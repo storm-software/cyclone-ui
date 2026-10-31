@@ -4782,6 +4782,30 @@ export const manifest: DesignSystemManifest = {
       family: "Storm Serif"
     }
   ],
+  tailwind: {
+    name: "cyclone-ui",
+    version: "0.0.0",
+    prefix: "cyclone-ui",
+    themes: [],
+    namespaces: {
+      font: [
+        "typography-body",
+        "typography-caption",
+        "typography-code",
+        "typography-display",
+        "typography-editorial",
+        "typography-eyebrow"
+      ],
+      leading: [
+        "typography-body",
+        "typography-caption",
+        "typography-code",
+        "typography-display",
+        "typography-editorial",
+        "typography-eyebrow"
+      ]
+    }
+  },
   tamagui: {
     name: "cyclone-ui",
     version: "0.0.0",

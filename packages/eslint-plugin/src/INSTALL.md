@@ -83,6 +83,15 @@ and component rules when it defines the replacement component.
 | `cyclone-ui/no-readonly-or-disabled-inputs`          | warn    | Inputs should be interactive; replace disabled and read-only inputs with a clearer pattern                         |
 | `cyclone-ui/no-deprecated-imports`                   | off     | Disallow importing deprecated design system components                                                             |
 | `cyclone-ui/no-banned-imports`                       | error   | Disallow importing banned modules                                                                                  |
+| `cyclone-ui/tailwind-no-color-literal`               | off     | No raw color value (hex, oklch, rgb, hsl, …) in a class                                                            |
+| `cyclone-ui/tailwind-no-stock-palette`               | off     | No Tailwind default palette color that the design system does not define                                           |
+| `cyclone-ui/tailwind-no-unknown-theme-var`           | error   | Theme variables referenced in a class must exist in the design system                                              |
+| `cyclone-ui/tailwind-no-radius-literal`              | off     | No arbitrary radius in a class                                                                                     |
+| `cyclone-ui/tailwind-no-spacing-literal`             | off     | No arbitrary spacing in a class                                                                                    |
+| `cyclone-ui/tailwind-no-typography-literal`          | warn    | No arbitrary font family, size, weight, leading or tracking in a class                                             |
+| `cyclone-ui/tailwind-no-shadow-literal`              | off     | No arbitrary shadow in a class                                                                                     |
+| `cyclone-ui/tailwind-no-dark-pairs`                  | off     | No hand-authored dark: color when tokens already carry a dark theme                                                |
+| `cyclone-ui/tailwind-focus-visible`                  | warn    | Focus rings use focus-visible:, not focus:                                                                         |
 | `cyclone-ui/tamagui-no-legacy-token-prefix`          | error   | No $-prefixed token names; Tamagui v3 resolves bare names                                                          |
 | `cyclone-ui/tamagui-no-legacy-condition-object`      | error   | No v2 condition objects (hoverStyle, $sm, $theme-dark, …); Tamagui v3 writes conditions into the value             |
 | `cyclone-ui/tamagui-no-color-literal`                | error   | No raw color value (hex, oklch, rgb, hsl, …) in a color style prop                                                 |

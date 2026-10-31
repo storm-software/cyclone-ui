@@ -1408,3 +1408,16 @@ declare module "@tamagui/core" {
 }
 
 export default config;
+
+for (const scheme of ["light", "dark"]) {
+  const all = config.themes as Record<string, Record<string, unknown>>;
+  const root = all[scheme];
+  const base = all[`${scheme}_base`];
+  if (root && base) {
+    for (const key of Object.keys(base)) {
+      if (!(key in root)) {
+        root[key] = base[key];
+      }
+    }
+  }
+}

@@ -107,20 +107,29 @@ const CardDataBorder = styled(View, {
   zIndex: "30"
 });
 
-// Theme-colored strip across the top edge; the frame's `overflow: hidden`
+// Theme-colored strip along the `variant` edge; the frame's `overflow: hidden`
 // clips it to the rounded corners.
 const CardAccentBar = styled(View, {
   displayName: "Card",
   transition: "200ms",
   position: "absolute",
-  top: 0,
-  right: 0,
-  left: 0,
-  height: 6,
   backgroundColor: "primary group-hover/card:primary-hovered",
   pointerEvents: "none",
-  zIndex: "30"
+  zIndex: "30",
+  variants: {
+    variant: {
+      top: { top: 0, right: 0, left: 0, height: 6 },
+      bottom: { right: 0, bottom: 0, left: 0, height: 6 },
+      left: { top: 0, bottom: 0, left: 0, width: 6 },
+      right: { top: 0, right: 0, bottom: 0, width: 6 }
+    }
+  } as const,
+  defaultVariants: {
+    variant: "top"
+  }
 });
+
+export type CardVariant = "top" | "bottom" | "left" | "right" | "none";
 
 // Soft radial spotlight that follows the pointer; `left` / `top` are written
 // straight to the DOM node on pointer move so tracking never re-renders.
@@ -162,8 +171,13 @@ const CardContent = styled(YStack, {
   }
 });
 
-type CardFrameImplProps = Omit<GetProps<typeof CardFrame>, "size"> & {
+type CardFrameImplProps = Omit<
+  GetProps<typeof CardFrame>,
+  "size" | "variant"
+> & {
   size?: SizeTokens;
+  /** The edge that carries the thick primary accent bar. */
+  variant?: CardVariant;
   color?: ColorTokens | ThemeTokens;
 };
 
@@ -175,6 +189,7 @@ const CardFrameImpl = createStyledHOC(
       color,
       theme,
       size = true,
+      variant = "top",
       onPointerMove,
       onPointerEnter,
       onPointerLeave,
@@ -223,9 +238,12 @@ const CardFrameImpl = createStyledHOC(
               {dataColor && (
                 <CardDataBorder style={{ borderColor: dataColor }} />
               )}
-              <CardAccentBar
-                {...(dataColor && { style: { backgroundColor: dataColor } })}
-              />
+              {variant !== "none" && (
+                <CardAccentBar
+                  variant={variant}
+                  {...(dataColor && { style: { backgroundColor: dataColor } })}
+                />
+              )}
               <CardSpotlight
                 ref={spotlightRef as any}
                 style={{

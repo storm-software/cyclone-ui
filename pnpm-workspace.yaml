@@ -260,7 +260,7 @@ minimumReleaseAgeExclude:
   - conventional-changelog-storm-software
   - powerlines
   - tamagui
-  - "@sourcebook/config@0.0.12"
+  - "@sourcebook/config"
 nodeVersion: 26.3.0
 allowBuilds:
   "@parcel/watcher": true

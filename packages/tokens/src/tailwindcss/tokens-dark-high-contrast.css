@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/Bold.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Bold.otf")
+    format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -8,7 +9,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/BoldItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/BoldItalic.otf")
+    format("opentype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -16,7 +18,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/ExtraLight.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/ExtraLight.otf")
+    format("opentype");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -24,7 +27,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/ExtraLightItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/ExtraLightItalic.otf")
+    format("opentype");
   font-weight: 200;
   font-style: italic;
   font-display: swap;
@@ -32,7 +36,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/Italic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Italic.otf")
+    format("opentype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -40,7 +45,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/Light.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Light.otf")
+    format("opentype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -48,7 +54,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/LightItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/LightItalic.otf")
+    format("opentype");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -56,7 +63,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/Medium.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Medium.otf")
+    format("opentype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -64,7 +72,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/MediumItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/MediumItalic.otf")
+    format("opentype");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -72,7 +81,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/Regular.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Regular.otf")
+    format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -80,7 +90,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/SemiBold.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/SemiBold.otf")
+    format("opentype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -88,7 +99,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/SemiBoldItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/SemiBoldItalic.otf")
+    format("opentype");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -96,7 +108,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/Text.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Text.otf")
+    format("opentype");
   font-weight: 450;
   font-style: normal;
   font-display: swap;
@@ -104,7 +117,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/TextItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/TextItalic.otf")
+    format("opentype");
   font-weight: 450;
   font-style: italic;
   font-display: swap;
@@ -112,7 +126,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/Thin.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Thin.otf")
+    format("opentype");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -120,7 +135,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/ThinItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/ThinItalic.otf")
+    format("opentype");
   font-weight: 100;
   font-style: italic;
   font-display: swap;
@@ -128,7 +144,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/Bold.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Bold.ttf")
+    format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -136,7 +153,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/BoldItalic.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/BoldItalic.ttf")
+    format("truetype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -144,7 +162,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/ExtraLight.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/ExtraLight.ttf")
+    format("truetype");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -152,7 +171,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/ExtraLightItalic.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/ExtraLightItalic.ttf")
+    format("truetype");
   font-weight: 200;
   font-style: italic;
   font-display: swap;
@@ -160,7 +180,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/Italic-Variable.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Italic-Variable.ttf")
+    format("truetype");
   font-weight: 100 700;
   font-style: italic;
   font-display: swap;
@@ -168,7 +189,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/Italic.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Italic.ttf")
+    format("truetype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -176,7 +198,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/Light.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Light.ttf")
+    format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -184,7 +207,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/LightItalic.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/LightItalic.ttf")
+    format("truetype");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -192,7 +216,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/Medium.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Medium.ttf")
+    format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -200,7 +225,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/MediumItalic.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/MediumItalic.ttf")
+    format("truetype");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -208,7 +234,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/Regular.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Regular.ttf")
+    format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -216,7 +243,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/SemiBold.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/SemiBold.ttf")
+    format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -224,7 +252,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/SemiBoldItalic.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/SemiBoldItalic.ttf")
+    format("truetype");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -232,7 +261,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/Text.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Text.ttf")
+    format("truetype");
   font-weight: 450;
   font-style: normal;
   font-display: swap;
@@ -240,7 +270,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/TextItalic.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/TextItalic.ttf")
+    format("truetype");
   font-weight: 450;
   font-style: italic;
   font-display: swap;
@@ -248,7 +279,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/Thin.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Thin.ttf")
+    format("truetype");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -256,7 +288,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/ThinItalic.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/ThinItalic.ttf")
+    format("truetype");
   font-weight: 100;
   font-style: italic;
   font-display: swap;
@@ -264,7 +297,8 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/storm-sans/Variable.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Variable.ttf")
+    format("truetype");
   font-weight: 100 700;
   font-style: normal;
   font-display: swap;
@@ -272,7 +306,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/Bold.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Bold.otf")
+    format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -280,7 +315,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/BoldItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/BoldItalic.otf")
+    format("opentype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -288,7 +324,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraBold.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraBold.otf")
+    format("opentype");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -296,7 +333,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraBoldItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraBoldItalic.otf")
+    format("opentype");
   font-weight: 800;
   font-style: italic;
   font-display: swap;
@@ -304,7 +342,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraLight.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraLight.otf")
+    format("opentype");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -312,7 +351,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraLightItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraLightItalic.otf")
+    format("opentype");
   font-weight: 200;
   font-style: italic;
   font-display: swap;
@@ -320,7 +360,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/Italic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Italic.otf")
+    format("opentype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -328,7 +369,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/Light.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Light.otf")
+    format("opentype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -336,7 +378,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/LightItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/LightItalic.otf")
+    format("opentype");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -344,7 +387,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/Medium.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Medium.otf")
+    format("opentype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -352,7 +396,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/MediumItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/MediumItalic.otf")
+    format("opentype");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -360,7 +405,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/Regular.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Regular.otf")
+    format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -368,7 +414,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/SemiBold.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/SemiBold.otf")
+    format("opentype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -376,7 +423,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/SemiBoldItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/SemiBoldItalic.otf")
+    format("opentype");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -384,7 +432,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/Bold.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Bold.ttf")
+    format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -392,7 +441,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/BoldItalic.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/BoldItalic.ttf")
+    format("truetype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -400,7 +450,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraBold.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraBold.ttf")
+    format("truetype");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -408,7 +459,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraBoldItalic.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraBoldItalic.ttf")
+    format("truetype");
   font-weight: 800;
   font-style: italic;
   font-display: swap;
@@ -416,7 +468,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraLight.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraLight.ttf")
+    format("truetype");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -424,7 +477,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraLightItalic.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraLightItalic.ttf")
+    format("truetype");
   font-weight: 200;
   font-style: italic;
   font-display: swap;
@@ -432,7 +486,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/Italic-Variable.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Italic-Variable.ttf")
+    format("truetype");
   font-weight: 200 800;
   font-style: italic;
   font-display: swap;
@@ -440,7 +495,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/Italic.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Italic.ttf")
+    format("truetype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -448,7 +504,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/Light.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Light.ttf")
+    format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -456,7 +513,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/LightItalic.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/LightItalic.ttf")
+    format("truetype");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -464,7 +522,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/Medium.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Medium.ttf")
+    format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -472,7 +531,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/MediumItalic.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/MediumItalic.ttf")
+    format("truetype");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -480,7 +540,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/Regular.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Regular.ttf")
+    format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -488,7 +549,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/SemiBold.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/SemiBold.ttf")
+    format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -496,7 +558,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/SemiBoldItalic.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/SemiBoldItalic.ttf")
+    format("truetype");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -504,7 +567,8 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/storm-serif/Variable.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Variable.ttf")
+    format("truetype");
   font-weight: 200 800;
   font-style: normal;
   font-display: swap;
@@ -518,30 +582,6 @@
   --blur-sm: 8px;
   --blur-xl: 24px;
   --blur-xs: 4px;
-  --border-radius-2xl: 1rem;
-  --border-radius-3xl: 1.5rem;
-  --border-radius-4xl: 2rem;
-  --border-radius-button: var(--border-radius-sm);
-  --border-radius-card: var(--border-radius-md);
-  --border-radius-checkbox: var(--border-radius-sm);
-  --border-radius-container: var(--border-radius-lg);
-  --border-radius-control: var(--border-radius-sm);
-  --border-radius-dialog: var(--border-radius-md);
-  --border-radius-drawer: var(--border-radius-lg);
-  --border-radius-full: 100%;
-  --border-radius-lg: 0.5rem;
-  --border-radius-md: 0.375rem;
-  --border-radius-popover: var(--border-radius-md);
-  --border-radius-sheet: var(--border-radius-zero);
-  --border-radius-sm: 0.25rem;
-  --border-radius-tab: var(--border-radius-sm);
-  --border-radius-tabs: var(--border-radius-md);
-  --border-radius-tag: var(--border-radius-sm);
-  --border-radius-tooltip: var(--border-radius-md);
-  --border-radius-trigger: var(--border-radius-sm);
-  --border-radius-xl: 0.75rem;
-  --border-radius-xs: 0.125rem;
-  --border-radius-zero: 0rem;
   --color-base-link: #00bcff;
   --color-base-link-active: var(--color-base-link-hovered);
   --color-base-link-disabled: #2c6380;
@@ -855,26 +895,12 @@
   --ease-in: cubic-bezier(0.4, 0, 1, 1);
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
-  --font-size-10xl: 12rem;
-  --font-size-11xl: 14rem;
-  --font-size-12xl: 16rem;
-  --font-size-13xl: 18rem;
-  --font-size-14xl: 20rem;
-  --font-size-15xl: 24rem;
-  --font-size-2xl: 1.875rem;
-  --font-size-3xl: 2.25rem;
-  --font-size-4xl: 3rem;
-  --font-size-5xl: 3.75rem;
-  --font-size-6xl: 4.5rem;
-  --font-size-7xl: 6rem;
-  --font-size-8xl: 8rem;
-  --font-size-9xl: 10rem;
-  --font-size-lg: 1.25rem;
-  --font-size-md: 1.125rem;
-  --font-size-sm: 1rem;
-  --font-size-xl: 1.5rem;
-  --font-size-xs: 0.875rem;
-  --font-size-xxs: 0.75rem;
+  --font-body: Storm Sans;
+  --font-caption: Storm Sans;
+  --font-code: Google Sans Code;
+  --font-display: Storm Sans;
+  --font-editorial: Storm Serif;
+  --font-eyebrow: Google Sans Code;
   --font-weight-black: 900;
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
@@ -887,60 +913,98 @@
   --inset-shadow-2xs: inset 0px 1px 0px 0px #0000000d;
   --inset-shadow-sm: inset 0px 2px 4px 0px #0000000d;
   --inset-shadow-xs: inset 0px 1px 1px 0px #0000000d;
-  --letter-spacing-normal: 0rem;
-  --letter-spacing-tight: -0.025rem;
-  --letter-spacing-tighter: -0.05rem;
-  --letter-spacing-wide: 0.025rem;
-  --letter-spacing-wider: 0.05rem;
-  --letter-spacing-widest: 0.1rem;
-  --line-height-10xl: 0.9;
-  --line-height-2xl: 1.2;
-  --line-height-3xl: 1.08;
-  --line-height-4xl: 1;
-  --line-height-5xl: 0.9;
-  --line-height-6xl: 0.9;
-  --line-height-7xl: 0.9;
-  --line-height-8xl: 0.9;
-  --line-height-9xl: 0.9;
-  --line-height-lg: 1.4;
-  --line-height-loose: 1.665;
-  --line-height-md: 1.35;
-  --line-height-none: 0.765;
-  --line-height-normal: 1.2375;
-  --line-height-relaxed: 1.35;
-  --line-height-sm: 1.285714;
-  --line-height-snug: 1.125;
-  --line-height-tight: 1.0575;
-  --line-height-xl: 1.26;
-  --line-height-xs: 1.2;
+  --leading-10xl: 0.9;
+  --leading-2xl: 1.2;
+  --leading-3xl: 1.08;
+  --leading-4xl: 1;
+  --leading-5xl: 0.9;
+  --leading-6xl: 0.9;
+  --leading-7xl: 0.9;
+  --leading-8xl: 0.9;
+  --leading-9xl: 0.9;
+  --leading-body: var(--leading-snug);
+  --leading-caption: var(--leading-snug);
+  --leading-code: var(--leading-none);
+  --leading-display: var(--leading-normal);
+  --leading-editorial: var(--leading-normal);
+  --leading-eyebrow: var(--leading-none);
+  --leading-lg: 1.4;
+  --leading-loose: 1.665;
+  --leading-md: 1.35;
+  --leading-none: 0.765;
+  --leading-normal: 1.2375;
+  --leading-relaxed: 1.35;
+  --leading-sm: 1.285714;
+  --leading-snug: 1.125;
+  --leading-tight: 1.0575;
+  --leading-xl: 1.26;
+  --leading-xs: 1.2;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2rem;
+  --radius-button: var(--radius-sm);
+  --radius-card: var(--radius-md);
+  --radius-checkbox: var(--radius-sm);
+  --radius-container: var(--radius-lg);
+  --radius-control: var(--radius-sm);
+  --radius-dialog: var(--radius-md);
+  --radius-drawer: var(--radius-lg);
+  --radius-full: 100%;
+  --radius-lg: 0.5rem;
+  --radius-md: 0.375rem;
+  --radius-popover: var(--radius-md);
+  --radius-sheet: var(--radius-zero);
+  --radius-sm: 0.25rem;
+  --radius-tab: var(--radius-sm);
+  --radius-tabs: var(--radius-md);
+  --radius-tag: var(--radius-sm);
+  --radius-tooltip: var(--radius-md);
+  --radius-trigger: var(--radius-sm);
+  --radius-xl: 0.75rem;
+  --radius-xs: 0.125rem;
+  --radius-zero: 0rem;
   --ring-base: 0px 0px 0px 3px #ffffff1a;
-  --ring-base-offset: 0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #ffffff1a;
+  --ring-base-offset:
+    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #ffffff1a;
   --ring-base-subtle: 0px 0px 0px 1px #ffffff1a;
-  --ring-base-subtle-offset: 0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #ffffff1a;
+  --ring-base-subtle-offset:
+    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #ffffff1a;
   --ring-brand: 0px 0px 0px 3px #3be4be26;
-  --ring-brand-offset: 0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #3be4be26;
+  --ring-brand-offset:
+    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #3be4be26;
   --ring-brand-subtle: 0px 0px 0px 1px #3be4be26;
-  --ring-brand-subtle-offset: 0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #3be4be26;
+  --ring-brand-subtle-offset:
+    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #3be4be26;
   --ring-danger: 0px 0px 0px 3px #cf2d5626;
-  --ring-danger-offset: 0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #cf2d5626;
+  --ring-danger-offset:
+    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #cf2d5626;
   --ring-danger-subtle: 0px 0px 0px 1px #cf2d5626;
-  --ring-danger-subtle-offset: 0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #cf2d5626;
+  --ring-danger-subtle-offset:
+    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #cf2d5626;
   --ring-discovery: 0px 0px 0px 3px #9277da26;
-  --ring-discovery-offset: 0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #9277da26;
+  --ring-discovery-offset:
+    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #9277da26;
   --ring-discovery-subtle: 0px 0px 0px 1px #9277da26;
-  --ring-discovery-subtle-offset: 0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #9277da26;
+  --ring-discovery-subtle-offset:
+    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #9277da26;
   --ring-info: 0px 0px 0px 3px #4d8eff26;
-  --ring-info-offset: 0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #4d8eff26;
+  --ring-info-offset:
+    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #4d8eff26;
   --ring-info-subtle: 0px 0px 0px 1px #4d8eff26;
-  --ring-info-subtle-offset: 0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #4d8eff26;
+  --ring-info-subtle-offset:
+    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #4d8eff26;
   --ring-success: 0px 0px 0px 3px #45c79126;
-  --ring-success-offset: 0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #45c79126;
+  --ring-success-offset:
+    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #45c79126;
   --ring-success-subtle: 0px 0px 0px 1px #45c79126;
-  --ring-success-subtle-offset: 0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #45c79126;
+  --ring-success-subtle-offset:
+    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #45c79126;
   --ring-warning: 0px 0px 0px 3px #f7ac2326;
-  --ring-warning-offset: 0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #f7ac2326;
+  --ring-warning-offset:
+    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #f7ac2326;
   --ring-warning-subtle: 0px 0px 0px 1px #f7ac2326;
-  --ring-warning-subtle-offset: 0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f7ac2326;
+  --ring-warning-subtle-offset:
+    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f7ac2326;
   --shadow-2xl: 0px 25px 50px -12px #00000040;
   --shadow-2xs: 0px 1px 0px 0px #0000000d;
   --shadow-lg: 0px 10px 15px -3px #0000001a, 0px 4px 6px -4px #0000001a;
@@ -1088,17 +1152,57 @@
   --spacing-xs: 1px;
   --spacing-xxs: 0.5px;
   --spacing-zero: 0px;
+  --text-10xl: 12rem;
+  --text-10xl--line-height: var(--leading-10xl);
+  --text-11xl: 14rem;
+  --text-12xl: 16rem;
+  --text-13xl: 18rem;
+  --text-14xl: 20rem;
+  --text-15xl: 24rem;
+  --text-2xl: 1.875rem;
+  --text-2xl--line-height: var(--leading-2xl);
+  --text-3xl: 2.25rem;
+  --text-3xl--line-height: var(--leading-3xl);
+  --text-4xl: 3rem;
+  --text-4xl--line-height: var(--leading-4xl);
+  --text-5xl: 3.75rem;
+  --text-5xl--line-height: var(--leading-5xl);
+  --text-6xl: 4.5rem;
+  --text-6xl--line-height: var(--leading-6xl);
+  --text-7xl: 6rem;
+  --text-7xl--line-height: var(--leading-7xl);
+  --text-8xl: 8rem;
+  --text-8xl--line-height: var(--leading-8xl);
+  --text-9xl: 10rem;
+  --text-9xl--line-height: var(--leading-9xl);
+  --text-lg: 1.25rem;
+  --text-lg--line-height: var(--leading-lg);
+  --text-md: 1.125rem;
+  --text-md--line-height: var(--leading-md);
   --text-shadow-2xs: 0px 1px 0px 0px #00000026;
-  --text-shadow-lg: 0px 1px 2px 0px #0000001a, 0px 3px 2px 0px #0000001a, 0px 4px 8px 0px #0000001a;
-  --text-shadow-md: 0px 1px 1px 0px #0000001a, 0px 1px 2px 0px #0000001a, 0px 2px 4px 0px #0000001a;
-  --text-shadow-sm: 0px 1px 0px 0px #00000013, 0px 1px 1px 0px #00000013, 0px 2px 2px 0px #00000013;
+  --text-shadow-lg:
+    0px 1px 2px 0px #0000001a, 0px 3px 2px 0px #0000001a,
+    0px 4px 8px 0px #0000001a;
+  --text-shadow-md:
+    0px 1px 1px 0px #0000001a, 0px 1px 2px 0px #0000001a,
+    0px 2px 4px 0px #0000001a;
+  --text-shadow-sm:
+    0px 1px 0px 0px #00000013, 0px 1px 1px 0px #00000013,
+    0px 2px 2px 0px #00000013;
   --text-shadow-xs: 0px 1px 1px 0px #00000033;
-  --typography-body: {"fontFamily":"Storm Sans","lineHeight":"{line-height.snug}"};
-  --typography-caption: {"fontFamily":"Storm Sans","lineHeight":"{line-height.snug}","fontStyle":"italic"};
-  --typography-code: {"fontFamily":"Google Sans Code","lineHeight":"{line-height.none}"};
-  --typography-display: {"fontFamily":"Storm Sans","lineHeight":"{line-height.normal}"};
-  --typography-editorial: {"fontFamily":"Storm Serif","lineHeight":"{line-height.normal}"};
-  --typography-eyebrow: {"fontFamily":"Google Sans Code","lineHeight":"{line-height.none}"};
+  --text-sm: 1rem;
+  --text-sm--line-height: var(--leading-sm);
+  --text-xl: 1.5rem;
+  --text-xl--line-height: var(--leading-xl);
+  --text-xs: 0.875rem;
+  --text-xs--line-height: var(--leading-xs);
+  --text-xxs: 0.75rem;
+  --tracking-normal: 0rem;
+  --tracking-tight: -0.025rem;
+  --tracking-tighter: -0.05rem;
+  --tracking-wide: 0.025rem;
+  --tracking-wider: 0.05rem;
+  --tracking-widest: 0.1rem;
   --z-index-0: 0;
   --z-index-10: 100;
   --z-index-20: 200;

@@ -29,6 +29,12 @@ const meta: Meta<CardStoryArgs> = {
   title: "Containers/Card",
   component: Card,
   tags: ["autodocs"],
+  argTypes: {
+    variant: {
+      control: "select",
+      options: ["top", "bottom", "left", "right", "none"]
+    }
+  },
   render: ({ icon, ...args }: CardStoryArgs) => (
     <Card {...args} width="500px">
       <Card.Header>
@@ -119,5 +125,33 @@ export const Success: Story = {
     children:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     theme: "success"
+  }
+};
+
+export const AccentBottom: Story = {
+  args: {
+    ...Base.args,
+    variant: "bottom"
+  }
+};
+
+export const AccentLeft: Story = {
+  args: {
+    ...Base.args,
+    variant: "left"
+  }
+};
+
+export const AccentRight: Story = {
+  args: {
+    ...Base.args,
+    variant: "right"
+  }
+};
+
+export const AccentNone: Story = {
+  args: {
+    ...Base.args,
+    variant: "none"
   }
 };

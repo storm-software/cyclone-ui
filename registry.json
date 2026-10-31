@@ -7,8 +7,8 @@
       "title": "@cyclone-ui/accordion",
       "description": "A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.Heading, Item.Content) built on Tamagui's accordion. It supports single or multiple open items, default, separated, bordered and ghost variants, numbered headers, toggle or chevron icons with a configurable side, and an up or down direction. Use it for FAQs or grouped sections that users expand.",
       "dependencies": [
-        "@stryke/type-checks@^0.6.49",
-        "@stryke/types@^0.12.44",
+        "@stryke/type-checks@^0.6.50",
+        "@stryke/types@^0.12.45",
         "@tamagui/accordion@3.0.13",
         "@tamagui/collapsible@3.0.13",
         "@tamagui/core@3.0.13",
@@ -17,7 +17,7 @@
         "@tamagui/stacks@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -41,7 +41,7 @@
       "description": "An address search field: a SearchInput whose suggestions come from an address search API endpoint (GET <endpoint>?q=<text> returning label/latitude/longitude options), with a map of the chosen address. It provides Map, Search and TextBox parts; the map sits outside the Field so a floating label still lines up.",
       "dependencies": ["@tamagui/core@3.0.13", "@tamagui/image@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -75,7 +75,7 @@
       ],
       "devDependencies": [
         "@tamagui/get-font-sized@3.0.13",
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -110,7 +110,7 @@
         "@tamagui/web@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -138,7 +138,7 @@
         "@tamagui/web@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -158,7 +158,7 @@
       "description": "A composable area chart built on Recharts and the shared Cyclone chart parts. Areas can overlap, stack or expand to 100%, use gradient, solid, dotted, lines or hatched fills, and take dashed or animated strokes, point markers and a reveal animation. It also supports a zoom brush, legend selection and a loading skeleton. Use it to show how values change over time and how series add up.",
       "dependencies": ["motion@^11.18.2", "recharts@3.8.0"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "@tamagui/stacks@3.0.13",
         "react@^19.3.1",
         "react-dom@^19.3.1",
@@ -179,7 +179,7 @@
       "description": "An ArticlePage layout compound component for blog posts and documentation articles. A Header on its own background holds the breadcrumb, title, summary, cover Media and a Details row with the byline, Share links and tags; it stays in place while the Main sheet scrolls up over it. Main holds the article Content, beside a sticky table of contents and share links on wide screens, and Sections for feedback and recommendations, followed by the page footer.",
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -204,7 +204,7 @@
       "description": "A Badge that wraps an element and pins a small count or dot to one of its corners. It follows MUI's API: anchorOrigin, max (shows 99+ by default), showZero, invisible, rectangular or circular overlap, standard or dot variants, and palette or theme colors. Use it for notification counts and status indicators.",
       "dependencies": ["@tamagui/core@3.0.13", "@tamagui/web@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -223,7 +223,7 @@
       "description": "A composable bar chart built on Recharts and the shared Cyclone chart parts. Bars can be grouped, stacked or shown as percentages, run vertically or horizontally, and use default, gradient, hatched, duotone or striped fills with glow and hover highlighting. It also supports a zoom brush, legend selection and a loading skeleton. Use it to compare values across categories.",
       "dependencies": ["motion@^11.18.2", "recharts@3.8.0"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "@tamagui/stacks@3.0.13",
         "react@^19.3.1",
         "react-dom@^19.3.1",
@@ -248,7 +248,7 @@
         "@tamagui/text@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -274,7 +274,7 @@
         "@tamagui/text@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -316,7 +316,7 @@
         "@tamagui/web@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -339,11 +339,11 @@
       "title": "@cyclone-ui/bytes-text",
       "description": "A BodyText-based text component that renders a numeric byte count as a human-readable size (such as 1.5 kB) using pretty-bytes. Children that are not numbers are shown as 0. Use it to display file sizes, upload sizes or storage usage.",
       "dependencies": [
-        "@stryke/string-format@^0.17.58",
+        "@stryke/string-format@^0.17.59",
         "@tamagui/core@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -368,7 +368,7 @@
         "@tamagui/stacks@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -400,7 +400,7 @@
         "@tamagui/web@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -438,7 +438,7 @@
         "@tamagui/web@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1",
@@ -473,7 +473,7 @@
         "recharts@3.8.0"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -532,7 +532,7 @@
         "react-native-svg@^15.16.0"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -557,7 +557,7 @@
         "react-native-svg@^15.16.0"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -589,7 +589,7 @@
         "@tamagui/web@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1",
@@ -622,7 +622,7 @@
         "@tamagui/helpers@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -647,7 +647,7 @@
       "description": "A 2D color picker, built on the React Stately color model, for selecting two channels of a color from a gradient area by dragging a thumb or using the keyboard.",
       "dependencies": ["@react-stately/color@^3.10.1", "@tamagui/core@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -666,7 +666,7 @@
       "description": "An animated display component reproducing Ellsworth Kelly's \"Colors for a Large Wall\" as a grid of colored panels. The grid fits as many `panelSize` panels as the component's dimensions allow, tiling the painting when larger. Pairs of differently colored panels swap places on an `interval` (in milliseconds) with a short color fade; `0` or a reduced-motion preference holds the panels still.",
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -685,7 +685,7 @@
       "description": "A color input with a swatch trigger that opens a popover to pick the color from an area, sliders, channel fields and preset swatches.",
       "dependencies": ["@react-stately/color@^3.10.1", "@tamagui/core@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -715,7 +715,7 @@
       "description": "A composable chart that draws bars and lines on the same axes, built on Recharts and the shared Cyclone chart parts. Bars and lines keep the fill, stroke, glow and point marker styles of the bar and line charts. It also supports a zoom brush, legend selection and a loading skeleton. Use it to show a value next to a related trend, such as revenue bars with a growth line.",
       "dependencies": ["motion@^11.18.2", "recharts@3.8.0"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "@tamagui/stacks@3.0.13",
         "react@^19.3.1",
         "react-dom@^19.3.1",
@@ -736,7 +736,7 @@
       "description": "An invisible anchor that bursts a ring of accent-colored confetti squares out of its position when its burst() handle is called. Size the spread and piece count with props. Web only (Web Animations API); it does nothing on native or when the user prefers reduced motion.",
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -759,7 +759,7 @@
         "@tamagui/stacks@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -779,7 +779,7 @@
       "description": "A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.",
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -816,7 +816,7 @@
         "react-native-svg@^15.16.0"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -839,10 +839,10 @@
       "title": "@cyclone-ui/data-table",
       "description": "A data grid built on TanStack Table and the Cyclone UI Table that takes table options (columns and data) and adds sorting, faceted column filtering, client-side pagination with a configurable page size, optional row selection checkboxes and resizable columns. Use it to display large, interactive datasets.",
       "dependencies": [
-        "@stryke/helpers@^0.10.56",
-        "@stryke/string-format@^0.17.58",
-        "@stryke/type-checks@^0.6.49",
-        "@stryke/types@^0.12.44",
+        "@stryke/helpers@^0.10.57",
+        "@stryke/string-format@^0.17.59",
+        "@stryke/type-checks@^0.6.50",
+        "@stryke/types@^0.12.45",
         "@tamagui/adapt@3.0.13",
         "@tamagui/animate-presence@3.0.13",
         "@tamagui/core@3.0.13",
@@ -850,11 +850,11 @@
         "@tamagui/stacks@3.0.13",
         "@tamagui/text@3.0.13",
         "@tanstack/react-table@^8.21.3",
-        "@tanstack/react-virtual@^3.14.22",
+        "@tanstack/react-virtual@^3.14.24",
         "@tanstack/table-core@^8.21.3"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "@tamagui/avatar@3.0.13",
         "react@^19.3.1",
         "react-dom@^19.3.1",
@@ -890,8 +890,8 @@
       "dependencies": [
         "@maskito/core@^3.11.1",
         "@maskito/kit@^3.11.1",
-        "@stryke/date@^0.0.28",
-        "@stryke/hooks@^0.4.133",
+        "@stryke/date@^0.0.29",
+        "@stryke/hooks@^0.4.134",
         "@tamagui/adapt@3.0.13",
         "@tamagui/compose-refs@3.0.13",
         "@tamagui/constants@3.0.13",
@@ -912,7 +912,7 @@
         "@tamagui/web@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -957,7 +957,7 @@
         "react-native-svg@^15.16.0"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -987,7 +987,7 @@
         "@tamagui/text@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -1006,7 +1006,7 @@
       "description": "A DocsPage layout compound component for documentation and long-form reading, built on Page. A collapsible SideNav sits on the page canvas beside an inset, rounded Main panel that scrolls on its own, with a Header for breadcrumbs and page actions and a Content area that centers the article beside a sticky table of contents. On smaller screens the SideNav opens as an overlay and the document scrolls. Use it as the shell of a docs or article page.",
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -1035,7 +1035,7 @@
         "@tamagui/stacks@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -1064,7 +1064,7 @@
         "@tamagui/text@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -1083,7 +1083,7 @@
       "description": "A Feedback control that pairs a like toggle with a dislike toggle. Pressing dislike opens a popover form asking for an optional comment. It can be controlled or uncontrolled (value, defaultValue, onValueChange), and it also has onCommentSubmit, a custom comment label and placeholder, disabled and size props. Use it to collect quick thumbs-up/down feedback on content.",
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -1113,7 +1113,7 @@
       "title": "@cyclone-ui/field",
       "description": "A form field wrapper that connects a control to Cyclone UI form state and provides Field.Label, Field.Link, Field.Details, Field.Icon and Field.ThemeIcon parts. It shows validation messages automatically and supports normal, floating and underline label variants. Use it as the base for building labeled form inputs.",
       "dependencies": [
-        "@stryke/types@^0.12.44",
+        "@stryke/types@^0.12.45",
         "@tamagui/core@3.0.13",
         "@tamagui/get-font-sized@3.0.13",
         "@tamagui/get-token@3.0.13",
@@ -1122,7 +1122,7 @@
         "@tamagui/text@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -1150,9 +1150,9 @@
       "title": "@cyclone-ui/file-picker",
       "description": "A file and image picker with a dashed drop zone that supports drag and drop on the web and the native document picker on mobile. It has a configurable media type and maximum file count, a Trigger.Button, and a Files list that shows each file's name, size, date and MIME type over an image, text or PDF preview. When wrapped in a Field it connects to the form, storing the picked files as the field's value.",
       "dependencies": [
-        "@stryke/date@^0.0.28",
-        "@stryke/hooks@^0.4.133",
-        "@stryke/types@^0.12.44",
+        "@stryke/date@^0.0.29",
+        "@stryke/hooks@^0.4.134",
+        "@stryke/types@^0.12.45",
         "@tamagui/animate-presence@3.0.13",
         "@tamagui/constants@3.0.13",
         "@tamagui/core@3.0.13",
@@ -1171,7 +1171,7 @@
         "react-native-svg@^15.16.0"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -1223,7 +1223,7 @@
         "@tamagui/text@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -1243,7 +1243,7 @@
       "description": "A responsive site footer with compound layout parts for an introduction, action, navigation sections, links, a bottom rail with brand, copyright and legal links, and a background logo. It optionally renders an animated terrain backdrop that respects reduced motion and a noise texture overlay. Use it at the bottom of marketing or documentation pages.",
       "dependencies": ["@tamagui/core@3.0.13", "react-native-svg@^15.16.0"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -1272,7 +1272,7 @@
       "description": "A form root that renders a native form element and provides Cyclone UI form state through FormProvider. Form.Submit and Form.Reset buttons call the form's submit and reset actions and are disabled when the form cannot be submitted. Use it to wrap Cyclone UI field components.",
       "dependencies": ["@tamagui/core@3.0.13", "@tamagui/helpers@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -1291,7 +1291,7 @@
       "description": "A decorative section divider that draws a ragged grid of seeded pseudo-random squares in SVG between a top and bottom color. On web it can animate never, always or on scroll, and it respects reduced-motion settings. Native renders a still edge.",
       "dependencies": ["@tamagui/core@3.0.13", "react-native-svg@^15.16.0"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -1314,7 +1314,7 @@
         "@tamagui/text@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -1339,7 +1339,7 @@
       "devDependencies": [
         "@phosphor-icons/core@^2.1.1",
         "@power-plant/core@^0.0.98",
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "@types/node@^25.9.9",
         "prettier@^3.9.10",
         "react@^19.3.1",
@@ -7422,7 +7422,7 @@
         "@tamagui/text@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -7451,8 +7451,8 @@
         "@tamagui/web@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
-        "@stryke/types@^0.12.44",
+        "@storybook/react-vite@^10.6.5",
+        "@stryke/types@^0.12.45",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -7486,7 +7486,7 @@
       "description": "A toggle button with a thumbs-up icon that can be controlled (liked, onLikedChange) or uncontrolled (defaultLiked), and has sm, md and lg sizes. On the web, liking plays a thumb animation and a confetti burst unless the user prefers reduced motion. It sets aria-pressed for accessibility.",
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -7506,7 +7506,7 @@
       "description": "A composable line chart built on Recharts and the shared Cyclone chart parts. Lines take solid, dashed or animated strokes, curve types, glow, point markers, a dashed buffer segment and a reveal animation. It also supports a zoom brush, legend selection and a loading skeleton. Use it to compare how several series trend over time.",
       "dependencies": ["motion@^11.18.2", "recharts@3.8.0"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "@tamagui/stacks@3.0.13",
         "react@^19.3.1",
         "react-dom@^19.3.1",
@@ -7534,7 +7534,7 @@
         "@tamagui/web@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -7562,7 +7562,7 @@
         "@tamagui/get-font-sized@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -7588,7 +7588,7 @@
         "@tamagui/web@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -7608,7 +7608,7 @@
       "description": "A responsive site header made of Logo, Navigation, Actions and MenuButton slots. Navigation.Item supports Group and Link children, which render as a desktop mega menu and a collapsible mobile panel. Items can be featured, active or external, and the header tracks page scroll.",
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "@tamagui/text@3.0.13",
         "react@^19.3.1",
         "react-dom@^19.3.1",
@@ -7637,12 +7637,12 @@
       "title": "@cyclone-ui/next-button",
       "description": "A Button preset labeled \"Next\" by default, with a right-arrow icon that animates on hover. It accepts all Button props plus hideText to show only the icon and animateShrink for the arrow. Use it for forward navigation in steps or flows.",
       "dependencies": [
-        "@stryke/hooks@^0.4.133",
+        "@stryke/hooks@^0.4.134",
         "@tamagui/core@3.0.13",
         "@tamagui/stacks@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -7662,7 +7662,7 @@
       "description": "A NumberInput built on Input that renders a type=number text box with decrease (minus) and increase (plus) buttons. The buttons change the value by a configurable increment. It has the same TextBox, TextBox.Value and Trigger parts as Input. Use it on its own or wrap it in a Field to connect it to a Form.",
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -7690,7 +7690,7 @@
         "@tamagui/core@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -7709,7 +7709,7 @@
       "description": "A one-time passcode input that renders one numeric input per digit (4 by default). Focus moves with typing, Backspace and the arrow keys, pasted codes fill the inputs, and autocomplete uses one-time-code. onComplete fires when every digit is filled. Use it on its own or wrap it in a Field to connect it to a Form.",
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -7734,7 +7734,7 @@
         "react-native-svg@^15.16.0"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -7752,7 +7752,7 @@
       "title": "@cyclone-ui/package-command-code-block",
       "description": "A tabbed code block that shows the equivalent npm, pnpm, yarn and bun command for an ni-style command (install, run, exec, uninstall and others), each with a copy button. The chosen package manager is saved and kept in sync across instances. Use it in docs for install instructions.",
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1",
@@ -7777,7 +7777,7 @@
         "@tamagui/core@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -7812,7 +7812,7 @@
         "react-native-svg@^15.16.0"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -7837,7 +7837,7 @@
       "description": "A password input with a show/hide toggle and a caps-lock warning. A strength meter rates the password from very weak to strong, and inside a Field a built-in validator lists the missing criteria. It has the same TextBox, TextBox.Value and Trigger parts as Input. Use it on its own or wrap it in a Field to connect it to a Form.",
       "dependencies": ["@tamagui/core@3.0.13", "@tamagui/stacks@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -7868,14 +7868,14 @@
       "title": "@cyclone-ui/pdf-document-display",
       "description": "Renders one page of a PDF from a URL or FileResult using react-pdf, with a spinner and PDF icon placeholder while loading or after an error. It exposes load progress, success and error callbacks, a pageNumber prop, and an option to disable the context menu.",
       "dependencies": [
-        "@stryke/type-checks@^0.6.49",
-        "@stryke/types@^0.12.44",
+        "@stryke/type-checks@^0.6.50",
+        "@stryke/types@^0.12.45",
         "@tamagui/core@3.0.13",
         "pdfjs-dist@4.8.69",
         "react-pdf@^9.2.1"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -7906,7 +7906,7 @@
         "libphonenumber-js@1.12.31"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -7931,7 +7931,7 @@
       "description": "A composable pie and donut chart built on Recharts and the shared Cyclone chart parts. Sectors take gradient colors from the theme and can be padded, overlapped, labeled, rounded or made to glow. It also supports legend selection, background patterns and a loading skeleton. Use it to show how a whole splits into a few parts.",
       "dependencies": ["motion@^11.18.2", "recharts@3.8.0"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "@tamagui/stacks@3.0.13",
         "react@^19.3.1",
         "react-dom@^19.3.1",
@@ -7963,7 +7963,7 @@
         "@tamagui/floating@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -7983,7 +7983,7 @@
       "description": "A Link with a dotted underline that shows a Tooltip with more details when hovered or focused.",
       "dependencies": ["@tamagui/tooltip@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8006,12 +8006,12 @@
       "title": "@cyclone-ui/previous-button",
       "description": "A button with an animated left-arrow icon and a default \"Previous\" label. The label can be hidden with hideText, and the arrow can shrink when animateShrink is set. Use it for back navigation in wizards, steppers and paginated flows.",
       "dependencies": [
-        "@stryke/hooks@^0.4.133",
+        "@stryke/hooks@^0.4.134",
         "@tamagui/core@3.0.13",
         "@tamagui/stacks@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8035,7 +8035,7 @@
         "@tamagui/stacks@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8054,7 +8054,7 @@
       "description": "A composable radar chart built on Recharts and the shared Cyclone chart parts. Series can be filled or drawn as lines over a polygon or circle grid, with glow and point markers. It also supports legend selection and a loading skeleton. Use it to compare several series across the same set of attributes.",
       "dependencies": ["motion@^11.18.2", "recharts@3.8.0"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "@tamagui/stacks@3.0.13",
         "react@^19.3.1",
         "react-dom@^19.3.1",
@@ -8075,7 +8075,7 @@
       "description": "A composable radial bar chart built on Recharts and the shared Cyclone chart parts. Each category is drawn as a ring, as a full circle or a semicircle, with gradient colors from the theme. It also supports legend selection and a loading skeleton. Use it to compare a few values as progress around a circle.",
       "dependencies": ["motion@^11.18.2", "recharts@3.8.0"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "@tamagui/stacks@3.0.13",
         "react@^19.3.1",
         "react-dom@^19.3.1",
@@ -8095,8 +8095,8 @@
       "title": "@cyclone-ui/radio-group",
       "description": "A RadioGroup compound component (RadioGroup.Item) built on Tamagui's radio group. Each item shows a label and an optional description next to its radio indicator. It supports form control sizes, disabled and required states, validation-aware styling, and controlled or default values. Wrapped in a Field, it connects to the form: it reads its value, size and disabled state from the field, renders the field items as options when given no children, and reports changes to it.",
       "dependencies": [
-        "@stryke/hooks@^0.4.133",
-        "@stryke/types@^0.12.44",
+        "@stryke/hooks@^0.4.134",
+        "@stryke/types@^0.12.45",
         "@tamagui/constants@3.0.13",
         "@tamagui/core@3.0.13",
         "@tamagui/get-font-sized@3.0.13",
@@ -8108,7 +8108,7 @@
         "react-native-svg@^15.16.0"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8132,7 +8132,7 @@
       "description": "A row of icons, stars by default, for displaying or selecting a rating. It can be controlled or uncontrolled and supports fractional precision, clearing the value, read-only and disabled states, sm, md and lg sizes, and custom icons, weights and colors. Hover changes are reported through onChangeActive. Wrapped in a Field, it connects to the form: it reads its value, size and disabled state from the field and reports changes to it.",
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8155,7 +8155,7 @@
       "description": "A RedactedAnimation wrapper that briefly covers its children with an accent-colored mask, then slides the mask away to the left or right to reveal the content. It skips the animation when the user prefers reduced motion. Use it to add a redaction-style reveal effect to text or other inline content.",
       "dependencies": ["@tamagui/core@3.0.13", "@tamagui/text@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8175,7 +8175,7 @@
       "description": "A RippleAnimation layer that fills its positioned parent and, when its ripple() handle is called with a press event, grows a fading circle out of the press point (or the center, for a keyboard press). The ripple is drawn through a fine pixel grid for a slight pixelated look. Web only; it does nothing on native.",
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8194,7 +8194,7 @@
       "description": "A composable Sankey diagram built on Recharts and the shared Cyclone chart parts. Links between nodes can use gradient, solid, source-colored or target-colored fills, and nodes can carry inside or outside labels. It also supports a loading skeleton. Use it to show how a quantity flows from sources to destinations.",
       "dependencies": ["motion@^11.18.2", "recharts@3.8.0"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "@tamagui/stacks@3.0.13",
         "react@^19.3.1",
         "react-dom@^19.3.1",
@@ -8220,7 +8220,7 @@
         "@tamagui/stacks@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8239,7 +8239,7 @@
       "description": "A search icon Button that opens a Dialog for searching the application, like the fumadocs search dialog. It also opens with ⌘K / Ctrl+K. A debounced `search` function (static index or API) returns page, heading and text results with breadcrumbs and highlighted query words, narrowed by optional filter toggles. The arrow keys move through the results and Enter opens one. The last results chosen are saved in localStorage and listed as \"Recent\" when it opens, where they can be removed one by one or cleared.",
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8271,7 +8271,7 @@
         "@tamagui/create-context@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8295,7 +8295,7 @@
       "title": "@cyclone-ui/select",
       "description": "A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. The items open in a ContextMenu: a popover on large screens and a bottom Sheet on small screens, with a check mark beside the selected item and a lock beside disabled ones. It supports default, floating and underline variants, sizes, disabled state, and validation colors. Wrapped in a Field, it connects to the form: it takes its name, value, items, size, disabled and focus state from the field, floats the field label by default, and renders the field's items with a placeholder when given no children.",
       "dependencies": [
-        "@stryke/types@^0.12.44",
+        "@stryke/types@^0.12.45",
         "@tamagui/core@3.0.13",
         "@tamagui/create-context@3.0.13",
         "@tamagui/focusable@3.0.13",
@@ -8308,7 +8308,7 @@
         "@tamagui/web@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8364,7 +8364,7 @@
         "@tamagui/stacks@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8388,7 +8388,7 @@
       "description": "A skeleton component for loading states.",
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8407,7 +8407,7 @@
       "description": "A Material-style slider, built on the Tamagui Slider, for choosing a single value or, when given an array, a range. It can be controlled or uncontrolled and supports step marks with labels, normal or inverted track fill, value labels, sm, md and lg sizes, and accessible label callbacks. Wrapped in a Field, it connects to the form: it reads its value, size and disabled state from the field, labels its thumbs with the field label, and reports changes to it.",
       "dependencies": ["@tamagui/core@3.0.13", "@tamagui/slider@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8426,7 +8426,7 @@
       "description": "A Spinner component that renders the React Native ActivityIndicator inside a Tamagui YStack. It takes a small or large size and a color, which can be a theme token or a raw value and defaults to the accent color. Use it to show that content or an action is loading.",
       "dependencies": ["@tamagui/core@3.0.13", "@tamagui/stacks@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8462,7 +8462,7 @@
         "react-native-svg@^15.16.0"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8497,7 +8497,7 @@
         "@tamagui/react-native-types@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8527,7 +8527,7 @@
         "react-native-svg@^15.16.0"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "@tamagui/avatar@3.0.13",
         "@tanstack/react-table@^8.21.3",
         "@tanstack/table-core@^8.21.3",
@@ -8554,7 +8554,7 @@
         "@tamagui/text@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8595,7 +8595,7 @@
         "react-native-svg@^15.16.0"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8624,7 +8624,7 @@
         "@tamagui/web@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8652,7 +8652,7 @@
         "@tamagui/stacks@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8677,7 +8677,7 @@
       "description": "A multiline text input that renders a textarea with 3 rows by default and uses the same tokens as the Cyclone UI Input. It has default, floating and underline variants, sm, md and lg sizes, and focus and disabled states, and its border reflects field validation messages. Wrapped in a Field, it connects to the form: it takes its name, value, size, disabled and focus state from the field and floats the field label by default.",
       "dependencies": ["@tamagui/constants@3.0.13", "@tamagui/core@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8701,7 +8701,7 @@
         "@tamagui/linear-gradient@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8729,7 +8729,7 @@
         "react-native-svg@^15.16.0"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8754,7 +8754,7 @@
         "@tamagui/stacks@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8781,7 +8781,7 @@
       "description": "A Timeline that renders a list of events joined by a line, vertically or horizontally. Pass the events as value and render each with content, plus optional opposite (e.g. a date on the other side of the line) and marker render functions. align places the line left, right, top, bottom or alternating; TimelineMarker is the default dot for custom markers. Use it for order tracking, changelogs and activity feeds.",
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8800,7 +8800,7 @@
       "description": "A clickable toggle component that is exists in either an \"on\" or \"off\" state with various styles and sizes.",
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8819,7 +8819,7 @@
       "description": "A clickable group of toggle components that exists in either an \"on\" or \"off\" state with various styles and sizes.",
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8846,7 +8846,7 @@
         "@tamagui/tooltip@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8865,7 +8865,7 @@
       "description": "A documentation table that lists properties with their types. Each row expands to show the description, default, parameters and return value, and can link to a type description. Required and deprecated items are marked. Rows can be deep-linked through the URL hash.",
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "@vitejs/plugin-react-swc@^3.11.0",
         "react@^19.3.1",
         "react-dom@^19.3.1",
@@ -8896,12 +8896,12 @@
       "title": "@cyclone-ui/validation-text",
       "description": "A ValidationText component that shows field validation messages in caption text with an enter/exit animation. A single message is shown as plain text. Multiple messages are shown as a bulleted list under a heading that depends on the theme (errors, warnings or success), and a default notice is shown when the field is disabled. Use it below form fields.",
       "dependencies": [
-        "@stryke/types@^0.12.44",
+        "@stryke/types@^0.12.45",
         "@tamagui/core@3.0.13",
         "@tamagui/stacks@3.0.13"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -8930,7 +8930,7 @@
         "motion@^11.18.2"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1",
@@ -9019,7 +9019,7 @@
       "description": "A wrapper that hides its content visually but keeps it available to screen readers. The visible, preserveDimensions and animate variants can reveal the content or keep its size. Use it for accessible labels and text that only assistive technology should announce.",
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.3",
+        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"

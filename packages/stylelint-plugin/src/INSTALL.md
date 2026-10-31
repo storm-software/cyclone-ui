@@ -59,6 +59,15 @@ Literals that match exactly one token's value are fixed by `stylelint --fix`.
 | `cyclone-ui/no-physical-properties`           | off     | Disallow physical properties and values; use logical properties that follow the reading direction                                                  |
 | `cyclone-ui/expand-motion-shorthand`          | off     | Expands transition and animation shorthands so each value can use a motion token                                                                   |
 | `cyclone-ui/use-visually-hidden`              | warn    | Enforce usage of the design system's visually hidden component over hand-rolled styles                                                             |
+| `cyclone-ui/tailwind-no-color-literal`        | off     | No raw color value (hex, oklch, rgb, hsl, …) in a class                                                                                            |
+| `cyclone-ui/tailwind-no-stock-palette`        | off     | No Tailwind default palette color that the design system does not define                                                                           |
+| `cyclone-ui/tailwind-no-unknown-theme-var`    | error   | Theme variables referenced in a class must exist in the design system                                                                              |
+| `cyclone-ui/tailwind-no-radius-literal`       | off     | No arbitrary radius in a class                                                                                                                     |
+| `cyclone-ui/tailwind-no-spacing-literal`      | off     | No arbitrary spacing in a class                                                                                                                    |
+| `cyclone-ui/tailwind-no-typography-literal`   | warn    | No arbitrary font family, size, weight, leading or tracking in a class                                                                             |
+| `cyclone-ui/tailwind-no-shadow-literal`       | off     | No arbitrary shadow in a class                                                                                                                     |
+| `cyclone-ui/tailwind-no-dark-pairs`           | off     | No hand-authored dark: color when tokens already carry a dark theme                                                                                |
+| `cyclone-ui/tailwind-focus-visible`           | warn    | Focus rings use focus-visible:, not focus:                                                                                                         |
 
 ## Regenerate
 
