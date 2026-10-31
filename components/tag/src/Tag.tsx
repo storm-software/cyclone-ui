@@ -18,7 +18,7 @@
 
 "use client";
 
-import { X } from "@cyclone-ui/icons";
+import { Close } from "@cyclone-ui/icons";
 import type { RippleAnimationHandle } from "@cyclone-ui/ripple-animation";
 import { RippleAnimation } from "@cyclone-ui/ripple-animation";
 import { AnimatePresence } from "@tamagui/animate-presence";
@@ -540,7 +540,7 @@ const TagRemoveButton = createStyledHOC(
         }}>
         <TagIcon
           color={getTextColor(variant as TagVariant | undefined, outlined)}>
-          <X weight="bold" />
+          <Close />
         </TagIcon>
       </TagRemoveButtonFrame>
     );

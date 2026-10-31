@@ -19,7 +19,7 @@
 import type { FieldLabelVariant, FieldProps } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
-import { Lock, MagnifyingGlass } from "@cyclone-ui/icons";
+import { Lock, Search } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 import type { InputProps } from "./Input";
@@ -189,7 +189,7 @@ export const FloatingWithStartIcon: Story = {
         <Input>
           <Input.TextBox>
             <Field.Icon position="start" aria-label="Search icon">
-              <MagnifyingGlass aria-hidden={true} />
+              <Search aria-hidden={true} />
             </Field.Icon>
             <Input.TextBox.Value />
           </Input.TextBox>

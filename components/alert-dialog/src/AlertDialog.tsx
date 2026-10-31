@@ -20,7 +20,7 @@
 
 import type { DialogProps } from "@cyclone-ui/dialog";
 import { Dialog, DialogContext } from "@cyclone-ui/dialog";
-import { WarningCircle } from "@cyclone-ui/icons";
+import { AlertCircle } from "@cyclone-ui/icons";
 import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import {
   createStyledHOC,
@@ -72,7 +72,7 @@ const AlertDialogIcon = createStyledHOC(
                 theme={theme}
                 color="primary"
                 size="14xl">
-                {children || getIconByTheme({ theme }) || <WarningCircle />}
+                {children || getIconByTheme({ theme }) || <AlertCircle />}
               </ThemeableIcon>
             </View>
           </Theme>

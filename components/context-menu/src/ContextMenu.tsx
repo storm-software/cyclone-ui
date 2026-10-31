@@ -26,7 +26,7 @@ import {
   getSized,
   getSpaced
 } from "@cyclone-ui/helpers";
-import { Check, Lock } from "@cyclone-ui/icons";
+import { Confirm, Lock } from "@cyclone-ui/icons";
 import { Popover } from "@cyclone-ui/popover";
 import { Tooltip } from "@cyclone-ui/tooltip";
 import type { GetProps, LayoutEvent } from "@tamagui/core";
@@ -455,11 +455,7 @@ const ContextMenuItem = ({
               {disabled ? (
                 <Lock size={indicatorIconSize} color="primary-disabled" />
               ) : (
-                <Check
-                  size={indicatorIconSize}
-                  color="primary-active"
-                  weight="bold"
-                />
+                <Confirm size={indicatorIconSize} color="primary-active" />
               )}
             </View>
           )}

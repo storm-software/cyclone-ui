@@ -134,7 +134,12 @@ const StoryBrand = () => (
       justifyContent="center"
       backgroundColor="secondary"
       borderRadius="full">
-      <Lightning aria-hidden={true} size={16} color="primary" weight="fill" />
+      <Lightning
+        aria-hidden={true}
+        size={16}
+        color="primary"
+        variant="filled"
+      />
     </View>
     <HeadingSmallText color="primary" fontSize="md">
       Cyclone UI

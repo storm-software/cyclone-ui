@@ -19,7 +19,7 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { HeadingText } from "@cyclone-ui/heading-text";
 import type { IconProps } from "@cyclone-ui/icons";
-import { Check, Gear, ShoppingCart, Truck } from "@cyclone-ui/icons";
+import { Briefcase, ClipboardList, Cog, Confirm } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { View } from "@tamagui/core";
 import type { ComponentType } from "react";
@@ -39,25 +39,25 @@ const events: TimelineEvent[] = [
     status: "Ordered",
     date: "15/10/2026 10:30",
     description: "The order was placed and payment was confirmed.",
-    icon: ShoppingCart
+    icon: ClipboardList
   },
   {
     status: "Processing",
     date: "15/10/2026 14:00",
     description: "The warehouse is picking and packing the items.",
-    icon: Gear
+    icon: Cog
   },
   {
     status: "Shipped",
     date: "16/10/2026 09:15",
     description: "The package left the warehouse with the carrier.",
-    icon: Truck
+    icon: Briefcase
   },
   {
     status: "Delivered",
     date: "18/10/2026 16:45",
     description: "The package was signed for at the front door.",
-    icon: Check
+    icon: Confirm
   }
 ];
 
@@ -158,7 +158,10 @@ export const CustomMarkers: Story = {
         justifyContent="center"
         borderWidth={0}
         backgroundColor={index < 3 ? "primary" : "secondary"}>
-        <event.icon size={16} color={index < 3 ? "on-primary" : "on-secondary"} />
+        <event.icon
+          size={16}
+          color={index < 3 ? "on-primary" : "on-secondary"}
+        />
       </TimelineMarker>
     )
   }

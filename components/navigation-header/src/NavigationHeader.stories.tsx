@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { Button } from "@cyclone-ui/button";
-import { DiscordLogo, GithubLogo, User } from "@cyclone-ui/icons";
+import { Account, Discord, Github } from "@cyclone-ui/icons";
 import { StormLogoIcon, StormLogoText } from "@cyclone-ui/vectors";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { styled, View } from "@tamagui/core";
@@ -216,12 +216,12 @@ const storySocial = (
     <NavigationHeader.Social.Link
       href="https://github.com/storm-software"
       label="GitHub"
-      icon={GithubLogo}
+      icon={Github}
     />
     <NavigationHeader.Social.Link
       href="https://discord.gg/MQ6YVzakM5"
       label="Discord"
-      icon={DiscordLogo}
+      icon={Discord}
     />
   </NavigationHeader.Social>
 );
@@ -296,7 +296,7 @@ export const SignedIn: Story = {
             flexGrow={0}
             size="10xl">
             <Button.Icon>
-              <User aria-hidden={true} />
+              <Account aria-hidden={true} />
             </Button.Icon>
           </Button>
         </NavigationHeader.Actions>

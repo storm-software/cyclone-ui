@@ -19,7 +19,7 @@
 "use client";
 
 import { HeadingText } from "@cyclone-ui/heading-text";
-import { CheckCircle, Lock, PencilSimpleLine } from "@cyclone-ui/icons";
+import { ConfirmCircle, Lock, Pencil } from "@cyclone-ui/icons";
 import type { NextButtonProps } from "@cyclone-ui/next-button";
 import { NextButton } from "@cyclone-ui/next-button";
 import type { PreviousButtonProps } from "@cyclone-ui/previous-button";
@@ -308,13 +308,13 @@ export const StepperHeaderItem = createStyledHOC(
             value={value}
             onInteraction={handleOnInteraction}>
             {index < currentIndex && (
-              <CheckCircle transition="200ms" color="primary" size="4xl" />
+              <ConfirmCircle transition="200ms" color="primary" size="4xl" />
             )}
             {index === currentIndex && (
-              <PencilSimpleLine transition="200ms" color="primary" size="4xl" />
+              <Pencil transition="200ms" color="primary" size="4xl" />
             )}
             {isVisitedFutureStep && (
-              <CheckCircle transition="200ms" color="hairline" size="4xl" />
+              <ConfirmCircle transition="200ms" color="hairline" size="4xl" />
             )}
             {index > currentIndex && !isVisitedFutureStep && (
               <Lock transition="200ms" color="hairline" size="4xl" />

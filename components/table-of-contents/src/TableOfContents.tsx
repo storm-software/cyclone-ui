@@ -19,7 +19,7 @@
 "use client";
 
 import { BodyText } from "@cyclone-ui/body-text";
-import { ListBullets } from "@cyclone-ui/icons";
+import { List } from "@cyclone-ui/icons";
 import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, View } from "@tamagui/core";
 import { XStack, YStack } from "@tamagui/stacks";
@@ -212,7 +212,7 @@ const TableOfContentsLinkText = styled(BodyText, {
     active: {
       true: {
         color: "primary",
-        fontWeight: "medium",
+        fontWeight: "medium"
       }
     },
     reducedMotion: {
@@ -607,7 +607,7 @@ export const TableOfContents = createStyledHOC(
         aria-label="Table of contents"
         {...props}>
         <TableOfContentsHeading>
-          <ListBullets aria-hidden={true} color="subtle" size="5xl" />
+          <List aria-hidden={true} color="subtle" size="5xl" />
           <TableOfContentsHeadingText>{children}</TableOfContentsHeadingText>
         </TableOfContentsHeading>
 

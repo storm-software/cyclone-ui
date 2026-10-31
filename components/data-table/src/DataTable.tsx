@@ -24,10 +24,13 @@ import { Checkbox } from "@cyclone-ui/checkbox";
 import { ContextMenu } from "@cyclone-ui/context-menu";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
-import { HeadingExtraSmallText, HeadingSmallText } from "@cyclone-ui/heading-text";
 import {
-  DotsThreeVertical,
-  Funnel,
+  HeadingExtraSmallText,
+  HeadingSmallText
+} from "@cyclone-ui/heading-text";
+import {
+  DotsVertical,
+  Filter,
   SortAscending,
   SortDescending
 } from "@cyclone-ui/icons";
@@ -261,7 +264,7 @@ const DataTableRowActions = <TData extends RowData>({
             padding="lg"
             aria-label={`Actions for row ${row.index + 1}`}>
             <Button.Icon>
-              <DotsThreeVertical size="2xl" weight="bold" />
+              <DotsVertical size="2xl" />
             </Button.Icon>
           </Button>
         </ContextMenu.Trigger>
@@ -854,7 +857,9 @@ export function DataTable<TData extends RowData>({
                     justifyContent="center"
                     alignItems="center"
                     padding="7xl">
-                    <HeadingSmallText size={4}>No data to display</HeadingSmallText>
+                    <HeadingSmallText size={4}>
+                      No data to display
+                    </HeadingSmallText>
                   </View>
                 </Table.Cell>
               </Table.Row>
@@ -1234,7 +1239,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
                 size="6xl"
                 padding="lg">
                 <Button.Icon>
-                  <Funnel size="2xl" />
+                  <Filter size="2xl" />
                 </Button.Icon>
               </Button>
             </Popover.Trigger>
@@ -1421,7 +1426,7 @@ export function DataTablePagination<TData extends RowData>({
                 alignItems="center"
                 gap="xl">
                 <HeadingExtraSmallText>Filtering:</HeadingExtraSmallText>
-                <HeadingExtraSmallText >
+                <HeadingExtraSmallText>
                   {`${totalCount - unfilteredCount} ${totalCount - unfilteredCount === 1 ? "row" : "rows"}`}
                 </HeadingExtraSmallText>
               </XStack>

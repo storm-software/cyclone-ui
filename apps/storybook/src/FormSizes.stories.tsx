@@ -18,7 +18,7 @@
 
 import { Form } from "@cyclone-ui/form";
 import type { FormControlSize } from "@cyclone-ui/helpers";
-import { MagnifyingGlass } from "@cyclone-ui/icons";
+import { Search } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { View } from "@tamagui/core";
 import { useId, useState } from "react";
@@ -79,17 +79,14 @@ function SizeComparison({ disabled = false }: { disabled?: boolean }) {
                 <Input>
                   <Input.TextBox>
                     <Field.Icon position="start">
-                      <MagnifyingGlass />
+                      <Search />
                     </Field.Icon>
                     <Input.TextBox.Value aria-label={`${size} input`} />
                   </Input.TextBox>
                 </Input>
                 <Field.Details>Supporting text</Field.Details>
               </Field>
-              <Field
-                name="above"
-                size={size}
-                disabled={disabled}>
+              <Field name="above" size={size} disabled={disabled}>
                 <Field.Label variant="above">Label above input</Field.Label>
                 <Input>
                   <Input.TextBox>
@@ -133,7 +130,11 @@ function SizeComparison({ disabled = false }: { disabled?: boolean }) {
                   </Input.TextBox>
                 </Input>
               </Field>
-              <Field name="select" size={size} items={items} disabled={disabled}>
+              <Field
+                name="select"
+                size={size}
+                items={items}
+                disabled={disabled}>
                 <Field.Label>Select fruit</Field.Label>
                 <Select placeholder="Choose fruit" />
               </Field>

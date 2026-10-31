@@ -13,25 +13,25 @@ This section describes the parts of the design system that you use to build an i
 
 ## Sections
 
-| Section | What you find there |
-| --- | --- |
-| [Tokens](./tokens/index.md) | Named values for color, type, spacing, size, radius, shadow, and motion. |
-| [Fonts](./fonts/index.md) | The font families [Storm Sans](./fonts/storm-sans.md) and [Storm Serif](./fonts/storm-serif.md). |
-| [Icons](./icons/index.md) | 1512 icon components from the Phosphor collection. |
-| [Components](./components/index.md) | One page for each component in the `components` folder. |
+| Section                             | What you find there                                                                              |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------ |
+| [Tokens](./tokens/index.md)         | Named values for color, type, spacing, size, radius, shadow, and motion.                         |
+| [Fonts](./fonts/index.md)           | The font families [Storm Sans](./fonts/storm-sans.md) and [Storm Serif](./fonts/storm-serif.md). |
+| [Icons](./icons/index.md)           | 478 animated icon components from the Material Line Icons collection.                            |
+| [Components](./components/index.md) | One page for each component in the `components` folder.                                          |
 
 ### Tokens
 
-| Page | Contents |
-| --- | --- |
-| [Overview](./tokens/index.md) | Primitive and semantic tokens, source of truth, themes, and how to use tokens. |
-| [Color palettes](./tokens/colors.md) | `black`, `white`, and 8 palettes. |
-| [Semantic colors](./tokens/semantic-colors.md) | Color roles in light and dark. |
-| [Color states](./tokens/color-states.md) | Hovered, active, inactive, and disabled colors. |
-| [Typography](./tokens/typography.md) | Font roles, sizes, line heights, weights, and letter spacing. |
-| [Sizes](./tokens/sizes.md) and [Spacing](./tokens/spacing.md) | The size and spacing scales. |
-| [Shape and effects](./tokens/shape-and-effects.md) | Radius, shadows, blur, focus rings, and z-index. |
-| [Motion](./tokens/motion.md) | Durations and easing. |
+| Page                                                          | Contents                                                                       |
+| ------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| [Overview](./tokens/index.md)                                 | Primitive and semantic tokens, source of truth, themes, and how to use tokens. |
+| [Color palettes](./tokens/colors.md)                          | `black`, `white`, and 8 palettes.                                              |
+| [Semantic colors](./tokens/semantic-colors.md)                | Color roles in light and dark.                                                 |
+| [Color states](./tokens/color-states.md)                      | Hovered, active, inactive, and disabled colors.                                |
+| [Typography](./tokens/typography.md)                          | Font roles, sizes, line heights, weights, and letter spacing.                  |
+| [Sizes](./tokens/sizes.md) and [Spacing](./tokens/spacing.md) | The size and spacing scales.                                                   |
+| [Shape and effects](./tokens/shape-and-effects.md)            | Radius, shadows, blur, focus rings, and z-index.                               |
+| [Motion](./tokens/motion.md)                                  | Durations and easing.                                                          |
 
 ## How the parts fit together
 

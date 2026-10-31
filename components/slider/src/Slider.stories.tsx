@@ -19,7 +19,7 @@
 import type { FieldProps } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
-import { SpeakerHigh, SpeakerLow } from "@cyclone-ui/icons";
+import { VolumeHigh, VolumeLow } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Text, Theme, View } from "@tamagui/core";
 import { useState } from "react";
@@ -165,7 +165,7 @@ const VolumeSlider = (args: SliderProps) => {
 
   return (
     <View flexDirection="row" alignItems="center" gap="7xl">
-      <SpeakerLow size={24} color="ink" />
+      <VolumeLow size={24} color="ink" />
       <View flex={1}>
         <Slider
           {...args}
@@ -174,7 +174,7 @@ const VolumeSlider = (args: SliderProps) => {
           onChange={setValue}
         />
       </View>
-      <SpeakerHigh size={24} color="ink" />
+      <VolumeHigh size={24} color="ink" />
     </View>
   );
 };

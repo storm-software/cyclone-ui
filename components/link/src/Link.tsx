@@ -18,7 +18,7 @@
 
 "use client";
 
-import { ArrowUpRight } from "@cyclone-ui/icons";
+import { ExternalLink } from "@cyclone-ui/icons";
 import { LinkText } from "@cyclone-ui/link-text";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import { isWeb } from "@tamagui/constants";
@@ -119,7 +119,7 @@ export const Link = createStyledHOC(
               {/* Set `color` on the icon (whose props win in `getIcon`) so the
                   SVG fills with the link's computed text color and follows
                   every variant and hover / press state. */}
-              <ArrowUpRight color="currentColor" />
+              <ExternalLink color="currentColor" />
             </ThemeableIcon>
           </ExternalIconFrame>
         )}

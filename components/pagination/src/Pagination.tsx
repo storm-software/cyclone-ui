@@ -20,7 +20,7 @@
 
 import type { ButtonProps } from "@cyclone-ui/button";
 import { Button } from "@cyclone-ui/button";
-import { DotsThree } from "@cyclone-ui/icons";
+import { DotsHorizontal } from "@cyclone-ui/icons";
 import { NextButton } from "@cyclone-ui/next-button";
 import { PreviousButton } from "@cyclone-ui/previous-button";
 import type { SizeTokens } from "@tamagui/core";
@@ -138,7 +138,7 @@ export const Pagination = createStyledHOC(
         </Button>
 
         {currentPage > 3 && pageCount > 5 && (
-          <DotsThree color="primary" paddingHorizontal="md" />
+          <DotsHorizontal color="primary" paddingHorizontal="md" />
         )}
 
         {pageCount > 1 && (
@@ -209,7 +209,7 @@ export const Pagination = createStyledHOC(
         )}
 
         {currentPage < pageCount - 2 && pageCount > 5 && (
-          <DotsThree color="primary" paddingHorizontal="md" />
+          <DotsHorizontal color="primary" paddingHorizontal="md" />
         )}
 
         {pageCount > 4 && (

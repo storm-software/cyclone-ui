@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { Button } from "@cyclone-ui/button";
-import { Envelope, ShoppingCart } from "@cyclone-ui/icons";
+import { Briefcase, Email } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { View } from "@tamagui/core";
 import { useState } from "react";
@@ -26,7 +26,7 @@ import { expect, userEvent, waitFor, within } from "storybook/test";
 import type { BadgeColor, BadgeOrigin, BadgeProps } from "./Badge";
 import { Badge } from "./Badge";
 
-const MailIcon = () => <Envelope size={24} color="emphasis" />;
+const MailIcon = () => <Email size={24} color="emphasis" />;
 
 const Shape = ({ circle = false }: { circle?: boolean }) => (
   <View
@@ -403,7 +403,7 @@ export const Customized: Story = {
         }
       }}
       {...args}>
-      <ShoppingCart size={24} color="emphasis" />
+      <Briefcase size={24} color="emphasis" />
     </Badge>
   )
 };

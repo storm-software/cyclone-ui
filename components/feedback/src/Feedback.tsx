@@ -148,7 +148,7 @@ export const Feedback = forwardRef<TamaguiElement, FeedbackProps>(
               <ThumbsDown
                 aria-hidden={true}
                 size={Math.round(BASE_ICON_SIZE * getFormSizeScale(size))}
-                weight={disliked ? "fill" : "light"}
+                variant={disliked ? "filled" : "regular"}
                 color={
                   hovered && !disabled
                     ? "primary-hovered"

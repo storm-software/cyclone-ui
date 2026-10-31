@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { Question } from "@cyclone-ui/icons";
+import { QuestionCircle } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import type { ComponentProps, ReactNode } from "react";
 import { Alert } from "./Alert";
@@ -64,7 +64,7 @@ export const Brand: Story = {
 export const CustomIcon: Story = {
   args: {
     children: bodyText,
-    icon: <Question />
+    icon: <QuestionCircle />
   }
 };
 

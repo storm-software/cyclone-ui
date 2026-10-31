@@ -21,7 +21,7 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { Dialog } from "@cyclone-ui/dialog";
-import { FileText, Hash, TextAlignLeft, X } from "@cyclone-ui/icons";
+import { AlignLeft, Close, FileDocument, Hash } from "@cyclone-ui/icons";
 import { Input } from "@cyclone-ui/input";
 import { ToggleGroup } from "@cyclone-ui/toggle-group";
 import { SearchTrigger } from "@cyclone-ui/vectors";
@@ -134,7 +134,7 @@ export type SearchDialogProps = GetProps<typeof Button> &
 // The same debounce as fumadocs' `useSearch`.
 const SEARCH_DELAY = 100;
 const EMPTY_RESULTS: SearchDialogResult[] = [];
-const resultIcons = { page: FileText, heading: Hash, text: TextAlignLeft };
+const resultIcons = { page: FileDocument, heading: Hash, text: AlignLeft };
 const HISTORY_SIZE = 5;
 
 /** The results chosen before, newest first, saved in `localStorage`. */
@@ -514,7 +514,7 @@ export const SearchDialog = createStyledHOC(
                 }}>
                 {/* A size up, or the glyph scales down to a few px. */}
                 <Button.Icon size="7xl">
-                  <X />
+                  <Close />
                 </Button.Icon>
               </Button>
             </View>
@@ -585,7 +585,7 @@ export const SearchDialog = createStyledHOC(
                     display="flex"
                     transition="200ms"
                     color="subtle group-hover/button:subtle-hovered">
-                    <X color="currentColor" />
+                    <Close color="currentColor" />
                   </Text>
                 </Input.Trigger.Icon>
               </Input.Trigger>

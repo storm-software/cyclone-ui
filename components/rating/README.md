@@ -45,6 +45,7 @@ A `Rating` component used to display and select a rating, such as a number of st
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 ## Table of Contents
 
 - [Quick Features](#quick-features)
@@ -130,20 +131,20 @@ import { Rating } from "@cyclone-ui/rating";
 </Form>
 ```
 
-| Prop | Default | Description |
-| --- | --- | --- |
-| `value` / `defaultValue` | `null` | The rating, or `null` for no rating. |
-| `max` | `5` | The number of icons. |
-| `precision` | `1` | The smallest selectable step, for example `0.5`. |
-| `onChange` | | Called with the new value, or `null` when the selected value is clicked again. |
-| `onChangeActive` | | Called with the hovered value, or `null` when the pointer leaves. |
-| `readOnly` / `disabled` | `false` | Prevent changes. |
-| `size` | `"md"` | `"sm"`, `"md"`, or `"lg"`. |
-| `icon` / `emptyIcon` | `Star` | Any `@cyclone-ui/icons` component. |
-| `iconWeight` / `emptyIconWeight` | `"fill"` / `"regular"` | The icon weights. |
-| `color` / `emptyColor` | `"primary"` / `"outline"` | The icon colors. Wrap in a `Theme` (for example `warning`) to change the accent. |
-| `highlightSelectedOnly` | `false` | Only fill the selected icon. |
-| `getLabelText` | `"N Stars"` | Builds the accessible value text. |
+| Prop                               | Default                   | Description                                                                      |
+| ---------------------------------- | ------------------------- | -------------------------------------------------------------------------------- |
+| `value` / `defaultValue`           | `null`                    | The rating, or `null` for no rating.                                             |
+| `max`                              | `5`                       | The number of icons.                                                             |
+| `precision`                        | `1`                       | The smallest selectable step, for example `0.5`.                                 |
+| `onChange`                         |                           | Called with the new value, or `null` when the selected value is clicked again.   |
+| `onChangeActive`                   |                           | Called with the hovered value, or `null` when the pointer leaves.                |
+| `readOnly` / `disabled`            | `false`                   | Prevent changes.                                                                 |
+| `size`                             | `"md"`                    | `"sm"`, `"md"`, or `"lg"`.                                                       |
+| `icon` / `emptyIcon`               | `Star`                    | Any `@cyclone-ui/icons` component.                                               |
+| `iconVariant` / `emptyIconVariant` | `"filled"` / `"regular"`  | The icon variants.                                                               |
+| `color` / `emptyColor`             | `"primary"` / `"outline"` | The icon colors. Wrap in a `Theme` (for example `warning`) to change the accent. |
+| `highlightSelectedOnly`            | `false`                   | Only fill the selected icon.                                                     |
+| `getLabelText`                     | `"N Stars"`               | Builds the accessible value text.                                                |
 
 An interactive rating is focusable and exposed as a `slider`: arrow keys change the value by `precision`, and `Home` / `End` jump to the minimum and maximum. A read-only rating is exposed as a labelled image.
 

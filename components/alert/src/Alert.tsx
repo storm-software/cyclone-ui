@@ -23,7 +23,7 @@ import { Button } from "@cyclone-ui/button";
 import type { ContainerProps } from "@cyclone-ui/container";
 import { Container } from "@cyclone-ui/container";
 import { HeadingMediumText } from "@cyclone-ui/heading-text";
-import { WarningCircle, X } from "@cyclone-ui/icons";
+import { AlertCircle, Close } from "@cyclone-ui/icons";
 import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import {
   createStyledContext,
@@ -84,7 +84,7 @@ const AlertCloseImpl = createStyledHOC(
           flexGrow={0}>
           {children || (
             <Button.Icon position="absolute" inset={0} justifyContent="center">
-              <X />
+              <Close />
             </Button.Icon>
           )}
         </AlertClose>
@@ -168,7 +168,7 @@ const AlertIcon = createStyledHOC(
                 {...(type ? { color: "primary" } : {})}
                 size="10xl">
                 {children || getIconByTheme({ theme: colorTheme }) || (
-                  <WarningCircle />
+                  <AlertCircle />
                 )}
               </ThemeableIcon>
             </AlertIconBackground>

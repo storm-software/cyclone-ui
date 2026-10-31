@@ -19,7 +19,7 @@
 import type { FieldProps } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
-import { Funnel } from "@cyclone-ui/icons";
+import { Filter } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import type { ReactNode } from "react";
 import { expect, userEvent, waitFor, within } from "storybook/test";
@@ -96,7 +96,7 @@ export const Base: Story = {
 
 export const CustomIcon: Story = {
   args: {
-    icon: <Funnel />
+    icon: <Filter />
   }
 };
 

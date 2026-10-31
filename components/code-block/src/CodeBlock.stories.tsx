@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { FileCode, Terminal } from "@cyclone-ui/icons";
+import { Computer, DocumentCode } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, userEvent, within } from "storybook/test";
 import {
@@ -70,7 +70,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Base: Story = {
   render: args => (
-    <CodeBlock {...args} title="example.ts" icon={<FileCode color="ink" />}>
+    <CodeBlock {...args} title="example.ts" icon={<DocumentCode color="ink" />}>
       <TypeScriptCode />
     </CodeBlock>
   ),
@@ -213,7 +213,7 @@ export const CompoundCompatibility: Story = {
     <CodeBlock {...args} allowCopy={false}>
       <CodeBlock.Header>
         <CodeBlock.Header.Icon>
-          <Terminal />
+          <Computer />
         </CodeBlock.Header.Icon>
         <CodeBlock.Header.Heading>terminal</CodeBlock.Header.Heading>
       </CodeBlock.Header>

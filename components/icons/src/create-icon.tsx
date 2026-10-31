@@ -20,19 +20,27 @@ import type { FontSizeTokens } from "@tamagui/core";
 import { getVariableValue } from "@tamagui/core";
 import type { IconProps as TamaguiIconProps } from "@tamagui/helpers-icon";
 import { themed } from "@tamagui/helpers-icon";
-import type { FC } from "react";
-import { memo } from "react";
+import type { ComponentType, FC, ReactNode } from "react";
+import { memo, useEffect, useId, useState } from "react";
 import type { ViewStyle } from "react-native";
-import { StyleSheet } from "react-native";
+import { AccessibilityInfo, StyleSheet } from "react-native";
 import type { NumberProp, SvgProps } from "react-native-svg";
-import { G, Svg } from "react-native-svg";
-import type { IconComponent, IconProps, IconSize, IconWeights } from "./types";
+import { Circle, Defs, G, Mask, Path, Rect, Svg } from "react-native-svg";
+import { animatedProps, animationDuration } from "./animate";
+import type {
+  IconComponent,
+  IconElement,
+  IconProps,
+  IconSize,
+  IconVariant,
+  IconVariants
+} from "./types";
 
 /**
  * The props received by the inner icon component, after `themed` has resolved theme and token values.
  */
 type ResolvedIconProps = SvgProps &
-  Pick<IconProps, "weight" | "mirrored"> & {
+  Pick<IconProps, "variant" | "animated" | "mirrored"> & {
     size?: NumberProp;
     strokeWidth?: NumberProp;
   };
@@ -73,73 +81,180 @@ export function resolveIconSize(
 }
 
 /**
- * Outline weights whose paths carry an extra `strokeWidth` from `scripts/generate.ts`.
- *
- * Fill and duotone are solid shapes and must not inherit that stroke.
+ * The variants tried, in order, when an icon does not have the requested one: same fill first, then same looping.
  */
-const OUTLINE_WEIGHTS = new Set<IconProps["weight"]>([
-  "thin",
-  "light",
-  "regular",
-  "bold"
-]);
+const VARIANT_FALLBACKS: Record<IconVariant, IconVariant[]> = {
+  regular: ["regular", "loop", "filled", "filled-loop"],
+  loop: ["loop", "regular", "filled-loop", "filled"],
+  filled: ["filled", "filled-loop", "regular", "loop"],
+  "filled-loop": ["filled-loop", "filled", "loop", "regular"]
+};
+
+const ELEMENTS = {
+  circle: Circle,
+  defs: Defs,
+  g: G,
+  mask: Mask,
+  path: Path,
+  rect: Rect
+} as unknown as Record<
+  IconElement["type"],
+  ComponentType<{ children?: ReactNode }>
+>;
 
 /**
  * Web-only CSS transition for the icon color (not part of React Native's style types).
  */
 const COLOR_TRANSITION = {
-  transition: "fill 200ms, stroke 200ms"
+  transition: "color 200ms"
 } as unknown as ViewStyle;
 
+function renderElements(
+  elements: IconElement[],
+  time: number,
+  idPrefix: string
+): ReactNode[] {
+  return elements.map((element, index) => {
+    const Element = ELEMENTS[element.type];
+    const props = animatedProps(element, time);
+    if (props.id !== undefined) {
+      props.id = `${idPrefix}${props.id}`;
+    }
+    if (props.mask !== undefined) {
+      props.mask = `url(#${idPrefix}${props.mask})`;
+    }
+
+    return (
+      // eslint-disable-next-line react/no-array-index-key -- generated elements are never reordered
+      <Element key={index} {...props}>
+        {element.children && renderElements(element.children, time, idPrefix)}
+      </Element>
+    );
+  });
+}
+
 /**
- * Create a themed Tamagui icon component from the SVG contents of each Phosphor weight.
+ * The animation time, in seconds, of an icon's elements, or `Infinity` (the final frame) when not animating.
  *
  * @remarks
- * Phosphor icons are drawn with fills on a 256×256 grid, so the resolved `color` is applied as the SVG `fill`. Outline weights also carry a `strokeWidth` (12.5% of the designed stroke) which is painted with the same color. Fill and duotone are left unstroked. The `strokeWidth` prop supplied by `themed` is ignored.
+ * The elements of a mounted body never change: the body is keyed by variant, so a new variant remounts and restarts at 0.
+ */
+function useAnimationTime(elements: IconElement[], animated: boolean) {
+  const [duration] = useState(() => animationDuration(elements));
+  // Server and client both start at 0, so hydration matches
+  const play = animated && duration > 0;
+  const [time, setTime] = useState(0);
+
+  useEffect(() => {
+    if (!play) {
+      return;
+    }
+    if (typeof requestAnimationFrame !== "function") {
+      // No frame clock (for example a test renderer): show the final frame
+      const timeout = setTimeout(() => setTime(Infinity), 0);
+
+      return () => clearTimeout(timeout);
+    }
+
+    let active = true;
+    let frame = 0;
+    let start: number | undefined;
+    // ponytail: one requestAnimationFrame loop and re-render per icon; share a ticker or move to native-driven animations if many loops run at once
+    const tick = (now: number) => {
+      start ??= now;
+      const elapsed = (now - start) / 1000;
+      if (elapsed >= duration) {
+        setTime(Infinity);
+        return;
+      }
+      setTime(elapsed);
+      frame = requestAnimationFrame(tick);
+    };
+
+    frame = requestAnimationFrame(tick);
+    AccessibilityInfo.isReduceMotionEnabled().then(
+      reduce => {
+        if (reduce && active) {
+          cancelAnimationFrame(frame);
+          setTime(Infinity);
+        }
+      },
+      () => undefined
+    );
+
+    return () => {
+      active = false;
+      cancelAnimationFrame(frame);
+    };
+  }, [duration, play]);
+
+  return play ? time : Infinity;
+}
+
+/**
+ * Create a themed Tamagui icon component from the SVG elements of each of its variants.
+ *
+ * @remarks
+ * The elements are drawn on a 24×24 grid. `currentColor` paints with the resolved `color`, and the SVG animations are played with `requestAnimationFrame`, so the icon animates the same way on web and React Native. The `strokeWidth` prop supplied by `themed` is ignored.
  *
  * @param displayName - The display name of the icon component.
- * @param weights - The SVG contents of the icon for each weight.
+ * @param variants - The SVG elements of the icon for each variant it has.
  * @returns The themed icon component.
  */
 export function createIcon(
   displayName: string,
-  weights: IconWeights
+  variants: IconVariants
 ): IconComponent {
+  const IconBody = ({
+    elements,
+    animated
+  }: {
+    elements: IconElement[];
+    animated: boolean;
+  }) => {
+    const time = useAnimationTime(elements, animated);
+    const idPrefix = `${useId().replace(/[^\w-]/g, "")}-`;
+
+    return <>{renderElements(elements, time, idPrefix)}</>;
+  };
+
   const Icon = memo(function Icon(props: ResolvedIconProps) {
     const {
       color = "black",
       size = 24,
-      weight = "regular",
+      variant = "regular",
+      animated = true,
       mirrored = false,
       strokeWidth: _strokeWidth,
       style,
       ...otherProps
     } = props;
 
-    const resolvedWeight = weights[weight] ? weight : "regular";
-    const contents = weights[resolvedWeight];
-    // Stroke is centered on the filled outline, so this width is the amount added to the designed stroke.
-    const painted = OUTLINE_WEIGHTS.has(resolvedWeight) ? (
-      <G stroke={color} strokeLinecap="round" strokeLinejoin="round">
-        {contents}
-      </G>
-    ) : (
-      contents
+    const resolvedVariant =
+      VARIANT_FALLBACKS[variant]?.find(name => variants[name]) ??
+      VARIANT_FALLBACKS.regular.find(name => variants[name])!;
+    // Keyed by variant, so a new variant draws itself in
+    const body = (
+      <IconBody
+        key={resolvedVariant}
+        elements={variants[resolvedVariant]!}
+        animated={animated}
+      />
     );
 
     return (
       <Svg
         width={size}
         height={size}
-        viewBox="0 0 256 256"
-        fill={color}
+        viewBox="0 0 24 24"
+        color={color}
         {...otherProps}
-        style={{ ...COLOR_TRANSITION, overflow: "visible", ...StyleSheet.flatten(style) }}>
-        {mirrored ? (
-          <G transform="matrix(-1 0 0 1 256 0)">{painted}</G>
-        ) : (
-          painted
-        )}
+        style={{
+          ...COLOR_TRANSITION,
+          overflow: "visible",
+          ...StyleSheet.flatten(style)
+        }}>
+        {mirrored ? <G transform="matrix(-1 0 0 1 24 0)">{body}</G> : body}
       </Svg>
     );
   });

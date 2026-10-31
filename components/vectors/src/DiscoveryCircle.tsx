@@ -132,7 +132,6 @@ const Icon = ({
               size={isSmall ? diameter : lightBulbSize}
               x={isSmall ? 0 : lightBulbOffset}
               y={isSmall ? 0 : lightBulbOffset}
-              weight="bold"
               color={color}
             />
           </G>

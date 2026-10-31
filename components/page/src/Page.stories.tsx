@@ -20,21 +20,21 @@ import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { HeadingLargeText, HeadingSmallText } from "@cyclone-ui/heading-text";
 import {
+  Account,
+  AlertCircle,
+  BackupRestore,
   Bell,
-  ChartBar,
-  ClockCounterClockwise,
+  Close,
+  Cog,
+  DocumentReport,
+  Email,
   Folder,
-  Gear,
-  House,
-  Info,
-  Kanban,
+  Grid3,
+  Home,
   Lightning,
-  MagnifyingGlass,
   Plus,
-  Question,
-  Tray,
-  User,
-  X
+  QuestionCircle,
+  Search
 } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { styled, View } from "@tamagui/core";
@@ -124,7 +124,7 @@ const StoryLogo = () => (
       justifyContent="center"
       backgroundColor="primary"
       borderRadius="full">
-      <Lightning size={14} color="on-primary" weight="fill" />
+      <Lightning size={14} color="on-primary" variant="filled" />
     </View>
     <BodyText render="span" color="emphasis" fontWeight="700">
       Storm
@@ -146,7 +146,7 @@ const StorySearch = () => (
     borderColor="hairline"
     borderRadius={1000}
     display="flex max-md:none">
-    <MagnifyingGlass aria-hidden={true} size={16} color="subtle" />
+    <Search aria-hidden={true} size={16} color="subtle" />
     <BodyText render="span" size="sm" color="subtle">
       Search
     </BodyText>
@@ -160,7 +160,7 @@ const StoryPanelToggle = () => {
     <StoryIconButton
       label={panel.open ? "Close details" : "Open details"}
       onPress={panel.toggle}>
-      <Info aria-hidden={true} />
+      <AlertCircle aria-hidden={true} />
     </StoryIconButton>
   );
 };
@@ -193,10 +193,10 @@ const StoryTopNav = ({ panelToggle = false }: { panelToggle?: boolean }) => (
         <Bell aria-hidden={true} />
       </StoryIconButton>
       <StoryIconButton label="Help">
-        <Question aria-hidden={true} />
+        <QuestionCircle aria-hidden={true} />
       </StoryIconButton>
       <StoryIconButton label="Your profile">
-        <User aria-hidden={true} />
+        <Account aria-hidden={true} />
       </StoryIconButton>
     </Page.TopNav.End>
   </Page.TopNav>
@@ -224,7 +224,7 @@ const StorySideNav = () => (
           justifyContent="center"
           backgroundColor="secondary"
           borderRadius="md">
-          <Kanban aria-hidden={true} size={18} color="primary" />
+          <Grid3 aria-hidden={true} size={18} color="primary" />
         </View>
         <View>
           <BodyText render="span" size="sm" color="emphasis" fontWeight="600">
@@ -237,17 +237,16 @@ const StorySideNav = () => (
       </View>
     </Page.SideNav.Header>
     <Page.SideNav.Body>
-      <StoryNavItem icon={<House aria-hidden={true} size={18} />} active={true}>
+      <StoryNavItem icon={<Home aria-hidden={true} size={18} />} active={true}>
         Overview
       </StoryNavItem>
-      <StoryNavItem icon={<Tray aria-hidden={true} size={18} />}>
+      <StoryNavItem icon={<Email aria-hidden={true} size={18} />}>
         Inbox
       </StoryNavItem>
-      <StoryNavItem icon={<ChartBar aria-hidden={true} size={18} />}>
+      <StoryNavItem icon={<DocumentReport aria-hidden={true} size={18} />}>
         Reports
       </StoryNavItem>
-      <StoryNavItem
-        icon={<ClockCounterClockwise aria-hidden={true} size={18} />}>
+      <StoryNavItem icon={<BackupRestore aria-hidden={true} size={18} />}>
         Recent
       </StoryNavItem>
       <StoryNavGroupLabel>Projects</StoryNavGroupLabel>
@@ -260,7 +259,7 @@ const StorySideNav = () => (
       ))}
     </Page.SideNav.Body>
     <Page.SideNav.Footer>
-      <StoryNavItem icon={<Gear aria-hidden={true} size={18} />}>
+      <StoryNavItem icon={<Cog aria-hidden={true} size={18} />}>
         Settings
       </StoryNavItem>
     </Page.SideNav.Footer>
@@ -342,7 +341,7 @@ const StoryPanel = () => {
           <StoryIconButton
             label="Close details"
             onPress={() => panel.setOpen(false)}>
-            <X aria-hidden={true} />
+            <Close aria-hidden={true} />
           </StoryIconButton>
         </View>
       </Page.Panel.Header>

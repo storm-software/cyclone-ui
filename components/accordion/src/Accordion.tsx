@@ -21,7 +21,7 @@
 /* eslint-disable react/no-children-to-array */
 
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
-import { CaretDown } from "@cyclone-ui/icons";
+import { ChevronDown } from "@cyclone-ui/icons";
 import { AccordionToggle } from "@cyclone-ui/vectors";
 import { isString } from "@stryke/type-checks/is-string";
 import type { AccordionSingleProps } from "@tamagui/accordion";
@@ -526,12 +526,7 @@ const AccordionItemHeaderImpl = createStyledHOC(
             alignItems="center"
             justifyContent="center"
             pointerEvents="none">
-            <CaretDown
-              aria-hidden={true}
-              color={iconColor}
-              size="6xl"
-              weight="bold"
-            />
+            <ChevronDown aria-hidden={true} color={iconColor} size="6xl" />
           </View>
         )}
       </AccordionItemHeader>

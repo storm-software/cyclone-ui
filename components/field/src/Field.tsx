@@ -45,7 +45,7 @@ import {
   useFieldLabelPlacement,
   useFormControl
 } from "@cyclone-ui/helpers";
-import { Asterisk, X } from "@cyclone-ui/icons";
+import { Asterisk, Close } from "@cyclone-ui/icons";
 import { Link } from "@cyclone-ui/link";
 import type { SpinnerProps } from "@cyclone-ui/spinner";
 import { Spinner } from "@cyclone-ui/spinner";
@@ -95,6 +95,7 @@ import {
   useRef,
   useState
 } from "react";
+import type { StyleProp, ViewStyle } from "react-native";
 import { StyleSheet } from "react-native";
 
 export {
@@ -383,7 +384,7 @@ const FieldGroupInnerImpl = createStyledHOC(
         <>
           {clearable && Boolean(formattedValue) && (
             <FieldThemeIcon position="end" onClick={handleClear}>
-              <X
+              <Close
                 color={`${disabled ? "primary-disabled" : "primary"} group-hover/field:${disabled ? "primary-disabled" : "primary-hovered"}`}
               />
             </FieldThemeIcon>
@@ -1004,7 +1005,6 @@ const FieldLabelTextImpl = createStyledHOC(
                               size={floating ? "sm" : "md"}
                               position="absolute"
                               top={floating ? -2 : -1}
-                              weight="bold"
                             />
                           </Theme>
                         </View>
@@ -1241,6 +1241,7 @@ const FieldIconButtonImpl = createStyledHOC(
     const icon = isValidElement<{
       color?: string;
       size?: number;
+      style?: StyleProp<ViewStyle>;
     }>(children)
       ? // eslint-disable-next-line react/no-clone-element
         cloneElement(children, {
@@ -1248,7 +1249,14 @@ const FieldIconButtonImpl = createStyledHOC(
           // so the glyph follows the CSS color of the wrapper below. That
           // keeps its hover transition in step with the border and separators.
           color: "currentColor",
-          size: 24 * getFormSizeScale(size)
+          size: 24 * getFormSizeScale(size),
+          // The icon's own color transition would restart on every frame of
+          // the wrapper's, finishing ~200ms after the border.
+          style: {
+            ...StyleSheet.flatten(children.props.style),
+            // Web-only CSS property, missing from React Native's style types.
+            ...({ transition: "none" } as ViewStyle)
+          }
         })
       : children;
 

@@ -21,7 +21,7 @@
 import { ContextMenu } from "@cyclone-ui/context-menu";
 import { Field } from "@cyclone-ui/field";
 import { useFieldOptions, useFormControl } from "@cyclone-ui/helpers";
-import { MagnifyingGlass } from "@cyclone-ui/icons";
+import { Search } from "@cyclone-ui/icons";
 import type {
   InputChangeEventHandler,
   InputValueProps
@@ -41,7 +41,9 @@ import {
 } from "react";
 const EMPTY_SUGGESTIONS: readonly string[] = [];
 const renderSuggestionText = (suggestion: string) => (
-  <ContextMenu.Item.Text whiteSpace="nowrap">{suggestion}</ContextMenu.Item.Text>
+  <ContextMenu.Item.Text whiteSpace="nowrap">
+    {suggestion}
+  </ContextMenu.Item.Text>
 );
 // Inside a `Field`, a search input is clearable unless the field says otherwise.
 const CLEARABLE_BY_DEFAULT = { defaults: { clearable: true } };
@@ -153,7 +155,7 @@ type SearchInputTextBoxProps = GetProps<typeof Input.TextBox> &
     /**
      * The icon shown at the start of the text box. Pass `null` to hide it.
      *
-     * @defaultValue `<MagnifyingGlass />`
+     * @defaultValue `<Search />`
      */
     icon?: ReactNode;
   };
@@ -165,7 +167,7 @@ const SearchInputTextBox = createStyledHOC(
       children,
       "aria-label": ariaLabel,
       placeholder = "Search...",
-      icon = <MagnifyingGlass />,
+      icon = <Search />,
       ...props
     }: SearchInputTextBoxProps,
     forwardedRef

@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { Button } from "@cyclone-ui/button";
-import { Question } from "@cyclone-ui/icons";
+import { QuestionCircle } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { XStack } from "@tamagui/stacks";
 import type { ComponentProps, ReactNode } from "react";
@@ -91,7 +91,7 @@ export const Brand: Story = {
 export const CustomIcon: Story = {
   args: {
     children: bodyText,
-    icon: <Question />
+    icon: <QuestionCircle />
   }
 };
 

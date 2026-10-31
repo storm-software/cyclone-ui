@@ -18,12 +18,15 @@
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Text, View } from "@tamagui/core";
+import type { ReactNode } from "react";
+import { useState } from "react";
 import { allIcons } from "./all";
-import { Acorn } from "./icons/Acorn";
 import { ArrowRight } from "./icons/ArrowRight";
+import { Bell } from "./icons/Bell";
 import { Heart } from "./icons/Heart";
+import { Loading } from "./icons/Loading";
 import type { IconProps } from "./types";
-import { ICON_WEIGHTS } from "./types";
+import { ICON_VARIANTS } from "./types";
 
 type GalleryArgs = IconProps & {
   filter?: string;
@@ -31,18 +34,19 @@ type GalleryArgs = IconProps & {
 
 const meta: Meta<GalleryArgs> = {
   title: "Display/Icons",
-  component: Acorn,
+  component: Bell,
   tags: ["autodocs"],
   args: {
-    weight: "regular",
+    variant: "regular",
+    animated: true,
     size: 32,
     mirrored: false,
     color: "primary"
   },
   argTypes: {
-    weight: {
+    variant: {
       control: "select",
-      options: ICON_WEIGHTS
+      options: ICON_VARIANTS
     },
     color: {
       control: "text"
@@ -53,21 +57,65 @@ const meta: Meta<GalleryArgs> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  render: ({ filter: _filter, ...args }) => <Acorn {...args} />
+/**
+ * Remounts its children when the button is pressed, so the drawing animations play again.
+ */
+const Replay = ({ children }: { children: () => ReactNode }) => {
+  const [count, setCount] = useState(0);
+
+  return (
+    <View gap="lg" alignItems="flex-start">
+      <View key={count}>{children()}</View>
+      <Text
+        role="button"
+        fontSize={12}
+        color="color"
+        cursor="pointer"
+        textDecorationLine="underline"
+        onPress={() => setCount(value => value + 1)}>
+        Replay
+      </Text>
+    </View>
+  );
 };
 
-export const Weights: Story = {
-  render: ({ filter: _filter, weight: _weight, ...args }) => (
-    <View flexDirection="row" gap="lg" flexWrap="wrap">
-      {ICON_WEIGHTS.map(weight => (
-        <View key={weight} alignItems="center" gap="sm">
-          <Heart {...args} weight={weight} />
-          <Text fontSize={12} color="color">
-            {weight}
-          </Text>
+export const Default: Story = {
+  render: ({ filter: _filter, ...args }) => (
+    <Replay>{() => <Bell {...args} />}</Replay>
+  )
+};
+
+export const Variants: Story = {
+  render: ({ filter: _filter, variant: _variant, ...args }) => (
+    <Replay>
+      {() => (
+        <View flexDirection="row" gap="lg" flexWrap="wrap">
+          {ICON_VARIANTS.map(variant => (
+            <View key={variant} alignItems="center" gap="sm">
+              <Bell {...args} variant={variant} />
+              <Text fontSize={12} color="color">
+                {variant}
+              </Text>
+            </View>
+          ))}
         </View>
-      ))}
+      )}
+    </Replay>
+  )
+};
+
+export const Spinner: Story = {
+  render: ({ filter: _filter, ...args }) => <Loading {...args} variant="loop" />
+};
+
+export const Static: Story = {
+  args: {
+    animated: false
+  },
+  render: ({ filter: _filter, ...args }) => (
+    <View flexDirection="row" gap="lg">
+      <Bell {...args} />
+      <Bell {...args} variant="filled" />
     </View>
   )
 };
@@ -78,7 +126,7 @@ export const Colors: Story = {
       <Heart {...args} />
       <Heart {...args} color="red" />
       <Heart {...args} color="#1fb2a6" />
-      <Heart {...args} weight="fill" color="red" />
+      <Heart {...args} variant="filled" color="red" />
     </View>
   )
 };
@@ -87,7 +135,7 @@ export const Sizes: Story = {
   render: ({ filter: _filter, size: _size, ...args }) => (
     <View flexDirection="row" gap="lg" alignItems="flex-end">
       {[16, 24, 32, 48, 64].map(size => (
-        <Acorn key={size} {...args} size={size} />
+        <Bell key={size} {...args} size={size} />
       ))}
     </View>
   )
@@ -98,7 +146,7 @@ export const SizeTokens: Story = {
     <View flexDirection="row" gap="lg" alignItems="flex-end">
       {(["2xl", "4xl", "6xl", "8xl", "10xl", "12xl"] as const).map(size => (
         <View key={size} alignItems="center" gap="sm">
-          <Acorn {...args} size={size} />
+          <Bell {...args} size={size} />
           <Text fontSize={12} color="color">
             {size}
           </Text>

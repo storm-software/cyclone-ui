@@ -20,12 +20,7 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
-import {
-  FacebookLogo,
-  LinkedinLogo,
-  ShareNetwork,
-  XLogo
-} from "@cyclone-ui/icons";
+import { Facebook, Linkedin, Share, TwitterX } from "@cyclone-ui/icons";
 import type { TableOfContentsItem } from "@cyclone-ui/table-of-contents";
 import { TableOfContents } from "@cyclone-ui/table-of-contents";
 import type { GetProps, TamaguiElement } from "@tamagui/core";
@@ -184,17 +179,17 @@ const getShareLinks = (url: string, title: string) => {
   return [
     {
       network: "X",
-      icon: XLogo,
+      icon: TwitterX,
       href: `https://x.com/intent/tweet?url=${encodedUrl}&text=${encodeURIComponent(title)}`
     },
     {
       network: "LinkedIn",
-      icon: LinkedinLogo,
+      icon: Linkedin,
       href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`
     },
     {
       network: "Facebook",
-      icon: FacebookLogo,
+      icon: Facebook,
       href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`
     }
   ];
@@ -323,7 +318,7 @@ const ArticlePageContent = createStyledHOC(
           {share ? (
             <View gap="md">
               <ArticlePageAsideHeading>
-                <ShareNetwork aria-hidden={true} color="subtle" size="5xl" />
+                <Share aria-hidden={true} color="subtle" size="5xl" />
                 <BodyText render="span" color="subtle" fontWeight="medium">
                   Share
                 </BodyText>

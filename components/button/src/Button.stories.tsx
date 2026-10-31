@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { X } from "@cyclone-ui/icons";
+import { Close } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import type { ComponentProps, ReactNode } from "react";
 import { Button } from "./Button";
@@ -66,28 +66,28 @@ export const Animated: Story = {
 
 export const Icon: Story = {
   args: {
-    icon: <X />,
+    icon: <Close />,
     animate: false
   }
 };
 
 export const Rounded: Story = {
   args: {
-    icon: <X />,
+    icon: <Close />,
     rounded: true
   }
 };
 
 export const Circular: Story = {
   args: {
-    icon: <X />,
+    icon: <Close />,
     circular: true
   }
 };
 
 export const NoPadding: Story = {
   args: {
-    icon: <X />,
+    icon: <Close />,
     noPadding: true,
     paddingHorizontal: "2xl"
   }
@@ -100,7 +100,7 @@ export const Sizes: Story = {
         <Button key={size} size={size} animate={false} flexGrow={0}>
           <Button.Text>{`Size ${size}`}</Button.Text>
           <Button.Icon>
-            <X />
+            <Close />
           </Button.Icon>
         </Button>
       ))}
@@ -118,7 +118,7 @@ export const Sized: Story = {
 
 export const SizedIcon: Story = {
   args: {
-    icon: <X />,
+    icon: <Close />,
     size: "13xl",
     animate: false
   }

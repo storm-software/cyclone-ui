@@ -1,34 +1,42 @@
 // Owned: inlined copy of components/page/src/Page.stories.tsx (keep in sync). The
 // story imports the `Folder` *icon*, but window.CycloneUI.Folder is the FileTree
 // component, so it is taken from the `FolderIcon` alias instead.
-import * as React from 'react';
+import * as React from "react";
 
+import {
+  Account,
+  AlertCircle,
+  BackupRestore,
+  Bell,
+  Close,
+  Cog,
+  DocumentReport,
+  Email,
+  Folder,
+  Grid3,
+  Home,
+  Lightning,
+  Plus,
+  QuestionCircle,
+  Search
+} from "@cyclone-ui/icons";
 import { BodyText } from "@ds-stories/components/body-text/src/index";
 import { Button } from "@ds-stories/components/button/src/index";
-import { HeadingLargeText, HeadingSmallText } from "@ds-stories/components/heading-text/src/index";
 import {
-  Bell,
-  ChartBar,
-  ClockCounterClockwise,
-  FolderIcon as Folder,
-  Gear,
-  House,
-  Info,
-  Kanban,
-  Lightning,
-  MagnifyingGlass,
-  Plus,
-  Question,
-  Tray,
-  User,
-  X
-} from "@cyclone-ui/icons";
+  HeadingLargeText,
+  HeadingSmallText
+} from "@ds-stories/components/heading-text/src/index";
+import {
+  Page,
+  usePagePanel,
+  usePageSideNav,
+  usePageSkipLink
+} from "@ds-stories/components/page/src/index";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { styled, View } from "@tamagui/core";
 import type { ReactNode } from "react";
 import { useId } from "react";
 import { expect, userEvent, waitFor, within } from "storybook/test";
-import { Page, usePagePanel, usePageSideNav, usePageSkipLink } from "@ds-stories/components/page/src/index";
 
 const StoryNavItemFrame = styled(View, {
   render: "a",
@@ -111,7 +119,7 @@ const StoryLogo = () => (
       justifyContent="center"
       backgroundColor="accent"
       borderRadius="full">
-      <Lightning size={14} color="onAccent" weight="fill" />
+      <Lightning size={14} color="onAccent" variant="filled" />
     </View>
     <BodyText render="span" color="inkEmphasis" fontWeight="700">
       Storm
@@ -133,7 +141,7 @@ const StorySearch = () => (
     borderColor="hairline"
     borderRadius={1000}
     display="flex max-md:none">
-    <MagnifyingGlass aria-hidden={true} size={16} color="inkSubtle" />
+    <Search aria-hidden={true} size={16} color="inkSubtle" />
     <BodyText render="span" size="sm" color="inkSubtle">
       Search
     </BodyText>
@@ -147,7 +155,7 @@ const StoryPanelToggle = () => {
     <StoryIconButton
       label={panel.open ? "Close details" : "Open details"}
       onPress={panel.toggle}>
-      <Info aria-hidden={true} />
+      <AlertCircle aria-hidden={true} />
     </StoryIconButton>
   );
 };
@@ -180,10 +188,10 @@ const StoryTopNav = ({ panelToggle = false }: { panelToggle?: boolean }) => (
         <Bell aria-hidden={true} />
       </StoryIconButton>
       <StoryIconButton label="Help">
-        <Question aria-hidden={true} />
+        <QuestionCircle aria-hidden={true} />
       </StoryIconButton>
       <StoryIconButton label="Your profile">
-        <User aria-hidden={true} />
+        <Account aria-hidden={true} />
       </StoryIconButton>
     </Page.TopNav.End>
   </Page.TopNav>
@@ -211,7 +219,7 @@ const StorySideNav = () => (
           justifyContent="center"
           backgroundColor="muted"
           borderRadius="md">
-          <Kanban aria-hidden={true} size={18} color="accent" />
+          <Grid3 aria-hidden={true} size={18} color="accent" />
         </View>
         <View>
           <BodyText
@@ -228,17 +236,16 @@ const StorySideNav = () => (
       </View>
     </Page.SideNav.Header>
     <Page.SideNav.Body>
-      <StoryNavItem icon={<House aria-hidden={true} size={18} />} active={true}>
+      <StoryNavItem icon={<Home aria-hidden={true} size={18} />} active={true}>
         Overview
       </StoryNavItem>
-      <StoryNavItem icon={<Tray aria-hidden={true} size={18} />}>
+      <StoryNavItem icon={<Email aria-hidden={true} size={18} />}>
         Inbox
       </StoryNavItem>
-      <StoryNavItem icon={<ChartBar aria-hidden={true} size={18} />}>
+      <StoryNavItem icon={<DocumentReport aria-hidden={true} size={18} />}>
         Reports
       </StoryNavItem>
-      <StoryNavItem
-        icon={<ClockCounterClockwise aria-hidden={true} size={18} />}>
+      <StoryNavItem icon={<BackupRestore aria-hidden={true} size={18} />}>
         Recent
       </StoryNavItem>
       <StoryNavGroupLabel>Projects</StoryNavGroupLabel>
@@ -251,7 +258,7 @@ const StorySideNav = () => (
       ))}
     </Page.SideNav.Body>
     <Page.SideNav.Footer>
-      <StoryNavItem icon={<Gear aria-hidden={true} size={18} />}>
+      <StoryNavItem icon={<Cog aria-hidden={true} size={18} />}>
         Settings
       </StoryNavItem>
     </Page.SideNav.Footer>
@@ -333,7 +340,7 @@ const StoryPanel = () => {
           <StoryIconButton
             label="Close details"
             onPress={() => panel.setOpen(false)}>
-            <X aria-hidden={true} />
+            <Close aria-hidden={true} />
           </StoryIconButton>
         </View>
       </Page.Panel.Header>
@@ -389,8 +396,6 @@ const meta = {
     </Page>
   )
 } satisfies Meta<typeof Page>;
-
-
 
 type Story = StoryObj<typeof meta>;
 
@@ -605,7 +610,18 @@ const __Mobile: Story = {
   }
 };
 
-const S: any = { default: meta, Default: __Default, WithBanner: __WithBanner, WithPanel: __WithPanel, CollapsedSideNav: __CollapsedSideNav, KeyboardShortcut: __KeyboardShortcut, FixedMain: __FixedMain, CustomSkipLink: __CustomSkipLink, ExpandSideNavFromHook: __ExpandSideNavFromHook, Mobile: __Mobile };
+const S: any = {
+  default: meta,
+  Default: __Default,
+  WithBanner: __WithBanner,
+  WithPanel: __WithPanel,
+  CollapsedSideNav: __CollapsedSideNav,
+  KeyboardShortcut: __KeyboardShortcut,
+  FixedMain: __FixedMain,
+  CustomSkipLink: __CustomSkipLink,
+  ExpandSideNavFromHook: __ExpandSideNavFromHook,
+  Mobile: __Mobile
+};
 
 function compose(S: any, key: string) {
   const meta: any = S.default ?? {};
@@ -613,21 +629,32 @@ function compose(S: any, key: string) {
   const args: any = { ...(meta.args ?? {}), ...(st && st.args ? st.args : {}) };
   // Storybook resolves argTypes.mapping (control value -> real arg) before
   // rendering; mirror that so mapped args don't render raw.
-  const at: any = { ...(meta.argTypes ?? {}), ...(st && st.argTypes ? st.argTypes : {}) };
+  const at: any = {
+    ...(meta.argTypes ?? {}),
+    ...(st && st.argTypes ? st.argTypes : {})
+  };
   for (const k of Object.keys(args)) {
     const m = at[k] && at[k].mapping;
-    if (m && typeof m === 'object' && args[k] in m) args[k] = m[args[k]];
+    if (m && typeof m === "object" && args[k] in m) args[k] = m[args[k]];
   }
-  const title: string = typeof meta.title === 'string' ? meta.title : '';
+  const title: string = typeof meta.title === "string" ? meta.title : "";
   const ctx: any = {
-    args, name: key, title, kind: title, id: title + '--' + key, componentId: title,
-    globals: {}, viewMode: 'story',
-    parameters: (st && st.parameters) ?? meta.parameters ?? {},
+    args,
+    name: key,
+    title,
+    kind: title,
+    id: title + "--" + key,
+    componentId: title,
+    globals: {},
+    viewMode: "story",
+    parameters: (st && st.parameters) ?? meta.parameters ?? {}
   };
   let render: (() => any) | null = null;
-  if (st && typeof st.render === 'function') render = () => st.render(args, ctx);
-  else if (typeof st === 'function') render = () => st(args, ctx);
-  else if (typeof meta.render === 'function') render = () => meta.render(args, ctx);
+  if (st && typeof st.render === "function")
+    render = () => st.render(args, ctx);
+  else if (typeof st === "function") render = () => st(args, ctx);
+  else if (typeof meta.render === "function")
+    render = () => meta.render(args, ctx);
   else {
     const C = (st && st.component) || meta.component;
     if (C) render = () => React.createElement(C, args);
@@ -636,19 +663,36 @@ function compose(S: any, key: string) {
   // [].concat: a single function is legal CSF decorator shorthand. A
   // decorator returning undefined (stubbed addon) falls through to the inner
   // render — otherwise one unrecognized addon blanks the cell silently.
-  const decorators: any[] = ([] as any[]).concat((st && st.decorators) ?? []).concat(meta.decorators ?? []);
-  return decorators.reduce((inner: any, dec: any) => () => {
-    const out = dec(inner, ctx);
-    return out === undefined ? inner() : out;
-  }, render);
+  const decorators: any[] = ([] as any[])
+    .concat((st && st.decorators) ?? [])
+    .concat(meta.decorators ?? []);
+  return decorators.reduce(
+    (inner: any, dec: any) => () => {
+      const out = dec(inner, ctx);
+      return out === undefined ? inner() : out;
+    },
+    render
+  );
 }
 
 export const Default = /* Default */ compose(S, "Default");
 export const WithBanner = /* With Banner */ compose(S, "WithBanner");
 export const WithPanel = /* With Panel */ compose(S, "WithPanel");
-export const CollapsedSideNav = /* Collapsed Side Nav */ compose(S, "CollapsedSideNav");
-export const KeyboardShortcut = /* Keyboard Shortcut */ compose(S, "KeyboardShortcut");
+export const CollapsedSideNav = /* Collapsed Side Nav */ compose(
+  S,
+  "CollapsedSideNav"
+);
+export const KeyboardShortcut = /* Keyboard Shortcut */ compose(
+  S,
+  "KeyboardShortcut"
+);
 export const FixedMain = /* Fixed Main */ compose(S, "FixedMain");
-export const CustomSkipLink = /* Custom Skip Link */ compose(S, "CustomSkipLink");
-export const ExpandSideNavFromHook = /* Expand Side Nav From Hook */ compose(S, "ExpandSideNavFromHook");
+export const CustomSkipLink = /* Custom Skip Link */ compose(
+  S,
+  "CustomSkipLink"
+);
+export const ExpandSideNavFromHook = /* Expand Side Nav From Hook */ compose(
+  S,
+  "ExpandSideNavFromHook"
+);
 export const Mobile = /* Mobile */ compose(S, "Mobile");

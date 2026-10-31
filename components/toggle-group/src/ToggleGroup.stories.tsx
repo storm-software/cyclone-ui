@@ -17,10 +17,10 @@
  ------------------------------------------------------------------- */
 
 import {
-  TextAlignCenter,
-  TextAlignJustify,
-  TextAlignLeft,
-  TextAlignRight
+  AlignCenter,
+  AlignJustify,
+  AlignLeft,
+  AlignRight
 } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Text, View } from "@tamagui/core";
@@ -96,10 +96,10 @@ export const Icons: Story = {
     <ToggleGroup {...args}>
       {(
         [
-          ["left", "Align left", TextAlignLeft],
-          ["center", "Align center", TextAlignCenter],
-          ["right", "Align right", TextAlignRight],
-          ["justify", "Justify", TextAlignJustify]
+          ["left", "Align left", AlignLeft],
+          ["center", "Align center", AlignCenter],
+          ["right", "Align right", AlignRight],
+          ["justify", "Justify", AlignJustify]
         ] as const
       ).map(([value, label, Icon]) => (
         <ToggleGroup.Item key={value} value={value} aria-label={label}>

@@ -19,7 +19,7 @@
 "use client";
 
 import {
-  CaretRight,
+  ChevronRight,
   File as FileIcon,
   Folder as FolderIcon,
   FolderOpen as FolderOpenIcon
@@ -169,7 +169,7 @@ export const Folder = ({
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         onKeyDown={event => onKeyDown(event)}>
-        <CaretRight
+        <ChevronRight
           transition="400ms"
           color={color}
           size="lg"

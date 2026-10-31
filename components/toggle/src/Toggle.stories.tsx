@@ -17,11 +17,11 @@
  ------------------------------------------------------------------- */
 
 import {
-  Bookmark,
-  LockSimple,
-  LockSimpleOpen,
-  SpeakerHigh,
-  SpeakerSlash
+  Lock,
+  LockOpen,
+  Star,
+  VolumeHigh,
+  VolumeHighOff
 } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Text, View } from "@tamagui/core";
@@ -86,9 +86,9 @@ export const Icon: Story = {
   args: {
     "aria-label": "Bookmark",
     children: pressed => (
-      <Bookmark
+      <Star
         size={18}
-        weight={pressed ? "fill" : "regular"}
+        variant={pressed ? "filled" : "regular"}
         color={iconColor(pressed)}
       />
     )
@@ -105,9 +105,9 @@ export const RenderProps: Story = {
         {pressed => (
           <>
             {pressed ? (
-              <LockSimple size={16} color={iconColor(pressed)} />
+              <Lock size={16} color={iconColor(pressed)} />
             ) : (
-              <LockSimpleOpen size={16} color={iconColor(pressed)} />
+              <LockOpen size={16} color={iconColor(pressed)} />
             )}
             <ToggleText active={pressed}>
               {pressed ? "Locked" : "Unlocked"}
@@ -119,9 +119,9 @@ export const RenderProps: Story = {
         {pressed => (
           <>
             {pressed ? (
-              <SpeakerSlash size={16} color={iconColor(pressed)} />
+              <VolumeHighOff size={16} color={iconColor(pressed)} />
             ) : (
-              <SpeakerHigh size={16} color={iconColor(pressed)} />
+              <VolumeHigh size={16} color={iconColor(pressed)} />
             )}
             <ToggleText active={pressed}>
               {pressed ? "Unmute" : "Mute"}

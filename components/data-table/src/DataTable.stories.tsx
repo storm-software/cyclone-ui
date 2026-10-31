@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { CheckCircle, PaperPlaneTilt, XSquare } from "@cyclone-ui/icons";
+import { CloseSquare, ConfirmCircle, EmailArrowRight } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Avatar } from "@tamagui/avatar";
 import { Text, View } from "@tamagui/core";
@@ -430,14 +430,14 @@ export const RowActions: Story = {
       {
         value: "approve",
         label: "Approve",
-        icon: <CheckCircle size="2xl" />,
+        icon: <ConfirmCircle size="2xl" />,
         disabled: row.original.status === "Active"
       },
-      { value: "decline", label: "Decline", icon: <XSquare size="2xl" /> },
+      { value: "decline", label: "Decline", icon: <CloseSquare size="2xl" /> },
       {
         value: "message",
         label: "Send Message",
-        icon: <PaperPlaneTilt size="2xl" />
+        icon: <EmailArrowRight size="2xl" />
       }
     ],
     onRowAction: fn()

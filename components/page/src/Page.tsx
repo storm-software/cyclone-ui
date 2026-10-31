@@ -19,7 +19,7 @@
 "use client";
 
 import { BodyText } from "@cyclone-ui/body-text";
-import { SidebarSimple } from "@cyclone-ui/icons";
+import { MenuFoldLeft } from "@cyclone-ui/icons";
 import type { ScrollViewProps } from "@cyclone-ui/scroll-view";
 import { ScrollView } from "@cyclone-ui/scroll-view";
 import { AnimatePresence } from "@tamagui/animate-presence";
@@ -1075,7 +1075,7 @@ const PageSideNavToggle = createStyledHOC(
           onMouseLeave?.(event);
           page.endSideNavPeek();
         }}>
-        <SidebarSimple aria-hidden={true} size={20} color="ink" />
+        <MenuFoldLeft aria-hidden={true} size={20} color="ink" />
       </PageSideNavToggleFrame>
     );
   },

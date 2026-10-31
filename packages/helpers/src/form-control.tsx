@@ -422,15 +422,38 @@ export const FieldNotchedOutline = createStyledHOC(
 
       update();
 
-      if (typeof ResizeObserver === "undefined") {
-        return;
-      }
+      // A label that only moves (its positioner's `top` or `transform` still
+      // transitioning after its size settled, as when a default value floats
+      // it on mount) never resizes, so also re-measure once it lands.
+      const document = outline.ownerDocument;
+      const handleTransitionEnd = (event: Event) => {
+        if ((event.target as Node).contains(label)) {
+          update();
+        }
+      };
+      document.addEventListener("transitionend", handleTransitionEnd, true);
+      document.addEventListener("transitioncancel", handleTransitionEnd, true);
 
-      const resizeObserver = new ResizeObserver(update);
-      resizeObserver.observe(outline);
-      resizeObserver.observe(label);
+      const resizeObserver =
+        typeof ResizeObserver === "undefined"
+          ? undefined
+          : new ResizeObserver(update);
+      resizeObserver?.observe(outline);
+      resizeObserver?.observe(label);
 
-      return () => resizeObserver.disconnect();
+      return () => {
+        resizeObserver?.disconnect();
+        document.removeEventListener(
+          "transitionend",
+          handleTransitionEnd,
+          true
+        );
+        document.removeEventListener(
+          "transitioncancel",
+          handleTransitionEnd,
+          true
+        );
+      };
     }, [gap, labelContentRef, labelVariant]);
 
     return (

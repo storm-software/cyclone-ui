@@ -26,23 +26,23 @@ import {
   HeadingTitleText
 } from "@cyclone-ui/heading-text";
 import {
-  BookOpen,
-  CaretDown,
-  CaretRight,
-  CaretUpDown,
-  ChatCircle,
-  Code,
-  Copy,
-  Cube,
-  DotsThree,
-  GithubLogo,
+  ArrowsVertical,
+  ChatRound,
+  ChatRoundDots,
+  ChevronDown,
+  ChevronRight,
+  Cog,
+  Construction,
+  DocumentCode,
+  DotsHorizontal,
+  FileDocument,
+  FolderZip,
+  Github,
+  Grid3,
   Lightning,
-  MagnifyingGlass,
-  Package,
-  PuzzlePiece,
-  Translate,
-  TreeStructure,
-  Wrench
+  ListIndented,
+  Search,
+  TextBoxMultiple
 } from "@cyclone-ui/icons";
 import { InlineCodeText } from "@cyclone-ui/inline-code-text";
 import type { Meta, StoryObj } from "@storybook/react-vite";
@@ -167,7 +167,7 @@ const StorySideNav = () => (
           justifyContent="center"
           backgroundColor="primary"
           borderRadius="full">
-          <Lightning size={12} color="on-primary" weight="fill" />
+          <Lightning size={12} color="on-primary" variant="filled" />
         </View>
         <BodyText render="span" color="emphasis" fontWeight="700" flexGrow={1}>
           Cyclone UI
@@ -175,14 +175,14 @@ const StorySideNav = () => (
         <DocsPage.SideNavToggle />
       </View>
       <StoryBoxButton aria-label="Switch documentation">
-        <Cube aria-hidden={true} size={16} color="primary" />
+        <Grid3 aria-hidden={true} size={16} color="primary" />
         <BodyText render="span" size="sm" color="emphasis" flexGrow={1}>
           Cyclone Core
         </BodyText>
-        <CaretUpDown aria-hidden={true} size={14} color="ink" />
+        <ArrowsVertical aria-hidden={true} size={14} color="ink" />
       </StoryBoxButton>
       <StoryBoxButton aria-label="Search">
-        <MagnifyingGlass aria-hidden={true} size={16} color="ink" />
+        <Search aria-hidden={true} size={16} color="ink" />
         <BodyText render="span" size="sm" color="ink" flexGrow={1}>
           Search
         </BodyText>
@@ -192,36 +192,36 @@ const StorySideNav = () => (
     </DocsPage.SideNav.Header>
     <DocsPage.SideNav.Body>
       <StoryNavGroupLabel paddingTop="md">Guide</StoryNavGroupLabel>
-      <StoryNavItem icon={<BookOpen aria-hidden={true} size={16} />}>
+      <StoryNavItem icon={<FileDocument aria-hidden={true} size={16} />}>
         Introduction
       </StoryNavItem>
       <StoryNavItem
-        icon={<MagnifyingGlass aria-hidden={true} size={16} />}
-        end={<CaretRight aria-hidden={true} size={14} color="ink" />}>
+        icon={<Search aria-hidden={true} size={16} />}
+        end={<ChevronRight aria-hidden={true} size={14} color="ink" />}>
         Search
       </StoryNavItem>
       <StoryNavGroupLabel>API References</StoryNavGroupLabel>
-      <StoryNavItem icon={<TreeStructure aria-hidden={true} size={16} />}>
+      <StoryNavItem icon={<ListIndented aria-hidden={true} size={16} />}>
         Page Tree
       </StoryNavItem>
       <StoryNavItem
-        icon={<Translate aria-hidden={true} size={16} />}
-        end={<CaretRight aria-hidden={true} size={14} color="ink" />}>
+        icon={<ChatRoundDots aria-hidden={true} size={16} />}
+        end={<ChevronRight aria-hidden={true} size={14} color="ink" />}>
         Internationalization
       </StoryNavItem>
       <StoryNavItem
-        icon={<PuzzlePiece aria-hidden={true} size={16} />}
-        end={<CaretRight aria-hidden={true} size={14} color="ink" />}>
+        icon={<Cog aria-hidden={true} size={16} />}
+        end={<ChevronRight aria-hidden={true} size={14} color="ink" />}>
         Components
       </StoryNavItem>
       <StoryNavItem
-        icon={<Wrench aria-hidden={true} size={16} />}
-        end={<CaretRight aria-hidden={true} size={14} color="ink" />}>
+        icon={<Construction aria-hidden={true} size={16} />}
+        end={<ChevronRight aria-hidden={true} size={14} color="ink" />}>
         Utilities
       </StoryNavItem>
       <StoryNavItem
-        icon={<Code aria-hidden={true} size={16} />}
-        end={<CaretDown aria-hidden={true} size={14} color="ink" />}>
+        icon={<DocumentCode aria-hidden={true} size={16} />}
+        end={<ChevronDown aria-hidden={true} size={14} color="ink" />}>
         MDX Plugins
       </StoryNavItem>
       <StoryNavFolderItems>
@@ -231,7 +231,7 @@ const StorySideNav = () => (
         ))}
       </StoryNavFolderItems>
       <StoryNavGroupLabel>Packages</StoryNavGroupLabel>
-      <StoryNavItem icon={<Package aria-hidden={true} size={16} />}>
+      <StoryNavItem icon={<FolderZip aria-hidden={true} size={16} />}>
         Installation
       </StoryNavItem>
     </DocsPage.SideNav.Body>
@@ -311,21 +311,21 @@ const StoryMain = () => (
         <View display="flex max-md:none">
           <Button variant="ghost" size="9xl" flexGrow={0}>
             <Button.Icon>
-              <ChatCircle aria-hidden={true} />
+              <ChatRound aria-hidden={true} />
             </Button.Icon>
             <Button.Text>Ask AI</Button.Text>
           </Button>
         </View>
         <View display="none max-md:flex">
           <StoryIconButton label="Ask AI">
-            <ChatCircle aria-hidden={true} />
+            <ChatRound aria-hidden={true} />
           </StoryIconButton>
         </View>
         <StoryIconButton label="GitHub">
-          <GithubLogo aria-hidden={true} />
+          <Github aria-hidden={true} />
         </StoryIconButton>
         <StoryIconButton label="More options">
-          <DotsThree aria-hidden={true} />
+          <DotsHorizontal aria-hidden={true} />
         </StoryIconButton>
       </DocsPage.Header.End>
     </DocsPage.Header>
@@ -337,14 +337,14 @@ const StoryMain = () => (
       <View flexDirection="row" flexWrap="wrap" gap="xl">
         <Button variant="outlined" size="9xl" flexGrow={0}>
           <Button.Icon>
-            <Copy aria-hidden={true} />
+            <TextBoxMultiple aria-hidden={true} />
           </Button.Icon>
           <Button.Text>Copy Markdown</Button.Text>
         </Button>
         <Button variant="outlined" size="9xl" flexGrow={0}>
           <Button.Text>Open</Button.Text>
           <Button.Icon>
-            <CaretDown aria-hidden={true} />
+            <ChevronDown aria-hidden={true} />
           </Button.Icon>
         </Button>
       </View>

@@ -32,7 +32,7 @@ import {
   useFieldVariant,
   useFormControl
 } from "@cyclone-ui/helpers";
-import { CaretDown } from "@cyclone-ui/icons";
+import { ChevronDown } from "@cyclone-ui/icons";
 import { ControlUnderline } from "@cyclone-ui/input";
 import type { GetProps } from "@tamagui/core";
 import {
@@ -249,11 +249,10 @@ const SelectTrigger = createStyledHOC(
           rotate={focused ? "180deg" : "0deg"}
           alignItems="center"
           justifyContent="center">
-          <CaretDown
+          <ChevronDown
             size={24 * getFormSizeScale(size)}
             // Inherits the field icon's CSS hover color.
             color="currentColor"
-            weight="bold"
           />
         </View>
       </Field.Icon>
@@ -280,7 +279,9 @@ const SelectTextBoxImpl = createStyledHOC(
     const frameSize = size;
     const underlineActive = focused || locallyActive;
     const idleColor = hasValidationMessage ? "primary" : "outline";
-    const focusColor = hasValidationMessage ? "primary-active" : "outline-active";
+    const focusColor = hasValidationMessage
+      ? "primary-active"
+      : "outline-active";
     const hoverColor = hasValidationMessage
       ? "primary-hovered"
       : "outline-hovered";

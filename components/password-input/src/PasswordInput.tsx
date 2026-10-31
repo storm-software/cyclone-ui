@@ -25,7 +25,7 @@ import {
   useFieldOptions,
   useFormControl
 } from "@cyclone-ui/helpers";
-import { Eye, EyeSlash } from "@cyclone-ui/icons";
+import { Watch, WatchOff } from "@cyclone-ui/icons";
 import type { InputChangeEventHandler } from "@cyclone-ui/input";
 import { Input, InputContext } from "@cyclone-ui/input";
 import type { GetProps } from "@tamagui/core";
@@ -432,9 +432,9 @@ const PasswordInputTrigger = createStyledHOC(
         onPress={handlePress}>
         {children ??
           (passwordVisible ? (
-            <EyeSlash aria-hidden={true} />
+            <WatchOff aria-hidden={true} />
           ) : (
-            <Eye aria-hidden={true} />
+            <Watch aria-hidden={true} />
           ))}
       </Field.Icon>
     );

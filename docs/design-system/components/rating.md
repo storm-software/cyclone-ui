@@ -12,7 +12,7 @@ tags: [component, form, rating, display]
 ## Import
 
 ```tsx
-import { Rating } from "@cyclone-ui/rating";
+import { Rating } from "@cyclone-ui/rating"
 ```
 
 ## Usage
@@ -30,25 +30,25 @@ import { Heart } from "@cyclone-ui/icons";
 
 `RatingProps` extends the Tamagui view props.
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `value` | `number \| null` | — | The rating. `null` means no rating. Makes the rating controlled. |
-| `defaultValue` | `number \| null` | `null` | Initial value when uncontrolled. |
-| `max` | `number` | `5` | Number of icons and the maximum value. |
-| `precision` | `number` | `1` | Smallest selectable step, for example `0.5`. |
-| `onChange` | `(value: number \| null) => void` | — | Called with the new value, or `null` when the current value is clicked again. |
-| `onChangeActive` | `(value: number \| null) => void` | — | Called with the hovered value, or `null` when the pointer leaves. |
-| `readOnly` | `boolean` | `false` | Shows the value without allowing changes. |
-| `disabled` | `boolean` | `false` | Disables the rating. Inherited from the field when inside one. |
-| `size` | `"sm" \| "md" \| "lg"` | `"md"` | Icon size. Inherited from the field when inside one. |
-| `icon` | `IconComponent` | `Star` | Icon for filled values. |
-| `emptyIcon` | `IconComponent` | `icon` | Icon for empty values. |
-| `iconWeight` | `IconWeight` | `"fill"` | Weight of the filled icon. |
-| `emptyIconWeight` | `IconWeight` | `"regular"` | Weight of the empty icon. |
-| `color` | `ColorTokens \| ThemeTokens \| string` | `"primary"` | Color of filled icons. |
-| `emptyColor` | `ColorTokens \| ThemeTokens \| string` | `"outline"` | Color of empty icons. It is `primary` when the field shows a validation message. |
-| `highlightSelectedOnly` | `boolean` | `false` | Fills only the icon that matches the value. |
-| `getLabelText` | `(value: number) => string` | `"N Star(s)"` | Builds the accessible description of a value. |
+| Prop                    | Type                                   | Default       | Description                                                                      |
+| ----------------------- | -------------------------------------- | ------------- | -------------------------------------------------------------------------------- |
+| `value`                 | `number \| null`                       | —             | The rating. `null` means no rating. Makes the rating controlled.                 |
+| `defaultValue`          | `number \| null`                       | `null`        | Initial value when uncontrolled.                                                 |
+| `max`                   | `number`                               | `5`           | Number of icons and the maximum value.                                           |
+| `precision`             | `number`                               | `1`           | Smallest selectable step, for example `0.5`.                                     |
+| `onChange`              | `(value: number \| null) => void`      | —             | Called with the new value, or `null` when the current value is clicked again.    |
+| `onChangeActive`        | `(value: number \| null) => void`      | —             | Called with the hovered value, or `null` when the pointer leaves.                |
+| `readOnly`              | `boolean`                              | `false`       | Shows the value without allowing changes.                                        |
+| `disabled`              | `boolean`                              | `false`       | Disables the rating. Inherited from the field when inside one.                   |
+| `size`                  | `"sm" \| "md" \| "lg"`                 | `"md"`        | Icon size. Inherited from the field when inside one.                             |
+| `icon`                  | `IconComponent`                        | `Star`        | Icon for filled values.                                                          |
+| `emptyIcon`             | `IconComponent`                        | `icon`        | Icon for empty values.                                                           |
+| `iconVariant`           | `IconVariant`                          | `"filled"`    | Variant of the filled icon.                                                      |
+| `emptyIconVariant`      | `IconVariant`                          | `"regular"`   | Variant of the empty icon.                                                       |
+| `color`                 | `ColorTokens \| ThemeTokens \| string` | `"primary"`   | Color of filled icons.                                                           |
+| `emptyColor`            | `ColorTokens \| ThemeTokens \| string` | `"outline"`   | Color of empty icons. It is `primary` when the field shows a validation message. |
+| `highlightSelectedOnly` | `boolean`                              | `false`       | Fills only the icon that matches the value.                                      |
+| `getLabelText`          | `(value: number) => string`            | `"N Star(s)"` | Builds the accessible description of a value.                                    |
 
 The package also exports `roundRatingValue(value, precision)`. It rounds a value to the nearest multiple of `precision`.
 

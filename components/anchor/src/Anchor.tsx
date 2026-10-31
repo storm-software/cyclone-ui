@@ -101,7 +101,6 @@ export const Anchor = createStyledHOC(
             color={isIconHovered ? "primary" : "neutral7"}
             height="90%"
             maxHeight="7xl"
-            weight="bold"
           />
         </Permalink>
       </AnchorFrame>

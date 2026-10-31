@@ -22,7 +22,7 @@ import { BodyText } from "@cyclone-ui/body-text";
 import { ContextMenu, getContextMenuSize } from "@cyclone-ui/context-menu";
 import type { FormControlSize } from "@cyclone-ui/helpers";
 import { useFormControl } from "@cyclone-ui/helpers";
-import { MapPin, MapTrifold } from "@cyclone-ui/icons";
+import { MapMarker, MapTrifold } from "@cyclone-ui/icons";
 import type { SearchInputProps } from "@cyclone-ui/search-input";
 import { SearchInput } from "@cyclone-ui/search-input";
 import type { GetProps } from "@tamagui/core";
@@ -311,7 +311,7 @@ const AddressInputSearchTextBox = createStyledHOC(
     forwardedRef
   ) => {
     return (
-      <SearchInput.TextBox ref={forwardedRef} icon={<MapPin />} {...props}>
+      <SearchInput.TextBox ref={forwardedRef} icon={<MapMarker />} {...props}>
         {children}
       </SearchInput.TextBox>
     );
@@ -420,7 +420,7 @@ const AddressInputMap = createStyledHOC(
             height={32}
             borderRadius="full"
             backgroundColor="primary">
-            <MapPin color="on-primary" size="2xl" weight="fill" />
+            <MapMarker color="on-primary" size="2xl" variant="filled" />
           </View>
         </View>
 

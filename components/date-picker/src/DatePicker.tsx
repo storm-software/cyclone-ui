@@ -29,7 +29,7 @@ import {
   useFieldVariant,
   useFormControl
 } from "@cyclone-ui/helpers";
-import { CalendarDots } from "@cyclone-ui/icons";
+import { Calendar as CalendarIcon } from "@cyclone-ui/icons";
 import type { InputContextProps } from "@cyclone-ui/input";
 import { Input } from "@cyclone-ui/input";
 import { Popover } from "@cyclone-ui/popover";
@@ -780,7 +780,7 @@ const DatePickerControlImpl = createStyledHOC(
                       </DatePickerTextBox>
                       <Input.Separator />
                       <DatePickerTrigger>
-                        <CalendarDots />
+                        <CalendarIcon />
                       </DatePickerTrigger>
                     </>
                   ))}

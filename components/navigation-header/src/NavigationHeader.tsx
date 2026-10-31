@@ -35,7 +35,7 @@ import {
   View,
   withStaticProperties
 } from "@tamagui/core";
-import type { KeyboardEvent, ReactElement, ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 import {
   Children,
   isValidElement,
@@ -881,9 +881,8 @@ const NavigationHeaderRoot = createStyledHOC(
                           active={active}
                           onMouseEnter={() => setOpenItemIndex(index)}
                           onFocus={() => setOpenItemIndex(index)}
-                          onKeyDown={(
-                            event: KeyboardEvent<HTMLButtonElement>
-                          ) => {
+                          // Inferred: `Link` types `onKeyDown` for a `<div>`.
+                          onKeyDown={event => {
                             if (event.key === "Escape") {
                               setOpenItemIndex(null);
                             }

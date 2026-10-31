@@ -26,7 +26,7 @@ import {
   useFieldHasValidationMessage,
   useFormControl
 } from "@cyclone-ui/helpers";
-import type { IconComponent, IconWeight } from "@cyclone-ui/icons";
+import type { IconComponent, IconVariant } from "@cyclone-ui/icons";
 import { Star } from "@cyclone-ui/icons";
 import type {
   ColorTokens,
@@ -66,10 +66,10 @@ export interface RatingProps extends Omit<
   icon?: IconComponent;
   /** The icon displayed for empty values. Defaults to `icon`. */
   emptyIcon?: IconComponent;
-  /** The weight of the filled icon. */
-  iconWeight?: IconWeight;
-  /** The weight of the empty icon. */
-  emptyIconWeight?: IconWeight;
+  /** The variant of the filled icon. */
+  iconVariant?: IconVariant;
+  /** The variant of the empty icon. */
+  emptyIconVariant?: IconVariant;
   /** The color of filled icons. */
   color?: RatingColor;
   /** The color of empty icons. */
@@ -131,8 +131,8 @@ export const Rating = forwardRef<TamaguiElement, RatingProps>(
       size = formControl?.size ?? "md",
       icon: Icon = Star,
       emptyIcon: EmptyIcon = Icon,
-      iconWeight = "fill",
-      emptyIconWeight = "regular",
+      iconVariant = "filled",
+      emptyIconVariant = "regular",
       color = "primary",
       emptyColor = hasValidationMessage ? "primary" : "outline",
       highlightSelectedOnly = false,
@@ -307,7 +307,7 @@ export const Rating = forwardRef<TamaguiElement, RatingProps>(
               {fill < 1 && (
                 <EmptyIcon
                   size={iconSize}
-                  weight={emptyIconWeight}
+                  variant={emptyIconVariant}
                   color={emptyColor}
                 />
               )}
@@ -319,7 +319,7 @@ export const Rating = forwardRef<TamaguiElement, RatingProps>(
                   height={iconSize}
                   width={fill * iconSize}
                   overflow="hidden">
-                  <Icon size={iconSize} weight={iconWeight} color={color} />
+                  <Icon size={iconSize} variant={iconVariant} color={color} />
                 </View>
               )}
               {interactive &&

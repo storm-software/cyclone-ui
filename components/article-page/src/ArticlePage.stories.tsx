@@ -26,7 +26,7 @@ import {
   HeadingLargeText,
   HeadingMediumText
 } from "@cyclone-ui/heading-text";
-import { CalendarBlank, Clock } from "@cyclone-ui/icons";
+import { Calendar, Clock } from "@cyclone-ui/icons";
 import { InlineCodeText } from "@cyclone-ui/inline-code-text";
 import { Link } from "@cyclone-ui/link";
 import { Tag } from "@cyclone-ui/tag";
@@ -188,7 +188,7 @@ const StoryHeader = () => (
         </BodyText>
         <View flexDirection="row" flexWrap="wrap" columnGap="4xl" rowGap="md">
           <StoryMeta
-            icon={<CalendarBlank aria-hidden={true} size={16} color="ink" />}>
+            icon={<Calendar aria-hidden={true} size={16} color="ink" />}>
             {storyArticle.published}
           </StoryMeta>
           <StoryMeta icon={<Clock aria-hidden={true} size={16} color="ink" />}>

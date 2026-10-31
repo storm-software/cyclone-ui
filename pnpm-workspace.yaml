@@ -233,7 +233,7 @@ catalog:
   "@razorwind/docgen": ^0.0.108
   ui-ux-pro-max-cli: ^2.15.0
   "@power-plant/core": ^0.0.98
-  "@phosphor-icons/core": ^2.1.1
+  line-md: ^3.0.5
   "@shell-shock/plugin-mcp": ^0.1.13
   "@shell-shock/plugin-skills": ^0.0.26
   "@razorwind/eslint": ^0.0.39

@@ -35,7 +35,7 @@ import {
   useFieldIconColor,
   useFormControl
 } from "@cyclone-ui/helpers";
-import { DownloadSimple, Lock, Trash, Upload, X } from "@cyclone-ui/icons";
+import { Close, Download, Lock, Trash, Upload } from "@cyclone-ui/icons";
 import { Link } from "@cyclone-ui/link";
 import type { ClientFileResult } from "@cyclone-ui/state";
 import { formatDate } from "@stryke/date/format";
@@ -428,7 +428,7 @@ const FilePickerTrigger = createStyledHOC(
                 aria-label={max > 1 ? "Remove files" : "Remove file"}
                 onPress={() => onChange([])}>
                 <Button.Icon>
-                  <X />
+                  <Close />
                 </Button.Icon>
               </Button>
             </View>
@@ -872,7 +872,7 @@ const FilePickerFile = ({
             noPadding={true}
             circular={true}>
             <Button.Icon>
-              <DownloadSimple />
+              <Download />
             </Button.Icon>
           </Button>
         )}

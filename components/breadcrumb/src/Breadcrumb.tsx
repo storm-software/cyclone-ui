@@ -19,15 +19,15 @@
 "use client";
 
 import { Button } from "@cyclone-ui/button";
-import { CaretDoubleRight, CaretRight, DotsThree } from "@cyclone-ui/icons";
+import {
+  ChevronDoubleRight,
+  ChevronRight,
+  DotsHorizontal
+} from "@cyclone-ui/icons";
 import { Link } from "@cyclone-ui/link";
 import type { LinkTextExtraProps } from "@cyclone-ui/link-text";
 import { Popover } from "@cyclone-ui/popover";
-import type {
-  FontSizeTokens,
-  GetProps,
-  ThemeName
-} from "@tamagui/core";
+import type { FontSizeTokens, GetProps, ThemeName } from "@tamagui/core";
 import {
   createStyledContext,
   createStyledHOC,
@@ -196,9 +196,9 @@ const BreadcrumbSeparator = () => {
   const { separator, size } = BreadcrumbContext.useStyledContext();
 
   if (separator === "chevron") {
-    return <CaretRight color="outline" size="2xl" weight="bold" />;
+    return <ChevronRight color="outline" size="2xl" />;
   } else if (separator === "double") {
-    return <CaretDoubleRight color="outline" size="2xl" />;
+    return <ChevronDoubleRight color="outline" size="2xl" />;
   } else if (separator === "slash") {
     return (
       <SizableText
@@ -206,7 +206,9 @@ const BreadcrumbSeparator = () => {
         fontFamily="body"
         fontSize={size === "lg" ? "md" : "sm"}
         lineHeight="sm"
-        fontWeight={size === "sm" ? "medium" : size === "lg" ? "black" : "bold"}>
+        fontWeight={
+          size === "sm" ? "medium" : size === "lg" ? "black" : "bold"
+        }>
         /
       </SizableText>
     );
@@ -221,7 +223,7 @@ interface BreadcrumbEllipsisProps {
 }
 
 /**
- * The `DotsThree` button that stands in for the collapsed links and lists them
+ * The `DotsHorizontal` button that stands in for the collapsed links and lists them
  * in a popover menu.
  */
 const BreadcrumbEllipsis = ({
@@ -243,10 +245,9 @@ const BreadcrumbEllipsis = ({
             size="6xl"
             aria-label={expandText}>
             <Button.Icon>
-              <DotsThree
+              <DotsHorizontal
                 color={getBreadcrumbEllipsisColor(context)}
                 size="4xl"
-                weight="bold"
               />
             </Button.Icon>
           </Button>
@@ -309,11 +310,7 @@ const BreadcrumbImpl = createStyledHOC(
 
     return (
       <Theme name={theme}>
-        <BreadcrumbFrame
-          ref={forwardRef}
-          theme={theme}
-          size={size}
-          {...props}>
+        <BreadcrumbFrame ref={forwardRef} theme={theme} size={size} {...props}>
           <XGroup display="contents">
             {trail}
             <BreadcrumbCurrent size={size}>

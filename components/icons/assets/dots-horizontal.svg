@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<g fill="currentColor">
+		<circle cx="5" cy="12" r="1.5">
+			<animate attributeName="r" dur="0.2s" fill="freeze" values="0;1.5" />
+		</circle>
+		<circle cx="12" cy="12" r="0">
+			<animate attributeName="r" begin="0.2s" dur="0.2s" fill="freeze" to="1.5" />
+		</circle>
+		<circle cx="19" cy="12" r="0">
+			<animate attributeName="r" begin="0.4s" dur="0.2s" fill="freeze" to="1.5" />
+		</circle>
+	</g>
+</svg>

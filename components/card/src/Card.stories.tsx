@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { Question } from "@cyclone-ui/icons";
+import { QuestionCircle } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { YStack } from "@tamagui/stacks";
 import type { ComponentProps, ReactNode } from "react";
@@ -75,7 +75,7 @@ export const CustomIcon: Story = {
   args: {
     children:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    icon: <Question />
+    icon: <QuestionCircle />
   }
 };
 
@@ -84,7 +84,7 @@ export const DataColor: Story = {
     children:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     color: "data-pink-emphasis",
-    icon: <Question />
+    icon: <QuestionCircle />
   }
 };
 

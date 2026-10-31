@@ -199,7 +199,7 @@ export const LikeButton = forwardRef<TamaguiElement, LikeButtonProps>(
         <View ref={thumbRef} aria-hidden={true}>
           <ThumbsUp
             size={iconSize}
-            weight={liked ? "fill" : "light"}
+            variant={liked ? "filled" : "regular"}
             color={
               color ||
               (hovered && !disabled

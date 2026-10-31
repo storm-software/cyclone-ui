@@ -19,7 +19,7 @@
 "use client";
 
 import { BodyText } from "@cyclone-ui/body-text";
-import { DotOutline } from "@cyclone-ui/icons";
+import { Dot } from "@cyclone-ui/icons";
 import type { ValidationDetail as ValidationDetails } from "@stryke/types/validations";
 import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, useThemeName } from "@tamagui/core";
@@ -87,7 +87,7 @@ export const ValidationText = createStyledHOC(
           .filter(message => message.message)
           .map(message => (
             <XStack key={message.message} gap="md" alignItems="center">
-              <DotOutline weight="fill" color="primary" />
+              <Dot variant="filled" color="primary" />
               <ValidationBodyText {...props}>
                 {message.message}
               </ValidationBodyText>
