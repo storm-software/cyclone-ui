@@ -32,6 +32,7 @@ async function handler(options: InfoOptions) {
     root,
     configFile: config ? resolve(root, CONFIG_FILE) : null,
     registry: config?.registry ?? null,
+    style: config ? (config.style ?? "tamagui") : null,
     componentPath: config ? resolve(root, config.path) : null,
     components: config?.components ?? {}
   };
@@ -45,6 +46,7 @@ async function handler(options: InfoOptions) {
   writeLine(`Configuration: ${data.configFile ?? "not initialized"}`);
   if (config) {
     writeLine(`Registry: ${config.registry}`);
+    writeLine(`Style: ${data.style}`);
     writeLine(
       `Components: ${Object.keys(config.components).join(", ") || "none"}`
     );

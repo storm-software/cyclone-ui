@@ -92,6 +92,7 @@ catalog:
   "@tamagui/switch": 3.0.13
   "@tamagui/switch-headless": 3.0.13
   "@tamagui/tabs": 3.0.13
+  "@tamagui/tailwind": 3.0.13
   "@tamagui/text": 3.0.13
   "@tamagui/toast": 3.0.13
   "@tamagui/tooltip": 3.0.13

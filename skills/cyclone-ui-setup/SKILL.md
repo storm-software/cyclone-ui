@@ -28,6 +28,7 @@ pnpm install
 - Discover actual component names with `search` or `view`. Preview the resolved file list with `add --dry-run` before writing. `add` copies internal component dependencies, rewrites their imports, updates `package.json` for external dependencies, and records installed files in `components.json`. It does not run the package manager afterward.
 - A changed local file blocks `add` unless `--overwrite` is supplied. Compare it with `cyclone-ui diff <name>` or `cyclone-ui add <name> --diff`; preserve local edits or merge them deliberately before overwriting. `--dry-run`, `--diff`, and `--view` on `add` are read-only previews.
 - For a Next.js App Router project, `init --rsc` records `rsc: true`. The CLI preserves registry directives when `rsc` is true or omitted; explicit `rsc: false` removes top-level `use client` directives from installed script files. The CLI does not infer or insert missing client boundaries. `add --rsc` is an installation-only override.
+- When the user wants Tailwind class names (Tamagui Tailwind, `@tamagui/tailwind`), `init --style tailwind` records `style: "tailwind"`. Components with a `*.tailwind.tsx` variant then install it in place of the default file and take `className` instead of style props; components without one install their Tamagui source, which works alongside. `add` adds `@tamagui/tailwind` to `package.json` only for this style.
 
 ## Connect the theme
 

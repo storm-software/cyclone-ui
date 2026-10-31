@@ -284,6 +284,49 @@ describe("component installation", () => {
     ).resolves.toContain('"react": "^19.0.0"');
   });
 
+  it.each([
+    [undefined, "tamagui", false],
+    ["tamagui", "tamagui", false],
+    ["tailwind", "tailwind", true]
+  ] as const)(
+    "installs %s style files",
+    async (style, expected, tailwindDependency) => {
+      const root = await temporaryDirectory();
+      await writeFile(join(root, "package.json"), "{}\n");
+      const config = createConfig({ style });
+      const registry = client({
+        skeleton: component("skeleton", {
+          dependencies: {
+            "@tamagui/core": "3.0.13",
+            "@tamagui/tailwind": "3.0.13"
+          },
+          files: [
+            { name: "Skeleton.tailwind.tsx", content: "tailwind" },
+            { name: "Skeleton.tsx", content: "tamagui" },
+            { name: "index.ts", content: 'export * from "./Skeleton";' }
+          ]
+        })
+      });
+      const plan = await createInstallPlan(registry, config, ["skeleton"], {
+        root
+      });
+      await applyInstallPlan(config, plan, { root });
+
+      expect(plan.files.map(file => file.path).sort()).toEqual([
+        join(root, "components/skeleton/Skeleton.tsx"),
+        join(root, "components/skeleton/index.ts")
+      ]);
+      await expect(
+        readFile(join(root, "components/skeleton/Skeleton.tsx"), "utf8")
+      ).resolves.toBe(expected);
+      const { dependencies } = JSON.parse(
+        await readFile(join(root, "package.json"), "utf8")
+      );
+      expect("@tamagui/tailwind" in dependencies).toBe(tailwindDependency);
+      expect(dependencies["@tamagui/core"]).toBe("3.0.13");
+    }
+  );
+
   it("rejects registry file paths that escape a component directory", async () => {
     const root = await temporaryDirectory();
     const config = createConfig();

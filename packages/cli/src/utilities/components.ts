@@ -70,6 +70,23 @@ async function resolveComponents(
   return [...resolved.values()];
 }
 
+const TAILWIND_FILE = /\.tailwind(?=\.[cm]?[jt]sx?$)/;
+
+/** `Skeleton.tailwind.tsx` replaces `Skeleton.tsx` for the tailwind style and is skipped otherwise. */
+function styleFiles(
+  files: RegistryComponent["files"],
+  style: CycloneConfig["style"]
+): RegistryComponent["files"] {
+  const base = files.filter(file => !TAILWIND_FILE.test(file.name));
+  if (style !== "tailwind") return base;
+
+  const variants = files
+    .filter(file => TAILWIND_FILE.test(file.name))
+    .map(file => ({ ...file, name: file.name.replace(TAILWIND_FILE, "") }));
+  const replaced = new Set(variants.map(file => file.name));
+  return [...base.filter(file => !replaced.has(file.name)), ...variants];
+}
+
 export async function createInstallPlan(
   client: CycloneRegistryClient,
   config: CycloneConfig,
@@ -89,7 +106,7 @@ export async function createInstallPlan(
       throw new Error(`Invalid component name received: ${component.name}`);
     }
 
-    for (const file of component.files) {
+    for (const file of styleFiles(component.files, config.style)) {
       const componentRoot = resolveInside(targetRoot, componentName);
       const filePath = resolveInside(componentRoot, file.name);
       const directedContent = await transformDirectives(
@@ -156,13 +173,14 @@ export async function applyInstallPlan(
     };
   }
 
-  await updatePackageJson(options.root, plan.components);
+  await updatePackageJson(options.root, plan.components, config.style);
   await writeConfig(options.root, config);
 }
 
 async function updatePackageJson(
   root: string,
-  components: RegistryComponent[]
+  components: RegistryComponent[],
+  style: CycloneConfig["style"]
 ): Promise<void> {
   const packagePath = resolve(root, "package.json");
   if (!(await pathExists(packagePath))) return;
@@ -181,6 +199,8 @@ async function updatePackageJson(
     {},
     ...components.map(component => component.dependencies)
   ) as Record<string, string>;
+  // Every item lists the runtime of its tailwind variants; only that style installs them.
+  if (style !== "tailwind") delete dependencies["@tamagui/tailwind"];
   const devDependencies = Object.assign(
     {},
     ...components.map(component => component.devDependencies)

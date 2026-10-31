@@ -22,16 +22,21 @@ export interface CycloneConfig {
   path: string;
   /** Preserve registry directives when true; remove client directives when false. */
   rsc?: boolean;
+  /** Install `@tamagui/tailwind` variants (`*.tailwind.tsx`) when set to `tailwind`. */
+  style?: "tamagui" | "tailwind";
   components: Record<string, InstalledComponent>;
 }
 
 export function createConfig(
-  overrides: Partial<Pick<CycloneConfig, "registry" | "path" | "rsc">> = {}
+  overrides: Partial<
+    Pick<CycloneConfig, "registry" | "path" | "rsc" | "style">
+  > = {}
 ): CycloneConfig {
   return {
     registry: overrides.registry ?? DEFAULT_REGISTRY_URL,
     path: overrides.path ?? "components",
     ...(overrides.rsc === undefined ? {} : { rsc: overrides.rsc }),
+    ...(overrides.style === undefined ? {} : { style: overrides.style }),
     components: {}
   };
 }
@@ -60,6 +65,9 @@ export async function readConfig(root: string): Promise<CycloneConfig | null> {
     !("path" in value) ||
     typeof value.path !== "string" ||
     ("rsc" in value && typeof value.rsc !== "boolean") ||
+    ("style" in value &&
+      value.style !== "tamagui" &&
+      value.style !== "tailwind") ||
     !("components" in value) ||
     !value.components ||
     typeof value.components !== "object" ||

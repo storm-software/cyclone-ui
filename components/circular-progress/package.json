@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",
+    "@tamagui/tailwind": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"

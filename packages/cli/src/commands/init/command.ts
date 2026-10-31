@@ -39,6 +39,8 @@ export interface InitOptions {
   registry?: string;
   /** Enable React Server Component support in components.json. */
   rsc?: boolean;
+  /** Component styling: Tamagui style props, or `@tamagui/tailwind` class names where a component provides them. */
+  style?: "tamagui" | "tailwind";
   /** Overwrite an existing Cyclone configuration. */
   force?: boolean;
   /** Mute non-essential output. */
@@ -61,7 +63,8 @@ async function handler(
   const config = createConfig({
     registry: options.registry,
     path: options.path,
-    rsc: options.rsc
+    rsc: options.rsc,
+    style: options.style
   });
   await mkdir(resolveInside(root, config.path), { recursive: true });
 

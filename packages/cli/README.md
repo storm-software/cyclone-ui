@@ -123,6 +123,25 @@ unchanged. Omitting `rsc` preserves registry contents without transformation.
 The `add` command also accepts `--rsc` to override the project setting for that
 installation. Previews and diffs use the same transformed contents as writes.
 
+To style components with [Tamagui Tailwind](https://tamagui.dev/docs/core/tailwind)
+class names instead of style props, run `cyclone-ui init --style tailwind`, or
+add `"style": "tailwind"` to your existing `components.json`. Components that
+ship a Tailwind variant (`Skeleton.tailwind.tsx`) install it in place of the
+default file, and `@tamagui/tailwind` is added to `package.json`. Style them
+with `className`, for example `<Skeleton className="h-[32px] w-1/2" />`.
+Cyclone defines no border width tokens and there is no Tailwind preflight, so
+give borders a px width and a style, such as `border-[1px] border-solid`.
+Animate class changes with Tamagui's `transition` prop, as the installed
+components do. `@tamagui/tailwind` leaves it out of its prop types, so pass it
+in a spread typed with `TransitionProp` from `@tamagui/core`.
+Components without a variant install their Tamagui source, which renders
+alongside Tailwind components with the same tokens and themes. For build-time
+CSS extraction, add `tamaguiPlugin({ components: ["@tamagui/tailwind"] })`
+from `@tamagui/tailwind/vite` to your Vite config.
+
+Registry authors add a Tailwind variant by placing `<Name>.tailwind.tsx` next to
+`<Name>.tsx` with the same exports.
+
 `build` accepts the same `--cwd`, `--config`, `--tokens`, and `--output` options
 as `build-tokens`. It compiles the generated config into `.tamagui/` and writes
 `tamagui.generated.css` in the working directory. The compiler is included with

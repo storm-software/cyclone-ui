@@ -45,3 +45,23 @@ describe("RSC configuration", () => {
     }
   );
 });
+
+describe("style configuration", () => {
+  it.each(["tamagui", "tailwind"] as const)(
+    "persists style=%s",
+    async style => {
+      const root = await project();
+      await writeConfig(root, createConfig({ style }));
+      expect((await readConfig(root))?.style).toBe(style);
+    }
+  );
+
+  it("rejects an unknown style", async () => {
+    const root = await project();
+    await writeFile(
+      join(root, "components.json"),
+      JSON.stringify({ ...createConfig(), style: "css" })
+    );
+    await expect(readConfig(root)).rejects.toThrow("configuration");
+  });
+});

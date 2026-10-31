@@ -25,6 +25,7 @@
     "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
     "@storybook/react-vite": "catalog:",
+    "@tamagui/tailwind": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"
