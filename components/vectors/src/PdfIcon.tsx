@@ -38,12 +38,12 @@ const Icon = (props: ThemedIconBodyProps<IconProps>) => {
       <G>
         <Path
           fill="#FAA"
-          fill-rule="evenodd"
+          fillRule="evenodd"
           d="M400 4400h3000V1400H400zm200-200h2600v-200H600zm0-400h2600v-200H600zm0-400h2600v-200H600zm0-400h2600v-200H600zm0-400h1400v-200H600zm0-400h1400v-200H600zm0-400h1400v-200H600zm1600 800h1000V1600H2200z"
         />
         <Path
           fill="#F00"
-          fill-rule="evenodd"
+          fillRule="evenodd"
           d="M400 1200h200V900h100c450 0 450-600 0-600H400zm200-450h100c250 0 250-300 0-300H600zm600 450h200c650 0 650-900 0-900h-200zm200-200c400 0 400-500 0-500zm600 200h200V900h300V700h-300V500h400V300h-600"
         />
       </G>

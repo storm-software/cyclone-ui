@@ -71,7 +71,7 @@ const ThemedIcon = ({ color: colorProp, ...rest }: IconProps) => {
         />
 
         <Path
-          fill-rule="evenodd"
+          fillRule="evenodd"
           d="
       M 875 203
       H 1088

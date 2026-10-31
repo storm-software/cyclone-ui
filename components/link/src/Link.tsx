@@ -23,7 +23,7 @@ import { LinkText } from "@cyclone-ui/link-text";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import { isWeb } from "@tamagui/constants";
 import type { GetProps } from "@tamagui/core";
-import { createStyledHOC, styled } from "@tamagui/core";
+import { createStyledHOC, styled, View } from "@tamagui/core";
 import { Linking } from "react-native";
 
 const LinkFrame = styled(LinkText, {
@@ -58,14 +58,17 @@ const LinkFrame = styled(LinkText, {
   }
 });
 
-// `ThemeableIcon` is a styled HOC; v3 `styled()` only forwards style defaults to
-// it, so `size` is passed as a prop at the call site below.
-const ThemeableIconFrame = styled(ThemeableIcon, {
+// The hover shift lives on a plain `View`: on a `styled(ThemeableIcon)` HOC the
+// `x` / `y` clauses compile to CSS classes and snap instead of animating.
+const ExternalIconFrame = styled(View, {
   displayName: "Link",
   render: "span",
   display: "inline-flex",
   marginBottom: "md",
-  cursor: "pointer"
+  cursor: "pointer",
+  transition: "200ms",
+  x: "0 group-hover/link:2px",
+  y: "0 group-hover/link:-2px"
 });
 
 export const Link = createStyledHOC(
@@ -111,17 +114,14 @@ export const Link = createStyledHOC(
         {children}
 
         {external && (
-          <ThemeableIconFrame
-            size="4xl"
-            style={{ verticalAlign: "middle" }}
-            x="group-hover/link:2px"
-            y="group-hover/link:-2px">
-            {/* `color` on the styled frame becomes a CSS class, not an icon
-                prop, so set it on the icon (whose props win in `getIcon`). The
-                SVG then fills with the link's computed text color and follows
-                every variant and hover / press state. */}
-            <ArrowUpRight color="currentColor" />
-          </ThemeableIconFrame>
+          <ExternalIconFrame style={{ verticalAlign: "middle" }}>
+            <ThemeableIcon render="span" size="4xl">
+              {/* Set `color` on the icon (whose props win in `getIcon`) so the
+                  SVG fills with the link's computed text color and follows
+                  every variant and hover / press state. */}
+              <ArrowUpRight color="currentColor" />
+            </ThemeableIcon>
+          </ExternalIconFrame>
         )}
       </LinkFrame>
     );

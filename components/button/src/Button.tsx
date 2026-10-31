@@ -265,6 +265,15 @@ type ButtonExtraProps = TextParentStyles & {
     download?: boolean;
 
     /**
+     * The native `type` of the rendered `<button>`. Defaults to `"button"` so
+     * buttons inside a `<form>` (e.g. a password toggle) aren't treated as the
+     * form's default submit button; pass `"submit"` for the submit button.
+     *
+     * @defaultValue "button"
+     */
+    type?: "button" | "submit" | "reset";
+
+    /**
      * The opacity of the ghost background when hovered
      *
      * @defaultValue 0.25
@@ -1115,6 +1124,7 @@ const ButtonContainerImpl = createStyledHOC(
       render,
       href,
       download,
+      type = "button",
       ghostOpacity = 0.5,
       ...props
     }: GetProps<typeof ButtonFrame> & ButtonProps,
@@ -1158,6 +1168,10 @@ const ButtonContainerImpl = createStyledHOC(
         // rendered `<a>` element when `render="a"`.
         {...({ href } as object)}
         download={download}
+        // Untyped on View too; only meaningful on the default `<button>` render.
+        {...(render === undefined || render === "button"
+          ? ({ type } as object)
+          : {})}
         // Before `{...props}`: Tamagui applies props in order, so the variant's
         // `padding: 0` would otherwise override explicit padding props.
         noPadding={noPadding}

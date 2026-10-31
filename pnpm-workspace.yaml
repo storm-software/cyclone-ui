@@ -13,12 +13,12 @@ catalog:
   "@expo/cli": 54.0.25
   "@maskito/core": ^3.11.1
   "@maskito/react": ^3.11.1
-  "@powerlines/nx": ^0.13.257
-  "@powerlines/tsconfig": ^0.4.260
-  "@powerlines/tsdoc": ^0.2.208
-  "@powerlines/plugin-tsdown": ^0.1.618
-  "@powerlines/plugin-tamagui": ^0.1.669
-  "@powerlines/plugin-env": ^0.16.426
+  "@powerlines/nx": ^0.13.258
+  "@powerlines/tsconfig": ^0.4.261
+  "@powerlines/tsdoc": ^0.2.209
+  "@powerlines/plugin-tsdown": ^0.1.619
+  "@powerlines/plugin-tamagui": ^0.1.670
+  "@powerlines/plugin-env": ^0.16.427
   "@razorwind/color-variants": ^0.0.88
   "@react-native-community/cli": 18.0.1
   "@react-native-community/cli-platform-android": 18.0.1
@@ -184,7 +184,7 @@ catalog:
   maska: ^3.2.2
   nx: 23.3.0
   optics-ts: ^2.4.1
-  powerlines: ^0.47.217
+  powerlines: ^0.47.218
   prettier: ^3.9.10
   jsonc-eslint-parser: ^2.4.2
   raf: ^3.4.1
@@ -197,8 +197,8 @@ catalog:
   react-native-web: 0.19.12
   react-refresh: ^0.10.0
   recharts: 3.8.0
-  react-email: ^6.11.5
-  "@react-email/ui": ^6.11.5
+  react-email: ^6.11.6
+  "@react-email/ui": ^6.11.6
   "@opentelemetry/api": ^1.10.0
   motion: ^11.18.2
   next: ^16.4.3
@@ -239,7 +239,7 @@ catalog:
   "@razorwind/eslint": ^0.0.39
   "@razorwind/stylelint": ^0.0.39
   "@sourcebook/config": ^0.0.12
-  "@tanstack/react-virtual": ^3.14.23
+  "@tanstack/react-virtual": ^3.14.24
   "@nx/maven": 23.3.0
   tsx: ^4.23.15
   "@nx/docker": ^23.3.1
