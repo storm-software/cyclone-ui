@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/sankey-chart",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "type": "module",
   "description": "A composable Sankey diagram built on Recharts and the shared Cyclone chart parts. Links between nodes can use gradient, solid, source-colored or target-colored fills, and nodes can carry inside or outside labels. It also supports a loading skeleton. Use it to show how a quantity flows from sources to destinations.",
   "repository": {

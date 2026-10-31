@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/field",
-  "version": "0.5.36",
+  "version": "0.5.37",
   "private": false,
   "description": "A form field wrapper that connects a control to Cyclone UI form state and provides Field.Label, Field.Link, Field.Details, Field.Icon and Field.ThemeIcon parts. It shows validation messages automatically and supports normal, floating and underline label variants. Use it as the base for building labeled form inputs.",
   "repository": {

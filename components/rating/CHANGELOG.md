@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Rating
 
+## [0.0.33](https://github.com/storm-software/cyclone-ui/releases/tag/rating%400.0.33) (10/31/2026)
+
+### Updated Dependencies
+
+- Updated **confetti-burst** to **v0.0.27**
+- Updated **field** to **v0.5.37**
+- Updated **form** to **v0.9.37**
+- Updated **helpers** to **v0.3.37**
+- Updated **icons** to **v0.0.33**
+- Updated **tokens** to **v0.3.26**
+
 ## [0.0.32](https://github.com/storm-software/cyclone-ui/releases/tag/rating%400.0.32) (10/30/2026)
 
 ### Bug Fixes

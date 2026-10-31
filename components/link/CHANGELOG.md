@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Link
 
+## [0.5.37](https://github.com/storm-software/cyclone-ui/releases/tag/link%400.5.37) (10/31/2026)
+
+### Bug Fixes
+
+- **link:** Resolve issue with icon animation in Link component ([f001c4d0b](https://github.com/storm-software/cyclone-ui/commit/f001c4d0b))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.37**
+- Updated **icons** to **v0.0.33**
+- Updated **link-text** to **v0.5.37**
+- Updated **themeable-icon** to **v0.6.37**
+
 ## [0.5.36](https://github.com/storm-software/cyclone-ui/releases/tag/link%400.5.36) (10/30/2026)
 
 ### Updated Dependencies

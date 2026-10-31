@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/pie-chart",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "type": "module",
   "description": "A composable pie and donut chart built on Recharts and the shared Cyclone chart parts. Sectors take gradient colors from the theme and can be padded, overlapped, labeled, rounded or made to glow. It also supports legend selection, background patterns and a loading skeleton. Use it to show how a whole splits into a few parts.",
   "repository": {

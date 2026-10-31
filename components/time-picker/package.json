@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/time-picker",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "type": "module",
   "description": "A time input with a masked text box and a clock popover whose hand can be pressed or dragged to pick the hour and minutes. It shows a 12-hour clock with AM/PM or a 24-hour clock (`hourCycle`). Arrow keys step the part under the caret, and space, up or down swap AM/PM. When wrapped in a Field it connects to the form, formatting, parsing and masking the field's 24-hour HH:mm value.",
   "repository": {

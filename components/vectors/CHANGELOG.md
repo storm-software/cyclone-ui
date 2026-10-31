@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Vectors
 
+## [0.5.37](https://github.com/storm-software/cyclone-ui/releases/tag/vectors%400.5.37) (10/31/2026)
+
+### Bug Fixes
+
+- **link:** Resolve issue with icon animation in Link component ([f001c4d0b](https://github.com/storm-software/cyclone-ui/commit/f001c4d0b))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.37**
+- Updated **icons** to **v0.0.33**
+
 ## [0.5.36](https://github.com/storm-software/cyclone-ui/releases/tag/vectors%400.5.36) (10/30/2026)
 
 ### Bug Fixes

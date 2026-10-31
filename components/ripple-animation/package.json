@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/ripple-animation",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "type": "module",
   "description": "A RippleAnimation layer that fills its positioned parent and, when its ripple() handle is called with a press event, grows a fading circle out of the press point (or the center, for a keyboard press). The ripple is drawn through a fine pixel grid for a slight pixelated look. Web only; it does nothing on native.",
   "repository": {
