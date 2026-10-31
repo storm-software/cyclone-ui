@@ -305,6 +305,18 @@ export const SignedIn: Story = {
   )
 };
 
+export const Transparent: Story = {
+  args: {
+    variant: "transparent"
+  }
+};
+
+export const Dotted: Story = {
+  args: {
+    variant: "dotted"
+  }
+};
+
 export const Compact: Story = {
   parameters: {
     viewport: {

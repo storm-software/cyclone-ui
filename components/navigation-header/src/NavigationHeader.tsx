@@ -144,6 +144,11 @@ const usePrefersReducedMotion = () =>
     () => true
   );
 
+// Inside `backgroundImage`, since Tamagui parses color-mix() words in
+// `backgroundColor` as tokens.
+const translucentCanvas = "color-mix(in oklab, var(--canvas) 70%, transparent)";
+const dotColor = "color-mix(in oklab, var(--emphasis) 20%, transparent)";
+
 const NavigationHeaderFrame = styled(View, {
   displayName: "NavigationHeader",
   render: "header",
@@ -153,7 +158,27 @@ const NavigationHeaderFrame = styled(View, {
   right: 0,
   zIndex: "40",
   width: "100%",
-  backgroundColor: "canvas"
+  backgroundColor: "canvas",
+
+  variants: {
+    variant: {
+      filled: {},
+      transparent: {
+        backgroundColor: "transparent",
+        backgroundImage: `linear-gradient(${translucentCanvas}, ${translucentCanvas})`,
+        backdropFilter: "blur(12px)"
+      },
+      dotted: {
+        backgroundColor: "transparent",
+        backgroundImage: `radial-gradient(circle, ${dotColor} 1px, transparent 1px), linear-gradient(${translucentCanvas}, ${translucentCanvas})`,
+        backgroundSize: "8px 8px, auto",
+        backdropFilter: "blur(12px)"
+      }
+    }
+  } as const,
+  defaultVariants: {
+    variant: "filled"
+  }
 });
 
 const NavigationHeaderBar = styled(View, {
@@ -565,6 +590,11 @@ export interface NavigationHeaderProps extends Omit<
 > {
   /** Compose the logo, navigation, actions, and optional menu button. */
   children: ReactNode;
+  /**
+   * The bar's background: opaque `filled` (default), a blurred
+   * semi-transparent `transparent`, or `dotted`, which overlays a dot pattern.
+   */
+  variant?: "filled" | "transparent" | "dotted";
 }
 
 export interface NavigationHeaderLogoProps {
