@@ -20,11 +20,8 @@
 
 import type { FieldLabelPlacement } from "@cyclone-ui/field";
 import { getFieldLabelInset } from "@cyclone-ui/field";
-import {
-  getFormSizeToken,
-  getSized,
-  type FormControlSize
-} from "@cyclone-ui/helpers";
+import type { FormControlSize } from "@cyclone-ui/helpers";
+import { getFormSizeToken, getSized } from "@cyclone-ui/helpers";
 import { createStyledContext } from "@tamagui/core";
 import type { SelectContextProps } from "./types";
 

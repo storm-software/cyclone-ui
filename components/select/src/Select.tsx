@@ -44,6 +44,7 @@ import {
 import { XGroup } from "@tamagui/group";
 import { XStack } from "@tamagui/stacks";
 import { useCallback, useMemo, useState } from "react";
+import type { ViewStyle } from "react-native";
 import { SelectItems } from "./SelectItems";
 import { SelectTextBox } from "./SelectTextBox";
 import type { SelectChangeEventHandler, SelectContextProps } from "./types";
@@ -231,7 +232,7 @@ type SelectTriggerProps = GetProps<typeof Field.Icon>;
 const SelectTrigger = createStyledHOC(
   Field.Icon,
   (props: SelectTriggerProps, forwardedRef) => {
-    const { focused, size } = SelectContext.useStyledContext();
+    const { open, size } = SelectContext.useStyledContext();
 
     return (
       <Field.Icon
@@ -242,17 +243,20 @@ const SelectTrigger = createStyledHOC(
         role={undefined}
         pointerEvents="none">
         <View
-          width="100%"
-          height="100%"
-          transition="400ms"
-          transformOrigin="center"
-          rotate={focused ? "180deg" : "0deg"}
+          // Points up while the menu is open. `Field.Icon` gives its child a
+          // `transition: none` style, so the rotation's goes in `style` too;
+          // react-native-svg drops a `transform` style on the icon itself.
+          style={{ transition: "transform 200ms" }}
+          rotate={open ? "180deg" : "0deg"}
           alignItems="center"
           justifyContent="center">
           <ChevronDown
             size={24 * getFormSizeScale(size)}
-            // Inherits the field icon's CSS hover color.
+            // Follows the field icon's hover color, which already fades in
+            // step with the border; its own color transition would restart
+            // on every frame of that one and finish ~200ms late.
             color="currentColor"
+            style={{ transition: "none" } as ViewStyle}
           />
         </View>
       </Field.Icon>
@@ -480,6 +484,7 @@ const SelectGroupImpl = createStyledHOC(
         variant={variant}
         size={size}
         value={resolvedValue}
+        open={open}
         onFocus={onFocus}
         onBlur={onBlur}
         onChange={onChange}>

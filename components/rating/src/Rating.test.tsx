@@ -55,14 +55,25 @@ describe("roundRatingValue", () => {
 });
 
 describe("Rating", () => {
-  it("renders one icon per step up to max", () => {
-    expect(countIcons(renderRating({ value: 3 }))).toBe(5);
-    expect(countIcons(renderRating({ value: 3, max: 10 }))).toBe(10);
+  it("layers an empty and a filled icon for every step up to max", () => {
+    // Both layers stay mounted so the fill can animate across each icon.
+    expect(countIcons(renderRating({ value: 3 }))).toBe(10);
+    expect(countIcons(renderRating({ value: 3, max: 10 }))).toBe(20);
   });
 
-  it("layers an empty and a filled icon for a partially filled step", () => {
-    // Steps 1-2 are full, 3 is half (two icons), 4-5 are empty.
-    expect(countIcons(renderRating({ value: 2.5, precision: 0.5 }))).toBe(6);
+  it("clips the filled icon to the fill of each step", () => {
+    // The width classes of the fill clips, the only views with `overflow`,
+    // compared with the width class of a whole icon.
+    const html = renderRating({ value: 2.5, precision: 0.5, readOnly: true });
+    const full = html.match(/class="is_View _s-compose[^"]*(_w-\d+)/)?.[1];
+    const [one, two, three, four, five] = [
+      ...html.matchAll(/class="[^"]*(_w-\d+)[^"]*_o-/g)
+    ].map(match => match[1]);
+
+    // Steps 1-2 are full, 3 is half, 4-5 are empty.
+    expect([one, two]).toEqual([full, full]);
+    expect(four).toBe(five);
+    expect(new Set([full, three, four]).size).toBe(3);
   });
 
   it("rounds the value to the precision", () => {

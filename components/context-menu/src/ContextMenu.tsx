@@ -138,7 +138,7 @@ const ContextMenuContent = ({
   ...props
 }: ContextMenuContentProps): JSX.Element => {
   const { size } = ContextMenuContext.useStyledContext();
-  const { contentPadding } = getContextMenuSize(size);
+  const { contentPadding, contentGap } = getContextMenuSize(size);
   const [menu, setMenu] = useState<HTMLElement | null>(null);
   const [narrow, setNarrow] = useState(false);
 
@@ -163,7 +163,7 @@ const ContextMenuContent = ({
           layout, styles and keyboard navigation. */}
       <View
         data-context-menu-narrow={narrow ? "" : undefined}
-        gap={contentPadding}
+        gap={contentGap}
         width="100%"
         ref={setMenu as any}
         onKeyDown={(event: any) => {
@@ -453,9 +453,17 @@ const ContextMenuItem = ({
               alignItems="flex-end"
               justifyContent="center">
               {disabled ? (
-                <Lock size={indicatorIconSize} color="primary-disabled" />
+                <Lock
+                  size={indicatorIconSize}
+                  variant="bold"
+                  color="primary-disabled"
+                />
               ) : (
-                <Confirm size={indicatorIconSize} color="primary-active" />
+                <Confirm
+                  size={indicatorIconSize}
+                  variant="bold"
+                  color="primary-active"
+                />
               )}
             </View>
           )}

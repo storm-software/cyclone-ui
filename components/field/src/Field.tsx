@@ -1252,11 +1252,12 @@ const FieldIconButtonImpl = createStyledHOC(
           color: "currentColor",
           size: 24 * getFormSizeScale(size),
           // The icon's own color transition would restart on every frame of
-          // the wrapper's, finishing ~200ms after the border.
+          // the wrapper's, finishing ~200ms after the border. A child may
+          // still set its own (non-color) transition, such as a rotation.
           style: {
-            ...StyleSheet.flatten(children.props.style),
             // Web-only CSS property, missing from React Native's style types.
-            ...({ transition: "none" } as ViewStyle)
+            ...({ transition: "none" } as ViewStyle),
+            ...StyleSheet.flatten(children.props.style)
           }
         })
       : children;

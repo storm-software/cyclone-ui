@@ -46,4 +46,9 @@ export type SelectContextProps = Omit<
    * The value of the selected item.
    */
   value?: string;
+
+  /**
+   * Whether the options menu is open.
+   */
+  open?: boolean;
 };

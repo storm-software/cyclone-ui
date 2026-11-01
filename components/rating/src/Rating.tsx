@@ -300,28 +300,29 @@ export const Rating = forwardRef<TamaguiElement, RatingProps>(
               position="relative"
               width={iconSize}
               height={iconSize}
-              transition="200ms"
-              scale={hovered ? 1.2 : 1}
-              rotateZ={hovered ? "45deg" : "0deg"}
+              // A spring lifts the hovered icon with a slight overshoot, and
+              // pressing squishes it before it springs back.
+              transition="bouncy"
+              scale={hovered ? "1.15 press:0.9" : 1}
+              rotateZ={hovered ? "-12deg" : "0deg"}
               aria-hidden={true}>
-              {fill < 1 && (
-                <EmptyIcon
-                  size={iconSize}
-                  variant={emptyIconVariant}
-                  color={emptyColor}
-                />
-              )}
-              {fill > 0 && (
-                <View
-                  position="absolute"
-                  top={0}
-                  left={0}
-                  height={iconSize}
-                  width={fill * iconSize}
-                  overflow="hidden">
-                  <Icon size={iconSize} variant={iconVariant} color={color} />
-                </View>
-              )}
+              <EmptyIcon
+                size={iconSize}
+                variant={emptyIconVariant}
+                color={emptyColor}
+              />
+              {/* Always mounted so the fill sweeps across the icon rather
+                  than snapping in and out. */}
+              <View
+                position="absolute"
+                top={0}
+                left={0}
+                height={iconSize}
+                width={fill * iconSize}
+                overflow="hidden"
+                transition="200ms ease-out">
+                <Icon size={iconSize} variant={iconVariant} color={color} />
+              </View>
               {interactive &&
                 // Each icon is split into one hit area per precision step,
                 // so fractional values work with both pointers and touch.
