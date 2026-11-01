@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `star-half-alt` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `star-half-alt` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=star-half-alt
  */
@@ -37,6 +37,47 @@ export const StarHalfAlt = createIcon("StarHalfAlt", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M12 3l-2.35 5.76l-6.21 0.46l4.76 4.02l-1.49 6.04l5.29 -3.28",
+            strokeDasharray: 34
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.5,
+              values: [34, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M12 3v13", strokeDasharray: 16 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.5,
+              values: [16, 0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

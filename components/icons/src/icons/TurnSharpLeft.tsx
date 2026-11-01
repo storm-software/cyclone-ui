@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `turn-sharp-left` icon, with the `regular` variants.
+ * The Material Line Icons `turn-sharp-left` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=turn-sharp-left
  */
@@ -37,6 +37,52 @@ export const TurnSharpLeft = createIcon("TurnSharpLeft", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M17 20v-5c0 -0.55 -0.45 -1 -1 -1h-8c-0.55 0 -1 -0.45 -1 -1v-9",
+            strokeDasharray: 28
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.6,
+              values: [28, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M7 4l-3 3M7 4l3 3",
+            strokeDasharray: 8,
+            strokeDashoffset: 8
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.6,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

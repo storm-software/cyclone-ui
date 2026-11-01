@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `cloud-alt-off` icon, with the `regular`, `loop`, `filled`, `filled-loop` variants.
+ * The Material Line Icons `cloud-alt-off` icon, with the `regular`, `bold`, `loop`, `filled`, `filled-loop` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=cloud-alt-off
  */
@@ -98,6 +98,93 @@ export const CloudAltOff = createIcon("CloudAltOff", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        transform: "rotate(45 12 12)",
+        strokeDasharray: 28,
+        strokeDashoffset: 28
+      },
+      animations: [
+        {
+          prop: "strokeDashoffset",
+          begin: 0.6,
+          dur: 0.4,
+          values: [0],
+          freeze: true
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "g",
+              props: {
+                fill: "none",
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                strokeWidth: 2
+              },
+              children: [
+                {
+                  type: "path",
+                  props: {
+                    d: "M7 19h11c2.21 0 4 -1.79 4 -4c0 -2.21 -1.79 -4 -4 -4h-1v-1c0 -2.76 -2.24 -5 -5 -5c-2.42 0 -4.44 1.72 -4.9 4h-0.1c-2.76 0 -5 2.24 -5 5c0 2.76 2.24 5 5 5Z",
+                    stroke: "#fff",
+                    strokeDasharray: 60
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      dur: 0.6,
+                      values: [60, 0],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M-1 11h26",
+                    stroke: "#000",
+                    transform: "rotate(45 12 12)",
+                    strokeDasharray: 28,
+                    strokeDashoffset: 28,
+                    strokeWidth: 2
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      begin: 0.6,
+                      dur: 0.4,
+                      values: [0],
+                      freeze: true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M0 0h24v24H0z", fill: "currentColor", mask: "m0" }
+    },
+    {
+      type: "path",
+      props: {
+        d: "M-1 13h26",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         transform: "rotate(45 12 12)",

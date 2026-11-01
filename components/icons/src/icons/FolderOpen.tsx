@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The `folder-open` icon, drawn in the Material Line Icons style, with the `regular`, `filled` variants.
+ * The `folder-open` icon, drawn in the Material Line Icons style, with the `regular`, `bold`, `filled` variants.
  */
 export const FolderOpen = createIcon("FolderOpen", {
   regular: [
@@ -33,6 +33,53 @@ export const FolderOpen = createIcon("FolderOpen", {
         fill: "none",
         stroke: "currentColor",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M3 19v-13c0 -0.55 0.45 -1 1 -1h6l2 2h7c0.55 0 1 0.45 1 1v2",
+            strokeDasharray: 36
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.4,
+              values: [36, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M3 19l2.8 -8.4c0.14 -0.4 0.5 -0.6 0.9 -0.6h14.6c0.7 0 1.1 0.6 0.9 1.2l-2.5 7.2c-0.15 0.4 -0.5 0.6 -0.9 0.6Z",
+            fill: "none",
+            strokeDasharray: 54,
+            strokeDashoffset: 54
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.4,
+              dur: 0.6,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round"
       },

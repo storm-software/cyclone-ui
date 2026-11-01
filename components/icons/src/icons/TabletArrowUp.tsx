@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `tablet-arrow-up` icon, with the `regular` variants.
+ * The Material Line Icons `tablet-arrow-up` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=tablet-arrow-up
  */
@@ -65,6 +65,75 @@ export const TabletArrowUp = createIcon("TabletArrowUp", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5,
+        strokeDasharray: 8
+      },
+      children: [
+        {
+          type: "path",
+          props: { d: "M12 15v-6", strokeDashoffset: 8 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.9,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M12 9l3 3M12 9l-3 3", strokeDashoffset: 8 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 1.1,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M12 5h9c0.55 0 1 0.45 1 1v12c0 0.55 -0.45 1 -1 1h-18c-0.55 0 -1 -0.45 -1 -1v-12c0 -0.55 0.45 -1 1 -1Z",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 70
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.6, values: [70, 0], freeze: true }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M2 5h0v14h0ZM22 5h0v14h0Z", fill: "currentColor" },
+      animations: [
+        {
+          prop: "d",
+          begin: 0.6,
+          dur: 0.2,
+          values: ["M2 5h3v14h-3ZM22 5h-3v14h3Z"],
+          freeze: true
+        }
+      ]
+    },
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
         strokeDasharray: 8
       },
       children: [

@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `folder-plus` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `folder-plus` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=folder-plus
  */
@@ -110,6 +110,120 @@ export const FolderPlus = createIcon("FolderPlus", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5,
+        strokeDasharray: 8
+      },
+      children: [
+        {
+          type: "path",
+          props: { d: "M16 19h6", strokeDashoffset: 8 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.8,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M19 16v6", strokeDashoffset: 8 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 1,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "g",
+              props: {
+                fill: "none",
+                stroke: "#fff",
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                strokeWidth: 2
+              },
+              children: [
+                {
+                  type: "path",
+                  props: {
+                    d: "M12 7h8c0.55 0 1 0.45 1 1v10c0 0.55 -0.45 1 -1 1h-16c-0.55 0 -1 -0.45 -1 -1v-11Z",
+                    strokeDasharray: 62
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      dur: 0.6,
+                      values: [62, 0],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M12 7h-9v-1c0 -0.55 0.45 -1 1 -1h6Z",
+                    opacity: 0
+                  },
+                  animations: [
+                    { prop: "opacity", begin: 0.6, values: [1], freeze: true },
+                    {
+                      prop: "d",
+                      begin: 0.6,
+                      dur: 0.2,
+                      values: [
+                        "M12 7h-9v0c0 0 0.45 0 1 0h6Z",
+                        "M12 7h-9v-1c0 -0.55 0.45 -1 1 -1h6Z"
+                      ],
+                      freeze: true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: {
+                d: "M19 13c3.31 0 6 2.69 6 6c0 3.31 -2.69 6 -6 6c-3.31 0 -6 -2.69 -6 -6c0 -3.31 2.69 -6 6 -6Z",
+                fill: "#000",
+                opacity: 0
+              },
+              animations: [
+                { prop: "opacity", begin: 0.8, values: [1], freeze: true }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M0 0h24v24H0z", fill: "currentColor", mask: "m0" }
+    },
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
         strokeDasharray: 8
       },
       children: [

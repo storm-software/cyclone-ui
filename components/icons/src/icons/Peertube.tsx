@@ -23,12 +23,45 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `peertube` icon, with the `regular` variants.
+ * The Material Line Icons `peertube` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=peertube
  */
 export const Peertube = createIcon("Peertube", {
   regular: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "path",
+              props: { d: "M4 1.34l16 10.66l-16 10.67Z", fill: "#fff" },
+              animations: [
+                {
+                  prop: "d",
+                  dur: 0.4,
+                  values: ["M12 12l0 0l0 0Z", "M4 1.34l16 10.66l-16 10.67Z"],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: { d: "M12 6.67v10.67l-8 -5.34Z", fill: "#000" }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M0 0h24v24H0z", fill: "currentColor", mask: "m0" }
+    }
+  ],
+  bold: [
     {
       type: "defs",
       children: [

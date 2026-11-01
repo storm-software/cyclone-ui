@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `cancel` icon, with the `regular` variants.
+ * The Material Line Icons `cancel` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=cancel
  */
@@ -37,6 +37,48 @@ export const Cancel = createIcon("Cancel", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M5.64 5.64c3.51 -3.51 9.21 -3.51 12.73 0c3.51 3.51 3.51 9.21 0 12.73c-3.51 3.51 -9.21 3.51 -12.73 0c-3.51 -3.51 -3.51 -9.21 -0 -12.73Z",
+            strokeDasharray: 60
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.6,
+              values: [60, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M6 6l12 12", strokeDasharray: 20, strokeDashoffset: 20 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.6,
+              dur: 0.3,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `taco` icon, with the `regular` variants.
+ * The Material Line Icons `taco` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=taco
  */
@@ -37,6 +37,49 @@ export const Taco = createIcon("Taco", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: { d: "M5 17h16", strokeDasharray: 18 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.3,
+              values: [18, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M19 17c1.5 0 3 -1.5 3 -3c0 -4.5 -4 -7 -7 -7c-4 0 -7 3 -7 7c0 1.78 -1.5 3 -3 3c-1.5 0 -3 -1 -3 -3c0 -5 5 -8.5 10 -6.38",
+            strokeDasharray: 54,
+            strokeDashoffset: 54
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.3,
+              dur: 0.6,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

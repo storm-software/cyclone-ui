@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `phone-remove` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `phone-remove` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=phone-remove
  */
@@ -37,6 +37,67 @@ export const PhoneRemove = createIcon("PhoneRemove", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M8 3c0.5 0 2.5 4.5 2.5 5c0 1 -1.5 2 -2 3c-0.5 1 0.5 2 1.5 3c0.39 0.39 2 2 3 1.5c1 -0.5 2 -2 3 -2c0.5 0 5 2 5 2.5c0 2 -1.5 3.5 -3 4c-1.5 0.5 -2.5 0.5 -4.5 0c-2 -0.5 -3.5 -1 -6 -3.5c-2.5 -2.5 -3 -4 -3.5 -6c-0.5 -2 -0.5 -3 0 -4.5c0.5 -1.5 2 -3 4 -3Z",
+            strokeDasharray: 62
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.6,
+              values: [62, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "g",
+          props: { strokeDasharray: 8 },
+          children: [
+            {
+              type: "path",
+              props: { d: "M16 4l4 4", strokeDashoffset: 8 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.7,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: { d: "M20 4l-4 4", strokeDashoffset: 8 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.9,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

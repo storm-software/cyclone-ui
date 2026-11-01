@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `chevron-right` icon, with the `regular` variants.
+ * The Material Line Icons `chevron-right` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=chevron-right
  */
@@ -36,6 +36,23 @@ export const ChevronRight = createIcon("ChevronRight", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 12
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.4, values: [12, 0], freeze: true }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M16 12l-7 -7M16 12l-7 7",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 12

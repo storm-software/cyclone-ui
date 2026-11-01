@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `car-light-dimmed-off` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `car-light-dimmed-off` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=car-light-dimmed-off
  */
@@ -158,6 +158,153 @@ export const CarLightDimmedOff = createIcon("CarLightDimmedOff", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        transform: "rotate(45 12 12)",
+        strokeDasharray: 28,
+        strokeDashoffset: 28
+      },
+      animations: [
+        {
+          prop: "strokeDashoffset",
+          begin: 1.2,
+          dur: 0.4,
+          values: [0],
+          freeze: true
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "g",
+              props: { strokeLinecap: "round", strokeLinejoin: "round" },
+              children: [
+                {
+                  type: "g",
+                  props: {
+                    fill: "none",
+                    stroke: "#fff",
+                    strokeWidth: 2,
+                    strokeDasharray: 12
+                  },
+                  children: [
+                    {
+                      type: "path",
+                      props: { d: "M12 5.5l-9 2.5", strokeDashoffset: 12 },
+                      animations: [
+                        {
+                          prop: "strokeDashoffset",
+                          begin: 0.6,
+                          dur: 0.2,
+                          values: [0],
+                          freeze: true
+                        }
+                      ]
+                    },
+                    {
+                      type: "path",
+                      props: { d: "M12 10.5l-9 2.5", strokeDashoffset: 12 },
+                      animations: [
+                        {
+                          prop: "strokeDashoffset",
+                          begin: 0.8,
+                          dur: 0.2,
+                          values: [0],
+                          freeze: true
+                        }
+                      ]
+                    },
+                    {
+                      type: "path",
+                      props: { d: "M12 15.5l-9 2.5", strokeDashoffset: 12 },
+                      animations: [
+                        {
+                          prop: "strokeDashoffset",
+                          begin: 1,
+                          dur: 0.2,
+                          values: [0],
+                          freeze: true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M21 12c0 -3.31 -3.5 -6.25 -8.25 -6.25c-0.5 0 -1.75 2.75 -1.75 6.25c0 3.5 1.25 6.25 1.75 6.25c4.75 0 8.25 -2.94 8.25 -6.25Z",
+                    stroke: "#000",
+                    fill: "#000",
+                    strokeWidth: 4
+                  }
+                },
+                {
+                  type: "g",
+                  props: { fill: "none", strokeWidth: 2 },
+                  children: [
+                    {
+                      type: "path",
+                      props: {
+                        d: "M21 12c0 -3.31 -3.5 -6.25 -8.25 -6.25c-0.5 0 -1.75 2.75 -1.75 6.25c0 3.5 1.25 6.25 1.75 6.25c4.75 0 8.25 -2.94 8.25 -6.25Z",
+                        stroke: "#fff",
+                        strokeDasharray: 40
+                      },
+                      animations: [
+                        {
+                          prop: "strokeDashoffset",
+                          dur: 0.5,
+                          values: [40, 0],
+                          freeze: true
+                        }
+                      ]
+                    },
+                    {
+                      type: "path",
+                      props: {
+                        d: "M0 11h26",
+                        stroke: "#000",
+                        transform: "rotate(45 12 12)",
+                        strokeDasharray: 28,
+                        strokeDashoffset: 28,
+                        strokeWidth: 2
+                      },
+                      animations: [
+                        {
+                          prop: "strokeDashoffset",
+                          begin: 1.2,
+                          dur: 0.4,
+                          values: [0],
+                          freeze: true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M0 0h24v24H0z", fill: "currentColor", mask: "m0" }
+    },
+    {
+      type: "path",
+      props: {
+        d: "M0 13h26",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         transform: "rotate(45 12 12)",

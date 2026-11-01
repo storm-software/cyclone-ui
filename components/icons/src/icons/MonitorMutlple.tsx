@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `monitor-mutlple` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `monitor-mutlple` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=monitor-mutlple
  */
@@ -65,6 +65,77 @@ export const MonitorMutlple = createIcon("MonitorMutlple", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M14 22h3M14 22h-3",
+            strokeDasharray: 6,
+            strokeDashoffset: 6
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.8,
+              dur: 0.4,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M1 14v-12h18", strokeDasharray: 32 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.6,
+              values: [32, 0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M14 18h-9v-12h18v12Z",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 62
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.6, values: [62, 0], freeze: true }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M12 17h4v0h-4Z", fill: "currentColor" },
+      animations: [
+        {
+          prop: "d",
+          begin: 0.6,
+          dur: 0.2,
+          values: ["M12 17h4v6h-4Z"],
+          freeze: true
+        }
+      ]
+    },
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

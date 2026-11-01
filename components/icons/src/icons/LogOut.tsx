@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `log-out` icon, with the `regular` variants.
+ * The Material Line Icons `log-out` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=log-out
  */
@@ -37,6 +37,65 @@ export const LogOut = createIcon("LogOut", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M16 5v-1c0 -0.55 -0.45 -1 -1 -1h-9c-0.55 0 -1 0.45 -1 1v16c0 0.55 0.45 1 1 1h9c0.55 0 1 -0.45 1 -1v-1",
+            strokeDasharray: 46
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.5,
+              values: [46, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M10 12h11", strokeDasharray: 14, strokeDashoffset: 14 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.6,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M21 12l-3.5 -3.5M21 12l-3.5 3.5",
+            strokeDasharray: 8,
+            strokeDashoffset: 8
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.8,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

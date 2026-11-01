@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `computer` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `computer` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=computer
  */
@@ -37,6 +37,44 @@ export const Computer = createIcon("Computer", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: { d: "M12 21h5M12 21h-5M12 21v-4", strokeDasharray: 8 },
+          animations: [
+            { prop: "strokeDashoffset", dur: 0.4, values: [8, 0], freeze: true }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M12 17h-9v-12h18v12Z",
+            strokeDasharray: 62,
+            strokeDashoffset: 62
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.4,
+              dur: 0.6,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

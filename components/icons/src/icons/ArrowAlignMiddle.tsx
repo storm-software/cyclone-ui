@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `arrow-align-middle` icon, with the `regular` variants.
+ * The Material Line Icons `arrow-align-middle` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=arrow-align-middle
  */
@@ -37,6 +37,66 @@ export const ArrowAlignMiddle = createIcon("ArrowAlignMiddle", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: { d: "M3 12l18 0", strokeDasharray: 20 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.3,
+              values: [20, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M12 2l0 6.5M12 22l0 -6.5",
+            strokeDasharray: 10,
+            strokeDashoffset: 10
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.4,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M12 9l3 -3M12 15l3 3M12 9l-3 -3M12 15l-3 3",
+            strokeDasharray: 8,
+            strokeDashoffset: 8
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.6,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

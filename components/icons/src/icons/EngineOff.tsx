@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `engine-off` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `engine-off` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=engine-off
  */
@@ -163,6 +163,158 @@ export const EngineOff = createIcon("EngineOff", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        transform: "rotate(45 12 12)",
+        strokeDasharray: 28,
+        strokeDashoffset: 28
+      },
+      animations: [
+        {
+          prop: "strokeDashoffset",
+          begin: 1.3,
+          dur: 0.4,
+          values: [0],
+          freeze: true
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "g",
+              props: {
+                fill: "none",
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                strokeWidth: 2
+              },
+              children: [
+                {
+                  type: "g",
+                  props: { stroke: "#fff" },
+                  children: [
+                    {
+                      type: "path",
+                      props: {
+                        d: "M11 9h6v10h-6.5l-2 -2h-2.5v-6.5l1.5 -1.5Z",
+                        strokeDasharray: 42
+                      },
+                      animations: [
+                        {
+                          prop: "strokeDashoffset",
+                          dur: 0.5,
+                          values: [42, 0],
+                          freeze: true
+                        }
+                      ]
+                    },
+                    {
+                      type: "path",
+                      props: { d: "M17 13h4v-3h1v8h-1v-3h-4Z", opacity: 0 },
+                      animations: [
+                        {
+                          prop: "opacity",
+                          begin: 0.6,
+                          values: [1],
+                          freeze: true
+                        },
+                        {
+                          prop: "d",
+                          begin: 0.6,
+                          dur: 0.2,
+                          values: [
+                            "M17 13h0v-3h0v8h0v-3h0Z",
+                            "M17 13h4v-3h1v8h-1v-3h-4Z"
+                          ],
+                          freeze: true
+                        }
+                      ]
+                    },
+                    {
+                      type: "path",
+                      props: { d: "M6 14h-4M2 11v6", opacity: 0 },
+                      animations: [
+                        {
+                          prop: "opacity",
+                          begin: 0.8,
+                          values: [1],
+                          freeze: true
+                        },
+                        {
+                          prop: "d",
+                          begin: 0.8,
+                          dur: 0.2,
+                          values: ["M6 14h0M6 11v6", "M6 14h-4M2 11v6"],
+                          freeze: true
+                        }
+                      ]
+                    },
+                    {
+                      type: "path",
+                      props: { d: "M11 9v-4M8 5h6", opacity: 0 },
+                      animations: [
+                        {
+                          prop: "opacity",
+                          begin: 1,
+                          values: [1],
+                          freeze: true
+                        },
+                        {
+                          prop: "d",
+                          begin: 1,
+                          dur: 0.2,
+                          values: ["M11 9v0M8 9h6", "M11 9v-4M8 5h6"],
+                          freeze: true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M0 11h26",
+                    stroke: "#000",
+                    transform: "rotate(45 12 12)",
+                    strokeDasharray: 28,
+                    strokeDashoffset: 28,
+                    strokeWidth: 2
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      begin: 1.3,
+                      dur: 0.4,
+                      values: [0],
+                      freeze: true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M0 0h24v24H0z", fill: "currentColor", mask: "m0" }
+    },
+    {
+      type: "path",
+      props: {
+        d: "M0 13h26",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         transform: "rotate(45 12 12)",

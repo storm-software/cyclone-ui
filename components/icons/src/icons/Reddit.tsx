@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `reddit` icon, with the `regular`, `loop` variants.
+ * The Material Line Icons `reddit` icon, with the `regular`, `bold`, `loop` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=reddit
  */
@@ -163,6 +163,163 @@ export const Reddit = createIcon("Reddit", {
                     strokeDasharray: 10,
                     strokeDashoffset: 10,
                     strokeWidth: 1.3
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      begin: 2,
+                      dur: 0.2,
+                      values: [0],
+                      freeze: true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M0 0h24v24H0z", fill: "currentColor", mask: "m0" }
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "g",
+              props: { fill: "#fff" },
+              children: [
+                {
+                  type: "path",
+                  props: {
+                    d: "M12 9.42c4.42 0 8 2.37 8 5.29c0 2.92 -3.58 5.29 -8 5.29c-4.42 0 -8 -2.37 -8 -5.29c0 -2.92 3.58 -5.29 8 -5.29Z",
+                    stroke: "#fff",
+                    strokeWidth: 2,
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    strokeDasharray: 46,
+                    fillOpacity: 0
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      dur: 0.6,
+                      values: [46, 0],
+                      freeze: true
+                    },
+                    {
+                      prop: "fillOpacity",
+                      begin: 0.6,
+                      dur: 0.4,
+                      values: [1],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M3.94 9.73c1.24 0 2.24 1 2.24 2.24c0 1.24 -1 2.24 -2.24 2.24c-1.24 0 -2.24 -1 -2.24 -2.24c0 -1.24 1 -2.24 2.24 -2.24ZM20.06 9.73c1.24 0 2.24 1 2.24 2.24c0 1.24 -1 2.24 -2.24 2.24c-1.24 0 -2.24 -1 -2.24 -2.24c0 -1.24 1 -2.24 2.24 -2.24Z",
+                    opacity: 0
+                  },
+                  animations: [
+                    { prop: "opacity", begin: 1, values: [1], freeze: true },
+                    {
+                      prop: "d",
+                      begin: 1,
+                      dur: 0.2,
+                      values: [
+                        "M7.24 9.73c1.24 0 2.24 1 2.24 2.24c0 1.24 -1 2.24 -2.24 2.24c-1.24 0 -2.24 -1 -2.24 -2.24c0 -1.24 1 -2.24 2.24 -2.24ZM16.76 9.73c1.24 0 2.24 1 2.24 2.24c0 1.24 -1 2.24 -2.24 2.24c-1.24 0 -2.24 -1 -2.24 -2.24c0 -1.24 1 -2.24 2.24 -2.24Z",
+                        "M3.94 9.73c1.24 0 2.24 1 2.24 2.24c0 1.24 -1 2.24 -2.24 2.24c-1.24 0 -2.24 -1 -2.24 -2.24c0 -1.24 1 -2.24 2.24 -2.24ZM20.06 9.73c1.24 0 2.24 1 2.24 2.24c0 1.24 -1 2.24 -2.24 2.24c-1.24 0 -2.24 -1 -2.24 -2.24c0 -1.24 1 -2.24 2.24 -2.24Z"
+                      ],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "circle",
+                  props: { cx: 18.45, cy: 4.23, r: 1.61, opacity: 0 },
+                  animations: [
+                    { prop: "opacity", begin: 2.2, values: [1], freeze: true }
+                  ]
+                }
+              ]
+            },
+            {
+              type: "g",
+              props: { fill: "#000" },
+              children: [
+                {
+                  type: "circle",
+                  props: { cx: 8.45, cy: 13.59, r: 1.61, opacity: 0 },
+                  animations: [
+                    {
+                      prop: "opacity",
+                      begin: 1.2,
+                      dur: 0.4,
+                      values: [1],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "circle",
+                  props: { cx: 15.55, cy: 13.59, r: 1.61, opacity: 0 },
+                  animations: [
+                    {
+                      prop: "opacity",
+                      begin: 1.6,
+                      dur: 0.4,
+                      values: [1],
+                      freeze: true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              type: "g",
+              props: {
+                fill: "none",
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                strokeWidth: 0.8
+              },
+              children: [
+                {
+                  type: "path",
+                  props: {
+                    d: "M12 8.75l1.18 -5.64l5.03 1.07",
+                    stroke: "#fff",
+                    strokeDasharray: 14,
+                    strokeDashoffset: 14
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      begin: 2,
+                      dur: 0.2,
+                      values: [0],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M8.47 17.52c0 0 0.94 1.06 3.53 1.06c2.58 0 3.53 -1.06 3.53 -1.06",
+                    stroke: "#000",
+                    strokeDasharray: 10,
+                    strokeDashoffset: 10,
+                    strokeWidth: 0.8
                   },
                   animations: [
                     {

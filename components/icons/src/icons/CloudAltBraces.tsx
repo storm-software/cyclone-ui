@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `cloud-alt-braces` icon, with the `regular`, `loop` variants.
+ * The Material Line Icons `cloud-alt-braces` icon, with the `regular`, `bold`, `loop` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=cloud-alt-braces
  */
@@ -43,6 +43,70 @@ export const CloudAltBraces = createIcon("CloudAltBraces", {
                 stroke: "#fff",
                 fill: "#fff",
                 strokeWidth: 1.5,
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                strokeDasharray: 60,
+                fillOpacity: 0
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  dur: 0.6,
+                  values: [60, 0],
+                  freeze: true
+                },
+                {
+                  prop: "fillOpacity",
+                  begin: 0.6,
+                  dur: 0.4,
+                  values: [1],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              origin: [12, 12],
+              props: {
+                d: "M7 13c1.1 0 2 -0.9 2 -2v-1h1.5v-2h-1.5c-1.1 0 -2 0.9 -2 2v1c0 0.55 -0.45 1 -1 1h-0.5v2h0.5c0.55 0 1 0.45 1 1v1c0 1.1 0.9 2 2 2h1.5v-2h-1.5v-1c0 -1.1 -0.9 -2 -2 -2ZM17 13c-1.1 0 -2 -0.9 -2 -2v-1h-1.5v-2h1.5c1.1 0 2 0.9 2 2v1c0 0.55 0.45 1 1 1h0.5v2h-0.5c-0.55 0 -1 0.45 -1 1v1c0 1.1 -0.9 2 -2 2h-1.5v-2h1.5v-1c0 -1.1 0.9 -2 2 -2Z",
+                fill: "#000",
+                transform: "scale(0 1)"
+              },
+              animations: [
+                {
+                  prop: "transform",
+                  transform: "scale",
+                  begin: 1.1,
+                  dur: 0.2,
+                  values: ["0 1", "1 1"],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M0 0h24v24H0z", fill: "currentColor", mask: "m0" }
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "path",
+              props: {
+                d: "M7 19h11c2.21 0 4 -1.79 4 -4c0 -2.21 -1.79 -4 -4 -4h-1v-1c0 -2.76 -2.24 -5 -5 -5c-2.42 0 -4.44 1.72 -4.9 4h-0.1c-2.76 0 -5 2.24 -5 5c0 2.76 2.24 5 5 5Z",
+                stroke: "#fff",
+                fill: "#fff",
+                strokeWidth: 2,
                 strokeLinecap: "round",
                 strokeLinejoin: "round",
                 strokeDasharray: 60,

@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `emoji-grin` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `emoji-grin` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=emoji-grin
  */
@@ -37,6 +37,85 @@ export const EmojiGrin = createIcon("EmojiGrin", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M12 3c4.97 0 9 4.03 9 9c0 4.97 -4.03 9 -9 9c-4.97 0 -9 -4.03 -9 -9c0 -4.97 4.03 -9 9 -9",
+            strokeDasharray: 60
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.6,
+              values: [60, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "g",
+          props: { strokeDasharray: 4 },
+          children: [
+            {
+              type: "path",
+              props: { d: "M9 9v1", strokeDashoffset: 4 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.6,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: { d: "M15 9v1", strokeDashoffset: 4 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.8,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: {
+        d: "M12 15c-2.5 0 -3.25 0 -4 0c-0.55 0 -1 0 -1 0c0 0 1.5 0 5 0c3.5 0 5 0 5 0c0 0 -0.45 0 -1 0c-0.75 0 -1.5 0 -4 0Z",
+        fill: "currentColor"
+      },
+      animations: [
+        {
+          prop: "d",
+          begin: 1,
+          dur: 0.2,
+          values: [
+            "M12 14c-2.5 0 -3.25 -1 -4 -1c-0.55 0 -1 0.45 -1 1c0 0.75 1.5 4 5 4c3.5 0 5 -3.25 5 -4c0 -0.55 -0.45 -1 -1 -1c-0.75 0 -1.5 1 -4 1Z"
+          ],
+          freeze: true
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

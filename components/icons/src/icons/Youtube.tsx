@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `youtube` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `youtube` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=youtube
  */
@@ -36,6 +36,37 @@ export const Youtube = createIcon("Youtube", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 60
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.6, values: [60, 0], freeze: true }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M10 8.5l6 3.5l-6 3.5Z", fill: "currentColor", opacity: 0 },
+      animations: [
+        { prop: "opacity", begin: 0.6, values: [1], freeze: true },
+        {
+          prop: "d",
+          begin: 0.6,
+          dur: 0.2,
+          values: ["M12 11l0 1l0 1Z", "M10 8.5l6 3.5l-6 3.5Z"],
+          freeze: true
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M12 5c9 0 9 0 9 7c0 7 0 7 -9 7c-9 0 -9 0 -9 -7c0 -7 0 -7 9 -7Z",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 60

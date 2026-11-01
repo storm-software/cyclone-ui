@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `menu` icon, with the `regular` variants.
+ * The Material Line Icons `menu` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=menu
  */
@@ -37,6 +37,59 @@ export const Menu = createIcon("Menu", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5,
+        strokeDasharray: 16
+      },
+      children: [
+        {
+          type: "path",
+          props: { d: "M5 5h14" },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.3,
+              values: [16, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M5 12h14", strokeDashoffset: 16 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.3,
+              dur: 0.3,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M5 19h14", strokeDashoffset: 16 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.6,
+              dur: 0.3,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
         strokeDasharray: 16
       },
       children: [

@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `compass-off` icon, with the `regular`, `loop`, `filled`, `filled-loop` variants.
+ * The Material Line Icons `compass-off` icon, with the `regular`, `bold`, `loop`, `filled`, `filled-loop` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=compass-off
  */
@@ -132,6 +132,127 @@ export const CompassOff = createIcon("CompassOff", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        transform: "rotate(45 12 12)",
+        strokeDasharray: 28,
+        strokeDashoffset: 28
+      },
+      animations: [
+        {
+          prop: "strokeDashoffset",
+          begin: 1.1,
+          dur: 0.4,
+          values: [0],
+          freeze: true
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "path",
+              props: {
+                d: "M12 3c4.97 0 9 4.03 9 9c0 4.97 -4.03 9 -9 9c-4.97 0 -9 -4.03 -9 -9c0 -4.97 4.03 -9 9 -9Z",
+                stroke: "#fff",
+                fill: "none",
+                strokeWidth: 2,
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                strokeDasharray: 60
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  dur: 0.6,
+                  values: [60, 0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: {
+                d: "M11 11l1 1l1 1l-1 -1Z",
+                fill: "#fff",
+                transform: "rotate(-180 12 12)"
+              },
+              animations: [
+                {
+                  prop: "d",
+                  begin: 0.6,
+                  dur: 0.3,
+                  values: ["M10.2 10.2l6.8 -3.2l-3.2 6.8l-6.8 3.2Z"],
+                  freeze: true
+                },
+                {
+                  prop: "transform",
+                  transform: "rotate",
+                  begin: 0.6,
+                  dur: 0.5,
+                  values: ["-180 12 12", "0 12 12"],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "circle",
+              props: { cx: 12, cy: 12, fill: "#000" },
+              animations: [
+                {
+                  prop: "r",
+                  begin: 0.6,
+                  dur: 0.3,
+                  values: [0, 1],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: {
+                d: "M-1 11h26",
+                stroke: "#000",
+                fill: "none",
+                strokeWidth: 2,
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                transform: "rotate(45 12 12)",
+                strokeDasharray: 28,
+                strokeDashoffset: 28
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 1.1,
+                  dur: 0.4,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M0 0h24v24H0z", fill: "currentColor", mask: "m0" }
+    },
+    {
+      type: "path",
+      props: {
+        d: "M-1 13h26",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         transform: "rotate(45 12 12)",

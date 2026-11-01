@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `round-ramp-left` icon, with the `regular` variants.
+ * The Material Line Icons `round-ramp-left` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=round-ramp-left
  */
@@ -37,6 +37,52 @@ export const RoundRampLeft = createIcon("RoundRampLeft", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M17.5 17.53c-3.29 -1.9 -5.5 -5.46 -5.5 -9.53v-4M12 20v-16",
+            strokeDasharray: 18
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.5,
+              values: [18, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M12 4l-3 3M12 4l3 3",
+            strokeDasharray: 8,
+            strokeDashoffset: 8
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.5,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

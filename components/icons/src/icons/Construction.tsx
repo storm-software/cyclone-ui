@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `construction` icon, with the `regular` variants.
+ * The Material Line Icons `construction` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=construction
  */
@@ -41,6 +41,108 @@ export const Construction = createIcon("Construction", {
         {
           type: "g",
           props: { strokeWidth: 1.5 },
+          children: [
+            {
+              type: "path",
+              props: {
+                d: "M21 21h-18v-2c0 -1 1 -2 2 -2h14c1 0 2 1 2 2v2Z",
+                strokeDasharray: 46
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  dur: 0.5,
+                  values: [46, 0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: {
+                d: "M6 17l6 -15M18 17l-6 -15",
+                strokeDasharray: 20,
+                strokeDashoffset: 20
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.6,
+                  dur: 0.5,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M8 12l4.5 -2.5",
+            strokeDasharray: 8,
+            strokeDashoffset: 8
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 1.2,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M6 16l7.5 -4",
+            strokeDasharray: 12,
+            strokeDashoffset: 12
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 1.4,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M9.5 17l5 -2.5",
+            strokeDasharray: 8,
+            strokeDashoffset: 8
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 1.6,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      },
+      children: [
+        {
+          type: "g",
+          props: { strokeWidth: 2 },
           children: [
             {
               type: "path",

@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `play` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `play` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=play
  */
@@ -36,6 +36,23 @@ export const Play = createIcon("Play", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 38
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.5, values: [38, 0], freeze: true }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M8 6l10 6l-10 6Z",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 38

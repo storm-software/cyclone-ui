@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `hash` icon, with the `regular` variants.
+ * The Material Line Icons `hash` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=hash
  */
@@ -37,6 +37,83 @@ export const Hash = createIcon("Hash", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "g",
+          props: { strokeDasharray: 20 },
+          children: [
+            {
+              type: "path",
+              props: { d: "M4 9h17" },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  dur: 0.3,
+                  values: [20, 0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: { d: "M3 15h17", strokeDashoffset: 20 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.3,
+                  dur: 0.3,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          type: "g",
+          props: { strokeDasharray: 22 },
+          children: [
+            {
+              type: "path",
+              props: { d: "M10 3l-2 18", strokeDashoffset: 22 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.7,
+                  dur: 0.3,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: { d: "M16 3l-2 18", strokeDashoffset: 22 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 1,
+                  dur: 0.3,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

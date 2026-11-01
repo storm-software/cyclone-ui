@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `moon-simple-off` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `moon-simple-off` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=moon-simple-off
  */
@@ -98,6 +98,93 @@ export const MoonSimpleOff = createIcon("MoonSimpleOff", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        transform: "rotate(45 12 12)",
+        strokeDasharray: 28,
+        strokeDashoffset: 28
+      },
+      animations: [
+        {
+          prop: "strokeDashoffset",
+          begin: 0.6,
+          dur: 0.4,
+          values: [0],
+          freeze: true
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "g",
+              props: {
+                fill: "none",
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                strokeWidth: 2
+              },
+              children: [
+                {
+                  type: "path",
+                  props: {
+                    d: "M12 3c-4.97 0 -9 4.03 -9 9c0 4.97 4.03 9 9 9c3.53 0 6.59 -2.04 8.06 -5c0 0 -6.06 1.5 -9.06 -3c-3 -4.5 1 -10 1 -10Z",
+                    stroke: "#fff",
+                    strokeDasharray: 62
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      dur: 0.6,
+                      values: [62, 0],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M-1 11h26",
+                    stroke: "#000",
+                    transform: "rotate(45 12 12)",
+                    strokeDasharray: 28,
+                    strokeDashoffset: 28,
+                    strokeWidth: 2
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      begin: 0.6,
+                      dur: 0.4,
+                      values: [0],
+                      freeze: true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M0 0h24v24H0z", fill: "currentColor", mask: "m0" }
+    },
+    {
+      type: "path",
+      props: {
+        d: "M-1 13h26",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         transform: "rotate(45 12 12)",

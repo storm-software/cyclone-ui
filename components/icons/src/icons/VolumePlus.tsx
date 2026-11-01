@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `volume-plus` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `volume-plus` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=volume-plus
  */
@@ -37,6 +37,67 @@ export const VolumePlus = createIcon("VolumePlus", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M4 10h3.5l3.5 -3.5v10.5l-3.5 -3.5h-3.5Z",
+            strokeDasharray: 34
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.4,
+              values: [34, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "g",
+          props: { strokeDasharray: 8 },
+          children: [
+            {
+              type: "path",
+              props: { d: "M15 12h6", strokeDashoffset: 8 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.4,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: { d: "M18 9v6", strokeDashoffset: 8 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.6,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

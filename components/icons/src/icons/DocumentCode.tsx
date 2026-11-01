@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `document-code` icon, with the `regular` variants.
+ * The Material Line Icons `document-code` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=document-code
  */
@@ -74,6 +74,84 @@ export const DocumentCode = createIcon("DocumentCode", {
         {
           type: "g",
           props: { strokeWidth: 1.5, strokeDasharray: 8 },
+          children: [
+            {
+              type: "path",
+              props: { d: "M10 13l-2 2l2 2", strokeDashoffset: 8 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.9,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: { d: "M14 13l2 2l-2 2", strokeDashoffset: 8 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 1.1,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M13 3l6 6v12h-14v-18h8",
+            strokeWidth: 2,
+            strokeDasharray: 64
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.6,
+              values: [64, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M12.5 3v5.5h6.5",
+            strokeDasharray: 14,
+            strokeDashoffset: 14
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.7,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "g",
+          props: { strokeWidth: 2, strokeDasharray: 8 },
           children: [
             {
               type: "path",

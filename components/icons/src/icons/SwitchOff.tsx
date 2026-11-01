@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `switch-off` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `switch-off` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=switch-off
  */
@@ -36,6 +36,30 @@ export const SwitchOff = createIcon("SwitchOff", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 54
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.6, values: [54, 0], freeze: true }
+      ]
+    },
+    {
+      type: "circle",
+      props: { cx: 7, cy: 12, r: 3, fill: "currentColor", opacity: 0 },
+      animations: [
+        { prop: "opacity", begin: 0.6, dur: 0.2, values: [1], freeze: true }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M12 7h5c2.76 0 5 2.24 5 5c0 2.76 -2.24 5 -5 5h-10c-2.76 0 -5 -2.24 -5 -5c0 -2.76 2.24 -5 5 -5Z",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 54

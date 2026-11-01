@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `folder-network` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `folder-network` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=folder-network
  */
@@ -37,6 +37,96 @@ export const FolderNetwork = createIcon("FolderNetwork", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M12 6h7c0.55 0 1 0.45 1 1v8c0 0.55 -0.45 1 -1 1h-14c-0.55 0 -1 -0.45 -1 -1v-9Z",
+            strokeDasharray: 54
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.6,
+              values: [54, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M12 6h-8v-1c0 -0.55 0.45 -1 1 -1h5Z", opacity: 0 },
+          animations: [
+            { prop: "opacity", begin: 0.6, values: [1], freeze: true },
+            {
+              prop: "d",
+              begin: 0.6,
+              dur: 0.2,
+              values: [
+                "M12 6h-8v0c0 0 0.45 0 1 0h5Z",
+                "M12 6h-8v-1c0 -0.55 0.45 -1 1 -1h5Z"
+              ],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M12 16v5", strokeDasharray: 8, strokeDashoffset: 8 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.8,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M12 21h9M12 21h-9",
+            strokeDasharray: 12,
+            strokeDashoffset: 12
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 1,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M10 20h4v2h-4Z", opacity: 0 },
+          animations: [
+            { prop: "opacity", begin: 1.2, values: [1], freeze: true },
+            {
+              prop: "d",
+              begin: 1.2,
+              dur: 0.2,
+              values: ["M12 21h0v0h0Z", "M10 20h4v2h-4Z"],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

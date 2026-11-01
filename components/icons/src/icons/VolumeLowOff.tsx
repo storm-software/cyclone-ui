@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `volume-low-off` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `volume-low-off` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=volume-low-off
  */
@@ -98,6 +98,93 @@ export const VolumeLowOff = createIcon("VolumeLowOff", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        transform: "rotate(45 12 12)",
+        strokeDasharray: 28,
+        strokeDashoffset: 28
+      },
+      animations: [
+        {
+          prop: "strokeDashoffset",
+          begin: 0.4,
+          dur: 0.4,
+          values: [0],
+          freeze: true
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "g",
+              props: {
+                fill: "none",
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                strokeWidth: 2
+              },
+              children: [
+                {
+                  type: "path",
+                  props: {
+                    d: "M8 10h3.5l3.5 -3.5v10.5l-3.5 -3.5h-3.5Z",
+                    stroke: "#fff",
+                    strokeDasharray: 34
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      dur: 0.4,
+                      values: [34, 0],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M-1 11h26",
+                    stroke: "#000",
+                    transform: "rotate(45 12 12)",
+                    strokeDasharray: 28,
+                    strokeDashoffset: 28,
+                    strokeWidth: 2
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      begin: 0.4,
+                      dur: 0.4,
+                      values: [0],
+                      freeze: true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M0 0h24v24H0z", fill: "currentColor", mask: "m0" }
+    },
+    {
+      type: "path",
+      props: {
+        d: "M-1 13h26",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         transform: "rotate(45 12 12)",

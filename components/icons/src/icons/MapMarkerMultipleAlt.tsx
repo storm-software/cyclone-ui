@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `map-marker-multiple-alt` icon, with the `regular`, `loop`, `filled`, `filled-loop` variants.
+ * The Material Line Icons `map-marker-multiple-alt` icon, with the `regular`, `bold`, `loop`, `filled`, `filled-loop` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=map-marker-multiple-alt
  */
@@ -101,6 +101,104 @@ export const MapMarkerMultipleAlt = createIcon("MapMarkerMultipleAlt", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      },
+      animations: [
+        {
+          prop: "d",
+          dur: 0.4,
+          values: [
+            "M14 20.5c0 0 -1 -1.5 -1 -2.5c0 -0.5 0.5 -1 1 -1c0.5 0 1 0.5 1 1c0 1 -1 2.5 -1 2.5Z",
+            "M14 20.5c0 0 -7 -7.5 -7 -12.5c0 -3.5 3 -7 7 -7c4 0 7 3.5 7 7c0 5 -7 12.5 -7 12.5Z",
+            "M14 20.5c0 0 -6 -7 -6 -11.5c0 -3.31 2.69 -6 6 -6c3.31 0 6 2.69 6 6c0 4.5 -6 11.5 -6 11.5Z"
+          ],
+          keyTimes: [0, 0.7, 1],
+          freeze: true
+        }
+      ]
+    },
+    {
+      type: "circle",
+      props: { cx: 14, cy: 9, fill: "currentColor" },
+      animations: [
+        { prop: "r", begin: 0.4, dur: 0.2, values: [0, 2.5], freeze: true }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "g",
+              props: { strokeLinecap: "round", strokeLinejoin: "round" },
+              children: [
+                {
+                  type: "path",
+                  props: {
+                    d: "M10 20.5c0 0 -6 -7 -6 -11.5c0 -3.31 2.69 -6 6 -6c3.31 0 6 2.69 6 6c0 4.5 -6 11.5 -6 11.5Z",
+                    stroke: "#fff",
+                    fill: "none",
+                    strokeWidth: 2
+                  },
+                  animations: [
+                    {
+                      prop: "d",
+                      dur: 0.4,
+                      values: [
+                        "M10 20.5c0 0 -1 -1.5 -1 -2.5c0 -0.5 0.5 -1 1 -1c0.5 0 1 0.5 1 1c0 1 -1 2.5 -1 2.5Z",
+                        "M10 20.5c0 0 -7 -7.5 -7 -12.5c0 -3.5 3 -7 7 -7c4 0 7 3.5 7 7c0 5 -7 12.5 -7 12.5Z",
+                        "M10 20.5c0 0 -6 -7 -6 -11.5c0 -3.31 2.69 -6 6 -6c3.31 0 6 2.69 6 6c0 4.5 -6 11.5 -6 11.5Z"
+                      ],
+                      keyTimes: [0, 0.7, 1],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M14 20.5c0 0 -6 -7 -6 -11.5c0 -3.31 2.69 -6 6 -6c3.31 0 6 2.69 6 6c0 4.5 -6 11.5 -6 11.5Z",
+                    stroke: "#000",
+                    fill: "#000",
+                    strokeWidth: 4
+                  },
+                  animations: [
+                    {
+                      prop: "d",
+                      dur: 0.4,
+                      values: [
+                        "M14 20.5c0 0 -1 -1.5 -1 -2.5c0 -0.5 0.5 -1 1 -1c0.5 0 1 0.5 1 1c0 1 -1 2.5 -1 2.5Z",
+                        "M14 20.5c0 0 -7 -7.5 -7 -12.5c0 -3.5 3 -7 7 -7c4 0 7 3.5 7 7c0 5 -7 12.5 -7 12.5Z",
+                        "M14 20.5c0 0 -6 -7 -6 -11.5c0 -3.31 2.69 -6 6 -6c3.31 0 6 2.69 6 6c0 4.5 -6 11.5 -6 11.5Z"
+                      ],
+                      keyTimes: [0, 0.7, 1],
+                      freeze: true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M0 0h24v24H0z", fill: "currentColor", mask: "m0" }
+    },
+    {
+      type: "path",
+      props: {
+        d: "M14 20.5c0 0 -6 -7 -6 -11.5c0 -3.31 2.69 -6 6 -6c3.31 0 6 2.69 6 6c0 4.5 -6 11.5 -6 11.5Z",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round"
       },

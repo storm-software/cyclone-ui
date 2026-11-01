@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `check-list-3` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `check-list-3` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=check-list-3
  */
@@ -93,6 +93,116 @@ export const CheckList3 = createIcon("CheckList3", {
         {
           type: "g",
           props: { strokeWidth: 1.5, strokeDasharray: 12 },
+          children: [
+            {
+              type: "path",
+              props: { d: "M3 5l2 2l4 -4", strokeDashoffset: 12 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.2,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: { d: "M3 12l2 2l4 -4", strokeDashoffset: 12 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.6,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: { d: "M3 19l2 2l4 -4", strokeDashoffset: 12 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 1,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      },
+      children: [
+        {
+          type: "g",
+          props: { strokeDasharray: 24 },
+          children: [
+            {
+              type: "path",
+              props: {
+                d: "M11.5 5c0 -0.83 0.67 -1.5 1.5 -1.5h6c0.83 0 1.5 0.67 1.5 1.5c0 0.83 -0.67 1.5 -1.5 1.5h-6c-0.83 0 -1.5 -0.67 -1.5 -1.5Z"
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  dur: 0.3,
+                  values: [24, 0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: {
+                d: "M11.5 12c0 -0.83 0.67 -1.5 1.5 -1.5h6c0.83 0 1.5 0.67 1.5 1.5c0 0.83 -0.67 1.5 -1.5 1.5h-6c-0.83 0 -1.5 -0.67 -1.5 -1.5Z",
+                strokeDashoffset: 24
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.4,
+                  dur: 0.3,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: {
+                d: "M11.5 19c0 -0.83 0.67 -1.5 1.5 -1.5h6c0.83 0 1.5 0.67 1.5 1.5c0 0.83 -0.67 1.5 -1.5 1.5h-6c-0.83 0 -1.5 -0.67 -1.5 -1.5Z",
+                strokeDashoffset: 24
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.8,
+                  dur: 0.3,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          type: "g",
+          props: { strokeWidth: 2, strokeDasharray: 12 },
           children: [
             {
               type: "path",

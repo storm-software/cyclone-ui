@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `chevron-left` icon, with the `regular` variants.
+ * The Material Line Icons `chevron-left` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=chevron-left
  */
@@ -36,6 +36,23 @@ export const ChevronLeft = createIcon("ChevronLeft", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 12
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.4, values: [12, 0], freeze: true }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M8 12l7 -7M8 12l7 7",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 12

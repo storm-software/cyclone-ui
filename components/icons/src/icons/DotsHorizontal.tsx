@@ -23,10 +23,37 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The `dots-horizontal` icon, drawn in the Material Line Icons style, with the `regular` variants.
+ * The `dots-horizontal` icon, drawn in the Material Line Icons style, with the `regular`, `bold` variants.
  */
 export const DotsHorizontal = createIcon("DotsHorizontal", {
   regular: [
+    {
+      type: "g",
+      props: { fill: "currentColor" },
+      children: [
+        {
+          type: "circle",
+          props: { cx: 5, cy: 12, r: 1.5 },
+          animations: [{ prop: "r", dur: 0.2, values: [0, 1.5], freeze: true }]
+        },
+        {
+          type: "circle",
+          props: { cx: 12, cy: 12, r: 0 },
+          animations: [
+            { prop: "r", begin: 0.2, dur: 0.2, values: [1.5], freeze: true }
+          ]
+        },
+        {
+          type: "circle",
+          props: { cx: 19, cy: 12, r: 0 },
+          animations: [
+            { prop: "r", begin: 0.4, dur: 0.2, values: [1.5], freeze: true }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
     {
       type: "g",
       props: { fill: "currentColor" },

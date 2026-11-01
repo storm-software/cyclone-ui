@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `iconify1` icon, with the `regular` variants.
+ * The Material Line Icons `iconify1` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=iconify1
  */
@@ -36,6 +36,59 @@ export const Iconify1 = createIcon("Iconify1", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 60
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.6, values: [60, 0], freeze: true }
+      ]
+    },
+    {
+      type: "g",
+      props: { fill: "currentColor" },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M9.5 9c0 -0.52 -0.48 -1 -1 -1c-0.52 0 -1 0.48 -1 1v1.44c0 0.52 0.48 1.06 1 1.06c0.52 0 1 -0.48 1 -1v-1.5Z",
+            opacity: 0
+          },
+          animations: [
+            { prop: "opacity", begin: 0.7, dur: 0.2, values: [1], freeze: true }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M16.5 9c0 -0.52 -0.48 -1 -1 -1c-0.52 0 -1 0.48 -1 1v1.44c0 0.52 0.48 1.06 1 1.06c0.52 0 1 -0.48 1 -1v-1.5Z",
+            opacity: 0
+          },
+          animations: [
+            { prop: "opacity", begin: 0.8, dur: 0.2, values: [1], freeze: true }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M12 18c3.13 0 5.33 -2.88 5 -3.5c-0.33 -0.63 -1.5 1.5 -5 1.5c-3.5 0 -4.69 -2.13 -5 -1.5c-0.31 0.63 1.88 3.5 5 3.5Z",
+            opacity: 0
+          },
+          animations: [
+            { prop: "opacity", begin: 1, dur: 0.2, values: [1], freeze: true }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M12 3c4.97 0 9 4.03 9 9c0 4.97 -4.03 9 -9 9c-4.97 0 -9 -4.03 -9 -9c0 -4.97 4.03 -9 9 -9Z",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 60

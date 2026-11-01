@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `arrows-diagonal` icon, with the `regular` variants.
+ * The Material Line Icons `arrows-diagonal` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=arrows-diagonal
  */
@@ -37,6 +37,49 @@ export const ArrowsDiagonal = createIcon("ArrowsDiagonal", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: { d: "M10 14l-6.5 6.5M14 10l6.5 -6.5", strokeDasharray: 12 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.4,
+              values: [12, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M21 3h-6M3 21v-6M21 3v6M3 21h6",
+            strokeDasharray: 8,
+            strokeDashoffset: 8
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.4,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `cellphone-arrow-up` icon, with the `regular` variants.
+ * The Material Line Icons `cellphone-arrow-up` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=cellphone-arrow-up
  */
@@ -65,6 +65,75 @@ export const CellphoneArrowUp = createIcon("CellphoneArrowUp", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5,
+        strokeDasharray: 8
+      },
+      children: [
+        {
+          type: "path",
+          props: { d: "M12 15v-6", strokeDashoffset: 8 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.9,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M12 9l3 3M12 9l-3 3", strokeDashoffset: 8 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 1.1,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M12 2h5c0.55 0 1 0.45 1 1v18c0 0.55 -0.45 1 -1 1h-10c-0.55 0 -1 -0.45 -1 -1v-18c0 -0.55 0.45 -1 1 -1Z",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 66
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.6, values: [66, 0], freeze: true }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M6 2h12v0h-12ZM6 22h12v0h-12Z", fill: "currentColor" },
+      animations: [
+        {
+          prop: "d",
+          begin: 0.6,
+          dur: 0.2,
+          values: ["M6 2h12v3h-12ZM6 22h12v-3h-12Z"],
+          freeze: true
+        }
+      ]
+    },
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
         strokeDasharray: 8
       },
       children: [

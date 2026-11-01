@@ -23,12 +23,58 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `peertube-alt` icon, with the `regular` variants.
+ * The Material Line Icons `peertube-alt` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=peertube-alt
  */
 export const PeertubeAlt = createIcon("PeertubeAlt", {
   regular: [
+    {
+      type: "g",
+      props: { fill: "currentColor" },
+      children: [
+        {
+          type: "path",
+          props: { d: "M12 6.67l8 5.33l-8 5.34Z" },
+          animations: [
+            {
+              prop: "d",
+              dur: 0.4,
+              values: ["M12 6.67l0 5.33l0 5.34Z", "M12 6.67l8 5.33l-8 5.34Z"],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M8 9.34l4 -2.67l-8 5.33Z" },
+          animations: [
+            {
+              prop: "d",
+              begin: 0.2,
+              dur: 0.4,
+              values: ["M4 1.34l8 5.33l-8 5.33Z"],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M4 12l8 5.34l-4 -2.67Z" },
+          animations: [
+            {
+              prop: "d",
+              begin: 0.4,
+              dur: 0.4,
+              values: ["M4 12l8 5.34l-8 5.33Z"],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
     {
       type: "g",
       props: { fill: "currentColor" },

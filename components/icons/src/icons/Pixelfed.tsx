@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `pixelfed` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `pixelfed` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=pixelfed
  */
@@ -36,6 +36,34 @@ export const Pixelfed = createIcon("Pixelfed", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 60
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.6, values: [60, 0], freeze: true }
+      ]
+    },
+    {
+      type: "path",
+      props: {
+        d: "M11.21 14.18h1.83c1.73 0 3.13 -1.36 3.13 -3.05c0 -1.68 -1.4 -3.05 -3.13 -3.05h-2.65c-1 0 -1.81 0.79 -1.81 1.76v6.84l2.62 -2.51Z",
+        fill: "currentColor",
+        opacity: 0
+      },
+      animations: [
+        { prop: "opacity", begin: 0.6, dur: 0.2, values: [1], freeze: true }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M12 3c4.97 0 9 4.03 9 9c0 4.97 -4.03 9 -9 9c-4.97 0 -9 -4.03 -9 -9c0 -4.97 4.03 -9 9 -9Z",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 60

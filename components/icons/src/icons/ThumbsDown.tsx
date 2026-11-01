@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `thumbs-down` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `thumbs-down` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=thumbs-down
  */
@@ -36,6 +36,23 @@ export const ThumbsDown = createIcon("ThumbsDown", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 76
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.6, values: [76, 0], freeze: true }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M7 4h11l3 7v3h-7l1 6l-3 1l-5 -8h-4v-9h4v9",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 76

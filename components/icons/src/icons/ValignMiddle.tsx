@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `valign-middle` icon, with the `regular` variants.
+ * The Material Line Icons `valign-middle` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=valign-middle
  */
@@ -55,6 +55,49 @@ export const ValignMiddle = createIcon("ValignMiddle", {
           props: {
             d: "M12 6h6v12h-12v-12Z",
             strokeWidth: 1.5,
+            strokeDasharray: 50,
+            strokeDashoffset: 50
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.4,
+              dur: 0.6,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      },
+      children: [
+        {
+          type: "path",
+          props: { d: "M2.5 8.5h19M2.5 15.5h19", strokeDasharray: 22 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.3,
+              values: [22, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M12 6h6v12h-12v-12Z",
+            strokeWidth: 2,
             strokeDasharray: 50,
             strokeDashoffset: 50
           },

@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `hazard-lights` icon, with the `regular`, `loop`, `filled`, `filled-loop` variants.
+ * The Material Line Icons `hazard-lights` icon, with the `regular`, `bold`, `loop`, `filled`, `filled-loop` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=hazard-lights
  */
@@ -37,6 +37,46 @@ export const HazardLights = createIcon("HazardLights", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: { d: "M12 10l4 7h-8Z", strokeDasharray: 28 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.4,
+              values: [28, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M12 4l9.25 16h-18.5Z", opacity: 0 },
+          animations: [
+            { prop: "opacity", begin: 0.4, values: [1], freeze: true },
+            {
+              prop: "d",
+              begin: 0.4,
+              dur: 0.2,
+              values: ["M12 10l4 7h-8Z", "M12 4l9.25 16h-18.5Z"],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

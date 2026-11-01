@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `linkedin` icon, with the `regular` variants.
+ * The Material Line Icons `linkedin` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=linkedin
  */
@@ -42,6 +42,74 @@ export const Linkedin = createIcon("Linkedin", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 3
+      },
+      children: [
+        {
+          type: "g",
+          props: { strokeDasharray: 12 },
+          children: [
+            {
+              type: "path",
+              props: { d: "M4 10v10", strokeDashoffset: 12 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.2,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: { d: "M10 10v10", strokeDashoffset: 12 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.5,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M10 15c0 -2.76 2.24 -5 5 -5c2.76 0 5 2.24 5 5v5",
+            strokeDasharray: 24,
+            strokeDashoffset: 24
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.7,
+              dur: 0.3,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "circle",
+      props: { cx: 4, cy: 4, r: 2, fill: "currentColor", opacity: 0 },
+      animations: [{ prop: "opacity", dur: 0.2, values: [1], freeze: true }]
+    },
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 4
       },
       children: [
         {

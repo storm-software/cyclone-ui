@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `speedometer` icon, with the `regular`, `loop` variants.
+ * The Material Line Icons `speedometer` icon, with the `regular`, `bold`, `loop` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=speedometer
  */
@@ -43,6 +43,102 @@ export const Speedometer = createIcon("Speedometer", {
                 stroke: "#fff",
                 fill: "none",
                 strokeWidth: 1.5,
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                strokeDasharray: 46
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  dur: 0.5,
+                  values: [46, 0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: {
+                d: "M12 14c0 0 0 0 0 0c0 0 0 0 0 0c0 0 0 0 0 0c0 0 0 0 0 0Z",
+                fill: "#000",
+                transform: "rotate(-100 12 13)"
+              },
+              animations: [
+                {
+                  prop: "d",
+                  begin: 0.5,
+                  dur: 0.2,
+                  values: [
+                    "M17 13c0 2.76 -2.24 5 -5 5c-2.76 0 -5 -2.24 -5 -5c0 -2.76 5 -15 5 -15c0 0 5 12.24 5 15Z"
+                  ],
+                  freeze: true
+                },
+                {
+                  prop: "transform",
+                  transform: "rotate",
+                  begin: 0.7,
+                  dur: 0.3,
+                  values: ["-100 12 13", "65 12 13"],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "g",
+      props: { fill: "currentColor" },
+      children: [
+        { type: "path", props: { d: "M0 0h24v24H0z", mask: "m0" } },
+        {
+          type: "path",
+          props: {
+            d: "M15 13c0 1.66 -1.34 3 -3 3c-1.66 0 -3 -1.34 -3 -3c0 -1.66 3 -11 3 -11c0 0 3 9.34 3 11Z",
+            transform: "rotate(-100 12 13)",
+            opacity: 0
+          },
+          animations: [
+            { prop: "opacity", begin: 0.5, values: [1], freeze: true },
+            {
+              prop: "d",
+              begin: 0.5,
+              dur: 0.2,
+              values: [
+                "M12 14c0 0 0 0 0 0c0 0 0 0 0 0c0 0 0 0 0 0c0 0 0 0 0 0Z",
+                "M15 13c0 1.66 -1.34 3 -3 3c-1.66 0 -3 -1.34 -3 -3c0 -1.66 3 -11 3 -11c0 0 3 9.34 3 11Z"
+              ],
+              freeze: true
+            },
+            {
+              prop: "transform",
+              transform: "rotate",
+              begin: 0.7,
+              dur: 0.3,
+              values: ["-100 12 13", "65 12 13"],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "path",
+              props: {
+                d: "M5.64 19.36c-3.52 -3.51 -3.52 -9.21 0 -12.72c3.51 -3.52 9.21 -3.52 12.72 -0c3.52 3.51 3.52 9.21 0 12.72",
+                stroke: "#fff",
+                fill: "none",
+                strokeWidth: 2,
                 strokeLinecap: "round",
                 strokeLinejoin: "round",
                 strokeDasharray: 46

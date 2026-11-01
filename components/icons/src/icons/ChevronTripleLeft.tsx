@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `chevron-triple-left` icon, with the `regular` variants.
+ * The Material Line Icons `chevron-triple-left` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=chevron-triple-left
  */
@@ -37,6 +37,59 @@ export const ChevronTripleLeft = createIcon("ChevronTripleLeft", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5,
+        strokeDasharray: 12
+      },
+      children: [
+        {
+          type: "path",
+          props: { d: "M2 12l7 -7M2 12l7 7" },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.4,
+              values: [12, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M8 12l7 -7M8 12l7 7", strokeDashoffset: 12 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.4,
+              dur: 0.4,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M14 12l7 -7M14 12l7 7", strokeDashoffset: 12 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.8,
+              dur: 0.4,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
         strokeDasharray: 12
       },
       children: [

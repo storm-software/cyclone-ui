@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `download-off` icon, with the `regular`, `loop` variants.
+ * The Material Line Icons `download-off` icon, with the `regular`, `bold`, `loop` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=download-off
  */
@@ -130,6 +130,125 @@ export const DownloadOff = createIcon("DownloadOff", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        transform: "rotate(45 13 12)",
+        strokeDasharray: 24,
+        strokeDashoffset: 24
+      },
+      animations: [
+        {
+          prop: "strokeDashoffset",
+          begin: 1.2,
+          dur: 0.3,
+          values: [0],
+          freeze: true
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "g",
+              props: {
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                strokeWidth: 2
+              },
+              children: [
+                {
+                  type: "path",
+                  props: {
+                    d: "M12 4h2v6h2.5l-4.5 4.5M12 4h-2v6h-2.5l4.5 4.5",
+                    stroke: "#fff",
+                    fill: "#fff",
+                    strokeDasharray: 20,
+                    fillOpacity: 0
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      dur: 0.5,
+                      values: [20, 0],
+                      freeze: true
+                    },
+                    {
+                      prop: "fillOpacity",
+                      begin: 0.7,
+                      dur: 0.4,
+                      values: [1],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "g",
+                  props: { fill: "none" },
+                  children: [
+                    {
+                      type: "path",
+                      props: {
+                        d: "M6 19h12",
+                        stroke: "#fff",
+                        strokeDasharray: 14,
+                        strokeDashoffset: 14
+                      },
+                      animations: [
+                        {
+                          prop: "strokeDashoffset",
+                          begin: 0.5,
+                          dur: 0.2,
+                          values: [0],
+                          freeze: true
+                        }
+                      ]
+                    },
+                    {
+                      type: "path",
+                      props: {
+                        d: "M0 11h24",
+                        stroke: "#000",
+                        transform: "rotate(45 13 12)",
+                        strokeDasharray: 26,
+                        strokeDashoffset: 26,
+                        strokeWidth: 2
+                      },
+                      animations: [
+                        {
+                          prop: "strokeDashoffset",
+                          begin: 1.2,
+                          dur: 0.4,
+                          values: [0],
+                          freeze: true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M0 0h24v24H0z", fill: "currentColor", mask: "m0" }
+    },
+    {
+      type: "path",
+      props: {
+        d: "M1 13h22",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         transform: "rotate(45 13 12)",

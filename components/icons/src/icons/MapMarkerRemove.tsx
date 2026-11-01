@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `map-marker-remove` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `map-marker-remove` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=map-marker-remove
  */
@@ -59,6 +59,69 @@ export const MapMarkerRemove = createIcon("MapMarkerRemove", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5,
+        strokeDasharray: 10
+      },
+      children: [
+        {
+          type: "path",
+          props: { d: "M16.5 15.5l5 5", strokeDashoffset: 10 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.9,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M16.5 20.5l5 -5", strokeDashoffset: 10 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 1.1,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M9 20.5c0 0 -6 -7 -6 -11.5c0 -3.31 2.69 -6 6 -6c3.31 0 6 2.69 6 6c0 4.5 -6 11.5 -6 11.5Z",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 48
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.6, values: [48, 0], freeze: true }
+      ]
+    },
+    {
+      type: "circle",
+      props: { cx: 9, cy: 9, fill: "currentColor" },
+      animations: [
+        { prop: "r", begin: 0.6, dur: 0.2, values: [0, 2.5], freeze: true }
+      ]
+    },
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
         strokeDasharray: 10
       },
       children: [

@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The `asterisk` icon, drawn in the Material Line Icons style, with the `regular` variants.
+ * The `asterisk` icon, drawn in the Material Line Icons style, with the `regular`, `bold` variants.
  */
 export const Asterisk = createIcon("Asterisk", {
   regular: [
@@ -33,6 +33,59 @@ export const Asterisk = createIcon("Asterisk", {
         fill: "none",
         stroke: "currentColor",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 14
+      },
+      children: [
+        {
+          type: "path",
+          props: { d: "M12 6v12" },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.2,
+              values: [14, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M6.8 9l10.4 6", strokeDashoffset: 14 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.2,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M6.8 15l10.4 -6", strokeDashoffset: 14 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.4,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 14

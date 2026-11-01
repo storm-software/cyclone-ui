@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `upload-off-outline` icon, with the `regular`, `loop` variants.
+ * The Material Line Icons `upload-off-outline` icon, with the `regular`, `bold`, `loop` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=upload-off-outline
  */
@@ -120,6 +120,115 @@ export const UploadOffOutline = createIcon("UploadOffOutline", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        transform: "rotate(45 13 12)",
+        strokeDasharray: 24,
+        strokeDashoffset: 24
+      },
+      animations: [
+        {
+          prop: "strokeDashoffset",
+          begin: 0.7,
+          dur: 0.3,
+          values: [0],
+          freeze: true
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "g",
+              props: {
+                fill: "none",
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                strokeWidth: 2
+              },
+              children: [
+                {
+                  type: "g",
+                  props: { stroke: "#fff" },
+                  children: [
+                    {
+                      type: "path",
+                      props: {
+                        d: "M12 15h2v-6h2.5l-4.5 -4.5M12 15h-2v-6h-2.5l4.5 -4.5",
+                        strokeDasharray: 20
+                      },
+                      animations: [
+                        {
+                          prop: "strokeDashoffset",
+                          dur: 0.5,
+                          values: [20, 0],
+                          freeze: true
+                        }
+                      ]
+                    },
+                    {
+                      type: "path",
+                      props: {
+                        d: "M6 19h12",
+                        strokeDasharray: 14,
+                        strokeDashoffset: 14
+                      },
+                      animations: [
+                        {
+                          prop: "strokeDashoffset",
+                          begin: 0.5,
+                          dur: 0.2,
+                          values: [0],
+                          freeze: true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M0 11h24",
+                    stroke: "#000",
+                    transform: "rotate(45 13 12)",
+                    strokeDasharray: 26,
+                    strokeDashoffset: 26,
+                    strokeWidth: 2
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      begin: 0.7,
+                      dur: 0.4,
+                      values: [0],
+                      freeze: true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M0 0h24v24H0z", fill: "currentColor", mask: "m0" }
+    },
+    {
+      type: "path",
+      props: {
+        d: "M1 13h22",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         transform: "rotate(45 13 12)",

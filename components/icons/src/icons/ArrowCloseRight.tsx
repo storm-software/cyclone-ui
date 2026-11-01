@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `arrow-close-right` icon, with the `regular` variants.
+ * The Material Line Icons `arrow-close-right` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=arrow-close-right
  */
@@ -37,6 +37,62 @@ export const ArrowCloseRight = createIcon("ArrowCloseRight", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: { d: "M21 3v18", strokeDasharray: 20 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.3,
+              values: [20, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M3 12h13.5", strokeDasharray: 16, strokeDashoffset: 16 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.4,
+              dur: 0.3,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M17 12l-7 7M17 12l-7 -7",
+            strokeDasharray: 12,
+            strokeDashoffset: 12
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.7,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

@@ -24,12 +24,13 @@ import type { JSX } from "react";
  * The variants (styles) of the Material Line Icons.
  *
  * @remarks
- * `loop` and `filled-loop` keep animating after the icon is drawn. Not every icon has every variant.
+ * `bold` is `regular` with the original 2px line-md strokes (`regular` thins them to 1.5px). `loop` and `filled-loop` keep animating after the icon is drawn. Not every icon has every variant.
  *
  * @see https://github.com/cyberalien/line-md
  */
 export const ICON_VARIANTS = [
   "regular",
+  "bold",
   "loop",
   "filled",
   "filled-loop"

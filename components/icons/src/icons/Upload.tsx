@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `upload` icon, with the `regular`, `loop` variants.
+ * The Material Line Icons `upload` icon, with the `regular`, `bold`, `loop` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=upload
  */
@@ -36,6 +36,61 @@ export const Upload = createIcon("Upload", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M12 15h2v-6h2.5l-4.5 -4.5M12 15h-2v-6h-2.5l4.5 -4.5",
+            fill: "currentColor",
+            strokeDasharray: 20,
+            fillOpacity: 0
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.5,
+              values: [20, 0],
+              freeze: true
+            },
+            {
+              prop: "fillOpacity",
+              begin: 0.7,
+              dur: 0.4,
+              values: [1],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M6 19h12",
+            fill: "none",
+            strokeDasharray: 14,
+            strokeDashoffset: 14
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.5,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

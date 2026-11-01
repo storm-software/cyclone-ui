@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `my-location-off` icon, with the `regular`, `loop` variants.
+ * The Material Line Icons `my-location-off` icon, with the `regular`, `bold`, `loop` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=my-location-off
  */
@@ -136,6 +136,131 @@ export const MyLocationOff = createIcon("MyLocationOff", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        transform: "rotate(45 12 12)",
+        strokeDasharray: 28,
+        strokeDashoffset: 28
+      },
+      animations: [
+        {
+          prop: "strokeDashoffset",
+          begin: 1.1,
+          dur: 0.4,
+          values: [0],
+          freeze: true
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "path",
+              props: {
+                d: "M12 4c4.42 0 8 3.58 8 8c0 4.42 -3.58 8 -8 8c-4.42 0 -8 -3.58 -8 -8c0 -4.42 3.58 -8 8 -8Z",
+                stroke: "#fff",
+                fill: "none",
+                strokeWidth: 2,
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                strokeDasharray: 54
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  dur: 0.6,
+                  values: [54, 0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "circle",
+              props: { cx: 12, cy: 12, fill: "#fff" },
+              animations: [
+                {
+                  prop: "r",
+                  begin: 0.9,
+                  dur: 0.2,
+                  values: [0, 4],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "g",
+              props: {
+                fill: "none",
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                strokeWidth: 2
+              },
+              children: [
+                {
+                  type: "path",
+                  props: {
+                    d: "M12 4v-2M20 12h2M12 20v2M4 12h-2",
+                    stroke: "#fff",
+                    opacity: 0
+                  },
+                  animations: [
+                    { prop: "opacity", begin: 0.7, values: [1], freeze: true },
+                    {
+                      prop: "d",
+                      begin: 0.7,
+                      dur: 0.2,
+                      values: [
+                        "M12 4v0M20 12h0M12 20v0M4 12h0",
+                        "M12 4v-2M20 12h2M12 20v2M4 12h-2"
+                      ],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M-1 11h26",
+                    stroke: "#000",
+                    transform: "rotate(45 12 12)",
+                    strokeDasharray: 28,
+                    strokeDashoffset: 28,
+                    strokeWidth: 2
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      begin: 1.1,
+                      dur: 0.4,
+                      values: [0],
+                      freeze: true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M0 0h24v24H0z", fill: "currentColor", mask: "m0" }
+    },
+    {
+      type: "path",
+      props: {
+        d: "M-1 13h26",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         transform: "rotate(45 12 12)",

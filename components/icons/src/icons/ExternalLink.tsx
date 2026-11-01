@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `external-link` icon, with the `regular` variants.
+ * The Material Line Icons `external-link` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=external-link
  */
@@ -37,6 +37,66 @@ export const ExternalLink = createIcon("ExternalLink", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: { d: "M11 5h-6v14h14v-6", strokeDasharray: 42 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.5,
+              values: [42, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M13 11l7 -7",
+            strokeDasharray: 12,
+            strokeDashoffset: 12
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.5,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M21 3h-6M21 3v6",
+            strokeDasharray: 8,
+            strokeDashoffset: 8
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.7,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

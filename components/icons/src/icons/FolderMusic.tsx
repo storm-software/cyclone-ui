@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `folder-music` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `folder-music` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=folder-music
  */
@@ -116,6 +116,138 @@ export const FolderMusic = createIcon("FolderMusic", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5,
+        strokeDasharray: 12
+      },
+      children: [
+        {
+          type: "path",
+          props: { d: "M21 14h-2v6.5", fill: "none", strokeDashoffset: 12 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.8,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M19 20.5c0 0.83 -0.67 1.5 -1.5 1.5c-0.83 0 -1.5 -0.67 -1.5 -1.5c0 -0.83 0.67 -1.5 1.5 -1.5c0.83 0 1.5 0.67 1.5 1.5Z",
+            fill: "currentColor",
+            strokeDashoffset: 12,
+            fillOpacity: 0
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 1,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            },
+            {
+              prop: "fillOpacity",
+              begin: 1.2,
+              dur: 0.2,
+              values: [1],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "g",
+              props: { strokeLinecap: "round", strokeLinejoin: "round" },
+              children: [
+                {
+                  type: "g",
+                  props: { fill: "none", stroke: "#fff", strokeWidth: 2 },
+                  children: [
+                    {
+                      type: "path",
+                      props: {
+                        d: "M12 7h8c0.55 0 1 0.45 1 1v10c0 0.55 -0.45 1 -1 1h-16c-0.55 0 -1 -0.45 -1 -1v-11Z",
+                        strokeDasharray: 62
+                      },
+                      animations: [
+                        {
+                          prop: "strokeDashoffset",
+                          dur: 0.6,
+                          values: [62, 0],
+                          freeze: true
+                        }
+                      ]
+                    },
+                    {
+                      type: "path",
+                      props: {
+                        d: "M12 7h-9v-1c0 -0.55 0.45 -1 1 -1h6Z",
+                        opacity: 0
+                      },
+                      animations: [
+                        {
+                          prop: "opacity",
+                          begin: 0.6,
+                          values: [1],
+                          freeze: true
+                        },
+                        {
+                          prop: "d",
+                          begin: 0.6,
+                          dur: 0.2,
+                          values: [
+                            "M12 7h-9v0c0 0 0.45 0 1 0h6Z",
+                            "M12 7h-9v-1c0 -0.55 0.45 -1 1 -1h6Z"
+                          ],
+                          freeze: true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M21 14h-2v6.5h2ZM19 20.5c0 0.83 -0.67 1.5 -1.5 1.5c-0.83 0 -1.5 -0.67 -1.5 -1.5c0 -0.83 0.67 -1.5 1.5 -1.5c0.83 0 1.5 0.67 1.5 1.5Z",
+                    stroke: "#000",
+                    fill: "#000",
+                    strokeWidth: 6,
+                    opacity: 0
+                  },
+                  animations: [
+                    { prop: "opacity", begin: 0.8, values: [1], freeze: true }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M0 0h24v24H0z", fill: "currentColor", mask: "m0" }
+    },
+    {
+      type: "g",
+      props: {
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
         strokeDasharray: 12
       },
       children: [

@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `iconify2` icon, with the `regular` variants.
+ * The Material Line Icons `iconify2` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=iconify2
  */
@@ -219,6 +219,271 @@ export const Iconify2 = createIcon("Iconify2", {
                 {
                   type: "g",
                   props: { stroke: "#fff", strokeWidth: 1.5 },
+                  children: [
+                    {
+                      type: "path",
+                      props: {
+                        d: "M12 3l-8.5 5.5",
+                        opacity: 0,
+                        strokeDasharray: 14
+                      },
+                      animations: [
+                        {
+                          prop: "opacity",
+                          begin: 0.5,
+                          values: [1],
+                          freeze: true
+                        },
+                        {
+                          prop: "strokeDashoffset",
+                          begin: 0.5,
+                          dur: 0.4,
+                          values: [14, 0],
+                          freeze: true
+                        }
+                      ]
+                    },
+                    {
+                      type: "path",
+                      props: {
+                        d: "M12 11.5v9",
+                        opacity: 0,
+                        strokeDasharray: 12
+                      },
+                      animations: [
+                        {
+                          prop: "opacity",
+                          begin: 1.3,
+                          values: [1],
+                          freeze: true
+                        },
+                        {
+                          prop: "strokeDashoffset",
+                          begin: 1.3,
+                          dur: 0.2,
+                          values: [12, 0],
+                          freeze: true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              type: "circle",
+              props: { cx: 12, cy: 11.5, r: 3.5, fill: "#000" }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "g",
+      props: { fill: "currentColor" },
+      children: [
+        { type: "path", props: { d: "M0 0h24v24H0z", mask: "m0" } },
+        {
+          type: "circle",
+          props: { cx: 12, cy: 11.5 },
+          animations: [
+            { prop: "r", begin: 1.1, dur: 0.2, values: [0, 1.5], freeze: true }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "g",
+              props: {
+                fill: "none",
+                strokeLinecap: "round",
+                strokeLinejoin: "round"
+              },
+              children: [
+                {
+                  type: "g",
+                  props: { stroke: "#fff" },
+                  children: [
+                    {
+                      type: "path",
+                      props: {
+                        d: "M12 22.25h8.75M12 22.25h-8.75",
+                        strokeWidth: 1.5,
+                        strokeDasharray: 12
+                      },
+                      animations: [
+                        {
+                          prop: "strokeDashoffset",
+                          dur: 0.4,
+                          values: [12, 0],
+                          freeze: true
+                        }
+                      ]
+                    },
+                    {
+                      type: "g",
+                      props: { strokeWidth: 2 },
+                      children: [
+                        {
+                          type: "path",
+                          props: {
+                            d: "M7 6v-3",
+                            opacity: 0,
+                            strokeDasharray: 6
+                          },
+                          animations: [
+                            {
+                              prop: "opacity",
+                              begin: 0.9,
+                              values: [1],
+                              freeze: true
+                            },
+                            {
+                              prop: "strokeDashoffset",
+                              begin: 0.9,
+                              dur: 0.2,
+                              values: [6, 0],
+                              freeze: true
+                            }
+                          ]
+                        },
+                        {
+                          type: "path",
+                          props: {
+                            d: "M12 19h-7v-11M12 19h7v-11",
+                            strokeDasharray: 20
+                          },
+                          animations: [
+                            {
+                              prop: "strokeDashoffset",
+                              dur: 0.5,
+                              values: [20, 0],
+                              freeze: true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  type: "g",
+                  props: { stroke: "#000", strokeWidth: 4 },
+                  children: [
+                    {
+                      type: "path",
+                      props: {
+                        d: "M12 16v4.5",
+                        opacity: 0,
+                        strokeDasharray: 8
+                      },
+                      animations: [
+                        {
+                          prop: "opacity",
+                          begin: 1.3,
+                          values: [1],
+                          freeze: true
+                        },
+                        {
+                          prop: "strokeDashoffset",
+                          begin: 1.3,
+                          dur: 0.2,
+                          values: [8, 0],
+                          freeze: true
+                        }
+                      ]
+                    },
+                    {
+                      type: "path",
+                      props: {
+                        d: "M12 3l8.5 5.5",
+                        opacity: 0,
+                        strokeDasharray: 14
+                      },
+                      animations: [
+                        {
+                          prop: "opacity",
+                          begin: 0.5,
+                          values: [1],
+                          freeze: true
+                        },
+                        {
+                          prop: "strokeDashoffset",
+                          begin: 0.5,
+                          dur: 0.4,
+                          values: [14, 0],
+                          freeze: true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  type: "g",
+                  props: { strokeDasharray: 14 },
+                  children: [
+                    {
+                      type: "path",
+                      props: {
+                        d: "M12 3l8.5 5.5",
+                        stroke: "#fff",
+                        strokeWidth: 2,
+                        opacity: 0
+                      },
+                      animations: [
+                        {
+                          prop: "opacity",
+                          begin: 0.5,
+                          values: [1],
+                          freeze: true
+                        },
+                        {
+                          prop: "strokeDashoffset",
+                          begin: 0.5,
+                          dur: 0.4,
+                          values: [14, 0],
+                          freeze: true
+                        }
+                      ]
+                    },
+                    {
+                      type: "path",
+                      props: {
+                        d: "M12 3l-8.5 5.5",
+                        stroke: "#000",
+                        strokeWidth: 4,
+                        opacity: 0
+                      },
+                      animations: [
+                        {
+                          prop: "opacity",
+                          begin: 0.5,
+                          values: [1],
+                          freeze: true
+                        },
+                        {
+                          prop: "strokeDashoffset",
+                          begin: 0.5,
+                          dur: 0.4,
+                          values: [14, 0],
+                          freeze: true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  type: "g",
+                  props: { stroke: "#fff", strokeWidth: 2 },
                   children: [
                     {
                       type: "path",

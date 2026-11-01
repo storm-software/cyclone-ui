@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `folder-multiple` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `folder-multiple` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=folder-multiple
  */
@@ -37,6 +37,69 @@ export const FolderMultiple = createIcon("FolderMultiple", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M14 5h8c0.55 0 1 0.45 1 1v10c0 0.55 -0.45 1 -1 1h-16c-0.55 0 -1 -0.45 -1 -1v-11Z",
+            strokeDasharray: 62
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.6,
+              values: [62, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M14 5h-9v-1c0 -0.55 0.45 -1 1 -1h6Z", opacity: 0 },
+          animations: [
+            { prop: "opacity", begin: 0.6, values: [1], freeze: true },
+            {
+              prop: "d",
+              begin: 0.6,
+              dur: 0.2,
+              values: [
+                "M14 5h-9v0c0 0 0.45 0 1 0h6Z",
+                "M14 5h-9v-1c0 -0.55 0.45 -1 1 -1h6Z"
+              ],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M19 21h-17c-0.55 0 -1 -0.45 -1 -1v-13", opacity: 0 },
+          animations: [
+            { prop: "opacity", begin: 0.8, values: [1], freeze: true },
+            {
+              prop: "d",
+              begin: 0.8,
+              dur: 0.2,
+              values: [
+                "M22 17h-16c-0.55 0 -1 -0.45 -1 -1v-12",
+                "M19 21h-17c-0.55 0 -1 -0.45 -1 -1v-13"
+              ],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

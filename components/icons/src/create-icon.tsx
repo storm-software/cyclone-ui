@@ -85,6 +85,7 @@ export function resolveIconSize(
  */
 const VARIANT_FALLBACKS: Record<IconVariant, IconVariant[]> = {
   regular: ["regular", "loop", "filled", "filled-loop"],
+  bold: ["bold", "regular", "loop", "filled", "filled-loop"],
   loop: ["loop", "regular", "filled-loop", "filled"],
   filled: ["filled", "filled-loop", "regular", "loop"],
   "filled-loop": ["filled-loop", "filled", "loop", "regular"]
@@ -223,7 +224,7 @@ export function createIcon(
       color = "black",
       size = 24,
       variant = "regular",
-      animated = false,
+      animated = true,
       mirrored = false,
       strokeWidth: _strokeWidth,
       style,

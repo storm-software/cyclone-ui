@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `roundabout-right` icon, with the `regular` variants.
+ * The Material Line Icons `roundabout-right` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=roundabout-right
  */
@@ -37,6 +37,52 @@ export const RoundaboutRight = createIcon("RoundaboutRight", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M8 20v-5c0 -0.55 -0.45 -0.99 -0.99 -1.1c-2.29 -0.46 -4.01 -2.48 -4.01 -4.9c0 -2.76 2.24 -5 5 -5c2.42 0 4.44 1.72 4.9 4.01c0.11 0.54 0.55 0.99 1.1 0.99h7",
+            strokeDasharray: 40
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.5,
+              values: [40, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M21 9l-3 -3M21 9l-3 3",
+            strokeDasharray: 8,
+            strokeDashoffset: 8
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.5,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

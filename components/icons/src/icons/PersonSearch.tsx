@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `person-search` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `person-search` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=person-search
  */
@@ -100,6 +100,117 @@ export const PersonSearch = createIcon("PersonSearch", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M18.12 18.12c-1.17 1.17 -3.07 1.17 -4.24 0c-1.17 -1.17 -1.17 -3.07 0 -4.24c1.17 -1.17 3.07 -1.17 4.24 0c1.17 1.17 1.17 3.07 0 4.24Z",
+            strokeDasharray: 22,
+            strokeDashoffset: 22
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 1.1,
+              dur: 0.3,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M18.12 18.12l2.83 2.83",
+            strokeDasharray: 8,
+            strokeDashoffset: 8
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 1.4,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "path",
+              props: {
+                d: "M10 14c4 0 7 2 7 3v2h-14v-2c0 -1 3 -3 7 -3Z",
+                stroke: "#fff",
+                fill: "none",
+                strokeWidth: 2,
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                strokeDasharray: 38,
+                strokeDashoffset: 38
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.5,
+                  dur: 0.5,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: {
+                d: "M16 10c3.31 0 6 2.69 6 6c0 3.31 -2.69 6 -6 6c-3.31 0 -6 -2.69 -6 -6c0 -3.31 2.69 -6 6 -6Z",
+                fill: "#000",
+                opacity: 0
+              },
+              animations: [
+                { prop: "opacity", begin: 1.1, values: [1], freeze: true }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: {
+        d: "M10 5c1.66 0 3 1.34 3 3c0 1.66 -1.34 3 -3 3c-1.66 0 -3 -1.34 -3 -3c0 -1.66 1.34 -3 3 -3Z",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 22
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.5, values: [22, 0], freeze: true }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M0 0h24v24H0z", fill: "currentColor", mask: "m0" }
+    },
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `home-md` icon, with the `regular` variants.
+ * The Material Line Icons `home-md` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=home-md
  */
@@ -37,6 +37,85 @@ export const HomeMd = createIcon("HomeMd", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "g",
+          props: { strokeDasharray: 16 },
+          children: [
+            {
+              type: "path",
+              props: { d: "M5 21h14" },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  dur: 0.3,
+                  values: [16, 0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: { d: "M5 21v-13M19 21v-13", strokeDashoffset: 16 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.3,
+                  dur: 0.3,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M9 21v-8h6v8",
+            strokeDasharray: 24,
+            strokeDashoffset: 24
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.6,
+              dur: 0.5,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M2 10l10 -8l10 8",
+            strokeDasharray: 28,
+            strokeDashoffset: 28
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.8,
+              dur: 0.6,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

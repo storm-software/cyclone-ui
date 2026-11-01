@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The `map-trifold` icon, drawn in the Material Line Icons style, with the `regular` variants.
+ * The `map-trifold` icon, drawn in the Material Line Icons style, with the `regular`, `bold` variants.
  */
 export const MapTrifold = createIcon("MapTrifold", {
   regular: [
@@ -33,6 +33,67 @@ export const MapTrifold = createIcon("MapTrifold", {
         fill: "none",
         stroke: "currentColor",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M3 6l6 -2l6 3l6 -2v13l-6 2l-6 -3l-6 2Z",
+            strokeDasharray: 68
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.7,
+              values: [68, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "g",
+          props: { strokeDasharray: 14, strokeDashoffset: 14 },
+          children: [
+            {
+              type: "path",
+              props: { d: "M9 4v13" },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.7,
+                  dur: 0.2,
+                  values: [14, 0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: { d: "M15 7v13" },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.9,
+                  dur: 0.2,
+                  values: [14, 0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round"
       },

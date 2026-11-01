@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `pizza-off` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `pizza-off` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=pizza-off
  */
@@ -126,6 +126,121 @@ export const PizzaOff = createIcon("PizzaOff", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        transform: "rotate(45 12 12)",
+        strokeDasharray: 28,
+        strokeDashoffset: 28
+      },
+      animations: [
+        {
+          prop: "strokeDashoffset",
+          begin: 1,
+          dur: 0.4,
+          values: [0],
+          freeze: true
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "path",
+              props: {
+                d: "M4 6.45c2.01 -2.12 4.85 -3.45 8 -3.45c3.15 0 5.99 1.33 8 3.45l-8 13.55Z",
+                stroke: "#fff",
+                fill: "none",
+                strokeWidth: 2,
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                strokeDasharray: 52
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  dur: 0.6,
+                  values: [52, 0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "g",
+              props: { fill: "#fff" },
+              children: [
+                {
+                  type: "circle",
+                  props: { cx: 9, cy: 7 },
+                  animations: [
+                    {
+                      prop: "r",
+                      begin: 0.6,
+                      dur: 0.2,
+                      values: [0, 2],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "circle",
+                  props: { cx: 12, cy: 13 },
+                  animations: [
+                    {
+                      prop: "r",
+                      begin: 0.8,
+                      dur: 0.2,
+                      values: [0, 2],
+                      freeze: true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: {
+                d: "M-1 11h26",
+                stroke: "#000",
+                fill: "none",
+                strokeWidth: 2,
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                transform: "rotate(45 12 12)",
+                strokeDasharray: 28,
+                strokeDashoffset: 28
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 1,
+                  dur: 0.4,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M0 0h24v24H0z", fill: "currentColor", mask: "m0" }
+    },
+    {
+      type: "path",
+      props: {
+        d: "M-1 13h26",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         transform: "rotate(45 12 12)",

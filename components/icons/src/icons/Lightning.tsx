@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The `lightning` icon, drawn in the Material Line Icons style, with the `regular`, `filled` variants.
+ * The `lightning` icon, drawn in the Material Line Icons style, with the `regular`, `bold`, `filled` variants.
  */
 export const Lightning = createIcon("Lightning", {
   regular: [
@@ -34,6 +34,23 @@ export const Lightning = createIcon("Lightning", {
         fill: "none",
         stroke: "currentColor",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 50
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.6, values: [50, 0], freeze: true }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M13 3l-8 11h6l-1 7l8 -11h-6Z",
+        fill: "none",
+        stroke: "currentColor",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 50

@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `plus-circle` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `plus-circle` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=plus-circle
  */
@@ -37,6 +37,67 @@ export const PlusCircle = createIcon("PlusCircle", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M3 12c0 -4.97 4.03 -9 9 -9c4.97 0 9 4.03 9 9c0 4.97 -4.03 9 -9 9c-4.97 0 -9 -4.03 -9 -9Z",
+            strokeDasharray: 60
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.6,
+              values: [60, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "g",
+          props: { strokeDasharray: 12 },
+          children: [
+            {
+              type: "path",
+              props: { d: "M7 12h10", strokeDashoffset: 12 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.6,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: { d: "M12 7v10", strokeDashoffset: 12 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.8,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

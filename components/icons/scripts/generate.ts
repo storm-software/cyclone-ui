@@ -20,7 +20,7 @@
  * Generates a Tamagui icon component for every icon in the Material Line Icons (line-md) collection, plus the extra icons in `assets/`.
  *
  * @remarks
- * The animated SVG assets are read from the `line-md` package and from `assets/*.svg` (drawn in the same style), parsed into element data with their animations, and turned into `src/icons/*.ts`, `src/index.ts`, and `src/all.ts` with a Power Plant generator. Only the `regular`, `loop`, `filled`, and `filled-loop` variants are included. Run with `pnpm --filter @cyclone-ui/icons generate`.
+ * The animated SVG assets are read from the `line-md` package and from `assets/*.svg` (drawn in the same style), parsed into element data with their animations, and turned into `src/icons/*.ts`, `src/index.ts`, and `src/all.ts` with a Power Plant generator. Only the `regular`, `loop`, `filled`, and `filled-loop` variants are included, plus a `bold` variant read from each `regular` file at the original stroke width. Run with `pnpm --filter @cyclone-ui/icons generate`.
  */
 
 import type { GeneratedDocument } from "@power-plant/core";
@@ -31,12 +31,15 @@ import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { format, resolveConfig } from "prettier";
 
-const VARIANTS = ["regular", "loop", "filled", "filled-loop"] as const;
+const VARIANTS = ["regular", "bold", "loop", "filled", "filled-loop"] as const;
 
 type IconVariant = (typeof VARIANTS)[number];
 
 /**
  * The factor applied to every stroke width, so the 2px line-md strokes render at 1.5px, closer to the thin lines of Material Design Light.
+ *
+ * @remarks
+ * The `bold` variant is not scaled, so it keeps the original line-md strokes.
  *
  * @see https://github.com/Templarian/MaterialDesignLight
  */
@@ -268,6 +271,10 @@ interface ParseContext {
   inherited: Record<string, Value>;
   maskIds: Map<string, string>;
   /**
+   * The factor applied to stroke widths: `STROKE_SCALE`, or 1 for the `bold` variant.
+   */
+  strokeScale: number;
+  /**
    * The inherited stroke width, before scaling.
    */
   strokeWidth?: Value;
@@ -289,8 +296,8 @@ const scaleStrokeWidth = (
 
   return round(
     context.inMask && stroke === "#000"
-      ? width + LINE_WIDTH * (1 - STROKE_SCALE)
-      : width * STROKE_SCALE
+      ? width + LINE_WIDTH * (1 - context.strokeScale)
+      : width * context.strokeScale
   );
 };
 
@@ -563,12 +570,17 @@ function parseElement(node: Node, context: ParseContext): IconElement {
   return element;
 }
 
-function parseSvg(svg: string, file: string): IconElement[] {
+function parseSvg(
+  svg: string,
+  file: string,
+  strokeScale = STROKE_SCALE
+): IconElement[] {
   const context: ParseContext = {
     file,
     inMask: false,
     inherited: {},
-    maskIds: new Map()
+    maskIds: new Map(),
+    strokeScale
   };
 
   return parseMarkup(svg, file).children.map(node =>
@@ -690,10 +702,11 @@ async function readIcons(
       );
     }
     const path = join(dir, file);
-    icon.variants[parsed.variant] = parseSvg(
-      await readFile(path, "utf8"),
-      path
-    );
+    const svg = await readFile(path, "utf8");
+    icon.variants[parsed.variant] = parseSvg(svg, path);
+    if (parsed.variant === "regular") {
+      icon.variants.bold = parseSvg(svg, path, 1);
+    }
     icons.set(parsed.name, icon);
   }
 

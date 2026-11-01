@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `sunny` icon, with the `regular`, `loop`, `filled`, `filled-loop` variants.
+ * The Material Line Icons `sunny` icon, with the `regular`, `bold`, `loop`, `filled`, `filled-loop` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=sunny
  */
@@ -37,6 +37,72 @@ export const Sunny = createIcon("Sunny", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M12 7c2.76 0 5 2.24 5 5c0 2.76 -2.24 5 -5 5c-2.76 0 -5 -2.24 -5 -5c0 -2.76 2.24 -5 5 -5Z",
+            strokeDasharray: 34
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.4,
+              values: [34, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M12 21v1M21 12h1M12 3v-1M3 12h-1", opacity: 0 },
+          animations: [
+            { prop: "opacity", begin: 0.5, values: [1], freeze: true },
+            {
+              prop: "d",
+              begin: 0.5,
+              dur: 0.2,
+              values: [
+                "M12 19v1M19 12h1M12 5v-1M5 12h-1",
+                "M12 21v1M21 12h1M12 3v-1M3 12h-1"
+              ],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M18.5 18.5l0.5 0.5M18.5 5.5l0.5 -0.5M5.5 5.5l-0.5 -0.5M5.5 18.5l-0.5 0.5",
+            opacity: 0
+          },
+          animations: [
+            { prop: "opacity", begin: 0.7, values: [1], freeze: true },
+            {
+              prop: "d",
+              begin: 0.7,
+              dur: 0.2,
+              values: [
+                "M17 17l0.5 0.5M17 7l0.5 -0.5M7 7l-0.5 -0.5M7 17l-0.5 0.5",
+                "M18.5 18.5l0.5 0.5M18.5 5.5l0.5 -0.5M5.5 5.5l-0.5 -0.5M5.5 18.5l-0.5 0.5"
+              ],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

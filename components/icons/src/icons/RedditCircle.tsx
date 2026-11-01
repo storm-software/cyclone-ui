@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `reddit-circle` icon, with the `regular`, `loop` variants.
+ * The Material Line Icons `reddit-circle` icon, with the `regular`, `bold`, `loop` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=reddit-circle
  */
@@ -182,6 +182,176 @@ export const RedditCircle = createIcon("RedditCircle", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 0.6,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 8,
+        strokeDashoffset: 8
+      },
+      animations: [
+        {
+          prop: "strokeDashoffset",
+          begin: 2.6,
+          dur: 0.2,
+          values: [0],
+          freeze: true
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "path",
+              props: {
+                d: "M12 3c4.97 0 9 4.03 9 9c0 4.97 -4.03 9 -9 9c-4.97 0 -9 -4.03 -9 -9c0 -4.97 4.03 -9 9 -9Z",
+                stroke: "#fff",
+                fill: "#fff",
+                strokeWidth: 2,
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                strokeDasharray: 60,
+                fillOpacity: 0
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  dur: 0.5,
+                  values: [60, 0],
+                  freeze: true
+                },
+                {
+                  prop: "fillOpacity",
+                  begin: 0.6,
+                  dur: 0.5,
+                  values: [1],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "g",
+              props: { fill: "#000" },
+              children: [
+                {
+                  type: "path",
+                  props: {
+                    d: "M12 9.71c3.22 0 5.83 1.82 5.83 4.06c0 2.24 -2.61 4.06 -5.83 4.06c-3.22 0 -5.83 -1.82 -5.83 -4.06c0 -2.24 2.61 -4.06 5.83 -4.06Z",
+                    opacity: 0
+                  },
+                  animations: [
+                    {
+                      prop: "opacity",
+                      begin: 1.2,
+                      dur: 0.4,
+                      values: [1],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M6.79 10.54c0.8 0 1.45 0.65 1.45 1.45c0 0.8 -0.65 1.45 -1.45 1.45c-0.8 0 -1.45 -0.65 -1.45 -1.45c0 -0.8 0.65 -1.45 1.45 -1.45ZM17.21 9.75c0.8 0 1.45 0.65 1.45 1.45c0 0.8 -0.65 1.45 -1.45 1.45c-0.8 0 -1.45 -0.65 -1.45 -1.45c0 -0.8 0.65 -1.45 1.45 -1.45Z",
+                    opacity: 0
+                  },
+                  animations: [
+                    { prop: "opacity", begin: 1.6, values: [1], freeze: true },
+                    {
+                      prop: "d",
+                      begin: 1.6,
+                      dur: 0.2,
+                      values: [
+                        "M9 10.54c0.8 0 1.45 0.65 1.45 1.45c0 0.8 -0.65 1.45 -1.45 1.45c-0.8 0 -1.45 -0.65 -1.45 -1.45c0 -0.8 0.65 -1.45 1.45 -1.45ZM15 9.75c0.8 0 1.45 0.65 1.45 1.45c0 0.8 -0.65 1.45 -1.45 1.45c-0.8 0 -1.45 -0.65 -1.45 -1.45c0 -0.8 0.65 -1.45 1.45 -1.45Z",
+                        "M6.79 10.54c0.8 0 1.45 0.65 1.45 1.45c0 0.8 -0.65 1.45 -1.45 1.45c-0.8 0 -1.45 -0.65 -1.45 -1.45c0 -0.8 0.65 -1.45 1.45 -1.45ZM17.21 9.75c0.8 0 1.45 0.65 1.45 1.45c0 0.8 -0.65 1.45 -1.45 1.45c-0.8 0 -1.45 -0.65 -1.45 -1.45c0 -0.8 0.65 -1.45 1.45 -1.45Z"
+                      ],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "circle",
+                  props: { cx: 16.18, cy: 7.01, r: 1.04, opacity: 0 },
+                  animations: [
+                    { prop: "opacity", begin: 2.8, values: [1], freeze: true }
+                  ]
+                }
+              ]
+            },
+            {
+              type: "g",
+              props: { fill: "#fff" },
+              children: [
+                {
+                  type: "circle",
+                  props: { cx: 9.71, cy: 13.04, r: 1.04, opacity: 0 },
+                  animations: [
+                    {
+                      prop: "opacity",
+                      begin: 1.8,
+                      dur: 0.4,
+                      values: [1],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "circle",
+                  props: { cx: 14.29, cy: 13.04, r: 1.04, opacity: 0 },
+                  animations: [
+                    {
+                      prop: "opacity",
+                      begin: 2.2,
+                      dur: 0.4,
+                      values: [1],
+                      freeze: true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: {
+                d: "M12 9.91l0.76 -3.64l3.24 0.71",
+                stroke: "#000",
+                fill: "none",
+                strokeWidth: 0.8,
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                strokeDasharray: 10,
+                strokeDashoffset: 10
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 2.6,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M0 0h24v24H0z", fill: "currentColor", mask: "m0" }
+    },
+    {
+      type: "path",
+      props: {
+        d: "M9.72 15.6c0 0 0.61 0.69 2.28 0.69c1.67 -0 2.28 -0.69 2.28 -0.69",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 0.8,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 8,

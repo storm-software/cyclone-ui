@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `arrows-long-diagonal-rotated` icon, with the `regular` variants.
+ * The Material Line Icons `arrows-long-diagonal-rotated` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=arrows-long-diagonal-rotated
  */
@@ -39,6 +39,49 @@ export const ArrowsLongDiagonalRotated = createIcon(
           strokeLinecap: "round",
           strokeLinejoin: "round",
           strokeWidth: 1.5
+        },
+        children: [
+          {
+            type: "path",
+            props: { d: "M12 12l8.5 8.5M12 12l-8.5 -8.5", strokeDasharray: 16 },
+            animations: [
+              {
+                prop: "strokeDashoffset",
+                dur: 0.5,
+                values: [16, 0],
+                freeze: true
+              }
+            ]
+          },
+          {
+            type: "path",
+            props: {
+              d: "M3 3h8M21 21v-8M3 3v8M21 21h-8",
+              strokeDasharray: 10,
+              strokeDashoffset: 10
+            },
+            animations: [
+              {
+                prop: "strokeDashoffset",
+                begin: 0.5,
+                dur: 0.2,
+                values: [0],
+                freeze: true
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    bold: [
+      {
+        type: "g",
+        props: {
+          fill: "none",
+          stroke: "currentColor",
+          strokeLinecap: "round",
+          strokeLinejoin: "round",
+          strokeWidth: 2
         },
         children: [
           {

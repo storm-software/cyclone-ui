@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `marker` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `marker` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=marker
  */
@@ -43,6 +43,49 @@ export const Marker = createIcon("Marker", {
           props: {
             d: "M6 14l11 -11l4 4l-11 11l-4 -4Z",
             strokeWidth: 1.5,
+            strokeDasharray: 46
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.5,
+              values: [46, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M9 17l-2.5 2.5l-4 0l4.5 -4.5Z", opacity: 0 },
+          animations: [
+            { prop: "opacity", begin: 0.5, values: [1], freeze: true },
+            {
+              prop: "d",
+              begin: 0.5,
+              dur: 0.3,
+              values: ["M9 17l0 0l-2 -2l0 0Z", "M9 17l-2.5 2.5l-4 0l4.5 -4.5Z"],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M6 14l11 -11l4 4l-11 11l-4 -4Z",
+            strokeWidth: 2,
             strokeDasharray: 46
           },
           animations: [

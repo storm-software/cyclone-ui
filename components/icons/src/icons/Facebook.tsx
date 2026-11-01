@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `facebook` icon, with the `regular` variants.
+ * The Material Line Icons `facebook` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=facebook
  */
@@ -37,6 +37,45 @@ export const Facebook = createIcon("Facebook", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 3
+      },
+      children: [
+        {
+          type: "path",
+          props: { d: "M17 4l-2 0c-2.5 0 -4 1.5 -4 4v12", strokeDasharray: 24 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.5,
+              values: [24, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M8 12h7", strokeDasharray: 10, strokeDashoffset: 10 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.6,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 4
       },
       children: [
         {

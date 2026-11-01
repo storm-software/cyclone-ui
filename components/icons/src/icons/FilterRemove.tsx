@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `filter-remove` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `filter-remove` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=filter-remove
  */
@@ -37,6 +37,64 @@ export const FilterRemove = createIcon("FilterRemove", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: { d: "M3 4h14l-5 6.5v9.5l-4 -4v-5.5Z", strokeDasharray: 54 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.6,
+              values: [54, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "g",
+          props: { strokeDasharray: 12 },
+          children: [
+            {
+              type: "path",
+              props: { d: "M16 15l6 6", strokeDashoffset: 12 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.7,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: { d: "M16 21l6 -6", strokeDashoffset: 12 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.9,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

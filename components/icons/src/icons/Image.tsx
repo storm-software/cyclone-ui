@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `image` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `image` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=image
  */
@@ -43,6 +43,59 @@ export const Image = createIcon("Image", {
           props: {
             d: "M3 14v-9h18v14h-18v-5",
             strokeWidth: 1.5,
+            strokeDasharray: 66
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.6,
+              values: [66, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M3 16l4 -3l3 2l6 -5l5 4",
+            strokeDasharray: 26,
+            strokeDashoffset: 26
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.6,
+              dur: 0.4,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "circle",
+      props: { cx: 7.5, cy: 9.5, r: 1.5, fill: "currentColor", opacity: 0 },
+      animations: [
+        { prop: "opacity", begin: 1, dur: 0.2, values: [1], freeze: true }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M3 14v-9h18v14h-18v-5",
+            strokeWidth: 2,
             strokeDasharray: 66
           },
           animations: [

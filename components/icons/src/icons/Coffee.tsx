@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `coffee` icon, with the `regular`, `loop`, `filled`, `filled-loop` variants.
+ * The Material Line Icons `coffee` icon, with the `regular`, `bold`, `loop`, `filled`, `filled-loop` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=coffee
  */
@@ -37,6 +37,66 @@ export const Coffee = createIcon("Coffee", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M17 4v9c0 1.66 -1.34 3 -3 3h-6c-1.66 0 -3 -1.34 -3 -3v-9Z",
+            strokeDasharray: 48,
+            strokeDashoffset: 48
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.4,
+              dur: 0.6,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M17 4h3c0.55 0 1 0.45 1 1v3c0 0.55 -0.45 1 -1 1h-3",
+            strokeDasharray: 16,
+            strokeDashoffset: 16
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 1,
+              dur: 0.3,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M11 20h8M11 20h-8", strokeDasharray: 10 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.4,
+              values: [10, 0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

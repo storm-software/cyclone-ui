@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `check-all` icon, with the `regular` variants.
+ * The Material Line Icons `check-all` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=check-all
  */
@@ -96,6 +96,90 @@ export const CheckAll = createIcon("CheckAll", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 24,
+        strokeDashoffset: 24
+      },
+      animations: [
+        {
+          prop: "strokeDashoffset",
+          begin: 0.5,
+          dur: 0.3,
+          values: [0],
+          freeze: true
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "g",
+              props: {
+                fill: "none",
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                strokeDasharray: 24
+              },
+              children: [
+                {
+                  type: "path",
+                  props: {
+                    d: "M2 13.5l4 4l10.75 -10.75",
+                    stroke: "#fff",
+                    strokeWidth: 2
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      dur: 0.5,
+                      values: [24, 0],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M7.5 13.5l4 4l10.75 -10.75",
+                    stroke: "#000",
+                    strokeWidth: 6,
+                    strokeDashoffset: 24
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      begin: 0.5,
+                      dur: 0.3,
+                      values: [0],
+                      freeze: true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M0 0h24v24H0z", fill: "currentColor", mask: "m0" }
+    },
+    {
+      type: "path",
+      props: {
+        d: "M7.5 13.5l4 4l10.75 -10.75",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 24,

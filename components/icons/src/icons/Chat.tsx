@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `chat` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `chat` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=chat
  */
@@ -37,6 +37,80 @@ export const Chat = createIcon("Chat", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M3 19.5v-15.5c0 -0.55 0.45 -1 1 -1h16c0.55 0 1 0.45 1 1v12c0 0.55 -0.45 1 -1 1h-14.5Z",
+            strokeDasharray: 70
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.6,
+              values: [70, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "g",
+          props: { strokeDasharray: 10 },
+          children: [
+            {
+              type: "path",
+              props: { d: "M8 7h8", strokeDashoffset: 10 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.7,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: { d: "M8 10h8", strokeDashoffset: 10 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.8,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M8 13h4", strokeDasharray: 6, strokeDashoffset: 6 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.9,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `file-export` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `file-export` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=file-export
  */
@@ -54,6 +54,67 @@ export const FileExport = createIcon("FileExport", {
             d: "M14 3.5l0 4.5l4.5 0Z",
             stroke: "currentColor",
             strokeWidth: 1.5,
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            opacity: 0
+          },
+          animations: [
+            { prop: "opacity", begin: 0.6, values: [1], freeze: true },
+            {
+              prop: "d",
+              begin: 0.6,
+              dur: 0.2,
+              values: ["M14 3.5l2.25 2.25l2.25 2.25Z", "M14 3.5l0 4.5l4.5 0Z"],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M8 16l3 -3l-2 -2l7 0l0 7l-2 -2l-3 3Z", opacity: 0 },
+          animations: [
+            { prop: "opacity", begin: 0.8, values: [1], freeze: true },
+            {
+              prop: "d",
+              begin: 0.8,
+              dur: 0.2,
+              values: [
+                "M8 16l0 0l-2 -2l3.5 3.5l3.5 3.5l-2 -2l0 0Z",
+                "M8 16l3 -3l-2 -2l7 0l0 7l-2 -2l-3 3Z"
+              ],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M13.5 3l5.5 5.5v11.5c0 0.55 -0.45 1 -1 1h-12c-0.55 0 -1 -0.45 -1 -1v-16c0 -0.55 0.45 -1 1 -1Z",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 62
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.6, values: [62, 0], freeze: true }
+      ]
+    },
+    {
+      type: "g",
+      props: { fill: "currentColor" },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M14 3.5l0 4.5l4.5 0Z",
+            stroke: "currentColor",
+            strokeWidth: 2,
             strokeLinecap: "round",
             strokeLinejoin: "round",
             opacity: 0

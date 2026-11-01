@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `cookie` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `cookie` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=cookie
  */
@@ -36,6 +36,64 @@ export const Cookie = createIcon("Cookie", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 56
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.6, values: [56, 0], freeze: true }
+      ]
+    },
+    {
+      type: "g",
+      props: { fill: "currentColor" },
+      children: [
+        {
+          type: "circle",
+          props: { cx: 9.5, cy: 7.5, r: 1.5, opacity: 0 },
+          animations: [
+            { prop: "opacity", begin: 0.6, dur: 0.1, values: [1], freeze: true }
+          ]
+        },
+        {
+          type: "circle",
+          props: { cx: 11, cy: 17.5, r: 1.5, opacity: 0 },
+          animations: [
+            { prop: "opacity", begin: 0.7, dur: 0.1, values: [1], freeze: true }
+          ]
+        },
+        {
+          type: "circle",
+          props: { cx: 6.5, cy: 11.5, r: 1.5, opacity: 0 },
+          animations: [
+            { prop: "opacity", begin: 0.8, dur: 0.1, values: [1], freeze: true }
+          ]
+        },
+        {
+          type: "circle",
+          props: { cx: 16.5, cy: 14.5, r: 1.5, opacity: 0 },
+          animations: [
+            { prop: "opacity", begin: 0.9, dur: 0.1, values: [1], freeze: true }
+          ]
+        },
+        {
+          type: "circle",
+          props: { cx: 11.5, cy: 12.5, r: 1.5, opacity: 0 },
+          animations: [
+            { prop: "opacity", begin: 1, dur: 0.1, values: [1], freeze: true }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M12 4c-4.42 0 -8 3.58 -8 8c0 4.42 3.58 8 8 8c4.42 0 8 -3.58 8 -8v-1h-2c-0.55 0 -1 -0.45 -1 -1v-1h-2c-0.55 0 -1 -0.45 -1 -1v-1h-1c-0.55 0 -1 -0.45 -1 -1Z",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 56

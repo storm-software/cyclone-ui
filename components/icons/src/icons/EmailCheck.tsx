@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `email-check` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `email-check` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=email-check
  */
@@ -106,6 +106,100 @@ export const EmailCheck = createIcon("EmailCheck", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 10,
+        strokeDashoffset: 10
+      },
+      animations: [
+        {
+          prop: "strokeDashoffset",
+          begin: 0.9,
+          dur: 0.2,
+          values: [0],
+          freeze: true
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "g",
+              props: {
+                fill: "none",
+                stroke: "#fff",
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                strokeWidth: 2
+              },
+              children: [
+                {
+                  type: "path",
+                  props: {
+                    d: "M4 5h16c0.55 0 1 0.45 1 1v12c0 0.55 -0.45 1 -1 1h-16c-0.55 0 -1 -0.45 -1 -1v-12c0 -0.55 0.45 -1 1 -1Z",
+                    strokeDasharray: 66
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      dur: 0.6,
+                      values: [66, 0],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M3 6.5l9 5.5l9 -5.5",
+                    strokeDasharray: 24,
+                    strokeDashoffset: 24
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      begin: 0.6,
+                      dur: 0.3,
+                      values: [0],
+                      freeze: true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: {
+                d: "M19 13c3.31 0 6 2.69 6 6c0 3.31 -2.69 6 -6 6c-3.31 0 -6 -2.69 -6 -6c0 -3.31 2.69 -6 6 -6Z",
+                fill: "#000",
+                opacity: 0
+              },
+              animations: [
+                { prop: "opacity", begin: 0.9, values: [1], freeze: true }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M0 0h24v24H0z", fill: "currentColor", mask: "m0" }
+    },
+    {
+      type: "path",
+      props: {
+        d: "M16 19l1.75 1.75l3.75 -3.75",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 10,

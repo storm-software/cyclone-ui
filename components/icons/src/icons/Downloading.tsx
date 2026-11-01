@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `downloading` icon, with the `regular`, `loop` variants.
+ * The Material Line Icons `downloading` icon, with the `regular`, `bold`, `loop` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=downloading
  */
@@ -37,6 +37,84 @@ export const Downloading = createIcon("Downloading", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M12 21c-4.97 0 -9 -4.03 -9 -9c0 -4.97 4.03 -9 9 -9",
+            strokeDasharray: 32
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.6,
+              values: [32, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M12 3c4.97 0 9 4.03 9 9c0 4.97 -4.03 9 -9 9",
+            strokeDasharray: "2 4",
+            opacity: 0
+          },
+          animations: [
+            { prop: "opacity", begin: 0.45, values: [1], freeze: true },
+            {
+              prop: "transform",
+              transform: "rotate",
+              begin: 0.45,
+              dur: 0.6,
+              values: ["-180 12 12", "0 12 12"],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M12 8v7.5", strokeDasharray: 10, strokeDashoffset: 10 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.85,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M12 15.5l3.5 -3.5M12 15.5l-3.5 -3.5",
+            strokeDasharray: 8,
+            strokeDashoffset: 8
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 1.05,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

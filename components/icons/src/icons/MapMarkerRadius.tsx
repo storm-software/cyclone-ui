@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `map-marker-radius` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `map-marker-radius` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=map-marker-radius
  */
@@ -36,6 +36,53 @@ export const MapMarkerRadius = createIcon("MapMarkerRadius", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 42
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.5, values: [42, 0], freeze: true }
+      ]
+    },
+    {
+      type: "g",
+      props: { fill: "currentColor" },
+      children: [
+        {
+          type: "circle",
+          props: { cx: 12, cy: 8.143 },
+          animations: [
+            { prop: "r", begin: 0.5, dur: 0.2, values: [0, 2.5], freeze: true }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M12 18c0 0 0 0 0 0c0 0 0 0 0 0l0 0c0 0 0 0 0 0c0 0 0 0 0 0c0 0 0 0 0 0c0 0 0 0 0 0l0 0c0 0 0 0 0 0c0 0 0 0 0 0Z"
+          },
+          animations: [
+            {
+              prop: "d",
+              begin: 0.8,
+              dur: 0.2,
+              values: [
+                "M12 21c3.3 0 6 -1.1 6 -2.5c0 -0.7 -0.7 -1.3 -1.8 -1.8l0.6 -0.9c2 0.8 3.2 1.9 3.2 3.2c0 2.2 -3.6 4 -8 4c-4.4 0 -8 -1.8 -8 -4c0 -1.3 1.2 -2.4 3.1 -3.2l0.6 0.9c-1 0.5 -1.7 1.1 -1.7 1.8c0 1.4 2.7 2.5 6 2.5Z"
+              ],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M12 18c0 0 -5.14 -6 -5.14 -9.86c0 -2.84 2.3 -5.14 5.14 -5.14c2.84 0 5.14 2.3 5.14 5.14c0 3.86 -5.14 9.86 -5.14 9.86Z",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 42

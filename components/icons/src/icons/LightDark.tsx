@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `light-dark` icon, with the `regular`, `loop` variants.
+ * The Material Line Icons `light-dark` icon, with the `regular`, `bold`, `loop` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=light-dark
  */
@@ -188,6 +188,183 @@ export const LightDark = createIcon("LightDark", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        transform: "rotate(-45 12 12)",
+        strokeDasharray: 24,
+        strokeDashoffset: 24
+      },
+      animations: [
+        {
+          prop: "strokeDashoffset",
+          begin: 0.5,
+          dur: 0.3,
+          values: [0],
+          freeze: true
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "circle",
+              props: { cx: 7.5, cy: 7.5, r: 5.5, fill: "#fff" }
+            },
+            {
+              type: "circle",
+              props: { cx: 11, cy: 7.5, r: 6.5, fill: "#000" },
+              animations: [
+                { prop: "cx", dur: 0.4, values: [7.5, 11], freeze: true },
+                { prop: "r", dur: 0.4, values: [5.5, 6.5], freeze: true }
+              ]
+            }
+          ]
+        },
+        {
+          type: "mask",
+          props: { id: "m1" },
+          children: [
+            {
+              type: "g",
+              props: { fill: "#fff" },
+              children: [
+                {
+                  type: "circle",
+                  props: {
+                    cx: 12,
+                    cy: 9,
+                    r: 5.5,
+                    transform: "rotate(-45 12 12)"
+                  },
+                  animations: [
+                    {
+                      prop: "cy",
+                      begin: 0.9,
+                      dur: 0.5,
+                      values: [15],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M12.62 20.62h3l-1.5 2.5Z",
+                    transform: "rotate(-120 14.12 14.12)",
+                    opacity: 0
+                  },
+                  animations: [
+                    { prop: "opacity", begin: 1.4, values: [1], freeze: true },
+                    {
+                      prop: "d",
+                      begin: 1.4,
+                      dur: 0.4,
+                      values: [
+                        "M13.12 17.12h2l-1 2Z",
+                        "M12.62 20.62h3l-1.5 2.5Z"
+                      ],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M12.62 20.62h3l-1.5 2.5Z",
+                    transform: "rotate(-70 14.12 14.12)",
+                    opacity: 0
+                  },
+                  animations: [
+                    { prop: "opacity", begin: 1.4, values: [1], freeze: true },
+                    {
+                      prop: "d",
+                      begin: 1.4,
+                      dur: 0.4,
+                      values: [
+                        "M13.12 17.12h2l-1 2Z",
+                        "M12.62 20.62h3l-1.5 2.5Z"
+                      ],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M12.62 20.62h3l-1.5 2.5Z",
+                    transform: "rotate(-20 14.12 14.12)",
+                    opacity: 0
+                  },
+                  animations: [
+                    { prop: "opacity", begin: 1.4, values: [1], freeze: true },
+                    {
+                      prop: "d",
+                      begin: 1.4,
+                      dur: 0.4,
+                      values: [
+                        "M13.12 17.12h2l-1 2Z",
+                        "M12.62 20.62h3l-1.5 2.5Z"
+                      ],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M12.62 20.62h3l-1.5 2.5Z",
+                    transform: "rotate(30 14.12 14.12)",
+                    opacity: 0
+                  },
+                  animations: [
+                    { prop: "opacity", begin: 1.4, values: [1], freeze: true },
+                    {
+                      prop: "d",
+                      begin: 1.4,
+                      dur: 0.4,
+                      values: [
+                        "M13.12 17.12h2l-1 2Z",
+                        "M12.62 20.62h3l-1.5 2.5Z"
+                      ],
+                      freeze: true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: {
+                d: "M-4.97 12l18.38 -18.38l10.61 10.61l-18.38 18.38Z",
+                fill: "#000"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "g",
+      props: { fill: "currentColor" },
+      children: [
+        { type: "path", props: { d: "M0 0h24v24H0z", mask: "m0" } },
+        { type: "path", props: { d: "M0 0h24v24H0z", mask: "m1" } }
+      ]
+    },
+    {
+      type: "path",
+      props: {
+        d: "M23 12h-22",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         transform: "rotate(-45 12 12)",

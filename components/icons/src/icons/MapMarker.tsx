@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `map-marker` icon, with the `regular`, `loop`, `filled`, `filled-loop` variants.
+ * The Material Line Icons `map-marker` icon, with the `regular`, `bold`, `loop`, `filled`, `filled-loop` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=map-marker
  */
@@ -36,6 +36,30 @@ export const MapMarker = createIcon("MapMarker", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 48
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.6, values: [48, 0], freeze: true }
+      ]
+    },
+    {
+      type: "circle",
+      props: { cx: 12, cy: 9, fill: "currentColor" },
+      animations: [
+        { prop: "r", begin: 0.7, dur: 0.2, values: [0, 2.5], freeze: true }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M12 20.5c0 0 -6 -7 -6 -11.5c0 -3.31 2.69 -6 6 -6c3.31 0 6 2.69 6 6c0 4.5 -6 11.5 -6 11.5Z",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 48

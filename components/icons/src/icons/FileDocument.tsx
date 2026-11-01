@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `file-document` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `file-document` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=file-document
  */
@@ -36,6 +36,85 @@ export const FileDocument = createIcon("FileDocument", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M13.5 3l5.5 5.5v11.5c0 0.55 -0.45 1 -1 1h-12c-0.55 0 -1 -0.45 -1 -1v-16c0 -0.55 0.45 -1 1 -1Z",
+            fill: "none",
+            strokeDasharray: 62
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.6,
+              values: [62, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M14 3.5l0 4.5l4.5 0Z",
+            fill: "currentColor",
+            opacity: 0
+          },
+          animations: [
+            { prop: "opacity", begin: 0.6, values: [1], freeze: true },
+            {
+              prop: "d",
+              begin: 0.6,
+              dur: 0.2,
+              values: ["M14 3.5l2.25 2.25l2.25 2.25Z", "M14 3.5l0 4.5l4.5 0Z"],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "g",
+          props: { fill: "none" },
+          children: [
+            {
+              type: "path",
+              props: { d: "M9 13h6", strokeDasharray: 8, strokeDashoffset: 8 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.8,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: { d: "M9 17h3", strokeDasharray: 6, strokeDashoffset: 6 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 1,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

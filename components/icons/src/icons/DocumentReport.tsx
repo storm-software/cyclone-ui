@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `document-report` icon, with the `regular` variants.
+ * The Material Line Icons `document-report` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=document-report
  */
@@ -74,6 +74,107 @@ export const DocumentReport = createIcon("DocumentReport", {
         {
           type: "g",
           props: { strokeWidth: 1.5 },
+          children: [
+            {
+              type: "g",
+              props: { strokeDasharray: 6 },
+              children: [
+                {
+                  type: "path",
+                  props: { d: "M9 17v-3", strokeDashoffset: 6 },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      begin: 0.9,
+                      dur: 0.2,
+                      values: [0],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: { d: "M12 17v-4", strokeDashoffset: 6 },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      begin: 1.1,
+                      dur: 0.2,
+                      values: [0],
+                      freeze: true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: {
+                d: "M15 17v-5",
+                strokeDasharray: 8,
+                strokeDashoffset: 8
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 1.3,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M13 3l6 6v12h-14v-18h8",
+            strokeWidth: 2,
+            strokeDasharray: 64
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.6,
+              values: [64, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M12.5 3v5.5h6.5",
+            strokeDasharray: 14,
+            strokeDashoffset: 14
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.7,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "g",
+          props: { strokeWidth: 2 },
           children: [
             {
               type: "g",

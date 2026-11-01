@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `iconify2-static` icon, with the `regular` variants.
+ * The Material Line Icons `iconify2-static` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=iconify2-static
  */
@@ -88,6 +88,79 @@ export const Iconify2Static = createIcon("Iconify2Static", {
                     d: "M12 3l-8.5 5.5M12 11.5v9",
                     stroke: "#fff",
                     strokeWidth: 1.5
+                  }
+                }
+              ]
+            },
+            {
+              type: "circle",
+              props: { cx: 12, cy: 11.5, r: 3.5, fill: "#000" }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "g",
+      props: { fill: "currentColor" },
+      children: [
+        { type: "path", props: { d: "M0 0h24v24H0z", mask: "m0" } },
+        { type: "circle", props: { cx: 12, cy: 11.5, r: 1.5 } }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "g",
+              props: {
+                fill: "none",
+                strokeLinecap: "round",
+                strokeLinejoin: "round"
+              },
+              children: [
+                {
+                  type: "g",
+                  props: { stroke: "#fff" },
+                  children: [
+                    {
+                      type: "path",
+                      props: { d: "M3.25 22.25h17.5", strokeWidth: 1.5 }
+                    },
+                    {
+                      type: "path",
+                      props: { d: "M7 6v-3M5 8v11h14v-11", strokeWidth: 2 }
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M12 16v4.5M12 3l8.5 5.5",
+                    stroke: "#000",
+                    strokeWidth: 4
+                  }
+                },
+                {
+                  type: "path",
+                  props: { d: "M12 3l8.5 5.5", stroke: "#fff", strokeWidth: 2 }
+                },
+                {
+                  type: "path",
+                  props: { d: "M12 3l-8.5 5.5", stroke: "#000", strokeWidth: 4 }
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M12 3l-8.5 5.5M12 11.5v9",
+                    stroke: "#fff",
+                    strokeWidth: 2
                   }
                 }
               ]

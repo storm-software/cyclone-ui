@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `cloud-alt-tags` icon, with the `regular`, `loop`, `filled`, `filled-loop` variants.
+ * The Material Line Icons `cloud-alt-tags` icon, with the `regular`, `bold`, `loop`, `filled`, `filled-loop` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=cloud-alt-tags
  */
@@ -37,6 +37,53 @@ export const CloudAltTags = createIcon("CloudAltTags", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M7 19h11c2.21 0 4 -1.79 4 -4c0 -2.21 -1.79 -4 -4 -4h-1v-1c0 -2.76 -2.24 -5 -5 -5c-2.42 0 -4.44 1.72 -4.9 4h-0.1c-2.76 0 -5 2.24 -5 5c0 2.76 2.24 5 5 5Z",
+            strokeDasharray: 60
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.6,
+              values: [60, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M7 14l2 2M7 14l2 -2M15 14l-2 2M15 14l-2 -2",
+            opacity: 0,
+            strokeDasharray: 6
+          },
+          animations: [
+            { prop: "opacity", begin: 0.6, values: [1], freeze: true },
+            {
+              prop: "strokeDashoffset",
+              begin: 0.6,
+              dur: 0.4,
+              values: [6, 0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

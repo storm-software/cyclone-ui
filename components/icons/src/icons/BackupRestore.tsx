@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `backup-restore` icon, with the `regular` variants.
+ * The Material Line Icons `backup-restore` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=backup-restore
  */
@@ -36,6 +36,59 @@ export const BackupRestore = createIcon("BackupRestore", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 48
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.6, values: [48, 0], freeze: true }
+      ]
+    },
+    {
+      type: "g",
+      props: { fill: "currentColor" },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M5.63 7.38l-2.13 -2.13l0 4.25l4.25 0Z",
+            stroke: "currentColor",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            opacity: 0
+          },
+          animations: [
+            { prop: "opacity", begin: 0.6, values: [1], freeze: true },
+            {
+              prop: "d",
+              begin: 0.6,
+              dur: 0.2,
+              values: [
+                "M4 9l0 0l0 0l0 0Z",
+                "M5.63 7.38l-2.13 -2.13l0 4.25l4.25 0Z"
+              ],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "circle",
+          props: { cx: 12, cy: 12 },
+          animations: [
+            { prop: "r", begin: 0.8, dur: 0.2, values: [0, 2], freeze: true }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M4.25 14c0.89 3.45 4.02 6 7.75 6c4.42 0 8 -3.58 8 -8c0 -4.42 -3.58 -8 -8 -8c-2.39 0 -4.53 1.05 -6 2.71l-2 2.29",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 48

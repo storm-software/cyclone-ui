@@ -23,12 +23,35 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `twitter-x-alt` icon, with the `regular` variants.
+ * The Material Line Icons `twitter-x-alt` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=twitter-x-alt
  */
 export const TwitterXAlt = createIcon("TwitterXAlt", {
   regular: [
+    {
+      type: "path",
+      props: {
+        d: "M1 2h2.5l15 20h-2.5ZM5.5 2h2.5l15 20h-2.5ZM3 2h5v2h-5ZM16 20h5v2h-5ZM18.5 2h3.5l-17 20h-3.5Z",
+        fill: "currentColor"
+      },
+      animations: [
+        {
+          prop: "d",
+          dur: 0.8,
+          values: [
+            "M8.5 2h2.5l0 0h-2.5ZM13 2h2.5l0 0h-2.5ZM10.5 2h5v0h-5ZM8.5 2h5v0h-5ZM10 2h3.5l0 0h-3.5Z",
+            "M8.5 2h2.5l0 20h-2.5ZM13 2h2.5l0 20h-2.5ZM10.5 2h5v2h-5ZM8.5 20h5v2h-5ZM10 2h3.5l0 20h-3.5Z",
+            "M8.5 2h2.5l0 20h-2.5ZM13 2h2.5l0 20h-2.5ZM10.5 2h5v2h-5ZM8.5 20h5v2h-5ZM10 2h3.5l0 20h-3.5Z",
+            "M1 2h2.5l15 20h-2.5ZM5.5 2h2.5l15 20h-2.5ZM3 2h5v2h-5ZM16 20h5v2h-5ZM18.5 2h3.5l-17 20h-3.5Z"
+          ],
+          keyTimes: [0, 0.3, 0.5, 1],
+          freeze: true
+        }
+      ]
+    }
+  ],
+  bold: [
     {
       type: "path",
       props: {

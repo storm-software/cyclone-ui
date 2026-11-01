@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `folder-cancel` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `folder-cancel` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=folder-cancel
  */
@@ -117,6 +117,130 @@ export const FolderCancel = createIcon("FolderCancel", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M18.5 14c2.48 0 4.5 2.02 4.5 4.5c0 2.48 -2.02 4.5 -4.5 4.5c-2.48 0 -4.5 -2.02 -4.5 -4.5c0 -2.48 2.02 -4.5 4.5 -4.5Z",
+            strokeDasharray: 32,
+            strokeDashoffset: 32
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.8,
+              dur: 0.4,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M16 16l5 5", strokeDasharray: 10, strokeDashoffset: 10 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 1.2,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "g",
+              props: { strokeLinecap: "round", strokeLinejoin: "round" },
+              children: [
+                {
+                  type: "g",
+                  props: { fill: "none", stroke: "#fff", strokeWidth: 2 },
+                  children: [
+                    {
+                      type: "path",
+                      props: {
+                        d: "M12 7h8c0.55 0 1 0.45 1 1v10c0 0.55 -0.45 1 -1 1h-16c-0.55 0 -1 -0.45 -1 -1v-11Z",
+                        strokeDasharray: 62
+                      },
+                      animations: [
+                        {
+                          prop: "strokeDashoffset",
+                          dur: 0.6,
+                          values: [62, 0],
+                          freeze: true
+                        }
+                      ]
+                    },
+                    {
+                      type: "path",
+                      props: {
+                        d: "M12 7h-9v-1c0 -0.55 0.45 -1 1 -1h6Z",
+                        opacity: 0
+                      },
+                      animations: [
+                        {
+                          prop: "opacity",
+                          begin: 0.6,
+                          values: [1],
+                          freeze: true
+                        },
+                        {
+                          prop: "d",
+                          begin: 0.6,
+                          dur: 0.2,
+                          values: [
+                            "M12 7h-9v0c0 0 0.45 0 1 0h6Z",
+                            "M12 7h-9v-1c0 -0.55 0.45 -1 1 -1h6Z"
+                          ],
+                          freeze: true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M18.5 14c2.48 0 4.5 2.02 4.5 4.5c0 2.48 -2.02 4.5 -4.5 4.5c-2.48 0 -4.5 -2.02 -4.5 -4.5c0 -2.48 2.02 -4.5 4.5 -4.5Z",
+                    stroke: "#000",
+                    fill: "#000",
+                    strokeWidth: 6,
+                    opacity: 0
+                  },
+                  animations: [
+                    { prop: "opacity", begin: 0.8, values: [1], freeze: true }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M0 0h24v24H0z", fill: "currentColor", mask: "m0" }
+    },
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

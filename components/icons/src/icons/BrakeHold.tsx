@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `brake-hold` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `brake-hold` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=brake-hold
  */
@@ -37,6 +37,118 @@ export const BrakeHold = createIcon("BrakeHold", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M12 4c4.42 0 8 3.58 8 8c0 4.42 -3.58 8 -8 8c-4.42 0 -8 -3.58 -8 -8c0 -4.42 3.58 -8 8 -8",
+            strokeDasharray: 54
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.6,
+              values: [54, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "g",
+          props: { strokeDasharray: 20 },
+          children: [
+            {
+              type: "path",
+              props: {
+                d: "M4.22 4.22c-4.29 4.3 -4.29 11.26 0 15.56",
+                strokeDashoffset: 20
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.7,
+                  dur: 0.3,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: {
+                d: "M19.78 4.22c4.29 4.3 4.29 11.26 0 15.56",
+                strokeDashoffset: 20
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 1,
+                  dur: 0.3,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          type: "g",
+          props: { strokeDasharray: 10 },
+          children: [
+            {
+              type: "path",
+              props: { d: "M10 8v8", strokeDashoffset: 10 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 1.3,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: { d: "M14 8v8", strokeDashoffset: 10 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 1.5,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M10 12h4", strokeDasharray: 6, strokeDashoffset: 6 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 1.7,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

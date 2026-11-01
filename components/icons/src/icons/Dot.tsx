@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The `dot` icon, drawn in the Material Line Icons style, with the `regular`, `filled` variants.
+ * The `dot` icon, drawn in the Material Line Icons style, with the `regular`, `bold`, `filled` variants.
  */
 export const Dot = createIcon("Dot", {
   regular: [
@@ -34,6 +34,23 @@ export const Dot = createIcon("Dot", {
         fill: "none",
         stroke: "currentColor",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 22
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.3, values: [22, 0], freeze: true }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M12 9c1.66 0 3 1.34 3 3c0 1.66 -1.34 3 -3 3c-1.66 0 -3 -1.34 -3 -3c0 -1.66 1.34 -3 3 -3Z",
+        fill: "none",
+        stroke: "currentColor",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 22

@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `bell` icon, with the `regular`, `loop`, `filled`, `filled-loop` variants.
+ * The Material Line Icons `bell` icon, with the `regular`, `bold`, `loop`, `filled`, `filled-loop` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=bell
  */
@@ -37,6 +37,61 @@ export const Bell = createIcon("Bell", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: { d: "M12 3v2", strokeDasharray: 4 },
+          animations: [
+            { prop: "strokeDashoffset", dur: 0.2, values: [4, 0], freeze: true }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M12 5c-3.31 0 -6 2.69 -6 6l0 6c-1 0 -2 1 -2 2h8M12 5c3.31 0 6 2.69 6 6l0 6c1 0 2 1 2 2h-8",
+            strokeDasharray: 30,
+            strokeDashoffset: 30
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.2,
+              dur: 0.4,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M10 20c0 1.1 0.9 2 2 2c1.1 0 2 -0.9 2 -2",
+            strokeDasharray: 10,
+            strokeDashoffset: 10
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.7,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

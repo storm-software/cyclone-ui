@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `speed` icon, with the `regular`, `loop` variants.
+ * The Material Line Icons `speed` icon, with the `regular`, `bold`, `loop` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=speed
  */
@@ -43,6 +43,102 @@ export const Speed = createIcon("Speed", {
                 stroke: "#fff",
                 fill: "none",
                 strokeWidth: 1.5,
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                strokeDasharray: 56
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  dur: 0.6,
+                  values: [56, 0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: {
+                d: "M12 14c0 0 0 0 0 0c0 0 0 0 0 0c0 0 0 0 0 0c0 0 0 0 0 0Z",
+                fill: "#000",
+                transform: "rotate(-100 12 14)"
+              },
+              animations: [
+                {
+                  prop: "d",
+                  begin: 0.6,
+                  dur: 0.2,
+                  values: [
+                    "M16 14c0 2.21 -1.79 4 -4 4c-2.21 0 -4 -1.79 -4 -4c0 -2.21 4 -14 4 -14c0 0 4 11.79 4 14Z"
+                  ],
+                  freeze: true
+                },
+                {
+                  prop: "transform",
+                  transform: "rotate",
+                  begin: 0.8,
+                  dur: 0.3,
+                  values: ["-100 12 14", "45 12 14"],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "g",
+      props: { fill: "currentColor" },
+      children: [
+        { type: "path", props: { d: "M0 0h24v24H0z", mask: "m0" } },
+        {
+          type: "path",
+          props: {
+            d: "M14 14c0 1.1 -0.9 2 -2 2c-1.1 0 -2 -0.9 -2 -2c0 -1.1 2 -10 2 -10c0 0 2 8.9 2 10Z",
+            transform: "rotate(-100 12 14)",
+            opacity: 0
+          },
+          animations: [
+            { prop: "opacity", begin: 0.6, values: [1], freeze: true },
+            {
+              prop: "d",
+              begin: 0.6,
+              dur: 0.2,
+              values: [
+                "M12 14c0 0 0 0 0 0c0 0 0 0 0 0c0 0 0 0 0 0c0 0 0 0 0 0Z",
+                "M14 14c0 1.1 -0.9 2 -2 2c-1.1 0 -2 -0.9 -2 -2c0 -1.1 2 -10 2 -10c0 0 2 8.9 2 10Z"
+              ],
+              freeze: true
+            },
+            {
+              prop: "transform",
+              transform: "rotate",
+              begin: 0.8,
+              dur: 0.3,
+              values: ["-100 12 14", "45 12 14"],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "path",
+              props: {
+                d: "M5 19v0c-0.3 0 -0.59 -0.15 -0.74 -0.41c-0.8 -1.34 -1.26 -2.91 -1.26 -4.59c0 -4.97 4.03 -9 9 -9c4.97 0 9 4.03 9 9c0 1.68 -0.46 3.25 -1.26 4.59c-0.15 0.26 -0.44 0.41 -0.74 0.41Z",
+                stroke: "#fff",
+                fill: "none",
+                strokeWidth: 2,
                 strokeLinecap: "round",
                 strokeLinejoin: "round",
                 strokeDasharray: 56

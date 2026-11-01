@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `patreon` icon, with the `regular` variants.
+ * The Material Line Icons `patreon` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=patreon
  */
@@ -51,6 +51,54 @@ export const Patreon = createIcon("Patreon", {
             d: "M14.88 3.5c3.38 0 6.12 2.74 6.12 6.13c0 3.38 -2.74 6.12 -6.12 6.12c-3.39 0 -6.13 -2.75 -6.13 -6.12c0 -3.39 2.74 -6.13 6.13 -6.13Z",
             fill: "currentColor",
             strokeWidth: 1.5,
+            strokeLinecap: "round",
+            strokeDasharray: 42,
+            strokeDashoffset: 42,
+            fillOpacity: 0
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.5,
+              dur: 0.4,
+              values: [0],
+              freeze: true
+            },
+            {
+              prop: "fillOpacity",
+              begin: 0.9,
+              dur: 0.5,
+              values: [1],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: { stroke: "currentColor", strokeLinejoin: "round" },
+      children: [
+        {
+          type: "path",
+          props: { d: "M4 2.5v19", fill: "none", strokeWidth: 3 },
+          animations: [
+            {
+              prop: "d",
+              dur: 0.4,
+              values: ["M4 2.5v0", "M4 2.5v19"],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M14.88 3.5c3.38 0 6.12 2.74 6.12 6.13c0 3.38 -2.74 6.12 -6.12 6.12c-3.39 0 -6.13 -2.75 -6.13 -6.12c0 -3.39 2.74 -6.13 6.13 -6.13Z",
+            fill: "currentColor",
+            strokeWidth: 2,
             strokeLinecap: "round",
             strokeDasharray: 42,
             strokeDashoffset: 42,

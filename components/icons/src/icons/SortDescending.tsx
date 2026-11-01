@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The `sort-descending` icon, drawn in the Material Line Icons style, with the `regular` variants.
+ * The `sort-descending` icon, drawn in the Material Line Icons style, with the `regular`, `bold` variants.
  */
 export const SortDescending = createIcon("SortDescending", {
   regular: [
@@ -33,6 +33,94 @@ export const SortDescending = createIcon("SortDescending", {
         fill: "none",
         stroke: "currentColor",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      },
+      children: [
+        {
+          type: "g",
+          props: { strokeDasharray: 12 },
+          children: [
+            {
+              type: "path",
+              props: { d: "M3 6h9" },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  dur: 0.2,
+                  values: [12, 0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: { d: "M3 12h6", strokeDashoffset: 12 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.2,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: { d: "M3 18h3", strokeDashoffset: 12 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.4,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M18 5v14", strokeDasharray: 16, strokeDashoffset: 16 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.6,
+              dur: 0.3,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M14.5 15.5l3.5 3.5l3.5 -3.5",
+            strokeDasharray: 12,
+            strokeDashoffset: 12
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.9,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round"
       },

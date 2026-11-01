@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `volume-medium` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `volume-medium` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=volume-medium
  */
@@ -36,6 +36,38 @@ export const VolumeMedium = createIcon("VolumeMedium", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 34
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.4, values: [34, 0], freeze: true }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M16 12c0 0 0 0 0 0c0 0 0 0 0 0Z", fill: "currentColor" },
+      animations: [
+        {
+          prop: "d",
+          begin: 0.4,
+          dur: 0.2,
+          values: [
+            "M16 16c1.5 -0.71 2.5 -2.24 2.5 -4c0 -1.77 -1 -3.26 -2.5 -4Z"
+          ],
+          freeze: true
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M6 10h3.5l3.5 -3.5v10.5l-3.5 -3.5h-3.5Z",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 34

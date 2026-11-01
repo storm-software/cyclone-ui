@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `car-light-alert` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `car-light-alert` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=car-light-alert
  */
@@ -130,6 +130,154 @@ export const CarLightAlert = createIcon("CarLightAlert", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M18 12c0 -3.31 -3.5 -6.25 -8.25 -6.25c-0.5 0 -1.75 2.75 -1.75 6.25c0 3.5 1.25 6.25 1.75 6.25c4.75 0 8.25 -2.94 8.25 -6.25Z",
+            strokeDasharray: 40
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.5,
+              values: [40, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M22 8v4", strokeDasharray: 6, strokeDashoffset: 6 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 1.4,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M22 16v0.01", strokeDasharray: 4, strokeDashoffset: 4 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 1.6,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "g",
+              props: { strokeLinecap: "round", strokeLinejoin: "round" },
+              children: [
+                {
+                  type: "g",
+                  props: {
+                    fill: "none",
+                    stroke: "#fff",
+                    strokeWidth: 2,
+                    strokeDasharray: 8
+                  },
+                  children: [
+                    {
+                      type: "path",
+                      props: { d: "M8 6h-6", strokeDashoffset: 8 },
+                      animations: [
+                        {
+                          prop: "strokeDashoffset",
+                          begin: 0.6,
+                          dur: 0.2,
+                          values: [0],
+                          freeze: true
+                        }
+                      ]
+                    },
+                    {
+                      type: "path",
+                      props: { d: "M8 10h-6", strokeDashoffset: 8 },
+                      animations: [
+                        {
+                          prop: "strokeDashoffset",
+                          begin: 0.8,
+                          dur: 0.2,
+                          values: [0],
+                          freeze: true
+                        }
+                      ]
+                    },
+                    {
+                      type: "path",
+                      props: { d: "M8 14h-6", strokeDashoffset: 8 },
+                      animations: [
+                        {
+                          prop: "strokeDashoffset",
+                          begin: 1,
+                          dur: 0.2,
+                          values: [0],
+                          freeze: true
+                        }
+                      ]
+                    },
+                    {
+                      type: "path",
+                      props: { d: "M8 18h-6", strokeDashoffset: 8 },
+                      animations: [
+                        {
+                          prop: "strokeDashoffset",
+                          begin: 1.2,
+                          dur: 0.2,
+                          values: [0],
+                          freeze: true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M18 12c0 -3.31 -3.5 -6.25 -8.25 -6.25c-0.5 0 -1.75 2.75 -1.75 6.25c0 3.5 1.25 6.25 1.75 6.25c4.75 0 8.25 -2.94 8.25 -6.25Z",
+                    stroke: "#000",
+                    fill: "#000",
+                    strokeWidth: 4
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M0 0h24v24H0z", fill: "currentColor", mask: "m0" }
+    },
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

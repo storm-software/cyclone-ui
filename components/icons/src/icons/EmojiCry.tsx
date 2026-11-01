@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `emoji-cry` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `emoji-cry` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=emoji-cry
  */
@@ -44,6 +44,129 @@ export const EmojiCry = createIcon("EmojiCry", {
                 strokeLinecap: "round",
                 strokeLinejoin: "round",
                 strokeWidth: 1.5
+              },
+              children: [
+                {
+                  type: "path",
+                  props: {
+                    d: "M12 3c4.97 0 9 4.03 9 9c0 4.97 -4.03 9 -9 9c-4.97 0 -9 -4.03 -9 -9c0 -4.97 4.03 -9 9 -9",
+                    strokeDasharray: 60
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      dur: 0.6,
+                      values: [60, 0],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "g",
+                  props: { strokeDasharray: 4 },
+                  children: [
+                    {
+                      type: "path",
+                      props: { d: "M9 9v1", strokeDashoffset: 4 },
+                      animations: [
+                        {
+                          prop: "strokeDashoffset",
+                          begin: 0.6,
+                          dur: 0.2,
+                          values: [0],
+                          freeze: true
+                        }
+                      ]
+                    },
+                    {
+                      type: "path",
+                      props: { d: "M15 9v1", strokeDashoffset: 4 },
+                      animations: [
+                        {
+                          prop: "strokeDashoffset",
+                          begin: 0.8,
+                          dur: 0.2,
+                          values: [0],
+                          freeze: true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M8 16c0.5 -1 1.79 -2 4 -2c2.21 0 3.5 1 4 2",
+                    strokeDasharray: 12,
+                    strokeDashoffset: 12
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      begin: 1.1,
+                      dur: 0.2,
+                      values: [0],
+                      freeze: true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: {
+                d: "M9.55 12c1.19 1.88 2.45 4.18 2.45 5.5c0 2.5 -2 4.5 -4.5 4.5c-2.5 0 -4.5 -2 -4.5 -4.5c0 -1.32 1.26 -3.62 2.45 -5.5Z",
+                fill: "#000",
+                opacity: 0
+              },
+              animations: [
+                {
+                  prop: "opacity",
+                  begin: 0.8,
+                  dur: 0.2,
+                  values: [1],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "g",
+      props: { fill: "currentColor" },
+      children: [
+        { type: "path", props: { d: "M0 0h24v24H0z", mask: "m0" } },
+        {
+          type: "path",
+          props: {
+            d: "M7.5 13c0 0 2.5 3.12 2.5 4.5c0 1.38 -1.12 2.5 -2.5 2.5c-1.38 0 -2.5 -1.12 -2.5 -2.5c0 -1.38 2.5 -4.5 2.5 -4.5Z",
+            opacity: 0
+          },
+          animations: [
+            { prop: "opacity", begin: 0.8, dur: 0.2, values: [1], freeze: true }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "g",
+              props: {
+                fill: "none",
+                stroke: "#fff",
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                strokeWidth: 2
               },
               children: [
                 {

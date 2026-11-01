@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `filter` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `filter` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=filter
  */
@@ -36,6 +36,23 @@ export const Filter = createIcon("Filter", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 54
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.6, values: [54, 0], freeze: true }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M5 4h14l-5 6.5v9.5l-4 -4v-5.5Z",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 54

@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `mushroom-off` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `mushroom-off` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=mushroom-off
  */
@@ -163,6 +163,158 @@ export const MushroomOff = createIcon("MushroomOff", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        transform: "rotate(45 12 12)",
+        strokeDasharray: 28,
+        strokeDashoffset: 28
+      },
+      animations: [
+        {
+          prop: "strokeDashoffset",
+          begin: 1.6,
+          dur: 0.4,
+          values: [0],
+          freeze: true
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "defs",
+      children: [
+        {
+          type: "mask",
+          props: { id: "m0" },
+          children: [
+            {
+              type: "g",
+              props: {
+                fill: "none",
+                stroke: "#fff",
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                strokeWidth: 2
+              },
+              children: [
+                {
+                  type: "path",
+                  props: {
+                    d: "M12 21h2.5c0.5 0 0.85 -0.5 0.85 -1c0 -0.5 -1.1 -4 -1.1 -4h-2.25M12 21h-2.5c-0.5 0 -0.85 -0.5 -0.85 -1c0 -0.5 1.1 -4 1.1 -4h2.25",
+                    strokeDasharray: 14
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      dur: 0.4,
+                      values: [14, 0],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M12 13h8c0.55 0 1 -0.45 1 -1c0 -4.97 -4.03 -9 -9 -9M12 13h-8c-0.55 0 -1 -0.45 -1 -1c0 -4.97 4.03 -9 9 -9",
+                    strokeDasharray: 26,
+                    strokeDashoffset: 26
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      begin: 0.4,
+                      dur: 0.6,
+                      values: [0],
+                      freeze: true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              type: "g",
+              props: { fill: "#fff" },
+              children: [
+                {
+                  type: "circle",
+                  props: { cx: 11, cy: 4 },
+                  animations: [
+                    {
+                      prop: "r",
+                      begin: 1,
+                      dur: 0.2,
+                      values: [0, 2],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "circle",
+                  props: { cx: 7, cy: 8 },
+                  animations: [
+                    {
+                      prop: "r",
+                      begin: 1.2,
+                      dur: 0.2,
+                      values: [0, 2],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "circle",
+                  props: { cx: 15, cy: 8 },
+                  animations: [
+                    {
+                      prop: "r",
+                      begin: 1.4,
+                      dur: 0.2,
+                      values: [0, 2],
+                      freeze: true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: {
+                d: "M-1 11h26",
+                stroke: "#000",
+                fill: "none",
+                strokeWidth: 2,
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                transform: "rotate(45 12 12)",
+                strokeDasharray: 28,
+                strokeDashoffset: 28
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 1.6,
+                  dur: 0.4,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M0 0h24v24H0z", fill: "currentColor", mask: "m0" }
+    },
+    {
+      type: "path",
+      props: {
+        d: "M-1 13h26",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         transform: "rotate(45 12 12)",

@@ -23,12 +23,61 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `twitter-x` icon, with the `regular` variants.
+ * The Material Line Icons `twitter-x` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=twitter-x
  */
 export const TwitterX = createIcon("TwitterX", {
   regular: [
+    {
+      type: "g",
+      props: { fill: "currentColor" },
+      children: [
+        {
+          type: "path",
+          props: { d: "M1 2h2.5l15 20h-2.5ZM5.5 2h2.5l15 20h-2.5Z" },
+          animations: [
+            {
+              prop: "d",
+              dur: 0.4,
+              values: [
+                "M1 2h2.5l0 0h-2.5ZM5.5 2h2.5l-0.8 0h-2.5Z",
+                "M1 2h2.5l15 20h-2.5ZM5.5 2h2.5l15 20h-2.5Z"
+              ],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M3 2h5v0h-5ZM16 22h5v0h-5Z" },
+          animations: [
+            {
+              prop: "d",
+              begin: 0.4,
+              dur: 0.4,
+              values: ["M3 2h5v2h-5ZM16 22h5v-2h-5Z"],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M18.5 2h3.5l0 0h-3.5Z" },
+          animations: [
+            {
+              prop: "d",
+              begin: 0.5,
+              dur: 0.4,
+              values: ["M18.5 2h3.5l-17 20h-3.5Z"],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
     {
       type: "g",
       props: { fill: "currentColor" },

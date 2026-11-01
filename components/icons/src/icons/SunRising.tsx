@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `sun-rising` icon, with the `regular`, `loop`, `filled`, `filled-loop` variants.
+ * The Material Line Icons `sun-rising` icon, with the `regular`, `bold`, `loop`, `filled`, `filled-loop` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=sun-rising
  */
@@ -37,6 +37,74 @@ export const SunRising = createIcon("SunRising", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M12 6c3.31 0 6 2.69 6 6c0 3.31 -2.69 6 -6 6c-3.31 0 -6 -2.69 -6 -6c0 -3.31 2.69 -6 6 -6Z"
+          },
+          animations: [
+            {
+              prop: "d",
+              dur: 0.6,
+              values: [
+                "M12 26c3.31 0 6 2.69 6 6c0 3.31 -2.69 6 -6 6c-3.31 0 -6 -2.69 -6 -6c0 -3.31 2.69 -6 6 -6Z",
+                "M12 6c3.31 0 6 2.69 6 6c0 3.31 -2.69 6 -6 6c-3.31 0 -6 -2.69 -6 -6c0 -3.31 2.69 -6 6 -6Z"
+              ],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M12 21v1M21 12h1M12 3v-1M3 12h-1", opacity: 0 },
+          animations: [
+            { prop: "opacity", begin: 0.7, values: [1], freeze: true },
+            {
+              prop: "d",
+              begin: 0.7,
+              dur: 0.2,
+              values: [
+                "M12 19v1M19 12h1M12 5v-1M5 12h-1",
+                "M12 21v1M21 12h1M12 3v-1M3 12h-1"
+              ],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M18.5 18.5l0.5 0.5M18.5 5.5l0.5 -0.5M5.5 5.5l-0.5 -0.5M5.5 18.5l-0.5 0.5",
+            opacity: 0
+          },
+          animations: [
+            { prop: "opacity", begin: 0.9, values: [1], freeze: true },
+            {
+              prop: "d",
+              begin: 0.9,
+              dur: 0.2,
+              values: [
+                "M17 17l0.5 0.5M17 7l0.5 -0.5M7 7l-0.5 -0.5M7 17l-0.5 0.5",
+                "M18.5 18.5l0.5 0.5M18.5 5.5l0.5 -0.5M5.5 5.5l-0.5 -0.5M5.5 18.5l-0.5 0.5"
+              ],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `cake` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `cake` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=cake
  */
@@ -37,6 +37,86 @@ export const Cake = createIcon("Cake", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M12 21h8v-9c0 -1.1 -0.9 -2 -2 -2h-6M12 21h-8v-9c0 -1.1 0.9 -2 2 -2h6",
+            strokeDasharray: 30
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.4,
+              values: [30, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M12 10v-2", strokeDasharray: 4, strokeDashoffset: 4 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.5,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M4 16h1c2 0 3.5 -2 3.5 -2c0 0 1.5 2 3.5 2c2 0 3.5 -2 3.5 -2c0 0 1.5 2 3.5 2h1",
+            strokeDasharray: 22,
+            strokeDashoffset: 22
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.7,
+              dur: 0.3,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: {
+        d: "M14 4c0 1.1 -0.9 2 -2 2c-1.1 0 -2 -0.9 -2 -2c0 -1.1 2 -4 2 -4c0 0 2 2.9 2 4Z",
+        fill: "currentColor",
+        opacity: 0
+      },
+      animations: [
+        { prop: "opacity", begin: 1, values: [1], freeze: true },
+        {
+          prop: "d",
+          begin: 1,
+          dur: 0.2,
+          values: [
+            "M13 5c0 0.5 -0.5 1 -1 1c-0.5 0 -1 -0.5 -1 -1c0 -0.5 1 -1 1 -1c0 0 1 0.5 1 1Z",
+            "M14 4c0 1.1 -0.9 2 -2 2c-1.1 0 -2 -0.9 -2 -2c0 -1.1 2 -4 2 -4c0 0 2 2.9 2 4Z"
+          ],
+          freeze: true
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `volume-low` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `volume-low` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=volume-low
  */
@@ -36,6 +36,23 @@ export const VolumeLow = createIcon("VolumeLow", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 34
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.4, values: [34, 0], freeze: true }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M8 10h3.5l3.5 -3.5v10.5l-3.5 -3.5h-3.5Z",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 34

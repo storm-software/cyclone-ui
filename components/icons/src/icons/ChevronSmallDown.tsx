@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `chevron-small-down` icon, with the `regular` variants.
+ * The Material Line Icons `chevron-small-down` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=chevron-small-down
  */
@@ -36,6 +36,23 @@ export const ChevronSmallDown = createIcon("ChevronSmallDown", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 10
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.4, values: [10, 0], freeze: true }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M12 15l-5 -5M12 15l5 -5",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 10

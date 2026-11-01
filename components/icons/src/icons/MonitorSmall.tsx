@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `monitor-small` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `monitor-small` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=monitor-small
  */
@@ -64,6 +64,58 @@ export const MonitorSmall = createIcon("MonitorSmall", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 6,
+        strokeDashoffset: 6
+      },
+      animations: [
+        {
+          prop: "strokeDashoffset",
+          begin: 0.8,
+          dur: 0.4,
+          values: [0],
+          freeze: true
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M12 17h-8v-14h16v14Z",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 62
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.6, values: [62, 0], freeze: true }
+      ]
+    },
+    {
+      type: "path",
+      props: { d: "M10 16h4v0h-4Z", fill: "currentColor" },
+      animations: [
+        {
+          prop: "d",
+          begin: 0.6,
+          dur: 0.2,
+          values: ["M10 16h4v6h-4Z"],
+          freeze: true
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: {
+        d: "M12 21h3M12 21h-3",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 6,

@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `clipboard-arrow` icon, with the `regular` variants.
+ * The Material Line Icons `clipboard-arrow` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=clipboard-arrow
  */
@@ -93,6 +93,111 @@ export const ClipboardArrow = createIcon("ClipboardArrow", {
         {
           type: "g",
           props: { strokeWidth: 1.5 },
+          children: [
+            {
+              type: "path",
+              props: {
+                d: "M21 14h-8.5",
+                strokeDasharray: 12,
+                strokeDashoffset: 12
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 1.1,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: {
+                d: "M12 14l3 3M12 14l3 -3",
+                strokeDasharray: 8,
+                strokeDashoffset: 8
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 1.3,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      },
+      children: [
+        {
+          type: "g",
+          props: { strokeWidth: 2 },
+          children: [
+            {
+              type: "path",
+              props: { d: "M12 3h7v8", strokeDasharray: 18 },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  dur: 0.3,
+                  values: [18, 0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: {
+                d: "M19 17v4h-14v-18h7",
+                strokeDasharray: 46,
+                strokeDashoffset: 46
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.3,
+                  dur: 0.5,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M14.5 3.5v3h-5v-3",
+            strokeDasharray: 14,
+            strokeDashoffset: 14
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.9,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "g",
+          props: { strokeWidth: 2 },
           children: [
             {
               type: "path",

@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `round-360` icon, with the `regular` variants.
+ * The Material Line Icons `round-360` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=round-360
  */
@@ -36,6 +36,53 @@ export const Round360 = createIcon("Round360", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M17 15.33c2.41 -0.72 4 -1.94 4 -3.33c0 -2.21 -4.03 -4 -9 -4c-4.97 0 -9 1.79 -9 4c0 2.06 3.5 3.75 8 3.98",
+            fill: "none",
+            strokeDasharray: 40
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.5,
+              values: [40, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M12.25 16l-2.75 -2.75l0 5.5Z",
+            fill: "currentColor",
+            opacity: 0
+          },
+          animations: [
+            { prop: "opacity", begin: 0.5, values: [1], freeze: true },
+            {
+              prop: "d",
+              begin: 0.5,
+              dur: 0.2,
+              values: ["M12.25 16l0 0l0 0Z", "M12.25 16l-2.75 -2.75l0 5.5Z"],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2
       },
       children: [
         {

@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `moon-alt` icon, with the `regular`, `loop`, `filled`, `filled-loop` variants.
+ * The Material Line Icons `moon-alt` icon, with the `regular`, `bold`, `loop`, `filled`, `filled-loop` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=moon-alt
  */
@@ -43,6 +43,89 @@ export const MoonAlt = createIcon("MoonAlt", {
           props: {
             d: "M7 6c0 6.08 4.92 11 11 11c0.53 0 1.05 -0.04 1.56 -0.11c-1.61 2.47 -4.39 4.11 -7.56 4.11c-4.97 0 -9 -4.03 -9 -9c0 -3.17 1.64 -5.95 4.11 -7.56c-0.07 0.51 -0.11 1.03 -0.11 1.56Z",
             strokeWidth: 1.5,
+            strokeDasharray: 56
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.6,
+              values: [56, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "g",
+          props: { strokeDasharray: 4 },
+          children: [
+            {
+              type: "path",
+              props: {
+                d: "M12 5h1.5M12 5h-1.5M12 5v1.5M12 5v-1.5",
+                strokeDashoffset: 4
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 0.7,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: {
+                d: "M17 11h1.5M17 11h-1.5M17 11v1.5M17 11v-1.5",
+                strokeDashoffset: 4
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 1,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            },
+            {
+              type: "path",
+              props: {
+                d: "M20 5h1.5M20 5h-1.5M20 5v1.5M20 5v-1.5",
+                strokeDashoffset: 4
+              },
+              animations: [
+                {
+                  prop: "strokeDashoffset",
+                  begin: 1.3,
+                  dur: 0.2,
+                  values: [0],
+                  freeze: true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M7 6c0 6.08 4.92 11 11 11c0.53 0 1.05 -0.04 1.56 -0.11c-1.61 2.47 -4.39 4.11 -7.56 4.11c-4.97 0 -9 -4.03 -9 -9c0 -3.17 1.64 -5.95 4.11 -7.56c-0.07 0.51 -0.11 1.03 -0.11 1.56Z",
+            strokeWidth: 2,
             strokeDasharray: 56
           },
           animations: [

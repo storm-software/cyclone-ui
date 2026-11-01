@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The `lock` icon, drawn in the Material Line Icons style, with the `regular`, `filled` variants.
+ * The `lock` icon, drawn in the Material Line Icons style, with the `regular`, `bold`, `filled` variants.
  */
 export const Lock = createIcon("Lock", {
   regular: [
@@ -33,6 +33,65 @@ export const Lock = createIcon("Lock", {
         fill: "none",
         stroke: "currentColor",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      },
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M6 11h12c0.55 0 1 0.45 1 1v8c0 0.55 -0.45 1 -1 1h-12c-0.55 0 -1 -0.45 -1 -1v-8c0 -0.55 0.45 -1 1 -1Z",
+            strokeDasharray: 48
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.5,
+              values: [48, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M8 11v-4c0 -2.21 1.79 -4 4 -4c2.21 0 4 1.79 4 4v4",
+            strokeDasharray: 22,
+            strokeDashoffset: 22
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.5,
+              dur: 0.3,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M12 15v2", strokeDasharray: 4, strokeDashoffset: 4 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.8,
+              dur: 0.1,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round"
       },

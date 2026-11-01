@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `gauge` icon, with the `regular`, `loop` variants.
+ * The Material Line Icons `gauge` icon, with the `regular`, `bold`, `loop` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=gauge
  */
@@ -124,6 +124,126 @@ export const Gauge = createIcon("Gauge", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 8,
+        strokeDashoffset: 8
+      },
+      animations: [
+        {
+          prop: "strokeDashoffset",
+          begin: 1.3,
+          dur: 0.2,
+          values: [0],
+          freeze: true
+        },
+        {
+          prop: "transform",
+          transform: "rotate",
+          begin: 1.5,
+          dur: 0.6,
+          values: ["0 12 12", "115 12 12"],
+          freeze: true
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M12 3c4.97 0 9 4.03 9 9c0 4.97 -4.03 9 -9 9c-4.97 0 -9 -4.03 -9 -9c0 -4.97 4.03 -9 9 -9Z",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 60
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.6, values: [60, 0], freeze: true }
+      ]
+    },
+    {
+      type: "path",
+      props: {
+        d: "M12 16c-2.59 0 -4.85 1.21 -6.06 3l6.06 2l6.06 -2c-1.21 -1.79 -3.47 -3 -6.06 -3Z",
+        fill: "currentColor",
+        opacity: 0
+      },
+      animations: [
+        { prop: "opacity", begin: 0.6, values: [1], freeze: true },
+        {
+          prop: "d",
+          begin: 0.6,
+          dur: 0.4,
+          values: [
+            "M12 21c-2.59 0 -4.85 -0.21 -6.06 -2l6.06 2l6.06 -2c-1.21 1.79 -3.47 2 -6.06 2Z",
+            "M12 16c-2.59 0 -4.85 1.21 -6.06 3l6.06 2l6.06 -2c-1.21 -1.79 -3.47 -3 -6.06 -3Z"
+          ],
+          freeze: true
+        }
+      ]
+    },
+    {
+      type: "circle",
+      props: {
+        cx: 12,
+        cy: 12,
+        r: 1,
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        opacity: 0
+      },
+      animations: [
+        { prop: "opacity", begin: 1.1, values: [1], freeze: true },
+        { prop: "r", begin: 1.1, dur: 0.2, values: [0, 1], freeze: true }
+      ]
+    },
+    {
+      type: "g",
+      props: { fill: "currentColor" },
+      children: [
+        {
+          type: "circle",
+          props: { cx: 7, cy: 12, transform: "rotate(15 12 12)" },
+          animations: [
+            { prop: "r", begin: 0.9, dur: 0.2, values: [0, 1], freeze: true }
+          ]
+        },
+        {
+          type: "circle",
+          props: { cx: 7, cy: 12, transform: "rotate(65 12 12)" },
+          animations: [
+            { prop: "r", begin: 0.95, dur: 0.2, values: [0, 1], freeze: true }
+          ]
+        },
+        {
+          type: "circle",
+          props: { cx: 7, cy: 12, transform: "rotate(115 12 12)" },
+          animations: [
+            { prop: "r", begin: 1, dur: 0.2, values: [0, 1], freeze: true }
+          ]
+        },
+        {
+          type: "circle",
+          props: { cx: 7, cy: 12, transform: "rotate(165 12 12)" },
+          animations: [
+            { prop: "r", begin: 1.05, dur: 0.2, values: [0, 1], freeze: true }
+          ]
+        }
+      ]
+    },
+    {
+      type: "path",
+      props: {
+        d: "M12 12h-5.5",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 8,

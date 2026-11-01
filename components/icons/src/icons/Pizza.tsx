@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `pizza` icon, with the `regular`, `filled` variants.
+ * The Material Line Icons `pizza` icon, with the `regular`, `bold`, `filled` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=pizza
  */
@@ -36,6 +36,43 @@ export const Pizza = createIcon("Pizza", {
         stroke: "currentColor",
         fill: "none",
         strokeWidth: 1.5,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeDasharray: 52
+      },
+      animations: [
+        { prop: "strokeDashoffset", dur: 0.6, values: [52, 0], freeze: true }
+      ]
+    },
+    {
+      type: "g",
+      props: { fill: "currentColor" },
+      children: [
+        {
+          type: "circle",
+          props: { cx: 9, cy: 7 },
+          animations: [
+            { prop: "r", begin: 0.6, dur: 0.2, values: [0, 2], freeze: true }
+          ]
+        },
+        {
+          type: "circle",
+          props: { cx: 12, cy: 13 },
+          animations: [
+            { prop: "r", begin: 0.8, dur: 0.2, values: [0, 2], freeze: true }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "path",
+      props: {
+        d: "M4 6.45c2.01 -2.12 4.85 -3.45 8 -3.45c3.15 0 5.99 1.33 8 3.45l-8 13.55Z",
+        stroke: "currentColor",
+        fill: "none",
+        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 52

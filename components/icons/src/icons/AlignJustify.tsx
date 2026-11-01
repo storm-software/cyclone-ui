@@ -23,7 +23,7 @@
 import { createIcon } from "../create-icon";
 
 /**
- * The Material Line Icons `align-justify` icon, with the `regular` variants.
+ * The Material Line Icons `align-justify` icon, with the `regular`, `bold` variants.
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=align-justify
  */
@@ -37,6 +37,57 @@ export const AlignJustify = createIcon("AlignJustify", {
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeWidth: 1.5,
+        strokeDasharray: 8
+      },
+      children: [
+        {
+          type: "path",
+          props: { d: "M12 5h6M12 5h-6" },
+          animations: [
+            { prop: "strokeDashoffset", dur: 0.2, values: [8, 0], freeze: true }
+          ]
+        },
+        {
+          type: "path",
+          props: { d: "M12 10h6M12 10h-6", strokeDashoffset: 8 },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.2,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M12 15h6M12 15h-6M12 20h6M12 20h-6",
+            strokeDashoffset: 8
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.4,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  bold: [
+    {
+      type: "g",
+      props: {
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
         strokeDasharray: 8
       },
       children: [

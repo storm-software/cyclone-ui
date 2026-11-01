@@ -112,11 +112,11 @@ import { Loading } from "@cyclone-ui/icons/icons/Loading";
 
 Every icon accepts the same props as the `@tamagui/lucide-icons-2` icons (`size`, `color`, `style`, `disableTheme`, and the other `react-native-svg` props), plus:
 
-| Prop       | Type                                               | Default     | Description                                                                                                 |
-| ---------- | -------------------------------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------- |
-| `variant`  | `"regular" \| "loop" \| "filled" \| "filled-loop"` | `"regular"` | The style to render. An icon without the variant uses its closest one (same fill first, then same looping). |
-| `animated` | `boolean`                                          | `true`      | Play the drawing animation on mount and when the variant changes. `false` renders the final frame.          |
-| `mirrored` | `boolean`                                          | `false`     | Flip the icon horizontally (for right-to-left UIs).                                                         |
+| Prop       | Type                                                         | Default     | Description                                                                                                                                                |
+| ---------- | ------------------------------------------------------------ | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `variant`  | `"regular" \| "bold" \| "loop" \| "filled" \| "filled-loop"` | `"regular"` | The style to render. `bold` keeps the original 2px line-md strokes. An icon without the variant uses its closest one (same fill first, then same looping). |
+| `animated` | `boolean`                                                    | `true`      | Play the drawing animation on mount and when the variant changes. `false` renders the final frame.                                                         |
+| `mirrored` | `boolean`                                                    | `false`     | Flip the icon horizontally (for right-to-left UIs).                                                                                                        |
 
 The `size` prop accepts a number of pixels or a token. A string is resolved against the theme's `size` tokens first (for example `size="4xl"`; a legacy `$` prefix is ignored). If it is not a `size` token, it is treated as a font size token so the icon matches text at that size. The `resolveIconSize` export applies the same resolution.
 
@@ -135,7 +135,7 @@ pnpm --filter @cyclone-ui/icons generate
 ```
 
 - Only the `regular`, `loop`, `filled`, and `filled-loop` variants are included; `twotone` and `-transition` icons are skipped.
-- Strokes are scaled to 75% (2px lines render at 1.5px) so the icons sit closer to [Material Design Light](https://github.com/Templarian/MaterialDesignLight). Change `STROKE_SCALE` in the generator to adjust.
+- Strokes are scaled to 75% (2px lines render at 1.5px) so the icons sit closer to [Material Design Light](https://github.com/Templarian/MaterialDesignLight). Change `STROKE_SCALE` in the generator to adjust. Each `regular` file is also read unscaled as the `bold` variant, which matches the original line-md icons.
 - `assets/` holds icons line-md does not have (for example `Lock`, `Clock`, `DotsHorizontal`), drawn in the same style: 24×24 grid, 2px round strokes, and `stroke-dashoffset` draw-in animations. Name variant files `<name>-filled.svg`, `<name>-loop.svg`, and `<name>-filled-loop.svg`.
 
 The line-md artwork is © Vjacheslav Trushkin and is licensed under the [MIT License](https://github.com/cyberalien/line-md/blob/main/license.txt).
