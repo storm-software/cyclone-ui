@@ -328,6 +328,9 @@
       "path": "./components/search-dialog"
     },
     {
+      "path": "./components/privacy-choices"
+    },
+    {
       "path": "./components/ripple-animation"
     },
     {

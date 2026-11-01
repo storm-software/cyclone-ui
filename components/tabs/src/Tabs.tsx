@@ -277,11 +277,12 @@ const TabsFrameImpl = createStyledHOC(
           ref={forwardedRef}
           value={currentTab}
           size={size}
+          // Before `rest` so callers can stack vertical tabs on small screens.
+          flexDirection={orientation === "horizontal" ? "column" : "row"}
           {...rest}
           bordered={bordered}
           onValueChange={handleSetCurrentTab}
           variant={variant}
-          flexDirection={orientation === "horizontal" ? "column" : "row"}
           orientation={orientation}>
           {children}
         </TabsFrame>

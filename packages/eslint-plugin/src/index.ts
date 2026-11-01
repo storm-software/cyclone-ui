@@ -4598,6 +4598,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/privacy-choices",
+      jsx: ["PrivacyChoices"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/progress",
       jsx: ["Progress"],
       roles: []

@@ -69,3 +69,22 @@ export const Success: Story = {
     theme: "success"
   }
 };
+
+export const Thick: Story = {
+  args: {
+    weight: "thick"
+  }
+};
+
+export const Outlined: Story = {
+  args: {
+    outlined: true
+  }
+};
+
+export const ThickOutlined: Story = {
+  args: {
+    weight: "thick",
+    outlined: true
+  }
+};

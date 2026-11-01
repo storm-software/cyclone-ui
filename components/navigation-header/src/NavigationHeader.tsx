@@ -147,7 +147,9 @@ const usePrefersReducedMotion = () =>
 // Inside `backgroundImage`, since Tamagui parses color-mix() words in
 // `backgroundColor` as tokens.
 const translucentCanvas = "color-mix(in oklab, var(--canvas) 70%, transparent)";
-const dotColor = "color-mix(in oklab, var(--emphasis) 20%, transparent)";
+// Dots match the header's canvas, so they vanish over an empty page and only
+// show as a screen over content scrolled underneath.
+const dotColor = "var(--canvas)";
 
 const NavigationHeaderFrame = styled(View, {
   displayName: "NavigationHeader",
@@ -188,7 +190,7 @@ const NavigationHeaderBar = styled(View, {
   boxSizing: "border-box",
   marginHorizontal: "auto",
   paddingHorizontal: "8xl max-md:4xl",
-  paddingVertical: "xl max-md:lg",
+  paddingVertical: "lg max-md:md",
   alignItems: "center",
   flexDirection: "row",
   // Tight on compact screens so logo, search and menu fit in 320px.

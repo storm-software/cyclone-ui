@@ -139,6 +139,7 @@
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
+        "@tamagui/tailwind@3.0.13",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -205,6 +206,7 @@
       "dependencies": ["@tamagui/core@3.0.13", "@tamagui/web@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
+        "@tamagui/tailwind@3.0.13",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -558,6 +560,7 @@
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
+        "@tamagui/tailwind@3.0.13",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -667,6 +670,7 @@
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
+        "@tamagui/tailwind@3.0.13",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -675,6 +679,11 @@
         {
           "path": "components/color-compositions/src/ColorCompositions.tsx",
           "type": "registry:component"
+        },
+        {
+          "path": "components/color-compositions/src/utilities.ts",
+          "type": "registry:file",
+          "target": "components/color-compositions/src/utilities.ts"
         }
       ]
     },
@@ -1224,6 +1233,7 @@
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
+        "@tamagui/tailwind@3.0.13",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -1292,6 +1302,7 @@
       "dependencies": ["@tamagui/core@3.0.13", "react-native-svg@^15.16.0"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
+        "@tamagui/tailwind@3.0.13",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -3894,6 +3905,39 @@
       ]
     },
     {
+      "name": "@cyclone-ui/privacy-choices",
+      "type": "registry:component",
+      "title": "@cyclone-ui/privacy-choices",
+      "description": "A \"Your Privacy Choices\" link, marked with the California privacy options icon, that opens a Dialog where users review their privacy rights and turn categories of cookies or data sharing on or off. Categories are listed in vertical Tabs with a Switch each, and required ones are shown as always active. Choices stay a draft until the user confirms them or rejects all but the necessary ones, then `onValueChange` receives every category's choice. Use it in a site footer.",
+      "dependencies": [
+        "@tamagui/core@3.0.13",
+        "@tamagui/use-controllable-state@3.0.13",
+        "react-native-svg@^15.16.0"
+      ],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.5",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/button",
+        "@cyclone-ui/dialog",
+        "@cyclone-ui/heading-text",
+        "@cyclone-ui/icons",
+        "@cyclone-ui/switch",
+        "@cyclone-ui/tabs",
+        "@cyclone-ui/visually-hidden"
+      ],
+      "files": [
+        {
+          "path": "components/privacy-choices/src/PrivacyChoices.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/progress",
       "type": "registry:component",
       "title": "@cyclone-ui/progress",
@@ -3905,6 +3949,7 @@
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
+        "@tamagui/tailwind@3.0.13",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -4258,6 +4303,7 @@
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
+        "@tamagui/tailwind@3.0.13",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -4651,6 +4697,7 @@
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
+        "@tamagui/tailwind@3.0.13",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -4889,6 +4936,7 @@
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
+        "@tamagui/tailwind@3.0.13",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
