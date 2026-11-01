@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/scramble-animation",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "description": "A ScrambleAnimation wrapper that decodes its children's text from random characters when it mounts, then scrambles the characters near the pointer as it moves over the content. It skips the animation when the user prefers reduced motion. Use it to add a hacker-style scrambled text effect to headings or other text content.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/scramble-animation"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -28,7 +30,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",

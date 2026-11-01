@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Drawer
 
+## [0.1.40](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.40) (11/01/2026)
+
+### Features
+
+- **modal:** Added Model component and updated Drawer styling ([567b818b5](https://github.com/storm-software/cyclone-ui/commit/567b818b5))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.40**
+- Updated **button** to **v0.6.40**
+- Updated **heading-text** to **v0.5.40**
+- Updated **icons** to **v0.0.36**
+- Updated **scroll-view** to **v0.5.40**
+- Updated **sheet** to **v0.0.39**
+
 ## [0.1.39](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.39) (11/01/2026)
 
 ### Features

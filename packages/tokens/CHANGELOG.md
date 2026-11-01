@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Tokens
 
+## [0.3.29](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.29) (11/01/2026)
+
+### Features
+
+- **modal:** Added Model component and updated Drawer styling ([567b818b5](https://github.com/storm-software/cyclone-ui/commit/567b818b5))
+
 ## [0.3.27](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.27) (10/31/2026)
 
 ### Features

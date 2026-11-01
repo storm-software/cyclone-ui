@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Radio Group
 
+## [0.5.40](https://github.com/storm-software/cyclone-ui/releases/tag/radio-group%400.5.40) (11/01/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.40**
+- Updated **field** to **v0.5.40**
+- Updated **form** to **v0.9.40**
+- Updated **heading-text** to **v0.5.40**
+- Updated **helpers** to **v0.3.40**
+- Updated **icons** to **v0.0.36**
+
 ## [0.5.39](https://github.com/storm-software/cyclone-ui/releases/tag/radio-group%400.5.39) (11/01/2026)
 
 ### Updated Dependencies

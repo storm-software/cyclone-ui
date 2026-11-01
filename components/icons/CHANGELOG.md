@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Icons
 
+## [0.0.36](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.36) (11/01/2026)
+
+### Features
+
+- **icons:** Added `bold` variant to the icons ([3c4854c4b](https://github.com/storm-software/cyclone-ui/commit/3c4854c4b))
+- **modal:** Added Model component and updated Drawer styling ([567b818b5](https://github.com/storm-software/cyclone-ui/commit/567b818b5))
+
 ## [0.0.34](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.34) (10/31/2026)
 
 ### Features

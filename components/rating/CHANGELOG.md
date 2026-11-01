@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Rating
 
+## [0.0.36](https://github.com/storm-software/cyclone-ui/releases/tag/rating%400.0.36) (11/01/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update icon display in various components ([eda2de6d7](https://github.com/storm-software/cyclone-ui/commit/eda2de6d7))
+
+### Updated Dependencies
+
+- Updated **confetti-burst** to **v0.0.30**
+- Updated **field** to **v0.5.40**
+- Updated **form** to **v0.9.40**
+- Updated **helpers** to **v0.3.40**
+- Updated **icons** to **v0.0.36**
+- Updated **tokens** to **v0.3.29**
+
 ## [0.0.35](https://github.com/storm-software/cyclone-ui/releases/tag/rating%400.0.35) (11/01/2026)
 
 ### Updated Dependencies

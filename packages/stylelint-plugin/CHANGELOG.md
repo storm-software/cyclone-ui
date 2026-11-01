@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.30](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.30) (11/01/2026)
+
+### Features
+
+- **modal:** Added Model component and updated Drawer styling ([567b818b5](https://github.com/storm-software/cyclone-ui/commit/567b818b5))
+
 ## [0.0.28](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.28) (10/31/2026)
 
 ### Features

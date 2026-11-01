@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Select
 
+## [0.6.40](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.40) (11/01/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update icon display in various components ([eda2de6d7](https://github.com/storm-software/cyclone-ui/commit/eda2de6d7))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.40**
+- Updated **button** to **v0.6.40**
+- Updated **context-menu** to **v0.0.30**
+- Updated **field** to **v0.5.40**
+- Updated **form** to **v0.9.40**
+- Updated **helpers** to **v0.3.40**
+- Updated **icons** to **v0.0.36**
+- Updated **input** to **v0.6.40**
+
 ## [0.6.39](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.39) (11/01/2026)
 
 ### Updated Dependencies

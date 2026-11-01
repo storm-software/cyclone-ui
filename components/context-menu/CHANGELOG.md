@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Context Menu
 
+## [0.0.30](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.30) (11/01/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update icon display in various components ([eda2de6d7](https://github.com/storm-software/cyclone-ui/commit/eda2de6d7))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.40**
+- Updated **button** to **v0.6.40**
+- Updated **helpers** to **v0.3.40**
+- Updated **icons** to **v0.0.36**
+- Updated **popover** to **v0.5.40**
+- Updated **tooltip** to **v0.5.40**
+
 ## [0.0.29](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.29) (11/01/2026)
 
 ### Updated Dependencies
