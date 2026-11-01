@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/drawer",
   "version": "0.1.38",
   "type": "module",
-  "description": "A side panel built on the Cyclone UI Sheet that slides in from the right by default and comes in sm, md and lg sizes. It has Frame, Handle, Overlay, ScrollView, Heading, Body and Footer parts. Use it for navigation, filters or secondary content shown beside the main view.",
+  "description": "A side panel built on the Cyclone UI Sheet that slides in from the right by default and comes in sm, md and lg sizes. It has Frame, Handle, Overlay, ScrollView, Header (with optional back and close buttons), Title, Description, Heading, Body and Footer parts; the Footer stays visible while content scrolls. Use it for navigation, filters or secondary content shown beside the main view.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
@@ -19,7 +19,9 @@
   },
   "dependencies": {
     "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
     "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/scroll-view": "workspace:*",
     "@cyclone-ui/sheet": "workspace:*",
     "@tamagui/core": "catalog:",
@@ -29,7 +31,6 @@
     "@tamagui/stacks": "catalog:"
   },
   "devDependencies": {
-    "@cyclone-ui/button": "workspace:*",
     "@storybook/react-vite": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",

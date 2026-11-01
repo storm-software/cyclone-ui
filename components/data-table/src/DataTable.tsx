@@ -29,6 +29,7 @@ import {
   HeadingSmallText
 } from "@cyclone-ui/heading-text";
 import {
+  Close,
   DotsVertical,
   Filter,
   SortAscending,
@@ -52,6 +53,7 @@ import {
   styled,
   View
 } from "@tamagui/core";
+import { withStaticProperties } from "@tamagui/helpers";
 import { XStack, YStack } from "@tamagui/stacks";
 import type {
   CellContext,
@@ -116,6 +118,7 @@ export interface DataTableContextProps {
   setColumnFilters: Dispatch<SetStateAction<ColumnFiltersState>>;
   pagination: PaginationState;
   setPagination: Dispatch<SetStateAction<PaginationState>>;
+  selectedRows: Row<any>[];
 }
 
 export const DataTableContext = createStyledContext<DataTableContextProps>({
@@ -124,7 +127,8 @@ export const DataTableContext = createStyledContext<DataTableContextProps>({
   columnFilters: [] as ColumnFiltersState,
   setColumnFilters: () => {},
   pagination: { pageIndex: 0, pageSize: 10 },
-  setPagination: () => {}
+  setPagination: () => {},
+  selectedRows: [] as Row<any>[]
 } as const);
 
 export type DataTableOptions<TData = any> = Partial<TableOptions<TData>> &
@@ -167,6 +171,12 @@ export interface DataTableProps<TData extends RowData> extends TableProps {
    * Called with the selected action's `value` and its row.
    */
   onRowAction?: (value: string, row: Row<TData>) => void;
+
+  /**
+   * Actions (`DataTable.SelectionAction`) shown in the bar above the column
+   * headers while rows are selected.
+   */
+  children?: ReactNode;
 }
 
 const SELECTION_COLUMN_ID = "__selection";
@@ -507,7 +517,7 @@ const useInitialContentSizedColumns = <TData extends RowData>(
   }, [columnIds, enabled, table, tableRef]);
 };
 
-export function DataTable<TData extends RowData>({
+function DataTableImpl<TData extends RowData>({
   options,
   pageSize = 100,
   resizable = false,
@@ -515,6 +525,7 @@ export function DataTable<TData extends RowData>({
   variant = "standard",
   rowActions,
   onRowAction,
+  children,
   ...rest
 }: DataTableProps<TData>) {
   const card = variant === "card";
@@ -626,7 +637,8 @@ export function DataTable<TData extends RowData>({
   const headerGroups = table.getHeaderGroups();
   const tableRows = table.getRowModel().rows;
   const pageCount = table.getPageCount();
-  const selectedCount = Object.keys(table.getState().rowSelection).length;
+  const selectedRows = table.getSelectedRowModel().rows;
+  const columnCount = table.getVisibleLeafColumns().length;
 
   return (
     <DataTableContext.Provider
@@ -635,7 +647,8 @@ export function DataTable<TData extends RowData>({
       columnFilters={columnFilters}
       setColumnFilters={setColumnFilters}
       pagination={pagination}
-      setPagination={setPagination}>
+      setPagination={setPagination}
+      selectedRows={selectedRows}>
       <YStack gap="3xl">
         <Table
           ref={tableRef as any}
@@ -663,6 +676,43 @@ export function DataTable<TData extends RowData>({
             ] as any
           }>
           <Table.Header>
+            {selectedRows.length > 0 && (
+              <Table.Row header={true}>
+                <Table.Cell
+                  borderBottomWidth={0}
+                  paddingVertical="lg"
+                  {...(card ? getCardCellProps(0, 1) : {})}
+                  backgroundColor="floating"
+                  {...({ colSpan: columnCount } as any)}>
+                  <XStack
+                    flexGrow={1}
+                    alignItems="center"
+                    justifyContent="space-between"
+                    gap="xl"
+                    paddingHorizontal="xl">
+                    <HeadingExtraSmallText
+                      fontWeight="600"
+                      aria-live="polite">{`${selectedRows.length} selected`}</HeadingExtraSmallText>
+                    <XStack alignItems="center" gap="md">
+                      {children}
+                      <Button
+                        theme="base"
+                        variant="ghost"
+                        circular={true}
+                        noPadding={true}
+                        size="6xl"
+                        padding="lg"
+                        aria-label="Clear selection"
+                        onPress={() => table.resetRowSelection(true)}>
+                        <Button.Icon>
+                          <Close size="2xl" />
+                        </Button.Icon>
+                      </Button>
+                    </XStack>
+                  </XStack>
+                </Table.Cell>
+              </Table.Row>
+            )}
             {headerGroups.map(headerGroup => {
               return (
                 <Table.Row key={headerGroup.id} header={true}>
@@ -849,9 +899,7 @@ export function DataTable<TData extends RowData>({
               <Table.Row>
                 <Table.Cell
                   {...(card ? getCardCellProps(0, 1) : {})}
-                  {...({
-                    colSpan: table.getVisibleLeafColumns().length
-                  } as any)}>
+                  {...({ colSpan: columnCount } as any)}>
                   <View
                     flex={1}
                     justifyContent="center"
@@ -874,9 +922,7 @@ export function DataTable<TData extends RowData>({
                   {...(card
                     ? { ...getCardCellProps(0, 1), paddingVertical: "xl" }
                     : {})}
-                  {...({
-                    colSpan: table.getVisibleLeafColumns().length
-                  } as any)}>
+                  {...({ colSpan: columnCount } as any)}>
                   <DataTablePagination
                     setPageIndex={table.setPageIndex}
                     nextPage={table.nextPage}
@@ -885,7 +931,6 @@ export function DataTable<TData extends RowData>({
                     lastPage={table.lastPage}
                     totalCount={data.length}
                     unfilteredCount={table.getFilteredRowModel().rows.length}
-                    selectedCount={selectedCount}
                     pageIndex={pagination.pageIndex}
                     pageSize={pagination.pageSize}
                     pageCount={pageCount}
@@ -899,6 +944,41 @@ export function DataTable<TData extends RowData>({
     </DataTableContext.Provider>
   );
 }
+
+export interface DataTableSelectionActionProps<TData extends RowData> {
+  icon?: ReactNode;
+  children: ReactNode;
+  disabled?: boolean;
+
+  /**
+   * Called with the selected rows (across every page) when pressed.
+   */
+  onAction: (rows: Row<TData>[]) => void;
+}
+
+export function DataTableSelectionAction<TData extends RowData>({
+  icon,
+  children,
+  disabled,
+  onAction
+}: DataTableSelectionActionProps<TData>) {
+  const { selectedRows } = DataTableContext.useStyledContext();
+
+  return (
+    <Button
+      theme="base"
+      size="sm"
+      disabled={disabled}
+      onPress={() => onAction(selectedRows)}>
+      {icon && <Button.Icon>{icon}</Button.Icon>}
+      <Button.Text>{children}</Button.Text>
+    </Button>
+  );
+}
+
+export const DataTable = withStaticProperties(DataTableImpl, {
+  SelectionAction: DataTableSelectionAction
+});
 
 export interface DataTableCellProps<
   TData extends RowData,
@@ -1274,7 +1354,6 @@ export type DataTablePaginationProps<TData extends RowData> = Pick<
     pageCount: number;
     totalCount: number;
     unfilteredCount: number;
-    selectedCount: number;
   };
 
 export function DataTablePagination<TData extends RowData>({
@@ -1285,7 +1364,6 @@ export function DataTablePagination<TData extends RowData>({
   lastPage,
   totalCount,
   unfilteredCount,
-  selectedCount,
   pageIndex,
   pageSize,
   pageCount,
@@ -1418,7 +1496,7 @@ export function DataTablePagination<TData extends RowData>({
 
           <YStack gap="xs" justifyContent="center">
             <HeadingExtraSmallText>
-              {`${unfilteredCount > 0 ? pageIndex * pageSize + 1 : 0}-${Math.min((pageIndex + 1) * pageSize, unfilteredCount)} of ${unfilteredCount} ${unfilteredCount === 1 ? "row" : "rows"}${selectedCount > 0 ? ` (${selectedCount} Selected)` : ""}`}
+              {`${unfilteredCount > 0 ? pageIndex * pageSize + 1 : 0}-${Math.min((pageIndex + 1) * pageSize, unfilteredCount)} of ${unfilteredCount} ${unfilteredCount === 1 ? "row" : "rows"}`}
             </HeadingExtraSmallText>
             {unfilteredCount !== totalCount && (
               <XStack

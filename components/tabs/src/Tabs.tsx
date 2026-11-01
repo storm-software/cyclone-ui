@@ -21,6 +21,7 @@
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import { getSized, getSpaced } from "@cyclone-ui/helpers";
 import { AnimatePresence } from "@tamagui/animate-presence";
+import { isWeb } from "@tamagui/constants";
 import type {
   FontSizeTokens,
   GetProps,
@@ -44,9 +45,10 @@ import type {
 import { Tabs as TamaguiTabs } from "@tamagui/tabs";
 import type { Dispatch, SetStateAction } from "react";
 import { useCallback, useLayoutEffect, useMemo, useState } from "react";
+import { TabsFluidIndicator } from "./fluid";
 
 export type TabOrientation = "horizontal" | "vertical";
-export type TabVariant = "underline" | "floating" | "tabbed";
+export type TabVariant = "underline" | "floating" | "tabbed" | "fluid";
 
 export interface TabsState {
   /**
@@ -183,7 +185,8 @@ const TabsFrame = styled(TamaguiTabs, {
     variant: {
       underline: {},
       floating: {},
-      tabbed: {}
+      tabbed: {},
+      fluid: {}
     },
 
     bordered: {
@@ -212,7 +215,7 @@ const TabsFrameImpl = createStyledHOC(
     {
       children,
       orientation = "horizontal",
-      variant = "floating",
+      variant: variantProp = "floating",
       bordered = true,
       size = true,
       onValueChange,
@@ -221,6 +224,9 @@ const TabsFrameImpl = createStyledHOC(
     }: TabsProps,
     forwardedRef
   ) => {
+    // The fluid indicator is WebGL; native falls back to the floating pill.
+    const variant =
+      variantProp === "fluid" && !isWeb ? "floating" : variantProp;
     const [state, setState] = useState<TabsState>({
       ...initialState
     });
@@ -330,7 +336,9 @@ const TabsRovingIndicator = styled(YStack, {
         alignItems: "center",
         justifyContent: "center"
       },
-      tabbed: {}
+      tabbed: {},
+      // Drawn by `TabsFluidIndicator` instead.
+      fluid: {}
     },
 
     bordered: {
@@ -459,6 +467,12 @@ const TabsHeaderList = styled(YStack, {
         backgroundColor: "transparent",
         borderWidth: 0,
         padding: 0
+      },
+      fluid: {
+        backgroundColor: "sunken",
+        borderRadius: 999,
+        borderColor: "hairline",
+        borderWidth: 1
       }
     },
 
@@ -479,7 +493,7 @@ const TabsHeaderListImpl = createStyledHOC(
   TabsHeaderList,
   ({ children, ...rest }: ViewProps, forwardedRef) => {
     const {
-      state: { activeAt, intentAt, prevActiveAt },
+      state: { activeAt, intentAt, prevActiveAt, currentTab, steps },
       orientation,
       variant,
       bordered
@@ -504,36 +518,40 @@ const TabsHeaderListImpl = createStyledHOC(
         variant={variant}
         bordered={bordered}
         {...rest}>
-        {variant !== "tabbed" && (
-          <>
-            {variant !== "floating" && (
-              <TabsRovingIndicatorImpl
-                width={intentAt?.width ?? 0}
-                height={intentAt?.height ?? 0}
-                x={intentAt?.x ?? 0}
-                y={intentAt?.y ?? 0}
-                opacity={`0 group-hover/tabs:${intentAt ? 1 : 0}`}
-                orientation={orientation}
-                variant={variant}
-                bordered={bordered}
-                intent={intentAt ? "group-hover/tabs:true" : undefined}
-              />
-            )}
-            <AnimatePresence>
-              {activeAt && (
+        {variant === "fluid" ? (
+          <TabsFluidIndicator selected={currentTab} count={steps.length} />
+        ) : (
+          variant !== "tabbed" && (
+            <>
+              {variant === "underline" && (
                 <TabsRovingIndicatorImpl
-                  width={activeAt.width}
-                  height={activeAt.height}
-                  x={activeAt.x}
-                  y={activeAt.y}
-                  active={true}
+                  width={intentAt?.width ?? 0}
+                  height={intentAt?.height ?? 0}
+                  x={intentAt?.x ?? 0}
+                  y={intentAt?.y ?? 0}
+                  opacity={`0 group-hover/tabs:${intentAt ? 1 : 0}`}
                   orientation={orientation}
                   variant={variant}
                   bordered={bordered}
+                  intent={intentAt ? "group-hover/tabs:true" : undefined}
                 />
               )}
-            </AnimatePresence>
-          </>
+              <AnimatePresence>
+                {activeAt && (
+                  <TabsRovingIndicatorImpl
+                    width={activeAt.width}
+                    height={activeAt.height}
+                    x={activeAt.x}
+                    y={activeAt.y}
+                    active={true}
+                    orientation={orientation}
+                    variant={variant}
+                    bordered={bordered}
+                  />
+                )}
+              </AnimatePresence>
+            </>
+          )
         )}
 
         <TamaguiTabs.List
@@ -614,7 +632,8 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
       underline: {},
       floating: {},
       // Styled by the `.resolve` below because it depends on `orientation`.
-      tabbed: {}
+      tabbed: {},
+      fluid: {}
     },
 
     // Styled by the `.resolve` below; it only applies to the tabbed variant.
@@ -678,6 +697,15 @@ const TabsHeaderItemImpl = createStyledHOC(
       setState(next => ({ ...next, steps: [...next.steps, value] }));
     }, [setState, value]);
 
+    const heading = (
+      <TabsHeaderItemHeading
+        size={size}
+        color="group-hover:primary"
+        selected={currentTab === value}>
+        {children}
+      </TabsHeaderItemHeading>
+    );
+
     return (
       <TabsHeaderItem
         ref={forwardedRef}
@@ -690,12 +718,29 @@ const TabsHeaderItemImpl = createStyledHOC(
         {...rest}
         value={value}
         onInteraction={onInteraction}>
-        <TabsHeaderItemHeading
-          size={size}
-          color="group-hover:primary"
-          selected={currentTab === value}>
-          {children}
-        </TabsHeaderItemHeading>
+        {variant === "fluid" ? (
+          <View position="relative">
+            {heading}
+            {/* Clipped to the pill by `TabsFluidIndicator`. */}
+            <TabsHeaderItemHeading
+              data-fluid-overlay=""
+              aria-hidden
+              size={size}
+              selected={currentTab === value}
+              color="on-primary"
+              position="absolute"
+              top={0}
+              right={0}
+              bottom={0}
+              left={0}
+              pointerEvents="none"
+              style={{ clipPath: "inset(100%)" }}>
+              {children}
+            </TabsHeaderItemHeading>
+          </View>
+        ) : (
+          heading
+        )}
       </TabsHeaderItem>
     );
   }
@@ -722,7 +767,8 @@ const TabsContentList = styled(View, {
       underline: {},
       floating: {},
       // Styled by the `.resolve` below because it depends on `orientation`.
-      tabbed: {}
+      tabbed: {},
+      fluid: {}
     },
 
     bordered: {

@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/tabs",
   "version": "0.3.38",
   "type": "module",
-  "description": "A tabbed interface with Header.Item triggers and Content.Item panels. It offers underline, floating and tabbed variants in horizontal or vertical orientation, optional borders and sizes, and an animated active indicator. onValueChange reports the selected tab.",
+  "description": "A tabbed interface with Header.Item triggers and Content.Item panels. It offers underline, floating, tabbed and fluid (gooey WebGL pill) variants in horizontal or vertical orientation, optional borders and sizes, and an animated active indicator. onValueChange reports the selected tab.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
@@ -22,6 +22,7 @@
     "@cyclone-ui/helpers": "workspace:*",
     "@tamagui/animate-presence": "catalog:",
     "@tamagui/button": "catalog:",
+    "@tamagui/constants": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/font-size": "catalog:",
     "@tamagui/get-font-sized": "catalog:",

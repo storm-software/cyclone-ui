@@ -27,13 +27,16 @@
       "path": "../scroll-view"
     },
     {
+      "path": "../icons"
+    },
+    {
       "path": "../heading-text"
     },
     {
-      "path": "../body-text"
+      "path": "../button"
     },
     {
-      "path": "../button"
+      "path": "../body-text"
     }
   ]
 }

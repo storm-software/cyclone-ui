@@ -38,15 +38,8 @@
   },
   "license": "Apache-2.0",
   "private": false,
-  "files": [
-    "dist"
-  ],
-  "keywords": [
-    "cli",
-    "cyclone-ui",
-    "storm-software",
-    "shell-shock"
-  ],
+  "files": ["dist"],
+  "keywords": ["cli", "cyclone-ui", "storm-software", "shell-shock"],
   "dependencies": {
     "@cyclone-ui/registry-api": "workspace:*",
     "@cyclone-ui/theme-builder": "workspace:*",
@@ -109,6 +102,7 @@
     "./search-icons": "./dist/search-icons.mjs",
     "./search-tokens": "./dist/search-tokens.mjs",
     "./update": "./dist/update.mjs",
+    "./update-components": "./dist/update-components.mjs",
     "./view": "./dist/view.mjs"
   }
 }

@@ -49,7 +49,14 @@ import { withStaticProperties } from "@tamagui/helpers";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { GetProps, SizeTokens } from "@tamagui/web";
 import type { PointerEvent } from "react";
-import { createContext, use, useContext, useRef, useState } from "react";
+import {
+  createContext,
+  use,
+  useContext,
+  useEffect,
+  useRef,
+  useState
+} from "react";
 
 export interface CardContextProps {
   size: SizeTokens;
@@ -129,7 +136,8 @@ const CardAccentBar = styled(View, {
   }
 });
 
-export type CardVariant = "top" | "bottom" | "left" | "right" | "none";
+export type CardVariant =
+  "top" | "bottom" | "left" | "right" | "none" | "pixel";
 
 // Soft radial spotlight that follows the pointer; `left` / `top` are written
 // straight to the DOM node on pointer move so tracking never re-renders.
@@ -146,6 +154,130 @@ const CardSpotlight = styled(View, {
   opacity: "0 group-hover/card:0.15",
   zIndex: 5
 });
+
+const PIXEL_GAP = 6;
+// Ripple speed in px of distance from the center per ms.
+const PIXEL_RIPPLE = 0.6;
+
+interface CardPixel {
+  x: number;
+  y: number;
+  delay: number;
+  max: number;
+  alpha: number;
+  phase: number;
+  size: number;
+}
+
+// `pixel` variant: a grid of twinkling pixels that ripples out from the
+// center while hovered and shrinks away on leave. Drawn on a canvas so the
+// animation never re-renders; the loop stops once every pixel is gone.
+const CardPixels = ({ active, color }: { active: boolean; color: string }) => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const pixelsRef = useRef<CardPixel[]>([]);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas?.getContext("2d");
+    if (
+      !canvas ||
+      !ctx ||
+      matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+
+    // `color` may be a CSS var; the computed style resolves it for canvas.
+    const fill = getComputedStyle(canvas).color;
+    const build = () => {
+      const { width, height } = canvas.getBoundingClientRect();
+      const dpr = Math.min(devicePixelRatio, 2);
+      if (canvas.width === Math.round(width * dpr)) {
+        return;
+      }
+
+      canvas.width = Math.round(width * dpr);
+      canvas.height = Math.round(height * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      const pixels: CardPixel[] = [];
+      for (let x = PIXEL_GAP / 2; x < width; x += PIXEL_GAP) {
+        for (let y = PIXEL_GAP / 2; y < height; y += PIXEL_GAP) {
+          pixels.push({
+            x,
+            y,
+            delay: Math.hypot(x - width / 2, y - height / 2) / PIXEL_RIPPLE,
+            max: 1 + Math.random() * 1.5,
+            alpha: 0.3 + Math.random() * 0.7,
+            phase: Math.random() * Math.PI * 2,
+            size: 0
+          });
+        }
+      }
+      pixelsRef.current = pixels;
+    };
+
+    const start = performance.now();
+    let frame = 0;
+    const tick = (now: number) => {
+      const elapsed = now - start;
+      let visible = false;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = fill;
+      for (const pixel of pixelsRef.current) {
+        const target =
+          active && elapsed >= pixel.delay
+            ? pixel.max * (0.6 + 0.4 * Math.sin(now / 300 + pixel.phase))
+            : 0;
+        pixel.size += (target - pixel.size) * 0.15;
+        if (pixel.size < 0.05) {
+          pixel.size = 0;
+          continue;
+        }
+
+        visible = true;
+        ctx.globalAlpha = pixel.alpha;
+        ctx.fillRect(
+          pixel.x - pixel.size / 2,
+          pixel.y - pixel.size / 2,
+          pixel.size,
+          pixel.size
+        );
+      }
+
+      if (active || visible) {
+        frame = requestAnimationFrame(tick);
+      }
+    };
+
+    const observer = new ResizeObserver(build);
+    observer.observe(canvas);
+    build();
+    frame = requestAnimationFrame(tick);
+
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(frame);
+    };
+  }, [active, color]);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      aria-hidden="true"
+      style={{
+        position: "absolute",
+        inset: 0,
+        width: "100%",
+        height: "100%",
+        color,
+        pointerEvents: "none",
+        zIndex: 5
+      }}
+    />
+  );
+};
 
 const CardContent = styled(YStack, {
   displayName: "Card",
@@ -238,18 +370,22 @@ const CardFrameImpl = createStyledHOC(
               {dataColor && (
                 <CardDataBorder style={{ borderColor: dataColor }} />
               )}
-              {variant !== "none" && (
+              {variant !== "none" && variant !== "pixel" && (
                 <CardAccentBar
                   variant={variant}
                   {...(dataColor && { style: { backgroundColor: dataColor } })}
                 />
               )}
-              <CardSpotlight
-                ref={spotlightRef as any}
-                style={{
-                  backgroundImage: `radial-gradient(circle closest-side, ${spotlightColor}, transparent)`
-                }}
-              />
+              {variant === "pixel" ? (
+                <CardPixels active={hovered} color={spotlightColor} />
+              ) : (
+                <CardSpotlight
+                  ref={spotlightRef as any}
+                  style={{
+                    backgroundImage: `radial-gradient(circle closest-side, ${spotlightColor}, transparent)`
+                  }}
+                />
+              )}
               <CardContent size={size}>{children}</CardContent>
             </CardFrame>
           </CardContext.Provider>

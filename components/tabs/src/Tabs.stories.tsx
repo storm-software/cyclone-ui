@@ -138,6 +138,34 @@ export const TabbedVertical: Story = {
   }
 };
 
+export const Fluid: Story = {
+  args: {
+    variant: "fluid"
+  },
+  play: async ({ canvasElement }) => {
+    const tabList = within(canvasElement).getByRole("tablist");
+
+    await expect(tabList.parentElement?.querySelector("canvas")).not.toBeNull();
+    await expect(
+      tabList.querySelectorAll("[data-fluid-overlay]")
+    ).toHaveLength(3);
+  }
+};
+
+export const FluidBrand: Story = {
+  args: {
+    variant: "fluid",
+    theme: "brand"
+  }
+};
+
+export const FluidVertical: Story = {
+  args: {
+    orientation: "vertical",
+    variant: "fluid"
+  }
+};
+
 export const Horizontal: Story = {
   args: {
     orientation: "horizontal"

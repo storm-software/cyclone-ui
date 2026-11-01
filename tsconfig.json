@@ -235,6 +235,9 @@
       "path": "./components/redacted-animation"
     },
     {
+      "path": "./components/scramble-animation"
+    },
+    {
       "path": "./components/divider"
     },
     {

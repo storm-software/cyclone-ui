@@ -166,12 +166,12 @@ const NavigationHeaderFrame = styled(View, {
     variant: {
       filled: {},
       transparent: {
-        backgroundColor: "transparent",
+        backgroundColor: "transparent hover:canvas",
         backgroundImage: `linear-gradient(${translucentCanvas}, ${translucentCanvas})`,
         backdropFilter: "blur(12px)"
       },
       dotted: {
-        backgroundColor: "transparent",
+        backgroundColor: "transparent hover:canvas",
         backgroundImage: `radial-gradient(circle, ${dotColor} 1px, transparent 1px), linear-gradient(${translucentCanvas}, ${translucentCanvas})`,
         backgroundSize: "8px 8px, auto",
         backdropFilter: "blur(12px)"

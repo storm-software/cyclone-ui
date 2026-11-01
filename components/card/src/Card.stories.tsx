@@ -32,7 +32,7 @@ const meta: Meta<CardStoryArgs> = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["top", "bottom", "left", "right", "none"]
+      options: ["top", "bottom", "left", "right", "none", "pixel"]
     }
   },
   render: ({ icon, ...args }: CardStoryArgs) => (
@@ -153,5 +153,19 @@ export const AccentNone: Story = {
   args: {
     ...Base.args,
     variant: "none"
+  }
+};
+
+export const Pixel: Story = {
+  args: {
+    ...Base.args,
+    variant: "pixel"
+  }
+};
+
+export const PixelDataColor: Story = {
+  args: {
+    ...DataColor.args,
+    variant: "pixel"
   }
 };

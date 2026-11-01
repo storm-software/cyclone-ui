@@ -16,7 +16,13 @@
 
  ------------------------------------------------------------------- */
 
-import { CloseSquare, ConfirmCircle, EmailArrowRight } from "@cyclone-ui/icons";
+import {
+  CloseSquare,
+  ConfirmCircle,
+  Download,
+  EmailArrowRight,
+  Pause
+} from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Avatar } from "@tamagui/avatar";
 import { Text, View } from "@tamagui/core";
@@ -346,6 +352,57 @@ export const RowSelection: Story = {
     );
 
     await waitFor(() => expect(canvas.getByText("3 rows")).toBeTruthy());
+  }
+};
+
+const onHold = fn();
+const onExport = fn();
+
+export const SelectionActions: Story = {
+  args: {
+    options: {
+      data: defaultData,
+      enableRowSelection: true
+    },
+    pageSize: 5
+  },
+  render: ({ options, ...props }: any) => (
+    <DataTable<Person> {...props} options={{ ...options, columns }}>
+      <DataTable.SelectionAction<Person>
+        icon={<Pause size="2xl" />}
+        onAction={onHold}>
+        Hold
+      </DataTable.SelectionAction>
+      <DataTable.SelectionAction<Person>
+        icon={<Download size="2xl" />}
+        onAction={onExport}>
+        Export
+      </DataTable.SelectionAction>
+    </DataTable>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.click(
+      canvas.getByRole("checkbox", { name: "Select row 1" })
+    );
+    await userEvent.click(
+      canvas.getByRole("checkbox", { name: "Select row 3" })
+    );
+    await expect(await canvas.findByText("2 selected")).toBeVisible();
+
+    await userEvent.click(canvas.getByRole("button", { name: "Export" }));
+    await expect(onExport).toHaveBeenCalledWith([
+      expect.objectContaining({ index: 0 }),
+      expect.objectContaining({ index: 2 })
+    ]);
+
+    await userEvent.click(
+      canvas.getByRole("button", { name: "Clear selection" })
+    );
+    await waitFor(() =>
+      expect(canvas.queryByText("2 selected")).not.toBeInTheDocument()
+    );
   }
 };
 
