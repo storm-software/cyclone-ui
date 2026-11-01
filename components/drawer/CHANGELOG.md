@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Drawer
 
+## [0.1.39](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.39) (11/01/2026)
+
+### Features
+
+- **scramble-animation:** Added scramble text animation component and improved design ([3a43c964f](https://github.com/storm-software/cyclone-ui/commit/3a43c964f))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.39**
+- Updated **button** to **v0.6.39**
+- Updated **heading-text** to **v0.5.39**
+- Updated **icons** to **v0.0.35**
+- Updated **scroll-view** to **v0.5.39**
+- Updated **sheet** to **v0.0.38**
+
 ## [0.1.38](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.38) (10/31/2026)
 
 ### Updated Dependencies

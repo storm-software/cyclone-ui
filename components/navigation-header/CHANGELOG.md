@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Navigation Header
 
+## [0.0.37](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-header%400.0.37) (11/01/2026)
+
+### Features
+
+- **scramble-animation:** Added scramble text animation component and improved design ([3a43c964f](https://github.com/storm-software/cyclone-ui/commit/3a43c964f))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.39**
+- Updated **eyebrow-text** to **v0.5.39**
+- Updated **heading-text** to **v0.5.39**
+- Updated **icons** to **v0.0.35**
+- Updated **link** to **v0.5.39**
+- Updated **redacted-animation** to **v0.0.36**
+- Updated **search-dialog** to **v0.0.16**
+- Updated **vectors** to **v0.5.39**
+
 ## [0.0.36](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-header%400.0.36) (10/31/2026)
 
 ### Features

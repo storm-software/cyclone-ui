@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Tabs
 
+## [0.3.39](https://github.com/storm-software/cyclone-ui/releases/tag/tabs%400.3.39) (11/01/2026)
+
+### Features
+
+- **scramble-animation:** Added scramble text animation component and improved design ([3a43c964f](https://github.com/storm-software/cyclone-ui/commit/3a43c964f))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.39**
+- Updated **heading-text** to **v0.5.39**
+- Updated **helpers** to **v0.3.39**
+
 ## [0.3.38](https://github.com/storm-software/cyclone-ui/releases/tag/tabs%400.3.38) (10/31/2026)
 
 ### Features

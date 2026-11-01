@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Card
 
+## [0.6.39](https://github.com/storm-software/cyclone-ui/releases/tag/card%400.6.39) (11/01/2026)
+
+### Features
+
+- **scramble-animation:** Added scramble text animation component and improved design ([3a43c964f](https://github.com/storm-software/cyclone-ui/commit/3a43c964f))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.39**
+- Updated **container** to **v0.6.39**
+- Updated **eyebrow-text** to **v0.5.39**
+- Updated **heading-text** to **v0.5.39**
+- Updated **helpers** to **v0.3.39**
+- Updated **icons** to **v0.0.35**
+- Updated **link** to **v0.5.39**
+- Updated **themeable-icon** to **v0.6.39**
+- Updated **vectors** to **v0.5.39**
+
 ## [0.6.38](https://github.com/storm-software/cyclone-ui/releases/tag/card%400.6.38) (10/31/2026)
 
 ### Features

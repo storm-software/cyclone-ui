@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Body Text
 
+## [0.5.39](https://github.com/storm-software/cyclone-ui/releases/tag/body-text%400.5.39) (11/01/2026)
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.39**
+
 ## [0.5.38](https://github.com/storm-software/cyclone-ui/releases/tag/body-text%400.5.38) (10/31/2026)
 
 ### Updated Dependencies

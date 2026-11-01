@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - CLI
 
+## [0.6.30](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.30) (11/01/2026)
+
+### Features
+
+- **scramble-animation:** Added scramble text animation component and improved design ([3a43c964f](https://github.com/storm-software/cyclone-ui/commit/3a43c964f))
+
+### Updated Dependencies
+
+- Updated **registry-api** to **v0.3.39**
+- Updated **theme-builder** to **v0.0.29**
+
 ## [0.6.29](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.29) (10/31/2026)
 
 ### Features
