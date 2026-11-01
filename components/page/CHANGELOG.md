@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Page
 
+## [0.0.32](https://github.com/storm-software/cyclone-ui/releases/tag/page%400.0.32) (10/31/2026)
+
+### Features
+
+- **icons:** Update icons to match material design icons with animations ([84720d7e0](https://github.com/storm-software/cyclone-ui/commit/84720d7e0))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.38**
+- Updated **button** to **v0.6.38**
+- Updated **heading-text** to **v0.5.38**
+- Updated **icons** to **v0.0.34**
+- Updated **scroll-view** to **v0.5.38**
+
 ## [0.0.31](https://github.com/storm-software/cyclone-ui/releases/tag/page%400.0.31) (10/31/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Stepper
 
+## [0.3.38](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.38) (10/31/2026)
+
+### Features
+
+- **icons:** Update icons to match material design icons with animations ([84720d7e0](https://github.com/storm-software/cyclone-ui/commit/84720d7e0))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.38**
+- Updated **icons** to **v0.0.34**
+- Updated **next-button** to **v0.5.38**
+- Updated **previous-button** to **v0.5.38**
+
 ## [0.3.37](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.37) (10/31/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Footer
 
+## [0.0.36](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.36) (10/31/2026)
+
+### Features
+
+- **icons:** Update icons to match material design icons with animations ([84720d7e0](https://github.com/storm-software/cyclone-ui/commit/84720d7e0))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.38**
+- Updated **heading-text** to **v0.5.38**
+- Updated **icons** to **v0.0.34**
+- Updated **link** to **v0.5.38**
+- Updated **vectors** to **v0.5.38**
+
 ## [0.0.35](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.35) (10/31/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Code Block
 
+## [0.6.38](https://github.com/storm-software/cyclone-ui/releases/tag/code-block%400.6.38) (10/31/2026)
+
+### Features
+
+- **icons:** Update icons to match material design icons with animations ([84720d7e0](https://github.com/storm-software/cyclone-ui/commit/84720d7e0))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.38**
+- Updated **button** to **v0.6.38**
+- Updated **heading-text** to **v0.5.38**
+- Updated **icons** to **v0.0.34**
+- Updated **scroll-view** to **v0.5.38**
+- Updated **themeable-icon** to **v0.6.38**
+- Updated **vectors** to **v0.5.38**
+
 ## [0.6.37](https://github.com/storm-software/cyclone-ui/releases/tag/code-block%400.6.37) (10/31/2026)
 
 ### Updated Dependencies

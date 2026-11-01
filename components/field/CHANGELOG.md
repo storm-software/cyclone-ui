@@ -2,6 +2,26 @@
 
 # Changelog for Cyclone UI - Field
 
+## [0.5.38](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.38) (10/31/2026)
+
+### Features
+
+- **icons:** Update icons to match material design icons with animations ([84720d7e0](https://github.com/storm-software/cyclone-ui/commit/84720d7e0))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.38**
+- Updated **button** to **v0.6.38**
+- Updated **form** to **v0.9.38**
+- Updated **helpers** to **v0.3.38**
+- Updated **icons** to **v0.0.34**
+- Updated **link** to **v0.5.38**
+- Updated **spinner** to **v0.5.38**
+- Updated **state** to **v0.0.39**
+- Updated **themeable-icon** to **v0.6.38**
+- Updated **tooltip** to **v0.5.38**
+- Updated **validation-text** to **v0.5.38**
+
 ## [0.5.37](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.37) (10/31/2026)
 
 ### Updated Dependencies

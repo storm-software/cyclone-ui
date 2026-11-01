@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Tokens
 
+## [0.3.27](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.27) (10/31/2026)
+
+### Features
+
+- **card:** Added the `variant` property to change border display ([5f86d2bce](https://github.com/storm-software/cyclone-ui/commit/5f86d2bce))
+
 ## [0.3.21](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.21) (10/25/2026)
 
 ### Bug Fixes

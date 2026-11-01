@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Helpers
 
+## [0.3.38](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.38) (10/31/2026)
+
+### Features
+
+- **icons:** Update icons to match material design icons with animations ([84720d7e0](https://github.com/storm-software/cyclone-ui/commit/84720d7e0))
+
 ## [0.3.36](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.36) (10/30/2026)
 
 ### Bug Fixes

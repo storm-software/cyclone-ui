@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Table of Contents
 
+## [0.0.35](https://github.com/storm-software/cyclone-ui/releases/tag/table-of-contents%400.0.35) (10/31/2026)
+
+### Features
+
+- **icons:** Update icons to match material design icons with animations ([84720d7e0](https://github.com/storm-software/cyclone-ui/commit/84720d7e0))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.38**
+- Updated **icons** to **v0.0.34**
+
 ## [0.0.34](https://github.com/storm-software/cyclone-ui/releases/tag/table-of-contents%400.0.34) (10/31/2026)
 
 ### Updated Dependencies

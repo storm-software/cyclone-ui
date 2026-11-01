@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Tag
 
+## [0.0.33](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.33) (10/31/2026)
+
+### Features
+
+- **icons:** Update icons to match material design icons with animations ([84720d7e0](https://github.com/storm-software/cyclone-ui/commit/84720d7e0))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.38**
+- Updated **icons** to **v0.0.34**
+- Updated **ripple-animation** to **v0.0.15**
+
 ## [0.0.32](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.32) (10/31/2026)
 
 ### Updated Dependencies

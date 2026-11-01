@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.28](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.28) (10/31/2026)
+
+### Features
+
+- **privacy-choices:** Initial check-in of Privacy Choices component ([ac380f8a8](https://github.com/storm-software/cyclone-ui/commit/ac380f8a8))
+- **card:** Added the `variant` property to change border display ([5f86d2bce](https://github.com/storm-software/cyclone-ui/commit/5f86d2bce))
+
 ## [0.0.20](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.20) (10/24/2026)
 
 ### Features

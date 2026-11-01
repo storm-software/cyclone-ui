@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Icons
 
+## [0.0.34](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.34) (10/31/2026)
+
+### Features
+
+- **icons:** Update icons to match material design icons with animations ([84720d7e0](https://github.com/storm-software/cyclone-ui/commit/84720d7e0))
+
 ## [0.0.25](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.25) (10/23/2026)
 
 ### Bug Fixes

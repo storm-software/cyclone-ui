@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Toggle
 
+## [0.0.28](https://github.com/storm-software/cyclone-ui/releases/tag/toggle%400.0.28) (10/31/2026)
+
+### Features
+
+- **icons:** Update icons to match material design icons with animations ([84720d7e0](https://github.com/storm-software/cyclone-ui/commit/84720d7e0))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.38**
+- Updated **icons** to **v0.0.34**
+- Updated **tokens** to **v0.3.27**
+
 ## [0.0.27](https://github.com/storm-software/cyclone-ui/releases/tag/toggle%400.0.27) (10/31/2026)
 
 ### Updated Dependencies

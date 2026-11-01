@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Color Compositions
 
+## [0.0.22](https://github.com/storm-software/cyclone-ui/releases/tag/color-compositions%400.0.22) (10/31/2026)
+
+### Features
+
+- **cli:** Add support for TailwindCSS styled components ([99fa33ed5](https://github.com/storm-software/cyclone-ui/commit/99fa33ed5))
+
 ## [0.0.9](https://github.com/storm-software/cyclone-ui/releases/tag/color-compositions%400.0.9) (10/22/2026)
 
 ### Bug Fixes

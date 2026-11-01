@@ -2,6 +2,14 @@
 
 # Changelog for Cyclone UI - Nextjs
 
+## [0.0.9](https://github.com/storm-software/cyclone-ui/releases/tag/nextjs%400.0.9) (10/31/2026)
+
+### Updated Dependencies
+
+- Updated **state** to **v0.0.39**
+- Updated **theme-builder** to **v0.0.28**
+- Updated **tokens** to **v0.3.27**
+
 ## [0.0.8](https://github.com/storm-software/cyclone-ui/releases/tag/nextjs%400.0.8) (10/31/2026)
 
 ### Updated Dependencies

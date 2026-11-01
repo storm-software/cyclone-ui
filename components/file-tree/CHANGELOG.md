@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - File Tree
 
+## [0.0.36](https://github.com/storm-software/cyclone-ui/releases/tag/file-tree%400.0.36) (10/31/2026)
+
+### Features
+
+- **cli:** Add support for TailwindCSS styled components ([99fa33ed5](https://github.com/storm-software/cyclone-ui/commit/99fa33ed5))
+- **icons:** Update icons to match material design icons with animations ([84720d7e0](https://github.com/storm-software/cyclone-ui/commit/84720d7e0))
+
+### Updated Dependencies
+
+- Updated **icons** to **v0.0.34**
+
 ## [0.0.35](https://github.com/storm-software/cyclone-ui/releases/tag/file-tree%400.0.35) (10/31/2026)
 
 ### Updated Dependencies

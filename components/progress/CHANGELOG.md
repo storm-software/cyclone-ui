@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Progress
 
+## [0.5.38](https://github.com/storm-software/cyclone-ui/releases/tag/progress%400.5.38) (10/31/2026)
+
+### Features
+
+- **cli:** Add support for TailwindCSS styled components ([99fa33ed5](https://github.com/storm-software/cyclone-ui/commit/99fa33ed5))
+
 ## [0.5.27](https://github.com/storm-software/cyclone-ui/releases/tag/progress%400.5.27) (10/23/2026)
 
 ### Documentation

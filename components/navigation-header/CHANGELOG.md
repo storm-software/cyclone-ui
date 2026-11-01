@@ -2,6 +2,25 @@
 
 # Changelog for Cyclone UI - Navigation Header
 
+## [0.0.36](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-header%400.0.36) (10/31/2026)
+
+### Features
+
+- **privacy-choices:** Initial check-in of Privacy Choices component ([ac380f8a8](https://github.com/storm-software/cyclone-ui/commit/ac380f8a8))
+- **navigation-header:** Add `variant` to component ([e089c67de](https://github.com/storm-software/cyclone-ui/commit/e089c67de))
+- **icons:** Update icons to match material design icons with animations ([84720d7e0](https://github.com/storm-software/cyclone-ui/commit/84720d7e0))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.38**
+- Updated **eyebrow-text** to **v0.5.38**
+- Updated **heading-text** to **v0.5.38**
+- Updated **icons** to **v0.0.34**
+- Updated **link** to **v0.5.38**
+- Updated **redacted-animation** to **v0.0.35**
+- Updated **search-dialog** to **v0.0.15**
+- Updated **vectors** to **v0.5.38**
+
 ## [0.0.35](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-header%400.0.35) (10/31/2026)
 
 ### Updated Dependencies

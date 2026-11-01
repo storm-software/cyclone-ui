@@ -1,0 +1,20 @@
+![Cyclone UI's logo banner](https://public.storm-cdn.com/cyclone-ui/media/banner-1280x320-dark.gif)
+
+# Changelog for Cyclone UI - Privacy Choices
+
+## [0.0.1](https://github.com/storm-software/cyclone-ui/releases/tag/privacy-choices%400.0.1) (10/31/2026)
+
+### Features
+
+- **privacy-choices:** Initial check-in of Privacy Choices component ([ac380f8a8](https://github.com/storm-software/cyclone-ui/commit/ac380f8a8))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.38**
+- Updated **button** to **v0.6.38**
+- Updated **dialog** to **v0.3.38**
+- Updated **heading-text** to **v0.5.38**
+- Updated **icons** to **v0.0.34**
+- Updated **switch** to **v0.5.38**
+- Updated **tabs** to **v0.3.38**
+- Updated **visually-hidden** to **v0.5.38**

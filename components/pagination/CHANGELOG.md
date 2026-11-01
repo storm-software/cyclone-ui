@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Pagination
 
+## [0.8.38](https://github.com/storm-software/cyclone-ui/releases/tag/pagination%400.8.38) (10/31/2026)
+
+### Features
+
+- **icons:** Update icons to match material design icons with animations ([84720d7e0](https://github.com/storm-software/cyclone-ui/commit/84720d7e0))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.38**
+- Updated **icons** to **v0.0.34**
+- Updated **next-button** to **v0.5.38**
+- Updated **previous-button** to **v0.5.38**
+
 ## [0.8.37](https://github.com/storm-software/cyclone-ui/releases/tag/pagination%400.8.37) (10/31/2026)
 
 ### Updated Dependencies

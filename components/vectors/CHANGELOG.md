@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Vectors
 
+## [0.5.38](https://github.com/storm-software/cyclone-ui/releases/tag/vectors%400.5.38) (10/31/2026)
+
+### Features
+
+- **privacy-choices:** Initial check-in of Privacy Choices component ([ac380f8a8](https://github.com/storm-software/cyclone-ui/commit/ac380f8a8))
+- **icons:** Update icons to match material design icons with animations ([84720d7e0](https://github.com/storm-software/cyclone-ui/commit/84720d7e0))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.38**
+- Updated **icons** to **v0.0.34**
+
 ## [0.5.37](https://github.com/storm-software/cyclone-ui/releases/tag/vectors%400.5.37) (10/31/2026)
 
 ### Bug Fixes

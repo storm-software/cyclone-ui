@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Badge
 
+## [0.3.38](https://github.com/storm-software/cyclone-ui/releases/tag/badge%400.3.38) (10/31/2026)
+
+### Features
+
+- **cli:** Add support for TailwindCSS styled components ([99fa33ed5](https://github.com/storm-software/cyclone-ui/commit/99fa33ed5))
+- **icons:** Update icons to match material design icons with animations ([84720d7e0](https://github.com/storm-software/cyclone-ui/commit/84720d7e0))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.38**
+- Updated **icons** to **v0.0.34**
+- Updated **state** to **v0.0.39**
+
 ## [0.3.37](https://github.com/storm-software/cyclone-ui/releases/tag/badge%400.3.37) (10/31/2026)
 
 ### Updated Dependencies

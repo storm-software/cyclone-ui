@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Glitch Separator
 
+## [0.0.35](https://github.com/storm-software/cyclone-ui/releases/tag/glitch-separator%400.0.35) (10/31/2026)
+
+### Features
+
+- **cli:** Add support for TailwindCSS styled components ([99fa33ed5](https://github.com/storm-software/cyclone-ui/commit/99fa33ed5))
+
 ## [0.0.22](https://github.com/storm-software/cyclone-ui/releases/tag/glitch-separator%400.0.22) (10/22/2026)
 
 ### Bug Fixes

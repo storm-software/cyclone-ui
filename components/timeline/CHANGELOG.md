@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Timeline
 
+## [0.0.28](https://github.com/storm-software/cyclone-ui/releases/tag/timeline%400.0.28) (10/31/2026)
+
+### Features
+
+- **cli:** Add support for TailwindCSS styled components ([99fa33ed5](https://github.com/storm-software/cyclone-ui/commit/99fa33ed5))
+- **icons:** Update icons to match material design icons with animations ([84720d7e0](https://github.com/storm-software/cyclone-ui/commit/84720d7e0))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.38**
+- Updated **heading-text** to **v0.5.38**
+- Updated **icons** to **v0.0.34**
+
 ## [0.0.27](https://github.com/storm-software/cyclone-ui/releases/tag/timeline%400.0.27) (10/31/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Rating
 
+## [0.0.34](https://github.com/storm-software/cyclone-ui/releases/tag/rating%400.0.34) (10/31/2026)
+
+### Features
+
+- **icons:** Update icons to match material design icons with animations ([84720d7e0](https://github.com/storm-software/cyclone-ui/commit/84720d7e0))
+
+### Updated Dependencies
+
+- Updated **confetti-burst** to **v0.0.28**
+- Updated **field** to **v0.5.38**
+- Updated **form** to **v0.9.38**
+- Updated **helpers** to **v0.3.38**
+- Updated **icons** to **v0.0.34**
+- Updated **tokens** to **v0.3.27**
+
 ## [0.0.33](https://github.com/storm-software/cyclone-ui/releases/tag/rating%400.0.33) (10/31/2026)
 
 ### Updated Dependencies
