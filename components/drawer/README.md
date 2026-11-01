@@ -6,8 +6,9 @@ A side panel built on the Cyclone UI `Sheet` that slides in from the right by de
 
 - Slides in from the `right` by default. Set `direction` to `top`, `bottom`, or `left` to change the edge.
 - `sm`, `md`, and `lg` sizes.
-- Parts: `Frame`, `Handle`, `Overlay`, `ScrollView`, `Heading`, `Body`, and `Footer`.
-- A bordered frame with the `drawer` border radius.
+- Parts: `Frame`, `Content`, `Handle`, `Overlay`, `ScrollView`, `Header`, `Title`, `Description`, `Heading`, `Body`, and `Footer`.
+- A bordered frame with the `drawer` border radius. `Content` is a bordered panel inset in it, and `Footer` sits below `Content` on the frame.
+- `Header` stays pinned while the rest of `Content` scrolls once it overflows.
 
 ## Installation
 
@@ -38,11 +39,11 @@ yarn add -D @cyclone-ui/drawer
 ## Usage
 
 ```tsx
-import { Drawer } from "@cyclone-ui/drawer";
-import { useState } from "react";
+import { Drawer } from "@cyclone-ui/drawer"
+import { useState } from "react"
 
 export function Example() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
   return (
     <>
@@ -56,7 +57,7 @@ export function Example() {
         </Drawer.Frame>
       </Drawer>
     </>
-  );
+  )
 }
 ```
 

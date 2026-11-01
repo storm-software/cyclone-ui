@@ -1035,7 +1035,7 @@
       "name": "@cyclone-ui/drawer",
       "type": "registry:component",
       "title": "@cyclone-ui/drawer",
-      "description": "A side panel built on the Cyclone UI Sheet that slides in from the right by default and comes in sm, md and lg sizes. It has Frame, Handle, Overlay, ScrollView, Heading, Body and Footer parts. Use it for navigation, filters or secondary content shown beside the main view.",
+      "description": "A side panel built on the Cyclone UI Sheet that slides in from the right by default and comes in sm, md and lg sizes. It has Frame, Handle, Overlay, ScrollView, Header (with optional back and close buttons), Title, Description, Heading, Body and Footer parts; the Footer stays visible while content scrolls. Use it for navigation, filters or secondary content shown beside the main view.",
       "dependencies": [
         "@tamagui/core@3.0.13",
         "@tamagui/dialog@3.0.13",
@@ -1051,7 +1051,9 @@
       ],
       "registryDependencies": [
         "@cyclone-ui/body-text",
+        "@cyclone-ui/button",
         "@cyclone-ui/heading-text",
+        "@cyclone-ui/icons",
         "@cyclone-ui/scroll-view",
         "@cyclone-ui/sheet"
       ],
@@ -3482,6 +3484,37 @@
       ]
     },
     {
+      "name": "@cyclone-ui/modal",
+      "type": "registry:component",
+      "title": "@cyclone-ui/modal",
+      "description": "A centered modal built on the Cyclone UI Dialog, with the same parts as the Drawer: Trigger, Frame, Content, Header (with optional back and close buttons), Title, Description, Body, ScrollView and Footer. The Frame is a bordered shell that holds an inset Content panel above a Footer for actions. Use it for short forms and confirmations.",
+      "dependencies": [
+        "@tamagui/core@3.0.13",
+        "@tamagui/dialog@3.0.13",
+        "@tamagui/helpers@3.0.13",
+        "@tamagui/stacks@3.0.13"
+      ],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.5",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/button",
+        "@cyclone-ui/dialog",
+        "@cyclone-ui/icons",
+        "@cyclone-ui/scroll-view"
+      ],
+      "files": [
+        {
+          "path": "components/modal/src/Modal.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/navigation-header",
       "type": "registry:component",
       "title": "@cyclone-ui/navigation-header",
@@ -4123,6 +4156,26 @@
       ]
     },
     {
+      "name": "@cyclone-ui/scramble-animation",
+      "type": "registry:component",
+      "title": "@cyclone-ui/scramble-animation",
+      "description": "A ScrambleAnimation wrapper that decodes its children's text from random characters when it mounts, then scrambles the characters near the pointer as it moves over the content. It skips the animation when the user prefers reduced motion. Use it to add a hacker-style scrambled text effect to headings or other text content.",
+      "dependencies": ["@tamagui/core@3.0.13"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.5",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": ["@cyclone-ui/heading-text"],
+      "files": [
+        {
+          "path": "components/scramble-animation/src/ScrambleAnimation.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/scroll-view",
       "type": "registry:component",
       "title": "@cyclone-ui/scroll-view",
@@ -4491,10 +4544,11 @@
       "name": "@cyclone-ui/tabs",
       "type": "registry:component",
       "title": "@cyclone-ui/tabs",
-      "description": "A tabbed interface with Header.Item triggers and Content.Item panels. It offers underline, floating and tabbed variants in horizontal or vertical orientation, optional borders and sizes, and an animated active indicator. onValueChange reports the selected tab.",
+      "description": "A tabbed interface with Header.Item triggers and Content.Item panels. It offers underline, floating, tabbed and fluid (gooey WebGL pill) variants in horizontal or vertical orientation, optional borders and sizes, and an animated active indicator. onValueChange reports the selected tab.",
       "dependencies": [
         "@tamagui/animate-presence@3.0.13",
         "@tamagui/button@3.0.13",
+        "@tamagui/constants@3.0.13",
         "@tamagui/core@3.0.13",
         "@tamagui/font-size@3.0.13",
         "@tamagui/get-font-sized@3.0.13",
@@ -4517,6 +4571,10 @@
       ],
       "registryDependencies": ["@cyclone-ui/heading-text"],
       "files": [
+        {
+          "path": "components/tabs/src/fluid.tsx",
+          "type": "registry:component"
+        },
         {
           "path": "components/tabs/src/Tabs.tsx",
           "type": "registry:component"

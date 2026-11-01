@@ -4518,6 +4518,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/modal",
+      jsx: ["Modal"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/navigation-header",
       jsx: ["NavigationHeader"],
       roles: []
@@ -4640,6 +4645,11 @@ export const manifest: DesignSystemManifest = {
     {
       name: "@cyclone-ui/sankey-chart",
       jsx: ["SankeyChart"],
+      roles: []
+    },
+    {
+      name: "@cyclone-ui/scramble-animation",
+      jsx: ["ScrambleAnimation"],
       roles: []
     },
     {
@@ -4779,14 +4789,7 @@ export const manifest: DesignSystemManifest = {
     }
   ],
   icons: [],
-  fonts: [
-    {
-      family: "Storm Sans"
-    },
-    {
-      family: "Storm Serif"
-    }
-  ],
+  fonts: [],
   tailwind: {
     name: "cyclone-ui",
     version: "0.0.0",

@@ -223,7 +223,7 @@ export function createIcon(
       color = "black",
       size = 24,
       variant = "regular",
-      animated = true,
+      animated = false,
       mirrored = false,
       strokeWidth: _strokeWidth,
       style,

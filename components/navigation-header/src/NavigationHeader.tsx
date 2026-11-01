@@ -154,6 +154,8 @@ const dotColor = "var(--canvas)";
 const NavigationHeaderFrame = styled(View, {
   displayName: "NavigationHeader",
   render: "header",
+
+  transition: "400ms",
   position: "fixed",
   top: 0,
   left: 0,

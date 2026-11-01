@@ -37,16 +37,29 @@ const meta: Meta<typeof Drawer> = {
         </Button>
         <Drawer {...props} open={open} onOpenChange={setOpen}>
           <Drawer.Overlay />
-          <Drawer.Frame padding="5xl" gap="3xl">
+          <Drawer.Frame>
             <Drawer.Handle />
-            <Drawer.Header closable={true}>
-              <Drawer.Title>Drawer title</Drawer.Title>
-              <Drawer.Description>Supporting description</Drawer.Description>
-            </Drawer.Header>
-            <Drawer.Body>{children}</Drawer.Body>
+            <Drawer.Content>
+              <Drawer.Header closable={true}>
+                <Drawer.Title>Drawer title</Drawer.Title>
+                <Drawer.Description>Supporting description</Drawer.Description>
+              </Drawer.Header>
+              <Drawer.Body>{children}</Drawer.Body>
+            </Drawer.Content>
             <Drawer.Footer>
-              <Button onPress={() => setOpen(false)} variant="outlined">
-                <Button.Text>Close</Button.Text>
+              <Button
+                onPress={() => setOpen(false)}
+                variant="outlined"
+                size="sm"
+                flexGrow={0}>
+                <Button.Text>Cancel</Button.Text>
+              </Button>
+              <Button
+                onPress={() => setOpen(false)}
+                variant="primary"
+                size="sm"
+                flexGrow={0}>
+                <Button.Text>Save changes</Button.Text>
               </Button>
             </Drawer.Footer>
           </Drawer.Frame>
@@ -120,12 +133,14 @@ export const Uncontrolled: Story = {
   render: ({ children, ...props }: DrawerProps) => (
     <Drawer {...props} defaultOpen={true}>
       <Drawer.Overlay />
-      <Drawer.Frame padding="5xl" gap="3xl">
+      <Drawer.Frame>
         <Drawer.Handle />
-        <Drawer.Header closable={true}>
-          <Drawer.Title>Uncontrolled drawer</Drawer.Title>
-        </Drawer.Header>
-        <Drawer.Body>{children}</Drawer.Body>
+        <Drawer.Content>
+          <Drawer.Header closable={true}>
+            <Drawer.Title>Uncontrolled drawer</Drawer.Title>
+          </Drawer.Header>
+          <Drawer.Body>{children}</Drawer.Body>
+        </Drawer.Content>
       </Drawer.Frame>
     </Drawer>
   ),
@@ -145,29 +160,34 @@ export const Scrollable: Story = {
         </Button>
         <Drawer {...props} open={open} onOpenChange={setOpen} snapPoints={[90]}>
           <Drawer.Overlay />
-          <Drawer.Frame paddingVertical="5xl" gap="3xl">
+          <Drawer.Frame>
             <Drawer.Handle />
-            <Drawer.Header
-              paddingHorizontal="5xl"
-              closable={true}
-              onBack={() => setOpen(false)}>
-              <Drawer.Title>Scrollable drawer</Drawer.Title>
-              <Drawer.Description>
-                The header and footer stay visible while the content scrolls.
-              </Drawer.Description>
-            </Drawer.Header>
-            <Drawer.ScrollView paddingHorizontal="5xl">
+            <Drawer.Content>
+              <Drawer.Header closable={true} onBack={() => setOpen(false)}>
+                <Drawer.Title>Scrollable drawer</Drawer.Title>
+                <Drawer.Description>
+                  The header and footer stay visible while the content scrolls.
+                </Drawer.Description>
+              </Drawer.Header>
               <YStack gap="3xl">
                 {Array.from({ length: 64 }, (_, index) => (
                   <Drawer.Body key={index}>{children}</Drawer.Body>
                 ))}
               </YStack>
-            </Drawer.ScrollView>
-            <Drawer.Footer paddingHorizontal="5xl">
-              <Button onPress={() => setOpen(false)} variant="outlined">
+            </Drawer.Content>
+            <Drawer.Footer>
+              <Button
+                onPress={() => setOpen(false)}
+                variant="outlined"
+                size="sm"
+                flexGrow={0}>
                 <Button.Text>Cancel</Button.Text>
               </Button>
-              <Button onPress={() => setOpen(false)}>
+              <Button
+                onPress={() => setOpen(false)}
+                variant="primary"
+                size="sm"
+                flexGrow={0}>
                 <Button.Text>Save</Button.Text>
               </Button>
             </Drawer.Footer>
@@ -178,6 +198,6 @@ export const Scrollable: Story = {
   },
   args: {
     children:
-      "Drawer.ScrollView keeps long content reachable without changing the drawer's modal behavior."
+      "Drawer.Content keeps long content reachable without changing the drawer's modal behavior."
   }
 };

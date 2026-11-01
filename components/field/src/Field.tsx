@@ -997,14 +997,15 @@ const FieldLabelTextImpl = createStyledHOC(
                           transition="250ms"
                           position="relative"
                           alignSelf="stretch"
-                          width={`${floating ? "sm" : "md"}`}>
+                          width={`${floating ? "lg" : "2xl"}`}>
                           <Theme name="danger">
                             <Asterisk
                               transition="250ms"
                               color="primary"
-                              size={floating ? "sm" : "md"}
+                              size={floating ? "lg" : "2xl"}
                               position="absolute"
                               top={floating ? -2 : -1}
+                              animated={false}
                             />
                           </Theme>
                         </View>

@@ -1,0 +1,58 @@
+{
+  "name": "@cyclone-ui/modal",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A centered modal built on the Cyclone UI Dialog, with the same parts as the Drawer: Trigger, Frame, Content, Header (with optional back and close buttons), Title, Description, Body and Footer. The Frame is a bordered shell that holds an inset Content panel above a Footer for actions; the Header stays pinned and the rest of the Content scrolls once it overflows. Use it for short forms and confirmations.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/modal"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/dialog": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/scroll-view": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/dialog": "catalog:",
+    "@tamagui/helpers": "catalog:",
+    "@tamagui/stacks": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/form": "workspace:*",
+    "@cyclone-ui/input": "workspace:*",
+    "@cyclone-ui/select": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": ["*.css"],
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Modal": {
+      "import": "./dist/Modal.mjs",
+      "require": "./dist/Modal.cjs"
+    },
+    "./*": "./*"
+  }
+}

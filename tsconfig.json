@@ -334,6 +334,9 @@
       "path": "./components/privacy-choices"
     },
     {
+      "path": "./components/modal"
+    },
+    {
       "path": "./components/ripple-animation"
     },
     {
