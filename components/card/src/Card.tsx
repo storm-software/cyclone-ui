@@ -428,7 +428,6 @@ const CardIcon = ({ children, ...props }: ThemeableIconProps) => {
 
   return (
     <ThemeableIcon
-      theme={theme}
       size="13xl"
       color={dataColor ?? "primary"}
       zIndex="20"
@@ -596,3 +595,17 @@ export const Card = withStaticProperties(CardFrameImpl, {
     Link: CardLinkImpl
   })
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Card.Eyebrow` is undefined on the server).
+ */
+export {
+  CardBodyImpl as CardBody,
+  CardEyebrowImpl as CardEyebrow,
+  CardFooter,
+  CardHeader,
+  CardHeadingImpl as CardHeading,
+  CardIcon,
+  CardLinkImpl as CardLink
+};

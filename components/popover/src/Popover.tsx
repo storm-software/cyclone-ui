@@ -164,3 +164,12 @@ export const Popover = withStaticProperties(PopoverFrameImpl, {
   Anchor: TamaguiPopover.Anchor,
   Trigger: TamaguiPopover.Trigger
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Popover.ContentClose` is undefined on the server).
+ */
+export { PopoverContentImpl as PopoverContent };
+export const PopoverContentClose = TamaguiPopover.Close;
+export const PopoverAnchor = TamaguiPopover.Anchor;
+export const PopoverTrigger = TamaguiPopover.Trigger;

@@ -262,3 +262,17 @@ export const Alert = withStaticProperties(AlertFrameImpl, {
     Icon: Button.Icon
   })
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Alert.Icon` is undefined on the server).
+ */
+export {
+  AlertBodyImpl as AlertBody,
+  AlertCloseImpl as AlertClose,
+  AlertContent,
+  AlertHeadingImpl as AlertHeading,
+  AlertIcon
+};
+export const AlertCloseText = Button.Text;
+export const AlertCloseIcon = Button.Icon;

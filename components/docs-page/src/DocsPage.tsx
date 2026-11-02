@@ -234,3 +234,10 @@ export const DocsPage = withStaticProperties(DocsPageRoot, {
   Header: DocsPageHeader,
   Content: DocsPageContent
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`DocsPage.SideNav` is undefined on the server).
+ */
+export { DocsPageContent, DocsPageHeader, DocsPageMain, DocsPageSideNav };
+export const DocsPageSideNavToggle = Page.SideNavToggle;

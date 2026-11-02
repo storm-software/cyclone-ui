@@ -211,3 +211,18 @@ export const Modal: ModalComponent = withStaticProperties(ModalImpl, {
   Body: ModalBody,
   Footer: ModalFooter
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Modal.Trigger` is undefined on the server).
+ */
+export {
+  ModalBody,
+  ModalContent,
+  ModalDescription,
+  ModalFooter,
+  ModalFrameImpl as ModalFrame,
+  ModalHeaderImpl as ModalHeader,
+  ModalTitle
+};
+export const ModalTrigger = Dialog.Trigger;

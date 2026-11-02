@@ -195,3 +195,22 @@ export const AlertDialog = withStaticProperties(AlertDialogFrame, {
     })
   })
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`AlertDialog.Trigger` is undefined on the server).
+ */
+export {
+  AlertDialogBody,
+  AlertDialogClose,
+  AlertDialogContainer,
+  AlertDialogContent,
+  AlertDialogHeading,
+  AlertDialogIcon
+};
+export const AlertDialogTrigger = Dialog.Trigger;
+export const AlertDialogContainerActionText = Dialog.Action.Text;
+export const AlertDialogContainerActionIcon = Dialog.Action.Icon;
+export const AlertDialogContainerAction = Dialog.Action;
+export const AlertDialogContainerCloseText = Dialog.Close.Text;
+export const AlertDialogContainerCloseIcon = Dialog.Close.Icon;

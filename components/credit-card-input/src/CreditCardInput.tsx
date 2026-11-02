@@ -1218,3 +1218,15 @@ export const CreditCardInput = withStaticProperties(CreditCardInputGroup, {
 });
 
 export type CreditCardInputProps = GetProps<typeof CreditCardInput>;
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`CreditCardInput.Card` is undefined on the server).
+ */
+export {
+  CreditCardInputCard,
+  CreditCardInputExpiry,
+  CreditCardInputName,
+  CreditCardInputNumber,
+  CreditCardInputSecurityCode
+};

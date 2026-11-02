@@ -281,3 +281,22 @@ export const Dialog = withStaticProperties(DialogFrame, {
 });
 
 export type DialogProps = GetProps<typeof Dialog>;
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Dialog.Trigger` is undefined on the server).
+ */
+export {
+  DialogAction,
+  DialogBodyImpl as DialogBody,
+  DialogClose,
+  DialogContainer,
+  DialogHeadingImpl as DialogHeading,
+  DialogOverlay,
+  TamaguiDialogPortal as DialogPortal,
+  TamaguiDialogTrigger as DialogTrigger
+};
+export const DialogCloseText = Button.Text;
+export const DialogCloseIcon = Button.Icon;
+export const DialogActionText = Button.Text;
+export const DialogActionIcon = Button.Icon;

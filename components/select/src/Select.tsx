@@ -520,3 +520,10 @@ export const Select = withStaticProperties(SelectGroupImpl, {
   }),
   Items: SelectItems
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Select.TextBoxValue` is undefined on the server).
+ */
+export { SelectItems, SelectTextBoxImpl as SelectTextBox };
+export const SelectTextBoxValue = SelectTextBox.Value;

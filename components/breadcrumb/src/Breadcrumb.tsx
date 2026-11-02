@@ -407,3 +407,9 @@ export const Breadcrumb = withStaticProperties(BreadcrumbImpl, {
 });
 
 export type BreadcrumbProps = GetProps<typeof Breadcrumb>;
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Breadcrumb.Item` is undefined on the server).
+ */
+export { BreadcrumbItemImpl as BreadcrumbItem };

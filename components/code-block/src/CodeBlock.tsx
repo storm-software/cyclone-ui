@@ -576,3 +576,14 @@ export const CodeBlock = withStaticProperties(CodeBlockImpl, {
     Content: CodeBlockTab
   })
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`CodeBlock.HeaderIcon` is undefined on the server).
+ */
+export {
+  Pre as CodeBlockBody,
+  CodeBlockHeader,
+  CodeBlockHeaderHeading,
+  CodeBlockHeaderIcon
+};

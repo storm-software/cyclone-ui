@@ -815,3 +815,12 @@ export const DatePicker = withStaticProperties(DatePickerControlImpl, {
     Text: Button.Text
   })
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`DatePicker.TextBoxValue` is undefined on the server).
+ */
+export { DatePickerTextBox, DatePickerTextBoxValue, DatePickerTrigger };
+export const DatePickerSeparator = Input.Separator;
+export const DatePickerTriggerIcon = Button.Icon;
+export const DatePickerTriggerText = Button.Text;

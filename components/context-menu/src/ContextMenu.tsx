@@ -581,3 +581,18 @@ export const ContextMenu = withStaticProperties(ContextMenuFrame, {
     Label: ContextMenuItemLabel
   })
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`ContextMenu.Trigger` is undefined on the server).
+ */
+export {
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuItemIcon,
+  ContextMenuItemLabel,
+  ContextMenuItemText,
+  ContextMenuScrollView
+};
+export const ContextMenuTrigger = Popover.Trigger;
+export const ContextMenuAnchor = Popover.Anchor;

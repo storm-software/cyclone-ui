@@ -266,3 +266,9 @@ ToggleGroupItem.displayName = "ToggleGroupItem";
 export const ToggleGroup = withStaticProperties(ToggleGroupFrameImpl, {
   Item: ToggleGroupItem
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`ToggleGroup.Item` is undefined on the server).
+ */
+export { ToggleGroupItem };

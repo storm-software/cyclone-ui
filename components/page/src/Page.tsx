@@ -1749,3 +1749,16 @@ export const Page = withStaticProperties(PageRoot, {
   Main: PageMain,
   Panel: PagePanel
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Page.Banner` is undefined on the server).
+ */
+export {
+  PageBanner,
+  PageMain,
+  PagePanel,
+  PageSideNav,
+  PageSideNavToggle,
+  PageTopNav
+};

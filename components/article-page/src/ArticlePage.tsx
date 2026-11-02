@@ -367,3 +367,17 @@ export const ArticlePage = withStaticProperties(ArticlePageFrame, {
   Content: ArticlePageContent,
   Section: ArticlePageSection
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`ArticlePage.Header` is undefined on the server).
+ */
+export {
+  ArticlePageContent,
+  ArticlePageDetails,
+  ArticlePageHeader,
+  ArticlePageMain,
+  ArticlePageMedia,
+  ArticlePageSection,
+  ArticlePageShare
+};

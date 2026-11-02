@@ -162,21 +162,38 @@ const NavigationHeaderFrame = styled(View, {
   right: 0,
   zIndex: "40",
   width: "100%",
-  backgroundColor: "canvas",
+  // The variant's look comes from `NavigationHeaderBackground`.
+  backgroundColor: "transparent hover:canvas"
+});
+
+// A separate layer, so it can fade out at the top of the page and be masked
+// without fading the bar's content.
+const NavigationHeaderBackground = styled(View, {
+  displayName: "NavigationHeaderBackground",
+  position: "absolute",
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  pointerEvents: "none",
 
   variants: {
     variant: {
-      filled: {},
+      filled: {
+        backgroundColor: "canvas"
+      },
       transparent: {
-        backgroundColor: "transparent hover:canvas",
         backgroundImage: `linear-gradient(${translucentCanvas}, ${translucentCanvas})`,
         backdropFilter: "blur(12px)"
       },
       dotted: {
-        backgroundColor: "transparent hover:canvas",
         backgroundImage: `radial-gradient(circle, ${dotColor} 1px, transparent 1px), linear-gradient(${translucentCanvas}, ${translucentCanvas})`,
         backgroundSize: "8px 8px, auto",
-        backdropFilter: "blur(12px)"
+        backdropFilter: "blur(12px)",
+        // Fades the dots, tint and blur so the bar's bottom edge is nearly
+        // transparent.
+        // RGB, since Tamagui parses color words like `black` as tokens.
+        maskImage: "linear-gradient(rgb(0 0 0), rgb(0 0 0 / 0.05))"
       }
     }
   } as const,
@@ -187,6 +204,8 @@ const NavigationHeaderFrame = styled(View, {
 
 const NavigationHeaderBar = styled(View, {
   displayName: "NavigationHeaderBar",
+  // Paints above the absolutely positioned background.
+  position: "relative",
   width: "100%",
   maxWidth: 1440,
   boxSizing: "border-box",
@@ -599,6 +618,11 @@ export interface NavigationHeaderProps extends Omit<
    * semi-transparent `transparent`, or `dotted`, which overlays a dot pattern.
    */
   variant?: "filled" | "transparent" | "dotted";
+  /**
+   * Hides the bar's background while the page is scrolled to the top, then
+   * shows the `variant` background once the page scrolls down.
+   */
+  transparentAtTop?: boolean;
 }
 
 export interface NavigationHeaderLogoProps {
@@ -750,6 +774,8 @@ const NavigationHeaderRoot = createStyledHOC(
   (
     {
       children,
+      variant,
+      transparentAtTop = false,
       onBlur,
       onMouseLeave,
       ...props
@@ -862,6 +888,14 @@ const NavigationHeaderRoot = createStyledHOC(
             setHoveredDropdownItem(null);
           }
         }}>
+        {/* Kept opaque while the compact menu is open, so the bar matches the
+            panel beneath it. */}
+        <NavigationHeaderBackground
+          variant={variant}
+          opacity={transparentAtTop && isAtTop && !menuOpen ? 0 : 1}
+          transition={prefersReducedMotion ? "none" : "400ms"}
+        />
+
         <NavigationHeaderBar>
           <NavigationHeaderLogo>
             <NavigationHeaderLogoContent {...scaleProps}>
@@ -1176,3 +1210,20 @@ export const NavigationHeader = withStaticProperties(NavigationHeaderRoot, {
   }),
   MenuButton: NavigationHeaderMenuButtonSlotComponent
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`NavigationHeader.LogoSlot` is undefined on the server).
+ */
+export {
+  NavigationHeaderActionsSlot,
+  NavigationHeaderGroupSlot,
+  NavigationHeaderItemSlot,
+  NavigationHeaderLinkSlot,
+  NavigationHeaderLogoSlot,
+  NavigationHeaderMenuButtonSlotComponent,
+  NavigationHeaderNavigationSlot,
+  NavigationHeaderSearchSlot,
+  NavigationHeaderSocialLinkSlot,
+  NavigationHeaderSocialSlot
+};

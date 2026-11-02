@@ -402,3 +402,16 @@ export const Table = withStaticProperties(TableFrame, {
   HeaderCell: TableHeaderCell,
   Footer: TableFooterImpl
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Table.Header` is undefined on the server).
+ */
+export {
+  TableBody,
+  TableCell,
+  TableFooterImpl as TableFooter,
+  TableHeaderImpl as TableHeader,
+  TableHeaderCell,
+  TableRowImpl as TableRow
+};

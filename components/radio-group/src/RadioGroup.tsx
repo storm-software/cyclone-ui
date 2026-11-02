@@ -20,7 +20,6 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
-import { Lock } from "@cyclone-ui/icons";
 import type { FormControlSize } from "@cyclone-ui/helpers";
 import {
   formSizeVariants,
@@ -32,6 +31,7 @@ import {
   useFieldHasValidationMessage,
   useFormControl
 } from "@cyclone-ui/helpers";
+import { Lock } from "@cyclone-ui/icons";
 import type { SelectOption } from "@stryke/types/form";
 import type { ColorTokens, GetProps } from "@tamagui/core";
 import {
@@ -132,7 +132,8 @@ const RadioGroupItemContainerFrame = styled(XStack, {
   transition: "200ms",
   cursor: "pointer",
   gap: "3xl",
-  boxShadow: "none press:ring-offset focus:ring-offset focus-visible:ring-offset",
+  boxShadow:
+    "none press:ring-offset focus:ring-offset focus-visible:ring-offset",
   borderRadius: "control",
   borderWidth: 1,
   paddingHorizontal: "3xl",
@@ -488,3 +489,9 @@ const RadioGroupImpl = createStyledHOC(
 export const RadioGroup = withStaticProperties(RadioGroupImpl, {
   Item: RadioGroupItemContainer
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`RadioGroup.ItemContainer` is undefined on the server).
+ */
+export { RadioGroupItemContainer };

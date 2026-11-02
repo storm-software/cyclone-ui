@@ -635,3 +635,14 @@ export const Accordion = withStaticProperties(AccordionFrameImpl, {
 });
 
 export type AccordionProps = GetProps<typeof Accordion>;
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Accordion.ItemHeaderHeading` is undefined on the server).
+ */
+export {
+  AccordionItemImpl as AccordionItem,
+  AccordionItemContentImpl as AccordionItemContent,
+  AccordionItemHeaderImpl as AccordionItemHeader,
+  AccordionItemHeaderHeading
+};

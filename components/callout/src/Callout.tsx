@@ -251,3 +251,15 @@ export const Callout = withStaticProperties(CalloutFrameImpl, {
   }),
   Body: CalloutBodyImpl
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Callout.Eyebrow` is undefined on the server).
+ */
+export {
+  CalloutBodyImpl as CalloutBody,
+  CalloutEyebrowImpl as CalloutEyebrow,
+  CalloutHeader,
+  CalloutHeadingImpl as CalloutHeading,
+  CalloutIcon
+};

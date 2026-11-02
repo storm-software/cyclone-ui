@@ -346,3 +346,27 @@ export const Footer = withStaticProperties(FooterFrameImpl, {
   Copyright: FooterCopyright,
   LegalNavigation: FooterLegalNavigation
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Footer.Container` is undefined on the server).
+ */
+export {
+  FooterAction,
+  FooterBackgroundLogoImpl as FooterBackgroundLogo,
+  FooterBrand,
+  FooterContainer,
+  FooterCopyright,
+  FooterDescription,
+  FooterIntroduction,
+  FooterLegalNavigation,
+  FooterLinkImpl as FooterLink,
+  FooterMain,
+  FooterNavigation,
+  FooterRail,
+  FooterRailLink,
+  FooterSectionFrame,
+  FooterSectionLinks,
+  FooterSectionTitle,
+  FooterStatement
+};

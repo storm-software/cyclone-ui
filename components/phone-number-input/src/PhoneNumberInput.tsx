@@ -475,3 +475,11 @@ export const PhoneNumberInput = withStaticProperties(PhoneNumberInputGroup, {
 });
 
 export type PhoneNumberInputProps = GetProps<typeof PhoneNumberInput>;
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`PhoneNumberInput.Value` is undefined on the server).
+ */
+export { PhoneNumberInputValue };
+export const PhoneNumberInputTextBox = Input.TextBox;
+export const PhoneNumberInputTrigger = Input.Trigger;

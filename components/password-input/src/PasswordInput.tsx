@@ -457,3 +457,12 @@ export const PasswordInput = withStaticProperties(PasswordInputImpl, {
     Text: Input.Trigger.Text
   })
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`PasswordInput.TextBoxValue` is undefined on the server).
+ */
+export { PasswordInputTextBoxValue, PasswordInputTrigger };
+export const PasswordInputTextBox = Input.TextBox;
+export const PasswordInputTriggerIcon = Field.Icon;
+export const PasswordInputTriggerText = Input.Trigger.Text;

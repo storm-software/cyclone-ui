@@ -164,15 +164,14 @@ export const LinkText = createStyledHOC(
     }: GetProps<typeof LinkTextFrame> & LinkTextExtraProps,
     forwardedRef
   ) => {
-    let theme = useThemeName();
-    if (
-      !theme ||
-      theme === "dark" ||
-      theme === "light" ||
-      theme.endsWith("base")
-    ) {
-      theme = `${theme?.startsWith("dark") ? "dark" : "light"}_base`;
-    }
+    // Use the relative `base` name (or inherit) rather than the absolute
+    // `<mode>_base`: `useThemeName` reports the client's mode during hydration,
+    // so an absolute name mismatches the server's className on a dark start.
+    const themeName = useThemeName();
+    const theme =
+      !themeName || themeName === "dark" || themeName === "light"
+        ? "base"
+        : undefined;
 
     const link = themed ? "primary" : "link";
     let textColor = getStateColors(variant === "base" ? link : variant);

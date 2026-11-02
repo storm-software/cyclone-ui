@@ -10,7 +10,7 @@
 // maps it to window.React.
 //
 // Run from the repo root: node .design-sync/pkg/build.mjs
-import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { copyFileSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { createRequire } from "node:module";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -46,8 +46,20 @@ const stateSource = (p) => {
 const fromStorybook = {
   name: "resolve-from-storybook",
   setup(b) {
+    // CJS deps (use-sync-external-store's shim, pulled in by the chart
+    // packages) `require("react")`; with React external, esbuild's ESM output
+    // turns that into a throwing `__require` stub. Route require() calls
+    // through an ESM wrapper so React stays an external *import*.
+    b.onResolve({ filter: external }, (a) => (a.kind === "require-call" ? { path: a.path, namespace: "react-cjs" } : null));
+    b.onLoad({ filter: /.*/, namespace: "react-cjs" }, (a) => ({
+      contents: `import * as m from ${JSON.stringify(a.path)}; export * from ${JSON.stringify(a.path)}; export default m;`,
+      loader: "js"
+    }));
     b.onResolve({ filter: /^[^./]/ }, async (a) => {
       if (a.pluginData === "sb" || external.test(a.path)) return null;
+      // main.ts pins @tamagui/adapt to the popover's peer-variant copy: an
+      // adapted Sheet only opens when it reads the Adapt context its Popover/Dialog provides.
+      if (a.path === "@tamagui/adapt") return b.resolve(a.path, { kind: a.kind, resolveDir: join(root, "components/popover"), pluginData: "sb" });
       const path = alias[a.path] ?? stateSource(a.path) ?? a.path;
       if (path.startsWith("/")) return { path };
       const r = await b.resolve(path, { kind: a.kind, resolveDir: sb, pluginData: "sb" });
@@ -75,8 +87,7 @@ await build({
   // Tamagui's dev-mode token warnings, which roughly double mount time.
   define: {
     "process.env.NODE_ENV": '"production"',
-    // No TAMAGUI_TARGET: Storybook doesn't define it, and defining it enables
-    // dead-in-storybook web-only blocks (Input's ::placeholder <style>).
+    "process.env.TAMAGUI_TARGET": '"web"',
     "process.env.TAMAGUI_BAIL_AFTER_SCANNING_X_CSS_RULES": '"false"',
     Bun: "undefined",
     Deno: "undefined",
@@ -93,17 +104,17 @@ await build({
 // URLs rebased to dist/, plus the `body` font rule from preview-body.html,
 // which react-native-web <input>s inherit (else Times New Roman).
 // The converter only resolves url()s inside the package dir, so the variable
-// fonts are copied into family-specific directories next to the stylesheet.
+// fonts are copied next to the stylesheet with family-prefixed names.
+rmSync(join(here, "dist/fonts"), { recursive: true, force: true });
+mkdirSync(join(here, "dist/fonts"), { recursive: true });
 const fontsCss = readFileSync(join(root, "fonts/fonts.css"), "utf8").replace(
   /url\("\.\/storm-(sans|serif)\/dist\/ttf\/([^"]+)"\)/g,
   (_, family, file) => {
+    // Unique basenames: the converter flattens fonts into one `fonts/` dir, so
+    // both families' `Variable.ttf` collided and Storm Sans shipped serif glyphs.
     const directory = `storm-${family}`;
-    mkdirSync(join(here, "dist/fonts", directory), { recursive: true });
-    copyFileSync(
-      join(root, "fonts", directory, "dist/ttf", file),
-      join(here, "dist/fonts", directory, file)
-    );
-    return `url("./fonts/${directory}/${file}")`;
+    copyFileSync(join(root, "fonts", directory, "dist/ttf", file), join(here, "dist/fonts", `${directory}-${file}`));
+    return `url("./fonts/${directory}-${file}")`;
   }
 );
 const bodyRule = /body\s*\{[^}]*font-family[^}]*\}/.exec(readFileSync(join(sb, ".storybook/preview-body.html"), "utf8"))?.[0];
@@ -111,7 +122,10 @@ if (!bodyRule) throw new Error("body font-family rule not found in .storybook/pr
 // preview.tsx also imports "@tamagui/core/reset.css" - without it native
 // <input> chrome (white background, border) shows through Input/Select.
 const resetCss = readFileSync(createRequire(join(sb, "package.json")).resolve("@tamagui/core/reset.css"), "utf8");
+// preview-head.html loads the code font (Google Sans Code) from Google Fonts;
+// a remote @import must come first in the stylesheet.
+const googleFonts = /href="(https:\/\/fonts\.googleapis\.com\/css2\?[^"]+)"/.exec(readFileSync(join(sb, ".storybook/preview-head.html"), "utf8"))?.[1];
 writeFileSync(
   join(here, "dist/styles.css"),
-  `${fontsCss}\n/* @tamagui/core/reset.css */\n${resetCss}\n/* from apps/storybook/.storybook/preview-body.html */\n${bodyRule}\n`
+  `${googleFonts ? `@import url("${googleFonts.replaceAll("&amp;", "&")}");\n` : ""}${fontsCss}\n/* @tamagui/core/reset.css */\n${resetCss}\n/* from apps/storybook/.storybook/preview-body.html */\n${bodyRule}\n`
 );

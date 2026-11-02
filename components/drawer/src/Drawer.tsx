@@ -267,3 +267,21 @@ export const Drawer: DrawerComponent = withStaticProperties(DrawerImpl, {
   Description: DrawerDescription,
   Footer: DrawerFooterImpl
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Drawer.Frame` is undefined on the server).
+ */
+export {
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooterImpl as DrawerFooter,
+  DrawerFrameImpl as DrawerFrame,
+  DrawerHandle,
+  DrawerHeaderImpl as DrawerHeader,
+  DrawerTitle
+};
+export const DrawerOverlay = Sheet.Overlay;
+export const DrawerScrollView = Sheet.ScrollView;
+export const DrawerHeading = Sheet.Heading;
+export const DrawerBody = Sheet.Body;

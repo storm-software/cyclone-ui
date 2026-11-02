@@ -69,3 +69,10 @@ export const Collapsible = withStaticProperties(CollapsibleFrame, {
   Header: Accordion.Item.Header,
   Content: Accordion.Item.Content
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Collapsible.Header` is undefined on the server).
+ */
+export const CollapsibleHeader = Accordion.Item.Header;
+export const CollapsibleContent = Accordion.Item.Content;

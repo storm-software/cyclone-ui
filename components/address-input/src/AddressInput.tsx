@@ -469,3 +469,9 @@ export const AddressInput = withStaticProperties(AddressInputGroup, {
 });
 
 export type AddressInputProps = GetProps<typeof AddressInput>;
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`AddressInput.Map` is undefined on the server).
+ */
+export { AddressInputMap, AddressInputSearch, AddressInputSearchTextBox };

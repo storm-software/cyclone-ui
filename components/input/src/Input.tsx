@@ -306,7 +306,9 @@ const InputGroupImpl = createStyledHOC(
     const hasValidationMessage = useFieldHasValidationMessage();
     const labelPlacement = useFieldLabelPlacement();
     const idleColor = hasValidationMessage ? "primary" : "outline";
-    const focusColor = hasValidationMessage ? "primary-active" : "outline-active";
+    const focusColor = hasValidationMessage
+      ? "primary-active"
+      : "outline-active";
     const hoverColor = hasValidationMessage
       ? "primary-hovered"
       : "outline-hovered";
@@ -424,7 +426,9 @@ const InputSeparatorImpl = createStyledHOC(
     const { disabled, focused, hasValidationMessage } =
       InputContext.useStyledContext();
     const idleColor = hasValidationMessage ? "primary" : "outline";
-    const focusColor = hasValidationMessage ? "primary-active" : "outline-active";
+    const focusColor = hasValidationMessage
+      ? "primary-active"
+      : "outline-active";
     const hoverColor = hasValidationMessage
       ? "primary-hovered"
       : "outline-hovered";
@@ -579,3 +583,16 @@ export const Input = withStaticProperties(InputGroupImpl, {
 });
 
 export type InputProps = GetProps<typeof Input>;
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Input.Value` is undefined on the server).
+ */
+export {
+  InputSeparatorImpl as InputSeparator,
+  InputTextBoxImpl as InputTextBox,
+  InputTrigger,
+  InputValueImpl as InputValue
+};
+export const InputTriggerIcon = Button.Icon;
+export const InputTriggerText = Button.Text;

@@ -340,3 +340,10 @@ export const SearchInput = withStaticProperties(SearchInputGroup, {
 });
 
 export type SearchInputProps = GetProps<typeof SearchInput>;
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`SearchInput.TextBox` is undefined on the server).
+ */
+export { SearchInputTextBox };
+export const SearchInputTrigger = Input.Trigger;

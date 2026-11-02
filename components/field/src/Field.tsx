@@ -1460,3 +1460,15 @@ export const Field = withStaticProperties(FieldGroup, {
   Icon: FieldIconButtonImpl,
   ThemeIcon: FieldThemeIcon
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Field.Label` is undefined on the server).
+ */
+export {
+  FieldDetailsImpl as FieldDetails,
+  FieldIconButtonImpl as FieldIconButton,
+  FieldLabel,
+  FieldLink,
+  FieldThemeIcon
+};

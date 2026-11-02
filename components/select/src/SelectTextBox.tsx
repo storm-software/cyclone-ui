@@ -92,3 +92,9 @@ const SelectTextBoxImpl = createStyledHOC(
 export const SelectTextBox = withStaticProperties(SelectTextBoxImpl, {
   Value: SelectValue
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`SelectTextBox.Value` is undefined on the server).
+ */
+export { SelectValue as SelectTextBoxValue };

@@ -740,3 +740,14 @@ export const ColorPicker = withStaticProperties(ColorPickerImpl, {
   ChannelField: ColorPickerChannelField,
   Swatches: ColorPickerSwatches
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`ColorPicker.Area` is undefined on the server).
+ */
+export {
+  ColorPickerArea,
+  ColorPickerChannelField,
+  ColorPickerSlider,
+  ColorPickerSwatches
+};

@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { FontSizeTokens } from "@tamagui/core";
 import { getVariableValue } from "@tamagui/core";
 import type { IconProps as TamaguiIconProps } from "@tamagui/helpers-icon";

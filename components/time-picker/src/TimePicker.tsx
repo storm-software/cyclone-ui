@@ -928,3 +928,12 @@ export const TimePicker = withStaticProperties(TimePickerControlImpl, {
     Text: Button.Text
   })
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`TimePicker.TextBoxValue` is undefined on the server).
+ */
+export { TimePickerTextBox, TimePickerTextBoxValue, TimePickerTrigger };
+export const TimePickerSeparator = Input.Separator;
+export const TimePickerTriggerIcon = Button.Icon;
+export const TimePickerTriggerText = Button.Text;

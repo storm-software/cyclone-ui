@@ -159,3 +159,10 @@ export const Tooltip = withStaticProperties(TooltipFrameImpl, {
   Content: TooltipContentImpl,
   Trigger: TamaguiTooltip.Trigger
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Tooltip.Content` is undefined on the server).
+ */
+export { TooltipContentImpl as TooltipContent };
+export const TooltipTrigger = TamaguiTooltip.Trigger;

@@ -293,7 +293,9 @@ const BaseSwitchImpl = createStyledHOC(
     } = allProps;
     const hasValidationMessage = useFieldHasValidationMessage();
     const idleColor = hasValidationMessage ? "primary" : "outline";
-    const focusColor = hasValidationMessage ? "primary-active" : "outline-active";
+    const focusColor = hasValidationMessage
+      ? "primary-active"
+      : "outline-active";
 
     return (
       <SwitchContext.Provider
@@ -357,3 +359,9 @@ const BaseSwitchImpl = createStyledHOC(
 export const Switch = withStaticProperties(BaseSwitchImpl, {
   Icon: SwitchIcon
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Switch.Icon` is undefined on the server).
+ */
+export { SwitchIcon };

@@ -91,3 +91,9 @@ const SelectItemsGroup = ({
 export const SelectItems = withStaticProperties(SelectItemsGroup, {
   Item: SelectItem
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`SelectItems.Item` is undefined on the server).
+ */
+export { SelectItem as SelectItemsItem };

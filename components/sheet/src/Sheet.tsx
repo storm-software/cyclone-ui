@@ -808,3 +808,19 @@ export const Sheet: SheetComponent = withStaticProperties(SheetFrameImpl, {
   Body: SheetBody,
   Footer: SheetFooter
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Sheet.Frame` is undefined on the server).
+ */
+export {
+  SheetBackground,
+  SheetBody,
+  SheetContainer,
+  SheetFooter,
+  SheetFrame,
+  SheetHandle,
+  SheetHeading,
+  SheetOverlay,
+  SheetScrollView
+};

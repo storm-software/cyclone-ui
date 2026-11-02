@@ -840,3 +840,14 @@ export const Tabs = withStaticProperties(TabsFrameImpl, {
     Item: TabsContentItem
   })
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Tabs.HeaderItem` is undefined on the server).
+ */
+export {
+  TabsContentItem,
+  TabsContentList,
+  TabsHeaderItemImpl as TabsHeaderItem,
+  TabsHeaderListImpl as TabsHeaderList
+};

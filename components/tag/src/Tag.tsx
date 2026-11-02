@@ -729,3 +729,9 @@ export const Tag = withStaticProperties(TagFrameImpl, {
   Icon: TagIcon,
   Button: TagButton
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Tag.Text` is undefined on the server).
+ */
+export { TagButton, TagIcon, TagText };

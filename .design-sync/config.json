@@ -6,7 +6,7 @@
   "pkg": "@cyclone-ui/design-sync",
   "globalName": "CycloneUI",
   "entry": ".design-sync/pkg/dist/index.mjs",
-  "buildCmd": "devenv shell -- pnpm nx run-many -t build -p accordion,alert,alert-dialog,anchor,badge,body-text,breadcrumb,button,bytes-text,callout,card,checkbox,circular-progress,code-block,collapsible,container,data-table,date-picker,dialog,divider,drawer,eyebrow-text,feedback,field,file-picker,file-tree,footer,form,glitch-separator,heading-text,icons,inline-code-text,input,label-text,like-button,link,link-text,message,navigation-header,next-button,number-input,number-text,otp-input,package-command-code-block,page,pagination,password-input,pdf-document-display,phone-number-input,popover,previous-button,progress,radio-group,rating,redacted-animation,scroll-view,search-input,select,sheet,slider,spinner,stepper,switch,table,table-of-contents,tabs,tag,tag-picker,text-area,themeable-gradient,themeable-icon,tooltip,type-table,validation-text,vectors,visually-hidden,state,themes && node .design-sync/pkg/build.mjs",
+  "buildCmd": "devenv shell -- pnpm nx run-many -t build -p accordion,address-input,alert,alert-dialog,anchor,area-chart,article-page,badge,bar-chart,body-text,breadcrumb,button,bytes-text,calendar,callout,card,chart,checkbox,circular-progress,code-block,collapsible,color-area,color-compositions,color-picker,composed-chart,confetti-burst,container,context-menu,credit-card-input,data-table,date-picker,dialog,divider,docs-page,drawer,eyebrow-text,feedback,field,file-picker,file-tree,footer,form,glitch-separator,heading-text,icons,inline-code-text,input,like-button,line-chart,link,link-text,message,modal,navigation-header,next-button,number-input,number-text,otp-input,overlay,package-command-code-block,page,pagination,password-input,pdf-document-display,phone-number-input,pie-chart,popover,preview-link,previous-button,privacy-choices,progress,radar-chart,radial-chart,radio-group,rating,redacted-animation,ripple-animation,sankey-chart,scramble-animation,scroll-view,search-dialog,search-input,select,sheet,skeleton,slider,spinner,stepper,switch,table,table-of-contents,tabs,tag,tag-picker,text-area,themeable-gradient,themeable-icon,timeline,time-picker,toggle,toggle-group,tooltip,type-table,validation-text,vectors,visually-hidden,state,tokens && node .design-sync/pkg/build.mjs",
   "storyImports": {
     "shim": [
       "/@tamagui/core/",
@@ -88,7 +88,8 @@
     "Tag": {
       "skip": [
         "triggers-tag--removable"
-      ]
+      ],
+      "cardMode": "column"
     },
     "Form": {
       "skip": [
@@ -113,31 +114,30 @@
       "cardMode": "column"
     },
     "Stepper": {
-      "cardMode": "column"
+      "cardMode": "column",
+      "skip": [
+        "containers-stepper--base",
+        "containers-stepper--brand",
+        "containers-stepper--numbered",
+        "containers-stepper--discovery",
+        "containers-stepper--error",
+        "containers-stepper--warning",
+        "containers-stepper--info",
+        "containers-stepper--success"
+      ]
     },
     "FileTree": {
-      "cardMode": "column"
+      "cardMode": "column",
+      "skip": [
+        "docs-filetree-tailwind--base",
+        "docs-filetree-tailwind--toggles-folder"
+      ]
     },
     "TableOfContents": {
       "cardMode": "column"
     },
     "TypeTable": {
       "cardMode": "column"
-    },
-    "CheckboxField": {
-      "cardMode": "column"
-    },
-    "PasswordInputField": {
-      "cardMode": "column"
-    },
-    "SwitchField": {
-      "cardMode": "column"
-    },
-    "TagPickerField": {
-      "cardMode": "column",
-      "skip": [
-        "form-tagpickerfield--base"
-      ]
     },
     "DataTable": {
       "cardMode": "column"
@@ -167,9 +167,6 @@
     "DatePicker": {
       "cardMode": "single"
     },
-    "DatePickerField": {
-      "cardMode": "single"
-    },
     "Message": {
       "cardMode": "column"
     },
@@ -188,24 +185,211 @@
     },
     "ThemeableIcon": {
       "skip": [
-        "base-themeableicon--base",
-        "base-themeableicon--brand",
-        "base-themeableicon--discovery",
-        "base-themeableicon--error",
-        "base-themeableicon--warning",
-        "base-themeableicon--info",
-        "base-themeableicon--success",
-        "base-themeableicon--disabled"
+        "display-themeableicon--base",
+        "display-themeableicon--brand",
+        "display-themeableicon--discovery",
+        "display-themeableicon--error",
+        "display-themeableicon--warning",
+        "display-themeableicon--info",
+        "display-themeableicon--success",
+        "display-themeableicon--disabled"
       ]
     },
     "VisuallyHidden": {
       "skip": [
-        "base-visuallyhidden--base",
-        "base-visuallyhidden--animate"
+        "display-visuallyhidden-tailwind--base",
+        "display-visuallyhidden-tailwind--preserve-dimensions",
+        "display-visuallyhidden-tailwind--visible",
+        "display-visuallyhidden-tailwind--animate",
+        "display-visuallyhidden--base",
+        "display-visuallyhidden--animate"
       ]
     },
-    "SelectField": {
+    "Anchor": {
+      "skip": [
+        "triggers-anchor-tailwind--base"
+      ]
+    },
+    "Badge": {
+      "skip": [
+        "triggers-badge-tailwind--base",
+        "triggers-badge-tailwind--colors",
+        "triggers-badge-tailwind--dot",
+        "triggers-badge-tailwind--pulse",
+        "triggers-badge-tailwind--max-value",
+        "triggers-badge-tailwind--show-zero",
+        "triggers-badge-tailwind--invisible",
+        "triggers-badge-tailwind--visibility",
+        "triggers-badge-tailwind--alignment",
+        "triggers-badge-tailwind--overlap",
+        "triggers-badge-tailwind--customized",
+        "triggers-badge-tailwind--danger"
+      ]
+    },
+    "CircularProgress": {
+      "skip": [
+        "display-circularprogress-tailwind--base",
+        "display-circularprogress-tailwind--brand",
+        "display-circularprogress-tailwind--small",
+        "display-circularprogress-tailwind--medium",
+        "display-circularprogress-tailwind--large",
+        "display-circularprogress-tailwind--extra-large",
+        "display-circularprogress-tailwind--data-color",
+        "display-circularprogress-tailwind--discovery",
+        "display-circularprogress-tailwind--info",
+        "display-circularprogress-tailwind--success",
+        "display-circularprogress-tailwind--warning",
+        "display-circularprogress-tailwind--danger"
+      ]
+    },
+    "ColorCompositions": {
+      "skip": [
+        "display-colorcompositions-tailwind--base",
+        "display-colorcompositions-tailwind--original-palette",
+        "display-colorcompositions-tailwind--vibrant-palette",
+        "display-colorcompositions-tailwind--fast",
+        "display-colorcompositions-tailwind--still",
+        "display-colorcompositions-tailwind--banner",
+        "display-colorcompositions-tailwind--small-panels"
+      ]
+    },
+    "GlitchSeparator": {
+      "skip": [
+        "display-glitchseparator-tailwind--base",
+        "display-glitchseparator-tailwind--reversed",
+        "display-glitchseparator-tailwind--alternate-pattern",
+        "display-glitchseparator-tailwind--theme-tokens",
+        "display-glitchseparator-tailwind--still",
+        "display-glitchseparator-tailwind--always",
+        "display-glitchseparator-tailwind--fixed-height",
+        "display-glitchseparator-tailwind--scroll"
+      ]
+    },
+    "Progress": {
+      "skip": [
+        "display-progress-tailwind--base",
+        "display-progress-tailwind--brand",
+        "display-progress-tailwind--data-color",
+        "display-progress-tailwind--discovery",
+        "display-progress-tailwind--info",
+        "display-progress-tailwind--success",
+        "display-progress-tailwind--warning",
+        "display-progress-tailwind--danger"
+      ]
+    },
+    "Skeleton": {
+      "skip": [
+        "display-skeleton-tailwind--default",
+        "display-skeleton-tailwind--shapes",
+        "display-skeleton-tailwind--card",
+        "display-skeleton-tailwind--no-animation"
+      ],
+      "cardMode": "column"
+    },
+    "Timeline": {
+      "skip": [
+        "containers-timeline-tailwind--base",
+        "containers-timeline-tailwind--opposite",
+        "containers-timeline-tailwind--right",
+        "containers-timeline-tailwind--alternate",
+        "containers-timeline-tailwind--custom-markers",
+        "containers-timeline-tailwind--horizontal",
+        "containers-timeline-tailwind--horizontal-bottom",
+        "containers-timeline-tailwind--horizontal-alternate"
+      ]
+    },
+    "ThemeableGradient": {
+      "skip": [
+        "display-themeablegradient--base",
+        "display-themeablegradient--brand",
+        "display-themeablegradient--discovery",
+        "display-themeablegradient--error",
+        "display-themeablegradient--warning",
+        "display-themeablegradient--info",
+        "display-themeablegradient--success",
+        "display-themeablegradient--analogous-secondary",
+        "display-themeablegradient--analogous-discovery",
+        "display-themeablegradient--analogous-error",
+        "display-themeablegradient--analogous-warning",
+        "display-themeablegradient--analogous-info",
+        "display-themeablegradient--analogous-success",
+        "display-themeablegradient--triadic-secondary",
+        "display-themeablegradient--triadic-discovery",
+        "display-themeablegradient--triadic-error",
+        "display-themeablegradient--triadic-warning",
+        "display-themeablegradient--triadic-info",
+        "display-themeablegradient--triadic-success",
+        "display-themeablegradient--tetradic-secondary",
+        "display-themeablegradient--tetradic-discovery",
+        "display-themeablegradient--tetradic-error",
+        "display-themeablegradient--tetradic-warning",
+        "display-themeablegradient--tetradic-info",
+        "display-themeablegradient--tetradic-success",
+        "display-themeablegradient--complementary-secondary",
+        "display-themeablegradient--complementary-discovery",
+        "display-themeablegradient--complementary-error",
+        "display-themeablegradient--complementary-warning",
+        "display-themeablegradient--complementary-info",
+        "display-themeablegradient--complementary-success",
+        "display-themeablegradient--split-complementary-secondary",
+        "display-themeablegradient--split-complementary-discovery",
+        "display-themeablegradient--split-complementary-error",
+        "display-themeablegradient--split-complementary-warning",
+        "display-themeablegradient--split-complementary-info",
+        "display-themeablegradient--split-complementary-success"
+      ]
+    },
+    "AreaChart": {
+      "cardMode": "column"
+    },
+    "BarChart": {
+      "cardMode": "column"
+    },
+    "ComposedChart": {
+      "cardMode": "column"
+    },
+    "LineChart": {
+      "cardMode": "column"
+    },
+    "PieChart": {
+      "cardMode": "column"
+    },
+    "RadarChart": {
+      "cardMode": "column"
+    },
+    "RadialChart": {
+      "cardMode": "column"
+    },
+    "SankeyChart": {
+      "cardMode": "column"
+    },
+    "Tabs": {
+      "cardMode": "column"
+    },
+    "ColorArea": {
+      "cardMode": "column"
+    },
+    "PasswordInput": {
+      "cardMode": "column"
+    },
+    "Slider": {
+      "cardMode": "column"
+    },
+    "Modal": {
       "cardMode": "single"
+    },
+    "PrivacyChoices": {
+      "cardMode": "single"
+    },
+    "SearchDialog": {
+      "cardMode": "single"
+    },
+    "TimePicker": {
+      "cardMode": "single"
+    },
+    "DocsPage": {
+      "cardMode": "single",
+      "primaryStory": "Default"
     }
   },
   "readmeHeader": ".design-sync/conventions.md",
