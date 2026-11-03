@@ -75,7 +75,6 @@
   "types": "./dist/index.d.cts",
   "dependencies": {
     "@razorwind/core": "catalog:",
-    "@razorwind/style-dictionary": "catalog:",
     "@razorwind/tamagui": "catalog:",
     "style-dictionary": "catalog:"
   },

@@ -33,9 +33,6 @@
       "path": "../themeable-icon"
     },
     {
-      "path": "../../packages/helpers"
-    },
-    {
       "path": "../icons"
     }
   ],

@@ -4,13 +4,11 @@
   "type": "module",
   "private": true,
   "dependencies": {
-    "@storm-software/config-tools": "catalog:",
     "defu": "catalog:",
     "esbuild": "catalog:"
   },
   "devDependencies": {
     "@types/node": "catalog:",
-    "rimraf": "catalog:",
     "typescript": "^6.0.3"
   }
 }

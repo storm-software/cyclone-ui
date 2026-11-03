@@ -21,16 +21,13 @@
       "path": "../input"
     },
     {
-      "path": "../context-menu"
-    },
-    {
       "path": "../../packages/helpers"
     },
     {
       "path": "../field"
     },
     {
-      "path": "../button"
+      "path": "../context-menu"
     },
     {
       "path": "../body-text"

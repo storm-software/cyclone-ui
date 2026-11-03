@@ -22,8 +22,7 @@
     "@tamagui/core": "catalog:",
     "@cyclone-ui/icons": "workspace:*",
     "@tamagui/stacks": "catalog:",
-    "@cyclone-ui/body-text": "workspace:*",
-    "@cyclone-ui/themeable-icon": "workspace:*"
+    "@cyclone-ui/body-text": "workspace:*"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

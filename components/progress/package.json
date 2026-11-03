@@ -19,8 +19,7 @@
   },
   "dependencies": {
     "@tamagui/core": "catalog:",
-    "@tamagui/progress": "catalog:",
-    "@tamagui/stacks": "catalog:"
+    "@tamagui/progress": "catalog:"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

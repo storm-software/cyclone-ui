@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@cyclone-ui/accordion": "workspace:*",
-    "@tamagui/accordion": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/helpers": "catalog:"
   },

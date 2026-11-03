@@ -21,7 +21,6 @@
     "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/collapsible": "workspace:*",
     "@cyclone-ui/container": "workspace:*",
-    "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/inline-code-text": "workspace:*",
     "@cyclone-ui/link": "workspace:*",
     "@tamagui/core": "catalog:"

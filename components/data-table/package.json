@@ -48,12 +48,9 @@
     "@stryke/string-format": "catalog:",
     "@stryke/type-checks": "catalog:",
     "@stryke/types": "catalog:",
-    "@tamagui/adapt": "catalog:",
-    "@tamagui/animate-presence": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/helpers": "catalog:",
     "@tamagui/stacks": "catalog:",
-    "@tamagui/text": "catalog:",
     "@tanstack/react-table": "^8.21.3",
     "@tanstack/react-virtual": "catalog:",
     "@tanstack/table-core": "^8.21.3"

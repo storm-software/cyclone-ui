@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "@tamagui/core": "catalog:",
-    "@tamagui/get-font-sized": "catalog:",
     "@tamagui/text": "catalog:"
   },
   "devDependencies": {

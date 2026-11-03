@@ -45,7 +45,6 @@
     "yaml": "catalog:"
   },
   "devDependencies": {
-    "@nx/workspace": "catalog:",
     "@types/node": "catalog:",
     "eslint-flat-config-utils": "catalog:",
     "jsonc-eslint-parser": "catalog:"

@@ -15,17 +15,12 @@
     "react-native": "catalog:"
   },
   "dependencies": {
-    "@tamagui/constants": "catalog:",
     "@tamagui/core": "catalog:",
-    "@tamagui/create-context": "catalog:",
     "@tamagui/get-token": "catalog:",
-    "@tamagui/group": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/switch": "catalog:",
-    "@tamagui/switch-headless": "catalog:",
     "@cyclone-ui/helpers": "workspace:*",
-    "@cyclone-ui/themeable-icon": "workspace:*",
-    "@tamagui/react-native-types": "catalog:"
+    "@cyclone-ui/themeable-icon": "workspace:*"
   },
   "devDependencies": {
     "@cyclone-ui/field": "workspace:*",

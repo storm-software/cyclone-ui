@@ -18,16 +18,10 @@
     "react-native": "catalog:"
   },
   "dependencies": {
-    "@floating-ui/react": "0.26.28",
     "@tamagui/adapt": "catalog:",
-    "@tamagui/animate-presence": "catalog:",
     "@tamagui/core": "catalog:",
-    "@tamagui/create-context": "catalog:",
     "@tamagui/popover": "catalog:",
-    "@tamagui/popper": "catalog:",
     "@tamagui/stacks": "catalog:",
-    "@tamagui/text": "catalog:",
-    "@tamagui/floating": "catalog:",
     "@cyclone-ui/scroll-view": "workspace:*",
     "@cyclone-ui/sheet": "workspace:*"
   },

@@ -171,12 +171,10 @@
   "dependencies": {
     "@stryke/type-checks": "catalog:",
     "@stryke/types": "catalog:",
-    "@tamagui/constants": "catalog:",
     "@tamagui/core": "catalog:",
     "chroma-js": "catalog:"
   },
   "devDependencies": {
-    "@powerlines/plugin-tamagui": "catalog:",
     "@powerlines/plugin-tsdown": "catalog:",
     "@types/chroma-js": "catalog:",
     "powerlines": "catalog:",

@@ -19,12 +19,8 @@
   },
   "dependencies": {
     "@tamagui/core": "catalog:",
-    "@tamagui/group": "catalog:",
-    "@tamagui/helpers": "catalog:",
-    "@tamagui/helpers-tamagui": "catalog:",
     "@cyclone-ui/icons": "workspace:*",
     "@tamagui/stacks": "catalog:",
-    "@tamagui/text": "catalog:",
     "@tamagui/web": "catalog:",
     "@cyclone-ui/dialog": "workspace:*",
     "@cyclone-ui/scroll-view": "workspace:*",

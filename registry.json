@@ -8,9 +8,7 @@
       "description": "A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.Heading, Item.Content) built on Tamagui's accordion. It supports single or multiple open items, default, separated, bordered and ghost variants, numbered headers, toggle or chevron icons with a configurable side, and an up or down direction. Use it for FAQs or grouped sections that users expand.",
       "dependencies": [
         "@stryke/type-checks@^0.6.50",
-        "@stryke/types@^0.12.45",
         "@tamagui/accordion@3.0.13",
-        "@tamagui/collapsible@3.0.13",
         "@tamagui/core@3.0.13",
         "@tamagui/group@3.0.13",
         "@tamagui/helpers@3.0.13",
@@ -66,11 +64,7 @@
       "description": "An inline alert banner with compound parts (Alert.Icon, Alert.Content.Heading, Alert.Content.Body, Alert.Close). Its type prop (base, brand, danger, warning, info, success, discovery, positive, negative) sets the color theme and default icon. Use it to show status or feedback messages in the page.",
       "dependencies": [
         "@tamagui/core@3.0.13",
-        "@tamagui/group@3.0.13",
-        "@tamagui/helpers@3.0.13",
-        "@tamagui/helpers-tamagui@3.0.13",
         "@tamagui/stacks@3.0.13",
-        "@tamagui/text@3.0.13",
         "@tamagui/web@3.0.13"
       ],
       "devDependencies": [
@@ -102,11 +96,7 @@
       "description": "A modal alert dialog built on the Cyclone UI Dialog, with an overlay, a theme-based status icon, and compound Trigger, Container, Icon, Content (Heading, Body), Action and Close parts. Use it to confirm a destructive action or show an important success, warning or error message.",
       "dependencies": [
         "@tamagui/core@3.0.13",
-        "@tamagui/group@3.0.13",
-        "@tamagui/helpers@3.0.13",
-        "@tamagui/helpers-tamagui@3.0.13",
         "@tamagui/stacks@3.0.13",
-        "@tamagui/text@3.0.13",
         "@tamagui/web@3.0.13"
       ],
       "devDependencies": [
@@ -118,6 +108,7 @@
       "registryDependencies": [
         "@cyclone-ui/icons",
         "@cyclone-ui/dialog",
+        "@cyclone-ui/scroll-view",
         "@cyclone-ui/themeable-icon"
       ],
       "files": [
@@ -132,11 +123,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/anchor",
       "description": "A heading wrapper that renders its children next to a permalink icon. The icon shows on hover or focus and links to href on web, or opens the URL with Linking on native. Use it to make headings and sections deep-linkable.",
-      "dependencies": [
-        "@tamagui/core@3.0.13",
-        "@tamagui/text@3.0.13",
-        "@tamagui/web@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
         "@tamagui/tailwind@3.0.13",
@@ -203,7 +190,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/badge",
       "description": "A Badge that wraps an element and pins a small count or dot to one of its corners. It follows MUI's API: anchorOrigin, max (shows 99+ by default), showZero, invisible, rectangular or circular overlap, standard or dot variants, and palette or theme colors. Use it for notification counts and status indicators.",
-      "dependencies": ["@tamagui/core@3.0.13", "@tamagui/web@3.0.13"],
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
         "@tamagui/tailwind@3.0.13",
@@ -244,11 +231,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/body-text",
       "description": "A themed paragraph text component built on Tamagui's SizableText that renders a p element using the body typography tokens. It has md and sm sizes and an optional bold weight. Use it for standard body copy and as a base for other text components.",
-      "dependencies": [
-        "@tamagui/core@3.0.13",
-        "@tamagui/get-font-sized@3.0.13",
-        "@tamagui/text@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13", "@tamagui/text@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
@@ -269,7 +252,6 @@
       "description": "A breadcrumb trail of Breadcrumb.Item links followed by the current page name. It offers chevron, double-chevron or slash separators, inverse and subtle styles, and sizes. When the trail is longer than maxItems, the middle links collapse into a popover menu.",
       "dependencies": [
         "@tamagui/core@3.0.13",
-        "@tamagui/create-context@3.0.13",
         "@tamagui/group@3.0.13",
         "@tamagui/helpers@3.0.13",
         "@tamagui/stacks@3.0.13",
@@ -306,16 +288,10 @@
       "title": "@cyclone-ui/button",
       "description": "A pressable button with Button.Text and Button.Icon subcomponents and primary, secondary, tertiary, outlined, ghost, link and cascade hover variants. It supports sizes, circular and rounded shapes, ringed and disabled states, press ripples, and rendering as an anchor with href.",
       "dependencies": [
-        "@tamagui/constants@3.0.13",
         "@tamagui/core@3.0.13",
-        "@tamagui/font-size@3.0.13",
-        "@tamagui/get-token@3.0.13",
         "@tamagui/helpers@3.0.13",
-        "@tamagui/helpers-tamagui@3.0.13",
-        "@tamagui/linear-gradient@3.0.13",
         "@tamagui/stacks@3.0.13",
-        "@tamagui/text@3.0.13",
-        "@tamagui/web@3.0.13"
+        "@tamagui/text@3.0.13"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
@@ -324,7 +300,6 @@
         "react-native@^0.87.1"
       ],
       "registryDependencies": [
-        "@cyclone-ui/body-text",
         "@cyclone-ui/ripple-animation",
         "@cyclone-ui/themeable-icon"
       ],
@@ -394,11 +369,8 @@
       "description": "A highlighted content panel with a theme-colored gradient and diagonal pattern background. Compound parts are Callout.Header (with Eyebrow, Heading and Icon) and Callout.Body, and the icon is picked from the theme by default. Use it to draw attention to important notes or featured content.",
       "dependencies": [
         "@tamagui/core@3.0.13",
-        "@tamagui/helpers@3.0.13",
-        "@tamagui/helpers-tamagui@3.0.13",
         "@tamagui/linear-gradient@3.0.13",
         "@tamagui/stacks@3.0.13",
-        "@tamagui/text@3.0.13",
         "@tamagui/web@3.0.13"
       ],
       "devDependencies": [
@@ -430,13 +402,9 @@
       "description": "A themed card container with a gradient background and an optional accent color. Compound parts include Header (Eyebrow, Heading, Icon), Body and Footer.Link, and the footer link's arrow animates when the card is hovered. Use it to present a summary or feature with a call-to-action link.",
       "dependencies": [
         "@tamagui/core@3.0.13",
-        "@tamagui/font-size@3.0.13",
         "@tamagui/get-font-sized@3.0.13",
         "@tamagui/helpers@3.0.13",
-        "@tamagui/helpers-tamagui@3.0.13",
-        "@tamagui/linear-gradient@3.0.13",
         "@tamagui/stacks@3.0.13",
-        "@tamagui/text@3.0.13",
         "@tamagui/web@3.0.13"
       ],
       "devDependencies": [
@@ -475,7 +443,6 @@
         "recharts@3.8.0"
       ],
       "devDependencies": [
-        "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -525,11 +492,7 @@
       "dependencies": [
         "@tamagui/checkbox@3.0.13",
         "@tamagui/checkbox-headless@3.0.13",
-        "@tamagui/constants@3.0.13",
         "@tamagui/core@3.0.13",
-        "@tamagui/create-context@3.0.13",
-        "@tamagui/get-token@3.0.13",
-        "@tamagui/group@3.0.13",
         "@tamagui/stacks@3.0.13",
         "react-native-svg@^15.16.0"
       ],
@@ -539,7 +502,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": ["@cyclone-ui/icons", "@cyclone-ui/vectors"],
+      "registryDependencies": ["@cyclone-ui/vectors"],
       "files": [
         {
           "path": "components/checkbox/src/Checkbox.tsx",
@@ -555,7 +518,6 @@
       "dependencies": [
         "@tamagui/core@3.0.13",
         "@tamagui/progress@3.0.13",
-        "@tamagui/stacks@3.0.13",
         "react-native-svg@^15.16.0"
       ],
       "devDependencies": [
@@ -579,16 +541,8 @@
       "description": "A figure that displays Shiki-highlighted code, with an optional title and icon, a copy-to-clipboard button, line numbers and a scrollable viewport. CodeBlock.Tabs, with List, Trigger and Content parts, switches between several code samples. Use it in documentation and technical content.",
       "dependencies": [
         "@tamagui/core@3.0.13",
-        "@tamagui/create-context@3.0.13",
-        "@tamagui/font-size@3.0.13",
-        "@tamagui/get-font-sized@3.0.13",
-        "@tamagui/group@3.0.13",
-        "@tamagui/helpers@3.0.13",
-        "@tamagui/helpers-tamagui@3.0.13",
-        "@tamagui/react-native-types@3.0.13",
         "@tamagui/stacks@3.0.13",
         "@tamagui/tabs@3.0.13",
-        "@tamagui/text@3.0.13",
         "@tamagui/web@3.0.13"
       ],
       "devDependencies": [
@@ -599,9 +553,7 @@
         "react-native-svg@^15.16.0"
       ],
       "registryDependencies": [
-        "@cyclone-ui/body-text",
         "@cyclone-ui/button",
-        "@cyclone-ui/heading-text",
         "@cyclone-ui/icons",
         "@cyclone-ui/scroll-view",
         "@cyclone-ui/themeable-icon",
@@ -619,11 +571,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/collapsible",
       "description": "A single disclosure panel built on Accordion, with Collapsible.Header and Collapsible.Content subcomponents and a chevron icon. Open state can be controlled with a boolean value or left uncontrolled with defaultValue. Use it to show and hide one section of content.",
-      "dependencies": [
-        "@tamagui/accordion@3.0.13",
-        "@tamagui/core@3.0.13",
-        "@tamagui/helpers@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13", "@tamagui/helpers@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
@@ -764,8 +712,7 @@
       "description": "A themed surface Container that wraps content in a padded, rounded box. Variants include primary, secondary, tertiary, sunken, canvas, elevated (the default), floating, overlay, outlined and glass, which adds a blurred gradient background. It also has size-based padding and bordered, shadowed, circular and noPadding options. Use it for cards and panels.",
       "dependencies": [
         "@tamagui/core@3.0.13",
-        "@tamagui/linear-gradient@3.0.13",
-        "@tamagui/stacks@3.0.13"
+        "@tamagui/linear-gradient@3.0.13"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
@@ -832,7 +779,6 @@
       ],
       "registryDependencies": [
         "@cyclone-ui/input",
-        "@cyclone-ui/icons",
         "@cyclone-ui/password-input"
       ],
       "files": [
@@ -852,14 +798,11 @@
         "@stryke/string-format@^0.17.59",
         "@stryke/type-checks@^0.6.50",
         "@stryke/types@^0.12.45",
-        "@tamagui/adapt@3.0.13",
-        "@tamagui/animate-presence@3.0.13",
         "@tamagui/core@3.0.13",
         "@tamagui/helpers@3.0.13",
         "@tamagui/stacks@3.0.13",
-        "@tamagui/text@3.0.13",
         "@tanstack/react-table@^8.21.3",
-        "@tanstack/react-virtual@^3.14.24",
+        "@tanstack/react-virtual@^3.14.25",
         "@tanstack/table-core@^8.21.3"
       ],
       "devDependencies": [
@@ -900,25 +843,7 @@
         "@maskito/core@^3.11.1",
         "@maskito/kit@^3.11.1",
         "@stryke/date@^0.0.29",
-        "@stryke/hooks@^0.4.134",
-        "@tamagui/adapt@3.0.13",
-        "@tamagui/compose-refs@3.0.13",
-        "@tamagui/constants@3.0.13",
-        "@tamagui/core@3.0.13",
-        "@tamagui/create-context@3.0.13",
-        "@tamagui/focusable@3.0.13",
-        "@tamagui/font-size@3.0.13",
-        "@tamagui/get-token@3.0.13",
-        "@tamagui/group@3.0.13",
-        "@tamagui/helpers@3.0.13",
-        "@tamagui/helpers-tamagui@3.0.13",
-        "@tamagui/label@3.0.13",
-        "@tamagui/popover@3.0.13",
-        "@tamagui/separator@3.0.13",
-        "@tamagui/sheet@3.0.13",
-        "@tamagui/stacks@3.0.13",
-        "@tamagui/text@3.0.13",
-        "@tamagui/web@3.0.13"
+        "@tamagui/core@3.0.13"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
@@ -931,7 +856,6 @@
         "@cyclone-ui/button",
         "@cyclone-ui/field",
         "@cyclone-ui/input",
-        "@cyclone-ui/body-text",
         "@cyclone-ui/popover",
         "@cyclone-ui/calendar"
       ],
@@ -948,21 +872,10 @@
       "title": "@cyclone-ui/dialog",
       "description": "A modal Dialog compound component built on Tamagui's dialog, with Trigger, Portal, Overlay, Container, Heading, Body, Close and Action parts. Close and Action are buttons with Text and Icon slots. It has an animated, blurred, theme-tinted overlay that can be turned off, a theme prop, and an animated floating container. Use it for confirmations and focused tasks.",
       "dependencies": [
-        "@tamagui/alert-dialog@3.0.13",
-        "@tamagui/compose-refs@3.0.13",
-        "@tamagui/constants@3.0.13",
         "@tamagui/core@3.0.13",
-        "@tamagui/create-context@3.0.13",
         "@tamagui/dialog@3.0.13",
-        "@tamagui/dismissable@3.0.13",
-        "@tamagui/font-size@3.0.13",
-        "@tamagui/get-font-sized@3.0.13",
         "@tamagui/helpers@3.0.13",
-        "@tamagui/helpers-tamagui@3.0.13",
         "@tamagui/stacks@3.0.13",
-        "@tamagui/text@3.0.13",
-        "@tamagui/use-controllable-state@3.0.13",
-        "@tamagui/web@3.0.13",
         "react-native-svg@^15.16.0"
       ],
       "devDependencies": [
@@ -990,11 +903,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/divider",
       "description": "A simple horizontal or vertical line used to separate content. It supports sm, md and lg thickness (1, 2 or 3px) and any color token, defaulting to the theme's hairline color. Use it between sections, list items or toolbar groups.",
-      "dependencies": [
-        "@tamagui/core@3.0.13",
-        "@tamagui/react-native-types@3.0.13",
-        "@tamagui/text@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
@@ -1038,9 +947,7 @@
       "description": "A side panel built on the Cyclone UI Sheet that slides in from the right by default and comes in sm, md and lg sizes. It has Frame, Content, Handle, Overlay, ScrollView, Header (with optional back and close buttons), Title, Description, Heading, Body and Footer parts; Content is a bordered panel inset in the Frame that keeps the Header pinned and scrolls the rest once it overflows, and the Footer stays visible below it. Use it for navigation, filters or secondary content shown beside the main view.",
       "dependencies": [
         "@tamagui/core@3.0.13",
-        "@tamagui/dialog@3.0.13",
         "@tamagui/helpers@3.0.13",
-        "@tamagui/sheet@3.0.13",
         "@tamagui/stacks@3.0.13"
       ],
       "devDependencies": [
@@ -1052,9 +959,7 @@
       "registryDependencies": [
         "@cyclone-ui/body-text",
         "@cyclone-ui/button",
-        "@cyclone-ui/heading-text",
         "@cyclone-ui/icons",
-        "@cyclone-ui/scroll-view",
         "@cyclone-ui/sheet"
       ],
       "files": [
@@ -1101,7 +1006,6 @@
       ],
       "registryDependencies": [
         "@cyclone-ui/button",
-        "@cyclone-ui/body-text",
         "@cyclone-ui/divider",
         "@cyclone-ui/form",
         "@cyclone-ui/icons",
@@ -1127,7 +1031,6 @@
         "@stryke/types@^0.12.45",
         "@tamagui/core@3.0.13",
         "@tamagui/get-font-sized@3.0.13",
-        "@tamagui/get-token@3.0.13",
         "@tamagui/label@3.0.13",
         "@tamagui/stacks@3.0.13",
         "@tamagui/text@3.0.13"
@@ -1165,17 +1068,11 @@
         "@stryke/hooks@^0.4.134",
         "@stryke/types@^0.12.45",
         "@tamagui/animate-presence@3.0.13",
-        "@tamagui/constants@3.0.13",
         "@tamagui/core@3.0.13",
-        "@tamagui/group@3.0.13",
-        "@tamagui/helpers@3.0.13",
-        "@tamagui/helpers-tamagui@3.0.13",
         "@tamagui/image@3.0.13",
         "@tamagui/linear-gradient@3.0.13",
-        "@tamagui/separator@3.0.13",
         "@tamagui/stacks@3.0.13",
         "@tamagui/text@3.0.13",
-        "@tamagui/web@3.0.13",
         "expo-document-picker@^11.10.1",
         "expo-image-picker@^15.1.0",
         "react-dropzone@^14.4.1",
@@ -3293,11 +3190,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/inline-code-text",
       "description": "An inline span styled for short code snippets, using the code font with a subtle background, padding and rounded corners. Use it to mark up commands, identifiers or values inside running text.",
-      "dependencies": [
-        "@tamagui/core@3.0.13",
-        "@tamagui/get-font-sized@3.0.13",
-        "@tamagui/text@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13", "@tamagui/text@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
@@ -3317,13 +3210,9 @@
       "title": "@cyclone-ui/input",
       "description": "A composable text input with Input.TextBox, Input.TextBox.Value, Input.Separator and Input.Trigger (with Icon and Text) subcomponents. It supports default, floating and underline variants, sizes, and disabled and focused states, shows validation colors inside a Field, and runs on web and native.",
       "dependencies": [
-        "@tamagui/constants@3.0.13",
         "@tamagui/core@3.0.13",
-        "@tamagui/create-context@3.0.13",
         "@tamagui/focusable@3.0.13",
         "@tamagui/group@3.0.13",
-        "@tamagui/react-native-types@3.0.13",
-        "@tamagui/separator@3.0.13",
         "@tamagui/stacks@3.0.13",
         "@tamagui/web@3.0.13"
       ],
@@ -3402,14 +3291,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/link",
       "description": "A themed text link that renders an anchor with href and target on web and opens the URL with Linking on native. Setting external opens it in a new tab and adds an arrow icon that shifts on hover. Supports text sizes.",
-      "dependencies": [
-        "@tamagui/constants@3.0.13",
-        "@tamagui/core@3.0.13",
-        "@tamagui/shapes@3.0.13",
-        "@tamagui/stacks@3.0.13",
-        "@tamagui/text@3.0.13",
-        "@tamagui/web@3.0.13"
-      ],
+      "dependencies": ["@tamagui/constants@3.0.13", "@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
@@ -3433,11 +3315,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/link-text",
       "description": "A LinkText component that renders styled, interactive link text. It has base, mixed, themed, subtle and subtlest color variants, an inverse mode, underline styles (static, hover, initial, none), sm and md sizes, a cta mode for uppercase button-style text, and a disabled state. Use it for inline and standalone hyperlinks.",
-      "dependencies": [
-        "@tamagui/core@3.0.13",
-        "@tamagui/text@3.0.13",
-        "@tamagui/get-font-sized@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13", "@tamagui/text@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
@@ -3460,9 +3338,7 @@
       "dependencies": [
         "@tamagui/core@3.0.13",
         "@tamagui/stacks@3.0.13",
-        "@tamagui/text@3.0.13",
-        "@tamagui/toast@3.0.13",
-        "@tamagui/web@3.0.13"
+        "@tamagui/toast@3.0.13"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
@@ -3715,8 +3591,6 @@
       "dependencies": [
         "@tamagui/core@3.0.13",
         "@tamagui/stacks@3.0.13",
-        "@tamagui/text@3.0.13",
-        "@tamagui/web@3.0.13",
         "react-native-svg@^15.16.0"
       ],
       "devDependencies": [
@@ -3752,10 +3626,8 @@
       ],
       "registryDependencies": [
         "@cyclone-ui/body-text",
-        "@cyclone-ui/visually-hidden",
         "@cyclone-ui/icons",
         "@cyclone-ui/input",
-        "@cyclone-ui/validation-text",
         "@cyclone-ui/field"
       ],
       "files": [
@@ -3809,7 +3681,6 @@
         "@maskito/core@^3.11.1",
         "@maskito/phone@3.11.1",
         "@tamagui/core@3.0.13",
-        "@tamagui/stacks@3.0.13",
         "@tamagui/text@3.0.13",
         "libphonenumber-js@1.12.31"
       ],
@@ -3820,7 +3691,6 @@
         "react-native@^0.87.1"
       ],
       "registryDependencies": [
-        "@cyclone-ui/body-text",
         "@cyclone-ui/context-menu",
         "@cyclone-ui/input",
         "@cyclone-ui/search-input"
@@ -3859,16 +3729,10 @@
       "title": "@cyclone-ui/popover",
       "description": "A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Anchor, Popover.Content (with an optional arrow, a ScrollView and Close) parts. Content is elevated by default and animates in, and on small screens it turns into a bottom sheet unless shouldAdapt is false. Use it for contextual menus, filters or extra details.",
       "dependencies": [
-        "@floating-ui/react@0.26.28",
         "@tamagui/adapt@3.0.13",
-        "@tamagui/animate-presence@3.0.13",
         "@tamagui/core@3.0.13",
-        "@tamagui/create-context@3.0.13",
         "@tamagui/popover@3.0.13",
-        "@tamagui/popper@3.0.13",
-        "@tamagui/stacks@3.0.13",
-        "@tamagui/text@3.0.13",
-        "@tamagui/floating@3.0.13"
+        "@tamagui/stacks@3.0.13"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
@@ -3956,8 +3820,7 @@
         "@cyclone-ui/icons",
         "@cyclone-ui/scroll-view",
         "@cyclone-ui/switch",
-        "@cyclone-ui/tabs",
-        "@cyclone-ui/visually-hidden"
+        "@cyclone-ui/tabs"
       ],
       "files": [
         {
@@ -3971,11 +3834,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/progress",
       "description": "A themed progress bar built on the Tamagui Progress, with an animated indicator. It accepts value, max, size and an indicator color token. Use it to show how far a task or loading process has gone.",
-      "dependencies": [
-        "@tamagui/core@3.0.13",
-        "@tamagui/progress@3.0.13",
-        "@tamagui/stacks@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13", "@tamagui/progress@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
         "@tamagui/tailwind@3.0.13",
@@ -3995,7 +3854,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/radar-chart",
       "description": "A composable radar chart built on Recharts and the shared Cyclone chart parts. Series can be filled or drawn as lines over a polygon or circle grid, with glow and point markers. It also supports legend selection and a loading skeleton. Use it to compare several series across the same set of attributes.",
-      "dependencies": ["motion@^11.18.2", "recharts@3.8.0"],
+      "dependencies": ["recharts@3.8.0"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
         "@tamagui/stacks@3.0.13",
@@ -4016,7 +3875,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/radial-chart",
       "description": "A composable radial bar chart built on Recharts and the shared Cyclone chart parts. Each category is drawn as a ring, as a full circle or a semicircle, with gradient colors from the theme. It also supports legend selection and a loading skeleton. Use it to compare a few values as progress around a circle.",
-      "dependencies": ["motion@^11.18.2", "recharts@3.8.0"],
+      "dependencies": ["recharts@3.8.0"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
         "@tamagui/stacks@3.0.13",
@@ -4038,12 +3897,8 @@
       "title": "@cyclone-ui/radio-group",
       "description": "A RadioGroup compound component (RadioGroup.Item) built on Tamagui's radio group. Each item shows a label and an optional description next to its radio indicator. It supports form control sizes, disabled and required states, validation-aware styling, and controlled or default values. Wrapped in a Field, it connects to the form: it reads its value, size and disabled state from the field, renders the field items as options when given no children, and reports changes to it.",
       "dependencies": [
-        "@stryke/hooks@^0.4.134",
         "@stryke/types@^0.12.45",
-        "@tamagui/constants@3.0.13",
         "@tamagui/core@3.0.13",
-        "@tamagui/get-font-sized@3.0.13",
-        "@tamagui/get-token@3.0.13",
         "@tamagui/label@3.0.13",
         "@tamagui/radio-group@3.0.13",
         "@tamagui/stacks@3.0.13",
@@ -4096,7 +3951,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/redacted-animation",
       "description": "A RedactedAnimation wrapper that briefly covers its children with an accent-colored mask, then slides the mask away to the left or right to reveal the content. It skips the animation when the user prefers reduced motion. Use it to add a redaction-style reveal effect to text or other inline content.",
-      "dependencies": ["@tamagui/core@3.0.13", "@tamagui/text@3.0.13"],
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
@@ -4179,8 +4034,7 @@
       "dependencies": [
         "@tamagui/core@3.0.13",
         "@tamagui/constants@3.0.13",
-        "@tamagui/scroll-view@3.0.13",
-        "@tamagui/stacks@3.0.13"
+        "@tamagui/scroll-view@3.0.13"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
@@ -4229,10 +4083,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/search-input",
       "description": "A headless search text input with a magnifying-glass icon. It shows a ContextMenu of case-insensitive suggestions (the same menu as Select) that can be navigated with the arrow keys and chosen with Enter or dismissed with Escape. Use it on its own (value/defaultValue/onChange) or inside a Field, where it connects to form state and is clearable by default. It provides TextBox and Trigger parts.",
-      "dependencies": [
-        "@tamagui/core@3.0.13",
-        "@tamagui/create-context@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
@@ -4260,14 +4111,8 @@
       "dependencies": [
         "@stryke/types@^0.12.45",
         "@tamagui/core@3.0.13",
-        "@tamagui/create-context@3.0.13",
-        "@tamagui/focusable@3.0.13",
         "@tamagui/group@3.0.13",
-        "@tamagui/helpers-icon@3.0.13",
-        "@tamagui/list-item@3.0.13",
-        "@tamagui/separator@3.0.13",
         "@tamagui/stacks@3.0.13",
-        "@tamagui/text@3.0.13",
         "@tamagui/web@3.0.13"
       ],
       "devDependencies": [
@@ -4279,7 +4124,6 @@
       "registryDependencies": [
         "@cyclone-ui/icons",
         "@cyclone-ui/body-text",
-        "@cyclone-ui/button",
         "@cyclone-ui/context-menu",
         "@cyclone-ui/field",
         "@cyclone-ui/input"
@@ -4409,20 +4253,11 @@
       "description": "A multi-step wizard built on Tamagui Tabs with a vertical header list that marks completed and current steps with check icons, plus optional step numbers. Compound parts are Stepper.Header.Item, Stepper.Content.Item, Stepper.NextButton and Stepper.PreviousButton, and it tracks which steps have been visited. Use it for guided, ordered flows.",
       "dependencies": [
         "@tamagui/animate-presence@3.0.13",
-        "@tamagui/button@3.0.13",
         "@tamagui/core@3.0.13",
-        "@tamagui/font-size@3.0.13",
-        "@tamagui/get-font-sized@3.0.13",
-        "@tamagui/helpers@3.0.13",
-        "@tamagui/helpers-tamagui@3.0.13",
-        "@tamagui/linear-gradient@3.0.13",
-        "@tamagui/react-native-types@3.0.13",
         "@tamagui/shapes@3.0.13",
         "@tamagui/stacks@3.0.13",
         "@tamagui/tabs@3.0.13",
         "@tamagui/text@3.0.13",
-        "@tamagui/use-controllable-state@3.0.13",
-        "@tamagui/web@3.0.13",
         "react-native-svg@^15.16.0"
       ],
       "devDependencies": [
@@ -4450,15 +4285,10 @@
       "title": "@cyclone-ui/switch",
       "description": "A toggle switch with an animated thumb, sm, md and lg sizes, and a disabled state. Its border reflects field validation messages, and Switch.Icon places an icon on the left or right of the track. Use it for on/off settings on its own, or wrap it in a Field to connect it to a form: it then reads its checked state, size and disabled state from the field and reports changes to it.",
       "dependencies": [
-        "@tamagui/constants@3.0.13",
         "@tamagui/core@3.0.13",
-        "@tamagui/create-context@3.0.13",
         "@tamagui/get-token@3.0.13",
-        "@tamagui/group@3.0.13",
         "@tamagui/stacks@3.0.13",
-        "@tamagui/switch@3.0.13",
-        "@tamagui/switch-headless@3.0.13",
-        "@tamagui/react-native-types@3.0.13"
+        "@tamagui/switch@3.0.13"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
@@ -4480,21 +4310,14 @@
       "title": "@cyclone-ui/table",
       "description": "A Table compound component with Header, Body, Row, Cell, HeaderCell and Footer parts that render semantic table elements. Table-level props set cell width and height, fixed or content-based sizing, separate alignment for header cells and body cells, and the border color. Use it to show tabular data in rows and columns.",
       "dependencies": [
-        "@tamagui/animate-presence@3.0.13",
         "@tamagui/core@3.0.13",
-        "@tamagui/helpers@3.0.13",
-        "@tamagui/linear-gradient@3.0.13",
         "@tamagui/stacks@3.0.13",
-        "@tamagui/text@3.0.13",
-        "@tamagui/use-controllable-state@3.0.13",
-        "@tamagui/web@3.0.13",
         "react-native-svg@^15.16.0"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
         "@tamagui/avatar@3.0.13",
         "@tanstack/react-table@^8.21.3",
-        "@tanstack/table-core@^8.21.3",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
@@ -4512,11 +4335,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/table-of-contents",
       "description": "A page navigation list built from an array of heading items, each with a title, a hash URL and a depth. On web it highlights the current section as the user scrolls and draws an indented rail showing the active heading path, and its motion respects reduced motion. Use it beside long documents.",
-      "dependencies": [
-        "@tamagui/core@3.0.13",
-        "@tamagui/stacks@3.0.13",
-        "@tamagui/text@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13", "@tamagui/stacks@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
@@ -4543,20 +4362,11 @@
       "description": "A tabbed interface with Header.Item triggers and Content.Item panels. It offers underline, floating, tabbed and fluid (gooey WebGL pill) variants in horizontal or vertical orientation, optional borders and sizes, and an animated active indicator. onValueChange reports the selected tab.",
       "dependencies": [
         "@tamagui/animate-presence@3.0.13",
-        "@tamagui/button@3.0.13",
         "@tamagui/constants@3.0.13",
         "@tamagui/core@3.0.13",
-        "@tamagui/font-size@3.0.13",
         "@tamagui/get-font-sized@3.0.13",
-        "@tamagui/helpers@3.0.13",
-        "@tamagui/helpers-tamagui@3.0.13",
-        "@tamagui/linear-gradient@3.0.13",
-        "@tamagui/react-native-types@3.0.13",
         "@tamagui/stacks@3.0.13",
         "@tamagui/tabs@3.0.13",
-        "@tamagui/text@3.0.13",
-        "@tamagui/use-controllable-state@3.0.13",
-        "@tamagui/web@3.0.13",
         "react-native-svg@^15.16.0"
       ],
       "devDependencies": [
@@ -4589,8 +4399,7 @@
         "@tamagui/get-font-sized@3.0.13",
         "@tamagui/helpers@3.0.13",
         "@tamagui/helpers-tamagui@3.0.13",
-        "@tamagui/text@3.0.13",
-        "@tamagui/web@3.0.13"
+        "@tamagui/text@3.0.13"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
@@ -4599,7 +4408,6 @@
         "react-native@^0.87.1"
       ],
       "registryDependencies": [
-        "@cyclone-ui/heading-text",
         "@cyclone-ui/icons",
         "@cyclone-ui/ripple-animation"
       ],
@@ -4713,12 +4521,9 @@
       "description": "An icon wrapper that applies size and color tokens to its child icon and animates when it enters or exits. It includes ThemedIcon and a getIconByTheme helper that pick a matching status icon (danger, warning, info, discovery, success, positive, negative) or a lock icon when disabled. Use it for status icons that follow the current theme.",
       "dependencies": [
         "@tamagui/core@3.0.13",
-        "@tamagui/font-size@3.0.13",
-        "@tamagui/get-token@3.0.13",
         "@tamagui/helpers@3.0.13",
         "@tamagui/helpers-icon@3.0.13",
         "@tamagui/helpers-tamagui@3.0.13",
-        "@tamagui/web@3.0.13",
         "react-native-svg@^15.16.0"
       ],
       "devDependencies": [
@@ -4831,14 +4636,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/tooltip",
       "description": "A tooltip built on the Tamagui Tooltip with Trigger and Content parts. The content is elevated, animates in and out, and shows an arrow by default, and the arrow and border colors can be customized. Use it to show short supplemental information on hover or focus.",
-      "dependencies": [
-        "@floating-ui/react@0.26.28",
-        "@tamagui/core@3.0.13",
-        "@tamagui/create-context@3.0.13",
-        "@tamagui/popover@3.0.13",
-        "@tamagui/popper@3.0.13",
-        "@tamagui/tooltip@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13", "@tamagui/tooltip@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
@@ -4869,7 +4667,6 @@
         "@cyclone-ui/body-text",
         "@cyclone-ui/collapsible",
         "@cyclone-ui/container",
-        "@cyclone-ui/heading-text",
         "@cyclone-ui/inline-code-text",
         "@cyclone-ui/link"
       ],
@@ -4900,11 +4697,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/icons",
-        "@cyclone-ui/body-text",
-        "@cyclone-ui/themeable-icon"
-      ],
+      "registryDependencies": ["@cyclone-ui/icons", "@cyclone-ui/body-text"],
       "files": [
         {
           "path": "components/validation-text/src/ValidationText.tsx",

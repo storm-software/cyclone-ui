@@ -18,31 +18,28 @@
       "path": "../../tools/config"
     },
     {
-      "path": "../body-text"
-    },
-    {
-      "path": "../button"
-    },
-    {
-      "path": "../dialog"
-    },
-    {
-      "path": "../heading-text"
-    },
-    {
-      "path": "../icons"
-    },
-    {
-      "path": "../scroll-view"
+      "path": "../tabs"
     },
     {
       "path": "../switch"
     },
     {
-      "path": "../tabs"
+      "path": "../scroll-view"
     },
     {
-      "path": "../visually-hidden"
+      "path": "../icons"
+    },
+    {
+      "path": "../heading-text"
+    },
+    {
+      "path": "../dialog"
+    },
+    {
+      "path": "../button"
+    },
+    {
+      "path": "../body-text"
     }
   ],
   "files": [],

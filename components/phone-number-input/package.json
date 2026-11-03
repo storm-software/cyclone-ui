@@ -18,7 +18,6 @@
     "react-native": "catalog:"
   },
   "dependencies": {
-    "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/context-menu": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/input": "workspace:*",
@@ -26,7 +25,6 @@
     "@maskito/core": "catalog:",
     "@maskito/phone": "catalog:",
     "@tamagui/core": "catalog:",
-    "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:",
     "libphonenumber-js": "catalog:"
   },

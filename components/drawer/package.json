@@ -20,14 +20,10 @@
   "dependencies": {
     "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/button": "workspace:*",
-    "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
-    "@cyclone-ui/scroll-view": "workspace:*",
     "@cyclone-ui/sheet": "workspace:*",
     "@tamagui/core": "catalog:",
-    "@tamagui/dialog": "catalog:",
     "@tamagui/helpers": "catalog:",
-    "@tamagui/sheet": "catalog:",
     "@tamagui/stacks": "catalog:"
   },
   "devDependencies": {

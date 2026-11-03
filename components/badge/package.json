@@ -31,8 +31,7 @@
   ],
   "dependencies": {
     "@cyclone-ui/state": "workspace:*",
-    "@tamagui/core": "catalog:",
-    "@tamagui/web": "catalog:"
+    "@tamagui/core": "catalog:"
   },
   "devDependencies": {
     "@cyclone-ui/button": "workspace:*",

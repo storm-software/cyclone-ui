@@ -30,7 +30,6 @@
     "dist"
   ],
   "dependencies": {
-    "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/ripple-animation": "workspace:*",
     "@tamagui/animate-presence": "catalog:",
@@ -39,8 +38,7 @@
     "@tamagui/get-font-sized": "catalog:",
     "@tamagui/helpers": "catalog:",
     "@tamagui/helpers-tamagui": "catalog:",
-    "@tamagui/text": "catalog:",
-    "@tamagui/web": "catalog:"
+    "@tamagui/text": "catalog:"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

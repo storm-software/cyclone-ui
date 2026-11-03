@@ -43,7 +43,6 @@
     "@stryke/types": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/get-font-sized": "catalog:",
-    "@tamagui/get-token": "catalog:",
     "@tamagui/label": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:"

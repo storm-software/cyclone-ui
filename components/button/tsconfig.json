@@ -17,13 +17,10 @@
       "path": "../themeable-icon"
     },
     {
-      "path": "../../packages/helpers"
-    },
-    {
-      "path": "../body-text"
-    },
-    {
       "path": "../ripple-animation"
+    },
+    {
+      "path": "../../packages/helpers"
     },
     {
       "path": "../icons"

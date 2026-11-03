@@ -22,12 +22,9 @@
     "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/vectors": "workspace:*",
     "@tamagui/core": "catalog:",
-    "@tamagui/font-size": "catalog:",
-    "@tamagui/get-token": "catalog:",
     "@tamagui/helpers": "catalog:",
     "@tamagui/helpers-icon": "catalog:",
     "@tamagui/helpers-tamagui": "catalog:",
-    "@tamagui/web": "catalog:",
     "react-native-svg": "catalog:"
   },
   "devDependencies": {

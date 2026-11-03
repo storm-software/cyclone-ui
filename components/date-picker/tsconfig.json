@@ -18,19 +18,16 @@
       "path": "../../tools/config"
     },
     {
+      "path": "../calendar"
+    },
+    {
       "path": "../../packages/helpers"
     },
     {
       "path": "../popover"
     },
     {
-      "path": "../body-text"
-    },
-    {
       "path": "../input"
-    },
-    {
-      "path": "../calendar"
     },
     {
       "path": "../button"

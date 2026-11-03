@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "@cyclone-ui/chart": "workspace:*",
-    "motion": "catalog:",
     "recharts": "catalog:"
   },
   "devDependencies": {

@@ -18,11 +18,7 @@
     "react-native": "catalog:"
   },
   "dependencies": {
-    "@floating-ui/react": "0.26.28",
     "@tamagui/core": "catalog:",
-    "@tamagui/create-context": "catalog:",
-    "@tamagui/popover": "catalog:",
-    "@tamagui/popper": "catalog:",
     "@tamagui/tooltip": "catalog:"
   },
   "devDependencies": {

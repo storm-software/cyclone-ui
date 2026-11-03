@@ -62,13 +62,10 @@
   },
   "dependencies": {
     "@tamagui/config": "catalog:",
-    "@tamagui/constants": "catalog:",
     "@tamagui/core": "catalog:",
-    "@tamagui/shorthands": "catalog:",
-    "@tamagui/theme-builder": "catalog:"
+    "@tamagui/shorthands": "catalog:"
   },
   "devDependencies": {
-    "@powerlines/plugin-tamagui": "catalog:",
     "@powerlines/plugin-tsdown": "catalog:",
     "powerlines": "catalog:"
   }

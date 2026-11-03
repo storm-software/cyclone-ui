@@ -70,16 +70,13 @@
     "view-config": "pnpm exec storm-config"
   },
   "devDependencies": {
-    "@expo/cli": "catalog:",
     "@nx/devkit": "catalog:",
     "@nx/docker": "catalog:",
     "@nx/eslint-plugin": "catalog:",
-    "@nx/expo": "catalog:",
     "@nx/js": "catalog:",
     "@nx/maven": "catalog:",
     "@nx/plugin": "catalog:",
     "@nx/react": "catalog:",
-    "@nx/react-native": "catalog:",
     "@nx/storybook": "catalog:",
     "@nx/vite": "catalog:",
     "@nx/vitest": "catalog:",
@@ -104,9 +101,6 @@
     "@razorwind/stylelint": "catalog:",
     "@razorwind/tailwindcss": "catalog:",
     "@razorwind/tamagui": "catalog:",
-    "@react-native-community/cli": "catalog:",
-    "@react-native-community/cli-platform-android": "catalog:",
-    "@react-native-community/cli-platform-ios": "catalog:",
     "@shell-shock/nx": "catalog:",
     "@sourcebook/config": "catalog:",
     "@storm-software/cloudflare-tools": "catalog:",
@@ -130,43 +124,31 @@
     "@swc/core": "catalog:",
     "@swc/helpers": "catalog:",
     "@tamagui/cli": "catalog:",
-    "@tamagui/codemod-flat-values": "catalog:",
-    "@tamagui/eslint-plugin": "catalog:",
-    "@tamagui/language-service": "catalog:",
     "@taplo/cli": "catalog:",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "@typescript/native-preview": "catalog:",
     "@vitest/coverage-v8": "catalog:",
-    "bundlewatch": "catalog:",
     "copyfiles": "catalog:",
     "defu": "catalog:",
     "eslint": "catalog:",
     "expo": "catalog:",
-    "expo-av": "catalog:",
-    "expo-constants": "catalog:",
     "expo-document-picker": "catalog:",
-    "expo-linking": "catalog:",
-    "expo-modules-core": "catalog:",
     "lefthook": "catalog:",
     "log4brains": "catalog:",
     "nx": "catalog:",
-    "parse-github-url": "catalog:",
     "playwright": "catalog:",
     "powerlines": "catalog:",
     "prettier": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:",
-    "react-native-reanimated": "catalog:",
     "react-native-safe-area-context": "catalog:",
     "react-native-web": "catalog:",
     "react-refresh": "catalog:",
     "rimraf": "catalog:",
-    "sembear": "catalog:",
     "sherif": "catalog:",
-    "solito": "catalog:",
     "storybook": "catalog:",
     "tsdown": "catalog:",
     "tslib": "catalog:",
@@ -177,17 +159,6 @@
     "vitest": "catalog:",
     "wrangler": "catalog:",
     "zx": "catalog:"
-  },
-  "bundlewatch": {
-    "files": [
-      {
-        "path": "dist/*/*.js",
-        "maxSize": "200kB"
-      }
-    ],
-    "ci": {
-      "trackBranches": ["main", "next", "experimental"]
-    }
   },
   "licenses": [
     {

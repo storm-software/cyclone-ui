@@ -24,8 +24,6 @@
     "@cyclone-ui/previous-button": "workspace:*",
     "@tamagui/core": "catalog:",
     "@tamagui/stacks": "catalog:",
-    "@tamagui/text": "catalog:",
-    "@tamagui/web": "catalog:",
     "react-native-svg": "catalog:"
   },
   "devDependencies": {

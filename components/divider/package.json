@@ -18,9 +18,7 @@
     "react-native": "catalog:"
   },
   "dependencies": {
-    "@tamagui/core": "catalog:",
-    "@tamagui/react-native-types": "catalog:",
-    "@tamagui/text": "catalog:"
+    "@tamagui/core": "catalog:"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

@@ -10,8 +10,7 @@
   },
   "private": false,
   "dependencies": {
-    "@trpc/server": "catalog:",
-    "zod": "catalog:"
+    "@trpc/server": "catalog:"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "catalog:"

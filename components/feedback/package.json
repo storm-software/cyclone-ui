@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "@cyclone-ui/button": "workspace:*",
-    "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/divider": "workspace:*",
     "@cyclone-ui/form": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*",

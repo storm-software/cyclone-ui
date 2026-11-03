@@ -20,13 +20,9 @@
   "dependencies": {
     "@cyclone-ui/button": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*",
-    "@tamagui/constants": "catalog:",
     "@tamagui/core": "catalog:",
-    "@tamagui/create-context": "catalog:",
     "@tamagui/focusable": "catalog:",
     "@tamagui/group": "catalog:",
-    "@tamagui/react-native-types": "catalog:",
-    "@tamagui/separator": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/web": "catalog:"
   },

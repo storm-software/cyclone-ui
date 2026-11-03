@@ -18,10 +18,10 @@
       "path": "../../tools/config"
     },
     {
-      "path": "../../packages/helpers"
+      "path": "../field"
     },
     {
-      "path": "../validation-text"
+      "path": "../../packages/helpers"
     },
     {
       "path": "../input"
@@ -30,13 +30,7 @@
       "path": "../icons"
     },
     {
-      "path": "../visually-hidden"
-    },
-    {
       "path": "../body-text"
-    },
-    {
-      "path": "../field"
     },
     {
       "path": "../form"

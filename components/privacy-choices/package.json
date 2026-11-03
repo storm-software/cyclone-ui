@@ -26,7 +26,6 @@
     "@cyclone-ui/scroll-view": "workspace:*",
     "@cyclone-ui/switch": "workspace:*",
     "@cyclone-ui/tabs": "workspace:*",
-    "@cyclone-ui/visually-hidden": "workspace:*",
     "@tamagui/core": "catalog:",
     "@tamagui/use-controllable-state": "catalog:",
     "react-native-svg": "catalog:"

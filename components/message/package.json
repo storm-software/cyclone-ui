@@ -20,9 +20,7 @@
   "dependencies": {
     "@tamagui/core": "catalog:",
     "@tamagui/stacks": "catalog:",
-    "@tamagui/text": "catalog:",
     "@tamagui/toast": "catalog:",
-    "@tamagui/web": "catalog:",
     "@cyclone-ui/alert": "workspace:*",
     "@cyclone-ui/button": "workspace:*",
     "@cyclone-ui/state": "workspace:*"

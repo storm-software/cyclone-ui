@@ -17,13 +17,10 @@
       "path": "../../tools/config"
     },
     {
-      "path": "../icons"
-    },
-    {
-      "path": "../heading-text"
-    },
-    {
       "path": "../ripple-animation"
+    },
+    {
+      "path": "../icons"
     }
   ],
   "files": [],

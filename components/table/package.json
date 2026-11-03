@@ -19,21 +19,14 @@
   },
   "dependencies": {
     "@cyclone-ui/heading-text": "workspace:*",
-    "@tamagui/animate-presence": "catalog:",
     "@tamagui/core": "catalog:",
-    "@tamagui/helpers": "catalog:",
-    "@tamagui/linear-gradient": "catalog:",
     "@tamagui/stacks": "catalog:",
-    "@tamagui/text": "catalog:",
-    "@tamagui/use-controllable-state": "catalog:",
-    "@tamagui/web": "catalog:",
     "react-native-svg": "catalog:"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",
     "@tamagui/avatar": "catalog:",
     "@tanstack/react-table": "^8.21.3",
-    "@tanstack/table-core": "^8.21.3",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"

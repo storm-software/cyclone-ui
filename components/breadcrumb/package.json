@@ -36,13 +36,11 @@
   },
   "dependencies": {
     "@tamagui/core": "catalog:",
-    "@tamagui/create-context": "catalog:",
     "@tamagui/group": "catalog:",
     "@tamagui/helpers": "catalog:",
     "@cyclone-ui/icons": "workspace:*",
     "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:",
-    "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/link": "workspace:*",
     "@cyclone-ui/link-text": "workspace:*",
     "@cyclone-ui/button": "workspace:*",
