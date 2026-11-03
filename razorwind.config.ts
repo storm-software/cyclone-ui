@@ -34,6 +34,7 @@ import stylelint from "@razorwind/stylelint";
 import tailwindcss from "@razorwind/tailwindcss/generate";
 import { tokenColors } from "./maps/styles/src/create-flavor";
 import { createStyle } from "./maps/styles/src/create-style";
+import { COMPONENT_PROTECTION_INSTRUCTIONS } from "./packages/cli/src/utilities/agent-guidance";
 import generate from "./packages/theme-builder/src/generate";
 import preprocessor from "./packages/theme-builder/src/preprocessor";
 
@@ -250,7 +251,8 @@ export default defineConfig({
       cssVarPrefix: "storm"
     }),
     llms({
-      outputPath: "docs/llms"
+      outputPath: "docs/llms",
+      details: COMPONENT_PROTECTION_INSTRUCTIONS
     }),
     maplibre({
       outputPath: "maps/styles/__generated__",

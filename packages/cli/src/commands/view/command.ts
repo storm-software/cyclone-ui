@@ -9,12 +9,13 @@
 import type { CommandMetadata } from "@shell-shock/core";
 import { resolve } from "node:path";
 import { write } from "shell-shock:console";
+import { COMPONENT_PROTECTION_RULE } from "../../utilities/agent-guidance";
 import { readConfig } from "../../utilities/config";
 import { DEFAULT_REGISTRY_URL, registryClient } from "../../utilities/registry";
 
 export const metadata = {
   title: "View Registry Components",
-  description: "View component metadata and files from the registry.",
+  description: `View component metadata and files from the registry. ${COMPONENT_PROTECTION_RULE}`,
   icon: "◉"
 } satisfies CommandMetadata;
 

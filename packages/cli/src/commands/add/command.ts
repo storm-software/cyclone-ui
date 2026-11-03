@@ -19,6 +19,7 @@
 import type { CommandMetadata } from "@shell-shock/core";
 import { resolve } from "node:path";
 import { write } from "shell-shock:console";
+import { COMPONENT_PROTECTION_RULE } from "../../utilities/agent-guidance";
 import {
   applyInstallPlan,
   createInstallPlan,
@@ -30,7 +31,7 @@ import { registryClient } from "../../utilities/registry";
 
 export const metadata = {
   title: "Add",
-  description: "Adds a new component to the project.",
+  description: `Adds a new component to the project. ${COMPONENT_PROTECTION_RULE}`,
   icon: "➕"
 } satisfies CommandMetadata;
 

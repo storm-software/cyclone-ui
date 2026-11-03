@@ -12,6 +12,10 @@ description: Set up Cyclone UI and Tamagui in a Next.js app with @cyclone-ui/nex
 
 To copy Cyclone components into the app (`cyclone-ui init`/`add`), use the **cyclone-ui-setup** skill. In an App Router app, run `init --rsc` so the components keep their `"use client"` directives. This skill covers only the framework wiring.
 
+## Protect installed components
+
+Do not change installed or added Cyclone UI component files unless the user specifically instructs you to do so. Use `components.json` to identify the configured component path and installed files. Framework setup, hydration fixes, styling requests, and application bug fixes do not authorize edits, refactors, formatting, renames, deletions, or registry updates/overwrites of those files. Keep changes in framework configuration, providers, application code, supported props, composition, application-owned wrappers, or theme configuration outside the installed components. If a component change is necessary, explain why and ask for specific instructions first. Scope any explicitly requested component addition or change narrowly and preserve unrelated installed files and local edits.
+
 ## Inspect the app first
 
 Work in the target Next.js app. Before writing, find:

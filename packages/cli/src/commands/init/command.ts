@@ -10,6 +10,7 @@ import type { CommandMetadata } from "@shell-shock/core";
 import { mkdir } from "node:fs/promises";
 import { resolve } from "node:path";
 import { success } from "shell-shock:console";
+import { COMPONENT_PROTECTION_RULE } from "../../utilities/agent-guidance";
 import {
   applyInstallPlan,
   createInstallPlan
@@ -25,7 +26,7 @@ import { registryClient } from "../../utilities/registry";
 
 export const metadata = {
   title: "Initialize",
-  description: "Initialize Cyclone UI in a project.",
+  description: `Initialize Cyclone UI in a project. ${COMPONENT_PROTECTION_RULE}`,
   alias: "create",
   icon: "🌀"
 } satisfies CommandMetadata;

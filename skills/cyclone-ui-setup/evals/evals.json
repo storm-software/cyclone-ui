@@ -40,6 +40,30 @@
         "Does not invent specific changed files or packages without seeing the target workspace or registry",
         "Explains how to inspect components.json and package.json changes after installation"
       ]
+    },
+    {
+      "id": 4,
+      "prompt": "Build a checkout form using the Cyclone UI components already installed under our custom components.json path. The button needs a different appearance and the input has a validation issue. Ship quickly and clean up formatting, but I have not requested changes to the installed component source.",
+      "expected_output": "Identifies installed files from components.json and leaves them unchanged. Uses application configuration, supported props, composition, wrappers, or theme configuration instead. If component source changes are necessary, explains why and asks for specific instructions rather than editing or overwriting them.",
+      "files": [],
+      "expectations": [
+        "Does not treat copied source or a general application fix as permission to change installed components",
+        "Identifies the protected component path and installed files from components.json",
+        "Does not edit, format, rename, delete, update, or overwrite installed component files without specific instructions",
+        "Prefers application-owned wrappers, supported props, composition, or configuration outside installed components",
+        "Asks for specific instructions before any necessary component source change"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Specifically change the installed Cyclone UI Button component so its default size is small. Leave all other installed components and existing local edits alone.",
+      "expected_output": "Treats this as explicit authorization to change only the installed Button default size, inspects the actual source and makes a narrow edit without updating the registry or touching unrelated components.",
+      "files": [],
+      "expectations": [
+        "Allows the specifically requested installed Button change instead of imposing an absolute ban",
+        "Limits changes to the requested default size and preserves unrelated components and local edits",
+        "Does not use a registry update or overwrite to implement the targeted edit"
+      ]
     }
   ]
 }

@@ -12,6 +12,19 @@
       "prompt": "Vite app, package.json has no \"type\" field and vite.config.js already registers tamaguiPlugin({ config: './src/tamagui.config.ts' }) from @tamagui/vite-plugin. Switch it to the Cyclone vite plugin but keep our custom tamagui config.",
       "expected_output": "Replaces tamaguiPlugin with cycloneUI({ config: './src/tamagui.config.ts' }), handles ESM-only by renaming to vite.config.mts, and passes the same config to ThemeProvider.",
       "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Fix the import and theme problems in our app using Cyclone UI. Components are already installed under the custom path in components.json. Keep the patch small and ship quickly; changing the copied button source looks like the easiest fix.",
+      "expected_output": "Identifies installed files from components.json and leaves them unchanged. Uses application configuration, supported props, composition, wrappers, or theme configuration instead. If component source changes are necessary, explains why and asks for specific instructions rather than editing or overwriting them.",
+      "files": [],
+      "expectations": [
+        "Does not treat copied source or a general application fix as permission to change installed components",
+        "Identifies the protected component path and installed files from components.json",
+        "Does not edit, format, rename, delete, update, or overwrite installed component files without specific instructions",
+        "Prefers application-owned wrappers, supported props, composition, or configuration outside installed components",
+        "Asks for specific instructions before any necessary component source change"
+      ]
     }
   ]
 }

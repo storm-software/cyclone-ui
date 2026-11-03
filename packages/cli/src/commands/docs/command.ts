@@ -9,6 +9,7 @@
 import type { CommandMetadata } from "@shell-shock/core";
 import { resolve } from "node:path";
 import { write } from "shell-shock:console";
+import { COMPONENT_PROTECTION_RULE } from "../../utilities/agent-guidance";
 import { readConfig } from "../../utilities/config";
 import {
   DEFAULT_REGISTRY_URL,
@@ -18,7 +19,7 @@ import {
 
 export const metadata = {
   title: "Component Documentation",
-  description: "Get documentation links for registry components.",
+  description: `Get documentation links for registry components. ${COMPONENT_PROTECTION_RULE}`,
   icon: "🕮"
 } satisfies CommandMetadata;
 

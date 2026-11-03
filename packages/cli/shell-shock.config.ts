@@ -21,6 +21,7 @@ import razorwind from "@razorwind/shell-shock/plugin";
 import type { UserConfig } from "@shell-shock/core";
 import { defineConfig } from "@shell-shock/core/config";
 import preset from "@shell-shock/preset-cli";
+import { componentProtectionGuideline } from "./src/utilities/agent-guidance";
 
 /** Resolve a `color.*` token path (following `{color.*}` references) to its hex value. */
 function tokenColors(tokens: Record<string, any>) {
@@ -56,6 +57,7 @@ const config: UserConfig = defineConfig({
     }),
     razorwind({
       root: "../..",
+      guidelines: [componentProtectionGuideline],
       // The default heuristic picks unrelated tokens (e.g. `subtlest` for sub-headings), so map the semantic roles directly
       mapTheme: spec => {
         const color = tokenColors(

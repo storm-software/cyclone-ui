@@ -9,6 +9,7 @@
 import type { CommandMetadata } from "@shell-shock/core";
 import { resolve } from "node:path";
 import { write } from "shell-shock:console";
+import { COMPONENT_PROTECTION_RULE } from "../../utilities/agent-guidance";
 import {
   applyInstallPlan,
   createInstallPlan,
@@ -16,12 +17,14 @@ import {
   formatPlan
 } from "../../utilities/components";
 import { requireConfig } from "../../utilities/config";
-import { normalizeComponentName, registryClient } from "../../utilities/registry";
+import {
+  normalizeComponentName,
+  registryClient
+} from "../../utilities/registry";
 
 export const metadata = {
   title: "Update Components",
-  description:
-    "Updates installed components to the latest registry version. Local edits to their files are overwritten.",
+  description: `Updates installed components to the latest registry version. Local edits to their files are overwritten. ${COMPONENT_PROTECTION_RULE}`,
   icon: "⟳"
 } satisfies CommandMetadata;
 
@@ -55,7 +58,8 @@ async function handler(
       `Not installed: ${missing.join(", ")}. Use "cyclone-ui add" instead.`
     );
   }
-  if (requested.length === 0) throw new Error("No installed components to update.");
+  if (requested.length === 0)
+    throw new Error("No installed components to update.");
 
   const dryRun = options.dryRun || options.diff;
   const previous = Object.fromEntries(

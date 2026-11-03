@@ -149,6 +149,23 @@ the Cyclone CLI; no separate Tamagui CLI installation is required.
 
 ## Configuration
 
+### Coding agent component protection
+
+Coding agents must not change installed or added Cyclone UI component files unless
+the user specifically instructs them to do so. `components.json` identifies the
+configured component path and installed files. General feature, styling, or
+application-fix requests do not authorize component edits, formatting, renames,
+deletions, registry updates, or overwrites. Prefer supported props, composition,
+application-owned wrappers, and theme configuration outside the installed files.
+If changing a component is necessary, explain why and ask for specific instructions
+first. Explicitly requested component additions or changes must remain scoped and
+preserve unrelated installed files and local edits.
+
+This guidance is included in the CLI's `guidelines` command (also exposed through
+MCP), component command descriptions, and `info` output. `info --json` includes an
+`agentInstructions` field. It is guidance for agents, not a filesystem write lock;
+explicitly requested CLI operations remain available.
+
 <!-- shell-shock:env -->
 <!-- /shell-shock -->
 

@@ -9,6 +9,12 @@ Work in the target application, not the Cyclone UI source repository. Identify t
 
 The [adoption guide](https://github.com/storm-software/cyclone-ui/blob/main/docs/design-system/guides/adopt-cyclone-ui.md) shows a complete Button example. Check the [CLI reference](https://github.com/storm-software/cyclone-ui/blob/main/docs/packages/cli.md) and the installed CLI's help when command behavior matters; published versions and the public registry can differ from the repository's main branch.
 
+## Protect installed components
+
+Do not change installed or added Cyclone UI component files unless the user specifically instructs you to do so. Read `components.json` to identify the configured component path and installed files; copied source is not permission to edit it. This includes fixes, refactors, formatting, renaming, deleting, and registry updates or overwrites (`add --overwrite`, `update-components`, or forced initialization).
+
+A request to build a feature, style a page, fix an application, or wire up a framework does not authorize component changes. Prefer supported props, composition, application-owned wrappers, and theme configuration outside the installed components. If a component change is necessary, explain why and ask for specific instructions before changing it. An explicit request to add or change a component authorizes only that scope; preserve unrelated installed files and local edits, including when resolving internal dependencies.
+
 ## Initialize and add components
 
 Use the app's package manager. These commands use pnpm:
@@ -26,7 +32,7 @@ pnpm install
 - Choose `--path` to fit the app; the CLI defaults to `components`. `init` creates the folder and `components.json`, which records the registry, output path, and installed components. If `components.json` exists, verify it has Cyclone's `registry`, `path`, and `components` fields before using it; another CLI may use the same filename with an incompatible format. Continue with a valid existing configuration. `init --force` replaces it, so use that only when replacement is intended.
 - The default registry is `https://public.storm-cdn.com/cyclone-ui/registry`. Use `init --registry <url>` or the existing `components.json` registry value when the user specifies another source. Use `--registry` on an individual command for a one-off override.
 - Discover actual component names with `search` or `view`. Preview the resolved file list with `add --dry-run` before writing. `add` copies internal component dependencies, rewrites their imports, updates `package.json` for external dependencies, and records installed files in `components.json`. It does not run the package manager afterward.
-- A changed local file blocks `add` unless `--overwrite` is supplied. Compare it with `cyclone-ui diff <name>` or `cyclone-ui add <name> --diff`; preserve local edits or merge them deliberately before overwriting. `--dry-run`, `--diff`, and `--view` on `add` are read-only previews.
+- A changed local file blocks `add` unless `--overwrite` is supplied. Compare it with `cyclone-ui diff <name>` or `cyclone-ui add <name> --diff`; preserve local edits. Only merge or overwrite installed files when the user specifically instructs you to change them. `--dry-run`, `--diff`, and `--view` on `add` are read-only previews.
 - For a Next.js App Router project, `init --rsc` records `rsc: true`. The CLI preserves registry directives when `rsc` is true or omitted; explicit `rsc: false` removes top-level `use client` directives from installed script files. The CLI does not infer or insert missing client boundaries. `add --rsc` is an installation-only override.
 - When the user wants Tailwind class names (Tamagui Tailwind, `@tamagui/tailwind`), `init --style tailwind` records `style: "tailwind"`. Components with a `*.tailwind.tsx` variant then install it in place of the default file and take `className` instead of style props; components without one install their Tamagui source, which works alongside. `add` adds `@tamagui/tailwind` to `package.json` only for this style.
 
