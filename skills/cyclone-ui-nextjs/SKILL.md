@@ -12,6 +12,29 @@ description: Set up Cyclone UI and Tamagui in a Next.js app with @cyclone-ui/nex
 
 To copy Cyclone components into the app (`cyclone-ui init`/`add`), use the **cyclone-ui-setup** skill. In an App Router app, run `init --rsc` so the components keep their `"use client"` directives. This skill covers only the framework wiring.
 
+## Use flat named exports in React Server Components
+
+In App Router Server Components, import and render Cyclone UI's flat named exports instead of accessing compound components through static properties. A Server Component receives a client reference when it imports a component from a `"use client"` module, not the component function with its attached properties. It cannot dot into that client module: `Footer.Container` is undefined on the server, and rendering it can produce `Element type is invalid` or `Cannot access ... on the server`.
+
+```tsx
+// app/page.tsx (Server Component)
+import { Footer, FooterContainer, FooterMain } from "@/components/ui/footer";
+
+export default function Page() {
+  return (
+    <Footer>
+      <FooterContainer>
+        <FooterMain>Footer content</FooterMain>
+      </FooterContainer>
+    </Footer>
+  );
+}
+```
+
+Use the app's actual installed component path from `components.json` and verify the available named exports. For example, replace `<Footer.Container>` with `<FooterContainer>` and `<Footer.Main>` with `<FooterMain>`. Apply the same rule to other compound components, including nested members; do not assume every component exposes the same flat naming scheme.
+
+Keep the page or layout a Server Component and preserve the installed components' `"use client"` directives. Do not add `"use client"` to the page merely to make dot notation work. Compound syntax such as `<Footer.Container>` is valid inside a Client Component; use an application-owned client wrapper only when client-side composition is actually needed. If a required flat export is missing, follow the installed-component protection rule below rather than modifying the installed file without specific instructions.
+
 ## Protect installed components
 
 Do not change installed or added Cyclone UI component files unless the user specifically instructs you to do so. Use `components.json` to identify the configured component path and installed files. Framework setup, hydration fixes, styling requests, and application bug fixes do not authorize edits, refactors, formatting, renames, deletions, or registry updates/overwrites of those files. Keep changes in framework configuration, providers, application code, supported props, composition, application-owned wrappers, or theme configuration outside the installed components. If a component change is necessary, explain why and ask for specific instructions first. Scope any explicitly requested component addition or change narrowly and preserve unrelated installed files and local edits.
@@ -143,6 +166,7 @@ Report which checks ran, and say so if only the build was verified.
 
 | Symptom | Likely cause |
 | --- | --- |
+| `Footer.Container` is undefined on the server, `Element type is invalid`, or `Cannot access ... on the server` when using compound components | A Server Component is reading static properties from a client reference. Import and render the available flat named exports, such as `FooterContainer`, instead. |
 | `Unexpected token '<'` / JSX parse error inside `@cyclone-ui/state` | `@cyclone-ui/state` 0.0.31 or earlier, which shipped raw JSX in `dist`. Upgrade it to the version `@cyclone-ui/nextjs` lists as a peer. |
 | Can't resolve `react-native` or `react-native-svg` | Missing `react-native-web` or `@tamagui/react-native-svg`, or (Webpack) the config isn't wrapped. |
 | `Cannot find module '@tamagui/next-plugin'` | A Webpack build without the plugin installed. |
