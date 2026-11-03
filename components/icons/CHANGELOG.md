@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Icons
 
+## [0.0.40](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.40) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve react-native type checking issues in components ([e417f1ac5](https://github.com/storm-software/cyclone-ui/commit/e417f1ac5))
+
 ## [0.0.39](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.39) (11/03/2026)
 
 ### Bug Fixes

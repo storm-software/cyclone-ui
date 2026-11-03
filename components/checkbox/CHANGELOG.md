@@ -2,6 +2,14 @@
 
 # Changelog for Cyclone UI - Checkbox
 
+## [0.5.45](https://github.com/storm-software/cyclone-ui/releases/tag/checkbox%400.5.45) (11/03/2026)
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.45**
+- Updated **icons** to **v0.0.40**
+- Updated **vectors** to **v0.5.44**
+
 ## [0.5.44](https://github.com/storm-software/cyclone-ui/releases/tag/checkbox%400.5.44) (11/03/2026)
 
 ### Updated Dependencies

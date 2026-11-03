@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Input
 
+## [0.6.45](https://github.com/storm-software/cyclone-ui/releases/tag/input%400.6.45) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve react-native type checking issues in components ([e417f1ac5](https://github.com/storm-software/cyclone-ui/commit/e417f1ac5))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.45**
+- Updated **field** to **v0.5.45**
+- Updated **icons** to **v0.0.40**
+
 ## [0.6.44](https://github.com/storm-software/cyclone-ui/releases/tag/input%400.6.44) (11/03/2026)
 
 ### Updated Dependencies

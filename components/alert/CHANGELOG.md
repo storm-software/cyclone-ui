@@ -2,6 +2,15 @@
 
 # Changelog for Cyclone UI - Alert
 
+## [0.4.46](https://github.com/storm-software/cyclone-ui/releases/tag/alert%400.4.46) (11/03/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.45**
+- Updated **container** to **v0.6.44**
+- Updated **icons** to **v0.0.40**
+- Updated **themeable-icon** to **v0.6.44**
+
 ## [0.4.45](https://github.com/storm-software/cyclone-ui/releases/tag/alert%400.4.45) (11/03/2026)
 
 ### Updated Dependencies

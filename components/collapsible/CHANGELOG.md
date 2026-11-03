@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Collapsible
 
+## [0.3.41](https://github.com/storm-software/cyclone-ui/releases/tag/collapsible%400.3.41) (11/03/2026)
+
+### Updated Dependencies
+
+- Updated **accordion** to **v0.3.45**
+
 ## [0.3.40](https://github.com/storm-software/cyclone-ui/releases/tag/collapsible%400.3.40) (11/03/2026)
 
 ### Updated Dependencies
