@@ -44,6 +44,11 @@ export type WithCycloneUIOptions = Partial<WithTamaguiProps> & {
   tokens?: BuildTamaguiConfigOptions["tokens"];
 };
 
+type NextConfigFunction<
+  Result extends NextConfig | Promise<NextConfig> =
+    NextConfig | Promise<NextConfig>
+> = (phase: string, context: { defaultConfig: NextConfig }) => Result;
+
 const extend = (
   nextConfig: NextConfig,
   options: Partial<WithTamaguiProps>,
@@ -86,6 +91,23 @@ const extend = (
   }
 });
 
+const resolveConfig = (
+  nextConfig: NextConfig | Promise<NextConfig>,
+  { tokens, ...options }: WithCycloneUIOptions
+): NextConfig | Promise<NextConfig> => {
+  if (nextConfig instanceof Promise) {
+    return nextConfig.then(config =>
+      resolveConfig(config, { tokens, ...options })
+    );
+  }
+
+  return tokens
+    ? import("@cyclone-ui/theme-builder")
+        .then(async ({ buildTamaguiConfig }) => buildTamaguiConfig({ tokens }))
+        .then(configPath => extend(nextConfig, options, configPath))
+    : extend(nextConfig, options);
+};
+
 /**
  * Wrap a Next.js config with the setup Tamagui and Cyclone UI components need.
  *
@@ -98,6 +120,8 @@ const extend = (
  *
  * With `tokens`, the Tamagui config is built from them first, so this returns
  * a promise, which Next.js accepts as the config export.
+ * Phase functions receive Next.js's original phase and default config and
+ * remain lazy; async functions and promised configs are resolved before setup.
  *
  * Turbopack builds don't run the Tamagui compiler. To optimize them, use the
  * Tamagui CLI: `tamagui build --target web ./src -- next build`.
@@ -118,7 +142,7 @@ const extend = (
  * export default withCycloneUI({}, { tokens: "tokens/**\/*.json" });
  * ```
  *
- * @param nextConfig - The Next.js config to extend.
+ * @param nextConfig - The Next.js config, promise, or phase function to extend.
  * @param options - The design `tokens`, plus options forwarded to
  * `@tamagui/next-plugin` (Webpack only).
  * @returns The extended Next.js config.
@@ -132,12 +156,24 @@ export function withCycloneUI(
   options: WithCycloneUIOptions
 ): NextConfig | Promise<NextConfig>;
 export function withCycloneUI(
-  nextConfig: NextConfig = {},
-  { tokens, ...options }: WithCycloneUIOptions = {}
-): NextConfig | Promise<NextConfig> {
-  return tokens
-    ? import("@cyclone-ui/theme-builder")
-        .then(async ({ buildTamaguiConfig }) => buildTamaguiConfig({ tokens }))
-        .then(configPath => extend(nextConfig, options, configPath))
-    : extend(nextConfig, options);
+  nextConfig: Promise<NextConfig>,
+  options?: WithCycloneUIOptions
+): Promise<NextConfig>;
+export function withCycloneUI<Result extends NextConfig | Promise<NextConfig>>(
+  nextConfig: NextConfigFunction<Result>,
+  options?: WithCycloneUIOptions & { tokens?: undefined }
+): NextConfigFunction<
+  Result extends Promise<NextConfig> ? Promise<NextConfig> : NextConfig
+>;
+export function withCycloneUI(
+  nextConfig: NextConfigFunction,
+  options: WithCycloneUIOptions
+): NextConfigFunction;
+export function withCycloneUI(
+  nextConfig: NextConfig | Promise<NextConfig> | NextConfigFunction = {},
+  options: WithCycloneUIOptions = {}
+): NextConfig | Promise<NextConfig> | NextConfigFunction {
+  return typeof nextConfig === "function"
+    ? (phase, context) => resolveConfig(nextConfig(phase, context), options)
+    : resolveConfig(nextConfig, options);
 }

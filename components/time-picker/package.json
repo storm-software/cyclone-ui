@@ -9,9 +9,7 @@
     "directory": "components/time-picker"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -40,9 +38,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -55,6 +51,10 @@
     "./TimePicker": {
       "import": "./dist/TimePicker.mjs",
       "require": "./dist/TimePicker.cjs"
+    },
+    "./utilities": {
+      "import": "./dist/utilities.mjs",
+      "require": "./dist/utilities.cjs"
     },
     "./*": "./*"
   }

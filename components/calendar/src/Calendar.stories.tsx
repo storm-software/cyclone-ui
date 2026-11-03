@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Calendar } from "./Calendar";
+import { Calendar, CalendarSkeleton } from "./Calendar";
 
 const meta = {
   title: "Display/Calendar",
@@ -41,4 +41,9 @@ export const Single: Story = {};
 
 export const Range: Story = {
   args: { mode: "range" }
+};
+
+export const Loading: Story = {
+  render: ({ size }) => <CalendarSkeleton size={size} />,
+  argTypes: { mode: { control: false } }
 };

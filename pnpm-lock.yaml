@@ -21,6 +21,9 @@ catalogs:
     '@maskito/react':
       specifier: ^3.11.1
       version: 3.11.1
+    '@next/playwright':
+      specifier: 16.4.4
+      version: 16.4.4
     '@nx/devkit':
       specifier: 23.3.0
       version: 23.3.0
@@ -57,6 +60,9 @@ catalogs:
     '@opentelemetry/api':
       specifier: ^1.10.0
       version: 1.10.0
+    '@playwright/test':
+      specifier: 1.64.1
+      version: 1.64.1
     '@power-plant/core':
       specifier: ^0.0.98
       version: 0.0.98
@@ -5088,6 +5094,12 @@ importers:
       '@cyclone-ui/tokens':
         specifier: workspace:*
         version: link:../tokens
+      '@next/playwright':
+        specifier: 'catalog:'
+        version: 16.4.4(@playwright/test@1.64.1)
+      '@playwright/test':
+        specifier: 'catalog:'
+        version: 1.64.1
       '@powerlines/plugin-tsdown':
         specifier: 'catalog:'
         version: 0.1.619(1a6c1924c453c0fb761ca9b6c1bbc8e8)
@@ -9030,6 +9042,14 @@ packages:
       webpack:
         optional: true
 
+  '@next/playwright@16.4.4':
+    resolution: {integrity: sha512-MGhSyg00sR2dDrQNp6Ia9vnVEeDa0XUoAvl4YE+8uBpRnh3t9gstY1BV8OBfBkqFSQ4WZHfgZ6CQNHqNZ5gcvw==}
+    peerDependencies:
+      '@playwright/test': '>=1.0.0'
+    peerDependenciesMeta:
+      '@playwright/test':
+        optional: true
+
   '@next/swc-darwin-arm64@16.4.3':
     resolution: {integrity: sha512-4yq5EXBt+VDtAZwTyfijaFp5D2C5oz3Ikw5a2kiX2K9nw72vrZX2q5UuAlkPtUMO1tQz6JTKpaKWjS7OOefTDQ==}
     engines: {node: '>= 10'}
@@ -10284,6 +10304,11 @@ packages:
   '@pkgr/core@0.3.6':
     resolution: {integrity: sha512-SEeaJLb3qBNF/OaXnaR1NmmBbFYk1zC0ZH/52fATcRPLFg/p791YrcyFFy44Bo9sLaGuSuLp5Q6axbb/O+v/RA==}
     engines: {node: ^14.18.0 || >=16.0.0}
+
+  '@playwright/test@1.64.1':
+    resolution: {integrity: sha512-IaYGml/nSOiZWROfPtuIL7neuu9qDOZ3TNvNljUIrhDMxiGTgPjzj/g9p9RxpS2tSepPDRY+UwAaEeiKtUvIAg==}
+    engines: {node: '>=20'}
+    hasBin: true
 
   '@pnpm/config.env-replace@1.1.0':
     resolution: {integrity: sha512-htyl8TWnKL7K/ESFa1oW2UB5lVDxuF5DpM7tBi6Hu2LNL3mWkIzNLG6N4zoCUP1lCKNxWy/3iu8mS8MvToGd6w==}
@@ -31209,6 +31234,10 @@ snapshots:
     optionalDependencies:
       webpack: 5.112.1(@swc/core@1.15.41(@swc/helpers@0.5.23))(esbuild@0.17.19)(postcss@8.2.13)
 
+  '@next/playwright@16.4.4(@playwright/test@1.64.1)':
+    optionalDependencies:
+      '@playwright/test': 1.64.1
+
   '@next/swc-darwin-arm64@16.4.3':
     optional: true
 
@@ -32659,6 +32688,10 @@ snapshots:
   '@pkgr/core@0.1.2': {}
 
   '@pkgr/core@0.3.6': {}
+
+  '@playwright/test@1.64.1':
+    dependencies:
+      playwright: 1.64.1
 
   '@pnpm/config.env-replace@1.1.0': {}
 

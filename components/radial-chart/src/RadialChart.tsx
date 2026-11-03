@@ -422,3 +422,10 @@ const LoadingRadialBar = () => (
 RadialChart.RadialBar = RadialBar;
 RadialChart.Tooltip = Tooltip;
 RadialChart.Legend = Legend;
+
+/** Direct references for composing chart parts from React Server Components. */
+export {
+  Legend as RadialChartLegend,
+  RadialBar as RadialChartRadialBar,
+  Tooltip as RadialChartTooltip
+};

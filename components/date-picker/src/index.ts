@@ -17,3 +17,15 @@
  ------------------------------------------------------------------- */
 
 export * from "./DatePicker";
+
+export {
+  DATE_RANGE_SEPARATOR,
+  DEFAULT_DATE_FORMAT,
+  format,
+  formatRange,
+  getDateFormat,
+  getDateRangeFormat,
+  parse,
+  parseRange
+} from "./utilities";
+export type { DateSeparator } from "./utilities";

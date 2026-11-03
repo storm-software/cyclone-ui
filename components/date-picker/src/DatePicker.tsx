@@ -35,7 +35,6 @@ import { Input } from "@cyclone-ui/input";
 import { Popover } from "@cyclone-ui/popover";
 import type { MaskitoOptions, MaskitoPostprocessor } from "@maskito/core";
 import { maskitoDateOptionsGenerator } from "@maskito/kit";
-import { formatDate } from "@stryke/date/format";
 import type { GetProps } from "@tamagui/core";
 import {
   createStyledContext,
@@ -56,6 +55,22 @@ import {
   useState
 } from "react";
 
+import type { DateSeparator } from "./utilities";
+import {
+  DATE_RANGE_SEPARATOR,
+  DEFAULT_DATE_FORMAT,
+  format,
+  formatRange,
+  getDateFormat,
+  getDatePart,
+  getDateRangeFormat,
+  parse,
+  parseInputDate,
+  parseInputDateRange,
+  parseRange,
+  stepDate
+} from "./utilities";
+
 export type DatePickerMode = "single" | "range";
 
 export type DatePickerChangeEventHandler = (
@@ -67,8 +82,6 @@ export type DatePickerDatesChangeEventHandler = (
 ) => any;
 
 export type DatePickerInputEventHandler = (event: CustomEvent<string>) => any;
-
-export type DateSeparator = "." | "/";
 
 export interface DatePickerExtraProps {
   /**
@@ -165,114 +178,6 @@ export const DatePickerContext = createStyledContext<
   }
 );
 
-export const DEFAULT_DATE_FORMAT = "MM.DD.YYYY";
-
-export const getDateFormat = (separator: DateSeparator = "/") =>
-  `MM${separator}DD${separator}YYYY`;
-
-export const DATE_RANGE_SEPARATOR = " – ";
-
-export const getDateRangeFormat = (separator: DateSeparator = "/") => {
-  const dateFormat = getDateFormat(separator);
-
-  return `${dateFormat}${DATE_RANGE_SEPARATOR}${dateFormat}`;
-};
-
-const toDate = (value: unknown) => {
-  if (value == null || value === "") {
-    return null;
-  }
-
-  const date =
-    value instanceof Date ? value : new Date(value as string | number);
-
-  return Number.isNaN(date.getTime()) ? null : date;
-};
-
-const parseInputDate = (value: string, separator: DateSeparator = "/") => {
-  const match = new RegExp(
-    `^(\\d{2})\\${separator}(\\d{2})\\${separator}(\\d{4})$`
-  ).exec(value);
-  if (!match) {
-    return null;
-  }
-
-  const month = Number(match[1]);
-  const day = Number(match[2]);
-  const year = Number(match[3]);
-  const date = new Date(year, month - 1, day);
-
-  return date.getFullYear() === year &&
-    date.getMonth() === month - 1 &&
-    date.getDate() === day
-    ? date
-    : null;
-};
-
-const parseInputDateRange = (
-  value: unknown,
-  separator: DateSeparator = "/"
-) => {
-  if (typeof value !== "string") {
-    return null;
-  }
-
-  const [startValue, endValue, ...rest] = value.split(DATE_RANGE_SEPARATOR);
-  if (!startValue || rest.length > 0) {
-    return null;
-  }
-
-  const startDate = parseInputDate(startValue, separator);
-  if (!startDate) {
-    return null;
-  }
-
-  if (!endValue) {
-    return [startDate];
-  }
-
-  const endDate = parseInputDate(endValue, separator);
-
-  return endDate && endDate >= startDate ? [startDate, endDate] : null;
-};
-
-type DatePart = "month" | "day" | "year";
-
-const getDatePart = (selectionStart: number): DatePart => {
-  if (selectionStart <= 2) {
-    return "month";
-  }
-
-  return selectionStart <= 5 ? "day" : "year";
-};
-
-const stepDate = (date: Date, part: DatePart, amount: number) => {
-  const next = new Date(date);
-
-  if (part === "day") {
-    next.setDate(next.getDate() + amount);
-    return next;
-  }
-
-  const day = next.getDate();
-  next.setDate(1);
-
-  if (part === "month") {
-    next.setMonth(next.getMonth() + amount);
-  } else {
-    next.setFullYear(next.getFullYear() + amount);
-  }
-
-  next.setDate(
-    Math.min(
-      day,
-      new Date(next.getFullYear(), next.getMonth() + 1, 0).getDate()
-    )
-  );
-
-  return next;
-};
-
 const rejectInvalidDate =
   (separator: DateSeparator): MaskitoPostprocessor =>
   (elementState, initialElementState) =>
@@ -344,58 +249,6 @@ const createRangeMask = (separator: DateSeparator): MaskitoOptions => {
 
 export const DATE_RANGE_MASK_DOT = createRangeMask(".");
 export const DATE_RANGE_MASK_SLASH = createRangeMask("/");
-
-export const format = (value: any, separator: DateSeparator = "/") => {
-  const date = toDate(value);
-  if (!date) {
-    return "";
-  }
-
-  return formatDate(
-    date,
-    getDateFormat(separator) as Parameters<typeof formatDate>[1]
-  );
-};
-
-export const formatRange = (value: any, separator: DateSeparator = "/") => {
-  if (!Array.isArray(value)) {
-    return "";
-  }
-
-  return value
-    .slice(0, 2)
-    .map(date => format(date, separator))
-    .filter(Boolean)
-    .join(DATE_RANGE_SEPARATOR);
-};
-
-export const parse = (value: any, separator: DateSeparator = "/") => {
-  if (
-    typeof value === "string" &&
-    new RegExp(`^[\\d\\${separator}]*$`).test(value)
-  ) {
-    return parseInputDate(value, separator);
-  }
-
-  return toDate(value);
-};
-
-export const parseRange = (value: any, separator: DateSeparator = "/") => {
-  if (typeof value === "string") {
-    return parseInputDateRange(value, separator);
-  }
-
-  if (!Array.isArray(value)) {
-    return null;
-  }
-
-  const dates = value.slice(0, 2).map(toDate);
-  if (!dates.every(Boolean)) {
-    return null;
-  }
-
-  return dates.length === 2 && dates[1]! < dates[0]! ? null : dates;
-};
 
 const DatePickerTextBox = createStyledHOC(
   Input.TextBox,
@@ -824,3 +677,15 @@ export { DatePickerTextBox, DatePickerTextBoxValue, DatePickerTrigger };
 export const DatePickerSeparator = Input.Separator;
 export const DatePickerTriggerIcon = Button.Icon;
 export const DatePickerTriggerText = Button.Text;
+
+export {
+  DATE_RANGE_SEPARATOR,
+  DEFAULT_DATE_FORMAT,
+  format,
+  formatRange,
+  getDateFormat,
+  getDateRangeFormat,
+  parse,
+  parseRange
+} from "./utilities";
+export type { DateSeparator } from "./utilities";

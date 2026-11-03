@@ -30,7 +30,14 @@ import type {
   NameType,
   ValueType
 } from "recharts/types/component/DefaultTooltipContent";
-import { getColorsCount, getPayloadConfigFromPayload, useChart } from "./Chart";
+import { useChart } from "./Chart";
+import {
+  getColorsCount,
+  getPayloadConfigFromPayload,
+  getSeriesBackground
+} from "./utilities";
+
+export { getSeriesBackground } from "./utilities";
 
 export type TooltipRoundness = "sm" | "md" | "lg" | "xl";
 export type TooltipVariant = "default" | "frosted-glass";
@@ -245,24 +252,6 @@ function TooltipIndicator({
       style={getSeriesBackground(dataKey, colorsCount)}
     />
   );
-}
-
-/** A solid or left-to-right gradient background in a series' colors. */
-export function getSeriesBackground(
-  dataKey: string,
-  colorsCount: number
-): CSSProperties {
-  if (colorsCount <= 1) {
-    return { background: `var(--color-${dataKey}-0)` };
-  }
-
-  const stops = Array.from({ length: colorsCount }, (_, index) => {
-    const offset = (index / (colorsCount - 1)) * 100;
-
-    return `var(--color-${dataKey}-${index}) ${offset}%`;
-  }).join(", ");
-
-  return { background: `linear-gradient(to right, ${stops})` };
 }
 
 export const ChartTooltip = ({

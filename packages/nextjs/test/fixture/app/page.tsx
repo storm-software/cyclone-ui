@@ -21,6 +21,13 @@ export default function Page() {
     <>
       <Cached />
       <Link href="/second">Second page</Link>
+      <nav aria-label="Integration fixtures">
+        <Link href="/composition">Server composition</Link>
+        <Link href="/search?q=default">Default prefetch</Link>
+        <Link href="/search?q=prefetched" prefetch={true}>
+          Prefetch results
+        </Link>
+      </nav>
       <Probe />
       <Suspense fallback={<p>Loading request content</p>}>
         <Dynamic />

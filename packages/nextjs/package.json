@@ -9,12 +9,7 @@
     "directory": "packages/nextjs"
   },
   "private": false,
-  "keywords": [
-    "cyclone-ui",
-    "tamagui",
-    "nextjs",
-    "next-plugin"
-  ],
+  "keywords": ["cyclone-ui", "tamagui", "nextjs", "next-plugin"],
   "exports": {
     ".": {
       "require": {
@@ -78,6 +73,8 @@
   "devDependencies": {
     "@cyclone-ui/state": "workspace:*",
     "@cyclone-ui/tokens": "workspace:*",
+    "@next/playwright": "catalog:",
+    "@playwright/test": "catalog:",
     "@powerlines/plugin-tsdown": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/next-plugin": "catalog:",

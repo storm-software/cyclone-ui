@@ -38,6 +38,42 @@
         "Preserves cacheComponents and partialPrefetching and checks version support",
         "Checks the production static shell and browser hydration, not only a dev build"
       ]
+    },
+    {
+      "id": 5,
+      "prompt": "Our app/layout.tsx is a Server Component. Pass our custom tamagui.config.ts object and an onChangeTheme logging callback into CycloneUIProvider, and use Footer.Container from the installed footer on the server page. Keep the page and layout server-rendered.",
+      "expected_output": "Uses an application-owned client provider wrapper to import the custom Tamagui config and define the callback locally; the server layout passes children through it. Uses actual flat named footer exports on the server page. Does not serialize the function-bearing config or ordinary callback across the RSC boundary, make the page/layout client components, or change installed component files.",
+      "files": [],
+      "expectations": [
+        "Keeps custom config imports and ordinary callbacks inside an application-owned use client wrapper",
+        "Passes server-rendered children through the client provider without importing the server page there",
+        "Uses available flat named exports rather than static compound properties in Server Components",
+        "Preserves installed component source and keeps the page/layout as Server Components"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Our Next.js 16.3+ catalog uses cacheComponents and has 50 links to the same /products route with different query strings. Enable Partial Prefetching. We need the cached results for two important links before clicking, but the live stock panel must stay fresh. Should we set prefetch=true on our shared Link primitive and add use cache to all Cyclone components?",
+      "expected_output": "Audits existing full-prefetch links, enables partialPrefetching, and explains the reusable route App Shell versus cached URL-specific content. Opts only the important application links into prefetch={true}; uncached live stock still streams after navigation behind local Suspense. Selects cache boundaries and invalidation for reusable application data rather than caching generic client primitives or applying blanket Link defaults. Verifies production hard load, relevant soft navigation, and prefetch behavior.",
+      "files": [],
+      "expectations": [
+        "Distinguishes Partial Prerendering from Partial Prefetching and checks the installed Next.js version",
+        "Explains default App Shell reuse and URL-specific cached content with per-link prefetch=true",
+        "Does not promise uncached dynamic stock data will be fully prefetched with Partial Prefetching enabled",
+        "Does not impose prefetch=true on a shared primitive or use cache on all Cyclone components",
+        "Calls for production navigation and network or framework insight evidence"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "We are staying on Next.js 16.2 for now. Set up Cyclone UI with Cache Components and Partial Prerendering. Do we also need experimental.ppr and partialPrefetching?",
+      "expected_output": "Checks the installed version and its documentation, preserves the existing version, and uses cacheComponents for Partial Prerendering without adding the legacy experimental.ppr flag. Explains that partialPrefetching is a separate Next.js 16.3+ feature, so does not add the unsupported option or silently upgrade Next.js. Keeps the provider shell synchronous and request reads in local Suspense boundaries.",
+      "files": [],
+      "expectations": [
+        "Uses cacheComponents for supported Next.js 16 Partial Prerendering without experimental.ppr",
+        "Does not add partialPrefetching to a Next.js 16.2 configuration",
+        "Does not silently upgrade Next.js or broaden the task into a migration"
+      ]
     }
   ]
 }

@@ -95,7 +95,23 @@ export const TerrainFooter = withStaticProperties(TerrainFooterImpl, {
 });
 
 /**
- * Flat named export for React Server Components, which cannot dot into a
- * client module. The other parts are exported by `@cyclone-ui/footer`.
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module.
  */
 export { TerrainFooterContainer };
+export const TerrainFooterMain = Footer.Main;
+export const TerrainFooterBackgroundLogo = Footer.BackgroundLogo;
+export const TerrainFooterIntroduction = Footer.Introduction;
+export const TerrainFooterStatement = Footer.Statement;
+export const TerrainFooterDescription = Footer.Description;
+export const TerrainFooterAction = Footer.Action;
+export const TerrainFooterNavigation = Footer.Navigation;
+export const TerrainFooterSection = Footer.Section;
+export const TerrainFooterSectionTitle = Footer.Section.Title;
+export const TerrainFooterSectionLinks = Footer.Section.Links;
+export const TerrainFooterLink = Footer.Link;
+export const TerrainFooterRail = Footer.Rail;
+export const TerrainFooterRailLink = Footer.Rail.Link;
+export const TerrainFooterBrand = Footer.Brand;
+export const TerrainFooterCopyright = Footer.Copyright;
+export const TerrainFooterLegalNavigation = Footer.LegalNavigation;

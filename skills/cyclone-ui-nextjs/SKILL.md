@@ -1,6 +1,6 @@
 ---
 name: cyclone-ui-nextjs
-description: Set up Cyclone UI and Tamagui in a Next.js app with @cyclone-ui/nextjs — wrap next.config with withCycloneUI, render CycloneUIProvider in the root layout, and wire light/dark theme switching. Use whenever someone adds Cyclone UI to a Next.js project (App Router or Pages Router, Turbopack or Webpack), mentions withCycloneUI, CycloneUIProvider, or useThemeSetting, or hits Cyclone/Tamagui problems in Next.js such as unstyled components, hydration warnings on <html>, react-native import errors, or a theme toggle that doesn't persist.
+description: Set up or troubleshoot Cyclone UI and Tamagui in Next.js using @cyclone-ui/nextjs. Use for withCycloneUI, CycloneUIProvider, theme persistence, SSR and hydration, Server Component composition, or Cyclone integration with Cache Components, Partial Prerendering, and Partial Prefetching. Covers App Router and Pages Router with Turbopack or Webpack; use cyclone-ui-setup for copying registry components.
 ---
 
 # Set up Cyclone UI in a Next.js app
@@ -18,7 +18,7 @@ In App Router Server Components, import and render Cyclone UI's flat named expor
 
 ```tsx
 // app/page.tsx (Server Component)
-import { Footer, FooterContainer, FooterMain } from "@/components/ui/footer";
+import { Footer, FooterContainer, FooterMain } from "@/components/ui/footer"
 
 export default function Page() {
   return (
@@ -27,13 +27,34 @@ export default function Page() {
         <FooterMain>Footer content</FooterMain>
       </FooterContainer>
     </Footer>
-  );
+  )
 }
 ```
 
 Use the app's actual installed component path from `components.json` and verify the available named exports. For example, replace `<Footer.Container>` with `<FooterContainer>` and `<Footer.Main>` with `<FooterMain>`. Apply the same rule to other compound components, including nested members; do not assume every component exposes the same flat naming scheme.
 
 Keep the page or layout a Server Component and preserve the installed components' `"use client"` directives. Do not add `"use client"` to the page merely to make dot notation work. Compound syntax such as `<Footer.Container>` is valid inside a Client Component; use an application-owned client wrapper only when client-side composition is actually needed. If a required flat export is missing, follow the installed-component protection rule below rather than modifying the installed file without specific instructions.
+
+## Keep props serializable across the server/client boundary
+
+Flat exports fix component lookup; props crossing into a Client Component must still be serializable by React. Keep ordinary event handlers, render callbacks, and function-bearing Tamagui config objects inside client modules. Use supported JSX children or slots for server-rendered composition, and an application-owned client wrapper when a component needs callbacks.
+
+The default provider imports its config inside its own client module, so a server layout can render it without passing `config`. The `tokens` option below also replaces that import at build time. For a manually maintained custom config, import it inside an application-owned client provider instead of passing the config object from the server layout:
+
+```tsx
+// app/providers.tsx
+"use client"
+
+import { CycloneUIProvider } from "@cyclone-ui/nextjs/provider"
+import type { PropsWithChildren } from "react"
+import { config } from "@/tamagui.config" // Use the app's actual export.
+
+export function AppProviders({ children }: PropsWithChildren) {
+  return <CycloneUIProvider config={config}>{children}</CycloneUIProvider>
+}
+```
+
+Define any `onChangeTheme` callback in that client module too. The server layout can pass `{children}` to `<AppProviders>`: those children retain their Server Component rendering. Do not import server page modules into the client wrapper or mark the entire layout/page `"use client"` to work around a prop error. React Server Function references are a separate supported mechanism, not ordinary event-handler functions.
 
 ## Protect installed components
 
@@ -44,6 +65,7 @@ Do not change installed or added Cyclone UI component files unless the user spec
 Work in the target Next.js app. Before writing, find:
 
 - **Router:** `app/` (or `src/app/`) is the App Router; `pages/` is the Pages Router. The provider setup differs (see below).
+- **Versions:** inspect the installed Next.js, React, Tamagui, and Cyclone versions and fetch version-relevant official documentation (use Context7 when available). Current docs can describe flags absent from the installed version; do not silently upgrade dependencies to use them.
 - **Bundler:** Next.js 16 uses Turbopack by default. If the `dev`/`build` scripts pass `--webpack`, it's Webpack, which needs `@tamagui/next-plugin`.
 - **Existing config:** the `next.config.*` format and any wrappers already in it (bundle analyzer, MDX, Sentry), plus any existing `TamaguiProvider`, `ThemeProvider`, `tamagui.config.ts`, or `tamagui.build.ts`. A `tamagui.build.ts` overrides `withCycloneUI`'s compiler defaults, so keep it only if its settings are intended.
 
@@ -61,14 +83,16 @@ Add `@tamagui/react-native-svg` if the app renders SVG icons (`withCycloneUI` al
 
 ```ts
 // next.config.ts
-import { withCycloneUI } from "@cyclone-ui/nextjs";
+import { withCycloneUI } from "@cyclone-ui/nextjs"
 
 export default withCycloneUI({
   reactStrictMode: true
-});
+})
 ```
 
-Keep the app's existing options inside the call. `withCycloneUI` merges `env` and `turbopack.resolveAlias` with the app's own values, and the app's values win on conflicts. When other wrappers exist, nest them: `withBundleAnalyzer(withCycloneUI(config))`.
+Keep the app's existing options inside the call. `withCycloneUI` merges `env` and `turbopack.resolveAlias` with the app's own values, and the app's values win on conflicts. It accepts an object, a promised config, or a sync/async Next.js config function; phase functions stay lazy and receive Next.js's original phase and context. Preserve an existing function instead of evaluating it during module import.
+
+For an object config without `tokens`, other wrappers can nest as `withBundleAnalyzer(withCycloneUI(config))`. If a third-party wrapper requires an object, compose it after resolving a function/promise and before the asynchronous token build; do not pass that wrapper a promise or config function it does not support.
 
 What the wrapper adds, which helps when something breaks:
 
@@ -82,7 +106,7 @@ What the wrapper adds, which helps when something breaks:
 
 ```tsx
 // app/layout.tsx
-import { CycloneUIProvider } from "@cyclone-ui/nextjs/provider";
+import { CycloneUIProvider } from "@cyclone-ui/nextjs/provider"
 
 export default function RootLayout({
   children
@@ -95,14 +119,14 @@ export default function RootLayout({
         <CycloneUIProvider>{children}</CycloneUIProvider>
       </body>
     </html>
-  );
+  )
 }
 ```
 
 - The layout can stay a server component, because the provider module already carries `"use client"`.
 - `suppressHydrationWarning` on `<html>` is required: the provider sets the theme class before React hydrates.
 - `CycloneUIProvider` already renders the `TamaguiProvider`, the Cyclone theme state, and `<Theme name="base">`, and it collects react-native-web styles on the server. Remove any other `TamaguiProvider` or `@cyclone-ui/state` `ThemeProvider` it replaces. Nesting them creates competing theme state.
-- The provider accepts the `NextThemeProvider` props (`defaultTheme`, `forcedTheme`, `enableSystem`, `storageKey`, …), plus `config` (default: `@cyclone-ui/tokens/tamagui`), `disableInjectCSS` (default `false`), `mode` (the mode the server rendered with, default `"light"`) and `modeCookie` (a cookie the provider keeps set to the active mode).
+- The provider accepts the `NextThemeProvider` props (`defaultTheme`, `forcedTheme`, `enableSystem`, `storageKey`, …), plus `config` (default: `@cyclone-ui/tokens/tamagui`), `disableInjectCSS` (default `false`), `mode` (a fixed SSR/hydration fallback, default `"light"`) and `modeCookie` (an optional client-written mirror of the resolved mode). Keep non-serializable props in a client wrapper as described above.
 
 ### Pages Router
 
@@ -113,12 +137,12 @@ Render `<CycloneUIProvider skipNextHead={false}>` in `pages/_app.tsx`, so the th
 Read and change the theme with `useThemeSetting` from `@cyclone-ui/nextjs/provider`, in a client component:
 
 ```tsx
-"use client";
+"use client"
 
-import { useThemeSetting } from "@cyclone-ui/nextjs/provider";
+import { useThemeSetting } from "@cyclone-ui/nextjs/provider"
 
 export function ThemeToggle() {
-  const theme = useThemeSetting();
+  const theme = useThemeSetting()
 
   return <button onClick={theme.toggle}>Change theme</button>
 }
@@ -130,23 +154,24 @@ While `forcedTheme` is set, theme changes are blocked. Hide or disable the
 toggle while a theme is forced; releasing it restores the stored preference.
 System preference changes apply when the selected setting is `system`.
 
-### Cache Components and static shells
+## Cache Components and static shells
 
-Enable the caching options explicitly in the consuming App Router app:
+When adopting caching in the consuming App Router app, check its installed Next.js version first. Cache Components is available in Next.js 16; enabling `cacheComponents` includes Partial Prerendering (PPR), which combines a prerendered shell with dynamic content streamed through Suspense. Do not add the older `experimental.ppr` flag alongside it. Partial Prefetching is a separate navigation feature introduced in Next.js 16.3 and requires Cache Components.
+
+For Next.js 16.3+ with both features requested:
 
 ```ts
-import { withCycloneUI } from "@cyclone-ui/nextjs";
+import { withCycloneUI } from "@cyclone-ui/nextjs"
 
 export default withCycloneUI({
   cacheComponents: true,
   partialPrefetching: true
-});
+})
 ```
 
-`withCycloneUI` preserves these options; it does not enable them globally.
-`partialPrefetching` requires `cacheComponents` and a Next.js version that
-supports the option. It changes Link prefetch behavior to fetch the static App
-Shell; it does not make request-dependent content static.
+`withCycloneUI` preserves these options; it does not choose a caching policy or enable them globally. On Next.js 16.0–16.2, use `cacheComponents` without the unsupported `partialPrefetching` option. In an existing app, audit links that already use `prefetch={true}` before enabling Partial Prefetching because their behavior changes (see below).
+
+### Preserve the provider shell
 
 Keep the root layout synchronous and render `CycloneUIProvider` directly around
 its children, as above. The provider does not read `cookies()` or `headers()`
@@ -158,22 +183,56 @@ Do not read a theme cookie in the root layout just to populate `mode`. `mode` is
 an SSR/hydration fallback, not the user's persisted preference. `modeCookie` is
 an optional client-written mirror of the resolved light/dark mode; it does not
 require a server cookie read or preserve the distinction between system and an
-explicit choice. If a server component needs request cookies, put that component
-under a local `<Suspense>` boundary. Do not put cookie reads inside `"use cache"`
-or move the whole provider behind that boundary. Cached Server Components can
-be passed as children through the client provider.
+explicit choice. Put request reads such as `cookies()`, `headers()`, and
+`searchParams` in the component that needs them under a local `<Suspense>`
+boundary, with a meaningful fallback. Do not put those reads inside `"use cache"`
+or move the whole provider behind that boundary. The boundary must be above the
+read; adding Suspense inside a component after it has awaited request data is
+too late. Server Components, including cached ones, can be passed as children
+through the client provider.
+
+Static JSX needs no `"use cache"` directive. Cache reusable application data or
+server-rendered UI when its freshness policy allows reuse; choose `cacheLife`
+and, where needed, `cacheTag` plus mutation invalidation. Keep uncached live or
+request-specific work behind local Suspense boundaries. Do not add `"use cache"`
+to the client provider, copied client components, or every page as a generic
+performance fix. Passing dynamic children through a cached wrapper does not
+cache those children.
 
 Use semantic theme tokens and relative sub-themes such as `base` in the shell.
 Avoid choosing server markup or literal colors from a browser theme preference.
 Theme-dependent text from `useThemeSetting().current`, `resolvedTheme`,
-`useRootTheme`, or `useThemeMode` must wait until that component mounts. These values can differ
-between the server and the first browser render. The constant-label toggle
+`useRootTheme`, or `useThemeMode` must wait until that component mounts. These
+values can differ between the server and the first browser render. The constant-label toggle
 above needs no mount guard. If showing a current-mode label, guard only that
 label/control, keeping the rest of the shell rendered. `suppressHydrationWarning`
 on `<html>` does not suppress mismatches in descendants.
 
-See [Next.js caching](https://nextjs.org/docs/app/getting-started/caching) and
-[partialPrefetching](https://nextjs.org/docs/app/api-reference/config/next-config-js/partialPrefetching).
+### Choose prefetching per navigation
+
+With `partialPrefetching: true`, default links and `prefetch="auto"` fetch a
+reusable route App Shell. It contains output independent of a link's URL;
+links to the same route reuse it. A shell may also contain session output that
+Next.js caches per session on the client, so do not assume every shell is public
+or identical for every user.
+
+Use `<Link prefetch={true}>` on selected application links when cached content
+depending on `params`, `searchParams`, or the full URL needs to be available
+before navigation. With Partial Prefetching enabled, this no longer includes
+the uncached dynamic content from the legacy full prefetch. That content still
+streams after navigation behind Suspense. `prefetch={false}` disables prefetch
+for an individual link when that is appropriate.
+
+Do not hard-code `prefetch={true}` in a shared Cyclone primitive or convert all
+links at once. Check the destination, desired immediate UI, caching policy, and
+network cost. Test the concrete source-to-destination URL and relevant query
+strings; a successful initial page load does not prove the soft navigation or
+prefetch behavior. Use framework development insights to find boundaries and
+production navigation/network evidence to verify the result.
+
+See [Next.js caching](https://nextjs.org/docs/app/getting-started/caching),
+[adopting Partial Prefetching](https://nextjs.org/docs/app/guides/adopting-partial-prefetching),
+and [optimizing prefetching](https://nextjs.org/docs/app/guides/optimizing-prefetching).
 
 ## Webpack and production CSS
 
@@ -186,7 +245,7 @@ export default withCycloneUI(nextConfig, {
       ? "./public/tamagui.generated.css"
       : null,
   disableExtraction: process.env.NODE_ENV === "development"
-});
+})
 ```
 
 If you emit `outputCSS`, import that CSS in the root layout and pass `disableInjectCSS` to the provider so the theme CSS isn't injected twice.
@@ -202,10 +261,10 @@ Turbopack doesn't run the Tamagui compiler. Builds still work, with styles resol
 The default config is the published Cyclone theme. If the app has its own design tokens, pass them as `tokens`: a DTCG token object, or token file paths or globs (theme-named files such as `light.tokens.json` / `dark.tokens.json` become the light and dark themes).
 
 ```ts
-export default withCycloneUI(nextConfig, { tokens: "tokens/**/*.json" });
+export default withCycloneUI(nextConfig, { tokens: "tokens/**/*.json" })
 ```
 
-`withCycloneUI` then builds the Tamagui config into `.cyclone-ui/tamagui.config.ts` (add `.cyclone-ui` to `.gitignore`) and aliases `@cyclone-ui/tokens/tamagui` to it, so the provider and the Webpack compiler need no `config`. It returns a promise in this case, so apply other wrappers to `nextConfig` inside the call instead of around it.
+`withCycloneUI` then builds the Tamagui config into `.cyclone-ui/tamagui.config.ts` (add `.cyclone-ui` to `.gitignore`) and aliases `@cyclone-ui/tokens/tamagui` to it, so the provider and the Webpack compiler need no `config`. With an object config, this returns a promise; with a phase function, token generation happens when Next.js resolves that function. Apply object-only wrappers to the resolved input config before the token build.
 
 ## Verify
 
@@ -215,7 +274,8 @@ Run the app's `next build`, then load a page with a Cyclone component in `next s
 - The console shows no hydration warning.
 - Toggling the theme flips `<html>`'s class and survives a reload, including a saved dark preference with a light system setting.
 - With `system` selected, system preference changes keep the active mode in sync. Changes to `forcedTheme` also keep Tamagui, `useThemeMode`, and any `modeCookie` in sync.
-- With Cache Components enabled, the production build reports a static or partially prerendered route. Inspect the shell for theme CSS, the inline theme script, and the static content; test client navigation and delayed Suspense hydration as well as the initial load.
+- With Cache Components enabled, inspect the production route's prerender result and HTML shell for theme CSS, the inline theme script, useful static content, and local dynamic fallbacks. Test client navigation and delayed Suspense hydration as well as the initial load. A dynamic route label alone does not prove the useful shell is missing.
+- If changing prefetching, verify the selected link's destination URL, what renders immediately after clicking, what streams later, and the production prefetch requests. Do not infer this from a build pass or development-mode network behavior.
 
 Report which checks ran, and say so if only the build was verified.
 

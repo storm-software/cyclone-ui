@@ -905,3 +905,16 @@ AreaChart.Grid = Grid;
 AreaChart.Tooltip = Tooltip;
 AreaChart.Legend = Legend;
 AreaChart.Brush = ChartBrush;
+
+/** Direct references for composing chart parts from React Server Components. */
+export {
+  ActiveDot as AreaChartActiveDot,
+  Area as AreaChartArea,
+  ChartBrush as AreaChartBrush,
+  Dot as AreaChartDot,
+  Grid as AreaChartGrid,
+  Legend as AreaChartLegend,
+  Tooltip as AreaChartTooltip,
+  XAxis as AreaChartXAxis,
+  YAxis as AreaChartYAxis
+};

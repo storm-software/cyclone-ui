@@ -22,4 +22,16 @@ export * from "./ChartBrush";
 export * from "./ChartDot";
 export * from "./ChartLegend";
 export * from "./ChartTooltip";
+export { useLoadingData } from "./useLoadingData";
 export * from "./utilities";
+
+// Explicit exports keep pure helpers outside the client component boundary.
+export {
+  CHART_DATA_COLORS,
+  axisValueToPercentFormatter,
+  getColorsCount,
+  getEasedGradientStops,
+  getLoadingData,
+  getPayloadConfigFromPayload,
+  getSeriesBackground
+} from "./utilities";

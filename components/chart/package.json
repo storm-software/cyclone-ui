@@ -9,9 +9,7 @@
     "directory": "components/chart"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -34,9 +32,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -73,6 +69,10 @@
     "./utilities": {
       "import": "./dist/utilities.mjs",
       "require": "./dist/utilities.cjs"
+    },
+    "./useLoadingData": {
+      "import": "./dist/useLoadingData.mjs",
+      "require": "./dist/useLoadingData.cjs"
     },
     "./*": "./*"
   }

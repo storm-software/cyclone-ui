@@ -24,8 +24,12 @@ import { XStack } from "@tamagui/stacks";
 import type { CSSProperties } from "react";
 import type { DefaultLegendContentProps } from "recharts";
 import { Legend as RechartsLegend } from "recharts";
-import { getColorsCount, getPayloadConfigFromPayload, useChart } from "./Chart";
-import { getSeriesBackground } from "./ChartTooltip";
+import { useChart } from "./Chart";
+import {
+  getColorsCount,
+  getPayloadConfigFromPayload,
+  getSeriesBackground
+} from "./utilities";
 
 export type ChartLegendVariant =
   | "square"

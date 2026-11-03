@@ -20,7 +20,6 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Spinner } from "@cyclone-ui/spinner";
-import type { ColorTokens, ThemeTokens } from "@tamagui/core";
 import {
   getConfig,
   getVariable,
@@ -30,41 +29,22 @@ import {
 import type { YStackProps } from "@tamagui/stacks";
 import { XStack, YStack } from "@tamagui/stacks";
 import { motion } from "motion/react";
-import type { ComponentProps, ComponentType, ReactNode, SVGProps } from "react";
-import { createContext, use, useCallback, useId, useState } from "react";
+import type { ComponentProps, ReactNode, SVGProps } from "react";
+import { createContext, use, useId } from "react";
 import { ResponsiveContainer } from "recharts";
+import type { ChartColor, ChartConfig } from "./utilities";
+import { CHART_DATA_COLORS, getColorsCount } from "./utilities";
 
-/**
- * A theme key (for example `data-blue-emphasis`), a color token, or any CSS
- * color. Theme keys resolve to CSS variables, so the series follows the
- * active light or dark theme.
- */
-export type ChartColor = ThemeTokens | ColorTokens | (string & {});
-
-export type ChartConfig = Record<
-  string,
-  {
-    label?: ReactNode;
-    icon?: ComponentType;
-    /** One color for a solid series, or several for a gradient. */
-    colors?: ChartColor[];
-  }
->;
-
-/**
- * The theme's data palette, assigned in order to series that don't set
- * `colors`.
- */
-export const CHART_DATA_COLORS: ChartColor[] = [
-  "data-blue-emphasis",
-  "data-green-emphasis",
-  "data-orange-emphasis",
-  "data-purple-emphasis",
-  "data-pink-emphasis",
-  "data-red-emphasis",
-  "data-yellow-emphasis",
-  "data-neutral-emphasis"
-];
+export { useLoadingData } from "./useLoadingData";
+export {
+  axisValueToPercentFormatter,
+  CHART_DATA_COLORS,
+  getColorsCount,
+  getEasedGradientStops,
+  getLoadingData,
+  getPayloadConfigFromPayload
+} from "./utilities";
+export type { ChartColor, ChartConfig } from "./utilities";
 
 interface ChartContextProps {
   config: ChartConfig;
@@ -238,51 +218,6 @@ export function ChartStyle({
   );
 }
 
-// Helper to extract item config from a payload.
-export function getPayloadConfigFromPayload(
-  config: ChartConfig,
-  payload: unknown,
-  key: string
-) {
-  if (typeof payload !== "object" || payload === null) {
-    return undefined;
-  }
-
-  const payloadPayload =
-    "payload" in payload &&
-    typeof payload.payload === "object" &&
-    payload.payload !== null
-      ? payload.payload
-      : undefined;
-
-  let configLabelKey: string = key;
-
-  if (
-    key in payload &&
-    typeof payload[key as keyof typeof payload] === "string"
-  ) {
-    configLabelKey = payload[key as keyof typeof payload];
-  } else if (
-    payloadPayload &&
-    key in payloadPayload &&
-    typeof payloadPayload[key as keyof typeof payloadPayload] === "string"
-  ) {
-    configLabelKey = payloadPayload[key as keyof typeof payloadPayload];
-  }
-
-  return configLabelKey in config ? config[configLabelKey] : config[key];
-}
-
-// Format values to percent for expanded charts
-export function axisValueToPercentFormatter(value: number) {
-  return `${Math.round(value * 100).toFixed(0)}%`;
-}
-
-/** The number of `--color-<key>-<index>` variables a series defines. */
-export function getColorsCount(config: ChartConfig[string] | undefined) {
-  return Math.max(config?.colors?.length ?? 0, 1);
-}
-
 /**
  * Two or more stops that paint a series' colors along the gradient. Pass the
  * full element `id` and any `<linearGradient>` props (direction, units).
@@ -415,60 +350,4 @@ export function ChartRevealMask({
       )}
     </mask>
   );
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Loading skeleton
-// ─────────────────────────────────────────────────────────────────────────────
-
-// Random rows for the loading skeleton; min/max are percentages of the range
-export const getLoadingData = (points = 10, min = 0, max = 70) => {
-  const range = max - min;
-
-  return Array.from({ length: points }, () => ({
-    loading: Math.floor(Math.random() * range) + min
-  }));
-};
-
-// Bell-curve eased gradient stops for the loading shimmer
-export const getEasedGradientStops = (
-  steps = 17,
-  minOpacity = 0.05,
-  maxOpacity = 0.9
-) =>
-  Array.from({ length: steps }, (_, i) => {
-    const t = i / (steps - 1);
-    // Sine-based bell curve: peaks at the centre, smooth falloff at the edges
-    const eased = Math.sin(t * Math.PI) ** 2;
-    const opacity = minOpacity + eased * (maxOpacity - minOpacity);
-
-    return {
-      offset: `${(t * 100).toFixed(0)}%`,
-      opacity: Number(opacity.toFixed(3))
-    };
-  });
-
-/**
- * Loading rows that regenerate each time the shimmer leaves the visible area.
- * Call `onShimmerExit` from the shimmer's motion `onUpdate` when it crosses
- * the right edge, so the data swaps while nothing is visible. `min` and `max`
- * are percentages of the value range (see `getLoadingData`).
- */
-export function useLoadingData(
-  isLoading: boolean,
-  loadingPoints = 14,
-  min?: number,
-  max?: number
-) {
-  const [loadingData, setLoadingData] = useState(() =>
-    getLoadingData(loadingPoints, min, max)
-  );
-
-  const onShimmerExit = useCallback(() => {
-    if (isLoading) {
-      setLoadingData(getLoadingData(loadingPoints, min, max));
-    }
-  }, [isLoading, loadingPoints, min, max]);
-
-  return { loadingData, onShimmerExit };
 }

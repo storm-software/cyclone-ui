@@ -526,3 +526,12 @@ PieChart.Label = Label;
 PieChart.Tooltip = Tooltip;
 PieChart.Legend = Legend;
 PieChart.Background = Background;
+
+/** Direct references for composing chart parts from React Server Components. */
+export {
+  Background as PieChartBackground,
+  Label as PieChartLabel,
+  Legend as PieChartLegend,
+  Pie as PieChartPie,
+  Tooltip as PieChartTooltip
+};

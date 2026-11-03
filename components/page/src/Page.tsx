@@ -1757,8 +1757,21 @@ export const Page = withStaticProperties(PageRoot, {
 export {
   PageBanner,
   PageMain,
+  PageMainContent,
+  PageMainHeader,
   PagePanel,
+  PageSectionBody as PagePanelBody,
+  PageSectionFooter as PagePanelFooter,
+  PageSectionHeader as PagePanelHeader,
+  PageSplitter as PagePanelSplitter,
   PageSideNav,
+  PageSectionBody as PageSideNavBody,
+  PageSectionFooter as PageSideNavFooter,
+  PageSectionHeader as PageSideNavHeader,
+  PageSplitter as PageSideNavSplitter,
   PageSideNavToggle,
-  PageTopNav
+  PageTopNav,
+  PageTopNavEnd,
+  PageTopNavMiddle,
+  PageTopNavStart
 };

@@ -53,6 +53,7 @@ import {
   use,
   useCallback,
   useId,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState
@@ -103,7 +104,7 @@ interface ComposedChartContextValue {
   // Default intro: lines wipe in along this direction, bars grow up from
   // their baseline staggered in the same order
   animationType: ChartAnimationType;
-  introStartedAt: number; // timestamp the chart mounted — anchors the one-shot intro
+  introStartedAt: number | null; // timestamp the chart mounted — anchors the one-shot intro
   dataLength: number; // number of rows currently rendered
   isLoading: boolean;
   hoveredIndex: number | null; // data index under the pointer
@@ -182,7 +183,11 @@ export function ComposedChart<
   const chartId = useId().replace(/:/g, "");
   // Anchors the intro to a fixed moment so it plays exactly once — re-renders
   // and Recharts remounts read elapsed time from here instead of replaying.
-  const [introStartedAt] = useState(() => Date.now());
+  const [introStartedAt, setIntroStartedAt] = useState<number | null>(null);
+  useLayoutEffect(() => {
+    // Start before the first browser paint, without reading the clock during SSR.
+    setIntroStartedAt(Date.now());
+  }, []);
   const [selectedDataKey, setSelectedDataKey] = useState<string | null>(
     defaultSelectedDataKey
   );
@@ -813,7 +818,7 @@ type CustomBarProps = {
   enableHoverHighlight?: boolean;
   animationType?: ChartAnimationType; // grow-in order for this bar
   dataLength?: number; // total bars in the series — drives the stagger
-  introStartedAt?: number; // chart-mount timestamp anchoring the one-shot grow-in
+  introStartedAt?: number | null; // chart-mount timestamp anchoring the one-shot grow-in
   onClick?: () => void;
 } & BarShapeProps;
 
@@ -916,9 +921,15 @@ const getBarGrowAnimation = (
   animationType: ChartAnimationType,
   index: number,
   dataLength: number,
-  introStartedAt: number
+  introStartedAt: number | null
 ) => {
-  if (animationType === "none" || index < 0 || dataLength <= 0) return null;
+  if (
+    animationType === "none" ||
+    index < 0 ||
+    dataLength <= 0 ||
+    introStartedAt === 0
+  )
+    return null;
 
   const lastIndex = dataLength - 1;
   const center = lastIndex / 2;
@@ -942,7 +953,9 @@ const getBarGrowAnimation = (
   const startMs = step * BAR_STAGGER * 1000;
   const durationMs = BAR_GROW_DURATION * 1000;
   const endMs = startMs + durationMs;
-  const elapsed = Date.now() - introStartedAt;
+  // Keep the first server/client frame at its baseline until the mount clock
+  // is available. A standalone shape's default zero timestamp stays static.
+  const elapsed = introStartedAt === null ? 0 : Date.now() - introStartedAt;
 
   if (elapsed >= endMs) return null;
 
@@ -951,7 +964,7 @@ const getBarGrowAnimation = (
 
   return {
     initial: { scaleY: from },
-    animate: { scaleY: 1 },
+    animate: { scaleY: introStartedAt === null ? 0 : 1 },
     transition: {
       duration: (endMs - Math.max(elapsed, startMs)) / 1000,
       ease: REVEAL_EASE,
@@ -1289,3 +1302,17 @@ ComposedChart.Grid = Grid;
 ComposedChart.Tooltip = Tooltip;
 ComposedChart.Legend = Legend;
 ComposedChart.Brush = ChartBrush;
+
+/** Direct references for composing chart parts from React Server Components. */
+export {
+  ActiveDot as ComposedChartActiveDot,
+  Bar as ComposedChartBar,
+  ChartBrush as ComposedChartBrush,
+  Dot as ComposedChartDot,
+  Grid as ComposedChartGrid,
+  Legend as ComposedChartLegend,
+  Line as ComposedChartLine,
+  Tooltip as ComposedChartTooltip,
+  XAxis as ComposedChartXAxis,
+  YAxis as ComposedChartYAxis
+};

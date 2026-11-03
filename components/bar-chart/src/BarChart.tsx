@@ -50,6 +50,7 @@ import {
   use,
   useCallback,
   useId,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState
@@ -100,7 +101,7 @@ interface BarChartContextValue {
   isLoading: boolean;
   barRadius: number; // default corner radius each <Bar /> inherits
   animationType: ChartAnimationType; // default grow-in order each <Bar /> inherits
-  introStartedAt: number; // timestamp the chart mounted — anchors the one-shot grow-in
+  introStartedAt: number | null; // timestamp the chart mounted — anchors the one-shot grow-in
   dataLength: number; // number of rows currently rendered
   selectedDataKey: string | null;
   selectDataKey: (dataKey: string | null) => void;
@@ -187,7 +188,11 @@ export function BarChart<
   const chartId = useId().replace(/:/g, "");
   // Stamped once, so re-renders and Recharts' bar remounts read the elapsed
   // time from here instead of replaying the grow-in.
-  const [introStartedAt] = useState(() => Date.now());
+  const [introStartedAt, setIntroStartedAt] = useState<number | null>(null);
+  useLayoutEffect(() => {
+    // Start before the first browser paint, without reading the clock during SSR.
+    setIntroStartedAt(Date.now());
+  }, []);
   const [selectedDataKey, setSelectedDataKey] = useState<string | null>(
     defaultSelectedDataKey
   );
@@ -638,7 +643,7 @@ type CustomBarProps = {
   isMouseInChart?: boolean;
   isHorizontal?: boolean;
   animationType?: ChartAnimationType;
-  introStartedAt?: number;
+  introStartedAt?: number | null;
   selectedDataKey?: string | null;
   isActive?: boolean;
   dataLength?: number;
@@ -767,9 +772,15 @@ const getBarGrowAnimation = (
   index: number,
   dataLength: number,
   isHorizontal: boolean,
-  introStartedAt: number
+  introStartedAt: number | null
 ) => {
-  if (animationType === "none" || index < 0 || dataLength <= 0) return null;
+  if (
+    animationType === "none" ||
+    index < 0 ||
+    dataLength <= 0 ||
+    introStartedAt === 0
+  )
+    return null;
 
   const lastIndex = dataLength - 1;
   const center = lastIndex / 2;
@@ -793,7 +804,9 @@ const getBarGrowAnimation = (
   const startMs = step * BAR_STAGGER * 1000;
   const durationMs = BAR_GROW_DURATION * 1000;
   const endMs = startMs + durationMs;
-  const elapsed = Date.now() - introStartedAt;
+  // Keep the first server/client frame at its baseline until the mount clock
+  // is available. A standalone shape's default zero timestamp stays static.
+  const elapsed = introStartedAt === null ? 0 : Date.now() - introStartedAt;
 
   if (elapsed >= endMs) return null;
 
@@ -808,13 +821,13 @@ const getBarGrowAnimation = (
   return isHorizontal
     ? {
         initial: { scaleX: from },
-        animate: { scaleX: 1 },
+        animate: { scaleX: introStartedAt === null ? 0 : 1 },
         transition,
         style: { originX: 0 }
       }
     : {
         initial: { scaleY: from },
-        animate: { scaleY: 1 },
+        animate: { scaleY: introStartedAt === null ? 0 : 1 },
         transition,
         style: { originY: 1 }
       };
@@ -1168,3 +1181,14 @@ BarChart.Grid = Grid;
 BarChart.Tooltip = Tooltip;
 BarChart.Legend = Legend;
 BarChart.Brush = ChartBrush;
+
+/** Direct references for composing chart parts from React Server Components. */
+export {
+  Bar as BarChartBar,
+  ChartBrush as BarChartBrush,
+  Grid as BarChartGrid,
+  Legend as BarChartLegend,
+  Tooltip as BarChartTooltip,
+  XAxis as BarChartXAxis,
+  YAxis as BarChartYAxis
+};

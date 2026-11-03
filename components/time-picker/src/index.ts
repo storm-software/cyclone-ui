@@ -17,3 +17,6 @@
  ------------------------------------------------------------------- */
 
 export * from "./TimePicker";
+
+export { format, getTimeFormat, parse } from "./utilities";
+export type { TimePickerHourCycle } from "./utilities";

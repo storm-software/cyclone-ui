@@ -563,3 +563,15 @@ RadarChart.PolarAngleAxis = PolarAngleAxis;
 RadarChart.PolarRadiusAxis = PolarRadiusAxis;
 RadarChart.Tooltip = Tooltip;
 RadarChart.Legend = Legend;
+
+/** Direct references for composing chart parts from React Server Components. */
+export {
+  ActiveDot as RadarChartActiveDot,
+  Dot as RadarChartDot,
+  Legend as RadarChartLegend,
+  PolarAngleAxis as RadarChartPolarAngleAxis,
+  PolarGrid as RadarChartPolarGrid,
+  PolarRadiusAxis as RadarChartPolarRadiusAxis,
+  Radar as RadarChartRadar,
+  Tooltip as RadarChartTooltip
+};

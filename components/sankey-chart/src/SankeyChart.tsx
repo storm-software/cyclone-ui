@@ -806,3 +806,11 @@ SankeyChart.Node = Node;
 SankeyChart.NodeLabel = NodeLabel;
 SankeyChart.Link = Link;
 SankeyChart.Tooltip = Tooltip;
+
+/** Direct references for composing chart parts from React Server Components. */
+export {
+  Link as SankeyChartLink,
+  Node as SankeyChartNode,
+  NodeLabel as SankeyChartNodeLabel,
+  Tooltip as SankeyChartTooltip
+};

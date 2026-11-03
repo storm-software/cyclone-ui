@@ -841,3 +841,16 @@ LineChart.Grid = Grid;
 LineChart.Tooltip = Tooltip;
 LineChart.Legend = Legend;
 LineChart.Brush = ChartBrush;
+
+/** Direct references for composing chart parts from React Server Components. */
+export {
+  ActiveDot as LineChartActiveDot,
+  ChartBrush as LineChartBrush,
+  Dot as LineChartDot,
+  Grid as LineChartGrid,
+  Legend as LineChartLegend,
+  Line as LineChartLine,
+  Tooltip as LineChartTooltip,
+  XAxis as LineChartXAxis,
+  YAxis as LineChartYAxis
+};
