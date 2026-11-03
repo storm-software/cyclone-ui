@@ -2,6 +2,27 @@
 
 # Changelog for Cyclone UI - Article Page
 
+## [0.0.30](https://github.com/storm-software/cyclone-ui/releases/tag/article-page%400.0.30) (11/03/2026)
+
+### Features
+
+- **footer:** Split footer out into a layout and block type components ([3976202de](https://github.com/storm-software/cyclone-ui/commit/3976202de))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.41**
+- Updated **breadcrumb** to **v0.4.44**
+- Updated **button** to **v0.6.42**
+- Updated **card** to **v0.6.43**
+- Updated **feedback** to **v0.0.33**
+- Updated **heading-text** to **v0.5.42**
+- Updated **icons** to **v0.0.38**
+- Updated **inline-code-text** to **v0.5.40**
+- Updated **link** to **v0.5.42**
+- Updated **table-of-contents** to **v0.0.39**
+- Updated **tag** to **v0.0.38**
+- Updated **terrain-footer** to **v0.0.2**
+
 ## [0.0.29](https://github.com/storm-software/cyclone-ui/releases/tag/article-page%400.0.29) (11/02/2026)
 
 ### Updated Dependencies

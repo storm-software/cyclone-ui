@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.31](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.31) (11/03/2026)
+
+### Features
+
+- **footer:** Split footer out into a layout and block type components ([3976202de](https://github.com/storm-software/cyclone-ui/commit/3976202de))
+
 ## [0.0.30](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.30) (11/01/2026)
 
 ### Features

@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - CLI
 
+## [0.6.32](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.32) (11/03/2026)
+
+### Bug Fixes
+
+- **cli:** Update agent skills and MCP servers to specify agents should not update components ([afd19ca07](https://github.com/storm-software/cyclone-ui/commit/afd19ca07))
+
+### Updated Dependencies
+
+- Updated **registry-api** to **v0.3.41**
+- Updated **theme-builder** to **v0.0.31**
+
 ## [0.6.31](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.31) (11/01/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Privacy Choices
 
+## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/privacy-choices%400.0.6) (11/03/2026)
+
+### Features
+
+- **footer:** Split footer out into a layout and block type components ([3976202de](https://github.com/storm-software/cyclone-ui/commit/3976202de))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.41**
+- Updated **button** to **v0.6.42**
+- Updated **dialog** to **v0.3.43**
+- Updated **heading-text** to **v0.5.42**
+- Updated **icons** to **v0.0.38**
+- Updated **switch** to **v0.5.42**
+- Updated **tabs** to **v0.3.43**
+- Updated **visually-hidden** to **v0.5.41**
+
 ## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/privacy-choices%400.0.5) (11/02/2026)
 
 ### Updated Dependencies
