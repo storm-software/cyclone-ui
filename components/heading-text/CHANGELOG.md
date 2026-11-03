@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Heading Text
 
+## [0.5.41](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.41) (11/02/2026)
+
+### Bug Fixes
+
+- **heading-text:** Update the font-size display of the heading text to adjust to smaller screens ([9bd5628f5](https://github.com/storm-software/cyclone-ui/commit/9bd5628f5))
+
 ## [0.5.27](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.27) (10/23/2026)
 
 ### Documentation

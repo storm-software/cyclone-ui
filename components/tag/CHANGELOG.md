@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Tag
 
+## [0.0.37](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.37) (11/02/2026)
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.41**
+
 ## [0.0.36](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.36) (11/02/2026)
 
 ### Bug Fixes
