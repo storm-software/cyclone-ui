@@ -27,11 +27,7 @@ import { RedactedAnimation } from "@cyclone-ui/redacted-animation";
 import type { SearchDialogProps } from "@cyclone-ui/search-dialog";
 import { SearchDialog } from "@cyclone-ui/search-dialog";
 import { MenuToggle } from "@cyclone-ui/vectors";
-import type {
-  GetProps,
-  TamaguiElement,
-  TamaguiWebElement
-} from "@tamagui/core";
+import type { GetProps } from "@tamagui/core";
 import {
   createStyledHOC,
   styled,
@@ -45,11 +41,8 @@ import {
   cloneElement,
   Fragment,
   isValidElement,
-  useCallback,
   useEffect,
   useId,
-  useLayoutEffect,
-  useRef,
   useState,
   useSyncExternalStore
 } from "react";
@@ -75,31 +68,6 @@ interface NavigationHeaderWindow {
   removeEventListener: (type: "scroll", listener: () => void) => void;
   matchMedia?: (query: string) => NavigationHeaderMediaQuery;
 }
-
-// Typed here, since the package builds without the DOM library.
-interface NavigationHeaderMeasurable extends TamaguiWebElement {
-  clientWidth: number;
-  offsetWidth: number;
-}
-
-interface NavigationHeaderComputedStyle {
-  columnGap: string;
-  marginLeft: string;
-  marginRight: string;
-  paddingLeft: string;
-  paddingRight: string;
-  position: string;
-}
-
-interface NavigationHeaderResizeObserver {
-  observe: (element: NavigationHeaderMeasurable) => void;
-  disconnect: () => void;
-}
-
-const browserGlobals = globalThis as typeof globalThis & {
-  getComputedStyle?: (element: unknown) => NavigationHeaderComputedStyle;
-  ResizeObserver?: new (callback: () => void) => NavigationHeaderResizeObserver;
-};
 
 const getBrowserWindow = () =>
   (globalThis as typeof globalThis & { window?: NavigationHeaderWindow })
@@ -248,7 +216,7 @@ const NavigationHeaderBar = styled(View, {
   alignItems: "center",
   flexDirection: "row",
   // Tight on compact screens so logo, search and menu fit in 320px.
-  gap: "5xl max-md:lg"
+  gap: "5xl max-xl:lg"
 });
 
 const NavigationHeaderEdge = styled(View, {
@@ -277,6 +245,8 @@ const NavigationHeaderLogoContent = styled(View, {
 const NavigationHeaderCenter = styled(View, {
   displayName: "NavigationHeaderCenter",
   height: "100%",
+  order: "0 max-xl:1",
+  flexShrink: 0,
   alignItems: "center",
   flexDirection: "row",
   // Navigation's `6xl` gap minus the search button's inner padding, so the
@@ -293,7 +263,7 @@ const NavigationHeaderNavigation = styled(View, {
   justifyContent: "center",
   flexDirection: "row",
   gap: "6xl",
-  display: "max-md:none"
+  display: "flex max-xl:none"
 });
 
 const NavigationHeaderItemFrame = styled(View, {
@@ -370,7 +340,7 @@ const NavigationHeaderDropdown = styled(View, {
   backgroundColor: "canvas",
   borderBottomWidth: 1,
   borderBottomColor: "hairline",
-  display: "max-md:none",
+  display: "flex max-xl:none",
 
   variants: {
     open: {
@@ -465,15 +435,17 @@ const NavigationHeaderMenuButtonSlot = styled(View, {
   displayName: "NavigationHeaderMenuButtonSlot",
   // Overlaps the buttons' transparent padding, so the menu glyph sits near the
   // search glyph and aligns with the bar's right padding.
+  display: "none max-xl:flex",
+  order: 2,
   marginLeft: -8,
   marginRight: -11
 });
 
-// Kept separate from the animated panel: the motion driver writes styles
-// inline, which would pin a `max-md:` display clause.
+// Kept separate from the animated panel so inline animation styles cannot
+// override responsive visibility.
 const NavigationHeaderMobileLayer = styled(View, {
   displayName: "NavigationHeaderMobileLayer",
-  display: "none max-md:flex",
+  display: "none max-xl:flex",
   position: "absolute",
   top: "100%",
   left: 0,
@@ -509,6 +481,7 @@ const NavigationHeaderMobileNavigation = styled(View, {
 
 const NavigationHeaderMobileActions = styled(View, {
   displayName: "NavigationHeaderMobileActions",
+  display: "none max-md:flex",
   marginTop: "2xl",
   paddingTop: "5xl",
   paddingHorizontal: "2xl",
@@ -579,27 +552,8 @@ interface NavigationHeaderDropdownHover {
 
 const dropdownTransition = "200ms";
 const scaleTransition = "300ms";
-// The logo and navigation scale up at the top of the page (see `scaleProps`).
-const topScale = 1.25;
-
-/**
- * How far the bar has collapsed to fit: not at all, no longer scaling up at
- * the top of the page, then also moving the navigation into the menu, then
- * also the actions.
- */
-type NavigationHeaderCollapse = 0 | 1 | 2 | 3;
-
-// Hides a collapsed part while keeping it measurable, so it can come back once
-// there is room for it again. `visibility` also drops it from focus and the
-// accessibility tree.
-const getCollapsedProps = (collapsed: boolean) =>
-  collapsed
-    ? ({
-        position: "absolute",
-        visibility: "hidden",
-        width: "max-content"
-      } as const)
-    : {};
+// CSS media clauses determine layout before hydration: stop scaling below
+// xxl, move navigation to the menu below xl, and move actions below md.
 const entranceStagger = 50;
 
 // Slides and fades each dropdown entry in, `index` steps after the first.
@@ -616,26 +570,6 @@ const getEntranceProps = (index: number) => {
     // Naming `enter` makes Tamagui animate the mount instead of snapping.
     transition: { ...transition, enter: transition }
   };
-};
-
-const useNavigationHeaderDropdownHeight = (
-  open: boolean,
-  contentKey: number | null
-) => {
-  const contentRef = useRef<TamaguiElement | null>(null);
-  const [height, setHeight] = useState(0);
-
-  useEffect(() => {
-    const content = contentRef.current;
-
-    setHeight(
-      open && content
-        ? (content as unknown as { scrollHeight: number }).scrollHeight
-        : 0
-    );
-  }, [contentKey, open]);
-
-  return { contentRef, height };
 };
 
 const groupNavigationHeaderChildren = (
@@ -865,27 +799,10 @@ const NavigationHeaderRoot = createStyledHOC(
     const isAtTop = useIsAtTop();
     const prefersReducedMotion = usePrefersReducedMotion();
     const mobileNavigationId = useId();
-    const compact = useMedia()["max-md"];
-
-    const barRef = useRef<NavigationHeaderMeasurable>(null);
-    const logoRef = useRef<NavigationHeaderMeasurable>(null);
-    const centerRef = useRef<NavigationHeaderMeasurable>(null);
-    const navigationRef = useRef<NavigationHeaderMeasurable>(null);
-    const actionsRef = useRef<NavigationHeaderMeasurable>(null);
-    const menuButtonRef = useRef<NavigationHeaderMeasurable>(null);
-    const [measuredCollapse, setMeasuredCollapse] =
-      useState<NavigationHeaderCollapse>(0);
-    const collapse: NavigationHeaderCollapse = compact ? 3 : measuredCollapse;
-    // The bar's gap narrows once the navigation collapses, so measurements
-    // reuse the gap from before.
-    const collapseRef = useRef(collapse);
-    const barGapRef = useRef(0);
-    useLayoutEffect(() => {
-      collapseRef.current = collapse;
-    });
-
-    // The menu stays open in state once the menu button hides.
-    useLockPageScroll(menuOpen && collapse > 1);
+    // Only the scroll-lock side effect needs the current viewport in JS.
+    // All responsive visibility, ordering and scaling are handled by CSS.
+    const compact = useMedia()["max-xl"];
+    useLockPageScroll(menuOpen && Boolean(compact));
     const logo = getSlot<NavigationHeaderLogoProps>(
       children,
       NavigationHeaderLogoSlot
@@ -918,113 +835,10 @@ const NavigationHeaderRoot = createStyledHOC(
 
     const items = getNavigationHeaderItems(navigation?.props.children);
 
-    // Collapsed parts stay mounted (see `getCollapsedProps`), so every width
-    // here is the part's natural width, whatever is currently collapsed.
-    const hasSearch = Boolean(search);
-    const hasActions = Boolean(actions);
-    const updateCollapse = useCallback(() => {
-      const bar = barRef.current;
-      const logoContent = logoRef.current;
-      const center = centerRef.current;
-      const navigationElement = navigationRef.current;
-      const menuButtonElement = menuButtonRef.current;
-      const { getComputedStyle } = browserGlobals;
-
-      if (
-        !bar ||
-        !logoContent ||
-        !center ||
-        !navigationElement ||
-        !menuButtonElement ||
-        !getComputedStyle
-      ) {
-        return;
-      }
-
-      const px = (value: string) => Number.parseFloat(value) || 0;
-      const barStyle = getComputedStyle(bar);
-      const menuButtonStyle = getComputedStyle(menuButtonElement);
-
-      const barWidth =
-        bar.clientWidth - px(barStyle.paddingLeft) - px(barStyle.paddingRight);
-      if (collapseRef.current < 2 || !barGapRef.current) {
-        barGapRef.current = px(barStyle.columnGap);
-      }
-      const barGap = barGapRef.current;
-      const logoWidth = logoContent.offsetWidth;
-      const navigationWidth = navigationElement.offsetWidth;
-      const searchGap = hasSearch ? px(getComputedStyle(center).columnGap) : 0;
-      // A collapsed navigation is out of flow, leaving only the search.
-      const searchWidth =
-        getComputedStyle(navigationElement).position === "absolute"
-          ? center.offsetWidth
-          : Math.max(0, center.offsetWidth - navigationWidth - searchGap);
-      const actionsWidth = actionsRef.current?.offsetWidth ?? 0;
-      const menuButtonWidth =
-        menuButtonElement.offsetWidth +
-        px(menuButtonStyle.marginLeft) +
-        px(menuButtonStyle.marginRight);
-
-      const fits = (next: NavigationHeaderCollapse) => {
-        const scale = next === 0 ? topScale : 1;
-
-        // The navigation stays centered between equal edges, so the wider of
-        // the logo and actions sets both edges.
-        if (next < 2) {
-          return (
-            (navigationWidth + searchGap + searchWidth) * scale +
-              2 * (barGap + Math.max(logoWidth * scale, actionsWidth)) <=
-            barWidth
-          );
-        }
-
-        // Otherwise everything packs to the ends, measured with the wider gap
-        // so the actions keep some room. Without the actions it always fits.
-        return (
-          logoWidth +
-            actionsWidth +
-            searchWidth +
-            menuButtonWidth +
-            3 * barGap <=
-          barWidth
-        );
-      };
-      const next = fits(0) ? 0 : fits(1) ? 1 : fits(2) ? 2 : 3;
-
-      setMeasuredCollapse(current => (current === next ? current : next));
-    }, [hasSearch]);
-
-    useLayoutEffect(() => {
-      updateCollapse();
-
-      const { ResizeObserver } = browserGlobals;
-      if (!ResizeObserver) {
-        return;
-      }
-
-      const resizeObserver = new ResizeObserver(updateCollapse);
-
-      for (const element of [
-        barRef.current,
-        logoRef.current,
-        centerRef.current,
-        navigationRef.current,
-        actionsRef.current,
-        menuButtonRef.current
-      ]) {
-        if (element) {
-          resizeObserver.observe(element);
-        }
-      }
-
-      return () => resizeObserver.disconnect();
-    }, [hasActions, updateCollapse]);
     const navigationLabel = navigation?.props.label ?? "Primary navigation";
     const menuLabel = menuButton?.props.label ?? "Navigation menu";
     const openItem = openItemIndex === null ? undefined : items[openItemIndex];
     const submenuOpen = Boolean(openItem?.children?.length);
-    const { contentRef: dropdownContentRef, height: dropdownHeight } =
-      useNavigationHeaderDropdownHeight(submenuOpen, openItemIndex);
 
     // Stagger entries only when the dropdown opens from closed, not when the
     // pointer moves between items while it is already open.
@@ -1046,20 +860,18 @@ const NavigationHeaderRoot = createStyledHOC(
     const entranceProps = () =>
       staggerEntrance ? getEntranceProps(entranceIndex++) : {};
 
-    // Tamagui's motion driver only animates its own transform props; a
-    // transition set through `style` is dropped.
-    // Collapsed headers have no room to grow, so they stay at full size.
+    // Native CSS transitions keep responsive transforms and ordering in CSS;
+    // the motion driver would resolve those media clauses into inline styles.
     const scaleProps = {
-      scale: isAtTop && collapse === 0 ? topScale : 1,
-      transition: prefersReducedMotion ? "none" : scaleTransition
+      scale: isAtTop ? "1 xxl:1.25" : 1,
+      style: {
+        transition: prefersReducedMotion ? "none" : `scale ${scaleTransition}`
+      }
     };
 
     const centerSlot = (
-      <NavigationHeaderCenter key="center" ref={centerRef} {...scaleProps}>
-        <NavigationHeaderNavigation
-          ref={navigationRef}
-          aria-label={navigationLabel}
-          {...getCollapsedProps(collapse > 1)}>
+      <NavigationHeaderCenter key="center" {...scaleProps}>
+        <NavigationHeaderNavigation aria-label={navigationLabel}>
           {items.map((item, index) => {
             const hasChildren = Boolean(item.children?.length);
             const active =
@@ -1137,22 +949,15 @@ const NavigationHeaderRoot = createStyledHOC(
         {/* Nudged onto the labels' x-height center, which sits below their
                 cap-height center; without them it centers with the menu. */}
         {search && (
-          <SearchDialog
-            {...search.props}
-            y={collapse > 1 ? 0 : 2}
-            noPadding={true}
-          />
+          <SearchDialog {...search.props} y="2px max-xl:0" noPadding={true} />
         )}
       </NavigationHeaderCenter>
     );
 
-    // Keyed, so the bar can move the actions before the search without
-    // remounting either.
+    // CSS order moves the actions before search without changing the markup.
     const actionsSlot = actions ? (
       <NavigationHeaderActions key="actions">
-        <NavigationHeaderActionsContent
-          ref={actionsRef}
-          {...getCollapsedProps(collapse === 3)}>
+        <NavigationHeaderActionsContent>
           {actions}
         </NavigationHeaderActionsContent>
       </NavigationHeaderActions>
@@ -1193,26 +998,17 @@ const NavigationHeaderRoot = createStyledHOC(
           transition={prefersReducedMotion ? "none" : "400ms"}
         />
 
-        <NavigationHeaderBar
-          ref={barRef}
-          // The compact gap, so the search sits by the menu button.
-          {...(collapse > 1 && { gap: "lg" })}>
+        <NavigationHeaderBar>
           <NavigationHeaderLogo>
-            <NavigationHeaderLogoContent ref={logoRef} {...scaleProps}>
+            <NavigationHeaderLogoContent {...scaleProps}>
               {logo}
             </NavigationHeaderLogoContent>
           </NavigationHeaderLogo>
 
-          {collapse > 1 ? [actionsSlot, centerSlot] : [centerSlot, actionsSlot]}
+          {centerSlot}
+          {actionsSlot}
 
-          {/* Measurable while hidden; flat values keep server markup right on
-              compact screens. */}
-          <NavigationHeaderMenuButtonSlot
-            ref={menuButtonRef}
-            {...(collapse < 2 && {
-              position: "absolute max-md:relative",
-              visibility: "hidden max-md:visible"
-            })}>
+          <NavigationHeaderMenuButtonSlot>
             <Button
               variant="ghost"
               noPadding={true}
@@ -1243,12 +1039,14 @@ const NavigationHeaderRoot = createStyledHOC(
           }
           open={submenuOpen}
           aria-hidden={!submenuOpen}
-          {...(collapse > 1 && { display: "none" })}
-          height={dropdownHeight}
-          transition={prefersReducedMotion ? "none" : dropdownTransition}
+          style={{
+            transition: prefersReducedMotion
+              ? "none"
+              : `clip-path ${dropdownTransition}`
+          }}
           onMouseLeave={() => setHoveredDropdownItem(null)}>
           {openItem?.children?.length ? (
-            <NavigationHeaderDropdownContent ref={dropdownContentRef}>
+            <NavigationHeaderDropdownContent>
               {groupNavigationHeaderChildren(openItem.children).map(
                 (group, groupIndex) => (
                   <NavigationHeaderDropdownGroup
@@ -1323,7 +1121,6 @@ const NavigationHeaderRoot = createStyledHOC(
           // Stays mounted so it can fade out; `inert` (untyped in Tamagui)
           // drops the hidden links from focus and the accessibility tree.
           {...{ inert: !menuOpen }}
-          {...(collapse > 1 && { display: "flex" })}
           pointerEvents={menuOpen ? "auto" : "none"}>
           <NavigationHeaderMobilePanel
             opacity={menuOpen ? 1 : 0}
@@ -1335,47 +1132,44 @@ const NavigationHeaderRoot = createStyledHOC(
             }
             style={{ scrollbarWidth: "none" }}>
             <NavigationHeaderMobileContent>
-              {collapse > 1 && (
-                <NavigationHeaderMobileNavigation aria-label={navigationLabel}>
-                  {items.map((item, index) => (
-                    <NavigationHeaderItemFrame
-                      key={`${item.href ?? "mobile-navigation-item"}-${index}`}
-                      active={
-                        item.active ??
-                        item.children?.some(child => child.active)
-                      }
-                      mobile={true}>
-                      <NavigationHeaderItemLink
-                        group={false}
-                        variant="emphasis"
-                        inverse={true}
-                        underline="none"
-                        href={item.href}
-                        target={item.target}
-                        external={item.external}
-                        active={item.active}
-                        mobile={true}
-                        aria-current={item.active ? "page" : undefined}
-                        onPress={(event: NavigationHeaderPressEvent) => {
-                          item.onPress?.(event);
-                          setMenuOpen(false);
-                        }}>
-                        {/* Mounts on open so the reveal replays each time. */}
-                        {menuOpen ? (
-                          <RedactedAnimation
-                            delay={200 + index * entranceStagger}>
-                            {item.label}
-                          </RedactedAnimation>
-                        ) : (
-                          item.label
-                        )}
-                      </NavigationHeaderItemLink>
-                    </NavigationHeaderItemFrame>
-                  ))}
-                </NavigationHeaderMobileNavigation>
-              )}
+              <NavigationHeaderMobileNavigation aria-label={navigationLabel}>
+                {items.map((item, index) => (
+                  <NavigationHeaderItemFrame
+                    key={`${item.href ?? "mobile-navigation-item"}-${index}`}
+                    active={
+                      item.active ?? item.children?.some(child => child.active)
+                    }
+                    mobile={true}>
+                    <NavigationHeaderItemLink
+                      group={false}
+                      variant="emphasis"
+                      inverse={true}
+                      underline="none"
+                      href={item.href}
+                      target={item.target}
+                      external={item.external}
+                      active={item.active}
+                      mobile={true}
+                      aria-current={item.active ? "page" : undefined}
+                      onPress={(event: NavigationHeaderPressEvent) => {
+                        item.onPress?.(event);
+                        setMenuOpen(false);
+                      }}>
+                      {/* Mounts on open so the reveal replays each time. */}
+                      {menuOpen ? (
+                        <RedactedAnimation
+                          delay={200 + index * entranceStagger}>
+                          {item.label}
+                        </RedactedAnimation>
+                      ) : (
+                        item.label
+                      )}
+                    </NavigationHeaderItemLink>
+                  </NavigationHeaderItemFrame>
+                ))}
+              </NavigationHeaderMobileNavigation>
 
-              {actions && collapse === 3 && (
+              {actions && (
                 <NavigationHeaderMobileActions>
                   {getFullWidthActions(actions)}
                 </NavigationHeaderMobileActions>

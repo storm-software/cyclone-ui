@@ -24,8 +24,8 @@ import { isEqual } from "@stryke/helpers/is-equal";
 import type { SetStateAction, WritableAtom } from "jotai";
 import { useAtomValue, useSetAtom } from "jotai";
 import { useEffect, useRef } from "react";
-import type { JotaiStore, WritableAtomRecord } from "../../types";
-import { isAtom } from "../utilities/is-atom";
+import type { AtomRecordConstraint, JotaiStore } from "../../types";
+import { isAtom, isWritableAtom } from "../utilities/is-atom";
 
 export type UseSyncAtoms<T> = (
   values: Partial<Record<keyof T, any>>,
@@ -53,12 +53,16 @@ const useDeepStable = <T>(value: T): T => {
  * `initialState` does not write to its atoms again. Without this, two
  * providers sharing a molecule scope overwrite each other on every render.
  */
-export const useSyncMolecule = <T extends object>(
-  atoms: WritableAtomRecord<T>,
+export const useSyncMolecule = <T extends AtomRecordConstraint<T>>(
+  atoms: T,
   values: Partial<Record<keyof T, unknown>>,
   store?: JotaiStore
 ) => {
   for (const key of Object.keys(atoms) as (keyof T)[]) {
+    if (!isWritableAtom(atoms[key])) {
+      continue;
+    }
+
     let value = values[key];
     if (isAtom(value)) {
       value = useAtomValue(value);
@@ -66,16 +70,16 @@ export const useSyncMolecule = <T extends object>(
     value = useDeepStable(value);
 
     const setAtom = useSetAtom(
-      atoms[key] as WritableAtom<
-        T[keyof T],
-        [SetStateAction<T[keyof T]>],
+      atoms[key] as unknown as WritableAtom<
+        unknown,
+        [SetStateAction<unknown>],
         void
       >,
       { store }
     );
     useEffect(() => {
       if (value !== undefined) {
-        setAtom(value as SetStateAction<T[keyof T]>);
+        setAtom(value);
       }
     }, [setAtom, value]);
   }

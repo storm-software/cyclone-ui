@@ -51,7 +51,7 @@ import { withStaticProperties } from "@tamagui/helpers";
 import { YStack } from "@tamagui/stacks";
 import type { TextContextStyles, TextParentStyles } from "@tamagui/text";
 import type { Ref } from "react";
-import { useCallback, useMemo, useRef } from "react";
+import { isValidElement, useCallback, useMemo, useRef } from "react";
 
 type ButtonCascadeEffect =
   | "cascade"
@@ -1134,7 +1134,9 @@ const ButtonContainerImpl = createStyledHOC(
 
     const handlePress = useCallback(
       (event: ButtonPressEvent) => {
-        if (render !== "a") {
+        // A link render (`"a"` or an element such as Next's `<Link>`) must keep the
+        // click's default, which `Link` checks before it navigates client-side.
+        if (render !== "a" && !isValidElement(render)) {
           event.preventDefault();
         }
         event.stopPropagation();

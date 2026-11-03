@@ -98,7 +98,7 @@ export const useMessageActions = (): UseMessageActionsResult => {
     ) => {
       show(message || "An error occured during processing", {
         ...options,
-        type: "error"
+        type: "danger"
       });
     },
     showHelp: (message: string, options: Omit<MessageOptions, "type"> = {}) => {

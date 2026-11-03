@@ -79,7 +79,7 @@ export function debounce<TArgs extends unknown[], TReturn>(
     return currentPromise;
   };
 
-  return async (...args: TArgs) => {
+  return async function debounced(this: unknown, ...args: TArgs) {
     if (currentPromise) {
       if (options.trailing) {
         trailingArgs = args;

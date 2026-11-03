@@ -42,7 +42,7 @@ function createContext(root: string): ExecutorContext {
       version: 2
     },
     root
-  } as ExecutorContext;
+  } as unknown as ExecutorContext;
 }
 
 async function addFontSources(

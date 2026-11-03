@@ -35,10 +35,9 @@ import type {
   ProviderProps
 } from "bunshi/react";
 import { ScopeProvider, useMolecule as useMoleculeBase } from "bunshi/react";
-import type { Atom, SetStateAction, WritableAtom } from "jotai";
+import type { Atom, WritableAtom } from "jotai";
 import { atom, useAtomValue, useSetAtom } from "jotai";
-import { RESET } from "jotai/utils";
-import { useCallback } from "react";
+import { useResetAtom } from "jotai/utils";
 import type {
   AtomRecord,
   AtomRecordConstraint,
@@ -193,7 +192,11 @@ export function createMoleculeApi<
           if (isFunction(unmount)) {
             return unmount;
           }
+
+          return undefined;
         }
+
+        return undefined;
       });
       onUnmount(() => {
         if (options.onUnmount) {
@@ -222,31 +225,22 @@ export function createMoleculeApi<
           const key = proxyKey as keyof TState;
 
           return {
-            get: () => useAtomValue(atoms[key] as Atom<TState[typeof key]>),
+            get: () => useAtomValue(atoms[key] as Atom<unknown>),
             set: isWritableAtom(atoms[key])
               ? () =>
                   useSetAtom(
-                    atoms[key] as WritableAtom<
-                      TState[typeof key],
-                      [SetStateAction<TState[typeof key]>],
-                      void
+                    atoms[key] as unknown as WritableAtom<
+                      unknown,
+                      unknown[],
+                      unknown
                     >
                   )
               : undefined,
             reset: isResetAtom(atoms[key])
-              ? () => {
-                  const setAtom = useSetAtom(
-                    atoms[key] as WritableAtom<
-                      TState[typeof key],
-                      [SetStateAction<TState[typeof key]>],
-                      void
-                    >
-                  );
-
-                  return useCallback(() => {
-                    setAtom(RESET);
-                  }, [setAtom]);
-                }
+              ? () =>
+                  useResetAtom(
+                    atoms[key] as unknown as Parameters<typeof useResetAtom>[0]
+                  )
               : undefined
           };
         }
@@ -256,9 +250,7 @@ export function createMoleculeApi<
     });
   };
 
-  function MoleculeStateManager<
-    TState extends AtomRecordConstraint<TState> = AtomRecordConstraint
-  >({
+  function MoleculeStateManager({
     initialState
   }: {
     initialState: Partial<ExtractAtomRecordValues<TState>>;
@@ -270,16 +262,17 @@ export function createMoleculeApi<
       atoms,
       Object.fromEntries(
         Object.entries(initialState).filter(([, value]) => !isAtom(value))
-      )
+      ) as Partial<Record<keyof MoleculeState<TState>, unknown>>
     );
-    useSyncMolecule(atoms, initialState);
+    useSyncMolecule(
+      atoms,
+      initialState as Partial<Record<keyof MoleculeState<TState>, unknown>>
+    );
 
     return null;
   }
 
-  function Provider<
-    TState extends AtomRecordConstraint<TState> = AtomRecordConstraint
-  >({
+  function Provider({
     children,
     scope,
     initialState,
@@ -287,9 +280,7 @@ export function createMoleculeApi<
   }: MoleculeProviderProps<TState>) {
     return (
       <ScopeProvider {...props} scope={Scope} value={scope}>
-        {initialState && (
-          <MoleculeStateManager<TState> initialState={initialState} />
-        )}
+        {initialState && <MoleculeStateManager initialState={initialState} />}
         {children}
       </ScopeProvider>
     );

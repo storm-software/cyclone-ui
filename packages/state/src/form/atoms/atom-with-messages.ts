@@ -22,8 +22,6 @@ import type {
   DangerValidationDetail as DangerValidationDetails,
   DiscoveryValidationDetail as DiscoveryValidationDetails,
   InfoValidationDetail as InfoValidationDetails,
-  NegativeValidationDetail as NegativeValidationDetails,
-  PositiveValidationDetail as PositiveValidationDetails,
   SuccessValidationDetail as SuccessValidationDetails,
   ValidationDetail as ValidationDetails,
   WarningValidationDetail as WarningValidationDetails
@@ -32,6 +30,9 @@ import type { Atom } from "jotai";
 import { atom } from "jotai";
 import type { InferFieldState, ValidationResults } from "../types";
 import { isValidationResults } from "../utilities/is-validation-results";
+
+type PositiveValidationDetails = SuccessValidationDetails;
+type NegativeValidationDetails = DangerValidationDetails;
 
 export const getMessageType = <
   TMessageType extends MessageType,

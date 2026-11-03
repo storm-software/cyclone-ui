@@ -330,8 +330,8 @@ export interface FormAtoms<
   infoMessages: Atom<ValidationDetails<"info">[]>;
   discoveryMessages: Atom<ValidationDetails<"discovery">[]>;
   successMessages: Atom<ValidationDetails<"success">[]>;
-  positiveMessages: Atom<ValidationDetails<"positive">[]>;
-  negativeMessages: Atom<ValidationDetails<"negative">[]>;
+  positiveMessages: Atom<ValidationDetails<"success">[]>;
+  negativeMessages: Atom<ValidationDetails<"danger">[]>;
   messages: Atom<ValidationDetails[]>;
 
   dangerFields: Atom<
@@ -693,16 +693,16 @@ export interface FieldAtoms<TFieldValue> {
   info: Atom<ValidationDetails<"info">[]>;
   discovery: Atom<ValidationDetails<"discovery">[]>;
   success: Atom<ValidationDetails<"success">[]>;
-  positive: Atom<ValidationDetails<"positive">[]>;
-  negative: Atom<ValidationDetails<"negative">[]>;
+  positive: Atom<ValidationDetails<"success">[]>;
+  negative: Atom<ValidationDetails<"danger">[]>;
 
   dangerMessages: Atom<ValidationDetails<"danger">[]>;
   warningMessages: Atom<ValidationDetails<"warning">[]>;
   infoMessages: Atom<ValidationDetails<"info">[]>;
   discoveryMessages: Atom<ValidationDetails<"discovery">[]>;
   successMessages: Atom<ValidationDetails<"success">[]>;
-  positiveMessages: Atom<ValidationDetails<"positive">[]>;
-  negativeMessages: Atom<ValidationDetails<"negative">[]>;
+  positiveMessages: Atom<ValidationDetails<"success">[]>;
+  negativeMessages: Atom<ValidationDetails<"danger">[]>;
 
   theme: Atom<string>;
   messages: Atom<ValidationDetails[]>;

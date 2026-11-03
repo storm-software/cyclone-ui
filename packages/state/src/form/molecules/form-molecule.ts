@@ -123,7 +123,7 @@ export const FormApi = createMoleculeApi(
       }
     );
 
-    const validationResultsAtom = atomWithReset({
+    const validationResultsAtom = atomWithReset<ValidationResults>({
       initialize: [],
       change: [],
       blur: [],
@@ -182,7 +182,7 @@ export const FormApi = createMoleculeApi(
           if ("field" in update && update.field && isString(update.field)) {
             let tabIndex = update.tabIndex;
             if (!isNumber(tabIndex) || tabIndex > -1) {
-              const flat = flattenObject(tabIndexes);
+              const flat = flattenObject(tabIndexes) as Record<string, number>;
 
               let lastIndex = -1;
               for (const key in flat) {
@@ -214,12 +214,18 @@ export const FormApi = createMoleculeApi(
     const pristineAtom = atom(get => !get(dirtyAtom));
 
     const blurredAtom = atom(get => {
-      const blurredFields = flattenObject(get(blurredFieldsAtom));
+      const blurredFields = flattenObject(get(blurredFieldsAtom)) as Record<
+        string,
+        boolean
+      >;
 
       return Object.keys(blurredFields).some(key => blurredFields[key]);
     });
     const touchedAtom = atom(get => {
-      const touchedFields = flattenObject(get(touchedFieldsAtom));
+      const touchedFields = flattenObject(get(touchedFieldsAtom)) as Record<
+        string,
+        boolean
+      >;
 
       return Object.keys(touchedFields).some(key => touchedFields[key]);
     });
@@ -229,7 +235,9 @@ export const FormApi = createMoleculeApi(
         return true;
       }
 
-      const validatingFields = flattenObject(get(validatingFieldsAtom));
+      const validatingFields = flattenObject(
+        get(validatingFieldsAtom)
+      ) as Record<string, boolean>;
 
       return Object.keys(validatingFields).some(key => validatingFields[key]);
     });
@@ -253,11 +261,11 @@ export const FormApi = createMoleculeApi(
     );
     const formPositivesAtom = atomWithMessageTypes(
       validationResultsAtom,
-      "positive"
+      "success"
     );
     const formNegativesAtom = atomWithMessageTypes(
       validationResultsAtom,
-      "negative"
+      "danger"
     );
 
     const isFormInvalidAtom = atom(get => {

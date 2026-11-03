@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { StormJSON as StormParser } from "@stryke/json/storm-json";
-import { isPromise, isPromiseLike } from "@stryke/type-checks/is-promise";
+import { isPromiseLike } from "@stryke/type-checks/is-promise";
 import type {
   AsyncStorage,
   AsyncStringStorage,
@@ -31,21 +31,27 @@ export function createWebStorage<TValue>(
   let lastStrValue: string | undefined;
   let lastValue: TValue;
 
-  const storage: AsyncStorage<TValue> | SyncStorage<TValue> = {
-    getItem: (key, initialValue) => {
-      const parse = (strValue = "") => {
+  const storage: {
+    getItem: (
+      key: string,
+      initialValue: TValue
+    ) => TValue | PromiseLike<TValue>;
+    removeItem: (key: string) => void | PromiseLike<void> | undefined;
+    setItem: (
+      key: string,
+      newValue: TValue
+    ) => void | PromiseLike<void> | undefined;
+    subscribe?: (
+      key: string,
+      callback: (value: TValue) => void,
+      initialValue: TValue
+    ) => () => void;
+  } = {
+    getItem: (key: string, initialValue: TValue) => {
+      const parse = (strValue = ""): TValue => {
         if (lastStrValue !== strValue) {
           try {
-            const nextValue = parse(strValue);
-            if (isPromise(nextValue)) {
-              return (nextValue as PromiseLike<TValue>).then(result => {
-                lastValue = result;
-
-                return result;
-              });
-            }
-
-            lastValue = nextValue;
+            lastValue = StormParser.parse<TValue>(strValue);
           } catch {
             return initialValue;
           }
@@ -61,8 +67,8 @@ export function createWebStorage<TValue>(
 
       return parse(strValue);
     },
-    removeItem: key => getStringStorage()?.removeItem(key),
-    setItem: (key, newValue) =>
+    removeItem: (key: string) => getStringStorage()?.removeItem(key),
+    setItem: (key: string, newValue: TValue) =>
       getStringStorage()?.setItem(key, StormParser.stringify(newValue))
   };
 
@@ -95,5 +101,5 @@ export function createWebStorage<TValue>(
     };
   }
 
-  return storage;
+  return storage as unknown as AsyncStorage<TValue> | SyncStorage<TValue>;
 }

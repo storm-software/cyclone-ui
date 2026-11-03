@@ -3,6 +3,7 @@
   "compilerOptions": {
     "tsBuildInfoFile": "out-tsc/tsconfig.tsbuildinfo",
     "jsx": "react-jsx",
+    "lib": ["dom", "esnext"],
     "outDir": "./out-tsc"
   },
   "references": [{ "path": "../helpers" }],

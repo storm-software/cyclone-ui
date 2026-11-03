@@ -29,9 +29,12 @@ jobs:
     permissions:
       contents: write
       id-token: write
-    if: github.repository == 'storm-software/cyclone-ui' && (github.ref ==
+    if: >-
+      github.repository == 'storm-software/cyclone-ui' && (github.ref ==
       'refs/heads/main' || github.ref == 'refs/heads/next' || github.ref ==
-      'refs/heads/experimental')
+      'refs/heads/experimental') && !(github.event_name == 'push' &&
+      github.actor == 'stormie-bot' &&
+      startsWith(github.event.head_commit.message, 'release(monorepo): Publish release updates'))
     steps:
       - name: Send notification - Deployment started
         uses: storm-software/action-notify@main
@@ -53,9 +56,15 @@ jobs:
 
   process:
     name: "Continuous Integration"
-    if: always() && !cancelled() && !contains(needs.*.result, 'failure') &&
-      github.event.pull_request.draft == false
+    if: >-
+      always() && !cancelled() && !contains(needs.*.result, 'failure') &&
+      github.event.pull_request.draft == false && !(github.event_name ==
+      'push' && github.actor == 'stormie-bot' &&
+      startsWith(github.event.head_commit.message, 'release(monorepo): Publish release updates'))
     runs-on: ubuntu-latest
+    concurrency:
+      group: release-${{ github.ref }}
+      cancel-in-progress: true
     permissions:
       contents: write
       id-token: write

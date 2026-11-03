@@ -16,9 +16,6 @@
 
  ------------------------------------------------------------------- */
 
-/* eslint-disable ts/no-unsafe-call -- validator callbacks are dynamically keyed */
-
-import { upperCaseFirst } from "@stryke/string-format/upper-case-first";
 import { isPromise } from "@stryke/type-checks/is-promise";
 import type { MessageDetails } from "@stryke/types/messages";
 import type { Getter, Setter } from "jotai";
@@ -26,6 +23,17 @@ import { useAtomCallback } from "jotai/utils";
 import { useCallback } from "react";
 import { FormApi } from "../molecules/form-molecule";
 import { ValidationCause } from "../types";
+
+const validationKey = {
+  initialize: "onInitialize",
+  change: "onChange",
+  blur: "onBlur",
+  submit: "onSubmit",
+  server: "onServer"
+} as const satisfies Record<
+  ValidationCause,
+  `on${Capitalize<ValidationCause>}`
+>;
 
 export const useFormActions = <
   TFormValues extends Record<string, any> = Record<string, any>
@@ -66,43 +74,33 @@ export const useFormActions = <
         cause: ValidationCause
       ) => {
         const options = get(form.options);
+        const validators = options.validate?.[validationKey[cause]];
+        const initializeValidators =
+          options.validate?.[validationKey.initialize];
         if (
-          (options.validate?.[`on${upperCaseFirst(cause)}`] &&
-            options.validate[`on${upperCaseFirst(cause)}`].length > 0) ||
-          (options.validate?.[
-            `on${upperCaseFirst(ValidationCause.INITIALIZE)}`
-          ] &&
-            options.validate[`on${upperCaseFirst(ValidationCause.INITIALIZE)}`]
-              .length > 0)
+          (validators && validators.length > 0) ||
+          (initializeValidators && initializeValidators.length > 0)
         ) {
           const previousValues = get(form.previousValues);
 
           const results = [] as any[];
-          if (
-            options.validate?.[`on${upperCaseFirst(cause)}`] &&
-            options.validate[`on${upperCaseFirst(cause)}`].length > 0
-          ) {
-            results.push(
-              ...options.validate[`on${upperCaseFirst(cause)}`].map(validator =>
+          if (validators && validators.length > 0) {
+            for (const validator of validators) {
+              results.push(
                 validator(nextValues, previousValues, cause, get, set)
-              )
-            );
+              );
+            }
           }
           if (
             cause !== ValidationCause.INITIALIZE &&
-            options.validate?.[
-              `on${upperCaseFirst(ValidationCause.INITIALIZE)}`
-            ] &&
-            options.validate[`on${upperCaseFirst(ValidationCause.INITIALIZE)}`]
-              .length > 0
+            initializeValidators &&
+            initializeValidators.length > 0
           ) {
-            results.push(
-              ...options.validate[
-                `on${upperCaseFirst(ValidationCause.INITIALIZE)}`
-              ].map(validator =>
+            for (const validator of initializeValidators) {
+              results.push(
                 validator(nextValues, previousValues, cause, get, set)
-              )
-            );
+              );
+            }
           }
 
           const messages = [] as MessageDetails[];
