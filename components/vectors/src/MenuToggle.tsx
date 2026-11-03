@@ -34,19 +34,14 @@ export type MenuToggleProps = IconProps & {
 
 const lerp = (from: number, to: number, t: number) => from + (to - from) * t;
 
-// Builds one bar of the icon. Closed, the bars are a hamburger whose outer bars
-// spread apart and middle bar shrinks on hover; open, the outer bars cross into
-// an X that turns a quarter and pinches on hover while the middle bar fades out.
+// Builds one bar of the icon. Closed, the two bars sit stacked and spread apart
+// on hover; open, they cross into an X that turns a quarter and pinches on hover.
 const bar = (index: number, open: number, hover: number) => {
-  const offset = index - 1;
+  const side = index * 2 - 1;
 
-  const cy = lerp(12 + offset * (6 + 1.5 * hover), 12, open);
-  const length = lerp(
-    index === 1 ? 8 - 3 * hover : 8,
-    index === 1 ? 0 : 8.5 - 1.5 * hover,
-    open
-  );
-  const angle = (open * (offset * -45 + 90 * hover) * Math.PI) / 180;
+  const cy = lerp(12 + side * (3 + hover), 12, open);
+  const length = lerp(9, 8.5 - 1.5 * hover, open);
+  const angle = (open * (side * -45 + 90 * hover) * Math.PI) / 180;
 
   const dx = length * Math.cos(angle);
   const dy = length * Math.sin(angle);
@@ -101,13 +96,12 @@ const Icon = ({
       strokeLinecap="round"
       strokeLinejoin="round"
       {...(props as SvgProps)}>
-      {[0, 1, 2].map(index => (
+      {[0, 1].map(index => (
         <Path
           key={index}
           d={bar(index, open, hover)}
           stroke={color}
           strokeWidth={strokeWidth}
-          opacity={index === 1 ? 1 - open : 1}
         />
       ))}
     </Svg>

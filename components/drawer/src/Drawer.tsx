@@ -282,6 +282,6 @@ export {
   DrawerTitle
 };
 export const DrawerOverlay = Sheet.Overlay;
-export const DrawerScrollView = Sheet.ScrollView;
+export const DrawerScrollView: typeof Sheet.ScrollView = Sheet.ScrollView;
 export const DrawerHeading = Sheet.Heading;
 export const DrawerBody = Sheet.Body;
