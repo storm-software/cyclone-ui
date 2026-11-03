@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Search Input
 
+## [0.1.47](https://github.com/storm-software/cyclone-ui/releases/tag/search-input%400.1.47) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
+### Updated Dependencies
+
+- Updated **context-menu** to **v0.0.37**
+- Updated **field** to **v0.5.46**
+- Updated **form** to **v0.9.44**
+- Updated **helpers** to **v0.3.43**
+- Updated **icons** to **v0.0.41**
+- Updated **input** to **v0.6.46**
+
 ## [0.1.46](https://github.com/storm-software/cyclone-ui/releases/tag/search-input%400.1.46) (11/03/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Card
 
+## [0.6.47](https://github.com/storm-software/cyclone-ui/releases/tag/card%400.6.47) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.43**
+- Updated **container** to **v0.6.45**
+- Updated **eyebrow-text** to **v0.5.43**
+- Updated **heading-text** to **v0.5.44**
+- Updated **helpers** to **v0.3.43**
+- Updated **icons** to **v0.0.41**
+- Updated **link** to **v0.5.46**
+- Updated **themeable-icon** to **v0.6.45**
+- Updated **vectors** to **v0.5.45**
+
 ## [0.6.46](https://github.com/storm-software/cyclone-ui/releases/tag/card%400.6.46) (11/03/2026)
 
 ### Updated Dependencies

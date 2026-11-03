@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Badge
 
+## [0.3.46](https://github.com/storm-software/cyclone-ui/releases/tag/badge%400.3.46) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.46**
+- Updated **icons** to **v0.0.41**
+- Updated **state** to **v0.0.45**
+
 ## [0.3.45](https://github.com/storm-software/cyclone-ui/releases/tag/badge%400.3.45) (11/03/2026)
 
 ### Updated Dependencies

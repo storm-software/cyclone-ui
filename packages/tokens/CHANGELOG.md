@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Tokens
 
+## [0.3.32](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.32) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
 ## [0.3.31](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.31) (11/03/2026)
 
 ### Bug Fixes

@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Alert Dialog
 
+## [0.4.47](https://github.com/storm-software/cyclone-ui/releases/tag/alert-dialog%400.4.47) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.46**
+- Updated **dialog** to **v0.3.47**
+- Updated **icons** to **v0.0.41**
+- Updated **scroll-view** to **v0.5.45**
+- Updated **themeable-icon** to **v0.6.45**
+
 ## [0.4.46](https://github.com/storm-software/cyclone-ui/releases/tag/alert-dialog%400.4.46) (11/03/2026)
 
 ### Updated Dependencies

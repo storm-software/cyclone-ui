@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Radial Chart
 
+## [0.0.15](https://github.com/storm-software/cyclone-ui/releases/tag/radial-chart%400.0.15) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
+### Updated Dependencies
+
+- Updated **chart** to **v0.0.15**
+
 ## [0.0.14](https://github.com/storm-software/cyclone-ui/releases/tag/radial-chart%400.0.14) (11/03/2026)
 
 ### Updated Dependencies

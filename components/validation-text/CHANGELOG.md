@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Validation Text
 
+## [0.5.45](https://github.com/storm-software/cyclone-ui/releases/tag/validation-text%400.5.45) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.43**
+- Updated **icons** to **v0.0.41**
+
 ## [0.5.44](https://github.com/storm-software/cyclone-ui/releases/tag/validation-text%400.5.44) (11/03/2026)
 
 ### Updated Dependencies

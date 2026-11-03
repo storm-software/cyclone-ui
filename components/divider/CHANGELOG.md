@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Divider
 
+## [0.0.39](https://github.com/storm-software/cyclone-ui/releases/tag/divider%400.0.39) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
+### Updated Dependencies
+
+- Updated **tokens** to **v0.3.32**
+
 ## [0.0.38](https://github.com/storm-software/cyclone-ui/releases/tag/divider%400.0.38) (11/03/2026)
 
 ### Updated Dependencies

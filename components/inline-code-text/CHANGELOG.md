@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Inline Code Text
 
+## [0.5.42](https://github.com/storm-software/cyclone-ui/releases/tag/inline-code-text%400.5.42) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issues preventing release build from completing ([7878a7799](https://github.com/storm-software/cyclone-ui/commit/7878a7799))
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.43**
+
 ## [0.5.41](https://github.com/storm-software/cyclone-ui/releases/tag/inline-code-text%400.5.41) (11/03/2026)
 
 ### Updated Dependencies

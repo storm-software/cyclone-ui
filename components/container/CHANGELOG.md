@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Container
 
+## [0.6.45](https://github.com/storm-software/cyclone-ui/releases/tag/container%400.6.45) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.43**
+- Updated **vectors** to **v0.5.45**
+
 ## [0.6.44](https://github.com/storm-software/cyclone-ui/releases/tag/container%400.6.44) (11/03/2026)
 
 ### Updated Dependencies

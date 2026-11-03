@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Body Text
 
+## [0.5.43](https://github.com/storm-software/cyclone-ui/releases/tag/body-text%400.5.43) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issues preventing release build from completing ([7878a7799](https://github.com/storm-software/cyclone-ui/commit/7878a7799))
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
 ## [0.5.42](https://github.com/storm-software/cyclone-ui/releases/tag/body-text%400.5.42) (11/03/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,26 @@
 
 # Changelog for Cyclone UI - Field
 
+## [0.5.46](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.46) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.43**
+- Updated **button** to **v0.6.46**
+- Updated **form** to **v0.9.44**
+- Updated **helpers** to **v0.3.43**
+- Updated **icons** to **v0.0.41**
+- Updated **link** to **v0.5.46**
+- Updated **spinner** to **v0.5.43**
+- Updated **state** to **v0.0.45**
+- Updated **themeable-icon** to **v0.6.45**
+- Updated **tooltip** to **v0.5.46**
+- Updated **validation-text** to **v0.5.45**
+
 ## [0.5.45](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.45) (11/03/2026)
 
 ### Updated Dependencies

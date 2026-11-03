@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Pagination
 
+## [0.8.46](https://github.com/storm-software/cyclone-ui/releases/tag/pagination%400.8.46) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.46**
+- Updated **icons** to **v0.0.41**
+- Updated **next-button** to **v0.5.46**
+- Updated **previous-button** to **v0.5.46**
+
 ## [0.8.45](https://github.com/storm-software/cyclone-ui/releases/tag/pagination%400.8.45) (11/03/2026)
 
 ### Updated Dependencies

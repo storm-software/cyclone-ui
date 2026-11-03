@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Table of Contents
 
+## [0.0.42](https://github.com/storm-software/cyclone-ui/releases/tag/table-of-contents%400.0.42) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.43**
+- Updated **icons** to **v0.0.41**
+
 ## [0.0.41](https://github.com/storm-software/cyclone-ui/releases/tag/table-of-contents%400.0.41) (11/03/2026)
 
 ### Updated Dependencies

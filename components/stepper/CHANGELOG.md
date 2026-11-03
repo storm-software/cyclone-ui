@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Stepper
 
+## [0.3.47](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.47) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.44**
+- Updated **icons** to **v0.0.41**
+- Updated **next-button** to **v0.5.46**
+- Updated **previous-button** to **v0.5.46**
+
 ## [0.3.46](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.46) (11/03/2026)
 
 ### Updated Dependencies

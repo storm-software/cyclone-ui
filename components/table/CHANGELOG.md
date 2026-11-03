@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Table
 
+## [0.4.45](https://github.com/storm-software/cyclone-ui/releases/tag/table%400.4.45) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.44**
+
 ## [0.4.44](https://github.com/storm-software/cyclone-ui/releases/tag/table%400.4.44) (11/03/2026)
 
 ### Updated Dependencies

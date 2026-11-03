@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Tabs
 
+## [0.3.45](https://github.com/storm-software/cyclone-ui/releases/tag/tabs%400.3.45) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.43**
+- Updated **heading-text** to **v0.5.44**
+- Updated **helpers** to **v0.3.43**
+
 ## [0.3.44](https://github.com/storm-software/cyclone-ui/releases/tag/tabs%400.3.44) (11/03/2026)
 
 ### Bug Fixes

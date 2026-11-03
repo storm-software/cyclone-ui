@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Scroll View
 
+## [0.5.45](https://github.com/storm-software/cyclone-ui/releases/tag/scroll-view%400.5.45) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
+### Updated Dependencies
+
+- Updated **vectors** to **v0.5.45**
+
 ## [0.5.44](https://github.com/storm-software/cyclone-ui/releases/tag/scroll-view%400.5.44) (11/03/2026)
 
 ### Updated Dependencies

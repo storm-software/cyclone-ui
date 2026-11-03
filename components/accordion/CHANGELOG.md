@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Accordion
 
+## [0.3.46](https://github.com/storm-software/cyclone-ui/releases/tag/accordion%400.3.46) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issues preventing release build from completing ([7878a7799](https://github.com/storm-software/cyclone-ui/commit/7878a7799))
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.43**
+- Updated **heading-text** to **v0.5.44**
+- Updated **icons** to **v0.0.41**
+- Updated **vectors** to **v0.5.45**
+
 ## [0.3.45](https://github.com/storm-software/cyclone-ui/releases/tag/accordion%400.3.45) (11/03/2026)
 
 ### Updated Dependencies

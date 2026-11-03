@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Privacy Choices
 
+## [0.0.10](https://github.com/storm-software/cyclone-ui/releases/tag/privacy-choices%400.0.10) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.43**
+- Updated **button** to **v0.6.46**
+- Updated **dialog** to **v0.3.47**
+- Updated **heading-text** to **v0.5.44**
+- Updated **icons** to **v0.0.41**
+- Updated **scroll-view** to **v0.5.45**
+- Updated **switch** to **v0.5.46**
+- Updated **tabs** to **v0.3.45**
+
 ## [0.0.9](https://github.com/storm-software/cyclone-ui/releases/tag/privacy-choices%400.0.9) (11/03/2026)
 
 ### Updated Dependencies

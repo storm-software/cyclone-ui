@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Type Table
 
+## [0.0.43](https://github.com/storm-software/cyclone-ui/releases/tag/type-table%400.0.43) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.43**
+- Updated **collapsible** to **v0.3.42**
+- Updated **container** to **v0.6.45**
+- Updated **inline-code-text** to **v0.5.42**
+- Updated **link** to **v0.5.46**
+- Updated **tokens** to **v0.3.32**
+
 ## [0.0.42](https://github.com/storm-software/cyclone-ui/releases/tag/type-table%400.0.42) (11/03/2026)
 
 ### Updated Dependencies

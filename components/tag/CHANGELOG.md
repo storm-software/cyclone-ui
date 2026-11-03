@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Tag
 
+## [0.0.41](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.41) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
+### Updated Dependencies
+
+- Updated **icons** to **v0.0.41**
+- Updated **ripple-animation** to **v0.0.20**
+
 ## [0.0.40](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.40) (11/03/2026)
 
 ### Updated Dependencies

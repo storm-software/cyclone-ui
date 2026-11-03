@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Helpers
 
+## [0.3.43](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.43) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
 ## [0.3.38](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.38) (10/31/2026)
 
 ### Features

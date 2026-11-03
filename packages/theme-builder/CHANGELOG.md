@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Theme Builder
 
+## [0.0.33](https://github.com/storm-software/cyclone-ui/releases/tag/theme-builder%400.0.33) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
 ## [0.0.32](https://github.com/storm-software/cyclone-ui/releases/tag/theme-builder%400.0.32) (11/03/2026)
 
 ### Bug Fixes
