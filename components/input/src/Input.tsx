@@ -263,7 +263,9 @@ const InputGroupImpl = createStyledHOC(
     const handleFocus = useCallback(
       (event: any) => {
         setLocallyActive(true);
-        onFocus?.(event);
+        // Some react-native type setups type the prop `() => any`, but user
+        // handlers still receive the event.
+        (onFocus as ((event: any) => void) | undefined)?.(event);
       },
       [onFocus]
     );

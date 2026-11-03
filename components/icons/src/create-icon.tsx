@@ -209,6 +209,11 @@ export function createIcon(
   displayName: string,
   variants: IconVariants
 ): IconComponent {
+  // Declared here, not inline in `Icon`: React Compiler outlines inline
+  // callbacks to module scope, where the `variants` they close over is
+  // undefined ("variants is not defined" at render).
+  const hasVariant = (name: IconVariant) => Boolean(variants[name]);
+
   const IconBody = ({
     elements,
     animated
@@ -235,8 +240,8 @@ export function createIcon(
     } = props;
 
     const resolvedVariant =
-      VARIANT_FALLBACKS[variant]?.find(name => variants[name]) ??
-      VARIANT_FALLBACKS.regular.find(name => variants[name])!;
+      VARIANT_FALLBACKS[variant]?.find(hasVariant) ??
+      VARIANT_FALLBACKS.regular.find(hasVariant)!;
     // Keyed by variant, so a new variant draws itself in
     const body = (
       <IconBody
