@@ -1,0 +1,56 @@
+{
+  "name": "@cyclone-ui/terrain-footer",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A site footer block built on the Cyclone UI Footer that draws a wireframe terrain backdrop behind the footer content, with an optional subtle ripple animation that respects reduced motion and an optional noise texture overlay. It has the same compound parts as the Footer. Use it at the bottom of marketing pages.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/terrain-footer"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/footer": "workspace:*",
+    "@cyclone-ui/vectors": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "react-native-svg": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/link": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": ["*.css"],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./FooterTerrain": {
+      "import": "./dist/FooterTerrain.mjs",
+      "require": "./dist/FooterTerrain.cjs"
+    },
+    "./TerrainFooter": {
+      "import": "./dist/TerrainFooter.mjs",
+      "require": "./dist/TerrainFooter.cjs"
+    },
+    "./*": "./*"
+  }
+}

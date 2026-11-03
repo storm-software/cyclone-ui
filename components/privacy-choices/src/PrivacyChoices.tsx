@@ -176,7 +176,7 @@ export const PrivacyChoices = createStyledHOC(
       value,
       defaultValue = EMPTY_VALUE,
       onValueChange,
-      label = "Your Privacy Choices",
+      label = "Privacy Choices",
       confirmLabel = "Confirm My Choices",
       rejectLabel = "Reject All But Necessary",
       requiredLabel = "Always Active",

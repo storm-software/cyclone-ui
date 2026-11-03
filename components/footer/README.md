@@ -41,14 +41,13 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 # Footer
 
-A responsive footer block with a closing statement, primary action, grouped
-navigation, brand details, and legal links over a decorative wireframe terrain.
-The SVG uses the current theme, requires no WebGL or image downloads,
-and stays behind the content without intercepting pointer or keyboard input.
-Pass `animate={true}` to `<Footer>` for a subtle terrain ripple. Animation is
-disabled by default and respects the system reduced-motion preference.
-Pass `noise={true}` to overlay a low-opacity repeating texture over the footer
-surface.
+A responsive footer layout with a closing statement, primary action, grouped
+navigation, brand details, and legal links. Columns sit side by side on wide
+screens and stack on smaller ones. Hovering one link mutes the others.
+
+For the footer block with the decorative wireframe terrain backdrop, use
+[`@cyclone-ui/terrain-footer`](../terrain-footer), which is built on this
+component.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->

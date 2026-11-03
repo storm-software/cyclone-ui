@@ -1035,7 +1035,7 @@
       "name": "@cyclone-ui/drawer",
       "type": "registry:component",
       "title": "@cyclone-ui/drawer",
-      "description": "A side panel built on the Cyclone UI Sheet that slides in from the right by default and comes in sm, md and lg sizes. It has Frame, Handle, Overlay, ScrollView, Header (with optional back and close buttons), Title, Description, Heading, Body and Footer parts; the Footer stays visible while content scrolls. Use it for navigation, filters or secondary content shown beside the main view.",
+      "description": "A side panel built on the Cyclone UI Sheet that slides in from the right by default and comes in sm, md and lg sizes. It has Frame, Content, Handle, Overlay, ScrollView, Header (with optional back and close buttons), Title, Description, Heading, Body and Footer parts; Content is a bordered panel inset in the Frame that keeps the Header pinned and scrolls the rest once it overflows, and the Footer stays visible below it. Use it for navigation, filters or secondary content shown beside the main view.",
       "dependencies": [
         "@tamagui/core@3.0.13",
         "@tamagui/dialog@3.0.13",
@@ -1252,8 +1252,8 @@
       "name": "@cyclone-ui/footer",
       "type": "registry:component",
       "title": "@cyclone-ui/footer",
-      "description": "A responsive site footer with compound layout parts for an introduction, action, navigation sections, links, a bottom rail with brand, copyright and legal links, and a background logo. It optionally renders an animated terrain backdrop that respects reduced motion and a noise texture overlay. Use it at the bottom of marketing or documentation pages.",
-      "dependencies": ["@tamagui/core@3.0.13", "react-native-svg@^15.16.0"],
+      "description": "A responsive site footer layout with compound parts for an introduction, action, navigation sections, links, a bottom rail with brand, copyright and legal links, and a background logo. Columns stack on smaller screens, and hovering one link mutes the others. Use it at the bottom of marketing or documentation pages, or build a footer block on top of it.",
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
@@ -1263,16 +1263,11 @@
       "registryDependencies": [
         "@cyclone-ui/body-text",
         "@cyclone-ui/heading-text",
-        "@cyclone-ui/link",
-        "@cyclone-ui/vectors"
+        "@cyclone-ui/link"
       ],
       "files": [
         {
           "path": "components/footer/src/Footer.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/footer/src/FooterTerrain.tsx",
           "type": "registry:component"
         }
       ]
@@ -1343,7 +1338,7 @@
       "name": "@cyclone-ui/icons",
       "type": "registry:component",
       "title": "@cyclone-ui/icons",
-      "description": "Animated Tamagui icon components for web and React Native covering the Material Line Icons (line-md) collection, plus the createIcon factory used to build them. Each icon is themed, draws itself in on mount, and accepts color, size (pixels or tokens), mirrored, animated, and a variant of regular, loop, filled or filled-loop.",
+      "description": "Animated Tamagui icon components for web and React Native covering the Material Line Icons (line-md) collection, plus the createIcon factory used to build them. Each icon is themed, draws itself in on mount, and accepts color, size (pixels or tokens), mirrored, animated, and a variant of regular, bold, loop, filled or filled-loop.",
       "dependencies": [
         "@tamagui/core@3.0.13",
         "@tamagui/helpers-icon@3.0.13",
@@ -3487,7 +3482,7 @@
       "name": "@cyclone-ui/modal",
       "type": "registry:component",
       "title": "@cyclone-ui/modal",
-      "description": "A centered modal built on the Cyclone UI Dialog, with the same parts as the Drawer: Trigger, Frame, Content, Header (with optional back and close buttons), Title, Description, Body, ScrollView and Footer. The Frame is a bordered shell that holds an inset Content panel above a Footer for actions. Use it for short forms and confirmations.",
+      "description": "A centered modal built on the Cyclone UI Dialog, with the same parts as the Drawer: Trigger, Frame, Content, Header (with optional back and close buttons), Title, Description, Body and Footer. The Frame is a bordered shell that holds an inset Content panel above a Footer for actions; the Header stays pinned and the rest of the Content scrolls once it overflows. Use it for short forms and confirmations.",
       "dependencies": [
         "@tamagui/core@3.0.13",
         "@tamagui/dialog@3.0.13",
@@ -4640,6 +4635,30 @@
           "path": "components/tag-picker/src/utilities.ts",
           "type": "registry:file",
           "target": "components/tag-picker/src/utilities.ts"
+        }
+      ]
+    },
+    {
+      "name": "@cyclone-ui/terrain-footer",
+      "type": "registry:component",
+      "title": "@cyclone-ui/terrain-footer",
+      "description": "A site footer block built on the Cyclone UI Footer that draws a wireframe terrain backdrop behind the footer content, with an optional subtle ripple animation that respects reduced motion and an optional noise texture overlay. It has the same compound parts as the Footer. Use it at the bottom of marketing pages.",
+      "dependencies": ["@tamagui/core@3.0.13", "react-native-svg@^15.16.0"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.5",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": ["@cyclone-ui/footer", "@cyclone-ui/vectors"],
+      "files": [
+        {
+          "path": "components/terrain-footer/src/FooterTerrain.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/terrain-footer/src/TerrainFooter.tsx",
+          "type": "registry:component"
         }
       ]
     },

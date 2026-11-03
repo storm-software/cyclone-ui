@@ -4728,6 +4728,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/terrain-footer",
+      jsx: ["TerrainFooter"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/text-area",
       jsx: ["TextArea"],
       roles: ["textarea"]
@@ -4789,7 +4794,14 @@ export const manifest: DesignSystemManifest = {
     }
   ],
   icons: [],
-  fonts: [],
+  fonts: [
+    {
+      family: "Storm Sans"
+    },
+    {
+      family: "Storm Serif"
+    }
+  ],
   tailwind: {
     name: "cyclone-ui",
     version: "0.0.0",

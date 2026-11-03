@@ -21,7 +21,6 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import { Link } from "@cyclone-ui/link";
-import { BackgroundNoise } from "@cyclone-ui/vectors";
 import type { GetProps } from "@tamagui/core";
 import {
   createStyledHOC,
@@ -30,7 +29,6 @@ import {
   withStaticProperties
 } from "@tamagui/core";
 import { createContext, use, useId, useState } from "react";
-import { FooterTerrain } from "./FooterTerrain";
 
 interface FooterLinkHoverContextValue {
   hoveredLinkId: string | null;
@@ -58,7 +56,7 @@ const FooterContainer = styled(View, {
   width: "100%",
   maxWidth: 1440,
   marginHorizontal: "auto",
-  paddingTop: "300px max-md:160px",
+  paddingTop: "7xl max-md:5xl",
   paddingHorizontal: "4xl max-md:2xl",
   paddingBottom: "7xl max-md:5xl",
   gap: "10xl max-md:10xl"
@@ -220,23 +218,7 @@ const FooterBackgroundLogoImpl = createStyledHOC(
   { displayName: "FooterBackgroundLogo" }
 );
 
-const FooterNoise = styled(View, {
-  displayName: "FooterNoise",
-  position: "absolute",
-  inset: 0,
-  width: "100%",
-  height: "100%",
-  zIndex: "30",
-  opacity: 0.025,
-  pointerEvents: "none"
-});
-
-export type FooterProps = GetProps<typeof FooterFrame> & {
-  /** Enable the subtle terrain ripple. Respects reduced motion. Defaults to false. */
-  animate?: boolean;
-  /** Overlay a low-opacity noise texture over the footer. Defaults to false. */
-  noise?: boolean;
-};
+export type FooterProps = GetProps<typeof FooterFrame>;
 
 export type FooterContainerProps = GetProps<typeof FooterContainer>;
 export type FooterMainProps = GetProps<typeof FooterMain>;
@@ -296,15 +278,7 @@ const FooterRailLink = styled(FooterLinkImpl, {
 
 const FooterFrameImpl = createStyledHOC(
   FooterFrame,
-  (
-    {
-      children,
-      animate = true,
-      noise = true,
-      ...props
-    }: GetProps<typeof FooterFrame> & FooterProps,
-    forwardedRef
-  ) => {
+  ({ children, ...props }, forwardedRef) => {
     const [hoveredLinkId, setHoveredLinkId] = useState<string | null>(null);
 
     return (
@@ -313,12 +287,6 @@ const FooterFrameImpl = createStyledHOC(
           value={{ hoveredLinkId, setHoveredLinkId }}>
           {children}
         </FooterLinkHoverContext.Provider>
-        <FooterTerrain animate={animate} />
-        {noise ? (
-          <FooterNoise>
-            <BackgroundNoise />
-          </FooterNoise>
-        ) : null}
       </FooterFrame>
     );
   },

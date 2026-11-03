@@ -217,6 +217,9 @@
       "path": "./components/footer"
     },
     {
+      "path": "./components/terrain-footer"
+    },
+    {
       "path": "./components/circular-progress"
     },
     {

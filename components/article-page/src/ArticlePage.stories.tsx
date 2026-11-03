@@ -20,7 +20,6 @@ import { BodyText } from "@cyclone-ui/body-text";
 import { Breadcrumb } from "@cyclone-ui/breadcrumb";
 import { Card } from "@cyclone-ui/card";
 import { Feedback } from "@cyclone-ui/feedback";
-import { Footer } from "@cyclone-ui/footer";
 import {
   HeadingHeroText,
   HeadingLargeText,
@@ -30,6 +29,7 @@ import { Calendar, Clock } from "@cyclone-ui/icons";
 import { InlineCodeText } from "@cyclone-ui/inline-code-text";
 import { Link } from "@cyclone-ui/link";
 import { Tag } from "@cyclone-ui/tag";
+import { TerrainFooter } from "@cyclone-ui/terrain-footer";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { View } from "@tamagui/core";
 import type { ReactNode } from "react";
@@ -286,44 +286,46 @@ const StoryMain = () => (
 );
 
 const StoryFooter = () => (
-  <Footer>
-    <Footer.Container>
-      <Footer.Main>
-        <Footer.Introduction>
-          <Footer.Statement>The Storm blog</Footer.Statement>
-          <Footer.Description>
+  <TerrainFooter>
+    <TerrainFooter.Container>
+      <TerrainFooter.Main>
+        <TerrainFooter.Introduction>
+          <TerrainFooter.Statement>The Storm blog</TerrainFooter.Statement>
+          <TerrainFooter.Description>
             Notes from the people building Cyclone UI.
-          </Footer.Description>
-        </Footer.Introduction>
-        <Footer.Navigation aria-label="Footer navigation">
-          <Footer.Section render="section">
-            <Footer.Section.Title>Explore</Footer.Section.Title>
-            <Footer.Section.Links>
+          </TerrainFooter.Description>
+        </TerrainFooter.Introduction>
+        <TerrainFooter.Navigation aria-label="Footer navigation">
+          <TerrainFooter.Section render="section">
+            <TerrainFooter.Section.Title>Explore</TerrainFooter.Section.Title>
+            <TerrainFooter.Section.Links>
               <Link group={false} href="#components">
                 Components
               </Link>
               <Link group={false} href="#documentation">
                 Documentation
               </Link>
-            </Footer.Section.Links>
-          </Footer.Section>
-        </Footer.Navigation>
-      </Footer.Main>
-      <Footer.Rail>
-        <Footer.Brand>
-          <Footer.Copyright>© 2026 Storm Software</Footer.Copyright>
-        </Footer.Brand>
-        <Footer.LegalNavigation aria-label="Legal">
+            </TerrainFooter.Section.Links>
+          </TerrainFooter.Section>
+        </TerrainFooter.Navigation>
+      </TerrainFooter.Main>
+      <TerrainFooter.Rail>
+        <TerrainFooter.Brand>
+          <TerrainFooter.Copyright>
+            © 2026 Storm Software
+          </TerrainFooter.Copyright>
+        </TerrainFooter.Brand>
+        <TerrainFooter.LegalNavigation aria-label="Legal">
           <Link group={false} href="#privacy">
             Privacy
           </Link>
           <Link group={false} href="#terms">
             Terms
           </Link>
-        </Footer.LegalNavigation>
-      </Footer.Rail>
-    </Footer.Container>
-  </Footer>
+        </TerrainFooter.LegalNavigation>
+      </TerrainFooter.Rail>
+    </TerrainFooter.Container>
+  </TerrainFooter>
 );
 
 const meta = {

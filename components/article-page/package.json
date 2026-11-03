@@ -9,9 +9,7 @@
     "directory": "components/article-page"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -28,11 +26,11 @@
     "@cyclone-ui/breadcrumb": "workspace:*",
     "@cyclone-ui/card": "workspace:*",
     "@cyclone-ui/feedback": "workspace:*",
-    "@cyclone-ui/footer": "workspace:*",
     "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/inline-code-text": "workspace:*",
     "@cyclone-ui/link": "workspace:*",
     "@cyclone-ui/tag": "workspace:*",
+    "@cyclone-ui/terrain-footer": "workspace:*",
     "@storybook/react-vite": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -41,9 +39,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",

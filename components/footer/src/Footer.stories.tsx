@@ -20,11 +20,9 @@ import { BodyText } from "@cyclone-ui/body-text";
 import { HeadingHeroText, HeadingSmallText } from "@cyclone-ui/heading-text";
 import { Lightning } from "@cyclone-ui/icons";
 import { Link } from "@cyclone-ui/link";
-import { StormLogoText } from "@cyclone-ui/vectors";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { styled, Text, View } from "@tamagui/core";
 import type { ComponentProps, ReactNode } from "react";
-import type { FooterProps } from "./Footer";
 import { Footer } from "./Footer";
 
 const StoryCanvas = styled(View, {
@@ -184,9 +182,6 @@ const storyAction = (
 const FooterExample = (props: ComponentProps<typeof Footer>) => (
   <Footer {...props}>
     <Footer.Container>
-      <Footer.BackgroundLogo>
-        <StormLogoText width="100%" />
-      </Footer.BackgroundLogo>
       <Footer.Main>
         <Footer.Introduction>
           <Footer.Statement>Contact us</Footer.Statement>
@@ -242,7 +237,7 @@ const FooterExample = (props: ComponentProps<typeof Footer>) => (
 );
 
 const meta = {
-  title: "Blocks/Footer",
+  title: "Layouts/Footer",
   component: Footer,
   tags: ["autodocs"],
   args: {},
@@ -268,18 +263,4 @@ export const Compact: Story = {
       defaultViewport: "mobile1"
     }
   }
-};
-
-export const Wireframe: Story = {
-  render: (args: FooterProps) => <FooterExample {...args} />
-};
-
-export const Unanimated: Story = {
-  ...Wireframe,
-  args: { animate: false }
-};
-
-export const NoNoise: Story = {
-  ...Wireframe,
-  args: { noise: false }
 };

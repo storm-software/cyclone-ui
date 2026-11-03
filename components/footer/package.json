@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/footer",
   "version": "0.0.40",
   "type": "module",
-  "description": "A responsive site footer with compound layout parts for an introduction, action, navigation sections, links, a bottom rail with brand, copyright and legal links, and a background logo. It optionally renders an animated terrain backdrop that respects reduced motion and a noise texture overlay. Use it at the bottom of marketing or documentation pages.",
+  "description": "A responsive site footer layout with compound parts for an introduction, action, navigation sections, links, a bottom rail with brand, copyright and legal links, and a background logo. Columns stack on smaller screens, and hovering one link mutes the others. Use it at the bottom of marketing or documentation pages, or build a footer block on top of it.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
@@ -21,9 +21,7 @@
     "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/link": "workspace:*",
-    "@cyclone-ui/vectors": "workspace:*",
-    "@tamagui/core": "catalog:",
-    "react-native-svg": "catalog:"
+    "@tamagui/core": "catalog:"
   },
   "devDependencies": {
     "@cyclone-ui/icons": "workspace:*",
@@ -49,10 +47,6 @@
     "./Footer": {
       "import": "./dist/Footer.mjs",
       "require": "./dist/Footer.cjs"
-    },
-    "./FooterTerrain": {
-      "import": "./dist/FooterTerrain.mjs",
-      "require": "./dist/FooterTerrain.cjs"
     },
     "./*": "./*"
   }

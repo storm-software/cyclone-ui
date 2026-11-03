@@ -1,6 +1,6 @@
 ---
 title: Footer
-description: Reference for the Footer component, a responsive site footer with navigation, a bottom rail, and an optional terrain backdrop.
+description: Reference for the Footer component, a responsive site footer layout with navigation and a bottom rail.
 documentType: reference
 tags: [component, layout]
 ---
@@ -9,7 +9,9 @@ tags: [component, layout]
 
 `Footer` is a site footer for a marketing or documentation page. Compose an introduction, an action, navigation sections, and a bottom rail.
 
-An optional terrain backdrop animates behind the footer. It respects reduced motion. An optional noise texture sits over the footer.
+On wide screens the introduction, action, and navigation sit side by side, and the rail spreads across one row. Below the `md` breakpoint they stack into one column.
+
+For the footer with the wireframe terrain backdrop, use [TerrainFooter](./terrain-footer.md). It is built on `Footer`.
 
 Source: [`components/footer`](https://github.com/storm-software/cyclone-ui/tree/main/components/footer)
 
@@ -22,7 +24,7 @@ import { Footer } from "@cyclone-ui/footer";
 ## Usage
 
 ```tsx
-<Footer animate noise>
+<Footer>
   <Footer.Container>
     <Footer.Main>
       <Footer.Introduction>
@@ -56,7 +58,7 @@ import { Footer } from "@cyclone-ui/footer";
 
 | Part | Purpose |
 | --- | --- |
-| `Footer` | The frame, the terrain, and the noise overlay. |
+| `Footer` | The frame. |
 | `Footer.Container` | The inner width. |
 | `Footer.Main` | The introduction and navigation. |
 | `Footer.Introduction`, `Statement`, `Description`, `Action` | The lead column. |
@@ -70,16 +72,10 @@ import { Footer } from "@cyclone-ui/footer";
 
 ## Props
 
-| Prop | Default | Purpose |
-| --- | --- | --- |
-| `animate` | `false` | Plays the terrain ripple. Reduced motion keeps it still. |
-| `noise` | `false` | Overlays a low-opacity noise texture. |
-
-`Footer` also accepts the props of its frame.
-
-`FooterTerrain` is exported separately. Its `animate` prop defaults to `true`.
+`Footer` accepts the props of its frame. It has no props of its own.
 
 ## Related pages
 
+- [Terrain footer](./terrain-footer.md)
 - [Navigation header](./navigation-header.md)
 - [Page](./page.md)
