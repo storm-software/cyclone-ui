@@ -151,6 +151,8 @@ It accepts `NextThemeProvider` props (`defaultTheme`, `forcedTheme`, `storageKey
 | `config` | The config from `@cyclone-ui/tokens/tamagui` | The Tamagui config. |
 | `disableInjectCSS` | `false` | Skip runtime theme CSS when the app imports CSS from the Tamagui compiler (`outputCSS`). |
 | `skipNextHead` | `true` | Renders the theme script inline. Set `false` in the Pages Router so the provider can use `next/script`. |
+| `mode` | `"light"` | The mode the server rendered with. Hydration starts in it, so Suspense boundaries that hydrate after the provider still match the server HTML. |
+| `modeCookie` | — | A cookie the provider keeps set to the active mode, so the server can read it and pass it back as `mode`. |
 
 The provider re-exports `useRootTheme`, `useThemeSetting`, and the types `ColorScheme`, `ThemeProviderProps`, and `UseThemeProps`.
 

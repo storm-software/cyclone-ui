@@ -48,12 +48,13 @@ const [open, setOpen] = useState(false);
 | --- | --- | --- | --- |
 | `direction` | `"top" \| "right" \| "bottom" \| "left"` | `"right"` | The edge the drawer slides in from. |
 | `size` | `"sm" \| "md" \| "lg"` | None | The drawer size. |
+| `showGaps` | `boolean` | `false` | When `true`, insets the frame from the viewport with a `lg` margin and rounds every corner with the `drawer` radius. When `false`, the frame sits flush against its edge with Sheet's radius, like [Sheet](./sheet.md). |
 
 ### Parts
 
 | Part | Description |
 | --- | --- |
-| `Drawer.Frame` | The panel. It adds `borderWidth` 1, `borderColor` `hairline`, `borderRadius` `drawer`, and a `lg` margin. You can override the border color and radius. |
+| `Drawer.Frame` | The panel. It adds a 1px `hairline` border (only on the side facing the page unless `showGaps` is set) and, with `showGaps`, `borderRadius` `drawer` and a `lg` margin. You can override the border color and radius. |
 | `Drawer.Handle` | The drag handle (from `Sheet.Handle`). |
 | `Drawer.Overlay` | The backdrop (from `Sheet.Overlay`). |
 | `Drawer.ScrollView` | A scroll area for long content (from `Sheet.ScrollView`). |

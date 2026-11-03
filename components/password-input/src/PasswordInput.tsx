@@ -427,7 +427,6 @@ const PasswordInputTrigger = createStyledHOC(
         {...props}
         position="end"
         aria-label={`${label} password`}
-        accessibilityLabel={`${label} password`}
         disabled={disabled}
         onPress={handlePress}>
         {children ??

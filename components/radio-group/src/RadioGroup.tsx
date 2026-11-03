@@ -48,7 +48,7 @@ import {
 } from "@tamagui/radio-group";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { FocusEvent } from "react";
-import { use, useCallback, useId } from "react";
+import { createContext, use, useCallback, useId } from "react";
 import type { GestureResponderEvent } from "react-native";
 
 export interface RadioGroupContextProps {
@@ -74,6 +74,21 @@ export const RadioGroupContext = createStyledContext<
     keys: ["size", "disabled"]
   }
 );
+
+// A plain React context: a nested styled context Provider would reset `size`
+// to its defaults.
+const ShowIndicatorContext = createContext(false);
+
+// Out of sight, the radio still gives the item its role, arrow-key navigation
+// and form value.
+const hiddenIndicatorStyle = {
+  position: "absolute",
+  width: 1,
+  height: 1,
+  overflow: "hidden",
+  opacity: 0,
+  pointerEvents: "none"
+} as const;
 
 // `name` is a plain (form/DOM) prop in v3, so the primitives use `displayName`
 const RadioGroupItem = styled(TamaguiRadioGroup.Item, {
@@ -245,6 +260,7 @@ const RadioGroupItemContainer = createStyledHOC(
   ) => {
     const { size } = RadioGroupContext.useStyledContext();
     const group = use(TamaguiRadioGroupContext);
+    const showIndicator = use(ShowIndicatorContext);
     const hasValidationMessage = useFieldHasValidationMessage();
     const id = useId();
     const itemValue = String(value);
@@ -311,8 +327,8 @@ const RadioGroupItemContainer = createStyledHOC(
             : withClauses(
                 props.boxShadow,
                 size === "sm"
-                  ? "press:ring-subtle-offset focus:ring-subtle-offset focus-visible:ring-subtle-offset"
-                  : "focus:ring-offset focus-visible:ring-offset"
+                  ? `press:ring-subtle-offset focus:ring-subtle-offset focus-visible:ring-subtle-offset`
+                  : `focus:ring-offset focus-visible:ring-offset`
               )
         }
         borderColor={`${borderColor} hover:${hoverColor}${disabled ? "" : ` focus:${focusColor} focus-visible:${focusColor}`}`}
@@ -336,7 +352,10 @@ const RadioGroupItemContainer = createStyledHOC(
           )}
         </YStack>
 
-        <View alignSelf="center" onPress={e => e.stopPropagation()}>
+        <View
+          alignSelf="center"
+          onPress={e => e.stopPropagation()}
+          {...(!showIndicator && hiddenIndicatorStyle)}>
           <RadioGroupItem
             id={id}
             size={size}
@@ -400,6 +419,8 @@ const RadioGroupImpl = createStyledHOC(
     props: GetProps<typeof RadioGroupFrame> & {
       defaultValue?: string | null;
       size?: FormControlSize;
+      /** Show each item's radio indicator. Defaults to `false`. */
+      showIndicator?: boolean;
     },
     forwardedRef
   ) => {
@@ -436,6 +457,7 @@ const RadioGroupImpl = createStyledHOC(
       onFocus = formControl?.onFocus,
       onBlur = formOnBlur ? handleBlur : undefined,
       onValueChange = formControl?.onChange,
+      showIndicator = false,
       ...rest
     } = props;
     const items = formControl?.items;
@@ -461,25 +483,27 @@ const RadioGroupImpl = createStyledHOC(
         defaultValue={defaultValue == null ? undefined : String(defaultValue)}
         required={required}
         disabled={disabled}>
-        <YStack
-          justifyContent="flex-start"
-          gap="2xl"
-          width="100%"
-          paddingHorizontal="max-sm:5xl"
-          paddingVertical="max-sm:6xl">
-          {/* Without children, the form control's items are rendered. */}
-          {children ??
-            items?.map((item, i) => (
-              <RadioGroupItemContainer
-                // eslint-disable-next-line react/no-array-index-key
-                key={i}
-                value={item.value}
-                description={item.description}
-                disabled={item.disabled}>
-                {item.name}
-              </RadioGroupItemContainer>
-            ))}
-        </YStack>
+        <ShowIndicatorContext value={showIndicator}>
+          <YStack
+            justifyContent="flex-start"
+            gap="2xl"
+            width="100%"
+            paddingHorizontal="max-sm:5xl"
+            paddingVertical="max-sm:6xl">
+            {/* Without children, the form control's items are rendered. */}
+            {children ??
+              items?.map((item, i) => (
+                <RadioGroupItemContainer
+                  // eslint-disable-next-line react/no-array-index-key
+                  key={i}
+                  value={item.value}
+                  description={item.description}
+                  disabled={item.disabled}>
+                  {item.name}
+                </RadioGroupItemContainer>
+              ))}
+          </YStack>
+        </ShowIndicatorContext>
       </RadioGroupFrame>
     );
   },

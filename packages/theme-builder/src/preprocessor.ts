@@ -632,6 +632,8 @@ const MINIMUM_INVERSE_CONTRAST_RATIO = 2;
 const SUBTLE_COLOR_LIGHTNESS_STEP = 0.01;
 const MAX_SUBTLE_COLOR_ADJUSTMENTS = 100;
 const SUBTLE_COLOR_GAMUT_SEARCH_ITERATIONS = 32;
+const BACKDROP_BRIGHTNESS = 0.25;
+const BACKDROP_OPACITY = 0.75;
 /** OKLCH lightness shift for hovered colors already near the contrast primitive. */
 const CONTRAST_SIDE_ACTIVE_LIGHTNESS_SHIFT = 0.25;
 
@@ -1342,7 +1344,8 @@ function addColorStateTokens(
  * `secondary` low-emphasis background from `primary` and the parent theme,
  * missing `link` color and, for `status` groups, `outline` color (both
  * aliasing `primary`), `on-primary` /
- * `on-secondary` text colors, and state variants for `primary`, `secondary`,
+ * `on-secondary` text colors, a `backdrop` overlay color (`primary` 30% darker
+ * at 75% opacity, no state variants), and state variants for `primary`, `secondary`,
  * `link` and `outline`. Every token in the group gets the group name as
  * its `theme` and `group`, so Tamagui places it in that child theme (e.g.
  * `danger.on-primary` → `onPrimary` in the `danger` theme).
@@ -1380,6 +1383,16 @@ function addThemeColorGroupTokens(
     $type: "color",
     $value: createOnColor(hex),
     $description: `Generated text and icon color on ${name} primary backgrounds`
+  };
+  // Darkened in both light and dark themes so overlays always dim content.
+  result.backdrop ??= {
+    ...token,
+    $type: "color",
+    $value: applyOpacity(
+      applyBrightness(hex, BACKDROP_BRIGHTNESS),
+      BACKDROP_OPACITY
+    ),
+    $description: `Generated ${name} overlay backdrop color (primary, 30% darker at 75% opacity)`
   };
 
   let onSecondary: string | undefined;

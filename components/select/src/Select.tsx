@@ -242,22 +242,27 @@ const SelectTrigger = createStyledHOC(
         render="span"
         role={undefined}
         pointerEvents="none">
-        <View
-          // Points up while the menu is open. `Field.Icon` gives its child a
-          // `transition: none` style, so the rotation's goes in `style` too;
-          // react-native-svg drops a `transform` style on the icon itself.
-          style={{ transition: "transform 200ms" }}
-          rotate={open ? "180deg" : "0deg"}
-          alignItems="center"
-          justifyContent="center">
-          <ChevronDown
-            size={24 * getFormSizeScale(size)}
-            // Follows the field icon's hover color, which already fades in
-            // step with the border; its own color transition would restart
-            // on every frame of that one and finish ~200ms late.
-            color="currentColor"
-            style={{ transition: "none" } as ViewStyle}
-          />
+        {/* `Field.Icon` clones its direct child with a `style` prop, which
+            stops the motion driver from animating it, so the rotating
+            wrapper sits one level down. */}
+        <View>
+          <View
+            // Points up while the menu is open. The rotation lives on a
+            // wrapper because react-native-svg drops a `transform` style on
+            // the icon.
+            transition="200ms"
+            rotate={open ? "180deg" : "0deg"}
+            alignItems="center"
+            justifyContent="center">
+            <ChevronDown
+              size={24 * getFormSizeScale(size)}
+              // Follows the field icon's hover color, which already fades in
+              // step with the border; its own color transition would restart
+              // on every frame of that one and finish ~200ms late.
+              color="currentColor"
+              style={{ transition: "none" } as ViewStyle}
+            />
+          </View>
         </View>
       </Field.Icon>
     );

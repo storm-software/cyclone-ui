@@ -129,6 +129,13 @@ export const Left: Story = {
   }
 };
 
+export const ShowGaps: Story = {
+  args: {
+    ...Base.args,
+    showGaps: true
+  }
+};
+
 export const Uncontrolled: Story = {
   render: ({ children, ...props }: DrawerProps) => (
     <Drawer {...props} defaultOpen={true}>

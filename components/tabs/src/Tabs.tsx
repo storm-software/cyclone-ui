@@ -674,8 +674,10 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
     borderBottomRightRadius: 0,
     borderBottomColor: props.selected && horizontal ? "surface" : undefined,
     borderRightColor: props.selected && !horizontal ? "surface" : undefined,
-    marginBottom: horizontal ? -1 : undefined,
-    marginRight: horizontal ? undefined : -1,
+    // Overlaps the content's border; without one, the tabs would jut past the
+    // gaps between them.
+    marginBottom: horizontal ? -borderWidth : undefined,
+    marginRight: horizontal ? undefined : -borderWidth,
     zIndex: 2
   };
 });

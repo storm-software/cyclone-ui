@@ -23,6 +23,7 @@
     "@cyclone-ui/dialog": "workspace:*",
     "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/scroll-view": "workspace:*",
     "@cyclone-ui/switch": "workspace:*",
     "@cyclone-ui/tabs": "workspace:*",
     "@cyclone-ui/visually-hidden": "workspace:*",

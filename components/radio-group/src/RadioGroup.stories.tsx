@@ -23,8 +23,10 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 import { RadioGroup } from "./RadioGroup";
 
-// Story args configure the wrapping `Field`, not the `RadioGroup` itself.
-type RadioGroupStoryArgs = Omit<FieldProps<string>, "children" | "name">;
+// Story args configure the wrapping `Field`, apart from `showIndicator`.
+type RadioGroupStoryArgs = Omit<FieldProps<string>, "children" | "name"> & {
+  showIndicator?: boolean;
+};
 
 const options: {
   name: string;
@@ -60,11 +62,14 @@ const options: {
 
 const renderGroup =
   (items = options) =>
-  ({ defaultValue, ...props }: any, { id }: { id: string }) => (
+  ({ defaultValue, showIndicator, ...props }: any, { id }: { id: string }) => (
     <Form name={`formName-${id}`} initialValues={{ selectName: defaultValue }}>
       <Field name="selectName" {...props}>
         <Field.Label>Label Text</Field.Label>
-        <RadioGroup size={props.size} width="500px">
+        <RadioGroup
+          size={props.size}
+          showIndicator={showIndicator}
+          width="500px">
           {items.map(option => (
             <RadioGroup.Item
               key={option.value}
@@ -112,6 +117,13 @@ const validation = (
 
 export const Base: Story = {
   args: {}
+};
+
+export const ShowIndicator: Story = {
+  args: {
+    showIndicator: true,
+    defaultValue: "Blackberry"
+  }
 };
 
 export const Required: Story = {

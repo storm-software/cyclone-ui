@@ -650,6 +650,12 @@
   --storm-color-pink-8: #932b6b; /** Deep berry pink. */
   --storm-color-pink-9: #1c0815; /** Dark plum pink. */
   --storm-color-base-link: #00bcff; /** The color used for hyperlink text. */
+  --storm-color-base-backdrop: rgba(
+    0,
+    0,
+    0,
+    0.7490196078431373
+  ); /** Generated base overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-base-primary-hovered: #c3c3c3; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% darker) */
   --storm-color-base-primary-inactive: #565656; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% darker) */
   --storm-color-base-primary-disabled: #828290; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26)) */
@@ -680,6 +686,12 @@
   --storm-color-warning-secondary-inactive: #6d4600; /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (inactive, 20% darker) */
   --storm-color-warning-secondary-disabled: #624e2d; /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-warning-outline-hovered: #5b3000; /** Generated warning border and divider color (matches primary) (hovered, 40% darker) */
+  --storm-color-info-backdrop: rgba(
+    1,
+    0,
+    17,
+    0.7490196078431373
+  ); /** Generated info overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-info-primary-hovered: #b8deff; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% brighter) */
   --storm-color-info-primary-inactive: #0159f1; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% darker) */
   --storm-color-info-primary-disabled: #36507f; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
@@ -1059,6 +1071,9 @@
   --storm-color-brand-on-primary: var(
     --storm-color-neutral-14
   ); /** Generated text and icon color on brand primary backgrounds */
+  --storm-color-brand-backdrop: var(
+    --storm-color-base-backdrop
+  ); /** Generated brand overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-brand-on-secondary: var(
     --storm-color-neutral-1
   ); /** Generated text and icon color on brand secondary backgrounds */
@@ -1089,6 +1104,9 @@
   --storm-color-danger-on-primary: var(
     --storm-color-neutral-1
   ); /** Generated text and icon color on danger primary backgrounds */
+  --storm-color-danger-backdrop: var(
+    --storm-color-base-backdrop
+  ); /** Generated danger overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-danger-primary-active: var(
     --storm-color-danger-primary-hovered
   ); /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% brighter) */
@@ -1128,6 +1146,9 @@
   --storm-color-warning-on-primary: var(
     --storm-color-neutral-14
   ); /** Generated text and icon color on warning primary backgrounds */
+  --storm-color-warning-backdrop: var(
+    --storm-color-base-backdrop
+  ); /** Generated warning overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-warning-on-secondary: var(
     --storm-color-neutral-1
   ); /** Generated text and icon color on warning secondary backgrounds */
@@ -1206,6 +1227,9 @@
   --storm-color-discovery-on-primary: var(
     --storm-color-neutral-1
   ); /** Generated text and icon color on discovery primary backgrounds */
+  --storm-color-discovery-backdrop: var(
+    --storm-color-base-backdrop
+  ); /** Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-discovery-on-secondary: var(
     --storm-color-neutral-1
   ); /** Generated text and icon color on discovery secondary backgrounds */
@@ -1245,6 +1269,9 @@
   --storm-color-success-on-primary: var(
     --storm-color-neutral-1
   ); /** Generated text and icon color on success primary backgrounds */
+  --storm-color-success-backdrop: var(
+    --storm-color-base-backdrop
+  ); /** Generated success overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-success-on-secondary: var(
     --storm-color-neutral-1
   ); /** Generated text and icon color on success secondary backgrounds */

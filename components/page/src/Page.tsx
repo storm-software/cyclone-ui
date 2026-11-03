@@ -406,7 +406,7 @@ const PageBackdrop = styled(View, {
   bottom: 0,
   zIndex: "20",
   display: "flex lg:none",
-  backgroundColor: "#0D0C0766",
+  backgroundColor: "backdrop",
   opacity: "1 enter:0 exit:0",
   transition: {
     duration: "200ms",

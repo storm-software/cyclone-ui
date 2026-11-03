@@ -1351,6 +1351,9 @@ importers:
       '@cyclone-ui/icons':
         specifier: workspace:*
         version: link:../icons
+      '@cyclone-ui/scroll-view':
+        specifier: workspace:*
+        version: link:../scroll-view
       '@cyclone-ui/themeable-icon':
         specifier: workspace:*
         version: link:../themeable-icon
@@ -4159,6 +4162,9 @@ importers:
       '@cyclone-ui/icons':
         specifier: workspace:*
         version: link:../icons
+      '@cyclone-ui/scroll-view':
+        specifier: workspace:*
+        version: link:../scroll-view
       '@cyclone-ui/switch':
         specifier: workspace:*
         version: link:../switch

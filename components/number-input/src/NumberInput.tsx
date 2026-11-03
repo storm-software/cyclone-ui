@@ -131,7 +131,6 @@ const NumberInputTextBox = createStyledHOC(
         <Field.Icon
           position="start"
           aria-label="Decrease value"
-          accessibilityLabel="Decrease value"
           disabled={disabled}
           onClick={() => updateValue(-1)}>
           <Minus aria-hidden={true} />
@@ -140,7 +139,6 @@ const NumberInputTextBox = createStyledHOC(
         <Field.Icon
           position="end"
           aria-label="Increase value"
-          accessibilityLabel="Increase value"
           disabled={disabled}
           onClick={() => updateValue(1)}>
           <Plus aria-hidden={true} />

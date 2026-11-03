@@ -31,14 +31,16 @@ const getAlertType = (type: unknown): AlertType => {
       return "danger";
     case "help":
       return "discovery";
+    case "positive":
+      return "success";
+    case "negative":
+      return "danger";
     case "danger":
     case "brand":
     case "discovery":
     case "warning":
     case "info":
     case "success":
-    case "positive":
-    case "negative":
       return type;
     default:
       return "base";
@@ -47,7 +49,8 @@ const getAlertType = (type: unknown): AlertType => {
 
 export type MessageProps = Partial<ToastRootProps>;
 
-const DEFAULT_DURATION = 30 * 1000;
+const DEFAULT_DURATION = 25 * 1000;
+const DEFAULT_ERROR_DURATION = 60 * 1000;
 
 // Shrinks from full width to nothing over `duration`, freezing while `paused`.
 const MessageTimer = ({
@@ -107,15 +110,18 @@ const MessageItem = ({
   index,
   toast,
   duration
-}: ToastItemRenderProps & { duration: number }) => {
+}: ToastItemRenderProps & { duration?: number }) => {
   const { expanded } = useToasts();
   const [hovered, setHovered] = useState(false);
   const paused = hovered || expanded;
 
+  const type = getAlertType(toast.data?.messageType ?? toast.type);
   const timeout =
     toast.type === "loading"
       ? Number.POSITIVE_INFINITY
-      : (toast.duration ?? duration);
+      : (toast.duration ??
+        duration ??
+        (type === "danger" ? DEFAULT_ERROR_DURATION : DEFAULT_DURATION));
 
   // The library only pauses its own timer while 2+ messages are stacked, so the
   // dismissal timer is owned by `MessageTimer` instead.
@@ -129,14 +135,12 @@ const MessageItem = ({
       index={index}
       toast={item}
       width="100%"
-      maxWidth={800}
+      maxWidth="1000px max-sm:800px"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onFocus={() => setHovered(true)}
       onBlur={() => setHovered(false)}>
-      <Alert
-        type={getAlertType(toast.data?.messageType ?? toast.type)}
-        hovered={paused}>
+      <Alert type={type} hovered={paused}>
         <Alert.Icon>{toast.icon}</Alert.Icon>
         <Alert.Content>
           <Alert.Content.Heading>
@@ -166,10 +170,7 @@ const MessageItem = ({
   );
 };
 
-export const Message = ({
-  duration = DEFAULT_DURATION,
-  ...props
-}: MessageProps) => (
+export const Message = ({ duration, ...props }: MessageProps) => (
   <Toast
     duration={duration}
     gap={20}

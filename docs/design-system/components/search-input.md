@@ -52,7 +52,7 @@ import { SearchInput } from "@cyclone-ui/search-input";
 | --- | --- | --- | --- |
 | `suggestions` | `readonly string[]` | `[]` | Values offered while the user types. Matching is case-insensitive. |
 | `filterSuggestions` | `boolean` | `true` | Offers only suggestions that contain the typed text. Turn it off when the suggestions are already matched, for example by a search API. |
-| `renderSuggestion` | `(suggestion: string) => ReactNode` | Suggestion on one line | Draws a suggestion row. |
+| `renderSuggestion` | `(suggestion: string, query: string) => ReactNode` | Suggestion on one line, typed words highlighted | Draws a suggestion row. |
 | `value` | `string` | — | The controlled value. Inside a `Field`, the field value is used. |
 | `defaultValue` | `string` | — | The initial value when uncontrolled and outside a `Field`. |
 

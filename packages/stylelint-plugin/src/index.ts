@@ -247,6 +247,13 @@ export const manifest: DesignSystemManifest = {
       value: "0rem"
     },
     {
+      path: "color.base.backdrop",
+      cssVar: "--storm-color-base-backdrop",
+      type: "color",
+      category: "color",
+      value: "#010101bf"
+    },
+    {
       path: "color.base.link",
       cssVar: "--storm-color-base-link",
       type: "color",
@@ -438,6 +445,13 @@ export const manifest: DesignSystemManifest = {
       value: "#123166"
     },
     {
+      path: "color.brand.backdrop",
+      cssVar: "--storm-color-brand-backdrop",
+      type: "color",
+      category: "color",
+      value: "#001c18bf"
+    },
+    {
       path: "color.brand.link",
       cssVar: "--storm-color-brand-link",
       type: "color",
@@ -592,6 +606,13 @@ export const manifest: DesignSystemManifest = {
       type: "color",
       category: "color",
       value: "#ffffff"
+    },
+    {
+      path: "color.danger.backdrop",
+      cssVar: "--storm-color-danger-backdrop",
+      type: "color",
+      category: "color",
+      value: "#240000bf"
     },
     {
       path: "color.danger.link",
@@ -877,6 +898,13 @@ export const manifest: DesignSystemManifest = {
       category: "color",
       value: "#f8b740",
       alias: true
+    },
+    {
+      path: "color.discovery.backdrop",
+      cssVar: "--storm-color-discovery-backdrop",
+      type: "color",
+      category: "color",
+      value: "#0d0030bf"
     },
     {
       path: "color.discovery.link",
@@ -1214,6 +1242,13 @@ export const manifest: DesignSystemManifest = {
       category: "color",
       value: "#d0d0d1",
       alias: true
+    },
+    {
+      path: "color.info.backdrop",
+      cssVar: "--storm-color-info-backdrop",
+      type: "color",
+      category: "color",
+      value: "#070043bf"
     },
     {
       path: "color.info.link",
@@ -1946,6 +1981,13 @@ export const manifest: DesignSystemManifest = {
       value: "#020102"
     },
     {
+      path: "color.success.backdrop",
+      cssVar: "--storm-color-success-backdrop",
+      type: "color",
+      category: "color",
+      value: "#000d02bf"
+    },
+    {
       path: "color.success.link",
       cssVar: "--storm-color-success-link",
       type: "color",
@@ -2173,6 +2215,13 @@ export const manifest: DesignSystemManifest = {
       type: "color",
       category: "color",
       value: "#ffffff"
+    },
+    {
+      path: "color.warning.backdrop",
+      cssVar: "--storm-color-warning-backdrop",
+      type: "color",
+      category: "color",
+      value: "#150000bf"
     },
     {
       path: "color.warning.link",

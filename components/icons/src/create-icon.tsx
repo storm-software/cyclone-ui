@@ -37,6 +37,7 @@ import type {
   IconVariant,
   IconVariants
 } from "./types";
+import { ICON_VARIANTS } from "./types";
 
 /**
  * The props received by the inner icon component, after `themed` has resolved theme and token values.
@@ -273,6 +274,7 @@ export function createIcon(
     />
   )) as IconComponent;
   SizedIcon.displayName = displayName;
+  SizedIcon.variants = ICON_VARIANTS.filter(name => variants[name]);
 
   // Keep the static config added by `themed` so `styled()` works with the icon
   (SizedIcon as unknown as Record<string, unknown>).staticConfig = (

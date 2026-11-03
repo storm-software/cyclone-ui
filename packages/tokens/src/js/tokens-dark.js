@@ -2859,6 +2859,45 @@ module.exports = {
         },
         path: ["color", "base", "on-primary"]
       },
+      backdrop: {
+        key: "{color.base.backdrop}",
+        theme: "base",
+        group: "base",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#222222bf",
+        $description:
+          "Generated base overlay backdrop color (primary, 30% darker at 75% opacity)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "base",
+          group: "base",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.13333333333333333, 0.13333333333333333, 0.13333333333333333
+            ],
+            alpha: 0.7490196078431373,
+            hex: "#222222"
+          },
+          $description:
+            "Generated base overlay backdrop color (primary, 30% darker at 75% opacity)",
+          semantic: true,
+          key: "{color.base.backdrop}"
+        },
+        name: "ColorBaseBackdrop",
+        attributes: {
+          category: "color",
+          type: "base",
+          item: "backdrop"
+        },
+        path: ["color", "base", "backdrop"]
+      },
       "on-secondary": {
         key: "{color.base.on-secondary}",
         theme: "base",
@@ -3419,6 +3458,43 @@ module.exports = {
           item: "on-primary"
         },
         path: ["color", "brand", "on-primary"]
+      },
+      backdrop: {
+        key: "{color.brand.backdrop}",
+        theme: "brand",
+        group: "brand",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#002811bf",
+        $description:
+          "Generated brand overlay backdrop color (primary, 30% darker at 75% opacity)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "brand",
+          group: "brand",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [0, 0.1568627450980392, 0.06666666666666667],
+            alpha: 0.7490196078431373,
+            hex: "#002811"
+          },
+          $description:
+            "Generated brand overlay backdrop color (primary, 30% darker at 75% opacity)",
+          semantic: true,
+          key: "{color.brand.backdrop}"
+        },
+        name: "ColorBrandBackdrop",
+        attributes: {
+          category: "color",
+          type: "brand",
+          item: "backdrop"
+        },
+        path: ["color", "brand", "backdrop"]
       },
       secondary: {
         key: "{color.brand.secondary}",
@@ -4030,6 +4106,43 @@ module.exports = {
           item: "on-primary"
         },
         path: ["color", "danger", "on-primary"]
+      },
+      backdrop: {
+        key: "{color.danger.backdrop}",
+        theme: "danger",
+        group: "danger",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#3a0000bf",
+        $description:
+          "Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "danger",
+          group: "danger",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [0.22745098039215686, 0, 0],
+            alpha: 0.7490196078431373,
+            hex: "#3a0000"
+          },
+          $description:
+            "Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)",
+          semantic: true,
+          key: "{color.danger.backdrop}"
+        },
+        name: "ColorDangerBackdrop",
+        attributes: {
+          category: "color",
+          type: "danger",
+          item: "backdrop"
+        },
+        path: ["color", "danger", "backdrop"]
       },
       secondary: {
         key: "{color.danger.secondary}",
@@ -4811,6 +4924,43 @@ module.exports = {
         },
         path: ["color", "warning", "on-primary"]
       },
+      backdrop: {
+        key: "{color.warning.backdrop}",
+        theme: "warning",
+        group: "warning",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#390000bf",
+        $description:
+          "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "warning",
+          group: "warning",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [0.2235294117647059, 0, 0],
+            alpha: 0.7490196078431373,
+            hex: "#390000"
+          },
+          $description:
+            "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
+          semantic: true,
+          key: "{color.warning.backdrop}"
+        },
+        name: "ColorWarningBackdrop",
+        attributes: {
+          category: "color",
+          type: "warning",
+          item: "backdrop"
+        },
+        path: ["color", "warning", "backdrop"]
+      },
       "on-secondary": {
         key: "{color.warning.on-secondary}",
         theme: "warning",
@@ -5548,6 +5698,43 @@ module.exports = {
           item: "on-primary"
         },
         path: ["color", "info", "on-primary"]
+      },
+      backdrop: {
+        key: "{color.info.backdrop}",
+        theme: "info",
+        group: "info",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#05005bbf",
+        $description:
+          "Generated info overlay backdrop color (primary, 30% darker at 75% opacity)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "info",
+          group: "info",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [0.0196078431372549, 0, 0.3568627450980392],
+            alpha: 0.7490196078431373,
+            hex: "#05005b"
+          },
+          $description:
+            "Generated info overlay backdrop color (primary, 30% darker at 75% opacity)",
+          semantic: true,
+          key: "{color.info.backdrop}"
+        },
+        name: "ColorInfoBackdrop",
+        attributes: {
+          category: "color",
+          type: "info",
+          item: "backdrop"
+        },
+        path: ["color", "info", "backdrop"]
       },
       "on-secondary": {
         key: "{color.info.on-secondary}",
@@ -6293,6 +6480,43 @@ module.exports = {
         },
         path: ["color", "discovery", "on-primary"]
       },
+      backdrop: {
+        key: "{color.discovery.backdrop}",
+        theme: "discovery",
+        group: "discovery",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#180043bf",
+        $description:
+          "Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "discovery",
+          group: "discovery",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [0.09411764705882353, 0, 0.2627450980392157],
+            alpha: 0.7490196078431373,
+            hex: "#180043"
+          },
+          $description:
+            "Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity)",
+          semantic: true,
+          key: "{color.discovery.backdrop}"
+        },
+        name: "ColorDiscoveryBackdrop",
+        attributes: {
+          category: "color",
+          type: "discovery",
+          item: "backdrop"
+        },
+        path: ["color", "discovery", "backdrop"]
+      },
       "on-secondary": {
         key: "{color.discovery.on-secondary}",
         theme: "discovery",
@@ -7004,6 +7228,43 @@ module.exports = {
           item: "on-primary"
         },
         path: ["color", "success", "on-primary"]
+      },
+      backdrop: {
+        key: "{color.success.backdrop}",
+        theme: "success",
+        group: "success",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#002100bf",
+        $description:
+          "Generated success overlay backdrop color (primary, 30% darker at 75% opacity)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "success",
+          group: "success",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [0, 0.12941176470588237, 0],
+            alpha: 0.7490196078431373,
+            hex: "#002100"
+          },
+          $description:
+            "Generated success overlay backdrop color (primary, 30% darker at 75% opacity)",
+          semantic: true,
+          key: "{color.success.backdrop}"
+        },
+        name: "ColorSuccessBackdrop",
+        attributes: {
+          category: "color",
+          type: "success",
+          item: "backdrop"
+        },
+        path: ["color", "success", "backdrop"]
       },
       secondary: {
         key: "{color.success.secondary}",

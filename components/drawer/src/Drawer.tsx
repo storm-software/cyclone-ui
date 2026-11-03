@@ -32,7 +32,7 @@ import type {
 } from "@cyclone-ui/sheet";
 import { Sheet } from "@cyclone-ui/sheet";
 import type { GetProps } from "@tamagui/core";
-import { styled } from "@tamagui/core";
+import { styled, useMedia } from "@tamagui/core";
 import { withStaticProperties } from "@tamagui/helpers";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { FC, ReactNode } from "react";
@@ -49,6 +49,11 @@ export type DrawerDirection = NonNullable<SheetProps["direction"]>;
 export type DrawerSize = "sm" | "md" | "lg";
 export type DrawerProps = Omit<SheetProps, "size"> & {
   size?: DrawerSize;
+  /**
+   * Insets the frame from the viewport edges and rounds every corner. When
+   * `false` (default) the frame sits flush against its edge like `Sheet`.
+   */
+  showGaps?: boolean;
 };
 export type DrawerFrameProps = SheetFrameProps;
 export type DrawerOverlayProps = SheetOverlayProps;
@@ -63,31 +68,86 @@ export type DrawerHeaderProps = SheetFooterProps & {
   closable?: boolean;
 };
 
-const DrawerContext = createContext<(open: boolean) => void>(() => {});
+const DrawerContext = createContext<{
+  setOpen: (open: boolean) => void;
+  showGaps: boolean;
+  direction: DrawerDirection;
+  size?: DrawerSize;
+}>({ setOpen: () => {}, showGaps: false, direction: "right" });
+
+// Mirrors Sheet's own size styles, which a media clause on the same prop would
+// otherwise replace.
+const drawerSizeExtents: Record<DrawerSize, string> = {
+  sm: "30vw",
+  md: "60vw",
+  lg: "90vw"
+};
+
+// Below `sm` the frame fills almost the whole viewport along its axis,
+// whatever `size` says.
+const getDrawerFrameExtentProps = (
+  direction: DrawerDirection,
+  size?: DrawerSize
+) => {
+  if (direction === "bottom") {
+    // Unsized bottom drawers are sized by snap points instead.
+    return size
+      ? { height: `${drawerSizeExtents[size]} max-sm:95vh` }
+      : undefined;
+  }
+
+  return direction === "top"
+    ? {
+        height: `${size ? drawerSizeExtents[size] : "80vh"} max-sm:95vh`,
+        maxHeight: "80vh max-sm:95vh"
+      }
+    : {
+        width: `${size ? drawerSizeExtents[size] : "80vw"} max-sm:95vw`,
+        maxWidth: "80vw max-sm:95vw"
+      };
+};
+
+// The frame side facing the page; the only border drawn without gaps.
+const drawerInnerBorderSide: Record<DrawerDirection, string> = {
+  top: "borderBottomWidth",
+  right: "borderLeftWidth",
+  bottom: "borderTopWidth",
+  left: "borderRightWidth"
+};
 
 // The outer shell. `Drawer.Footer` sits on it, below `Drawer.Content`.
+// Without gaps, Sheet's own edge-side radii apply (an explicit `undefined`
+// would replace them).
 const DrawerFrameImpl: FC<DrawerFrameProps> = ({
   backgroundColor = "surface",
-  borderRadius = "drawer",
   borderColor = "hairline",
   ...props
-}) => (
-  <Sheet.Frame
-    backgroundColor={backgroundColor}
-    borderRadius={borderRadius}
-    borderColor={borderColor}
-    borderLeftColor={borderColor}
-    borderRightColor={borderColor}
-    borderTopColor={borderColor}
-    borderBottomColor={borderColor}
-    borderWidth={1}
-    margin="lg"
-    // Portaled content inherits the text color (black by default), which
-    // `currentColor` icons pick up.
-    style={{ color: "var(--primary)" }}
-    {...props}
-  />
-);
+}) => {
+  const { showGaps, direction, size } = use(DrawerContext);
+
+  return (
+    <Sheet.Frame
+      backgroundColor={backgroundColor}
+      {...getDrawerFrameExtentProps(direction, size)}
+      {...(showGaps && { borderRadius: "drawer", margin: "lg" })}
+      borderColor={borderColor}
+      borderLeftColor={borderColor}
+      borderRightColor={borderColor}
+      borderTopColor={borderColor}
+      borderBottomColor={borderColor}
+      // Per side, so the screen-facing sides can drop their border.
+      borderTopWidth={showGaps ? 1 : 0}
+      borderRightWidth={showGaps ? 1 : 0}
+      borderBottomWidth={showGaps ? 1 : 0}
+      borderLeftWidth={showGaps ? 1 : 0}
+      {...{ [drawerInnerBorderSide[direction]]: 1 }}
+      // Portaled content inherits the text color (black by default), which
+      // `currentColor` icons pick up.
+      style={{ color: "var(--primary)" }}
+      {...props}
+    />
+  );
+};
 
 // Sheet's handle sits 15px into the frame, over `Drawer.Content`'s border;
 // without the margin it stays in the frame's 13px handle-side inset.
@@ -101,7 +161,7 @@ const DrawerHeaderImpl: FC<DrawerHeaderProps> = ({
   closable = false,
   ...props
 }) => {
-  const setOpen = use(DrawerContext);
+  const { setOpen } = use(DrawerContext);
 
   return (
     <XStack
@@ -201,9 +261,19 @@ const DrawerDescription: typeof BodyText = styled(BodyText, {
   marginTop: "sm"
 });
 
-// Stays pinned below `Drawer.Content`, on the frame's surface.
+// Stays pinned below `Drawer.Content`, on the frame's surface. Buttons wrap
+// onto stacked rows once they no longer fit side by side.
 const DrawerFooterImpl: FC<DrawerFooterProps> = props => (
-  <Sheet.Footer flexShrink={0} padding="xl" gap="2xl" {...props} />
+  <Sheet.Footer
+    flexShrink={0}
+    flexWrap="wrap"
+    padding="xl"
+    // `Drawer.Content`'s `lg` margin already sits above, so the buttons end up
+    // centered between the panel and the frame's bottom edge.
+    paddingTop="calc(var(--t-space-xl) - var(--t-space-lg))"
+    gap="2xl"
+    {...props}
+  />
 );
 
 const DrawerImpl: FC<DrawerProps> = ({
@@ -211,8 +281,12 @@ const DrawerImpl: FC<DrawerProps> = ({
   open,
   defaultOpen,
   onOpenChange,
+  showGaps = false,
+  size,
+  snapPoints,
   ...props
 }) => {
+  const isSmall = useMedia()["max-sm"] ?? false;
   // Owned here (not by Sheet) so `Drawer.Header`'s close button can also
   // close uncontrolled drawers.
   const [uncontrolledOpen, setUncontrolledOpen] = useState(
@@ -229,9 +303,14 @@ const DrawerImpl: FC<DrawerProps> = ({
   );
 
   return (
-    <DrawerContext.Provider value={setOpen}>
+    <DrawerContext.Provider value={{ setOpen, showGaps, direction, size }}>
       <Sheet
         direction={direction}
+        size={size}
+        snapPoints={
+          snapPoints ??
+          (direction === "bottom" && !size && isSmall ? [95] : undefined)
+        }
         {...props}
         open={open ?? uncontrolledOpen}
         onOpenChange={setOpen}

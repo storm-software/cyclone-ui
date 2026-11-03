@@ -582,6 +582,7 @@
   --blur-sm: 8px;
   --blur-xl: 24px;
   --blur-xs: 4px;
+  --color-base-backdrop: #222222bf;
   --color-base-link: #00bcff;
   --color-base-link-active: var(--color-base-link-hovered);
   --color-base-link-disabled: #436d83;
@@ -609,6 +610,7 @@
   --color-blue-7: #2055b3;
   --color-blue-8: #19438c;
   --color-blue-9: #123166;
+  --color-brand-backdrop: #002811bf;
   --color-brand-link: var(--color-brand-primary);
   --color-brand-link-active: var(--color-brand-primary-hovered);
   --color-brand-link-disabled: var(--color-brand-primary-disabled);
@@ -631,6 +633,7 @@
   --color-canvas-disabled: #242427;
   --color-canvas-hovered: #19191d;
   --color-canvas-inactive: #111114;
+  --color-danger-backdrop: #3a0000bf;
   --color-danger-link: var(--color-danger-primary);
   --color-danger-link-active: var(--color-danger-primary-hovered);
   --color-danger-link-disabled: var(--color-danger-primary-disabled);
@@ -669,6 +672,7 @@
   --color-data-red-subtle: var(--color-red-9);
   --color-data-yellow-emphasis: var(--color-yellow-5);
   --color-data-yellow-subtle: var(--color-yellow-9);
+  --color-discovery-backdrop: #180043bf;
   --color-discovery-link: var(--color-discovery-primary);
   --color-discovery-link-active: var(--color-discovery-primary-hovered);
   --color-discovery-link-disabled: var(--color-discovery-primary-disabled);
@@ -716,6 +720,7 @@
   --color-green-8: #164a3c;
   --color-green-9: #0c2a22;
   --color-hairline: var(--color-neutral-12);
+  --color-info-backdrop: #05005bbf;
   --color-info-link: var(--color-info-primary);
   --color-info-link-active: var(--color-info-primary-hovered);
   --color-info-link-disabled: var(--color-info-primary-disabled);
@@ -818,6 +823,7 @@
   --color-subtlest-disabled: var(--color-base-secondary-disabled);
   --color-subtlest-hovered: #757679;
   --color-subtlest-inactive: var(--color-base-primary-inactive);
+  --color-success-backdrop: #002100bf;
   --color-success-link: var(--color-success-primary);
   --color-success-link-active: var(--color-success-primary-hovered);
   --color-success-link-disabled: var(--color-success-primary-disabled);
@@ -850,6 +856,7 @@
   --color-surface-disabled: #2b2b2d;
   --color-surface-hovered: #252527;
   --color-surface-inactive: #19191b;
+  --color-warning-backdrop: #390000bf;
   --color-warning-link: var(--color-warning-primary);
   --color-warning-link-active: var(--color-warning-primary-hovered);
   --color-warning-link-disabled: var(--color-warning-primary-disabled);

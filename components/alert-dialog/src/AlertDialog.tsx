@@ -21,6 +21,7 @@
 import type { DialogProps } from "@cyclone-ui/dialog";
 import { Dialog, DialogContext } from "@cyclone-ui/dialog";
 import { AlertCircle } from "@cyclone-ui/icons";
+import { ScrollView } from "@cyclone-ui/scroll-view";
 import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import {
   createStyledHOC,
@@ -94,6 +95,8 @@ const AlertDialogContainer = createStyledHOC(
         <Dialog.Container
           ref={forwardedRef}
           key="content"
+          // Leaves room for the dialog's margin; `Content` scrolls past this.
+          maxHeight="85vh"
           {...props}
           bordered={true}
           noPadding={true}>
@@ -111,16 +114,25 @@ const AlertDialogContent = createStyledHOC(
   YStack,
   ({ children, ...props }, forwardedRef) => {
     return (
-      <YStack
-        ref={forwardedRef}
-        paddingHorizontal="7xl"
-        paddingTop="xl"
-        paddingBottom="7xl"
-        gap="3xl"
-        alignItems="center"
-        {...props}>
-        {children}
-      </YStack>
+      <ScrollView
+        // Sized to its content; `flex={1}` would collapse it to zero because
+        // the dialog has no fixed height.
+        flexShrink={1}
+        size="lg">
+        <YStack
+          ref={forwardedRef}
+          paddingLeft="7xl"
+          // The stable scrollbar gutter (6px thumb + `lg`) takes the place of
+          // part of the right padding, so the content stays centered.
+          paddingRight="calc(var(--t-space-7xl) - 6px - var(--t-space-lg))"
+          paddingTop="xl"
+          paddingBottom="7xl"
+          gap="3xl"
+          alignItems="center"
+          {...props}>
+          {children}
+        </YStack>
+      </ScrollView>
     );
   },
   {

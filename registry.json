@@ -3954,6 +3954,7 @@
         "@cyclone-ui/dialog",
         "@cyclone-ui/heading-text",
         "@cyclone-ui/icons",
+        "@cyclone-ui/scroll-view",
         "@cyclone-ui/switch",
         "@cyclone-ui/tabs",
         "@cyclone-ui/visually-hidden"

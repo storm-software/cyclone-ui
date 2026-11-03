@@ -27,6 +27,7 @@
     "@tamagui/text": "catalog:",
     "@tamagui/web": "catalog:",
     "@cyclone-ui/dialog": "workspace:*",
+    "@cyclone-ui/scroll-view": "workspace:*",
     "@cyclone-ui/themeable-icon": "workspace:*"
   },
   "devDependencies": {

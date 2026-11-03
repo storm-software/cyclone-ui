@@ -53,6 +53,21 @@ export type CycloneUIProviderProps = PropsWithChildren<
      * @defaultValue false
      */
     disableInjectCSS?: boolean;
+
+    /**
+     * The color mode the server rendered with. Hydration starts in this mode
+     * so nested `t_<mode>_*` classNames match the server HTML, including
+     * Suspense boundaries that hydrate after the provider.
+     *
+     * @defaultValue "light"
+     */
+    mode?: ColorThemeMode;
+
+    /**
+     * A cookie the provider keeps set to the active mode, so the server can
+     * pass it back as `mode` on the next request.
+     */
+    modeCookie?: string;
   }
 >;
 
@@ -102,18 +117,29 @@ export function CycloneUIProvider({
   disableInjectCSS = false,
   skipNextHead = true,
   onChangeTheme,
+  mode: serverMode = "light",
+  modeCookie,
   ...props
 }: CycloneUIProviderProps) {
   // Hydrate with the server's mode so nested `t_<mode>_*` classNames match, then
   // switch to the mode the theme script put on `<html>` before the first paint.
   // `useRootTheme` reads `<html>` during hydration, which breaks a dark start.
-  const [mode, setMode] = useState<ColorThemeMode>("light");
+  const [mode, setMode] = useState<ColorThemeMode>(serverMode);
 
   useLayoutEffect(() => {
-    if (document.documentElement.classList.contains("t_dark")) {
+    const { classList } = document.documentElement;
+    if (classList.contains("t_dark")) {
       setMode("dark");
+    } else if (classList.contains("t_light")) {
+      setMode("light");
     }
   }, []);
+
+  useEffect(() => {
+    if (modeCookie) {
+      document.cookie = `${modeCookie}=${mode}; path=/; max-age=31536000; samesite=lax`;
+    }
+  }, [mode, modeCookie]);
 
   useServerInsertedHTML(() => {
     // `getSheet` is react-native-web only.

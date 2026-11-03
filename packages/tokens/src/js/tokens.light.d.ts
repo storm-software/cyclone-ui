@@ -129,6 +129,7 @@ declare const tokens: {
       secondary: DesignToken;
       link: DesignToken;
       "on-primary": DesignToken;
+      backdrop: DesignToken;
       "on-secondary": DesignToken;
       "primary-hovered": DesignToken;
       "primary-active": DesignToken;
@@ -147,6 +148,7 @@ declare const tokens: {
       primary: DesignToken;
       link: DesignToken;
       "on-primary": DesignToken;
+      backdrop: DesignToken;
       secondary: DesignToken;
       "on-secondary": DesignToken;
       "primary-hovered": DesignToken;
@@ -167,6 +169,7 @@ declare const tokens: {
       link: DesignToken;
       outline: DesignToken;
       "on-primary": DesignToken;
+      backdrop: DesignToken;
       secondary: DesignToken;
       "on-secondary": DesignToken;
       "primary-hovered": DesignToken;
@@ -191,6 +194,7 @@ declare const tokens: {
       link: DesignToken;
       outline: DesignToken;
       "on-primary": DesignToken;
+      backdrop: DesignToken;
       secondary: DesignToken;
       "on-secondary": DesignToken;
       "primary-hovered": DesignToken;
@@ -216,6 +220,7 @@ declare const tokens: {
       link: DesignToken;
       outline: DesignToken;
       "on-primary": DesignToken;
+      backdrop: DesignToken;
       "on-secondary": DesignToken;
       "primary-hovered": DesignToken;
       "primary-active": DesignToken;
@@ -240,6 +245,7 @@ declare const tokens: {
       link: DesignToken;
       outline: DesignToken;
       "on-primary": DesignToken;
+      backdrop: DesignToken;
       "on-secondary": DesignToken;
       "primary-hovered": DesignToken;
       "primary-active": DesignToken;
@@ -263,6 +269,7 @@ declare const tokens: {
       link: DesignToken;
       outline: DesignToken;
       "on-primary": DesignToken;
+      backdrop: DesignToken;
       secondary: DesignToken;
       "on-secondary": DesignToken;
       "primary-hovered": DesignToken;

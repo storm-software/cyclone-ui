@@ -237,7 +237,7 @@ const SheetDialogBackground = styled(YStack, {
 
 const SheetSheetOverlay = styled(TamaguiSheet.Overlay, {
   displayName: "SheetOverlay",
-  backgroundColor: "#0D0C0766",
+  backgroundColor: "backdrop",
   opacity: "0.6 enter:0 exit:0",
   transition: "200ms"
 });
@@ -427,7 +427,7 @@ const SheetOverlay: FC<SheetOverlayProps> = props => {
 
   return (
     <TamaguiDialogOverlay
-      backgroundColor="#0D0C0766"
+      backgroundColor="backdrop"
       opacity="0.6 enter:0 exit:0"
       transition="200ms"
       {...props}

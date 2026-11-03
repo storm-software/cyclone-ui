@@ -650,6 +650,12 @@
   --storm-color-pink-8: #932b6b; /** Deep berry pink. */
   --storm-color-pink-9: #1c0815; /** Dark plum pink. */
   --storm-color-base-link: #0077bc; /** The color used for hyperlink text. */
+  --storm-color-base-backdrop: rgba(
+    0,
+    0,
+    0,
+    0.7490196078431373
+  ); /** Generated base overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-base-primary-hovered: #4e4e59; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter) */
   --storm-color-base-primary-disabled: #151519; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-base-secondary-hovered: #9797a2; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 12% darker) */
@@ -1068,6 +1074,9 @@
   --storm-color-brand-on-primary: var(
     --storm-color-neutral-1
   ); /** Generated text and icon color on brand primary backgrounds */
+  --storm-color-brand-backdrop: var(
+    --storm-color-base-backdrop
+  ); /** Generated brand overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-brand-secondary: var(
     --storm-color-neutral-1
   ); /** Generated low-emphasis brand background for the light theme */
@@ -1098,6 +1107,9 @@
   --storm-color-danger-on-primary: var(
     --storm-color-neutral-1
   ); /** Generated text and icon color on danger primary backgrounds */
+  --storm-color-danger-backdrop: var(
+    --storm-color-base-backdrop
+  ); /** Generated danger overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-danger-on-secondary: var(
     --storm-color-neutral-14
   ); /** Generated text and icon color on danger secondary backgrounds */
@@ -1134,6 +1146,9 @@
   --storm-color-warning-on-primary: var(
     --storm-color-neutral-1
   ); /** Generated text and icon color on warning primary backgrounds */
+  --storm-color-warning-backdrop: var(
+    --storm-color-base-backdrop
+  ); /** Generated warning overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-warning-on-secondary: var(
     --storm-color-neutral-14
   ); /** Generated text and icon color on warning secondary backgrounds */
@@ -1176,6 +1191,9 @@
   --storm-color-info-on-primary: var(
     --storm-color-neutral-1
   ); /** Generated text and icon color on info primary backgrounds */
+  --storm-color-info-backdrop: var(
+    --storm-color-base-backdrop
+  ); /** Generated info overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-info-on-secondary: var(
     --storm-color-neutral-1
   ); /** Generated text and icon color on info secondary backgrounds */
@@ -1215,6 +1233,9 @@
   --storm-color-discovery-on-primary: var(
     --storm-color-neutral-1
   ); /** Generated text and icon color on discovery primary backgrounds */
+  --storm-color-discovery-backdrop: var(
+    --storm-color-base-backdrop
+  ); /** Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-discovery-on-secondary: var(
     --storm-color-neutral-1
   ); /** Generated text and icon color on discovery secondary backgrounds */
@@ -1254,6 +1275,9 @@
   --storm-color-success-on-primary: var(
     --storm-color-neutral-1
   ); /** Generated text and icon color on success primary backgrounds */
+  --storm-color-success-backdrop: var(
+    --storm-color-base-backdrop
+  ); /** Generated success overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-success-on-secondary: var(
     --storm-color-neutral-14
   ); /** Generated text and icon color on success secondary backgrounds */

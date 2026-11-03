@@ -33,6 +33,9 @@
       "path": "../icons"
     },
     {
+      "path": "../scroll-view"
+    },
+    {
       "path": "../switch"
     },
     {

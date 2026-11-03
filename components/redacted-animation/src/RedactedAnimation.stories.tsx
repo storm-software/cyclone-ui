@@ -69,7 +69,7 @@ export const ImageContent: Story = {
   args: {
     children: (
       <Image
-        accessibilityLabel="Cyclone UI lightning bolt"
+        aria-label="Cyclone UI lightning bolt"
         resizeMode="contain"
         source={imageSource}
         style={{ width: 288, height: 192 }}

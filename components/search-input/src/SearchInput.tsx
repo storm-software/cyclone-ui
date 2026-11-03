@@ -28,7 +28,13 @@ import type {
 } from "@cyclone-ui/input";
 import { Input, InputContext } from "@cyclone-ui/input";
 import type { GetProps } from "@tamagui/core";
-import { createStyledHOC, Theme, withStaticProperties } from "@tamagui/core";
+import {
+  createStyledHOC,
+  styled,
+  Text,
+  Theme,
+  withStaticProperties
+} from "@tamagui/core";
 import type { KeyboardEvent, MouseEvent, ReactNode } from "react";
 import {
   createContext,
@@ -40,18 +46,55 @@ import {
   useState
 } from "react";
 const EMPTY_SUGGESTIONS: readonly string[] = [];
-const renderSuggestionText = (suggestion: string) => (
+
+/** Matches any word of `query`, captured so `split` keeps the matches. */
+const getQueryPattern = (query: string) => {
+  const source = query
+    .trim()
+    .replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+    .replace(/\s+/g, "|");
+
+  return source ? new RegExp(`(${source})`, "gi") : undefined;
+};
+
+// Same look as the matched text in `SearchDialog` results.
+const SearchInputMatch = styled(Text, {
+  displayName: "SearchInputMatch",
+  render: "mark",
+  color: "link",
+  backgroundColor: "transparent",
+  fontWeight: "bold"
+});
+
+/**
+ * `text` with the words of `query` highlighted, as in the default suggestion
+ * rows. Use it in a custom `renderSuggestion` to match their look.
+ */
+export const highlightMatches = (text: string, query: string): ReactNode => {
+  const pattern = getQueryPattern(query);
+
+  return pattern
+    ? text
+        .split(pattern)
+        .map((part, i) =>
+          i % 2 ? <SearchInputMatch key={i}>{part}</SearchInputMatch> : part
+        )
+    : text;
+};
+
+const renderSuggestionText = (suggestion: string, query: string) => (
   <ContextMenu.Item.Text whiteSpace="nowrap">
-    {suggestion}
+    {highlightMatches(suggestion, query)}
   </ContextMenu.Item.Text>
 );
+
 // Inside a `Field`, a search input is clearable unless the field says otherwise.
 const CLEARABLE_BY_DEFAULT = { defaults: { clearable: true } };
 
 interface SearchInputContextValue {
   suggestions: readonly string[];
   filterSuggestions: boolean;
-  renderSuggestion: (suggestion: string) => ReactNode;
+  renderSuggestion: (suggestion: string, query: string) => ReactNode;
   value: string;
 }
 
@@ -80,10 +123,11 @@ export interface SearchInputExtraProps {
 
   /**
    * Draws a suggestion's row in the popover, such as a title over details.
+   * `query` is the typed text, for highlighting matches.
    *
-   * @defaultValue the suggestion on one line
+   * @defaultValue the suggestion on one line, with the typed words highlighted
    */
-  renderSuggestion?: (suggestion: string) => ReactNode;
+  renderSuggestion?: (suggestion: string, query: string) => ReactNode;
 
   /** The controlled value. Inside a `Field`, the field's value is used. */
   value?: string;
@@ -313,7 +357,7 @@ const SearchInputTextBox = createStyledHOC(
                   value={suggestion}
                   highlighted={index === activeIndex}
                   onMouseDown={preventFocusLoss}>
-                  {renderSuggestion(suggestion)}
+                  {renderSuggestion(suggestion, value)}
                 </ContextMenu.Item>
               ))}
             </ContextMenu.Content.ScrollView>

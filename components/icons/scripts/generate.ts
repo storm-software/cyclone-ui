@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 /**
- * Generates a Tamagui icon component for every icon in the Material Line Icons (line-md) collection, plus the extra icons in `assets/`.
+ * Generates a Tamagui icon component for every icon in the Material Line Icons (line-md) collection, plus the extra icons in `assets/` (which replace any line-md icon of the same name).
  *
  * @remarks
  * The animated SVG assets are read from the `line-md` package and from `assets/*.svg` (drawn in the same style), parsed into element data with their animations, and turned into `src/icons/*.ts`, `src/index.ts`, and `src/all.ts` with a Power Plant generator. Only the `regular`, `loop`, `filled`, and `filled-loop` variants are included, plus a `bold` variant read from each `regular` file at the original stroke width. Run with `pnpm --filter @cyclone-ui/icons generate`.
@@ -746,9 +746,14 @@ export const generator = defineGenerator<IconsSpec, IconsOptions, string[]>({
       }
       const { version } = JSON.parse(await readFile(packagePath, "utf8"));
 
+      // An icon in `assets/` replaces the line-md icon of the same name
+      const assets = await readIcons(join(root, "assets"), "assets");
+      const overridden = new Set(assets.map(icon => icon.name));
       const icons = [
-        ...(await readIcons(join(dirname(packagePath), "svg"), "line-md")),
-        ...(await readIcons(join(root, "assets"), "assets"))
+        ...(
+          await readIcons(join(dirname(packagePath), "svg"), "line-md")
+        ).filter(icon => !overridden.has(icon.name)),
+        ...assets
       ];
 
       return { version, icons };

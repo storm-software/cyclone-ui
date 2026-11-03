@@ -150,10 +150,15 @@ const ModalContent: FC<ModalContentProps> = ({ children, ...props }) => {
         // Sized to its content; `flex={1}` would collapse it to zero because
         // the modal has no fixed height.
         flexShrink={1}
-        size="lg"
-        // No gutter until it scrolls, so the body lines up with the header.
-        style={{ scrollbarGutter: "auto" }}>
-        <YStack paddingHorizontal="6xl" paddingBottom="5xl" gap="6xl">
+        size="lg">
+        <YStack
+          paddingLeft="6xl"
+          // The stable gutter (6px thumb + `lg` outer gap, see
+          // `SCROLL_VIEW_STYLES`) takes the place of part of the right
+          // padding, so the body still lines up with the header.
+          paddingRight="calc(var(--t-space-6xl) - 6px - var(--t-space-lg))"
+          paddingBottom="5xl"
+          gap="6xl">
           {items.filter(child => !isModalHeader(child))}
         </YStack>
       </ScrollView>
@@ -187,6 +192,9 @@ const ModalFooter = styled(XStack, {
   gap: "2xl",
   width: "100%",
   padding: "xl",
+  // `Modal.Content`'s `lg` margin already sits above, so the buttons end up
+  // centered between the panel and the frame's bottom edge.
+  paddingTop: "calc(var(--t-space-xl) - var(--t-space-lg))",
   flexShrink: 0
 });
 

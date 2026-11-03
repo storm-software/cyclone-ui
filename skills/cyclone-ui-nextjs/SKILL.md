@@ -98,7 +98,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 - The layout can stay a server component, because the provider module already carries `"use client"`.
 - `suppressHydrationWarning` on `<html>` is required: the provider sets the theme class before React hydrates.
 - `CycloneUIProvider` already renders the `TamaguiProvider`, the Cyclone theme state, and `<Theme name="<mode>_base">`, and it collects react-native-web styles on the server. Remove any other `TamaguiProvider` or `@cyclone-ui/state` `ThemeProvider` it replaces. Nesting them creates competing theme state.
-- The provider accepts the `NextThemeProvider` props (`defaultTheme`, `forcedTheme`, `enableSystem`, `storageKey`, …), plus `config` (default: `@cyclone-ui/tokens/tamagui`) and `disableInjectCSS` (default `false`).
+- The provider accepts the `NextThemeProvider` props (`defaultTheme`, `forcedTheme`, `enableSystem`, `storageKey`, …), plus `config` (default: `@cyclone-ui/tokens/tamagui`), `disableInjectCSS` (default `false`), `mode` (the mode the server rendered with, default `"light"`) and `modeCookie` (a cookie the provider keeps set to the active mode).
 
 ### Pages Router
 

@@ -176,7 +176,7 @@ export const Gallery: Story = {
       description: "Only show icons whose name includes this text"
     }
   },
-  render: ({ filter = "", ...args }) => {
+  render: ({ filter = "", variant: _variant, ...args }) => {
     const search = filter.trim().toLowerCase();
     const icons = Object.entries(allIcons).filter(([name]) =>
       name.toLowerCase().includes(search)
@@ -188,19 +188,24 @@ export const Gallery: Story = {
           {icons.length} of {Object.keys(allIcons).length} icons
         </Text>
         <View flexDirection="row" flexWrap="wrap" gap="md">
-          {icons.map(([name, Icon]) => (
-            <View
-              key={name}
-              width={96}
-              alignItems="center"
-              gap="xs"
-              paddingVertical="2xl">
-              <Icon {...args} />
-              <Text fontSize={10} color="color" textAlign="center">
-                {name}
-              </Text>
-            </View>
-          ))}
+          {icons.flatMap(([name, Icon]) =>
+            Icon.variants.map(variant => (
+              <View
+                key={`${name}-${variant}`}
+                width={96}
+                alignItems="center"
+                gap="xs"
+                paddingVertical="2xl">
+                <Icon {...args} variant={variant} />
+                <Text fontSize={10} color="color" textAlign="center">
+                  {name}
+                </Text>
+                <Text fontSize={10} color="color" opacity={0.6}>
+                  {variant}
+                </Text>
+              </View>
+            ))
+          )}
         </View>
       </View>
     );

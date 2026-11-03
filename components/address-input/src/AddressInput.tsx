@@ -22,9 +22,9 @@ import { BodyText } from "@cyclone-ui/body-text";
 import { ContextMenu, getContextMenuSize } from "@cyclone-ui/context-menu";
 import type { FormControlSize } from "@cyclone-ui/helpers";
 import { useFormControl } from "@cyclone-ui/helpers";
-import { MapMarker, MapTrifold } from "@cyclone-ui/icons";
+import { MapMarkerRadius, MapTrifold } from "@cyclone-ui/icons";
 import type { SearchInputProps } from "@cyclone-ui/search-input";
-import { SearchInput } from "@cyclone-ui/search-input";
+import { highlightMatches, SearchInput } from "@cyclone-ui/search-input";
 import type { GetProps } from "@tamagui/core";
 import {
   createStyledHOC,
@@ -52,10 +52,18 @@ export interface AddressOption {
 
 // The street on the first line, the rest of the address under it in
 // smaller text.
-const renderAddressSuggestion = (label: string, size: FormControlSize) => {
+const renderAddressSuggestion = (
+  label: string,
+  query: string,
+  size: FormControlSize
+) => {
   const comma = label.indexOf(", ");
   if (comma === -1) {
-    return <ContextMenu.Item.Label>{label}</ContextMenu.Item.Label>;
+    return (
+      <ContextMenu.Item.Label>
+        {highlightMatches(label, query)}
+      </ContextMenu.Item.Label>
+    );
   }
 
   const { fontSize, lineHeight } = getContextMenuSize(size);
@@ -65,14 +73,14 @@ const renderAddressSuggestion = (label: string, size: FormControlSize) => {
       <ContextMenu.Item.Text
         paddingBottom={0}
         color="emphasis group-hover:emphasis-hovered">
-        {label.slice(0, comma)}
+        {highlightMatches(label.slice(0, comma), query)}
       </ContextMenu.Item.Text>
       <ContextMenu.Item.Text
         color="subtle group-hover:subtle-hovered"
         fontSize={fontSize * 0.875}
         lineHeight={`${lineHeight * 0.875}px`}
         paddingTop={0}>
-        {label.slice(comma + 2)}
+        {highlightMatches(label.slice(comma + 2), query)}
       </ContextMenu.Item.Text>
     </View>
   );
@@ -184,7 +192,8 @@ const AddressInputSearch = createStyledHOC(
     const formControl = useFormControl();
     const size = props.size ?? formControl?.size ?? "md";
     const renderSuggestion = useCallback(
-      (label: string) => renderAddressSuggestion(label, size),
+      (label: string, query: string) =>
+        renderAddressSuggestion(label, query, size),
       [size]
     );
     const setMessage = formControl?.setMessage;
@@ -311,7 +320,10 @@ const AddressInputSearchTextBox = createStyledHOC(
     forwardedRef
   ) => {
     return (
-      <SearchInput.TextBox ref={forwardedRef} icon={<MapMarker />} {...props}>
+      <SearchInput.TextBox
+        ref={forwardedRef}
+        icon={<MapMarkerRadius />}
+        {...props}>
         {children}
       </SearchInput.TextBox>
     );
@@ -420,7 +432,7 @@ const AddressInputMap = createStyledHOC(
             height={32}
             borderRadius="full"
             backgroundColor="primary">
-            <MapMarker color="on-primary" size="2xl" variant="filled" />
+            <MapMarkerRadius color="on-primary" size="2xl" variant="filled" />
           </View>
         </View>
 

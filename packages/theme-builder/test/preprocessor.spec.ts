@@ -104,6 +104,28 @@ describe("tamaguiPreprocessor", () => {
     expect(result.ring).not.toHaveProperty("unthemed");
   });
 
+  it("generates a darkened, translucent backdrop color for theme color groups", () => {
+    const result = tamaguiPreprocessor({
+      color: {
+        danger: { primary: colorToken("#336699") },
+        info: {
+          primary: colorToken("#336699"),
+          backdrop: colorToken("#00000080")
+        }
+      }
+    }) as any;
+
+    const backdrop = result.color.danger.backdrop;
+    expect(backdrop).toMatchObject({ theme: "danger", group: "danger" });
+    expect(backdrop.$value).toMatch(/^#[0-9a-f]{6}bf$/);
+    expect(relativeLuminance(backdrop.$value)).toBeLessThan(
+      relativeLuminance("#336699")
+    );
+    expect(result.color.danger).not.toHaveProperty("backdrop-hovered");
+    expect(result.color.danger).not.toHaveProperty("backdrop-active");
+    expect(result.color.info.backdrop.$value).toBe("#00000080");
+  });
+
   it("generates missing on-primary text colors for theme color groups", () => {
     const result = tamaguiPreprocessor({
       color: {

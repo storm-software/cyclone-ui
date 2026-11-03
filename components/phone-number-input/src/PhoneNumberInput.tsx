@@ -163,7 +163,6 @@ const CountryListItem = memo(
     return (
       <ContextMenu.Item
         aria-label={`${country.name} (${country.code}) +${country.callingCode}`}
-        accessibilityLabel={`${country.name} (${country.code}) +${country.callingCode}`}
         onPress={handlePress}>
         <ContextMenu.Item.Icon>{country.flag}</ContextMenu.Item.Icon>
         {showCountryName && (
@@ -232,8 +231,7 @@ const CountryCodeSelector = (): JSX.Element => {
         aria-label={`Select country code, currently ${selectedCountry.name} +${selectedCountry.callingCode}`}>
         <Input.Trigger
           disabled={disabled}
-          aria-label={`Select country code, currently ${selectedCountry.name} +${selectedCountry.callingCode}`}
-          accessibilityLabel={`Select country code, currently ${selectedCountry.name} +${selectedCountry.callingCode}`}>
+          aria-label={`Select country code, currently ${selectedCountry.name} +${selectedCountry.callingCode}`}>
           <SizableText
             position="absolute"
             width={1}

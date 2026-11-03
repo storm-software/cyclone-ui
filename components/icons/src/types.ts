@@ -84,6 +84,11 @@ export type IconProps = Omit<TamaguiIconProps, "size"> & {
 
 export type IconComponent = ((props: IconProps) => JSX.Element) & {
   displayName?: string;
+
+  /**
+   * The variants the icon has, in {@link ICON_VARIANTS} order.
+   */
+  variants: IconVariant[];
 };
 
 /**

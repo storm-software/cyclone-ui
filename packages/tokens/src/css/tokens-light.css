@@ -661,6 +661,12 @@
   --storm-color-pink-8: #904272; /** Deep berry pink. */
   --storm-color-pink-9: #482039; /** Dark plum pink. */
   --storm-color-base-link: #0084d1; /** The color used for hyperlink text. */
+  --storm-color-base-backdrop: rgba(
+    1,
+    1,
+    1,
+    0.7490196078431373
+  ); /** Generated base overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-base-primary-hovered: #606062; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter) */
   --storm-color-base-primary-active: #000000; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black) */
   --storm-color-base-primary-inactive: #020102; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% darker) */
@@ -671,6 +677,12 @@
   --storm-color-base-link-inactive: #40aaf9; /** The color used for hyperlink text. (inactive, 20% brighter) */
   --storm-color-base-link-disabled: #3c5a72; /** The color used for hyperlink text. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-brand-primary: #1fb2a6; /** The Storm Teal color is used as the primary brand color for Storm Software. */
+  --storm-color-brand-backdrop: rgba(
+    0,
+    28,
+    24,
+    0.7490196078431373
+  ); /** Generated brand overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-brand-secondary: #d6fff9; /** Generated low-emphasis brand background for the light theme */
   --storm-color-brand-on-secondary: #005a53; /** Generated text and icon color on brand secondary backgrounds */
   --storm-color-brand-primary-hovered: #007c72; /** The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker) */
@@ -679,6 +691,12 @@
   --storm-color-brand-secondary-hovered: #89b0ab; /** Generated low-emphasis brand background for the light theme (hovered, 25% darker) */
   --storm-color-brand-secondary-inactive: #e0ffff; /** Generated low-emphasis brand background for the light theme (inactive, 20% brighter) */
   --storm-color-brand-secondary-disabled: #788484; /** Generated low-emphasis brand background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-danger-backdrop: rgba(
+    36,
+    0,
+    0,
+    0.7490196078431373
+  ); /** Generated danger overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-danger-secondary: #f17d91; /** Generated low-emphasis danger background for the light theme */
   --storm-color-danger-on-secondary: #200006; /** Generated text and icon color on danger secondary backgrounds */
   --storm-color-danger-primary-hovered: #6a0022; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% darker) */
@@ -688,6 +706,12 @@
   --storm-color-danger-secondary-inactive: #ffabbe; /** Generated low-emphasis danger background for the light theme (inactive, 20% brighter) */
   --storm-color-danger-secondary-disabled: #7c5a61; /** Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-danger-outline-hovered: #550013; /** Generated danger border and divider color (matches primary) (hovered, 40% darker) */
+  --storm-color-warning-backdrop: rgba(
+    21,
+    0,
+    0,
+    0.7490196078431373
+  ); /** Generated warning overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-warning-secondary: #caa46b; /** Generated low-emphasis warning background for the light theme */
   --storm-color-warning-on-secondary: #241500; /** Generated text and icon color on warning secondary backgrounds */
   --storm-color-warning-primary-hovered: #543400; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker) */
@@ -697,6 +721,12 @@
   --storm-color-warning-secondary-inactive: #fbd399; /** Generated low-emphasis warning background for the light theme (inactive, 20% brighter) */
   --storm-color-warning-secondary-disabled: #716557; /** Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-warning-outline-hovered: #402100; /** Generated warning border and divider color (matches primary) (hovered, 40% darker) */
+  --storm-color-info-backdrop: rgba(
+    7,
+    0,
+    67,
+    0.7490196078431373
+  ); /** Generated info overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-info-primary-hovered: #00318d; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker) */
   --storm-color-info-primary-inactive: #3b72d3; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter) */
   --storm-color-info-primary-disabled: #3b4a68; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
@@ -704,6 +734,12 @@
   --storm-color-info-secondary-inactive: #99d1ff; /** Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter) */
   --storm-color-info-secondary-disabled: #556582; /** Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-info-outline-hovered: #001a76; /** Generated info border and divider color (matches primary) (hovered, 40% darker) */
+  --storm-color-discovery-backdrop: rgba(
+    13,
+    0,
+    48,
+    0.7490196078431373
+  ); /** Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-discovery-primary-hovered: #3c2372; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% darker) */
   --storm-color-discovery-primary-inactive: #725db2; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter) */
   --storm-color-discovery-primary-disabled: #4a445f; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
@@ -711,6 +747,12 @@
   --storm-color-discovery-secondary-inactive: #d2bcff; /** Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% brighter) */
   --storm-color-discovery-secondary-disabled: #655f79; /** Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-discovery-outline-hovered: #2c0d5e; /** Generated discovery border and divider color (matches primary) (hovered, 40% darker) */
+  --storm-color-success-backdrop: rgba(
+    0,
+    13,
+    2,
+    0.7490196078431373
+  ); /** Generated success overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-success-secondary: #74ba9f; /** Generated low-emphasis success background for the light theme */
   --storm-color-success-on-secondary: #002015; /** Generated text and icon color on success secondary backgrounds */
   --storm-color-success-primary-hovered: #004933; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% darker) */
