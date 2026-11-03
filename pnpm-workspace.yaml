@@ -202,7 +202,7 @@ catalog:
   "@react-email/ui": ^6.11.6
   "@opentelemetry/api": ^1.10.0
   motion: ^11.18.2
-  next: ^16.4.3
+  next: ^16.4.4
   sherif: ^1.13.0
   solito: ^4.4.1
   storybook: ^10.6.5
@@ -240,7 +240,7 @@ catalog:
   "@razorwind/eslint": ^0.0.39
   "@razorwind/stylelint": ^0.0.39
   "@sourcebook/config": ^0.0.12
-  "@tanstack/react-virtual": ^3.14.24
+  "@tanstack/react-virtual": ^3.14.25
   "@nx/maven": 23.3.0
   tsx: ^4.23.15
   "@nx/docker": ^23.3.1
