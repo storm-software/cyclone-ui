@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Nextjs
 
+## [0.0.14](https://github.com/storm-software/cyclone-ui/releases/tag/nextjs%400.0.14) (11/03/2026)
+
+### Bug Fixes
+
+- **nextjs:** Improve our handling of NextJs cache component themes ([be9476b40](https://github.com/storm-software/cyclone-ui/commit/be9476b40))
+
+### Updated Dependencies
+
+- Updated **state** to **v0.0.44**
+
 ## [0.0.13](https://github.com/storm-software/cyclone-ui/releases/tag/nextjs%400.0.13) (11/03/2026)
 
 ### Bug Fixes

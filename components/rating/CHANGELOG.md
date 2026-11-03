@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Rating
 
+## [0.0.40](https://github.com/storm-software/cyclone-ui/releases/tag/rating%400.0.40) (11/03/2026)
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.44**
+- Updated **form** to **v0.9.43**
+
 ## [0.0.39](https://github.com/storm-software/cyclone-ui/releases/tag/rating%400.0.39) (11/03/2026)
 
 ### Updated Dependencies

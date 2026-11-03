@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - CLI
 
+## [0.6.34](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.34) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve typescript compiler issues and made the navigation header support RSC better ([af6bce9b9](https://github.com/storm-software/cyclone-ui/commit/af6bce9b9))
+
 ## [0.6.33](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.33) (11/03/2026)
 
 ### Updated Dependencies

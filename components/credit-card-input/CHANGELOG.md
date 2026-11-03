@@ -2,6 +2,15 @@
 
 # Changelog for Cyclone UI - Credit Card Input
 
+## [0.0.28](https://github.com/storm-software/cyclone-ui/releases/tag/credit-card-input%400.0.28) (11/03/2026)
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.44**
+- Updated **form** to **v0.9.43**
+- Updated **input** to **v0.6.44**
+- Updated **password-input** to **v0.0.43**
+
 ## [0.0.27](https://github.com/storm-software/cyclone-ui/releases/tag/credit-card-input%400.0.27) (11/03/2026)
 
 ### Updated Dependencies

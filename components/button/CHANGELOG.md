@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Button
 
+## [0.6.44](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.44) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve typescript compiler issues and made the navigation header support RSC better ([af6bce9b9](https://github.com/storm-software/cyclone-ui/commit/af6bce9b9))
+
 ## [0.6.43](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.43) (11/03/2026)
 
 ### Updated Dependencies

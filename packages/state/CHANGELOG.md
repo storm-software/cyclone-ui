@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - State
 
+## [0.0.44](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.44) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve typescript compiler issues and made the navigation header support RSC better ([af6bce9b9](https://github.com/storm-software/cyclone-ui/commit/af6bce9b9))
+
 ## [0.0.43](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.43) (11/03/2026)
 
 ### Bug Fixes
