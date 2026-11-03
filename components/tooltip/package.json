@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "@tamagui/core": "catalog:",
+    "@tamagui/popover": "catalog:",
+    "@tamagui/popper": "catalog:",
     "@tamagui/tooltip": "catalog:"
   },
   "devDependencies": {

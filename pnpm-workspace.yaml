@@ -37,12 +37,16 @@ catalog:
   "@tamagui/checkbox": 3.0.13
   "@tamagui/checkbox-headless": 3.0.13
   "@tamagui/cli": 3.0.13
+  "@tamagui/collapsible": 3.0.13
   "@tamagui/config": 3.0.13
   "@tamagui/constants": 3.0.13
   "@tamagui/core": 3.0.13
+  "@tamagui/create-context": 3.0.13
   "@tamagui/dialog": 3.0.13
+  "@tamagui/dismissable": 3.0.13
   "@tamagui/focusable": 3.0.13
   "@tamagui/font-size": 3.0.13
+  "@tamagui/floating": 3.0.13
   "@tamagui/get-font-sized": 3.0.13
   "@tamagui/get-token": 3.0.13
   "@tamagui/group": 3.0.13
@@ -55,10 +59,12 @@ catalog:
   "@tamagui/next-plugin": 3.0.13
   "@tamagui/next-theme": 3.0.13
   "@tamagui/popover": 3.0.13
+  "@tamagui/popper": 3.0.13
   "@tamagui/portal": 3.0.13
   "@tamagui/progress": 3.0.13
   "@tamagui/proxy-worm": 3.0.13
   "@tamagui/radio-group": 3.0.13
+  "@tamagui/react-native-types": 3.0.13
   "@tamagui/react-native-svg": 3.0.13
   "@tamagui/scroll-view": 3.0.13
   "@tamagui/shapes": 3.0.13
@@ -68,6 +74,7 @@ catalog:
   "@tamagui/static": 3.0.13
   "@tamagui/slider": 3.0.13
   "@tamagui/switch": 3.0.13
+  "@tamagui/switch-headless": 3.0.13
   "@tamagui/tabs": 3.0.13
   "@tamagui/tailwind": 3.0.13
   "@tamagui/text": 3.0.13

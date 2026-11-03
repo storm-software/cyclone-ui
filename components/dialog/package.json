@@ -25,6 +25,7 @@
     "@cyclone-ui/overlay": "workspace:*",
     "@tamagui/core": "catalog:",
     "@tamagui/dialog": "catalog:",
+    "@tamagui/dismissable": "catalog:",
     "@tamagui/helpers": "catalog:",
     "@tamagui/stacks": "catalog:",
     "react-native-svg": "catalog:"

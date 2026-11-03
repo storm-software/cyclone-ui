@@ -20,7 +20,9 @@
   "dependencies": {
     "@tamagui/adapt": "catalog:",
     "@tamagui/core": "catalog:",
+    "@tamagui/floating": "catalog:",
     "@tamagui/popover": "catalog:",
+    "@tamagui/popper": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@cyclone-ui/scroll-view": "workspace:*",
     "@cyclone-ui/sheet": "workspace:*"

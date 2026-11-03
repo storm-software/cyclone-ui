@@ -24,6 +24,8 @@
     "@cyclone-ui/themeable-icon": "workspace:*",
     "@cyclone-ui/vectors": "workspace:*",
     "@tamagui/core": "catalog:",
+    "@tamagui/create-context": "catalog:",
+    "@tamagui/group": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/tabs": "catalog:",
     "@tamagui/web": "catalog:"
