@@ -33,8 +33,8 @@ const BaseHeadingText = styled(SizableText, {
   // The typography tokens only carry the family and leading, so each level
   // sets its own size and weight. Static (not `size`) so a `size: true` passed
   // through a styled context keeps the level's size.
-  fontSize: "xl",
-  lineHeight: "xl",
+  fontSize: "xl max-sm:lg",
+  lineHeight: "xl max-sm:lg",
   fontWeight: "semibold",
   color: "primary",
 
@@ -58,59 +58,54 @@ export const HeadingHeroText = styled(BaseHeadingText, {
   displayName: "HeadingHeroText",
   render: "h1",
   color: "primary",
-  fontSize: "5xl",
-  lineHeight: "5xl",
-  fontWeight: "semibold",
+  fontSize: "5xl max-sm:3xl",
+  lineHeight: "5xl max-sm:3xl",
+  fontWeight: "semibold"
 });
 
 export const HeadingTitleText = styled(BaseHeadingText, {
   displayName: "HeadingTitleText",
   render: "h1",
   color: "primary",
-  fontSize: "3xl",
-  lineHeight: "3xl",
-  fontWeight: "semibold",
-
+  fontSize: "3xl max-sm:2xl",
+  lineHeight: "3xl max-sm:2xl",
+  fontWeight: "semibold"
 });
 
 export const HeadingLargeText = styled(BaseHeadingText, {
   displayName: "HeadingLargeText",
   render: "h2",
   color: "emphasis",
-  fontSize: "3xl",
-  lineHeight: "3xl",
-  fontWeight: "semibold",
-
+  fontSize: "3xl max-sm:2xl",
+  lineHeight: "3xl max-sm:2xl",
+  fontWeight: "semibold"
 });
 
 export const HeadingMediumText = styled(BaseHeadingText, {
   displayName: "HeadingMediumText",
   render: "h3",
   color: "emphasis",
-  fontSize: "xl",
-  lineHeight: "xl",
-  fontWeight: "bold",
-
+  fontSize: "xl max-sm:lg",
+  lineHeight: "xl max-sm:lg",
+  fontWeight: "bold"
 });
 
 export const HeadingSmallText = styled(BaseHeadingText, {
   displayName: "HeadingSmallText",
   render: "h4",
   color: "emphasis",
-  fontSize: "lg",
+  fontSize: "lg max-sm:md",
   lineHeight: "sm",
-  fontWeight: "semibold",
-
+  fontWeight: "semibold"
 });
 
 export const HeadingExtraSmallText = styled(BaseHeadingText, {
   displayName: "HeadingExtraSmallText",
   render: "h5",
   color: "emphasis",
-  fontSize: "md",
+  fontSize: "md max-sm:sm",
   lineHeight: "xs",
-  fontWeight: "semibold",
-
+  fontWeight: "semibold"
 });
 
 export type HeadingTextProps = GetProps<typeof BaseHeadingText>;
