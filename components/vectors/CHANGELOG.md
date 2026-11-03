@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Vectors
 
+## [0.5.41](https://github.com/storm-software/cyclone-ui/releases/tag/vectors%400.5.41) (11/02/2026)
+
+### Bug Fixes
+
+- **drawer:** Resolve issue with drawer type-checking ([192320079](https://github.com/storm-software/cyclone-ui/commit/192320079))
+
+### Updated Dependencies
+
+- Updated **icons** to **v0.0.37**
+
 ## [0.5.40](https://github.com/storm-software/cyclone-ui/releases/tag/vectors%400.5.40) (11/01/2026)
 
 ### Updated Dependencies

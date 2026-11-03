@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Tag
 
+## [0.0.36](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.36) (11/02/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update the components to better support server-side rendering ([9169cc5d7](https://github.com/storm-software/cyclone-ui/commit/9169cc5d7))
+
+### Updated Dependencies
+
+- Updated **icons** to **v0.0.37**
+
 ## [0.0.35](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.35) (11/01/2026)
 
 ### Updated Dependencies

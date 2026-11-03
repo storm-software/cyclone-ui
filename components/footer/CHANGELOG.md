@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Footer
 
+## [0.0.39](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.39) (11/02/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update the components to better support server-side rendering ([9169cc5d7](https://github.com/storm-software/cyclone-ui/commit/9169cc5d7))
+
+### Updated Dependencies
+
+- Updated **icons** to **v0.0.37**
+- Updated **link** to **v0.5.41**
+- Updated **vectors** to **v0.5.41**
+
 ## [0.0.38](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.38) (11/01/2026)
 
 ### Updated Dependencies

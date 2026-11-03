@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Link Text
 
+## [0.5.41](https://github.com/storm-software/cyclone-ui/releases/tag/link-text%400.5.41) (11/02/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update the components to better support server-side rendering ([9169cc5d7](https://github.com/storm-software/cyclone-ui/commit/9169cc5d7))
+
 ## [0.5.40](https://github.com/storm-software/cyclone-ui/releases/tag/link-text%400.5.40) (11/01/2026)
 
 ### Updated Dependencies

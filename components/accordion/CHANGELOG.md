@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Accordion
 
+## [0.3.41](https://github.com/storm-software/cyclone-ui/releases/tag/accordion%400.3.41) (11/02/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update the components to better support server-side rendering ([9169cc5d7](https://github.com/storm-software/cyclone-ui/commit/9169cc5d7))
+
+### Updated Dependencies
+
+- Updated **icons** to **v0.0.37**
+- Updated **vectors** to **v0.5.41**
+
 ## [0.3.40](https://github.com/storm-software/cyclone-ui/releases/tag/accordion%400.3.40) (11/01/2026)
 
 ### Updated Dependencies

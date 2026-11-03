@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Drawer
 
+## [0.1.41](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.41) (11/02/2026)
+
+### Bug Fixes
+
+- **drawer:** Resolve issue with drawer type-checking ([192320079](https://github.com/storm-software/cyclone-ui/commit/192320079))
+- **monorepo:** Update the components to better support server-side rendering ([9169cc5d7](https://github.com/storm-software/cyclone-ui/commit/9169cc5d7))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.41**
+- Updated **icons** to **v0.0.37**
+- Updated **scroll-view** to **v0.5.41**
+- Updated **sheet** to **v0.0.40**
+
 ## [0.1.40](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.40) (11/01/2026)
 
 ### Features

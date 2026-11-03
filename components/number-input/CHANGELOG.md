@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Number Input
 
+## [0.0.42](https://github.com/storm-software/cyclone-ui/releases/tag/number-input%400.0.42) (11/02/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update the components to better support server-side rendering ([9169cc5d7](https://github.com/storm-software/cyclone-ui/commit/9169cc5d7))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.41**
+- Updated **icons** to **v0.0.37**
+- Updated **input** to **v0.6.41**
+
 ## [0.0.41](https://github.com/storm-software/cyclone-ui/releases/tag/number-input%400.0.41) (11/01/2026)
 
 ### Updated Dependencies

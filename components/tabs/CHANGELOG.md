@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Tabs
 
+## [0.3.41](https://github.com/storm-software/cyclone-ui/releases/tag/tabs%400.3.41) (11/02/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update the components to better support server-side rendering ([9169cc5d7](https://github.com/storm-software/cyclone-ui/commit/9169cc5d7))
+
 ## [0.3.40](https://github.com/storm-software/cyclone-ui/releases/tag/tabs%400.3.40) (11/01/2026)
 
 ### Updated Dependencies
