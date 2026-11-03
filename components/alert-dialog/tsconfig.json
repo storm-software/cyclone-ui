@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/alert-dialog/tsconfig.tsbuildinfo",
     "jsx": "preserve",
     "ignoreDeprecations": "6.0",
     "rootDir": ".",
@@ -9,8 +10,7 @@
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ],
-    "outDir": "../../dist/out-tsc/components/alert-dialog",
-    "tsBuildInfoFile": "../../dist/out-tsc/components/alert-dialog/tsconfig.tsbuildinfo"
+    "outDir": "../../dist/out-tsc/components/alert-dialog"
   },
   "references": [
     {
@@ -18,6 +18,9 @@
     },
     {
       "path": "../themeable-icon"
+    },
+    {
+      "path": "../scroll-view"
     },
     {
       "path": "../dialog"
