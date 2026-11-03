@@ -25,6 +25,19 @@
         "Prefers application-owned wrappers, supported props, composition, or configuration outside installed components",
         "Asks for specific instructions before any necessary component source change"
       ]
+    },
+    {
+      "id": 4,
+      "prompt": "Our Next.js App Router app uses cacheComponents and partialPrefetching. Wire Cyclone UI theme switching into the root layout. A teammate suggests reading cookies() there to set mode and rendering useThemeSetting().current in the toggle. Preserve a static shell and support saved dark mode, system changes, and forced themes.",
+      "expected_output": "Keeps the root layout synchronous with CycloneUIProvider outside dynamic Suspense boundaries, preserves both caching flags, uses a constant or mount-guarded theme label, and avoids reading theme cookies in the root layout. Explains mode as a hydration fallback and modeCookie as an optional client mirror. Verifies the production shell, persistence, forced/system changes, navigation, and delayed hydration.",
+      "files": [],
+      "expectations": [
+        "Does not add cookies() or headers() to the root layout for theme selection",
+        "Does not wrap the entire provider in a dynamic Suspense boundary or use cache",
+        "Uses useThemeSetting for changes and guards browser-dependent labels",
+        "Preserves cacheComponents and partialPrefetching and checks version support",
+        "Checks the production static shell and browser hydration, not only a dev build"
+      ]
     }
   ]
 }

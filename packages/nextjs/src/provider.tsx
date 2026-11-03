@@ -24,7 +24,7 @@ import { config as cycloneConfig } from "@cyclone-ui/tokens/tamagui";
 import type { TamaguiProviderProps } from "@tamagui/core";
 import { TamaguiProvider, Theme } from "@tamagui/core";
 import type { ThemeProviderProps } from "@tamagui/next-theme";
-import { NextThemeProvider } from "@tamagui/next-theme";
+import { NextThemeProvider, useThemeSetting } from "@tamagui/next-theme";
 import { useServerInsertedHTML } from "next/navigation";
 import type { PropsWithChildren } from "react";
 import { useEffect, useLayoutEffect, useState } from "react";
@@ -56,16 +56,17 @@ export type CycloneUIProviderProps = PropsWithChildren<
 
     /**
      * The color mode the server rendered with. Hydration starts in this mode
-     * so nested `t_<mode>_*` classNames match the server HTML, including
-     * Suspense boundaries that hydrate after the provider.
+     * so the initial client render matches the server HTML. Keep this fixed
+     * for a shared static shell; the browser preference is applied separately.
      *
      * @defaultValue "light"
      */
     mode?: ColorThemeMode;
 
     /**
-     * A cookie the provider keeps set to the active mode, so the server can
-     * pass it back as `mode` on the next request.
+     * An optional client-written cookie containing the resolved mode. Reading
+     * it on the server requires a dynamic boundary with Cache Components;
+     * omit it when only client-side theme persistence is needed.
      */
     modeCookie?: string;
   }
@@ -75,8 +76,31 @@ const ITEMS: ColorThemeMode[] = ["light", "dark"];
 
 // Mirrors the Next.js theme into the Cyclone theme state so `useThemeMode`
 // reports the active mode.
-const SyncColorMode = ({ mode }: { mode: ColorThemeMode }) => {
+const SyncColorMode = ({
+  mode,
+  onChangeMode,
+  enableColorScheme
+}: {
+  mode: ColorThemeMode;
+  enableColorScheme: boolean;
+  onChangeMode: (mode: ColorThemeMode) => void;
+}) => {
+  const { forcedTheme, resolvedTheme } = useThemeSetting();
+  const activeMode = forcedTheme ?? resolvedTheme;
   const { changeMode } = useThemeActions();
+
+  // Forced themes and initial stored preferences do not emit onChangeTheme.
+  // Read the provider's resolved setting, rather than competing DOM classes.
+  useLayoutEffect(() => {
+    if (activeMode === "light" || activeMode === "dark") {
+      onChangeMode(activeMode);
+      // next-theme skips this write when the selected mode matches the OS,
+      // leaving a previous explicit color-scheme behind after a toggle.
+      if (enableColorScheme) {
+        document.documentElement.style.colorScheme = activeMode;
+      }
+    }
+  }, [activeMode, enableColorScheme, onChangeMode]);
 
   useEffect(() => {
     changeMode(mode);
@@ -121,19 +145,9 @@ export function CycloneUIProvider({
   modeCookie,
   ...props
 }: CycloneUIProviderProps) {
-  // Hydrate with the server's mode so nested `t_<mode>_*` classNames match, then
-  // switch to the mode the theme script put on `<html>` before the first paint.
-  // `useRootTheme` reads `<html>` during hydration, which breaks a dark start.
+  // Keep the first client render identical to the shell. SyncColorMode reads
+  // browser preferences after hydration, without a request-time cookie read.
   const [mode, setMode] = useState<ColorThemeMode>(serverMode);
-
-  useLayoutEffect(() => {
-    const { classList } = document.documentElement;
-    if (classList.contains("t_dark")) {
-      setMode("dark");
-    } else if (classList.contains("t_light")) {
-      setMode("light");
-    }
-  }, []);
 
   useEffect(() => {
     if (modeCookie) {
@@ -163,11 +177,17 @@ export function CycloneUIProvider({
       {...props}
       skipNextHead={skipNextHead}
       onChangeTheme={name => {
-        setMode(name as ColorThemeMode);
+        if (name === "light" || name === "dark") {
+          setMode(name);
+        }
         onChangeTheme?.(name);
       }}>
       <ThemeApi.Provider scope="theme" initialState={{ mode, items: ITEMS }}>
-        <SyncColorMode mode={mode} />
+        <SyncColorMode
+          mode={mode}
+          onChangeMode={setMode}
+          enableColorScheme={props.enableColorScheme ?? true}
+        />
         <TamaguiProvider
           config={config}
           defaultTheme={mode}

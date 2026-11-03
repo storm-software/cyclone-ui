@@ -84,7 +84,11 @@ What the wrapper adds, which helps when something breaks:
 // app/layout.tsx
 import { CycloneUIProvider } from "@cyclone-ui/nextjs/provider";
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
@@ -97,12 +101,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 - The layout can stay a server component, because the provider module already carries `"use client"`.
 - `suppressHydrationWarning` on `<html>` is required: the provider sets the theme class before React hydrates.
-- `CycloneUIProvider` already renders the `TamaguiProvider`, the Cyclone theme state, and `<Theme name="<mode>_base">`, and it collects react-native-web styles on the server. Remove any other `TamaguiProvider` or `@cyclone-ui/state` `ThemeProvider` it replaces. Nesting them creates competing theme state.
+- `CycloneUIProvider` already renders the `TamaguiProvider`, the Cyclone theme state, and `<Theme name="base">`, and it collects react-native-web styles on the server. Remove any other `TamaguiProvider` or `@cyclone-ui/state` `ThemeProvider` it replaces. Nesting them creates competing theme state.
 - The provider accepts the `NextThemeProvider` props (`defaultTheme`, `forcedTheme`, `enableSystem`, `storageKey`, …), plus `config` (default: `@cyclone-ui/tokens/tamagui`), `disableInjectCSS` (default `false`), `mode` (the mode the server rendered with, default `"light"`) and `modeCookie` (a cookie the provider keeps set to the active mode).
 
 ### Pages Router
 
-Render `<CycloneUIProvider skipNextHead={false}>` in `pages/_app.tsx`, so the theme script goes through `next/script`. The provider collects server styles with `useServerInsertedHTML`, which does nothing outside the App Router. A Pages Router app therefore needs a `pages/_document.tsx` that adds the react-native-web sheet and Tamagui CSS to the server render. Follow the `_document` section of the [Tamagui Next.js guide](https://tamagui.dev/docs/guides/next-js). Without it, the first paint is unstyled.
+Render `<CycloneUIProvider skipNextHead={false}>` in `pages/_app.tsx`, so the theme script goes through `next/script`. The provider collects react-native-web server styles with `useServerInsertedHTML`, which does nothing outside the App Router. A Pages Router app therefore needs a `pages/_document.tsx` that adds the react-native-web sheet. Tamagui 3 with React 19 injects its own runtime CSS; if using extracted theme CSS, import that CSS and pass `disableInjectCSS`. Follow the `_document` section of the [Tamagui Next.js guide](https://tamagui.dev/docs/guides/next-js). Without it, the first paint is unstyled.
 
 ## Theme switching
 
@@ -116,11 +120,60 @@ import { useThemeSetting } from "@cyclone-ui/nextjs/provider";
 export function ThemeToggle() {
   const theme = useThemeSetting();
 
-  return <button onClick={theme.toggle}>Theme: {theme.current}</button>;
+  return <button onClick={theme.toggle}>Change theme</button>
 }
 ```
 
 `useThemeSetting` controls `@tamagui/next-theme`, which is the source of truth: it stores the choice and applies it before hydration. `useThemeMode` from `@cyclone-ui/state/theme` correctly reads the active mode. But don't change the theme with `useThemeActions`: it changes only Cyclone's mirrored state, so the choice is lost on reload.
+
+While `forcedTheme` is set, theme changes are blocked. Hide or disable the
+toggle while a theme is forced; releasing it restores the stored preference.
+System preference changes apply when the selected setting is `system`.
+
+### Cache Components and static shells
+
+Enable the caching options explicitly in the consuming App Router app:
+
+```ts
+import { withCycloneUI } from "@cyclone-ui/nextjs";
+
+export default withCycloneUI({
+  cacheComponents: true,
+  partialPrefetching: true
+});
+```
+
+`withCycloneUI` preserves these options; it does not enable them globally.
+`partialPrefetching` requires `cacheComponents` and a Next.js version that
+supports the option. It changes Link prefetch behavior to fetch the static App
+Shell; it does not make request-dependent content static.
+
+Keep the root layout synchronous and render `CycloneUIProvider` directly around
+its children, as above. The provider does not read `cookies()` or `headers()`
+on the server. Its inline script applies the saved or system theme to the same
+prerendered shell before hydration. Keep the provider outside request-dependent
+Suspense boundaries so it and its script are included in the shell.
+
+Do not read a theme cookie in the root layout just to populate `mode`. `mode` is
+an SSR/hydration fallback, not the user's persisted preference. `modeCookie` is
+an optional client-written mirror of the resolved light/dark mode; it does not
+require a server cookie read or preserve the distinction between system and an
+explicit choice. If a server component needs request cookies, put that component
+under a local `<Suspense>` boundary. Do not put cookie reads inside `"use cache"`
+or move the whole provider behind that boundary. Cached Server Components can
+be passed as children through the client provider.
+
+Use semantic theme tokens and relative sub-themes such as `base` in the shell.
+Avoid choosing server markup or literal colors from a browser theme preference.
+Theme-dependent text from `useThemeSetting().current`, `resolvedTheme`,
+`useRootTheme`, or `useThemeMode` must wait until that component mounts. These values can differ
+between the server and the first browser render. The constant-label toggle
+above needs no mount guard. If showing a current-mode label, guard only that
+label/control, keeping the rest of the shell rendered. `suppressHydrationWarning`
+on `<html>` does not suppress mismatches in descendants.
+
+See [Next.js caching](https://nextjs.org/docs/app/getting-started/caching) and
+[partialPrefetching](https://nextjs.org/docs/app/api-reference/config/next-config-js/partialPrefetching).
 
 ## Webpack and production CSS
 
@@ -129,7 +182,9 @@ For `next build --webpack`, install `@tamagui/next-plugin` and pass any [plugin 
 ```ts
 export default withCycloneUI(nextConfig, {
   outputCSS:
-    process.env.NODE_ENV === "production" ? "./public/tamagui.generated.css" : null,
+    process.env.NODE_ENV === "production"
+      ? "./public/tamagui.generated.css"
+      : null,
   disableExtraction: process.env.NODE_ENV === "development"
 });
 ```
@@ -158,19 +213,21 @@ Run the app's `next build`, then load a page with a Cyclone component in `next s
 
 - The component is styled on first paint (view the page source and look for the react-native-web `<style>`).
 - The console shows no hydration warning.
-- Toggling the theme flips `<html>`'s class and survives a reload.
+- Toggling the theme flips `<html>`'s class and survives a reload, including a saved dark preference with a light system setting.
+- With `system` selected, system preference changes keep the active mode in sync. Changes to `forcedTheme` also keep Tamagui, `useThemeMode`, and any `modeCookie` in sync.
+- With Cache Components enabled, the production build reports a static or partially prerendered route. Inspect the shell for theme CSS, the inline theme script, and the static content; test client navigation and delayed Suspense hydration as well as the initial load.
 
 Report which checks ran, and say so if only the build was verified.
 
 ## Troubleshooting
 
-| Symptom | Likely cause |
-| --- | --- |
+| Symptom                                                                                                                                       | Likely cause                                                                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Footer.Container` is undefined on the server, `Element type is invalid`, or `Cannot access ... on the server` when using compound components | A Server Component is reading static properties from a client reference. Import and render the available flat named exports, such as `FooterContainer`, instead. |
-| `Unexpected token '<'` / JSX parse error inside `@cyclone-ui/state` | `@cyclone-ui/state` 0.0.31 or earlier, which shipped raw JSX in `dist`. Upgrade it to the version `@cyclone-ui/nextjs` lists as a peer. |
-| Can't resolve `react-native` or `react-native-svg` | Missing `react-native-web` or `@tamagui/react-native-svg`, or (Webpack) the config isn't wrapped. |
-| `Cannot find module '@tamagui/next-plugin'` | A Webpack build without the plugin installed. |
-| Hydration warning on `<html>` | Missing `suppressHydrationWarning`. |
-| Unstyled first paint in the Pages Router | Missing `_document` style collection (see above). |
-| Placeholders or animations missing only on web | `TAMAGUI_TARGET` overridden or unset; check `env` in the final config. |
-| Theme resets on reload | Changed with `useThemeActions` instead of `useThemeSetting`. |
+| `Unexpected token '<'` / JSX parse error inside `@cyclone-ui/state`                                                                           | `@cyclone-ui/state` 0.0.31 or earlier, which shipped raw JSX in `dist`. Upgrade it to the version `@cyclone-ui/nextjs` lists as a peer.                          |
+| Can't resolve `react-native` or `react-native-svg`                                                                                            | Missing `react-native-web` or `@tamagui/react-native-svg`, or (Webpack) the config isn't wrapped.                                                                |
+| `Cannot find module '@tamagui/next-plugin'`                                                                                                   | A Webpack build without the plugin installed.                                                                                                                    |
+| Hydration warning on `<html>`                                                                                                                 | Missing `suppressHydrationWarning`.                                                                                                                              |
+| Unstyled first paint in the Pages Router                                                                                                      | Missing `_document` style collection (see above).                                                                                                                |
+| Placeholders or animations missing only on web                                                                                                | `TAMAGUI_TARGET` overridden or unset; check `env` in the final config.                                                                                           |
+| Theme resets on reload                                                                                                                        | Changed with `useThemeActions` instead of `useThemeSetting`.                                                                                                     |
