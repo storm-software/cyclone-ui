@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Sheet
 
+## [0.0.43](https://github.com/storm-software/cyclone-ui/releases/tag/sheet%400.0.43) (11/03/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Added the `backdrop` color token and updated component responsiveness ([eaaf2aba9](https://github.com/storm-software/cyclone-ui/commit/eaaf2aba9))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.42**
+- Updated **button** to **v0.6.43**
+- Updated **heading-text** to **v0.5.43**
+- Updated **scroll-view** to **v0.5.43**
+
 ## [0.0.42](https://github.com/storm-software/cyclone-ui/releases/tag/sheet%400.0.42) (11/03/2026)
 
 ### Updated Dependencies

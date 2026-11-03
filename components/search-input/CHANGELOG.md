@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Search Input
 
+## [0.1.44](https://github.com/storm-software/cyclone-ui/releases/tag/search-input%400.1.44) (11/03/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Added the `backdrop` color token and updated component responsiveness ([eaaf2aba9](https://github.com/storm-software/cyclone-ui/commit/eaaf2aba9))
+
+### Updated Dependencies
+
+- Updated **context-menu** to **v0.0.34**
+- Updated **field** to **v0.5.43**
+- Updated **form** to **v0.9.42**
+- Updated **helpers** to **v0.3.42**
+- Updated **icons** to **v0.0.39**
+- Updated **input** to **v0.6.43**
+
 ## [0.1.43](https://github.com/storm-software/cyclone-ui/releases/tag/search-input%400.1.43) (11/03/2026)
 
 ### Updated Dependencies

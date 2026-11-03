@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Tabs
 
+## [0.3.44](https://github.com/storm-software/cyclone-ui/releases/tag/tabs%400.3.44) (11/03/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Added the `backdrop` color token and updated component responsiveness ([eaaf2aba9](https://github.com/storm-software/cyclone-ui/commit/eaaf2aba9))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.42**
+- Updated **heading-text** to **v0.5.43**
+- Updated **helpers** to **v0.3.42**
+
 ## [0.3.43](https://github.com/storm-software/cyclone-ui/releases/tag/tabs%400.3.43) (11/03/2026)
 
 ### Updated Dependencies

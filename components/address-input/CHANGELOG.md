@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Address Input
 
+## [0.0.28](https://github.com/storm-software/cyclone-ui/releases/tag/address-input%400.0.28) (11/03/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Added the `backdrop` color token and updated component responsiveness ([eaaf2aba9](https://github.com/storm-software/cyclone-ui/commit/eaaf2aba9))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.42**
+- Updated **context-menu** to **v0.0.34**
+- Updated **field** to **v0.5.43**
+- Updated **form** to **v0.9.42**
+- Updated **helpers** to **v0.3.42**
+- Updated **icons** to **v0.0.39**
+- Updated **search-input** to **v0.1.44**
+
 ## [0.0.27](https://github.com/storm-software/cyclone-ui/releases/tag/address-input%400.0.27) (11/03/2026)
 
 ### Updated Dependencies

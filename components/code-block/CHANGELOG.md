@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Code Block
 
+## [0.6.44](https://github.com/storm-software/cyclone-ui/releases/tag/code-block%400.6.44) (11/03/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Added the `backdrop` color token and updated component responsiveness ([eaaf2aba9](https://github.com/storm-software/cyclone-ui/commit/eaaf2aba9))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.42**
+- Updated **button** to **v0.6.43**
+- Updated **heading-text** to **v0.5.43**
+- Updated **icons** to **v0.0.39**
+- Updated **scroll-view** to **v0.5.43**
+- Updated **themeable-icon** to **v0.6.43**
+- Updated **vectors** to **v0.5.43**
+
 ## [0.6.43](https://github.com/storm-software/cyclone-ui/releases/tag/code-block%400.6.43) (11/03/2026)
 
 ### Updated Dependencies

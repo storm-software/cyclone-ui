@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Theme Builder
 
+## [0.0.32](https://github.com/storm-software/cyclone-ui/releases/tag/theme-builder%400.0.32) (11/03/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Added the `backdrop` color token and updated component responsiveness ([eaaf2aba9](https://github.com/storm-software/cyclone-ui/commit/eaaf2aba9))
+
 ## [0.0.22](https://github.com/storm-software/cyclone-ui/releases/tag/theme-builder%400.0.22) (10/25/2026)
 
 ### Bug Fixes

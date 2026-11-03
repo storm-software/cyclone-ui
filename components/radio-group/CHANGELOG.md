@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Radio Group
 
+## [0.5.44](https://github.com/storm-software/cyclone-ui/releases/tag/radio-group%400.5.44) (11/03/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Added the `backdrop` color token and updated component responsiveness ([eaaf2aba9](https://github.com/storm-software/cyclone-ui/commit/eaaf2aba9))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.42**
+- Updated **field** to **v0.5.43**
+- Updated **form** to **v0.9.42**
+- Updated **heading-text** to **v0.5.43**
+- Updated **helpers** to **v0.3.42**
+- Updated **icons** to **v0.0.39**
+
 ## [0.5.43](https://github.com/storm-software/cyclone-ui/releases/tag/radio-group%400.5.43) (11/03/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Alert Dialog
 
+## [0.4.44](https://github.com/storm-software/cyclone-ui/releases/tag/alert-dialog%400.4.44) (11/03/2026)
+
+### Bug Fixes
+
+- **alert-dialog:** Add missing `tsconfig.json` update ([e1fc1b4b0](https://github.com/storm-software/cyclone-ui/commit/e1fc1b4b0))
+- **theme-builder:** Added the `backdrop` color token and updated component responsiveness ([eaaf2aba9](https://github.com/storm-software/cyclone-ui/commit/eaaf2aba9))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.43**
+- Updated **dialog** to **v0.3.44**
+- Updated **icons** to **v0.0.39**
+- Updated **scroll-view** to **v0.5.43**
+- Updated **themeable-icon** to **v0.6.43**
+
 ## [0.4.43](https://github.com/storm-software/cyclone-ui/releases/tag/alert-dialog%400.4.43) (11/03/2026)
 
 ### Updated Dependencies

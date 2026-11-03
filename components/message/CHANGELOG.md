@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Message
 
+## [0.6.44](https://github.com/storm-software/cyclone-ui/releases/tag/message%400.6.44) (11/03/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Added the `backdrop` color token and updated component responsiveness ([eaaf2aba9](https://github.com/storm-software/cyclone-ui/commit/eaaf2aba9))
+
+### Updated Dependencies
+
+- Updated **alert** to **v0.4.44**
+- Updated **button** to **v0.6.43**
+- Updated **state** to **v0.0.43**
+
 ## [0.6.43](https://github.com/storm-software/cyclone-ui/releases/tag/message%400.6.43) (11/03/2026)
 
 ### Updated Dependencies

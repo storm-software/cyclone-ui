@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Navigation Header
 
+## [0.0.42](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-header%400.0.42) (11/03/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Added the `backdrop` color token and updated component responsiveness ([eaaf2aba9](https://github.com/storm-software/cyclone-ui/commit/eaaf2aba9))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.43**
+- Updated **eyebrow-text** to **v0.5.42**
+- Updated **heading-text** to **v0.5.43**
+- Updated **icons** to **v0.0.39**
+- Updated **link** to **v0.5.43**
+- Updated **redacted-animation** to **v0.0.40**
+- Updated **search-dialog** to **v0.0.21**
+- Updated **vectors** to **v0.5.43**
+
 ## [0.0.41](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-header%400.0.41) (11/03/2026)
 
 ### Updated Dependencies

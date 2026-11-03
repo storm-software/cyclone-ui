@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Password Input
 
+## [0.0.42](https://github.com/storm-software/cyclone-ui/releases/tag/password-input%400.0.42) (11/03/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Added the `backdrop` color token and updated component responsiveness ([eaaf2aba9](https://github.com/storm-software/cyclone-ui/commit/eaaf2aba9))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.42**
+- Updated **field** to **v0.5.43**
+- Updated **form** to **v0.9.42**
+- Updated **helpers** to **v0.3.42**
+- Updated **icons** to **v0.0.39**
+- Updated **input** to **v0.6.43**
+- Updated **validation-text** to **v0.5.43**
+- Updated **visually-hidden** to **v0.5.42**
+
 ## [0.0.41](https://github.com/storm-software/cyclone-ui/releases/tag/password-input%400.0.41) (11/03/2026)
 
 ### Updated Dependencies

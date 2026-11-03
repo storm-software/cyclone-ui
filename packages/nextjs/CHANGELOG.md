@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Nextjs
 
+## [0.0.13](https://github.com/storm-software/cyclone-ui/releases/tag/nextjs%400.0.13) (11/03/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Added the `backdrop` color token and updated component responsiveness ([eaaf2aba9](https://github.com/storm-software/cyclone-ui/commit/eaaf2aba9))
+
+### Updated Dependencies
+
+- Updated **state** to **v0.0.43**
+- Updated **theme-builder** to **v0.0.32**
+- Updated **tokens** to **v0.3.31**
+
 ## [0.0.12](https://github.com/storm-software/cyclone-ui/releases/tag/nextjs%400.0.12) (11/03/2026)
 
 ### Updated Dependencies

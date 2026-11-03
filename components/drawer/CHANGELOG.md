@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Drawer
 
+## [0.1.44](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.44) (11/03/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Added the `backdrop` color token and updated component responsiveness ([eaaf2aba9](https://github.com/storm-software/cyclone-ui/commit/eaaf2aba9))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.42**
+- Updated **button** to **v0.6.43**
+- Updated **heading-text** to **v0.5.43**
+- Updated **icons** to **v0.0.39**
+- Updated **scroll-view** to **v0.5.43**
+- Updated **sheet** to **v0.0.43**
+
 ## [0.1.43](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.43) (11/03/2026)
 
 ### Updated Dependencies

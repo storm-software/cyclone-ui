@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Overlay
 
+## [0.0.29](https://github.com/storm-software/cyclone-ui/releases/tag/overlay%400.0.29) (11/03/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Added the `backdrop` color token and updated component responsiveness ([eaaf2aba9](https://github.com/storm-software/cyclone-ui/commit/eaaf2aba9))
+
 ## [0.0.14](https://github.com/storm-software/cyclone-ui/releases/tag/overlay%400.0.14) (10/23/2026)
 
 ### Documentation

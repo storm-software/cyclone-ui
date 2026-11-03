@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Icons
 
+## [0.0.39](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.39) (11/03/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Added the `backdrop` color token and updated component responsiveness ([eaaf2aba9](https://github.com/storm-software/cyclone-ui/commit/eaaf2aba9))
+
 ## [0.0.37](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.37) (11/02/2026)
 
 ### Bug Fixes
