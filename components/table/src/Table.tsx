@@ -97,6 +97,7 @@ const TableRow = styled(YStack, {
   position: "relative",
   backgroundColor: "transparent hover:transparent",
   paddingHorizontal: "xl",
+
   boxShadow: "none focus-visible:ring-offset",
   variants: {
     header: {
@@ -119,7 +120,7 @@ const TableRowImpl = createStyledHOC(
   ({ children, header = false, ...props }, forwardRef) => {
     const { sizing } = TableContext.useStyledContext();
     const rowChildren = header
-      ? Children.toArray(children).map((child, index, childrenArray) => {
+      ? Children.toArray(children).map(async (child, index, childrenArray) => {
           if (
             !isValidElement<GetProps<typeof TableHeaderCell>>(child) ||
             child.type !== TableHeaderCell
@@ -188,6 +189,7 @@ const TableCell = styled(YStack, {
   borderColor: "hairline focus-visible:outline-active",
   justifyContent: "flex-start",
   paddingHorizontal: "xl",
+
   boxShadow: "none focus-visible:ring-offset",
   variants: {
     cellWidth: styled.dynamic<SizeTokens | number>((name, { tokens }) => {

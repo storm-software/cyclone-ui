@@ -889,6 +889,7 @@ const FieldLabelTextImpl = createStyledHOC(
       hasOptionalLabel,
       labelContentRef,
       size,
+      truncated,
       updateOptionalLabelVisibility
     ]);
 
@@ -907,13 +908,46 @@ const FieldLabelTextImpl = createStyledHOC(
       resizeObserver.observe(labelText);
 
       return () => resizeObserver.disconnect();
-    }, [children, floating, size]);
+    }, [children, floating, size, truncated]);
 
     const disabled = useMemo(
       () => Boolean(fieldDisabled || props.disabled),
       [fieldDisabled, props.disabled]
     );
-    const baseTheme = theme?.startsWith("light") ? "light_base" : "dark_base";
+    const baseTheme =
+      typeof theme === "string" && theme.startsWith("light")
+        ? "light_base"
+        : "dark_base";
+
+    const labelText = (
+      <FieldLabelText
+        ref={labelTextRef}
+        {...props}
+        flexShrink={1}
+        minWidth={0}
+        overflow="hidden"
+        textOverflow="ellipsis"
+        whiteSpace="nowrap"
+        color={`${disabled ? "primary-disabled" : "primary"}`}
+        // Web-only ellipsis styles are not part of React Native's
+        // style types.
+        style={StyleSheet.flatten([
+          style as any,
+          {
+            flexShrink: 1,
+            minWidth: 0,
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            whiteSpace: "nowrap"
+          }
+        ] as any)}
+        ellipsis={true}
+        disabled={disabled}
+        floating={floating}
+        controlSize={size}>
+        {children}
+      </FieldLabelText>
+    );
 
     return (
       <FieldLabelPositioner
@@ -948,45 +982,20 @@ const FieldLabelTextImpl = createStyledHOC(
           <LabelXStack disabled={disabled} floating={floating}>
             <FieldLabelContent ref={labelContentRef}>
               <Theme name={baseTheme}>
-                <Tooltip groupId="field-label" theme={baseTheme}>
-                  <Tooltip.Trigger asChild={true}>
-                    <FieldLabelText
-                      ref={labelTextRef}
-                      {...props}
-                      flexShrink={1}
-                      minWidth={0}
-                      overflow="hidden"
-                      textOverflow="ellipsis"
-                      whiteSpace="nowrap"
-                      color={`${disabled ? "primary-disabled" : "primary"}`}
-                      // Web-only ellipsis styles are not part of React Native's
-                      // style types.
-                      style={StyleSheet.flatten([
-                        style as any,
-                        {
-                          flexShrink: 1,
-                          minWidth: 0,
-                          overflow: "hidden",
-                          textOverflow: "ellipsis",
-                          whiteSpace: "nowrap"
-                        }
-                      ] as any)}
-                      ellipsis={true}
-                      disabled={disabled}
-                      floating={floating}
-                      controlSize={size}>
-                      {children}
-                    </FieldLabelText>
-                  </Tooltip.Trigger>
-                  {truncated && (
-                    // Portaled outside the label's `Theme`, so apply it here.
+                {truncated ? (
+                  <Tooltip groupId="field-label" theme={baseTheme}>
+                    <Tooltip.Trigger asChild={true}>
+                      {labelText}
+                    </Tooltip.Trigger>
                     <Tooltip.Content theme={baseTheme}>
                       <View paddingVertical="2xl" paddingHorizontal="3xl">
                         <BodyText>{children}</BodyText>
                       </View>
                     </Tooltip.Content>
-                  )}
-                </Tooltip>
+                  </Tooltip>
+                ) : (
+                  labelText
+                )}
               </Theme>
               {hideRequired !== true && (
                 <>

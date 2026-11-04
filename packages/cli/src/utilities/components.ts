@@ -2,6 +2,16 @@
 
                    🗲 Storm Software - Cyclone UI
 
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
  SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
@@ -84,6 +94,7 @@ function styleFiles(
     .filter(file => TAILWIND_FILE.test(file.name))
     .map(file => ({ ...file, name: file.name.replace(TAILWIND_FILE, "") }));
   const replaced = new Set(variants.map(file => file.name));
+
   return [...base.filter(file => !replaced.has(file.name)), ...variants];
 }
 
@@ -102,7 +113,7 @@ export async function createInstallPlan(
 
   for (const component of components) {
     const componentName = normalizeComponentName(component.name);
-    if (!/^[a-z0-9][a-z0-9._-]*$/i.test(componentName)) {
+    if (!/^[a-z0-9][\w.-]*$/i.test(componentName)) {
       throw new Error(`Invalid component name received: ${component.name}`);
     }
 
@@ -246,6 +257,98 @@ export function formatPlan(plan: InstallPlan, root: string): string {
     .join("\n");
 }
 
+export interface UpdateFileLine {
+  status: FileChange["status"] | "removed";
+  path: string;
+}
+
+export interface UpdateComponentReport {
+  name: string;
+  previousVersion?: string;
+  version?: string;
+  files: UpdateFileLine[];
+}
+
+type Paint = (text: string | number | boolean | null | undefined) => string;
+
+const plain: Paint = text =>
+  text === undefined || text === null ? "" : String(text);
+
+const STATUS_COLOR = {
+  unchanged: "gray",
+  create: "green",
+  overwrite: "green",
+  removed: "red"
+} as const;
+
+/** Group an update by component, including files the registry no longer ships. */
+export function componentUpdateReports(
+  config: CycloneConfig,
+  plan: InstallPlan,
+  root: string
+): UpdateComponentReport[] {
+  const nextPaths = new Set(plan.files.map(file => relative(root, file.path)));
+
+  return plan.components.map(component => {
+    const name = normalizeComponentName(component.name);
+    const installed = config.components[name];
+    const files: UpdateFileLine[] = plan.files
+      .filter(file => file.component === name)
+      .map(file => ({
+        status: file.status,
+        path: relative(root, file.path)
+      }));
+
+    for (const path of installed?.files ?? []) {
+      if (!nextPaths.has(path)) files.push({ status: "removed", path });
+    }
+
+    return {
+      name,
+      previousVersion: installed?.version,
+      version: component.version,
+      files
+    };
+  });
+}
+
+/**
+ * Human-readable update summary.
+ * Unchanged files are gray, written files are green, removed files are red.
+ * A version change paints the previous version red and the next version green.
+ */
+export function formatUpdate(
+  reports: UpdateComponentReport[],
+  paint: Partial<Record<"gray" | "green" | "red" | "dim", Paint>> = {}
+): string {
+  const colors = {
+    gray: paint.gray ?? plain,
+    green: paint.green ?? plain,
+    red: paint.red ?? plain,
+    dim: paint.dim ?? plain
+  };
+
+  return reports
+    .map(report => {
+      const lines = [report.name];
+      if (report.previousVersion !== report.version) {
+        const previous = report.previousVersion ?? "?";
+        const next = report.version ?? "?";
+        lines.push(
+          `  ${colors.red(previous)} ${colors.dim("→")} ${colors.green(next)}`
+        );
+      }
+
+      for (const file of report.files) {
+        const color = colors[STATUS_COLOR[file.status]];
+        lines.push(`  ${color(file.status.padEnd(9))} ${color(file.path)}`);
+      }
+
+      return lines.join("\n");
+    })
+    .join("\n\n");
+}
+
 export function formatDiff(plan: InstallPlan, root: string): string {
   const changes = plan.files.filter(file => file.status !== "unchanged");
   if (changes.length === 0) return "No differences found.";
@@ -268,6 +371,7 @@ export function formatDiff(plan: InstallPlan, root: string): string {
         .split("\n")
         .map(line => `+${line}`)
         .join("\n");
+
       return `${header}\n${previous}\n${next}`;
     })
     .join("\n\n");

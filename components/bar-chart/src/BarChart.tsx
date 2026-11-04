@@ -191,6 +191,7 @@ export function BarChart<
   const [introStartedAt, setIntroStartedAt] = useState<number | null>(null);
   useLayoutEffect(() => {
     // Start before the first browser paint, without reading the clock during SSR.
+    // eslint-disable-next-line react-hooks/set-state-in-effect, react/set-state-in-effect -- The mount timestamp must trigger the intro before paint, after hydration.
     setIntroStartedAt(Date.now());
   }, []);
   const [selectedDataKey, setSelectedDataKey] = useState<string | null>(

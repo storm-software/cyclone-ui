@@ -21,7 +21,6 @@
 import type { IconProps } from "@tamagui/helpers-icon";
 import { useCurrentColor } from "@tamagui/helpers-tamagui";
 import { memo } from "react";
-import type { SvgProps } from "react-native-svg";
 import {
   Defs,
   Ellipse,
@@ -38,12 +37,7 @@ const Icon = (props: ThemedIconBodyProps<IconProps>) => {
   const color = useCurrentColor((props.color || "on-primary") as any);
 
   return (
-    <Svg
-      width="790"
-      height="640"
-      viewBox="0 0 790 718"
-      fill="none"
-      {...(props as SvgProps)}>
+    <Svg width="790" height="640" viewBox="0 0 790 718" fill="none" {...props}>
       <Mask
         id="mask-dark"
         maskUnits="userSpaceOnUse"

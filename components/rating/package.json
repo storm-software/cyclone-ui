@@ -24,12 +24,12 @@
     "@tamagui/core": "catalog:"
   },
   "devDependencies": {
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/form": "workspace:*",
     "@storybook/react-vite": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
-    "react-native": "catalog:",
-    "@cyclone-ui/field": "workspace:*",
-    "@cyclone-ui/form": "workspace:*"
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"

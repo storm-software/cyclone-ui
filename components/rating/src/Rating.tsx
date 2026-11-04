@@ -240,6 +240,8 @@ export const Rating = forwardRef<TamaguiElement, RatingProps>(
           Math.min(max, Math.max(0, next)),
           precision
         );
+        // Zero clears the rating; it must not be preserved by `??`.
+        // eslint-disable-next-line ts/prefer-nullish-coalescing
         setValue(clamped || null);
       },
       [interactive, max, onKeyDown, precision, setValue, value]

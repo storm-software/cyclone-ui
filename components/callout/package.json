@@ -18,18 +18,18 @@
     "react-native": "catalog:"
   },
   "dependencies": {
-    "@tamagui/core": "catalog:",
-    "@tamagui/linear-gradient": "catalog:",
-    "@cyclone-ui/icons": "workspace:*",
-    "@tamagui/stacks": "catalog:",
-    "@tamagui/web": "catalog:",
     "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/container": "workspace:*",
     "@cyclone-ui/eyebrow-text": "workspace:*",
     "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/state": "workspace:*",
     "@cyclone-ui/themeable-icon": "workspace:*",
-    "@cyclone-ui/vectors": "workspace:*"
+    "@cyclone-ui/vectors": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/linear-gradient": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@tamagui/web": "catalog:"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

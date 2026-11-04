@@ -43,29 +43,25 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 A composable radar chart built on [Recharts](https://recharts.org) and the shared `@cyclone-ui/chart` parts, ported from [EvilCharts](https://evilcharts.com). Use it to compare several series across the same set of attributes.
 
-<!-- START doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-## Table of Contents
 
-- [Progress](#progress)
-  - [Table of Contents](#table-of-contents)
-  - [Quick Features](#quick-features)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Reduced Package Size](#reduced-package-size)
-  - [Development](#development)
-    - [Building](#building)
-    - [Running unit tests](#running-unit-tests)
-    - [Linting](#linting)
-  - [Storm Workspaces](#storm-workspaces)
-  - [Roadmap](#roadmap)
-  - [Support](#support)
-  - [License](#license)
-    - [Documentation](#documentation)
-  - [Changelog](#changelog)
-  - [Contributing](#contributing)
-  - [Contributors](#contributors)
-    - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer-1)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Reduced Package Size](#reduced-package-size)
+- [Development](#development)
+  - [Building](#building)
+  - [Running unit tests](#running-unit-tests)
+  - [Linting](#linting)
+- [Storm Workspaces](#storm-workspaces)
+- [Roadmap](#roadmap)
+- [Support](#support)
+- [License](#license)
+  - [Documentation](#documentation)
+- [Changelog](#changelog)
+- [Contributing](#contributing)
+- [Contributors](#contributors)
 
 <!-- END doctoc -->
 

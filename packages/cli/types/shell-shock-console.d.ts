@@ -19,4 +19,24 @@ declare module "shell-shock:console" {
   ): void;
 
   export function success(message: string, header?: string): void;
+
+  export function gray(
+    text: string | number | boolean | null | undefined,
+    background?: boolean
+  ): string;
+
+  export function green(
+    text: string | number | boolean | null | undefined,
+    background?: boolean
+  ): string;
+
+  export function red(
+    text: string | number | boolean | null | undefined,
+    background?: boolean
+  ): string;
+
+  export function dim(
+    text: string | number | boolean | null | undefined,
+    background?: boolean
+  ): string;
 }

@@ -278,7 +278,9 @@ export const MinimumRating: Story = {
     );
     await userEvent.tab();
     await userEvent.keyboard("{ArrowLeft}{ArrowLeft}");
-    await waitFor(() => expect(rating).toHaveAttribute("aria-valuenow", "2"));
+    await waitFor(async () =>
+      expect(rating).toHaveAttribute("aria-valuenow", "2")
+    );
     await expect(canvas.queryByText("Please select at least 3 stars")).toBe(
       null
     );

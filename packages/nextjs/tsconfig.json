@@ -8,33 +8,21 @@
     "outDir": "../../dist/out-tsc/packages/nextjs"
   },
   "references": [
-    {
-      "path": "../../components/page"
-    },
-    {
-      "path": "../../components/footer"
-    },
-    {
-      "path": "../../components/chart"
-    },
-    {
-      "path": "../../components/composed-chart"
-    },
-    {
-      "path": "../../components/bar-chart"
-    },
-    {
-      "path": "../../components/calendar"
-    },
-    {
-      "path": "../theme-builder"
-    },
-    {
-      "path": "../tokens"
-    },
-    {
-      "path": "../state"
-    }
+    { "path": "../../components/text-area" },
+    { "path": "../../components/password-input" },
+    { "path": "../../components/input" },
+    { "path": "../../components/form" },
+    { "path": "../../components/field" },
+    { "path": "../../components/drawer" },
+    { "path": "../../components/page" },
+    { "path": "../../components/footer" },
+    { "path": "../../components/chart" },
+    { "path": "../../components/composed-chart" },
+    { "path": "../../components/bar-chart" },
+    { "path": "../../components/calendar" },
+    { "path": "../theme-builder" },
+    { "path": "../tokens" },
+    { "path": "../state" }
   ],
   "files": [],
   "include": [

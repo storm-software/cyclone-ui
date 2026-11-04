@@ -18,14 +18,14 @@
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/scroll-view": "workspace:*",
+    "@cyclone-ui/sheet": "workspace:*",
     "@tamagui/adapt": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/floating": "catalog:",
     "@tamagui/popover": "catalog:",
     "@tamagui/popper": "catalog:",
-    "@tamagui/stacks": "catalog:",
-    "@cyclone-ui/scroll-view": "workspace:*",
-    "@cyclone-ui/sheet": "workspace:*"
+    "@tamagui/stacks": "catalog:"
   },
   "devDependencies": {
     "@cyclone-ui/body-text": "workspace:*",

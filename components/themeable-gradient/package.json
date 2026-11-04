@@ -18,10 +18,10 @@
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/helpers": "workspace:*",
     "@tamagui/core": "catalog:",
     "@tamagui/helpers-tamagui": "catalog:",
-    "@tamagui/linear-gradient": "catalog:",
-    "@cyclone-ui/helpers": "workspace:*"
+    "@tamagui/linear-gradient": "catalog:"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

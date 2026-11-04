@@ -1,4 +1,7 @@
-# @cyclone-ui/nextjs
+<!-- START header -->
+<!-- END header -->
+
+# Cyclone UI - NextJS
 
 Set up [Tamagui](https://tamagui.dev) and Cyclone UI components in a Next.js
 application. The package has two entry points:

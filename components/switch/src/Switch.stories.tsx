@@ -88,7 +88,9 @@ export const Base: Story = {
     const restingBorderColor = getStyles(switchControl).borderColor;
 
     await userEvent.hover(label);
-    await new Promise(resolve => setTimeout(resolve, 250));
+    await new Promise(resolve => {
+      setTimeout(resolve, 250);
+    });
 
     await expect(getStyles(switchControl).borderColor).not.toBe(
       restingBorderColor

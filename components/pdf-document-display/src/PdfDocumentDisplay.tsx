@@ -75,7 +75,8 @@ interface PdfDocumentDisplayExtraProps {
 
 export type PdfDocumentDisplayProps = PdfDocumentDisplayExtraProps & ViewProps;
 
-export const PdfDocumentDisplay = createStyledHOC(View, 
+export const PdfDocumentDisplay = createStyledHOC(
+  View,
   (
     {
       src,

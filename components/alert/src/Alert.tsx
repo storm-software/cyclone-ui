@@ -98,7 +98,6 @@ const AlertCloseImpl = createStyledHOC(
 
 export type AlertFrameProps = ContainerProps & AlertContextProps;
 
-// eslint-disable-next-line react-refresh/only-export-components
 const AlertFrameImpl = ({
   children,
   theme,

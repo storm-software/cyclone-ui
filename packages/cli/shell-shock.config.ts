@@ -53,7 +53,10 @@ const config: UserConfig = defineConfig({
   plugins: [
     preset({
       // ponytail: preset-cli 0.9.46 ignores `banner.text` (falls back to the app name), so use the string form
-      banner: "Cyclone UI"
+      banner: "Cyclone UI",
+      skills: {
+        path: "skills"
+      }
     }),
     razorwind({
       root: "../..",
@@ -63,6 +66,7 @@ const config: UserConfig = defineConfig({
         const color = tokenColors(
           selectThemeTokens(spec.tokens, "dark").tokens
         );
+
         const theme = paletteToTheme({
           name: "dark",
           primary: color("brand.primary"),
@@ -119,7 +123,8 @@ const config: UserConfig = defineConfig({
         spinner: "dotsCircle"
       }
     })
-  ]
+    // ponytail: preset/razorwind Plugin types recurse across two @powerlines/core copies (TS2589). Drop the cast when they resolve to one Plugin.
+  ] as UserConfig["plugins"]
 });
 
 export default config;

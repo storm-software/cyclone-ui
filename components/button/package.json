@@ -18,17 +18,17 @@
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/ripple-animation": "workspace:*",
+    "@cyclone-ui/themeable-icon": "workspace:*",
     "@tamagui/core": "catalog:",
     "@tamagui/helpers": "catalog:",
     "@tamagui/stacks": "catalog:",
-    "@tamagui/text": "catalog:",
-    "@cyclone-ui/helpers": "workspace:*",
-    "@cyclone-ui/ripple-animation": "workspace:*",
-    "@cyclone-ui/themeable-icon": "workspace:*"
+    "@tamagui/text": "catalog:"
   },
   "devDependencies": {
-    "@storybook/react-vite": "catalog:",
     "@cyclone-ui/icons": "workspace:*",
+    "@storybook/react-vite": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"

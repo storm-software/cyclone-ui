@@ -2,21 +2,33 @@
 
                    🗲 Storm Software - Cyclone UI
 
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
  SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
 
 import type { CommandMetadata } from "@shell-shock/core";
+import { rm } from "node:fs/promises";
 import { resolve } from "node:path";
-import { write } from "shell-shock:console";
+import { dim, gray, green, red, write } from "shell-shock:console";
 import { COMPONENT_PROTECTION_RULE } from "../../utilities/agent-guidance";
 import {
   applyInstallPlan,
+  componentUpdateReports,
   createInstallPlan,
   formatDiff,
-  formatPlan
+  formatUpdate
 } from "../../utilities/components";
-import { requireConfig } from "../../utilities/config";
+import { requireConfig, resolveInside } from "../../utilities/config";
 import {
   normalizeComponentName,
   registryClient
@@ -61,32 +73,33 @@ async function handler(
   if (requested.length === 0)
     throw new Error("No installed components to update.");
 
-  const dryRun = options.dryRun || options.diff;
-  const previous = Object.fromEntries(
-    requested.map(name => [name, config.components[name]?.version])
-  );
+  const dryRun = options.dryRun === true || options.diff === true;
   const plan = await createInstallPlan(
     registryClient(options.registry ?? config.registry),
     config,
     requested,
     { root, overwrite: true, dryRun }
   );
+  const reports = componentUpdateReports(config, plan, root);
 
   if (options.diff) {
     write(formatDiff(plan, root));
   } else if (!options.silent) {
-    const versions = plan.components
-      .map(component => {
-        const name = normalizeComponentName(component.name);
-        return name in previous && previous[name] !== component.version
-          ? `${name} ${previous[name] ?? "?"} → ${component.version ?? "?"}`
-          : null;
-      })
-      .filter(Boolean);
-    write([...versions, formatPlan(plan, root)].join("\n"));
+    write(formatUpdate(reports, { gray, green, red, dim }));
   }
 
   await applyInstallPlan(config, plan, { root, overwrite: true, dryRun });
+
+  if (!dryRun) {
+    const removed = reports.flatMap(report =>
+      report.files
+        .filter(file => file.status === "removed")
+        .map(file => file.path)
+    );
+    await Promise.all(
+      removed.map(async path => rm(resolveInside(root, path), { force: true }))
+    );
+  }
 }
 
 export default handler;

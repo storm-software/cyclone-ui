@@ -46,7 +46,7 @@ const aliases = (css: string) =>
     "}"
   ].join("\n");
 
-const declaration = /^(\s*(--[\w-]+):\s*)(.+);$/gm;
+const declaration = /^(\s*(--[\w-]+):\s*)(\S.*);$/gm;
 
 /**
  * Email clients can't read CSS variables, and the `<Tailwind>` inliner only
@@ -61,10 +61,11 @@ const flatten = (css: string) => {
     value
       .replace(/var\((--[\w-]+)\)/g, (match, name: string) => {
         const aliased = values.get(name);
+
         return aliased === undefined ? match : resolve(aliased);
       })
       .replace(
-        /(-?\d*\.?\d+)rem\b/g,
+        /(-?(?:\d+(?:\.\d+)?|\.\d+))rem\b/g,
         (_, rem: string) => `${Number(rem) * 16}px`
       );
 

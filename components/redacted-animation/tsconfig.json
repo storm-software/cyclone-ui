@@ -12,9 +12,6 @@
     ],
     "outDir": "../../dist/out-tsc/components/redacted-animation"
   },
-  "files": [],
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"],
   "references": [
     {
       "path": "../../tools/config"
@@ -22,5 +19,8 @@
     {
       "path": "../heading-text"
     }
-  ]
+  ],
+  "files": [],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

@@ -29,22 +29,13 @@ import {
 import { useCallback, useEffect, useState } from "react";
 
 const PACKAGE_MANAGERS = ["npm", "pnpm", "yarn", "bun"] as const;
-const NI_COMMANDS = [
-  "ni",
-  "nr",
-  "nlx",
-  "nup",
-  "nun",
-  "nci",
-  "nd",
-  "na"
-] as const;
 const DEFAULT_PACKAGE_MANAGER: PackageManager = "pnpm";
 const PACKAGE_MANAGER_STORAGE_KEY = "cyclone-ui.package-manager";
 const PACKAGE_MANAGER_CHANGE_EVENT = "cyclone-ui:package-manager-change";
 
 export type PackageManager = (typeof PACKAGE_MANAGERS)[number];
-export type NiCommand = (typeof NI_COMMANDS)[number];
+export type NiCommand =
+  "ni" | "nr" | "nlx" | "nup" | "nun" | "nci" | "nd" | "na";
 
 export interface PackageCommandCodeBlockProps {
   /** The ni command to express. @defaultValue "ni" */
@@ -229,6 +220,7 @@ function getPackageCommand(
         case "bun":
           return serializeCommand(["bunx", ...commandArgs]);
       }
+      return undefined;
     }
     case "nup": {
       const interactive = args.includes("-i");
@@ -275,6 +267,7 @@ function getPackageCommand(
         case "bun":
           return serializeCommand(["bun", "remove", "-g", ...commandArgs]);
       }
+      return undefined;
     }
     case "nd":
       if (packageManager === "bun") {

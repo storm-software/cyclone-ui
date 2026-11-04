@@ -201,7 +201,9 @@ export const Checkbox = createStyledHOC(
     );
     const hasValidationMessage = useFieldHasValidationMessage();
     const idleColor = hasValidationMessage ? "primary" : "outline";
-    const focusColor = hasValidationMessage ? "primary-active" : "outline-active";
+    const focusColor = hasValidationMessage
+      ? "primary-active"
+      : "outline-active";
     // The full 3px ring overwhelms the small checkbox, so use the 1px ring.
     const ring = size === "sm" ? "ring-subtle" : "ring-offset";
 

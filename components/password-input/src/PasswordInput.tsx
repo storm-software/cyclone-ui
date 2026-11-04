@@ -27,7 +27,7 @@ import {
 } from "@cyclone-ui/helpers";
 import { Watch, WatchOff } from "@cyclone-ui/icons";
 import type { InputChangeEventHandler } from "@cyclone-ui/input";
-import { Input, InputContext } from "@cyclone-ui/input";
+import { Input, InputContext, useInputBehavior } from "@cyclone-ui/input";
 import type { GetProps } from "@tamagui/core";
 import {
   createStyledHOC,
@@ -344,7 +344,7 @@ const PasswordInputTextBoxValue = createStyledHOC(
   Input.TextBox.Value,
   (props, forwardedRef) => {
     const setMessage = useFormControl()?.setMessage;
-    const contextOnBlur = InputContext.useStyledContext().onBlur;
+    const contextOnBlur = useInputBehavior().onBlur;
     const { delay, passwordVisible } = use(PasswordInputContext);
     const inputRef = useRef<HTMLInputElement>(null);
     const ref = useComposedRefs(forwardedRef, inputRef);

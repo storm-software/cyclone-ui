@@ -1,4 +1,7 @@
-# @cyclone-ui/vite
+<!-- START header -->
+<!-- END header -->
+
+# Cyclone UI - Vite Plugin
 
 A Vite plugin that sets up [Tamagui](https://tamagui.dev) and Cyclone UI
 components in a Vite application. It wraps

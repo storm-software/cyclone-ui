@@ -20,14 +20,13 @@
 
 import type { IconProps } from "@tamagui/helpers-icon";
 import { memo } from "react";
-import type { SvgProps } from "react-native-svg";
 import { G, Path, Svg } from "react-native-svg";
 import type { ThemedIconBodyProps } from "./themed-icon";
 import { themedIcon } from "./themed-icon";
 
 const Icon = (props: ThemedIconBodyProps<IconProps>) => {
   return (
-    <Svg viewBox="0 0 3800 4800" fill="none" {...(props as SvgProps)}>
+    <Svg viewBox="0 0 3800 4800" fill="none" {...props}>
       <G>
         <Path fill="#F00" d="M0 4800h3800V840L2960 0H0z" />
         <Path fill="#FAFAFA" d="M100 4700h3600V840l-740-740H100z" />

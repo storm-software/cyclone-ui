@@ -20,13 +20,13 @@
   "dependencies": {
     "@cyclone-ui/button": "workspace:*",
     "@cyclone-ui/divider": "workspace:*",
+    "@cyclone-ui/field": "workspace:*",
     "@cyclone-ui/form": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/like-button": "workspace:*",
     "@cyclone-ui/popover": "workspace:*",
     "@cyclone-ui/text-area": "workspace:*",
-    "@cyclone-ui/field": "workspace:*",
     "@cyclone-ui/toggle": "workspace:*",
     "@tamagui/core": "catalog:"
   },

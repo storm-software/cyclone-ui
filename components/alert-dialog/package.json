@@ -18,13 +18,13 @@
     "react-native": "catalog:"
   },
   "dependencies": {
-    "@tamagui/core": "catalog:",
-    "@cyclone-ui/icons": "workspace:*",
-    "@tamagui/stacks": "catalog:",
-    "@tamagui/web": "catalog:",
     "@cyclone-ui/dialog": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/scroll-view": "workspace:*",
-    "@cyclone-ui/themeable-icon": "workspace:*"
+    "@cyclone-ui/themeable-icon": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@tamagui/web": "catalog:"
   },
   "devDependencies": {
     "@cyclone-ui/button": "workspace:*",

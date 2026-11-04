@@ -44,7 +44,8 @@ type FormFrameExtraProps = Pick<
 >;
 type FormFrameProps = GetProps<typeof FormFrame> & FormFrameExtraProps;
 
-const FormImpl = createStyledHOC(FormFrame, 
+const FormImpl = createStyledHOC(
+  FormFrame,
   ({ children, ...props }: FormFrameProps) => {
     const form = FormApi.use();
     const name = form.name.get();
@@ -93,9 +94,10 @@ const FormTriggerFrame = styled(View, {
   displayName: FORM_NAME
 });
 
-export interface FormSubmitProps extends ViewProps {}
+export type FormSubmitProps = ViewProps;
 
-export const FormSubmit = createStyledHOC(FormTriggerFrame, 
+export const FormSubmit = createStyledHOC(
+  FormTriggerFrame,
   (props: FormSubmitProps, forwardedRef) => {
     const { children, onPress, ...triggerProps } = props;
 
@@ -110,14 +112,17 @@ export const FormSubmit = createStyledHOC(FormTriggerFrame,
         {...triggerProps}
         ref={forwardedRef}
         disabled={!canSubmit}
-        onPress={composeEventHandlers(onPress, submit)}>
+        onPress={composeEventHandlers(onPress, () => {
+          void submit();
+        })}>
         {children}
       </FormTriggerFrame>
     );
   }
 );
 
-export const FormReset = createStyledHOC(FormTriggerFrame, 
+export const FormReset = createStyledHOC(
+  FormTriggerFrame,
   (props: FormSubmitProps, forwardedRef) => {
     const { children, onPress, ...triggerProps } = props;
     const { reset } = useFormActions();

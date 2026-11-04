@@ -216,7 +216,9 @@ export const TextArea = createStyledHOC(
     const hasValidationMessage = useFieldHasValidationMessage();
     const labelPlacement = useFieldLabelPlacement();
     const idleColor = hasValidationMessage ? "primary" : "outline";
-    const focusColor = hasValidationMessage ? "primary-active" : "outline-active";
+    const focusColor = hasValidationMessage
+      ? "primary-active"
+      : "outline-active";
     const hoverColor = hasValidationMessage
       ? "primary-hovered"
       : "outline-hovered";

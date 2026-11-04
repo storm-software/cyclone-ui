@@ -5,9 +5,9 @@
   "type": "module",
   "dependencies": {
     "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/state": "workspace:*",
     "@cyclone-ui/tokens": "workspace:*",
-    "@cyclone-ui/icons": "workspace:*",
     "@storybook/addon-docs": "catalog:",
     "@storybook/react": "catalog:",
     "@storybook/react-vite": "catalog:",
@@ -31,10 +31,10 @@
   "devDependencies": {
     "@storybook/addon-vitest": "catalog:",
     "@tamagui/vite-plugin": "catalog:",
-    "@vitest/browser": "catalog:",
-    "@vitest/browser-playwright": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
+    "@vitest/browser": "catalog:",
+    "@vitest/browser-playwright": "catalog:",
     "jotai": "catalog:",
     "storybook": "catalog:",
     "typescript": "^6.0.3",

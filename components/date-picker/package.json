@@ -18,20 +18,19 @@
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/calendar": "workspace:*",
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/input": "workspace:*",
+    "@cyclone-ui/popover": "workspace:*",
     "@maskito/core": "catalog:",
     "@maskito/kit": "^3.11.1",
     "@stryke/date": "catalog:",
-    "@tamagui/core": "catalog:",
-    "@cyclone-ui/icons": "workspace:*",
-    "@cyclone-ui/button": "workspace:*",
-    "@cyclone-ui/field": "workspace:*",
-    "@cyclone-ui/input": "workspace:*",
-    "@cyclone-ui/popover": "workspace:*",
-    "@cyclone-ui/helpers": "workspace:*",
-    "@cyclone-ui/calendar": "workspace:*"
+    "@tamagui/core": "catalog:"
   },
   "devDependencies": {
-    "@cyclone-ui/field": "workspace:*",
     "@cyclone-ui/form": "workspace:*",
     "@storybook/react-vite": "catalog:",
     "react": "catalog:",

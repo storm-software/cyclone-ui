@@ -18,8 +18,8 @@
 
 "use client";
 
-import type { FieldLabelPlacement } from "@cyclone-ui/helpers";
-import {
+import type {
+  FieldLabelPlacement,
   formSizeVariants,
   getFieldLabelInset,
   getFormFontScale,
@@ -31,9 +31,20 @@ import {
   type FormControlSize
 } from "@cyclone-ui/helpers";
 import { createStyledContext, getVariableValue } from "@tamagui/core";
-import type { InputContextProps } from "./types";
+import { createContext, use } from "react";
+import type {
+  InputBehaviorContextProps,
+  InputStyleContextProps
+} from "./types";
+
+// Callbacks must never enter createStyledContext: Tamagui hashes object and
+// function identities using randomness during prerendering.
+export const InputBehaviorContext = createContext<InputBehaviorContextProps>(
+  {}
+);
+export const useInputBehavior = () => use(InputBehaviorContext);
 export const InputContext = createStyledContext<
-  InputContextProps,
+  InputStyleContextProps,
   | "size"
   | "circular"
   | "disabled"
@@ -48,7 +59,7 @@ export const InputContext = createStyledContext<
     focused: false,
     hasValidationMessage: false,
     variant: "outlined"
-  } as InputContextProps,
+  } as InputStyleContextProps,
   {
     keys: [
       "size",
@@ -147,6 +158,7 @@ const toFlatLength = (value: unknown) => {
   }
 
   const resolved = getVariableValue(value);
+
   return typeof resolved === "number" ? `${resolved}px` : String(resolved);
 };
 
@@ -164,6 +176,7 @@ export const getInputSize = (
   const height = labelPlacement
     ? getSized(token) + getFieldLabelInset(labelPlacement, val)
     : token;
+
   return {
     paddingHorizontal: getSpaced(token),
     height,

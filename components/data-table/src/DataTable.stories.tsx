@@ -303,21 +303,23 @@ export const Reorderable: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const headers = () =>
-      canvas.getAllByRole("columnheader") as (HTMLElement & {
-        dataset: { columnId?: string };
-      })[];
+      canvas.getAllByRole<
+        HTMLElement & {
+          dataset: { columnId?: string };
+        }
+      >("columnheader");
     const header = (id: string) =>
       headers().find(cell => cell.dataset.columnId === id)!;
     const headerIds = () => headers().map(cell => cell.dataset.columnId);
 
     // Story tsconfigs have no DOM lib.
     const dataTransfer = new (globalThis as any).DataTransfer();
-    fireEvent.dragStart(header("role"), { dataTransfer });
-    fireEvent.dragOver(header("user_base"), { dataTransfer });
-    fireEvent.drop(header("user_base"), { dataTransfer });
-    fireEvent.dragEnd(header("role"), { dataTransfer });
+    await fireEvent.dragStart(header("role"), { dataTransfer });
+    await fireEvent.dragOver(header("user_base"), { dataTransfer });
+    await fireEvent.drop(header("user_base"), { dataTransfer });
+    await fireEvent.dragEnd(header("role"), { dataTransfer });
 
-    await waitFor(() =>
+    await waitFor(async () =>
       expect(headerIds()).toEqual([
         "__selection",
         "role",
@@ -340,9 +342,9 @@ export const RowSelection: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     // Story tsconfigs have no DOM lib.
-    const header = (canvas.getAllByRole("columnheader") as any[]).find(
-      cell => cell.dataset.columnId === "user_base"
-    );
+    const header = canvas
+      .getAllByRole<any>("columnheader")
+      .find(cell => cell.dataset.columnId === "user_base");
 
     await userEvent.click(header.querySelector("button"));
 
@@ -351,7 +353,7 @@ export const RowSelection: Story = {
       await screen.findByRole("checkbox", { name: "@john (3)" })
     );
 
-    await waitFor(() => expect(canvas.getByText("3 rows")).toBeTruthy());
+    await waitFor(async () => expect(canvas.getByText("3 rows")).toBeTruthy());
   }
 };
 
@@ -400,7 +402,7 @@ export const SelectionActions: Story = {
     await userEvent.click(
       canvas.getByRole("button", { name: "Clear selection" })
     );
-    await waitFor(() =>
+    await waitFor(async () =>
       expect(canvas.queryByText("2 selected")).not.toBeInTheDocument()
     );
   }
@@ -513,7 +515,7 @@ export const RowActions: Story = {
       "decline",
       expect.objectContaining({ index: 1 })
     );
-    await waitFor(() =>
+    await waitFor(async () =>
       expect(
         screen.queryByRole("button", { name: "Decline" })
       ).not.toBeInTheDocument()
@@ -559,12 +561,14 @@ export const ManyFilterValues: Story = {
     // rows in view have mounted.
     const middle = Math.round(scrollElement.scrollHeight / 2);
     scrollElement.scrollTop = middle;
-    fireEvent.scroll(scrollElement);
-    await new Promise(resolve => setTimeout(resolve, 500));
+    await fireEvent.scroll(scrollElement);
+    await new Promise(resolve => {
+      setTimeout(resolve, 500);
+    });
     await expect(Math.abs(scrollElement.scrollTop - middle)).toBeLessThan(100);
 
     scrollElement.scrollTop = scrollElement.scrollHeight;
-    fireEvent.scroll(scrollElement);
+    await fireEvent.scroll(scrollElement);
 
     await expect(await screen.findByText("@user2999 (1)")).toBeVisible();
   }

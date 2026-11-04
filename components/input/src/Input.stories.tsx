@@ -149,25 +149,25 @@ export const Floating: Story = {
     ).toBeLessThan(2);
 
     await userEvent.click(input);
-    await waitFor(() => {
+    await waitFor(async () => {
       const focusedLabelRect = label.getBoundingClientRect();
       const focusedLabelOffset =
         focusedLabelRect.top + focusedLabelRect.height / 2 - inputRect.top;
-      expect(focusedLabelOffset).toBeGreaterThanOrEqual(0);
-      expect(focusedLabelOffset).toBeLessThan(5);
-      expect(
+      await expect(focusedLabelOffset).toBeGreaterThanOrEqual(0);
+      await expect(focusedLabelOffset).toBeLessThan(5);
+      await expect(
         Number.parseFloat(getComputedStyle(labelText).fontSize)
       ).toBeLessThan(initialFontSize);
     });
 
     await userEvent.type(input, "input value");
     await userEvent.tab();
-    await waitFor(() => {
+    await waitFor(async () => {
       const valuedLabelRect = label.getBoundingClientRect();
       const valuedLabelOffset =
         valuedLabelRect.top + valuedLabelRect.height / 2 - inputRect.top;
-      expect(valuedLabelOffset).toBeGreaterThanOrEqual(0);
-      expect(valuedLabelOffset).toBeLessThan(5);
+      await expect(valuedLabelOffset).toBeGreaterThanOrEqual(0);
+      await expect(valuedLabelOffset).toBeLessThan(5);
     });
   }
 };

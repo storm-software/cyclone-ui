@@ -43,30 +43,26 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 A DocsPage compound component that provides a spacious layout for documentation and long-form articles. A collapsible side nav sits on the page canvas beside an inset, rounded panel that holds the page header, the article and a sticky table of contents. It is built on [`Page`](../page/README.md), so it shares Page's side nav behavior, keyboard shortcut and skip links.
 
-<!-- START doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-## Table of Contents
 
-- [Docs Page](#docs-page)
-  - [Table of Contents](#table-of-contents)
-  - [Quick Features](#quick-features)
-  - [Installation](#installation)
-  - [Usage](#usage)
-    - [Layout areas](#layout-areas)
-    - [Side nav](#side-nav)
-  - [Reduced Package Size](#reduced-package-size)
-  - [Development](#development)
-    - [Building](#building)
-    - [Linting](#linting)
-  - [Storm Workspaces](#storm-workspaces)
-  - [Roadmap](#roadmap)
-  - [Support](#support)
-  - [License](#license)
-    - [Documentation](#documentation)
-  - [Changelog](#changelog)
-  - [Contributing](#contributing)
-  - [Contributors](#contributors)
-    - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer-1)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Layout areas](#layout-areas)
+  - [Side nav](#side-nav)
+- [Reduced Package Size](#reduced-package-size)
+- [Development](#development)
+  - [Building](#building)
+  - [Linting](#linting)
+- [Storm Workspaces](#storm-workspaces)
+- [Roadmap](#roadmap)
+- [Support](#support)
+- [License](#license)
+  - [Documentation](#documentation)
+- [Changelog](#changelog)
+- [Contributing](#contributing)
+- [Contributors](#contributors)
 
 <!-- END doctoc -->
 

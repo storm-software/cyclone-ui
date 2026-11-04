@@ -22,16 +22,19 @@ import { $, argv, chalk, echo } from "zx";
 try {
   echo`${chalk.whiteBright(" 📋  Linting the monorepo...")}`;
 
-  let filesArg = "--all";
-  let filesList = "";
-  if (argv._ && argv._.length > 0) {
-    filesList = argv._.join(" ");
-    filesArg = `--files ${argv._.join(",")}`;
-  }
+  // `--files a b c` parses as `{ files: "a", _: ["b", "c"] }`
+  const files = [argv.files, argv._]
+    .flat()
+    .filter(file => typeof file === "string" && file);
+
+  const nxArgs =
+    files.length > 0
+      ? ["affected", `--files=${files.join(",")}`]
+      : ["run-many"];
 
   let proc =
-    $`pnpm exec eslint --fix --quiet --color --config ./eslint.config.mjs --cache --cache-location ./node_modules/.cache/eslint/cache.json --concurrency auto ${
-      filesList || "packages/**"
+    $`pnpm exec eslint --fix --quiet --max-warnings=-1 --color --config ./eslint.config.mjs --cache --cache-location ./node_modules/.cache/eslint/cache.json --concurrency auto --no-error-on-unmatched-pattern ${
+      files.length > 0 ? files : "packages/**"
     }`.timeout(`${30 * 60}s`);
   proc.stdout.on("data", data => {
     echo`${data}`;
@@ -44,7 +47,7 @@ try {
   }
 
   proc =
-    $`pnpm nx run-many --target=lint ${filesArg} --exclude=monorepo --outputStyle=dynamic-legacy --parallel=5`.timeout(
+    $`pnpm nx ${nxArgs} --target=lint --exclude=monorepo --outputStyle=dynamic-legacy --parallel=5`.timeout(
       `${30 * 60}s`
     );
   proc.stdout.on("data", data => {
@@ -57,9 +60,12 @@ try {
     );
   }
 
-  proc = $`pnpm exec storm-lint all --skip-cspell --skip-circular-deps`.timeout(
-    `${30 * 60}s`
-  );
+  // The CLI uses Zod 4 while registry-api uses the Zod 3 catalog. Maps tooling
+  // also retains Node 22 types while other packages use the Node 25 catalog.
+  proc =
+    $`pnpm exec storm-lint all --skip-cspell --skip-circular-deps --ignore-deps-version zod @types/node`.timeout(
+      `${30 * 60}s`
+    );
   proc.stdout.on("data", data => {
     echo`${data}`;
   });

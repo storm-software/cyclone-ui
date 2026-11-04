@@ -18,7 +18,7 @@
 
 "use client";
 
-import { BodyText } from "@cyclone-ui/body-text";
+import type { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { ArrowLeft, Close } from "@cyclone-ui/icons";
 import type {
@@ -245,14 +245,14 @@ const DrawerContent: FC<DrawerContentProps> = ({ children, ...props }) => {
   );
 };
 
-const DrawerTitle: typeof Sheet.Heading = styled(Sheet.Heading, {
+const DrawerTitle = styled(Sheet.Heading, {
   displayName: "DrawerTitle",
   fontSize: "2xl",
   lineHeight: "lg",
   fontWeight: "semibold"
 });
 
-const DrawerDescription: typeof BodyText = styled(BodyText, {
+const DrawerDescription = styled(Sheet.Description, {
   displayName: "DrawerDescription",
   size: "sm",
   // After `size`, whose font tokens would otherwise make it bold.

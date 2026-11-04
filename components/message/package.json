@@ -18,12 +18,12 @@
     "react-native": "catalog:"
   },
   "dependencies": {
-    "@tamagui/core": "catalog:",
-    "@tamagui/stacks": "catalog:",
-    "@tamagui/toast": "catalog:",
     "@cyclone-ui/alert": "workspace:*",
     "@cyclone-ui/button": "workspace:*",
-    "@cyclone-ui/state": "workspace:*"
+    "@cyclone-ui/state": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@tamagui/toast": "catalog:"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

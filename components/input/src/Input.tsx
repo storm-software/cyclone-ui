@@ -49,7 +49,12 @@ import type {
   InputContextProps,
   InputVariant
 } from "./types";
-import { getInputSize, InputContext } from "./utilities";
+import {
+  getInputSize,
+  InputBehaviorContext,
+  InputContext,
+  useInputBehavior
+} from "./utilities";
 
 // Text inputs float their field label by default.
 const FLOATING_LABEL = { variant: "floating" } as const;
@@ -316,56 +321,59 @@ const InputGroupImpl = createStyledHOC(
       : "outline-hovered";
     const borderColor = `${active ? focusColor : idleColor} group-hover/field:${disabled ? "primary-disabled" : active ? focusColor : hoverColor}`;
 
+    const behavior = useMemo(
+      () => ({ onChange, onInput, onFocus, onBlur }),
+      [onChange, onInput, onFocus, onBlur]
+    );
+
     return (
-      <InputContext.Provider
-        // Only context keys: a styled context treats every key in its value
-        // as a context prop, so spreading all props swallowed `aria-*` and
-        // other DOM attributes before they reached the element.
-        name={name}
-        circular={Boolean(rest.circular)}
-        size={size}
-        variant={variant}
-        labelPlacement={labelPlacement}
-        focused={active}
-        hasValidationMessage={hasValidationMessage}
-        disabled={disabled}
-        onChange={onChange}
-        onInput={onInput}
-        onFocus={onFocus}
-        onBlur={onBlur}>
-        <InputGroup
-          ref={forwardedRef}
-          {...rest}
-          frameSize={frameSize}
+      <InputBehaviorContext.Provider value={behavior}>
+        <InputContext.Provider
+          // Only context keys: a styled context treats every key in its value
+          // as a context prop, so spreading all props swallowed `aria-*` and
+          // other DOM attributes before they reached the element.
+          name={name}
+          circular={Boolean(rest.circular)}
+          size={size}
           variant={variant}
           labelPlacement={labelPlacement}
           focused={active}
           hasValidationMessage={hasValidationMessage}
-          disabled={disabled}
-          borderColor={borderColor}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-          onMouseDown={handleMouseDown}
-          transition="200ms">
-          <XGroup display="contents" disabled={disabled}>
-            {children}
-            {variant === "underlined" && (
-              <ControlUnderline
-                bottom={-1}
-                focused={active}
-                disabled={disabled}
-                backgroundColor={disabled ? "primary-disabled" : focusColor}
-              />
-            )}
-            {labelPlacement === "border" && (
-              <FieldNotchedOutline
-                borderColor={borderColor}
-                borderRadius={rest.circular ? 100_000 : "control"}
-              />
-            )}
-          </XGroup>
-        </InputGroup>
-      </InputContext.Provider>
+          disabled={disabled}>
+          <InputGroup
+            ref={forwardedRef}
+            {...rest}
+            frameSize={frameSize}
+            variant={variant}
+            labelPlacement={labelPlacement}
+            focused={active}
+            hasValidationMessage={hasValidationMessage}
+            disabled={disabled}
+            borderColor={borderColor}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            onMouseDown={handleMouseDown}
+            transition="200ms">
+            <XGroup display="contents" disabled={disabled}>
+              {children}
+              {variant === "underlined" && (
+                <ControlUnderline
+                  bottom={-1}
+                  focused={active}
+                  disabled={disabled}
+                  backgroundColor={disabled ? "primary-disabled" : focusColor}
+                />
+              )}
+              {labelPlacement === "border" && (
+                <FieldNotchedOutline
+                  borderColor={borderColor}
+                  borderRadius={rest.circular ? 100_000 : "control"}
+                />
+              )}
+            </XGroup>
+          </InputGroup>
+        </InputContext.Provider>
+      </InputBehaviorContext.Provider>
     );
   },
   { displayName: "Input" }
@@ -483,7 +491,7 @@ const InputValueImpl = createStyledHOC(
     forwardedRef
   ) => {
     const { onChange: contextOnChange, onInput: contextOnInput } =
-      InputContext.useStyledContext();
+      useInputBehavior();
     const formControl = useFormControl();
     const value = valueProp ?? formControl?.formattedValue;
     useFieldVariant(props.placeholder);

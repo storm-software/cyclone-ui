@@ -18,11 +18,11 @@
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/vectors": "workspace:*",
     "@stryke/hooks": "catalog:",
     "@tamagui/core": "catalog:",
-    "@tamagui/stacks": "catalog:",
-    "@cyclone-ui/button": "workspace:*",
-    "@cyclone-ui/vectors": "workspace:*"
+    "@tamagui/stacks": "catalog:"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

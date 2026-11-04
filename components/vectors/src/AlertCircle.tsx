@@ -22,7 +22,6 @@ import type { IconProps } from "@tamagui/helpers-icon";
 import { useCurrentColor } from "@tamagui/helpers-tamagui";
 import { animate, useMotionValue, useMotionValueEvent } from "motion/react";
 import { memo, useEffect, useState } from "react";
-import type { SvgProps } from "react-native-svg";
 import { Circle, Path, Svg } from "react-native-svg";
 import type { ThemedIconBodyProps } from "./themed-icon";
 import { themedIcon } from "./themed-icon";
@@ -123,7 +122,7 @@ const Icon = ({
       stroke={color}
       strokeLinecap="round"
       strokeLinejoin="round"
-      {...(props as SvgProps)}
+      {...props}
       strokeWidth={strokeWidth}>
       {isComplete && (
         <>

@@ -335,7 +335,7 @@ export interface TagPickerOwnProps {
   /**
    * Get the accessible label of a tag's remove button
    *
-   * @defaultValue (tag) => `Remove ${tag}`
+   * @defaultValue A function returning `Remove ${tag}`.
    */
   removeButtonLabel?: (tag: string) => string;
 
@@ -546,7 +546,9 @@ const TagPickerImpl = createStyledHOC(
     const hasValidationMessage = useFieldHasValidationMessage();
     const labelPlacement = useFieldLabelPlacement();
     const idleColor = hasValidationMessage ? "primary" : "outline";
-    const focusColor = hasValidationMessage ? "primary-active" : "outline-active";
+    const focusColor = hasValidationMessage
+      ? "primary-active"
+      : "outline-active";
     const hoverColor = disabled
       ? "primary-disabled"
       : active

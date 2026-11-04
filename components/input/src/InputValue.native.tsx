@@ -18,8 +18,8 @@
 
 "use client";
 
-import type { GetProps } from "@tamagui/core";
 import type { Mutable } from "@stryke/types/base";
+import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, useComposedRefs } from "@tamagui/core";
 import { registerFocusable } from "@tamagui/focusable";
 import type { ComponentProps, ComponentType } from "react";
@@ -31,7 +31,7 @@ import type {
 } from "react-native";
 import { TextInput } from "react-native";
 import type { InputComponentProps } from "./types";
-import { baseInputStyle, InputContext } from "./utilities";
+import { baseInputStyle, InputContext, useInputBehavior } from "./utilities";
 
 /* eslint-disable ts/no-unused-vars --
  * Web-only props are destructured so they are not forwarded to the native input.
@@ -43,16 +43,21 @@ const BaseInputValue = styled(
   baseInputStyle[1]
 );
 
-export const InputValue: ComponentType<InputComponentProps> =
-  createStyledHOC(BaseInputValue, (inProps: Omit<GetProps<typeof BaseInputValue>, "onChange" | "onInput"> & InputComponentProps, forwardedRef) => {
+export const InputValue: ComponentType<InputComponentProps> = createStyledHOC(
+  BaseInputValue,
+  (
+    inProps: Omit<GetProps<typeof BaseInputValue>, "onChange" | "onInput"> &
+      InputComponentProps,
+    forwardedRef
+  ) => {
+    const { disabled: contextDisabled, name: contextName } =
+      InputContext.useStyledContext();
     const {
-      disabled: contextDisabled,
-      name: contextName,
       onChange: contextOnChange,
       onInput: contextOnInput,
       onBlur,
       onFocus
-    } = InputContext.useStyledContext();
+    } = useInputBehavior();
 
     const {
       // some of destructed props are just to avoid passing them to ...rest because they are not in native.
@@ -166,7 +171,7 @@ export const InputValue: ComponentType<InputComponentProps> =
           onInput(
             new CustomEvent("input", {
               detail: text
-            }) as any
+            })
           );
         }
 
@@ -174,7 +179,7 @@ export const InputValue: ComponentType<InputComponentProps> =
           onChange(
             new CustomEvent("change", {
               detail: text
-            }) as any
+            })
           );
         }
       };
@@ -209,7 +214,8 @@ export const InputValue: ComponentType<InputComponentProps> =
         {...finalProps}
       />
     );
-  });
+  }
+);
 
 /** @deprecated Use InputValue. */
 export { InputValue as Input };

@@ -24,7 +24,7 @@
     "@tamagui/core": "catalog:",
     "@tamagui/helpers-icon": "catalog:",
     "@tamagui/helpers-tamagui": "catalog:",
-    "motion": "^11.18.2"
+    "motion": "catalog:"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

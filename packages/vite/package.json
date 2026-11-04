@@ -33,6 +33,7 @@
     "@cyclone-ui/tokens": "workspace:*",
     "@powerlines/plugin-tsdown": "catalog:",
     "powerlines": "catalog:",
+    "react-native-web": "catalog:",
     "vite": "catalog:"
   },
   "publishConfig": {

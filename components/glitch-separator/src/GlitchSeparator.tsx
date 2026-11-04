@@ -46,6 +46,7 @@ const DEFAULT_SEED = 27;
 
 const createRandom = (seed: number) => {
   let value = seed >>> 0;
+
   return () => {
     value += 0x6d2b79f5;
     let result = value;
@@ -109,9 +110,11 @@ export const GlitchSeparator = createStyledHOC(
       const random = createRandom(
         Number.isFinite(seed) ? Math.trunc(seed) : DEFAULT_SEED
       );
+
       return Array.from({ length: rows * COLUMNS }, (_, index) => {
         const row = Math.floor(index / COLUMNS);
         const column = index % COLUMNS;
+
         return {
           x: column,
           y: row,

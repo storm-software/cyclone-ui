@@ -247,7 +247,6 @@ const FooterLinkImpl = createStyledHOC(
     return (
       <FooterLink
         ref={forwardedRef}
-        group={false}
         underline="none"
         {...props}
         {...(hovered && {

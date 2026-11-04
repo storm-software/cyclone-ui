@@ -193,12 +193,12 @@ type Story = StoryObj<typeof meta>;
 export const AllSizes: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    await waitFor(() => {
+    await waitFor(async () => {
       const inputHeights = sizes.map(
         size =>
           canvas.getByLabelText(`${size} input`).getBoundingClientRect().height
       );
-      expect(inputHeights).toEqual([33, 43, 53]);
+      await expect(inputHeights).toEqual([33, 43, 53]);
       const switchHeights = sizes.map(
         size =>
           within(
@@ -209,7 +209,7 @@ export const AllSizes: Story = {
             .getByRole("switch")
             .getBoundingClientRect().height
       );
-      expect(switchHeights).toEqual([20, 24, 26]);
+      await expect(switchHeights).toEqual([20, 24, 26]);
     });
   }
 };
@@ -218,9 +218,9 @@ export const Disabled: Story = {
   args: { disabled: true },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    await waitFor(() => {
+    await waitFor(async () => {
       for (const size of sizes) {
-        expect(canvas.getByLabelText(`${size} input`)).toBeDisabled();
+        await expect(canvas.getByLabelText(`${size} input`)).toBeDisabled();
       }
     });
   }

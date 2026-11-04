@@ -43,30 +43,25 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 An `ArticlePage` compound component for blog posts and documentation articles. A header on its own background holds the article's metadata and stays in place while the content scrolls up over it, like a fixed background. On wide screens, a sticky table of contents and share links follow the reader beside the article.
 
-<!-- START doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-## Table of Contents
-
-- [Article Page](#article-page)
-  - [Table of Contents](#table-of-contents)
-  - [Quick Features](#quick-features)
-  - [Installation](#installation)
-  - [Usage](#usage)
-    - [Layout areas](#layout-areas)
-  - [Reduced Package Size](#reduced-package-size)
-  - [Development](#development)
-    - [Building](#building)
-    - [Linting](#linting)
-  - [Storm Workspaces](#storm-workspaces)
-  - [Roadmap](#roadmap)
-  - [Support](#support)
-  - [License](#license)
-    - [Documentation](#documentation)
-  - [Changelog](#changelog)
-  - [Contributing](#contributing)
-  - [Contributors](#contributors)
-    - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer-1)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Layout areas](#layout-areas)
+- [Reduced Package Size](#reduced-package-size)
+- [Development](#development)
+  - [Building](#building)
+  - [Linting](#linting)
+- [Storm Workspaces](#storm-workspaces)
+- [Roadmap](#roadmap)
+- [Support](#support)
+- [License](#license)
+  - [Documentation](#documentation)
+- [Changelog](#changelog)
+- [Contributing](#contributing)
+- [Contributors](#contributors)
 
 <!-- END doctoc -->
 

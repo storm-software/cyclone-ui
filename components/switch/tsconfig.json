@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/switch/tsconfig.tsbuildinfo",
     "jsx": "preserve",
     "ignoreDeprecations": "6.0",
     "rootDir": ".",
@@ -10,8 +11,7 @@
       "@nx/react/typings/image.d.ts",
       "vite/client"
     ],
-    "outDir": "../../dist/out-tsc/components/switch",
-    "tsBuildInfoFile": "../../dist/out-tsc/components/switch/tsconfig.tsbuildinfo"
+    "outDir": "../../dist/out-tsc/components/switch"
   },
   "references": [
     {

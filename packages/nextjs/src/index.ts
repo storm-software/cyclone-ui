@@ -96,7 +96,7 @@ const resolveConfig = (
   { tokens, ...options }: WithCycloneUIOptions
 ): NextConfig | Promise<NextConfig> => {
   if (nextConfig instanceof Promise) {
-    return nextConfig.then(config =>
+    return nextConfig.then((config): NextConfig | Promise<NextConfig> =>
       resolveConfig(config, { tokens, ...options })
     );
   }
@@ -174,6 +174,7 @@ export function withCycloneUI(
   options: WithCycloneUIOptions = {}
 ): NextConfig | Promise<NextConfig> | NextConfigFunction {
   return typeof nextConfig === "function"
-    ? (phase, context) => resolveConfig(nextConfig(phase, context), options)
+    ? (phase, context): NextConfig | Promise<NextConfig> =>
+        resolveConfig(nextConfig(phase, context), options)
     : resolveConfig(nextConfig, options);
 }

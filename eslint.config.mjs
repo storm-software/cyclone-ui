@@ -41,6 +41,25 @@ registerHooks({
   }
 });
 
+const { default: tamaguiConfig } =
+  await import("./packages/tokens/src/tamagui/config.ts");
+// The grammar currently classifies every theme key as a color. Exclude the
+// shadow aliases from its color vocabulary; the runtime config stays intact.
+const shadowThemeKeys = new Set([
+  "ring",
+  "ring-offset",
+  "ring-subtle",
+  "ring-subtle-offset"
+]);
+const lintThemes = Object.fromEntries(
+  Object.entries(tamaguiConfig.themes).map(([name, theme]) => [
+    name,
+    Object.fromEntries(
+      Object.entries(theme).filter(([key]) => !shadowThemeKeys.has(key))
+    )
+  ])
+);
+
 /** @type {import('eslint').Linter.Config[]} */
 export default defineConfig(
   {
@@ -53,10 +72,20 @@ export default defineConfig(
       configFile: "@powerlines/tsdoc/recommended.json"
     },
     tamagui: {
-      configPath: "packages/tokens/src/tamagui/config.ts"
-    }
-  },
-  {
+      config: {
+        ...tamaguiConfig,
+        themes: lintThemes,
+        tokensParsed: {
+          ...tamaguiConfig.tokensParsed,
+          // Razorwind calls the token group `shadow`; the grammar expects
+          // `boxShadow`. Theme shadow aliases belong to that same vocabulary.
+          boxShadow: {
+            ...tamaguiConfig.tokensParsed.shadow,
+            ...Object.fromEntries([...shadowThemeKeys].map(key => [key, true]))
+          }
+        }
+      }
+    },
     ignores: [
       "**/*.d.ts",
       "**/*.toml",
@@ -64,7 +93,8 @@ export default defineConfig(
       ".ds-sync",
       "apps/storybook/src/blocks/**/*.tsx",
       "packages/eslint-plugin/src/*.ts",
-      "packages/stylelint-plugin/src/*.ts"
+      "packages/stylelint-plugin/src/*.ts",
+      "packages/nextjs/test/**"
     ]
   },
   {

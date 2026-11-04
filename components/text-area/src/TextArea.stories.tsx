@@ -137,7 +137,9 @@ export const Base: Story = {
     );
     await expect(getBrowserStyle(textArea).boxShadow).toBe("none");
     await userEvent.click(textArea);
-    await new Promise(resolve => setTimeout(resolve, 250));
+    await new Promise(resolve => {
+      setTimeout(resolve, 250);
+    });
     await expect(getBrowserStyle(textArea).boxShadow).not.toBe("none");
     await userEvent.type(textArea, "A multiline value");
     await expect(textArea).toHaveValue("A multiline value");

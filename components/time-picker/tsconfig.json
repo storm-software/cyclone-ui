@@ -1,9 +1,9 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/time-picker/tsconfig.tsbuildinfo",
     "jsx": "preserve",
     "lib": ["ESnext", "DOM"],
-    "tsBuildInfoFile": "../../dist/out-tsc/components/time-picker/tsconfig.tsbuildinfo",
     "ignoreDeprecations": "6.0",
     "rootDir": ".",
     "types": [

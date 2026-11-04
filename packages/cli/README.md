@@ -14,6 +14,7 @@ The Cyclone UI command-line interface application.
   - [Table of Contents](#table-of-contents)
   - [Installing](#installing)
   - [Configuration](#configuration)
+    - [Coding agent component protection](#coding-agent-component-protection)
   - [Development](#development)
     - [Building](#building)
     - [Running unit tests](#running-unit-tests)

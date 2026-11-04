@@ -39,13 +39,12 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# Cyclone-UI Helpers package
+# Cyclone UI - Helpers
 
 A package containing various helper utilities used in Storm Software applications
 
-<!-- START doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-## Table of Contents
 
 - [Quick Features](#quick-features)
 - [Installing](#installing)
@@ -63,7 +62,6 @@ A package containing various helper utilities used in Storm Software application
 - [Changelog](#changelog)
 - [Contributing](#contributing)
 - [Contributors](#contributors)
-  - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
 
 <!-- END doctoc -->
 

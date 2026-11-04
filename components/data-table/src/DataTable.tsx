@@ -94,6 +94,7 @@ import {
 
 declare module "@tanstack/react-table" {
   // Type parameters must match `@tanstack/table-core`'s declaration exactly.
+  // eslint-disable-next-line unused-imports/no-unused-vars, ts/no-unused-vars -- Module augmentation must retain the upstream type parameter names.
   interface ColumnMeta<TData extends RowData, TValue> {
     facetFn?: (data: TData) => string;
   }

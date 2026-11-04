@@ -43,30 +43,26 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 Animated [Tamagui](https://tamagui.dev) icon components (React Native and web) for the [Material Line Icons](https://github.com/cyberalien/line-md) (line-md) collection. The package works like [`@tamagui/lucide-icons-2`](https://github.com/tamagui/tamagui/tree/main/code/packages/lucide-icons): each icon is a `react-native-svg` component wrapped with `themed` from `@tamagui/helpers-icon`, so it resolves theme colors and size tokens.
 
-<!-- START doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-## Table of Contents
-
-- [Icons](#icons)
-  - [Table of Contents](#table-of-contents)
-  - [Installing](#installing)
-  - [Usage](#usage)
-  - [Generating the icons](#generating-the-icons)
-  - [Reduced Package Size](#reduced-package-size)
-  - [Development](#development)
-    - [Building](#building)
-    - [Running unit tests](#running-unit-tests)
-    - [Linting](#linting)
-  - [Storm Workspaces](#storm-workspaces)
-  - [Roadmap](#roadmap)
-  - [Support](#support)
-  - [License](#license)
-    - [Documentation](#documentation)
-  - [Changelog](#changelog)
-  - [Contributing](#contributing)
-  - [Contributors](#contributors)
-    - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer-1)
+- [Installing](#installing)
+- [Usage](#usage)
+  - [Animation](#animation)
+- [Generating the icons](#generating-the-icons)
+- [Reduced Package Size](#reduced-package-size)
+- [Development](#development)
+  - [Building](#building)
+  - [Running unit tests](#running-unit-tests)
+  - [Linting](#linting)
+- [Storm Workspaces](#storm-workspaces)
+- [Roadmap](#roadmap)
+- [Support](#support)
+- [License](#license)
+  - [Documentation](#documentation)
+- [Changelog](#changelog)
+- [Contributing](#contributing)
+- [Contributors](#contributors)
 
 <!-- END doctoc -->
 

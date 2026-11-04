@@ -60,7 +60,11 @@ export interface BreadcrumbCollapseRange {
  */
 export const getBreadcrumbCollapse = (
   linkCount: number,
-  { maxItems, itemsBeforeCollapse, itemsAfterCollapse }: BreadcrumbCollapseOptions
+  {
+    maxItems,
+    itemsBeforeCollapse,
+    itemsAfterCollapse
+  }: BreadcrumbCollapseOptions
 ): BreadcrumbCollapseRange | undefined => {
   const total = linkCount + 1;
   const before = Math.max(0, Math.floor(itemsBeforeCollapse));

@@ -8,12 +8,12 @@
     "types": ["node"],
     "outDir": "../dist/out-tsc/email"
   },
-  "files": [],
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["src/**/*.test.tsx"],
   "references": [
     {
       "path": "../packages/tokens"
     }
-  ]
+  ],
+  "files": [],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["src/**/*.test.tsx"]
 }

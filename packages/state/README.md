@@ -39,13 +39,12 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# state
+# Cyclone UI - State Management
 
 A state management package containing various Jotai atoms used by Storm Software
 
-<!-- START doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-## Table of Contents
 
 - [Quick Features](#quick-features)
 - [Installing](#installing)
@@ -63,7 +62,6 @@ A state management package containing various Jotai atoms used by Storm Software
 - [Changelog](#changelog)
 - [Contributing](#contributing)
 - [Contributors](#contributors)
-  - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
 
 <!-- END doctoc -->
 

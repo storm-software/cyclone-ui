@@ -21,7 +21,6 @@
 import type { IconProps } from "@tamagui/helpers-icon";
 import { useCurrentColor } from "@tamagui/helpers-tamagui";
 import { memo } from "react";
-import type { SvgProps } from "react-native-svg";
 import { Defs, Path, Pattern, Rect, Svg } from "react-native-svg";
 import type { ThemedIconBodyProps } from "./themed-icon";
 import { themedIcon } from "./themed-icon";
@@ -29,7 +28,7 @@ const Icon = (props: ThemedIconBodyProps<IconProps>) => {
   const color = useCurrentColor((props.color || "on-primary") as any);
 
   return (
-    <Svg x="0" y="0" fill="none" {...(props as SvgProps)}>
+    <Svg x="0" y="0" fill="none" {...props}>
       <Defs>
         <Pattern
           id="diag_p"

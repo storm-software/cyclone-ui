@@ -27,7 +27,7 @@ import {
 } from "@cyclone-ui/scroll-view";
 import { isWeb } from "@tamagui/constants";
 import type { GetProps } from "@tamagui/core";
-import { styled, Theme } from "@tamagui/core";
+import { createStyledHOC, styled, Theme } from "@tamagui/core";
 import {
   Dialog as TamaguiDialog,
   DialogContent as TamaguiDialogContent,
@@ -43,7 +43,8 @@ import {
   useCallback,
   useMemo,
   useRef,
-  useState
+  useState,
+  useSyncExternalStore
 } from "react";
 import { PanResponder, Platform } from "react-native";
 
@@ -82,7 +83,7 @@ interface SheetContextValue {
   disableDrag: boolean;
   dragOffset: number;
   dragging: boolean;
-  panHandlers: ReturnType<typeof PanResponder.create>["panHandlers"];
+  panHandlers: Partial<ReturnType<typeof PanResponder.create>["panHandlers"]>;
   pointerHandlers: Record<string, unknown>;
   setFrameSize: (size: number) => void;
   transition: SheetProps["transition"];
@@ -482,15 +483,42 @@ const SheetScrollView: FC<SheetScrollViewProps> = ({
   );
 };
 
-const SheetHeading: typeof HeadingLargeText = styled(HeadingLargeText, {
+const SheetHeadingText = styled(HeadingLargeText, {
   displayName: "SheetHeading",
   color: "primary"
 });
 
-const SheetBody: typeof BodyText = styled(BodyText, {
+const SheetBody = styled(BodyText, {
   displayName: "SheetBody",
   color: "ink",
   flexGrow: 1
+});
+
+const SheetHeading = createStyledHOC(
+  SheetHeadingText,
+  (props, forwardedRef) => {
+    const { direction } = useSheetContext();
+
+    return direction === "bottom" ? (
+      <SheetHeadingText ref={forwardedRef} {...props} />
+    ) : (
+      <TamaguiDialog.Title asChild>
+        <SheetHeadingText ref={forwardedRef} {...props} />
+      </TamaguiDialog.Title>
+    );
+  }
+);
+
+const SheetDescription = createStyledHOC(BodyText, (props, forwardedRef) => {
+  const { direction } = useSheetContext();
+
+  return direction === "bottom" ? (
+    <BodyText ref={forwardedRef} {...props} />
+  ) : (
+    <TamaguiDialog.Description asChild>
+      <BodyText ref={forwardedRef} {...props} />
+    </TamaguiDialog.Description>
+  );
 });
 
 const sheetFooterDirectionStyles: Record<
@@ -532,6 +560,10 @@ export type SheetProps = Omit<GetProps<typeof TamaguiSheet>, "size"> & {
 };
 
 const SNAP_POINTS = [80];
+const EMPTY_PAN_HANDLERS = {};
+const subscribeToHydration = () => () => undefined;
+const getHydratedSnapshot = () => true;
+const getServerHydratedSnapshot = () => !isWeb;
 
 // The animation drivers' default spring (stiffness 100, damping 10) overshoots
 // a bottom sheet by about 16% of its travel. The same stiffness with more
@@ -558,6 +590,13 @@ const SheetFrameImpl: FC<SheetProps> = ({
   open,
   ...props
 }: SheetProps) => {
+  // Upstream portal implementations initialize non-deterministic browser
+  // contexts. Defer portals while preserving inline nonmodal bottom sheets.
+  const mounted = useSyncExternalStore(
+    subscribeToHydration,
+    getHydratedSnapshot,
+    getServerHydratedSnapshot
+  );
   const [dragOffset, setDragOffset] = useState(0);
   const [dragging, setDragging] = useState(false);
   const [frameSize, setFrameSize] = useState(0);
@@ -618,27 +657,31 @@ const SheetFrameImpl: FC<SheetProps> = ({
 
   const panResponder = useMemo(
     () =>
-      PanResponder.create({
-        onStartShouldSetPanResponder: () => !disableDrag,
-        onMoveShouldSetPanResponder: (_, gestureState) =>
-          !disableDrag &&
-          Math.abs(isVertical ? gestureState.dy : gestureState.dx) > 3,
-        onPanResponderGrant: () => setDragging(true),
-        onPanResponderMove: (_, gestureState) => {
-          const distance = isVertical ? gestureState.dy : gestureState.dx;
-          updateDrag(distance);
-        },
-        onPanResponderRelease: (_, gestureState) => {
-          const velocity = isVertical ? gestureState.vy : gestureState.vx;
-          const distance = isVertical ? gestureState.dy : gestureState.dx;
-          finishDrag(distance, velocity);
-        },
-        onPanResponderTerminate: cancelDrag,
-        onPanResponderTerminationRequest: () => false
-      }),
+      // Web handles dragging through pointer events; native keeps its responder.
+      isWeb
+        ? undefined
+        : PanResponder.create({
+            onStartShouldSetPanResponder: () => !disableDrag,
+            onMoveShouldSetPanResponder: (_, gestureState) =>
+              !disableDrag &&
+              Math.abs(isVertical ? gestureState.dy : gestureState.dx) > 3,
+            onPanResponderGrant: () => setDragging(true),
+            onPanResponderMove: (_, gestureState) => {
+              const distance = isVertical ? gestureState.dy : gestureState.dx;
+              updateDrag(distance);
+            },
+            onPanResponderRelease: (_, gestureState) => {
+              const velocity = isVertical ? gestureState.vy : gestureState.vx;
+              const distance = isVertical ? gestureState.dy : gestureState.dx;
+              finishDrag(distance, velocity);
+            },
+            onPanResponderTerminate: cancelDrag,
+            onPanResponderTerminationRequest: () => false
+          }),
     [cancelDrag, disableDrag, finishDrag, isVertical, updateDrag]
   );
 
+  const panHandlers = panResponder?.panHandlers ?? EMPTY_PAN_HANDLERS;
   const pointerGesture = useRef({
     pointerId: -1,
     start: 0,
@@ -736,7 +779,7 @@ const SheetFrameImpl: FC<SheetProps> = ({
       disableDrag,
       dragOffset,
       dragging,
-      panHandlers: panResponder.panHandlers,
+      panHandlers,
       pointerHandlers,
       setFrameSize,
       transition
@@ -747,36 +790,33 @@ const SheetFrameImpl: FC<SheetProps> = ({
       disableDrag,
       dragOffset,
       dragging,
-      panResponder.panHandlers,
+      panHandlers,
       pointerHandlers,
       transition
     ]
   );
-  const content =
-    direction === "bottom" ? (
-      <TamaguiSheet
-        modal={modal}
-        dismissOnSnapToBottom={dismissOnSnapToBottom}
-        disableDrag={disableDrag}
-        snapPoints={
-          usesSizedBottomFrame ? ["fit"] : (snapPoints ?? SNAP_POINTS)
-        }
-        snapPointsMode={usesSizedBottomFrame ? "fit" : snapPointsMode}
-        transition={transition}
-        transitionConfig={transition === undefined ? SHEET_SPRING : undefined}
-        open={open}
-        onOpenChange={onOpenChange}
-        {...props}>
+  const deferPortal = !mounted && (modal || direction !== "bottom");
+  const content = deferPortal ? null : direction === "bottom" ? (
+    <TamaguiSheet
+      modal={modal}
+      dismissOnSnapToBottom={dismissOnSnapToBottom}
+      disableDrag={disableDrag}
+      snapPoints={usesSizedBottomFrame ? ["fit"] : (snapPoints ?? SNAP_POINTS)}
+      snapPointsMode={usesSizedBottomFrame ? "fit" : snapPointsMode}
+      transition={transition}
+      transitionConfig={transition === undefined ? SHEET_SPRING : undefined}
+      open={open}
+      onOpenChange={onOpenChange}
+      {...props}>
+      {children}
+    </TamaguiSheet>
+  ) : (
+    <TamaguiDialog modal={modal} open={dialogOpen} onOpenChange={setDialogOpen}>
+      <TamaguiDialog.Portal role="presentation" aria-modal={undefined}>
         {children}
-      </TamaguiSheet>
-    ) : (
-      <TamaguiDialog
-        modal={modal}
-        open={dialogOpen}
-        onOpenChange={setDialogOpen}>
-        <TamaguiDialog.Portal>{children}</TamaguiDialog.Portal>
-      </TamaguiDialog>
-    );
+      </TamaguiDialog.Portal>
+    </TamaguiDialog>
+  );
 
   return (
     <Theme name={theme}>
@@ -794,6 +834,7 @@ export interface SheetComponent extends FC<SheetProps> {
   ScrollView: FC<SheetScrollViewProps>;
   Heading: typeof HeadingLargeText;
   Body: typeof BodyText;
+  Description: typeof BodyText;
   Footer: FC<SheetFooterProps>;
 }
 
@@ -806,6 +847,7 @@ export const Sheet: SheetComponent = withStaticProperties(SheetFrameImpl, {
   ScrollView: SheetScrollView,
   Heading: SheetHeading,
   Body: SheetBody,
+  Description: SheetDescription,
   Footer: SheetFooter
 });
 
@@ -817,6 +859,7 @@ export {
   SheetBackground,
   SheetBody,
   SheetContainer,
+  SheetDescription,
   SheetFooter,
   SheetFrame,
   SheetHandle,

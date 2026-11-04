@@ -264,7 +264,7 @@ const RadioGroupItemContainer = createStyledHOC(
     const hasValidationMessage = useFieldHasValidationMessage();
     const id = useId();
     const itemValue = String(value);
-    const disabled = Boolean(disabledProp || group.disabled);
+    const disabled = Boolean(disabledProp) || Boolean(group.disabled);
     const selected = group.value === itemValue;
     // Another item of the group is selected.
     const inactive = !selected && Boolean(group.value);
@@ -434,11 +434,7 @@ const RadioGroupImpl = createStyledHOC(
         // Moving focus between the items stays in the field.
         const currentTarget = event.currentTarget as unknown as Node;
 
-        if (
-          currentTarget.contains(
-            event.relatedTarget as Parameters<typeof currentTarget.contains>[0]
-          )
-        ) {
+        if (currentTarget.contains(event.relatedTarget)) {
           return;
         }
 

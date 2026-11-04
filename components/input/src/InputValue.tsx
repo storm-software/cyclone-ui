@@ -43,7 +43,7 @@ import type { TamaguiWebElement } from "@tamagui/web";
 import type { FormEvent } from "react";
 import { useCallback, useEffect, useRef } from "react";
 import type { InputComponentProps } from "./types";
-import { InputContext, baseInputStyle } from "./utilities";
+import { InputContext, baseInputStyle, useInputBehavior } from "./utilities";
 
 /* eslint-disable ts/no-unused-vars --
  * Native-only props are destructured so they are not forwarded to the web input.
@@ -82,14 +82,16 @@ export const InputValue = createStyledHOC(
     const {
       disabled: contextDisabled,
       name: contextName,
-      onChange: contextOnChange,
-      onInput: contextOnInput,
-      onBlur: contextOnBlur,
-      onFocus: contextOnFocus,
       labelPlacement,
       size: contextSize,
       variant
     } = InputContext.useStyledContext();
+    const {
+      onChange: contextOnChange,
+      onInput: contextOnInput,
+      onBlur: contextOnBlur,
+      onFocus: contextOnFocus
+    } = useInputBehavior();
     // An underlined control's text starts flush with its left edge unless a
     // start icon sits before it.
     const flushStart = variant === "underlined" && !useFieldHasStartIcon();
@@ -205,9 +207,9 @@ export const InputValue = createStyledHOC(
         onInput?.(
           new CustomEvent("input", {
             detail: value
-          }) as any
+          })
         );
-        onChange?.(new CustomEvent("change", { detail: value }) as any);
+        onChange?.(new CustomEvent("change", { detail: value }));
       },
       [onChange, onInput]
     );

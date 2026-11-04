@@ -1,10 +1,12 @@
-import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   applyInstallPlan,
-  createInstallPlan
+  componentUpdateReports,
+  createInstallPlan,
+  formatUpdate
 } from "../../src/utilities/components";
 import { createConfig } from "../../src/utilities/config";
 import type { CycloneRegistryClient } from "../../src/utilities/registry";
@@ -369,5 +371,73 @@ describe("component installation", () => {
     await expect(
       createInstallPlan(registry, config, ["button"], { root })
     ).rejects.toThrow("--overwrite");
+  });
+
+  it("formats an update with status colors and a red-to-green version change", async () => {
+    const root = await temporaryDirectory();
+    const config = createConfig();
+    config.components.button = {
+      version: "1.0.0",
+      files: ["components/button/index.ts", "components/button/legacy.ts"]
+    };
+    await mkdir(join(root, "components/button"), { recursive: true });
+    await writeFile(
+      join(root, "components/button/index.ts"),
+      "export const name = \"previous\";"
+    );
+    const registry = client({
+      button: component("button", {
+        version: "2.0.0",
+        files: [{ name: "index.ts", content: "export const name = \"next\";" }]
+      })
+    });
+    const plan = await createInstallPlan(registry, config, ["button"], {
+      root,
+      overwrite: true,
+      dryRun: true
+    });
+    const reports = componentUpdateReports(config, plan, root);
+    const paint = (name: string) => (text: string) => `${name}(${text})`;
+
+    expect(
+      formatUpdate(reports, {
+        gray: paint("gray"),
+        green: paint("green"),
+        red: paint("red"),
+        dim: paint("dim")
+      })
+    ).toBe(
+      [
+        "button",
+        "  red(1.0.0) dim(→) green(2.0.0)",
+        "  green(overwrite) green(components/button/index.ts)",
+        "  red(removed  ) red(components/button/legacy.ts)"
+      ].join("\n")
+    );
+  });
+
+  it("leaves an unchanged version uncolored and grays matching files", () => {
+    const paint = (name: string) => (text: string) => `${name}(${text})`;
+
+    expect(
+      formatUpdate(
+        [
+          {
+            name: "field",
+            previousVersion: "1.0.0",
+            version: "1.0.0",
+            files: [{ status: "unchanged", path: "components/field/index.ts" }]
+          }
+        ],
+        {
+          gray: paint("gray"),
+          green: paint("green"),
+          red: paint("red"),
+          dim: paint("dim")
+        }
+      )
+    ).toBe(
+      ["field", "  gray(unchanged) gray(components/field/index.ts)"].join("\n")
+    );
   });
 });

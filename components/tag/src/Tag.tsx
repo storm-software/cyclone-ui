@@ -322,10 +322,7 @@ const TagText = createStyledHOC(
   ({ children, color, size, ...props }, forwardedRef) => {
     const context = TagContext.useStyledContext();
     const edit = useContext(TagEditContext);
-    const themeColor = getTextColor(
-      context.variant as TagVariant | undefined,
-      context.outlined
-    );
+    const themeColor = getTextColor(context.variant, context.outlined);
     const baseColor = color ?? themeColor;
     const hoveredColor = getHoveredColor(themeColor);
     const textSize = (size ?? context.size) as FontSizeTokens | number | true;
@@ -401,7 +398,7 @@ const TagIcon = createStyledHOC(
     const iconSize =
       (typeof finalSize === "number"
         ? finalSize * 0.5
-        : getFontSize(finalSize as FontSizeTokens)) * scaleIcon;
+        : getFontSize(finalSize)) * scaleIcon;
 
     const getThemedIcon = useGetThemedIcon({
       size: iconSize,
@@ -538,8 +535,7 @@ const TagRemoveButton = createStyledHOC(
           event?.stopPropagation?.();
           onPress?.(event);
         }}>
-        <TagIcon
-          color={getTextColor(variant as TagVariant | undefined, outlined)}>
+        <TagIcon color={getTextColor(variant, outlined)}>
           <Close />
         </TagIcon>
       </TagRemoveButtonFrame>

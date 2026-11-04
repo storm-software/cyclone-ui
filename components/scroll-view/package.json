@@ -18,8 +18,8 @@
     "react-native": "catalog:"
   },
   "dependencies": {
-    "@tamagui/core": "catalog:",
     "@tamagui/constants": "catalog:",
+    "@tamagui/core": "catalog:",
     "@tamagui/scroll-view": "catalog:"
   },
   "devDependencies": {

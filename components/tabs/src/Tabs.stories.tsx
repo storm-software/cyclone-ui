@@ -146,9 +146,9 @@ export const Fluid: Story = {
     const tabList = within(canvasElement).getByRole("tablist");
 
     await expect(tabList.parentElement?.querySelector("canvas")).not.toBeNull();
-    await expect(
-      tabList.querySelectorAll("[data-fluid-overlay]")
-    ).toHaveLength(3);
+    await expect(tabList.querySelectorAll("[data-fluid-overlay]")).toHaveLength(
+      3
+    );
   }
 };
 

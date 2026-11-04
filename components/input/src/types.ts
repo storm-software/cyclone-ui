@@ -16,10 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import type {
-  FieldLabelPlacement,
-  FormControlSize
-} from "@cyclone-ui/helpers";
+import type { FieldLabelPlacement, FormControlSize } from "@cyclone-ui/helpers";
 import type {
   ColorTokens,
   TamaguiComponentPropsBaseBase,
@@ -143,6 +140,16 @@ export type InputComponentProps = Omit<ViewProps, "onChange" | "onInput"> &
     size?: FormControlSize;
     numberOfLines?: number;
   };
+
+export type InputBehaviorContextProps = Pick<
+  InputContextProps,
+  "onChange" | "onInput" | "onFocus" | "onBlur"
+>;
+
+export type InputStyleContextProps = Omit<
+  InputContextProps,
+  keyof InputBehaviorContextProps
+>;
 
 export interface InputContextProps {
   /**

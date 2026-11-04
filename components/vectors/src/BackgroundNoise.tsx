@@ -21,7 +21,6 @@
 import type { IconProps } from "@tamagui/helpers-icon";
 import { useCurrentColor } from "@tamagui/helpers-tamagui";
 import { memo } from "react";
-import type { SvgProps } from "react-native-svg";
 import * as ReactNativeSvg from "react-native-svg";
 import { Defs, Rect, Svg } from "react-native-svg";
 import type { ThemedIconBodyProps } from "./themed-icon";
@@ -38,11 +37,7 @@ const Icon = (props: ThemedIconBodyProps<IconProps>) => {
   const color = useCurrentColor((props.color || "on-primary") as any);
 
   return (
-    <Svg
-      viewBox="0 0 700 700"
-      width="700"
-      height="700"
-      {...(props as SvgProps)}>
+    <Svg viewBox="0 0 700 700" width="700" height="700" {...props}>
       <Defs>
         <Filter
           id="noise-filter"

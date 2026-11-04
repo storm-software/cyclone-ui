@@ -43,33 +43,29 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 A `Page` compound component that provides the base layout of an application page: a banner, top navigation, a collapsible and resizable side navigation, the main content and an optional panel. Building every page on it keeps applications consistent in structure, spacing and behavior.
 
-<!-- START doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-## Table of Contents
 
-- [Page](#page)
-  - [Table of Contents](#table-of-contents)
-  - [Quick Features](#quick-features)
-  - [Installing](#installing)
-  - [Usage](#usage)
-    - [Layout areas](#layout-areas)
-    - [Side nav](#side-nav)
-    - [Panel](#panel)
-    - [Skip links](#skip-links)
-  - [Reduced Package Size](#reduced-package-size)
-  - [Development](#development)
-    - [Building](#building)
-    - [Running unit tests](#running-unit-tests)
-    - [Linting](#linting)
-  - [Storm Workspaces](#storm-workspaces)
-  - [Roadmap](#roadmap)
-  - [Support](#support)
-  - [License](#license)
-    - [Documentation](#documentation)
-  - [Changelog](#changelog)
-  - [Contributing](#contributing)
-  - [Contributors](#contributors)
-    - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer-1)
+- [Quick Features](#quick-features)
+- [Installing](#installing)
+- [Usage](#usage)
+  - [Layout areas](#layout-areas)
+  - [Side nav](#side-nav)
+  - [Panel](#panel)
+  - [Skip links](#skip-links)
+- [Reduced Package Size](#reduced-package-size)
+- [Development](#development)
+  - [Building](#building)
+  - [Running unit tests](#running-unit-tests)
+  - [Linting](#linting)
+- [Storm Workspaces](#storm-workspaces)
+- [Roadmap](#roadmap)
+- [Support](#support)
+- [License](#license)
+  - [Documentation](#documentation)
+- [Changelog](#changelog)
+- [Contributing](#contributing)
+- [Contributors](#contributors)
 
 <!-- END doctoc -->
 

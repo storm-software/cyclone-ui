@@ -18,14 +18,14 @@
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/spinner": "workspace:*",
+    "@cyclone-ui/vectors": "workspace:*",
+    "@cyclone-ui/visually-hidden": "workspace:*",
     "@stryke/type-checks": "catalog:",
     "@stryke/types": "catalog:",
     "@tamagui/core": "catalog:",
     "pdfjs-dist": "4.8.69",
-    "react-pdf": "^9.2.1",
-    "@cyclone-ui/spinner": "workspace:*",
-    "@cyclone-ui/vectors": "workspace:*",
-    "@cyclone-ui/visually-hidden": "workspace:*"
+    "react-pdf": "^9.2.1"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

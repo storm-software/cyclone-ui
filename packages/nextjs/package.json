@@ -83,10 +83,12 @@
     "@powerlines/plugin-tsdown": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/next-plugin": "catalog:",
+    "@tamagui/react-native-svg": "catalog:",
     "@types/react": "catalog:",
     "next": "catalog:",
     "powerlines": "catalog:",
     "react": "catalog:",
+    "react-native": "catalog:",
     "react-native-web": "catalog:"
   },
   "publishConfig": {

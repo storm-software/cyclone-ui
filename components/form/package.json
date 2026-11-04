@@ -18,9 +18,9 @@
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/state": "workspace:*",
     "@tamagui/core": "catalog:",
-    "@tamagui/helpers": "catalog:",
-    "@cyclone-ui/state": "workspace:*"
+    "@tamagui/helpers": "catalog:"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",
