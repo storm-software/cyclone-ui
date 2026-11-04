@@ -1,10 +1,12 @@
-import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import { defineConfig } from "vitest/config";
 
 export default defineConfig(() => ({
+  resolve: {
+    tsconfigPaths: true
+  },
   root: import.meta.dirname,
   cacheDir: "../../node_modules/.vite/packages/stylelint-plugin",
-  plugins: [nxViteTsPaths()],
+  plugins: [],
   test: {
     name: "stylelint-plugin",
     watch: false,

@@ -1,4 +1,3 @@
-import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import react from "@vitejs/plugin-react-swc";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "vitest/config";
@@ -7,6 +6,7 @@ export default defineConfig(() => ({
   root: import.meta.dirname,
   cacheDir: "../../node_modules/.vite/components/type-table",
   resolve: {
+    tsconfigPaths: true,
     alias: [
       {
         find: "react-native-svg",
@@ -57,8 +57,7 @@ export default defineConfig(() => ({
           options.jsc.transform.react.development = false;
         }
       }
-    }),
-    nxViteTsPaths()
+    })
   ],
   test: {
     name: "type-table",

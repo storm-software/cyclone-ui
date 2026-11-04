@@ -1,4 +1,3 @@
-import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
 import { playwright } from "@vitest/browser-playwright";
 import { dirname, join } from "node:path";
@@ -8,9 +7,12 @@ import { defineConfig } from "vitest/config";
 const projectRoot = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig(() => ({
+  resolve: {
+    tsconfigPaths: true
+  },
   root: import.meta.dirname,
   cacheDir: "../../node_modules/.vite/apps/storybook",
-  plugins: [nxViteTsPaths()],
+  plugins: [],
   test: {
     watch: false,
     projects: [

@@ -1,4 +1,3 @@
-import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import { defineConfig } from "vitest/config";
 import {
   componentDistJsx,
@@ -8,8 +7,11 @@ import {
 export default defineConfig(() => ({
   root: import.meta.dirname,
   cacheDir: "../../node_modules/.vite/components/like-button",
-  resolve: { alias: reactNativeWebAliases },
-  plugins: [nxViteTsPaths(), componentDistJsx()],
+  resolve: {
+    tsconfigPaths: true,
+    alias: reactNativeWebAliases
+  },
+  plugins: [componentDistJsx()],
   // tsconfig uses `jsx: preserve`; tests need the JSX transformed.
   oxc: { jsx: { runtime: "automatic" as const } },
   test: {
