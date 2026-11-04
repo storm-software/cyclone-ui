@@ -26,14 +26,8 @@ import {
   writeSuccess
 } from "@storm-software/config-tools/logger/console";
 import { execFileSync } from "node:child_process";
-import {
-  existsSync,
-  mkdirSync,
-  readFileSync,
-  readdirSync,
-  writeFileSync
-} from "node:fs";
-import { dirname, join } from "node:path";
+import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
 import {
   consistentFontVersion,
   fontVersionToSemver
@@ -86,22 +80,11 @@ export default async function runExecutor(
       config
     );
 
-    const result = await executor(
-      {
-        ...options,
-        bucketId: "storm-public",
-        bucketPath: `fonts/${projectRoot.replace(/.*fonts\//, "")}`,
-        clean: false,
-        path: outputPath,
-        writeMetaJson: false
-      },
-      context
-    );
-
     const nixPath = join(projectRoot, "package.nix");
-    if (result.success && !options.dryRun && existsSync(nixPath)) {
-      // Attach a nixpkgs-ready derivation with the tag tarball's hash to the
-      // GitHub release created by `nx release` for this version.
+    if (!options.dryRun && existsSync(nixPath)) {
+      // Ship a nixpkgs-ready derivation with the tag tarball's hash next to
+      // the fonts on the CDN (GitHub releases are immutable once created, so
+      // assets can't be attached after `nx release`).
       const tag = `${projectName}@${packageVersion}`;
       const { hash } = JSON.parse(
         execFileSync(
@@ -118,26 +101,23 @@ export default async function runExecutor(
           { encoding: "utf8" }
         )
       );
-      const releaseNixPath = joinPathFragments(
-        context.root,
-        "tmp",
-        project.root,
-        "package.nix"
-      );
-      mkdirSync(dirname(releaseNixPath), { recursive: true });
       writeFileSync(
-        releaseNixPath,
+        join(outputPath, "package.nix"),
         readFileSync(nixPath, "utf8").replace("lib.fakeHash", `"${hash}"`)
       );
-      execFileSync(
-        "gh",
-        ["release", "upload", tag, releaseNixPath, "--clobber"],
-        {
-          stdio: "inherit"
-        }
-      );
-      writeInfo(`Attached ${releaseNixPath} to the ${tag} release`, config);
     }
+
+    const result = await executor(
+      {
+        ...options,
+        bucketId: "storm-public",
+        bucketPath: `fonts/${projectRoot.replace(/.*fonts\//, "")}`,
+        clean: false,
+        path: outputPath,
+        writeMetaJson: false
+      },
+      context
+    );
 
     if (result.success) {
       writeSuccess(

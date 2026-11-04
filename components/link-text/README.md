@@ -69,7 +69,7 @@ A `LinkText` component used to render the body text of a page. It is a simple co
 
 ## Quick Features
 
-- Five color variants: `base`, `emphasis`, `ink`, `subtle`, and `subtlest`.
+- Four color variants: `base`, `emphasis`, `ink`, and `subtle`.
 - Four underline modes: `static`, `hover`, `initial`, and `none`.
 - `sm` and `md` sizes, a `cta` style for uppercase button-like text, and a `disabled` state.
 - `mixed`, `inverse`, and `themed` options to control text and underline colors.

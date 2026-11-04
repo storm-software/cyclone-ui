@@ -62,7 +62,7 @@ export const HeadingText = ({
   />
 );
 
-export type TextVariant = "emphasis" | "ink" | "subtle" | "subtlest";
+export type TextVariant = "emphasis" | "ink" | "subtle";
 
 export interface BodyTextProps extends ComponentProps<typeof Text> {
   size?: "xxs" | "xs" | "sm" | "md" | "lg";

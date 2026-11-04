@@ -97,20 +97,7 @@ export const SubtleExternal: Story = {
   }
 };
 
-export const Subtlest: Story = {
-  args: {
-    href: "#",
-    variant: "subtlest"
-  }
-};
 
-export const SubtlestExternal: Story = {
-  args: {
-    href: "#",
-    variant: "subtlest",
-    external: true
-  }
-};
 
 export const CallToAction: Story = {
   args: {

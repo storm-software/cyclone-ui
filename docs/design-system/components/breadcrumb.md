@@ -42,7 +42,7 @@ import { Breadcrumb } from "@cyclone-ui/breadcrumb";
 | --------------------- | ----------------------------------- | ------------- | --------------------------------------------------------------------------- |
 | `currentName`         | `string`                            | -             | The name of the current page. Required. If empty, `Current` is shown.       |
 | `separator`           | `"chevron" \| "double" \| "slash"`  | `"slash"`     | The mark between items.                                                     |
-| `variant`             | link text variant                   | `"base"`      | The link color. The stories use `base`, `emphasis`, `ink`, `subtle`, and `subtlest`. |
+| `variant`             | link text variant                   | `"base"`      | The link color. The stories use `base`, `emphasis`, `ink`, `subtle`. |
 | `mixed`               | `boolean`                           | `false`       | Passed to each link. See [Link Text](./link-text.md).                       |
 | `inverse`             | `boolean`                           | `false`       | Passed to each link.                                                        |
 | `themed`              | `boolean`                           | `false`       | Colors links with the `primary` token of the theme.                         |

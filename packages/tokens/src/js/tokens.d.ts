@@ -116,7 +116,6 @@ declare const tokens: {
     emphasis: DesignToken;
     ink: DesignToken;
     subtle: DesignToken;
-    subtlest: DesignToken;
     outline: DesignToken;
     hairline: DesignToken;
     sunken: DesignToken;
@@ -357,10 +356,6 @@ declare const tokens: {
     "subtle-active": DesignToken;
     "subtle-inactive": DesignToken;
     "subtle-disabled": DesignToken;
-    "subtlest-hovered": DesignToken;
-    "subtlest-active": DesignToken;
-    "subtlest-inactive": DesignToken;
-    "subtlest-disabled": DesignToken;
     "sunken-hovered": DesignToken;
     "sunken-active": DesignToken;
     "sunken-inactive": DesignToken;

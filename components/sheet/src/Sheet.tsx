@@ -246,7 +246,7 @@ const SheetSheetOverlay = styled(TamaguiSheet.Overlay, {
 // v3's `Sheet.Handle` ships unstyled (no size), so both handles share this skin.
 const sheetHandleStyles = {
   position: "absolute" as const,
-  backgroundColor: "subtlest",
+  backgroundColor: "subtle",
   borderRadius: 100,
   cursor: "grab press:grabbing",
   opacity: "0.5 hover:0.7",

@@ -26,7 +26,7 @@ import type {
   InputChangeEventHandler,
   InputValueProps
 } from "@cyclone-ui/input";
-import { Input, InputContext } from "@cyclone-ui/input";
+import { Input, InputContext, useInputBehavior } from "@cyclone-ui/input";
 import type { GetProps } from "@tamagui/core";
 import {
   createStyledHOC,
@@ -216,7 +216,8 @@ const SearchInputTextBox = createStyledHOC(
     }: SearchInputTextBoxProps,
     forwardedRef
   ) => {
-    const { disabled, size, onChange } = InputContext.useStyledContext();
+    const { disabled, size } = InputContext.useStyledContext();
+    const { onChange } = useInputBehavior();
     const { suggestions, filterSuggestions, renderSuggestion, value } =
       use(SearchInputContext);
 

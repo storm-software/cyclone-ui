@@ -22,7 +22,7 @@ import { BodyText } from "@cyclone-ui/body-text";
 import { ContextMenu, getContextMenuSize } from "@cyclone-ui/context-menu";
 import type { FormControlSize } from "@cyclone-ui/helpers";
 import { useFormControl } from "@cyclone-ui/helpers";
-import { MapMarkerRadius, MapTrifold } from "@cyclone-ui/icons";
+import { MapMarker, MapMarkerRadius, MapTrifold } from "@cyclone-ui/icons";
 import type { SearchInputProps } from "@cyclone-ui/search-input";
 import { highlightMatches, SearchInput } from "@cyclone-ui/search-input";
 import type { GetProps } from "@tamagui/core";
@@ -361,7 +361,7 @@ const AddressInputMap = createStyledHOC(
     if (!address) {
       return (
         <AddressInputMapFrame ref={forwardedRef} {...props}>
-          <MapTrifold color="subtle" size="10xl" />
+          <MapTrifold color="subtle" size="16xl" />
         </AddressInputMapFrame>
       );
     }
@@ -431,8 +431,8 @@ const AddressInputMap = createStyledHOC(
             width={32}
             height={32}
             borderRadius="full"
-            backgroundColor="primary">
-            <MapMarkerRadius color="on-primary" size="2xl" variant="filled" />
+            backgroundColor="secondary">
+            <MapMarker color="primary" size="5xl" variant="filled" />
           </View>
         </View>
 

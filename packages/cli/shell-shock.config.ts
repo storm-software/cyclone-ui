@@ -61,7 +61,7 @@ const config: UserConfig = defineConfig({
     razorwind({
       root: "../..",
       guidelines: [componentProtectionGuideline],
-      // The default heuristic picks unrelated tokens (e.g. `subtlest` for sub-headings), so map the semantic roles directly
+      // The default heuristic picks unrelated tokens (for example, a color token for sub-headings), so map the semantic roles directly
       mapTheme: spec => {
         const color = tokenColors(
           selectThemeTokens(spec.tokens, "dark").tokens

@@ -704,14 +704,6 @@
             "$description": "Lower-emphasis text and icon color for supporting content that should recede behind body copy. Use it for metadata, secondary labels and decorative icons. Used by Breadcrumb separators, EyebrowText, TableOfContents entries, FileTree, DatePicker, inactive Slider values and NavigationHeader links.",
             "filePath": "/home/development/repos/cyclone-ui/packages/themes/src/tokens/semantic/dark.tokens.json",
             "isSource": true
-          },
-          "subtlest": {
-            "$type": "color",
-            "colorSpace": "display-p3",
-            "$value": "{color.neutral.8}",
-            "$description": "Lowest-emphasis text and icon color, for content that should be legible but barely noticed. Use it for hints and optional markers. Used by Field for the `optional` marker beside a field label; avoid it for anything the user must read.",
-            "filePath": "/home/development/repos/cyclone-ui/packages/themes/src/tokens/semantic/dark.tokens.json",
-            "isSource": true
           }
         },
         "surface": {

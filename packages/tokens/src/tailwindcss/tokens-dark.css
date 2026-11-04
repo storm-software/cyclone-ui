@@ -583,7 +583,7 @@
   --blur-xl: 24px;
   --blur-xs: 4px;
   --color-base-backdrop: #222222bf;
-  --color-base-border: #56565a;
+  --color-base-border: #383a3f;
   --color-base-link: #00bcff;
   --color-base-link-active: var(--color-base-link-hovered);
   --color-base-link-disabled: #436d83;
@@ -596,10 +596,10 @@
   --color-base-primary-disabled: #858587;
   --color-base-primary-hovered: #aeaeae;
   --color-base-primary-inactive: #636363;
-  --color-base-secondary: var(--color-neutral-11);
+  --color-base-secondary: var(--color-neutral-12);
   --color-base-secondary-active: var(--color-base-secondary-hovered);
-  --color-base-secondary-disabled: #444447;
-  --color-base-secondary-hovered: #535358;
+  --color-base-secondary-disabled: #3b3c3f;
+  --color-base-secondary-hovered: #37383d;
   --color-base-secondary-inactive: var(--color-base-primary-inactive);
   --color-black: #0c0c0d;
   --color-blue-1: #abcaff;
@@ -780,7 +780,7 @@
   --color-orange-9: #803000;
   --color-outline: var(--color-neutral-10);
   --color-outline-active: var(--color-white);
-  --color-outline-disabled: var(--color-subtlest-disabled);
+  --color-outline-disabled: #494a4d;
   --color-outline-hovered: var(--color-white);
   --color-outline-inactive: var(--color-base-primary-inactive);
   --color-pink-1: #f5c7e4;
@@ -825,11 +825,6 @@
   --color-subtle-disabled: #606063;
   --color-subtle-hovered: #cacbcd;
   --color-subtle-inactive: var(--color-base-primary-inactive);
-  --color-subtlest: var(--color-neutral-10);
-  --color-subtlest-active: var(--color-white);
-  --color-subtlest-disabled: #494a4d;
-  --color-subtlest-hovered: #757679;
-  --color-subtlest-inactive: var(--color-base-primary-inactive);
   --color-success-backdrop: #002100bf;
   --color-success-border: #217452;
   --color-success-link: var(--color-success-primary);
@@ -864,8 +859,8 @@
   --color-surface-disabled: #29292b;
   --color-surface-hovered: #212123;
   --color-surface-inactive: #171719;
-  --color-warning-backdrop: #320d00bf;
-  --color-warning-border: #ffc366;
+  --color-warning-backdrop: #350500bf;
+  --color-warning-border: #be8e3e;
   --color-warning-link: var(--color-warning-primary);
   --color-warning-link-active: var(--color-warning-primary-hovered);
   --color-warning-link-disabled: var(--color-warning-primary-disabled);
@@ -876,18 +871,18 @@
   --color-warning-outline: var(--color-warning-primary);
   --color-warning-outline-active: var(--color-warning-outline-hovered);
   --color-warning-outline-disabled: var(--color-warning-primary-disabled);
-  --color-warning-outline-hovered: #8a6100;
+  --color-warning-outline-hovered: #8c5a00;
   --color-warning-outline-inactive: var(--color-warning-primary-inactive);
-  --color-warning-primary: var(--color-yellow-1);
+  --color-warning-primary: var(--color-yellow-2);
   --color-warning-primary-active: var(--color-warning-primary-hovered);
-  --color-warning-primary-disabled: #81745e;
-  --color-warning-primary-hovered: #b38834;
-  --color-warning-primary-inactive: #fff8a5;
-  --color-warning-secondary: var(--color-yellow-6);
+  --color-warning-primary-disabled: #807056;
+  --color-warning-primary-hovered: #b37f00;
+  --color-warning-primary-inactive: #fff592;
+  --color-warning-secondary: var(--color-yellow-8);
   --color-warning-secondary-active: var(--color-warning-secondary-hovered);
-  --color-warning-secondary-disabled: #776446;
-  --color-warning-secondary-hovered: #ffd96d;
-  --color-warning-secondary-inactive: #ae6f00;
+  --color-warning-secondary-disabled: #635540;
+  --color-warning-secondary-hovered: #d1a052;
+  --color-warning-secondary-inactive: #7e5100;
   --color-white: #ffffff;
   --color-yellow-1: #facd7b;
   --color-yellow-2: #f9c25e;
@@ -1015,12 +1010,12 @@
   --ring-success-subtle: 0px 0px 0px 1px #45c79126;
   --ring-success-subtle-offset:
     0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #45c79126;
-  --ring-warning: 0px 0px 0px 3px #facd7b26;
+  --ring-warning: 0px 0px 0px 3px #f9c25e26;
   --ring-warning-offset:
-    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #facd7b26;
-  --ring-warning-subtle: 0px 0px 0px 1px #facd7b26;
+    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #f9c25e26;
+  --ring-warning-subtle: 0px 0px 0px 1px #f9c25e26;
   --ring-warning-subtle-offset:
-    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #facd7b26;
+    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f9c25e26;
   --shadow-2xl: 0px 25px 50px -12px #00000040;
   --shadow-2xs: 0px 1px 0px 0px #0000000d;
   --shadow-lg: 0px 10px 15px -3px #0000001a, 0px 4px 6px -4px #0000001a;

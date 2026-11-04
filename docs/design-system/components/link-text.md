@@ -35,7 +35,7 @@ import { LinkText } from "@cyclone-ui/link-text";
 
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
-| `variant` | `"base" \| "emphasis" \| "ink" \| "subtle" \| "subtlest"` | `"base"` | Sets the text color. `base` uses the `link` color. The other values use the color token of the same name. |
+| `variant` | `"base" \| "emphasis" \| "ink" \| "subtle"` | `"base"` | Sets the text color. `base` uses the `link` color. The other values use the color token of the same name. |
 | `underline` | `"hover" \| "initial" \| "static" \| "none"` | `"static"` | Sets when the underline shows. |
 | `size` | `"sm" \| "md"` | `"md"` | Sets the body font size and line height. |
 | `cta` | `boolean` | `false` | Uses the `display` font in small, uppercase, weight 600 text. |

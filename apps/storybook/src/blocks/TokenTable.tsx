@@ -773,16 +773,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.subtlest",
-      type: "color",
-      value: "#555659",
-      cssVar: "--cu-color-subtlest",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.outline",
       type: "color",
       value: "#555659",
@@ -864,7 +854,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary",
       type: "color",
-      value: "#46464a",
+      value: "#2d2e33",
       cssVar: "--cu-color-base-secondary",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
@@ -912,7 +902,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.border",
       type: "color",
-      value: "#56565a",
+      value: "#383a3f",
       cssVar: "--cu-color-base-border",
       description:
         "Generated base border color for secondary backgrounds (secondary, 15% brighter)",
@@ -962,7 +952,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-hovered",
       type: "color",
-      value: "#535358",
+      value: "#37383d",
       cssVar: "--cu-color-base-secondary-hovered",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 13% brighter)",
@@ -972,7 +962,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-active",
       type: "color",
-      value: "#535358",
+      value: "#37383d",
       cssVar: "--cu-color-base-secondary-active",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 13% brighter)",
@@ -992,7 +982,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-disabled",
       type: "color",
-      value: "#444447",
+      value: "#3b3c3f",
       cssVar: "--cu-color-base-secondary-disabled",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -1465,7 +1455,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary",
       type: "color",
-      value: "#facd7b",
+      value: "#f9c25e",
       cssVar: "--cu-color-warning-primary",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
@@ -1475,7 +1465,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary",
       type: "color",
-      value: "#df9d24",
+      value: "#a2731e",
       cssVar: "--cu-color-warning-secondary",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme.",
@@ -1485,7 +1475,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link",
       type: "color",
-      value: "#facd7b",
+      value: "#f9c25e",
       cssVar: "--cu-color-warning-link",
       description: "Generated warning hyperlink text color (matches primary)",
       theme: undefined,
@@ -1494,7 +1484,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline",
       type: "color",
-      value: "#facd7b",
+      value: "#f9c25e",
       cssVar: "--cu-color-warning-outline",
       description:
         "Generated warning border and divider color (matches primary)",
@@ -1514,7 +1504,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.backdrop",
       type: "color",
-      value: "#320d00bf",
+      value: "#350500bf",
       cssVar: "--cu-color-warning-backdrop",
       description:
         "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -1534,7 +1524,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.border",
       type: "color",
-      value: "#ffc366",
+      value: "#be8e3e",
       cssVar: "--cu-color-warning-border",
       description:
         "Generated warning border color for secondary backgrounds (secondary, 15% brighter)",
@@ -1544,7 +1534,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-hovered",
       type: "color",
-      value: "#b38834",
+      value: "#b37f00",
       cssVar: "--cu-color-warning-primary-hovered",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
@@ -1554,7 +1544,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-active",
       type: "color",
-      value: "#b38834",
+      value: "#b37f00",
       cssVar: "--cu-color-warning-primary-active",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)",
@@ -1564,7 +1554,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-inactive",
       type: "color",
-      value: "#fff8a5",
+      value: "#fff592",
       cssVar: "--cu-color-warning-primary-inactive",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
@@ -1574,7 +1564,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-disabled",
       type: "color",
-      value: "#81745e",
+      value: "#807056",
       cssVar: "--cu-color-warning-primary-disabled",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -1584,7 +1574,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-hovered",
       type: "color",
-      value: "#ffd96d",
+      value: "#d1a052",
       cssVar: "--cu-color-warning-secondary-hovered",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 25% brighter)",
@@ -1594,7 +1584,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-active",
       type: "color",
-      value: "#ffd96d",
+      value: "#d1a052",
       cssVar: "--cu-color-warning-secondary-active",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (active, 25% brighter)",
@@ -1604,7 +1594,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-inactive",
       type: "color",
-      value: "#ae6f00",
+      value: "#7e5100",
       cssVar: "--cu-color-warning-secondary-inactive",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (inactive, 20% darker)",
@@ -1614,7 +1604,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-disabled",
       type: "color",
-      value: "#776446",
+      value: "#635540",
       cssVar: "--cu-color-warning-secondary-disabled",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -1624,7 +1614,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-hovered",
       type: "color",
-      value: "#b38834",
+      value: "#b37f00",
       cssVar: "--cu-color-warning-link-hovered",
       description:
         "Generated warning hyperlink text color (matches primary) (hovered, 25% darker)",
@@ -1634,7 +1624,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-active",
       type: "color",
-      value: "#b38834",
+      value: "#b37f00",
       cssVar: "--cu-color-warning-link-active",
       description:
         "Generated warning hyperlink text color (matches primary) (active, 25% darker)",
@@ -1644,7 +1634,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-inactive",
       type: "color",
-      value: "#fff8a5",
+      value: "#fff592",
       cssVar: "--cu-color-warning-link-inactive",
       description:
         "Generated warning hyperlink text color (matches primary) (inactive, 20% brighter)",
@@ -1654,7 +1644,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-disabled",
       type: "color",
-      value: "#81745e",
+      value: "#807056",
       cssVar: "--cu-color-warning-link-disabled",
       description:
         "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -1664,7 +1654,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-hovered",
       type: "color",
-      value: "#8a6100",
+      value: "#8c5a00",
       cssVar: "--cu-color-warning-outline-hovered",
       description:
         "Generated warning border and divider color (matches primary) (hovered, 40% darker)",
@@ -1674,7 +1664,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-active",
       type: "color",
-      value: "#8a6100",
+      value: "#8c5a00",
       cssVar: "--cu-color-warning-outline-active",
       description:
         "Generated warning border and divider color (matches primary) (active, 40% darker)",
@@ -1684,7 +1674,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-inactive",
       type: "color",
-      value: "#fff8a5",
+      value: "#fff592",
       cssVar: "--cu-color-warning-outline-inactive",
       description:
         "Generated warning border and divider color (matches primary) (inactive, 20% brighter)",
@@ -1694,7 +1684,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-disabled",
       type: "color",
-      value: "#81745e",
+      value: "#807056",
       cssVar: "--cu-color-warning-outline-disabled",
       description:
         "Generated warning border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -2781,46 +2771,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#606063",
       cssVar: "--cu-color-subtle-disabled",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-hovered",
-      type: "color",
-      value: "#757679",
-      cssVar: "--cu-color-subtlest-hovered",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-active",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-subtlest-active",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, dark contrast primitive)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-inactive",
-      type: "color",
-      value: "#636363",
-      cssVar: "--cu-color-subtlest-inactive",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-disabled",
-      type: "color",
-      value: "#494a4d",
-      cssVar: "--cu-color-subtlest-disabled",
       description:
         "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
@@ -5642,7 +5592,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px #facd7b26",
+      value: "0px 0px 0px 3px #f9c25e26",
       cssVar: "--cu-ring-warning",
       description: "Generated warning 3px focus ring with no gap",
       theme: undefined,
@@ -5651,7 +5601,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #facd7b26",
+      value: "0px 0px 0px 1px #f9c25e26",
       cssVar: "--cu-ring-warning-subtle",
       description: "Generated warning 1px outline focus ring with no gap",
       theme: undefined,
@@ -5660,7 +5610,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #facd7b26",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #f9c25e26",
       cssVar: "--cu-ring-warning-offset",
       description: "Generated warning 3px focus ring with a 3px gap",
       theme: undefined,
@@ -5669,7 +5619,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #facd7b26",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f9c25e26",
       cssVar: "--cu-ring-warning-subtle-offset",
       description: "Generated warning 1px focus ring with a 2px gap",
       theme: undefined,
@@ -6545,16 +6495,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.subtlest",
-      type: "color",
-      value: "#626364",
-      cssVar: "--cu-color-subtlest",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.outline",
       type: "color",
       value: "#626364",
@@ -6636,7 +6576,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary",
       type: "color",
-      value: "#57575a",
+      value: "#45464a",
       cssVar: "--cu-color-base-secondary",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
@@ -6684,7 +6624,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.border",
       type: "color",
-      value: "#636365",
+      value: "#4d4f52",
       cssVar: "--cu-color-base-border",
       description:
         "Generated base border color for secondary backgrounds (secondary, 15% brighter)",
@@ -6734,7 +6674,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-hovered",
       type: "color",
-      value: "#616164",
+      value: "#4d4d51",
       cssVar: "--cu-color-base-secondary-hovered",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 13% brighter)",
@@ -6744,7 +6684,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-active",
       type: "color",
-      value: "#616164",
+      value: "#4d4d51",
       cssVar: "--cu-color-base-secondary-active",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 13% brighter)",
@@ -6764,7 +6704,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-disabled",
       type: "color",
-      value: "#565658",
+      value: "#4f5052",
       cssVar: "--cu-color-base-secondary-disabled",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -7237,7 +7177,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary",
       type: "color",
-      value: "#d5b67d",
+      value: "#d0ad6d",
       cssVar: "--cu-color-warning-primary",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
@@ -7247,7 +7187,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary",
       type: "color",
-      value: "#b5904d",
+      value: "#917542",
       cssVar: "--cu-color-warning-secondary",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme.",
@@ -7257,7 +7197,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link",
       type: "color",
-      value: "#d5b67d",
+      value: "#d0ad6d",
       cssVar: "--cu-color-warning-link",
       description: "Generated warning hyperlink text color (matches primary)",
       theme: undefined,
@@ -7266,7 +7206,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline",
       type: "color",
-      value: "#d5b67d",
+      value: "#d0ad6d",
       cssVar: "--cu-color-warning-outline",
       description:
         "Generated warning border and divider color (matches primary)",
@@ -7286,7 +7226,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.backdrop",
       type: "color",
-      value: "#562919bf",
+      value: "#581f1abf",
       cssVar: "--cu-color-warning-backdrop",
       description:
         "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -7306,7 +7246,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.border",
       type: "color",
-      value: "#d6ae71",
+      value: "#a2875b",
       cssVar: "--cu-color-warning-border",
       description:
         "Generated warning border color for secondary backgrounds (secondary, 15% brighter)",
@@ -7316,7 +7256,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-hovered",
       type: "color",
-      value: "#9b8353",
+      value: "#9c7c2d",
       cssVar: "--cu-color-warning-primary-hovered",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
@@ -7326,7 +7266,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-active",
       type: "color",
-      value: "#9b8353",
+      value: "#9c7c2d",
       cssVar: "--cu-color-warning-primary-active",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)",
@@ -7336,7 +7276,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-inactive",
       type: "color",
-      value: "#e0da93",
+      value: "#ddd589",
       cssVar: "--cu-color-warning-primary-inactive",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
@@ -7346,7 +7286,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-disabled",
       type: "color",
-      value: "#7e776a",
+      value: "#7d7465",
       cssVar: "--cu-color-warning-primary-disabled",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -7356,7 +7296,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-hovered",
       type: "color",
-      value: "#d7bd75",
+      value: "#b19467",
       cssVar: "--cu-color-warning-secondary-hovered",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 25% brighter)",
@@ -7366,7 +7306,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-active",
       type: "color",
-      value: "#d7bd75",
+      value: "#b19467",
       cssVar: "--cu-color-warning-secondary-active",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (active, 25% brighter)",
@@ -7376,7 +7316,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-inactive",
       type: "color",
-      value: "#9a722d",
+      value: "#805f25",
       cssVar: "--cu-color-warning-secondary-inactive",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (inactive, 20% darker)",
@@ -7386,7 +7326,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-disabled",
       type: "color",
-      value: "#776c5a",
+      value: "#6b6254",
       cssVar: "--cu-color-warning-secondary-disabled",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -7396,7 +7336,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-hovered",
       type: "color",
-      value: "#9b8353",
+      value: "#9c7c2d",
       cssVar: "--cu-color-warning-link-hovered",
       description:
         "Generated warning hyperlink text color (matches primary) (hovered, 25% darker)",
@@ -7406,7 +7346,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-active",
       type: "color",
-      value: "#9b8353",
+      value: "#9c7c2d",
       cssVar: "--cu-color-warning-link-active",
       description:
         "Generated warning hyperlink text color (matches primary) (active, 25% darker)",
@@ -7416,7 +7356,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-inactive",
       type: "color",
-      value: "#e0da93",
+      value: "#ddd589",
       cssVar: "--cu-color-warning-link-inactive",
       description:
         "Generated warning hyperlink text color (matches primary) (inactive, 20% brighter)",
@@ -7426,7 +7366,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-disabled",
       type: "color",
-      value: "#7e776a",
+      value: "#7d7465",
       cssVar: "--cu-color-warning-link-disabled",
       description:
         "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -7436,7 +7376,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-hovered",
       type: "color",
-      value: "#866a27",
+      value: "#876527",
       cssVar: "--cu-color-warning-outline-hovered",
       description:
         "Generated warning border and divider color (matches primary) (hovered, 40% darker)",
@@ -7446,7 +7386,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-active",
       type: "color",
-      value: "#866a27",
+      value: "#876527",
       cssVar: "--cu-color-warning-outline-active",
       description:
         "Generated warning border and divider color (matches primary) (active, 40% darker)",
@@ -7456,7 +7396,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-inactive",
       type: "color",
-      value: "#e0da93",
+      value: "#ddd589",
       cssVar: "--cu-color-warning-outline-inactive",
       description:
         "Generated warning border and divider color (matches primary) (inactive, 20% brighter)",
@@ -7466,7 +7406,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-disabled",
       type: "color",
-      value: "#7e776a",
+      value: "#7d7465",
       cssVar: "--cu-color-warning-outline-disabled",
       description:
         "Generated warning border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -8553,46 +8493,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#6a6a6b",
       cssVar: "--cu-color-subtle-disabled",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-hovered",
-      type: "color",
-      value: "#78797b",
-      cssVar: "--cu-color-subtlest-hovered",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-active",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-subtlest-active",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, dark contrast primitive)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-inactive",
-      type: "color",
-      value: "#6c6c6c",
-      cssVar: "--cu-color-subtlest-inactive",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-disabled",
-      type: "color",
-      value: "#595a5c",
-      cssVar: "--cu-color-subtlest-disabled",
       description:
         "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
@@ -11414,7 +11314,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px #facd7b26",
+      value: "0px 0px 0px 3px #f9c25e26",
       cssVar: "--cu-ring-warning",
       description: "Generated warning 3px focus ring with no gap",
       theme: undefined,
@@ -11423,7 +11323,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #facd7b26",
+      value: "0px 0px 0px 1px #f9c25e26",
       cssVar: "--cu-ring-warning-subtle",
       description: "Generated warning 1px outline focus ring with no gap",
       theme: undefined,
@@ -11432,7 +11332,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #facd7b26",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #f9c25e26",
       cssVar: "--cu-ring-warning-offset",
       description: "Generated warning 3px focus ring with a 3px gap",
       theme: undefined,
@@ -11441,7 +11341,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #facd7b26",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f9c25e26",
       cssVar: "--cu-ring-warning-subtle-offset",
       description: "Generated warning 1px focus ring with a 2px gap",
       theme: undefined,
@@ -12317,16 +12217,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.subtlest",
-      type: "color",
-      value: "#3f424a",
-      cssVar: "--cu-color-subtlest",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.outline",
       type: "color",
       value: "#3f424a",
@@ -12408,7 +12298,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary",
       type: "color",
-      value: "#2b2b33",
+      value: "#0b0b0e",
       cssVar: "--cu-color-base-secondary",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
@@ -12456,7 +12346,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.border",
       type: "color",
-      value: "#41414c",
+      value: "#191b21",
       cssVar: "--cu-color-base-border",
       description:
         "Generated base border color for secondary backgrounds (secondary, 15% brighter)",
@@ -12506,7 +12396,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-hovered",
       type: "color",
-      value: "#3d3d49",
+      value: "#18191e",
       cssVar: "--cu-color-base-secondary-hovered",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 13% brighter)",
@@ -12516,7 +12406,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-active",
       type: "color",
-      value: "#3d3d49",
+      value: "#18191e",
       cssVar: "--cu-color-base-secondary-active",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 13% brighter)",
@@ -12536,7 +12426,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-disabled",
       type: "color",
-      value: "#28282f",
+      value: "#1c1e22",
       cssVar: "--cu-color-base-secondary-disabled",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -13009,7 +12899,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary",
       type: "color",
-      value: "#ffe1ab",
+      value: "#ffd280",
       cssVar: "--cu-color-warning-primary",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
@@ -13019,7 +12909,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary",
       type: "color",
-      value: "#ffa706",
+      value: "#a26902",
       cssVar: "--cu-color-warning-secondary",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme.",
@@ -13029,7 +12919,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link",
       type: "color",
-      value: "#ffe1ab",
+      value: "#ffd280",
       cssVar: "--cu-color-warning-link",
       description: "Generated warning hyperlink text color (matches primary)",
       theme: undefined,
@@ -13038,7 +12928,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline",
       type: "color",
-      value: "#ffe1ab",
+      value: "#ffd280",
       cssVar: "--cu-color-warning-outline",
       description:
         "Generated warning border and divider color (matches primary)",
@@ -13078,7 +12968,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.border",
       type: "color",
-      value: "#ffd594",
+      value: "#da9421",
       cssVar: "--cu-color-warning-border",
       description:
         "Generated warning border color for secondary backgrounds (secondary, 15% brighter)",
@@ -13088,7 +12978,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-hovered",
       type: "color",
-      value: "#c58a17",
+      value: "#916700",
       cssVar: "--cu-color-warning-primary-hovered",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
@@ -13098,7 +12988,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-active",
       type: "color",
-      value: "#c58a17",
+      value: "#916700",
       cssVar: "--cu-color-warning-primary-active",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)",
@@ -13108,7 +12998,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-inactive",
       type: "color",
-      value: "#fffeef",
+      value: "#fffbd4",
       cssVar: "--cu-color-warning-primary-inactive",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
@@ -13118,7 +13008,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-disabled",
       type: "color",
-      value: "#846f4d",
+      value: "#816943",
       cssVar: "--cu-color-warning-primary-disabled",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -13128,7 +13018,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-hovered",
       type: "color",
-      value: "#ffe69e",
+      value: "#eead45",
       cssVar: "--cu-color-warning-secondary-hovered",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 25% brighter)",
@@ -13138,7 +13028,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-active",
       type: "color",
-      value: "#ffe69e",
+      value: "#eead45",
       cssVar: "--cu-color-warning-secondary-active",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (active, 25% brighter)",
@@ -13148,7 +13038,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-inactive",
       type: "color",
-      value: "#8a5800",
+      value: "#442c00",
       cssVar: "--cu-color-warning-secondary-inactive",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (inactive, 20% darker)",
@@ -13158,7 +13048,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-disabled",
       type: "color",
-      value: "#705730",
+      value: "#514128",
       cssVar: "--cu-color-warning-secondary-disabled",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -13168,7 +13058,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-hovered",
       type: "color",
-      value: "#c58a17",
+      value: "#916700",
       cssVar: "--cu-color-warning-link-hovered",
       description:
         "Generated warning hyperlink text color (matches primary) (hovered, 25% darker)",
@@ -13178,7 +13068,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-active",
       type: "color",
-      value: "#c58a17",
+      value: "#916700",
       cssVar: "--cu-color-warning-link-active",
       description:
         "Generated warning hyperlink text color (matches primary) (active, 25% darker)",
@@ -13188,7 +13078,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-inactive",
       type: "color",
-      value: "#fffeef",
+      value: "#fffbd4",
       cssVar: "--cu-color-warning-link-inactive",
       description:
         "Generated warning hyperlink text color (matches primary) (inactive, 20% brighter)",
@@ -13198,7 +13088,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-disabled",
       type: "color",
-      value: "#846f4d",
+      value: "#816943",
       cssVar: "--cu-color-warning-link-disabled",
       description:
         "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -13208,7 +13098,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-hovered",
       type: "color",
-      value: "#553c00",
+      value: "#583900",
       cssVar: "--cu-color-warning-outline-hovered",
       description:
         "Generated warning border and divider color (matches primary) (hovered, 40% darker)",
@@ -13218,7 +13108,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-active",
       type: "color",
-      value: "#553c00",
+      value: "#583900",
       cssVar: "--cu-color-warning-outline-active",
       description:
         "Generated warning border and divider color (matches primary) (active, 40% darker)",
@@ -13228,7 +13118,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-inactive",
       type: "color",
-      value: "#fffeef",
+      value: "#fffbd4",
       cssVar: "--cu-color-warning-outline-inactive",
       description:
         "Generated warning border and divider color (matches primary) (inactive, 20% brighter)",
@@ -13238,7 +13128,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-disabled",
       type: "color",
-      value: "#846f4d",
+      value: "#816943",
       cssVar: "--cu-color-warning-outline-disabled",
       description:
         "Generated warning border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -14325,46 +14215,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#4e4e5a",
       cssVar: "--cu-color-subtle-disabled",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-hovered",
-      type: "color",
-      value: "#6b6f7c",
-      cssVar: "--cu-color-subtlest-hovered",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-active",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-subtlest-active",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, dark contrast primitive)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-inactive",
-      type: "color",
-      value: "#565656",
-      cssVar: "--cu-color-subtlest-inactive",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-disabled",
-      type: "color",
-      value: "#2f3138",
-      cssVar: "--cu-color-subtlest-disabled",
       description:
         "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
@@ -17186,7 +17036,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px #facd7b26",
+      value: "0px 0px 0px 3px #f9c25e26",
       cssVar: "--cu-ring-warning",
       description: "Generated warning 3px focus ring with no gap",
       theme: undefined,
@@ -17195,7 +17045,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #facd7b26",
+      value: "0px 0px 0px 1px #f9c25e26",
       cssVar: "--cu-ring-warning-subtle",
       description: "Generated warning 1px outline focus ring with no gap",
       theme: undefined,
@@ -17204,7 +17054,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #facd7b26",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #f9c25e26",
       cssVar: "--cu-ring-warning-offset",
       description: "Generated warning 3px focus ring with a 3px gap",
       theme: undefined,
@@ -17213,7 +17063,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #facd7b26",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f9c25e26",
       cssVar: "--cu-ring-warning-subtle-offset",
       description: "Generated warning 1px focus ring with a 2px gap",
       theme: undefined,
@@ -18083,16 +17933,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#959698",
       cssVar: "--cu-color-subtle",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest",
-      type: "color",
-      value: "#b0b0b1",
-      cssVar: "--cu-color-subtlest",
       description:
         "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
       theme: undefined,
@@ -20099,46 +19939,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#606063",
       cssVar: "--cu-color-subtle-disabled",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-hovered",
-      type: "color",
-      value: "#777778",
-      cssVar: "--cu-color-subtlest-hovered",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-active",
-      type: "color",
-      value: "#0c0c0d",
-      cssVar: "--cu-color-subtlest-active",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, light contrast primitive)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-inactive",
-      type: "color",
-      value: "#020102",
-      cssVar: "--cu-color-subtlest-inactive",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-disabled",
-      type: "color",
-      value: "#69696b",
-      cssVar: "--cu-color-subtlest-disabled",
       description:
         "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
@@ -23863,16 +23663,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.subtlest",
-      type: "color",
-      value: "#a1a1a2",
-      cssVar: "--cu-color-subtlest",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.outline",
       type: "color",
       value: "#adadad",
@@ -25873,46 +25663,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#6a6a6b",
       cssVar: "--cu-color-subtle-disabled",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-hovered",
-      type: "color",
-      value: "#7a7a7a",
-      cssVar: "--cu-color-subtlest-hovered",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-active",
-      type: "color",
-      value: "#2e2e30",
-      cssVar: "--cu-color-subtlest-active",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, light contrast primitive)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-inactive",
-      type: "color",
-      value: "#2f202f",
-      cssVar: "--cu-color-subtlest-inactive",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-disabled",
-      type: "color",
-      value: "#707071",
-      cssVar: "--cu-color-subtlest-disabled",
       description:
         "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
@@ -29637,16 +29387,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.subtlest",
-      type: "color",
-      value: "#c3c3ca",
-      cssVar: "--cu-color-subtlest",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.outline",
       type: "color",
       value: "#dcdce0",
@@ -31647,46 +31387,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#4e4e5a",
       cssVar: "--cu-color-subtle-disabled",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-hovered",
-      type: "color",
-      value: "#6d6d7a",
-      cssVar: "--cu-color-subtlest-hovered",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-active",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-subtlest-active",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, light contrast primitive)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-inactive",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-subtlest-inactive",
-      description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.subtlest-disabled",
-      type: "color",
-      value: "#5a5a66",
-      cssVar: "--cu-color-subtlest-disabled",
       description:
         "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,

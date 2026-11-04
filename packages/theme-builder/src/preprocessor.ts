@@ -1588,7 +1588,7 @@ function injectColorStateVariants(
 /**
  * Style Dictionary preprocessor: rewrite color `$value`s (and nested shadow
  * colors) to hex so generators emit `#rrggbb` / `#rrggbbaa` instead of
- * `oklch()`. Root colors (emphasis, ink, subtle, subtlest, outline, backgrounds)
+ * `oklch()`. Root colors (emphasis, ink, subtle, outline, backgrounds)
  * stay in the root light and dark themes without rings. For each color group
  * with a `primary` token (except excluded groups), a missing `secondary` background and `on-primary` /
  * `on-secondary` text colors are generated, a missing `border` is derived from

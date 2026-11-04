@@ -27,7 +27,7 @@ There are no utility classes. Style through Tamagui props on components and on t
 
 | Prop family | Real values |
 | --- | --- |
-| Color (`backgroundColor`, `color`, `borderColor`) | `surfaceCanvas`, `surfaceElevated`, `surfaceFloating`, `surfaceSunken`, `surfaceOverlay`, `inkBody`, `inkEmphasis`, `inkSubtle`, `inkSubtlest`, `accent`, `onAccent`, `muted`, `onMuted`, `hairline`, `link`, `background`, `color`, `borderColor` |
+| Color (`backgroundColor`, `color`, `borderColor`) | `surfaceCanvas`, `surfaceElevated`, `surfaceFloating`, `surfaceSunken`, `surfaceOverlay`, `inkBody`, `inkEmphasis`, `inkSubtle`, `accent`, `onAccent`, `muted`, `onMuted`, `hairline`, `link`, `background`, `color`, `borderColor` |
 | Space (`padding`, `margin`, `gap`) | `xxs`, `xs`, `sm`, `md`, `lg`, `xl`, `2xl` … `22xl`, `zero` |
 | Radius (`borderRadius`) | `xs`, `sm`, `md`, `lg`, `xl`, `full`, `button`, `card`, `control`, `dialog`, `popover`, `tooltip` |
 

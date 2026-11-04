@@ -293,7 +293,7 @@ const TimePickerClock = ({
           gap="2xl">
           <XStack alignItems="center" gap="xl">
             <Button
-              variant={view === "hours" ? "primary" : "tertiary"}
+              variant={view === "hours" ? "primary" : "ghost"}
               size={cellSize}
               aria-pressed={view === "hours"}
               onPress={() => onViewChange("hours")}>
@@ -307,7 +307,7 @@ const TimePickerClock = ({
               :
             </BodyText>
             <Button
-              variant={view === "minutes" ? "primary" : "tertiary"}
+              variant={view === "minutes" ? "primary" : "ghost"}
               size={cellSize}
               aria-pressed={view === "minutes"}
               onPress={() => onViewChange("minutes")}>
@@ -325,7 +325,7 @@ const TimePickerClock = ({
                   <Button
                     key={meridiem}
                     variant="ghost"
-                    size={cellSize}
+                    size="sm"
                     paddingHorizontal="lg"
                     aria-pressed={active}
                     onPress={() =>
@@ -342,9 +342,7 @@ const TimePickerClock = ({
                     <Button.Text
                       fontSize={fontSize}
                       color={
-                        active
-                          ? "primary"
-                          : "subtlest group-hover/button:primary"
+                        active ? "primary" : "subtle group-hover/button:primary"
                       }>
                       {meridiem}
                     </Button.Text>
@@ -363,7 +361,7 @@ const TimePickerClock = ({
           height={diameter}
           borderRadius={diameter / 2}
           borderWidth={1}
-          borderColor="subtlest"
+          borderColor="subtle"
           cursor="pointer"
           style={{ touchAction: "none" }}
           onPointerDown={handlePointerDown}

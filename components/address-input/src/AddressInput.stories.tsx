@@ -136,8 +136,9 @@ export const Base: Story = {
     // "200 spring" isn't a run of text in any address, so the suggestion
     // only shows because the endpoint's own matching is kept.
     await userEvent.type(input, "200 spring");
+    // The row splits the label over two lines, so its name drops the ", ".
     await userEvent.click(
-      await document.findByRole("option", { name: cityHall!.label })
+      await document.findByRole("option", { name: /^200 N Spring St/ })
     );
     await expect(input).toHaveValue(cityHall!.label);
     await expect(args.onAddressChange).toHaveBeenLastCalledWith(cityHall);

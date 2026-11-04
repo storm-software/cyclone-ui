@@ -22,13 +22,6 @@
       "$description": "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
       "group": "foreground"
     },
-    "subtlest": {
-      "$type": "color",
-      "colorSpace": "display-p3",
-      "$value": "{color.neutral.7}",
-      "$description": "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
-      "group": "foreground"
-    },
     "outline": {
       "$type": "color",
       "colorSpace": "display-p3",

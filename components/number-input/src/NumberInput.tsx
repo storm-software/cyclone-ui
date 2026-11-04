@@ -155,12 +155,31 @@ const NumberInputTextBoxValue = createStyledHOC(
     const { displayValue } = use(NumberInputContext);
 
     return (
-      <Input.TextBox.Value
-        ref={forwardedRef}
-        {...props}
-        value={props.value ?? displayValue}
-        type="number"
-      />
+      <>
+        {process.env.TAMAGUI_TARGET === "web" && (
+          <style>
+            {`
+      /* The decrease and increase buttons replace the native spinners. */
+      input.cyclone-input-value[type="number"] {
+        -moz-appearance: textfield;
+        appearance: textfield;
+      }
+
+      input.cyclone-input-value[type="number"]::-webkit-inner-spin-button,
+      input.cyclone-input-value[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+`}
+          </style>
+        )}
+        <Input.TextBox.Value
+          ref={forwardedRef}
+          {...props}
+          value={props.value ?? displayValue}
+          type="number"
+        />
+      </>
     );
   },
   { displayName: "NumberInputTextBoxValue" }

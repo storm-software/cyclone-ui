@@ -111,7 +111,7 @@ describe("font publish executor", () => {
     );
   });
 
-  it("attaches a nixpkgs derivation with the tag hash to the release", async () => {
+  it("uploads a nixpkgs derivation with the tag hash alongside the fonts", async () => {
     const root = await mkdtemp(join(tmpdir(), "cyclone-font-publish-"));
     temporaryRoots.push(root);
     await mkdir(join(root, "fonts/storm-sans/dist"), { recursive: true });
@@ -134,21 +134,10 @@ describe("font publish executor", () => {
       ]),
       expect.anything()
     );
-    const releaseNixPath = join(root, "tmp/fonts/storm-sans/package.nix");
-    await expect(readFile(releaseNixPath, "utf8")).resolves.toBe(
-      'src = fetchFromGitHub { hash = "sha256-test="; };\n'
-    );
-    expect(mocks.execFileSync).toHaveBeenCalledWith(
-      "gh",
-      [
-        "release",
-        "upload",
-        "fonts-storm-sans@1.0.0",
-        releaseNixPath,
-        "--clobber"
-      ],
-      expect.anything()
-    );
+    await expect(
+      readFile(join(root, "fonts/storm-sans/dist/package.nix"), "utf8")
+    ).resolves.toBe('src = fetchFromGitHub { hash = "sha256-test="; };\n');
+    expect(mocks.upload).toHaveBeenCalledOnce();
   });
 
   it("refuses to upload a font project with inconsistent UFO versions", async () => {

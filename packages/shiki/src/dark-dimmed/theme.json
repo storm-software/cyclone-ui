@@ -17,7 +17,7 @@
     {
       "scope": ["constant", "constant.numeric", "constant.language"],
       "settings": {
-        "foreground": "#d5b67d"
+        "foreground": "#d0ad6d"
       }
     },
     {

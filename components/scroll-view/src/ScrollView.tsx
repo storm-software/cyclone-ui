@@ -36,19 +36,19 @@ export const SCROLL_VIEW_CLASS_NAME = "cyclone-scroll-view";
 export const SCROLL_VIEW_STYLES = `
 @property --cyclone-scroll-view-thumb { syntax: "<color>"; inherits: true; initial-value: transparent; }
 .${SCROLL_VIEW_CLASS_NAME} { --cyclone-scroll-view-thumb: transparent; transition: --cyclone-scroll-view-thumb 200ms ease-out, scrollbar-color 200ms ease-out; }
-.${SCROLL_VIEW_CLASS_NAME}:hover { --cyclone-scroll-view-thumb: var(--subtlest); }
+.${SCROLL_VIEW_CLASS_NAME}:hover { --cyclone-scroll-view-thumb: var(--subtle); }
 .${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar { width: calc(6px + var(--t-space-lg)); height: calc(6px + var(--t-space-lg)); background: transparent; }
 .${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-track { background: transparent; }
 .${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar, .${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar-track { background: color-mix(in srgb, var(--sunken) 0%, transparent); }
 .${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-thumb { background-color: var(--cyclone-scroll-view-thumb); background-clip: padding-box; border: 0 solid transparent; }
 .${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-thumb:vertical { border-right-width: var(--t-space-lg); border-radius: 3px calc(3px + var(--t-space-lg)) calc(3px + var(--t-space-lg)) 3px / 3px; }
 .${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-thumb:horizontal { border-bottom-width: var(--t-space-lg); border-radius: 3px / 3px 3px calc(3px + var(--t-space-lg)) calc(3px + var(--t-space-lg)); }
-.${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar-thumb:hover { background-color: var(--subtlest-hovered); }
+.${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar-thumb:hover { background-color: var(--subtle-hovered); }
 .${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-button { display: none; }
 .${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-corner { background: transparent; }
 @supports not selector(::-webkit-scrollbar) {
   .${SCROLL_VIEW_CLASS_NAME} { scrollbar-color: transparent transparent; }
-  .${SCROLL_VIEW_CLASS_NAME}:hover { scrollbar-color: var(--subtlest-hovered) transparent; }
+  .${SCROLL_VIEW_CLASS_NAME}:hover { scrollbar-color: var(--subtle-hovered) transparent; }
 }
 `;
 

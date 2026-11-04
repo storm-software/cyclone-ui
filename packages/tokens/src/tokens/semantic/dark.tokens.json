@@ -22,13 +22,6 @@
       "$description": "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
       "group": "foreground"
     },
-    "subtlest": {
-      "$type": "color",
-      "colorSpace": "display-p3",
-      "$value": "{color.neutral.10}",
-      "$description": "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
-      "group": "foreground"
-    },
     "outline": {
       "$type": "color",
       "colorSpace": "display-p3",
@@ -91,7 +84,7 @@
       "secondary": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.neutral.11}",
+        "$value": "{color.neutral.12}",
         "$description": "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
         "semantic": true
       },
@@ -131,14 +124,14 @@
       "primary": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.yellow.1}",
+        "$value": "{color.yellow.2}",
         "$description": "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
         "semantic": true
       },
       "secondary": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.yellow.6}",
+        "$value": "{color.yellow.8}",
         "$description": "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme.",
         "semantic": true
       }

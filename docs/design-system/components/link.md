@@ -53,7 +53,7 @@ Set `external` to open the link in a new tab and show an arrow icon.
 
 ## Variants and states
 
-The color, underline, size, and disabled options come from [Link Text](./link-text.md). The stories show the default style, `brand`, `mixed`, `mixed` with `inverse`, `subtle`, `subtlest`, and the external arrow with `subtle` and `subtlest`.
+The color, underline, size, and disabled options come from [Link Text](./link-text.md). The stories show the default style, `brand`, `mixed`, `mixed` with `inverse`, `subtle`, and the external arrow with `subtle`.
 
 ## Accessibility
 

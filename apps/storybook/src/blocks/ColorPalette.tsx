@@ -568,51 +568,6 @@ const COLOR_VARIANTS = {
               "subtle-inactive": "#636363"
             }}
           />
-          <ColorItem
-            title={"color.subtlest"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."
-            }
-            colors={{
-              subtlest: "#555659"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-active"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, dark contrast primitive)"
-            }
-            colors={{
-              "subtlest-active": "#ffffff"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-disabled"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
-            }
-            colors={{
-              "subtlest-disabled": "#494a4d"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-hovered"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% brighter)"
-            }
-            colors={{
-              "subtlest-hovered": "#757679"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-inactive"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)"
-            }
-            colors={{
-              "subtlest-inactive": "#636363"
-            }}
-          />
         </ColorPalette>
       </section>
       <section>
@@ -672,20 +627,20 @@ const COLOR_VARIANTS = {
               }
               colors={{
                 primary: "#ffffff",
-                secondary: "#46464a",
+                secondary: "#2d2e33",
                 link: "#00bcff",
                 "on-primary": "#151518",
                 backdrop: "#222222bf",
                 "on-secondary": "#FAFAFA",
-                border: "#56565a",
+                border: "#383a3f",
                 "primary-hovered": "#aeaeae",
                 "primary-active": "#ffffff",
                 "primary-inactive": "#636363",
                 "primary-disabled": "#858587",
-                "secondary-hovered": "#535358",
-                "secondary-active": "#535358",
+                "secondary-hovered": "#37383d",
+                "secondary-active": "#37383d",
                 "secondary-inactive": "#636363",
-                "secondary-disabled": "#444447",
+                "secondary-disabled": "#3b3c3f",
                 "link-hovered": "#6bfaff",
                 "link-active": "#6bfaff",
                 "link-inactive": "#008ccc",
@@ -883,30 +838,30 @@ const COLOR_VARIANTS = {
                 "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText."
               }
               colors={{
-                primary: "#facd7b",
-                secondary: "#df9d24",
-                link: "#facd7b",
+                primary: "#f9c25e",
+                secondary: "#a2731e",
+                link: "#f9c25e",
                 "on-primary": "#151518",
-                backdrop: "#320d00bf",
+                backdrop: "#350500bf",
                 "on-secondary": "#FAFAFA",
-                border: "#ffc366",
-                "primary-hovered": "#b38834",
-                "primary-active": "#b38834",
-                "primary-inactive": "#fff8a5",
-                "primary-disabled": "#81745e",
-                "secondary-hovered": "#ffd96d",
-                "secondary-active": "#ffd96d",
-                "secondary-inactive": "#ae6f00",
-                "secondary-disabled": "#776446",
-                "link-hovered": "#b38834",
-                "link-active": "#b38834",
-                "link-inactive": "#fff8a5",
-                "link-disabled": "#81745e",
-                "outline-hovered": "#8a6100",
-                "outline-active": "#8a6100",
-                "outline-inactive": "#fff8a5",
-                "outline-disabled": "#81745e",
-                outline: "#facd7b"
+                border: "#be8e3e",
+                "primary-hovered": "#b37f00",
+                "primary-active": "#b37f00",
+                "primary-inactive": "#fff592",
+                "primary-disabled": "#807056",
+                "secondary-hovered": "#d1a052",
+                "secondary-active": "#d1a052",
+                "secondary-inactive": "#7e5100",
+                "secondary-disabled": "#635540",
+                "link-hovered": "#b37f00",
+                "link-active": "#b37f00",
+                "link-inactive": "#fff592",
+                "link-disabled": "#807056",
+                "outline-hovered": "#8c5a00",
+                "outline-active": "#8c5a00",
+                "outline-inactive": "#fff592",
+                "outline-disabled": "#807056",
+                outline: "#f9c25e"
               }}
             />
           </ColorPalette>
@@ -1475,51 +1430,6 @@ const COLOR_VARIANTS = {
               "subtle-inactive": "#6c6c6c"
             }}
           />
-          <ColorItem
-            title={"color.subtlest"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."
-            }
-            colors={{
-              subtlest: "#626364"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-active"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, dark contrast primitive)"
-            }
-            colors={{
-              "subtlest-active": "#d9d9d9"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-disabled"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
-            }
-            colors={{
-              "subtlest-disabled": "#595a5c"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-hovered"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% brighter)"
-            }
-            colors={{
-              "subtlest-hovered": "#78797b"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-inactive"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)"
-            }
-            colors={{
-              "subtlest-inactive": "#6c6c6c"
-            }}
-          />
         </ColorPalette>
       </section>
       <section>
@@ -1579,20 +1489,20 @@ const COLOR_VARIANTS = {
               }
               colors={{
                 primary: "#d9d9d9",
-                secondary: "#57575a",
+                secondary: "#45464a",
                 link: "#39a1c6",
                 "on-primary": "#343438",
                 backdrop: "#3e3e3ebf",
                 "on-secondary": "#d5d5d5",
-                border: "#636365",
+                border: "#4d4f52",
                 "primary-hovered": "#a0a0a0",
                 "primary-active": "#d9d9d9",
                 "primary-inactive": "#6c6c6c",
                 "primary-disabled": "#838385",
-                "secondary-hovered": "#616164",
-                "secondary-active": "#616164",
+                "secondary-hovered": "#4d4d51",
+                "secondary-active": "#4d4d51",
                 "secondary-inactive": "#6c6c6c",
-                "secondary-disabled": "#565658",
+                "secondary-disabled": "#4f5052",
                 "link-hovered": "#73d3d6",
                 "link-active": "#73d3d6",
                 "link-inactive": "#3184aa",
@@ -1790,30 +1700,30 @@ const COLOR_VARIANTS = {
                 "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText."
               }
               colors={{
-                primary: "#d5b67d",
-                secondary: "#b5904d",
-                link: "#d5b67d",
+                primary: "#d0ad6d",
+                secondary: "#917542",
+                link: "#d0ad6d",
                 "on-primary": "#343438",
-                backdrop: "#562919bf",
+                backdrop: "#581f1abf",
                 "on-secondary": "#d5d5d5",
-                border: "#d6ae71",
-                "primary-hovered": "#9b8353",
-                "primary-active": "#9b8353",
-                "primary-inactive": "#e0da93",
-                "primary-disabled": "#7e776a",
-                "secondary-hovered": "#d7bd75",
-                "secondary-active": "#d7bd75",
-                "secondary-inactive": "#9a722d",
-                "secondary-disabled": "#776c5a",
-                "link-hovered": "#9b8353",
-                "link-active": "#9b8353",
-                "link-inactive": "#e0da93",
-                "link-disabled": "#7e776a",
-                "outline-hovered": "#866a27",
-                "outline-active": "#866a27",
-                "outline-inactive": "#e0da93",
-                "outline-disabled": "#7e776a",
-                outline: "#d5b67d"
+                border: "#a2875b",
+                "primary-hovered": "#9c7c2d",
+                "primary-active": "#9c7c2d",
+                "primary-inactive": "#ddd589",
+                "primary-disabled": "#7d7465",
+                "secondary-hovered": "#b19467",
+                "secondary-active": "#b19467",
+                "secondary-inactive": "#805f25",
+                "secondary-disabled": "#6b6254",
+                "link-hovered": "#9c7c2d",
+                "link-active": "#9c7c2d",
+                "link-inactive": "#ddd589",
+                "link-disabled": "#7d7465",
+                "outline-hovered": "#876527",
+                "outline-active": "#876527",
+                "outline-inactive": "#ddd589",
+                "outline-disabled": "#7d7465",
+                outline: "#d0ad6d"
               }}
             />
           </ColorPalette>
@@ -2382,51 +2292,6 @@ const COLOR_VARIANTS = {
               "subtle-inactive": "#565656"
             }}
           />
-          <ColorItem
-            title={"color.subtlest"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."
-            }
-            colors={{
-              subtlest: "#3f424a"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-active"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, dark contrast primitive)"
-            }
-            colors={{
-              "subtlest-active": "#ffffff"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-disabled"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
-            }
-            colors={{
-              "subtlest-disabled": "#2f3138"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-hovered"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% brighter)"
-            }
-            colors={{
-              "subtlest-hovered": "#6b6f7c"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-inactive"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)"
-            }
-            colors={{
-              "subtlest-inactive": "#565656"
-            }}
-          />
         </ColorPalette>
       </section>
       <section>
@@ -2486,20 +2351,20 @@ const COLOR_VARIANTS = {
               }
               colors={{
                 primary: "#ffffff",
-                secondary: "#2b2b33",
+                secondary: "#0b0b0e",
                 link: "#00bcff",
                 "on-primary": "#000000",
                 backdrop: "#000000bf",
                 "on-secondary": "#ffffff",
-                border: "#41414c",
+                border: "#191b21",
                 "primary-hovered": "#c3c3c3",
                 "primary-active": "#ffffff",
                 "primary-inactive": "#565656",
                 "primary-disabled": "#828290",
-                "secondary-hovered": "#3d3d49",
-                "secondary-active": "#3d3d49",
+                "secondary-hovered": "#18191e",
+                "secondary-active": "#18191e",
                 "secondary-inactive": "#565656",
-                "secondary-disabled": "#28282f",
+                "secondary-disabled": "#1c1e22",
                 "link-hovered": "#9bfcff",
                 "link-active": "#9bfcff",
                 "link-inactive": "#007cb5",
@@ -2697,30 +2562,30 @@ const COLOR_VARIANTS = {
                 "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText."
               }
               colors={{
-                primary: "#ffe1ab",
-                secondary: "#ffa706",
-                link: "#ffe1ab",
+                primary: "#ffd280",
+                secondary: "#a26902",
+                link: "#ffd280",
                 "on-primary": "#000000",
                 backdrop: "#000000bf",
                 "on-secondary": "#ffffff",
-                border: "#ffd594",
-                "primary-hovered": "#c58a17",
-                "primary-active": "#c58a17",
-                "primary-inactive": "#fffeef",
-                "primary-disabled": "#846f4d",
-                "secondary-hovered": "#ffe69e",
-                "secondary-active": "#ffe69e",
-                "secondary-inactive": "#8a5800",
-                "secondary-disabled": "#705730",
-                "link-hovered": "#c58a17",
-                "link-active": "#c58a17",
-                "link-inactive": "#fffeef",
-                "link-disabled": "#846f4d",
-                "outline-hovered": "#553c00",
-                "outline-active": "#553c00",
-                "outline-inactive": "#fffeef",
-                "outline-disabled": "#846f4d",
-                outline: "#ffe1ab"
+                border: "#da9421",
+                "primary-hovered": "#916700",
+                "primary-active": "#916700",
+                "primary-inactive": "#fffbd4",
+                "primary-disabled": "#816943",
+                "secondary-hovered": "#eead45",
+                "secondary-active": "#eead45",
+                "secondary-inactive": "#442c00",
+                "secondary-disabled": "#514128",
+                "link-hovered": "#916700",
+                "link-active": "#916700",
+                "link-inactive": "#fffbd4",
+                "link-disabled": "#816943",
+                "outline-hovered": "#583900",
+                "outline-active": "#583900",
+                "outline-inactive": "#fffbd4",
+                "outline-disabled": "#816943",
+                outline: "#ffd280"
               }}
             />
           </ColorPalette>
@@ -3228,51 +3093,6 @@ const COLOR_VARIANTS = {
             }
             colors={{
               "subtle-inactive": "#020102"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."
-            }
-            colors={{
-              subtlest: "#b0b0b1"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-active"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, light contrast primitive)"
-            }
-            colors={{
-              "subtlest-active": "#0c0c0d"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-disabled"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
-            }
-            colors={{
-              "subtlest-disabled": "#69696b"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-hovered"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% darker)"
-            }
-            colors={{
-              "subtlest-hovered": "#777778"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-inactive"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)"
-            }
-            colors={{
-              "subtlest-inactive": "#020102"
             }}
           />
         </ColorPalette>
@@ -4137,51 +3957,6 @@ const COLOR_VARIANTS = {
               "subtle-inactive": "#2f202f"
             }}
           />
-          <ColorItem
-            title={"color.subtlest"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."
-            }
-            colors={{
-              subtlest: "#a1a1a2"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-active"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, light contrast primitive)"
-            }
-            colors={{
-              "subtlest-active": "#2e2e30"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-disabled"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
-            }
-            colors={{
-              "subtlest-disabled": "#707071"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-hovered"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% darker)"
-            }
-            colors={{
-              "subtlest-hovered": "#7a7a7a"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-inactive"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)"
-            }
-            colors={{
-              "subtlest-inactive": "#2f202f"
-            }}
-          />
         </ColorPalette>
       </section>
       <section>
@@ -5042,51 +4817,6 @@ const COLOR_VARIANTS = {
             }
             colors={{
               "subtle-inactive": "#000000"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."
-            }
-            colors={{
-              subtlest: "#c3c3ca"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-active"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, light contrast primitive)"
-            }
-            colors={{
-              "subtlest-active": "#000000"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-disabled"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
-            }
-            colors={{
-              "subtlest-disabled": "#5a5a66"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-hovered"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% darker)"
-            }
-            colors={{
-              "subtlest-hovered": "#6d6d7a"
-            }}
-          />
-          <ColorItem
-            title={"color.subtlest-inactive"}
-            subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)"
-            }
-            colors={{
-              "subtlest-inactive": "#000000"
             }}
           />
         </ColorPalette>

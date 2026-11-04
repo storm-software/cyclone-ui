@@ -339,7 +339,7 @@ export default defineConfig({
           return {
             base: theme,
             colorPrimary: tokenValue(color.emphasis),
-            colorSecondary: tokenValue(color.subtlest),
+            colorSecondary: tokenValue(color.subtle),
 
             textColor: tokenValue(color.emphasis),
             textInverseColor: tokenValue(color.canvas),
@@ -353,7 +353,7 @@ export default defineConfig({
             barTextColor: tokenValue(color.ink),
             barSelectedColor: tokenValue(color.emphasis),
             barBg: tokenValue(color.floating),
-            barHoverColor: tokenValue(color.subtlest),
+            barHoverColor: tokenValue(color.subtle),
 
             buttonBg: tokenValue(color.elevated),
             buttonBorder: tokenValue(color.hairline),
@@ -364,7 +364,7 @@ export default defineConfig({
             inputBorderRadius: tokenValue(tokens?.[theme]?.radius?.md),
 
             booleanBg: tokenValue(color.elevated),
-            booleanSelectedBg: tokenValue(color.subtlest),
+            booleanSelectedBg: tokenValue(color.subtle),
 
             brandImage
           } as Record<string, unknown>;

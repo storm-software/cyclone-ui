@@ -23,7 +23,7 @@ import { createStyledHOC, styled, useThemeName } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
 
 export type LinkTextVariant =
-  "base" | "emphasis" | "ink" | "subtle" | "subtlest";
+  "base" | "emphasis" | "ink" | "subtle";
 
 export interface LinkTextExtraProps {
   disabled?: boolean;

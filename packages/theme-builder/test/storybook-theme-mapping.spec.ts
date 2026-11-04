@@ -56,7 +56,6 @@ const semanticColors = (prefix: string) => ({
   color: {
     emphasis: token(`${prefix}-emphasis`),
     ink: token(`${prefix}-ink`),
-    subtlest: token(`${prefix}-subtlest`),
     subtle: token(`${prefix}-subtle`),
     outline: token(`${prefix}-outline`),
     hairline: token(`${prefix}-hairline`),
@@ -92,7 +91,7 @@ describe("Storybook theme mapping", () => {
     expect(themes.dark).toMatchObject({
       base: "dark",
       colorPrimary: "dark-emphasis",
-      colorSecondary: "dark-subtlest",
+      colorSecondary: "dark-subtle",
       textColor: "dark-emphasis",
       textInverseColor: "dark-canvas",
       appBg: "dark-canvas",
@@ -103,7 +102,7 @@ describe("Storybook theme mapping", () => {
       barTextColor: "dark-ink",
       barSelectedColor: "dark-emphasis",
       barBg: "dark-floating",
-      barHoverColor: "dark-subtlest",
+      barHoverColor: "dark-subtle",
       buttonBg: "dark-elevated",
       buttonBorder: "dark-outline",
       inputBg: "dark-elevated",
@@ -111,7 +110,7 @@ describe("Storybook theme mapping", () => {
       inputTextColor: "dark-ink",
       inputBorderRadius: 6,
       booleanBg: "dark-elevated",
-      booleanSelectedBg: "dark-subtlest"
+      booleanSelectedBg: "dark-subtle"
     });
     expect(themes.light.colorPrimary).toBe("light-emphasis");
     expect(themes.light.textColor).toBe("light-emphasis");

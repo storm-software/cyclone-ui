@@ -1987,42 +1987,6 @@ export const manifest: DesignSystemManifest = {
       value: "#020102"
     },
     {
-      path: "color.subtlest",
-      cssVar: "--storm-color-subtlest",
-      type: "color",
-      category: "color",
-      value: "#b0b0b1",
-      alias: true
-    },
-    {
-      path: "color.subtlest-active",
-      cssVar: "--storm-color-subtlest-active",
-      type: "color",
-      category: "color",
-      value: "#0c0c0d"
-    },
-    {
-      path: "color.subtlest-disabled",
-      cssVar: "--storm-color-subtlest-disabled",
-      type: "color",
-      category: "color",
-      value: "#69696b"
-    },
-    {
-      path: "color.subtlest-hovered",
-      cssVar: "--storm-color-subtlest-hovered",
-      type: "color",
-      category: "color",
-      value: "#777778"
-    },
-    {
-      path: "color.subtlest-inactive",
-      cssVar: "--storm-color-subtlest-inactive",
-      type: "color",
-      category: "color",
-      value: "#020102"
-    },
-    {
       path: "color.success.backdrop",
       cssVar: "--storm-color-success-backdrop",
       type: "color",

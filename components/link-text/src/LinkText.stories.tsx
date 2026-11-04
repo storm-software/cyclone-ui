@@ -93,11 +93,6 @@ export const SubtleVariant: Story = {
   }
 };
 
-export const SubtlestVariant: Story = {
-  args: {
-    variant: "subtlest"
-  }
-};
 
 export const Mixed: Story = {
   args: {

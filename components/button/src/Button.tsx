@@ -276,7 +276,7 @@ type ButtonExtraProps = TextParentStyles & {
     /**
      * The opacity of the ghost background when hovered
      *
-     * @defaultValue 0.25
+     * @defaultValue 0.75
      */
     ghostOpacity?: number;
   };
@@ -717,7 +717,7 @@ const colorForVariant = (
     return (
       disabled
         ? !themeName || themeName?.endsWith("base")
-          ? "subtlest"
+          ? "subtle"
           : "primary-disabled"
         : (color ?? "primary")
     ) as ThemeableIconProps["color"];
@@ -1128,7 +1128,7 @@ const ButtonContainerImpl = createStyledHOC(
       href,
       download,
       type = "button",
-      ghostOpacity = 0.5,
+      ghostOpacity = 0.75,
       ...props
     }: GetProps<typeof ButtonFrame> & ButtonProps,
     forwardedRef

@@ -38,7 +38,7 @@ import { ScrollView } from "@cyclone-ui/scroll-view";
 ## Scrollbar (web)
 
 - The scrollbar is `6px` wide. Its track and thumb are transparent until you hover.
-- On hover, the thumb uses the `subtlest` color. On thumb hover, it uses `subtlest-hovered`.
+- On hover, the thumb uses the `subtle` color. On thumb hover, it uses `subtle-hovered`.
 - Scrollbar buttons are hidden.
 - The container reserves the scrollbar gutter (`scrollbar-gutter: stable`).
 - Browsers without `::-webkit-scrollbar` use `scrollbar-color` instead.

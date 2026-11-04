@@ -2513,33 +2513,6 @@ module.exports = {
       },
       path: ["color", "subtle"]
     },
-    subtlest: {
-      key: "{color.subtlest}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#555659",
-      $description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
-      group: "foreground",
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-      isSource: true,
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.neutral.10}",
-        $description:
-          "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
-        group: "foreground",
-        key: "{color.subtlest}"
-      },
-      name: "ColorSubtlest",
-      attributes: {
-        category: "color",
-        type: "subtlest"
-      },
-      path: ["color", "subtlest"]
-    },
     outline: {
       key: "{color.outline}",
       $type: "color",
@@ -2767,7 +2740,7 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#46464a",
+        $value: "#2d2e33",
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
         semantic: true,
@@ -2779,7 +2752,7 @@ module.exports = {
           group: "base",
           $type: "color",
           colorSpace: "display-p3",
-          $value: "{color.neutral.11}",
+          $value: "{color.neutral.12}",
           $description:
             "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
           semantic: true,
@@ -2936,7 +2909,7 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#56565a",
+        $value: "#383a3f",
         $description:
           "Generated base border color for secondary backgrounds (secondary, 15% brighter)",
         semantic: true,
@@ -2951,9 +2924,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.33725490196078434, 0.33725490196078434, 0.35294117647058826
+              0.2196078431372549, 0.22745098039215686, 0.24705882352941178
             ],
-            hex: "#56565a"
+            hex: "#383a3f"
           },
           $description:
             "Generated base border color for secondary backgrounds (secondary, 15% brighter)",
@@ -3120,7 +3093,7 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#535358",
+        $value: "#37383d",
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 13% brighter)",
         semantic: true,
@@ -3135,9 +3108,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.3254901960784314, 0.3254901960784314, 0.34509803921568627
+              0.21568627450980393, 0.2196078431372549, 0.23921568627450981
             ],
-            hex: "#535358"
+            hex: "#37383d"
           },
           $description:
             "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 13% brighter)",
@@ -3158,7 +3131,7 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#535358",
+        $value: "#37383d",
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 13% brighter)",
         semantic: true,
@@ -3222,7 +3195,7 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#444447",
+        $value: "#3b3c3f",
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
@@ -3237,9 +3210,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.26666666666666666, 0.26666666666666666, 0.2784313725490196
+              0.23137254901960785, 0.23529411764705882, 0.24705882352941178
             ],
-            hex: "#444447"
+            hex: "#3b3c3f"
           },
           $description:
             "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -4886,7 +4859,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#facd7b",
+        $value: "#f9c25e",
         $description:
           "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
         semantic: true,
@@ -4898,7 +4871,7 @@ module.exports = {
           group: "warning",
           $type: "color",
           colorSpace: "display-p3",
-          $value: "{color.yellow.1}",
+          $value: "{color.yellow.2}",
           $description:
             "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
           semantic: true,
@@ -4918,7 +4891,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#df9d24",
+        $value: "#a2731e",
         $description:
           "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme.",
         semantic: true,
@@ -4930,7 +4903,7 @@ module.exports = {
           group: "warning",
           $type: "color",
           colorSpace: "display-p3",
-          $value: "{color.yellow.6}",
+          $value: "{color.yellow.8}",
           $description:
             "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme.",
           semantic: true,
@@ -4950,7 +4923,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#facd7b",
+        $value: "#f9c25e",
         $description:
           "Generated warning hyperlink text color (matches primary)",
         semantic: true,
@@ -4982,7 +4955,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#facd7b",
+        $value: "#f9c25e",
         $description:
           "Generated warning border and divider color (matches primary)",
         semantic: true,
@@ -5046,7 +5019,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#320d00bf",
+        $value: "#350500bf",
         $description:
           "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
         semantic: true,
@@ -5060,9 +5033,9 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [0.19607843137254902, 0.050980392156862744, 0],
+            components: [0.20784313725490197, 0.0196078431372549, 0],
             alpha: 0.7490196078431373,
-            hex: "#320d00"
+            hex: "#350500"
           },
           $description:
             "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -5115,7 +5088,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#ffc366",
+        $value: "#be8e3e",
         $description:
           "Generated warning border color for secondary backgrounds (secondary, 15% brighter)",
         semantic: true,
@@ -5129,8 +5102,10 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [1, 0.7647058823529411, 0.4],
-            hex: "#ffc366"
+            components: [
+              0.7450980392156863, 0.5568627450980392, 0.24313725490196078
+            ],
+            hex: "#be8e3e"
           },
           $description:
             "Generated warning border color for secondary backgrounds (secondary, 15% brighter)",
@@ -5151,7 +5126,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#b38834",
+        $value: "#b37f00",
         $description:
           "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
         semantic: true,
@@ -5165,10 +5140,8 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [
-              0.7019607843137254, 0.5333333333333333, 0.20392156862745098
-            ],
-            hex: "#b38834"
+            components: [0.7019607843137254, 0.4980392156862745, 0],
+            hex: "#b37f00"
           },
           $description:
             "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
@@ -5189,7 +5162,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#b38834",
+        $value: "#b37f00",
         $description:
           "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)",
         semantic: true,
@@ -5221,7 +5194,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#fff8a5",
+        $value: "#fff592",
         $description:
           "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
         semantic: true,
@@ -5235,8 +5208,8 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [1, 0.9725490196078431, 0.6470588235294118],
-            hex: "#fff8a5"
+            components: [1, 0.9607843137254902, 0.5725490196078431],
+            hex: "#fff592"
           },
           $description:
             "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
@@ -5257,7 +5230,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#81745e",
+        $value: "#807056",
         $description:
           "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
@@ -5272,9 +5245,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.5058823529411764, 0.4549019607843137, 0.3686274509803922
+              0.5019607843137255, 0.4392156862745098, 0.33725490196078434
             ],
-            hex: "#81745e"
+            hex: "#807056"
           },
           $description:
             "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -5295,7 +5268,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#ffd96d",
+        $value: "#d1a052",
         $description:
           "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 25% brighter)",
         semantic: true,
@@ -5309,8 +5282,10 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [1, 0.8509803921568627, 0.42745098039215684],
-            hex: "#ffd96d"
+            components: [
+              0.8196078431372549, 0.6274509803921569, 0.3215686274509804
+            ],
+            hex: "#d1a052"
           },
           $description:
             "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 25% brighter)",
@@ -5331,7 +5306,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#ffd96d",
+        $value: "#d1a052",
         $description:
           "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (active, 25% brighter)",
         semantic: true,
@@ -5363,7 +5338,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#ae6f00",
+        $value: "#7e5100",
         $description:
           "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (inactive, 20% darker)",
         semantic: true,
@@ -5377,8 +5352,8 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [0.6823529411764706, 0.43529411764705883, 0],
-            hex: "#ae6f00"
+            components: [0.49411764705882355, 0.3176470588235294, 0],
+            hex: "#7e5100"
           },
           $description:
             "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (inactive, 20% darker)",
@@ -5399,7 +5374,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#776446",
+        $value: "#635540",
         $description:
           "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
@@ -5414,9 +5389,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.4666666666666667, 0.39215686274509803, 0.27450980392156865
+              0.38823529411764707, 0.3333333333333333, 0.25098039215686274
             ],
-            hex: "#776446"
+            hex: "#635540"
           },
           $description:
             "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -5437,7 +5412,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#b38834",
+        $value: "#b37f00",
         $description:
           "Generated warning hyperlink text color (matches primary) (hovered, 25% darker)",
         semantic: true,
@@ -5469,7 +5444,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#b38834",
+        $value: "#b37f00",
         $description:
           "Generated warning hyperlink text color (matches primary) (active, 25% darker)",
         semantic: true,
@@ -5501,7 +5476,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#fff8a5",
+        $value: "#fff592",
         $description:
           "Generated warning hyperlink text color (matches primary) (inactive, 20% brighter)",
         semantic: true,
@@ -5533,7 +5508,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#81745e",
+        $value: "#807056",
         $description:
           "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
@@ -5565,7 +5540,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#8a6100",
+        $value: "#8c5a00",
         $description:
           "Generated warning border and divider color (matches primary) (hovered, 40% darker)",
         semantic: true,
@@ -5579,8 +5554,8 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [0.5411764705882353, 0.3803921568627451, 0],
-            hex: "#8a6100"
+            components: [0.5490196078431373, 0.35294117647058826, 0],
+            hex: "#8c5a00"
           },
           $description:
             "Generated warning border and divider color (matches primary) (hovered, 40% darker)",
@@ -5601,7 +5576,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#8a6100",
+        $value: "#8c5a00",
         $description:
           "Generated warning border and divider color (matches primary) (active, 40% darker)",
         semantic: true,
@@ -5633,7 +5608,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#fff8a5",
+        $value: "#fff592",
         $description:
           "Generated warning border and divider color (matches primary) (inactive, 20% brighter)",
         semantic: true,
@@ -5665,7 +5640,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#81745e",
+        $value: "#807056",
         $description:
           "Generated warning border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
@@ -9484,126 +9459,6 @@ module.exports = {
       },
       path: ["color", "subtle-disabled"]
     },
-    "subtlest-hovered": {
-      key: "{color.subtlest-hovered}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#757679",
-      $description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% brighter)",
-      group: "foreground",
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-      isSource: true,
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.4588235294117647, 0.4627450980392157, 0.4745098039215686
-          ],
-          hex: "#757679"
-        },
-        $description:
-          "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% brighter)",
-        group: "foreground",
-        key: "{color.subtlest-hovered}"
-      },
-      name: "ColorSubtlestHovered",
-      attributes: {
-        category: "color",
-        type: "subtlest-hovered"
-      },
-      path: ["color", "subtlest-hovered"]
-    },
-    "subtlest-active": {
-      key: "{color.subtlest-active}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#ffffff",
-      $description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, dark contrast primitive)",
-      group: "foreground",
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-      isSource: true,
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.white}",
-        $description:
-          "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, dark contrast primitive)",
-        group: "foreground",
-        key: "{color.subtlest-active}"
-      },
-      name: "ColorSubtlestActive",
-      attributes: {
-        category: "color",
-        type: "subtlest-active"
-      },
-      path: ["color", "subtlest-active"]
-    },
-    "subtlest-inactive": {
-      key: "{color.subtlest-inactive}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#636363",
-      $description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)",
-      group: "foreground",
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-      isSource: true,
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.base.primary-inactive}",
-        $description:
-          "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)",
-        group: "foreground",
-        key: "{color.subtlest-inactive}"
-      },
-      name: "ColorSubtlestInactive",
-      attributes: {
-        category: "color",
-        type: "subtlest-inactive"
-      },
-      path: ["color", "subtlest-inactive"]
-    },
-    "subtlest-disabled": {
-      key: "{color.subtlest-disabled}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#494a4d",
-      $description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      group: "foreground",
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-      isSource: true,
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.28627450980392155, 0.2901960784313726, 0.30196078431372547
-          ],
-          hex: "#494a4d"
-        },
-        $description:
-          "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-        group: "foreground",
-        key: "{color.subtlest-disabled}"
-      },
-      name: "ColorSubtlestDisabled",
-      attributes: {
-        category: "color",
-        type: "subtlest-disabled"
-      },
-      path: ["color", "subtlest-disabled"]
-    },
     "sunken-hovered": {
       key: "{color.sunken-hovered}",
       $type: "color",
@@ -10353,7 +10208,13 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.subtlest-disabled}",
+        $value: {
+          colorSpace: "srgb",
+          components: [
+            0.28627450980392155, 0.2901960784313726, 0.30196078431372547
+          ],
+          hex: "#494a4d"
+        },
         $description:
           "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         group: "border",
@@ -18975,7 +18836,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#facd7b26",
+          color: "#f9c25e26",
           offsetX: {
             value: 0,
             unit: "px"
@@ -19000,7 +18861,7 @@ module.exports = {
         $type: "shadow",
         $value: [
           {
-            color: "#facd7b26",
+            color: "#f9c25e26",
             offsetX: {
               value: 0,
               unit: "px"
@@ -19035,7 +18896,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#facd7b26",
+          color: "#f9c25e26",
           offsetX: {
             value: 0,
             unit: "px"
@@ -19060,7 +18921,7 @@ module.exports = {
         $type: "shadow",
         $value: [
           {
-            color: "#facd7b26",
+            color: "#f9c25e26",
             offsetX: {
               value: 0,
               unit: "px"
@@ -19114,7 +18975,7 @@ module.exports = {
           }
         },
         {
-          color: "#facd7b26",
+          color: "#f9c25e26",
           offsetX: {
             value: 0,
             unit: "px"
@@ -19158,7 +19019,7 @@ module.exports = {
             }
           },
           {
-            color: "#facd7b26",
+            color: "#f9c25e26",
             offsetX: {
               value: 0,
               unit: "px"
@@ -19212,7 +19073,7 @@ module.exports = {
           }
         },
         {
-          color: "#facd7b26",
+          color: "#f9c25e26",
           offsetX: {
             value: 0,
             unit: "px"
@@ -19256,7 +19117,7 @@ module.exports = {
             }
           },
           {
-            color: "#facd7b26",
+            color: "#f9c25e26",
             offsetX: {
               value: 0,
               unit: "px"

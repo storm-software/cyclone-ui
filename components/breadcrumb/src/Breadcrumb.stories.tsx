@@ -78,12 +78,6 @@ export const Subtle: Story = {
   }
 };
 
-export const Subtlest: Story = {
-  args: {
-    currentName: "Current Page",
-    variant: "subtlest"
-  }
-};
 
 export const Mixed: Story = {
   args: {

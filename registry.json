@@ -3344,7 +3344,7 @@
       "name": "@cyclone-ui/link-text",
       "type": "registry:component",
       "title": "@cyclone-ui/link-text",
-      "description": "A LinkText component that renders styled, interactive link text. It has base, mixed, themed, subtle and subtlest color variants, an inverse mode, underline styles (static, hover, initial, none), sm and md sizes, a cta mode for uppercase button-style text, and a disabled state. Use it for inline and standalone hyperlinks.",
+      "description": "A LinkText component that renders styled, interactive link text. It has base, mixed, themed, subtle color variants, an inverse mode, underline styles (static, hover, initial, none), sm and md sizes, a cta mode for uppercase button-style text, and a disabled state. Use it for inline and standalone hyperlinks.",
       "dependencies": [
         "@tamagui/core@3.2.0",
         "@tamagui/get-font-sized@3.2.0",

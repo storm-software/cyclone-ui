@@ -455,10 +455,10 @@ const TagButtonFrame = styled(View, {
   borderRadius: 1000_000_000,
   // No `press:` background color: a press draws a ripple from the press
   // point instead.
-  backgroundColor: "primary hover:secondary-hovered focus:surface",
+  backgroundColor: "primary hover:primary-hovered focus:surface",
   justifyContent: "center",
   alignItems: "center",
-  borderColor: "hover:primary-hovered",
+  borderColor: "border hover:border-hovered",
   variants: {
     size: styled.dynamic<TagSize>(),
     // Styled by the `.resolve` below because the offset depends on `size`.
@@ -543,6 +543,7 @@ const TagRemoveButton = createStyledHOC(
             // color transition so the glyph switches with it.
             // Web-only CSS property, missing from React Native's style types.
             style={{ transition: "none" } as ViewStyle}
+            variant="bold"
           />
         </TagIcon>
       </TagRemoveButtonFrame>

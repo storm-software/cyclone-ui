@@ -655,12 +655,12 @@
     0,
     0.7490196078431373
   ); /** Generated base overlay backdrop color (primary, 30% darker at 75% opacity) */
-  --storm-color-base-border: #41414c; /** Generated base border color for secondary backgrounds (secondary, 15% brighter) */
+  --storm-color-base-border: #191b21; /** Generated base border color for secondary backgrounds (secondary, 15% brighter) */
   --storm-color-base-primary-hovered: #c3c3c3; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% darker) */
   --storm-color-base-primary-inactive: #565656; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% darker) */
   --storm-color-base-primary-disabled: #828290; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26)) */
-  --storm-color-base-secondary-hovered: #3d3d49; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 13% brighter) */
-  --storm-color-base-secondary-disabled: #28282f; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-base-secondary-hovered: #18191e; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 13% brighter) */
+  --storm-color-base-secondary-disabled: #1c1e22; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-base-link-hovered: #9bfcff; /** The color used for hyperlink text. (hovered, 25% brighter) */
   --storm-color-base-link-inactive: #007cb5; /** The color used for hyperlink text. (inactive, 20% darker) */
   --storm-color-base-link-disabled: #2c6380; /** The color used for hyperlink text. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
@@ -681,14 +681,14 @@
   --storm-color-danger-secondary-hovered: #5a071a; /** Generated low-emphasis danger background for the dark theme (hovered, 25% brighter) */
   --storm-color-danger-secondary-disabled: #2a151c; /** Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-danger-outline-hovered: #ffb4c4; /** Generated danger border and divider color (matches primary) (hovered, 40% brighter) */
-  --storm-color-warning-border: #ffd594; /** Generated warning border color for secondary backgrounds (secondary, 15% brighter) */
-  --storm-color-warning-primary-hovered: #c58a17; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker) */
-  --storm-color-warning-primary-inactive: #fffeef; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter) */
-  --storm-color-warning-primary-disabled: #846f4d; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
-  --storm-color-warning-secondary-hovered: #ffe69e; /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 25% brighter) */
-  --storm-color-warning-secondary-inactive: #8a5800; /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (inactive, 20% darker) */
-  --storm-color-warning-secondary-disabled: #705730; /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
-  --storm-color-warning-outline-hovered: #553c00; /** Generated warning border and divider color (matches primary) (hovered, 40% darker) */
+  --storm-color-warning-border: #da9421; /** Generated warning border color for secondary backgrounds (secondary, 15% brighter) */
+  --storm-color-warning-primary-hovered: #916700; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker) */
+  --storm-color-warning-primary-inactive: #fffbd4; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter) */
+  --storm-color-warning-primary-disabled: #816943; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-warning-secondary-hovered: #eead45; /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 25% brighter) */
+  --storm-color-warning-secondary-inactive: #442c00; /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (inactive, 20% darker) */
+  --storm-color-warning-secondary-disabled: #514128; /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-warning-outline-hovered: #583900; /** Generated warning border and divider color (matches primary) (hovered, 40% darker) */
   --storm-color-info-backdrop: rgba(
     1,
     0,
@@ -724,13 +724,12 @@
   --storm-color-ink-disabled: #5a5a66; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-subtle-hovered: #ecedef; /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% brighter) */
   --storm-color-subtle-disabled: #4e4e5a; /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
-  --storm-color-subtlest-hovered: #6b6f7c; /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% brighter) */
-  --storm-color-subtlest-disabled: #2f3138; /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-surface-disabled: #030304; /** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-elevated-active: #020202; /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% brighter) */
   --storm-color-elevated-disabled: #060607; /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-floating-hovered: #060708; /** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% brighter) */
   --storm-color-floating-active: #0b0c0e; /** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% brighter) */
+  --storm-color-outline-disabled: #2f3138; /** High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-size-zero: 0px; /** No size */
   --storm-size-xxs: 2px; /** A 2px xxs size step */
   --storm-size-xs: 4px; /** A 4px xs size step */
@@ -1003,8 +1002,8 @@
   --storm-ring-brand-subtle: 0px 0px 0px 1px #3be4be26; /** Generated brand 1px outline focus ring with no gap */
   --storm-ring-danger: 0px 0px 0px 3px #cf2d5626; /** Generated danger 3px focus ring with no gap */
   --storm-ring-danger-subtle: 0px 0px 0px 1px #cf2d5626; /** Generated danger 1px outline focus ring with no gap */
-  --storm-ring-warning: 0px 0px 0px 3px #facd7b26; /** Generated warning 3px focus ring with no gap */
-  --storm-ring-warning-subtle: 0px 0px 0px 1px #facd7b26; /** Generated warning 1px outline focus ring with no gap */
+  --storm-ring-warning: 0px 0px 0px 3px #f9c25e26; /** Generated warning 3px focus ring with no gap */
+  --storm-ring-warning-subtle: 0px 0px 0px 1px #f9c25e26; /** Generated warning 1px outline focus ring with no gap */
   --storm-ring-info: 0px 0px 0px 3px #4d8eff26; /** Generated info 3px focus ring with no gap */
   --storm-ring-info-subtle: 0px 0px 0px 1px #4d8eff26; /** Generated info 1px outline focus ring with no gap */
   --storm-ring-discovery: 0px 0px 0px 3px #9277da26; /** Generated discovery 3px focus ring with no gap */
@@ -1039,9 +1038,6 @@
   --storm-color-subtle: var(
     --storm-color-neutral-8
   ); /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. */
-  --storm-color-subtlest: var(
-    --storm-color-neutral-10
-  ); /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. */
   --storm-color-outline: var(
     --storm-color-neutral-10
   ); /** High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. */
@@ -1052,7 +1048,7 @@
     --storm-color-neutral-13
   ); /** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. */
   --storm-color-base-secondary: var(
-    --storm-color-neutral-11
+    --storm-color-neutral-12
   ); /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. */
   --storm-color-base-on-primary: var(
     --storm-color-neutral-13
@@ -1145,10 +1141,10 @@
     --storm-color-danger-primary-disabled
   ); /** Generated danger border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-warning-primary: var(
-    --storm-color-yellow-1
+    --storm-color-yellow-2
   ); /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. */
   --storm-color-warning-secondary: var(
-    --storm-color-yellow-6
+    --storm-color-yellow-8
   ); /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. */
   --storm-color-warning-on-primary: var(
     --storm-color-neutral-13
@@ -1405,12 +1401,6 @@
   --storm-color-subtle-inactive: var(
     --storm-color-base-primary-inactive
   ); /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker) */
-  --storm-color-subtlest-active: var(
-    --storm-color-neutral-1
-  ); /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, dark contrast primitive) */
-  --storm-color-subtlest-inactive: var(
-    --storm-color-base-primary-inactive
-  ); /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker) */
   --storm-color-sunken-hovered: var(
     --storm-color-neutral-13
   ); /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 10% brighter) */
@@ -1465,9 +1455,6 @@
   --storm-color-outline-inactive: var(
     --storm-color-base-primary-inactive
   ); /** High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 50% darker) */
-  --storm-color-outline-disabled: var(
-    --storm-color-subtlest-disabled
-  ); /** High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-border-radius-container: var(
     --storm-border-radius-lg
   ); /** Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText. */
@@ -1583,9 +1570,9 @@
   --storm-ring-danger-subtle-offset:
     0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #cf2d5626; /** Generated danger 1px focus ring with a 2px gap */
   --storm-ring-warning-offset:
-    0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 7px #facd7b26; /** Generated warning 3px focus ring with a 3px gap */
+    0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 7px #f9c25e26; /** Generated warning 3px focus ring with a 3px gap */
   --storm-ring-warning-subtle-offset:
-    0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #facd7b26; /** Generated warning 1px focus ring with a 2px gap */
+    0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #f9c25e26; /** Generated warning 1px focus ring with a 2px gap */
   --storm-ring-info-offset:
     0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 7px #4d8eff26; /** Generated info 3px focus ring with a 3px gap */
   --storm-ring-info-subtle-offset:

@@ -397,7 +397,6 @@ describe("tamaguiPreprocessor", () => {
         emphasis: { ...colorToken("#f5f5f5"), group: "foreground" },
         ink: { ...colorToken("#777777"), group: "foreground" },
         subtle: { ...colorToken("#777777"), group: "foreground" },
-        subtlest: colorToken("#777777"),
         hairline: colorToken("#777777"),
         base: {
           primary: colorToken("#f5f5f5"),
@@ -437,7 +436,7 @@ describe("tamaguiPreprocessor", () => {
     }
     expect(result.color["ink-active"].group).toBe("foreground");
 
-    for (const key of ["subtlest", "backdrop"]) {
+    for (const key of ["backdrop"]) {
       expect(result.color).toHaveProperty(key);
       expect(result.color).not.toHaveProperty(`${key}-active`);
     }
