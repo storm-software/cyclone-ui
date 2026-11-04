@@ -18,9 +18,19 @@
 
 "use client";
 
-import type { ColorTokens, GetProps, ThemeTokens } from "@tamagui/core";
+import type {
+  ColorTokens,
+  GetProps,
+  TamaguiComponent,
+  TamaguiElement,
+  ThemeTokens
+} from "@tamagui/core";
 import { createStyledHOC } from "@tamagui/core";
 import { Progress as TamaguiProgress } from "@tamagui/progress";
+
+export type ProgressProps = GetProps<typeof TamaguiProgress> & {
+  color?: ColorTokens | ThemeTokens;
+};
 
 export const Progress = createStyledHOC(
   TamaguiProgress,
@@ -31,9 +41,7 @@ export const Progress = createStyledHOC(
       value = 0,
       max = 100,
       ...props
-    }: GetProps<typeof TamaguiProgress> & {
-      color?: ColorTokens | ThemeTokens;
-    },
+    }: ProgressProps,
     forwardRef
   ) => {
     return (
@@ -54,6 +62,4 @@ export const Progress = createStyledHOC(
   {
     displayName: "Progress"
   }
-);
-
-export type ProgressProps = GetProps<typeof Progress>;
+) as TamaguiComponent<ProgressProps, TamaguiElement>;
