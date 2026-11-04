@@ -2,6 +2,30 @@
 
 # Changelog for Cyclone UI - Card
 
+## [0.6.49](https://github.com/storm-software/cyclone-ui/releases/tag/card%400.6.49) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Update display of secondary variants to include box-shadow ([02092d99a](https://github.com/storm-software/cyclone-ui/commit/02092d99a))
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.45**
+- Updated **container** to **v0.6.47**
+- Updated **eyebrow-text** to **v0.5.45**
+- Updated **heading-text** to **v0.5.46**
+- Updated **helpers** to **v0.3.45**
+- Updated **icons** to **v0.0.43**
+- Updated **link** to **v0.5.48**
+- Updated **themeable-icon** to **v0.6.47**
+- Updated **vectors** to **v0.5.47**
+
 ## [0.6.48](https://github.com/storm-software/cyclone-ui/releases/tag/card%400.6.48) (11/03/2026)
 
 ### Updated Dependencies

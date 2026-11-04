@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - CLI
 
+## [0.6.37](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.37) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **registry-api** to **v0.3.45**
+- Updated **theme-builder** to **v0.0.35**
+
 ## [0.6.36](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.36) (11/03/2026)
 
 ### Updated Dependencies

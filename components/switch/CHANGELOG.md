@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Switch
 
+## [0.5.48](https://github.com/storm-software/cyclone-ui/releases/tag/switch%400.5.48) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.48**
+- Updated **form** to **v0.9.46**
+- Updated **helpers** to **v0.3.45**
+- Updated **themeable-icon** to **v0.6.47**
+
 ## [0.5.47](https://github.com/storm-software/cyclone-ui/releases/tag/switch%400.5.47) (11/03/2026)
 
 ### Updated Dependencies

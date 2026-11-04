@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Radar Chart
 
+## [0.0.17](https://github.com/storm-software/cyclone-ui/releases/tag/radar-chart%400.0.17) (11/04/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **chart** to **v0.0.17**
+
 ## [0.0.16](https://github.com/storm-software/cyclone-ui/releases/tag/radar-chart%400.0.16) (11/03/2026)
 
 ### Bug Fixes

@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Theme Builder
 
+## [0.0.35](https://github.com/storm-software/cyclone-ui/releases/tag/theme-builder%400.0.35) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **theme-builder:** Added the `border` color token to themes ([47f36e073](https://github.com/storm-software/cyclone-ui/commit/47f36e073))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
 ## [0.0.33](https://github.com/storm-software/cyclone-ui/releases/tag/theme-builder%400.0.33) (11/03/2026)
 
 ### Bug Fixes

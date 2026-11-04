@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Message
 
+## [0.6.49](https://github.com/storm-software/cyclone-ui/releases/tag/message%400.6.49) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **alert** to **v0.4.49**
+- Updated **button** to **v0.6.48**
+- Updated **state** to **v0.0.47**
+
 ## [0.6.48](https://github.com/storm-software/cyclone-ui/releases/tag/message%400.6.48) (11/03/2026)
 
 ### Updated Dependencies

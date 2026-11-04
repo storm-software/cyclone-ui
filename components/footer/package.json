@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/footer",
-  "version": "0.0.46",
+  "version": "0.0.47",
   "type": "module",
   "description": "A responsive site footer layout with compound parts for an introduction, action, navigation sections, links, a bottom rail with brand, copyright and legal links, and a background logo. Columns stack on smaller screens, and hovering one link mutes the others. Use it at the bottom of marketing or documentation pages, or build a footer block on top of it.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/footer"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -31,7 +33,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",

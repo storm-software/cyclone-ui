@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/cli",
-  "version": "0.6.36",
+  "version": "0.6.37",
   "type": "module",
   "description": "🌀 Tamagui based design components used by Storm Software. Like shadcn/ui, the components are copied into other repositories via the Cyclone CLI.",
   "repository": {
@@ -38,8 +38,15 @@
   },
   "license": "Apache-2.0",
   "private": false,
-  "files": ["dist"],
-  "keywords": ["cli", "cyclone-ui", "storm-software", "shell-shock"],
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "cli",
+    "cyclone-ui",
+    "storm-software",
+    "shell-shock"
+  ],
   "dependencies": {
     "@cyclone-ui/registry-api": "workspace:*",
     "@cyclone-ui/theme-builder": "workspace:*",

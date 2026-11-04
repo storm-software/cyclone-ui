@@ -2,6 +2,25 @@
 
 # Changelog for Cyclone UI - Radio Group
 
+## [0.5.49](https://github.com/storm-software/cyclone-ui/releases/tag/radio-group%400.5.49) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.45**
+- Updated **field** to **v0.5.48**
+- Updated **form** to **v0.9.46**
+- Updated **heading-text** to **v0.5.46**
+- Updated **helpers** to **v0.3.45**
+- Updated **icons** to **v0.0.43**
+
 ## [0.5.48](https://github.com/storm-software/cyclone-ui/releases/tag/radio-group%400.5.48) (11/03/2026)
 
 ### Updated Dependencies

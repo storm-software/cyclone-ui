@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/line-chart",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "private": false,
   "description": "A composable line chart built on Recharts and the shared Cyclone chart parts. Lines take solid, dashed or animated strokes, curve types, glow, point markers, a dashed buffer segment and a reveal animation. It also supports a zoom brush, legend selection and a loading skeleton. Use it to compare how several series trend over time.",
   "repository": {
@@ -8,7 +8,9 @@
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/line-chart"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "type": "module",
   "exports": {
     ".": {
@@ -24,7 +26,9 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@cyclone-ui/chart": "workspace:*",
     "motion": "catalog:",

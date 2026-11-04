@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Confetti Burst
 
+## [0.0.35](https://github.com/storm-software/cyclone-ui/releases/tag/confetti-burst%400.0.35) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+
+### Updated Dependencies
+
+- Updated **tokens** to **v0.3.34**
+
 ## [0.0.34](https://github.com/storm-software/cyclone-ui/releases/tag/confetti-burst%400.0.34) (11/03/2026)
 
 ### Updated Dependencies

@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/bar-chart",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "type": "module",
   "description": "A composable bar chart built on Recharts and the shared Cyclone chart parts. Bars can be grouped, stacked or shown as percentages, run vertically or horizontally, and use default, gradient, hatched, duotone or striped fills with glow and hover highlighting. It also supports a zoom brush, legend selection and a loading skeleton. Use it to compare values across categories.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/bar-chart"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -30,7 +32,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

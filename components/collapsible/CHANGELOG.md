@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Collapsible
 
+## [0.3.44](https://github.com/storm-software/cyclone-ui/releases/tag/collapsible%400.3.44) (11/04/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **accordion** to **v0.3.48**
+- Updated **body-text** to **v0.5.45**
+
 ## [0.3.43](https://github.com/storm-software/cyclone-ui/releases/tag/collapsible%400.3.43) (11/03/2026)
 
 ### Updated Dependencies

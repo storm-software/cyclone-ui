@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Accordion
 
+## [0.3.48](https://github.com/storm-software/cyclone-ui/releases/tag/accordion%400.3.48) (11/04/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Added the `border` color token to themes ([47f36e073](https://github.com/storm-software/cyclone-ui/commit/47f36e073))
+- **monorepo:** Resolve issue building component packages ([291579621](https://github.com/storm-software/cyclone-ui/commit/291579621))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.45**
+- Updated **heading-text** to **v0.5.46**
+- Updated **icons** to **v0.0.43**
+- Updated **vectors** to **v0.5.47**
+
 ## [0.3.47](https://github.com/storm-software/cyclone-ui/releases/tag/accordion%400.3.47) (11/03/2026)
 
 ### Updated Dependencies

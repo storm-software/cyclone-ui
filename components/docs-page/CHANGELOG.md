@@ -2,6 +2,25 @@
 
 # Changelog for Cyclone UI - Docs Page
 
+## [0.0.24](https://github.com/storm-software/cyclone-ui/releases/tag/docs-page%400.0.24) (11/04/2026)
+
+### Bug Fixes
+
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.45**
+- Updated **breadcrumb** to **v0.4.50**
+- Updated **button** to **v0.6.48**
+- Updated **divider** to **v0.0.41**
+- Updated **heading-text** to **v0.5.46**
+- Updated **icons** to **v0.0.43**
+- Updated **inline-code-text** to **v0.5.44**
+- Updated **page** to **v0.0.43**
+- Updated **table-of-contents** to **v0.0.44**
+
 ## [0.0.23](https://github.com/storm-software/cyclone-ui/releases/tag/docs-page%400.0.23) (11/03/2026)
 
 ### Bug Fixes

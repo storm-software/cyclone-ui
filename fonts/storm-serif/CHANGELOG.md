@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Fonts Storm Serif
 
+## [1.0.34](https://github.com/storm-software/cyclone-ui/releases/tag/fonts-storm-serif%401.0.34) (11/04/2026)
+
+### Bug Fixes
+
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+
 ## [1.0.12](https://github.com/storm-software/cyclone-ui/releases/tag/fonts-storm-serif%401.0.12) (10/16/2026)
 
 ### Bug Fixes

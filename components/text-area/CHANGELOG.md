@@ -2,6 +2,25 @@
 
 # Changelog for Cyclone UI - Text Area
 
+## [0.1.48](https://github.com/storm-software/cyclone-ui/releases/tag/text-area%400.1.48) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.48**
+- Updated **form** to **v0.9.46**
+- Updated **helpers** to **v0.3.45**
+- Updated **input** to **v0.6.48**
+- Updated **scroll-view** to **v0.5.47**
+
 ## [0.1.47](https://github.com/storm-software/cyclone-ui/releases/tag/text-area%400.1.47) (11/03/2026)
 
 ### Updated Dependencies

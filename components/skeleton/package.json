@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/skeleton",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "type": "module",
   "description": "A skeleton component for loading states.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/skeleton"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -28,7 +30,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",

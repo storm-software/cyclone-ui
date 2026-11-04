@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Registry API
 
+## [0.3.45](https://github.com/storm-software/cyclone-ui/releases/tag/registry-api%400.3.45) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
 ## [0.3.33](https://github.com/storm-software/cyclone-ui/releases/tag/registry-api%400.3.33) (10/29/2026)
 
 ### Bug Fixes
