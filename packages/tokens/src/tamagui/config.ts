@@ -432,6 +432,7 @@ const themes = {
   },
   dark_base: {
     backdrop: "oklch(0.251965 0 0 / 0.749)",
+    border: "oklch(0.454551 0.006426 286.141)",
     link: "oklch(0.748414 0.1551 233.252)",
     "link-active": "oklch(0.90939 0.122701 198.412)",
     "link-disabled": "oklch(0.512983 0.058412 232.37)",
@@ -456,6 +457,7 @@ const themes = {
   },
   dark_brand: {
     backdrop: "oklch(0.242794 0.062022 153.375 / 0.749)",
+    border: "oklch(0.501556 0.083543 172.932)",
     link: "oklch(0.825828 0.144837 173.563)",
     "link-active": "oklch(0.630716 0.124588 170.203)",
     "link-disabled": "oklch(0.544293 0.051291 178.337)",
@@ -480,6 +482,7 @@ const themes = {
   },
   dark_danger: {
     backdrop: "oklch(0.218817 0.089792 29.234 / 0.749)",
+    border: "oklch(0.34937 0.121812 11.995)",
     link: tokens.color.red5,
     "link-active": "oklch(0.702463 0.193626 11.864)",
     "link-disabled": "oklch(0.436988 0.065223 4.651)",
@@ -509,6 +512,7 @@ const themes = {
   },
   dark_discovery: {
     backdrop: "oklch(0.196717 0.11219 288.742 / 0.749)",
+    border: "oklch(0.369313 0.099907 292.323)",
     link: tokens.color.purple4,
     "link-active": "oklch(0.789049 0.12248 297.421)",
     "link-disabled": "oklch(0.475609 0.049988 294.783)",
@@ -538,6 +542,7 @@ const themes = {
   },
   dark_info: {
     backdrop: "oklch(0.216042 0.145372 267.094 / 0.749)",
+    border: "oklch(0.457571 0.130694 260.968)",
     link: tokens.color.blue4,
     "link-active": "oklch(0.797163 0.109493 245.556)",
     "link-disabled": "oklch(0.481081 0.061443 262.279)",
@@ -567,6 +572,7 @@ const themes = {
   },
   dark_success: {
     backdrop: "oklch(0.214668 0.073046 142.495 / 0.749)",
+    border: "oklch(0.500375 0.096033 161.806)",
     link: tokens.color.green4,
     "link-active": "oklch(0.9169 0.13001 163.782)",
     "link-disabled": "oklch(0.51343 0.046888 168.285)",
@@ -596,6 +602,7 @@ const themes = {
   },
   dark_warning: {
     backdrop: "oklch(0.219683 0.065383 42.737 / 0.749)",
+    border: "oklch(0.853588 0.129676 76.44)",
     link: tokens.color.yellow1,
     "link-active": "oklch(0.652732 0.112539 80.951)",
     "link-disabled": "oklch(0.564806 0.036201 80.806)",
@@ -696,6 +703,7 @@ const themes = {
   },
   light_base: {
     backdrop: "oklch(0.067205 0 0 / 0.749)",
+    border: "oklch(0.643721 0.001468 286.359)",
     link: "oklch(0.593348 0.150515 245.368)",
     "link-active": "oklch(0.455409 0.137645 252.341)",
     "link-disabled": "oklch(0.454315 0.053086 243.434)",
@@ -720,6 +728,7 @@ const themes = {
   },
   light_brand: {
     backdrop: "oklch(0.203199 0.036369 182.141 / 0.749)",
+    border: "oklch(0.824039 0.043063 185.212)",
     link: "oklch(0.689733 0.115563 186.097)",
     "link-active": "oklch(0.527193 0.092884 185.044)",
     "link-disabled": "oklch(0.491771 0.043289 191.633)",
@@ -744,6 +753,7 @@ const themes = {
   },
   light_danger: {
     backdrop: "oklch(0.163472 0.067081 29.234 / 0.749)",
+    border: "oklch(0.616028 0.143319 10.06)",
     link: tokens.color.red7,
     "link-active": "oklch(0.33398 0.133464 12.997)",
     "link-disabled": "oklch(0.3932 0.043815 1.83)",
@@ -773,6 +783,7 @@ const themes = {
   },
   light_discovery: {
     backdrop: "oklch(0.156124 0.090762 285.766 / 0.749)",
+    border: "oklch(0.598697 0.117771 295.615)",
     link: tokens.color.purple7,
     "link-active": "oklch(0.337037 0.128688 292.702)",
     "link-disabled": "oklch(0.403776 0.045319 294.476)",
@@ -802,6 +813,7 @@ const themes = {
   },
   light_info: {
     backdrop: "oklch(0.179341 0.115985 271.53 / 0.749)",
+    border: "oklch(0.607898 0.147788 260.915)",
     link: tokens.color.blue7,
     "link-active": "oklch(0.354654 0.159775 261.635)",
     "link-disabled": "oklch(0.40952 0.05423 263.696)",
@@ -831,6 +843,7 @@ const themes = {
   },
   light_success: {
     backdrop: "oklch(0.138783 0.039775 148.383 / 0.749)",
+    border: "oklch(0.623483 0.08057 168.157)",
     link: tokens.color.green7,
     "link-active": "oklch(0.359241 0.075319 165.208)",
     "link-disabled": "oklch(0.412806 0.026211 177.911)",
@@ -860,6 +873,7 @@ const themes = {
   },
   light_warning: {
     backdrop: "oklch(0.122913 0.050438 29.234 / 0.749)",
+    border: "oklch(0.629842 0.087518 76.873)",
     link: tokens.color.yellow9,
     "link-active": "oklch(0.355177 0.076137 71.799)",
     "link-disabled": "oklch(0.411202 0.026125 76.156)",
@@ -1314,6 +1328,7 @@ const eyebrowFont = createFont({
  */
 export interface AppTheme {
   backdrop: string;
+  border: string;
   canvas: string;
   "canvas-active": string;
   "canvas-disabled": string;

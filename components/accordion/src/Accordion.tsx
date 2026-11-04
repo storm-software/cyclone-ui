@@ -155,7 +155,7 @@ const AccordionGroup = styled(YGroup, {
   width: "100%",
   borderRadius: "container",
   borderWidth: 1,
-  borderColor: "outline",
+  borderColor: "border",
   paddingHorizontal: "6xl",
   paddingVertical: "lg",
   overflow: "hidden",
@@ -345,14 +345,14 @@ const AccordionItem = styled(TamaguiAccordion.Item, {
   context: AccordionContext,
   overflow: "hidden",
   borderBottomWidth: 1,
-  borderBottomColor: "outline",
+  borderBottomColor: "border",
 
   variants: {
     separated: {
       true: {
         borderRadius: "container",
         borderWidth: 1,
-        borderColor: "outline"
+        borderColor: "border"
       }
     },
 
@@ -429,7 +429,7 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
   zIndex: "60",
   borderStyle: "solid",
   borderWidth: 0,
-  borderColor: "outline",
+  borderColor: "border",
   boxShadow: "none focus-visible:ring-offset",
   cursor: "hover:pointer",
   outlineStyle: "focus-visible:none",
@@ -453,7 +453,7 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
       ghost: {
         paddingHorizontal: 0,
         borderBottomWidth: 1,
-        borderBottomColor: "outline"
+        borderBottomColor: "border"
       }
     },
 

@@ -256,6 +256,13 @@ export const manifest: DesignSystemManifest = {
       value: "#010101bf"
     },
     {
+      path: "color.base.border",
+      cssVar: "--storm-color-base-border",
+      type: "color",
+      category: "color",
+      value: "#8d8d8e"
+    },
+    {
       path: "color.base.link",
       cssVar: "--storm-color-base-link",
       type: "color",
@@ -454,6 +461,13 @@ export const manifest: DesignSystemManifest = {
       value: "#001c18bf"
     },
     {
+      path: "color.brand.border",
+      cssVar: "--storm-color-brand-border",
+      type: "color",
+      category: "color",
+      value: "#a7cfc9"
+    },
+    {
       path: "color.brand.link",
       cssVar: "--storm-color-brand-link",
       type: "color",
@@ -615,6 +629,13 @@ export const manifest: DesignSystemManifest = {
       type: "color",
       category: "color",
       value: "#240000bf"
+    },
+    {
+      path: "color.danger.border",
+      cssVar: "--storm-color-danger-border",
+      type: "color",
+      category: "color",
+      value: "#cb5b71"
     },
     {
       path: "color.danger.link",
@@ -907,6 +928,13 @@ export const manifest: DesignSystemManifest = {
       type: "color",
       category: "color",
       value: "#0d0030bf"
+    },
+    {
+      path: "color.discovery.border",
+      cssVar: "--storm-color-discovery-border",
+      type: "color",
+      category: "color",
+      value: "#8670be"
     },
     {
       path: "color.discovery.link",
@@ -1251,6 +1279,13 @@ export const manifest: DesignSystemManifest = {
       type: "color",
       category: "color",
       value: "#070043bf"
+    },
+    {
+      path: "color.info.border",
+      cssVar: "--storm-color-info-border",
+      type: "color",
+      category: "color",
+      value: "#4d80da"
     },
     {
       path: "color.info.link",
@@ -1997,6 +2032,13 @@ export const manifest: DesignSystemManifest = {
       value: "#000d02bf"
     },
     {
+      path: "color.success.border",
+      cssVar: "--storm-color-success-border",
+      type: "color",
+      category: "color",
+      value: "#52977e"
+    },
+    {
       path: "color.success.link",
       cssVar: "--storm-color-success-link",
       type: "color",
@@ -2231,6 +2273,13 @@ export const manifest: DesignSystemManifest = {
       type: "color",
       category: "color",
       value: "#150000bf"
+    },
+    {
+      path: "color.warning.border",
+      cssVar: "--storm-color-warning-border",
+      type: "color",
+      category: "color",
+      value: "#a78249"
     },
     {
       path: "color.warning.link",
@@ -4917,6 +4966,7 @@ export const manifest: DesignSystemManifest = {
         "blue7",
         "blue8",
         "blue9",
+        "border",
         "canvas",
         "canvas-active",
         "canvas-disabled",

@@ -389,7 +389,7 @@ const ButtonFrame = styled(View, {
 
       secondary: {
         borderWidth: 1,
-        borderColor: "outline hover:outline press:outline",
+        borderColor: "border hover:border press:border",
         backgroundColor: "secondary hover:secondary-hovered",
         boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
       },

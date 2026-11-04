@@ -634,6 +634,8 @@ const MAX_SUBTLE_COLOR_ADJUSTMENTS = 100;
 const SUBTLE_COLOR_GAMUT_SEARCH_ITERATIONS = 32;
 const BACKDROP_BRIGHTNESS = 0.25;
 const BACKDROP_OPACITY = 0.75;
+/** OKLCH lightness step for the rim around `secondary` backgrounds (brighter in dark, darker in light themes). */
+const BORDER_LIGHTNESS_STEP = 0.15;
 /** OKLCH lightness shift for hovered colors already near the contrast primitive. */
 const CONTRAST_SIDE_ACTIVE_LIGHTNESS_SHIFT = 0.25;
 
@@ -1345,7 +1347,8 @@ function addColorStateTokens(
  * missing `link` color and, for `status` groups, `outline` color (both
  * aliasing `primary`), `on-primary` /
  * `on-secondary` text colors, a `backdrop` overlay color (`primary` 30% darker
- * at 75% opacity, no state variants), and state variants for `primary`, `secondary`,
+ * at 75% opacity, no state variants), a `border` color (`secondary` 15% brighter, or
+ * 15% darker in light themes, no state variants), and state variants for `primary`, `secondary`,
  * `link` and `outline`. Every token in the group gets the group name as
  * its `theme` and `group`, so Tamagui places it in that child theme (e.g.
  * `danger.on-primary` → `onPrimary` in the `danger` theme).
@@ -1416,6 +1419,26 @@ function addThemeColorGroupTokens(
       $type: "color",
       $value: onSecondary,
       $description: `Generated text and icon color on ${name} secondary backgrounds`
+    };
+  }
+
+  const secondaryHex =
+    !("border" in group) &&
+    isTokenNode(result.secondary) &&
+    resolveColorHex(result.secondary.$value, tree);
+  if (secondaryHex) {
+    const { lightness, chroma, hue, alpha } = hexToOklch(secondaryHex);
+    const direction = parentTheme === "light" ? -1 : 1;
+    result.border = {
+      ...token,
+      $type: "color",
+      $value: oklchToGamutMappedHex(
+        clamp01(lightness * (1 + direction * BORDER_LIGHTNESS_STEP)),
+        chroma,
+        hue,
+        alpha
+      ),
+      $description: `Generated ${name} border color for secondary backgrounds (secondary, ${Math.round(BORDER_LIGHTNESS_STEP * 100)}% ${direction > 0 ? "brighter" : "darker"})`
     };
   }
 
@@ -1568,7 +1591,8 @@ function injectColorStateVariants(
  * `oklch()`. Root colors (emphasis, ink, subtle, subtlest, outline, backgrounds)
  * stay in the root light and dark themes without rings. For each color group
  * with a `primary` token (except excluded groups), a missing `secondary` background and `on-primary` /
- * `on-secondary` text colors are generated, then hovered, active, inactive,
+ * `on-secondary` text colors are generated, a missing `border` is derived from
+ * `secondary` (15% brighter, or darker in light themes), then hovered, active, inactive,
  * and disabled variants are added to the outline, `foreground` and
  * `background` group colors, and each theme color group's `primary`, `secondary`
  * `link` and `outline` (`link`, and `outline` in `status` groups, default to

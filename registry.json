@@ -13,6 +13,7 @@
         "@tamagui/core@3.2.0",
         "@tamagui/group@3.2.0",
         "@tamagui/helpers@3.2.0",
+        "@tamagui/react-native-types@3.2.0",
         "@tamagui/stacks@3.2.0"
       ],
       "devDependencies": [
@@ -3875,7 +3876,8 @@
         "@tamagui/tailwind@3.2.0",
         "react@^19.3.1",
         "react-dom@^19.3.1",
-        "react-native@^0.87.1"
+        "react-native@^0.87.1",
+        "@tamagui/create-context@3.2.0"
       ],
       "files": [
         {

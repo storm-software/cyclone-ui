@@ -60,7 +60,7 @@ Razorwind is an external package. Do not patch it in this repository. Change the
 [`packages/theme-builder/src/preprocessor.ts`](../../../packages/theme-builder/src/preprocessor.ts) is registered first (`preprocessor()`, line 56). It runs `tamaguiPreprocessor` over the token tree. The doc comment above the function (line 1552) lists the rules. In short:
 
 1. **Convert colors to hex.** `oklch()` values and shadow colors become `#rrggbb` or `#rrggbbaa`. Generators then do not need to parse `oklch()`.
-2. **Group colors into child themes.** Each color group that has a `primary` token becomes a child theme. A missing `secondary`, `on-primary`, and `on-secondary` are generated.
+2. **Group colors into child themes.** Each color group that has a `primary` token becomes a child theme. A missing `secondary`, `on-primary`, and `on-secondary` are generated. A missing `border` is then derived from `secondary`, 15% brighter (darker in light themes), to outline `secondary` backgrounds.
 3. **Add state variants.** Hovered, active, inactive, and disabled colors are derived. Low-saturation colors shift lightness from the theme's contrast primitive. Saturated colors scale their own lightness.
 4. **Add focus rings.** Ring tokens and ring opacity are generated for each theme color group.
 

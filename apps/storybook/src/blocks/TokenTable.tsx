@@ -910,6 +910,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.base.border",
+      type: "color",
+      value: "#56565a",
+      cssVar: "--cu-color-base-border",
+      description:
+        "Generated base border color for secondary backgrounds (secondary, 15% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.base.primary-hovered",
       type: "color",
       value: "#aeaeae",
@@ -1080,6 +1090,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-brand-on-secondary",
       description:
         "Generated text and icon color on brand secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.border",
+      type: "color",
+      value: "#22735f",
+      cssVar: "--cu-color-brand-border",
+      description:
+        "Generated brand border color for secondary backgrounds (secondary, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1269,6 +1289,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-danger-on-secondary",
       description:
         "Generated text and icon color on danger secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger.border",
+      type: "color",
+      value: "#6b1229",
+      cssVar: "--cu-color-danger-border",
+      description:
+        "Generated danger border color for secondary backgrounds (secondary, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1502,6 +1532,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.warning.border",
+      type: "color",
+      value: "#ffc366",
+      cssVar: "--cu-color-warning-border",
+      description:
+        "Generated warning border color for secondary backgrounds (secondary, 15% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.warning.primary-hovered",
       type: "color",
       value: "#b38834",
@@ -1725,6 +1765,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-info-on-secondary",
       description:
         "Generated text and icon color on info secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info.border",
+      type: "color",
+      value: "#2a549f",
+      cssVar: "--cu-color-info-border",
+      description:
+        "Generated info border color for secondary backgrounds (secondary, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1958,6 +2008,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.discovery.border",
+      type: "color",
+      value: "#42336f",
+      cssVar: "--cu-color-discovery-border",
+      description:
+        "Generated discovery border color for secondary backgrounds (secondary, 15% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.discovery.primary-hovered",
       type: "color",
       value: "#c3a9ff",
@@ -2183,6 +2243,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-success-on-secondary",
       description:
         "Generated text and icon color on success secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success.border",
+      type: "color",
+      value: "#217452",
+      cssVar: "--cu-color-success-border",
+      description:
+        "Generated success border color for secondary backgrounds (secondary, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -6612,6 +6682,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.base.border",
+      type: "color",
+      value: "#636365",
+      cssVar: "--cu-color-base-border",
+      description:
+        "Generated base border color for secondary backgrounds (secondary, 15% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.base.primary-hovered",
       type: "color",
       value: "#a0a0a0",
@@ -6782,6 +6862,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-brand-on-secondary",
       description:
         "Generated text and icon color on brand secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.border",
+      type: "color",
+      value: "#3f7568",
+      cssVar: "--cu-color-brand-border",
+      description:
+        "Generated brand border color for secondary backgrounds (secondary, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -6971,6 +7061,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-danger-on-secondary",
       description:
         "Generated text and icon color on danger secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger.border",
+      type: "color",
+      value: "#723242",
+      cssVar: "--cu-color-danger-border",
+      description:
+        "Generated danger border color for secondary backgrounds (secondary, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -7204,6 +7304,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.warning.border",
+      type: "color",
+      value: "#d6ae71",
+      cssVar: "--cu-color-warning-border",
+      description:
+        "Generated warning border color for secondary backgrounds (secondary, 15% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.warning.primary-hovered",
       type: "color",
       value: "#9b8353",
@@ -7427,6 +7537,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-info-on-secondary",
       description:
         "Generated text and icon color on info secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info.border",
+      type: "color",
+      value: "#4a638f",
+      cssVar: "--cu-color-info-border",
+      description:
+        "Generated info border color for secondary backgrounds (secondary, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -7660,6 +7780,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.discovery.border",
+      type: "color",
+      value: "#554c72",
+      cssVar: "--cu-color-discovery-border",
+      description:
+        "Generated discovery border color for secondary backgrounds (secondary, 15% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.discovery.primary-hovered",
       type: "color",
       value: "#ac95e0",
@@ -7885,6 +8015,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-success-on-secondary",
       description:
         "Generated text and icon color on success secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success.border",
+      type: "color",
+      value: "#3f765f",
+      cssVar: "--cu-color-success-border",
+      description:
+        "Generated success border color for secondary backgrounds (secondary, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -12314,6 +12454,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.base.border",
+      type: "color",
+      value: "#41414c",
+      cssVar: "--cu-color-base-border",
+      description:
+        "Generated base border color for secondary backgrounds (secondary, 15% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.base.primary-hovered",
       type: "color",
       value: "#c3c3c3",
@@ -12484,6 +12634,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-brand-on-secondary",
       description:
         "Generated text and icon color on brand secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.border",
+      type: "color",
+      value: "#0b5a47",
+      cssVar: "--cu-color-brand-border",
+      description:
+        "Generated brand border color for secondary backgrounds (secondary, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -12673,6 +12833,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-danger-on-secondary",
       description:
         "Generated text and icon color on danger secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger.border",
+      type: "color",
+      value: "#430011",
+      cssVar: "--cu-color-danger-border",
+      description:
+        "Generated danger border color for secondary backgrounds (secondary, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -12906,6 +13076,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.warning.border",
+      type: "color",
+      value: "#ffd594",
+      cssVar: "--cu-color-warning-border",
+      description:
+        "Generated warning border color for secondary backgrounds (secondary, 15% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.warning.primary-hovered",
       type: "color",
       value: "#c58a17",
@@ -13129,6 +13309,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-info-on-secondary",
       description:
         "Generated text and icon color on info secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info.border",
+      type: "color",
+      value: "#0f44a2",
+      cssVar: "--cu-color-info-border",
+      description:
+        "Generated info border color for secondary backgrounds (secondary, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -13362,6 +13552,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.discovery.border",
+      type: "color",
+      value: "#2c1b5d",
+      cssVar: "--cu-color-discovery-border",
+      description:
+        "Generated discovery border color for secondary backgrounds (secondary, 15% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.discovery.primary-hovered",
       type: "color",
       value: "#f8f5ff",
@@ -13587,6 +13787,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-success-on-secondary",
       description:
         "Generated text and icon color on success secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success.border",
+      type: "color",
+      value: "#0a5b3a",
+      cssVar: "--cu-color-success-border",
+      description:
+        "Generated success border color for secondary backgrounds (secondary, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -18016,6 +18226,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.base.border",
+      type: "color",
+      value: "#8d8d8e",
+      cssVar: "--cu-color-base-border",
+      description:
+        "Generated base border color for secondary backgrounds (secondary, 15% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.base.primary-hovered",
       type: "color",
       value: "#5c5c5f",
@@ -18188,6 +18408,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-brand-on-secondary",
       description:
         "Generated text and icon color on brand secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.border",
+      type: "color",
+      value: "#a7cfc9",
+      cssVar: "--cu-color-brand-border",
+      description:
+        "Generated brand border color for secondary backgrounds (secondary, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -18377,6 +18607,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-danger-on-secondary",
       description:
         "Generated text and icon color on danger secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger.border",
+      type: "color",
+      value: "#cb5b71",
+      cssVar: "--cu-color-danger-border",
+      description:
+        "Generated danger border color for secondary backgrounds (secondary, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -18610,6 +18850,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.warning.border",
+      type: "color",
+      value: "#a78249",
+      cssVar: "--cu-color-warning-border",
+      description:
+        "Generated warning border color for secondary backgrounds (secondary, 15% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.warning.primary-hovered",
       type: "color",
       value: "#543400",
@@ -18833,6 +19083,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-info-on-secondary",
       description:
         "Generated text and icon color on info secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info.border",
+      type: "color",
+      value: "#4d80da",
+      cssVar: "--cu-color-info-border",
+      description:
+        "Generated info border color for secondary backgrounds (secondary, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -19066,6 +19326,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.discovery.border",
+      type: "color",
+      value: "#8670be",
+      cssVar: "--cu-color-discovery-border",
+      description:
+        "Generated discovery border color for secondary backgrounds (secondary, 15% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.discovery.primary-hovered",
       type: "color",
       value: "#3c2372",
@@ -19291,6 +19561,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-success-on-secondary",
       description:
         "Generated text and icon color on success secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success.border",
+      type: "color",
+      value: "#52977e",
+      cssVar: "--cu-color-success-border",
+      description:
+        "Generated success border color for secondary backgrounds (secondary, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -23720,6 +24000,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.base.border",
+      type: "color",
+      value: "#89898a",
+      cssVar: "--cu-color-base-border",
+      description:
+        "Generated base border color for secondary backgrounds (secondary, 15% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.base.primary-hovered",
       type: "color",
       value: "#676769",
@@ -23892,6 +24182,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-brand-on-secondary",
       description:
         "Generated text and icon color on brand secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.border",
+      type: "color",
+      value: "#9bb7b3",
+      cssVar: "--cu-color-brand-border",
+      description:
+        "Generated brand border color for secondary backgrounds (secondary, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -24081,6 +24381,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-danger-on-secondary",
       description:
         "Generated text and icon color on danger secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger.border",
+      type: "color",
+      value: "#ae6d79",
+      cssVar: "--cu-color-danger-border",
+      description:
+        "Generated danger border color for secondary backgrounds (secondary, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -24314,6 +24624,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.warning.border",
+      type: "color",
+      value: "#958060",
+      cssVar: "--cu-color-warning-border",
+      description:
+        "Generated warning border color for secondary backgrounds (secondary, 15% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.warning.primary-hovered",
       type: "color",
       value: "#694d1e",
@@ -24537,6 +24857,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-info-on-secondary",
       description:
         "Generated text and icon color on info secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info.border",
+      type: "color",
+      value: "#6582b6",
+      cssVar: "--cu-color-info-border",
+      description:
+        "Generated info border color for secondary backgrounds (secondary, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -24770,6 +25100,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.discovery.border",
+      type: "color",
+      value: "#8679a7",
+      cssVar: "--cu-color-discovery-border",
+      description:
+        "Generated discovery border color for secondary backgrounds (secondary, 15% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.discovery.primary-hovered",
       type: "color",
       value: "#514075",
@@ -24995,6 +25335,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-success-on-secondary",
       description:
         "Generated text and icon color on success secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success.border",
+      type: "color",
+      value: "#648b7d",
+      cssVar: "--cu-color-success-border",
+      description:
+        "Generated success border color for secondary backgrounds (secondary, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -29424,6 +29774,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.base.border",
+      type: "color",
+      value: "#8e8e9a",
+      cssVar: "--cu-color-base-border",
+      description:
+        "Generated base border color for secondary backgrounds (secondary, 15% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.base.primary-hovered",
       type: "color",
       value: "#494954",
@@ -29596,6 +29956,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-brand-on-secondary",
       description:
         "Generated text and icon color on brand secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.border",
+      type: "color",
+      value: "#c3e8e3",
+      cssVar: "--cu-color-brand-border",
+      description:
+        "Generated brand border color for secondary backgrounds (secondary, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -29785,6 +30155,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-danger-on-secondary",
       description:
         "Generated text and icon color on danger secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger.border",
+      type: "color",
+      value: "#e6516f",
+      cssVar: "--cu-color-danger-border",
+      description:
+        "Generated danger border color for secondary backgrounds (secondary, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -30018,6 +30398,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.warning.border",
+      type: "color",
+      value: "#b88331",
+      cssVar: "--cu-color-warning-border",
+      description:
+        "Generated warning border color for secondary backgrounds (secondary, 15% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.warning.primary-hovered",
       type: "color",
       value: "#070400",
@@ -30241,6 +30631,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-info-on-secondary",
       description:
         "Generated text and icon color on info secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info.border",
+      type: "color",
+      value: "#4083f9",
+      cssVar: "--cu-color-info-border",
+      description:
+        "Generated info border color for secondary backgrounds (secondary, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -30474,6 +30874,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.discovery.border",
+      type: "color",
+      value: "#8b6ed6",
+      cssVar: "--cu-color-discovery-border",
+      description:
+        "Generated discovery border color for secondary backgrounds (secondary, 15% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.discovery.primary-hovered",
       type: "color",
       value: "#240c59",
@@ -30699,6 +31109,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-success-on-secondary",
       description:
         "Generated text and icon color on success secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success.border",
+      type: "color",
+      value: "#3da27d",
+      cssVar: "--cu-color-success-border",
+      description:
+        "Generated success border color for secondary backgrounds (secondary, 15% darker)",
       theme: undefined,
       typography: false
     },

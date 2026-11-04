@@ -126,6 +126,60 @@ describe("tamaguiPreprocessor", () => {
     expect(result.color.info.backdrop.$value).toBe("#00000080");
   });
 
+  it("generates a border color brighter than secondary for theme color groups", () => {
+    const result = tamaguiPreprocessor({
+      dark: {
+        color: {
+          base: {
+            primary: colorToken("#a1a1aa"),
+            secondary: colorToken("#37373b")
+          },
+          info: {
+            primary: colorToken("#4c4dfb"),
+            secondary: colorToken("#4c4dfb")
+          },
+          danger: { primary: colorToken("#ff5470") },
+          warning: {
+            primary: colorToken("#ffb020"),
+            border: colorToken("#ffffff")
+          }
+        }
+      }
+    }) as any;
+
+    const { base, info, danger, warning } = result.dark.color;
+    expect(base.border).toMatchObject({ theme: "base", group: "base" });
+    for (const group of [base, info, danger]) {
+      expect(group.border.$value).toMatch(/^#[0-9a-f]{6}$/);
+      expect(relativeLuminance(group.border.$value)).toBeGreaterThan(
+        relativeLuminance(group.secondary.$value)
+      );
+    }
+    expect(base).not.toHaveProperty("border-hovered");
+    expect(warning.border.$value).toBe("#ffffff");
+  });
+
+  it("generates a border color darker than secondary in light themes", () => {
+    const result = tamaguiPreprocessor({
+      light: {
+        color: {
+          base: {
+            primary: colorToken("#3f3f46"),
+            secondary: colorToken("#f4f4f5")
+          },
+          danger: { primary: colorToken("#336699") }
+        }
+      }
+    }) as any;
+
+    for (const group of [result.light.color.base, result.light.color.danger]) {
+      expect(group.border.$description).toMatch(/15% darker\)$/);
+      expect(relativeLuminance(group.border.$value)).toBeLessThan(
+        relativeLuminance(group.secondary.$value)
+      );
+    }
+  });
+
   it("generates missing on-primary text colors for theme color groups", () => {
     const result = tamaguiPreprocessor({
       color: {

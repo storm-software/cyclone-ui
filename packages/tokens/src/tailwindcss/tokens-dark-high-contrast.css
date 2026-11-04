@@ -583,6 +583,7 @@
   --blur-xl: 24px;
   --blur-xs: 4px;
   --color-base-backdrop: #000000bf;
+  --color-base-border: #41414c;
   --color-base-link: #00bcff;
   --color-base-link-active: var(--color-base-link-hovered);
   --color-base-link-disabled: #2c6380;
@@ -611,6 +612,7 @@
   --color-blue-8: #012e7c;
   --color-blue-9: #00163b;
   --color-brand-backdrop: var(--color-base-backdrop);
+  --color-brand-border: #0b5a47;
   --color-brand-link: var(--color-brand-primary);
   --color-brand-link-active: var(--color-brand-primary-hovered);
   --color-brand-link-disabled: var(--color-brand-primary-disabled);
@@ -634,6 +636,7 @@
   --color-canvas-hovered: var(--color-neutral-13);
   --color-canvas-inactive: var(--color-neutral-13);
   --color-danger-backdrop: var(--color-base-backdrop);
+  --color-danger-border: #430011;
   --color-danger-link: var(--color-danger-primary);
   --color-danger-link-active: var(--color-danger-primary-hovered);
   --color-danger-link-disabled: var(--color-danger-primary-disabled);
@@ -673,6 +676,7 @@
   --color-data-yellow-emphasis: var(--color-yellow-5);
   --color-data-yellow-subtle: var(--color-yellow-9);
   --color-discovery-backdrop: var(--color-base-backdrop);
+  --color-discovery-border: #2c1b5d;
   --color-discovery-link: var(--color-discovery-primary);
   --color-discovery-link-active: var(--color-discovery-primary-hovered);
   --color-discovery-link-disabled: var(--color-discovery-primary-disabled);
@@ -721,6 +725,7 @@
   --color-green-9: var(--color-neutral-13);
   --color-hairline: var(--color-neutral-12);
   --color-info-backdrop: #010011bf;
+  --color-info-border: #0f44a2;
   --color-info-link: var(--color-info-primary);
   --color-info-link-active: var(--color-info-primary-hovered);
   --color-info-link-disabled: var(--color-info-primary-disabled);
@@ -826,6 +831,7 @@
   --color-subtlest-hovered: #6b6f7c;
   --color-subtlest-inactive: var(--color-base-primary-inactive);
   --color-success-backdrop: var(--color-base-backdrop);
+  --color-success-border: #0a5b3a;
   --color-success-link: var(--color-success-primary);
   --color-success-link-active: var(--color-success-primary-hovered);
   --color-success-link-disabled: var(--color-success-primary-disabled);
@@ -859,6 +865,7 @@
   --color-surface-hovered: var(--color-neutral-13);
   --color-surface-inactive: var(--color-neutral-13);
   --color-warning-backdrop: var(--color-base-backdrop);
+  --color-warning-border: #ffd594;
   --color-warning-link: var(--color-warning-primary);
   --color-warning-link-active: var(--color-warning-primary-hovered);
   --color-warning-link-disabled: var(--color-warning-primary-disabled);

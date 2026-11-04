@@ -63,7 +63,7 @@ This repository imports the plugins from their source paths (`./packages/theme-b
 Returns a Razorwind plugin named `cyclone-ui:tamagui-preprocessor`. It registers one Style Dictionary preprocessor that does these steps:
 
 1. Converts color values to hex (`#rrggbb` or `#rrggbbaa`). It reads hex strings, sRGB design-token color objects, and `oklch()` values.
-2. Fills in missing companion colors for each color group that has a `primary` token. These are `secondary`, `on-primary`, and `on-secondary`.
+2. Fills in missing companion colors for each color group that has a `primary` token. These are `secondary`, `on-primary`, and `on-secondary`. A missing `border` is then derived from `secondary`, 15% brighter in OKLCH lightness (15% darker in light themes), to outline `secondary` backgrounds.
 3. Adds hovered, active, inactive, and disabled state variants.
 4. Sets `theme` and `group` on tokens in a color group. For example, `danger.on-primary` goes to the `danger` theme.
 5. Copies base colors into an empty `brand` theme.

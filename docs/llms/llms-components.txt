@@ -21,6 +21,7 @@ A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.
 - `@tamagui/core`: `catalog:`
 - `@tamagui/group`: `catalog:`
 - `@tamagui/helpers`: `catalog:`
+- `@tamagui/react-native-types`: `catalog:`
 - `@tamagui/stacks`: `catalog:`
 
 ### Development Dependencies
@@ -2648,6 +2649,7 @@ A themed progress bar built on the Tamagui Progress, with an animated indicator.
 ### Development Dependencies
 
 - `@storybook/react-vite`: `catalog:`
+- `@tamagui/create-context`: `catalog:`
 - `@tamagui/tailwind`: `catalog:`
 - `react`: `catalog:`
 - `react-dom`: `catalog:`

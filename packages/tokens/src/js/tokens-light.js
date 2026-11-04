@@ -1,20 +1,6 @@
-/* -------------------------------------------------------------------
-
-                   🗲 Storm Software - Cyclone UI
-
- This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 license, and is
- free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
-
- Website:                  https://stormsoftware.com
- Repository:               https://github.com/storm-software/cyclone-ui
- Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
- Contact:                  https://stormsoftware.com/contact
-
- SPDX-License-Identifier:  Apache-2.0
-
- ------------------------------------------------------------------- */
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
 
 module.exports = {
   color: {
@@ -2944,6 +2930,44 @@ module.exports = {
         },
         path: ["color", "base", "on-secondary"]
       },
+      border: {
+        key: "{color.base.border}",
+        theme: "base",
+        group: "base",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#8d8d8e",
+        $description:
+          "Generated base border color for secondary backgrounds (secondary, 15% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "base",
+          group: "base",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.5529411764705883, 0.5529411764705883, 0.5568627450980392
+            ],
+            hex: "#8d8d8e"
+          },
+          $description:
+            "Generated base border color for secondary backgrounds (secondary, 15% darker)",
+          semantic: true,
+          key: "{color.base.border}"
+        },
+        name: "ColorBaseBorder",
+        attributes: {
+          category: "color",
+          type: "base",
+          item: "border"
+        },
+        path: ["color", "base", "border"]
+      },
       "primary-hovered": {
         key: "{color.base.primary-hovered}",
         theme: "base",
@@ -3588,6 +3612,44 @@ module.exports = {
           item: "on-secondary"
         },
         path: ["color", "brand", "on-secondary"]
+      },
+      border: {
+        key: "{color.brand.border}",
+        theme: "brand",
+        group: "brand",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#a7cfc9",
+        $description:
+          "Generated brand border color for secondary backgrounds (secondary, 15% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "brand",
+          group: "brand",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.6549019607843137, 0.8117647058823529, 0.788235294117647
+            ],
+            hex: "#a7cfc9"
+          },
+          $description:
+            "Generated brand border color for secondary backgrounds (secondary, 15% darker)",
+          semantic: true,
+          key: "{color.brand.border}"
+        },
+        name: "ColorBrandBorder",
+        attributes: {
+          category: "color",
+          type: "brand",
+          item: "border"
+        },
+        path: ["color", "brand", "border"]
       },
       "primary-hovered": {
         key: "{color.brand.primary-hovered}",
@@ -4244,6 +4306,44 @@ module.exports = {
           item: "on-secondary"
         },
         path: ["color", "danger", "on-secondary"]
+      },
+      border: {
+        key: "{color.danger.border}",
+        theme: "danger",
+        group: "danger",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#cb5b71",
+        $description:
+          "Generated danger border color for secondary backgrounds (secondary, 15% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "danger",
+          group: "danger",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.796078431372549, 0.3568627450980392, 0.44313725490196076
+            ],
+            hex: "#cb5b71"
+          },
+          $description:
+            "Generated danger border color for secondary backgrounds (secondary, 15% darker)",
+          semantic: true,
+          key: "{color.danger.border}"
+        },
+        name: "ColorDangerBorder",
+        attributes: {
+          category: "color",
+          type: "danger",
+          item: "border"
+        },
+        path: ["color", "danger", "border"]
       },
       "primary-hovered": {
         key: "{color.danger.primary-hovered}",
@@ -5034,6 +5134,44 @@ module.exports = {
         },
         path: ["color", "warning", "on-secondary"]
       },
+      border: {
+        key: "{color.warning.border}",
+        theme: "warning",
+        group: "warning",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#a78249",
+        $description:
+          "Generated warning border color for secondary backgrounds (secondary, 15% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "warning",
+          group: "warning",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.6549019607843137, 0.5098039215686274, 0.28627450980392155
+            ],
+            hex: "#a78249"
+          },
+          $description:
+            "Generated warning border color for secondary backgrounds (secondary, 15% darker)",
+          semantic: true,
+          key: "{color.warning.border}"
+        },
+        name: "ColorWarningBorder",
+        attributes: {
+          category: "color",
+          type: "warning",
+          item: "border"
+        },
+        path: ["color", "warning", "border"]
+      },
       "primary-hovered": {
         key: "{color.warning.primary-hovered}",
         theme: "warning",
@@ -5808,6 +5946,44 @@ module.exports = {
           item: "on-secondary"
         },
         path: ["color", "info", "on-secondary"]
+      },
+      border: {
+        key: "{color.info.border}",
+        theme: "info",
+        group: "info",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#4d80da",
+        $description:
+          "Generated info border color for secondary backgrounds (secondary, 15% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "info",
+          group: "info",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.30196078431372547, 0.5019607843137255, 0.8549019607843137
+            ],
+            hex: "#4d80da"
+          },
+          $description:
+            "Generated info border color for secondary backgrounds (secondary, 15% darker)",
+          semantic: true,
+          key: "{color.info.border}"
+        },
+        name: "ColorInfoBorder",
+        attributes: {
+          category: "color",
+          type: "info",
+          item: "border"
+        },
+        path: ["color", "info", "border"]
       },
       "primary-hovered": {
         key: "{color.info.primary-hovered}",
@@ -6587,6 +6763,44 @@ module.exports = {
           item: "on-secondary"
         },
         path: ["color", "discovery", "on-secondary"]
+      },
+      border: {
+        key: "{color.discovery.border}",
+        theme: "discovery",
+        group: "discovery",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#8670be",
+        $description:
+          "Generated discovery border color for secondary backgrounds (secondary, 15% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "discovery",
+          group: "discovery",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.5254901960784314, 0.4392156862745098, 0.7450980392156863
+            ],
+            hex: "#8670be"
+          },
+          $description:
+            "Generated discovery border color for secondary backgrounds (secondary, 15% darker)",
+          semantic: true,
+          key: "{color.discovery.border}"
+        },
+        name: "ColorDiscoveryBorder",
+        attributes: {
+          category: "color",
+          type: "discovery",
+          item: "border"
+        },
+        path: ["color", "discovery", "border"]
       },
       "primary-hovered": {
         key: "{color.discovery.primary-hovered}",
@@ -7380,6 +7594,44 @@ module.exports = {
           item: "on-secondary"
         },
         path: ["color", "success", "on-secondary"]
+      },
+      border: {
+        key: "{color.success.border}",
+        theme: "success",
+        group: "success",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#52977e",
+        $description:
+          "Generated success border color for secondary backgrounds (secondary, 15% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "success",
+          group: "success",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.3215686274509804, 0.592156862745098, 0.49411764705882355
+            ],
+            hex: "#52977e"
+          },
+          $description:
+            "Generated success border color for secondary backgrounds (secondary, 15% darker)",
+          semantic: true,
+          key: "{color.success.border}"
+        },
+        name: "ColorSuccessBorder",
+        attributes: {
+          category: "color",
+          type: "success",
+          item: "border"
+        },
+        path: ["color", "success", "border"]
       },
       "primary-hovered": {
         key: "{color.success.primary-hovered}",

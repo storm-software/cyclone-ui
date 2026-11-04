@@ -20,6 +20,7 @@ colors:
   base-on-primary: "#FAFAFA"
   base-backdrop: "#010101bf"
   base-on-secondary: "#FAFAFA"
+  base-border: "#8d8d8e"
   base-primary-hovered: "#5c5c5f"
   base-primary-active: "#000000"
   base-primary-inactive: "#020102"
@@ -38,6 +39,7 @@ colors:
   brand-backdrop: "#001c18bf"
   brand-secondary: "#d6fff9"
   brand-on-secondary: "#005a53"
+  brand-border: "#a7cfc9"
   brand-primary-hovered: "#007c72"
   brand-primary-active: "#007c72"
   brand-primary-inactive: "#5ddfd2"
@@ -57,6 +59,7 @@ colors:
   danger-backdrop: "#240000bf"
   danger-secondary: "#f17d91"
   danger-on-secondary: "#200006"
+  danger-border: "#cb5b71"
   danger-primary-hovered: "#6a0022"
   danger-primary-active: "#6a0022"
   danger-primary-inactive: "#ab3e56"
@@ -80,6 +83,7 @@ colors:
   warning-backdrop: "#150000bf"
   warning-secondary: "#caa46b"
   warning-on-secondary: "#241500"
+  warning-border: "#a78249"
   warning-primary-hovered: "#543400"
   warning-primary-active: "#543400"
   warning-primary-inactive: "#926f36"
@@ -103,6 +107,7 @@ colors:
   info-on-primary: "#FAFAFA"
   info-backdrop: "#070043bf"
   info-on-secondary: "#FAFAFA"
+  info-border: "#4d80da"
   info-primary-hovered: "#00318d"
   info-primary-active: "#00318d"
   info-primary-inactive: "#3b72d3"
@@ -126,6 +131,7 @@ colors:
   discovery-on-primary: "#FAFAFA"
   discovery-backdrop: "#0d0030bf"
   discovery-on-secondary: "#FAFAFA"
+  discovery-border: "#8670be"
   discovery-primary-hovered: "#3c2372"
   discovery-primary-active: "#3c2372"
   discovery-primary-inactive: "#725db2"
@@ -149,6 +155,7 @@ colors:
   success-backdrop: "#000d02bf"
   success-secondary: "#74ba9f"
   success-on-secondary: "#002015"
+  success-border: "#52977e"
   success-primary-hovered: "#004933"
   success-primary-active: "#004933"
   success-primary-inactive: "#40876e"
@@ -317,7 +324,7 @@ spacing:
 
 ## Overview
 
-Cyclone UI design tokens — 218 color tokens, 6 typography tokens, 70 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 225 color tokens, 6 typography tokens, 70 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
@@ -338,6 +345,7 @@ Cyclone UI design tokens — 218 color tokens, 6 typography tokens, 70 spacing t
 - **Base On Primary (#FAFAFA):** Generated text and icon color on base primary backgrounds
 - **Base Backdrop (#010101bf):** Generated base overlay backdrop color (primary, 30% darker at 75% opacity)
 - **Base On Secondary (#FAFAFA):** Generated text and icon color on base secondary backgrounds
+- **Base Border (#8d8d8e):** Generated base border color for secondary backgrounds (secondary, 15% darker)
 - **Base Primary Hovered (#5c5c5f):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)
 - **Base Primary Active (#000000):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)
 - **Base Primary Inactive (#020102):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% darker)
@@ -356,6 +364,7 @@ Cyclone UI design tokens — 218 color tokens, 6 typography tokens, 70 spacing t
 - **Brand Backdrop (#001c18bf):** Generated brand overlay backdrop color (primary, 30% darker at 75% opacity)
 - **Brand Secondary (#d6fff9):** Generated low-emphasis brand background for the light theme
 - **Brand On Secondary (#005a53):** Generated text and icon color on brand secondary backgrounds
+- **Brand Border (#a7cfc9):** Generated brand border color for secondary backgrounds (secondary, 15% darker)
 - **Brand Primary Hovered (#007c72):** The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker)
 - **Brand Primary Active (#007c72):** The Storm Teal color is used as the primary brand color for Storm Software. (active, 25% darker)
 - **Brand Primary Inactive (#5ddfd2):** The Storm Teal color is used as the primary brand color for Storm Software. (inactive, 20% brighter)
@@ -375,6 +384,7 @@ Cyclone UI design tokens — 218 color tokens, 6 typography tokens, 70 spacing t
 - **Danger Backdrop (#240000bf):** Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)
 - **Danger Secondary (#f17d91):** Generated low-emphasis danger background for the light theme
 - **Danger On Secondary (#200006):** Generated text and icon color on danger secondary backgrounds
+- **Danger Border (#cb5b71):** Generated danger border color for secondary backgrounds (secondary, 15% darker)
 - **Danger Primary Hovered (#6a0022):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% darker)
 - **Danger Primary Active (#6a0022):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% darker)
 - **Danger Primary Inactive (#ab3e56):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)
@@ -398,6 +408,7 @@ Cyclone UI design tokens — 218 color tokens, 6 typography tokens, 70 spacing t
 - **Warning Backdrop (#150000bf):** Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)
 - **Warning Secondary (#caa46b):** Generated low-emphasis warning background for the light theme
 - **Warning On Secondary (#241500):** Generated text and icon color on warning secondary backgrounds
+- **Warning Border (#a78249):** Generated warning border color for secondary backgrounds (secondary, 15% darker)
 - **Warning Primary Hovered (#543400):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)
 - **Warning Primary Active (#543400):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)
 - **Warning Primary Inactive (#926f36):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)
@@ -421,6 +432,7 @@ Cyclone UI design tokens — 218 color tokens, 6 typography tokens, 70 spacing t
 - **Info On Primary (#FAFAFA):** Generated text and icon color on info primary backgrounds
 - **Info Backdrop (#070043bf):** Generated info overlay backdrop color (primary, 30% darker at 75% opacity)
 - **Info On Secondary (#FAFAFA):** Generated text and icon color on info secondary backgrounds
+- **Info Border (#4d80da):** Generated info border color for secondary backgrounds (secondary, 15% darker)
 - **Info Primary Hovered (#00318d):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker)
 - **Info Primary Active (#00318d):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% darker)
 - **Info Primary Inactive (#3b72d3):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)
@@ -444,6 +456,7 @@ Cyclone UI design tokens — 218 color tokens, 6 typography tokens, 70 spacing t
 - **Discovery On Primary (#FAFAFA):** Generated text and icon color on discovery primary backgrounds
 - **Discovery Backdrop (#0d0030bf):** Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity)
 - **Discovery On Secondary (#FAFAFA):** Generated text and icon color on discovery secondary backgrounds
+- **Discovery Border (#8670be):** Generated discovery border color for secondary backgrounds (secondary, 15% darker)
 - **Discovery Primary Hovered (#3c2372):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% darker)
 - **Discovery Primary Active (#3c2372):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 25% darker)
 - **Discovery Primary Inactive (#725db2):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)
@@ -467,6 +480,7 @@ Cyclone UI design tokens — 218 color tokens, 6 typography tokens, 70 spacing t
 - **Success Backdrop (#000d02bf):** Generated success overlay backdrop color (primary, 30% darker at 75% opacity)
 - **Success Secondary (#74ba9f):** Generated low-emphasis success background for the light theme
 - **Success On Secondary (#002015):** Generated text and icon color on success secondary backgrounds
+- **Success Border (#52977e):** Generated success border color for secondary backgrounds (secondary, 15% darker)
 - **Success Primary Hovered (#004933):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% darker)
 - **Success Primary Active (#004933):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 25% darker)
 - **Success Primary Inactive (#40876e):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)

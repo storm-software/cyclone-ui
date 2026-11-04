@@ -85,15 +85,15 @@ catalog:
   "@tamagui/vite-plugin": 3.2.0
   "@tamagui/web": 3.2.0
   "@taplo/cli": ^0.7.0
-  "@nx/devkit": 23.3.0
-  "@nx/eslint-plugin": 23.3.0
-  "@nx/js": 23.3.0
-  "@nx/plugin": 23.3.0
-  "@nx/react": 23.3.0
-  "@nx/workspace": 23.3.0
-  "@nx/storybook": 23.3.0
-  "@nx/vite": 23.3.0
-  "@nx/vitest": 23.3.0
+  "@nx/devkit": 24.0.3
+  "@nx/eslint-plugin": 24.0.3
+  "@nx/js": 24.0.3
+  "@nx/plugin": 24.0.3
+  "@nx/react": 24.0.3
+  "@nx/workspace": 24.0.3
+  "@nx/storybook": 24.0.3
+  "@nx/vite": 24.0.3
+  "@nx/vitest": 24.0.3
   "@razorwind/core": ^0.0.110
   "@razorwind/css": ^0.0.93
   "@razorwind/design-md": ^0.0.108
@@ -104,7 +104,7 @@ catalog:
   "@razorwind/shell-shock": ^0.0.31
   "@razorwind/tailwindcss": ^0.0.108
   "@razorwind/tamagui": ^0.0.116
-  "@storm-software/cloudflare-tools": ^0.71.306
+  "@storm-software/cloudflare-tools": ^0.71.307
   "@storm-software/config": ^1.138.93
   "@storm-software/config-tools": ^1.190.157
   "@storm-software/cspell": ^0.46.224
@@ -117,7 +117,7 @@ catalog:
   "@storm-software/prettier": ^0.59.210
   "@storm-software/tsconfig": ^0.48.223
   "@storm-software/untyped": ^0.24.299
-  "@storm-software/workspace-tools": ^1.297.27
+  "@storm-software/workspace-tools": ^1.297.28
   "@stryke/async": ^0.1.45
   "@stryke/env": ^0.20.136
   "@stryke/helpers": ^0.10.57
@@ -155,7 +155,7 @@ catalog:
   jotai-optics: ^0.4.0
   lefthook: ^2.2.2
   log4brains: ^1.1.0
-  nx: 23.3.0
+  nx: 24.0.3
   optics-ts: ^2.4.1
   powerlines: ^0.47.219
   prettier: ^3.9.10
@@ -206,12 +206,12 @@ catalog:
   "@razorwind/eslint": ^0.0.39
   "@razorwind/stylelint": ^0.0.39
   "@sourcebook/config": ^0.0.12
-  "@tanstack/react-virtual": ^3.14.25
-  "@nx/maven": 23.3.0
+  "@tanstack/react-virtual": ^3.14.26
+  "@nx/maven": 24.0.3
   tsx: ^4.23.15
-  "@nx/docker": ^23.3.1
+  "@nx/docker": 24.0.3
   yaml: ^2.9.1
-  rimraf: ^6.1.3
+  rimraf: ^6.1.4
   "@next/playwright": 16.4.4
   "@playwright/test": 1.64.1
 cleanupUnusedCatalogs: true
