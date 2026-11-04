@@ -9,9 +9,7 @@
     "directory": "packages/state"
   },
   "private": false,
-  "keywords": [
-    "jotai"
-  ],
+  "keywords": ["jotai"],
   "exports": {
     ".": {
       "require": {

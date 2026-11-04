@@ -1,10 +1,11 @@
 import type { ExecutorContext } from "@nx/devkit";
-import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({
+  execFileSync: vi.fn(),
   getWorkspaceConfig: vi.fn(async () => ({})),
   upload: vi.fn(),
   writeFatal: vi.fn(),
@@ -16,6 +17,10 @@ vi.mock(
   "@storm-software/cloudflare-tools/executors/r2-upload-publish/executor",
   () => ({ default: mocks.upload })
 );
+vi.mock("node:child_process", async importOriginal => ({
+  ...(await importOriginal<typeof import("node:child_process")>()),
+  execFileSync: mocks.execFileSync
+}));
 vi.mock("@storm-software/config-tools/get-config", () => ({
   getWorkspaceConfig: mocks.getWorkspaceConfig
 }));
@@ -103,6 +108,46 @@ describe("font publish executor", () => {
         writeMetaJson: false
       },
       context
+    );
+  });
+
+  it("attaches a nixpkgs derivation with the tag hash to the release", async () => {
+    const root = await mkdtemp(join(tmpdir(), "cyclone-font-publish-"));
+    temporaryRoots.push(root);
+    await mkdir(join(root, "fonts/storm-sans/dist"), { recursive: true });
+    await addFontSources(root);
+    await writeFile(
+      join(root, "fonts/storm-sans/package.nix"),
+      "src = fetchFromGitHub { hash = lib.fakeHash; };\n"
+    );
+    mocks.execFileSync.mockReturnValueOnce(
+      JSON.stringify({ hash: "sha256-test=" })
+    );
+
+    await expect(runExecutor({}, createContext(root))).resolves.toEqual({
+      success: true
+    });
+    expect(mocks.execFileSync).toHaveBeenCalledWith(
+      "nix",
+      expect.arrayContaining([
+        "https://github.com/storm-software/cyclone-ui/archive/refs/tags/fonts-storm-sans@1.0.0.tar.gz"
+      ]),
+      expect.anything()
+    );
+    const releaseNixPath = join(root, "tmp/fonts/storm-sans/package.nix");
+    await expect(readFile(releaseNixPath, "utf8")).resolves.toBe(
+      'src = fetchFromGitHub { hash = "sha256-test="; };\n'
+    );
+    expect(mocks.execFileSync).toHaveBeenCalledWith(
+      "gh",
+      [
+        "release",
+        "upload",
+        "fonts-storm-sans@1.0.0",
+        releaseNixPath,
+        "--clobber"
+      ],
+      expect.anything()
     );
   });
 

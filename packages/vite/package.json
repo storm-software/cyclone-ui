@@ -9,12 +9,7 @@
     "directory": "packages/vite"
   },
   "private": false,
-  "keywords": [
-    "cyclone-ui",
-    "tamagui",
-    "vite",
-    "vite-plugin"
-  ],
+  "keywords": ["cyclone-ui", "tamagui", "vite", "vite-plugin"],
   "exports": {
     ".": "./dist/index.mjs",
     "./package.json": "./package.json"

@@ -25,8 +25,15 @@ import {
   writeInfo,
   writeSuccess
 } from "@storm-software/config-tools/logger/console";
-import { existsSync, readFileSync, readdirSync } from "node:fs";
-import { join } from "node:path";
+import { execFileSync } from "node:child_process";
+import {
+  existsSync,
+  mkdirSync,
+  readFileSync,
+  readdirSync,
+  writeFileSync
+} from "node:fs";
+import { dirname, join } from "node:path";
 import {
   consistentFontVersion,
   fontVersionToSemver
@@ -90,6 +97,47 @@ export default async function runExecutor(
       },
       context
     );
+
+    const nixPath = join(projectRoot, "package.nix");
+    if (result.success && !options.dryRun && existsSync(nixPath)) {
+      // Attach a nixpkgs-ready derivation with the tag tarball's hash to the
+      // GitHub release created by `nx release` for this version.
+      const tag = `${projectName}@${packageVersion}`;
+      const { hash } = JSON.parse(
+        execFileSync(
+          "nix",
+          [
+            "store",
+            "prefetch-file",
+            "--name",
+            "source",
+            "--unpack",
+            "--json",
+            `https://github.com/storm-software/cyclone-ui/archive/refs/tags/${tag}.tar.gz`
+          ],
+          { encoding: "utf8" }
+        )
+      );
+      const releaseNixPath = joinPathFragments(
+        context.root,
+        "tmp",
+        project.root,
+        "package.nix"
+      );
+      mkdirSync(dirname(releaseNixPath), { recursive: true });
+      writeFileSync(
+        releaseNixPath,
+        readFileSync(nixPath, "utf8").replace("lib.fakeHash", `"${hash}"`)
+      );
+      execFileSync(
+        "gh",
+        ["release", "upload", tag, releaseNixPath, "--clobber"],
+        {
+          stdio: "inherit"
+        }
+      );
+      writeInfo(`Attached ${releaseNixPath} to the ${tag} release`, config);
+    }
 
     if (result.success) {
       writeSuccess(

@@ -19,6 +19,10 @@ function setup(boldVersion: [number, number] = [1, 0]) {
     "fonts/storm-sans/package.json",
     JSON.stringify({ name: "fonts-storm-sans", version: "0.0.1" })
   );
+  tree.write(
+    "fonts/storm-sans/package.nix",
+    'stdenvNoCC.mkDerivation {\n  pname = "storm-sans";\n  version = "0.0.1";\n}\n'
+  );
   const actions = new FontVersionActions(
     {} as never,
     { name: "fonts-storm-sans", data: { root: "fonts/storm-sans" } } as never,
@@ -84,6 +88,9 @@ describe("font version actions", () => {
     ).toMatchObject({
       version: "2.0.0"
     });
+    expect(tree.read("fonts/storm-sans/package.nix", "utf8")).toContain(
+      '  version = "2.0.0";'
+    );
   });
 
   it("packs Nx minor and patch into the UFO minor value", async () => {

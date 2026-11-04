@@ -94,6 +94,14 @@ export default class FontVersionActions extends VersionActions {
         version: newVersion
       }));
     }
+    const nixPath = join(this.projectGraphNode.data.root, "package.nix");
+    const nix = tree.read(nixPath, "utf8");
+    if (nix !== null) {
+      tree.write(
+        nixPath,
+        nix.replace(/^(\s*version = ")[^"]*(";)$/m, `$1${newVersion}$2`)
+      );
+    }
     return updated.map(
       ({ path }) => `New font version ${newVersion} written to ${path}`
     );

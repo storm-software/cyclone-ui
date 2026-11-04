@@ -21,7 +21,6 @@ import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { View } from "@tamagui/core";
-import type { ComponentType } from "react";
 import {
   createEvent,
   expect,
@@ -46,7 +45,7 @@ type PasswordInputStoryArgs = Partial<FieldProps> & {
 const meta: Meta<PasswordInputStoryArgs> = {
   title: "Form/PasswordInput",
   // Field props drive the story; the render passes the strength flags through.
-  component: PasswordInput as unknown as ComponentType<PasswordInputStoryArgs>,
+  component: PasswordInput,
   tags: ["autodocs"],
   args: {
     name: "inputFieldName"
