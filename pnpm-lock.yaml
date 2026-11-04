@@ -1039,6 +1039,9 @@ importers:
       '@tamagui/helpers':
         specifier: 'catalog:'
         version: 3.2.0(react@19.3.1)
+      '@tamagui/react-native-types':
+        specifier: 'catalog:'
+        version: 3.2.0(react@19.3.1)
       '@tamagui/stacks':
         specifier: 'catalog:'
         version: 3.2.0(react-dom@19.3.1(react@19.3.1))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.1.0)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.1))(react@19.3.1))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.1.0)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.1))(react@19.3.1))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-native@0.87.1(@babel/core@8.1.0)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.1))(react@19.3.1)

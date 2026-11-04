@@ -22,6 +22,8 @@ import type {
   ColorTokens,
   GetProps,
   SizeTokens,
+  TamaguiComponent,
+  TamaguiElement,
   ThemeTokens
 } from "@tamagui/core";
 import { createStyledHOC, getVariableValue, useTheme } from "@tamagui/core";
@@ -42,6 +44,14 @@ const CIRCULAR_PROGRESS_SIZES = {
 
 export type CircularProgressSize = keyof typeof CIRCULAR_PROGRESS_SIZES;
 type CircularProgressSizeProp = CircularProgressSize | SizeTokens;
+
+export type CircularProgressProps = Omit<
+  GetProps<typeof TamaguiProgress>,
+  "color" | "size"
+> & {
+  color?: ColorTokens | ThemeTokens;
+  size?: CircularProgressSizeProp;
+};
 
 const getProgressRatio = (value: number | null, max: number) => {
   const resolvedMax =
@@ -66,10 +76,7 @@ export const CircularProgress = createStyledHOC(
       value = 0,
       max = 100,
       ...props
-    }: Omit<GetProps<typeof TamaguiProgress>, "color" | "size"> & {
-      color?: ColorTokens | ThemeTokens;
-      size?: CircularProgressSizeProp;
-    },
+    }: CircularProgressProps,
     forwardRef
   ) => {
     const resolvedSize =
@@ -131,6 +138,4 @@ export const CircularProgress = createStyledHOC(
   {
     displayName: "CircularProgress"
   }
-);
-
-export type CircularProgressProps = GetProps<typeof CircularProgress>;
+) as TamaguiComponent<CircularProgressProps, TamaguiElement>;

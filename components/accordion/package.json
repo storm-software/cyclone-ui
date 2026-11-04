@@ -34,6 +34,7 @@
     "@tamagui/core": "catalog:",
     "@tamagui/group": "catalog:",
     "@tamagui/helpers": "catalog:",
+    "@tamagui/react-native-types": "catalog:",
     "@tamagui/stacks": "catalog:"
   },
   "devDependencies": {
