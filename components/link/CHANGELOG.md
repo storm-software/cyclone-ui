@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Link
 
+## [0.5.49](https://github.com/storm-software/cyclone-ui/releases/tag/link%400.5.49) (11/04/2026)
+
+### Bug Fixes
+
+- **tokens:** Update token styles and remove `subtlest` duplicate tokens ([ccbe4f900](https://github.com/storm-software/cyclone-ui/commit/ccbe4f900))
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.46**
+- Updated **icons** to **v0.0.44**
+- Updated **link-text** to **v0.5.48**
+- Updated **themeable-icon** to **v0.6.48**
+
 ## [0.5.48](https://github.com/storm-software/cyclone-ui/releases/tag/link%400.5.48) (11/04/2026)
 
 ### Bug Fixes

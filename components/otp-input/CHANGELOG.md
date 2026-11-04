@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - OTP Input
 
+## [0.0.50](https://github.com/storm-software/cyclone-ui/releases/tag/otp-input%400.0.50) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.49**
+- Updated **form** to **v0.9.47**
+- Updated **helpers** to **v0.3.46**
+- Updated **input** to **v0.6.49**
+
 ## [0.0.49](https://github.com/storm-software/cyclone-ui/releases/tag/otp-input%400.0.49) (11/04/2026)
 
 ### Miscellaneous

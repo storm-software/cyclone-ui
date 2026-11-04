@@ -2,6 +2,25 @@
 
 # Changelog for Cyclone UI - Popover
 
+## [0.5.50](https://github.com/storm-software/cyclone-ui/releases/tag/popover%400.5.50) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.46**
+- Updated **button** to **v0.6.49**
+- Updated **heading-text** to **v0.5.47**
+- Updated **scroll-view** to **v0.5.48**
+- Updated **sheet** to **v0.0.49**
+
 ## [0.5.49](https://github.com/storm-software/cyclone-ui/releases/tag/popover%400.5.49) (11/04/2026)
 
 ### Miscellaneous

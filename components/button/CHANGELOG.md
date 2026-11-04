@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Button
 
+## [0.6.49](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.49) (11/04/2026)
+
+### Bug Fixes
+
+- **tokens:** Update token styles and remove `subtlest` duplicate tokens ([ccbe4f900](https://github.com/storm-software/cyclone-ui/commit/ccbe4f900))
+- **theme-builder:** Added the `border` color token to themes ([47f36e073](https://github.com/storm-software/cyclone-ui/commit/47f36e073))
+- **monorepo:** Update display of secondary variants to include box-shadow ([02092d99a](https://github.com/storm-software/cyclone-ui/commit/02092d99a))
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.46**
+- Updated **icons** to **v0.0.44**
+- Updated **ripple-animation** to **v0.0.23**
+- Updated **themeable-icon** to **v0.6.48**
+
 ## [0.6.48](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.48) (11/04/2026)
 
 ### Bug Fixes

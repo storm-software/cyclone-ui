@@ -2,6 +2,26 @@
 
 # Changelog for Cyclone UI - Input
 
+## [0.6.49](https://github.com/storm-software/cyclone-ui/releases/tag/input%400.6.49) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Update display of secondary variants to include box-shadow ([02092d99a](https://github.com/storm-software/cyclone-ui/commit/02092d99a))
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.49**
+- Updated **field** to **v0.5.49**
+- Updated **form** to **v0.9.47**
+- Updated **helpers** to **v0.3.46**
+- Updated **icons** to **v0.0.44**
+
 ## [0.6.48](https://github.com/storm-software/cyclone-ui/releases/tag/input%400.6.48) (11/04/2026)
 
 ### Miscellaneous

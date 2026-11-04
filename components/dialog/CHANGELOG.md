@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Dialog
 
+## [0.3.50](https://github.com/storm-software/cyclone-ui/releases/tag/dialog%400.3.50) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.46**
+- Updated **button** to **v0.6.49**
+- Updated **container** to **v0.6.48**
+- Updated **heading-text** to **v0.5.47**
+- Updated **overlay** to **v0.0.33**
+
 ## [0.3.49](https://github.com/storm-software/cyclone-ui/releases/tag/dialog%400.3.49) (11/04/2026)
 
 ### Miscellaneous

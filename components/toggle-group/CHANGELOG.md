@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Toggle Group
 
+## [0.0.38](https://github.com/storm-software/cyclone-ui/releases/tag/toggle-group%400.0.38) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.46**
+- Updated **icons** to **v0.0.44**
+- Updated **toggle** to **v0.0.38**
+- Updated **tokens** to **v0.3.35**
+
 ## [0.0.37](https://github.com/storm-software/cyclone-ui/releases/tag/toggle-group%400.0.37) (11/04/2026)
 
 ### Miscellaneous

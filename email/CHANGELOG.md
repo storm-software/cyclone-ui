@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Email
 
+## [0.0.17](https://github.com/storm-software/cyclone-ui/releases/tag/email%400.0.17) (11/04/2026)
+
+### Bug Fixes
+
+- **tokens:** Update token styles and remove `subtlest` duplicate tokens ([ccbe4f900](https://github.com/storm-software/cyclone-ui/commit/ccbe4f900))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **tokens** to **v0.3.35**
+
 ## [0.0.16](https://github.com/storm-software/cyclone-ui/releases/tag/email%400.0.16) (11/04/2026)
 
 ### Bug Fixes

@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Shiki
 
+## [0.0.36](https://github.com/storm-software/cyclone-ui/releases/tag/shiki%400.0.36) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **tokens:** Update token styles and remove `subtlest` duplicate tokens ([ccbe4f900](https://github.com/storm-software/cyclone-ui/commit/ccbe4f900))
+- **monorepo:** Update display of secondary variants to include box-shadow ([02092d99a](https://github.com/storm-software/cyclone-ui/commit/02092d99a))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
 ## [0.0.35](https://github.com/storm-software/cyclone-ui/releases/tag/shiki%400.0.35) (11/04/2026)
 
 ### Miscellaneous

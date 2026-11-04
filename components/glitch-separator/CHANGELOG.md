@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Glitch Separator
 
+## [0.0.43](https://github.com/storm-software/cyclone-ui/releases/tag/glitch-separator%400.0.43) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
 ## [0.0.42](https://github.com/storm-software/cyclone-ui/releases/tag/glitch-separator%400.0.42) (11/04/2026)
 
 ### Miscellaneous

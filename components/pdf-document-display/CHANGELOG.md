@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Pdf Document Display
 
+## [0.5.48](https://github.com/storm-software/cyclone-ui/releases/tag/pdf-document-display%400.5.48) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **spinner** to **v0.5.46**
+- Updated **vectors** to **v0.5.48**
+- Updated **visually-hidden** to **v0.5.46**
+
 ## [0.5.47](https://github.com/storm-software/cyclone-ui/releases/tag/pdf-document-display%400.5.47) (11/04/2026)
 
 ### Miscellaneous

@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Bar Chart
 
+## [0.0.18](https://github.com/storm-software/cyclone-ui/releases/tag/bar-chart%400.0.18) (11/04/2026)
+
+### Bug Fixes
+
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **chart** to **v0.0.18**
+
 ## [0.0.17](https://github.com/storm-software/cyclone-ui/releases/tag/bar-chart%400.0.17) (11/04/2026)
 
 ### Bug Fixes

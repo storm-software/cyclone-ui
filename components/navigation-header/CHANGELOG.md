@@ -2,6 +2,28 @@
 
 # Changelog for Cyclone UI - Navigation Header
 
+## [0.0.48](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-header%400.0.48) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.49**
+- Updated **eyebrow-text** to **v0.5.46**
+- Updated **heading-text** to **v0.5.47**
+- Updated **icons** to **v0.0.44**
+- Updated **link** to **v0.5.49**
+- Updated **redacted-animation** to **v0.0.44**
+- Updated **search-dialog** to **v0.0.27**
+- Updated **vectors** to **v0.5.48**
+
 ## [0.0.47](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-header%400.0.47) (11/04/2026)
 
 ### Miscellaneous

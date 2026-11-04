@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Checkbox
 
+## [0.5.49](https://github.com/storm-software/cyclone-ui/releases/tag/checkbox%400.5.49) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.49**
+- Updated **form** to **v0.9.47**
+- Updated **helpers** to **v0.3.46**
+- Updated **vectors** to **v0.5.48**
+
 ## [0.5.48](https://github.com/storm-software/cyclone-ui/releases/tag/checkbox%400.5.48) (11/04/2026)
 
 ### Miscellaneous

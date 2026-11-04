@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Color Compositions
 
+## [0.0.30](https://github.com/storm-software/cyclone-ui/releases/tag/color-compositions%400.0.30) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
 ## [0.0.29](https://github.com/storm-software/cyclone-ui/releases/tag/color-compositions%400.0.29) (11/04/2026)
 
 ### Miscellaneous

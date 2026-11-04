@@ -2,6 +2,30 @@
 
 # Changelog for Cyclone UI - File Picker
 
+## [0.5.50](https://github.com/storm-software/cyclone-ui/releases/tag/file-picker%400.5.50) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.46**
+- Updated **button** to **v0.6.49**
+- Updated **bytes-text** to **v0.5.46**
+- Updated **field** to **v0.5.49**
+- Updated **form** to **v0.9.47**
+- Updated **heading-text** to **v0.5.47**
+- Updated **helpers** to **v0.3.46**
+- Updated **icons** to **v0.0.44**
+- Updated **link** to **v0.5.49**
+- Updated **pdf-document-display** to **v0.5.48**
+- Updated **state** to **v0.0.48**
+
 ## [0.5.49](https://github.com/storm-software/cyclone-ui/releases/tag/file-picker%400.5.49) (11/04/2026)
 
 ### Miscellaneous
