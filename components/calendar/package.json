@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/calendar",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "type": "module",
   "description": "A stand-alone calendar with day, month and year views that selects a single date or a start and end date range.",
   "repository": {
@@ -51,6 +51,14 @@
     "./Calendar": {
       "import": "./dist/Calendar.mjs",
       "require": "./dist/Calendar.cjs"
+    },
+    "./CalendarImpl": {
+      "import": "./dist/CalendarImpl.mjs",
+      "require": "./dist/CalendarImpl.cjs"
+    },
+    "./CalendarSkeleton": {
+      "import": "./dist/CalendarSkeleton.mjs",
+      "require": "./dist/CalendarSkeleton.cjs"
     },
     "./*": "./*"
   }

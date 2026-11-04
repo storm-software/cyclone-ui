@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Area Chart
 
+## [0.0.16](https://github.com/storm-software/cyclone-ui/releases/tag/area-chart%400.0.16) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update workspace component to better support nextjs SSR ([dff5b74cd](https://github.com/storm-software/cyclone-ui/commit/dff5b74cd))
+
+### Updated Dependencies
+
+- Updated **chart** to **v0.0.16**
+
 ## [0.0.15](https://github.com/storm-software/cyclone-ui/releases/tag/area-chart%400.0.15) (11/03/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,25 @@
 
 # Changelog for Cyclone UI - Nextjs
 
+## [0.0.16](https://github.com/storm-software/cyclone-ui/releases/tag/nextjs%400.0.16) (11/03/2026)
+
+### Bug Fixes
+
+- **nextjs:** Added missing items to `tsconfig.json` file ([cedb01651](https://github.com/storm-software/cyclone-ui/commit/cedb01651))
+- **monorepo:** Update workspace component to better support nextjs SSR ([dff5b74cd](https://github.com/storm-software/cyclone-ui/commit/dff5b74cd))
+
+### Updated Dependencies
+
+- Updated **bar-chart** to **v0.0.16**
+- Updated **calendar** to **v0.0.33**
+- Updated **chart** to **v0.0.16**
+- Updated **composed-chart** to **v0.0.16**
+- Updated **footer** to **v0.0.46**
+- Updated **page** to **v0.0.42**
+- Updated **state** to **v0.0.46**
+- Updated **theme-builder** to **v0.0.34**
+- Updated **tokens** to **v0.3.33**
+
 ## [0.0.15](https://github.com/storm-software/cyclone-ui/releases/tag/nextjs%400.0.15) (11/03/2026)
 
 ### Updated Dependencies

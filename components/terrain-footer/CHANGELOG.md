@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Terrain Footer
 
+## [0.0.7](https://github.com/storm-software/cyclone-ui/releases/tag/terrain-footer%400.0.7) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update workspace component to better support nextjs SSR ([dff5b74cd](https://github.com/storm-software/cyclone-ui/commit/dff5b74cd))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.44**
+- Updated **footer** to **v0.0.46**
+- Updated **heading-text** to **v0.5.45**
+- Updated **icons** to **v0.0.42**
+- Updated **link** to **v0.5.47**
+- Updated **vectors** to **v0.5.46**
+
 ## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/terrain-footer%400.0.6) (11/03/2026)
 
 ### Updated Dependencies

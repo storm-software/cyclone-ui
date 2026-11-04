@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/chart",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "type": "module",
   "description": "Shared building blocks for the Cyclone UI chart packages, built on Recharts. It provides the chart container, which maps each series to theme data colors, and the tooltip, legend, point markers, zoom brush, background patterns, reveal animation and loading skeleton that the charts reuse. Use it to build a custom Recharts chart that looks like the other Cyclone charts.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/chart"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -32,7 +34,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -66,13 +70,13 @@
       "import": "./dist/ChartTooltip.mjs",
       "require": "./dist/ChartTooltip.cjs"
     },
-    "./utilities": {
-      "import": "./dist/utilities.mjs",
-      "require": "./dist/utilities.cjs"
-    },
     "./useLoadingData": {
       "import": "./dist/useLoadingData.mjs",
       "require": "./dist/useLoadingData.cjs"
+    },
+    "./utilities": {
+      "import": "./dist/utilities.mjs",
+      "require": "./dist/utilities.cjs"
     },
     "./*": "./*"
   }

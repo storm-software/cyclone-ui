@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Date Picker
 
+## [0.5.48](https://github.com/storm-software/cyclone-ui/releases/tag/date-picker%400.5.48) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update workspace component to better support nextjs SSR ([dff5b74cd](https://github.com/storm-software/cyclone-ui/commit/dff5b74cd))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.47**
+- Updated **calendar** to **v0.0.33**
+- Updated **field** to **v0.5.47**
+- Updated **form** to **v0.9.45**
+- Updated **helpers** to **v0.3.44**
+- Updated **icons** to **v0.0.42**
+- Updated **input** to **v0.6.47**
+- Updated **popover** to **v0.5.48**
+
 ## [0.5.47](https://github.com/storm-software/cyclone-ui/releases/tag/date-picker%400.5.47) (11/03/2026)
 
 ### Bug Fixes

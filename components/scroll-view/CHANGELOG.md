@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Scroll View
 
+## [0.5.46](https://github.com/storm-software/cyclone-ui/releases/tag/scroll-view%400.5.46) (11/03/2026)
+
+### Updated Dependencies
+
+- Updated **vectors** to **v0.5.46**
+
 ## [0.5.45](https://github.com/storm-software/cyclone-ui/releases/tag/scroll-view%400.5.45) (11/03/2026)
 
 ### Bug Fixes

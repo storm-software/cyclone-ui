@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Popover
 
+## [0.5.48](https://github.com/storm-software/cyclone-ui/releases/tag/popover%400.5.48) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update workspace component to better support nextjs SSR ([dff5b74cd](https://github.com/storm-software/cyclone-ui/commit/dff5b74cd))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.44**
+- Updated **button** to **v0.6.47**
+- Updated **heading-text** to **v0.5.45**
+- Updated **scroll-view** to **v0.5.46**
+- Updated **sheet** to **v0.0.47**
+
 ## [0.5.47](https://github.com/storm-software/cyclone-ui/releases/tag/popover%400.5.47) (11/03/2026)
 
 ### Bug Fixes

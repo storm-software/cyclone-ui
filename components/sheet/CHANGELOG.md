@@ -2,6 +2,15 @@
 
 # Changelog for Cyclone UI - Sheet
 
+## [0.0.47](https://github.com/storm-software/cyclone-ui/releases/tag/sheet%400.0.47) (11/03/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.44**
+- Updated **button** to **v0.6.47**
+- Updated **heading-text** to **v0.5.45**
+- Updated **scroll-view** to **v0.5.46**
+
 ## [0.0.46](https://github.com/storm-software/cyclone-ui/releases/tag/sheet%400.0.46) (11/03/2026)
 
 ### Updated Dependencies

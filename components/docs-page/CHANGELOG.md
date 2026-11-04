@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Docs Page
 
+## [0.0.23](https://github.com/storm-software/cyclone-ui/releases/tag/docs-page%400.0.23) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update workspace component to better support nextjs SSR ([dff5b74cd](https://github.com/storm-software/cyclone-ui/commit/dff5b74cd))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.44**
+- Updated **breadcrumb** to **v0.4.49**
+- Updated **button** to **v0.6.47**
+- Updated **divider** to **v0.0.40**
+- Updated **heading-text** to **v0.5.45**
+- Updated **icons** to **v0.0.42**
+- Updated **inline-code-text** to **v0.5.43**
+- Updated **page** to **v0.0.42**
+- Updated **table-of-contents** to **v0.0.43**
+
 ## [0.0.22](https://github.com/storm-software/cyclone-ui/releases/tag/docs-page%400.0.22) (11/03/2026)
 
 ### Updated Dependencies
