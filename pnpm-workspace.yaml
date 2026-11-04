@@ -104,20 +104,20 @@ catalog:
   "@razorwind/shell-shock": ^0.0.31
   "@razorwind/tailwindcss": ^0.0.108
   "@razorwind/tamagui": ^0.0.116
-  "@storm-software/cloudflare-tools": ^0.71.307
+  "@storm-software/cloudflare-tools": ^0.71.308
   "@storm-software/config": ^1.138.93
   "@storm-software/config-tools": ^1.190.157
   "@storm-software/cspell": ^0.46.224
-  "@storm-software/eslint-config-react": ^0.0.114
+  "@storm-software/eslint-config-react": ^0.0.115
   "@storm-software/eslint-plugin-tsdoc": ^0.0.120
   "@storm-software/git-tools": ^2.133.2
-  "@storm-software/linting-tools": ^1.134.87
+  "@storm-software/linting-tools": ^1.134.88
   "@storm-software/markdownlint": ^0.30.312
   "@storm-software/pnpm-tools": ^0.7.171
   "@storm-software/prettier": ^0.59.210
   "@storm-software/tsconfig": ^0.48.223
   "@storm-software/untyped": ^0.24.299
-  "@storm-software/workspace-tools": ^1.297.28
+  "@storm-software/workspace-tools": ^1.297.29
   "@stryke/async": ^0.1.45
   "@stryke/env": ^0.20.136
   "@stryke/helpers": ^0.10.57
@@ -173,7 +173,7 @@ catalog:
   "@react-email/ui": ^6.11.6
   "@opentelemetry/api": ^1.10.0
   motion: ^11.18.2
-  next: ^16.4.4
+  next: ^16.4.5
   sherif: ^1.13.0
   storybook: ^10.6.5
   tamagui: 3.2.0
