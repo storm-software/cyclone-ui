@@ -1,4 +1,4 @@
-name: "Release"
+name: Release
 
 on:
   workflow_dispatch:
@@ -24,7 +24,7 @@ env:
 
 jobs:
   start:
-    name: "Send in process notification"
+    name: Send in process notification
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -48,14 +48,14 @@ jobs:
             with this deployment: ${{ github.event.pull_request.html_url ||
             github.event.head_commit.url }} "
           color: 2077350
-          status: "In Progress"
+          status: In Progress
           slack-token: ${{ secrets.STORM_BOT_SLACK_TOKEN }}
           telegram-token: ${{ secrets.STORM_BOT_TELEGRAM_TOKEN }}
           telegram-chat: ${{ secrets.STORM_BOT_TELEGRAM_NOTIFICATION_CHAT }}
           discord-webhook: ${{ secrets.STORM_BOT_DISCORD_WEBHOOK}}
 
   process:
-    name: "Continuous Integration"
+    name: Continuous Integration
     if: >-
       always() && !cancelled() && !contains(needs.*.result, 'failure') &&
       github.event.pull_request.draft == false && !(github.event_name ==
@@ -84,7 +84,7 @@ jobs:
         run: devenv shell -- git lfs pull --include='maps/tiles/src/test/resources/*' --exclude=''
 
       - name: Log in to GitHub Container Registry
-        uses: docker/login-action@v3
+        uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9 # v3.7.0
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -134,7 +134,7 @@ jobs:
             with this deployment: ${{ github.event.pull_request.html_url ||
             github.event.head_commit.url }} "
           color: 556891
-          status: "Success"
+          status: Success
           slack-token: ${{ secrets.STORM_BOT_SLACK_TOKEN }}
           telegram-token: ${{ secrets.STORM_BOT_TELEGRAM_TOKEN }}
           telegram-chat: ${{ secrets.STORM_BOT_TELEGRAM_NOTIFICATION_CHAT }}
@@ -160,7 +160,7 @@ jobs:
             with this deployment: ${{ github.event.pull_request.html_url ||
             github.event.head_commit.url }} "
           color: 10027008
-          status: "Failure"
+          status: Failure
           slack-token: ${{ secrets.STORM_BOT_SLACK_TOKEN }}
           telegram-token: ${{ secrets.STORM_BOT_TELEGRAM_TOKEN }}
           telegram-chat: ${{ secrets.STORM_BOT_TELEGRAM_NOTIFICATION_CHAT }}
@@ -187,7 +187,7 @@ jobs:
             github.event.pull_request.html_url || github.event.head_commit.url
             }}."
           color: 16565273
-          status: "Cancelled"
+          status: Cancelled
           slack-token: ${{ secrets.STORM_BOT_SLACK_TOKEN }}
           telegram-token: ${{ secrets.STORM_BOT_TELEGRAM_TOKEN }}
           telegram-chat: ${{ secrets.STORM_BOT_TELEGRAM_NOTIFICATION_CHAT }}

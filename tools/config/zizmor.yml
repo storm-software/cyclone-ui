@@ -12,6 +12,7 @@ rules:
       - sync-labels.yml
       - lock.yml
       - git-guardian.yml
+      - all-contributors.yml
       - contributors.yml
       - codeql.yml
       - greetings.yml
