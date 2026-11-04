@@ -89,11 +89,12 @@ const Icon = ({
       return 0;
     }
 
+    // Above the reference size the bulb grows much slower than the circle
+    const ratio = lightBulbScaleReferenceSize / resolvedSize;
+
     return Math.min(
       resolvedSize,
-      resolvedSize *
-        0.2 *
-        Math.max(1, lightBulbScaleReferenceSize / resolvedSize) ** 0.840625
+      resolvedSize * 0.28 * ratio ** (ratio >= 1 ? 0.840625 : 0.9)
     );
   }, [resolvedSize]);
   const lightBulbOffset = (diameter - lightBulbSize) / 2;
@@ -129,6 +130,7 @@ const Icon = ({
             transform={`translate(12 12) scale(${lightBulbScale}) translate(-12 -12)`}>
             <Lightbulb
               size={isSmall ? diameter : lightBulbSize}
+              variant={isSmall ? "regular" : "bold"}
               x={isSmall ? 0 : lightBulbOffset}
               y={isSmall ? 0 : lightBulbOffset}
               color={color}

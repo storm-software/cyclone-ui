@@ -48,6 +48,7 @@ import {
   useRef,
   useState
 } from "react";
+import type { ViewStyle } from "react-native";
 
 export type TagSize = SizeTokens | number;
 
@@ -240,7 +241,7 @@ const TagTextFrame = styled(SizableText, {
   fontFamily: "display",
   fontSize: "xs",
   lineHeight: "xs",
-  fontWeight: "700",
+  fontWeight: "semibold",
 
   variants: {
     // v2 `"...fontSize"`: only font size keys restyle the text; `true` keeps
@@ -536,7 +537,13 @@ const TagRemoveButton = createStyledHOC(
           onPress?.(event);
         }}>
         <TagIcon color={getTextColor(variant, outlined)}>
-          <Close />
+          <Close
+            // The `danger` theme swap only redefines the frame's color vars,
+            // so its border switches instantly; drop the icon's own 200ms
+            // color transition so the glyph switches with it.
+            // Web-only CSS property, missing from React Native's style types.
+            style={{ transition: "none" } as ViewStyle}
+          />
         </TagIcon>
       </TagRemoveButtonFrame>
     );

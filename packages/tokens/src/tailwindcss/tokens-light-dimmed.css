@@ -592,8 +592,8 @@
   --color-base-on-secondary: var(--color-neutral-1);
   --color-base-primary: var(--color-neutral-15);
   --color-base-primary-active: #262626;
-  --color-base-primary-disabled: #4c4c4e;
-  --color-base-primary-hovered: #6a6a6b;
+  --color-base-primary-disabled: #4b4b4e;
+  --color-base-primary-hovered: #676769;
   --color-base-primary-inactive: #2f202f;
   --color-base-secondary: var(--color-neutral-7);
   --color-base-secondary-active: var(--color-base-secondary-hovered);
@@ -702,8 +702,8 @@
   --color-elevated-inactive: var(--color-white);
   --color-emphasis: var(--color-neutral-14);
   --color-emphasis-active: var(--color-base-primary-active);
-  --color-emphasis-disabled: #4d4e50;
-  --color-emphasis-hovered: #4a4b4e;
+  --color-emphasis-disabled: #4c4c4e;
+  --color-emphasis-hovered: #464648;
   --color-emphasis-inactive: var(--color-base-primary-inactive);
   --color-floating: var(--color-white);
   --color-floating-active: #b6b6b6;
@@ -752,9 +752,9 @@
   --color-neutral-10: #626364;
   --color-neutral-11: #57575a;
   --color-neutral-12: #45464a;
-  --color-neutral-13: #434347;
-  --color-neutral-14: #3f4043;
-  --color-neutral-15: #3c3c3e;
+  --color-neutral-13: #3f4043;
+  --color-neutral-14: #3c3c3e;
+  --color-neutral-15: #39393c;
   --color-neutral-16: #343438;
   --color-neutral-2: #cfcfcf;
   --color-neutral-3: #cacaca;
@@ -811,11 +811,13 @@
   --color-shadow-floating-xlarge: var(--shadow-2xl);
   --color-shadow-inset: var(--inset-shadow-xs);
   --color-shadow-resting-medium: var(--shadow-sm);
+  --color-shadow-resting-raised:
+    0px 1px 2px 0px #00000014, 0px 2px 8px 0px #0000000f;
   --color-shadow-resting-small: var(--shadow-xs);
   --color-shadow-resting-xsmall: var(--shadow-2xs);
   --color-subtle: var(--color-neutral-8);
   --color-subtle-active: var(--color-black);
-  --color-subtle-disabled: var(--color-base-primary-hovered);
+  --color-subtle-disabled: #6a6a6b;
   --color-subtle-hovered: #6c6c6e;
   --color-subtle-inactive: var(--color-base-primary-inactive);
   --color-subtlest: var(--color-neutral-7);
@@ -949,12 +951,12 @@
   --radius-2xl: 1rem;
   --radius-3xl: 1.5rem;
   --radius-4xl: 2rem;
-  --radius-button: var(--radius-sm);
-  --radius-card: var(--radius-md);
+  --radius-button: var(--radius-md);
+  --radius-card: var(--radius-lg);
   --radius-checkbox: var(--radius-sm);
   --radius-container: var(--radius-lg);
   --radius-control: var(--radius-sm);
-  --radius-dialog: var(--radius-md);
+  --radius-dialog: var(--radius-lg);
   --radius-drawer: var(--radius-lg);
   --radius-full: 100%;
   --radius-lg: 0.5rem;
@@ -962,20 +964,20 @@
   --radius-popover: var(--radius-md);
   --radius-sheet: var(--radius-zero);
   --radius-sm: 0.25rem;
-  --radius-tab: var(--radius-sm);
-  --radius-tabs: var(--radius-md);
+  --radius-tab: var(--radius-md);
+  --radius-tabs: var(--radius-lg);
   --radius-tag: var(--radius-sm);
   --radius-tooltip: var(--radius-md);
-  --radius-trigger: var(--radius-sm);
+  --radius-trigger: var(--radius-md);
   --radius-xl: 0.75rem;
   --radius-xs: 0.125rem;
   --radius-zero: 0rem;
-  --ring-base: 0px 0px 0px 3px #1f1f211a;
+  --ring-base: 0px 0px 0px 3px #1c1c1e1a;
   --ring-base-offset:
-    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #1f1f211a;
-  --ring-base-subtle: 0px 0px 0px 1px #1f1f211a;
+    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #1c1c1e1a;
+  --ring-base-subtle: 0px 0px 0px 1px #1c1c1e1a;
   --ring-base-subtle-offset:
-    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1f1f211a;
+    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1c1c1e1a;
   --ring-brand: 0px 0px 0px 3px #1fb2a626;
   --ring-brand-offset:
     0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #1fb2a626;
@@ -1204,6 +1206,7 @@
   --text-xs: 0.875rem;
   --text-xs--line-height: var(--leading-xs);
   --text-xxs: 0.75rem;
+  --text-xxxs: 0.625rem;
   --tracking-normal: 0rem;
   --tracking-tight: -0.025rem;
   --tracking-tighter: -0.05rem;

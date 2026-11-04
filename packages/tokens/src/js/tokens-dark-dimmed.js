@@ -1,6 +1,20 @@
-/**
- * Do not edit directly, this file was auto-generated.
- */
+/* -------------------------------------------------------------------
+
+                   🗲 Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 module.exports = {
   color: {
@@ -431,7 +445,7 @@ module.exports = {
         key: "{color.neutral.13}",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#434347",
+        $value: "#3f4043",
         $description: "Dark charcoal gray.",
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/primitives/tokens.json",
@@ -442,9 +456,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.2627450980392157, 0.2627450980392157, 0.2784313725490196
+              0.24705882352941178, 0.25098039215686274, 0.2627450980392157
             ],
-            hex: "#434347"
+            hex: "#3f4043"
           },
           $description: "Dark charcoal gray.",
           key: "{color.neutral.13}"
@@ -461,7 +475,7 @@ module.exports = {
         key: "{color.neutral.14}",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#3f4043",
+        $value: "#3c3c3e",
         $description: "Deep graphite gray.",
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/primitives/tokens.json",
@@ -472,9 +486,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.24705882352941178, 0.25098039215686274, 0.2627450980392157
+              0.23529411764705882, 0.23529411764705882, 0.24313725490196078
             ],
-            hex: "#3f4043"
+            hex: "#3c3c3e"
           },
           $description: "Deep graphite gray.",
           key: "{color.neutral.14}"
@@ -491,7 +505,7 @@ module.exports = {
         key: "{color.neutral.15}",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#3c3c3e",
+        $value: "#39393c",
         $description: "Near-black graphite.",
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/primitives/tokens.json",
@@ -502,9 +516,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.23529411764705882, 0.23529411764705882, 0.24313725490196078
+              0.2235294117647059, 0.2235294117647059, 0.23529411764705882
             ],
-            hex: "#3c3c3e"
+            hex: "#39393c"
           },
           $description: "Near-black graphite.",
           key: "{color.neutral.15}"
@@ -2560,7 +2574,7 @@ module.exports = {
       key: "{color.outline}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#57575a",
+      $value: "#626364",
       $description:
         "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
       group: "border",
@@ -2570,7 +2584,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.11}",
+        $value: "{color.neutral.10}",
         $description:
           "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
         group: "border",
@@ -2667,7 +2681,7 @@ module.exports = {
       key: "{color.surface}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#3c3c3e",
+      $value: "#39393c",
       $description:
         "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree.",
       group: "background",
@@ -2694,7 +2708,7 @@ module.exports = {
       key: "{color.elevated}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#3f4043",
+      $value: "#3c3c3e",
       $description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant.",
       group: "background",
@@ -2721,7 +2735,7 @@ module.exports = {
       key: "{color.floating}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#434347",
+      $value: "#3f4043",
       $description:
         "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant.",
       group: "background",
@@ -2783,7 +2797,7 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#626364",
+        $value: "#57575a",
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
         semantic: true,
@@ -2795,7 +2809,7 @@ module.exports = {
           group: "base",
           $type: "color",
           colorSpace: "display-p3",
-          $value: "{color.neutral.10}",
+          $value: "{color.neutral.11}",
           $description:
             "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
           semantic: true,
@@ -3100,7 +3114,7 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#6d6e70",
+        $value: "#616164",
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 13% brighter)",
         semantic: true,
@@ -3115,9 +3129,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.42745098039215684, 0.43137254901960786, 0.4392156862745098
+              0.3803921568627451, 0.3803921568627451, 0.39215686274509803
             ],
-            hex: "#6d6e70"
+            hex: "#616164"
           },
           $description:
             "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 13% brighter)",
@@ -3138,7 +3152,7 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#6d6e70",
+        $value: "#616164",
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 13% brighter)",
         semantic: true,
@@ -3202,7 +3216,7 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#595a5c",
+        $value: "#565658",
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
@@ -3217,9 +3231,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.34901960784313724, 0.35294117647058826, 0.3607843137254902
+              0.33725490196078434, 0.33725490196078434, 0.34509803921568627
             ],
-            hex: "#595a5c"
+            hex: "#565658"
           },
           $description:
             "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -4818,7 +4832,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#c59b4d",
+        $value: "#d5b67d",
         $description:
           "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
         semantic: true,
@@ -4830,7 +4844,7 @@ module.exports = {
           group: "warning",
           $type: "color",
           colorSpace: "display-p3",
-          $value: "{color.yellow.4}",
+          $value: "{color.yellow.1}",
           $description:
             "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
           semantic: true,
@@ -4850,7 +4864,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#a58549",
+        $value: "#b5904d",
         $description:
           "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme.",
         semantic: true,
@@ -4862,7 +4876,7 @@ module.exports = {
           group: "warning",
           $type: "color",
           colorSpace: "display-p3",
-          $value: "{color.yellow.7}",
+          $value: "{color.yellow.6}",
           $description:
             "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme.",
           semantic: true,
@@ -4882,7 +4896,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#c59b4d",
+        $value: "#d5b67d",
         $description:
           "Generated warning hyperlink text color (matches primary)",
         semantic: true,
@@ -4914,7 +4928,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#c59b4d",
+        $value: "#d5b67d",
         $description:
           "Generated warning border and divider color (matches primary)",
         semantic: true,
@@ -4978,7 +4992,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#5a1a1abf",
+        $value: "#562919bf",
         $description:
           "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
         semantic: true,
@@ -4993,10 +5007,10 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.35294117647058826, 0.10196078431372549, 0.10196078431372549
+              0.33725490196078434, 0.1607843137254902, 0.09803921568627451
             ],
             alpha: 0.7490196078431373,
-            hex: "#5a1a1a"
+            hex: "#562919"
           },
           $description:
             "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -5049,7 +5063,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#9d722e",
+        $value: "#9b8353",
         $description:
           "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
         semantic: true,
@@ -5064,9 +5078,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.615686274509804, 0.4470588235294118, 0.1803921568627451
+              0.6078431372549019, 0.5137254901960784, 0.3254901960784314
             ],
-            hex: "#9d722e"
+            hex: "#9b8353"
           },
           $description:
             "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
@@ -5087,7 +5101,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#9d722e",
+        $value: "#9b8353",
         $description:
           "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)",
         semantic: true,
@@ -5119,7 +5133,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#d6c171",
+        $value: "#e0da93",
         $description:
           "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
         semantic: true,
@@ -5134,9 +5148,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.8392156862745098, 0.7568627450980392, 0.44313725490196076
+              0.8784313725490196, 0.8549019607843137, 0.5764705882352941
             ],
-            hex: "#d6c171"
+            hex: "#e0da93"
           },
           $description:
             "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
@@ -5157,7 +5171,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#7c6f5b",
+        $value: "#7e776a",
         $description:
           "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
@@ -5172,9 +5186,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.48627450980392156, 0.43529411764705883, 0.3568627450980392
+              0.49411764705882355, 0.4666666666666667, 0.41568627450980394
             ],
-            hex: "#7c6f5b"
+            hex: "#7e776a"
           },
           $description:
             "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -5195,7 +5209,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#d4ad6f",
+        $value: "#d7bd75",
         $description:
           "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 25% brighter)",
         semantic: true,
@@ -5210,9 +5224,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.8313725490196079, 0.6784313725490196, 0.43529411764705883
+              0.8431372549019608, 0.7411764705882353, 0.4588235294117647
             ],
-            hex: "#d4ad6f"
+            hex: "#d7bd75"
           },
           $description:
             "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 25% brighter)",
@@ -5233,7 +5247,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#d4ad6f",
+        $value: "#d7bd75",
         $description:
           "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (active, 25% brighter)",
         semantic: true,
@@ -5265,7 +5279,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#8f6b29",
+        $value: "#9a722d",
         $description:
           "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (inactive, 20% darker)",
         semantic: true,
@@ -5280,9 +5294,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.5607843137254902, 0.4196078431372549, 0.1607843137254902
+              0.6039215686274509, 0.4470588235294118, 0.17647058823529413
             ],
-            hex: "#8f6b29"
+            hex: "#9a722d"
           },
           $description:
             "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (inactive, 20% darker)",
@@ -5303,7 +5317,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#726858",
+        $value: "#776c5a",
         $description:
           "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
@@ -5318,9 +5332,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.4470588235294118, 0.40784313725490196, 0.34509803921568627
+              0.4666666666666667, 0.4235294117647059, 0.35294117647058826
             ],
-            hex: "#726858"
+            hex: "#776c5a"
           },
           $description:
             "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -5341,7 +5355,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#9d722e",
+        $value: "#9b8353",
         $description:
           "Generated warning hyperlink text color (matches primary) (hovered, 25% darker)",
         semantic: true,
@@ -5373,7 +5387,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#9d722e",
+        $value: "#9b8353",
         $description:
           "Generated warning hyperlink text color (matches primary) (active, 25% darker)",
         semantic: true,
@@ -5405,7 +5419,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#d6c171",
+        $value: "#e0da93",
         $description:
           "Generated warning hyperlink text color (matches primary) (inactive, 20% brighter)",
         semantic: true,
@@ -5437,7 +5451,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#7c6f5b",
+        $value: "#7e776a",
         $description:
           "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
@@ -5469,7 +5483,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#885a28",
+        $value: "#866a27",
         $description:
           "Generated warning border and divider color (matches primary) (hovered, 40% darker)",
         semantic: true,
@@ -5484,9 +5498,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.5333333333333333, 0.35294117647058826, 0.1568627450980392
+              0.5254901960784314, 0.41568627450980394, 0.15294117647058825
             ],
-            hex: "#885a28"
+            hex: "#866a27"
           },
           $description:
             "Generated warning border and divider color (matches primary) (hovered, 40% darker)",
@@ -5507,7 +5521,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#885a28",
+        $value: "#866a27",
         $description:
           "Generated warning border and divider color (matches primary) (active, 40% darker)",
         semantic: true,
@@ -5539,7 +5553,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#d6c171",
+        $value: "#e0da93",
         $description:
           "Generated warning border and divider color (matches primary) (inactive, 20% brighter)",
         semantic: true,
@@ -5571,7 +5585,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#7c6f5b",
+        $value: "#7e776a",
         $description:
           "Generated warning border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
@@ -8112,6 +8126,109 @@ module.exports = {
             subitem: "medium"
           },
           path: ["color", "shadow", "resting", "medium"]
+        },
+        raised: {
+          key: "{color.shadow.resting.raised}",
+          $type: "shadow",
+          $value: [
+            {
+              color: "#0000004d",
+              offsetX: {
+                value: 0,
+                unit: "px"
+              },
+              offsetY: {
+                value: 1,
+                unit: "px"
+              },
+              blur: {
+                value: 2,
+                unit: "px"
+              },
+              spread: {
+                value: 0,
+                unit: "px"
+              }
+            },
+            {
+              color: "#00000040",
+              offsetX: {
+                value: 0,
+                unit: "px"
+              },
+              offsetY: {
+                value: 2,
+                unit: "px"
+              },
+              blur: {
+                value: 8,
+                unit: "px"
+              },
+              spread: {
+                value: 0,
+                unit: "px"
+              }
+            }
+          ],
+          $description:
+            "Raised resting shadow: a tight contact shadow plus a soft 8px falloff. Use it for selected segments, notification cards and secondary buttons that should read as lifted off their surface. Used by Button (`secondary` variant).",
+          filePath:
+            "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+          isSource: true,
+          original: {
+            $type: "shadow",
+            $value: [
+              {
+                color: "#0000004d",
+                offsetX: {
+                  value: 0,
+                  unit: "px"
+                },
+                offsetY: {
+                  value: 1,
+                  unit: "px"
+                },
+                blur: {
+                  value: 2,
+                  unit: "px"
+                },
+                spread: {
+                  value: 0,
+                  unit: "px"
+                }
+              },
+              {
+                color: "#00000040",
+                offsetX: {
+                  value: 0,
+                  unit: "px"
+                },
+                offsetY: {
+                  value: 2,
+                  unit: "px"
+                },
+                blur: {
+                  value: 8,
+                  unit: "px"
+                },
+                spread: {
+                  value: 0,
+                  unit: "px"
+                }
+              }
+            ],
+            $description:
+              "Raised resting shadow: a tight contact shadow plus a soft 8px falloff. Use it for selected segments, notification cards and secondary buttons that should read as lifted off their surface. Used by Button (`secondary` variant).",
+            key: "{color.shadow.resting.raised}"
+          },
+          name: "ColorShadowRestingRaised",
+          attributes: {
+            category: "color",
+            type: "shadow",
+            item: "resting",
+            subitem: "raised"
+          },
+          path: ["color", "shadow", "resting", "raised"]
         }
       },
       floating: {
@@ -8428,7 +8545,7 @@ module.exports = {
           key: "{color.data.neutral.subtle}",
           $type: "color",
           colorSpace: "display-p3",
-          $value: "#3f4043",
+          $value: "#3c3c3e",
           $description:
             "Low-emphasis neutral (gray) data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `neutral.emphasis` series.",
           filePath:
@@ -9298,7 +9415,13 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.base.secondary-disabled}",
+        $value: {
+          colorSpace: "srgb",
+          components: [
+            0.34901960784313724, 0.35294117647058826, 0.3607843137254902
+          ],
+          hex: "#595a5c"
+        },
         $description:
           "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         group: "foreground",
@@ -9577,7 +9700,7 @@ module.exports = {
       key: "{color.surface-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#404042",
+      $value: "#3d3d3f",
       $description:
         "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 10% brighter)",
       group: "background",
@@ -9590,9 +9713,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.25098039215686274, 0.25098039215686274, 0.25882352941176473
+            0.23921568627450981, 0.23921568627450981, 0.24705882352941178
           ],
-          hex: "#404042"
+          hex: "#3d3d3f"
         },
         $description:
           "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 10% brighter)",
@@ -9610,7 +9733,7 @@ module.exports = {
       key: "{color.surface-active}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#424244",
+      $value: "#3f3f41",
       $description:
         "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% brighter)",
       group: "background",
@@ -9623,9 +9746,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.25882352941176473, 0.25882352941176473, 0.26666666666666666
+            0.24705882352941178, 0.24705882352941178, 0.2549019607843137
           ],
-          hex: "#424244"
+          hex: "#3f3f41"
         },
         $description:
           "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% brighter)",
@@ -9643,7 +9766,7 @@ module.exports = {
       key: "{color.surface-inactive}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#37373a",
+      $value: "#363638",
       $description:
         "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 10% darker)",
       group: "background",
@@ -9656,9 +9779,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.21568627450980393, 0.21568627450980393, 0.22745098039215686
+            0.21176470588235294, 0.21176470588235294, 0.2196078431372549
           ],
-          hex: "#37373a"
+          hex: "#363638"
         },
         $description:
           "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 10% darker)",
@@ -9676,7 +9799,7 @@ module.exports = {
       key: "{color.surface-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#444446",
+      $value: "#434345",
       $description:
         "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
       group: "background",
@@ -9689,9 +9812,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.26666666666666666, 0.26666666666666666, 0.27450980392156865
+            0.2627450980392157, 0.2627450980392157, 0.27058823529411763
           ],
-          hex: "#444446"
+          hex: "#434345"
         },
         $description:
           "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
@@ -9709,7 +9832,7 @@ module.exports = {
       key: "{color.elevated-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#434448",
+      $value: "#404042",
       $description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% brighter)",
       group: "background",
@@ -9722,9 +9845,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.2627450980392157, 0.26666666666666666, 0.2823529411764706
+            0.25098039215686274, 0.25098039215686274, 0.25882352941176473
           ],
-          hex: "#434448"
+          hex: "#404042"
         },
         $description:
           "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% brighter)",
@@ -9742,7 +9865,7 @@ module.exports = {
       key: "{color.elevated-active}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#464749",
+      $value: "#424244",
       $description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% brighter)",
       group: "background",
@@ -9755,9 +9878,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.27450980392156865, 0.2784313725490196, 0.28627450980392155
+            0.25882352941176473, 0.25882352941176473, 0.26666666666666666
           ],
-          hex: "#464749"
+          hex: "#424244"
         },
         $description:
           "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% brighter)",
@@ -9775,7 +9898,7 @@ module.exports = {
       key: "{color.elevated-inactive}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#3b3c3f",
+      $value: "#37373a",
       $description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% darker)",
       group: "background",
@@ -9788,9 +9911,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.23137254901960785, 0.23529411764705882, 0.24705882352941178
+            0.21568627450980393, 0.21568627450980393, 0.22745098039215686
           ],
-          hex: "#3b3c3f"
+          hex: "#37373a"
         },
         $description:
           "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% darker)",
@@ -9808,7 +9931,7 @@ module.exports = {
       key: "{color.elevated-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#464749",
+      $value: "#444446",
       $description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
       group: "background",
@@ -9818,7 +9941,13 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.elevated-active}",
+        $value: {
+          colorSpace: "srgb",
+          components: [
+            0.26666666666666666, 0.26666666666666666, 0.27450980392156865
+          ],
+          hex: "#444446"
+        },
         $description:
           "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
         group: "background",
@@ -9835,7 +9964,7 @@ module.exports = {
       key: "{color.floating-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#48484c",
+      $value: "#434448",
       $description:
         "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% brighter)",
       group: "background",
@@ -9848,9 +9977,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.2823529411764706, 0.2823529411764706, 0.2980392156862745
+            0.2627450980392157, 0.26666666666666666, 0.2823529411764706
           ],
-          hex: "#48484c"
+          hex: "#434448"
         },
         $description:
           "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% brighter)",
@@ -9868,7 +9997,7 @@ module.exports = {
       key: "{color.floating-active}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#4a4b4e",
+      $value: "#464749",
       $description:
         "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% brighter)",
       group: "background",
@@ -9881,9 +10010,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.2901960784313726, 0.29411764705882354, 0.3058823529411765
+            0.27450980392156865, 0.2784313725490196, 0.28627450980392155
           ],
-          hex: "#4a4b4e"
+          hex: "#464749"
         },
         $description:
           "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% brighter)",
@@ -9901,7 +10030,7 @@ module.exports = {
       key: "{color.floating-inactive}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#3d3e42",
+      $value: "#3b3c3f",
       $description:
         "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 10% darker)",
       group: "background",
@@ -9914,9 +10043,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.23921568627450981, 0.24313725490196078, 0.25882352941176473
+            0.23137254901960785, 0.23529411764705882, 0.24705882352941178
           ],
-          hex: "#3d3e42"
+          hex: "#3b3c3f"
         },
         $description:
           "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 10% darker)",
@@ -9934,7 +10063,7 @@ module.exports = {
       key: "{color.floating-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#48494c",
+      $value: "#464749",
       $description:
         "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
       group: "background",
@@ -9944,13 +10073,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.2823529411764706, 0.28627450980392155, 0.2980392156862745
-          ],
-          hex: "#48494c"
-        },
+        $value: "{color.floating-active}",
         $description:
           "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
         group: "background",
@@ -10048,7 +10171,7 @@ module.exports = {
       key: "{color.outline-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#565658",
+      $value: "#595a5c",
       $description:
         "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       group: "border",
@@ -10058,13 +10181,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.33725490196078434, 0.33725490196078434, 0.34509803921568627
-          ],
-          hex: "#565658"
-        },
+        $value: "{color.subtlest-disabled}",
         $description:
           "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         group: "border",
@@ -13761,6 +13878,30 @@ module.exports = {
     }
   },
   "font-size": {
+    xxxs: {
+      key: "{font-size.xxxs}",
+      $type: "dimension",
+      $value: "0.625rem",
+      $description: "Extra extra small font size (0.625rem)",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/primitives/tokens.json",
+      isSource: true,
+      original: {
+        $type: "dimension",
+        $value: {
+          value: 0.625,
+          unit: "rem"
+        },
+        $description: "Extra extra small font size (0.625rem)",
+        key: "{font-size.xxxs}"
+      },
+      name: "FontSizeXxxs",
+      attributes: {
+        category: "font-size",
+        type: "xxxs"
+      },
+      path: ["font-size", "xxxs"]
+    },
     xxs: {
       key: "{font-size.xxs}",
       $type: "dimension",
@@ -15270,7 +15411,7 @@ module.exports = {
       $description:
         "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
       $type: "dimension",
-      $value: "0.25rem",
+      $value: "0.375rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -15278,7 +15419,7 @@ module.exports = {
         $description:
           "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
         $type: "dimension",
-        $value: "{border-radius.sm}",
+        $value: "{border-radius.md}",
         key: "{border-radius.trigger}"
       },
       name: "BorderRadiusTrigger",
@@ -15293,7 +15434,7 @@ module.exports = {
       $description:
         "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
       $type: "dimension",
-      $value: "0.375rem",
+      $value: "0.5rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -15301,7 +15442,7 @@ module.exports = {
         $description:
           "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
         $type: "dimension",
-        $value: "{border-radius.md}",
+        $value: "{border-radius.lg}",
         key: "{border-radius.card}"
       },
       name: "BorderRadiusCard",
@@ -15316,7 +15457,7 @@ module.exports = {
       $description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
       $type: "dimension",
-      $value: "0.25rem",
+      $value: "0.375rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -15324,7 +15465,7 @@ module.exports = {
         $description:
           "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
         $type: "dimension",
-        $value: "{border-radius.sm}",
+        $value: "{border-radius.md}",
         key: "{border-radius.button}"
       },
       name: "BorderRadiusButton",
@@ -15408,7 +15549,7 @@ module.exports = {
       $description:
         "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
       $type: "dimension",
-      $value: "0.25rem",
+      $value: "0.375rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -15416,7 +15557,7 @@ module.exports = {
         $description:
           "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
         $type: "dimension",
-        $value: "{border-radius.sm}",
+        $value: "{border-radius.md}",
         key: "{border-radius.tab}"
       },
       name: "BorderRadiusTab",
@@ -15431,7 +15572,7 @@ module.exports = {
       $description:
         "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
       $type: "dimension",
-      $value: "0.375rem",
+      $value: "0.5rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -15439,7 +15580,7 @@ module.exports = {
         $description:
           "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
         $type: "dimension",
-        $value: "{border-radius.md}",
+        $value: "{border-radius.lg}",
         key: "{border-radius.tabs}"
       },
       name: "BorderRadiusTabs",
@@ -15454,7 +15595,7 @@ module.exports = {
       $description:
         "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
       $type: "dimension",
-      $value: "0.375rem",
+      $value: "0.5rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -15462,7 +15603,7 @@ module.exports = {
         $description:
           "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
         $type: "dimension",
-        $value: "{border-radius.md}",
+        $value: "{border-radius.lg}",
         key: "{border-radius.dialog}"
       },
       name: "BorderRadiusDialog",
@@ -17834,7 +17975,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3f4043",
+          color: "#3c3c3e",
           offsetX: {
             value: 0,
             unit: "px"
@@ -17932,7 +18073,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3f4043",
+          color: "#3c3c3e",
           offsetX: {
             value: 0,
             unit: "px"
@@ -18150,7 +18291,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3f4043",
+          color: "#3c3c3e",
           offsetX: {
             value: 0,
             unit: "px"
@@ -18248,7 +18389,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3f4043",
+          color: "#3c3c3e",
           offsetX: {
             value: 0,
             unit: "px"
@@ -18466,7 +18607,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3f4043",
+          color: "#3c3c3e",
           offsetX: {
             value: 0,
             unit: "px"
@@ -18564,7 +18705,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3f4043",
+          color: "#3c3c3e",
           offsetX: {
             value: 0,
             unit: "px"
@@ -18662,7 +18803,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#f7ac2326",
+          color: "#facd7b26",
           offsetX: {
             value: 0,
             unit: "px"
@@ -18687,7 +18828,7 @@ module.exports = {
         $type: "shadow",
         $value: [
           {
-            color: "#f7ac2326",
+            color: "#facd7b26",
             offsetX: {
               value: 0,
               unit: "px"
@@ -18722,7 +18863,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#f7ac2326",
+          color: "#facd7b26",
           offsetX: {
             value: 0,
             unit: "px"
@@ -18747,7 +18888,7 @@ module.exports = {
         $type: "shadow",
         $value: [
           {
-            color: "#f7ac2326",
+            color: "#facd7b26",
             offsetX: {
               value: 0,
               unit: "px"
@@ -18782,7 +18923,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3f4043",
+          color: "#3c3c3e",
           offsetX: {
             value: 0,
             unit: "px"
@@ -18801,7 +18942,7 @@ module.exports = {
           }
         },
         {
-          color: "#f7ac2326",
+          color: "#facd7b26",
           offsetX: {
             value: 0,
             unit: "px"
@@ -18845,7 +18986,7 @@ module.exports = {
             }
           },
           {
-            color: "#f7ac2326",
+            color: "#facd7b26",
             offsetX: {
               value: 0,
               unit: "px"
@@ -18880,7 +19021,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3f4043",
+          color: "#3c3c3e",
           offsetX: {
             value: 0,
             unit: "px"
@@ -18899,7 +19040,7 @@ module.exports = {
           }
         },
         {
-          color: "#f7ac2326",
+          color: "#facd7b26",
           offsetX: {
             value: 0,
             unit: "px"
@@ -18943,7 +19084,7 @@ module.exports = {
             }
           },
           {
-            color: "#f7ac2326",
+            color: "#facd7b26",
             offsetX: {
               value: 0,
               unit: "px"
@@ -19098,7 +19239,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3f4043",
+          color: "#3c3c3e",
           offsetX: {
             value: 0,
             unit: "px"
@@ -19196,7 +19337,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3f4043",
+          color: "#3c3c3e",
           offsetX: {
             value: 0,
             unit: "px"
@@ -19414,7 +19555,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3f4043",
+          color: "#3c3c3e",
           offsetX: {
             value: 0,
             unit: "px"
@@ -19512,7 +19653,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3f4043",
+          color: "#3c3c3e",
           offsetX: {
             value: 0,
             unit: "px"
@@ -19730,7 +19871,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3f4043",
+          color: "#3c3c3e",
           offsetX: {
             value: 0,
             unit: "px"
@@ -19828,7 +19969,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3f4043",
+          color: "#3c3c3e",
           offsetX: {
             value: 0,
             unit: "px"

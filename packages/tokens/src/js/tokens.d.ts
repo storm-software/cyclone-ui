@@ -294,6 +294,7 @@ declare const tokens: {
         xsmall: DesignToken;
         small: DesignToken;
         medium: DesignToken;
+        raised: DesignToken;
       };
       floating: {
         small: DesignToken;
@@ -535,6 +536,7 @@ declare const tokens: {
     "64xl": DesignToken;
   };
   "font-size": {
+    xxxs: DesignToken;
     xxs: DesignToken;
     xs: DesignToken;
     sm: DesignToken;

@@ -91,9 +91,12 @@ export default defineConfig(
       "**/*.toml",
       ".design-sync",
       ".ds-sync",
+      "docs/**",
       "apps/storybook/src/blocks/**/*.tsx",
       "packages/eslint-plugin/src/*.ts",
+      "packages/eslint-plugin/src/INSTALL.md",
       "packages/stylelint-plugin/src/*.ts",
+      "packages/stylelint-plugin/src/INSTALL.md",
       "packages/nextjs/test/**"
     ]
   },

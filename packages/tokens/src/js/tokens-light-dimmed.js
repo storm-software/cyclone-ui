@@ -1,6 +1,20 @@
-/**
- * Do not edit directly, this file was auto-generated.
- */
+/* -------------------------------------------------------------------
+
+                   🗲 Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 module.exports = {
   color: {
@@ -431,7 +445,7 @@ module.exports = {
         key: "{color.neutral.13}",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#434347",
+        $value: "#3f4043",
         $description: "Dark charcoal gray.",
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/primitives/tokens.json",
@@ -442,9 +456,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.2627450980392157, 0.2627450980392157, 0.2784313725490196
+              0.24705882352941178, 0.25098039215686274, 0.2627450980392157
             ],
-            hex: "#434347"
+            hex: "#3f4043"
           },
           $description: "Dark charcoal gray.",
           key: "{color.neutral.13}"
@@ -461,7 +475,7 @@ module.exports = {
         key: "{color.neutral.14}",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#3f4043",
+        $value: "#3c3c3e",
         $description: "Deep graphite gray.",
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/primitives/tokens.json",
@@ -472,9 +486,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.24705882352941178, 0.25098039215686274, 0.2627450980392157
+              0.23529411764705882, 0.23529411764705882, 0.24313725490196078
             ],
-            hex: "#3f4043"
+            hex: "#3c3c3e"
           },
           $description: "Deep graphite gray.",
           key: "{color.neutral.14}"
@@ -491,7 +505,7 @@ module.exports = {
         key: "{color.neutral.15}",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#3c3c3e",
+        $value: "#39393c",
         $description: "Near-black graphite.",
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/primitives/tokens.json",
@@ -502,9 +516,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.23529411764705882, 0.23529411764705882, 0.24313725490196078
+              0.2235294117647059, 0.2235294117647059, 0.23529411764705882
             ],
-            hex: "#3c3c3e"
+            hex: "#39393c"
           },
           $description: "Near-black graphite.",
           key: "{color.neutral.15}"
@@ -2452,7 +2466,7 @@ module.exports = {
       key: "{color.emphasis}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#3f4043",
+      $value: "#3c3c3e",
       $description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
       group: "foreground",
@@ -2751,7 +2765,7 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#3c3c3e",
+        $value: "#39393c",
         $description:
           "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
         semantic: true,
@@ -2954,7 +2968,7 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#6a6a6b",
+        $value: "#676769",
         $description:
           "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)",
         semantic: true,
@@ -2969,9 +2983,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.41568627450980394, 0.41568627450980394, 0.4196078431372549
+              0.403921568627451, 0.403921568627451, 0.4117647058823529
             ],
-            hex: "#6a6a6b"
+            hex: "#676769"
           },
           $description:
             "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)",
@@ -3068,7 +3082,7 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#4c4c4e",
+        $value: "#4b4b4e",
         $description:
           "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
@@ -3083,9 +3097,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.2980392156862745, 0.2980392156862745, 0.3058823529411765
+              0.29411764705882354, 0.29411764705882354, 0.3058823529411765
             ],
-            hex: "#4c4c4e"
+            hex: "#4b4b4e"
           },
           $description:
             "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -8139,6 +8153,109 @@ module.exports = {
             subitem: "medium"
           },
           path: ["color", "shadow", "resting", "medium"]
+        },
+        raised: {
+          key: "{color.shadow.resting.raised}",
+          $type: "shadow",
+          $value: [
+            {
+              color: "#00000014",
+              offsetX: {
+                value: 0,
+                unit: "px"
+              },
+              offsetY: {
+                value: 1,
+                unit: "px"
+              },
+              blur: {
+                value: 2,
+                unit: "px"
+              },
+              spread: {
+                value: 0,
+                unit: "px"
+              }
+            },
+            {
+              color: "#0000000f",
+              offsetX: {
+                value: 0,
+                unit: "px"
+              },
+              offsetY: {
+                value: 2,
+                unit: "px"
+              },
+              blur: {
+                value: 8,
+                unit: "px"
+              },
+              spread: {
+                value: 0,
+                unit: "px"
+              }
+            }
+          ],
+          $description:
+            "Raised resting shadow: a tight contact shadow plus a soft 8px falloff. Use it for selected segments, notification cards and secondary buttons that should read as lifted off their surface. Used by Button (`secondary` variant).",
+          filePath:
+            "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+          isSource: true,
+          original: {
+            $type: "shadow",
+            $value: [
+              {
+                color: "#00000014",
+                offsetX: {
+                  value: 0,
+                  unit: "px"
+                },
+                offsetY: {
+                  value: 1,
+                  unit: "px"
+                },
+                blur: {
+                  value: 2,
+                  unit: "px"
+                },
+                spread: {
+                  value: 0,
+                  unit: "px"
+                }
+              },
+              {
+                color: "#0000000f",
+                offsetX: {
+                  value: 0,
+                  unit: "px"
+                },
+                offsetY: {
+                  value: 2,
+                  unit: "px"
+                },
+                blur: {
+                  value: 8,
+                  unit: "px"
+                },
+                spread: {
+                  value: 0,
+                  unit: "px"
+                }
+              }
+            ],
+            $description:
+              "Raised resting shadow: a tight contact shadow plus a soft 8px falloff. Use it for selected segments, notification cards and secondary buttons that should read as lifted off their surface. Used by Button (`secondary` variant).",
+            key: "{color.shadow.resting.raised}"
+          },
+          name: "ColorShadowRestingRaised",
+          attributes: {
+            category: "color",
+            type: "shadow",
+            item: "resting",
+            subitem: "raised"
+          },
+          path: ["color", "shadow", "resting", "raised"]
         }
       },
       floating: {
@@ -8876,7 +8993,7 @@ module.exports = {
       key: "{color.emphasis-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#4a4b4e",
+      $value: "#464648",
       $description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% brighter)",
       group: "foreground",
@@ -8889,9 +9006,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.2901960784313726, 0.29411764705882354, 0.3058823529411765
+            0.27450980392156865, 0.27450980392156865, 0.2823529411764706
           ],
-          hex: "#4a4b4e"
+          hex: "#464648"
         },
         $description:
           "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% brighter)",
@@ -8963,7 +9080,7 @@ module.exports = {
       key: "{color.emphasis-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#4d4e50",
+      $value: "#4c4c4e",
       $description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       group: "foreground",
@@ -8976,9 +9093,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.30196078431372547, 0.3058823529411765, 0.3137254901960784
+            0.2980392156862745, 0.2980392156862745, 0.3058823529411765
           ],
-          hex: "#4d4e50"
+          hex: "#4c4c4e"
         },
         $description:
           "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -9213,7 +9330,13 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.base.primary-hovered}",
+        $value: {
+          colorSpace: "srgb",
+          components: [
+            0.41568627450980394, 0.41568627450980394, 0.4196078431372549
+          ],
+          hex: "#6a6a6b"
+        },
         $description:
           "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         group: "foreground",
@@ -13768,6 +13891,30 @@ module.exports = {
     }
   },
   "font-size": {
+    xxxs: {
+      key: "{font-size.xxxs}",
+      $type: "dimension",
+      $value: "0.625rem",
+      $description: "Extra extra small font size (0.625rem)",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/primitives/tokens.json",
+      isSource: true,
+      original: {
+        $type: "dimension",
+        $value: {
+          value: 0.625,
+          unit: "rem"
+        },
+        $description: "Extra extra small font size (0.625rem)",
+        key: "{font-size.xxxs}"
+      },
+      name: "FontSizeXxxs",
+      attributes: {
+        category: "font-size",
+        type: "xxxs"
+      },
+      path: ["font-size", "xxxs"]
+    },
     xxs: {
       key: "{font-size.xxs}",
       $type: "dimension",
@@ -15277,7 +15424,7 @@ module.exports = {
       $description:
         "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
       $type: "dimension",
-      $value: "0.25rem",
+      $value: "0.375rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -15285,7 +15432,7 @@ module.exports = {
         $description:
           "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
         $type: "dimension",
-        $value: "{border-radius.sm}",
+        $value: "{border-radius.md}",
         key: "{border-radius.trigger}"
       },
       name: "BorderRadiusTrigger",
@@ -15300,7 +15447,7 @@ module.exports = {
       $description:
         "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
       $type: "dimension",
-      $value: "0.375rem",
+      $value: "0.5rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -15308,7 +15455,7 @@ module.exports = {
         $description:
           "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
         $type: "dimension",
-        $value: "{border-radius.md}",
+        $value: "{border-radius.lg}",
         key: "{border-radius.card}"
       },
       name: "BorderRadiusCard",
@@ -15323,7 +15470,7 @@ module.exports = {
       $description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
       $type: "dimension",
-      $value: "0.25rem",
+      $value: "0.375rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -15331,7 +15478,7 @@ module.exports = {
         $description:
           "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
         $type: "dimension",
-        $value: "{border-radius.sm}",
+        $value: "{border-radius.md}",
         key: "{border-radius.button}"
       },
       name: "BorderRadiusButton",
@@ -15415,7 +15562,7 @@ module.exports = {
       $description:
         "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
       $type: "dimension",
-      $value: "0.25rem",
+      $value: "0.375rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -15423,7 +15570,7 @@ module.exports = {
         $description:
           "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
         $type: "dimension",
-        $value: "{border-radius.sm}",
+        $value: "{border-radius.md}",
         key: "{border-radius.tab}"
       },
       name: "BorderRadiusTab",
@@ -15438,7 +15585,7 @@ module.exports = {
       $description:
         "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
       $type: "dimension",
-      $value: "0.375rem",
+      $value: "0.5rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -15446,7 +15593,7 @@ module.exports = {
         $description:
           "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
         $type: "dimension",
-        $value: "{border-radius.md}",
+        $value: "{border-radius.lg}",
         key: "{border-radius.tabs}"
       },
       name: "BorderRadiusTabs",
@@ -15461,7 +15608,7 @@ module.exports = {
       $description:
         "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
       $type: "dimension",
-      $value: "0.375rem",
+      $value: "0.5rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -15469,7 +15616,7 @@ module.exports = {
         $description:
           "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
         $type: "dimension",
-        $value: "{border-radius.md}",
+        $value: "{border-radius.lg}",
         key: "{border-radius.dialog}"
       },
       name: "BorderRadiusDialog",
@@ -17721,7 +17868,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#1f1f211a",
+          color: "#1c1c1e1a",
           offsetX: {
             value: 0,
             unit: "px"
@@ -17746,7 +17893,7 @@ module.exports = {
         $type: "shadow",
         $value: [
           {
-            color: "#1f1f211a",
+            color: "#1c1c1e1a",
             offsetX: {
               value: 0,
               unit: "px"
@@ -17781,7 +17928,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#1f1f211a",
+          color: "#1c1c1e1a",
           offsetX: {
             value: 0,
             unit: "px"
@@ -17806,7 +17953,7 @@ module.exports = {
         $type: "shadow",
         $value: [
           {
-            color: "#1f1f211a",
+            color: "#1c1c1e1a",
             offsetX: {
               value: 0,
               unit: "px"
@@ -17860,7 +18007,7 @@ module.exports = {
           }
         },
         {
-          color: "#1f1f211a",
+          color: "#1c1c1e1a",
           offsetX: {
             value: 0,
             unit: "px"
@@ -17904,7 +18051,7 @@ module.exports = {
             }
           },
           {
-            color: "#1f1f211a",
+            color: "#1c1c1e1a",
             offsetX: {
               value: 0,
               unit: "px"
@@ -17958,7 +18105,7 @@ module.exports = {
           }
         },
         {
-          color: "#1f1f211a",
+          color: "#1c1c1e1a",
           offsetX: {
             value: 0,
             unit: "px"
@@ -18002,7 +18149,7 @@ module.exports = {
             }
           },
           {
-            color: "#1f1f211a",
+            color: "#1c1c1e1a",
             offsetX: {
               value: 0,
               unit: "px"

@@ -90,7 +90,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-border-radius-button",
       type: "dimension",
       category: "radius",
-      value: "0.25rem",
+      value: "0.375rem",
       alias: true
     },
     {
@@ -98,7 +98,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-border-radius-card",
       type: "dimension",
       category: "radius",
-      value: "0.375rem",
+      value: "0.5rem",
       alias: true
     },
     {
@@ -130,7 +130,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-border-radius-dialog",
       type: "dimension",
       category: "radius",
-      value: "0.375rem",
+      value: "0.5rem",
       alias: true
     },
     {
@@ -190,7 +190,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-border-radius-tab",
       type: "dimension",
       category: "radius",
-      value: "0.25rem",
+      value: "0.375rem",
       alias: true
     },
     {
@@ -198,7 +198,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-border-radius-tabs",
       type: "dimension",
       category: "radius",
-      value: "0.375rem",
+      value: "0.5rem",
       alias: true
     },
     {
@@ -222,7 +222,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-border-radius-trigger",
       type: "dimension",
       category: "radius",
-      value: "0.25rem",
+      value: "0.375rem",
       alias: true
     },
     {
@@ -307,7 +307,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-base-primary",
       type: "color",
       category: "color",
-      value: "#1f1f21",
+      value: "#1c1c1e",
       alias: true
     },
     {
@@ -322,14 +322,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-base-primary-disabled",
       type: "color",
       category: "color",
-      value: "#363639"
+      value: "#353538"
     },
     {
       path: "color.base.primary-hovered",
       cssVar: "--storm-color-base-primary-hovered",
       type: "color",
       category: "color",
-      value: "#606062"
+      value: "#5c5c5f"
     },
     {
       path: "color.base.primary-inactive",
@@ -1105,7 +1105,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-emphasis",
       type: "color",
       category: "color",
-      value: "#242528",
+      value: "#1f1f21",
       alias: true
     },
     {
@@ -1120,14 +1120,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-emphasis-disabled",
       type: "color",
       category: "color",
-      value: "#38393c"
+      value: "#363639"
     },
     {
       path: "color.emphasis-hovered",
       cssVar: "--storm-color-emphasis-hovered",
       type: "color",
       category: "color",
-      value: "#343539"
+      value: "#2e2e30"
     },
     {
       path: "color.emphasis-inactive",
@@ -1533,21 +1533,21 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-neutral-13",
       type: "color",
       category: "color",
-      value: "#292a2e"
+      value: "#242528"
     },
     {
       path: "color.neutral.14",
       cssVar: "--storm-color-neutral-14",
       type: "color",
       category: "color",
-      value: "#242528"
+      value: "#1f1f21"
     },
     {
       path: "color.neutral.15",
       cssVar: "--storm-color-neutral-15",
       type: "color",
       category: "color",
-      value: "#1f1f21"
+      value: "#1c1c1e"
     },
     {
       path: "color.neutral.16",
@@ -1891,6 +1891,13 @@ export const manifest: DesignSystemManifest = {
       category: "shadow",
       value: "0px 1px 3px 0px #0000001a, 0px 1px 2px -1px #0000001a",
       alias: true
+    },
+    {
+      path: "color.shadow.resting.raised",
+      cssVar: "--storm-color-shadow-resting-raised",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 1px 2px 0px #00000014, 0px 2px 8px 0px #0000000f"
     },
     {
       path: "color.shadow.resting.small",
@@ -2682,6 +2689,13 @@ export const manifest: DesignSystemManifest = {
       value: "0.75rem"
     },
     {
+      path: "font-size.xxxs",
+      cssVar: "--storm-font-size-xxxs",
+      type: "dimension",
+      category: "fontSize",
+      value: "0.625rem"
+    },
+    {
       path: "font-weight.black",
       cssVar: "--storm-font-weight-black",
       type: "fontWeight",
@@ -2952,7 +2966,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-ring-base",
       type: "shadow",
       category: "shadow",
-      value: "0px 0px 0px 3px #1f1f211a"
+      value: "0px 0px 0px 3px #1c1c1e1a"
     },
     {
       path: "ring.base-offset",
@@ -2965,7 +2979,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-ring-base-subtle",
       type: "shadow",
       category: "shadow",
-      value: "0px 0px 0px 1px #1f1f211a"
+      value: "0px 0px 0px 1px #1c1c1e1a"
     },
     {
       path: "ring.base-subtle-offset",

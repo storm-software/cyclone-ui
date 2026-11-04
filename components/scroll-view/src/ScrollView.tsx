@@ -19,7 +19,7 @@
 "use client";
 
 import { isWeb } from "@tamagui/constants";
-import type { GetFinalProps, GetProps, TamaguiComponent } from "@tamagui/core";
+import type { GetProps, TamaguiComponent } from "@tamagui/core";
 import { createStyledHOC, styled } from "@tamagui/core";
 import { ScrollView as TamaguiScrollView } from "@tamagui/scroll-view";
 
@@ -100,9 +100,10 @@ interface ScrollViewVariants {
 
 // Spelled out because the inferred type references `WebScrollViewProps`,
 // which `@tamagui/scroll-view` does not export (TS2883).
+// Keep Tamagui's deferred props so the v3.2 styled HOC remains assignable.
 type ResolvedScrollViewComponent =
   typeof TamaguiScrollView extends TamaguiComponent<
-    any,
+    infer Props,
     infer Ref,
     infer NonStyledProps,
     infer BaseStyles,
@@ -110,7 +111,7 @@ type ResolvedScrollViewComponent =
     infer StaticProperties
   >
     ? TamaguiComponent<
-        GetFinalProps<NonStyledProps, BaseStyles, ScrollViewVariants>,
+        Props,
         Ref,
         NonStyledProps,
         BaseStyles,

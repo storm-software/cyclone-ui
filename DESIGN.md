@@ -3,7 +3,7 @@ version: alpha
 name: "Cyclone UI"
 description: "A modern and minimal style over an intuitive, well-structured design system. Cyclone UI was built with a deep focus on color theory, cross-platform design, and user experience."
 colors:
-  emphasis: "#242528"
+  emphasis: "#1f1f21"
   ink: "#555659"
   subtle: "#959698"
   subtlest: "#b0b0b1"
@@ -14,16 +14,16 @@ colors:
   surface: "#f1f1f1"
   elevated: "#fafafa"
   floating: "#ffffff"
-  base-primary: "#1f1f21"
+  base-primary: "#1c1c1e"
   base-secondary: "#b0b0b1"
   base-link: "#0084d1"
   base-on-primary: "#FAFAFA"
   base-backdrop: "#010101bf"
   base-on-secondary: "#FAFAFA"
-  base-primary-hovered: "#606062"
+  base-primary-hovered: "#5c5c5f"
   base-primary-active: "#000000"
   base-primary-inactive: "#020102"
-  base-primary-disabled: "#363639"
+  base-primary-disabled: "#353538"
   base-secondary-hovered: "#939394"
   base-secondary-active: "#939394"
   base-secondary-inactive: "#020102"
@@ -181,10 +181,10 @@ colors:
   data-purple-subtle: "#a690e1"
   data-pink-emphasis: "#904272"
   data-pink-subtle: "#eb89c5"
-  emphasis-hovered: "#343539"
+  emphasis-hovered: "#2e2e30"
   emphasis-active: "#000000"
   emphasis-inactive: "#020102"
-  emphasis-disabled: "#38393c"
+  emphasis-disabled: "#363639"
   ink-hovered: "#37383b"
   ink-active: "#0c0c0d"
   ink-inactive: "#020102"
@@ -321,7 +321,7 @@ Cyclone UI design tokens — 218 color tokens, 6 typography tokens, 70 spacing t
 
 ## Colors
 
-- **Emphasis (#242528):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.
+- **Emphasis (#1f1f21):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.
 - **Ink (#555659):** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.
 - **Subtle (#959698):** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.
 - **Subtlest (#b0b0b1):** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.
@@ -332,16 +332,16 @@ Cyclone UI design tokens — 218 color tokens, 6 typography tokens, 70 spacing t
 - **Surface (#f1f1f1):** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree.
 - **Elevated (#fafafa):** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant.
 - **Floating (#ffffff):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant.
-- **Base Primary (#1f1f21):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.
+- **Base Primary (#1c1c1e):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.
 - **Base Secondary (#b0b0b1):** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.
 - **Base Link (#0084d1):** The color used for hyperlink text.
 - **Base On Primary (#FAFAFA):** Generated text and icon color on base primary backgrounds
 - **Base Backdrop (#010101bf):** Generated base overlay backdrop color (primary, 30% darker at 75% opacity)
 - **Base On Secondary (#FAFAFA):** Generated text and icon color on base secondary backgrounds
-- **Base Primary Hovered (#606062):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)
+- **Base Primary Hovered (#5c5c5f):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)
 - **Base Primary Active (#000000):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)
 - **Base Primary Inactive (#020102):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% darker)
-- **Base Primary Disabled (#363639):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
+- **Base Primary Disabled (#353538):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
 - **Base Secondary Hovered (#939394):** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 12% darker)
 - **Base Secondary Active (#939394):** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 12% darker)
 - **Base Secondary Inactive (#020102):** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 50% darker)
@@ -499,10 +499,10 @@ Cyclone UI design tokens — 218 color tokens, 6 typography tokens, 70 spacing t
 - **Data Purple Subtle (#a690e1):** Low-emphasis purple data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `purple.emphasis` series.
 - **Data Pink Emphasis (#904272):** High-emphasis pink data color. Use it for the primary mark of a pink series, such as lines, bars, points and legend swatches.
 - **Data Pink Subtle (#eb89c5):** Low-emphasis pink data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `pink.emphasis` series.
-- **Emphasis Hovered (#343539):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% brighter)
+- **Emphasis Hovered (#2e2e30):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% brighter)
 - **Emphasis Active (#000000):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)
 - **Emphasis Inactive (#020102):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% darker)
-- **Emphasis Disabled (#38393c):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
+- **Emphasis Disabled (#363639):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
 - **Ink Hovered (#37383b):** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 25% darker)
 - **Ink Active (#0c0c0d):** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, light contrast primitive)
 - **Ink Inactive (#020102):** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 50% darker)

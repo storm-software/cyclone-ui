@@ -375,20 +375,23 @@ const ButtonFrame = styled(View, {
   minWidth: "fit-content",
   paddingHorizontal: "2xl",
   boxShadow: "focus-visible:ring-offset",
+
   // No `press:` background colors: a press draws a `ButtonRipple` from the
   // press point instead.
   variants: {
     variant: {
       tertiary: {
         borderWidth: 1,
-        borderColor: "primary hover:primary-hovered press:primary-active",
-        backgroundColor: "surface hover:surface-hovered"
+        borderColor: "hairline hover:hairline-hovered press:hairline-active",
+        backgroundColor: "surface hover:surface-hovered",
+        boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
       },
 
       secondary: {
-        borderWidth: 0,
-        borderColor: "transparent hover:transparent press:transparent",
-        backgroundColor: "secondary hover:secondary-hovered"
+        borderWidth: 1,
+        borderColor: "outline hover:outline press:outline",
+        backgroundColor: "secondary hover:secondary-hovered",
+        boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
       },
 
       primary: {

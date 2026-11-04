@@ -142,7 +142,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.13",
       type: "color",
-      value: "#292a2e",
+      value: "#242528",
       cssVar: "--cu-color-neutral-13",
       description: "Dark charcoal gray.",
       theme: undefined,
@@ -151,7 +151,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.14",
       type: "color",
-      value: "#242528",
+      value: "#1f1f21",
       cssVar: "--cu-color-neutral-14",
       description: "Deep graphite gray.",
       theme: undefined,
@@ -160,7 +160,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.15",
       type: "color",
-      value: "#1f1f21",
+      value: "#1c1c1e",
       cssVar: "--cu-color-neutral-15",
       description: "Near-black graphite.",
       theme: undefined,
@@ -785,7 +785,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.outline",
       type: "color",
-      value: "#46464a",
+      value: "#555659",
       cssVar: "--cu-color-outline",
       description:
         "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
@@ -824,7 +824,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface",
       type: "color",
-      value: "#1f1f21",
+      value: "#1c1c1e",
       cssVar: "--cu-color-surface",
       description:
         "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree.",
@@ -834,7 +834,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated",
       type: "color",
-      value: "#242528",
+      value: "#1f1f21",
       cssVar: "--cu-color-elevated",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant.",
@@ -844,7 +844,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating",
       type: "color",
-      value: "#292a2e",
+      value: "#242528",
       cssVar: "--cu-color-floating",
       description:
         "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant.",
@@ -864,7 +864,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary",
       type: "color",
-      value: "#555659",
+      value: "#46464a",
       cssVar: "--cu-color-base-secondary",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
@@ -952,7 +952,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-hovered",
       type: "color",
-      value: "#656669",
+      value: "#535358",
       cssVar: "--cu-color-base-secondary-hovered",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 13% brighter)",
@@ -962,7 +962,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-active",
       type: "color",
-      value: "#656669",
+      value: "#535358",
       cssVar: "--cu-color-base-secondary-active",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 13% brighter)",
@@ -982,7 +982,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-disabled",
       type: "color",
-      value: "#494a4d",
+      value: "#444447",
       cssVar: "--cu-color-base-secondary-disabled",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -1435,7 +1435,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary",
       type: "color",
-      value: "#f7ac23",
+      value: "#facd7b",
       cssVar: "--cu-color-warning-primary",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
@@ -1445,7 +1445,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary",
       type: "color",
-      value: "#c58c22",
+      value: "#df9d24",
       cssVar: "--cu-color-warning-secondary",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme.",
@@ -1455,7 +1455,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link",
       type: "color",
-      value: "#f7ac23",
+      value: "#facd7b",
       cssVar: "--cu-color-warning-link",
       description: "Generated warning hyperlink text color (matches primary)",
       theme: undefined,
@@ -1464,7 +1464,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline",
       type: "color",
-      value: "#f7ac23",
+      value: "#facd7b",
       cssVar: "--cu-color-warning-outline",
       description:
         "Generated warning border and divider color (matches primary)",
@@ -1484,7 +1484,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.backdrop",
       type: "color",
-      value: "#390000bf",
+      value: "#320d00bf",
       cssVar: "--cu-color-warning-backdrop",
       description:
         "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -1504,7 +1504,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-hovered",
       type: "color",
-      value: "#b56e00",
+      value: "#b38834",
       cssVar: "--cu-color-warning-primary-hovered",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
@@ -1514,7 +1514,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-active",
       type: "color",
-      value: "#b56e00",
+      value: "#b38834",
       cssVar: "--cu-color-warning-primary-active",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)",
@@ -1524,7 +1524,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-inactive",
       type: "color",
-      value: "#ffe067",
+      value: "#fff8a5",
       cssVar: "--cu-color-warning-primary-inactive",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
@@ -1534,7 +1534,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-disabled",
       type: "color",
-      value: "#7f6948",
+      value: "#81745e",
       cssVar: "--cu-color-warning-primary-disabled",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -1544,7 +1544,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-hovered",
       type: "color",
-      value: "#fec262",
+      value: "#ffd96d",
       cssVar: "--cu-color-warning-secondary-hovered",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 25% brighter)",
@@ -1554,7 +1554,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-active",
       type: "color",
-      value: "#fec262",
+      value: "#ffd96d",
       cssVar: "--cu-color-warning-secondary-active",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (active, 25% brighter)",
@@ -1564,7 +1564,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-inactive",
       type: "color",
-      value: "#9a6300",
+      value: "#ae6f00",
       cssVar: "--cu-color-warning-secondary-inactive",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (inactive, 20% darker)",
@@ -1574,7 +1574,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-disabled",
       type: "color",
-      value: "#6e5e44",
+      value: "#776446",
       cssVar: "--cu-color-warning-secondary-disabled",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -1584,7 +1584,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-hovered",
       type: "color",
-      value: "#b56e00",
+      value: "#b38834",
       cssVar: "--cu-color-warning-link-hovered",
       description:
         "Generated warning hyperlink text color (matches primary) (hovered, 25% darker)",
@@ -1594,7 +1594,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-active",
       type: "color",
-      value: "#b56e00",
+      value: "#b38834",
       cssVar: "--cu-color-warning-link-active",
       description:
         "Generated warning hyperlink text color (matches primary) (active, 25% darker)",
@@ -1604,7 +1604,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-inactive",
       type: "color",
-      value: "#ffe067",
+      value: "#fff8a5",
       cssVar: "--cu-color-warning-link-inactive",
       description:
         "Generated warning hyperlink text color (matches primary) (inactive, 20% brighter)",
@@ -1614,7 +1614,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-disabled",
       type: "color",
-      value: "#7f6948",
+      value: "#81745e",
       cssVar: "--cu-color-warning-link-disabled",
       description:
         "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -1624,7 +1624,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-hovered",
       type: "color",
-      value: "#8e4a00",
+      value: "#8a6100",
       cssVar: "--cu-color-warning-outline-hovered",
       description:
         "Generated warning border and divider color (matches primary) (hovered, 40% darker)",
@@ -1634,7 +1634,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-active",
       type: "color",
-      value: "#8e4a00",
+      value: "#8a6100",
       cssVar: "--cu-color-warning-outline-active",
       description:
         "Generated warning border and divider color (matches primary) (active, 40% darker)",
@@ -1644,7 +1644,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-inactive",
       type: "color",
-      value: "#ffe067",
+      value: "#fff8a5",
       cssVar: "--cu-color-warning-outline-inactive",
       description:
         "Generated warning border and divider color (matches primary) (inactive, 20% brighter)",
@@ -1654,7 +1654,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-disabled",
       type: "color",
-      value: "#7f6948",
+      value: "#81745e",
       cssVar: "--cu-color-warning-outline-disabled",
       description:
         "Generated warning border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -2377,6 +2377,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.shadow.resting.raised",
+      type: "shadow",
+      value: "0px 1px 2px 0px #0000004d, 0px 2px 8px 0px #00000040",
+      cssVar: "--cu-color-shadow-resting-raised",
+      description:
+        "Raised resting shadow: a tight contact shadow plus a soft 8px falloff. Use it for selected segments, notification cards and secondary buttons that should read as lifted off their surface. Used by Button (`secondary` variant).",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.shadow.floating.small",
       type: "shadow",
       value: "var(--shadow-md)",
@@ -2439,7 +2449,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.neutral.subtle",
       type: "color",
-      value: "#242528",
+      value: "#1f1f21",
       cssVar: "--cu-color-data-neutral-subtle",
       description:
         "Low-emphasis neutral (gray) data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `neutral.emphasis` series.",
@@ -2829,7 +2839,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-hovered",
       type: "color",
-      value: "#252527",
+      value: "#212123",
       cssVar: "--cu-color-surface-hovered",
       description:
         "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 10% brighter)",
@@ -2839,7 +2849,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-active",
       type: "color",
-      value: "#28282a",
+      value: "#242426",
       cssVar: "--cu-color-surface-active",
       description:
         "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% brighter)",
@@ -2849,7 +2859,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-inactive",
       type: "color",
-      value: "#19191b",
+      value: "#171719",
       cssVar: "--cu-color-surface-inactive",
       description:
         "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 10% darker)",
@@ -2859,7 +2869,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-disabled",
       type: "color",
-      value: "#2b2b2d",
+      value: "#29292b",
       cssVar: "--cu-color-surface-disabled",
       description:
         "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
@@ -2869,7 +2879,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-hovered",
       type: "color",
-      value: "#2a2b2f",
+      value: "#252527",
       cssVar: "--cu-color-elevated-hovered",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% brighter)",
@@ -2879,7 +2889,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-active",
       type: "color",
-      value: "#2e2f32",
+      value: "#28282a",
       cssVar: "--cu-color-elevated-active",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% brighter)",
@@ -2889,7 +2899,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-inactive",
       type: "color",
-      value: "#1e1f22",
+      value: "#19191b",
       cssVar: "--cu-color-elevated-inactive",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% darker)",
@@ -2899,7 +2909,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-disabled",
       type: "color",
-      value: "#2e2f32",
+      value: "#2b2b2d",
       cssVar: "--cu-color-elevated-disabled",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
@@ -2909,7 +2919,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-hovered",
       type: "color",
-      value: "#303135",
+      value: "#2a2b2f",
       cssVar: "--cu-color-floating-hovered",
       description:
         "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% brighter)",
@@ -2919,7 +2929,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-active",
       type: "color",
-      value: "#343539",
+      value: "#2e2f32",
       cssVar: "--cu-color-floating-active",
       description:
         "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% brighter)",
@@ -2929,7 +2939,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-inactive",
       type: "color",
-      value: "#222327",
+      value: "#1e1f22",
       cssVar: "--cu-color-floating-inactive",
       description:
         "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 10% darker)",
@@ -2939,7 +2949,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-disabled",
       type: "color",
-      value: "#313236",
+      value: "#2e2f32",
       cssVar: "--cu-color-floating-disabled",
       description:
         "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
@@ -2979,7 +2989,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.outline-disabled",
       type: "color",
-      value: "#444447",
+      value: "#494a4d",
       cssVar: "--cu-color-outline-disabled",
       description:
         "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -4337,6 +4347,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "font-size.xxxs",
+      type: "dimension",
+      value: "0.625rem",
+      cssVar: "--cu-font-size-xxxs",
+      description: "Extra extra small font size (0.625rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "font-size.xxs",
       type: "dimension",
       value: "0.75rem",
@@ -4934,7 +4953,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-trigger",
       description:
         "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
@@ -4944,7 +4963,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-card",
       description:
         "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
@@ -4954,7 +4973,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
@@ -4994,7 +5013,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tab",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-tab",
       description:
         "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
@@ -5004,7 +5023,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tabs",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-tabs",
       description:
         "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
@@ -5014,7 +5033,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-dialog",
       description:
         "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
@@ -5553,7 +5572,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px #f7ac2326",
+      value: "0px 0px 0px 3px #facd7b26",
       cssVar: "--cu-ring-warning",
       description: "Generated warning 3px focus ring with no gap",
       theme: undefined,
@@ -5562,7 +5581,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #f7ac2326",
+      value: "0px 0px 0px 1px #facd7b26",
       cssVar: "--cu-ring-warning-subtle",
       description: "Generated warning 1px outline focus ring with no gap",
       theme: undefined,
@@ -5571,7 +5590,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #f7ac2326",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #facd7b26",
       cssVar: "--cu-ring-warning-offset",
       description: "Generated warning 3px focus ring with a 3px gap",
       theme: undefined,
@@ -5580,7 +5599,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f7ac2326",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #facd7b26",
       cssVar: "--cu-ring-warning-subtle-offset",
       description: "Generated warning 1px focus ring with a 2px gap",
       theme: undefined,
@@ -5825,7 +5844,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.13",
       type: "color",
-      value: "#434347",
+      value: "#3f4043",
       cssVar: "--cu-color-neutral-13",
       description: "Dark charcoal gray.",
       theme: undefined,
@@ -5834,7 +5853,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.14",
       type: "color",
-      value: "#3f4043",
+      value: "#3c3c3e",
       cssVar: "--cu-color-neutral-14",
       description: "Deep graphite gray.",
       theme: undefined,
@@ -5843,7 +5862,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.15",
       type: "color",
-      value: "#3c3c3e",
+      value: "#39393c",
       cssVar: "--cu-color-neutral-15",
       description: "Near-black graphite.",
       theme: undefined,
@@ -6468,7 +6487,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.outline",
       type: "color",
-      value: "#57575a",
+      value: "#626364",
       cssVar: "--cu-color-outline",
       description:
         "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
@@ -6507,7 +6526,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface",
       type: "color",
-      value: "#3c3c3e",
+      value: "#39393c",
       cssVar: "--cu-color-surface",
       description:
         "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree.",
@@ -6517,7 +6536,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated",
       type: "color",
-      value: "#3f4043",
+      value: "#3c3c3e",
       cssVar: "--cu-color-elevated",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant.",
@@ -6527,7 +6546,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating",
       type: "color",
-      value: "#434347",
+      value: "#3f4043",
       cssVar: "--cu-color-floating",
       description:
         "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant.",
@@ -6547,7 +6566,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary",
       type: "color",
-      value: "#626364",
+      value: "#57575a",
       cssVar: "--cu-color-base-secondary",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
@@ -6635,7 +6654,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-hovered",
       type: "color",
-      value: "#6d6e70",
+      value: "#616164",
       cssVar: "--cu-color-base-secondary-hovered",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 13% brighter)",
@@ -6645,7 +6664,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-active",
       type: "color",
-      value: "#6d6e70",
+      value: "#616164",
       cssVar: "--cu-color-base-secondary-active",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 13% brighter)",
@@ -6665,7 +6684,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-disabled",
       type: "color",
-      value: "#595a5c",
+      value: "#565658",
       cssVar: "--cu-color-base-secondary-disabled",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -7118,7 +7137,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary",
       type: "color",
-      value: "#c59b4d",
+      value: "#d5b67d",
       cssVar: "--cu-color-warning-primary",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
@@ -7128,7 +7147,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary",
       type: "color",
-      value: "#a58549",
+      value: "#b5904d",
       cssVar: "--cu-color-warning-secondary",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme.",
@@ -7138,7 +7157,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link",
       type: "color",
-      value: "#c59b4d",
+      value: "#d5b67d",
       cssVar: "--cu-color-warning-link",
       description: "Generated warning hyperlink text color (matches primary)",
       theme: undefined,
@@ -7147,7 +7166,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline",
       type: "color",
-      value: "#c59b4d",
+      value: "#d5b67d",
       cssVar: "--cu-color-warning-outline",
       description:
         "Generated warning border and divider color (matches primary)",
@@ -7167,7 +7186,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.backdrop",
       type: "color",
-      value: "#5a1a1abf",
+      value: "#562919bf",
       cssVar: "--cu-color-warning-backdrop",
       description:
         "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -7187,7 +7206,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-hovered",
       type: "color",
-      value: "#9d722e",
+      value: "#9b8353",
       cssVar: "--cu-color-warning-primary-hovered",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
@@ -7197,7 +7216,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-active",
       type: "color",
-      value: "#9d722e",
+      value: "#9b8353",
       cssVar: "--cu-color-warning-primary-active",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)",
@@ -7207,7 +7226,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-inactive",
       type: "color",
-      value: "#d6c171",
+      value: "#e0da93",
       cssVar: "--cu-color-warning-primary-inactive",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
@@ -7217,7 +7236,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-disabled",
       type: "color",
-      value: "#7c6f5b",
+      value: "#7e776a",
       cssVar: "--cu-color-warning-primary-disabled",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -7227,7 +7246,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-hovered",
       type: "color",
-      value: "#d4ad6f",
+      value: "#d7bd75",
       cssVar: "--cu-color-warning-secondary-hovered",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 25% brighter)",
@@ -7237,7 +7256,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-active",
       type: "color",
-      value: "#d4ad6f",
+      value: "#d7bd75",
       cssVar: "--cu-color-warning-secondary-active",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (active, 25% brighter)",
@@ -7247,7 +7266,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-inactive",
       type: "color",
-      value: "#8f6b29",
+      value: "#9a722d",
       cssVar: "--cu-color-warning-secondary-inactive",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (inactive, 20% darker)",
@@ -7257,7 +7276,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-disabled",
       type: "color",
-      value: "#726858",
+      value: "#776c5a",
       cssVar: "--cu-color-warning-secondary-disabled",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -7267,7 +7286,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-hovered",
       type: "color",
-      value: "#9d722e",
+      value: "#9b8353",
       cssVar: "--cu-color-warning-link-hovered",
       description:
         "Generated warning hyperlink text color (matches primary) (hovered, 25% darker)",
@@ -7277,7 +7296,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-active",
       type: "color",
-      value: "#9d722e",
+      value: "#9b8353",
       cssVar: "--cu-color-warning-link-active",
       description:
         "Generated warning hyperlink text color (matches primary) (active, 25% darker)",
@@ -7287,7 +7306,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-inactive",
       type: "color",
-      value: "#d6c171",
+      value: "#e0da93",
       cssVar: "--cu-color-warning-link-inactive",
       description:
         "Generated warning hyperlink text color (matches primary) (inactive, 20% brighter)",
@@ -7297,7 +7316,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-disabled",
       type: "color",
-      value: "#7c6f5b",
+      value: "#7e776a",
       cssVar: "--cu-color-warning-link-disabled",
       description:
         "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -7307,7 +7326,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-hovered",
       type: "color",
-      value: "#885a28",
+      value: "#866a27",
       cssVar: "--cu-color-warning-outline-hovered",
       description:
         "Generated warning border and divider color (matches primary) (hovered, 40% darker)",
@@ -7317,7 +7336,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-active",
       type: "color",
-      value: "#885a28",
+      value: "#866a27",
       cssVar: "--cu-color-warning-outline-active",
       description:
         "Generated warning border and divider color (matches primary) (active, 40% darker)",
@@ -7327,7 +7346,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-inactive",
       type: "color",
-      value: "#d6c171",
+      value: "#e0da93",
       cssVar: "--cu-color-warning-outline-inactive",
       description:
         "Generated warning border and divider color (matches primary) (inactive, 20% brighter)",
@@ -7337,7 +7356,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-disabled",
       type: "color",
-      value: "#7c6f5b",
+      value: "#7e776a",
       cssVar: "--cu-color-warning-outline-disabled",
       description:
         "Generated warning border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -8060,6 +8079,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.shadow.resting.raised",
+      type: "shadow",
+      value: "0px 1px 2px 0px #0000004d, 0px 2px 8px 0px #00000040",
+      cssVar: "--cu-color-shadow-resting-raised",
+      description:
+        "Raised resting shadow: a tight contact shadow plus a soft 8px falloff. Use it for selected segments, notification cards and secondary buttons that should read as lifted off their surface. Used by Button (`secondary` variant).",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.shadow.floating.small",
       type: "shadow",
       value: "var(--shadow-md)",
@@ -8122,7 +8151,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.neutral.subtle",
       type: "color",
-      value: "#3f4043",
+      value: "#3c3c3e",
       cssVar: "--cu-color-data-neutral-subtle",
       description:
         "Low-emphasis neutral (gray) data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `neutral.emphasis` series.",
@@ -8512,7 +8541,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-hovered",
       type: "color",
-      value: "#404042",
+      value: "#3d3d3f",
       cssVar: "--cu-color-surface-hovered",
       description:
         "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 10% brighter)",
@@ -8522,7 +8551,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-active",
       type: "color",
-      value: "#424244",
+      value: "#3f3f41",
       cssVar: "--cu-color-surface-active",
       description:
         "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% brighter)",
@@ -8532,7 +8561,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-inactive",
       type: "color",
-      value: "#37373a",
+      value: "#363638",
       cssVar: "--cu-color-surface-inactive",
       description:
         "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 10% darker)",
@@ -8542,7 +8571,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-disabled",
       type: "color",
-      value: "#444446",
+      value: "#434345",
       cssVar: "--cu-color-surface-disabled",
       description:
         "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
@@ -8552,7 +8581,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-hovered",
       type: "color",
-      value: "#434448",
+      value: "#404042",
       cssVar: "--cu-color-elevated-hovered",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% brighter)",
@@ -8562,7 +8591,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-active",
       type: "color",
-      value: "#464749",
+      value: "#424244",
       cssVar: "--cu-color-elevated-active",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% brighter)",
@@ -8572,7 +8601,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-inactive",
       type: "color",
-      value: "#3b3c3f",
+      value: "#37373a",
       cssVar: "--cu-color-elevated-inactive",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% darker)",
@@ -8582,7 +8611,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-disabled",
       type: "color",
-      value: "#464749",
+      value: "#444446",
       cssVar: "--cu-color-elevated-disabled",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
@@ -8592,7 +8621,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-hovered",
       type: "color",
-      value: "#48484c",
+      value: "#434448",
       cssVar: "--cu-color-floating-hovered",
       description:
         "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% brighter)",
@@ -8602,7 +8631,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-active",
       type: "color",
-      value: "#4a4b4e",
+      value: "#464749",
       cssVar: "--cu-color-floating-active",
       description:
         "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% brighter)",
@@ -8612,7 +8641,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-inactive",
       type: "color",
-      value: "#3d3e42",
+      value: "#3b3c3f",
       cssVar: "--cu-color-floating-inactive",
       description:
         "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 10% darker)",
@@ -8622,7 +8651,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-disabled",
       type: "color",
-      value: "#48494c",
+      value: "#464749",
       cssVar: "--cu-color-floating-disabled",
       description:
         "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
@@ -8662,7 +8691,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.outline-disabled",
       type: "color",
-      value: "#565658",
+      value: "#595a5c",
       cssVar: "--cu-color-outline-disabled",
       description:
         "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -10020,6 +10049,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "font-size.xxxs",
+      type: "dimension",
+      value: "0.625rem",
+      cssVar: "--cu-font-size-xxxs",
+      description: "Extra extra small font size (0.625rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "font-size.xxs",
       type: "dimension",
       value: "0.75rem",
@@ -10617,7 +10655,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-trigger",
       description:
         "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
@@ -10627,7 +10665,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-card",
       description:
         "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
@@ -10637,7 +10675,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
@@ -10677,7 +10715,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tab",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-tab",
       description:
         "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
@@ -10687,7 +10725,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tabs",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-tabs",
       description:
         "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
@@ -10697,7 +10735,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-dialog",
       description:
         "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
@@ -11236,7 +11274,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px #f7ac2326",
+      value: "0px 0px 0px 3px #facd7b26",
       cssVar: "--cu-ring-warning",
       description: "Generated warning 3px focus ring with no gap",
       theme: undefined,
@@ -11245,7 +11283,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #f7ac2326",
+      value: "0px 0px 0px 1px #facd7b26",
       cssVar: "--cu-ring-warning-subtle",
       description: "Generated warning 1px outline focus ring with no gap",
       theme: undefined,
@@ -11254,7 +11292,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #f7ac2326",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #facd7b26",
       cssVar: "--cu-ring-warning-offset",
       description: "Generated warning 3px focus ring with a 3px gap",
       theme: undefined,
@@ -11263,7 +11301,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f7ac2326",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #facd7b26",
       cssVar: "--cu-ring-warning-subtle-offset",
       description: "Generated warning 1px focus ring with a 2px gap",
       theme: undefined,
@@ -11508,7 +11546,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.13",
       type: "color",
-      value: "#050506",
+      value: "#000000",
       cssVar: "--cu-color-neutral-13",
       description: "Dark charcoal gray.",
       theme: undefined,
@@ -12151,7 +12189,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.outline",
       type: "color",
-      value: "#2b2b33",
+      value: "#3f424a",
       cssVar: "--cu-color-outline",
       description:
         "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
@@ -12210,7 +12248,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating",
       type: "color",
-      value: "#050506",
+      value: "#000000",
       cssVar: "--cu-color-floating",
       description:
         "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant.",
@@ -12230,7 +12268,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary",
       type: "color",
-      value: "#3f424a",
+      value: "#2b2b33",
       cssVar: "--cu-color-base-secondary",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
@@ -12318,7 +12356,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-hovered",
       type: "color",
-      value: "#555863",
+      value: "#3d3d49",
       cssVar: "--cu-color-base-secondary-hovered",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 13% brighter)",
@@ -12328,7 +12366,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-active",
       type: "color",
-      value: "#555863",
+      value: "#3d3d49",
       cssVar: "--cu-color-base-secondary-active",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 13% brighter)",
@@ -12348,7 +12386,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-disabled",
       type: "color",
-      value: "#2f3138",
+      value: "#28282f",
       cssVar: "--cu-color-base-secondary-disabled",
       description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -12801,7 +12839,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary",
       type: "color",
-      value: "#ffb327",
+      value: "#ffe1ab",
       cssVar: "--cu-color-warning-primary",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
@@ -12811,7 +12849,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary",
       type: "color",
-      value: "#dc8f00",
+      value: "#ffa706",
       cssVar: "--cu-color-warning-secondary",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme.",
@@ -12821,7 +12859,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link",
       type: "color",
-      value: "#ffb327",
+      value: "#ffe1ab",
       cssVar: "--cu-color-warning-link",
       description: "Generated warning hyperlink text color (matches primary)",
       theme: undefined,
@@ -12830,7 +12868,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline",
       type: "color",
-      value: "#ffb327",
+      value: "#ffe1ab",
       cssVar: "--cu-color-warning-outline",
       description:
         "Generated warning border and divider color (matches primary)",
@@ -12870,7 +12908,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-hovered",
       type: "color",
-      value: "#945a00",
+      value: "#c58a17",
       cssVar: "--cu-color-warning-primary-hovered",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
@@ -12880,7 +12918,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-active",
       type: "color",
-      value: "#945a00",
+      value: "#c58a17",
       cssVar: "--cu-color-warning-primary-active",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)",
@@ -12890,7 +12928,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-inactive",
       type: "color",
-      value: "#ffe995",
+      value: "#fffeef",
       cssVar: "--cu-color-warning-primary-inactive",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
@@ -12900,7 +12938,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-disabled",
       type: "color",
-      value: "#7c5e32",
+      value: "#846f4d",
       cssVar: "--cu-color-warning-primary-disabled",
       description:
         "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -12910,7 +12948,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-hovered",
       type: "color",
-      value: "#ffd38d",
+      value: "#ffe69e",
       cssVar: "--cu-color-warning-secondary-hovered",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 25% brighter)",
@@ -12920,7 +12958,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-active",
       type: "color",
-      value: "#ffd38d",
+      value: "#ffe69e",
       cssVar: "--cu-color-warning-secondary-active",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (active, 25% brighter)",
@@ -12930,7 +12968,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-inactive",
       type: "color",
-      value: "#6d4600",
+      value: "#8a5800",
       cssVar: "--cu-color-warning-secondary-inactive",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (inactive, 20% darker)",
@@ -12940,7 +12978,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-disabled",
       type: "color",
-      value: "#624e2d",
+      value: "#705730",
       cssVar: "--cu-color-warning-secondary-disabled",
       description:
         "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -12950,7 +12988,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-hovered",
       type: "color",
-      value: "#945a00",
+      value: "#c58a17",
       cssVar: "--cu-color-warning-link-hovered",
       description:
         "Generated warning hyperlink text color (matches primary) (hovered, 25% darker)",
@@ -12960,7 +12998,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-active",
       type: "color",
-      value: "#945a00",
+      value: "#c58a17",
       cssVar: "--cu-color-warning-link-active",
       description:
         "Generated warning hyperlink text color (matches primary) (active, 25% darker)",
@@ -12970,7 +13008,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-inactive",
       type: "color",
-      value: "#ffe995",
+      value: "#fffeef",
       cssVar: "--cu-color-warning-link-inactive",
       description:
         "Generated warning hyperlink text color (matches primary) (inactive, 20% brighter)",
@@ -12980,7 +13018,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-disabled",
       type: "color",
-      value: "#7c5e32",
+      value: "#846f4d",
       cssVar: "--cu-color-warning-link-disabled",
       description:
         "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -12990,7 +13028,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-hovered",
       type: "color",
-      value: "#5b3000",
+      value: "#553c00",
       cssVar: "--cu-color-warning-outline-hovered",
       description:
         "Generated warning border and divider color (matches primary) (hovered, 40% darker)",
@@ -13000,7 +13038,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-active",
       type: "color",
-      value: "#5b3000",
+      value: "#553c00",
       cssVar: "--cu-color-warning-outline-active",
       description:
         "Generated warning border and divider color (matches primary) (active, 40% darker)",
@@ -13010,7 +13048,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-inactive",
       type: "color",
-      value: "#ffe995",
+      value: "#fffeef",
       cssVar: "--cu-color-warning-outline-inactive",
       description:
         "Generated warning border and divider color (matches primary) (inactive, 20% brighter)",
@@ -13020,7 +13058,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.outline-disabled",
       type: "color",
-      value: "#7c5e32",
+      value: "#846f4d",
       cssVar: "--cu-color-warning-outline-disabled",
       description:
         "Generated warning border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -13743,6 +13781,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.shadow.resting.raised",
+      type: "shadow",
+      value: "0px 1px 2px 0px #0000004d, 0px 2px 8px 0px #00000040",
+      cssVar: "--cu-color-shadow-resting-raised",
+      description:
+        "Raised resting shadow: a tight contact shadow plus a soft 8px falloff. Use it for selected segments, notification cards and secondary buttons that should read as lifted off their surface. Used by Button (`secondary` variant).",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.shadow.floating.small",
       type: "shadow",
       value: "var(--shadow-md)",
@@ -14205,7 +14253,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-active",
       type: "color",
-      value: "#020202",
+      value: "#000000",
       cssVar: "--cu-color-surface-active",
       description:
         "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% brighter)",
@@ -14225,7 +14273,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-disabled",
       type: "color",
-      value: "#060607",
+      value: "#030304",
       cssVar: "--cu-color-surface-disabled",
       description:
         "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
@@ -14235,7 +14283,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-hovered",
       type: "color",
-      value: "#060708",
+      value: "#000000",
       cssVar: "--cu-color-elevated-hovered",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% brighter)",
@@ -14245,7 +14293,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-active",
       type: "color",
-      value: "#0b0c0e",
+      value: "#020202",
       cssVar: "--cu-color-elevated-active",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% brighter)",
@@ -14265,7 +14313,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-disabled",
       type: "color",
-      value: "#0b0c0e",
+      value: "#060607",
       cssVar: "--cu-color-elevated-disabled",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
@@ -14275,7 +14323,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-hovered",
       type: "color",
-      value: "#0e0f12",
+      value: "#060708",
       cssVar: "--cu-color-floating-hovered",
       description:
         "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% brighter)",
@@ -14285,7 +14333,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-active",
       type: "color",
-      value: "#131418",
+      value: "#0b0c0e",
       cssVar: "--cu-color-floating-active",
       description:
         "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% brighter)",
@@ -14305,7 +14353,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-disabled",
       type: "color",
-      value: "#0f1013",
+      value: "#0b0c0e",
       cssVar: "--cu-color-floating-disabled",
       description:
         "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
@@ -14345,7 +14393,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.outline-disabled",
       type: "color",
-      value: "#28282f",
+      value: "#2f3138",
       cssVar: "--cu-color-outline-disabled",
       description:
         "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -15703,6 +15751,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "font-size.xxxs",
+      type: "dimension",
+      value: "0.625rem",
+      cssVar: "--cu-font-size-xxxs",
+      description: "Extra extra small font size (0.625rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "font-size.xxs",
       type: "dimension",
       value: "0.75rem",
@@ -16300,7 +16357,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-trigger",
       description:
         "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
@@ -16310,7 +16367,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-card",
       description:
         "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
@@ -16320,7 +16377,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
@@ -16360,7 +16417,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tab",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-tab",
       description:
         "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
@@ -16370,7 +16427,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tabs",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-tabs",
       description:
         "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
@@ -16380,7 +16437,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-dialog",
       description:
         "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
@@ -16919,7 +16976,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px #f7ac2326",
+      value: "0px 0px 0px 3px #facd7b26",
       cssVar: "--cu-ring-warning",
       description: "Generated warning 3px focus ring with no gap",
       theme: undefined,
@@ -16928,7 +16985,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #f7ac2326",
+      value: "0px 0px 0px 1px #facd7b26",
       cssVar: "--cu-ring-warning-subtle",
       description: "Generated warning 1px outline focus ring with no gap",
       theme: undefined,
@@ -16937,7 +16994,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #f7ac2326",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #facd7b26",
       cssVar: "--cu-ring-warning-offset",
       description: "Generated warning 3px focus ring with a 3px gap",
       theme: undefined,
@@ -16946,7 +17003,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f7ac2326",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #facd7b26",
       cssVar: "--cu-ring-warning-subtle-offset",
       description: "Generated warning 1px focus ring with a 2px gap",
       theme: undefined,
@@ -17191,7 +17248,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.13",
       type: "color",
-      value: "#292a2e",
+      value: "#242528",
       cssVar: "--cu-color-neutral-13",
       description: "Dark charcoal gray.",
       theme: undefined,
@@ -17200,7 +17257,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.14",
       type: "color",
-      value: "#242528",
+      value: "#1f1f21",
       cssVar: "--cu-color-neutral-14",
       description: "Deep graphite gray.",
       theme: undefined,
@@ -17209,7 +17266,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.15",
       type: "color",
-      value: "#1f1f21",
+      value: "#1c1c1e",
       cssVar: "--cu-color-neutral-15",
       description: "Near-black graphite.",
       theme: undefined,
@@ -17794,7 +17851,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis",
       type: "color",
-      value: "#242528",
+      value: "#1f1f21",
       cssVar: "--cu-color-emphasis",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
@@ -17903,7 +17960,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.primary",
       type: "color",
-      value: "#1f1f21",
+      value: "#1c1c1e",
       cssVar: "--cu-color-base-primary",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
@@ -17961,7 +18018,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.primary-hovered",
       type: "color",
-      value: "#606062",
+      value: "#5c5c5f",
       cssVar: "--cu-color-base-primary-hovered",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)",
@@ -17991,7 +18048,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.primary-disabled",
       type: "color",
-      value: "#363639",
+      value: "#353538",
       cssVar: "--cu-color-base-primary-disabled",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -19428,6 +19485,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.shadow.resting.raised",
+      type: "shadow",
+      value: "0px 1px 2px 0px #00000014, 0px 2px 8px 0px #0000000f",
+      cssVar: "--cu-color-shadow-resting-raised",
+      description:
+        "Raised resting shadow: a tight contact shadow plus a soft 8px falloff. Use it for selected segments, notification cards and secondary buttons that should read as lifted off their surface. Used by Button (`secondary` variant).",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.shadow.floating.small",
       type: "shadow",
       value: "var(--shadow-md)",
@@ -19640,7 +19707,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis-hovered",
       type: "color",
-      value: "#343539",
+      value: "#2e2e30",
       cssVar: "--cu-color-emphasis-hovered",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% brighter)",
@@ -19670,7 +19737,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis-disabled",
       type: "color",
-      value: "#38393c",
+      value: "#363639",
       cssVar: "--cu-color-emphasis-disabled",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -21388,6 +21455,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "font-size.xxxs",
+      type: "dimension",
+      value: "0.625rem",
+      cssVar: "--cu-font-size-xxxs",
+      description: "Extra extra small font size (0.625rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "font-size.xxs",
       type: "dimension",
       value: "0.75rem",
@@ -21985,7 +22061,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-trigger",
       description:
         "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
@@ -21995,7 +22071,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-card",
       description:
         "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
@@ -22005,7 +22081,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
@@ -22045,7 +22121,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tab",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-tab",
       description:
         "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
@@ -22055,7 +22131,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tabs",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-tabs",
       description:
         "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
@@ -22065,7 +22141,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-dialog",
       description:
         "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
@@ -22496,7 +22572,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #1f1f211a",
+      value: "0px 0px 0px 3px #1c1c1e1a",
       cssVar: "--cu-ring-base",
       description: "Generated base 3px focus ring with no gap",
       theme: undefined,
@@ -22505,7 +22581,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #1f1f211a",
+      value: "0px 0px 0px 1px #1c1c1e1a",
       cssVar: "--cu-ring-base-subtle",
       description: "Generated base 1px outline focus ring with no gap",
       theme: undefined,
@@ -22514,7 +22590,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #1f1f211a",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #1c1c1e1a",
       cssVar: "--cu-ring-base-offset",
       description: "Generated base 3px focus ring with a 3px gap",
       theme: undefined,
@@ -22523,7 +22599,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1f1f211a",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1c1c1e1a",
       cssVar: "--cu-ring-base-subtle-offset",
       description: "Generated base 1px focus ring with a 2px gap",
       theme: undefined,
@@ -22876,7 +22952,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.13",
       type: "color",
-      value: "#434347",
+      value: "#3f4043",
       cssVar: "--cu-color-neutral-13",
       description: "Dark charcoal gray.",
       theme: undefined,
@@ -22885,7 +22961,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.14",
       type: "color",
-      value: "#3f4043",
+      value: "#3c3c3e",
       cssVar: "--cu-color-neutral-14",
       description: "Deep graphite gray.",
       theme: undefined,
@@ -22894,7 +22970,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.15",
       type: "color",
-      value: "#3c3c3e",
+      value: "#39393c",
       cssVar: "--cu-color-neutral-15",
       description: "Near-black graphite.",
       theme: undefined,
@@ -23479,7 +23555,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis",
       type: "color",
-      value: "#3f4043",
+      value: "#3c3c3e",
       cssVar: "--cu-color-emphasis",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
@@ -23588,7 +23664,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.primary",
       type: "color",
-      value: "#3c3c3e",
+      value: "#39393c",
       cssVar: "--cu-color-base-primary",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
@@ -23646,7 +23722,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.primary-hovered",
       type: "color",
-      value: "#6a6a6b",
+      value: "#676769",
       cssVar: "--cu-color-base-primary-hovered",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)",
@@ -23676,7 +23752,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.primary-disabled",
       type: "color",
-      value: "#4c4c4e",
+      value: "#4b4b4e",
       cssVar: "--cu-color-base-primary-disabled",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -25113,6 +25189,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.shadow.resting.raised",
+      type: "shadow",
+      value: "0px 1px 2px 0px #00000014, 0px 2px 8px 0px #0000000f",
+      cssVar: "--cu-color-shadow-resting-raised",
+      description:
+        "Raised resting shadow: a tight contact shadow plus a soft 8px falloff. Use it for selected segments, notification cards and secondary buttons that should read as lifted off their surface. Used by Button (`secondary` variant).",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.shadow.floating.small",
       type: "shadow",
       value: "var(--shadow-md)",
@@ -25325,7 +25411,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis-hovered",
       type: "color",
-      value: "#4a4b4e",
+      value: "#464648",
       cssVar: "--cu-color-emphasis-hovered",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% brighter)",
@@ -25355,7 +25441,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis-disabled",
       type: "color",
-      value: "#4d4e50",
+      value: "#4c4c4e",
       cssVar: "--cu-color-emphasis-disabled",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -27073,6 +27159,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "font-size.xxxs",
+      type: "dimension",
+      value: "0.625rem",
+      cssVar: "--cu-font-size-xxxs",
+      description: "Extra extra small font size (0.625rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "font-size.xxs",
       type: "dimension",
       value: "0.75rem",
@@ -27670,7 +27765,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-trigger",
       description:
         "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
@@ -27680,7 +27775,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-card",
       description:
         "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
@@ -27690,7 +27785,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
@@ -27730,7 +27825,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tab",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-tab",
       description:
         "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
@@ -27740,7 +27835,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tabs",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-tabs",
       description:
         "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
@@ -27750,7 +27845,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-dialog",
       description:
         "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
@@ -28181,7 +28276,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #1f1f211a",
+      value: "0px 0px 0px 3px #1c1c1e1a",
       cssVar: "--cu-ring-base",
       description: "Generated base 3px focus ring with no gap",
       theme: undefined,
@@ -28190,7 +28285,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #1f1f211a",
+      value: "0px 0px 0px 1px #1c1c1e1a",
       cssVar: "--cu-ring-base-subtle",
       description: "Generated base 1px outline focus ring with no gap",
       theme: undefined,
@@ -28199,7 +28294,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #1f1f211a",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #1c1c1e1a",
       cssVar: "--cu-ring-base-offset",
       description: "Generated base 3px focus ring with a 3px gap",
       theme: undefined,
@@ -28208,7 +28303,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1f1f211a",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1c1c1e1a",
       cssVar: "--cu-ring-base-subtle-offset",
       description: "Generated base 1px focus ring with a 2px gap",
       theme: undefined,
@@ -28561,7 +28656,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.13",
       type: "color",
-      value: "#050506",
+      value: "#000000",
       cssVar: "--cu-color-neutral-13",
       description: "Dark charcoal gray.",
       theme: undefined,
@@ -29331,7 +29426,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.primary-hovered",
       type: "color",
-      value: "#4e4e59",
+      value: "#494954",
       cssVar: "--cu-color-base-primary-hovered",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)",
@@ -29361,7 +29456,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.primary-disabled",
       type: "color",
-      value: "#151519",
+      value: "#141418",
       cssVar: "--cu-color-base-primary-disabled",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -30798,6 +30893,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.shadow.resting.raised",
+      type: "shadow",
+      value: "0px 1px 2px 0px #00000014, 0px 2px 8px 0px #0000000f",
+      cssVar: "--cu-color-shadow-resting-raised",
+      description:
+        "Raised resting shadow: a tight contact shadow plus a soft 8px falloff. Use it for selected segments, notification cards and secondary buttons that should read as lifted off their surface. Used by Button (`secondary` variant).",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.shadow.floating.small",
       type: "shadow",
       value: "var(--shadow-md)",
@@ -31010,7 +31115,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis-hovered",
       type: "color",
-      value: "#131418",
+      value: "#0a0a0c",
       cssVar: "--cu-color-emphasis-hovered",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% brighter)",
@@ -31040,7 +31145,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis-disabled",
       type: "color",
-      value: "#18191d",
+      value: "#151519",
       cssVar: "--cu-color-emphasis-disabled",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -32758,6 +32863,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "font-size.xxxs",
+      type: "dimension",
+      value: "0.625rem",
+      cssVar: "--cu-font-size-xxxs",
+      description: "Extra extra small font size (0.625rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "font-size.xxs",
       type: "dimension",
       value: "0.75rem",
@@ -33355,7 +33469,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-trigger",
       description:
         "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
@@ -33365,7 +33479,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-card",
       description:
         "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
@@ -33375,7 +33489,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
@@ -33415,7 +33529,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tab",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-tab",
       description:
         "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
@@ -33425,7 +33539,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tabs",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-tabs",
       description:
         "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
@@ -33435,7 +33549,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-dialog",
       description:
         "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
@@ -33866,7 +33980,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #1f1f211a",
+      value: "0px 0px 0px 3px #1c1c1e1a",
       cssVar: "--cu-ring-base",
       description: "Generated base 3px focus ring with no gap",
       theme: undefined,
@@ -33875,7 +33989,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #1f1f211a",
+      value: "0px 0px 0px 1px #1c1c1e1a",
       cssVar: "--cu-ring-base-subtle",
       description: "Generated base 1px outline focus ring with no gap",
       theme: undefined,
@@ -33884,7 +33998,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #1f1f211a",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #1c1c1e1a",
       cssVar: "--cu-ring-base-offset",
       description: "Generated base 3px focus ring with a 3px gap",
       theme: undefined,
@@ -33893,7 +34007,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1f1f211a",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1c1c1e1a",
       cssVar: "--cu-ring-base-subtle-offset",
       description: "Generated base 1px focus ring with a 2px gap",
       theme: undefined,

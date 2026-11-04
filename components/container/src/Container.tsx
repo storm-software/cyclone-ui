@@ -78,13 +78,15 @@ const ContainerFrame = styled(View, {
       secondary: {
         backgroundColor: "secondary",
         borderWidth: 1,
-        borderColor: "hairline"
+        borderColor: "outline",
+        boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
       },
 
       tertiary: {
         backgroundColor: "surface",
         borderWidth: 1,
-        borderColor: "hairline"
+        borderColor: "hairline",
+        boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
       },
 
       sunken: {
@@ -96,25 +98,29 @@ const ContainerFrame = styled(View, {
       canvas: {
         backgroundColor: "canvas",
         borderWidth: 1,
-        borderColor: "hairline"
+        borderColor: "hairline",
+        boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
       },
 
       elevated: {
         backgroundColor: "surface",
         borderWidth: 1,
-        borderColor: "hairline"
+        borderColor: "hairline",
+        boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
       },
 
       floating: {
         backgroundColor: "elevated",
         borderWidth: 1,
-        borderColor: "hairline"
+        borderColor: "hairline",
+        boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
       },
 
       overlay: {
         backgroundColor: "floating",
         borderWidth: 1,
-        borderColor: "hairline"
+        borderColor: "hairline",
+        boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
       },
 
       outlined: {
@@ -126,7 +132,8 @@ const ContainerFrame = styled(View, {
       glass: {
         backgroundColor: "transparent",
         borderWidth: 1,
-        borderColor: "hairline"
+        borderColor: "outline",
+        boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
       }
     },
 

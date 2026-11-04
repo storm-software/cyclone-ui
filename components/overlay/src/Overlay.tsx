@@ -69,13 +69,13 @@ export const Overlay = createStyledHOC(
         <OverlayGradientBottom
           start={[1, 0]}
           end={[0, 1]}
-          colors={["primary", "transparent"]}
+          colors={["backdrop", "transparent"]}
           locations={[1.0, 0.0]}
         />
         <OverlayGradientTop
           start={[0, 0]}
           end={[1, 1]}
-          colors={["primary", "transparent"]}
+          colors={["backdrop", "transparent"]}
           locations={[0.0, 1.0]}
         />
         {children}

@@ -53,6 +53,35 @@ const PIXEL_GRID_MASK =
   "conic-gradient(from 90deg at 1px 1px, #000 90deg, rgb(0 0 0 / 0.5) 0)";
 const PIXEL_GRID_SIZE = "4px 4px";
 
+/**
+ * A 64px tile of the grid's 4px cells at a few random strengths, intersected
+ * with the grid and shifted by whole cells while a ripple plays, so each
+ * square flickers slightly. A fixed seed keeps the tile identical between
+ * server and client renders.
+ */
+const NOISE_CELLS = 16;
+const NOISE_LEVELS = [0.6, 0.73, 0.87, 1];
+const NOISE_TILE_MASK = (() => {
+  const paths = NOISE_LEVELS.map(() => "");
+  let seed = 1;
+  for (let i = 0; i < NOISE_CELLS ** 2; i++) {
+    seed = (seed * 48271) % 2147483647;
+    paths[seed % NOISE_LEVELS.length] +=
+      `M${(i % NOISE_CELLS) * 4} ${Math.floor(i / NOISE_CELLS) * 4}h4v4h-4z`;
+  }
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${NOISE_CELLS * 4}" height="${NOISE_CELLS * 4}">${paths
+    .map((d, level) => `<path fill-opacity="${NOISE_LEVELS[level]}" d="${d}"/>`)
+    .join("")}</svg>`;
+
+  return `url("data:image/svg+xml,${encodeURIComponent(svg)}")`;
+})();
+
+/** How many times the noise tile jumps during one ripple. */
+const FLICKER_STEPS = 8;
+
+/** A random whole-cell offset of the noise tile, in px. */
+const randomNoiseOffset = () => Math.floor(Math.random() * NOISE_CELLS) * 4;
+
 interface RippleCircle {
   /** The circle's diameter before it scales: the layer's longer side. */
   size: number;
@@ -78,12 +107,16 @@ const RippleFrame = styled(View, {
   // flips it to 2.6 halfway through instead of interpolating.
   scale: "2.6 enter:0.001",
   // Higher than an unmasked ripple's 0.3: the grid's half-strength gaps cover
-  // 7/16 of it.
-  opacity: "0 enter:0.4"
+  // 7/16 of it, and the flicker noise averages 0.8.
+  opacity: "0 enter:0.5"
 });
 
 /** The parts of a web element a ripple is measured from. */
 interface RippleLayerElement {
+  animate?: (
+    keyframes: { maskPosition: string[] },
+    options: { duration: number; easing: string }
+  ) => unknown;
   offsetWidth: number;
   offsetHeight: number;
   getBoundingClientRect?: () => {
@@ -131,7 +164,8 @@ const getRippleCircle = (
 
 /**
  * A layer that fills its positioned parent and draws a pixelated press
- * ripple when `ripple(event)` is called on its ref. Each ripple removes itself
+ * ripple when `ripple(event)` is called on its ref. The ripple's squares
+ * flicker slightly while it plays, unless reduced motion is preferred. Each ripple removes itself
  * once its animation ends. The parent clips the ripples to its shape with
  * `overflow: hidden`.
  */
@@ -152,6 +186,26 @@ export const RippleAnimation = forwardRef<
           return;
         }
 
+        const reducedMotion = (
+          globalThis as {
+            matchMedia?: (query: string) => { matches: boolean };
+          }
+        ).matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+        if (!reducedMotion) {
+          (layerRef.current as unknown as RippleLayerElement).animate?.(
+            {
+              maskPosition: Array.from(
+                { length: FLICKER_STEPS + 1 },
+                () => `${randomNoiseOffset()}px ${randomNoiseOffset()}px, 0 0`
+              )
+            },
+            {
+              duration: RIPPLE_LIFETIME_MS,
+              easing: `steps(${FLICKER_STEPS})`
+            }
+          );
+        }
+
         const id = nextIdRef.current++;
         setRipples(prev => [...prev, { ...circle, id }]);
         setTimeout(
@@ -169,8 +223,9 @@ export const RippleAnimation = forwardRef<
       position="absolute"
       inset={0}
       pointerEvents="none"
-      maskImage={PIXEL_GRID_MASK}
-      maskSize={PIXEL_GRID_SIZE}
+      maskImage={`${NOISE_TILE_MASK}, ${PIXEL_GRID_MASK}`}
+      maskSize={`${NOISE_CELLS * 4}px ${NOISE_CELLS * 4}px, ${PIXEL_GRID_SIZE}`}
+      maskComposite="intersect"
       {...props}
       ref={layerRef}>
       {ripples.map(({ id, size, x, y }) => (

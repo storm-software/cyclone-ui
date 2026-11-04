@@ -58,9 +58,9 @@ const COLOR_VARIANTS = {
               "10": "#555659",
               "11": "#46464a",
               "12": "#2d2e33",
-              "13": "#292a2e",
-              "14": "#242528",
-              "15": "#1f1f21",
+              "13": "#242528",
+              "14": "#1f1f21",
+              "15": "#1c1c1e",
               "16": "#151518"
             }}
           />
@@ -195,7 +195,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant."
             }
             colors={{
-              elevated: "#242528"
+              elevated: "#1f1f21"
             }}
           />
           <ColorItem
@@ -204,7 +204,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% brighter)"
             }
             colors={{
-              "elevated-active": "#2e2f32"
+              "elevated-active": "#28282a"
             }}
           />
           <ColorItem
@@ -213,7 +213,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#2e2f32"
+              "elevated-disabled": "#2b2b2d"
             }}
           />
           <ColorItem
@@ -222,7 +222,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% brighter)"
             }
             colors={{
-              "elevated-hovered": "#2a2b2f"
+              "elevated-hovered": "#252527"
             }}
           />
           <ColorItem
@@ -231,7 +231,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% darker)"
             }
             colors={{
-              "elevated-inactive": "#1e1f22"
+              "elevated-inactive": "#19191b"
             }}
           />
           <ColorItem
@@ -240,7 +240,7 @@ const COLOR_VARIANTS = {
               "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant."
             }
             colors={{
-              floating: "#292a2e"
+              floating: "#242528"
             }}
           />
           <ColorItem
@@ -249,7 +249,7 @@ const COLOR_VARIANTS = {
               "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% brighter)"
             }
             colors={{
-              "floating-active": "#343539"
+              "floating-active": "#2e2f32"
             }}
           />
           <ColorItem
@@ -258,7 +258,7 @@ const COLOR_VARIANTS = {
               "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "floating-disabled": "#313236"
+              "floating-disabled": "#2e2f32"
             }}
           />
           <ColorItem
@@ -267,7 +267,7 @@ const COLOR_VARIANTS = {
               "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% brighter)"
             }
             colors={{
-              "floating-hovered": "#303135"
+              "floating-hovered": "#2a2b2f"
             }}
           />
           <ColorItem
@@ -276,7 +276,7 @@ const COLOR_VARIANTS = {
               "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 10% darker)"
             }
             colors={{
-              "floating-inactive": "#222327"
+              "floating-inactive": "#1e1f22"
             }}
           />
           <ColorItem
@@ -330,7 +330,7 @@ const COLOR_VARIANTS = {
               "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree."
             }
             colors={{
-              surface: "#1f1f21"
+              surface: "#1c1c1e"
             }}
           />
           <ColorItem
@@ -339,7 +339,7 @@ const COLOR_VARIANTS = {
               "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% brighter)"
             }
             colors={{
-              "surface-active": "#28282a"
+              "surface-active": "#242426"
             }}
           />
           <ColorItem
@@ -348,7 +348,7 @@ const COLOR_VARIANTS = {
               "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "surface-disabled": "#2b2b2d"
+              "surface-disabled": "#29292b"
             }}
           />
           <ColorItem
@@ -357,7 +357,7 @@ const COLOR_VARIANTS = {
               "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 10% brighter)"
             }
             colors={{
-              "surface-hovered": "#252527"
+              "surface-hovered": "#212123"
             }}
           />
           <ColorItem
@@ -366,7 +366,7 @@ const COLOR_VARIANTS = {
               "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 10% darker)"
             }
             colors={{
-              "surface-inactive": "#19191b"
+              "surface-inactive": "#171719"
             }}
           />
         </ColorPalette>
@@ -389,7 +389,7 @@ const COLOR_VARIANTS = {
               "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."
             }
             colors={{
-              outline: "#46464a"
+              outline: "#555659"
             }}
           />
           <ColorItem
@@ -407,7 +407,7 @@ const COLOR_VARIANTS = {
               "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "outline-disabled": "#444447"
+              "outline-disabled": "#494a4d"
             }}
           />
           <ColorItem
@@ -644,7 +644,7 @@ const COLOR_VARIANTS = {
             }
             colors={{
               "neutral.emphasis": "#fafafa",
-              "neutral.subtle": "#242528",
+              "neutral.subtle": "#1f1f21",
               "red.emphasis": "#8e223e",
               "red.subtle": "#501524",
               "orange.emphasis": "#df6520",
@@ -672,7 +672,7 @@ const COLOR_VARIANTS = {
               }
               colors={{
                 primary: "#ffffff",
-                secondary: "#555659",
+                secondary: "#46464a",
                 link: "#00bcff",
                 "on-primary": "#151518",
                 backdrop: "#222222bf",
@@ -681,10 +681,10 @@ const COLOR_VARIANTS = {
                 "primary-active": "#ffffff",
                 "primary-inactive": "#636363",
                 "primary-disabled": "#858587",
-                "secondary-hovered": "#656669",
-                "secondary-active": "#656669",
+                "secondary-hovered": "#535358",
+                "secondary-active": "#535358",
                 "secondary-inactive": "#636363",
-                "secondary-disabled": "#494a4d",
+                "secondary-disabled": "#444447",
                 "link-hovered": "#6bfaff",
                 "link-active": "#6bfaff",
                 "link-inactive": "#008ccc",
@@ -877,29 +877,29 @@ const COLOR_VARIANTS = {
                 "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText."
               }
               colors={{
-                primary: "#f7ac23",
-                secondary: "#c58c22",
-                link: "#f7ac23",
+                primary: "#facd7b",
+                secondary: "#df9d24",
+                link: "#facd7b",
                 "on-primary": "#151518",
-                backdrop: "#390000bf",
+                backdrop: "#320d00bf",
                 "on-secondary": "#FAFAFA",
-                "primary-hovered": "#b56e00",
-                "primary-active": "#b56e00",
-                "primary-inactive": "#ffe067",
-                "primary-disabled": "#7f6948",
-                "secondary-hovered": "#fec262",
-                "secondary-active": "#fec262",
-                "secondary-inactive": "#9a6300",
-                "secondary-disabled": "#6e5e44",
-                "link-hovered": "#b56e00",
-                "link-active": "#b56e00",
-                "link-inactive": "#ffe067",
-                "link-disabled": "#7f6948",
-                "outline-hovered": "#8e4a00",
-                "outline-active": "#8e4a00",
-                "outline-inactive": "#ffe067",
-                "outline-disabled": "#7f6948",
-                outline: "#f7ac23"
+                "primary-hovered": "#b38834",
+                "primary-active": "#b38834",
+                "primary-inactive": "#fff8a5",
+                "primary-disabled": "#81745e",
+                "secondary-hovered": "#ffd96d",
+                "secondary-active": "#ffd96d",
+                "secondary-inactive": "#ae6f00",
+                "secondary-disabled": "#776446",
+                "link-hovered": "#b38834",
+                "link-active": "#b38834",
+                "link-inactive": "#fff8a5",
+                "link-disabled": "#81745e",
+                "outline-hovered": "#8a6100",
+                "outline-active": "#8a6100",
+                "outline-inactive": "#fff8a5",
+                "outline-disabled": "#81745e",
+                outline: "#facd7b"
               }}
             />
           </ColorPalette>
@@ -958,9 +958,9 @@ const COLOR_VARIANTS = {
               "10": "#626364",
               "11": "#57575a",
               "12": "#45464a",
-              "13": "#434347",
-              "14": "#3f4043",
-              "15": "#3c3c3e",
+              "13": "#3f4043",
+              "14": "#3c3c3e",
+              "15": "#39393c",
               "16": "#343438"
             }}
           />
@@ -1095,7 +1095,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant."
             }
             colors={{
-              elevated: "#3f4043"
+              elevated: "#3c3c3e"
             }}
           />
           <ColorItem
@@ -1104,7 +1104,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% brighter)"
             }
             colors={{
-              "elevated-active": "#464749"
+              "elevated-active": "#424244"
             }}
           />
           <ColorItem
@@ -1113,7 +1113,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#464749"
+              "elevated-disabled": "#444446"
             }}
           />
           <ColorItem
@@ -1122,7 +1122,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% brighter)"
             }
             colors={{
-              "elevated-hovered": "#434448"
+              "elevated-hovered": "#404042"
             }}
           />
           <ColorItem
@@ -1131,7 +1131,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% darker)"
             }
             colors={{
-              "elevated-inactive": "#3b3c3f"
+              "elevated-inactive": "#37373a"
             }}
           />
           <ColorItem
@@ -1140,7 +1140,7 @@ const COLOR_VARIANTS = {
               "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant."
             }
             colors={{
-              floating: "#434347"
+              floating: "#3f4043"
             }}
           />
           <ColorItem
@@ -1149,7 +1149,7 @@ const COLOR_VARIANTS = {
               "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% brighter)"
             }
             colors={{
-              "floating-active": "#4a4b4e"
+              "floating-active": "#464749"
             }}
           />
           <ColorItem
@@ -1158,7 +1158,7 @@ const COLOR_VARIANTS = {
               "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "floating-disabled": "#48494c"
+              "floating-disabled": "#464749"
             }}
           />
           <ColorItem
@@ -1167,7 +1167,7 @@ const COLOR_VARIANTS = {
               "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% brighter)"
             }
             colors={{
-              "floating-hovered": "#48484c"
+              "floating-hovered": "#434448"
             }}
           />
           <ColorItem
@@ -1176,7 +1176,7 @@ const COLOR_VARIANTS = {
               "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 10% darker)"
             }
             colors={{
-              "floating-inactive": "#3d3e42"
+              "floating-inactive": "#3b3c3f"
             }}
           />
           <ColorItem
@@ -1230,7 +1230,7 @@ const COLOR_VARIANTS = {
               "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree."
             }
             colors={{
-              surface: "#3c3c3e"
+              surface: "#39393c"
             }}
           />
           <ColorItem
@@ -1239,7 +1239,7 @@ const COLOR_VARIANTS = {
               "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% brighter)"
             }
             colors={{
-              "surface-active": "#424244"
+              "surface-active": "#3f3f41"
             }}
           />
           <ColorItem
@@ -1248,7 +1248,7 @@ const COLOR_VARIANTS = {
               "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "surface-disabled": "#444446"
+              "surface-disabled": "#434345"
             }}
           />
           <ColorItem
@@ -1257,7 +1257,7 @@ const COLOR_VARIANTS = {
               "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 10% brighter)"
             }
             colors={{
-              "surface-hovered": "#404042"
+              "surface-hovered": "#3d3d3f"
             }}
           />
           <ColorItem
@@ -1266,7 +1266,7 @@ const COLOR_VARIANTS = {
               "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 10% darker)"
             }
             colors={{
-              "surface-inactive": "#37373a"
+              "surface-inactive": "#363638"
             }}
           />
         </ColorPalette>
@@ -1289,7 +1289,7 @@ const COLOR_VARIANTS = {
               "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."
             }
             colors={{
-              outline: "#57575a"
+              outline: "#626364"
             }}
           />
           <ColorItem
@@ -1307,7 +1307,7 @@ const COLOR_VARIANTS = {
               "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "outline-disabled": "#565658"
+              "outline-disabled": "#595a5c"
             }}
           />
           <ColorItem
@@ -1544,7 +1544,7 @@ const COLOR_VARIANTS = {
             }
             colors={{
               "neutral.emphasis": "#d5d5d5",
-              "neutral.subtle": "#3f4043",
+              "neutral.subtle": "#3c3c3e",
               "red.emphasis": "#864254",
               "red.subtle": "#61323e",
               "orange.emphasis": "#b4714b",
@@ -1572,7 +1572,7 @@ const COLOR_VARIANTS = {
               }
               colors={{
                 primary: "#d9d9d9",
-                secondary: "#626364",
+                secondary: "#57575a",
                 link: "#39a1c6",
                 "on-primary": "#343438",
                 backdrop: "#3e3e3ebf",
@@ -1581,10 +1581,10 @@ const COLOR_VARIANTS = {
                 "primary-active": "#d9d9d9",
                 "primary-inactive": "#6c6c6c",
                 "primary-disabled": "#838385",
-                "secondary-hovered": "#6d6e70",
-                "secondary-active": "#6d6e70",
+                "secondary-hovered": "#616164",
+                "secondary-active": "#616164",
                 "secondary-inactive": "#6c6c6c",
-                "secondary-disabled": "#595a5c",
+                "secondary-disabled": "#565658",
                 "link-hovered": "#73d3d6",
                 "link-active": "#73d3d6",
                 "link-inactive": "#3184aa",
@@ -1777,29 +1777,29 @@ const COLOR_VARIANTS = {
                 "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText."
               }
               colors={{
-                primary: "#c59b4d",
-                secondary: "#a58549",
-                link: "#c59b4d",
+                primary: "#d5b67d",
+                secondary: "#b5904d",
+                link: "#d5b67d",
                 "on-primary": "#343438",
-                backdrop: "#5a1a1abf",
+                backdrop: "#562919bf",
                 "on-secondary": "#d5d5d5",
-                "primary-hovered": "#9d722e",
-                "primary-active": "#9d722e",
-                "primary-inactive": "#d6c171",
-                "primary-disabled": "#7c6f5b",
-                "secondary-hovered": "#d4ad6f",
-                "secondary-active": "#d4ad6f",
-                "secondary-inactive": "#8f6b29",
-                "secondary-disabled": "#726858",
-                "link-hovered": "#9d722e",
-                "link-active": "#9d722e",
-                "link-inactive": "#d6c171",
-                "link-disabled": "#7c6f5b",
-                "outline-hovered": "#885a28",
-                "outline-active": "#885a28",
-                "outline-inactive": "#d6c171",
-                "outline-disabled": "#7c6f5b",
-                outline: "#c59b4d"
+                "primary-hovered": "#9b8353",
+                "primary-active": "#9b8353",
+                "primary-inactive": "#e0da93",
+                "primary-disabled": "#7e776a",
+                "secondary-hovered": "#d7bd75",
+                "secondary-active": "#d7bd75",
+                "secondary-inactive": "#9a722d",
+                "secondary-disabled": "#776c5a",
+                "link-hovered": "#9b8353",
+                "link-active": "#9b8353",
+                "link-inactive": "#e0da93",
+                "link-disabled": "#7e776a",
+                "outline-hovered": "#866a27",
+                "outline-active": "#866a27",
+                "outline-inactive": "#e0da93",
+                "outline-disabled": "#7e776a",
+                outline: "#d5b67d"
               }}
             />
           </ColorPalette>
@@ -1858,7 +1858,7 @@ const COLOR_VARIANTS = {
               "10": "#3f424a",
               "11": "#2b2b33",
               "12": "#0b0b0e",
-              "13": "#050506",
+              "13": "#000000",
               "14": "#000000",
               "15": "#000000",
               "16": "#000000"
@@ -2004,7 +2004,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% brighter)"
             }
             colors={{
-              "elevated-active": "#0b0c0e"
+              "elevated-active": "#020202"
             }}
           />
           <ColorItem
@@ -2013,7 +2013,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#0b0c0e"
+              "elevated-disabled": "#060607"
             }}
           />
           <ColorItem
@@ -2022,7 +2022,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% brighter)"
             }
             colors={{
-              "elevated-hovered": "#060708"
+              "elevated-hovered": "#000000"
             }}
           />
           <ColorItem
@@ -2040,7 +2040,7 @@ const COLOR_VARIANTS = {
               "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant."
             }
             colors={{
-              floating: "#050506"
+              floating: "#000000"
             }}
           />
           <ColorItem
@@ -2049,7 +2049,7 @@ const COLOR_VARIANTS = {
               "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% brighter)"
             }
             colors={{
-              "floating-active": "#131418"
+              "floating-active": "#0b0c0e"
             }}
           />
           <ColorItem
@@ -2058,7 +2058,7 @@ const COLOR_VARIANTS = {
               "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "floating-disabled": "#0f1013"
+              "floating-disabled": "#0b0c0e"
             }}
           />
           <ColorItem
@@ -2067,7 +2067,7 @@ const COLOR_VARIANTS = {
               "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% brighter)"
             }
             colors={{
-              "floating-hovered": "#0e0f12"
+              "floating-hovered": "#060708"
             }}
           />
           <ColorItem
@@ -2139,7 +2139,7 @@ const COLOR_VARIANTS = {
               "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% brighter)"
             }
             colors={{
-              "surface-active": "#020202"
+              "surface-active": "#000000"
             }}
           />
           <ColorItem
@@ -2148,7 +2148,7 @@ const COLOR_VARIANTS = {
               "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "surface-disabled": "#060607"
+              "surface-disabled": "#030304"
             }}
           />
           <ColorItem
@@ -2189,7 +2189,7 @@ const COLOR_VARIANTS = {
               "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."
             }
             colors={{
-              outline: "#2b2b33"
+              outline: "#3f424a"
             }}
           />
           <ColorItem
@@ -2207,7 +2207,7 @@ const COLOR_VARIANTS = {
               "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "outline-disabled": "#28282f"
+              "outline-disabled": "#2f3138"
             }}
           />
           <ColorItem
@@ -2472,7 +2472,7 @@ const COLOR_VARIANTS = {
               }
               colors={{
                 primary: "#ffffff",
-                secondary: "#3f424a",
+                secondary: "#2b2b33",
                 link: "#00bcff",
                 "on-primary": "#000000",
                 backdrop: "#000000bf",
@@ -2481,10 +2481,10 @@ const COLOR_VARIANTS = {
                 "primary-active": "#ffffff",
                 "primary-inactive": "#565656",
                 "primary-disabled": "#828290",
-                "secondary-hovered": "#555863",
-                "secondary-active": "#555863",
+                "secondary-hovered": "#3d3d49",
+                "secondary-active": "#3d3d49",
                 "secondary-inactive": "#565656",
-                "secondary-disabled": "#2f3138",
+                "secondary-disabled": "#28282f",
                 "link-hovered": "#9bfcff",
                 "link-active": "#9bfcff",
                 "link-inactive": "#007cb5",
@@ -2677,29 +2677,29 @@ const COLOR_VARIANTS = {
                 "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText."
               }
               colors={{
-                primary: "#ffb327",
-                secondary: "#dc8f00",
-                link: "#ffb327",
+                primary: "#ffe1ab",
+                secondary: "#ffa706",
+                link: "#ffe1ab",
                 "on-primary": "#000000",
                 backdrop: "#000000bf",
                 "on-secondary": "#ffffff",
-                "primary-hovered": "#945a00",
-                "primary-active": "#945a00",
-                "primary-inactive": "#ffe995",
-                "primary-disabled": "#7c5e32",
-                "secondary-hovered": "#ffd38d",
-                "secondary-active": "#ffd38d",
-                "secondary-inactive": "#6d4600",
-                "secondary-disabled": "#624e2d",
-                "link-hovered": "#945a00",
-                "link-active": "#945a00",
-                "link-inactive": "#ffe995",
-                "link-disabled": "#7c5e32",
-                "outline-hovered": "#5b3000",
-                "outline-active": "#5b3000",
-                "outline-inactive": "#ffe995",
-                "outline-disabled": "#7c5e32",
-                outline: "#ffb327"
+                "primary-hovered": "#c58a17",
+                "primary-active": "#c58a17",
+                "primary-inactive": "#fffeef",
+                "primary-disabled": "#846f4d",
+                "secondary-hovered": "#ffe69e",
+                "secondary-active": "#ffe69e",
+                "secondary-inactive": "#8a5800",
+                "secondary-disabled": "#705730",
+                "link-hovered": "#c58a17",
+                "link-active": "#c58a17",
+                "link-inactive": "#fffeef",
+                "link-disabled": "#846f4d",
+                "outline-hovered": "#553c00",
+                "outline-active": "#553c00",
+                "outline-inactive": "#fffeef",
+                "outline-disabled": "#846f4d",
+                outline: "#ffe1ab"
               }}
             />
           </ColorPalette>
@@ -2758,9 +2758,9 @@ const COLOR_VARIANTS = {
               "10": "#555659",
               "11": "#46464a",
               "12": "#2d2e33",
-              "13": "#292a2e",
-              "14": "#242528",
-              "15": "#1f1f21",
+              "13": "#242528",
+              "14": "#1f1f21",
+              "15": "#1c1c1e",
               "16": "#151518"
             }}
           />
@@ -3080,7 +3080,7 @@ const COLOR_VARIANTS = {
               "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."
             }
             colors={{
-              emphasis: "#242528"
+              emphasis: "#1f1f21"
             }}
           />
           <ColorItem
@@ -3098,7 +3098,7 @@ const COLOR_VARIANTS = {
               "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "emphasis-disabled": "#38393c"
+              "emphasis-disabled": "#363639"
             }}
           />
           <ColorItem
@@ -3107,7 +3107,7 @@ const COLOR_VARIANTS = {
               "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% brighter)"
             }
             colors={{
-              "emphasis-hovered": "#343539"
+              "emphasis-hovered": "#2e2e30"
             }}
           />
           <ColorItem
@@ -3371,16 +3371,16 @@ const COLOR_VARIANTS = {
                 "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."
               }
               colors={{
-                primary: "#1f1f21",
+                primary: "#1c1c1e",
                 secondary: "#b0b0b1",
                 link: "#0084d1",
                 "on-primary": "#FAFAFA",
                 backdrop: "#010101bf",
                 "on-secondary": "#FAFAFA",
-                "primary-hovered": "#606062",
+                "primary-hovered": "#5c5c5f",
                 "primary-active": "#000000",
                 "primary-inactive": "#020102",
-                "primary-disabled": "#363639",
+                "primary-disabled": "#353538",
                 "secondary-hovered": "#939394",
                 "secondary-active": "#939394",
                 "secondary-inactive": "#020102",
@@ -3658,9 +3658,9 @@ const COLOR_VARIANTS = {
               "10": "#626364",
               "11": "#57575a",
               "12": "#45464a",
-              "13": "#434347",
-              "14": "#3f4043",
-              "15": "#3c3c3e",
+              "13": "#3f4043",
+              "14": "#3c3c3e",
+              "15": "#39393c",
               "16": "#343438"
             }}
           />
@@ -3980,7 +3980,7 @@ const COLOR_VARIANTS = {
               "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."
             }
             colors={{
-              emphasis: "#3f4043"
+              emphasis: "#3c3c3e"
             }}
           />
           <ColorItem
@@ -3998,7 +3998,7 @@ const COLOR_VARIANTS = {
               "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "emphasis-disabled": "#4d4e50"
+              "emphasis-disabled": "#4c4c4e"
             }}
           />
           <ColorItem
@@ -4007,7 +4007,7 @@ const COLOR_VARIANTS = {
               "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% brighter)"
             }
             colors={{
-              "emphasis-hovered": "#4a4b4e"
+              "emphasis-hovered": "#464648"
             }}
           />
           <ColorItem
@@ -4271,16 +4271,16 @@ const COLOR_VARIANTS = {
                 "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."
               }
               colors={{
-                primary: "#3c3c3e",
+                primary: "#39393c",
                 secondary: "#a1a1a2",
                 link: "#3280ad",
                 "on-primary": "#d5d5d5",
                 backdrop: "#272727bf",
                 "on-secondary": "#d5d5d5",
-                "primary-hovered": "#6a6a6b",
+                "primary-hovered": "#676769",
                 "primary-active": "#262626",
                 "primary-inactive": "#2f202f",
-                "primary-disabled": "#4c4c4e",
+                "primary-disabled": "#4b4b4e",
                 "secondary-hovered": "#8d8d8e",
                 "secondary-active": "#8d8d8e",
                 "secondary-inactive": "#2f202f",
@@ -4558,7 +4558,7 @@ const COLOR_VARIANTS = {
               "10": "#3f424a",
               "11": "#2b2b33",
               "12": "#0b0b0e",
-              "13": "#050506",
+              "13": "#000000",
               "14": "#000000",
               "15": "#000000",
               "16": "#000000"
@@ -4898,7 +4898,7 @@ const COLOR_VARIANTS = {
               "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "emphasis-disabled": "#18191d"
+              "emphasis-disabled": "#151519"
             }}
           />
           <ColorItem
@@ -4907,7 +4907,7 @@ const COLOR_VARIANTS = {
               "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% brighter)"
             }
             colors={{
-              "emphasis-hovered": "#131418"
+              "emphasis-hovered": "#0a0a0c"
             }}
           />
           <ColorItem
@@ -5177,10 +5177,10 @@ const COLOR_VARIANTS = {
                 "on-primary": "#ffffff",
                 backdrop: "#000000bf",
                 "on-secondary": "#ffffff",
-                "primary-hovered": "#4e4e59",
+                "primary-hovered": "#494954",
                 "primary-active": "#000000",
                 "primary-inactive": "#000000",
-                "primary-disabled": "#151519",
+                "primary-disabled": "#141418",
                 "secondary-hovered": "#9797a2",
                 "secondary-active": "#9797a2",
                 "secondary-inactive": "#000000",

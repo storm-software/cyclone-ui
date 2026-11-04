@@ -26,6 +26,7 @@ maxh
 maxw
 minh
 minw
+xxxs
 
 # Ignore in Regex
 ommands

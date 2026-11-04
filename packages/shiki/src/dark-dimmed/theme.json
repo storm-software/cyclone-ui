@@ -17,7 +17,7 @@
     {
       "scope": ["constant", "constant.numeric", "constant.language"],
       "settings": {
-        "foreground": "#c59b4d"
+        "foreground": "#d5b67d"
       }
     },
     {
@@ -83,10 +83,10 @@
     "editorCursor.foreground": "#638cd2",
     "editor.selectionBackground": "#cfcfcf",
     "editor.selectionForeground": "#343438",
-    "editor.inactiveSelectionBackground": "#3c3c3e",
+    "editor.inactiveSelectionBackground": "#39393c",
     "editorLineNumber.foreground": "#8f8f90",
     "editorLineNumber.activeForeground": "#a1a1a2",
-    "editorIndentGuide.background1": "#57575a",
+    "editorIndentGuide.background1": "#626364",
     "editorIndentGuide.activeBackground1": "#8f8f90",
     "editorWhitespace.foreground": "#8f8f90"
   }

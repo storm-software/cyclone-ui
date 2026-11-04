@@ -51,9 +51,9 @@ const tokens = createTokens({
     neutral10: "oklch(0.453283 0.00501 271.304)",
     neutral11: "oklch(0.395624 0.006657 286.092)",
     neutral12: "oklch(0.302157 0.009073 276.828)",
-    neutral13: "oklch(0.285591 0.007411 274.703)",
-    neutral14: "oklch(0.264649 0.005749 271.196)",
-    neutral15: "oklch(0.24011 0.00377 286.112)",
+    neutral13: "oklch(0.264649 0.005749 271.196)",
+    neutral14: "oklch(0.24011 0.00377 286.112)",
+    neutral15: "oklch(0.22728 0.003823 286.092)",
     neutral16: "oklch(0.197057 0.005959 285.84)",
     orange1: "oklch(0.855427 0.069792 50.188)",
     orange2: "oklch(0.81458 0.093105 49.905)",
@@ -250,12 +250,12 @@ const tokens = createTokens({
     "2xl": 16,
     "3xl": 24,
     "4xl": 32,
-    button: 4,
-    card: 6,
+    button: 6,
+    card: 8,
     checkbox: 4,
     container: 8,
     control: 4,
-    dialog: 6,
+    dialog: 8,
     drawer: 8,
     full: "100%",
     lg: 8,
@@ -263,11 +263,11 @@ const tokens = createTokens({
     popover: 6,
     sheet: 0,
     sm: 4,
-    tab: 4,
-    tabs: 6,
+    tab: 6,
+    tabs: 8,
     tag: 4,
     tooltip: 6,
-    trigger: 4,
+    trigger: 6,
     xl: 12,
     xs: 2,
     zero: 0
@@ -313,7 +313,8 @@ const tokens = createTokens({
     sm: px(16),
     xl: px(24),
     xs: px(14),
-    xxs: px(12)
+    xxs: px(12),
+    xxxs: px(10)
   },
   shadow: {
     "2xl": "0px 25px 50px -12px #00000040",
@@ -364,6 +365,8 @@ const themes = {
     "canvas-disabled": "oklch(0.261537 0.005542 286.01)",
     "canvas-hovered": "oklch(0.215164 0.007781 285.728)",
     "canvas-inactive": "oklch(0.179001 0.006108 285.767)",
+    "color-shadow-resting-raised":
+      "0px 1px 2px 0px #0000004d, 0px 2px 8px 0px #00000040",
     "data-blue-emphasis": tokens.color.blue7,
     "data-blue-subtle": tokens.color.blue9,
     "data-green-emphasis": tokens.color.green6,
@@ -381,29 +384,29 @@ const themes = {
     "data-yellow-emphasis": tokens.color.yellow5,
     "data-yellow-subtle": tokens.color.yellow9,
     elevated: tokens.color.neutral14,
-    "elevated-active": "oklch(0.305345 0.005542 271.233)",
-    "elevated-disabled": "oklch(0.305345 0.005542 271.233)",
-    "elevated-hovered": "oklch(0.28965 0.007384 274.709)",
-    "elevated-inactive": "oklch(0.239475 0.005899 271.165)",
+    "elevated-active": "oklch(0.277633 0.003634 286.161)",
+    "elevated-disabled": "oklch(0.289855 0.003594 286.173)",
+    "elevated-hovered": "oklch(0.265274 0.003676 286.146)",
+    "elevated-inactive": "oklch(0.214267 0.003881 286.068)",
     emphasis: tokens.color.neutral2,
     "emphasis-active": tokens.color.white,
     "emphasis-disabled": "oklch(0.600508 0.00299 286.309)",
     "emphasis-hovered": tokens.color.white,
     "emphasis-inactive": "oklch(0.499696 0 0)",
     floating: tokens.color.neutral13,
-    "floating-active": "oklch(0.329509 0.007143 274.76)",
-    "floating-disabled": "oklch(0.317684 0.007211 274.747)",
-    "floating-hovered": "oklch(0.313718 0.007234 274.742)",
-    "floating-inactive": "oklch(0.256756 0.007618 274.653)",
+    "floating-active": "oklch(0.305345 0.005542 271.233)",
+    "floating-disabled": "oklch(0.305345 0.005542 271.233)",
+    "floating-hovered": "oklch(0.28965 0.007384 274.709)",
+    "floating-inactive": "oklch(0.239475 0.005899 271.165)",
     hairline: tokens.color.neutral12,
     ink: tokens.color.neutral7,
     "ink-active": tokens.color.white,
     "ink-disabled": "oklch(0.521468 0.003099 286.292)",
     "ink-hovered": "oklch(0.946388 0.001333 286.375)",
     "ink-inactive": "oklch(0.499696 0 0)",
-    outline: tokens.color.neutral11,
+    outline: tokens.color.neutral10,
     "outline-active": tokens.color.white,
-    "outline-disabled": "oklch(0.387736 0.005014 286.164)",
+    "outline-disabled": "oklch(0.409248 0.005142 271.29)",
     "outline-hovered": tokens.color.white,
     "outline-inactive": "oklch(0.499696 0 0)",
     subtle: tokens.color.neutral8,
@@ -422,10 +425,10 @@ const themes = {
     "sunken-hovered": "oklch(0.16886 0.002057 286.177)",
     "sunken-inactive": "oklch(0.140274 0.002225 286.109)",
     surface: tokens.color.neutral15,
-    "surface-active": "oklch(0.277633 0.003634 286.161)",
-    "surface-disabled": "oklch(0.289855 0.003594 286.173)",
-    "surface-hovered": "oklch(0.265274 0.003676 286.146)",
-    "surface-inactive": "oklch(0.214267 0.003881 286.068)"
+    "surface-active": "oklch(0.261123 0.003691 286.141)",
+    "surface-disabled": "oklch(0.281721 0.00362 286.165)",
+    "surface-hovered": "oklch(0.248568 0.003737 286.125)",
+    "surface-inactive": "oklch(0.205481 0.003923 286.049)"
   },
   dark_base: {
     backdrop: "oklch(0.251965 0 0 / 0.749)",
@@ -442,13 +445,13 @@ const themes = {
     "primary-hovered": "oklch(0.750824 0 0)",
     "primary-inactive": "oklch(0.499696 0 0)",
     ring: "0px 0px 0px 3px #ffffff1a",
-    "ring-offset": "0px 0px 0px 3px #242528, 0px 0px 0px 7px #ffffff1a",
+    "ring-offset": "0px 0px 0px 3px #1f1f21, 0px 0px 0px 7px #ffffff1a",
     "ring-subtle": "0px 0px 0px 1px #ffffff1a",
-    "ring-subtle-offset": "0px 0px 0px 2px #242528, 0px 0px 0px 3px #ffffff1a",
-    secondary: tokens.color.neutral10,
-    "secondary-active": "oklch(0.510393 0.004862 271.319)",
-    "secondary-disabled": "oklch(0.409248 0.005142 271.29)",
-    "secondary-hovered": "oklch(0.510393 0.004862 271.319)",
+    "ring-subtle-offset": "0px 0px 0px 2px #1f1f21, 0px 0px 0px 3px #ffffff1a",
+    secondary: tokens.color.neutral11,
+    "secondary-active": "oklch(0.444015 0.008087 286.066)",
+    "secondary-disabled": "oklch(0.387736 0.005014 286.164)",
+    "secondary-hovered": "oklch(0.444015 0.008087 286.066)",
     "secondary-inactive": "oklch(0.499696 0 0)"
   },
   dark_brand: {
@@ -466,9 +469,9 @@ const themes = {
     "primary-hovered": "oklch(0.630716 0.124588 170.203)",
     "primary-inactive": "oklch(0.924711 0.114215 187.862)",
     ring: "0px 0px 0px 3px #3be4be26",
-    "ring-offset": "0px 0px 0px 3px #242528, 0px 0px 0px 7px #3be4be26",
+    "ring-offset": "0px 0px 0px 3px #1f1f21, 0px 0px 0px 7px #3be4be26",
     "ring-subtle": "0px 0px 0px 1px #3be4be26",
-    "ring-subtle-offset": "0px 0px 0px 2px #242528, 0px 0px 0px 3px #3be4be26",
+    "ring-subtle-offset": "0px 0px 0px 2px #1f1f21, 0px 0px 0px 3px #3be4be26",
     secondary: "oklch(0.435986 0.08367 173.058)",
     "secondary-active": "oklch(0.54501 0.084202 172.608)",
     "secondary-disabled": "oklch(0.396561 0.028821 186.057)",
@@ -495,9 +498,9 @@ const themes = {
     "primary-hovered": "oklch(0.702463 0.193626 11.864)",
     "primary-inactive": "oklch(0.463261 0.185173 14.457)",
     ring: "0px 0px 0px 3px #cf2d5626",
-    "ring-offset": "0px 0px 0px 3px #242528, 0px 0px 0px 7px #cf2d5626",
+    "ring-offset": "0px 0px 0px 3px #1f1f21, 0px 0px 0px 7px #cf2d5626",
     "ring-subtle": "0px 0px 0px 1px #cf2d5626",
-    "ring-subtle-offset": "0px 0px 0px 2px #242528, 0px 0px 0px 3px #cf2d5626",
+    "ring-subtle-offset": "0px 0px 0px 2px #1f1f21, 0px 0px 0px 3px #cf2d5626",
     secondary: "oklch(0.305007 0.121891 12.109)",
     "secondary-active": "oklch(0.380983 0.121562 11.993)",
     "secondary-disabled": "oklch(0.345433 0.038302 358.451)",
@@ -524,9 +527,9 @@ const themes = {
     "primary-hovered": "oklch(0.789049 0.12248 297.421)",
     "primary-inactive": "oklch(0.510883 0.145556 294.25)",
     ring: "0px 0px 0px 3px #9277da26",
-    "ring-offset": "0px 0px 0px 3px #242528, 0px 0px 0px 7px #9277da26",
+    "ring-offset": "0px 0px 0px 3px #1f1f21, 0px 0px 0px 7px #9277da26",
     "ring-subtle": "0px 0px 0px 1px #9277da26",
-    "ring-subtle-offset": "0px 0px 0px 2px #242528, 0px 0px 0px 3px #9277da26",
+    "ring-subtle-offset": "0px 0px 0px 2px #1f1f21, 0px 0px 0px 3px #9277da26",
     secondary: tokens.color.purple9,
     "secondary-active": "oklch(0.40271 0.100053 292.662)",
     "secondary-disabled": "oklch(0.360349 0.032816 294.347)",
@@ -553,9 +556,9 @@ const themes = {
     "primary-hovered": "oklch(0.797163 0.109493 245.556)",
     "primary-inactive": "oklch(0.527438 0.180545 260.642)",
     ring: "0px 0px 0px 3px #4d8eff26",
-    "ring-offset": "0px 0px 0px 3px #242528, 0px 0px 0px 7px #4d8eff26",
+    "ring-offset": "0px 0px 0px 3px #1f1f21, 0px 0px 0px 7px #4d8eff26",
     "ring-subtle": "0px 0px 0px 1px #4d8eff26",
-    "ring-subtle-offset": "0px 0px 0px 2px #242528, 0px 0px 0px 3px #4d8eff26",
+    "ring-subtle-offset": "0px 0px 0px 2px #1f1f21, 0px 0px 0px 3px #4d8eff26",
     secondary: tokens.color.blue8,
     "secondary-active": "oklch(0.498066 0.130587 260.879)",
     "secondary-disabled": "oklch(0.385219 0.042948 261.625)",
@@ -582,9 +585,9 @@ const themes = {
     "primary-hovered": "oklch(0.9169 0.13001 163.782)",
     "primary-inactive": "oklch(0.600104 0.134075 160.784)",
     ring: "0px 0px 0px 3px #45c79126",
-    "ring-offset": "0px 0px 0px 3px #242528, 0px 0px 0px 7px #45c79126",
+    "ring-offset": "0px 0px 0px 3px #1f1f21, 0px 0px 0px 7px #45c79126",
     "ring-subtle": "0px 0px 0px 1px #45c79126",
-    "ring-subtle-offset": "0px 0px 0px 2px #242528, 0px 0px 0px 3px #45c79126",
+    "ring-subtle-offset": "0px 0px 0px 2px #1f1f21, 0px 0px 0px 3px #45c79126",
     secondary: "oklch(0.435214 0.096108 161.542)",
     "secondary-active": "oklch(0.544052 0.096073 161.618)",
     "secondary-disabled": "oklch(0.397834 0.032513 171.919)",
@@ -592,33 +595,33 @@ const themes = {
     "secondary-inactive": "oklch(0.353497 0.084003 157.11)"
   },
   dark_warning: {
-    backdrop: "oklch(0.216383 0.088793 29.234 / 0.749)",
-    link: tokens.color.yellow4,
-    "link-active": "oklch(0.602147 0.133464 66.596)",
-    "link-disabled": "oklch(0.533787 0.055195 77.258)",
-    "link-hovered": "oklch(0.602147 0.133464 66.596)",
-    "link-inactive": "oklch(0.909784 0.14319 95.018)",
+    backdrop: "oklch(0.219683 0.065383 42.737 / 0.749)",
+    link: tokens.color.yellow1,
+    "link-active": "oklch(0.652732 0.112539 80.951)",
+    "link-disabled": "oklch(0.564806 0.036201 80.806)",
+    "link-hovered": "oklch(0.652732 0.112539 80.951)",
+    "link-inactive": "oklch(0.966125 0.103557 104.031)",
     "on-primary": tokens.color.neutral16,
     "on-secondary": tokens.color.neutral1,
-    outline: tokens.color.yellow4,
-    "outline-active": "oklch(0.483082 0.116571 57.25)",
-    "outline-disabled": "oklch(0.533787 0.055195 77.258)",
-    "outline-hovered": "oklch(0.483082 0.116571 57.25)",
-    "outline-inactive": "oklch(0.909784 0.14319 95.018)",
-    primary: tokens.color.yellow4,
-    "primary-active": "oklch(0.602147 0.133464 66.596)",
-    "primary-disabled": "oklch(0.533787 0.055195 77.258)",
-    "primary-hovered": "oklch(0.602147 0.133464 66.596)",
-    "primary-inactive": "oklch(0.909784 0.14319 95.018)",
-    ring: "0px 0px 0px 3px #f7ac2326",
-    "ring-offset": "0px 0px 0px 3px #242528, 0px 0px 0px 7px #f7ac2326",
-    "ring-subtle": "0px 0px 0px 1px #f7ac2326",
-    "ring-subtle-offset": "0px 0px 0px 2px #242528, 0px 0px 0px 3px #f7ac2326",
-    secondary: tokens.color.yellow7,
-    "secondary-active": "oklch(0.850218 0.131974 77.087)",
-    "secondary-disabled": "oklch(0.490522 0.043983 79.523)",
-    "secondary-hovered": "oklch(0.850218 0.131974 77.087)",
-    "secondary-inactive": "oklch(0.546315 0.117191 71.676)"
+    outline: tokens.color.yellow1,
+    "outline-active": "oklch(0.522115 0.108226 79.728)",
+    "outline-disabled": "oklch(0.564806 0.036201 80.806)",
+    "outline-hovered": "oklch(0.522115 0.108226 79.728)",
+    "outline-inactive": "oklch(0.966125 0.103557 104.031)",
+    primary: tokens.color.yellow1,
+    "primary-active": "oklch(0.652732 0.112539 80.951)",
+    "primary-disabled": "oklch(0.564806 0.036201 80.806)",
+    "primary-hovered": "oklch(0.652732 0.112539 80.951)",
+    "primary-inactive": "oklch(0.966125 0.103557 104.031)",
+    ring: "0px 0px 0px 3px #facd7b26",
+    "ring-offset": "0px 0px 0px 3px #1f1f21, 0px 0px 0px 7px #facd7b26",
+    "ring-subtle": "0px 0px 0px 1px #facd7b26",
+    "ring-subtle-offset": "0px 0px 0px 2px #1f1f21, 0px 0px 0px 3px #facd7b26",
+    secondary: tokens.color.yellow6,
+    "secondary-active": "oklch(0.896657 0.133412 90.156)",
+    "secondary-disabled": "oklch(0.513882 0.050206 78.673)",
+    "secondary-hovered": "oklch(0.896657 0.133412 90.156)",
+    "secondary-inactive": "oklch(0.594984 0.128425 70.597)"
   },
   light: {
     canvas: tokens.color.neutral3,
@@ -626,6 +629,8 @@ const themes = {
     "canvas-disabled": "oklch(0.770229 0.001404 286.367)",
     "canvas-hovered": "oklch(0.842119 0 0)",
     "canvas-inactive": tokens.color.white,
+    "color-shadow-resting-raised":
+      "0px 1px 2px 0px #00000014, 0px 2px 8px 0px #0000000f",
     "data-blue-emphasis": tokens.color.blue7,
     "data-blue-subtle": tokens.color.blue3,
     "data-green-emphasis": tokens.color.green7,
@@ -649,8 +654,8 @@ const themes = {
     "elevated-inactive": tokens.color.white,
     emphasis: tokens.color.neutral14,
     "emphasis-active": "oklch(0 0 0)",
-    "emphasis-disabled": "oklch(0.344726 0.005372 271.259)",
-    "emphasis-hovered": "oklch(0.329509 0.007143 274.76)",
+    "emphasis-disabled": "oklch(0.334019 0.005207 286.114)",
+    "emphasis-hovered": "oklch(0.30195 0.003557 286.185)",
     "emphasis-inactive": "oklch(0.074227 0.009824 326.51)",
     floating: tokens.color.white,
     "floating-active": "oklch(0.851419 0 0)",
@@ -700,13 +705,13 @@ const themes = {
     "on-secondary": tokens.color.neutral1,
     primary: tokens.color.neutral15,
     "primary-active": "oklch(0 0 0)",
-    "primary-disabled": "oklch(0.334019 0.005207 286.114)",
-    "primary-hovered": "oklch(0.489729 0.003148 286.283)",
+    "primary-disabled": "oklch(0.330102 0.005223 286.11)",
+    "primary-hovered": "oklch(0.475803 0.00476 286.217)",
     "primary-inactive": "oklch(0.074227 0.009824 326.51)",
-    ring: "0px 0px 0px 3px #1f1f211a",
-    "ring-offset": "0px 0px 0px 3px #fafafa, 0px 0px 0px 7px #1f1f211a",
-    "ring-subtle": "0px 0px 0px 1px #1f1f211a",
-    "ring-subtle-offset": "0px 0px 0px 2px #fafafa, 0px 0px 0px 3px #1f1f211a",
+    ring: "0px 0px 0px 3px #1c1c1e1a",
+    "ring-offset": "0px 0px 0px 3px #fafafa, 0px 0px 0px 7px #1c1c1e1a",
+    "ring-subtle": "0px 0px 0px 1px #1c1c1e1a",
+    "ring-subtle-offset": "0px 0px 0px 2px #fafafa, 0px 0px 0px 3px #1c1c1e1a",
     secondary: tokens.color.neutral7,
     "secondary-active": "oklch(0.663564 0.001457 286.36)",
     "secondary-disabled": "oklch(0.521468 0.003099 286.292)",
@@ -906,7 +911,8 @@ const bodyFont = createFont({
     sm: 16,
     xl: 24,
     xs: 14,
-    xxs: 12
+    xxs: 12,
+    xxxs: 10
   },
   lineHeight: {
     "2xl": 33.75,
@@ -930,7 +936,8 @@ const bodyFont = createFont({
     true: 18,
     xl: 27,
     xs: 15.75,
-    xxs: 13.5
+    xxs: 13.5,
+    xxxs: 11.25
   },
   weight: {
     black: "700",
@@ -976,7 +983,8 @@ const captionFont = createFont({
     sm: 16,
     xl: 24,
     xs: 14,
-    xxs: 12
+    xxs: 12,
+    xxxs: 10
   },
   lineHeight: {
     "2xl": 33.75,
@@ -1000,7 +1008,8 @@ const captionFont = createFont({
     true: 18,
     xl: 27,
     xs: 15.75,
-    xxs: 13.5
+    xxs: 13.5,
+    xxxs: 11.25
   },
   weight: {
     black: "700",
@@ -1046,7 +1055,8 @@ const codeFont = createFont({
     sm: 16,
     xl: 24,
     xs: 14,
-    xxs: 12
+    xxs: 12,
+    xxxs: 10
   },
   lineHeight: {
     "2xl": 22.95,
@@ -1070,7 +1080,8 @@ const codeFont = createFont({
     true: 12.24,
     xl: 18.36,
     xs: 10.71,
-    xxs: 9.18
+    xxs: 9.18,
+    xxxs: 7.65
   },
   weight: {
     black: "900",
@@ -1107,7 +1118,8 @@ const displayFont = createFont({
     sm: 16,
     xl: 24,
     xs: 14,
-    xxs: 12
+    xxs: 12,
+    xxxs: 10
   },
   lineHeight: {
     "2xl": 37.125,
@@ -1131,7 +1143,8 @@ const displayFont = createFont({
     true: 19.8,
     xl: 29.7,
     xs: 17.325,
-    xxs: 14.85
+    xxs: 14.85,
+    xxxs: 12.375
   },
   weight: {
     black: "700",
@@ -1177,7 +1190,8 @@ const editorialFont = createFont({
     sm: 16,
     xl: 24,
     xs: 14,
-    xxs: 12
+    xxs: 12,
+    xxxs: 10
   },
   lineHeight: {
     "2xl": 37.125,
@@ -1201,7 +1215,8 @@ const editorialFont = createFont({
     true: 19.8,
     xl: 29.7,
     xs: 17.325,
-    xxs: 14.85
+    xxs: 14.85,
+    xxxs: 12.375
   },
   weight: {
     black: "800",
@@ -1247,7 +1262,8 @@ const eyebrowFont = createFont({
     sm: 16,
     xl: 24,
     xs: 14,
-    xxs: 12
+    xxs: 12,
+    xxxs: 10
   },
   lineHeight: {
     "2xl": 22.95,
@@ -1271,7 +1287,8 @@ const eyebrowFont = createFont({
     true: 12.24,
     xl: 18.36,
     xs: 10.71,
-    xxs: 9.18
+    xxs: 9.18,
+    xxxs: 7.65
   },
   weight: {
     black: "900",
@@ -1302,6 +1319,7 @@ export interface AppTheme {
   "canvas-disabled": string;
   "canvas-hovered": string;
   "canvas-inactive": string;
+  "color-shadow-resting-raised": string;
   "data-blue-emphasis": string;
   "data-blue-subtle": string;
   "data-green-emphasis": string;

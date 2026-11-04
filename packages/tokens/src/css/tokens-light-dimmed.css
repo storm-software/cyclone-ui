@@ -593,9 +593,9 @@
   --storm-color-neutral-10: #626364; /** Deep gray. */
   --storm-color-neutral-11: #57575a; /** Charcoal gray. */
   --storm-color-neutral-12: #45464a; /** Charcoal gray. */
-  --storm-color-neutral-13: #434347; /** Dark charcoal gray. */
-  --storm-color-neutral-14: #3f4043; /** Deep graphite gray. */
-  --storm-color-neutral-15: #3c3c3e; /** Near-black graphite. */
+  --storm-color-neutral-13: #3f4043; /** Dark charcoal gray. */
+  --storm-color-neutral-14: #3c3c3e; /** Deep graphite gray. */
+  --storm-color-neutral-15: #39393c; /** Near-black graphite. */
   --storm-color-neutral-16: #343438; /** Almost black gray. */
   --storm-color-red-1: #c28393; /** Pale coral red. */
   --storm-color-red-2: #bc7788; /** Light coral red. */
@@ -667,10 +667,10 @@
     39,
     0.7490196078431373
   ); /** Generated base overlay backdrop color (primary, 30% darker at 75% opacity) */
-  --storm-color-base-primary-hovered: #6a6a6b; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter) */
+  --storm-color-base-primary-hovered: #676769; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter) */
   --storm-color-base-primary-active: #262626; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black) */
   --storm-color-base-primary-inactive: #2f202f; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% darker) */
-  --storm-color-base-primary-disabled: #4c4c4e; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-base-primary-disabled: #4b4b4e; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-base-secondary-hovered: #8d8d8e; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 12% darker) */
   --storm-color-base-secondary-disabled: #707071; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-base-link-hovered: #2a6392; /** The color used for hyperlink text. (hovered, 25% darker) */
@@ -762,11 +762,14 @@
   --storm-color-success-secondary-inactive: #96ccb6; /** Generated low-emphasis success background for the light theme (inactive, 20% brighter) */
   --storm-color-success-secondary-disabled: #65716d; /** Generated low-emphasis success background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-success-outline-hovered: #1a5941; /** Generated success border and divider color (matches primary) (hovered, 40% darker) */
-  --storm-color-emphasis-hovered: #4a4b4e; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% brighter) */
-  --storm-color-emphasis-disabled: #4d4e50; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-shadow-resting-raised:
+    0px 1px 2px 0px #00000014, 0px 2px 8px 0px #0000000f; /** Raised resting shadow: a tight contact shadow plus a soft 8px falloff. Use it for selected segments, notification cards and secondary buttons that should read as lifted off their surface. Used by Button (`secondary` variant). */
+  --storm-color-emphasis-hovered: #464648; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% brighter) */
+  --storm-color-emphasis-disabled: #4c4c4e; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-ink-hovered: #4d4d50; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 25% darker) */
   --storm-color-ink-disabled: #595a5c; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-subtle-hovered: #6c6c6e; /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% darker) */
+  --storm-color-subtle-disabled: #6a6a6b; /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-subtlest-hovered: #7a7a7a; /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% darker) */
   --storm-color-sunken-hovered: #afafaf; /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 10% darker) */
   --storm-color-sunken-active: #a5a5a5; /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 15% darker) */
@@ -934,6 +937,7 @@
   --storm-spacing-62xl: 760px; /** A 760px 62xl spacing step (from size.62xl via sizeToSpace) */
   --storm-spacing-63xl: 774px; /** A 774px 63xl spacing step (from size.63xl via sizeToSpace) */
   --storm-spacing-64xl: 788px; /** A 788px 64xl spacing step (from size.64xl via sizeToSpace) */
+  --storm-font-size-xxxs: 0.625rem; /** Extra extra small font size (0.625rem) */
   --storm-font-size-xxs: 0.75rem; /** Extra small font size (0.75rem) */
   --storm-font-size-xs: 0.875rem; /** Extra small font size (0.875rem) */
   --storm-font-size-sm: 1rem; /** Small font size (1rem) */
@@ -1049,8 +1053,8 @@
   --storm-blur-xl: 24px; /** Extra large blur (24px) */
   --storm-blur-2xl: 40px; /** 2X large blur (40px) */
   --storm-blur-3xl: 64px; /** 3X large blur (64px) */
-  --storm-ring-base: 0px 0px 0px 3px #1f1f211a; /** Generated base 3px focus ring with no gap */
-  --storm-ring-base-subtle: 0px 0px 0px 1px #1f1f211a; /** Generated base 1px outline focus ring with no gap */
+  --storm-ring-base: 0px 0px 0px 3px #1c1c1e1a; /** Generated base 3px focus ring with no gap */
+  --storm-ring-base-subtle: 0px 0px 0px 1px #1c1c1e1a; /** Generated base 1px outline focus ring with no gap */
   --storm-ring-brand: 0px 0px 0px 3px #1fb2a626; /** Generated brand 3px focus ring with no gap */
   --storm-ring-brand-subtle: 0px 0px 0px 1px #1fb2a626; /** Generated brand 1px outline focus ring with no gap */
   --storm-ring-danger: 0px 0px 0px 3px #8e223e26; /** Generated danger 3px focus ring with no gap */
@@ -1408,9 +1412,6 @@
   --storm-color-subtle-inactive: var(
     --storm-color-base-primary-inactive
   ); /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker) */
-  --storm-color-subtle-disabled: var(
-    --storm-color-base-primary-hovered
-  ); /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-subtlest-active: var(
     --storm-color-black
   ); /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, light contrast primitive) */
@@ -1448,13 +1449,13 @@
     --storm-border-radius-lg
   ); /** Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText. */
   --storm-border-radius-trigger: var(
-    --storm-border-radius-sm
+    --storm-border-radius-md
   ); /** Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators). */
   --storm-border-radius-card: var(
-    --storm-border-radius-md
+    --storm-border-radius-lg
   ); /** Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker. */
   --storm-border-radius-button: var(
-    --storm-border-radius-sm
+    --storm-border-radius-md
   ); /** Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it. */
   --storm-border-radius-tag: var(
     --storm-border-radius-sm
@@ -1466,13 +1467,13 @@
     --storm-border-radius-sm
   ); /** Corner radius for the checkbox box (6px, `border-radius.md`). Kept smaller than `control` so the small box still reads as a square rather than a pill. Used by Checkbox. */
   --storm-border-radius-tab: var(
-    --storm-border-radius-sm
+    --storm-border-radius-md
   ); /** Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items. */
   --storm-border-radius-tabs: var(
-    --storm-border-radius-md
+    --storm-border-radius-lg
   ); /** Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup. */
   --storm-border-radius-dialog: var(
-    --storm-border-radius-md
+    --storm-border-radius-lg
   ); /** Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog. */
   --storm-border-radius-sheet: var(
     --storm-border-radius-zero
@@ -1526,9 +1527,9 @@
     --storm-color-success-primary
   ); /** Generated success border and divider color (matches primary) */
   --storm-ring-base-offset:
-    0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 7px #1f1f211a; /** Generated base 3px focus ring with a 3px gap */
+    0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 7px #1c1c1e1a; /** Generated base 3px focus ring with a 3px gap */
   --storm-ring-base-subtle-offset:
-    0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #1f1f211a; /** Generated base 1px focus ring with a 2px gap */
+    0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #1c1c1e1a; /** Generated base 1px focus ring with a 2px gap */
   --storm-ring-brand-offset:
     0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 7px #1fb2a626; /** Generated brand 3px focus ring with a 3px gap */
   --storm-ring-brand-subtle-offset:

@@ -592,8 +592,8 @@
   --color-base-on-secondary: var(--color-neutral-1);
   --color-base-primary: var(--color-neutral-15);
   --color-base-primary-active: #000000;
-  --color-base-primary-disabled: #363639;
-  --color-base-primary-hovered: #606062;
+  --color-base-primary-disabled: #353538;
+  --color-base-primary-hovered: #5c5c5f;
   --color-base-primary-inactive: #020102;
   --color-base-secondary: var(--color-neutral-7);
   --color-base-secondary-active: var(--color-base-secondary-hovered);
@@ -702,8 +702,8 @@
   --color-elevated-inactive: var(--color-white);
   --color-emphasis: var(--color-neutral-14);
   --color-emphasis-active: var(--color-base-primary-active);
-  --color-emphasis-disabled: #38393c;
-  --color-emphasis-hovered: #343539;
+  --color-emphasis-disabled: #363639;
+  --color-emphasis-hovered: #2e2e30;
   --color-emphasis-inactive: var(--color-base-primary-inactive);
   --color-floating: var(--color-white);
   --color-floating-active: #cecece;
@@ -752,9 +752,9 @@
   --color-neutral-10: #555659;
   --color-neutral-11: #46464a;
   --color-neutral-12: #2d2e33;
-  --color-neutral-13: #292a2e;
-  --color-neutral-14: #242528;
-  --color-neutral-15: #1f1f21;
+  --color-neutral-13: #242528;
+  --color-neutral-14: #1f1f21;
+  --color-neutral-15: #1c1c1e;
   --color-neutral-16: #151518;
   --color-neutral-2: #f1f1f1;
   --color-neutral-3: #eaeaea;
@@ -811,6 +811,8 @@
   --color-shadow-floating-xlarge: var(--shadow-2xl);
   --color-shadow-inset: var(--inset-shadow-xs);
   --color-shadow-resting-medium: var(--shadow-sm);
+  --color-shadow-resting-raised:
+    0px 1px 2px 0px #00000014, 0px 2px 8px 0px #0000000f;
   --color-shadow-resting-small: var(--shadow-xs);
   --color-shadow-resting-xsmall: var(--shadow-2xs);
   --color-subtle: var(--color-neutral-8);
@@ -949,12 +951,12 @@
   --radius-2xl: 1rem;
   --radius-3xl: 1.5rem;
   --radius-4xl: 2rem;
-  --radius-button: var(--radius-sm);
-  --radius-card: var(--radius-md);
+  --radius-button: var(--radius-md);
+  --radius-card: var(--radius-lg);
   --radius-checkbox: var(--radius-sm);
   --radius-container: var(--radius-lg);
   --radius-control: var(--radius-sm);
-  --radius-dialog: var(--radius-md);
+  --radius-dialog: var(--radius-lg);
   --radius-drawer: var(--radius-lg);
   --radius-full: 100%;
   --radius-lg: 0.5rem;
@@ -962,20 +964,20 @@
   --radius-popover: var(--radius-md);
   --radius-sheet: var(--radius-zero);
   --radius-sm: 0.25rem;
-  --radius-tab: var(--radius-sm);
-  --radius-tabs: var(--radius-md);
+  --radius-tab: var(--radius-md);
+  --radius-tabs: var(--radius-lg);
   --radius-tag: var(--radius-sm);
   --radius-tooltip: var(--radius-md);
-  --radius-trigger: var(--radius-sm);
+  --radius-trigger: var(--radius-md);
   --radius-xl: 0.75rem;
   --radius-xs: 0.125rem;
   --radius-zero: 0rem;
-  --ring-base: 0px 0px 0px 3px #1f1f211a;
+  --ring-base: 0px 0px 0px 3px #1c1c1e1a;
   --ring-base-offset:
-    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #1f1f211a;
-  --ring-base-subtle: 0px 0px 0px 1px #1f1f211a;
+    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #1c1c1e1a;
+  --ring-base-subtle: 0px 0px 0px 1px #1c1c1e1a;
   --ring-base-subtle-offset:
-    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1f1f211a;
+    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1c1c1e1a;
   --ring-brand: 0px 0px 0px 3px #1fb2a626;
   --ring-brand-offset:
     0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #1fb2a626;
@@ -1204,6 +1206,7 @@
   --text-xs: 0.875rem;
   --text-xs--line-height: var(--leading-xs);
   --text-xxs: 0.75rem;
+  --text-xxxs: 0.625rem;
   --tracking-normal: 0rem;
   --tracking-tight: -0.025rem;
   --tracking-tighter: -0.05rem;

@@ -32,7 +32,7 @@
     "outline": {
       "$type": "color",
       "colorSpace": "display-p3",
-      "$value": "{color.neutral.11}",
+      "$value": "{color.neutral.10}",
       "$description": "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
       "group": "border"
     },
@@ -91,7 +91,7 @@
       "secondary": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.neutral.10}",
+        "$value": "{color.neutral.11}",
         "$description": "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
         "semantic": true
       },
@@ -131,14 +131,14 @@
       "primary": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.yellow.4}",
+        "$value": "{color.yellow.1}",
         "$description": "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
         "semantic": true
       },
       "secondary": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.yellow.7}",
+        "$value": "{color.yellow.6}",
         "$description": "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme.",
         "semantic": true
       }
@@ -208,6 +208,60 @@
           "$type": "shadow",
           "$value": "{shadow.sm}",
           "$description": "Medium resting shadow (`shadow.sm`). Use it for raised cards and panels that need more separation from the canvas than `resting.small`."
+        },
+        "raised": {
+          "$type": "shadow",
+          "$value": [
+            {
+              "color": {
+                "colorSpace": "srgb",
+                "components": [0, 0, 0],
+                "alpha": 0.3,
+                "hex": "#000000"
+              },
+              "offsetX": {
+                "value": 0,
+                "unit": "px"
+              },
+              "offsetY": {
+                "value": 1,
+                "unit": "px"
+              },
+              "blur": {
+                "value": 2,
+                "unit": "px"
+              },
+              "spread": {
+                "value": 0,
+                "unit": "px"
+              }
+            },
+            {
+              "color": {
+                "colorSpace": "srgb",
+                "components": [0, 0, 0],
+                "alpha": 0.25,
+                "hex": "#000000"
+              },
+              "offsetX": {
+                "value": 0,
+                "unit": "px"
+              },
+              "offsetY": {
+                "value": 2,
+                "unit": "px"
+              },
+              "blur": {
+                "value": 8,
+                "unit": "px"
+              },
+              "spread": {
+                "value": 0,
+                "unit": "px"
+              }
+            }
+          ],
+          "$description": "Raised resting shadow: a tight contact shadow plus a soft 8px falloff. Use it for selected segments, notification cards and secondary buttons that should read as lifted off their surface. Used by Button (`secondary` variant)."
         }
       },
       "floating": {

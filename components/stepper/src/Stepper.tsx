@@ -130,6 +130,7 @@ export const StepperFrame = createStyledHOC(
     const [state, setState] = useState<StepperState>({
       ...defaultContextValues.state
     });
+
     const { steps, currentStep } = state;
 
     const setCurrentStep = (currentStep: string) => {
@@ -160,6 +161,7 @@ export const StepperFrame = createStyledHOC(
 
     useLayoutEffect(() => {
       if (!currentStep) {
+        // eslint-disable-next-line react/set-state-in-effect
         setState(next => ({
           ...next,
           currentStep: next.steps[0] as string,

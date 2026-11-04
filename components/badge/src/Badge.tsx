@@ -111,8 +111,8 @@ const BadgeBadgeFrame = styled(View, {
   variants: {
     variant: {
       standard: {
-        height: "4xl",
-        minWidth: "4xl",
+        height: "2xl",
+        minWidth: "2xl",
         paddingHorizontal: 6
       },
       dot: {
@@ -158,10 +158,9 @@ const BadgeText = styled(Text, {
   displayName: BADGE_NAME,
   color: "on-primary",
   fontFamily: "caption",
-  fontSize: 12,
-  fontWeight: "500",
-  // Unitless, as in CSS: a multiple of `fontSize`.
-  lineHeight: 1
+  fontSize: "xxs",
+  fontWeight: "semibold",
+  lineHeight: "xxs"
 });
 
 // MUI's `transitions.duration.enteringScreen` and `leavingScreen`.

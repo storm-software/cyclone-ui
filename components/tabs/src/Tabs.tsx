@@ -333,6 +333,7 @@ const TabsRovingIndicator = styled(YStack, {
         borderRadius: "tab",
         borderWidth: 1,
         borderColor: "hairline",
+        boxShadow: "color-shadow-resting-raised",
         alignItems: "center",
         justifyContent: "center"
       },
@@ -581,23 +582,27 @@ const TabsHeaderItemHeading = styled(HeadingSmallText, {
   paddingVertical: "xl",
 
   variants: {
+    // One step below `HeadingSmallText` (lg), and one more for inactive tabs.
+    // Declared before `size` so an explicit font size key still wins.
+    selected: {
+      true: {
+        color: "primary",
+        fontSize: "md max-sm:sm",
+        fontWeight: "semibold"
+      },
+      false: {
+        color: "primary-inactive",
+        fontSize: "sm max-sm:xs",
+        fontWeight: "normal"
+      }
+    },
+
     // Only font size keys restyle the text; `true` keeps the heading's size.
     size: styled.dynamic<FontSizeTokens | SizeTokens | number>((val, env) =>
       typeof val === "string" && !!env.font && val in env.font.size
         ? getFontSized(val, env)
         : undefined
-    ),
-
-    selected: {
-      true: {
-        color: "primary-active",
-        fontWeight: "semibold"
-      },
-      false: {
-        color: "primary-inactive",
-        fontWeight: "medium"
-      }
-    }
+    )
   } as const,
   defaultVariants: {
     size: true,
@@ -702,7 +707,7 @@ const TabsHeaderItemImpl = createStyledHOC(
     const heading = (
       <TabsHeaderItemHeading
         size={size}
-        color="group-hover:primary"
+        color="group-hover:primary-active"
         selected={currentTab === value}>
         {children}
       </TabsHeaderItemHeading>

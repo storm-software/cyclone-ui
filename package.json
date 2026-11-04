@@ -150,6 +150,7 @@
     "rimraf": "catalog:",
     "sherif": "catalog:",
     "storybook": "catalog:",
+    "tamagui": "catalog:",
     "tsdown": "catalog:",
     "tslib": "catalog:",
     "typescript": "^6.0.3",

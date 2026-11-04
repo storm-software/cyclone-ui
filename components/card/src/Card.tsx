@@ -208,7 +208,8 @@ const CardPixels = ({ active, color }: { active: boolean; color: string }) => {
             y,
             delay: Math.hypot(x - width / 2, y - height / 2) / PIXEL_RIPPLE,
             max: 1 + Math.random() * 1.5,
-            alpha: 0.3 + Math.random() * 0.7,
+            // Kept faint so card text above the effect stays readable.
+            alpha: 0.1 + Math.random() * 0.25,
             phase: Math.random() * Math.PI * 2,
             size: 0
           });
