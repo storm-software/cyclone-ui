@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Field
 
+## [0.5.52](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.52) (11/05/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.49**
+- Updated **button** to **v0.6.52**
+- Updated **form** to **v0.9.50**
+- Updated **helpers** to **v0.3.49**
+- Updated **icons** to **v0.0.47**
+- Updated **link** to **v0.5.52**
+- Updated **spinner** to **v0.5.49**
+- Updated **state** to **v0.0.51**
+- Updated **themeable-icon** to **v0.6.51**
+- Updated **tooltip** to **v0.5.52**
+- Updated **validation-text** to **v0.5.51**
+
 ## [0.5.51](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.51) (11/05/2026)
 
 ### Updated Dependencies

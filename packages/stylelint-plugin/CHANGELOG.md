@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.39](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.39) (11/05/2026)
+
+### Features
+
+- **file:** Initial check-in of the `File` component package ([33ae985b4](https://github.com/storm-software/cyclone-ui/commit/33ae985b4))
+
 ## [0.0.36](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.36) (11/04/2026)
 
 ### Miscellaneous

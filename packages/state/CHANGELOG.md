@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - State
 
+## [0.0.51](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.51) (11/05/2026)
+
+### Features
+
+- **file:** Initial check-in of the `File` component package ([33ae985b4](https://github.com/storm-software/cyclone-ui/commit/33ae985b4))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.49**
+
 ## [0.0.50](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.50) (11/05/2026)
 
 ### Updated Dependencies

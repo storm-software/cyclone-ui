@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Message
 
+## [0.6.53](https://github.com/storm-software/cyclone-ui/releases/tag/message%400.6.53) (11/05/2026)
+
+### Features
+
+- **file:** Initial check-in of the `File` component package ([33ae985b4](https://github.com/storm-software/cyclone-ui/commit/33ae985b4))
+
+### Updated Dependencies
+
+- Updated **alert** to **v0.4.53**
+- Updated **button** to **v0.6.52**
+- Updated **state** to **v0.0.51**
+
 ## [0.6.52](https://github.com/storm-software/cyclone-ui/releases/tag/message%400.6.52) (11/05/2026)
 
 ### Updated Dependencies

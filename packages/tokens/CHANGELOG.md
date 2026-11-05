@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Tokens
 
+## [0.3.38](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.38) (11/05/2026)
+
+### Features
+
+- **file:** Initial check-in of the `File` component package ([33ae985b4](https://github.com/storm-software/cyclone-ui/commit/33ae985b4))
+
 ## [0.3.35](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.35) (11/04/2026)
 
 ### Miscellaneous

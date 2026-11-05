@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Alert
 
+## [0.4.53](https://github.com/storm-software/cyclone-ui/releases/tag/alert%400.4.53) (11/05/2026)
+
+### Features
+
+- **file:** Initial check-in of the `File` component package ([33ae985b4](https://github.com/storm-software/cyclone-ui/commit/33ae985b4))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.49**
+- Updated **button** to **v0.6.52**
+- Updated **container** to **v0.6.51**
+- Updated **heading-text** to **v0.5.50**
+- Updated **icons** to **v0.0.47**
+- Updated **themeable-icon** to **v0.6.51**
+
 ## [0.4.52](https://github.com/storm-software/cyclone-ui/releases/tag/alert%400.4.52) (11/05/2026)
 
 ### Updated Dependencies
