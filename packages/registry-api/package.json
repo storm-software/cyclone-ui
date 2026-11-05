@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/registry-api",
-  "version": "0.3.50",
+  "version": "0.3.51",
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
     "type": "github",

@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Slider
 
+## [0.0.50](https://github.com/storm-software/cyclone-ui/releases/tag/slider%400.0.50) (11/05/2026)
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.54**
+- Updated **form** to **v0.9.52**
+- Updated **helpers** to **v0.3.51**
+- Updated **icons** to **v0.0.49**
+- Updated **tokens** to **v0.3.40**
+
 ## [0.0.49](https://github.com/storm-software/cyclone-ui/releases/tag/slider%400.0.49) (11/05/2026)
 
 ### Updated Dependencies

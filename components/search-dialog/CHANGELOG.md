@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Search Dialog
 
+## [0.0.32](https://github.com/storm-software/cyclone-ui/releases/tag/search-dialog%400.0.32) (11/05/2026)
+
+### Bug Fixes
+
+- **navigation-header:** Resolve issue with animations in navigation header ([608eb080e](https://github.com/storm-software/cyclone-ui/commit/608eb080e))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.51**
+- Updated **button** to **v0.6.54**
+- Updated **dialog** to **v0.3.55**
+- Updated **icons** to **v0.0.49**
+- Updated **input** to **v0.6.54**
+- Updated **toggle-group** to **v0.0.43**
+- Updated **vectors** to **v0.5.53**
+- Updated **visually-hidden** to **v0.5.51**
+
 ## [0.0.31](https://github.com/storm-software/cyclone-ui/releases/tag/search-dialog%400.0.31) (11/05/2026)
 
 ### Updated Dependencies
