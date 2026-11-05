@@ -2,6 +2,25 @@
 
 # Changelog for Cyclone UI - Card
 
+## [0.6.54](https://github.com/storm-software/cyclone-ui/releases/tag/card%400.6.54) (11/05/2026)
+
+### Features
+
+- **context-menu:** Added the child and themed menu items ([47dbc07c5](https://github.com/storm-software/cyclone-ui/commit/47dbc07c5))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.50**
+- Updated **container** to **v0.6.52**
+- Updated **eyebrow-text** to **v0.5.50**
+- Updated **heading-text** to **v0.5.51**
+- Updated **helpers** to **v0.3.50**
+- Updated **icons** to **v0.0.48**
+- Updated **link** to **v0.5.53**
+- Updated **tag** to **v0.0.48**
+- Updated **themeable-icon** to **v0.6.52**
+- Updated **vectors** to **v0.5.52**
+
 ## [0.6.53](https://github.com/storm-software/cyclone-ui/releases/tag/card%400.6.53) (11/05/2026)
 
 ### Updated Dependencies

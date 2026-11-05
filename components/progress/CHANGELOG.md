@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Progress
 
+## [0.5.50](https://github.com/storm-software/cyclone-ui/releases/tag/progress%400.5.50) (11/05/2026)
+
+### Features
+
+- **progress:** Added the `variant` and `dashed` variant type ([5535f8cb6](https://github.com/storm-software/cyclone-ui/commit/5535f8cb6))
+
 ## [0.5.46](https://github.com/storm-software/cyclone-ui/releases/tag/progress%400.5.46) (11/04/2026)
 
 ### Miscellaneous

@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Circular Progress
 
+## [0.0.48](https://github.com/storm-software/cyclone-ui/releases/tag/circular-progress%400.0.48) (11/05/2026)
+
+### Features
+
+- **progress:** Added the `variant` and `dashed` variant type ([5535f8cb6](https://github.com/storm-software/cyclone-ui/commit/5535f8cb6))
+
 ## [0.0.44](https://github.com/storm-software/cyclone-ui/releases/tag/circular-progress%400.0.44) (11/04/2026)
 
 ### Miscellaneous

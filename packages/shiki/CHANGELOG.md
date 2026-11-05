@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Shiki
 
+## [0.0.40](https://github.com/storm-software/cyclone-ui/releases/tag/shiki%400.0.40) (11/05/2026)
+
+### Features
+
+- **context-menu:** Added the child and themed menu items ([47dbc07c5](https://github.com/storm-software/cyclone-ui/commit/47dbc07c5))
+
 ## [0.0.36](https://github.com/storm-software/cyclone-ui/releases/tag/shiki%400.0.36) (11/04/2026)
 
 ### Miscellaneous

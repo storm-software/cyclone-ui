@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Tokens
 
+## [0.3.39](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.39) (11/05/2026)
+
+### Features
+
+- **context-menu:** Added the child and themed menu items ([47dbc07c5](https://github.com/storm-software/cyclone-ui/commit/47dbc07c5))
+
 ## [0.3.38](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.38) (11/05/2026)
 
 ### Features

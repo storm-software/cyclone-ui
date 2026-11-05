@@ -2,6 +2,28 @@
 
 # Changelog for Cyclone UI - File
 
+## [0.0.3](https://github.com/storm-software/cyclone-ui/releases/tag/file%400.0.3) (11/05/2026)
+
+### Features
+
+- **context-menu:** Added the child and themed menu items ([47dbc07c5](https://github.com/storm-software/cyclone-ui/commit/47dbc07c5))
+- **progress:** Added the `variant` and `dashed` variant type ([5535f8cb6](https://github.com/storm-software/cyclone-ui/commit/5535f8cb6))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.50**
+- Updated **button** to **v0.6.53**
+- Updated **bytes-text** to **v0.5.50**
+- Updated **heading-text** to **v0.5.51**
+- Updated **helpers** to **v0.3.50**
+- Updated **icons** to **v0.0.48**
+- Updated **link** to **v0.5.53**
+- Updated **number-text** to **v0.5.50**
+- Updated **pdf-document-display** to **v0.5.52**
+- Updated **progress** to **v0.5.50**
+- Updated **state** to **v0.0.52**
+- Updated **themeable-icon** to **v0.6.52**
+
 ## [0.0.2](https://github.com/storm-software/cyclone-ui/releases/tag/file%400.0.2) (11/05/2026)
 
 ### Features
