@@ -50,6 +50,26 @@ export const Brand: Story = {
   }
 };
 
+export const Dashed: Story = {
+  args: {
+    variant: "dashed"
+  }
+};
+
+export const DashedBrand: Story = {
+  args: {
+    variant: "dashed",
+    theme: "brand"
+  }
+};
+
+export const DashedCustomSegments: Story = {
+  args: {
+    variant: "dashed",
+    segments: 24
+  }
+};
+
 export const DataColor: Story = {
   args: {
     color: "data-pink-emphasis"

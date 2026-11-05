@@ -29,6 +29,7 @@
     "@cyclone-ui/pdf-document-display": "workspace:*",
     "@cyclone-ui/progress": "workspace:*",
     "@cyclone-ui/state": "workspace:*",
+    "@cyclone-ui/themeable-icon": "workspace:*",
     "@stryke/date": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/image": "catalog:",

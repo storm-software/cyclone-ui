@@ -26,8 +26,14 @@ import type {
   TamaguiElement,
   ThemeTokens
 } from "@tamagui/core";
-import { createStyledHOC, getVariableValue, useTheme } from "@tamagui/core";
+import {
+  createStyledHOC,
+  getVariableValue,
+  useTheme,
+  View
+} from "@tamagui/core";
 import { Progress as TamaguiProgress } from "@tamagui/progress";
+import { useEffect, useRef, useState } from "react";
 import { Circle, Svg } from "react-native-svg";
 
 const VIEWBOX_SIZE = 24;
@@ -42,8 +48,45 @@ const CIRCULAR_PROGRESS_SIZES = {
   xl: "26xl"
 } as const;
 
+// The dashed ring: segment count, and each segment's size as a fraction of
+// the diameter.
+const DASHED_SEGMENTS = 20;
+const POP_DURATION = 150;
+
+// When several segments fill in one update, they light one after another.
+// Each update picks a step so its sweep takes at most `MAX_STAGGER` ms.
+// Emptying is immediate.
+const STAGGER = 40;
+const MAX_STAGGER = 600;
+
+const useStaggeredCount = (target: number) => {
+  const [state, setState] = useState({ lit: target, target, step: STAGGER });
+  if (state.target !== target) {
+    setState({
+      lit: Math.min(state.lit, target),
+      target,
+      step: Math.min(STAGGER, MAX_STAGGER / Math.max(1, target - state.lit))
+    });
+  }
+
+  useEffect(() => {
+    if (state.lit >= state.target) return;
+
+    const timeout = setTimeout(
+      () => setState(current => ({ ...current, lit: current.lit + 1 })),
+      state.step
+    );
+
+    return () => clearTimeout(timeout);
+  }, [state]);
+
+  return Math.min(state.lit, target);
+};
+
 export type CircularProgressSize = keyof typeof CIRCULAR_PROGRESS_SIZES;
 type CircularProgressSizeProp = CircularProgressSize | SizeTokens;
+
+export type CircularProgressVariant = "solid" | "dashed";
 
 export type CircularProgressProps = Omit<
   GetProps<typeof TamaguiProgress>,
@@ -51,6 +94,48 @@ export type CircularProgressProps = Omit<
 > & {
   color?: ColorTokens | ThemeTokens;
   size?: CircularProgressSizeProp;
+  /**
+   * `solid` draws a continuous ring. `dashed` splits the ring into segments
+   * that light up (with a brief scale pop) as the value increases.
+   */
+  variant?: CircularProgressVariant;
+  /** The number of dashed segments around the ring. Defaults to 20. */
+  segments?: number;
+};
+
+const ProgressSegment = ({
+  filled,
+  color,
+  ...props
+}: GetProps<typeof View> & {
+  filled: boolean;
+  color: ColorTokens | ThemeTokens;
+}) => {
+  const [popping, setPopping] = useState(false);
+  const wasFilledRef = useRef(filled);
+
+  useEffect(() => {
+    const filling = filled && !wasFilledRef.current;
+    wasFilledRef.current = filled;
+    if (!filling) return;
+
+    setPopping(true);
+    const timeout = setTimeout(() => setPopping(false), POP_DURATION);
+
+    return () => {
+      clearTimeout(timeout);
+      setPopping(false);
+    };
+  }, [filled]);
+
+  return (
+    <View
+      transition="150ms"
+      backgroundColor={filled ? color : "sunken"}
+      scale={popping ? 1.3 : 1}
+      {...props}
+    />
+  );
 };
 
 const getProgressRatio = (value: number | null, max: number) => {
@@ -75,6 +160,8 @@ export const CircularProgress = createStyledHOC(
       size = "sm",
       value = 0,
       max = 100,
+      variant = "solid",
+      segments = DASHED_SEGMENTS,
       ...props
     }: CircularProgressProps,
     forwardRef
@@ -91,6 +178,12 @@ export const CircularProgress = createStyledHOC(
     );
     const trackColor = getVariableValue(theme.sunken, "color");
     const progressRatio = getProgressRatio(value, max);
+    const count = Math.max(1, Math.round(segments));
+    const filled = useStaggeredCount(
+      variant === "dashed" ? Math.round(progressRatio * count) : 0
+    );
+    // Segments thin out as the count grows: 7% of the diameter at 20.
+    const segmentWidth = `${Math.min(12, 140 / count)}%`;
 
     return (
       <TamaguiProgress
@@ -105,33 +198,59 @@ export const CircularProgress = createStyledHOC(
         minWidth={resolvedSize}
         width={resolvedSize}
         backgroundColor="transparent">
-        <Svg
-          height="100%"
-          pointerEvents="none"
-          viewBox={`0 0 ${VIEWBOX_SIZE} ${VIEWBOX_SIZE}`}
-          width="100%">
-          <Circle
-            cx={VIEWBOX_SIZE / 2}
-            cy={VIEWBOX_SIZE / 2}
-            fill="none"
-            r={RADIUS}
-            stroke={trackColor}
-            strokeWidth={STROKE_WIDTH}
-          />
-          <Circle
-            cx={VIEWBOX_SIZE / 2}
-            cy={VIEWBOX_SIZE / 2}
-            fill="none"
-            origin={`${VIEWBOX_SIZE / 2}, ${VIEWBOX_SIZE / 2}`}
-            r={RADIUS}
-            rotation="-90"
-            stroke={indicatorColor}
-            strokeDasharray={CIRCUMFERENCE}
-            strokeDashoffset={CIRCUMFERENCE * (1 - progressRatio)}
-            strokeLinecap="round"
-            strokeWidth={STROKE_WIDTH}
-          />
-        </Svg>
+        {variant === "dashed" ? (
+          Array.from({ length: count }, (_, index) => (
+            // Each segment hangs from the top of a rotated full-size layer.
+            // The padding leaves room for the pop inside the clip.
+            <View
+              key={index}
+              position="absolute"
+              top={0}
+              right={0}
+              bottom={0}
+              left={0}
+              padding="3%"
+              alignItems="center"
+              pointerEvents="none"
+              rotate={`${(360 / count) * index}deg`}>
+              <ProgressSegment
+                filled={index < filled}
+                color={color}
+                width={segmentWidth}
+                height="24%"
+                borderRadius={1000}
+              />
+            </View>
+          ))
+        ) : (
+          <Svg
+            height="100%"
+            pointerEvents="none"
+            viewBox={`0 0 ${VIEWBOX_SIZE} ${VIEWBOX_SIZE}`}
+            width="100%">
+            <Circle
+              cx={VIEWBOX_SIZE / 2}
+              cy={VIEWBOX_SIZE / 2}
+              fill="none"
+              r={RADIUS}
+              stroke={trackColor}
+              strokeWidth={STROKE_WIDTH}
+            />
+            <Circle
+              cx={VIEWBOX_SIZE / 2}
+              cy={VIEWBOX_SIZE / 2}
+              fill="none"
+              origin={`${VIEWBOX_SIZE / 2}, ${VIEWBOX_SIZE / 2}`}
+              r={RADIUS}
+              rotation="-90"
+              stroke={indicatorColor}
+              strokeDasharray={CIRCUMFERENCE}
+              strokeDashoffset={CIRCUMFERENCE * (1 - progressRatio)}
+              strokeLinecap="round"
+              strokeWidth={STROKE_WIDTH}
+            />
+          </Svg>
+        )}
       </TamaguiProgress>
     );
   },

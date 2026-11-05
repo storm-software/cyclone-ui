@@ -4,6 +4,7 @@
     "tsBuildInfoFile": "../../dist/out-tsc/components/file/tsconfig.tsbuildinfo",
     "jsx": "preserve",
     "ignoreDeprecations": "6.0",
+    "lib": ["ESNext", "DOM"],
     "rootDir": ".",
     "types": [
       "node",
@@ -48,6 +49,9 @@
     },
     {
       "path": "../body-text"
+    },
+    {
+      "path": "../themeable-icon"
     }
   ],
   "files": [],

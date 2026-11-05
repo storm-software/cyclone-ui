@@ -21,18 +21,86 @@
 // The `@tamagui/tailwind` variant of CircularProgress.tsx, installed in its
 // place by `cyclone-ui init --style tailwind`. Keep the exports in sync.
 
-import type { ColorTokens, ThemeTokens } from "@tamagui/core";
+import type { ColorTokens, ThemeTokens, TransitionProp } from "@tamagui/core";
 import { getVariableValue, useTheme } from "@tamagui/core";
 import type { TailwindViewElement } from "@tamagui/tailwind";
 import { styled, View } from "@tamagui/tailwind";
 import type { ComponentPropsWithoutRef } from "react";
-import { forwardRef } from "react";
+import { forwardRef, useEffect, useRef, useState } from "react";
 import { Circle, Svg } from "react-native-svg";
 
 const VIEWBOX_SIZE = 24;
 const STROKE_WIDTH = 2.5;
 const RADIUS = VIEWBOX_SIZE / 2 - STROKE_WIDTH / 2;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
+const DASHED_SEGMENTS = 20;
+const POP_DURATION = 150;
+
+// When several segments fill in one update, they light one after another.
+// Each update picks a step so its sweep takes at most `MAX_STAGGER` ms.
+// Emptying is immediate.
+const STAGGER = 40;
+const MAX_STAGGER = 600;
+
+const useStaggeredCount = (target: number) => {
+  const [state, setState] = useState({ lit: target, target, step: STAGGER });
+  if (state.target !== target) {
+    setState({
+      lit: Math.min(state.lit, target),
+      target,
+      step: Math.min(STAGGER, MAX_STAGGER / Math.max(1, target - state.lit))
+    });
+  }
+
+  useEffect(() => {
+    if (state.lit >= state.target) return;
+
+    const timeout = setTimeout(
+      () => setState(current => ({ ...current, lit: current.lit + 1 })),
+      state.step
+    );
+
+    return () => clearTimeout(timeout);
+  }, [state]);
+
+  return Math.min(state.lit, target);
+};
+
+const fade: { transition: TransitionProp } = { transition: "150ms" };
+
+const ProgressSegment = ({
+  filled,
+  color,
+  width
+}: {
+  filled: boolean;
+  color: ColorTokens | ThemeTokens;
+  width: string;
+}) => {
+  const [popping, setPopping] = useState(false);
+  const wasFilledRef = useRef(filled);
+
+  useEffect(() => {
+    const filling = filled && !wasFilledRef.current;
+    wasFilledRef.current = filled;
+    if (!filling) return;
+
+    setPopping(true);
+    const timeout = setTimeout(() => setPopping(false), POP_DURATION);
+
+    return () => {
+      clearTimeout(timeout);
+      setPopping(false);
+    };
+  }, [filled]);
+
+  return (
+    <View
+      {...fade}
+      className={`h-[24%] w-[${width}] rounded-[999px] bg-${filled ? color : "sunken"} ${popping ? "scale-[1.3]" : "scale-100"}`}
+    />
+  );
+};
 
 // Other sizes come from `className`, e.g. `size-12xl min-w-12xl`.
 const CircularProgressFrame = styled(
@@ -64,6 +132,13 @@ export interface CircularProgressProps extends Omit<
   max?: number;
   getValueLabel?: (value: number, max: number) => string;
   color?: ColorTokens | ThemeTokens;
+  /**
+   * `solid` draws a continuous ring. `dashed` splits the ring into segments
+   * that light up (with a brief scale pop) as the value increases.
+   */
+  variant?: "solid" | "dashed";
+  /** The number of dashed segments around the ring. Defaults to 20. */
+  segments?: number;
 }
 
 // The same value handling and ARIA output as `@tamagui/progress`.
@@ -85,6 +160,8 @@ export const CircularProgress = forwardRef<
       value: valueProp = 0,
       max: maxProp = DEFAULT_MAX,
       getValueLabel = defaultGetValueLabel,
+      variant = "solid",
+      segments = DASHED_SEGMENTS,
       ...props
     },
     forwardedRef
@@ -101,6 +178,12 @@ export const CircularProgress = forwardRef<
     );
     const trackColor = getVariableValue(theme.sunken, "color");
     const progressRatio = (value ?? 0) / max;
+    const count = Math.max(1, Math.round(segments));
+    const filled = useStaggeredCount(
+      variant === "dashed" ? Math.round(progressRatio * count) : 0
+    );
+    // Segments thin out as the count grows: 7% of the diameter at 20.
+    const segmentWidth = `${Math.min(12, 140 / count)}%`;
 
     return (
       <CircularProgressFrame
@@ -120,33 +203,49 @@ export const CircularProgress = forwardRef<
         data-value={value ?? undefined}
         data-max={max}
         {...props}>
-        <Svg
-          height="100%"
-          pointerEvents="none"
-          viewBox={`0 0 ${VIEWBOX_SIZE} ${VIEWBOX_SIZE}`}
-          width="100%">
-          <Circle
-            cx={VIEWBOX_SIZE / 2}
-            cy={VIEWBOX_SIZE / 2}
-            fill="none"
-            r={RADIUS}
-            stroke={trackColor}
-            strokeWidth={STROKE_WIDTH}
-          />
-          <Circle
-            cx={VIEWBOX_SIZE / 2}
-            cy={VIEWBOX_SIZE / 2}
-            fill="none"
-            origin={`${VIEWBOX_SIZE / 2}, ${VIEWBOX_SIZE / 2}`}
-            r={RADIUS}
-            rotation="-90"
-            stroke={indicatorColor}
-            strokeDasharray={CIRCUMFERENCE}
-            strokeDashoffset={CIRCUMFERENCE * (1 - progressRatio)}
-            strokeLinecap="round"
-            strokeWidth={STROKE_WIDTH}
-          />
-        </Svg>
+        {variant === "dashed" ? (
+          Array.from({ length: count }, (_, index) => (
+            // Each segment hangs from the top of a rotated full-size layer.
+            // The padding leaves room for the pop inside the clip.
+            <View
+              key={index}
+              className={`absolute inset-0 items-center p-[3%] rotate-[${(360 / count) * index}deg]`}>
+              <ProgressSegment
+                filled={index < filled}
+                color={color}
+                width={segmentWidth}
+              />
+            </View>
+          ))
+        ) : (
+          <Svg
+            height="100%"
+            pointerEvents="none"
+            viewBox={`0 0 ${VIEWBOX_SIZE} ${VIEWBOX_SIZE}`}
+            width="100%">
+            <Circle
+              cx={VIEWBOX_SIZE / 2}
+              cy={VIEWBOX_SIZE / 2}
+              fill="none"
+              r={RADIUS}
+              stroke={trackColor}
+              strokeWidth={STROKE_WIDTH}
+            />
+            <Circle
+              cx={VIEWBOX_SIZE / 2}
+              cy={VIEWBOX_SIZE / 2}
+              fill="none"
+              origin={`${VIEWBOX_SIZE / 2}, ${VIEWBOX_SIZE / 2}`}
+              r={RADIUS}
+              rotation="-90"
+              stroke={indicatorColor}
+              strokeDasharray={CIRCUMFERENCE}
+              strokeDashoffset={CIRCUMFERENCE * (1 - progressRatio)}
+              strokeLinecap="round"
+              strokeWidth={STROKE_WIDTH}
+            />
+          </Svg>
+        )}
       </CircularProgressFrame>
     );
   }

@@ -19,7 +19,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { View } from "@tamagui/core";
 import { useEffect, useState } from "react";
-import { expect, fn, userEvent, within } from "storybook/test";
+import { expect, fn, userEvent, waitFor, within } from "storybook/test";
 import { File } from "./File";
 
 const meta: Meta<typeof File> = {
@@ -118,6 +118,43 @@ export const UploadComplete: Story = {
     await expect(
       within(canvasElement).queryByRole("progressbar")
     ).not.toBeInTheDocument();
+    // Only an upload finishing shows the success state.
+    await expect(
+      within(canvasElement).queryByRole("status")
+    ).not.toBeInTheDocument();
+  }
+};
+
+export const UploadSucceeded: Story = {
+  render: (args: any) => {
+    const [progress, setProgress] = useState(90);
+    useEffect(() => {
+      const timeout = setTimeout(() => setProgress(100), 500);
+
+      return () => clearTimeout(timeout);
+    }, []);
+
+    return (
+      <View
+        backgroundColor="background"
+        padding={24}
+        width={500}
+        maxWidth="100%">
+        <File {...args} progress={progress} />
+      </View>
+    );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await expect(
+      await canvas.findByRole("status", {}, { timeout: 2000 })
+    ).toHaveTextContent("Upload complete");
+    await expect(canvas.queryByRole("progressbar")).not.toBeInTheDocument();
+    // The success state is brief.
+    await waitFor(
+      async () => expect(canvas.queryByRole("status")).not.toBeInTheDocument(),
+      { timeout: 5000 }
+    );
   }
 };
 

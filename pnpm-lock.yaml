@@ -2553,6 +2553,9 @@ importers:
       '@cyclone-ui/state':
         specifier: workspace:*
         version: link:../../packages/state
+      '@cyclone-ui/themeable-icon':
+        specifier: workspace:*
+        version: link:../themeable-icon
       '@stryke/date':
         specifier: 'catalog:'
         version: 0.0.29

@@ -80,6 +80,33 @@ export const ExtraLarge: Story = {
   }
 };
 
+export const Dashed: Story = {
+  args: {
+    variant: "dashed"
+  }
+};
+
+export const DashedBrand: Story = {
+  args: {
+    variant: "dashed",
+    theme: "brand"
+  }
+};
+
+export const DashedLarge: Story = {
+  args: {
+    variant: "dashed",
+    size: "lg"
+  }
+};
+
+export const DashedCustomSegments: Story = {
+  args: {
+    variant: "dashed",
+    segments: 12
+  }
+};
+
 export const DataColor: Story = {
   args: {
     color: "data-pink-emphasis"

@@ -1111,8 +1111,10 @@
         "@cyclone-ui/heading-text",
         "@cyclone-ui/icons",
         "@cyclone-ui/link",
+        "@cyclone-ui/number-text",
         "@cyclone-ui/pdf-document-display",
-        "@cyclone-ui/progress"
+        "@cyclone-ui/progress",
+        "@cyclone-ui/themeable-icon"
       ],
       "files": [
         {

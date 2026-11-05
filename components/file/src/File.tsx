@@ -35,14 +35,16 @@ import { Link } from "@cyclone-ui/link";
 import { NumberText } from "@cyclone-ui/number-text";
 import { Progress } from "@cyclone-ui/progress";
 import type { ClientFileResult } from "@cyclone-ui/state";
+import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import { formatDate } from "@stryke/date/format";
+import type { TamaguiWebElement } from "@tamagui/core";
 import { styled, Text, Theme, View } from "@tamagui/core";
 import { Image } from "@tamagui/image";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import { XStack, YStack } from "@tamagui/stacks";
 import { SizableText } from "@tamagui/text";
 import type { PropsWithChildren } from "react";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { FilePdfPreview } from "./FilePdfPreview";
 
 /**
@@ -174,6 +176,14 @@ const TEXT_EXTENSION =
 const MAX_TEXT_PREVIEW_FILE_SIZE = 1024 * 1024;
 const MAX_TEXT_PREVIEW_LENGTH = 2048;
 
+/** How long the success state shows after an upload completes. */
+const UPLOAD_SUCCESS_DURATION = 3000;
+
+/** How long the upload status takes to fade and resize. */
+const UPLOAD_STATUS_TRANSITION_DURATION = 200;
+
+type FileUploadStatus = "uploading" | "success" | "failed";
+
 type FilePreviewKind = "image" | "text" | "pdf";
 
 const getFilePreviewKind = (
@@ -193,13 +203,7 @@ const getFilePreviewKind = (
   return "image";
 };
 
-const FileTextPreview = ({
-  uri,
-  size
-}: {
-  uri: string;
-  size?: number;
-}) => {
+const FileTextPreview = ({ uri, size }: { uri: string; size?: number }) => {
   const [text, setText] = useState("");
 
   useEffect(() => {
@@ -280,8 +284,9 @@ export type FileProps = PropsWithChildren<ClientFileResult> & {
  * @remarks
  * While `progress` is between 0 and 100, an inline progress bar shows how
  * much of the file has been uploaded, and the remove button cancels the
- * upload instead. A `failed` status outlines the card in the danger color and
- * shows the first danger issue's message.
+ * upload instead. When the upload completes, the card briefly shows a success
+ * state. A `failed` status outlines the card in the danger color and shows the
+ * first danger issue's message.
  */
 export const File = ({
   id,
@@ -309,6 +314,88 @@ export const File = ({
   const failedMessage =
     issues?.find(issue => issue.type === "danger")?.message || "Upload failed";
 
+  // Set while rendering (not in an effect) so the success state replaces the
+  // progress bar in the same frame.
+  const [wasUploading, setWasUploading] = useState(uploading);
+  const [succeeded, setSucceeded] = useState(false);
+  if (uploading !== wasUploading) {
+    setWasUploading(uploading);
+    setSucceeded(!uploading && !failed);
+  }
+  useEffect(() => {
+    if (!succeeded) {
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      setSucceeded(false);
+    }, UPLOAD_SUCCESS_DURATION);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [succeeded]);
+  const showSuccess = succeeded && !failed && !uploading;
+
+  // The status shown under the metadata. It lags behind `uploadStatus` so the
+  // previous status can fade out before the next one fades in.
+  const uploadStatus: FileUploadStatus | null = failed
+    ? "failed"
+    : uploading
+      ? "uploading"
+      : showSuccess
+        ? "success"
+        : null;
+  const [shownStatus, setShownStatus] = useState(uploadStatus);
+  useEffect(() => {
+    if (uploadStatus === shownStatus) {
+      return;
+    }
+    if (!shownStatus) {
+      setShownStatus(uploadStatus);
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      setShownStatus(uploadStatus);
+    }, UPLOAD_STATUS_TRANSITION_DURATION);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [uploadStatus, shownStatus]);
+  const statusVisible = Boolean(shownStatus) && shownStatus === uploadStatus;
+
+  // Resizes the status slot to fit its content, so the text around it glides
+  // instead of snapping. Written straight to the DOM in the observer callback
+  // (after layout, before paint): `onLayout` reports too late to follow the
+  // fades, and the slot is not a Tamagui transition, so it never chases a
+  // tween.
+  const statusSlotRef = useRef<TamaguiWebElement>(null);
+  const statusContentRef = useRef<TamaguiWebElement>(null);
+  useLayoutEffect(() => {
+    const slot = statusSlotRef.current;
+    const content = statusContentRef.current;
+    if (!slot || !content || typeof ResizeObserver === "undefined") {
+      return;
+    }
+
+    const updateHeight = () => {
+      slot.style.height = uploadStatus ? `${content.offsetHeight}px` : "0px";
+    };
+    updateHeight();
+    // Set after the first height, so the slot never animates in on mount.
+    slot.style.transition = `height ${UPLOAD_STATUS_TRANSITION_DURATION}ms ease-out`;
+
+    const resizeObserver = new ResizeObserver(updateHeight);
+    resizeObserver.observe(content);
+
+    return () => resizeObserver.disconnect();
+  }, [uploadStatus]);
+  // The upload can finish (and `progress` be cleared) while the progress bar
+  // is still fading out.
+  const shownProgress = Math.max(progress ?? 100, 0);
+
   return (
     <View
       group="file"
@@ -321,8 +408,10 @@ export const File = ({
       overflow="hidden"
       position="relative"
       borderRadius="card"
-      // The danger outline overlay below stands in for the border.
-      borderColor={failed ? "transparent" : "outline hover:outline-hovered"}
+      // The status outline overlays below stand in for the border.
+      borderColor={
+        failed || showSuccess ? "transparent" : "outline hover:outline-hovered"
+      }
       borderWidth={1}
       boxShadow="none hover:ring-offset"
       onClick={event => event.stopPropagation()}
@@ -366,21 +455,34 @@ export const File = ({
         )}
       </View>
 
-      {/* An overlay, so the card itself never switches theme (which would
+      {/* Overlays, so the card itself never switches theme (which would
           remount its preview). */}
-      {failed && (
-        <Theme name="danger">
-          <View
-            position="absolute"
-            inset={0}
-            zIndex="40"
-            borderRadius="card"
-            borderWidth={1}
-            borderColor="primary"
-            pointerEvents="none"
-          />
-        </Theme>
-      )}
+      <Theme name="danger">
+        <View
+          transition="200ms"
+          opacity={failed ? 1 : 0}
+          position="absolute"
+          inset={0}
+          zIndex="40"
+          borderRadius="card"
+          borderWidth={1}
+          borderColor="primary"
+          pointerEvents="none"
+        />
+      </Theme>
+      <Theme name="success">
+        <View
+          transition="200ms"
+          opacity={showSuccess ? 1 : 0}
+          position="absolute"
+          inset={0}
+          zIndex="40"
+          borderRadius="card"
+          borderWidth={1}
+          borderColor="primary"
+          pointerEvents="none"
+        />
+      </Theme>
 
       {!disabled && handleRemove && (
         <View
@@ -400,9 +502,7 @@ export const File = ({
             size={buttonSize}
             noPadding={true}
             circular={true}>
-            <Button.Icon>
-              {uploading ? <Close /> : <Trash />}
-            </Button.Icon>
+            <Button.Icon>{uploading ? <Close /> : <Trash />}</Button.Icon>
           </Button>
         </View>
       )}
@@ -450,9 +550,7 @@ export const File = ({
                 {
                   key: "size",
                   value: (
-                    <FileBytesText
-                      controlSize={controlSize}
-                      render="span">
+                    <FileBytesText controlSize={controlSize} render="span">
                       {size}
                     </FileBytesText>
                   )
@@ -492,54 +590,91 @@ export const File = ({
               </FileMetadataText>
             )}
           </FileMetadataText>
-          {uploading && (
-            <YStack zIndex="30" width="100%" gap="xl">
-              <Progress
-                value={Math.max(progress, 0)}
-                minWidth={0}
-                aria-label={`Uploading ${name || "file"}`}
-              />
-              <FileMetadataText
-                controlSize={controlSize}
-                textAlign="center"
-                aria-live="polite"
-                color="subtle"
-                size="sm"
-                >
-                {"Uploading\u2026 "}
-                <FileNumberText controlSize={controlSize} color="inherit">
-                  {Math.round(Math.max(progress, 0))}
-                </FileNumberText>
-                %
-              </FileMetadataText>
-            </YStack>
-          )}
-          {failed && (
-            <Theme name="danger">
-              <XStack
-                zIndex="30"
-                gap="xl"
-                justifyContent="center"
-                alignItems="center"
-                role="alert">
-                {/* Icons only resolve a plain theme key, so the color is set
-                    on a wrapper whose CSS color the icon inherits. */}
-                <Text display="flex" color="primary" flexShrink={0}>
-                  <AlertCircle
-                    size={getSized("4xl") * scale}
-                    color="currentColor"
-                    animated={false}
+          {/* The previous status fades out before the next fades in, while
+              the slot resizes to fit (see `statusSlotRef`). */}
+          <View ref={statusSlotRef} zIndex="30" width="100%" overflow="hidden">
+            <View
+              ref={statusContentRef}
+              transition="200ms"
+              width="100%"
+              // Stands in for the stack's gap, which would not collapse.
+              paddingTop="xl"
+              opacity={statusVisible ? "1 enter:0" : 0}
+              aria-hidden={!statusVisible}>
+              {shownStatus === "uploading" && (
+                <YStack zIndex="30" width="100%" gap="xl">
+                  <Progress
+                    variant="dashed"
+                    value={shownProgress}
+                    minWidth={0}
+                    aria-label={`Uploading ${name || "file"}`}
                   />
-                </Text>
-                <FileMetadataText
-                  controlSize={controlSize}
-                  color="primary"
-                  textAlign="center">
-                  {failedMessage}
-                </FileMetadataText>
-              </XStack>
-            </Theme>
-          )}
+                  <FileMetadataText
+                    controlSize={controlSize}
+                    textAlign="center"
+                    aria-live="polite"
+                    color="subtle"
+                    size="sm">
+                    {"Uploading\u2026 "}
+                    <FileNumberText controlSize={controlSize} color="inherit">
+                      {Math.round(shownProgress)}
+                    </FileNumberText>
+                    %
+                  </FileMetadataText>
+                </YStack>
+              )}
+              {shownStatus === "failed" && (
+                <Theme name="danger">
+                  <XStack
+                    zIndex="30"
+                    gap="xl"
+                    justifyContent="center"
+                    alignItems="center"
+                    role="alert">
+                    {/* Icons only resolve a plain theme key, so the color is
+                        set on a wrapper whose CSS color the icon inherits. */}
+                    <Text display="flex" color="primary" flexShrink={0}>
+                      <AlertCircle
+                        size={getSized("4xl") * scale}
+                        color="currentColor"
+                        animated={false}
+                      />
+                    </Text>
+                    <FileMetadataText
+                      controlSize={controlSize}
+                      color="primary"
+                      textAlign="center">
+                      {failedMessage}
+                    </FileMetadataText>
+                  </XStack>
+                </Theme>
+              )}
+              {shownStatus === "success" && (
+                <Theme name="success">
+                  <XStack
+                    zIndex="30"
+                    gap="xl"
+                    justifyContent="center"
+                    alignItems="center"
+                    role="status">
+                    <ThemeableIcon
+                      theme="success"
+                      size={getSized("4xl") * scale}
+                      color="primary"
+                      flexShrink={0}>
+                      {getIconByTheme({ theme: "success" })}
+                    </ThemeableIcon>
+                    <FileMetadataText
+                      controlSize={controlSize}
+                      color="primary"
+                      textAlign="center">
+                      Upload complete
+                    </FileMetadataText>
+                  </XStack>
+                </Theme>
+              )}
+            </View>
+          </View>
         </YStack>
       </View>
 
@@ -568,12 +703,7 @@ export const File = ({
         // preview, and with GPU compositing it let the preview paint square
         // over the card's rounded corners.
         scale="1 group-hover/file:1.2">
-        <FileFilePreview
-          key={id}
-          kind={previewKind}
-          uri={uri}
-          size={size}
-        />
+        <FileFilePreview key={id} kind={previewKind} uri={uri} size={size} />
       </View>
     </View>
   );
