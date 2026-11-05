@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Dialog
 
+## [0.3.52](https://github.com/storm-software/cyclone-ui/releases/tag/dialog%400.3.52) (11/05/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.48**
+- Updated **button** to **v0.6.51**
+- Updated **container** to **v0.6.50**
+- Updated **heading-text** to **v0.5.49**
+- Updated **overlay** to **v0.0.35**
+
 ## [0.3.51](https://github.com/storm-software/cyclone-ui/releases/tag/dialog%400.3.51) (11/05/2026)
 
 ### Features

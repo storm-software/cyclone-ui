@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Icons
 
+## [0.0.46](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.46) (11/05/2026)
+
+### Bug Fixes
+
+- **icons:** Resolve issue with names of `LogIn` and `Login` icons ([0b24b13be](https://github.com/storm-software/cyclone-ui/commit/0b24b13be))
+
 ## [0.0.44](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.44) (11/04/2026)
 
 ### Miscellaneous

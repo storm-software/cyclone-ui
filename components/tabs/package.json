@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/tabs",
-  "version": "0.3.49",
+  "version": "0.3.50",
   "type": "module",
   "description": "A tabbed interface with Header.Item triggers and Content.Item panels. It offers underline, floating, tabbed and fluid (gooey WebGL pill) tab styles, each with primary, secondary, tertiary or outlined color variants, in horizontal or vertical orientation, optional borders and sizes, and an animated active indicator. onValueChange reports the selected tab.",
   "repository": {
