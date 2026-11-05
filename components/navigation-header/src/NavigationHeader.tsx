@@ -722,7 +722,7 @@ const getSlot = <Props,>(children: ReactNode, slot: unknown) =>
 // overriding any width sized for the header bar.
 const getFullWidthActions = (children: ReactNode): ReactNode[] =>
   // eslint-disable-next-line react/no-children-to-array
-  Children.toArray(children).flatMap(async child =>
+  Children.toArray(children).flatMap(child =>
     isValidElement<{ children?: ReactNode }>(child)
       ? child.type === Fragment
         ? getFullWidthActions(child.props.children)

@@ -676,6 +676,17 @@ function DataTableImpl<TData extends RowData>({
                 : undefined
             ] as any
           }>
+          {/* Fixed layout sizes columns from the first row, which is the
+              full-width selection bar while rows are selected. */}
+          <colgroup>
+            {table.getVisibleLeafColumns().map(column => (
+              <col
+                key={column.id}
+                data-column-id={column.id}
+                style={resizable ? { width: column.getSize() } : undefined}
+              />
+            ))}
+          </colgroup>
           <Table.Header>
             {selectedRows.length > 0 && (
               <Table.Row header={true}>
@@ -687,12 +698,16 @@ function DataTableImpl<TData extends RowData>({
                   {...({ colSpan: columnCount } as any)}>
                   <XStack
                     flexGrow={1}
+                    // Zero intrinsic width so the spanning bar doesn't widen
+                    // the columns under it (it still fills the cell).
+                    width={0}
+                    minWidth="100%"
                     alignItems="center"
                     justifyContent="space-between"
                     gap="xl"
                     paddingHorizontal="xl">
                     <HeadingExtraSmallText
-                      fontWeight="600"
+                      fontWeight="medium"
                       aria-live="polite">{`${selectedRows.length} selected`}</HeadingExtraSmallText>
                     <XStack alignItems="center" gap="md">
                       {children}
@@ -1273,7 +1288,10 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
       gap="3xl"
       justifyContent="space-between"
       alignItems="center"
-      paddingRight="3xl">
+      // Static so the filter button anchors to the header cell's edge.
+      position="static"
+      // Reserves room for the absolutely positioned filter button.
+      paddingRight={column.getCanFilter() ? "8xl" : "3xl"}>
       <XStack gap="xl" flexShrink={0} cursor="pointer" onPress={handleSorting}>
         <DataTableColumnHeading
           transition="200ms"
@@ -1282,22 +1300,22 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
         </DataTableColumnHeading>
         {isSorted && !desc && (
           <XStack gap="xxs" alignItems="center">
-            <SortAscending size="4xl" color="emphasis" />
+            <SortAscending size="4xl" color="emphasis group-hover/header:emphasis-hovered" />
             <DataTableColumnHeading
               transition="200ms"
               fontWeight={600}
-              color="emphasis">
+              color="emphasis group-hover/header:emphasis-hovered">
               {sortIndex + 1}
             </DataTableColumnHeading>
           </XStack>
         )}
         {isSorted && desc && (
           <XStack gap="xxs" alignItems="center">
-            <SortDescending size="4xl" color="emphasis" />
+            <SortDescending size="4xl" color="emphasis group-hover/header:emphasis-hovered" />
             <DataTableColumnHeading
               transition="200ms"
               fontWeight={600}
-              color="emphasis">
+              color="emphasis group-hover/header:emphasis-hovered">
               {sortIndex + 1}
             </DataTableColumnHeading>
           </XStack>
@@ -1307,8 +1325,11 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
       {column.getCanFilter() && (
         <View
           transition="200ms"
-          flexShrink={0}
-          paddingRight="3xl"
+          position="absolute"
+          top={0}
+          bottom={0}
+          right="4xl"
+          justifyContent="center"
           opacity={`${filterValues.length > 0 ? 1 : 0} group-hover/header:1`}>
           <Popover allowFlip={true}>
             <Popover.Trigger asChild={true}>
@@ -1483,7 +1504,7 @@ export function DataTablePagination<TData extends RowData>({
                   size="sm"
                   onChange={handlePageSizeChange}>
                   <XStack alignItems="center" gap="3xl">
-                    <Field.Label variant="above" flexShrink={0}>
+                    <Field.Label variant="above" flexShrink={0} fontWeight="medium">
                       Per page:
                     </Field.Label>
                     <View width="18xl" flexShrink={0}>
@@ -1496,7 +1517,7 @@ export function DataTablePagination<TData extends RowData>({
           </View>
 
           <YStack gap="xs" justifyContent="center">
-            <HeadingExtraSmallText>
+            <HeadingExtraSmallText fontWeight="medium">
               {`${unfilteredCount > 0 ? pageIndex * pageSize + 1 : 0}-${Math.min((pageIndex + 1) * pageSize, unfilteredCount)} of ${unfilteredCount} ${unfilteredCount === 1 ? "row" : "rows"}`}
             </HeadingExtraSmallText>
             {unfilteredCount !== totalCount && (
@@ -1504,7 +1525,7 @@ export function DataTablePagination<TData extends RowData>({
                 justifyContent="space-between"
                 alignItems="center"
                 gap="xl">
-                <HeadingExtraSmallText>Filtering:</HeadingExtraSmallText>
+                <HeadingExtraSmallText fontWeight="medium">Filtering:</HeadingExtraSmallText>
                 <HeadingExtraSmallText>
                   {`${totalCount - unfilteredCount} ${totalCount - unfilteredCount === 1 ? "row" : "rows"}`}
                 </HeadingExtraSmallText>

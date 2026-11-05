@@ -133,5 +133,14 @@ export default defineConfig(
     rules: {
       "react/no-context-provider": "off"
     }
+  },
+  {
+    files: ["**/*.tsx"],
+    rules: {
+      // React 19's `ReactNode` includes `Promise`, so this rule's autofix adds
+      // `async` to render callbacks (`Children.map(async ...)`) and the
+      // resulting Promise children suspend forever (Table/Stepper/DataTable).
+      "ts/promise-function-async": "off"
+    }
   }
 );

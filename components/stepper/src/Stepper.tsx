@@ -245,7 +245,7 @@ export const StepperHeaderList = createStyledHOC(
           gap="3xl"
           backgroundColor="transparent">
           <AnimatePresence mode="wait" custom={{ direction }} initial={false}>
-            {Children.toArray(children).map(async (child, index) =>
+            {Children.toArray(children).map((child, index) =>
               isValidElement(child)
                 ? cloneElement(child, { index } as never)
                 : child
