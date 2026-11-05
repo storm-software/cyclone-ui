@@ -323,9 +323,9 @@ import { LoadingAlt } from "./icons/LoadingAlt";
 import { Lock } from "./icons/Lock";
 import { LockOpen } from "./icons/LockOpen";
 import { Login } from "./icons/Login";
-import { LogIn } from "./icons/LogIn";
+import { LogIn2 } from "./icons/LogIn2";
 import { Logout } from "./icons/Logout";
-import { LogOut } from "./icons/LogOut";
+import { LogOut2 } from "./icons/LogOut2";
 import { MapMarker } from "./icons/MapMarker";
 import { MapMarkerAlt } from "./icons/MapMarkerAlt";
 import { MapMarkerAltOff } from "./icons/MapMarkerAltOff";
@@ -807,9 +807,9 @@ export const allIcons: { [component: string]: IconComponent } = {
   Lock,
   LockOpen,
   Login,
-  LogIn,
+  LogIn2,
   Logout,
-  LogOut,
+  LogOut2,
   MapMarker,
   MapMarkerAlt,
   MapMarkerAltOff,

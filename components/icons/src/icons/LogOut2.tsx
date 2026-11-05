@@ -27,7 +27,7 @@ import { createIcon } from "../create-icon";
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=log-out
  */
-export const LogOut = createIcon("LogOut", {
+export const LogOut2 = createIcon("LogOut2", {
   regular: [
     {
       type: "g",

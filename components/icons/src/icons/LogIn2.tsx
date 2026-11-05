@@ -27,7 +27,7 @@ import { createIcon } from "../create-icon";
  *
  * @see https://icon-sets.iconify.design/line-md/?icon-filter=log-in
  */
-export const LogIn = createIcon("LogIn", {
+export const LogIn2 = createIcon("LogIn2", {
   regular: [
     {
       type: "g",

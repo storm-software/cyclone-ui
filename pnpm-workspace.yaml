@@ -130,8 +130,8 @@ catalog:
   "@swc-node/register": 1.11.1
   "@swc/core": 1.15.41
   "@swc/helpers": 0.5.23
-  "@trpc/client": ^11.23.0
-  "@trpc/server": ^11.23.0
+  "@trpc/client": ^11.24.0
+  "@trpc/server": ^11.24.0
   "@types/chroma-js": ^2.4.5
   "@types/react": ^19.3.0
   "@types/react-dom": ^19.3.0
@@ -191,7 +191,7 @@ catalog:
   zx: ^8.8.5
   "@storm-software/tsdoc": ^0.13.309
   playwright: ^1.64.1
-  style-dictionary: ^5.7.1
+  style-dictionary: ^5.8.0
   "@maskito/phone": 3.11.1
   libphonenumber-js: 1.12.31
   "@razorwind/shiki": ^0.0.84

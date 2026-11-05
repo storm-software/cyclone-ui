@@ -769,6 +769,10 @@ export const generator = defineGenerator<IconsSpec, IconsOptions, string[]>({
     };
 
     const components = new Set<string>();
+    const filenames = new Set<string>();
+    const reservedFilenames = new Set(
+      spec.icons.map(icon => icon.component.toLowerCase())
+    );
     for (const icon of spec.icons) {
       if (RESERVED.has(icon.component)) {
         throw new Error(`Reserved icon component name: ${icon.component}`);
@@ -777,6 +781,19 @@ export const generator = defineGenerator<IconsSpec, IconsOptions, string[]>({
         throw new Error(`Duplicate icon component name: ${icon.component}`);
       }
       components.add(icon.component);
+
+      // Distinct line-md names can produce filenames that differ only by case.
+      // Give the later icon a stable suffix so TypeScript and Git can use both.
+      if (filenames.has(icon.component.toLowerCase())) {
+        const name = icon.component;
+        let suffix = 2;
+        while (reservedFilenames.has(`${name}${suffix}`.toLowerCase())) {
+          suffix++;
+        }
+        icon.component = `${name}${suffix}`;
+        reservedFilenames.add(icon.component.toLowerCase());
+      }
+      filenames.add(icon.component.toLowerCase());
     }
 
     return Object.fromEntries(
