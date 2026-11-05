@@ -655,7 +655,7 @@ export const SearchDialog = createStyledHOC(
                     key={filter.name}
                     aria-label={filter.label}
                     size="sm"
-                    rounded={true}
+                    multiple={true}
                     flexWrap="wrap"
                     value={filterValues[filter.name] ?? null}
                     onValueChange={value =>

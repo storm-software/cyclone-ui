@@ -319,7 +319,7 @@ export const Dotted: Story = {
 
 export const TransparentAtTop: Story = {
   args: {
-    variant: "dotted",
+
     transparentAtTop: true
   }
 };

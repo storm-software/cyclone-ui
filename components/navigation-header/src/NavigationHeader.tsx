@@ -862,11 +862,11 @@ const NavigationHeaderRoot = createStyledHOC(
 
     // Native CSS transitions keep responsive transforms and ordering in CSS;
     // the motion driver would resolve those media clauses into inline styles.
+    // Longhand props, since Tamagui drops `transition` inside `style`.
     const scaleProps = {
-      scale: isAtTop ? "1 xxl:1.25" : 1,
-      style: {
-        transition: prefersReducedMotion ? "none" : `scale ${scaleTransition}`
-      }
+      scale: isAtTop ? "1 xl:1.1 xxl:1.25" : 1,
+      transitionProperty: "scale",
+      transitionDuration: prefersReducedMotion ? "0s" : scaleTransition
     };
 
     const centerSlot = (
