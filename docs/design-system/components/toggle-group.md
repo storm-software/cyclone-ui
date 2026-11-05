@@ -48,6 +48,7 @@ Set `multiple` to allow more than one selected item. The value is then a `string
 | `onValueChange` | `(value: string \| string[] \| null) => void` | — | Called with the new selection. It receives an array when `multiple` is set. Otherwise it receives a string or `null`. |
 | `allowEmpty` | `boolean` | `true` | Lets the user clear the last selected item. |
 | `size` | `"sm" \| "md" \| "lg"` | `"md"` | The size of every item. |
+| `variant` | `"primary" \| "secondary" \| "tertiary" \| "outlined"` | — | The shared frame colors, as on [Toggle](./toggle.md). The items stay transparent on top and take the variant's text color. Ignored when `borderless`. |
 | `invalid` | `boolean` | `false` | Switches to the `danger` theme. |
 | `disabled` | `boolean` | `false` | Disables every item. |
 | `fluid` | `boolean` | `false` | Spans the parent width. The items share it evenly. |
@@ -73,10 +74,10 @@ An item that renders outside a `ToggleGroup` throws an error.
 - **Frame:** A `hairline` border, a `sunken` background, and the `tabs` radius. The gap and padding use the same inset as a standalone toggle.
 - **Single selection:** Pressing an item selects it. Pressing the selected item clears it when `allowEmpty` is `true`.
 - **Multiple selection:** Pressing an item adds it or removes it.
-- **Item style:** Each item takes its size, `invalid`, `borderless`, and `rounded` settings from the group. A selected item shows the raised indicator of a `Toggle`.
+- **Item style:** Each item takes its size, `variant`, `invalid`, `borderless`, and `rounded` settings from the group. A selected item shows the raised indicator of a `Toggle`.
 - **Disabled:** The group disables every item. An item can also set its own `disabled`.
 
-The stories show `Base`, `Icons`, `Multiple`, `Controlled`, `Sizes`, `Fluid`, `Borderless`, `Rounded`, `Invalid`, and `Disabled`.
+The stories show `Base`, `Icons`, `Multiple`, `Controlled`, `Sizes`, `Fluid`, `Borderless`, `Rounded`, `Invalid`, `Disabled`, and each `variant`.
 
 ## Accessibility
 

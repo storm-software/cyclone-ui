@@ -80,10 +80,33 @@ const expectOutlinedTextToMatchBorder = async (canvasElement: HTMLElement) => {
 export const Outlined: Story = {
   args: {
     children: "Tag Text",
-    outlined: true
+    variant: "outlined"
   },
   play: async ({ canvasElement }) =>
     expectOutlinedTextToMatchBorder(canvasElement)
+};
+
+export const PressableSecondary: Story = {
+  args: {
+    children: "Tag Text",
+    variant: "secondary",
+    pressable: true
+  }
+};
+
+export const Tertiary: Story = {
+  args: {
+    children: "Tag Text",
+    variant: "tertiary"
+  }
+};
+
+export const PressableTertiary: Story = {
+  args: {
+    children: "Tag Text",
+    variant: "tertiary",
+    pressable: true
+  }
 };
 
 export const Pressable: Story = {
@@ -97,7 +120,7 @@ export const PressableOutlined: Story = {
   args: {
     children: "Tag Text",
     pressable: true,
-    outlined: true
+    variant: "outlined"
   }
 };
 
@@ -124,7 +147,7 @@ export const RemovableOutlined: Story = {
   args: {
     children: "Tag Text",
     removable: true,
-    outlined: true
+    variant: "outlined"
   }
 };
 
@@ -251,7 +274,7 @@ export const DiscoveryOutlined: Story = {
   args: {
     children: "Tag Text",
     theme: "discovery",
-    outlined: true
+    variant: "outlined"
   }
 };
 
@@ -300,7 +323,7 @@ export const ErrorOutlined: Story = {
   args: {
     children: "Tag Text",
     theme: "danger",
-    outlined: true
+    variant: "outlined"
   }
 };
 
@@ -349,7 +372,7 @@ export const WarningOutlined: Story = {
   args: {
     children: "Tag Text",
     theme: "warning",
-    outlined: true
+    variant: "outlined"
   }
 };
 
@@ -398,7 +421,7 @@ export const InfoOutlined: Story = {
   args: {
     children: "Tag Text",
     theme: "info",
-    outlined: true
+    variant: "outlined"
   }
 };
 
@@ -447,7 +470,7 @@ export const SuccessOutlined: Story = {
   args: {
     children: "Tag Text",
     theme: "success",
-    outlined: true
+    variant: "outlined"
   }
 };
 

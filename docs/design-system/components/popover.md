@@ -59,6 +59,7 @@ The root accepts the Tamagui `Popover` props plus the props below. It sets `allo
 | --- | --- | --- | --- |
 | `size` | `SizeTokens` | `true` | Size, shared with the parts through `PopoverContext`. |
 | `shouldAdapt` | `boolean` | `true` | Renders the content in a bottom `Sheet` on small screens. |
+| `variant` | `"primary" \| "secondary" \| "tertiary" \| "outlined"` | — | The surface of the content, the arrow, and the small-screen sheet. See [Variants](#variants). |
 | `theme` | theme name | — | Theme. |
 
 ### `Popover.Content`
@@ -68,7 +69,8 @@ It accepts the Tamagui `Popover.Content` props plus the props below.
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
 | `hasArrow` | `boolean` | `false` | Shows an arrow that points to the trigger. |
-| `elevated` | `boolean` | `true` | Adds the shadow `0px 4px 30px #0D0C0766`. |
+| `variant` | Same as `Popover` | The `Popover`'s | Overrides the root's `variant` for this content. |
+| `elevated` | `boolean` | `true`, or `false` with a `variant` | Adds the shadow `0px 4px 30px #0D0C0766`. |
 
 ## Appearance
 
@@ -78,7 +80,20 @@ It accepts the Tamagui `Popover.Content` props plus the props below.
 
 ## Variants
 
-The stories show the default popover, `hasArrow`, and the themes `brand`, `discovery`, `danger`, `warning`, `info`, and `success`.
+`variant` follows the [Button](./button.md) variants. Without it, the popover keeps the appearance above.
+
+| `variant` | Surface | Border | Shadow |
+| --- | --- | --- | --- |
+| `primary` | `primary` | None | None |
+| `secondary` | `secondary` | 1px `border` | `color-shadow-resting-raised` |
+| `tertiary` | `surface` | 1px `hairline` | `color-shadow-resting-raised` |
+| `outlined` | `elevated` | 2px `primary` | None |
+
+- An `outlined` popover keeps an opaque `elevated` surface so its content stays readable over the page.
+- The content is yours, so text inside a `primary` or `secondary` popover should use `on-primary` / `on-secondary` (use `primary` on `secondary` with the uncolored base theme).
+- Pass `elevated` to add the floating shadow to a variant.
+
+The stories show the default popover, `hasArrow`, each `variant` (with `PrimaryArrow` and `OutlinedArrow`), and the themes `brand`, `discovery`, `danger`, `warning`, `info`, and `success`.
 
 ## Related
 

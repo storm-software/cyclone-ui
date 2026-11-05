@@ -46,6 +46,10 @@ const meta: Meta<typeof ToggleGroup> = {
     size: {
       control: "inline-radio",
       options: ["sm", "md", "lg"]
+    },
+    variant: {
+      control: "inline-radio",
+      options: ["primary", "secondary", "tertiary", "outlined"]
     }
   },
   render: args => (
@@ -241,5 +245,33 @@ export const Disabled: Story = {
     await expect(
       canvas.getByRole("button", { name: "Option 1" })
     ).not.toBeDisabled();
+  }
+};
+
+export const Primary: Story = {
+  args: {
+    defaultValue: "left",
+    variant: "primary"
+  }
+};
+
+export const Secondary: Story = {
+  args: {
+    defaultValue: "left",
+    variant: "secondary"
+  }
+};
+
+export const Tertiary: Story = {
+  args: {
+    defaultValue: "left",
+    variant: "tertiary"
+  }
+};
+
+export const Outlined: Story = {
+  args: {
+    defaultValue: "left",
+    variant: "outlined"
   }
 };

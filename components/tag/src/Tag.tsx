@@ -52,7 +52,7 @@ import type { ViewStyle } from "react-native";
 
 export type TagSize = SizeTokens | number;
 
-export type TagVariant = "primary" | "secondary";
+export type TagVariant = "primary" | "secondary" | "tertiary" | "outlined";
 
 export interface TagContextProps {
   /**
@@ -63,14 +63,19 @@ export interface TagContextProps {
   size: TagSize;
 
   /**
-   * Should the tag have an outlined style
+   * Should the tag have an outlined style, drawn in the `primary` or
+   * `secondary` variant's color
    *
+   * @deprecated Use `variant="outlined"`.
    * @defaultValue false
    */
   outlined: boolean;
 
   /**
-   * The variant style of the tag
+   * The variant style of the tag: `primary` fills it with `primary`,
+   * `secondary` with `secondary` and a `border` border, `tertiary` with
+   * `surface` and a `hairline` border, and `outlined` draws a 2px `primary`
+   * border on a transparent background
    *
    * @defaultValue "primary"
    */
@@ -130,24 +135,68 @@ const getSpaceToken = (val: string, tokens: TagTokens) =>
 const getSpaceValue = (val: string, tokens: TagTokens): number =>
   Number(getSpaceToken(val, tokens)?.val ?? 0);
 
-// The theme color a variant fills (or, when outlined, draws) the tag with.
-const getVariantColor = (variant: TagVariant | undefined) =>
-  variant === "secondary" ? "secondary" : "primary";
-
-// Outlined tags draw the text in the variant color, filled ones in the
-// matching `on*` color (`on-primary` / `on-secondary`).
-const getTextColor = (
+// The deprecated `outlined` flag outlines a filled variant.
+const isOutlined = (
   variant: TagVariant | undefined,
   outlined: boolean | undefined
-) => {
-  const variantColor = getVariantColor(variant);
+) => Boolean(outlined) || variant === "outlined";
 
-  return outlined
-    ? variantColor
-    : variantColor === "secondary"
-      ? "on-secondary"
-      : "on-primary";
+// The color an outlined tag draws its border and text in: the `secondary`
+// variant keeps its own color under the deprecated `outlined` flag.
+const getOutlineColor = (variant: TagVariant | undefined) =>
+  variant === "secondary" ? "secondary" : "primary";
+
+// The filled variants' background, its hovered shade and the border.
+const TAG_FILLS = {
+  primary: {
+    backgroundColor: "primary",
+    hovered: "primary-hovered",
+    borderWidth: 0,
+    borderColor: "transparent",
+    raised: false
+  },
+  secondary: {
+    backgroundColor: "secondary",
+    hovered: "secondary-hovered",
+    borderWidth: 1,
+    borderColor: "border",
+    raised: true
+  },
+  tertiary: {
+    backgroundColor: "surface",
+    hovered: "surface-hovered",
+    borderWidth: 1,
+    borderColor: "hairline",
+    raised: true
+  }
+} as const;
+
+// `dark_brand` / `brand` -> `brand`; `dark`, `base` and `dark_base` are
+// uncolored.
+const isUncoloredTheme = (themeName: string | null | undefined) => {
+  const parts = themeName?.split("_") ?? [];
+  const color = parts.length > 1 ? parts[1] : parts[0];
+
+  return !color || color === "base" || color === "light" || color === "dark";
 };
+
+// Outlined tags draw the text in the outline color, filled ones in the color
+// made for their background. `on-secondary` is faint on the uncolored themes'
+// light `secondary`, so those use `primary` there, as `Button` does.
+const getTextColor = (
+  variant: TagVariant | undefined,
+  outlined: boolean | undefined,
+  themeName: string | null | undefined
+) =>
+  isOutlined(variant, outlined)
+    ? getOutlineColor(variant)
+    : variant === "secondary"
+      ? isUncoloredTheme(themeName)
+        ? "primary"
+        : "on-secondary"
+      : variant === "tertiary"
+        ? "primary"
+        : "on-primary";
 
 // The hovered counterpart of a variant color; the `on*` text colors have none.
 const getHoveredColor = (color: string) =>
@@ -210,23 +259,35 @@ const TagFrame = styled(View, {
 }).resolve(({ variant, outlined, pressable }) => {
   // Each property is returned whole (with its `hover:` clause): an
   // unconditional resolver value replaces every lower-tier value for that
-  // property, including a variant's conditional ones.
-  const color = getVariantColor(variant as TagVariant | undefined);
+  // property, including a variant's conditional ones. Like `Button`, only a
+  // pressable tag shows the hovered shade.
+  const withHover = (color: string, hovered: string) =>
+    pressable ? `${color} hover:${hovered}` : color;
 
-  if (outlined) {
+  if (isOutlined(variant as TagVariant | undefined, outlined === true)) {
+    const color = getOutlineColor(variant as TagVariant | undefined);
+
     return {
-      backgroundColor: pressable
-        ? "transparent hover:secondary-hovered"
-        : "transparent",
-      borderColor: pressable
-        ? `${color} hover:${getHoveredColor(color)}`
-        : color,
+      backgroundColor: "transparent",
+      borderColor: withHover(color, `${color}-hovered`),
       borderWidth: 2
     };
   }
 
+  const fill =
+    TAG_FILLS[(variant as keyof typeof TAG_FILLS | undefined) ?? "primary"] ??
+    TAG_FILLS.primary;
+
   return {
-    backgroundColor: pressable ? `${color} hover:secondary-hovered` : color
+    backgroundColor: withHover(fill.backgroundColor, fill.hovered),
+    borderColor: fill.borderColor,
+    borderWidth: fill.borderWidth,
+    // Keeps the pressable focus ring the shadow would otherwise replace.
+    boxShadow: fill.raised
+      ? pressable
+        ? "color-shadow-resting-raised focus-visible:ring-offset"
+        : "color-shadow-resting-raised"
+      : undefined
   };
 });
 
@@ -323,7 +384,11 @@ const TagText = createStyledHOC(
   ({ children, color, size, ...props }, forwardedRef) => {
     const context = TagContext.useStyledContext();
     const edit = useContext(TagEditContext);
-    const themeColor = getTextColor(context.variant, context.outlined);
+    const themeColor = getTextColor(
+      context.variant,
+      context.outlined,
+      useThemeName()
+    );
     const baseColor = color ?? themeColor;
     const hoveredColor = getHoveredColor(themeColor);
     const textSize = (size ?? context.size) as FontSizeTokens | number | true;
@@ -526,6 +591,7 @@ const TagRemoveButton = createStyledHOC(
   TagRemoveButtonFrame,
   ({ onPress, ...props }, forwardedRef) => {
     const { variant, outlined } = TagContext.useStyledContext();
+    const themeName = useThemeName();
 
     return (
       <TagRemoveButtonFrame
@@ -536,7 +602,7 @@ const TagRemoveButton = createStyledHOC(
           event?.stopPropagation?.();
           onPress?.(event);
         }}>
-        <TagIcon color={getTextColor(variant, outlined)}>
+        <TagIcon color={getTextColor(variant, outlined, themeName)}>
           <Close
             // The `danger` theme swap only redefines the frame's color vars,
             // so its border switches instantly; drop the icon's own 200ms
@@ -635,11 +701,15 @@ const TagFrameImpl = createStyledHOC(
     // An editable tag responds to hover like a pressable one.
     const pressable = pressableProp || editable;
 
-    // The text's color: it stays visible on the `secondary-active` background a
-    // pointer press lands on.
-    const ripple = useTagRipples(getTextColor(variant, outlined), onPress);
-
     const themeName = useThemeName();
+
+    // The text's color, so it stays visible on the tag's hovered background a
+    // pointer press lands on.
+    const ripple = useTagRipples(
+      getTextColor(variant, outlined, props.theme ?? themeName),
+      onPress
+    );
+
     const [removed, setRemoved] = useState(false);
     const [removeHovered, setRemoveHovered] = useState(false);
     const [removeFocused, setRemoveFocused] = useState(false);

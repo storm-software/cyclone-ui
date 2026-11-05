@@ -22,10 +22,15 @@
 // (https://reactbits.dev/components/gooey-nav). A WebGL2 signed distance field
 // renders the active pill, which bursts into droplets that flow to the newly
 // selected tab. Each tab's `[data-fluid-overlay]` text copy is clipped to the
-// same shape so labels switch to `on-primary` exactly where the pill covers them.
+// same shape so labels switch to `on-primary` exactly where the pill covers them
+// (or to `primary` where an `on-primary` pill covers them).
 
 import { useThemeName } from "@tamagui/core";
+import type { CSSProperties } from "react";
 import { useEffect, useLayoutEffect, useRef } from "react";
+
+/** Set on the canvas to the pill's theme color, so the engine reads it there. */
+const PILL_COLOR_VAR = "--tabs-fluid-pill";
 
 const MAX_DROPS = 32;
 const MAX_PILLS = 4;
@@ -327,7 +332,7 @@ const createEngine = (canvas: HTMLCanvasElement, fallback: HTMLElement) => {
 
       return element ? [{ element, rect: local(element) }] : [];
     });
-    pillRgb = resolveColor(canvas, "--primary");
+    pillRgb = resolveColor(canvas, PILL_COLOR_VAR);
   };
 
   const trace = (boxes: Box[], blobs: Blob[], smooth: number, region: Rect) => {
@@ -825,6 +830,13 @@ export interface TabsFluidIndicatorProps {
 
   /** The number of registered tabs, so added or removed tabs are re-measured. */
   count: number;
+
+  /**
+   * The theme color token of the pill.
+   *
+   * @defaultValue "primary"
+   */
+  color?: string;
 }
 
 /**
@@ -833,7 +845,8 @@ export interface TabsFluidIndicatorProps {
  */
 export const TabsFluidIndicator = ({
   selected,
-  count
+  count,
+  color = "primary"
 }: TabsFluidIndicatorProps) => {
   const themeName = useThemeName();
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -852,19 +865,22 @@ export const TabsFluidIndicator = ({
 
   useEffect(() => {
     engineRef.current?.sync();
-  }, [selected, count, themeName]);
+  }, [selected, count, themeName, color]);
 
   return (
     <>
       <canvas
         ref={canvasRef}
         aria-hidden="true"
-        style={{
-          position: "absolute",
-          top: -MARGIN,
-          left: -MARGIN,
-          pointerEvents: "none"
-        }}
+        style={
+          {
+            position: "absolute",
+            top: -MARGIN,
+            left: -MARGIN,
+            pointerEvents: "none",
+            [PILL_COLOR_VAR]: `var(--${color})`
+          } as CSSProperties
+        }
       />
       <span
         ref={fallbackRef}
@@ -875,7 +891,7 @@ export const TabsFluidIndicator = ({
           left: 0,
           display: "none",
           borderRadius: 999,
-          background: "var(--primary)",
+          background: `var(--${color})`,
           pointerEvents: "none"
         }}
       />

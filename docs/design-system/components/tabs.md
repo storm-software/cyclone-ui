@@ -24,7 +24,7 @@ import { Tabs } from "@cyclone-ui/tabs";
 
 export function Example() {
   return (
-    <Tabs variant="floating" onValueChange={value => console.log(value)}>
+    <Tabs tabStyle="floating" onValueChange={value => console.log(value)}>
       <Tabs.Header>
         <Tabs.Header.Item value="tab1">Overview</Tabs.Header.Item>
         <Tabs.Header.Item value="tab2">Details</Tabs.Header.Item>
@@ -52,22 +52,23 @@ The first header item becomes the current tab when no tab is set.
 
 ## Props
 
-`TabsProps` is the Tamagui tabs frame props, with the four context props below.
+`TabsProps` is the Tamagui tabs frame props, with the five context props below.
 
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
-| `variant` | `"underline" \| "floating" \| "tabbed"` | `"floating"` | The visual style. |
+| `tabStyle` | `"underline" \| "floating" \| "tabbed" \| "fluid"` | `"floating"` | The layout style. Named `variant` before. |
+| `variant` | `"primary" \| "secondary" \| "tertiary" \| "outlined"` | — | The colors, in any `tabStyle`. See [Color variants](#color-variants). Unset keeps the style's own colors. |
 | `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | The direction of the tab list. |
-| `bordered` | `boolean` | `true` | Shows the borders that the variant owns. |
+| `bordered` | `boolean` | `true` | Shows the borders that the style and variant own. |
 | `size` | `SizeTokens` | `true` | Sets the item padding and label size. Only size token names restyle the root. |
 | `onValueChange` | `(value: string) => void` | — | Called with the selected tab value. |
 | `theme` | Tamagui theme name | Inherited | The stories use `brand`, `discovery`, `danger`, `warning`, `info`, and `success`. |
 
 `Tabs.Header.Item` and `Tabs.Content.Item` take a required `value` (`string`) and the matching Tamagui tab props. `Tabs.Header.Item` also accepts `onInteraction`.
 
-## Variants and states
+## Styles and states
 
-| Variant | Header style | Indicator |
+| `tabStyle` | Header style | Indicator |
 | --- | --- | --- |
 | `underline` | A `sunken` bottom border (`lg` width) with no radius. | An active bar and a hover bar. |
 | `floating` | A `sunken` background, `hairline` border, and the `tabs` radius. | None. |
@@ -76,10 +77,24 @@ The first header item becomes the current tab when no tab is set.
 - **Selected item:** The label uses `primary-active` and `semibold`. Other labels use `primary-inactive` and `medium`.
 - **Hover:** A label uses `primary` when the pointer is over its item. The `tabbed` items use `canvas-hovered` on hover.
 - **Vertical:** The header list has a minimum width of `20xl`. The panel takes the remaining space.
-- **Borderless:** Set `bordered={false}` to remove the variant borders.
+- **Borderless:** Set `bordered={false}` to remove the style and variant borders.
 - **Panels:** Only the active panel is in the layout. The others are positioned absolutely.
 
-The stories cover `Floating`, `Underline`, `Tabbed`, their borderless forms, `TabbedVertical`, `Horizontal`, and `Vertical`.
+The stories cover `Floating`, `Underline`, `Tabbed`, their borderless forms, `TabbedVertical`, `Horizontal`, and `Vertical`, plus each color variant per style (for example `UnderlinePrimary`, `TabbedOutlined`).
+
+## Color variants
+
+`variant` follows the [Button](./button.md) variants and combines with every `tabStyle`.
+
+| `variant` | Surface | Border | Shadow |
+| --- | --- | --- | --- |
+| `primary` | `primary` | None | None |
+| `secondary` | `secondary` | 1px `border` | `color-shadow-resting-raised` |
+| `tertiary` | `surface` | 1px `hairline` | `color-shadow-resting-raised` |
+| `outlined` | Transparent | 2px `primary` | None |
+
+- The surface goes on the tab list. With `tabStyle="tabbed"` the list stays bare, and the selected tab and the panel take the surface instead.
+- On `primary` and `secondary`, labels use `on-primary` / `on-secondary` (`primary` on the uncolored base theme's light `secondary`). The underline bar and the `fluid` pill switch to `on-primary` on a `primary` list so they stay visible. The `floating` pill keeps its `surface` (`elevated` on a `tertiary` list).
 
 ## Accessibility
 

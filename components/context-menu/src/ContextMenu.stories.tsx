@@ -44,6 +44,10 @@ const meta: Meta<typeof ContextMenu> = {
     size: {
       control: "inline-radio",
       options: ["sm", "md", "lg"]
+    },
+    variant: {
+      control: "inline-radio",
+      options: ["primary", "secondary", "tertiary", "outlined"]
     }
   },
   render: function Render(args) {
@@ -135,3 +139,11 @@ export const Base: Story = {
 export const SmallSize: Story = { args: { size: "sm" } };
 
 export const LargeSize: Story = { args: { size: "lg" } };
+
+export const Primary: Story = { args: { variant: "primary" } };
+
+export const Secondary: Story = { args: { variant: "secondary" } };
+
+export const Tertiary: Story = { args: { variant: "tertiary" } };
+
+export const Outlined: Story = { args: { variant: "outlined" } };

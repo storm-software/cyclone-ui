@@ -27,7 +27,7 @@ import {
 } from "@cyclone-ui/scroll-view";
 import { isWeb } from "@tamagui/constants";
 import type { GetProps } from "@tamagui/core";
-import { createStyledHOC, styled, Theme } from "@tamagui/core";
+import { createStyledHOC, styled, Theme, useThemeName } from "@tamagui/core";
 import {
   Dialog as TamaguiDialog,
   DialogContent as TamaguiDialogContent,
@@ -50,6 +50,7 @@ import { PanResponder, Platform } from "react-native";
 
 export type SheetDirection = "top" | "right" | "bottom" | "left";
 export type SheetSize = "sm" | "md" | "lg";
+export type SheetVariant = "primary" | "secondary" | "tertiary" | "outlined";
 
 const sheetSizeStyles: Record<
   SheetDirection,
@@ -87,6 +88,7 @@ interface SheetContextValue {
   pointerHandlers: Record<string, unknown>;
   setFrameSize: (size: number) => void;
   transition: SheetProps["transition"];
+  variant?: SheetVariant;
 }
 
 const SheetContext = createContext<SheetContextValue | null>(null);
@@ -106,6 +108,57 @@ const sheetSurfaceStyles = {
   borderWidth: 0,
   borderColor: "transparent"
 };
+
+// Unlike `Button`'s `outlined`, an outlined sheet keeps an opaque surface so
+// its content stays readable over the page.
+const sheetVariantSurfaces = {
+  primary: {
+    backgroundColor: "primary",
+    borderWidth: 0,
+    borderColor: "transparent"
+  },
+  secondary: {
+    backgroundColor: "secondary",
+    borderWidth: 1,
+    borderColor: "border",
+    boxShadow: "color-shadow-resting-raised"
+  },
+  tertiary: {
+    backgroundColor: "surface",
+    borderWidth: 1,
+    borderColor: "hairline",
+    boxShadow: "color-shadow-resting-raised"
+  },
+  outlined: {
+    backgroundColor: "elevated",
+    borderWidth: 2,
+    borderColor: "primary"
+  }
+} as const;
+
+// `dark_brand` / `brand` -> `brand`; `dark`, `base` and `dark_base` are
+// uncolored.
+const isUncoloredTheme = (themeName: string | null | undefined) => {
+  const parts = themeName?.split("_") ?? [];
+  const color = parts.length > 1 ? parts[1] : parts[0];
+
+  return !color || color === "base" || color === "light" || color === "dark";
+};
+
+// The text color on the `primary` / `secondary` surfaces. `on-secondary` is
+// faint on the uncolored themes' light `secondary`, so those use `primary`
+// there, as `Button` does.
+const getSheetForeground = (
+  variant: SheetVariant | undefined,
+  themeName: string | null | undefined
+) =>
+  variant === "primary"
+    ? "on-primary"
+    : variant === "secondary"
+      ? isUncoloredTheme(themeName)
+        ? "primary"
+        : "on-secondary"
+      : undefined;
 
 const sheetLayoutStyles = {
   flexDirection: "column" as const,
@@ -335,7 +388,8 @@ const SheetDialogContainer: FC<SheetContainerProps> = ({
     dragOffset,
     dragging,
     setFrameSize,
-    transition: sheetTransition
+    transition: sheetTransition,
+    variant
   } = useSheetContext();
   const {
     onLayout,
@@ -356,6 +410,7 @@ const SheetDialogContainer: FC<SheetContainerProps> = ({
       ]}
       {...(size ? sheetSizeStyles[direction][size] : {})}
       {...sheetFrameHandleInsetStyles[direction]}
+      {...(variant && sheetVariantSurfaces[variant])}
       {...frameProps}
       x={isVertical ? 0 : draggedOffset}
       y={isVertical ? draggedOffset : 0}
@@ -388,12 +443,21 @@ const SheetContainer: FC<SheetContainerProps> = ({ children, ...props }) => {
 };
 
 const SheetBackground: FC<SheetBackgroundProps> = props => {
-  const { direction } = useSheetContext();
+  const { direction, variant } = useSheetContext();
 
   return direction === "bottom" ? (
-    <SheetSheetBackground {...props} />
+    <SheetSheetBackground
+      {...(variant && sheetVariantSurfaces[variant])}
+      {...props}
+    />
   ) : (
-    <SheetDialogBackground {...props} />
+    // The dialog frame draws the variant's border and shadow.
+    <SheetDialogBackground
+      {...(variant && {
+        backgroundColor: sheetVariantSurfaces[variant].backgroundColor
+      })}
+      {...props}
+    />
   );
 };
 
@@ -488,22 +552,37 @@ const SheetHeadingText = styled(HeadingLargeText, {
   color: "primary"
 });
 
-const SheetBody = styled(BodyText, {
+const SheetBodyText = styled(BodyText, {
   displayName: "SheetBody",
   color: "ink",
   flexGrow: 1
 });
 
+/** The `on-primary` / `on-secondary` text color on a filled sheet. */
+const useSheetForeground = () => {
+  const foreground = getSheetForeground(
+    useSheetContext().variant,
+    useThemeName()
+  );
+
+  return foreground ? { color: foreground } : undefined;
+};
+
+const SheetBody = createStyledHOC(SheetBodyText, (props, forwardedRef) => (
+  <SheetBodyText ref={forwardedRef} {...useSheetForeground()} {...props} />
+));
+
 const SheetHeading = createStyledHOC(
   SheetHeadingText,
   (props, forwardedRef) => {
     const { direction } = useSheetContext();
+    const foreground = useSheetForeground();
 
     return direction === "bottom" ? (
-      <SheetHeadingText ref={forwardedRef} {...props} />
+      <SheetHeadingText ref={forwardedRef} {...foreground} {...props} />
     ) : (
       <TamaguiDialog.Title asChild>
-        <SheetHeadingText ref={forwardedRef} {...props} />
+        <SheetHeadingText ref={forwardedRef} {...foreground} {...props} />
       </TamaguiDialog.Title>
     );
   }
@@ -511,12 +590,13 @@ const SheetHeading = createStyledHOC(
 
 const SheetDescription = createStyledHOC(BodyText, (props, forwardedRef) => {
   const { direction } = useSheetContext();
+  const foreground = useSheetForeground();
 
   return direction === "bottom" ? (
-    <BodyText ref={forwardedRef} {...props} />
+    <BodyText ref={forwardedRef} {...foreground} {...props} />
   ) : (
     <TamaguiDialog.Description asChild>
-      <BodyText ref={forwardedRef} {...props} />
+      <BodyText ref={forwardedRef} {...foreground} {...props} />
     </TamaguiDialog.Description>
   );
 });
@@ -557,6 +637,16 @@ export type SheetProps = Omit<GetProps<typeof TamaguiSheet>, "size"> & {
   theme?: string;
   direction?: SheetDirection;
   size?: SheetSize;
+
+  /**
+   * The sheet's surface: `primary` fills it with `primary`, `secondary` with
+   * `secondary` and a `border` border, `tertiary` with `surface` and a
+   * `hairline` border, and `outlined` draws a 2px `primary` border. `primary`
+   * and `secondary` also draw `Sheet.Heading`, `Sheet.Body` and
+   * `Sheet.Description` in `on-primary` / `on-secondary`. Unset keeps the
+   * borderless `elevated` surface.
+   */
+  variant?: SheetVariant;
 };
 
 const SNAP_POINTS = [80];
@@ -586,6 +676,7 @@ const SheetFrameImpl: FC<SheetProps> = ({
   snapPoints,
   snapPointsMode,
   transition,
+  variant,
   onOpenChange,
   open,
   ...props
@@ -782,7 +873,8 @@ const SheetFrameImpl: FC<SheetProps> = ({
       panHandlers,
       pointerHandlers,
       setFrameSize,
-      transition
+      transition,
+      variant
     }),
     [
       direction,
@@ -792,7 +884,8 @@ const SheetFrameImpl: FC<SheetProps> = ({
       dragging,
       panHandlers,
       pointerHandlers,
-      transition
+      transition,
+      variant
     ]
   );
   const deferPortal = !mounted && (modal || direction !== "bottom");

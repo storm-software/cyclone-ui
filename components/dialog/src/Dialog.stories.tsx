@@ -114,3 +114,31 @@ export const Success: Story = {
     theme: "success"
   }
 };
+
+export const Primary: Story = {
+  args: {
+    ...Base.args,
+    variant: "primary"
+  }
+};
+
+export const Secondary: Story = {
+  args: {
+    ...Base.args,
+    variant: "secondary"
+  }
+};
+
+export const Tertiary: Story = {
+  args: {
+    ...Base.args,
+    variant: "tertiary"
+  }
+};
+
+export const Outlined: Story = {
+  args: {
+    ...Base.args,
+    variant: "outlined"
+  }
+};

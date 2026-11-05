@@ -54,6 +54,7 @@ export function Example() {
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
 | `size` | `SizeTokens` | `true` | Stored in the tooltip context. The Tamagui tooltip has no `size` prop. |
+| `variant` | `"primary" \| "secondary" \| "tertiary" \| "outlined"` | — | The surface of the content and the arrow. See below. |
 | `theme` | Tamagui theme name | Inherited | The stories use `brand`, `discovery`, `danger`, `warning`, `info`, and `success`. |
 
 The root passes all other props to the Tamagui `Tooltip`. The source does not list them, so see the Tamagui docs for placement and delay.
@@ -63,10 +64,11 @@ The root passes all other props to the Tamagui `Tooltip`. The source does not li
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
 | `hasArrow` | `boolean` | `true` | Shows the arrow. |
+| `variant` | Same as `Tooltip` | The `Tooltip`'s | Overrides the root's `variant` for this content. |
 | `arrowBorderColor` | color token | Content `borderColor` | The arrow border color. |
-| `borderColor` | color token | `"outline"` | The content border color. |
-| `backgroundColor` | color token | `"elevated"` | The content and arrow background. |
-| `elevated` | `boolean` | `true` | Adds the `0px 4px 30px #0D0C0766` shadow. |
+| `borderColor` | color token | `"outline"`, or the variant's | The content border color. |
+| `backgroundColor` | color token | `"elevated"`, or the variant's | The content and arrow background. |
+| `elevated` | `boolean` | `true`, or `false` with a `variant` | Adds the `0px 4px 30px #0D0C0766` shadow. |
 
 ## Variants and states
 
@@ -74,6 +76,7 @@ The root passes all other props to the Tamagui `Tooltip`. The source does not li
 - **Focus:** The content shows a `3px` solid `primary-active` outline when it has keyboard focus.
 - **Shape:** The content uses the `tooltip` radius, a `3xl` vertical padding, and a `2xl` horizontal padding.
 - **Context size:** The default context size is `12xl`.
+- **Variants:** `variant` follows the [Button](./button.md) variants. `primary` uses a `primary` surface with no border. `secondary` uses `secondary` with a 1px `border` border. `tertiary` uses `surface` with a 1px `hairline` border. `secondary` and `tertiary` also get the `color-shadow-resting-raised` shadow. `outlined` uses a 2px `primary` border on an opaque `elevated` surface. Explicit `backgroundColor`, `borderColor`, and `borderWidth` props win over the variant. Text inside a `primary` or `secondary` tooltip should use `on-primary` / `on-secondary`.
 
 ## Accessibility
 

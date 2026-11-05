@@ -27,6 +27,7 @@ import {
   getSpaced
 } from "@cyclone-ui/helpers";
 import { Confirm, Lock } from "@cyclone-ui/icons";
+import type { PopoverVariant } from "@cyclone-ui/popover";
 import { Popover } from "@cyclone-ui/popover";
 import { Tooltip } from "@cyclone-ui/tooltip";
 import type { GetProps, LayoutEvent } from "@tamagui/core";
@@ -35,6 +36,7 @@ import {
   createStyledHOC,
   isWeb,
   styled,
+  useThemeName,
   View,
   withStaticProperties
 } from "@tamagui/core";
@@ -67,7 +69,41 @@ interface ContextMenuContextValue {
   size: FormControlSize;
   value?: string;
   onValueChange?: (value: string) => void;
+  variant?: PopoverVariant;
 }
+
+// A hovered, focused or highlighted item's background on each filled menu;
+// the other menus use `floating-active`.
+const ITEM_HIGHLIGHTS: Partial<Record<PopoverVariant, string>> = {
+  primary: "primary-hovered",
+  secondary: "secondary-hovered",
+  tertiary: "surface-hovered"
+};
+
+// `dark_brand` / `brand` -> `brand`; `dark`, `base` and `dark_base` are
+// uncolored.
+const isUncoloredTheme = (themeName: string | null | undefined) => {
+  const parts = themeName?.split("_") ?? [];
+  const color = parts.length > 1 ? parts[1] : parts[0];
+
+  return !color || color === "base" || color === "light" || color === "dark";
+};
+
+// The text and icon color on the `primary` / `secondary` menus, in every item
+// state: the `on-*` colors have no state shades. `on-secondary` is faint on
+// the uncolored themes' light `secondary`, so those use `primary` there, as
+// `Button` does.
+const useItemForeground = (variant: PopoverVariant | undefined) => {
+  const themeName = useThemeName();
+
+  return variant === "primary"
+    ? "on-primary"
+    : variant === "secondary"
+      ? isUncoloredTheme(themeName)
+        ? "primary"
+        : "on-secondary"
+      : undefined;
+};
 
 // Frames take `size` from the item rather than through `context`: a styled
 // `context` merges every value (including `value`) into the frame's props.
@@ -85,6 +121,12 @@ const ContextMenuItemStateContext = createContext({
 
 export interface ContextMenuExtraProps {
   size?: FormControlSize;
+
+  /**
+   * The menu's surface (see `Popover`'s `variant`). `primary` and `secondary`
+   * also draw the items in `on-primary` / `on-secondary`.
+   */
+  variant?: PopoverVariant;
 
   /**
    * The `value` of the selected item, which displays a check mark.
@@ -108,16 +150,20 @@ const ContextMenuFrame = createStyledHOC(
       size = "md",
       value,
       onValueChange,
+      variant,
       ...props
-    }: Omit<GetProps<typeof Popover>, "size"> & ContextMenuExtraProps,
+    }: Omit<GetProps<typeof Popover>, "size" | "variant"> &
+      ContextMenuExtraProps,
     forwardedRef
   ) => (
     <ContextMenuContext.Provider
       size={size}
       value={value}
-      onValueChange={onValueChange}>
+      onValueChange={onValueChange}
+      variant={variant}>
       <Popover
         ref={forwardedRef}
+        variant={variant}
         size={getFormSizeToken(size)}
         placement="bottom-start"
         // Floating UI applies the offset on whichever side the menu flips to.
@@ -400,9 +446,12 @@ const ContextMenuItem = ({
   const {
     size,
     value: selectedValue,
-    onValueChange
+    onValueChange,
+    variant
   } = ContextMenuContext.useStyledContext();
   const disabled = Boolean(disabledProp);
+  const highlight = variant && ITEM_HIGHLIGHTS[variant];
+  const foreground = useItemForeground(variant);
   const selected = value !== undefined && value === selectedValue;
   const { indicatorWidth, indicatorIconSize } = getContextMenuSize(size);
 
@@ -438,6 +487,13 @@ const ContextMenuItem = ({
           size={size}
           highlighted={highlighted}
           disabled={disabled}
+          {...(highlight && {
+            backgroundColor: disabled
+              ? "transparent"
+              : highlighted
+                ? highlight
+                : `transparent group-hover/item:${highlight} group-focus-visible/item:${highlight}`
+          })}
         />
         <ContextMenuItemGroup
           size={size}
@@ -456,13 +512,13 @@ const ContextMenuItem = ({
                 <Lock
                   size={indicatorIconSize}
                   variant="bold"
-                  color="primary-disabled"
+                  color={foreground ?? "primary-disabled"}
                 />
               ) : (
                 <Confirm
                   size={indicatorIconSize}
                   variant="bold"
-                  color="primary-active"
+                  color={foreground ?? "primary-active"}
                 />
               )}
             </View>
@@ -475,7 +531,8 @@ const ContextMenuItem = ({
 };
 
 const ContextMenuItemText = (props: GetProps<typeof BodyText>): JSX.Element => {
-  const { size } = ContextMenuContext.useStyledContext();
+  const { size, variant } = ContextMenuContext.useStyledContext();
+  const foreground = useItemForeground(variant);
   const { selected, disabled, highlighted } = use(ContextMenuItemStateContext);
   const {
     fontSize,
@@ -508,13 +565,14 @@ const ContextMenuItemText = (props: GetProps<typeof BodyText>): JSX.Element => {
       cursor="inherit"
       // On the text: a View frame doesn't emit `color` for it to inherit.
       color={
-        disabled
+        foreground ??
+        (disabled
           ? "primary-disabled"
           : selected
             ? "primary-active"
             : highlighted
               ? "primary"
-              : "primary-inactive group-hover/item:primary group-focus-visible/item:primary"
+              : "primary-inactive group-hover/item:primary group-focus-visible/item:primary")
       }
       fontSize={fontSize}
       lineHeight={`${lineHeight}px`}
@@ -547,13 +605,15 @@ const ContextMenuItemText = (props: GetProps<typeof BodyText>): JSX.Element => {
 
 // A leading icon, flag or other adornment.
 const ContextMenuItemIcon = (props: GetProps<typeof BodyText>): JSX.Element => {
-  const { size } = ContextMenuContext.useStyledContext();
+  const { size, variant } = ContextMenuContext.useStyledContext();
   const { fontSize, lineHeight } = getContextMenuSize(size);
+  const foreground = useItemForeground(variant);
 
   return (
     <BodyText
       render="span"
       aria-hidden={true}
+      {...(foreground && { color: foreground })}
       flexShrink={0}
       minWidth="2xl"
       marginRight="lg"

@@ -67,6 +67,7 @@ All parts must render inside `Sheet`. If not, the part throws an error.
 | `direction` | `"top" \| "right" \| "bottom" \| "left"` | `"bottom"` | The edge the sheet slides from. |
 | `size` | `"sm" \| "md" \| "lg"` | — | Sets the height (`top`, `bottom`) or width (`left`, `right`) to `30vw`, `60vw`, or `90vw`. |
 | `theme` | `string` | `"base"` | Theme name. |
+| `variant` | `"primary" \| "secondary" \| "tertiary" \| "outlined"` | — | The sheet surface. See [Variants](#variants). Unset keeps the borderless `elevated` surface. |
 | `open` | `boolean` | — | Controlled open state. |
 | `onOpenChange` | `(open: boolean) => void` | — | Called when the state changes. |
 | `modal` | `boolean` | `true` | Makes the sheet modal. |
@@ -82,7 +83,18 @@ The panel closes when the drag passes `25%` of its size, or when the outward spe
 
 ## Variants
 
-The stories show `Base`, `Top`, `Right`, `Bottom`, `Left`, and `Scrollable` (a `Sheet.ScrollView` with `snapPoints={[90]}`).
+`variant` follows the [Button](./button.md) variants, for every `direction`.
+
+| `variant` | Surface | Border | Shadow |
+| --- | --- | --- | --- |
+| `primary` | `primary` | None | None |
+| `secondary` | `secondary` | 1px `border` | `color-shadow-resting-raised` |
+| `tertiary` | `surface` | 1px `hairline` | `color-shadow-resting-raised` |
+| `outlined` | `elevated` | 2px `primary` | None |
+
+On `primary` and `secondary`, `Sheet.Heading`, `Sheet.Body`, and `Sheet.Description` use `on-primary` / `on-secondary` (`primary` on `secondary` with the uncolored base theme). An `outlined` sheet keeps an opaque surface. Other content, such as buttons, keeps its own colors.
+
+The stories show `Base`, `Top`, `Right`, `Bottom`, `Left`, `Scrollable` (a `Sheet.ScrollView` with `snapPoints={[90]}`), each `variant`, `RightPrimary`, and `RightOutlined`.
 
 ## Related
 

@@ -24,6 +24,7 @@ import type { GetProps, SizeTokens, TamaguiElement } from "@tamagui/core";
 import { createStyledHOC, styled, useThemeName, View } from "@tamagui/core";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import type { Ref } from "react";
+import { createContext, use } from "react";
 
 // v2 `"...size"` variant keys only matched keys of the size token scale; any
 // other value (numbers, `true`) left the frame's styles untouched.
@@ -54,6 +55,30 @@ const HOVERED_BACKGROUND: Partial<Record<ContainerVariant, string>> = {
   overlay: "floating-hovered"
 };
 
+// The text and icon color on the filled variants; the others leave content in
+// its own colors. `on-secondary` is faint on the uncolored themes' light
+// `secondary`, so those use `primary` there, as `Button` does.
+const getForeground = (
+  variant: ContainerVariant | undefined,
+  colorTheme: string | undefined
+) =>
+  variant === "primary"
+    ? "on-primary"
+    : variant === "secondary"
+      ? !colorTheme || colorTheme === "base"
+        ? "primary"
+        : "on-secondary"
+      : undefined;
+
+const ContainerForegroundContext = createContext<string | undefined>(undefined);
+
+/**
+ * The text and icon color for content inside the nearest `primary` (
+ * `on-primary`) or `secondary` (`on-secondary`, or `primary` on an uncolored
+ * theme) Container, or `undefined` inside any other variant.
+ */
+export const useContainerForeground = () => use(ContainerForegroundContext);
+
 const ContainerFrame = styled(View, {
   displayName: "Container",
   tabIndex: -1,
@@ -71,14 +96,14 @@ const ContainerFrame = styled(View, {
     variant: {
       primary: {
         backgroundColor: "primary",
-        borderWidth: 1,
-        borderColor: "outline"
+        borderWidth: 0,
+        borderColor: "transparent"
       },
 
       secondary: {
         backgroundColor: "secondary",
         borderWidth: 1,
-        borderColor: "outline",
+        borderColor: "border",
         boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
       },
 
@@ -125,7 +150,7 @@ const ContainerFrame = styled(View, {
 
       outlined: {
         backgroundColor: "transparent",
-        borderWidth: 3,
+        borderWidth: 2,
         borderColor: "primary"
       },
 
@@ -223,7 +248,10 @@ const ContainerSurface = (
           />
         </View>
       )}
-      {children}
+      <ContainerForegroundContext.Provider
+        value={getForeground(props.variant as ContainerVariant, colorTheme)}>
+        {children}
+      </ContainerForegroundContext.Provider>
     </ContainerFrame>
   );
 };

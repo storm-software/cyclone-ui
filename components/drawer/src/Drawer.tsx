@@ -47,7 +47,8 @@ import {
 
 export type DrawerDirection = NonNullable<SheetProps["direction"]>;
 export type DrawerSize = "sm" | "md" | "lg";
-export type DrawerProps = Omit<SheetProps, "size"> & {
+// Not `variant`: `Drawer.Frame` owns its surface and inset-panel layout.
+export type DrawerProps = Omit<SheetProps, "size" | "variant"> & {
   size?: DrawerSize;
   /**
    * Insets the frame from the viewport edges and rounds every corner. When

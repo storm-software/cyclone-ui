@@ -20,7 +20,8 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
-import { Container } from "@cyclone-ui/container";
+import type { ContainerVariant } from "@cyclone-ui/container";
+import { Container, useContainerForeground } from "@cyclone-ui/container";
 import { HeadingLargeText } from "@cyclone-ui/heading-text";
 import type { OverlayProps } from "@cyclone-ui/overlay";
 import { Overlay } from "@cyclone-ui/overlay";
@@ -52,6 +53,15 @@ import * as React from "react";
 export interface DialogContextProps {
   theme: string;
   overlay: boolean;
+
+  /**
+   * The surface of `Dialog.Container`, which can also set its own. `primary`
+   * and `secondary` draw `Dialog.Heading` and `Dialog.Body` in `on-primary` /
+   * `on-secondary`.
+   *
+   * @defaultValue "floating"
+   */
+  variant?: ContainerVariant;
 }
 
 export const DialogContext = createStyledContext<
@@ -63,6 +73,7 @@ export const DialogContext = createStyledContext<
     overlay: true
   } as DialogContextProps,
   {
+    // Not `variant`: `DialogHeading` would take it as `HeadingLargeText`'s own.
     keys: ["theme", "overlay"]
   }
 );
@@ -76,9 +87,15 @@ const DialogHeading = styled(HeadingLargeText, {
 const DialogHeadingImpl = createStyledHOC(
   DialogHeading,
   ({ children, ...props }, forwardedRef) => {
+    // `on-primary` / `on-secondary` on a filled `Dialog.Container` variant.
+    const foreground = useContainerForeground();
+
     return (
       <TamaguiDialogTitle render="span">
-        <DialogHeading ref={forwardedRef} {...props}>
+        <DialogHeading
+          ref={forwardedRef}
+          {...(foreground && { color: foreground })}
+          {...props}>
           {children}
         </DialogHeading>
       </TamaguiDialogTitle>
@@ -97,9 +114,14 @@ const DialogBody = styled(BodyText, {
 const DialogBodyImpl = createStyledHOC(
   DialogBody,
   ({ children, ...props }, forwardedRef) => {
+    const foreground = useContainerForeground();
+
     return (
       <TamaguiDialogDescription render="span">
-        <DialogBody ref={forwardedRef} {...props}>
+        <DialogBody
+          ref={forwardedRef}
+          {...(foreground && { color: foreground })}
+          {...props}>
           {children}
         </DialogBody>
       </TamaguiDialogDescription>
@@ -119,16 +141,16 @@ const withFullBasisOnSmall = (flexBasis: unknown) =>
 
 const DialogAction = createStyledHOC(
   Button,
-  (
-    { children, onPress, variant = "primary", flexBasis, ...props },
-    forwardedRef
-  ) => {
+  ({ children, onPress, variant, flexBasis, ...props }, forwardedRef) => {
+    // A primary button would vanish into a `primary` container.
+    const onPrimary = useContainerForeground() === "on-primary";
+
     return (
       <TamaguiDialogClose onPress={onPress} asChild={true}>
         <Button
           ref={forwardedRef}
           {...props}
-          variant={variant}
+          variant={variant ?? (onPrimary ? "secondary" : "primary")}
           flexBasis={withFullBasisOnSmall(flexBasis)}>
           {children}
         </Button>
@@ -142,16 +164,17 @@ const DialogAction = createStyledHOC(
 
 const DialogClose = createStyledHOC(
   Button,
-  (
-    { children, onPress, variant = "outlined", flexBasis, ...props },
-    forwardedRef
-  ) => {
+  ({ children, onPress, variant, flexBasis, ...props }, forwardedRef) => {
+    // An outlined button's primary border and text would vanish into a
+    // `primary` container.
+    const onPrimary = useContainerForeground() === "on-primary";
+
     return (
       <TamaguiDialogClose onPress={onPress} asChild={true}>
         <Button
           ref={forwardedRef}
           {...props}
-          variant={variant}
+          variant={variant ?? (onPrimary ? "tertiary" : "outlined")}
           flexBasis={withFullBasisOnSmall(flexBasis)}>
           {children}
         </Button>
@@ -200,9 +223,16 @@ const DialogOverlay = createStyledHOC(
 
 const DialogFrame: React.FC<
   TamaguiDialogProps & Partial<DialogContextProps>
-> = ({ modal = true, children, theme = "base", overlay = true, ...props }) => {
+> = ({
+  modal = true,
+  children,
+  theme = "base",
+  overlay = true,
+  variant,
+  ...props
+}) => {
   return (
-    <DialogContext.Provider theme={theme} overlay={overlay}>
+    <DialogContext.Provider theme={theme} overlay={overlay} variant={variant}>
       <Theme name={theme}>
         <TamaguiDialog modal={modal} {...props}>
           {children}
@@ -218,15 +248,20 @@ const DialogContainer = createStyledHOC(
     {
       children,
       bordered = true,
-      variant = "floating",
+      variant: variantProp,
       maxWidth,
       ...props
     }: GetProps<typeof Container> & TamaguiDialogContentProps,
     forwardedRef
   ) => {
+    const variant =
+      variantProp ?? DialogContext.useStyledContext().variant ?? "floating";
+
     return (
       <TamaguiDialogContent
-        backgroundColor="transparent"
+        // An outlined container is transparent; this opaque backing keeps its
+        // content readable over the page, unlike `Button`'s `outlined`.
+        backgroundColor={variant === "outlined" ? "elevated" : "transparent"}
         borderWidth={0}
         width="95%"
         // On this frame: capping only the container would leave the rest of
@@ -235,7 +270,7 @@ const DialogContainer = createStyledHOC(
         flexDirection="row"
         padding={0}
         margin="7xl"
-        borderRadius={0}
+        borderRadius={variant === "outlined" ? "dialog" : 0}
         transition={{
           duration: "200ms",
           opacity: { duration: "200ms", spring: { overshootClamping: true } }

@@ -19,7 +19,8 @@
 "use client";
 
 import { BodyText } from "@cyclone-ui/body-text";
-import { Container } from "@cyclone-ui/container";
+import type { ContainerVariant } from "@cyclone-ui/container";
+import { Container, useContainerForeground } from "@cyclone-ui/container";
 import { EyebrowText } from "@cyclone-ui/eyebrow-text";
 import { HeadingLargeText } from "@cyclone-ui/heading-text";
 import { getSpaced } from "@cyclone-ui/helpers";
@@ -48,7 +49,7 @@ import { getFontSized } from "@tamagui/get-font-sized";
 import { withStaticProperties } from "@tamagui/helpers";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { GetProps, SizeTokens } from "@tamagui/web";
-import type { PointerEvent } from "react";
+import type { PointerEvent, RefObject } from "react";
 import {
   createContext,
   use,
@@ -89,15 +90,15 @@ const CardDataColorContext = createContext<
 // `group-hover` style value can't drive.
 const CardHoverContext = createContext(false);
 
+// The `variant` owns the background, border and shadow; the frame shows the
+// variant's hovered background while the pointer is over the card.
 const CardFrame = styled(Container, {
   displayName: "Card",
   context: CardContext,
   transition: "200ms",
   overflow: "hidden",
   borderRadius: "card",
-  borderColor: "hairline",
   cursor: "pointer",
-  backgroundColor: "elevated hover:elevated-hovered",
   position: "relative"
 });
 
@@ -136,8 +137,11 @@ const CardAccentBar = styled(View, {
   }
 });
 
-export type CardVariant =
-  "top" | "bottom" | "left" | "right" | "none" | "pixel";
+/** The edge that carries the accent bar, no bar, or the pixel hover effect. */
+export type CardStyle = "top" | "bottom" | "left" | "right" | "none" | "pixel";
+
+/** The surface of the card; see `Container`'s variants. */
+export type CardVariant = ContainerVariant;
 
 // Soft radial spotlight that follows the pointer; `left` / `top` are written
 // straight to the DOM node on pointer move so tracking never re-renders.
@@ -304,12 +308,68 @@ const CardContent = styled(YStack, {
   }
 });
 
+interface CardDecorationsProps {
+  cardStyle: CardStyle;
+  dataColor: string | undefined;
+  hovered: boolean;
+  spotlightRef: RefObject<HTMLElement | null>;
+}
+
+/**
+ * The accent bar and hover effect. Rendered inside the frame so the variant's
+ * foreground resolves in the card's own theme.
+ */
+const CardDecorations = ({
+  cardStyle,
+  dataColor,
+  hovered,
+  spotlightRef
+}: CardDecorationsProps) => {
+  // A `primary` bar or spotlight would vanish into a filled card.
+  const foreground = useContainerForeground();
+  const spotlightColor = dataColor ?? `var(--${foreground ?? "primary"})`;
+
+  return (
+    <>
+      {cardStyle !== "none" && cardStyle !== "pixel" && (
+        <CardAccentBar
+          variant={cardStyle}
+          {...(foreground && { backgroundColor: foreground })}
+          {...(dataColor && { style: { backgroundColor: dataColor } })}
+        />
+      )}
+      {cardStyle === "pixel" ? (
+        <CardPixels active={hovered} color={spotlightColor} />
+      ) : (
+        <CardSpotlight
+          ref={spotlightRef as any}
+          style={{
+            backgroundImage: `radial-gradient(circle closest-side, ${spotlightColor}, transparent)`
+          }}
+        />
+      )}
+    </>
+  );
+};
+
 type CardFrameImplProps = Omit<
   GetProps<typeof CardFrame>,
   "size" | "variant"
 > & {
   size?: SizeTokens;
-  /** The edge that carries the thick primary accent bar. */
+  /**
+   * The edge that carries the thick primary accent bar, `none` for no bar, or
+   * `pixel` for the pixel hover effect.
+   *
+   * @defaultValue "top"
+   */
+  cardStyle?: CardStyle;
+  /**
+   * The surface of the card. `primary` and `secondary` also draw the card's
+   * heading, text, icon, accent bar and link in `on-primary` / `on-secondary`.
+   *
+   * @defaultValue "floating"
+   */
   variant?: CardVariant;
   color?: ColorTokens | ThemeTokens;
 };
@@ -322,7 +382,8 @@ const CardFrameImpl = createStyledHOC(
       color,
       theme,
       size = true,
-      variant = "top",
+      cardStyle = "top",
+      variant = "floating",
       onPointerMove,
       onPointerEnter,
       onPointerLeave,
@@ -333,9 +394,6 @@ const CardFrameImpl = createStyledHOC(
     const dataColor = color
       ? getVariableValue(activeTheme[color as any] ?? color, "color")
       : undefined;
-    // The theme var resolves inside the themed frame; `useTheme` here still
-    // sees the outer theme.
-    const spotlightColor = dataColor ?? "var(--primary)";
 
     const spotlightRef = useRef<HTMLElement>(null);
     const handlePointerMove = (event: PointerEvent<HTMLDivElement>) => {
@@ -367,26 +425,18 @@ const CardFrameImpl = createStyledHOC(
                 onPointerLeave?.(event);
               }}
               theme={theme}
-              size={size}>
+              size={size}
+              variant={variant}
+              hovered={hovered}>
               {dataColor && (
                 <CardDataBorder style={{ borderColor: dataColor }} />
               )}
-              {variant !== "none" && variant !== "pixel" && (
-                <CardAccentBar
-                  variant={variant}
-                  {...(dataColor && { style: { backgroundColor: dataColor } })}
-                />
-              )}
-              {variant === "pixel" ? (
-                <CardPixels active={hovered} color={spotlightColor} />
-              ) : (
-                <CardSpotlight
-                  ref={spotlightRef as any}
-                  style={{
-                    backgroundImage: `radial-gradient(circle closest-side, ${spotlightColor}, transparent)`
-                  }}
-                />
-              )}
+              <CardDecorations
+                cardStyle={cardStyle}
+                dataColor={dataColor}
+                hovered={hovered}
+                spotlightRef={spotlightRef}
+              />
               <CardContent size={size}>{children}</CardContent>
             </CardFrame>
           </CardContext.Provider>
@@ -420,6 +470,7 @@ const CardHeader = styled(XStack, {
 
 const CardIcon = ({ children, ...props }: ThemeableIconProps) => {
   const dataColor = use(CardDataColorContext);
+  const foreground = useContainerForeground();
   const theme = useThemeName();
   const icon = children || getIconByTheme({ theme });
 
@@ -430,7 +481,7 @@ const CardIcon = ({ children, ...props }: ThemeableIconProps) => {
   return (
     <ThemeableIcon
       size="13xl"
-      color={dataColor ?? "primary"}
+      color={dataColor ?? foreground ?? "primary"}
       zIndex="20"
       {...props}>
       {icon}
@@ -465,9 +516,13 @@ const CardHeadingImpl = createStyledHOC(
   (props, forwardedRef) => {
     const { children, ...rest } = props;
     const dataColor = useContext(CardDataColorContext);
+    const foreground = useContainerForeground();
 
     return (
-      <CardHeading ref={forwardedRef} color={dataColor ?? "primary"} {...rest}>
+      <CardHeading
+        ref={forwardedRef}
+        color={dataColor ?? foreground ?? "primary"}
+        {...rest}>
         {children}
       </CardHeading>
     );
@@ -491,14 +546,18 @@ const CardEyebrowImpl = createStyledHOC(
   CardEyebrow,
   (props, forwardedRef) => {
     const { children, ...rest } = props;
-
-    return (
-      <Theme name="base">
-        <CardEyebrow ref={forwardedRef} {...rest}>
-          {children}
-        </CardEyebrow>
-      </Theme>
+    const foreground = useContainerForeground();
+    const eyebrow = (
+      <CardEyebrow
+        ref={forwardedRef}
+        {...(foreground && { color: foreground })}
+        {...rest}>
+        {children}
+      </CardEyebrow>
     );
+
+    // On a filled card the text takes the foreground of the card's own theme.
+    return foreground ? eyebrow : <Theme name="base">{eyebrow}</Theme>;
   },
   {
     displayName: "CardEyebrow"
@@ -519,14 +578,18 @@ const CardBodyImpl = createStyledHOC(
   CardBody,
   (props, forwardedRef) => {
     const { children, ...rest } = props;
-
-    return (
-      <Theme name="base">
-        <CardBody ref={forwardedRef} {...rest}>
-          {children}
-        </CardBody>
-      </Theme>
+    const foreground = useContainerForeground();
+    const body = (
+      <CardBody
+        ref={forwardedRef}
+        {...(foreground && { color: foreground })}
+        {...rest}>
+        {children}
+      </CardBody>
     );
+
+    // On a filled card the text takes the foreground of the card's own theme.
+    return foreground ? body : <Theme name="base">{body}</Theme>;
   },
   {
     displayName: "CardBody"
@@ -547,6 +610,7 @@ const CardLinkImpl = createStyledHOC(
     const theme = useThemeName();
     const inverse = theme?.endsWith("base");
     const hovered = use(CardHoverContext);
+    const foreground = useContainerForeground();
 
     return (
       <XStack
@@ -561,7 +625,15 @@ const CardLinkImpl = createStyledHOC(
           inverse={inverse}
           zIndex="30"
           color="group-hover/card:link-hovered"
-          textDecorationColor="group-hover/card:link-hovered">
+          textDecorationColor="group-hover/card:link-hovered"
+          // `Link` is a `styled(LinkText)`, whose `color` never reaches the
+          // inner text; the inline color does.
+          {...(foreground && {
+            style: {
+              color: `var(--${foreground})`,
+              textDecorationColor: `var(--${foreground})`
+            }
+          })}>
           {children}
         </Link>
         {/* `RightArrow` is a plain component, so flat values / style props
@@ -571,7 +643,7 @@ const CardLinkImpl = createStyledHOC(
           transition="200ms"
           marginTop="xs"
           zIndex="30"
-          color="link group-hover/cardLink:link-hovered">
+          color={foreground ?? "link group-hover/cardLink:link-hovered"}>
           <RightArrow color="currentColor" size="4xl" isComplete={hovered} />
         </Text>
       </XStack>

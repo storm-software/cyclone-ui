@@ -61,7 +61,7 @@ The root also accepts the props of the Tamagui accordion, such as `defaultValue`
 | --------------- | ----------------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------ |
 | `type`          | `"single" \| "multiple"`                                                                  | `"multiple"` | Whether one or many items can be open.                             |
 | `single`        | `boolean`                                                                                 | `false`      | Same as `type="single"`.                                           |
-| `variant`       | `"sunken" \| "canvas" \| "surface" \| "elevated" \| "floating" \| "outlined" \| "ghost"` | `"surface"`  | The background style.                                              |
+| `variant`       | `"primary" \| "secondary" \| "tertiary" \| "sunken" \| "canvas" \| "surface" \| "elevated" \| "floating" \| "outlined" \| "ghost"` | `"surface"`  | The background style.                                              |
 | `bordered`      | `boolean`                                                                                 | `true`       | Shows the borders and the item dividers.                           |
 | `separated`     | `boolean`                                                                                 | `false`      | Draws each item as its own box with a gap between items.           |
 | `numbered`      | `boolean`                                                                                 | `false`      | Shows a two-digit number before each heading (`01`, `02`, ...).    |
@@ -78,16 +78,19 @@ The root also accepts the props of the Tamagui accordion, such as `defaultValue`
 
 ## Variants
 
-Each filled variant uses the background token with the same name. See [Design tokens](../tokens/index.md).
+`primary`, `secondary`, `tertiary`, and `outlined` follow the [Button](./button.md) variants; when `separated`, each item takes the variant's border and shadow. The other filled variants use the background token with the same name. See [Design tokens](../tokens/index.md).
 
 | Variant    | Background    | Notes                                                       |
 | ---------- | ------------- | ----------------------------------------------------------- |
+| `primary`  | `primary`     | No border or shadow. Headings, numbers, and icons use `on-primary`. |
+| `secondary`| `secondary`   | `border` border, `color-shadow-resting-raised` shadow. Headings use `on-secondary` (`primary` on the uncolored base theme). |
+| `tertiary` | `surface`     | `hairline` border, `color-shadow-resting-raised` shadow.    |
 | `sunken`   | `sunken`      |                                                             |
 | `canvas`   | `canvas`      |                                                             |
 | `surface`  | `surface`     | The default.                                                |
 | `elevated` | `elevated`    |                                                             |
 | `floating` | `floating`    |                                                             |
-| `outlined` | `transparent` | Headers use `surface-hovered` on hover when `separated`.    |
+| `outlined` | `transparent` | 2px `primary` border. Headers use `surface-hovered` on hover when `separated`. |
 | `ghost`    | `transparent` | No outer border or padding. Each header has an underline.   |
 
 ## States and behavior

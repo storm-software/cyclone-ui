@@ -33,16 +33,18 @@ import { Container } from "@cyclone-ui/container";
 
 | Variant | Surface |
 | --- | --- |
-| `primary` | `primary` background, `outline` border. |
-| `secondary` | `secondary` background, `hairline` border. |
-| `tertiary` | `surface` background, `hairline` border. |
+| `primary` | `primary` background, no border or shadow. |
+| `secondary` | `secondary` background, `border` border, `color-shadow-resting-raised` shadow. |
+| `tertiary` | `surface` background, `hairline` border, `color-shadow-resting-raised` shadow. |
 | `sunken` | `sunken` background, `hairline` border. |
 | `canvas` | `canvas` background, `hairline` border. |
 | `elevated` | The default. `surface` background, `hairline` border. |
 | `floating` | `elevated` background, `hairline` border. |
 | `overlay` | `floating` background, `hairline` border. |
-| `outlined` | Transparent background, 3 px `primary` border. |
+| `outlined` | Transparent background, 2 px `primary` border. |
 | `glass` | Transparent background, `hairline` border, and a blurred gradient. |
+
+`primary`, `secondary`, `tertiary`, and `outlined` match the [Button](./button.md) variants. Inside a `primary` or `secondary` container, `useContainerForeground()` returns the color for its content (`on-primary`, `on-secondary`, or `primary` on the uncolored base theme's light `secondary`); Card and Dialog read it for their built-in text.
 
 ## Props
 

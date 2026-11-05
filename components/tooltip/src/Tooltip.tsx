@@ -28,8 +28,19 @@ import {
 import type { TooltipProps as TamaguiTooltipProps } from "@tamagui/tooltip";
 import { Tooltip as TamaguiTooltip } from "@tamagui/tooltip";
 
+export type TooltipVariant = "primary" | "secondary" | "tertiary" | "outlined";
+
 export interface TooltipContextProps {
   size: SizeTokens;
+
+  /**
+   * The surface of the tooltip's content and arrow: `primary` fills it with
+   * `primary`, `secondary` with `secondary` and a `border` border, `tertiary`
+   * with `surface` and a `hairline` border, and `outlined` draws a 2px
+   * `primary` border. Unset keeps the `elevated` surface with an `outline`
+   * border.
+   */
+  variant?: TooltipVariant;
 }
 
 export const TooltipContext = createStyledContext<TooltipContextProps, "size">(
@@ -37,9 +48,35 @@ export const TooltipContext = createStyledContext<TooltipContextProps, "size">(
     size: "12xl"
   } as TooltipContextProps,
   {
+    // Not `variant`: `TooltipContentImpl` turns it into surface props.
     keys: ["size"]
   }
 );
+
+// Unlike `Button`'s `outlined`, an outlined tooltip keeps an opaque surface so
+// its text stays readable over the page. The shadow belongs to `elevated`.
+const tooltipSurfaces = {
+  primary: {
+    backgroundColor: "primary",
+    borderColor: "transparent",
+    borderWidth: 0
+  },
+  secondary: {
+    backgroundColor: "secondary",
+    borderColor: "border",
+    borderWidth: 1
+  },
+  tertiary: {
+    backgroundColor: "surface",
+    borderColor: "hairline",
+    borderWidth: 1
+  },
+  outlined: {
+    backgroundColor: "elevated",
+    borderColor: "primary",
+    borderWidth: 2
+  }
+} as const;
 
 const TooltipFrame = styled(TamaguiTooltip, {
   displayName: "Tooltip",
@@ -52,12 +89,13 @@ const TooltipFrameImpl = createStyledHOC(
     {
       children,
       size = true,
+      variant,
       ...props
     }: TamaguiTooltipProps & Partial<TooltipContextProps>,
     forwardedRef
   ) => {
     return (
-      <TooltipContext.Provider size={size}>
+      <TooltipContext.Provider size={size} variant={variant}>
         {/* v3's Tooltip (Popper) has no `size` prop; size lives in context. */}
         <TamaguiTooltip ref={forwardedRef} {...props}>
           {children}
@@ -120,6 +158,8 @@ const TooltipContent = styled(
 interface TooltipContentExtraProps {
   hasArrow?: boolean;
   arrowBorderColor?: GetProps<typeof TooltipContent>["borderColor"];
+  /** Overrides the `Tooltip`'s `variant`. */
+  variant?: TooltipVariant;
 }
 
 const TooltipContentImpl = createStyledHOC(
@@ -129,23 +169,44 @@ const TooltipContentImpl = createStyledHOC(
       children,
       hasArrow = true,
       arrowBorderColor,
-      borderColor = "outline",
-      // Keep the arrow on the same background as the body
-      backgroundColor = "elevated",
+      variant: variantProp,
+      borderColor: borderColorProp,
+      backgroundColor: backgroundColorProp,
+      borderWidth: borderWidthProp,
+      elevated: elevatedProp,
       ...props
     }: GetProps<typeof TooltipContent> & TooltipContentExtraProps,
     forwardedRef
   ) => {
+    const variant = variantProp ?? TooltipContext.useStyledContext().variant;
+    const surface = variant ? tooltipSurfaces[variant] : undefined;
+    const borderColor = borderColorProp ?? surface?.borderColor ?? "outline";
+    // Keep the arrow on the same background as the body
+    const backgroundColor =
+      backgroundColorProp ?? surface?.backgroundColor ?? "elevated";
+    const borderWidth = borderWidthProp ?? surface?.borderWidth;
+    // A `variant` brings its own shadow, like `Button`'s.
+    const elevated = elevatedProp ?? variant === undefined;
+
     return (
       <TooltipContent
         ref={forwardedRef}
+        // Without the floating shadow, the raised variants keep `Button`'s
+        // resting one.
+        {...(!elevated &&
+          (variant === "secondary" || variant === "tertiary") && {
+            boxShadow: "color-shadow-resting-raised"
+          })}
         {...props}
+        elevated={elevated}
         backgroundColor={backgroundColor}
-        borderColor={borderColor}>
+        borderColor={borderColor}
+        {...(borderWidth !== undefined && { borderWidth })}>
         {hasArrow && (
           <TooltipArrow
             backgroundColor={backgroundColor}
             borderColor={arrowBorderColor || borderColor}
+            {...(borderWidth !== undefined && { borderWidth })}
           />
         )}
         {children}

@@ -49,9 +49,9 @@ export function Example() {
 
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
-| `variant` | `"primary" \| "secondary"` | `"primary"` | The theme color that fills the tag, or that draws the border when outlined. |
+| `variant` | `"primary" \| "secondary" \| "tertiary" \| "outlined"` | `"primary"` | The style, following the [Button](./button.md) variants. See below. |
 | `size` | `SizeTokens \| number` | `true` | Sets the padding. `Tag.Text` and `Tag.Icon` also follow it. |
-| `outlined` | `boolean` | `false` | Draws a 2px border and a transparent background. |
+| `outlined` | `boolean` | `false` | Deprecated: use `variant="outlined"`. Outlines the tag in the `primary` or `secondary` variant's color. |
 | `circular` | `boolean` | `false` | Fully rounds the tag. The `Rounded` story uses this prop. |
 | `pressable` | `boolean` | `false` | Makes the tag focusable with `role="button"` and a press ripple. |
 | `removable` | `boolean` | `false` | Adds a remove button after the children. |
@@ -75,9 +75,11 @@ export function Example() {
 
 ## Variants and states
 
-- **Filled:** The background is `primary`, or `secondary` for the secondary variant.
-- **Outlined:** The border uses the variant color. The text uses the same color.
-- **Pressable:** The background changes to `secondary-hovered` on hover. A ripple starts at the press point. The focus ring uses `ring-offset`.
+- **`primary`:** A `primary` background with no border or shadow, and `on-primary` text.
+- **`secondary`:** A `secondary` background, a 1px `border` border, and the `color-shadow-resting-raised` shadow. The text is `on-secondary` (`primary` on the uncolored base theme's light `secondary`).
+- **`tertiary`:** A `surface` background, a 1px `hairline` border, the `color-shadow-resting-raised` shadow, and `primary` text.
+- **`outlined`:** A transparent background with a 2px `primary` border and `primary` text. With the deprecated `outlined` flag, a `secondary` tag outlines in `secondary` instead.
+- **Pressable:** The background (or the outlined border) changes to its `-hovered` shade on hover. A ripple starts at the press point. The focus ring uses `ring-offset`.
 - **Removable:** Hovering or focusing the remove button switches the whole tag to the `danger` theme. The tag fades and shrinks to `0.8` scale on exit, over 200ms.
 - **Editable:** The tag responds to hover like a pressable tag. In edit mode, Enter or blur commits the text. Escape restores the old text. The remove button is hidden during editing.
 - **Themes:** The stories also show the `brand`, `discovery`, `danger`, `warning`, `info`, and `success` themes.

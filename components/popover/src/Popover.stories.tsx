@@ -32,6 +32,18 @@ const meta: Meta<PopoverStoryArgs> = {
   component: Popover,
   tags: ["autodocs"],
   render: ({ hasArrow, ...props }) => {
+    // Content keeps its own colors; on a filled popover it uses the variant's
+    // foreground, like the components with built-in text do.
+    const color =
+      props.variant === "primary"
+        ? "on-primary"
+        : props.variant === "secondary"
+          ? // `on-secondary` is faint on the base theme's light `secondary`.
+            props.theme && props.theme !== "base"
+            ? "on-secondary"
+            : "primary"
+          : undefined;
+
     return (
       <Popover {...props}>
         <Popover.Trigger asChild={true}>
@@ -42,8 +54,8 @@ const meta: Meta<PopoverStoryArgs> = {
 
         <Popover.Content hasArrow={hasArrow}>
           <YStack gap="3xl">
-            <HeadingText>Heading Text</HeadingText>
-            <BodyText>
+            <HeadingText {...(color && { color })}>Heading Text</HeadingText>
+            <BodyText {...(color && { color })}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -109,5 +121,43 @@ export const Info: Story = {
 export const Success: Story = {
   args: {
     theme: "success"
+  }
+};
+
+export const Primary: Story = {
+  args: {
+    variant: "primary"
+  }
+};
+
+export const Secondary: Story = {
+  args: {
+    variant: "secondary"
+  }
+};
+
+export const Tertiary: Story = {
+  args: {
+    variant: "tertiary"
+  }
+};
+
+export const Outlined: Story = {
+  args: {
+    variant: "outlined"
+  }
+};
+
+export const PrimaryArrow: Story = {
+  args: {
+    variant: "primary",
+    hasArrow: true
+  }
+};
+
+export const OutlinedArrow: Story = {
+  args: {
+    variant: "outlined",
+    hasArrow: true
   }
 };

@@ -55,10 +55,12 @@ import { Card } from "@cyclone-ui/card";
 | `theme` | theme name                 | -       | The color theme. The stories use `brand`, `discovery`, `danger`, `warning`, `info`, and `success`. |
 | `color` | color or theme token       | -       | A data color for the accent bar, the border, the icon, the heading, and the spotlight. The `DataColor` story uses `data-pink-emphasis`. |
 | `size`  | size token                 | `true`  | Sets the gap and the padding. By default, the sizes of the parts apply.    |
+| `cardStyle` | `"top" \| "bottom" \| "left" \| "right" \| "none" \| "pixel"` | `"top"` | The edge with the accent bar, no bar, or the pixel hover effect. Named `variant` before. |
+| `variant` | [Container](./container.md) variant | `"floating"` | The surface. `primary`, `secondary`, `tertiary`, and `outlined` follow the [Button](./button.md) variants. On `primary` and `secondary`, the heading, eyebrow, body, icon, accent bar, spotlight, and link use `on-primary` / `on-secondary` (`primary` on the uncolored base theme's light `secondary`). |
 
 ## States
 
-- **Hover.** The background changes to `elevated-hovered`. The accent bar changes to `primary-hovered`. The spotlight shows at 15% opacity and follows the pointer. The footer arrow completes.
+- **Hover.** The background changes to the variant's hovered background (`elevated-hovered` for the default `floating`). The accent bar changes to `primary-hovered`. The spotlight shows at 15% opacity and follows the pointer. The footer arrow completes.
 - **Cursor.** The card uses the pointer cursor.
 - **Data color.** With `color`, the card draws a 1 px border and the accent bar in that color.
 

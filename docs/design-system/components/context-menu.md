@@ -60,6 +60,7 @@ import { ContextMenu } from "@cyclone-ui/context-menu";
 | `size` | `"sm"`, `"md"`, or `"lg"` | - | The control size. `getContextMenuSize` treats a missing size as `"md"`. |
 | `value` | `string` | - | The selected item. That item shows a check mark. |
 | `onValueChange` | `(value: string) => void` | - | Called with the pressed item's `value`. |
+| `variant` | `"primary"`, `"secondary"`, `"tertiary"`, or `"outlined"` | - | The menu surface, passed to [Popover](./popover.md#variants). On `primary` and `secondary`, item text, icons, and indicators use `on-primary` / `on-secondary` (`primary` on `secondary` with the uncolored base theme). Hovered, focused, and highlighted items use `primary-hovered`, `secondary-hovered`, or `surface-hovered`. Unset keeps the default menu. |
 
 `ContextMenu.Item` takes `value`. The item is selected when that value equals the menu `value`. Pressing the item calls `onValueChange`.
 

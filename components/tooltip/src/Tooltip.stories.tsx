@@ -26,6 +26,18 @@ const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
   tags: ["autodocs"],
   render: (props: any) => {
+    // Content keeps its own colors; on a filled tooltip it uses the variant's
+    // foreground, like the components with built-in text do.
+    const color =
+      props.variant === "primary"
+        ? "on-primary"
+        : props.variant === "secondary"
+          ? // `on-secondary` is faint on the base theme's light `secondary`.
+            props.theme && props.theme !== "base"
+            ? "on-secondary"
+            : "primary"
+          : undefined;
+
     return (
       <Tooltip {...props}>
         <Tooltip.Trigger asChild={true}>
@@ -35,7 +47,7 @@ const meta: Meta<typeof Tooltip> = {
         </Tooltip.Trigger>
 
         <Tooltip.Content>
-          <BodyText>Lorem ipsum dolor</BodyText>
+          <BodyText {...(color && { color })}>Lorem ipsum dolor</BodyText>
         </Tooltip.Content>
       </Tooltip>
     );
@@ -83,5 +95,29 @@ export const Info: Story = {
 export const Success: Story = {
   args: {
     theme: "success"
+  }
+};
+
+export const Primary: Story = {
+  args: {
+    variant: "primary"
+  }
+};
+
+export const Secondary: Story = {
+  args: {
+    variant: "secondary"
+  }
+};
+
+export const Tertiary: Story = {
+  args: {
+    variant: "tertiary"
+  }
+};
+
+export const Outlined: Story = {
+  args: {
+    variant: "outlined"
   }
 };

@@ -172,6 +172,51 @@ export const DirectionUp: Story = {
   }
 };
 
+export const Primary: Story = {
+  args: {
+    variant: "primary",
+    children: "Some collapsed content"
+  }
+};
+
+export const Secondary: Story = {
+  args: {
+    variant: "secondary",
+    children: "Some collapsed content"
+  }
+};
+
+export const Tertiary: Story = {
+  args: {
+    variant: "tertiary",
+    children: "Some collapsed content"
+  }
+};
+
+export const SeparatedPrimary: Story = {
+  args: {
+    variant: "primary",
+    separated: true,
+    children: "Some collapsed content"
+  }
+};
+
+export const SeparatedSecondary: Story = {
+  args: {
+    variant: "secondary",
+    separated: true,
+    children: "Some collapsed content"
+  }
+};
+
+export const SeparatedTertiary: Story = {
+  args: {
+    variant: "tertiary",
+    separated: true,
+    children: "Some collapsed content"
+  }
+};
+
 export const Sunken: Story = {
   args: {
     variant: "sunken",

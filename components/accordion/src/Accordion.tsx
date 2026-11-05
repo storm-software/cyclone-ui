@@ -32,6 +32,7 @@ import {
   createStyledHOC,
   styled,
   Text,
+  useThemeName,
   View
 } from "@tamagui/core";
 import { YGroup } from "@tamagui/group";
@@ -63,6 +64,9 @@ type BaseAccordionProps = Omit<
 };
 
 export type AccordionVariant =
+  | "primary"
+  | "secondary"
+  | "tertiary"
   | "sunken"
   | "canvas"
   | "surface"
@@ -75,10 +79,14 @@ export type AccordionIcon = "toggle" | "chevron";
 export type AccordionIconDirection = "left" | "right";
 export type AccordionDirection = "up" | "down";
 
-// Each variant uses the background token of the same name; separated items
-// paint their own background (and hover) since the group behind them is
+// The surface variants use the background token of the same name, and
+// `primary` / `secondary` / `tertiary` follow `Button`'s variants. Separated
+// items paint their own background (and hover) since the group behind them is
 // transparent.
 const ITEM_BACKGROUNDS = {
+  primary: "primary",
+  secondary: "secondary",
+  tertiary: "surface",
   sunken: "sunken",
   canvas: "canvas",
   surface: "surface",
@@ -89,6 +97,9 @@ const ITEM_BACKGROUNDS = {
 } as const;
 
 const HEADER_BACKGROUNDS = {
+  primary: "primary hover:primary-hovered",
+  secondary: "secondary hover:secondary-hovered",
+  tertiary: "surface hover:surface-hovered",
   sunken: "sunken hover:sunken-hovered",
   canvas: "canvas hover:canvas-hovered",
   surface: "surface hover:surface-hovered",
@@ -97,6 +108,44 @@ const HEADER_BACKGROUNDS = {
   outlined: "transparent hover:surface-hovered",
   ghost: "transparent"
 } as const;
+
+// The border and shadow of a separated item, where it differs from the
+// separated default (a 1px `border` border).
+const SEPARATED_ITEM_FRAMES: Partial<
+  Record<AccordionVariant, Record<string, string | number>>
+> = {
+  primary: { borderWidth: 0 },
+  secondary: { boxShadow: "color-shadow-resting-raised" },
+  tertiary: {
+    borderColor: "hairline",
+    boxShadow: "color-shadow-resting-raised"
+  },
+  outlined: { borderWidth: 2, borderColor: "primary" }
+};
+
+// `dark_brand` / `brand` -> `brand`; `dark`, `base` and `dark_base` are
+// uncolored.
+const isUncoloredTheme = (themeName: string | null | undefined) => {
+  const parts = themeName?.split("_") ?? [];
+  const color = parts.length > 1 ? parts[1] : parts[0];
+
+  return !color || color === "base" || color === "light" || color === "dark";
+};
+
+// The text and icon color on the `primary` / `secondary` backgrounds.
+// `on-secondary` is faint on the uncolored themes' light `secondary`, so those
+// use `primary` there, as `Button` does.
+const useForeground = (variant: AccordionVariant | undefined) => {
+  const themeName = useThemeName();
+
+  return variant === "primary"
+    ? "on-primary"
+    : variant === "secondary"
+      ? isUncoloredTheme(themeName)
+        ? "primary"
+        : "on-secondary"
+      : undefined;
+};
 
 const getOpenValues = (value?: string | string[]) =>
   isString(value) ? [value] : (value ?? []);
@@ -161,6 +210,19 @@ const AccordionGroup = styled(YGroup, {
   overflow: "hidden",
   variants: {
     variant: {
+      primary: {
+        backgroundColor: "primary",
+        borderWidth: 0
+      },
+      secondary: {
+        backgroundColor: "secondary",
+        boxShadow: "color-shadow-resting-raised"
+      },
+      tertiary: {
+        backgroundColor: "surface",
+        borderColor: "hairline",
+        boxShadow: "color-shadow-resting-raised"
+      },
       sunken: {
         backgroundColor: "sunken"
       },
@@ -177,7 +239,9 @@ const AccordionGroup = styled(YGroup, {
         backgroundColor: "floating"
       },
       outlined: {
-        backgroundColor: "transparent"
+        backgroundColor: "transparent",
+        borderWidth: 2,
+        borderColor: "primary"
       },
       ghost: {
         backgroundColor: "transparent",
@@ -193,7 +257,8 @@ const AccordionGroup = styled(YGroup, {
         overflow: "visible",
         borderRadius: 0,
         borderWidth: 0,
-        backgroundColor: "transparent"
+        backgroundColor: "transparent",
+        boxShadow: "none"
       }
     },
     bordered: {
@@ -358,6 +423,9 @@ const AccordionItem = styled(TamaguiAccordion.Item, {
 
     // Ghost headers draw their own underline instead.
     variant: {
+      primary: {},
+      secondary: {},
+      tertiary: {},
       sunken: {},
       canvas: {},
       surface: {},
@@ -383,7 +451,11 @@ const AccordionItem = styled(TamaguiAccordion.Item, {
       }
     }
   } as const
-});
+}).resolve(({ separated, bordered, variant }) =>
+  separated && bordered !== false
+    ? SEPARATED_ITEM_FRAMES[variant as AccordionVariant]
+    : undefined
+);
 
 const AccordionItemImpl = createStyledHOC(
   AccordionItem,
@@ -444,6 +516,9 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
     },
 
     variant: {
+      primary: {},
+      secondary: {},
+      tertiary: {},
       sunken: {},
       canvas: {},
       surface: {},
@@ -477,7 +552,8 @@ const AccordionItemHeaderImpl = createStyledHOC(
     // The header icons are `themed` SVG icons, which resolve a single color
     // value and cannot take a `group-hover/accordion:` clause.
     const [hovered, setHovered] = useState(false);
-    const iconColor = hovered ? "primary-active" : "primary";
+    const foreground = useForeground(variant);
+    const iconColor = foreground ?? (hovered ? "primary-active" : "primary");
 
     return (
       <AccordionItemHeader
@@ -498,7 +574,7 @@ const AccordionItemHeaderImpl = createStyledHOC(
         }}>
         {numbered ? (
           <XStack alignItems="center" flex={1} gap="6xl">
-            <Text color="ink" fontFamily="code">
+            <Text color={foreground ?? "ink"} fontFamily="code">
               {String(index + 1).padStart(2, "0")}
             </Text>
             {children}
@@ -540,11 +616,14 @@ const AccordionItemHeaderImpl = createStyledHOC(
 const AccordionItemHeaderHeading = createStyledHOC(
   HeadingSmallText,
   ({ children, ...props }, forwardedRef) => {
+    const { variant } = AccordionContext.useStyledContext();
+    const foreground = useForeground(variant);
+
     return (
       <HeadingSmallText
         ref={forwardedRef}
         transition="250ms"
-        color="primary group-hover/accordion:primary-hovered"
+        color={foreground ?? "primary group-hover/accordion:primary-hovered"}
         cursor="group-hover/accordion:pointer"
         {...props}>
         {children}
@@ -569,6 +648,9 @@ const AccordionItemContent = styled(TamaguiAccordion.Content, {
       }
     },
     variant: {
+      primary: {},
+      secondary: {},
+      tertiary: {},
       sunken: {},
       canvas: {},
       surface: {},

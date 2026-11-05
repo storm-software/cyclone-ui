@@ -32,7 +32,9 @@ import { XStack, YStack } from "@tamagui/stacks";
 import type { FC, ReactNode } from "react";
 import { Children, isValidElement } from "react";
 
-export type ModalProps = DialogProps;
+// Not `variant`: `Modal.Frame` owns its `elevated` surface and inset-panel
+// layout.
+export type ModalProps = Omit<DialogProps, "variant">;
 export type ModalFrameProps = GetProps<typeof Dialog.Container>;
 export type ModalContentProps = GetProps<typeof YStack>;
 export type ModalFooterProps = GetProps<typeof XStack>;

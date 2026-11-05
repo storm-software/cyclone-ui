@@ -265,7 +265,7 @@ export const PrivacyChoices = createStyledHOC(
               style={{ scrollbarGutter: "auto" }}>
               <Tabs
                 orientation="vertical"
-                variant="tabbed"
+                tabStyle="tabbed"
                 bordered={false}
                 height="auto"
                 // The category list sits above the panel on small screens.

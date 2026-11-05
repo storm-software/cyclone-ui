@@ -32,6 +32,31 @@ import type { ReactNode } from "react";
 import { forwardRef, useCallback, useState } from "react";
 
 export type ToggleSize = FormControlSize;
+export type ToggleVariant = "primary" | "secondary" | "tertiary" | "outlined";
+
+// `dark_brand` / `brand` -> `brand`; `dark`, `base` and `dark_base` are
+// uncolored.
+const isUncoloredTheme = (themeName: string | null | undefined) => {
+  const parts = themeName?.split("_") ?? [];
+  const color = parts.length > 1 ? parts[1] : parts[0];
+
+  return !color || color === "base" || color === "light" || color === "dark";
+};
+
+// The unpressed text color on the `primary` / `secondary` frames.
+// `on-secondary` is faint on the uncolored themes' light `secondary`, so those
+// use `primary` there, as `Button` does.
+const getToggleForeground = (
+  variant: ToggleVariant | undefined,
+  themeName: string | null | undefined
+) =>
+  variant === "primary"
+    ? "on-primary"
+    : variant === "secondary"
+      ? isUncoloredTheme(themeName)
+        ? "primary"
+        : "on-secondary"
+      : undefined;
 
 /** Gap between the frame and the inner indicator at the medium size. */
 const BASE_INSET = 2.5;
@@ -80,10 +105,34 @@ const ToggleFrame = styled(View, {
       }
     },
 
-    invalid: {
-      true: {
-        borderColor: "hairline"
+    // `Button`'s variants on the frame; the pressed indicator stays a raised
+    // surface. Unset keeps the sunken frame.
+    variant: {
+      primary: {
+        backgroundColor: "primary hover:primary-hovered",
+        // Transparent rather than removed, so the indicator keeps its size.
+        borderColor: "transparent"
+      },
+      secondary: {
+        backgroundColor: "secondary hover:secondary-hovered",
+        borderColor: "border",
+        boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
+      },
+      tertiary: {
+        backgroundColor: "surface hover:surface-hovered",
+        borderColor: "hairline",
+        boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
+      },
+      outlined: {
+        backgroundColor: "transparent",
+        borderWidth: 2,
+        borderColor: "primary hover:primary-hovered"
       }
+    },
+
+    // Shown by the `danger` theme, which recolors the variant's border too.
+    invalid: {
+      true: {}
     },
 
     disabled: {
@@ -231,6 +280,13 @@ export interface ToggleProps extends Omit<
   /** The control size. */
   size?: ToggleSize;
   /**
+   * The frame's colors: `primary` fills it with `primary`, `secondary` with
+   * `secondary` and a `border` border, `tertiary` with `surface` and a
+   * `hairline` border, and `outlined` draws a 2px `primary` border. Unset
+   * keeps the sunken frame. Ignored when `borderless`.
+   */
+  variant?: ToggleVariant;
+  /**
    * The toggle content. Strings are wrapped in styled text; pass a function
    * to render different content (e.g. "On"/"Off" or icons) per state.
    */
@@ -250,6 +306,7 @@ export const Toggle = forwardRef<TamaguiElement, ToggleProps>(
       defaultPressed = false,
       onPressedChange,
       size = "md",
+      variant,
       invalid = false,
       disabled = false,
       borderless = false,
@@ -282,10 +339,20 @@ export const Toggle = forwardRef<TamaguiElement, ToggleProps>(
 
     const content =
       typeof children === "function" ? children(pressed) : children;
+    // The pressed text sits on the indicator instead.
+    const foreground =
+      pressed || borderless
+        ? undefined
+        : getToggleForeground(
+            variant,
+            props.theme ?? (invalid ? "danger" : themeName)
+          );
 
     return (
       <ToggleFrame
         theme={invalid ? "danger" : themeName}
+        // Before `props`, so explicit colors (e.g. `ToggleGroup.Item`'s) win.
+        variant={borderless ? undefined : variant}
         {...props}
         ref={forwardedRef}
         frameSize={size}
@@ -313,7 +380,10 @@ export const Toggle = forwardRef<TamaguiElement, ToggleProps>(
               backgroundColor: `${pressedBackgroundColor} group-hover/toggle:${pressedBackgroundColor}`
             })}>
           {typeof content === "string" || typeof content === "number" ? (
-            <ToggleText textSize={size} active={pressed}>
+            <ToggleText
+              textSize={size}
+              active={pressed}
+              {...(foreground && { color: foreground })}>
               {content}
             </ToggleText>
           ) : (

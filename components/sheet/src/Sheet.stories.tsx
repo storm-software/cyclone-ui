@@ -43,7 +43,10 @@ const meta: Meta<typeof Sheet> = {
             <Sheet.Heading>Sheet heading</Sheet.Heading>
             <Sheet.Body>{children}</Sheet.Body>
             <Sheet.Footer>
-              <Button onPress={() => setOpen(false)} variant="outlined">
+              <Button
+                onPress={() => setOpen(false)}
+                // An outlined button would vanish into a `primary` sheet.
+                variant={props.variant === "primary" ? "tertiary" : "outlined"}>
                 <Button.Text>Close</Button.Text>
               </Button>
             </Sheet.Footer>
@@ -90,6 +93,50 @@ export const Left: Story = {
   args: {
     ...Base.args,
     direction: "left"
+  }
+};
+
+export const Primary: Story = {
+  args: {
+    ...Base.args,
+    variant: "primary"
+  }
+};
+
+export const Secondary: Story = {
+  args: {
+    ...Base.args,
+    variant: "secondary"
+  }
+};
+
+export const Tertiary: Story = {
+  args: {
+    ...Base.args,
+    variant: "tertiary"
+  }
+};
+
+export const Outlined: Story = {
+  args: {
+    ...Base.args,
+    variant: "outlined"
+  }
+};
+
+export const RightPrimary: Story = {
+  args: {
+    ...Base.args,
+    direction: "right",
+    variant: "primary"
+  }
+};
+
+export const RightOutlined: Story = {
+  args: {
+    ...Base.args,
+    direction: "right",
+    variant: "outlined"
   }
 };
 

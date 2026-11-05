@@ -49,6 +49,10 @@ const meta: Meta<typeof Toggle> = {
     size: {
       control: "inline-radio",
       options: ["sm", "md", "lg"]
+    },
+    variant: {
+      control: "inline-radio",
+      options: ["primary", "secondary", "tertiary", "outlined"]
     }
   }
 };
@@ -218,5 +222,36 @@ export const Disabled: Story = {
 
     await expect(toggle).toBeDisabled();
     await expect(toggle).toHaveAttribute("aria-pressed", "false");
+  }
+};
+
+export const Primary: Story = {
+  args: {
+    variant: "primary"
+  }
+};
+
+export const Secondary: Story = {
+  args: {
+    variant: "secondary"
+  }
+};
+
+export const Tertiary: Story = {
+  args: {
+    variant: "tertiary"
+  }
+};
+
+export const Outlined: Story = {
+  args: {
+    variant: "outlined"
+  }
+};
+
+export const PrimaryPressed: Story = {
+  args: {
+    defaultPressed: true,
+    variant: "primary"
   }
 };

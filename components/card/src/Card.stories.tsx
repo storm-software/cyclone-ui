@@ -30,9 +30,13 @@ const meta: Meta<CardStoryArgs> = {
   component: Card,
   tags: ["autodocs"],
   argTypes: {
-    variant: {
+    cardStyle: {
       control: "select",
       options: ["top", "bottom", "left", "right", "none", "pixel"]
+    },
+    variant: {
+      control: "select",
+      options: ["primary", "secondary", "tertiary", "outlined", "floating"]
     }
   },
   render: ({ icon, ...args }: CardStoryArgs) => (
@@ -131,41 +135,85 @@ export const Success: Story = {
 export const AccentBottom: Story = {
   args: {
     ...Base.args,
-    variant: "bottom"
+    cardStyle: "bottom"
   }
 };
 
 export const AccentLeft: Story = {
   args: {
     ...Base.args,
-    variant: "left"
+    cardStyle: "left"
   }
 };
 
 export const AccentRight: Story = {
   args: {
     ...Base.args,
-    variant: "right"
+    cardStyle: "right"
   }
 };
 
 export const AccentNone: Story = {
   args: {
     ...Base.args,
-    variant: "none"
+    cardStyle: "none"
   }
 };
 
 export const Pixel: Story = {
   args: {
     ...Base.args,
-    variant: "pixel"
+    cardStyle: "pixel"
   }
 };
 
 export const PixelDataColor: Story = {
   args: {
     ...DataColor.args,
-    variant: "pixel"
+    cardStyle: "pixel"
+  }
+};
+
+export const Primary: Story = {
+  args: {
+    ...Base.args,
+    variant: "primary"
+  }
+};
+
+export const Secondary: Story = {
+  args: {
+    ...Base.args,
+    variant: "secondary"
+  }
+};
+
+export const Tertiary: Story = {
+  args: {
+    ...Base.args,
+    variant: "tertiary"
+  }
+};
+
+export const Outlined: Story = {
+  args: {
+    ...Base.args,
+    variant: "outlined"
+  }
+};
+
+export const BrandPrimary: Story = {
+  args: {
+    ...Base.args,
+    theme: "brand",
+    variant: "primary"
+  }
+};
+
+export const BrandSecondary: Story = {
+  args: {
+    ...Base.args,
+    theme: "brand",
+    variant: "secondary"
   }
 };

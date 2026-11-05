@@ -45,6 +45,7 @@ A package containing the Tabs component used by Storm Software
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 ## Table of Contents
 
 - [Installing](#installing)
@@ -68,7 +69,7 @@ A package containing the Tabs component used by Storm Software
 ## Quick Features
 
 - `Tabs.Header.Item` triggers and `Tabs.Content.Item` panels
-- `underline`, `floating`, and `tabbed` variants
+- `underline`, `floating`, `tabbed`, and `fluid` styles (`tabStyle`), each with `primary`, `secondary`, `tertiary`, and `outlined` color variants (`variant`)
 - Horizontal or vertical orientation, with optional borders
 - Animated active indicator and an `onValueChange` callback
 
@@ -101,9 +102,9 @@ yarn add -D @cyclone-ui/tabs
 ## Usage
 
 ```tsx
-import { Tabs } from "@cyclone-ui/tabs";
+import { Tabs } from "@cyclone-ui/tabs"
 
-<Tabs variant="floating" onValueChange={value => console.log(value)}>
+;<Tabs tabStyle="floating" onValueChange={value => console.log(value)}>
   <Tabs.Header>
     <Tabs.Header.Item value="tab1">Overview</Tabs.Header.Item>
     <Tabs.Header.Item value="tab2">Details</Tabs.Header.Item>
@@ -112,7 +113,7 @@ import { Tabs } from "@cyclone-ui/tabs";
     <Tabs.Content.Item value="tab1">First panel</Tabs.Content.Item>
     <Tabs.Content.Item value="tab2">Second panel</Tabs.Content.Item>
   </Tabs.Content>
-</Tabs>;
+</Tabs>
 ```
 
 See the [Tabs documentation](../../docs/design-system/components/tabs.md) for all props.
