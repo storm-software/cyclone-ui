@@ -144,8 +144,11 @@ const AlertIcon = createStyledHOC(
       <XStack position="relative" minHeight="100%" alignItems="center">
         <View
           theme={colorTheme}
-          transition="500ms"
-          x="enter:-200px"
+          // Offset by its own width (not a fixed distance) so the stripe is
+          // visible from the first frame and lands with the Message toast's
+          // 400ms entrance, instead of popping in after the card settles.
+          transition="400ms"
+          x="enter:-100%"
           opacity="enter:0.6"
           position="absolute"
           display="block"

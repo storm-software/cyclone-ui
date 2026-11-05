@@ -22,7 +22,7 @@ import { View } from "@tamagui/core";
 import { Image } from "@tamagui/image";
 import { lazy, Suspense, useRef, useState } from "react";
 
-// Loaded on demand so pdfjs only ships to pickers that actually show a PDF.
+// Loaded on demand so pdfjs only ships to files that actually show a PDF.
 const PdfDocumentDisplay = lazy(async () =>
   import("@cyclone-ui/pdf-document-display").then(module => ({
     default: module.PdfDocumentDisplay
@@ -44,7 +44,7 @@ interface PreviewCanvas {
  * with `getBoundingClientRect`, which includes the card's hover scale, so a
  * live page would redraw on every frame of that transition.
  */
-export const FilePickerPdfPreview = ({ uri }: { uri: string }) => {
+export const FilePdfPreview = ({ uri }: { uri: string }) => {
   const [width, setWidth] = useState(0);
   const [snapshot, setSnapshot] = useState<{ src: string; height: number }>();
   const canvasRef = useRef<HTMLCanvasElement>(null);

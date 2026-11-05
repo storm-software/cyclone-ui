@@ -17,4 +17,4 @@
  ------------------------------------------------------------------- */
 
 // react-pdf is web-only, so native falls back to the plain file card.
-export const FilePickerPdfPreview = (_props: { uri: string }) => null;
+export const FilePdfPreview = (_props: { uri: string }) => null;

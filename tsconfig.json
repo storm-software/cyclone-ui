@@ -64,6 +64,9 @@
       "path": "./components/file-picker"
     },
     {
+      "path": "./components/file"
+    },
+    {
       "path": "./components/next-button"
     },
     {

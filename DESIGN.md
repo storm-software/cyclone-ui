@@ -17,7 +17,7 @@ colors:
   base-secondary: "#b0b0b1"
   base-link: "#0084d1"
   base-on-primary: "#FAFAFA"
-  base-backdrop: "#010101bf"
+  base-backdrop: "#02020373"
   base-on-secondary: "#FAFAFA"
   base-border: "#8d8d8e"
   base-primary-hovered: "#5c5c5f"
@@ -35,7 +35,7 @@ colors:
   brand-primary: "#1fb2a6"
   brand-link: "#1fb2a6"
   brand-on-primary: "#FAFAFA"
-  brand-backdrop: "#001c18bf"
+  brand-backdrop: "#00332c73"
   brand-secondary: "#d6fff9"
   brand-on-secondary: "#005a53"
   brand-border: "#a7cfc9"
@@ -55,7 +55,7 @@ colors:
   danger-link: "#8e223e"
   danger-outline: "#8e223e"
   danger-on-primary: "#FAFAFA"
-  danger-backdrop: "#240000bf"
+  danger-backdrop: "#35000173"
   danger-secondary: "#f17d91"
   danger-on-secondary: "#200006"
   danger-border: "#cb5b71"
@@ -79,7 +79,7 @@ colors:
   warning-link: "#765417"
   warning-outline: "#765417"
   warning-on-primary: "#FAFAFA"
-  warning-backdrop: "#150000bf"
+  warning-backdrop: "#24070073"
   warning-secondary: "#caa46b"
   warning-on-secondary: "#241500"
   warning-border: "#a78249"
@@ -104,7 +104,7 @@ colors:
   info-link: "#2055b3"
   info-outline: "#2055b3"
   info-on-primary: "#FAFAFA"
-  info-backdrop: "#070043bf"
+  info-backdrop: "#00005573"
   info-on-secondary: "#FAFAFA"
   info-border: "#4d80da"
   info-primary-hovered: "#00318d"
@@ -128,7 +128,7 @@ colors:
   discovery-link: "#594395"
   discovery-outline: "#594395"
   discovery-on-primary: "#FAFAFA"
-  discovery-backdrop: "#0d0030bf"
+  discovery-backdrop: "#17004073"
   discovery-on-secondary: "#FAFAFA"
   discovery-border: "#8670be"
   discovery-primary-hovered: "#3c2372"
@@ -151,7 +151,7 @@ colors:
   success-link: "#216b53"
   success-outline: "#216b53"
   success-on-primary: "#FAFAFA"
-  success-backdrop: "#000d02bf"
+  success-backdrop: "#001b0973"
   success-secondary: "#74ba9f"
   success-on-secondary: "#002015"
   success-border: "#52977e"
@@ -199,24 +199,24 @@ colors:
   subtle-active: "#0c0c0d"
   subtle-inactive: "#020102"
   subtle-disabled: "#606063"
-  sunken-hovered: "#c4c4c4"
-  sunken-active: "#b5b5b5"
+  sunken-hovered: "#999999"
+  sunken-active: "#8b8b8b"
   sunken-inactive: "#ffffff"
   sunken-disabled: "#aeaeaf"
-  canvas-hovered: "#cbcbcb"
-  canvas-active: "#bcbcbc"
+  canvas-hovered: "#9f9f9f"
+  canvas-active: "#919191"
   canvas-inactive: "#ffffff"
   canvas-disabled: "#b4b4b5"
-  surface-hovered: "#d2d2d2"
-  surface-active: "#c2c2c2"
+  surface-hovered: "#a4a4a4"
+  surface-active: "#959595"
   surface-inactive: "#ffffff"
   surface-disabled: "#b8b8b9"
-  elevated-hovered: "#d9d9d9"
-  elevated-active: "#c9c9c9"
+  elevated-hovered: "#aaaaaa"
+  elevated-active: "#9b9b9b"
   elevated-inactive: "#ffffff"
   elevated-disabled: "#bfbfc0"
-  floating-hovered: "#dedede"
-  floating-active: "#cecece"
+  floating-hovered: "#aeaeae"
+  floating-active: "#9e9e9e"
   floating-inactive: "#ffffff"
   floating-disabled: "#c2c2c3"
   outline-hovered: "#0c0c0d"
@@ -337,7 +337,7 @@ Cyclone UI design tokens — 220 color tokens, 6 typography tokens, 70 spacing t
 - **Base Secondary (#b0b0b1):** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.
 - **Base Link (#0084d1):** The color used for hyperlink text.
 - **Base On Primary (#FAFAFA):** Generated text and icon color on base primary backgrounds
-- **Base Backdrop (#010101bf):** Generated base overlay backdrop color (primary, 30% darker at 75% opacity)
+- **Base Backdrop (#02020373):** Generated base overlay backdrop color (primary, 30% darker at 75% opacity)
 - **Base On Secondary (#FAFAFA):** Generated text and icon color on base secondary backgrounds
 - **Base Border (#8d8d8e):** Generated base border color for secondary backgrounds (secondary, 15% darker)
 - **Base Primary Hovered (#5c5c5f):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)
@@ -355,7 +355,7 @@ Cyclone UI design tokens — 220 color tokens, 6 typography tokens, 70 spacing t
 - **Brand Primary (#1fb2a6):** The Storm Teal color is used as the primary brand color for Storm Software.
 - **Brand Link (#1fb2a6):** Generated brand hyperlink text color (matches primary)
 - **Brand On Primary (#FAFAFA):** Generated text and icon color on brand primary backgrounds
-- **Brand Backdrop (#001c18bf):** Generated brand overlay backdrop color (primary, 30% darker at 75% opacity)
+- **Brand Backdrop (#00332c73):** Generated brand overlay backdrop color (primary, 30% darker at 75% opacity)
 - **Brand Secondary (#d6fff9):** Generated low-emphasis brand background for the light theme
 - **Brand On Secondary (#005a53):** Generated text and icon color on brand secondary backgrounds
 - **Brand Border (#a7cfc9):** Generated brand border color for secondary backgrounds (secondary, 15% darker)
@@ -375,7 +375,7 @@ Cyclone UI design tokens — 220 color tokens, 6 typography tokens, 70 spacing t
 - **Danger Link (#8e223e):** Generated danger hyperlink text color (matches primary)
 - **Danger Outline (#8e223e):** Generated danger border and divider color (matches primary)
 - **Danger On Primary (#FAFAFA):** Generated text and icon color on danger primary backgrounds
-- **Danger Backdrop (#240000bf):** Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)
+- **Danger Backdrop (#35000173):** Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)
 - **Danger Secondary (#f17d91):** Generated low-emphasis danger background for the light theme
 - **Danger On Secondary (#200006):** Generated text and icon color on danger secondary backgrounds
 - **Danger Border (#cb5b71):** Generated danger border color for secondary backgrounds (secondary, 15% darker)
@@ -399,7 +399,7 @@ Cyclone UI design tokens — 220 color tokens, 6 typography tokens, 70 spacing t
 - **Warning Link (#765417):** Generated warning hyperlink text color (matches primary)
 - **Warning Outline (#765417):** Generated warning border and divider color (matches primary)
 - **Warning On Primary (#FAFAFA):** Generated text and icon color on warning primary backgrounds
-- **Warning Backdrop (#150000bf):** Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)
+- **Warning Backdrop (#24070073):** Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)
 - **Warning Secondary (#caa46b):** Generated low-emphasis warning background for the light theme
 - **Warning On Secondary (#241500):** Generated text and icon color on warning secondary backgrounds
 - **Warning Border (#a78249):** Generated warning border color for secondary backgrounds (secondary, 15% darker)
@@ -424,7 +424,7 @@ Cyclone UI design tokens — 220 color tokens, 6 typography tokens, 70 spacing t
 - **Info Link (#2055b3):** Generated info hyperlink text color (matches primary)
 - **Info Outline (#2055b3):** Generated info border and divider color (matches primary)
 - **Info On Primary (#FAFAFA):** Generated text and icon color on info primary backgrounds
-- **Info Backdrop (#070043bf):** Generated info overlay backdrop color (primary, 30% darker at 75% opacity)
+- **Info Backdrop (#00005573):** Generated info overlay backdrop color (primary, 30% darker at 75% opacity)
 - **Info On Secondary (#FAFAFA):** Generated text and icon color on info secondary backgrounds
 - **Info Border (#4d80da):** Generated info border color for secondary backgrounds (secondary, 15% darker)
 - **Info Primary Hovered (#00318d):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker)
@@ -448,7 +448,7 @@ Cyclone UI design tokens — 220 color tokens, 6 typography tokens, 70 spacing t
 - **Discovery Link (#594395):** Generated discovery hyperlink text color (matches primary)
 - **Discovery Outline (#594395):** Generated discovery border and divider color (matches primary)
 - **Discovery On Primary (#FAFAFA):** Generated text and icon color on discovery primary backgrounds
-- **Discovery Backdrop (#0d0030bf):** Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity)
+- **Discovery Backdrop (#17004073):** Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity)
 - **Discovery On Secondary (#FAFAFA):** Generated text and icon color on discovery secondary backgrounds
 - **Discovery Border (#8670be):** Generated discovery border color for secondary backgrounds (secondary, 15% darker)
 - **Discovery Primary Hovered (#3c2372):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% darker)
@@ -471,7 +471,7 @@ Cyclone UI design tokens — 220 color tokens, 6 typography tokens, 70 spacing t
 - **Success Link (#216b53):** Generated success hyperlink text color (matches primary)
 - **Success Outline (#216b53):** Generated success border and divider color (matches primary)
 - **Success On Primary (#FAFAFA):** Generated text and icon color on success primary backgrounds
-- **Success Backdrop (#000d02bf):** Generated success overlay backdrop color (primary, 30% darker at 75% opacity)
+- **Success Backdrop (#001b0973):** Generated success overlay backdrop color (primary, 30% darker at 75% opacity)
 - **Success Secondary (#74ba9f):** Generated low-emphasis success background for the light theme
 - **Success On Secondary (#002015):** Generated text and icon color on success secondary backgrounds
 - **Success Border (#52977e):** Generated success border color for secondary backgrounds (secondary, 15% darker)
@@ -519,24 +519,24 @@ Cyclone UI design tokens — 220 color tokens, 6 typography tokens, 70 spacing t
 - **Subtle Active (#0c0c0d):** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, light contrast primitive)
 - **Subtle Inactive (#020102):** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)
 - **Subtle Disabled (#606063):** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
-- **Sunken Hovered (#c4c4c4):** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 10% darker)
-- **Sunken Active (#b5b5b5):** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 15% darker)
+- **Sunken Hovered (#999999):** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% darker)
+- **Sunken Active (#8b8b8b):** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 30% darker)
 - **Sunken Inactive (#ffffff):** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 10% brighter)
 - **Sunken Disabled (#aeaeaf):** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))
-- **Canvas Hovered (#cbcbcb):** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 10% darker)
-- **Canvas Active (#bcbcbc):** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 15% darker)
+- **Canvas Hovered (#9f9f9f):** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% darker)
+- **Canvas Active (#919191):** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 30% darker)
 - **Canvas Inactive (#ffffff):** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 10% brighter)
 - **Canvas Disabled (#b4b4b5):** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 68% over oklch(0.3839 0.0045 286.26))
-- **Surface Hovered (#d2d2d2):** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 10% darker)
-- **Surface Active (#c2c2c2):** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% darker)
+- **Surface Hovered (#a4a4a4):** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% darker)
+- **Surface Active (#959595):** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 30% darker)
 - **Surface Inactive (#ffffff):** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 10% brighter)
 - **Surface Disabled (#b8b8b9):** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 68% over oklch(0.3839 0.0045 286.26))
-- **Elevated Hovered (#d9d9d9):** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% darker)
-- **Elevated Active (#c9c9c9):** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% darker)
+- **Elevated Hovered (#aaaaaa):** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% darker)
+- **Elevated Active (#9b9b9b):** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% darker)
 - **Elevated Inactive (#ffffff):** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% brighter)
 - **Elevated Disabled (#bfbfc0):** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))
-- **Floating Hovered (#dedede):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% darker)
-- **Floating Active (#cecece):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% darker)
+- **Floating Hovered (#aeaeae):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% darker)
+- **Floating Active (#9e9e9e):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 30% darker)
 - **Floating Inactive (#ffffff):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 10% brighter)
 - **Floating Disabled (#c2c2c3):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))
 - **Outline Hovered (#0c0c0d):** High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, light contrast primitive)

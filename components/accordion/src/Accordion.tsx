@@ -545,15 +545,11 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
 
 const AccordionItemHeaderImpl = createStyledHOC(
   AccordionItemHeader,
-  ({ children, onMouseEnter, onMouseLeave, ...props }, forwardedRef) => {
+  ({ children, ...props }, forwardedRef) => {
     const { numbered, direction, icon, iconDirection, separated, variant } =
       AccordionContext.useStyledContext();
     const { index, open } = AccordionItemContext.useStyledContext();
-    // The header icons are `themed` SVG icons, which resolve a single color
-    // value and cannot take a `group-hover/accordion:` clause.
-    const [hovered, setHovered] = useState(false);
     const foreground = useForeground(variant);
-    const iconColor = foreground ?? (hovered ? "primary-active" : "primary");
 
     return (
       <AccordionItemHeader
@@ -563,15 +559,7 @@ const AccordionItemHeaderImpl = createStyledHOC(
         justifyContent="space-between"
         alignItems="center"
         {...(separated && { backgroundColor: HEADER_BACKGROUNDS[variant] })}
-        {...props}
-        onMouseEnter={event => {
-          setHovered(true);
-          onMouseEnter?.(event);
-        }}
-        onMouseLeave={event => {
-          setHovered(false);
-          onMouseLeave?.(event);
-        }}>
+        {...props}>
         {numbered ? (
           <XStack alignItems="center" flex={1} gap="6xl">
             <Text color={foreground ?? "ink"} fontFamily="code">
@@ -582,29 +570,36 @@ const AccordionItemHeaderImpl = createStyledHOC(
         ) : (
           children
         )}
-        {icon === "toggle" && (
-          <AccordionToggle
-            isExpanded={open}
-            color={iconColor}
-            size="6xl"
-            strokeWidth={3.25}
-          />
-        )}
-        {icon === "chevron" && (
-          <View
-            transition="200ms"
-            transformOrigin="center"
-            rotate={
-              (open && direction !== "up") || (!open && direction === "up")
-                ? "180deg"
-                : "0deg"
-            }
-            alignItems="center"
-            justifyContent="center"
-            pointerEvents="none">
-            <ChevronDown aria-hidden={true} color={iconColor} size="6xl" />
-          </View>
-        )}
+        {/* The icons resolve a single color value, so they follow the
+            heading's `group-hover/accordion:` color through `currentColor`. */}
+        <Text
+          display="flex"
+          transition="250ms"
+          color={foreground ?? "primary group-hover/accordion:primary-hovered"}>
+          {icon === "toggle" && (
+            <AccordionToggle
+              isExpanded={open}
+              color="currentColor"
+              size="6xl"
+              strokeWidth={3.25}
+            />
+          )}
+          {icon === "chevron" && (
+            <View
+              transition="200ms"
+              transformOrigin="center"
+              rotate={
+                (open && direction !== "up") || (!open && direction === "up")
+                  ? "180deg"
+                  : "0deg"
+              }
+              alignItems="center"
+              justifyContent="center"
+              pointerEvents="none">
+              <ChevronDown aria-hidden={true} color="currentColor" size="6xl" />
+            </View>
+          )}
+        </Text>
       </AccordionItemHeader>
     );
   },

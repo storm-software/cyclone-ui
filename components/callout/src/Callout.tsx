@@ -71,7 +71,7 @@ const CalloutBackgroundHighGradient = styled(LinearGradient, {
   flexDirection: "row",
   transition: "200ms",
   overflow: "hidden",
-  opacity: 0.25,
+  opacity: 0.1,
   zIndex: "10"
 });
 
@@ -91,13 +91,13 @@ const CalloutContent = styled(YStack, {
   displayName: "Callout",
   transition: "200ms",
   position: "relative",
-  marginHorizontal: "6xl",
-  marginVertical: "4xl",
+  marginHorizontal: "3xl",
+  marginVertical: "2xl",
   flexDirection: "column",
   maxHeight: "fit-content",
   zIndex: "30",
   gap: "xl",
-  padding: "md"
+  padding: "xs"
 });
 
 const CalloutFrameImpl = createStyledHOC(
@@ -121,6 +121,18 @@ const CalloutFrameImpl = createStyledHOC(
             theme={theme}
             start={[1.0, 1.0]}
             end={[0, 0]}
+            colors={["primary", "transparent"]}
+          />
+          {/* Plain `LinearGradient`: a `styled()` wrapper parses `start`/`end`
+              as logical insets, so the gradient always ran top to bottom. */}
+          <LinearGradient
+            theme={theme}
+            position="absolute"
+            inset={0}
+            zIndex="20"
+            locations={[0, 0.6]}
+            start={[0, 0.5]}
+            end={[1, 0.5]}
             colors={["primary", "transparent"]}
           />
           <CalloutBackgroundHighGradient
@@ -196,6 +208,8 @@ const CalloutHeadingImpl = createStyledHOC(
 const CalloutEyebrow = styled(EyebrowText, {
   displayName: "CalloutEyebrow",
   color: "secondary",
+  fontWeight: "bold",
+  fontSize: "md",
   zIndex: "20"
 });
 
@@ -215,7 +229,7 @@ const CalloutEyebrowImpl = createStyledHOC(
 
 const CalloutBody = styled(BodyText, {
   displayName: "CalloutBody",
-  color: "ink",
+  color: "ink-active",
   zIndex: "20",
   paddingVertical: 0
 });

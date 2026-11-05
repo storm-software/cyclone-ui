@@ -22,7 +22,7 @@ import type { ClientFileResult } from "@cyclone-ui/state";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import type { GetProps } from "@tamagui/core";
 import { View } from "@tamagui/core";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { expect, userEvent, within } from "storybook/test";
 import { FilePicker } from "./FilePicker";
 
@@ -356,6 +356,89 @@ export const SimplePopulated: Story = {
               onChange={setFiles as never}
               width={500}
               maxWidth="100%">
+              <FilePicker.Trigger>
+                <FilePicker.Trigger.Button />
+              </FilePicker.Trigger>
+            </FilePicker>
+          </Field>
+        </Form>
+      </View>
+    );
+  }
+};
+
+/**
+ * Picked files start uploading; each card shows its progress until done, and
+ * removing one mid-upload cancels it. `broken-upload.svg` fails at 60%.
+ */
+export const UploadProgress: Story = {
+  render: () => {
+    const [files, setFiles] = useState<ClientFileResult[]>([
+      { ...previewFile, progress: 0 },
+      { ...previewFile, id: 2, name: "broken-upload.svg", progress: 0 }
+    ]);
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setFiles(prev =>
+          prev.map(file => {
+            if (
+              file.status === "failed" ||
+              file.progress === undefined ||
+              file.progress >= 100
+            ) {
+              return file;
+            }
+
+            const progress = Math.min(file.progress + 4, 100);
+            if (file.name === "broken-upload.svg" && progress >= 60) {
+              return {
+                ...file,
+                progress,
+                status: "failed",
+                issues: [
+                  {
+                    code: "upload",
+                    type: "danger",
+                    message: "The connection was lost"
+                  }
+                ]
+              };
+            }
+
+            return {
+              ...file,
+              progress,
+              status: progress >= 100 ? "uploaded" : file.status
+            };
+          })
+        );
+      }, 250);
+
+      return () => clearInterval(interval);
+    }, []);
+
+    return (
+      <View backgroundColor="background" padding={24}>
+        <Form name="file-upload-progress">
+          <Field name="uploadProgress">
+            <Field.Label>Upload files</Field.Label>
+            <FilePicker
+              files={files}
+              max={5}
+              // Newly picked files start their (simulated) upload at 0%.
+              onChange={
+                ((next: ClientFileResult[]) =>
+                  setFiles(
+                    next.map(file =>
+                      file.progress === undefined && file.status !== "uploaded"
+                        ? { ...file, progress: 0 }
+                        : file
+                    )
+                  )) as never
+              }
+              width={500}
+              maxWidth="100%">
+              <FilePicker.Files />
               <FilePicker.Trigger>
                 <FilePicker.Trigger.Button />
               </FilePicker.Trigger>

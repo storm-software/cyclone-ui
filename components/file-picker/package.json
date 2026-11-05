@@ -18,24 +18,16 @@
     "react-native": "catalog:"
   },
   "dependencies": {
-    "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/button": "workspace:*",
-    "@cyclone-ui/bytes-text": "workspace:*",
-    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/file": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
-    "@cyclone-ui/link": "workspace:*",
-    "@cyclone-ui/pdf-document-display": "workspace:*",
     "@cyclone-ui/state": "workspace:*",
-    "@stryke/date": "catalog:",
     "@stryke/hooks": "catalog:",
     "@stryke/types": "catalog:",
     "@tamagui/animate-presence": "catalog:",
     "@tamagui/core": "catalog:",
-    "@tamagui/image": "catalog:",
-    "@tamagui/linear-gradient": "catalog:",
     "@tamagui/stacks": "catalog:",
-    "@tamagui/text": "catalog:",
     "expo-document-picker": "catalog:",
     "expo-image-picker": "^15.1.0",
     "react-dropzone": "^14.4.1",
@@ -71,10 +63,6 @@
     "./FilePicker": {
       "import": "./dist/FilePicker.mjs",
       "require": "./dist/FilePicker.cjs"
-    },
-    "./FilePickerPdfPreview": {
-      "import": "./dist/FilePickerPdfPreview.mjs",
-      "require": "./dist/FilePickerPdfPreview.cjs"
     },
     "./useDropZone": {
       "import": "./dist/useDropZone.mjs",

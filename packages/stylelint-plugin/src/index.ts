@@ -251,7 +251,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-base-backdrop",
       type: "color",
       category: "color",
-      value: "#010101bf"
+      value: "#02020373"
     },
     {
       path: "color.base.border",
@@ -456,7 +456,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-brand-backdrop",
       type: "color",
       category: "color",
-      value: "#001c18bf"
+      value: "#00332c73"
     },
     {
       path: "color.brand.border",
@@ -598,7 +598,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-canvas-active",
       type: "color",
       category: "color",
-      value: "#bcbcbc"
+      value: "#919191"
     },
     {
       path: "color.canvas-disabled",
@@ -612,7 +612,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-canvas-hovered",
       type: "color",
       category: "color",
-      value: "#cbcbcb"
+      value: "#9f9f9f"
     },
     {
       path: "color.canvas-inactive",
@@ -626,7 +626,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-danger-backdrop",
       type: "color",
       category: "color",
-      value: "#240000bf"
+      value: "#35000173"
     },
     {
       path: "color.danger.border",
@@ -925,7 +925,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-discovery-backdrop",
       type: "color",
       category: "color",
-      value: "#0d0030bf"
+      value: "#17004073"
     },
     {
       path: "color.discovery.border",
@@ -1105,7 +1105,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-elevated-active",
       type: "color",
       category: "color",
-      value: "#c9c9c9"
+      value: "#9b9b9b"
     },
     {
       path: "color.elevated-disabled",
@@ -1119,7 +1119,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-elevated-hovered",
       type: "color",
       category: "color",
-      value: "#d9d9d9"
+      value: "#aaaaaa"
     },
     {
       path: "color.elevated-inactive",
@@ -1177,7 +1177,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-floating-active",
       type: "color",
       category: "color",
-      value: "#cecece"
+      value: "#9e9e9e"
     },
     {
       path: "color.floating-disabled",
@@ -1191,7 +1191,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-floating-hovered",
       type: "color",
       category: "color",
-      value: "#dedede"
+      value: "#aeaeae"
     },
     {
       path: "color.floating-inactive",
@@ -1276,7 +1276,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-info-backdrop",
       type: "color",
       category: "color",
-      value: "#070043bf"
+      value: "#00005573"
     },
     {
       path: "color.info.border",
@@ -1991,7 +1991,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-success-backdrop",
       type: "color",
       category: "color",
-      value: "#000d02bf"
+      value: "#001b0973"
     },
     {
       path: "color.success.border",
@@ -2170,7 +2170,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-sunken-active",
       type: "color",
       category: "color",
-      value: "#b5b5b5"
+      value: "#8b8b8b"
     },
     {
       path: "color.sunken-disabled",
@@ -2184,7 +2184,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-sunken-hovered",
       type: "color",
       category: "color",
-      value: "#c4c4c4"
+      value: "#999999"
     },
     {
       path: "color.sunken-inactive",
@@ -2206,7 +2206,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-surface-active",
       type: "color",
       category: "color",
-      value: "#c2c2c2"
+      value: "#959595"
     },
     {
       path: "color.surface-disabled",
@@ -2220,7 +2220,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-surface-hovered",
       type: "color",
       category: "color",
-      value: "#d2d2d2"
+      value: "#a4a4a4"
     },
     {
       path: "color.surface-inactive",
@@ -2234,7 +2234,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-warning-backdrop",
       type: "color",
       category: "color",
-      value: "#150000bf"
+      value: "#24070073"
     },
     {
       path: "color.warning.border",
@@ -4519,6 +4519,11 @@ export const manifest: DesignSystemManifest = {
     {
       name: "@cyclone-ui/field",
       jsx: ["Field"],
+      roles: []
+    },
+    {
+      name: "@cyclone-ui/file",
+      jsx: ["File"],
       roles: []
     },
     {

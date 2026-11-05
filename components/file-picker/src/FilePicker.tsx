@@ -18,15 +18,12 @@
 
 "use client";
 
-import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
-import { BytesText } from "@cyclone-ui/bytes-text";
-import { HeadingSmallText } from "@cyclone-ui/heading-text";
-import type { FormControlSize, StyleEnv } from "@cyclone-ui/helpers";
+import type { FileProps } from "@cyclone-ui/file";
+import { File as FileCard, FileMetadataText } from "@cyclone-ui/file";
+import type { FormControlSize } from "@cyclone-ui/helpers";
 import {
-  formSizeVariants,
   getFormFontScale,
-  getFormFontSize,
   getFormSizeScale,
   getFormSizeToken,
   getSized,
@@ -35,10 +32,8 @@ import {
   useFieldIconColor,
   useFormControl
 } from "@cyclone-ui/helpers";
-import { Close, Download, Lock, Trash, Upload } from "@cyclone-ui/icons";
-import { Link } from "@cyclone-ui/link";
+import { Close, Lock, Upload } from "@cyclone-ui/icons";
 import type { ClientFileResult } from "@cyclone-ui/state";
-import { formatDate } from "@stryke/date/format";
 import { useComposedRefs } from "@stryke/hooks";
 import type { FileStatus } from "@stryke/types/file";
 import { AnimatePresence } from "@tamagui/animate-presence";
@@ -51,15 +46,10 @@ import {
   View,
   withStaticProperties
 } from "@tamagui/core";
-import { Image } from "@tamagui/image";
-import { LinearGradient } from "@tamagui/linear-gradient";
 import { XStack, YStack } from "@tamagui/stacks";
-import { SizableText } from "@tamagui/text";
 import type { DocumentPickerResult } from "expo-document-picker";
-import type { PropsWithChildren } from "react";
-import { Fragment, useCallback, useEffect, useState } from "react";
+import { useCallback } from "react";
 import { MediaTypeOptions } from "./file-picker-types";
-import { FilePickerPdfPreview } from "./FilePickerPdfPreview";
 import { useFilePicker } from "./useFilePicker";
 
 export type FilePickerVariant = "dropzone" | "simple";
@@ -397,7 +387,7 @@ const FilePickerTrigger = createStyledHOC(
           cursor={disabled ? "not-allowed" : "pointer"}
           {...props}>
           {children}
-          <FilePickerMetadataText
+          <FileMetadataText
             controlSize={size}
             flex={1}
             alignSelf="center"
@@ -411,7 +401,7 @@ const FilePickerTrigger = createStyledHOC(
               : files.length === 1
                 ? files[0]?.name || "Unnamed File"
                 : `${files.length} files`}
-          </FilePickerMetadataText>
+          </FileMetadataText>
           {!disabled && files.length > 0 && (
             // Keep the press from bubbling to the frame, which opens the picker.
             <View
@@ -508,12 +498,12 @@ const FilePickerTriggerButton = createStyledHOC(
               : "elevated group-hover/file-picker:elevated-hovered"
           }
           transition="200ms">
-          <FilePickerMetadataText
+          <FileMetadataText
             controlSize={size}
             fontWeight="500"
             color={disabled ? "emphasis-disabled" : "emphasis"}>
             {children || (max > 1 ? "Choose Files" : "Choose File")}
-          </FilePickerMetadataText>
+          </FileMetadataText>
         </View>
       );
     }
@@ -591,231 +581,13 @@ const FilePickerFiles = createStyledHOC(
   }
 );
 
-/**
- * The form font for a control size.
- *
- * @remarks
- * Tamagui v3 reads a unitless `lineHeight` as a ratio, so the scaled pixel
- * leading `getFormFontSize` returns for `sm`/`lg` is pinned in `px`.
- */
-const getFormFontStyle = (
-  size: FormControlSize,
-  env: StyleEnv,
-  token: string
-) => {
-  const style = getFormFontSize(size, env, token);
+export type FilePickerFileProps = FileProps;
 
-  return {
-    fontFamily: style.fontFamily,
-    fontWeight: style.fontWeight,
-    fontStyle: style.fontStyle,
-    letterSpacing: style.letterSpacing,
-    textTransform: style.textTransform,
-    color: style.color,
-    fontSize: style.fontSize,
-    lineHeight:
-      typeof style.lineHeight === "number"
-        ? `${style.lineHeight}px`
-        : style.lineHeight
-  };
-};
-
-const FilePickerNameText = styled(HeadingSmallText, {
-  variants: {
-    controlSize: formSizeVariants((size, env) =>
-      getFormFontStyle(size, env, "sm")
-    )
-  }
-});
-const FilePickerMetadataText = styled(BodyText, {
-  variants: {
-    controlSize: formSizeVariants((size, env) =>
-      getFormFontStyle(size, env, "md")
-    )
-  }
-});
-const FilePickerMetadataSeparator = styled(FilePickerMetadataText, {
-  render: "span",
-  display: "inline max-md:none",
-  "aria-hidden": true
-});
-const FILE_METADATA_SEPARATOR = "\u2002\u2022\u2002";
-const FilePickerBytesText = styled(BytesText, {
-  variants: {
-    controlSize: formSizeVariants((size, env) =>
-      getFormFontStyle(size, env, "md")
-    )
-  }
-});
-
-/**
- * One line cut short with an ellipsis when it doesn't fit, except on small
- * screens, where the text wraps (breaking inside long names) so none of it is
- * hidden.
- */
-const fileTextOverflowStyle = {
-  overflow: "hidden",
-  textOverflow: "ellipsis",
-  whiteSpace: "nowrap max-md:normal",
-  overflowWrap: "anywhere"
-} as const;
-
-const FilePickerViewLink = ({
-  uri,
-  children,
-  ...props
-}: PropsWithChildren<{ uri?: string }>) => {
-  const { size } = FilePickerContext.useStyledContext();
-  if (uri) {
-    return (
-      <Link
-        fontSize={18 * getFormFontScale(size)}
-        display="block"
-        width="100%"
-        textAlign="center"
-        {...fileTextOverflowStyle}
-        {...props}
-        href={uri}
-        target="_blank">
-        {children}
-      </Link>
-    );
-  }
-
-  return (
-    <SizableText
-      color="on-primary"
-      display="block"
-      width="100%"
-      textAlign="center"
-      fontFamily="body"
-      fontWeight="medium"
-      {...fileTextOverflowStyle}
-      {...props}>
-      <FilePickerNameText controlSize={size} color="on-primary">
-        {children}
-      </FilePickerNameText>
-    </SizableText>
-  );
-};
-
-// Browsers often report source files as `video/mp2t` (`.ts`) or with no MIME
-// type at all, so the extension is checked too.
-const TEXT_MIME_TYPE =
-  /^text\/|json|xml|yaml|javascript|typescript|toml|x-sh|sql|graphql/i;
-const TEXT_EXTENSION =
-  /\.(?:txt|log|md|mdx|csv|tsv|json5?|jsonc|ya?ml|toml|ini|cfg|conf|env|xml|html?|css|scss|sass|less|[cm]?[jt]sx?|vue|svelte|astro|py|rb|go|rs|java|kts?|swift|c|h|cc|cpp|hpp|cs|php|lua|sh|bash|zsh|fish|ps1|sql|graphql|gql|proto|tf|nix|lock|gitignore|dockerfile)$/i;
-
-// ponytail: reads the whole file to show ~2 kB, so large files are skipped;
-// stream the first chunk instead if bigger text previews are ever needed.
-const MAX_TEXT_PREVIEW_FILE_SIZE = 1024 * 1024;
-const MAX_TEXT_PREVIEW_LENGTH = 2048;
-
-type FilePreviewKind = "image" | "text" | "pdf";
-
-const getFilePreviewKind = (
-  name?: string,
-  mimeType?: string
-): FilePreviewKind => {
-  if (mimeType?.startsWith("image/")) {
-    return "image";
-  }
-  if (mimeType === "application/pdf" || /\.pdf$/i.test(name ?? "")) {
-    return "pdf";
-  }
-  if (TEXT_MIME_TYPE.test(mimeType ?? "") || TEXT_EXTENSION.test(name ?? "")) {
-    return "text";
-  }
-
-  return "image";
-};
-
-const FilePickerTextPreview = ({
-  uri,
-  size
-}: {
-  uri: string;
-  size?: number;
-}) => {
-  const [text, setText] = useState("");
-
-  useEffect(() => {
-    if (size && size > MAX_TEXT_PREVIEW_FILE_SIZE) {
-      return;
-    }
-
-    let cancelled = false;
-    fetch(uri)
-      .then(async response => response.text())
-      .then(value => {
-        if (!cancelled) {
-          setText(value.slice(0, MAX_TEXT_PREVIEW_LENGTH));
-        }
-      })
-      // The preview is decorative, so an unreadable file just shows nothing.
-      .catch(() => {});
-
-    return () => {
-      cancelled = true;
-    };
-  }, [uri, size]);
-
-  return (
-    <Text
-      fontFamily="code"
-      fontSize={12}
-      lineHeight="18px"
-      color="ink"
-      padding="md"
-      whiteSpace="pre"
-      aria-hidden={true}>
-      {text}
-    </Text>
-  );
-};
-
-const FilePickerFilePreview = ({
-  kind,
-  uri,
-  size
-}: {
-  kind: FilePreviewKind;
-  uri?: string;
-  size?: number;
-}) => {
-  if (!uri) {
-    return null;
-  }
-  if (kind === "pdf") {
-    return <FilePickerPdfPreview uri={uri} />;
-  }
-  if (kind === "text") {
-    return <FilePickerTextPreview uri={uri} size={size} />;
-  }
-
-  return <Image height={500} src={uri} />;
-};
-
-export type FilePickerFileProps = PropsWithChildren<ClientFileResult>;
-
-const FilePickerFile = ({
-  id,
-  uri,
-  name,
-  size,
-  lastModified,
-  mimeType
-}: FilePickerFileProps) => {
-  const {
-    disabled,
-    onChange,
-    files,
-    size: controlSize
-  } = FilePickerContext.useStyledContext();
-  const scale = getFormSizeScale(controlSize);
-  const buttonSize = getSized("10xl") * scale;
-  const buttonInset = 6 * scale;
-  const previewKind = getFilePreviewKind(name, mimeType);
+/** A `File` card wired to the picker: removing it updates the picked files. */
+const FilePickerFile = (props: FilePickerFileProps) => {
+  const { disabled, onChange, files, size } =
+    FilePickerContext.useStyledContext();
+  const { id } = props;
 
   const handleRemove = useCallback(
     () => onChange(files.filter(file => file.id !== id)),
@@ -823,207 +595,12 @@ const FilePickerFile = ({
   );
 
   return (
-    <View
-      group="file"
-      flexDirection="column"
-      transition="200ms"
-      opacity="1 enter:0 exit:0"
-      scale="1 enter:0.3 exit:0.5"
-      minHeight={100 * scale}
-      width="100%"
-      overflow="hidden"
-      position="relative"
-      borderRadius="card"
-      borderColor="outline hover:outline-hovered"
-      borderWidth={1}
-      boxShadow="none hover:ring-offset"
-      onClick={event => event.stopPropagation()}
-      onPress={event => event.stopPropagation()}>
-      <View
-        transition="200ms"
-        position="absolute"
-        top={0}
-        bottom={0}
-        left={0}
-        right={0}
-        zIndex="10"
-        backgroundColor="black"
-        opacity="0.6 group-hover/file:0.8"
-      />
-
-      <View
-        transition="100ms"
-        position="absolute"
-        zIndex="30"
-        left={buttonInset}
-        top="50%"
-        y="-50%"
-        opacity="0 group-hover/file:1 touchable:1">
-        {uri && (
-          <Button
-            render="a"
-            href={uri}
-            // Button types `download` as a boolean; the `<a>` attribute also
-            // accepts the suggested file name.
-            {...{ download: name }}
-            variant="ghost"
-            ghostOpacity={0.75}
-            size={buttonSize}
-            noPadding={true}
-            circular={true}>
-            <Button.Icon>
-              <Download />
-            </Button.Icon>
-          </Button>
-        )}
-      </View>
-
-      {!disabled && (
-        <View
-          transition="200ms"
-          position="absolute"
-          zIndex="30"
-          right={buttonInset}
-          top="50%"
-          y="-50%"
-          opacity="0 group-hover/file:1 touchable:1">
-          <Button
-            variant="ghost"
-            theme="danger"
-            ghostOpacity={0.25}
-            aria-label={`Remove ${name || "file"}`}
-            onPress={handleRemove}
-            size={buttonSize}
-            noPadding={true}
-            circular={true}>
-            <Button.Icon>
-              <Trash />
-            </Button.Icon>
-          </Button>
-        </View>
-      )}
-
-      {/* In the flow (unlike the layers around it), so the card grows when
-          the text wraps on small screens. */}
-      <View
-        transition="200ms"
-        position="relative"
-        zIndex="20"
-        flexGrow={1}
-        paddingVertical="2xl"
-        // Reserve the buttons' footprint so narrow cards never overlap them.
-        paddingHorizontal={buttonInset * 2 + buttonSize}
-        alignItems="center"
-        justifyContent="center">
-        <YStack width="100%" gap="xl">
-          <View zIndex="30" justifyContent="center" alignItems="center">
-            <FilePickerViewLink uri={uri}>
-              {name || "Unnamed File"}
-            </FilePickerViewLink>
-          </View>
-          {/* On wider screens one line: the size and modified time are cut
-              short with an ellipsis, and the MIME type wraps onto the clipped
-              second line (hidden) when it doesn't fit. On small screens each
-              item takes its own line and the separators are hidden. */}
-          <FilePickerMetadataText
-            controlSize={controlSize}
-            zIndex="30"
-            display="flex max-md:block"
-            flexWrap="wrap"
-            justifyContent="center"
-            alignItems="baseline"
-            maxHeight="1lh max-md:none"
-            overflow="hidden"
-            width="100%"
-            textAlign="center">
-            <FilePickerMetadataText
-              controlSize={controlSize}
-              render="span"
-              flexShrink={1}
-              minWidth={0}
-              {...fileTextOverflowStyle}>
-              {[
-                {
-                  key: "size",
-                  value: (
-                    <FilePickerBytesText
-                      controlSize={controlSize}
-                      render="span">
-                      {size}
-                    </FilePickerBytesText>
-                  )
-                },
-                ...(lastModified
-                  ? formatDate(new Date(lastModified), "MM-DD-YYYY HH:mm:ss")
-                      .split(" ")
-                      .map((value, i) => ({ key: i ? "time" : "date", value }))
-                  : [])
-              ].map(({ key, value }, i) => (
-                <Fragment key={key}>
-                  {i > 0 && (
-                    <FilePickerMetadataSeparator controlSize={controlSize}>
-                      {key === "time" ? " " : FILE_METADATA_SEPARATOR}
-                    </FilePickerMetadataSeparator>
-                  )}
-                  <FilePickerMetadataText
-                    controlSize={controlSize}
-                    render="span"
-                    display="inline max-md:block">
-                    {value}
-                  </FilePickerMetadataText>
-                </Fragment>
-              ))}
-            </FilePickerMetadataText>
-            {mimeType && (
-              <FilePickerMetadataText
-                controlSize={controlSize}
-                render="span"
-                whiteSpace="nowrap max-md:normal"
-                overflowWrap="anywhere"
-                display="inline max-md:block">
-                <FilePickerMetadataSeparator controlSize={controlSize}>
-                  {FILE_METADATA_SEPARATOR}
-                </FilePickerMetadataSeparator>
-                {mimeType}
-              </FilePickerMetadataText>
-            )}
-          </FilePickerMetadataText>
-        </YStack>
-      </View>
-
-      <LinearGradient
-        transition="200ms"
-        zIndex="10"
-        start={[0, 0]}
-        end={[1, 1]}
-        opacity="0 group-hover/file:0.25"
-        position="absolute"
-        inset={0}
-        colors={["transparent", "canvas"]}
-        locations={[0, 1.1]}
-      />
-
-      <View
-        transition="200ms"
-        position="absolute"
-        // Images are offset so the card shows a band from their middle;
-        // documents show their first lines.
-        top={previewKind === "image" ? -240 : 0}
-        left={0}
-        right={0}
-        zIndex="0"
-        // No `backdropFilter` here: it only blurred the plain card behind the
-        // preview, and with GPU compositing it let the preview paint square
-        // over the card's rounded corners.
-        scale="1 group-hover/file:1.2">
-        <FilePickerFilePreview
-          key={id}
-          kind={previewKind}
-          uri={uri}
-          size={size}
-        />
-      </View>
-    </View>
+    <FileCard
+      controlSize={size}
+      disabled={disabled}
+      onRemove={handleRemove}
+      {...props}
+    />
   );
 };
 

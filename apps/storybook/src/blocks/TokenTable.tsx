@@ -882,7 +882,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.backdrop",
       type: "color",
-      value: "#222222bf",
+      value: "#41414173",
       cssVar: "--cu-color-base-backdrop",
       description:
         "Generated base overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -1057,7 +1057,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.backdrop",
       type: "color",
-      value: "#002811bf",
+      value: "#00442a73",
       cssVar: "--cu-color-brand-backdrop",
       description:
         "Generated brand overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -1255,7 +1255,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.backdrop",
       type: "color",
-      value: "#3a0000bf",
+      value: "#53000073",
       cssVar: "--cu-color-danger-backdrop",
       description:
         "Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -1504,7 +1504,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.backdrop",
       type: "color",
-      value: "#350500bf",
+      value: "#53240073",
       cssVar: "--cu-color-warning-backdrop",
       description:
         "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -1741,7 +1741,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.backdrop",
       type: "color",
-      value: "#05005bbf",
+      value: "#00007573",
       cssVar: "--cu-color-info-backdrop",
       description:
         "Generated info overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -1980,7 +1980,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.backdrop",
       type: "color",
-      value: "#180043bf",
+      value: "#28005b73",
       cssVar: "--cu-color-discovery-backdrop",
       description:
         "Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -2209,7 +2209,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.backdrop",
       type: "color",
-      value: "#002100bf",
+      value: "#003a1073",
       cssVar: "--cu-color-success-backdrop",
       description:
         "Generated success overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -2779,20 +2779,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sunken-hovered",
       type: "color",
-      value: "#0f0f10",
+      value: "#141415",
       cssVar: "--cu-color-sunken-hovered",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 10% brighter)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.sunken-active",
       type: "color",
-      value: "#111112",
+      value: "#161617",
       cssVar: "--cu-color-sunken-active",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 15% brighter)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 30% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2819,20 +2819,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.canvas-hovered",
       type: "color",
-      value: "#19191d",
+      value: "#202024",
       cssVar: "--cu-color-canvas-hovered",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 10% brighter)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.canvas-active",
       type: "color",
-      value: "#1c1c1f",
+      value: "#232326",
       cssVar: "--cu-color-canvas-active",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 15% brighter)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 30% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2859,20 +2859,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-hovered",
       type: "color",
-      value: "#212123",
+      value: "#2a2a2c",
       cssVar: "--cu-color-surface-hovered",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 10% brighter)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.surface-active",
       type: "color",
-      value: "#242426",
+      value: "#2c2c2f",
       cssVar: "--cu-color-surface-active",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% brighter)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 30% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2899,20 +2899,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-hovered",
       type: "color",
-      value: "#252527",
+      value: "#2e2e30",
       cssVar: "--cu-color-elevated-hovered",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% brighter)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.elevated-active",
       type: "color",
-      value: "#28282a",
+      value: "#313133",
       cssVar: "--cu-color-elevated-active",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% brighter)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2939,20 +2939,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-hovered",
       type: "color",
-      value: "#2a2b2f",
+      value: "#343539",
       cssVar: "--cu-color-floating-hovered",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% brighter)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.floating-active",
       type: "color",
-      value: "#2e2f32",
+      value: "#38393c",
       cssVar: "--cu-color-floating-active",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% brighter)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 30% brighter)",
       theme: undefined,
       typography: false
     },
@@ -6604,7 +6604,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.backdrop",
       type: "color",
-      value: "#3e3e3ebf",
+      value: "#54545473",
       cssVar: "--cu-color-base-backdrop",
       description:
         "Generated base overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -6779,7 +6779,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.backdrop",
       type: "color",
-      value: "#185130bf",
+      value: "#1c604673",
       cssVar: "--cu-color-brand-backdrop",
       description:
         "Generated brand overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -6977,7 +6977,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.backdrop",
       type: "color",
-      value: "#5b1a1abf",
+      value: "#681e1e73",
       cssVar: "--cu-color-danger-backdrop",
       description:
         "Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -7226,7 +7226,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.backdrop",
       type: "color",
-      value: "#581f1abf",
+      value: "#683e1e73",
       cssVar: "--cu-color-warning-backdrop",
       description:
         "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -7463,7 +7463,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.backdrop",
       type: "color",
-      value: "#24206dbf",
+      value: "#24247b73",
       cssVar: "--cu-color-info-backdrop",
       description:
         "Generated info overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -7702,7 +7702,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.backdrop",
       type: "color",
-      value: "#341c60bf",
+      value: "#41206d73",
       cssVar: "--cu-color-discovery-backdrop",
       description:
         "Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -7931,7 +7931,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.backdrop",
       type: "color",
-      value: "#164d16bf",
+      value: "#1a5b2c73",
       cssVar: "--cu-color-success-backdrop",
       description:
         "Generated success overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -8501,20 +8501,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sunken-hovered",
       type: "color",
-      value: "#303032",
+      value: "#343435",
       cssVar: "--cu-color-sunken-hovered",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 10% brighter)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.sunken-active",
       type: "color",
-      value: "#323233",
+      value: "#353537",
       cssVar: "--cu-color-sunken-active",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 15% brighter)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 30% brighter)",
       theme: undefined,
       typography: false
     },
@@ -8541,20 +8541,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.canvas-hovered",
       type: "color",
-      value: "#37373b",
+      value: "#3c3c40",
       cssVar: "--cu-color-canvas-hovered",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 10% brighter)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.canvas-active",
       type: "color",
-      value: "#39393d",
+      value: "#3e3e41",
       cssVar: "--cu-color-canvas-active",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 15% brighter)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 30% brighter)",
       theme: undefined,
       typography: false
     },
@@ -8581,20 +8581,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-hovered",
       type: "color",
-      value: "#3d3d3f",
+      value: "#434345",
       cssVar: "--cu-color-surface-hovered",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 10% brighter)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.surface-active",
       type: "color",
-      value: "#3f3f41",
+      value: "#454547",
       cssVar: "--cu-color-surface-active",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% brighter)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 30% brighter)",
       theme: undefined,
       typography: false
     },
@@ -8621,20 +8621,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-hovered",
       type: "color",
-      value: "#404042",
+      value: "#464648",
       cssVar: "--cu-color-elevated-hovered",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% brighter)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.elevated-active",
       type: "color",
-      value: "#424244",
+      value: "#48484a",
       cssVar: "--cu-color-elevated-active",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% brighter)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% brighter)",
       theme: undefined,
       typography: false
     },
@@ -8661,20 +8661,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-hovered",
       type: "color",
-      value: "#434448",
+      value: "#4a4b4e",
       cssVar: "--cu-color-floating-hovered",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% brighter)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.floating-active",
       type: "color",
-      value: "#464749",
+      value: "#4d4e50",
       cssVar: "--cu-color-floating-active",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% brighter)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 30% brighter)",
       theme: undefined,
       typography: false
     },
@@ -12326,7 +12326,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.backdrop",
       type: "color",
-      value: "#000000bf",
+      value: "#25252573",
       cssVar: "--cu-color-base-backdrop",
       description:
         "Generated base overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -12501,7 +12501,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.backdrop",
       type: "color",
-      value: "#000000bf",
+      value: "#00000073",
       cssVar: "--cu-color-brand-backdrop",
       description:
         "Generated brand overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -12699,7 +12699,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.backdrop",
       type: "color",
-      value: "#000000bf",
+      value: "#06000073",
       cssVar: "--cu-color-danger-backdrop",
       description:
         "Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -12948,7 +12948,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.backdrop",
       type: "color",
-      value: "#000000bf",
+      value: "#06020073",
       cssVar: "--cu-color-warning-backdrop",
       description:
         "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -13185,7 +13185,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.backdrop",
       type: "color",
-      value: "#010011bf",
+      value: "#00003773",
       cssVar: "--cu-color-info-backdrop",
       description:
         "Generated info overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -13424,7 +13424,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.backdrop",
       type: "color",
-      value: "#000000bf",
+      value: "#08001173",
       cssVar: "--cu-color-discovery-backdrop",
       description:
         "Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -13653,7 +13653,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.backdrop",
       type: "color",
-      value: "#000000bf",
+      value: "#00000073",
       cssVar: "--cu-color-success-backdrop",
       description:
         "Generated success overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -14226,7 +14226,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#000000",
       cssVar: "--cu-color-sunken-hovered",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 10% brighter)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -14236,7 +14236,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#000000",
       cssVar: "--cu-color-sunken-active",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 15% brighter)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 30% brighter)",
       theme: undefined,
       typography: false
     },
@@ -14266,7 +14266,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#000000",
       cssVar: "--cu-color-canvas-hovered",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 10% brighter)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -14276,7 +14276,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#000000",
       cssVar: "--cu-color-canvas-active",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 15% brighter)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 30% brighter)",
       theme: undefined,
       typography: false
     },
@@ -14303,20 +14303,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-hovered",
       type: "color",
-      value: "#000000",
+      value: "#050505",
       cssVar: "--cu-color-surface-hovered",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 10% brighter)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.surface-active",
       type: "color",
-      value: "#000000",
+      value: "#080809",
       cssVar: "--cu-color-surface-active",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% brighter)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 30% brighter)",
       theme: undefined,
       typography: false
     },
@@ -14343,20 +14343,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-hovered",
       type: "color",
-      value: "#000000",
+      value: "#0a0a0c",
       cssVar: "--cu-color-elevated-hovered",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% brighter)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.elevated-active",
       type: "color",
-      value: "#020202",
+      value: "#0e0e10",
       cssVar: "--cu-color-elevated-active",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% brighter)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% brighter)",
       theme: undefined,
       typography: false
     },
@@ -14383,20 +14383,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-hovered",
       type: "color",
-      value: "#060708",
+      value: "#131418",
       cssVar: "--cu-color-floating-hovered",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% brighter)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.floating-active",
       type: "color",
-      value: "#0b0c0e",
+      value: "#18191d",
       cssVar: "--cu-color-floating-active",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% brighter)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 30% brighter)",
       theme: undefined,
       typography: false
     },
@@ -18048,7 +18048,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.backdrop",
       type: "color",
-      value: "#010101bf",
+      value: "#02020373",
       cssVar: "--cu-color-base-backdrop",
       description:
         "Generated base overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -18224,7 +18224,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.backdrop",
       type: "color",
-      value: "#001c18bf",
+      value: "#00332c73",
       cssVar: "--cu-color-brand-backdrop",
       description:
         "Generated brand overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -18423,7 +18423,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.backdrop",
       type: "color",
-      value: "#240000bf",
+      value: "#35000173",
       cssVar: "--cu-color-danger-backdrop",
       description:
         "Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -18662,7 +18662,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.backdrop",
       type: "color",
-      value: "#150000bf",
+      value: "#24070073",
       cssVar: "--cu-color-warning-backdrop",
       description:
         "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -18909,7 +18909,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.backdrop",
       type: "color",
-      value: "#070043bf",
+      value: "#00005573",
       cssVar: "--cu-color-info-backdrop",
       description:
         "Generated info overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -19148,7 +19148,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.backdrop",
       type: "color",
-      value: "#0d0030bf",
+      value: "#17004073",
       cssVar: "--cu-color-discovery-backdrop",
       description:
         "Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -19377,7 +19377,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.backdrop",
       type: "color",
-      value: "#000d02bf",
+      value: "#001b0973",
       cssVar: "--cu-color-success-backdrop",
       description:
         "Generated success overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -19947,20 +19947,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sunken-hovered",
       type: "color",
-      value: "#c4c4c4",
+      value: "#999999",
       cssVar: "--cu-color-sunken-hovered",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 10% darker)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.sunken-active",
       type: "color",
-      value: "#b5b5b5",
+      value: "#8b8b8b",
       cssVar: "--cu-color-sunken-active",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 15% darker)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 30% darker)",
       theme: undefined,
       typography: false
     },
@@ -19987,20 +19987,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.canvas-hovered",
       type: "color",
-      value: "#cbcbcb",
+      value: "#9f9f9f",
       cssVar: "--cu-color-canvas-hovered",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 10% darker)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.canvas-active",
       type: "color",
-      value: "#bcbcbc",
+      value: "#919191",
       cssVar: "--cu-color-canvas-active",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 15% darker)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 30% darker)",
       theme: undefined,
       typography: false
     },
@@ -20027,20 +20027,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-hovered",
       type: "color",
-      value: "#d2d2d2",
+      value: "#a4a4a4",
       cssVar: "--cu-color-surface-hovered",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 10% darker)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.surface-active",
       type: "color",
-      value: "#c2c2c2",
+      value: "#959595",
       cssVar: "--cu-color-surface-active",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% darker)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 30% darker)",
       theme: undefined,
       typography: false
     },
@@ -20067,20 +20067,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-hovered",
       type: "color",
-      value: "#d9d9d9",
+      value: "#aaaaaa",
       cssVar: "--cu-color-elevated-hovered",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% darker)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.elevated-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#9b9b9b",
       cssVar: "--cu-color-elevated-active",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% darker)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% darker)",
       theme: undefined,
       typography: false
     },
@@ -20107,20 +20107,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-hovered",
       type: "color",
-      value: "#dedede",
+      value: "#aeaeae",
       cssVar: "--cu-color-floating-hovered",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% darker)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.floating-active",
       type: "color",
-      value: "#cecece",
+      value: "#9e9e9e",
       cssVar: "--cu-color-floating-active",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% darker)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 30% darker)",
       theme: undefined,
       typography: false
     },
@@ -23772,7 +23772,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.backdrop",
       type: "color",
-      value: "#272727bf",
+      value: "#24242c73",
       cssVar: "--cu-color-base-backdrop",
       description:
         "Generated base overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -23948,7 +23948,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.backdrop",
       type: "color",
-      value: "#164a43bf",
+      value: "#19574e73",
       cssVar: "--cu-color-brand-backdrop",
       description:
         "Generated brand overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -24147,7 +24147,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.backdrop",
       type: "color",
-      value: "#4f1717bf",
+      value: "#581a1b73",
       cssVar: "--cu-color-danger-backdrop",
       description:
         "Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -24386,7 +24386,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.backdrop",
       type: "color",
-      value: "#471515bf",
+      value: "#4f221773",
       cssVar: "--cu-color-warning-backdrop",
       description:
         "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -24633,7 +24633,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.backdrop",
       type: "color",
-      value: "#231c60bf",
+      value: "#1f1f6973",
       cssVar: "--cu-color-info-backdrop",
       description:
         "Generated info overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -24872,7 +24872,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.backdrop",
       type: "color",
-      value: "#291955bf",
+      value: "#331b5e73",
       cssVar: "--cu-color-discovery-backdrop",
       description:
         "Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -25101,7 +25101,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.backdrop",
       type: "color",
-      value: "#13421bbf",
+      value: "#154a2773",
       cssVar: "--cu-color-success-backdrop",
       description:
         "Generated success overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -25671,20 +25671,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sunken-hovered",
       type: "color",
-      value: "#afafaf",
+      value: "#919191",
       cssVar: "--cu-color-sunken-hovered",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 10% darker)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.sunken-active",
       type: "color",
-      value: "#a5a5a5",
+      value: "#888888",
       cssVar: "--cu-color-sunken-active",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 15% darker)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 30% darker)",
       theme: undefined,
       typography: false
     },
@@ -25711,20 +25711,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.canvas-hovered",
       type: "color",
-      value: "#b4b4b4",
+      value: "#969696",
       cssVar: "--cu-color-canvas-hovered",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 10% darker)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.canvas-active",
       type: "color",
-      value: "#aaaaaa",
+      value: "#8c8c8c",
       cssVar: "--cu-color-canvas-active",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 15% darker)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 30% darker)",
       theme: undefined,
       typography: false
     },
@@ -25751,20 +25751,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-hovered",
       type: "color",
-      value: "#b9b9b9",
+      value: "#999999",
       cssVar: "--cu-color-surface-hovered",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 10% darker)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.surface-active",
       type: "color",
-      value: "#aeaeae",
+      value: "#8f8f8f",
       cssVar: "--cu-color-surface-active",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% darker)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 30% darker)",
       theme: undefined,
       typography: false
     },
@@ -25791,20 +25791,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-hovered",
       type: "color",
-      value: "#bebebe",
+      value: "#9d9d9d",
       cssVar: "--cu-color-elevated-hovered",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% darker)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.elevated-active",
       type: "color",
-      value: "#b3b3b3",
+      value: "#939393",
       cssVar: "--cu-color-elevated-active",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% darker)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% darker)",
       theme: undefined,
       typography: false
     },
@@ -25831,20 +25831,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-hovered",
       type: "color",
-      value: "#c2c2c2",
+      value: "#a0a0a0",
       cssVar: "--cu-color-floating-hovered",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% darker)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.floating-active",
       type: "color",
-      value: "#b6b6b6",
+      value: "#959595",
       cssVar: "--cu-color-floating-active",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% darker)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 30% darker)",
       theme: undefined,
       typography: false
     },
@@ -29496,7 +29496,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.backdrop",
       type: "color",
-      value: "#000000bf",
+      value: "#00000073",
       cssVar: "--cu-color-base-backdrop",
       description:
         "Generated base overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -29672,7 +29672,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.backdrop",
       type: "color",
-      value: "#000000bf",
+      value: "#00000073",
       cssVar: "--cu-color-brand-backdrop",
       description:
         "Generated brand overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -29871,7 +29871,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.backdrop",
       type: "color",
-      value: "#000000bf",
+      value: "#00000073",
       cssVar: "--cu-color-danger-backdrop",
       description:
         "Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -30110,7 +30110,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.backdrop",
       type: "color",
-      value: "#000000bf",
+      value: "#00000073",
       cssVar: "--cu-color-warning-backdrop",
       description:
         "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -30357,7 +30357,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.backdrop",
       type: "color",
-      value: "#000000bf",
+      value: "#00000873",
       cssVar: "--cu-color-info-backdrop",
       description:
         "Generated info overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -30596,7 +30596,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.backdrop",
       type: "color",
-      value: "#000000bf",
+      value: "#00000073",
       cssVar: "--cu-color-discovery-backdrop",
       description:
         "Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -30825,7 +30825,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.backdrop",
       type: "color",
-      value: "#000000bf",
+      value: "#00000073",
       cssVar: "--cu-color-success-backdrop",
       description:
         "Generated success overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -31395,20 +31395,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sunken-hovered",
       type: "color",
-      value: "#e3e3e3",
+      value: "#a4a4a4",
       cssVar: "--cu-color-sunken-hovered",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 10% darker)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.sunken-active",
       type: "color",
-      value: "#cdcdcd",
+      value: "#909090",
       cssVar: "--cu-color-sunken-active",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 15% darker)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 30% darker)",
       theme: undefined,
       typography: false
     },
@@ -31435,20 +31435,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.canvas-hovered",
       type: "color",
-      value: "#ededed",
+      value: "#adadad",
       cssVar: "--cu-color-canvas-hovered",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 10% darker)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.canvas-active",
       type: "color",
-      value: "#d7d7d7",
+      value: "#999999",
       cssVar: "--cu-color-canvas-active",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 15% darker)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 30% darker)",
       theme: undefined,
       typography: false
     },
@@ -31475,20 +31475,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-hovered",
       type: "color",
-      value: "#f7f7f7",
+      value: "#b4b4b4",
       cssVar: "--cu-color-surface-hovered",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 10% darker)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.surface-active",
       type: "color",
-      value: "#e0e0e0",
+      value: "#9f9f9f",
       cssVar: "--cu-color-surface-active",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% darker)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 30% darker)",
       theme: undefined,
       typography: false
     },
@@ -31515,20 +31515,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-hovered",
       type: "color",
-      value: "#ffffff",
+      value: "#bdbdbd",
       cssVar: "--cu-color-elevated-hovered",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% darker)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.elevated-active",
       type: "color",
-      value: "#eaeaea",
+      value: "#a7a7a7",
       cssVar: "--cu-color-elevated-active",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% darker)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% darker)",
       theme: undefined,
       typography: false
     },
@@ -31555,20 +31555,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-hovered",
       type: "color",
-      value: "#ffffff",
+      value: "#c3c3c3",
       cssVar: "--cu-color-floating-hovered",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% darker)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.floating-active",
       type: "color",
-      value: "#f1f1f1",
+      value: "#acacac",
       cssVar: "--cu-color-floating-active",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% darker)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 30% darker)",
       theme: undefined,
       typography: false
     },

@@ -2838,7 +2838,7 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#010101bf",
+        $value: "#02020373",
         $description:
           "Generated base overlay backdrop color (primary, 30% darker at 75% opacity)",
         semantic: true,
@@ -2853,10 +2853,10 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.00392156862745098, 0.00392156862745098, 0.00392156862745098
+              0.00784313725490196, 0.00784313725490196, 0.011764705882352941
             ],
-            alpha: 0.7490196078431373,
-            hex: "#010101"
+            alpha: 0.45098039215686275,
+            hex: "#020203"
           },
           $description:
             "Generated base overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -3483,7 +3483,7 @@ module.exports = {
         group: "brand",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#001c18bf",
+        $value: "#00332c73",
         $description:
           "Generated brand overlay backdrop color (primary, 30% darker at 75% opacity)",
         semantic: true,
@@ -3497,9 +3497,9 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [0, 0.10980392156862745, 0.09411764705882353],
-            alpha: 0.7490196078431373,
-            hex: "#001c18"
+            components: [0, 0.2, 0.17254901960784313],
+            alpha: 0.45098039215686275,
+            hex: "#00332c"
           },
           $description:
             "Generated brand overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -4175,7 +4175,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#240000bf",
+        $value: "#35000173",
         $description:
           "Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)",
         semantic: true,
@@ -4189,9 +4189,9 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [0.1411764705882353, 0, 0],
-            alpha: 0.7490196078431373,
-            hex: "#240000"
+            components: [0.20784313725490197, 0, 0.00392156862745098],
+            alpha: 0.45098039215686275,
+            hex: "#350001"
           },
           $description:
             "Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -5002,7 +5002,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#150000bf",
+        $value: "#24070073",
         $description:
           "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
         semantic: true,
@@ -5016,9 +5016,9 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [0.08235294117647059, 0, 0],
-            alpha: 0.7490196078431373,
-            hex: "#150000"
+            components: [0.1411764705882353, 0.027450980392156862, 0],
+            alpha: 0.45098039215686275,
+            hex: "#240700"
           },
           $description:
             "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -5857,7 +5857,7 @@ module.exports = {
         group: "info",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#070043bf",
+        $value: "#00005573",
         $description:
           "Generated info overlay backdrop color (primary, 30% darker at 75% opacity)",
         semantic: true,
@@ -5871,9 +5871,9 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [0.027450980392156862, 0, 0.2627450980392157],
-            alpha: 0.7490196078431373,
-            hex: "#070043"
+            components: [0, 0, 0.3333333333333333],
+            alpha: 0.45098039215686275,
+            hex: "#000055"
           },
           $description:
             "Generated info overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -6674,7 +6674,7 @@ module.exports = {
         group: "discovery",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#0d0030bf",
+        $value: "#17004073",
         $description:
           "Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity)",
         semantic: true,
@@ -6688,9 +6688,9 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [0.050980392156862744, 0, 0.18823529411764706],
-            alpha: 0.7490196078431373,
-            hex: "#0d0030"
+            components: [0.09019607843137255, 0, 0.25098039215686274],
+            alpha: 0.45098039215686275,
+            hex: "#170040"
           },
           $description:
             "Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -7463,7 +7463,7 @@ module.exports = {
         group: "success",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#000d02bf",
+        $value: "#001b0973",
         $description:
           "Generated success overlay backdrop color (primary, 30% darker at 75% opacity)",
         semantic: true,
@@ -7477,9 +7477,9 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [0, 0.050980392156862744, 0.00784313725490196],
-            alpha: 0.7490196078431373,
-            hex: "#000d02"
+            components: [0, 0.10588235294117647, 0.03529411764705882],
+            alpha: 0.45098039215686275,
+            hex: "#001b09"
           },
           $description:
             "Generated success overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -9504,9 +9504,9 @@ module.exports = {
       key: "{color.sunken-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#c4c4c4",
+      $value: "#999999",
       $description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 10% darker)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% darker)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -9516,13 +9516,11 @@ module.exports = {
         colorSpace: "display-p3",
         $value: {
           colorSpace: "srgb",
-          components: [
-            0.7686274509803922, 0.7686274509803922, 0.7686274509803922
-          ],
-          hex: "#c4c4c4"
+          components: [0.6, 0.6, 0.6],
+          hex: "#999999"
         },
         $description:
-          "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 10% darker)",
+          "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% darker)",
         group: "background",
         key: "{color.sunken-hovered}"
       },
@@ -9537,9 +9535,9 @@ module.exports = {
       key: "{color.sunken-active}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#b5b5b5",
+      $value: "#8b8b8b",
       $description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 15% darker)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 30% darker)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -9550,12 +9548,12 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.7098039215686275, 0.7098039215686275, 0.7098039215686275
+            0.5450980392156862, 0.5450980392156862, 0.5450980392156862
           ],
-          hex: "#b5b5b5"
+          hex: "#8b8b8b"
         },
         $description:
-          "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 15% darker)",
+          "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 30% darker)",
         group: "background",
         key: "{color.sunken-active}"
       },
@@ -9630,9 +9628,9 @@ module.exports = {
       key: "{color.canvas-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#cbcbcb",
+      $value: "#9f9f9f",
       $description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 10% darker)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% darker)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -9642,11 +9640,13 @@ module.exports = {
         colorSpace: "display-p3",
         $value: {
           colorSpace: "srgb",
-          components: [0.796078431372549, 0.796078431372549, 0.796078431372549],
-          hex: "#cbcbcb"
+          components: [
+            0.6235294117647059, 0.6235294117647059, 0.6235294117647059
+          ],
+          hex: "#9f9f9f"
         },
         $description:
-          "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 10% darker)",
+          "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% darker)",
         group: "background",
         key: "{color.canvas-hovered}"
       },
@@ -9661,9 +9661,9 @@ module.exports = {
       key: "{color.canvas-active}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#bcbcbc",
+      $value: "#919191",
       $description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 15% darker)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 30% darker)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -9674,12 +9674,12 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.7372549019607844, 0.7372549019607844, 0.7372549019607844
+            0.5686274509803921, 0.5686274509803921, 0.5686274509803921
           ],
-          hex: "#bcbcbc"
+          hex: "#919191"
         },
         $description:
-          "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 15% darker)",
+          "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 30% darker)",
         group: "background",
         key: "{color.canvas-active}"
       },
@@ -9754,9 +9754,9 @@ module.exports = {
       key: "{color.surface-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#d2d2d2",
+      $value: "#a4a4a4",
       $description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 10% darker)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% darker)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -9767,12 +9767,12 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.8235294117647058, 0.8235294117647058, 0.8235294117647058
+            0.6431372549019608, 0.6431372549019608, 0.6431372549019608
           ],
-          hex: "#d2d2d2"
+          hex: "#a4a4a4"
         },
         $description:
-          "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 10% darker)",
+          "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% darker)",
         group: "background",
         key: "{color.surface-hovered}"
       },
@@ -9787,9 +9787,9 @@ module.exports = {
       key: "{color.surface-active}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#c2c2c2",
+      $value: "#959595",
       $description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% darker)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 30% darker)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -9800,12 +9800,12 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.7607843137254902, 0.7607843137254902, 0.7607843137254902
+            0.5843137254901961, 0.5843137254901961, 0.5843137254901961
           ],
-          hex: "#c2c2c2"
+          hex: "#959595"
         },
         $description:
-          "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% darker)",
+          "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 30% darker)",
         group: "background",
         key: "{color.surface-active}"
       },
@@ -9880,9 +9880,9 @@ module.exports = {
       key: "{color.elevated-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#d9d9d9",
+      $value: "#aaaaaa",
       $description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% darker)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% darker)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -9893,12 +9893,12 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.8509803921568627, 0.8509803921568627, 0.8509803921568627
+            0.6666666666666666, 0.6666666666666666, 0.6666666666666666
           ],
-          hex: "#d9d9d9"
+          hex: "#aaaaaa"
         },
         $description:
-          "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% darker)",
+          "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% darker)",
         group: "background",
         key: "{color.elevated-hovered}"
       },
@@ -9913,9 +9913,9 @@ module.exports = {
       key: "{color.elevated-active}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#c9c9c9",
+      $value: "#9b9b9b",
       $description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% darker)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% darker)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -9925,11 +9925,13 @@ module.exports = {
         colorSpace: "display-p3",
         $value: {
           colorSpace: "srgb",
-          components: [0.788235294117647, 0.788235294117647, 0.788235294117647],
-          hex: "#c9c9c9"
+          components: [
+            0.6078431372549019, 0.6078431372549019, 0.6078431372549019
+          ],
+          hex: "#9b9b9b"
         },
         $description:
-          "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% darker)",
+          "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% darker)",
         group: "background",
         key: "{color.elevated-active}"
       },
@@ -10004,9 +10006,9 @@ module.exports = {
       key: "{color.floating-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#dedede",
+      $value: "#aeaeae",
       $description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% darker)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% darker)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -10017,12 +10019,12 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.8705882352941177, 0.8705882352941177, 0.8705882352941177
+            0.6823529411764706, 0.6823529411764706, 0.6823529411764706
           ],
-          hex: "#dedede"
+          hex: "#aeaeae"
         },
         $description:
-          "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% darker)",
+          "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% darker)",
         group: "background",
         key: "{color.floating-hovered}"
       },
@@ -10037,9 +10039,9 @@ module.exports = {
       key: "{color.floating-active}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#cecece",
+      $value: "#9e9e9e",
       $description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% darker)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 30% darker)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -10049,11 +10051,13 @@ module.exports = {
         colorSpace: "display-p3",
         $value: {
           colorSpace: "srgb",
-          components: [0.807843137254902, 0.807843137254902, 0.807843137254902],
-          hex: "#cecece"
+          components: [
+            0.6196078431372549, 0.6196078431372549, 0.6196078431372549
+          ],
+          hex: "#9e9e9e"
         },
         $description:
-          "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% darker)",
+          "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 30% darker)",
         group: "background",
         key: "{color.floating-active}"
       },

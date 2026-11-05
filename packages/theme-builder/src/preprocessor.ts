@@ -536,7 +536,7 @@ const BACKGROUND_COLOR_STATE_DISABLED: ColorStateVariant = {
 
 const BACKGROUND_COLOR_STATE_VARIANTS: ColorStateVariants = {
   lowSaturation: [
-    { name: "active", brightness: 1.15 },
+    { name: "active", brightness: 1.3 },
     BACKGROUND_COLOR_STATE_INACTIVE,
     BACKGROUND_COLOR_STATE_DISABLED
   ],
@@ -602,7 +602,7 @@ const FOREGROUND_COLOR_STATE_VARIANTS: ColorStateVariants = {
 
 const BACKGROUND_COLOR_STATE_HOVERED_VARIANTS: ColorStateVariants = {
   lowSaturation: [
-    { name: "hovered", brightness: 1.1 },
+    { name: "hovered", brightness: 1.25 },
     ...BACKGROUND_COLOR_STATE_VARIANTS.lowSaturation
   ],
   saturated: [
@@ -632,8 +632,8 @@ const MINIMUM_INVERSE_CONTRAST_RATIO = 2;
 const SUBTLE_COLOR_LIGHTNESS_STEP = 0.01;
 const MAX_SUBTLE_COLOR_ADJUSTMENTS = 100;
 const SUBTLE_COLOR_GAMUT_SEARCH_ITERATIONS = 32;
-const BACKDROP_BRIGHTNESS = 0.25;
-const BACKDROP_OPACITY = 0.75;
+const BACKDROP_BRIGHTNESS = 0.375;
+const BACKDROP_OPACITY = 0.45;
 /** OKLCH lightness step for the rim around `secondary` backgrounds (brighter in dark, darker in light themes). */
 const BORDER_LIGHTNESS_STEP = 0.15;
 /** OKLCH lightness shift for hovered colors already near the contrast primitive. */

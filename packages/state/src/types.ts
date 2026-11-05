@@ -104,6 +104,12 @@ export type ExtractAtomRecordValues<T extends AtomRecordConstraint<T>> = {
 
 export type ClientFileResult = FileResult & {
   id: number;
+
+  /**
+   * How much of the file has been uploaded, from 0 to 100. While set below
+   * 100, the file shows an upload progress bar.
+   */
+  progress?: number;
 };
 
 export type SplitAtomAction<TValue> =

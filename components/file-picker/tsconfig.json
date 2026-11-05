@@ -20,28 +20,16 @@
       "path": "../../packages/state"
     },
     {
-      "path": "../pdf-document-display"
-    },
-    {
-      "path": "../link"
-    },
-    {
       "path": "../icons"
     },
     {
       "path": "../../packages/helpers"
     },
     {
-      "path": "../heading-text"
-    },
-    {
-      "path": "../bytes-text"
+      "path": "../file"
     },
     {
       "path": "../button"
-    },
-    {
-      "path": "../body-text"
     },
     {
       "path": "../form"

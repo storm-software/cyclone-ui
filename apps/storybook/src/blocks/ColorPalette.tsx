@@ -156,10 +156,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-active"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 15% brighter)"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 30% brighter)"
             }
             colors={{
-              "canvas-active": "#1c1c1f"
+              "canvas-active": "#232326"
             }}
           />
           <ColorItem
@@ -174,10 +174,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-hovered"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 10% brighter)"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% brighter)"
             }
             colors={{
-              "canvas-hovered": "#19191d"
+              "canvas-hovered": "#202024"
             }}
           />
           <ColorItem
@@ -201,10 +201,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-active"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% brighter)"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% brighter)"
             }
             colors={{
-              "elevated-active": "#28282a"
+              "elevated-active": "#313133"
             }}
           />
           <ColorItem
@@ -219,10 +219,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-hovered"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% brighter)"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% brighter)"
             }
             colors={{
-              "elevated-hovered": "#252527"
+              "elevated-hovered": "#2e2e30"
             }}
           />
           <ColorItem
@@ -246,10 +246,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-active"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% brighter)"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 30% brighter)"
             }
             colors={{
-              "floating-active": "#2e2f32"
+              "floating-active": "#38393c"
             }}
           />
           <ColorItem
@@ -264,10 +264,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-hovered"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% brighter)"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% brighter)"
             }
             colors={{
-              "floating-hovered": "#2a2b2f"
+              "floating-hovered": "#343539"
             }}
           />
           <ColorItem
@@ -291,10 +291,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-active"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 15% brighter)"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 30% brighter)"
             }
             colors={{
-              "sunken-active": "#111112"
+              "sunken-active": "#161617"
             }}
           />
           <ColorItem
@@ -309,10 +309,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-hovered"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 10% brighter)"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% brighter)"
             }
             colors={{
-              "sunken-hovered": "#0f0f10"
+              "sunken-hovered": "#141415"
             }}
           />
           <ColorItem
@@ -336,10 +336,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-active"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% brighter)"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 30% brighter)"
             }
             colors={{
-              "surface-active": "#242426"
+              "surface-active": "#2c2c2f"
             }}
           />
           <ColorItem
@@ -354,10 +354,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-hovered"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 10% brighter)"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% brighter)"
             }
             colors={{
-              "surface-hovered": "#212123"
+              "surface-hovered": "#2a2a2c"
             }}
           />
           <ColorItem
@@ -630,7 +630,7 @@ const COLOR_VARIANTS = {
                 secondary: "#2d2e33",
                 link: "#00bcff",
                 "on-primary": "#151518",
-                backdrop: "#222222bf",
+                backdrop: "#41414173",
                 "on-secondary": "#FAFAFA",
                 border: "#383a3f",
                 "primary-hovered": "#aeaeae",
@@ -662,7 +662,7 @@ const COLOR_VARIANTS = {
                 secondary: "#00604d",
                 link: "#3be4be",
                 "on-primary": "#151518",
-                backdrop: "#002811bf",
+                backdrop: "#00442a73",
                 "on-secondary": "#ffffff",
                 border: "#22735f",
                 "primary-hovered": "#00a17e",
@@ -694,7 +694,7 @@ const COLOR_VARIANTS = {
                 secondary: "#5d001e",
                 link: "#cf2d56",
                 "on-primary": "#FAFAFA",
-                backdrop: "#3a0000bf",
+                backdrop: "#53000073",
                 "on-secondary": "#ffa6b0",
                 border: "#6b1229",
                 "primary-hovered": "#ff607f",
@@ -731,7 +731,7 @@ const COLOR_VARIANTS = {
                 secondary: "#362661",
                 link: "#9277da",
                 "on-primary": "#FAFAFA",
-                backdrop: "#180043bf",
+                backdrop: "#28005b73",
                 "on-secondary": "#FAFAFA",
                 border: "#42336f",
                 "primary-hovered": "#c3a9ff",
@@ -768,7 +768,7 @@ const COLOR_VARIANTS = {
                 secondary: "#19438c",
                 link: "#4d8eff",
                 "on-primary": "#FAFAFA",
-                backdrop: "#05005bbf",
+                backdrop: "#00007573",
                 "on-secondary": "#FAFAFA",
                 border: "#2a549f",
                 "primary-hovered": "#7fc4ff",
@@ -805,7 +805,7 @@ const COLOR_VARIANTS = {
                 secondary: "#006140",
                 link: "#45c791",
                 "on-primary": "#FAFAFA",
-                backdrop: "#002100bf",
+                backdrop: "#003a1073",
                 "on-secondary": "#ffffff",
                 border: "#217452",
                 "primary-hovered": "#89ffcc",
@@ -842,7 +842,7 @@ const COLOR_VARIANTS = {
                 secondary: "#a2731e",
                 link: "#f9c25e",
                 "on-primary": "#151518",
-                backdrop: "#350500bf",
+                backdrop: "#53240073",
                 "on-secondary": "#FAFAFA",
                 border: "#be8e3e",
                 "primary-hovered": "#b37f00",
@@ -1018,10 +1018,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-active"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 15% brighter)"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 30% brighter)"
             }
             colors={{
-              "canvas-active": "#39393d"
+              "canvas-active": "#3e3e41"
             }}
           />
           <ColorItem
@@ -1036,10 +1036,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-hovered"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 10% brighter)"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% brighter)"
             }
             colors={{
-              "canvas-hovered": "#37373b"
+              "canvas-hovered": "#3c3c40"
             }}
           />
           <ColorItem
@@ -1063,10 +1063,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-active"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% brighter)"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% brighter)"
             }
             colors={{
-              "elevated-active": "#424244"
+              "elevated-active": "#48484a"
             }}
           />
           <ColorItem
@@ -1081,10 +1081,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-hovered"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% brighter)"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% brighter)"
             }
             colors={{
-              "elevated-hovered": "#404042"
+              "elevated-hovered": "#464648"
             }}
           />
           <ColorItem
@@ -1108,10 +1108,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-active"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% brighter)"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 30% brighter)"
             }
             colors={{
-              "floating-active": "#464749"
+              "floating-active": "#4d4e50"
             }}
           />
           <ColorItem
@@ -1126,10 +1126,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-hovered"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% brighter)"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% brighter)"
             }
             colors={{
-              "floating-hovered": "#434448"
+              "floating-hovered": "#4a4b4e"
             }}
           />
           <ColorItem
@@ -1153,10 +1153,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-active"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 15% brighter)"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 30% brighter)"
             }
             colors={{
-              "sunken-active": "#323233"
+              "sunken-active": "#353537"
             }}
           />
           <ColorItem
@@ -1171,10 +1171,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-hovered"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 10% brighter)"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% brighter)"
             }
             colors={{
-              "sunken-hovered": "#303032"
+              "sunken-hovered": "#343435"
             }}
           />
           <ColorItem
@@ -1198,10 +1198,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-active"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% brighter)"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 30% brighter)"
             }
             colors={{
-              "surface-active": "#3f3f41"
+              "surface-active": "#454547"
             }}
           />
           <ColorItem
@@ -1216,10 +1216,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-hovered"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 10% brighter)"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% brighter)"
             }
             colors={{
-              "surface-hovered": "#3d3d3f"
+              "surface-hovered": "#434345"
             }}
           />
           <ColorItem
@@ -1492,7 +1492,7 @@ const COLOR_VARIANTS = {
                 secondary: "#45464a",
                 link: "#39a1c6",
                 "on-primary": "#343438",
-                backdrop: "#3e3e3ebf",
+                backdrop: "#54545473",
                 "on-secondary": "#d5d5d5",
                 border: "#4d4f52",
                 "primary-hovered": "#a0a0a0",
@@ -1524,7 +1524,7 @@ const COLOR_VARIANTS = {
                 secondary: "#206f60",
                 link: "#5abba5",
                 "on-primary": "#343438",
-                backdrop: "#185130bf",
+                backdrop: "#1c604673",
                 "on-secondary": "#d9d9d9",
                 border: "#3f7568",
                 "primary-hovered": "#2b937c",
@@ -1556,7 +1556,7 @@ const COLOR_VARIANTS = {
                 secondary: "#6e2039",
                 link: "#ab5268",
                 "on-primary": "#d5d5d5",
-                backdrop: "#5b1a1abf",
+                backdrop: "#681e1e73",
                 "on-secondary": "#e0939c",
                 border: "#723242",
                 "primary-hovered": "#d56d82",
@@ -1593,7 +1593,7 @@ const COLOR_VARIANTS = {
                 secondary: "#4c416a",
                 link: "#8e7dbb",
                 "on-primary": "#d5d5d5",
-                backdrop: "#341c60bf",
+                backdrop: "#41206d73",
                 "on-secondary": "#d5d5d5",
                 border: "#554c72",
                 "primary-hovered": "#ac95e0",
@@ -1630,7 +1630,7 @@ const COLOR_VARIANTS = {
                 secondary: "#3b5685",
                 link: "#638cd2",
                 "on-primary": "#d5d5d5",
-                backdrop: "#24206dbf",
+                backdrop: "#24247b73",
                 "on-secondary": "#d5d5d5",
                 border: "#4a638f",
                 "primary-hovered": "#7eb0da",
@@ -1667,7 +1667,7 @@ const COLOR_VARIANTS = {
                 secondary: "#207055",
                 link: "#60a88a",
                 "on-primary": "#d5d5d5",
-                backdrop: "#164d16bf",
+                backdrop: "#1a5b2c73",
                 "on-secondary": "#d9d9d9",
                 border: "#3f765f",
                 "primary-hovered": "#84dbb5",
@@ -1704,7 +1704,7 @@ const COLOR_VARIANTS = {
                 secondary: "#917542",
                 link: "#d0ad6d",
                 "on-primary": "#343438",
-                backdrop: "#581f1abf",
+                backdrop: "#683e1e73",
                 "on-secondary": "#d5d5d5",
                 border: "#a2875b",
                 "primary-hovered": "#9c7c2d",
@@ -1880,7 +1880,7 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-active"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 15% brighter)"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 30% brighter)"
             }
             colors={{
               "canvas-active": "#000000"
@@ -1898,7 +1898,7 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-hovered"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 10% brighter)"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% brighter)"
             }
             colors={{
               "canvas-hovered": "#000000"
@@ -1925,10 +1925,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-active"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% brighter)"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% brighter)"
             }
             colors={{
-              "elevated-active": "#020202"
+              "elevated-active": "#0e0e10"
             }}
           />
           <ColorItem
@@ -1943,10 +1943,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-hovered"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% brighter)"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% brighter)"
             }
             colors={{
-              "elevated-hovered": "#000000"
+              "elevated-hovered": "#0a0a0c"
             }}
           />
           <ColorItem
@@ -1970,10 +1970,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-active"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% brighter)"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 30% brighter)"
             }
             colors={{
-              "floating-active": "#0b0c0e"
+              "floating-active": "#18191d"
             }}
           />
           <ColorItem
@@ -1988,10 +1988,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-hovered"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% brighter)"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% brighter)"
             }
             colors={{
-              "floating-hovered": "#060708"
+              "floating-hovered": "#131418"
             }}
           />
           <ColorItem
@@ -2015,7 +2015,7 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-active"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 15% brighter)"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 30% brighter)"
             }
             colors={{
               "sunken-active": "#000000"
@@ -2033,7 +2033,7 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-hovered"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 10% brighter)"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% brighter)"
             }
             colors={{
               "sunken-hovered": "#000000"
@@ -2060,10 +2060,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-active"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% brighter)"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 30% brighter)"
             }
             colors={{
-              "surface-active": "#000000"
+              "surface-active": "#080809"
             }}
           />
           <ColorItem
@@ -2078,10 +2078,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-hovered"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 10% brighter)"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% brighter)"
             }
             colors={{
-              "surface-hovered": "#000000"
+              "surface-hovered": "#050505"
             }}
           />
           <ColorItem
@@ -2354,7 +2354,7 @@ const COLOR_VARIANTS = {
                 secondary: "#0b0b0e",
                 link: "#00bcff",
                 "on-primary": "#000000",
-                backdrop: "#000000bf",
+                backdrop: "#25252573",
                 "on-secondary": "#ffffff",
                 border: "#191b21",
                 "primary-hovered": "#c3c3c3",
@@ -2386,7 +2386,7 @@ const COLOR_VARIANTS = {
                 secondary: "#001814",
                 link: "#2effd0",
                 "on-primary": "#000000",
-                backdrop: "#000000bf",
+                backdrop: "#00000073",
                 "on-secondary": "#ffffff",
                 border: "#0b5a47",
                 "primary-hovered": "#00775d",
@@ -2418,7 +2418,7 @@ const COLOR_VARIANTS = {
                 secondary: "#140006",
                 link: "#f00a45",
                 "on-primary": "#ffffff",
-                backdrop: "#000000bf",
+                backdrop: "#06000073",
                 "on-secondary": "#fff1f2",
                 border: "#430011",
                 "primary-hovered": "#ff8ba2",
@@ -2455,7 +2455,7 @@ const COLOR_VARIANTS = {
                 secondary: "#1d0f42",
                 link: "#a283f3",
                 "on-primary": "#ffffff",
-                backdrop: "#000000bf",
+                backdrop: "#08001173",
                 "on-secondary": "#ffffff",
                 border: "#2c1b5d",
                 "primary-hovered": "#f8f5ff",
@@ -2492,7 +2492,7 @@ const COLOR_VARIANTS = {
                 secondary: "#012e7c",
                 link: "#70a4ff",
                 "on-primary": "#ffffff",
-                backdrop: "#010011bf",
+                backdrop: "#00003773",
                 "on-secondary": "#ffffff",
                 border: "#0f44a2",
                 "primary-hovered": "#b8deff",
@@ -2529,7 +2529,7 @@ const COLOR_VARIANTS = {
                 secondary: "#001a11",
                 link: "#2de498",
                 "on-primary": "#ffffff",
-                backdrop: "#000000bf",
+                backdrop: "#00000073",
                 "on-secondary": "#ffffff",
                 border: "#0a5b3a",
                 "primary-hovered": "#c7ffe7",
@@ -2566,7 +2566,7 @@ const COLOR_VARIANTS = {
                 secondary: "#a26902",
                 link: "#ffd280",
                 "on-primary": "#000000",
-                backdrop: "#000000bf",
+                backdrop: "#06020073",
                 "on-secondary": "#ffffff",
                 border: "#da9421",
                 "primary-hovered": "#916700",
@@ -2742,10 +2742,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-active"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 15% darker)"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 30% darker)"
             }
             colors={{
-              "canvas-active": "#bcbcbc"
+              "canvas-active": "#919191"
             }}
           />
           <ColorItem
@@ -2760,10 +2760,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-hovered"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 10% darker)"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% darker)"
             }
             colors={{
-              "canvas-hovered": "#cbcbcb"
+              "canvas-hovered": "#9f9f9f"
             }}
           />
           <ColorItem
@@ -2787,10 +2787,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-active"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% darker)"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% darker)"
             }
             colors={{
-              "elevated-active": "#c9c9c9"
+              "elevated-active": "#9b9b9b"
             }}
           />
           <ColorItem
@@ -2805,10 +2805,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-hovered"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% darker)"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% darker)"
             }
             colors={{
-              "elevated-hovered": "#d9d9d9"
+              "elevated-hovered": "#aaaaaa"
             }}
           />
           <ColorItem
@@ -2832,10 +2832,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-active"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% darker)"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 30% darker)"
             }
             colors={{
-              "floating-active": "#cecece"
+              "floating-active": "#9e9e9e"
             }}
           />
           <ColorItem
@@ -2850,10 +2850,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-hovered"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% darker)"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% darker)"
             }
             colors={{
-              "floating-hovered": "#dedede"
+              "floating-hovered": "#aeaeae"
             }}
           />
           <ColorItem
@@ -2877,10 +2877,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-active"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 15% darker)"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 30% darker)"
             }
             colors={{
-              "sunken-active": "#b5b5b5"
+              "sunken-active": "#8b8b8b"
             }}
           />
           <ColorItem
@@ -2895,10 +2895,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-hovered"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 10% darker)"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% darker)"
             }
             colors={{
-              "sunken-hovered": "#c4c4c4"
+              "sunken-hovered": "#999999"
             }}
           />
           <ColorItem
@@ -2922,10 +2922,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-active"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% darker)"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 30% darker)"
             }
             colors={{
-              "surface-active": "#c2c2c2"
+              "surface-active": "#959595"
             }}
           />
           <ColorItem
@@ -2940,10 +2940,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-hovered"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 10% darker)"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% darker)"
             }
             colors={{
-              "surface-hovered": "#d2d2d2"
+              "surface-hovered": "#a4a4a4"
             }}
           />
           <ColorItem
@@ -3216,7 +3216,7 @@ const COLOR_VARIANTS = {
                 secondary: "#b0b0b1",
                 link: "#0084d1",
                 "on-primary": "#FAFAFA",
-                backdrop: "#010101bf",
+                backdrop: "#02020373",
                 "on-secondary": "#FAFAFA",
                 border: "#8d8d8e",
                 "primary-hovered": "#5c5c5f",
@@ -3248,7 +3248,7 @@ const COLOR_VARIANTS = {
                 secondary: "#d6fff9",
                 link: "#1fb2a6",
                 "on-primary": "#FAFAFA",
-                backdrop: "#001c18bf",
+                backdrop: "#00332c73",
                 "on-secondary": "#005a53",
                 border: "#a7cfc9",
                 "primary-hovered": "#007c72",
@@ -3280,7 +3280,7 @@ const COLOR_VARIANTS = {
                 secondary: "#f17d91",
                 link: "#8e223e",
                 "on-primary": "#FAFAFA",
-                backdrop: "#240000bf",
+                backdrop: "#35000173",
                 "on-secondary": "#200006",
                 border: "#cb5b71",
                 "primary-hovered": "#6a0022",
@@ -3317,7 +3317,7 @@ const COLOR_VARIANTS = {
                 secondary: "#a690e1",
                 link: "#594395",
                 "on-primary": "#FAFAFA",
-                backdrop: "#0d0030bf",
+                backdrop: "#17004073",
                 "on-secondary": "#FAFAFA",
                 border: "#8670be",
                 "primary-hovered": "#3c2372",
@@ -3354,7 +3354,7 @@ const COLOR_VARIANTS = {
                 secondary: "#6da2ff",
                 link: "#2055b3",
                 "on-primary": "#FAFAFA",
-                backdrop: "#070043bf",
+                backdrop: "#00005573",
                 "on-secondary": "#FAFAFA",
                 border: "#4d80da",
                 "primary-hovered": "#00318d",
@@ -3391,7 +3391,7 @@ const COLOR_VARIANTS = {
                 secondary: "#74ba9f",
                 link: "#216b53",
                 "on-primary": "#FAFAFA",
-                backdrop: "#000d02bf",
+                backdrop: "#001b0973",
                 "on-secondary": "#002015",
                 border: "#52977e",
                 "primary-hovered": "#004933",
@@ -3428,7 +3428,7 @@ const COLOR_VARIANTS = {
                 secondary: "#caa46b",
                 link: "#765417",
                 "on-primary": "#FAFAFA",
-                backdrop: "#150000bf",
+                backdrop: "#24070073",
                 "on-secondary": "#241500",
                 border: "#a78249",
                 "primary-hovered": "#543400",
@@ -3604,10 +3604,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-active"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 15% darker)"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 30% darker)"
             }
             colors={{
-              "canvas-active": "#aaaaaa"
+              "canvas-active": "#8c8c8c"
             }}
           />
           <ColorItem
@@ -3622,10 +3622,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-hovered"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 10% darker)"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% darker)"
             }
             colors={{
-              "canvas-hovered": "#b4b4b4"
+              "canvas-hovered": "#969696"
             }}
           />
           <ColorItem
@@ -3649,10 +3649,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-active"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% darker)"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% darker)"
             }
             colors={{
-              "elevated-active": "#b3b3b3"
+              "elevated-active": "#939393"
             }}
           />
           <ColorItem
@@ -3667,10 +3667,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-hovered"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% darker)"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% darker)"
             }
             colors={{
-              "elevated-hovered": "#bebebe"
+              "elevated-hovered": "#9d9d9d"
             }}
           />
           <ColorItem
@@ -3694,10 +3694,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-active"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% darker)"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 30% darker)"
             }
             colors={{
-              "floating-active": "#b6b6b6"
+              "floating-active": "#959595"
             }}
           />
           <ColorItem
@@ -3712,10 +3712,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-hovered"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% darker)"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% darker)"
             }
             colors={{
-              "floating-hovered": "#c2c2c2"
+              "floating-hovered": "#a0a0a0"
             }}
           />
           <ColorItem
@@ -3739,10 +3739,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-active"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 15% darker)"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 30% darker)"
             }
             colors={{
-              "sunken-active": "#a5a5a5"
+              "sunken-active": "#888888"
             }}
           />
           <ColorItem
@@ -3757,10 +3757,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-hovered"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 10% darker)"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% darker)"
             }
             colors={{
-              "sunken-hovered": "#afafaf"
+              "sunken-hovered": "#919191"
             }}
           />
           <ColorItem
@@ -3784,10 +3784,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-active"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% darker)"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 30% darker)"
             }
             colors={{
-              "surface-active": "#aeaeae"
+              "surface-active": "#8f8f8f"
             }}
           />
           <ColorItem
@@ -3802,10 +3802,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-hovered"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 10% darker)"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% darker)"
             }
             colors={{
-              "surface-hovered": "#b9b9b9"
+              "surface-hovered": "#999999"
             }}
           />
           <ColorItem
@@ -4078,7 +4078,7 @@ const COLOR_VARIANTS = {
                 secondary: "#a1a1a2",
                 link: "#3280ad",
                 "on-primary": "#d5d5d5",
-                backdrop: "#272727bf",
+                backdrop: "#24242c73",
                 "on-secondary": "#d5d5d5",
                 border: "#89898a",
                 "primary-hovered": "#676769",
@@ -4110,7 +4110,7 @@ const COLOR_VARIANTS = {
                 secondary: "#ade7df",
                 link: "#449a93",
                 "on-primary": "#d5d5d5",
-                backdrop: "#164a43bf",
+                backdrop: "#19574e73",
                 "on-secondary": "#1f6c66",
                 border: "#9bb7b3",
                 "primary-hovered": "#257f77",
@@ -4142,7 +4142,7 @@ const COLOR_VARIANTS = {
                 secondary: "#ce7f8d",
                 link: "#864254",
                 "on-primary": "#d5d5d5",
-                backdrop: "#4f1717bf",
+                backdrop: "#581a1b73",
                 "on-secondary": "#4d1620",
                 border: "#ae6d79",
                 "primary-hovered": "#75223c",
@@ -4179,7 +4179,7 @@ const COLOR_VARIANTS = {
                 secondary: "#9b8cc3",
                 link: "#675a8a",
                 "on-primary": "#d5d5d5",
-                backdrop: "#291955bf",
+                backdrop: "#331b5e73",
                 "on-secondary": "#d5d5d5",
                 border: "#8679a7",
                 "primary-hovered": "#514075",
@@ -4216,7 +4216,7 @@ const COLOR_VARIANTS = {
                 secondary: "#7598d7",
                 link: "#45649b",
                 "on-primary": "#d5d5d5",
-                backdrop: "#231c60bf",
+                backdrop: "#1f1f6973",
                 "on-secondary": "#d5d5d5",
                 border: "#6582b6",
                 "primary-hovered": "#274988",
@@ -4253,7 +4253,7 @@ const COLOR_VARIANTS = {
                 secondary: "#7ba595",
                 link: "#3e7160",
                 "on-primary": "#d5d5d5",
-                backdrop: "#13421bbf",
+                backdrop: "#154a2773",
                 "on-secondary": "#164d3a",
                 border: "#648b7d",
                 "primary-hovered": "#1d634e",
@@ -4290,7 +4290,7 @@ const COLOR_VARIANTS = {
                 secondary: "#af9876",
                 link: "#786137",
                 "on-primary": "#d5d5d5",
-                backdrop: "#471515bf",
+                backdrop: "#4f221773",
                 "on-secondary": "#4f3817",
                 border: "#958060",
                 "primary-hovered": "#694d1e",
@@ -4466,10 +4466,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-active"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 15% darker)"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 30% darker)"
             }
             colors={{
-              "canvas-active": "#d7d7d7"
+              "canvas-active": "#999999"
             }}
           />
           <ColorItem
@@ -4484,10 +4484,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-hovered"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 10% darker)"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% darker)"
             }
             colors={{
-              "canvas-hovered": "#ededed"
+              "canvas-hovered": "#adadad"
             }}
           />
           <ColorItem
@@ -4511,10 +4511,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-active"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% darker)"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% darker)"
             }
             colors={{
-              "elevated-active": "#eaeaea"
+              "elevated-active": "#a7a7a7"
             }}
           />
           <ColorItem
@@ -4529,10 +4529,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-hovered"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% darker)"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% darker)"
             }
             colors={{
-              "elevated-hovered": "#ffffff"
+              "elevated-hovered": "#bdbdbd"
             }}
           />
           <ColorItem
@@ -4556,10 +4556,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-active"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% darker)"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 30% darker)"
             }
             colors={{
-              "floating-active": "#f1f1f1"
+              "floating-active": "#acacac"
             }}
           />
           <ColorItem
@@ -4574,10 +4574,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-hovered"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% darker)"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% darker)"
             }
             colors={{
-              "floating-hovered": "#ffffff"
+              "floating-hovered": "#c3c3c3"
             }}
           />
           <ColorItem
@@ -4601,10 +4601,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-active"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 15% darker)"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 30% darker)"
             }
             colors={{
-              "sunken-active": "#cdcdcd"
+              "sunken-active": "#909090"
             }}
           />
           <ColorItem
@@ -4619,10 +4619,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-hovered"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 10% darker)"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% darker)"
             }
             colors={{
-              "sunken-hovered": "#e3e3e3"
+              "sunken-hovered": "#a4a4a4"
             }}
           />
           <ColorItem
@@ -4646,10 +4646,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-active"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% darker)"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 30% darker)"
             }
             colors={{
-              "surface-active": "#e0e0e0"
+              "surface-active": "#9f9f9f"
             }}
           />
           <ColorItem
@@ -4664,10 +4664,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-hovered"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 10% darker)"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% darker)"
             }
             colors={{
-              "surface-hovered": "#f7f7f7"
+              "surface-hovered": "#b4b4b4"
             }}
           />
           <ColorItem
@@ -4940,7 +4940,7 @@ const COLOR_VARIANTS = {
                 secondary: "#c3c3ca",
                 link: "#0077bc",
                 "on-primary": "#ffffff",
-                backdrop: "#000000bf",
+                backdrop: "#00000073",
                 "on-secondary": "#ffffff",
                 border: "#8e8e9a",
                 "primary-hovered": "#494954",
@@ -4972,7 +4972,7 @@ const COLOR_VARIANTS = {
                 secondary: "#ffffff",
                 link: "#00bcad",
                 "on-primary": "#ffffff",
-                backdrop: "#000000bf",
+                backdrop: "#00000073",
                 "on-secondary": "#00100f",
                 border: "#c3e8e3",
                 "primary-hovered": "#00413c",
@@ -5004,7 +5004,7 @@ const COLOR_VARIANTS = {
                 secondary: "#ffa1b1",
                 link: "#840929",
                 "on-primary": "#ffffff",
-                backdrop: "#000000bf",
+                backdrop: "#00000073",
                 "on-secondary": "#000000",
                 border: "#e6516f",
                 "primary-hovered": "#27000c",
@@ -5041,7 +5041,7 @@ const COLOR_VARIANTS = {
                 secondary: "#c1adf7",
                 link: "#492b9b",
                 "on-primary": "#ffffff",
-                backdrop: "#000000bf",
+                backdrop: "#00000073",
                 "on-secondary": "#ffffff",
                 border: "#8b6ed6",
                 "primary-hovered": "#240c59",
@@ -5078,7 +5078,7 @@ const COLOR_VARIANTS = {
                 secondary: "#9ec1ff",
                 link: "#0145be",
                 "on-primary": "#ffffff",
-                backdrop: "#000000bf",
+                backdrop: "#00000873",
                 "on-secondary": "#ffffff",
                 border: "#4083f9",
                 "primary-hovered": "#001f5a",
@@ -5115,7 +5115,7 @@ const COLOR_VARIANTS = {
                 secondary: "#72d1ac",
                 link: "#0a4e38",
                 "on-primary": "#ffffff",
-                backdrop: "#000000bf",
+                backdrop: "#00000073",
                 "on-secondary": "#000000",
                 border: "#3da27d",
                 "primary-hovered": "#000000",
@@ -5152,7 +5152,7 @@ const COLOR_VARIANTS = {
                 secondary: "#e3b36a",
                 link: "#583902",
                 "on-primary": "#ffffff",
-                backdrop: "#000000bf",
+                backdrop: "#00000073",
                 "on-secondary": "#000000",
                 border: "#b88331",
                 "primary-hovered": "#070400",

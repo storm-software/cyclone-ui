@@ -140,7 +140,12 @@ const MessageItem = ({
       onMouseLeave={() => setHovered(false)}
       onFocus={() => setHovered(true)}
       onBlur={() => setHovered(false)}>
-      <Alert type={type} hovered={paused}>
+      {/* Softer than the Container's `color-shadow-resting-raised` (30%/25%
+          black in dark mode), which reads as a dark halo over page content. */}
+      <Alert
+        type={type}
+        hovered={paused}
+        boxShadow="0px 1px 2px 0px #0000000a, 0px 4px 16px 0px #0000000d">
         <Alert.Icon>{toast.icon}</Alert.Icon>
         <Alert.Content>
           <Alert.Content.Heading>

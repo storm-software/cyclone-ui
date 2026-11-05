@@ -361,9 +361,9 @@ const tokens = createTokens({
 const themes = {
   dark: {
     canvas: tokens.color.neutral16,
-    "canvas-active": "oklch(0.227713 0.005742 285.935)",
+    "canvas-active": "oklch(0.257371 0.005565 286.002)",
     "canvas-disabled": "oklch(0.261537 0.005542 286.01)",
-    "canvas-hovered": "oklch(0.215164 0.007781 285.728)",
+    "canvas-hovered": "oklch(0.245204 0.007524 285.832)",
     "canvas-inactive": "oklch(0.179001 0.006108 285.767)",
     "color-shadow-resting-raised":
       "0px 1px 2px 0px #0000004d, 0px 2px 8px 0px #00000040",
@@ -384,9 +384,9 @@ const themes = {
     "data-yellow-emphasis": tokens.color.yellow5,
     "data-yellow-subtle": tokens.color.yellow9,
     elevated: tokens.color.neutral14,
-    "elevated-active": "oklch(0.277633 0.003634 286.161)",
+    "elevated-active": "oklch(0.313925 0.003522 286.195)",
     "elevated-disabled": "oklch(0.289855 0.003594 286.173)",
-    "elevated-hovered": "oklch(0.265274 0.003676 286.146)",
+    "elevated-hovered": "oklch(0.30195 0.003557 286.185)",
     "elevated-inactive": "oklch(0.214267 0.003881 286.068)",
     emphasis: tokens.color.neutral2,
     "emphasis-active": tokens.color.white,
@@ -394,9 +394,9 @@ const themes = {
     "emphasis-hovered": tokens.color.white,
     "emphasis-inactive": "oklch(0.499696 0 0)",
     floating: tokens.color.neutral13,
-    "floating-active": "oklch(0.305345 0.005542 271.233)",
+    "floating-active": "oklch(0.344726 0.005372 271.259)",
     "floating-disabled": "oklch(0.305345 0.005542 271.233)",
-    "floating-hovered": "oklch(0.28965 0.007384 274.709)",
+    "floating-hovered": "oklch(0.329509 0.007143 274.76)",
     "floating-inactive": "oklch(0.239475 0.005899 271.165)",
     hairline: tokens.color.neutral12,
     ink: tokens.color.neutral7,
@@ -415,18 +415,18 @@ const themes = {
     "subtle-hovered": "oklch(0.841916 0.002976 264.54)",
     "subtle-inactive": "oklch(0.499696 0 0)",
     sunken: tokens.color.black,
-    "sunken-active": "oklch(0.178075 0.002029 286.192)",
+    "sunken-active": "oklch(0.200616 0.001969 286.221)",
     "sunken-disabled": "oklch(0.235853 0.003788 286.106)",
-    "sunken-hovered": "oklch(0.16886 0.002057 286.177)",
+    "sunken-hovered": "oklch(0.19168 0.001992 286.21)",
     "sunken-inactive": "oklch(0.140274 0.002225 286.109)",
     surface: tokens.color.neutral15,
-    "surface-active": "oklch(0.261123 0.003691 286.141)",
+    "surface-active": "oklch(0.294299 0.005378 286.065)",
     "surface-disabled": "oklch(0.281721 0.00362 286.165)",
-    "surface-hovered": "oklch(0.248568 0.003737 286.125)",
+    "surface-hovered": "oklch(0.285796 0.003607 286.169)",
     "surface-inactive": "oklch(0.205481 0.003923 286.049)"
   },
   dark_base: {
-    backdrop: "oklch(0.251965 0 0 / 0.749)",
+    backdrop: "oklch(0.375299 0 0 / 0.451)",
     border: "oklch(0.348424 0.009089 268.401)",
     link: "oklch(0.748414 0.1551 233.252)",
     "link-active": "oklch(0.90939 0.122701 198.412)",
@@ -451,7 +451,7 @@ const themes = {
     "secondary-inactive": "oklch(0.499696 0 0)"
   },
   dark_brand: {
-    backdrop: "oklch(0.242794 0.062022 153.375 / 0.749)",
+    backdrop: "oklch(0.341174 0.077104 160.061 / 0.451)",
     border: "oklch(0.501556 0.083543 172.932)",
     link: "oklch(0.825828 0.144837 173.563)",
     "link-active": "oklch(0.630716 0.124588 170.203)",
@@ -476,7 +476,7 @@ const themes = {
     "secondary-inactive": "oklch(0.357066 0.071253 169.276)"
   },
   dark_danger: {
-    backdrop: "oklch(0.218817 0.089792 29.234 / 0.749)",
+    backdrop: "oklch(0.277716 0.113962 29.234 / 0.451)",
     border: "oklch(0.34937 0.121812 11.995)",
     link: tokens.color.red5,
     "link-active": "oklch(0.702463 0.193626 11.864)",
@@ -506,7 +506,7 @@ const themes = {
     "secondary-inactive": "oklch(0.259439 0.103884 17.432)"
   },
   dark_discovery: {
-    backdrop: "oklch(0.196717 0.11219 288.742 / 0.749)",
+    backdrop: "oklch(0.248073 0.138052 292.745 / 0.451)",
     border: "oklch(0.369313 0.099907 292.323)",
     link: tokens.color.purple4,
     "link-active": "oklch(0.789049 0.12248 297.421)",
@@ -536,7 +536,7 @@ const themes = {
     "secondary-inactive": "oklch(0.256581 0.100598 292.987)"
   },
   dark_info: {
-    backdrop: "oklch(0.216042 0.145372 267.094 / 0.749)",
+    backdrop: "oklch(0.254215 0.176153 264.052 / 0.451)",
     border: "oklch(0.457571 0.130694 260.968)",
     link: tokens.color.blue4,
     "link-active": "oklch(0.797163 0.109493 245.556)",
@@ -566,7 +566,7 @@ const themes = {
     "secondary-inactive": "oklch(0.318783 0.130149 260.588)"
   },
   dark_success: {
-    backdrop: "oklch(0.214668 0.073046 142.495 / 0.749)",
+    backdrop: "oklch(0.30363 0.089727 147.212 / 0.451)",
     border: "oklch(0.500375 0.096033 161.806)",
     link: tokens.color.green4,
     "link-active": "oklch(0.9169 0.13001 163.782)",
@@ -596,7 +596,7 @@ const themes = {
     "secondary-inactive": "oklch(0.353497 0.084003 157.11)"
   },
   dark_warning: {
-    backdrop: "oklch(0.214291 0.077825 33.612 / 0.749)",
+    backdrop: "oklch(0.321495 0.083102 51.617 / 0.451)",
     border: "oklch(0.67785 0.112603 77.465)",
     link: tokens.color.yellow2,
     "link-active": "oklch(0.632126 0.131014 79.769)",
@@ -627,9 +627,9 @@ const themes = {
   },
   light: {
     canvas: tokens.color.neutral3,
-    "canvas-active": "oklch(0.795225 0 0)",
+    "canvas-active": "oklch(0.656656 0 0)",
     "canvas-disabled": "oklch(0.770229 0.001404 286.367)",
-    "canvas-hovered": "oklch(0.842119 0 0)",
+    "canvas-hovered": "oklch(0.702511 0 0)",
     "canvas-inactive": tokens.color.white,
     "color-shadow-resting-raised":
       "0px 1px 2px 0px #00000014, 0px 2px 8px 0px #0000000f",
@@ -650,9 +650,9 @@ const themes = {
     "data-yellow-emphasis": tokens.color.yellow9,
     "data-yellow-subtle": tokens.color.yellow3,
     elevated: tokens.color.neutral1,
-    "elevated-active": "oklch(0.835905 0 0)",
+    "elevated-active": "oklch(0.689488 0 0)",
     "elevated-disabled": "oklch(0.804952 0.001388 286.369)",
-    "elevated-hovered": "oklch(0.885305 0 0)",
+    "elevated-hovered": "oklch(0.738019 0 0)",
     "elevated-inactive": tokens.color.white,
     emphasis: tokens.color.neutral14,
     "emphasis-active": "oklch(0 0 0)",
@@ -660,9 +660,9 @@ const themes = {
     "emphasis-hovered": "oklch(0.30195 0.003557 286.185)",
     "emphasis-inactive": "oklch(0.074227 0.009824 326.51)",
     floating: tokens.color.white,
-    "floating-active": "oklch(0.851419 0 0)",
+    "floating-active": "oklch(0.699261 0 0)",
     "floating-disabled": "oklch(0.814357 0.001384 286.369)",
-    "floating-hovered": "oklch(0.900601 0 0)",
+    "floating-hovered": "oklch(0.750824 0 0)",
     "floating-inactive": tokens.color.white,
     hairline: tokens.color.neutral5,
     ink: tokens.color.neutral10,
@@ -681,18 +681,18 @@ const themes = {
     "subtle-hovered": "oklch(0.503897 0.003125 286.287)",
     "subtle-inactive": "oklch(0.074227 0.009824 326.51)",
     sunken: tokens.color.neutral4,
-    "sunken-active": "oklch(0.773104 0 0)",
+    "sunken-active": "oklch(0.63676 0 0)",
     "sunken-disabled": "oklch(0.751124 0.001413 286.366)",
-    "sunken-hovered": "oklch(0.820319 0 0)",
+    "sunken-hovered": "oklch(0.682953 0 0)",
     "sunken-inactive": tokens.color.white,
     surface: tokens.color.neutral2,
-    "surface-active": "oklch(0.814064 0 0)",
+    "surface-active": "oklch(0.669837 0 0)",
     "surface-disabled": "oklch(0.7829 0.001398 286.368)",
-    "surface-hovered": "oklch(0.86378 0 0)",
+    "surface-hovered": "oklch(0.718705 0 0)",
     "surface-inactive": tokens.color.white
   },
   light_base: {
-    backdrop: "oklch(0.067205 0 0 / 0.749)",
+    backdrop: "oklch(0.085973 0.005553 285.173 / 0.451)",
     border: "oklch(0.643721 0.001468 286.359)",
     link: "oklch(0.593348 0.150515 245.368)",
     "link-active": "oklch(0.455409 0.137645 252.341)",
@@ -717,7 +717,7 @@ const themes = {
     "secondary-inactive": "oklch(0.074227 0.009824 326.51)"
   },
   light_brand: {
-    backdrop: "oklch(0.203199 0.036369 182.141 / 0.749)",
+    backdrop: "oklch(0.287808 0.052013 180.59 / 0.451)",
     border: "oklch(0.824039 0.043063 185.212)",
     link: "oklch(0.689733 0.115563 186.097)",
     "link-active": "oklch(0.527193 0.092884 185.044)",
@@ -742,7 +742,7 @@ const themes = {
     "secondary-inactive": "oklch(0.977858 0.032029 196.64)"
   },
   light_danger: {
-    backdrop: "oklch(0.163472 0.067081 29.234 / 0.749)",
+    backdrop: "oklch(0.206808 0.084456 27.707 / 0.451)",
     border: "oklch(0.616028 0.143319 10.06)",
     link: tokens.color.red7,
     "link-active": "oklch(0.33398 0.133464 12.997)",
@@ -772,7 +772,7 @@ const themes = {
     "secondary-inactive": "oklch(0.827696 0.101024 4.72)"
   },
   light_discovery: {
-    backdrop: "oklch(0.156124 0.090762 285.766 / 0.749)",
+    backdrop: "oklch(0.191397 0.108838 289.207 / 0.451)",
     border: "oklch(0.598697 0.117771 295.615)",
     link: tokens.color.purple7,
     "link-active": "oklch(0.337037 0.128688 292.702)",
@@ -802,7 +802,7 @@ const themes = {
     "secondary-inactive": "oklch(0.836592 0.094933 299.401)"
   },
   light_info: {
-    backdrop: "oklch(0.179341 0.115985 271.53 / 0.749)",
+    backdrop: "oklch(0.203195 0.1408 264.052 / 0.451)",
     border: "oklch(0.607898 0.147788 260.915)",
     link: tokens.color.blue7,
     "link-active": "oklch(0.354654 0.159775 261.635)",
@@ -832,7 +832,7 @@ const themes = {
     "secondary-inactive": "oklch(0.838568 0.086857 243.852)"
   },
   light_success: {
-    backdrop: "oklch(0.138783 0.039775 148.383 / 0.749)",
+    backdrop: "oklch(0.194674 0.050455 152.689 / 0.451)",
     border: "oklch(0.623483 0.08057 168.157)",
     link: tokens.color.green7,
     "link-active": "oklch(0.359241 0.075319 165.208)",
@@ -862,7 +862,7 @@ const themes = {
     "secondary-inactive": "oklch(0.882027 0.081698 167.143)"
   },
   light_warning: {
-    backdrop: "oklch(0.122913 0.050438 29.234 / 0.749)",
+    backdrop: "oklch(0.179632 0.054113 42.091 / 0.451)",
     border: "oklch(0.629842 0.087518 76.873)",
     link: tokens.color.yellow9,
     "link-active": "oklch(0.355177 0.076137 71.799)",

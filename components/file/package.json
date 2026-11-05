@@ -1,0 +1,71 @@
+{
+  "name": "@cyclone-ui/file",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A file card that shows a file's name, size, modified date and MIME type over an image, text or PDF preview, with download and remove buttons. While an upload is underway, it shows an inline progress bar with the uploaded percentage.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/file"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/bytes-text": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/link": "workspace:*",
+    "@cyclone-ui/number-text": "workspace:*",
+    "@cyclone-ui/pdf-document-display": "workspace:*",
+    "@cyclone-ui/progress": "workspace:*",
+    "@cyclone-ui/state": "workspace:*",
+    "@stryke/date": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/image": "catalog:",
+    "@tamagui/linear-gradient": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@tamagui/text": "catalog:",
+    "react-native-svg": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./File": {
+      "import": "./dist/File.mjs",
+      "require": "./dist/File.cjs"
+    },
+    "./FilePdfPreview": {
+      "import": "./dist/FilePdfPreview.mjs",
+      "require": "./dist/FilePdfPreview.cjs"
+    },
+    "./*": "./*"
+  }
+}
