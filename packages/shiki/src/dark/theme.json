@@ -69,7 +69,7 @@
     {
       "scope": ["invalid", "invalid.illegal"],
       "settings": {
-        "foreground": "#cf2d56"
+        "foreground": "#d44267"
       }
     }
   ],

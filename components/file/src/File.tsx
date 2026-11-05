@@ -347,11 +347,14 @@ export const File = ({
         ? "success"
         : null;
   const [shownStatus, setShownStatus] = useState(uploadStatus);
+
   useEffect(() => {
     if (uploadStatus === shownStatus) {
       return;
     }
+
     if (!shownStatus) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect, react/set-state-in-effect
       setShownStatus(uploadStatus);
       return;
     }
@@ -364,6 +367,7 @@ export const File = ({
       clearTimeout(timeout);
     };
   }, [uploadStatus, shownStatus]);
+
   const statusVisible = Boolean(shownStatus) && shownStatus === uploadStatus;
 
   // Resizes the status slot to fit its content, so the text around it glides
@@ -373,6 +377,7 @@ export const File = ({
   // tween.
   const statusSlotRef = useRef<TamaguiWebElement>(null);
   const statusContentRef = useRef<TamaguiWebElement>(null);
+
   useLayoutEffect(() => {
     const slot = statusSlotRef.current;
     const content = statusContentRef.current;
@@ -392,6 +397,7 @@ export const File = ({
 
     return () => resizeObserver.disconnect();
   }, [uploadStatus]);
+
   // The upload can finish (and `progress` be cleared) while the progress bar
   // is still fading out.
   const shownProgress = Math.max(progress ?? 100, 0);

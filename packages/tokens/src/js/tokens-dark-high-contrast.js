@@ -3921,7 +3921,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#f00a45",
+        $value: "#f42c5f",
         $description:
           "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
         semantic: true,
@@ -3933,7 +3933,7 @@ module.exports = {
           group: "danger",
           $type: "color",
           colorSpace: "display-p3",
-          $value: "{color.red.5}",
+          $value: "{color.red.4}",
           $description:
             "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
           semantic: true,
@@ -3953,7 +3953,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#f00a45",
+        $value: "#f42c5f",
         $description: "Generated danger hyperlink text color (matches primary)",
         semantic: true,
         filePath:
@@ -3984,7 +3984,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#f00a45",
+        $value: "#f42c5f",
         $description:
           "Generated danger border and divider color (matches primary)",
         semantic: true,
@@ -4085,7 +4085,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#140006",
+        $value: "#28000f",
         $description:
           "Generated low-emphasis danger background for the dark theme",
         semantic: true,
@@ -4099,8 +4099,8 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [0.0784313725490196, 0, 0.023529411764705882],
-            hex: "#140006"
+            components: [0.1568627450980392, 0, 0.058823529411764705],
+            hex: "#28000f"
           },
           $description:
             "Generated low-emphasis danger background for the dark theme",
@@ -4121,7 +4121,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#fff1f2",
+        $value: "#ffffff",
         $description:
           "Generated text and icon color on danger secondary backgrounds",
         semantic: true,
@@ -4133,11 +4133,7 @@ module.exports = {
           group: "danger",
           $type: "color",
           colorSpace: "display-p3",
-          $value: {
-            colorSpace: "srgb",
-            components: [1, 0.9450980392156862, 0.9490196078431372],
-            hex: "#fff1f2"
-          },
+          $value: "{color.neutral.1}",
           $description:
             "Generated text and icon color on danger secondary backgrounds",
           semantic: true,
@@ -4157,7 +4153,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#430011",
+        $value: "#60011d",
         $description:
           "Generated danger border color for secondary backgrounds (secondary, 15% brighter)",
         semantic: true,
@@ -4171,8 +4167,10 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [0.2627450980392157, 0, 0.06666666666666667],
-            hex: "#430011"
+            components: [
+              0.3764705882352941, 0.00392156862745098, 0.11372549019607843
+            ],
+            hex: "#60011d"
           },
           $description:
             "Generated danger border color for secondary backgrounds (secondary, 15% brighter)",
@@ -4193,7 +4191,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#ff8ba2",
+        $value: "#ffa7bb",
         $description:
           "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% brighter)",
         semantic: true,
@@ -4207,8 +4205,8 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [1, 0.5450980392156862, 0.6352941176470588],
-            hex: "#ff8ba2"
+            components: [1, 0.6549019607843137, 0.7333333333333333],
+            hex: "#ffa7bb"
           },
           $description:
             "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% brighter)",
@@ -4229,7 +4227,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#ff8ba2",
+        $value: "#ffa7bb",
         $description:
           "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% brighter)",
         semantic: true,
@@ -4261,7 +4259,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#7f002a",
+        $value: "#9b0036",
         $description:
           "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% darker)",
         semantic: true,
@@ -4275,8 +4273,8 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [0.4980392156862745, 0, 0.16470588235294117],
-            hex: "#7f002a"
+            components: [0.6078431372549019, 0, 0.21176470588235294],
+            hex: "#9b0036"
           },
           $description:
             "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% darker)",
@@ -4297,7 +4295,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#642b39",
+        $value: "#693240",
         $description:
           "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
@@ -4312,9 +4310,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.39215686274509803, 0.16862745098039217, 0.2235294117647059
+              0.4117647058823529, 0.19607843137254902, 0.25098039215686274
             ],
-            hex: "#642b39"
+            hex: "#693240"
           },
           $description:
             "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -4335,7 +4333,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#5a071a",
+        $value: "#780a26",
         $description:
           "Generated low-emphasis danger background for the dark theme (hovered, 25% brighter)",
         semantic: true,
@@ -4350,9 +4348,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.35294117647058826, 0.027450980392156862, 0.10196078431372549
+              0.47058823529411764, 0.0392156862745098, 0.14901960784313725
             ],
-            hex: "#5a071a"
+            hex: "#780a26"
           },
           $description:
             "Generated low-emphasis danger background for the dark theme (hovered, 25% brighter)",
@@ -4373,7 +4371,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#5a071a",
+        $value: "#780a26",
         $description:
           "Generated low-emphasis danger background for the dark theme (active, 25% brighter)",
         semantic: true,
@@ -4405,7 +4403,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#000000",
+        $value: "#080002",
         $description:
           "Generated low-emphasis danger background for the dark theme (inactive, 20% darker)",
         semantic: true,
@@ -4417,7 +4415,11 @@ module.exports = {
           group: "danger",
           $type: "color",
           colorSpace: "display-p3",
-          $value: "{color.neutral.13}",
+          $value: {
+            colorSpace: "srgb",
+            components: [0.03137254901960784, 0, 0.00784313725490196],
+            hex: "#080002"
+          },
           $description:
             "Generated low-emphasis danger background for the dark theme (inactive, 20% darker)",
           semantic: true,
@@ -4437,7 +4439,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#2a151c",
+        $value: "#311720",
         $description:
           "Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
@@ -4452,9 +4454,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.16470588235294117, 0.08235294117647059, 0.10980392156862745
+              0.19215686274509805, 0.09019607843137255, 0.12549019607843137
             ],
-            hex: "#2a151c"
+            hex: "#311720"
           },
           $description:
             "Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -4475,7 +4477,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#ff8ba2",
+        $value: "#ffa7bb",
         $description:
           "Generated danger hyperlink text color (matches primary) (hovered, 25% brighter)",
         semantic: true,
@@ -4507,7 +4509,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#ff8ba2",
+        $value: "#ffa7bb",
         $description:
           "Generated danger hyperlink text color (matches primary) (active, 25% brighter)",
         semantic: true,
@@ -4539,7 +4541,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#7f002a",
+        $value: "#9b0036",
         $description:
           "Generated danger hyperlink text color (matches primary) (inactive, 20% darker)",
         semantic: true,
@@ -4571,7 +4573,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#642b39",
+        $value: "#693240",
         $description:
           "Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
@@ -4603,7 +4605,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#ffb4c4",
+        $value: "#ffd2de",
         $description:
           "Generated danger border and divider color (matches primary) (hovered, 40% brighter)",
         semantic: true,
@@ -4617,8 +4619,8 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [1, 0.7058823529411765, 0.7686274509803922],
-            hex: "#ffb4c4"
+            components: [1, 0.8235294117647058, 0.8705882352941177],
+            hex: "#ffd2de"
           },
           $description:
             "Generated danger border and divider color (matches primary) (hovered, 40% brighter)",
@@ -4639,7 +4641,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#ffb4c4",
+        $value: "#ffd2de",
         $description:
           "Generated danger border and divider color (matches primary) (active, 40% brighter)",
         semantic: true,
@@ -4671,7 +4673,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#7f002a",
+        $value: "#9b0036",
         $description:
           "Generated danger border and divider color (matches primary) (inactive, 20% darker)",
         semantic: true,
@@ -4703,7 +4705,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#642b39",
+        $value: "#693240",
         $description:
           "Generated danger border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
@@ -18319,7 +18321,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#cf2d5626",
+          color: "#d4426726",
           offsetX: {
             value: 0,
             unit: "px"
@@ -18344,7 +18346,7 @@ module.exports = {
         $type: "shadow",
         $value: [
           {
-            color: "#cf2d5626",
+            color: "#d4426726",
             offsetX: {
               value: 0,
               unit: "px"
@@ -18379,7 +18381,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#cf2d5626",
+          color: "#d4426726",
           offsetX: {
             value: 0,
             unit: "px"
@@ -18404,7 +18406,7 @@ module.exports = {
         $type: "shadow",
         $value: [
           {
-            color: "#cf2d5626",
+            color: "#d4426726",
             offsetX: {
               value: 0,
               unit: "px"
@@ -18458,7 +18460,7 @@ module.exports = {
           }
         },
         {
-          color: "#cf2d5626",
+          color: "#d4426726",
           offsetX: {
             value: 0,
             unit: "px"
@@ -18502,7 +18504,7 @@ module.exports = {
             }
           },
           {
-            color: "#cf2d5626",
+            color: "#d4426726",
             offsetX: {
               value: 0,
               unit: "px"
@@ -18556,7 +18558,7 @@ module.exports = {
           }
         },
         {
-          color: "#cf2d5626",
+          color: "#d4426726",
           offsetX: {
             value: 0,
             unit: "px"
@@ -18600,7 +18602,7 @@ module.exports = {
             }
           },
           {
-            color: "#cf2d5626",
+            color: "#d4426726",
             offsetX: {
               value: 0,
               unit: "px"

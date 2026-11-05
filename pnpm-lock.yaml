@@ -1612,6 +1612,9 @@ importers:
       '@cyclone-ui/link':
         specifier: workspace:*
         version: link:../link
+      '@cyclone-ui/tag':
+        specifier: workspace:*
+        version: link:../tag
       '@cyclone-ui/themeable-icon':
         specifier: workspace:*
         version: link:../themeable-icon

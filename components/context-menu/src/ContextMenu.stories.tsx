@@ -147,3 +147,76 @@ export const Secondary: Story = { args: { variant: "secondary" } };
 export const Tertiary: Story = { args: { variant: "tertiary" } };
 
 export const Outlined: Story = { args: { variant: "outlined" } };
+
+export const ThemedAndChildItems: Story = {
+  render: function Render(args) {
+    const [open, setOpen] = useState(false);
+    const [selected, setSelected] = useState<string>();
+
+    return (
+      <ContextMenu
+        {...args}
+        open={open}
+        onOpenChange={setOpen}
+        value={selected}
+        onValueChange={value => {
+          setSelected(value);
+          setOpen(false);
+        }}>
+        <ContextMenu.Trigger asChild={true}>
+          <Button>{selected ?? "Actions"}</Button>
+        </ContextMenu.Trigger>
+        <ContextMenu.Content width={320}>
+          <ContextMenu.Content.ScrollView>
+            <ContextMenu.Item aria-label="Copy" value="Copy">
+              <ContextMenu.Item.Text>Copy</ContextMenu.Item.Text>
+            </ContextMenu.Item>
+            <ContextMenu.Item
+              aria-label="Share"
+              items={["Email", "Link", "Slack"].map(target => (
+                <ContextMenu.Item
+                  key={target}
+                  aria-label={target}
+                  value={target}>
+                  <ContextMenu.Item.Text>{target}</ContextMenu.Item.Text>
+                </ContextMenu.Item>
+              ))}>
+              <ContextMenu.Item.Label>Share</ContextMenu.Item.Label>
+            </ContextMenu.Item>
+            <ContextMenu.Item
+              aria-label="Publish"
+              value="Publish"
+              theme="brand">
+              <ContextMenu.Item.Icon>★</ContextMenu.Item.Icon>
+              <ContextMenu.Item.Text>Publish</ContextMenu.Item.Text>
+            </ContextMenu.Item>
+            <ContextMenu.Item aria-label="Delete" value="Delete" theme="danger">
+              <ContextMenu.Item.Icon>✕</ContextMenu.Item.Icon>
+              <ContextMenu.Item.Text>Delete</ContextMenu.Item.Text>
+            </ContextMenu.Item>
+          </ContextMenu.Content.ScrollView>
+        </ContextMenu.Content>
+      </ContextMenu>
+    );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const document = within(canvasElement.ownerDocument.body);
+
+    await userEvent.click(canvas.getByRole("button", { name: "Actions" }));
+    await userEvent.click(
+      await document.findByRole("button", { name: "Share" })
+    );
+    await userEvent.click(
+      await document.findByRole("button", { name: "Slack" })
+    );
+    await waitFor(
+      async () =>
+        expect(
+          document.queryByRole("button", { name: "Share" })
+        ).not.toBeInTheDocument(),
+      { timeout: 3000 }
+    );
+    await expect(canvas.getByRole("button", { name: "Slack" })).toBeVisible();
+  }
+};

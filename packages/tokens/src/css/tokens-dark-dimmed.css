@@ -694,19 +694,19 @@
   --storm-color-danger-backdrop: rgba(
     104,
     30,
-    30,
+    37,
     0.45098039215686275
   ); /** Generated danger overlay backdrop color (primary, 30% darker at 75% opacity) */
-  --storm-color-danger-secondary: #6e2039; /** Generated low-emphasis danger background for the dark theme */
-  --storm-color-danger-on-secondary: #e0939c; /** Generated text and icon color on danger secondary backgrounds */
-  --storm-color-danger-border: #723242; /** Generated danger border color for secondary backgrounds (secondary, 15% brighter) */
-  --storm-color-danger-primary-hovered: #d56d82; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% brighter) */
-  --storm-color-danger-primary-inactive: #962c4f; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% darker) */
-  --storm-color-danger-primary-disabled: #73565d; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
-  --storm-color-danger-secondary-hovered: #773c49; /** Generated low-emphasis danger background for the dark theme (hovered, 25% brighter) */
-  --storm-color-danger-secondary-inactive: #631d2c; /** Generated low-emphasis danger background for the dark theme (inactive, 20% darker) */
-  --storm-color-danger-secondary-disabled: #5a484e; /** Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
-  --storm-color-danger-outline-hovered: #d97d91; /** Generated danger border and divider color (matches primary) (hovered, 40% brighter) */
+  --storm-color-danger-secondary: #752240; /** Generated low-emphasis danger background for the dark theme */
+  --storm-color-danger-on-secondary: #e29ca6; /** Generated text and icon color on danger secondary backgrounds */
+  --storm-color-danger-border: #7b384b; /** Generated danger border color for secondary backgrounds (secondary, 15% brighter) */
+  --storm-color-danger-primary-hovered: #d8788e; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% brighter) */
+  --storm-color-danger-primary-inactive: #963859; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% darker) */
+  --storm-color-danger-primary-disabled: #745b61; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-danger-secondary-hovered: #814252; /** Generated low-emphasis danger background for the dark theme (hovered, 25% brighter) */
+  --storm-color-danger-secondary-inactive: #691f33; /** Generated low-emphasis danger background for the dark theme (inactive, 20% darker) */
+  --storm-color-danger-secondary-disabled: #5e4950; /** Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-danger-outline-hovered: #dc889f; /** Generated danger border and divider color (matches primary) (hovered, 40% brighter) */
   --storm-color-warning-backdrop: rgba(
     104,
     62,
@@ -1061,8 +1061,8 @@
   --storm-ring-base-subtle: 0px 0px 0px 1px #ffffff1a; /** Generated base 1px outline focus ring with no gap */
   --storm-ring-brand: 0px 0px 0px 3px #3be4be26; /** Generated brand 3px focus ring with no gap */
   --storm-ring-brand-subtle: 0px 0px 0px 1px #3be4be26; /** Generated brand 1px outline focus ring with no gap */
-  --storm-ring-danger: 0px 0px 0px 3px #cf2d5626; /** Generated danger 3px focus ring with no gap */
-  --storm-ring-danger-subtle: 0px 0px 0px 1px #cf2d5626; /** Generated danger 1px outline focus ring with no gap */
+  --storm-ring-danger: 0px 0px 0px 3px #d4426726; /** Generated danger 3px focus ring with no gap */
+  --storm-ring-danger-subtle: 0px 0px 0px 1px #d4426726; /** Generated danger 1px outline focus ring with no gap */
   --storm-ring-warning: 0px 0px 0px 3px #f9c25e26; /** Generated warning 3px focus ring with no gap */
   --storm-ring-warning-subtle: 0px 0px 0px 1px #f9c25e26; /** Generated warning 1px outline focus ring with no gap */
   --storm-ring-info: 0px 0px 0px 3px #4d8eff26; /** Generated info 3px focus ring with no gap */
@@ -1153,7 +1153,7 @@
     --storm-color-brand-primary-disabled
   ); /** Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-danger-primary: var(
-    --storm-color-red-5
+    --storm-color-red-4
   ); /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. */
   --storm-color-danger-on-primary: var(
     --storm-color-neutral-1
@@ -1533,9 +1533,9 @@
   --storm-ring-brand-subtle-offset:
     0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #3be4be26; /** Generated brand 1px focus ring with a 2px gap */
   --storm-ring-danger-offset:
-    0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 7px #cf2d5626; /** Generated danger 3px focus ring with a 3px gap */
+    0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 7px #d4426726; /** Generated danger 3px focus ring with a 3px gap */
   --storm-ring-danger-subtle-offset:
-    0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #cf2d5626; /** Generated danger 1px focus ring with a 2px gap */
+    0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #d4426726; /** Generated danger 1px focus ring with a 2px gap */
   --storm-ring-warning-offset:
     0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 7px #f9c25e26; /** Generated warning 3px focus ring with a 3px gap */
   --storm-ring-warning-subtle-offset:

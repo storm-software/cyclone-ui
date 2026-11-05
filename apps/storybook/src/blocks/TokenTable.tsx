@@ -1216,7 +1216,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary",
       type: "color",
-      value: "#cf2d56",
+      value: "#d44267",
       cssVar: "--cu-color-danger-primary",
       description:
         "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
@@ -1226,7 +1226,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.link",
       type: "color",
-      value: "#cf2d56",
+      value: "#d44267",
       cssVar: "--cu-color-danger-link",
       description: "Generated danger hyperlink text color (matches primary)",
       theme: undefined,
@@ -1235,7 +1235,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.outline",
       type: "color",
-      value: "#cf2d56",
+      value: "#d44267",
       cssVar: "--cu-color-danger-outline",
       description:
         "Generated danger border and divider color (matches primary)",
@@ -1255,7 +1255,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.backdrop",
       type: "color",
-      value: "#53000073",
+      value: "#53000773",
       cssVar: "--cu-color-danger-backdrop",
       description:
         "Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -1265,7 +1265,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.secondary",
       type: "color",
-      value: "#5d001e",
+      value: "#6b0027",
       cssVar: "--cu-color-danger-secondary",
       description:
         "Generated low-emphasis danger background for the dark theme",
@@ -1275,7 +1275,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.on-secondary",
       type: "color",
-      value: "#ffa6b0",
+      value: "#ffb6c0",
       cssVar: "--cu-color-danger-on-secondary",
       description:
         "Generated text and icon color on danger secondary backgrounds",
@@ -1285,7 +1285,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.border",
       type: "color",
-      value: "#6b1229",
+      value: "#7b1734",
       cssVar: "--cu-color-danger-border",
       description:
         "Generated danger border color for secondary backgrounds (secondary, 15% brighter)",
@@ -1295,7 +1295,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-hovered",
       type: "color",
-      value: "#ff607f",
+      value: "#ff7393",
       cssVar: "--cu-color-danger-primary-hovered",
       description:
         "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% brighter)",
@@ -1305,7 +1305,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-active",
       type: "color",
-      value: "#ff607f",
+      value: "#ff7393",
       cssVar: "--cu-color-danger-primary-active",
       description:
         "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% brighter)",
@@ -1315,7 +1315,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-inactive",
       type: "color",
-      value: "#a70037",
+      value: "#aa1046",
       cssVar: "--cu-color-danger-primary-inactive",
       description:
         "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% darker)",
@@ -1325,7 +1325,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-disabled",
       type: "color",
-      value: "#70424d",
+      value: "#724853",
       cssVar: "--cu-color-danger-primary-disabled",
       description:
         "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -1335,7 +1335,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.secondary-hovered",
       type: "color",
-      value: "#751d31",
+      value: "#86233c",
       cssVar: "--cu-color-danger-secondary-hovered",
       description:
         "Generated low-emphasis danger background for the dark theme (hovered, 25% brighter)",
@@ -1345,7 +1345,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.secondary-active",
       type: "color",
-      value: "#751d31",
+      value: "#86233c",
       cssVar: "--cu-color-danger-secondary-active",
       description:
         "Generated low-emphasis danger background for the dark theme (active, 25% brighter)",
@@ -1355,7 +1355,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.secondary-inactive",
       type: "color",
-      value: "#4a0010",
+      value: "#550017",
       cssVar: "--cu-color-danger-secondary-inactive",
       description:
         "Generated low-emphasis danger background for the dark theme (inactive, 20% darker)",
@@ -1365,7 +1365,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.secondary-disabled",
       type: "color",
-      value: "#4a3139",
+      value: "#4f323c",
       cssVar: "--cu-color-danger-secondary-disabled",
       description:
         "Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -1375,7 +1375,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.link-hovered",
       type: "color",
-      value: "#ff607f",
+      value: "#ff7393",
       cssVar: "--cu-color-danger-link-hovered",
       description:
         "Generated danger hyperlink text color (matches primary) (hovered, 25% brighter)",
@@ -1385,7 +1385,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.link-active",
       type: "color",
-      value: "#ff607f",
+      value: "#ff7393",
       cssVar: "--cu-color-danger-link-active",
       description:
         "Generated danger hyperlink text color (matches primary) (active, 25% brighter)",
@@ -1395,7 +1395,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.link-inactive",
       type: "color",
-      value: "#a70037",
+      value: "#aa1046",
       cssVar: "--cu-color-danger-link-inactive",
       description:
         "Generated danger hyperlink text color (matches primary) (inactive, 20% darker)",
@@ -1405,7 +1405,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.link-disabled",
       type: "color",
-      value: "#70424d",
+      value: "#724853",
       cssVar: "--cu-color-danger-link-disabled",
       description:
         "Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -1415,7 +1415,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.outline-hovered",
       type: "color",
-      value: "#ff7c99",
+      value: "#ff91af",
       cssVar: "--cu-color-danger-outline-hovered",
       description:
         "Generated danger border and divider color (matches primary) (hovered, 40% brighter)",
@@ -1425,7 +1425,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.outline-active",
       type: "color",
-      value: "#ff7c99",
+      value: "#ff91af",
       cssVar: "--cu-color-danger-outline-active",
       description:
         "Generated danger border and divider color (matches primary) (active, 40% brighter)",
@@ -1435,7 +1435,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.outline-inactive",
       type: "color",
-      value: "#a70037",
+      value: "#aa1046",
       cssVar: "--cu-color-danger-outline-inactive",
       description:
         "Generated danger border and divider color (matches primary) (inactive, 20% darker)",
@@ -1445,7 +1445,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.outline-disabled",
       type: "color",
-      value: "#70424d",
+      value: "#724853",
       cssVar: "--cu-color-danger-outline-disabled",
       description:
         "Generated danger border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -5556,7 +5556,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger",
       type: "shadow",
-      value: "0px 0px 0px 3px #cf2d5626",
+      value: "0px 0px 0px 3px #d4426726",
       cssVar: "--cu-ring-danger",
       description: "Generated danger 3px focus ring with no gap",
       theme: undefined,
@@ -5565,7 +5565,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #cf2d5626",
+      value: "0px 0px 0px 1px #d4426726",
       cssVar: "--cu-ring-danger-subtle",
       description: "Generated danger 1px outline focus ring with no gap",
       theme: undefined,
@@ -5574,7 +5574,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #cf2d5626",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #d4426726",
       cssVar: "--cu-ring-danger-offset",
       description: "Generated danger 3px focus ring with a 3px gap",
       theme: undefined,
@@ -5583,7 +5583,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #cf2d5626",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #d4426726",
       cssVar: "--cu-ring-danger-subtle-offset",
       description: "Generated danger 1px focus ring with a 2px gap",
       theme: undefined,
@@ -6938,7 +6938,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary",
       type: "color",
-      value: "#ab5268",
+      value: "#b15e73",
       cssVar: "--cu-color-danger-primary",
       description:
         "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
@@ -6948,7 +6948,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.link",
       type: "color",
-      value: "#ab5268",
+      value: "#b15e73",
       cssVar: "--cu-color-danger-link",
       description: "Generated danger hyperlink text color (matches primary)",
       theme: undefined,
@@ -6957,7 +6957,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.outline",
       type: "color",
-      value: "#ab5268",
+      value: "#b15e73",
       cssVar: "--cu-color-danger-outline",
       description:
         "Generated danger border and divider color (matches primary)",
@@ -6977,7 +6977,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.backdrop",
       type: "color",
-      value: "#681e1e73",
+      value: "#681e2573",
       cssVar: "--cu-color-danger-backdrop",
       description:
         "Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -6987,7 +6987,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.secondary",
       type: "color",
-      value: "#6e2039",
+      value: "#752240",
       cssVar: "--cu-color-danger-secondary",
       description:
         "Generated low-emphasis danger background for the dark theme",
@@ -6997,7 +6997,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.on-secondary",
       type: "color",
-      value: "#e0939c",
+      value: "#e29ca6",
       cssVar: "--cu-color-danger-on-secondary",
       description:
         "Generated text and icon color on danger secondary backgrounds",
@@ -7007,7 +7007,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.border",
       type: "color",
-      value: "#723242",
+      value: "#7b384b",
       cssVar: "--cu-color-danger-border",
       description:
         "Generated danger border color for secondary backgrounds (secondary, 15% brighter)",
@@ -7017,7 +7017,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-hovered",
       type: "color",
-      value: "#d56d82",
+      value: "#d8788e",
       cssVar: "--cu-color-danger-primary-hovered",
       description:
         "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% brighter)",
@@ -7027,7 +7027,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-active",
       type: "color",
-      value: "#d56d82",
+      value: "#d8788e",
       cssVar: "--cu-color-danger-primary-active",
       description:
         "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% brighter)",
@@ -7037,7 +7037,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-inactive",
       type: "color",
-      value: "#962c4f",
+      value: "#963859",
       cssVar: "--cu-color-danger-primary-inactive",
       description:
         "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% darker)",
@@ -7047,7 +7047,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-disabled",
       type: "color",
-      value: "#73565d",
+      value: "#745b61",
       cssVar: "--cu-color-danger-primary-disabled",
       description:
         "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -7057,7 +7057,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.secondary-hovered",
       type: "color",
-      value: "#773c49",
+      value: "#814252",
       cssVar: "--cu-color-danger-secondary-hovered",
       description:
         "Generated low-emphasis danger background for the dark theme (hovered, 25% brighter)",
@@ -7067,7 +7067,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.secondary-active",
       type: "color",
-      value: "#773c49",
+      value: "#814252",
       cssVar: "--cu-color-danger-secondary-active",
       description:
         "Generated low-emphasis danger background for the dark theme (active, 25% brighter)",
@@ -7077,7 +7077,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.secondary-inactive",
       type: "color",
-      value: "#631d2c",
+      value: "#691f33",
       cssVar: "--cu-color-danger-secondary-inactive",
       description:
         "Generated low-emphasis danger background for the dark theme (inactive, 20% darker)",
@@ -7087,7 +7087,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.secondary-disabled",
       type: "color",
-      value: "#5a484e",
+      value: "#5e4950",
       cssVar: "--cu-color-danger-secondary-disabled",
       description:
         "Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -7097,7 +7097,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.link-hovered",
       type: "color",
-      value: "#d56d82",
+      value: "#d8788e",
       cssVar: "--cu-color-danger-link-hovered",
       description:
         "Generated danger hyperlink text color (matches primary) (hovered, 25% brighter)",
@@ -7107,7 +7107,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.link-active",
       type: "color",
-      value: "#d56d82",
+      value: "#d8788e",
       cssVar: "--cu-color-danger-link-active",
       description:
         "Generated danger hyperlink text color (matches primary) (active, 25% brighter)",
@@ -7117,7 +7117,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.link-inactive",
       type: "color",
-      value: "#962c4f",
+      value: "#963859",
       cssVar: "--cu-color-danger-link-inactive",
       description:
         "Generated danger hyperlink text color (matches primary) (inactive, 20% darker)",
@@ -7127,7 +7127,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.link-disabled",
       type: "color",
-      value: "#73565d",
+      value: "#745b61",
       cssVar: "--cu-color-danger-link-disabled",
       description:
         "Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -7137,7 +7137,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.outline-hovered",
       type: "color",
-      value: "#d97d91",
+      value: "#dc889f",
       cssVar: "--cu-color-danger-outline-hovered",
       description:
         "Generated danger border and divider color (matches primary) (hovered, 40% brighter)",
@@ -7147,7 +7147,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.outline-active",
       type: "color",
-      value: "#d97d91",
+      value: "#dc889f",
       cssVar: "--cu-color-danger-outline-active",
       description:
         "Generated danger border and divider color (matches primary) (active, 40% brighter)",
@@ -7157,7 +7157,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.outline-inactive",
       type: "color",
-      value: "#962c4f",
+      value: "#963859",
       cssVar: "--cu-color-danger-outline-inactive",
       description:
         "Generated danger border and divider color (matches primary) (inactive, 20% darker)",
@@ -7167,7 +7167,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.outline-disabled",
       type: "color",
-      value: "#73565d",
+      value: "#745b61",
       cssVar: "--cu-color-danger-outline-disabled",
       description:
         "Generated danger border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -11278,7 +11278,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger",
       type: "shadow",
-      value: "0px 0px 0px 3px #cf2d5626",
+      value: "0px 0px 0px 3px #d4426726",
       cssVar: "--cu-ring-danger",
       description: "Generated danger 3px focus ring with no gap",
       theme: undefined,
@@ -11287,7 +11287,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #cf2d5626",
+      value: "0px 0px 0px 1px #d4426726",
       cssVar: "--cu-ring-danger-subtle",
       description: "Generated danger 1px outline focus ring with no gap",
       theme: undefined,
@@ -11296,7 +11296,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #cf2d5626",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #d4426726",
       cssVar: "--cu-ring-danger-offset",
       description: "Generated danger 3px focus ring with a 3px gap",
       theme: undefined,
@@ -11305,7 +11305,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #cf2d5626",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #d4426726",
       cssVar: "--cu-ring-danger-subtle-offset",
       description: "Generated danger 1px focus ring with a 2px gap",
       theme: undefined,
@@ -12660,7 +12660,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary",
       type: "color",
-      value: "#f00a45",
+      value: "#f42c5f",
       cssVar: "--cu-color-danger-primary",
       description:
         "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
@@ -12670,7 +12670,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.link",
       type: "color",
-      value: "#f00a45",
+      value: "#f42c5f",
       cssVar: "--cu-color-danger-link",
       description: "Generated danger hyperlink text color (matches primary)",
       theme: undefined,
@@ -12679,7 +12679,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.outline",
       type: "color",
-      value: "#f00a45",
+      value: "#f42c5f",
       cssVar: "--cu-color-danger-outline",
       description:
         "Generated danger border and divider color (matches primary)",
@@ -12709,7 +12709,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.secondary",
       type: "color",
-      value: "#140006",
+      value: "#28000f",
       cssVar: "--cu-color-danger-secondary",
       description:
         "Generated low-emphasis danger background for the dark theme",
@@ -12719,7 +12719,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.on-secondary",
       type: "color",
-      value: "#fff1f2",
+      value: "#ffffff",
       cssVar: "--cu-color-danger-on-secondary",
       description:
         "Generated text and icon color on danger secondary backgrounds",
@@ -12729,7 +12729,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.border",
       type: "color",
-      value: "#430011",
+      value: "#60011d",
       cssVar: "--cu-color-danger-border",
       description:
         "Generated danger border color for secondary backgrounds (secondary, 15% brighter)",
@@ -12739,7 +12739,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-hovered",
       type: "color",
-      value: "#ff8ba2",
+      value: "#ffa7bb",
       cssVar: "--cu-color-danger-primary-hovered",
       description:
         "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% brighter)",
@@ -12749,7 +12749,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-active",
       type: "color",
-      value: "#ff8ba2",
+      value: "#ffa7bb",
       cssVar: "--cu-color-danger-primary-active",
       description:
         "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% brighter)",
@@ -12759,7 +12759,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-inactive",
       type: "color",
-      value: "#7f002a",
+      value: "#9b0036",
       cssVar: "--cu-color-danger-primary-inactive",
       description:
         "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% darker)",
@@ -12769,7 +12769,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-disabled",
       type: "color",
-      value: "#642b39",
+      value: "#693240",
       cssVar: "--cu-color-danger-primary-disabled",
       description:
         "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -12779,7 +12779,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.secondary-hovered",
       type: "color",
-      value: "#5a071a",
+      value: "#780a26",
       cssVar: "--cu-color-danger-secondary-hovered",
       description:
         "Generated low-emphasis danger background for the dark theme (hovered, 25% brighter)",
@@ -12789,7 +12789,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.secondary-active",
       type: "color",
-      value: "#5a071a",
+      value: "#780a26",
       cssVar: "--cu-color-danger-secondary-active",
       description:
         "Generated low-emphasis danger background for the dark theme (active, 25% brighter)",
@@ -12799,7 +12799,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.secondary-inactive",
       type: "color",
-      value: "#000000",
+      value: "#080002",
       cssVar: "--cu-color-danger-secondary-inactive",
       description:
         "Generated low-emphasis danger background for the dark theme (inactive, 20% darker)",
@@ -12809,7 +12809,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.secondary-disabled",
       type: "color",
-      value: "#2a151c",
+      value: "#311720",
       cssVar: "--cu-color-danger-secondary-disabled",
       description:
         "Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -12819,7 +12819,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.link-hovered",
       type: "color",
-      value: "#ff8ba2",
+      value: "#ffa7bb",
       cssVar: "--cu-color-danger-link-hovered",
       description:
         "Generated danger hyperlink text color (matches primary) (hovered, 25% brighter)",
@@ -12829,7 +12829,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.link-active",
       type: "color",
-      value: "#ff8ba2",
+      value: "#ffa7bb",
       cssVar: "--cu-color-danger-link-active",
       description:
         "Generated danger hyperlink text color (matches primary) (active, 25% brighter)",
@@ -12839,7 +12839,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.link-inactive",
       type: "color",
-      value: "#7f002a",
+      value: "#9b0036",
       cssVar: "--cu-color-danger-link-inactive",
       description:
         "Generated danger hyperlink text color (matches primary) (inactive, 20% darker)",
@@ -12849,7 +12849,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.link-disabled",
       type: "color",
-      value: "#642b39",
+      value: "#693240",
       cssVar: "--cu-color-danger-link-disabled",
       description:
         "Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -12859,7 +12859,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.outline-hovered",
       type: "color",
-      value: "#ffb4c4",
+      value: "#ffd2de",
       cssVar: "--cu-color-danger-outline-hovered",
       description:
         "Generated danger border and divider color (matches primary) (hovered, 40% brighter)",
@@ -12869,7 +12869,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.outline-active",
       type: "color",
-      value: "#ffb4c4",
+      value: "#ffd2de",
       cssVar: "--cu-color-danger-outline-active",
       description:
         "Generated danger border and divider color (matches primary) (active, 40% brighter)",
@@ -12879,7 +12879,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.outline-inactive",
       type: "color",
-      value: "#7f002a",
+      value: "#9b0036",
       cssVar: "--cu-color-danger-outline-inactive",
       description:
         "Generated danger border and divider color (matches primary) (inactive, 20% darker)",
@@ -12889,7 +12889,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.outline-disabled",
       type: "color",
-      value: "#642b39",
+      value: "#693240",
       cssVar: "--cu-color-danger-outline-disabled",
       description:
         "Generated danger border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -17000,7 +17000,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger",
       type: "shadow",
-      value: "0px 0px 0px 3px #cf2d5626",
+      value: "0px 0px 0px 3px #d4426726",
       cssVar: "--cu-ring-danger",
       description: "Generated danger 3px focus ring with no gap",
       theme: undefined,
@@ -17009,7 +17009,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #cf2d5626",
+      value: "0px 0px 0px 1px #d4426726",
       cssVar: "--cu-ring-danger-subtle",
       description: "Generated danger 1px outline focus ring with no gap",
       theme: undefined,
@@ -17018,7 +17018,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #cf2d5626",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #d4426726",
       cssVar: "--cu-ring-danger-offset",
       description: "Generated danger 3px focus ring with a 3px gap",
       theme: undefined,
@@ -17027,7 +17027,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #cf2d5626",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #d4426726",
       cssVar: "--cu-ring-danger-subtle-offset",
       description: "Generated danger 1px focus ring with a 2px gap",
       theme: undefined,

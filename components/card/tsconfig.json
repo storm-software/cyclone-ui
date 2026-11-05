@@ -43,6 +43,9 @@
     },
     {
       "path": "../body-text"
+    },
+    {
+      "path": "../tag"
     }
   ],
   "files": [],

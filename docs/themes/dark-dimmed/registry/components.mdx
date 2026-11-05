@@ -359,6 +359,7 @@ A themed card container with a gradient background and an optional accent color.
 - `@cyclone-ui/helpers@0.3.49`
 - `@cyclone-ui/icons@0.0.47`
 - `@cyclone-ui/link@0.5.52`
+- `@cyclone-ui/tag@0.0.47`
 - `@cyclone-ui/themeable-icon@0.6.51`
 - `@cyclone-ui/vectors@0.5.51`
 - `@tamagui/core@3.2.0`
@@ -610,7 +611,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 ## @cyclone-ui/context-menu
 
-A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, a sm, md or lg size, and primary, secondary, tertiary or outlined variants. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, a sm, md or lg size, and primary, secondary, tertiary or outlined variants. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option), take a `theme` that colors its text and icons with that theme's primary tokens, and list child `items` in a submenu behind a right chevron (expanded inline in the small-screen sheet). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`

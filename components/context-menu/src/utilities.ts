@@ -59,6 +59,7 @@ export const getContextMenuSize = (val: FormControlSize = "md") => {
     dividerInset: scaleMetric(10, scale, 4),
     indicatorWidth: scaleMetric(20, scale, 14),
     indicatorIconSize: 16 * getFormFontScale(val),
+    confirmIconSize: 18.5 * getFormFontScale(val),
     scrollButtonHeight: scaleMetric(18, scale, 14),
     scrollIconSize: scaleMetric(20, scale, 14),
     viewportPadding: scaleMetric(7, scale, 3),

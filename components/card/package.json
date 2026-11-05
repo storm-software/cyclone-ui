@@ -25,6 +25,7 @@
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/link": "workspace:*",
+    "@cyclone-ui/tag": "workspace:*",
     "@cyclone-ui/themeable-icon": "workspace:*",
     "@cyclone-ui/vectors": "workspace:*",
     "@tamagui/core": "catalog:",

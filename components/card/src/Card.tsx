@@ -25,6 +25,8 @@ import { EyebrowText } from "@cyclone-ui/eyebrow-text";
 import { HeadingLargeText } from "@cyclone-ui/heading-text";
 import { getSpaced } from "@cyclone-ui/helpers";
 import { Link } from "@cyclone-ui/link";
+import type { TagProps } from "@cyclone-ui/tag";
+import { Tag } from "@cyclone-ui/tag";
 import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
 import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import { RightArrow } from "@cyclone-ui/vectors";
@@ -490,6 +492,23 @@ const CardIcon = ({ children, ...props }: ThemeableIconProps) => {
 };
 
 /**
+ * A tag pinned to the card's top right corner, after the rest of the header.
+ * Plain string children are wrapped in `Tag.Text`.
+ */
+const CardTag = ({ children, ...props }: TagProps) => (
+  // Wrapped so the layout props land on a plain frame, not the tag's HOC.
+  <View marginLeft="auto" alignSelf="flex-start" zIndex="20">
+    <Tag {...props}>
+      {typeof children === "string" ? (
+        <Tag.Text>{children}</Tag.Text>
+      ) : (
+        children
+      )}
+    </Tag>
+  </View>
+);
+
+/**
  * `CardContext` passes `size: true` to the text parts, which keeps each part's
  * own size; only font size keys restyle the text.
  */
@@ -661,7 +680,8 @@ export const Card = withStaticProperties(CardFrameImpl, {
   Header: withStaticProperties(CardHeader, {
     Eyebrow: CardEyebrowImpl,
     Heading: CardHeadingImpl,
-    Icon: CardIcon
+    Icon: CardIcon,
+    Tag: CardTag
   }),
   Body: CardBodyImpl,
   Footer: withStaticProperties(CardFooter, {
@@ -680,5 +700,6 @@ export {
   CardHeader,
   CardHeadingImpl as CardHeading,
   CardIcon,
-  CardLinkImpl as CardLink
+  CardLinkImpl as CardLink,
+  CardTag
 };

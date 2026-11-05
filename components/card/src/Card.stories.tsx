@@ -217,3 +217,23 @@ export const BrandSecondary: Story = {
     variant: "secondary"
   }
 };
+
+export const WithTag: Story = {
+  args: Base.args,
+  render: ({ icon, ...args }: CardStoryArgs) => (
+    <Card {...args} width="500px">
+      <Card.Header>
+        <Card.Header.Icon>{icon}</Card.Header.Icon>
+        <YStack gap="md">
+          <Card.Header.Eyebrow>Card Eyebrow</Card.Header.Eyebrow>
+          <Card.Header.Heading>Card Heading</Card.Header.Heading>
+        </YStack>
+        <Card.Header.Tag>New</Card.Header.Tag>
+      </Card.Header>
+      <Card.Body>{args.children}</Card.Body>
+      <Card.Footer>
+        <Card.Footer.Link href="#">Card Link</Card.Footer.Link>
+      </Card.Footer>
+    </Card>
+  )
+};

@@ -636,29 +636,29 @@
   --color-canvas-hovered: var(--color-neutral-13);
   --color-canvas-inactive: var(--color-neutral-13);
   --color-danger-backdrop: #06000073;
-  --color-danger-border: #430011;
+  --color-danger-border: #60011d;
   --color-danger-link: var(--color-danger-primary);
   --color-danger-link-active: var(--color-danger-primary-hovered);
   --color-danger-link-disabled: var(--color-danger-primary-disabled);
   --color-danger-link-hovered: var(--color-danger-primary-hovered);
   --color-danger-link-inactive: var(--color-danger-primary-inactive);
   --color-danger-on-primary: var(--color-neutral-1);
-  --color-danger-on-secondary: #fff1f2;
+  --color-danger-on-secondary: var(--color-neutral-1);
   --color-danger-outline: var(--color-danger-primary);
   --color-danger-outline-active: var(--color-danger-outline-hovered);
   --color-danger-outline-disabled: var(--color-danger-primary-disabled);
-  --color-danger-outline-hovered: #ffb4c4;
+  --color-danger-outline-hovered: #ffd2de;
   --color-danger-outline-inactive: var(--color-danger-primary-inactive);
-  --color-danger-primary: var(--color-red-5);
+  --color-danger-primary: var(--color-red-4);
   --color-danger-primary-active: var(--color-danger-primary-hovered);
-  --color-danger-primary-disabled: #642b39;
-  --color-danger-primary-hovered: #ff8ba2;
-  --color-danger-primary-inactive: #7f002a;
-  --color-danger-secondary: #140006;
+  --color-danger-primary-disabled: #693240;
+  --color-danger-primary-hovered: #ffa7bb;
+  --color-danger-primary-inactive: #9b0036;
+  --color-danger-secondary: #28000f;
   --color-danger-secondary-active: var(--color-danger-secondary-hovered);
-  --color-danger-secondary-disabled: #2a151c;
-  --color-danger-secondary-hovered: #5a071a;
-  --color-danger-secondary-inactive: var(--color-neutral-13);
+  --color-danger-secondary-disabled: #311720;
+  --color-danger-secondary-hovered: #780a26;
+  --color-danger-secondary-inactive: #080002;
   --color-data-blue-emphasis: var(--color-blue-7);
   --color-data-blue-subtle: var(--color-blue-9);
   --color-data-green-emphasis: var(--color-green-6);
@@ -986,12 +986,12 @@
   --ring-brand-subtle: 0px 0px 0px 1px #3be4be26;
   --ring-brand-subtle-offset:
     0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #3be4be26;
-  --ring-danger: 0px 0px 0px 3px #cf2d5626;
+  --ring-danger: 0px 0px 0px 3px #d4426726;
   --ring-danger-offset:
-    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #cf2d5626;
-  --ring-danger-subtle: 0px 0px 0px 1px #cf2d5626;
+    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #d4426726;
+  --ring-danger-subtle: 0px 0px 0px 1px #d4426726;
   --ring-danger-subtle-offset:
-    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #cf2d5626;
+    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #d4426726;
   --ring-discovery: 0px 0px 0px 3px #9277da26;
   --ring-discovery-offset:
     0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #9277da26;

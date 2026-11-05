@@ -26,21 +26,23 @@ import {
   getSized,
   getSpaced
 } from "@cyclone-ui/helpers";
-import { Confirm, Lock } from "@cyclone-ui/icons";
+import { ChevronRight, Confirm, Lock } from "@cyclone-ui/icons";
 import type { PopoverVariant } from "@cyclone-ui/popover";
 import { Popover } from "@cyclone-ui/popover";
 import { Tooltip } from "@cyclone-ui/tooltip";
-import type { GetProps, LayoutEvent } from "@tamagui/core";
+import type { GetProps, LayoutEvent, ThemeName } from "@tamagui/core";
 import {
   createStyledContext,
   createStyledHOC,
   isWeb,
   styled,
+  Theme,
+  useMedia,
   useThemeName,
   View,
   withStaticProperties
 } from "@tamagui/core";
-import type { JSX } from "react";
+import type { JSX, ReactNode } from "react";
 import { createContext, use, useLayoutEffect, useMemo, useState } from "react";
 import { getContextMenuSize } from "./utilities";
 
@@ -51,6 +53,10 @@ const NARROW_MENU_WIDTH = getSized("20xl");
 const CONTEXT_MENU_STYLES = `
 [data-context-menu-item]:last-child [data-context-menu-item-divider] {
   display: none;
+}
+
+[data-context-menu-item-children]:not(:last-child) > [data-context-menu-item]:last-child [data-context-menu-item-divider] {
+  display: flex;
 }
 
 [data-context-menu-item]:focus-visible {
@@ -105,6 +111,27 @@ const useItemForeground = (variant: PopoverVariant | undefined) => {
       : undefined;
 };
 
+// The text, chevron and (when themed) icon color of an item in each state.
+// Themed items rest at their theme's `primary`, not `primary-inactive`.
+const getItemColor = ({
+  selected,
+  disabled,
+  highlighted,
+  themed
+}: {
+  selected: boolean;
+  disabled: boolean;
+  highlighted: boolean;
+  themed: boolean;
+}) =>
+  disabled
+    ? "primary-disabled"
+    : selected
+      ? "primary-active"
+      : highlighted || themed
+        ? "primary"
+        : "primary-inactive group-hover/item:primary group-focus-visible/item:primary";
+
 // Frames take `size` from the item rather than through `context`: a styled
 // `context` merges every value (including `value`) into the frame's props.
 const ContextMenuContext = createStyledContext<ContextMenuContextValue, "size">(
@@ -116,7 +143,8 @@ const ContextMenuContext = createStyledContext<ContextMenuContextValue, "size">(
 const ContextMenuItemStateContext = createContext({
   selected: false,
   disabled: false,
-  highlighted: false
+  highlighted: false,
+  themed: false
 });
 
 export interface ContextMenuExtraProps {
@@ -262,7 +290,7 @@ const ContextMenuScrollView = ({
       maxHeight="47xl"
       paddingRight={isOverflowing ? "3xl" : 0}
       {...props}
-      style={[style, { scrollbarGutter: "auto" } as any]}
+      style={[style, { scrollbarGutter: "auto" }]}
       onLayout={(event: LayoutEvent) => {
         setViewportHeight(event.nativeEvent.layout.height);
         onLayout?.(event);
@@ -389,6 +417,7 @@ const ContextMenuItemGroup = styled(View, {
   position: "relative",
   cursor: "inherit",
   flexDirection: "row",
+  gap: "sm",
   alignItems: "center",
   flex: 1,
   minWidth: 0,
@@ -433,6 +462,19 @@ export type ContextMenuItemProps = Omit<
    * combobox's `aria-activedescendant` option.
    */
   highlighted?: boolean;
+
+  /**
+   * Colors the item's text and icons with this theme's `primary` tokens
+   * (`primary-inactive`, `primary`, `primary-active`, ...), for example
+   * `danger` on a destructive action.
+   */
+  theme?: ThemeName | null;
+
+  /**
+   * Child items, shown in a submenu that opens beside this item (on hover,
+   * press or `ArrowRight`). The item shows a right chevron.
+   */
+  items?: ReactNode;
 };
 
 const ContextMenuItem = ({
@@ -440,7 +482,10 @@ const ContextMenuItem = ({
   value,
   highlighted = false,
   disabled: disabledProp,
+  theme,
+  items,
   onPress,
+  onKeyDown,
   ...props
 }: ContextMenuItemProps): JSX.Element => {
   const {
@@ -449,58 +494,85 @@ const ContextMenuItem = ({
     onValueChange,
     variant
   } = ContextMenuContext.useStyledContext();
+
   const disabled = Boolean(disabledProp);
   const highlight = variant && ITEM_HIGHLIGHTS[variant];
-  const foreground = useItemForeground(variant);
+  const themed = Boolean(theme);
+
+  // A themed item keeps its theme's `primary` colors on every menu surface.
+  const foreground = useItemForeground(themed ? undefined : variant);
   const selected = value !== undefined && value === selectedValue;
-  const { indicatorWidth, indicatorIconSize } = getContextMenuSize(size);
+  const hasItems = Boolean(items) && !disabled;
+  const { indicatorWidth, indicatorIconSize, confirmIconSize } =
+    getContextMenuSize(size);
+  const [open, setOpen] = useState(false);
+
+  // Where the menu is a bottom sheet (`Popover`'s `max-sm`), child items
+  // expand inline: a submenu popover would fight the sheet's focus trap.
+  const inline = Boolean((useMedia() as Record<string, boolean>)["max-sm"]);
 
   const itemState = useMemo(
-    () => ({ selected, disabled, highlighted }),
-    [selected, disabled, highlighted]
+    () => ({ selected, disabled, highlighted, themed }),
+    [selected, disabled, highlighted, themed]
   );
 
-  return (
-    <ContextMenuItemStateContext.Provider value={itemState}>
-      <ContextMenuItemFrame
-        // Not typed on a styled View; keeps the item from submitting a form.
-        {...({ type: "button" } as object)}
-        group="item"
-        data-context-menu-item
-        // Rows with an indicator keep a narrow menu's text left-aligned.
-        data-context-menu-item-adorned={selected || disabled ? "" : undefined}
-        aria-disabled={disabled || undefined}
-        size={size}
-        disabled={disabled}
-        {...props}
-        onPress={event => {
-          if (disabled) {
-            return;
-          }
+  const frame = (
+    <ContextMenuItemFrame
+      // Not typed on a styled View; keeps the item from submitting a form.
+      {...({ type: "button" } as object)}
+      group="item"
+      data-context-menu-item
+      // Rows with an indicator keep a narrow menu's text left-aligned.
+      data-context-menu-item-adorned={
+        selected || disabled || hasItems ? "" : undefined
+      }
+      aria-disabled={disabled || undefined}
+      size={size}
+      disabled={disabled}
+      {...props}
+      onPress={event => {
+        if (disabled) {
+          return;
+        }
 
-          onPress?.(event);
-          if (value !== undefined) {
-            onValueChange?.(value);
-          }
-        }}>
-        <ContextMenuItemBackground
-          size={size}
-          highlighted={highlighted}
-          disabled={disabled}
-          {...(highlight && {
-            backgroundColor: disabled
-              ? "transparent"
-              : highlighted
-                ? highlight
-                : `transparent group-hover/item:${highlight} group-focus-visible/item:${highlight}`
-          })}
-        />
+        onPress?.(event);
+        if (hasItems) {
+          setOpen(inline ? !open : true);
+        }
+        if (value !== undefined) {
+          onValueChange?.(value);
+        }
+      }}
+      onKeyDown={(event: any) => {
+        onKeyDown?.(event);
+        if (hasItems && event.key === "ArrowRight") {
+          event.preventDefault();
+          setOpen(true);
+        } else if (inline && open && event.key === "ArrowLeft") {
+          event.preventDefault();
+          setOpen(false);
+        }
+      }}>
+      <ContextMenuItemBackground
+        size={size}
+        highlighted={highlighted}
+        disabled={disabled}
+        {...(highlight && {
+          backgroundColor: disabled
+            ? "transparent"
+            : highlighted
+              ? highlight
+              : `transparent group-hover/item:${highlight} group-focus-visible/item:${highlight}`
+        })}
+      />
+      {/* Only the content: the hover background stays the menu's. */}
+      <Theme name={theme}>
         <ContextMenuItemGroup
           size={size}
           disabled={disabled}
           data-context-menu-item-group>
           {children}
-          {(selected || disabled) && (
+          {(selected || disabled || hasItems) && (
             <View
               aria-hidden={true}
               width={indicatorWidth}
@@ -514,18 +586,93 @@ const ContextMenuItem = ({
                   variant="bold"
                   color={foreground ?? "primary-disabled"}
                 />
+              ) : selected ? (
+                <View paddingLeft="lg">
+                  <Confirm
+                    size={confirmIconSize}
+                    variant="bold"
+                    color={foreground ?? "primary-active"}
+                  />
+                </View>
               ) : (
-                <Confirm
-                  size={indicatorIconSize}
-                  variant="bold"
-                  color={foreground ?? "primary-active"}
-                />
+                // Follows the item's hover through CSS, like the text.
+                <BodyText
+                  render="span"
+                  display="flex"
+                  transition="200ms"
+                  rotate={inline && open ? "90deg" : "0deg"}
+                  color={foreground ?? getItemColor(itemState)}>
+                  <ChevronRight
+                    size={indicatorIconSize}
+                    variant="bold"
+                    color="currentColor"
+                    // The wrapper animates the color; the icon's own CSS
+                    // transition would ease it a second time and lag.
+                    style={{ transition: "none" } as object}
+                  />
+                </BodyText>
               )}
             </View>
           )}
         </ContextMenuItemGroup>
-        <ContextMenuItemDivider size={size} data-context-menu-item-divider />
-      </ContextMenuItemFrame>
+      </Theme>
+      <ContextMenuItemDivider size={size} data-context-menu-item-divider />
+    </ContextMenuItemFrame>
+  );
+
+  return (
+    <ContextMenuItemStateContext.Provider value={itemState}>
+      {hasItems && inline ? (
+        <>
+          {frame}
+          {open && (
+            <View
+              data-context-menu-item-children
+              paddingLeft="3xl"
+              onKeyDown={(event: any) => {
+                if (event.key === "ArrowLeft" && !event.defaultPrevented) {
+                  event.preventDefault();
+                  setOpen(false);
+                  // Back to this item, which follows the child items.
+                  event.currentTarget.previousElementSibling?.focus();
+                }
+              }}>
+              {items}
+            </View>
+          )}
+        </>
+      ) : hasItems ? (
+        <Popover
+          open={open}
+          onOpenChange={setOpen}
+          variant={variant}
+          size={getFormSizeToken(size)}
+          placement="right-start"
+          offset={getSpaced("2xl")}
+          hoverable={true}
+          // Opened by hover, press or `ArrowRight`, not by arrowing past it.
+          disableFocus={true}
+          shouldAdapt={false}>
+          {/* Pressing opens rather than toggles: hovering already opened it. */}
+          <Popover.Trigger asChild={true} disablePressTrigger={true}>
+            {frame}
+          </Popover.Trigger>
+          <ContextMenuContent
+            onKeyDown={(event: any) => {
+              // A nested submenu handles its own `ArrowLeft` first.
+              if (event.key === "ArrowLeft" && !event.defaultPrevented) {
+                event.preventDefault();
+                setOpen(false);
+              }
+            }}>
+            {/* Like the menu's items, inside a scroll view: the content's
+                `gap` would otherwise space every item apart. */}
+            <ContextMenuScrollView>{items}</ContextMenuScrollView>
+          </ContextMenuContent>
+        </Popover>
+      ) : (
+        frame
+      )}
     </ContextMenuItemStateContext.Provider>
   );
 };
@@ -533,7 +680,7 @@ const ContextMenuItem = ({
 const ContextMenuItemText = (props: GetProps<typeof BodyText>): JSX.Element => {
   const { size, variant } = ContextMenuContext.useStyledContext();
   const foreground = useItemForeground(variant);
-  const { selected, disabled, highlighted } = use(ContextMenuItemStateContext);
+  const itemState = use(ContextMenuItemStateContext);
   const {
     fontSize,
     lineHeight,
@@ -564,19 +711,10 @@ const ContextMenuItemText = (props: GetProps<typeof BodyText>): JSX.Element => {
       transition="200ms"
       cursor="inherit"
       // On the text: a View frame doesn't emit `color` for it to inherit.
-      color={
-        foreground ??
-        (disabled
-          ? "primary-disabled"
-          : selected
-            ? "primary-active"
-            : highlighted
-              ? "primary"
-              : "primary-inactive group-hover/item:primary group-focus-visible/item:primary")
-      }
+      color={(!itemState.themed && foreground) || getItemColor(itemState)}
       fontSize={fontSize}
       lineHeight={`${lineHeight}px`}
-      fontWeight={selected ? "semibold" : "normal"}
+      fontWeight={itemState.selected ? "semibold" : "normal"}
       paddingVertical={itemTextPaddingVertical}
       paddingHorizontal={itemTextPaddingHorizontal}
       // One line, cut short with an ellipsis when it doesn't fit.
@@ -608,12 +746,15 @@ const ContextMenuItemIcon = (props: GetProps<typeof BodyText>): JSX.Element => {
   const { size, variant } = ContextMenuContext.useStyledContext();
   const { fontSize, lineHeight } = getContextMenuSize(size);
   const foreground = useItemForeground(variant);
+  const itemState = use(ContextMenuItemStateContext);
+  const color = itemState.themed ? getItemColor(itemState) : foreground;
 
   return (
     <BodyText
       render="span"
       aria-hidden={true}
-      {...(foreground && { color: foreground })}
+      transition="200ms"
+      {...(color && { color })}
       flexShrink={0}
       minWidth="2xl"
       marginRight="lg"

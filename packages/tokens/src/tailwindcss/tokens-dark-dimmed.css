@@ -635,30 +635,30 @@
   --color-canvas-disabled: #3f3f42;
   --color-canvas-hovered: #3c3c40;
   --color-canvas-inactive: #313135;
-  --color-danger-backdrop: #681e1e73;
-  --color-danger-border: #723242;
+  --color-danger-backdrop: #681e2573;
+  --color-danger-border: #7b384b;
   --color-danger-link: var(--color-danger-primary);
   --color-danger-link-active: var(--color-danger-primary-hovered);
   --color-danger-link-disabled: var(--color-danger-primary-disabled);
   --color-danger-link-hovered: var(--color-danger-primary-hovered);
   --color-danger-link-inactive: var(--color-danger-primary-inactive);
   --color-danger-on-primary: var(--color-neutral-1);
-  --color-danger-on-secondary: #e0939c;
+  --color-danger-on-secondary: #e29ca6;
   --color-danger-outline: var(--color-danger-primary);
   --color-danger-outline-active: var(--color-danger-outline-hovered);
   --color-danger-outline-disabled: var(--color-danger-primary-disabled);
-  --color-danger-outline-hovered: #d97d91;
+  --color-danger-outline-hovered: #dc889f;
   --color-danger-outline-inactive: var(--color-danger-primary-inactive);
-  --color-danger-primary: var(--color-red-5);
+  --color-danger-primary: var(--color-red-4);
   --color-danger-primary-active: var(--color-danger-primary-hovered);
-  --color-danger-primary-disabled: #73565d;
-  --color-danger-primary-hovered: #d56d82;
-  --color-danger-primary-inactive: #962c4f;
-  --color-danger-secondary: #6e2039;
+  --color-danger-primary-disabled: #745b61;
+  --color-danger-primary-hovered: #d8788e;
+  --color-danger-primary-inactive: #963859;
+  --color-danger-secondary: #752240;
   --color-danger-secondary-active: var(--color-danger-secondary-hovered);
-  --color-danger-secondary-disabled: #5a484e;
-  --color-danger-secondary-hovered: #773c49;
-  --color-danger-secondary-inactive: #631d2c;
+  --color-danger-secondary-disabled: #5e4950;
+  --color-danger-secondary-hovered: #814252;
+  --color-danger-secondary-inactive: #691f33;
   --color-data-blue-emphasis: var(--color-blue-7);
   --color-data-blue-subtle: var(--color-blue-9);
   --color-data-green-emphasis: var(--color-green-6);
@@ -986,12 +986,12 @@
   --ring-brand-subtle: 0px 0px 0px 1px #3be4be26;
   --ring-brand-subtle-offset:
     0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #3be4be26;
-  --ring-danger: 0px 0px 0px 3px #cf2d5626;
+  --ring-danger: 0px 0px 0px 3px #d4426726;
   --ring-danger-offset:
-    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #cf2d5626;
-  --ring-danger-subtle: 0px 0px 0px 1px #cf2d5626;
+    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #d4426726;
+  --ring-danger-subtle: 0px 0px 0px 1px #d4426726;
   --ring-danger-subtle-offset:
-    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #cf2d5626;
+    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #d4426726;
   --ring-discovery: 0px 0px 0px 3px #9277da26;
   --ring-discovery-offset:
     0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #9277da26;

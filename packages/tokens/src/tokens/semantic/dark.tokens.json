@@ -113,7 +113,7 @@
       "primary": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.red.5}",
+        "$value": "{color.red.4}",
         "$description": "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
         "semantic": true
       }
