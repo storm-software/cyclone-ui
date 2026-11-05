@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Pie Chart
 
+## [0.0.19](https://github.com/storm-software/cyclone-ui/releases/tag/pie-chart%400.0.19) (11/05/2026)
+
+### Updated Dependencies
+
+- Updated **chart** to **v0.0.19**
+
 ## [0.0.18](https://github.com/storm-software/cyclone-ui/releases/tag/pie-chart%400.0.18) (11/04/2026)
 
 ### Bug Fixes

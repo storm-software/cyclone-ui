@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Article Page
 
+## [0.0.38](https://github.com/storm-software/cyclone-ui/releases/tag/article-page%400.0.38) (11/05/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.47**
+- Updated **breadcrumb** to **v0.4.52**
+- Updated **button** to **v0.6.50**
+- Updated **card** to **v0.6.51**
+- Updated **feedback** to **v0.0.41**
+- Updated **heading-text** to **v0.5.48**
+- Updated **icons** to **v0.0.45**
+- Updated **inline-code-text** to **v0.5.46**
+- Updated **link** to **v0.5.50**
+- Updated **table-of-contents** to **v0.0.46**
+- Updated **tag** to **v0.0.45**
+- Updated **terrain-footer** to **v0.0.10**
+
 ## [0.0.37](https://github.com/storm-software/cyclone-ui/releases/tag/article-page%400.0.37) (11/04/2026)
 
 ### Bug Fixes

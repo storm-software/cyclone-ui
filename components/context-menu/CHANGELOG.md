@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Context Menu
 
+## [0.0.41](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.41) (11/05/2026)
+
+### Features
+
+- **monorepo:** Update various component to include hierarchical variant display ([916d9a942](https://github.com/storm-software/cyclone-ui/commit/916d9a942))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.47**
+- Updated **button** to **v0.6.50**
+- Updated **helpers** to **v0.3.47**
+- Updated **icons** to **v0.0.45**
+- Updated **popover** to **v0.5.51**
+- Updated **tooltip** to **v0.5.50**
+
 ## [0.0.40](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.40) (11/04/2026)
 
 ### Miscellaneous

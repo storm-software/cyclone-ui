@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Toggle
 
+## [0.0.39](https://github.com/storm-software/cyclone-ui/releases/tag/toggle%400.0.39) (11/05/2026)
+
+### Features
+
+- **monorepo:** Update various component to include hierarchical variant display ([916d9a942](https://github.com/storm-software/cyclone-ui/commit/916d9a942))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.47**
+- Updated **icons** to **v0.0.45**
+- Updated **tokens** to **v0.3.36**
+
 ## [0.0.38](https://github.com/storm-software/cyclone-ui/releases/tag/toggle%400.0.38) (11/04/2026)
 
 ### Miscellaneous

@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Tabs
 
+## [0.3.49](https://github.com/storm-software/cyclone-ui/releases/tag/tabs%400.3.49) (11/05/2026)
+
+### Features
+
+- **monorepo:** Update various component to include hierarchical variant display ([916d9a942](https://github.com/storm-software/cyclone-ui/commit/916d9a942))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.47**
+- Updated **heading-text** to **v0.5.48**
+- Updated **helpers** to **v0.3.47**
+
 ## [0.3.48](https://github.com/storm-software/cyclone-ui/releases/tag/tabs%400.3.48) (11/04/2026)
 
 ### Miscellaneous

@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Dialog
 
+## [0.3.51](https://github.com/storm-software/cyclone-ui/releases/tag/dialog%400.3.51) (11/05/2026)
+
+### Features
+
+- **monorepo:** Update various component to include hierarchical variant display ([916d9a942](https://github.com/storm-software/cyclone-ui/commit/916d9a942))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.47**
+- Updated **button** to **v0.6.50**
+- Updated **container** to **v0.6.49**
+- Updated **heading-text** to **v0.5.48**
+- Updated **overlay** to **v0.0.34**
+
 ## [0.3.50](https://github.com/storm-software/cyclone-ui/releases/tag/dialog%400.3.50) (11/04/2026)
 
 ### Miscellaneous

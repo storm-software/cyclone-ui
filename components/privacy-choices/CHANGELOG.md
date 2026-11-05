@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Privacy Choices
 
+## [0.0.14](https://github.com/storm-software/cyclone-ui/releases/tag/privacy-choices%400.0.14) (11/05/2026)
+
+### Features
+
+- **monorepo:** Update various component to include hierarchical variant display ([916d9a942](https://github.com/storm-software/cyclone-ui/commit/916d9a942))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.47**
+- Updated **button** to **v0.6.50**
+- Updated **dialog** to **v0.3.51**
+- Updated **heading-text** to **v0.5.48**
+- Updated **icons** to **v0.0.45**
+- Updated **scroll-view** to **v0.5.49**
+- Updated **switch** to **v0.5.50**
+- Updated **tabs** to **v0.3.49**
+
 ## [0.0.13](https://github.com/storm-software/cyclone-ui/releases/tag/privacy-choices%400.0.13) (11/04/2026)
 
 ### Miscellaneous

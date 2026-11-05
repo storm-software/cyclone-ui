@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Drawer
 
+## [0.1.51](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.51) (11/05/2026)
+
+### Features
+
+- **monorepo:** Update various component to include hierarchical variant display ([916d9a942](https://github.com/storm-software/cyclone-ui/commit/916d9a942))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.47**
+- Updated **button** to **v0.6.50**
+- Updated **icons** to **v0.0.45**
+- Updated **sheet** to **v0.0.50**
+
 ## [0.1.50](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.50) (11/04/2026)
 
 ### Miscellaneous

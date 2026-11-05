@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Accordion
 
+## [0.3.50](https://github.com/storm-software/cyclone-ui/releases/tag/accordion%400.3.50) (11/05/2026)
+
+### Features
+
+- **monorepo:** Update various component to include hierarchical variant display ([916d9a942](https://github.com/storm-software/cyclone-ui/commit/916d9a942))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.47**
+- Updated **heading-text** to **v0.5.48**
+- Updated **icons** to **v0.0.45**
+- Updated **vectors** to **v0.5.49**
+
 ## [0.3.49](https://github.com/storm-software/cyclone-ui/releases/tag/accordion%400.3.49) (11/04/2026)
 
 ### Bug Fixes

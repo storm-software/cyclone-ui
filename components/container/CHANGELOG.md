@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Container
 
+## [0.6.49](https://github.com/storm-software/cyclone-ui/releases/tag/container%400.6.49) (11/05/2026)
+
+### Features
+
+- **monorepo:** Update various component to include hierarchical variant display ([916d9a942](https://github.com/storm-software/cyclone-ui/commit/916d9a942))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.47**
+- Updated **vectors** to **v0.5.49**
+
 ## [0.6.48](https://github.com/storm-software/cyclone-ui/releases/tag/container%400.6.48) (11/04/2026)
 
 ### Bug Fixes

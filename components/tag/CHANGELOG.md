@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Tag
 
+## [0.0.45](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.45) (11/05/2026)
+
+### Features
+
+- **monorepo:** Update various component to include hierarchical variant display ([916d9a942](https://github.com/storm-software/cyclone-ui/commit/916d9a942))
+
+### Updated Dependencies
+
+- Updated **icons** to **v0.0.45**
+- Updated **ripple-animation** to **v0.0.24**
+
 ## [0.0.44](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.44) (11/04/2026)
 
 ### Miscellaneous

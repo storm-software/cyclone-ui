@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Popover
 
+## [0.5.51](https://github.com/storm-software/cyclone-ui/releases/tag/popover%400.5.51) (11/05/2026)
+
+### Features
+
+- **monorepo:** Update various component to include hierarchical variant display ([916d9a942](https://github.com/storm-software/cyclone-ui/commit/916d9a942))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.47**
+- Updated **button** to **v0.6.50**
+- Updated **heading-text** to **v0.5.48**
+- Updated **scroll-view** to **v0.5.49**
+- Updated **sheet** to **v0.0.50**
+
 ## [0.5.50](https://github.com/storm-software/cyclone-ui/releases/tag/popover%400.5.50) (11/04/2026)
 
 ### Miscellaneous

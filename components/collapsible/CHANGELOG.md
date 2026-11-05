@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Collapsible
 
+## [0.3.46](https://github.com/storm-software/cyclone-ui/releases/tag/collapsible%400.3.46) (11/05/2026)
+
+### Features
+
+- **monorepo:** Update various component to include hierarchical variant display ([916d9a942](https://github.com/storm-software/cyclone-ui/commit/916d9a942))
+
+### Updated Dependencies
+
+- Updated **accordion** to **v0.3.50**
+- Updated **body-text** to **v0.5.47**
+
 ## [0.3.45](https://github.com/storm-software/cyclone-ui/releases/tag/collapsible%400.3.45) (11/04/2026)
 
 ### Bug Fixes
