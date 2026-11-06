@@ -198,7 +198,7 @@ const DrawerHeaderImpl: FC<DrawerHeaderProps> = ({
           flexGrow={0}
           onPress={() => setOpen(false)}>
           <Button.Icon>
-            <Close color="currentColor" />
+            <Close variant="bold" color="currentColor" />
           </Button.Icon>
         </Button>
       )}

@@ -69,12 +69,12 @@ const config: UserConfig = defineConfig({
 
         const theme = paletteToTheme({
           name: "dark",
-          primary: color("brand.primary"),
-          secondary: color("emphasis"),
-          tertiary: color("ink"),
+          primary: color("base.primary"),
+          secondary: color("ink"),
+          tertiary: color("subtle"),
           text: color("ink"),
-          muted: color("subtle"),
-          link: color("brand.link"),
+          muted: color("hairline"),
+          link: color("base.link"),
           border: color("hairline"),
           success: color("success.primary"),
           info: color("info.primary"),
@@ -104,7 +104,15 @@ const config: UserConfig = defineConfig({
                 $default: color("brand.primary"),
                 utility: color("subtle"),
                 deprecated: color("danger.primary"),
-                experimental: color("discovery.primary")
+                experimental: color("discovery.primary"),
+                designSystem: color("brand.primary"),
+                ai: color("discovery.primary"),
+                mcp: color("discovery.primary"),
+                tokens: "#FF6693",
+                plugins: "#80C93C",
+                components: "#5B69FF",
+                fonts: "#00CED1",
+                icons: "#4682B4"
               }
             }
           }

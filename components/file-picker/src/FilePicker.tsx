@@ -419,7 +419,7 @@ const FilePickerTrigger = createStyledHOC(
                 tooltip={max > 1 ? "Remove all files" : "Remove file"}
                 onPress={() => onChange([])}>
                 <Button.Icon>
-                  <Close />
+                  <Close variant="bold" />
                 </Button.Icon>
               </Button>
             </View>

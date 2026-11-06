@@ -723,7 +723,7 @@ function DataTableImpl<TData extends RowData>({
                         tooltip="Clear selection"
                         onPress={() => table.resetRowSelection(true)}>
                         <Button.Icon>
-                          <Close size="2xl" />
+                          <Close variant="bold" size="2xl" />
                         </Button.Icon>
                       </Button>
                     </XStack>

@@ -32,7 +32,7 @@ import { registryClient } from "../../utilities/registry";
 export const metadata = {
   title: "Add",
   description: `Adds a new component to the project. ${COMPONENT_PROTECTION_RULE}`,
-  icon: "➕"
+  icon: "+"
 } satisfies CommandMetadata;
 
 export interface AddOptions {

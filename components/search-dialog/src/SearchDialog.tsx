@@ -585,7 +585,7 @@ export const SearchDialog = createStyledHOC(
                 }}>
                 {/* A size up, or the glyph scales down to a few px. */}
                 <Button.Icon size="7xl">
-                  <Close />
+                  <Close variant="bold" />
                 </Button.Icon>
               </Button>
             </View>
@@ -660,7 +660,7 @@ export const SearchDialog = createStyledHOC(
                     display="flex"
                     transition="200ms"
                     color="subtle group-hover/button:subtle-hovered">
-                    <Close color="currentColor" />
+                    <Close variant="bold" color="currentColor" />
                   </Text>
                 </Input.Trigger.Icon>
               </Input.Trigger>

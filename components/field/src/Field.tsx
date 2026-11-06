@@ -385,6 +385,7 @@ const FieldGroupInnerImpl = createStyledHOC(
           {clearable && Boolean(formattedValue) && (
             <FieldThemeIcon position="end" onClick={handleClear}>
               <Close
+                variant="bold"
                 color={`${disabled ? "primary-disabled" : "primary"} group-hover/field:${disabled ? "primary-disabled" : "primary-hovered"}`}
               />
             </FieldThemeIcon>

@@ -37,6 +37,7 @@ import {
 import { usePopperContext } from "@tamagui/popper";
 import type { TooltipProps as TamaguiTooltipProps } from "@tamagui/tooltip";
 import { Tooltip as TamaguiTooltip } from "@tamagui/tooltip";
+import { Suspense } from "react";
 
 export type TooltipVariant = ContainerVariant;
 
@@ -92,9 +93,14 @@ const TooltipFrameImpl = createStyledHOC(
         glass={glass}
         accented={accented}>
         {/* v3's Tooltip (Popper) has no `size` prop; size lives in context. */}
-        <TamaguiTooltip ref={forwardedRef} {...props}>
-          {children}
-        </TamaguiTooltip>
+        {/* Popper's styled contexts assign random identity keys to refs and
+            callbacks. Stream this subtree so Cache Components can prerender
+            the surrounding navigation without evaluating those keys. */}
+        <Suspense fallback={null}>
+          <TamaguiTooltip ref={forwardedRef} {...props}>
+            {children}
+          </TamaguiTooltip>
+        </Suspense>
       </TooltipContext.Provider>
     );
   },

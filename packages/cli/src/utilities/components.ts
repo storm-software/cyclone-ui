@@ -332,8 +332,8 @@ export function formatUpdate(
     .map(report => {
       const lines = [report.name];
       if (report.previousVersion !== report.version) {
-        const previous = report.previousVersion ?? "?";
-        const next = report.version ?? "?";
+        const previous = report.previousVersion ?? "N/A";
+        const next = report.version ?? "N/A";
         lines.push(
           `  ${colors.red(previous)} ${colors.dim("→")} ${colors.green(next)}`
         );
@@ -353,9 +353,11 @@ export function formatDiff(plan: InstallPlan, root: string): string {
   const changes = plan.files.filter(file => file.status !== "unchanged");
   if (changes.length === 0) return "No differences found.";
 
-  return changes
+  return `${changes
     .map(file => {
-      const header = `--- ${file.previousContent === null ? "/dev/null" : relative(root, file.path)}\n+++ ${relative(root, file.path)}`;
+      const header = `--- ${
+        file.previousContent === null ? "/dev/null" : relative(root, file.path)
+      }\n+++ ${relative(root, file.path)}`;
       if (file.previousContent === null) {
         return `${header}\n${file.content
           .split("\n")
@@ -374,5 +376,5 @@ export function formatDiff(plan: InstallPlan, root: string): string {
 
       return `${header}\n${previous}\n${next}`;
     })
-    .join("\n\n");
+    .join("\n\n")}\n`;
 }

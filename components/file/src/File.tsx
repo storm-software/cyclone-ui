@@ -510,7 +510,7 @@ export const File = ({
             size={buttonSize}
             tight={true}
             circular={true}>
-            <Button.Icon>{uploading ? <Close /> : <Trash />}</Button.Icon>
+            <Button.Icon>{uploading ? <Close variant="bold" /> : <Trash />}</Button.Icon>
           </Button>
         </View>
       )}

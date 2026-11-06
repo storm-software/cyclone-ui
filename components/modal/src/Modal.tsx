@@ -112,7 +112,7 @@ const ModalHeaderImpl: FC<ModalHeaderProps> = ({
           circular={true}
           flexGrow={0}>
           <Button.Icon>
-            <Close color="currentColor" />
+            <Close variant="bold" color="currentColor" />
           </Button.Icon>
         </Button>
       </DialogClose>

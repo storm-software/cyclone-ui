@@ -401,8 +401,10 @@ interface ColorStateVariant {
   /** Multiplier applied to OKLCH chroma for non-greyscale colors. */
   saturation?: number;
   /**
-   * Multiplier applied to OKLCH lightness (e.g. 1.1 = 10%). State direction
-   * is determined by the source color and its parent theme.
+   * Multiplier applied to OKLCH lightness (e.g. 1.1 = 10%). Values above 1 are
+   * brighter: lighter in dark themes, darker in light themes. Active states
+   * are never less bright than the color's normal, hovered, or inactive states;
+   * hovered states reverse for colors already near the contrast primitive.
    */
   brightness?: number;
   /** Resolve state colors from the parent theme's contrast primitive. */
@@ -505,10 +507,14 @@ const DEFAULT_COLOR_STATE_VARIANTS: ColorStateVariants = {
   saturated: [COLOR_STATE_ACTIVE, COLOR_STATE_INACTIVE, COLOR_STATE_DISABLED]
 };
 
+/**
+ * Subtle (secondary) colors dim their own lightness when inactive; the
+ * contrast primitive's mid-grey would be brighter than these backgrounds.
+ */
 const SUBTLE_COLOR_STATE_VARIANTS: ColorStateVariants = {
   lowSaturation: [
     SUBTLE_LOW_SATURATION_COLOR_STATE_ACTIVE,
-    LOW_SATURATION_COLOR_STATE_INACTIVE,
+    COLOR_STATE_INACTIVE,
     COLOR_STATE_DISABLED
   ],
   saturated: DEFAULT_COLOR_STATE_VARIANTS.saturated
@@ -1069,22 +1075,6 @@ function createMutedColor(
   throw new Error(`Unable to generate an accessible secondary pair for ${hex}`);
 }
 
-function isLightColor(hex: string, parentTheme?: ParentTheme): boolean {
-  if (parentTheme === "dark") {
-    return isWhiteColor(hex);
-  }
-
-  if (parentTheme === "light") {
-    return !isBlackColor(hex);
-  }
-
-  return hexToOklch(hex).lightness >= 0.5;
-}
-
-function isDarkColor(hex: string, parentTheme?: ParentTheme): boolean {
-  return !isLightColor(hex, parentTheme);
-}
-
 /** Low-saturation colors only count as white / black past ≈ #dddddd / #262626. */
 const LOW_SATURATION_WHITE_LIGHTNESS = hexToOklch("#fefefe").lightness;
 const LOW_SATURATION_BLACK_LIGHTNESS = hexToOklch("#262626").lightness;
@@ -1117,13 +1107,83 @@ function isNearContrastPrimitive(
     : parentTheme === "light" && isBlackColor(hex);
 }
 
-/** Resolve a state multiplier from the source color and parent theme. */
-function directedBrightnessFactor(
+/** Without a parent theme, dark colors brighten like a dark theme (and vice versa). */
+function stateTheme(hex: string, parentTheme?: ParentTheme): ParentTheme {
+  return parentTheme ?? (hexToOklch(hex).lightness >= 0.5 ? "light" : "dark");
+}
+
+/** Brightness is OKLCH lightness in dark themes and its inverse in light themes. */
+function themeBrightness(hex: string, parentTheme: ParentTheme): number {
+  const { lightness } = hexToOklch(hex);
+
+  return parentTheme === "light" ? 1 - lightness : lightness;
+}
+
+function withThemeBrightness(
   hex: string,
-  factor: number,
-  parentTheme?: ParentTheme
-): number {
-  return isDarkColor(hex, parentTheme) ? factor : 2 - factor;
+  brightness: number,
+  parentTheme: ParentTheme
+): string {
+  const { chroma, hue, alpha } = hexToOklch(hex);
+
+  return oklchToGamutMappedHex(
+    clamp01(parentTheme === "light" ? 1 - brightness : brightness),
+    chroma,
+    hue,
+    alpha
+  );
+}
+
+/**
+ * Only hovered states reverse, for colors already near the contrast primitive
+ * (which can't get meaningfully brighter); active states never become less
+ * bright.
+ */
+function isReversedState(
+  hex: string,
+  variant: ColorStateVariant,
+  parentTheme: ParentTheme
+): boolean {
+  return (
+    variant.name === "hovered" && isNearContrastPrimitive(hex, parentTheme)
+  );
+}
+
+function isBrighterState(
+  hex: string,
+  variant: ColorStateVariant,
+  parentTheme: ParentTheme
+): boolean {
+  return (
+    (variant.brightness ?? 1) >= 1 !==
+    isReversedState(hex, variant, parentTheme)
+  );
+}
+
+/**
+ * Step `hex` by the state's `brightness` (a multiple of its OKLCH lightness).
+ * Brighter steps stop halfway to pure white / black so bright colors keep
+ * their hue instead of blowing out. Reversed steps scale with brightness so
+ * pure black still moves in light themes.
+ */
+function applyStateBrightness(
+  hex: string,
+  variant: ColorStateVariant,
+  parentTheme: ParentTheme
+): string {
+  const brightness = themeBrightness(hex, parentTheme);
+  const step =
+    (isReversedState(hex, variant, parentTheme)
+      ? brightness
+      : hexToOklch(hex).lightness) * Math.abs((variant.brightness ?? 1) - 1);
+
+  return withThemeBrightness(
+    hex,
+    isBrighterState(hex, variant, parentTheme)
+      ? brightness + Math.min(step, (1 - brightness) / 2)
+      : brightness - step,
+    parentTheme
+  );
 }
 
 function contrastPrimitive(
@@ -1178,22 +1238,6 @@ function stateContrastColor(
     : primitive;
 }
 
-function stateBrightnessFactor(
-  hex: string,
-  variant: ColorStateVariant,
-  parentTheme?: ParentTheme
-): number {
-  if (variant.brightness === undefined) {
-    return 1;
-  }
-
-  if (contrastPrimitive(variant, parentTheme)) {
-    return isInteractionState(variant) ? 1 : variant.brightness;
-  }
-
-  return directedBrightnessFactor(hex, variant.brightness, parentTheme);
-}
-
 function applyStateTransform(
   hex: string,
   variant: ColorStateVariant,
@@ -1204,6 +1248,7 @@ function applyStateTransform(
     shift === undefined
       ? stateContrastColor(hex, variant, parentTheme)
       : undefined;
+  const theme = stateTheme(hex, parentTheme);
   let transformed = primitive ?? hex;
 
   if (shift !== undefined) {
@@ -1212,10 +1257,15 @@ function applyStateTransform(
     variant.brightness !== undefined &&
     !(primitive && isInteractionState(variant))
   ) {
-    transformed = applyBrightness(
-      transformed,
-      stateBrightnessFactor(transformed, variant, parentTheme)
-    );
+    // Non-interaction states scale the primitive's brightness directly
+    // (e.g. inactive at 50% is mid-grey in both dark and light themes).
+    transformed = primitive
+      ? withThemeBrightness(
+          primitive,
+          themeBrightness(primitive, theme) * variant.brightness,
+          theme
+        )
+      : applyStateBrightness(hex, variant, theme);
   }
 
   if (variant.saturation !== undefined && !isGreyscale(hex)) {
@@ -1256,11 +1306,12 @@ function variantDetail(
         : `${parentTheme} contrast primitive`
     );
   } else if (variant.brightness !== undefined) {
-    const factor = stateBrightnessFactor(hex, variant, parentTheme);
-    const percent = Math.round((factor - 1) * 100);
+    const theme = stateTheme(hex, parentTheme);
 
     details.push(
-      percent >= 0 ? `${percent}% brighter` : `${Math.abs(percent)}% darker`
+      primitive
+        ? `${Math.round(variant.brightness * 100)}% of the ${theme} contrast primitive's brightness`
+        : `${Math.round(Math.abs(variant.brightness - 1) * 100)}% ${isBrighterState(hex, variant, theme) ? "brighter" : "less bright"}`
     );
   }
 
@@ -1357,6 +1408,34 @@ function addColorStateTokens(
         variant,
         tokenParentTheme
       );
+    }
+
+    // Generated active states are never less bright than the color or its
+    // hovered / inactive states.
+    const activeKey = `${name}-active`;
+    const active = result[activeKey];
+    if (
+      !(activeKey in group) &&
+      isTokenNode(active) &&
+      typeof active.$value === "string"
+    ) {
+      const theme = stateTheme(hex, tokenParentTheme);
+      const floor = Math.max(
+        ...[
+          hex,
+          result[`${name}-hovered`]?.$value,
+          result[`${name}-inactive`]?.$value
+        ]
+          .map(value => resolveColorHex(value, tree))
+          .filter((value): value is string => value !== undefined)
+          .map(value => themeBrightness(value, theme))
+      );
+      if (themeBrightness(active.$value, theme) < floor) {
+        result[activeKey] = {
+          ...active,
+          $value: withThemeBrightness(active.$value, floor, theme)
+        };
+      }
     }
   }
 
@@ -1614,8 +1693,10 @@ function injectColorStateVariants(
  * primitive (backgrounds use a half-strength shift of their own lightness; hovered
  * colors already near that primitive shift toward the middle, while active
  * ones become pure white or black); saturated
- * colors scale their own lightness. Foreground and background hovered states
- * take a smaller step than their active states. Tokens in a theme color group get the
+ * colors scale their own lightness. "Brighter" means lighter in dark themes and
+ * darker in light themes: active states are never less bright than the normal,
+ * hovered, or inactive states, and hovered states take a smaller step than
+ * active (reversing only for colors near the contrast primitive). Tokens in a theme color group get the
  * group name as `theme` and `group`, unless already set; root state and `on-*`
  * tokens get their main token name as `group` (e.g. `hairline-active` →
  * `hairline`).

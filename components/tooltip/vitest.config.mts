@@ -1,8 +1,12 @@
 import { defineConfig } from "vitest/config";
-import { componentDistJsx } from "../../tools/config/vitest.component";
+import {
+  componentDistJsx,
+  reactNativeWebAliases
+} from "../../tools/config/vitest.component";
 
 export default defineConfig(() => ({
   resolve: {
+    alias: reactNativeWebAliases,
     tsconfigPaths: true
   },
   root: import.meta.dirname,

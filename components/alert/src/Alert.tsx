@@ -85,7 +85,7 @@ const AlertCloseImpl = createStyledHOC(
           flexGrow={0}>
           {children || (
             <Button.Icon position="absolute" inset={0} justifyContent="center">
-              <Close />
+              <Close variant="bold" />
             </Button.Icon>
           )}
         </AlertClose>

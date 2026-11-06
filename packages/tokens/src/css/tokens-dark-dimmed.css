@@ -668,15 +668,16 @@
     0.14901960784313725
   ); /** Generated base overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-base-border: #535458; /** Generated base border color for secondary backgrounds (secondary, 25% brighter) */
-  --storm-color-base-primary-hovered: #a0a0a0; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% darker) */
-  --storm-color-base-primary-inactive: #6c6c6c; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% darker) */
+  --storm-color-base-primary-hovered: #a0a0a0; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% less bright) */
+  --storm-color-base-primary-inactive: #6c6c6c; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% of the dark contrast primitive's brightness) */
   --storm-color-base-primary-disabled: #69696b; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 15% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-base-secondary-hovered: #4a4b4e; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 8% brighter) */
   --storm-color-base-secondary-active: #4f4f54; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 18% brighter) */
+  --storm-color-base-secondary-inactive: #3a3b40; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 20% less bright) */
   --storm-color-base-secondary-disabled: #535355; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26)) */
-  --storm-color-base-link-hovered: #5fbad0; /** The color used for hyperlink text. (hovered, 13% brighter) */
-  --storm-color-base-link-active: #73d3d6; /** The color used for hyperlink text. (active, 25% brighter) */
-  --storm-color-base-link-inactive: #3184aa; /** The color used for hyperlink text. (inactive, 20% darker) */
+  --storm-color-base-link-hovered: #85bddc; /** The color used for hyperlink text. (hovered, 13% brighter) */
+  --storm-color-base-link-active: #93c4e0; /** The color used for hyperlink text. (active, 25% brighter) */
+  --storm-color-base-link-inactive: #2f83a2; /** The color used for hyperlink text. (inactive, 20% less bright) */
   --storm-color-base-link-disabled: #566269; /** The color used for hyperlink text. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-brand-primary: #5abba5; /** The Storm Teal color is used as the primary brand color for Storm Software. */
   --storm-color-brand-backdrop: rgba(
@@ -687,12 +688,12 @@
   ); /** Generated brand overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-brand-secondary: #206f60; /** Generated low-emphasis brand background for the dark theme */
   --storm-color-brand-border: #4c7d70; /** Generated brand border color for secondary backgrounds (secondary, 25% brighter) */
-  --storm-color-brand-primary-hovered: #30a58f; /** The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 12% darker) */
-  --storm-color-brand-primary-active: #2b937c; /** The Storm Teal color is used as the primary brand color for Storm Software. (active, 25% darker) */
-  --storm-color-brand-primary-inactive: #7fdad2; /** The Storm Teal color is used as the primary brand color for Storm Software. (inactive, 20% brighter) */
+  --storm-color-brand-primary-hovered: #30a48f; /** The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 13% less bright) */
+  --storm-color-brand-primary-active: #78d8bf; /** The Storm Teal color is used as the primary brand color for Storm Software. (active, 25% brighter) */
+  --storm-color-brand-primary-inactive: #2c9884; /** The Storm Teal color is used as the primary brand color for Storm Software. (inactive, 20% less bright) */
   --storm-color-brand-primary-disabled: #596563; /** The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-brand-secondary-hovered: #3b7466; /** Generated low-emphasis brand background for the dark theme (hovered, 13% brighter) */
-  --storm-color-brand-secondary-inactive: #1d6251; /** Generated low-emphasis brand background for the dark theme (inactive, 20% darker) */
+  --storm-color-brand-secondary-inactive: #1c6153; /** Generated low-emphasis brand background for the dark theme (inactive, 20% less bright) */
   --storm-color-brand-secondary-disabled: #515858; /** Generated low-emphasis brand background for the dark theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-danger-backdrop: rgba(
     104,
@@ -704,11 +705,11 @@
   --storm-color-danger-on-secondary: #e29ca6; /** Generated text and icon color on danger secondary backgrounds */
   --storm-color-danger-border: #814252; /** Generated danger border color for secondary backgrounds (secondary, 25% brighter) */
   --storm-color-danger-primary-hovered: #c86c81; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 13% brighter) */
-  --storm-color-danger-primary-active: #d8788e; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% brighter) */
-  --storm-color-danger-primary-inactive: #963859; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% darker) */
+  --storm-color-danger-primary-active: #d97e90; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% brighter) */
+  --storm-color-danger-primary-inactive: #963859; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% less bright) */
   --storm-color-danger-primary-disabled: #63575c; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-danger-secondary-hovered: #7a344a; /** Generated low-emphasis danger background for the dark theme (hovered, 13% brighter) */
-  --storm-color-danger-secondary-inactive: #691f33; /** Generated low-emphasis danger background for the dark theme (inactive, 20% darker) */
+  --storm-color-danger-secondary-inactive: #661d36; /** Generated low-emphasis danger background for the dark theme (inactive, 20% less bright) */
   --storm-color-danger-secondary-disabled: #595054; /** Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-warning-backdrop: rgba(
     104,
@@ -717,12 +718,12 @@
     0.14901960784313725
   ); /** Generated warning overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-warning-border: #b19467; /** Generated warning border color for secondary backgrounds (secondary, 25% brighter) */
-  --storm-color-warning-primary-hovered: #b19358; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 12% darker) */
-  --storm-color-warning-primary-active: #9c7c2d; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker) */
-  --storm-color-warning-primary-inactive: #ddd589; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter) */
+  --storm-color-warning-primary-hovered: #b19358; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 13% less bright) */
+  --storm-color-warning-primary-active: #e1c698; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% brighter) */
+  --storm-color-warning-primary-inactive: #a38544; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% less bright) */
   --storm-color-warning-primary-disabled: #67625d; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-warning-secondary-hovered: #9f8457; /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 13% brighter) */
-  --storm-color-warning-secondary-inactive: #805f25; /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (inactive, 20% darker) */
+  --storm-color-warning-secondary-inactive: #7d6124; /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (inactive, 20% less bright) */
   --storm-color-warning-secondary-disabled: #5f5b55; /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-info-backdrop: rgba(
     36,
@@ -731,12 +732,12 @@
     0.14901960784313725
   ); /** Generated info overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-info-border: #536c97; /** Generated info border color for secondary backgrounds (secondary, 25% brighter) */
-  --storm-color-info-primary-hovered: #719dd6; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 13% brighter) */
-  --storm-color-info-primary-active: #7eb0da; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% brighter) */
-  --storm-color-info-primary-inactive: #4d70ac; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% darker) */
+  --storm-color-info-primary-hovered: #7c9ed9; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 13% brighter) */
+  --storm-color-info-primary-active: #93b0e0; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% brighter) */
+  --storm-color-info-primary-inactive: #4d70ac; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% less bright) */
   --storm-color-info-primary-disabled: #585e68; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-info-secondary-hovered: #47618e; /** Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 13% brighter) */
-  --storm-color-info-secondary-inactive: #254479; /** Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% darker) */
+  --storm-color-info-secondary-inactive: #254479; /** Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% less bright) */
   --storm-color-info-secondary-disabled: #52555d; /** Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-discovery-backdrop: rgba(
     65,
@@ -746,11 +747,11 @@
   ); /** Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-discovery-border: #5c5378; /** Generated discovery border color for secondary backgrounds (secondary, 25% brighter) */
   --storm-color-discovery-primary-hovered: #9c89d3; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 13% brighter) */
-  --storm-color-discovery-primary-active: #ac95e0; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 25% brighter) */
-  --storm-color-discovery-primary-inactive: #75669a; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% darker) */
+  --storm-color-discovery-primary-active: #a998e1; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 25% brighter) */
+  --storm-color-discovery-primary-inactive: #75669a; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% less bright) */
   --storm-color-discovery-primary-disabled: #5e5b65; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-discovery-secondary-hovered: #544a71; /** Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 13% brighter) */
-  --storm-color-discovery-secondary-inactive: #403160; /** Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% darker) */
+  --storm-color-discovery-secondary-inactive: #403160; /** Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% less bright) */
   --storm-color-discovery-secondary-disabled: #545259; /** Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-success-backdrop: rgba(
     26,
@@ -761,38 +762,39 @@
   --storm-color-success-secondary: #207055; /** Generated low-emphasis success background for the dark theme */
   --storm-color-success-border: #4c7d68; /** Generated success border color for secondary backgrounds (secondary, 25% brighter) */
   --storm-color-success-primary-hovered: #74c2a0; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 13% brighter) */
-  --storm-color-success-primary-active: #84dbb5; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 25% brighter) */
-  --storm-color-success-primary-inactive: #298e6c; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% darker) */
+  --storm-color-success-primary-active: #7acca7; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 25% brighter) */
+  --storm-color-success-primary-inactive: #298d6d; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% less bright) */
   --storm-color-success-primary-disabled: #58625f; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-success-secondary-hovered: #3b755d; /** Generated low-emphasis success background for the dark theme (hovered, 13% brighter) */
-  --storm-color-success-secondary-inactive: #1d6244; /** Generated low-emphasis success background for the dark theme (inactive, 20% darker) */
+  --storm-color-success-secondary-inactive: #1c6149; /** Generated low-emphasis success background for the dark theme (inactive, 20% less bright) */
   --storm-color-success-secondary-disabled: #515857; /** Generated low-emphasis success background for the dark theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-shadow-resting-raised:
     0px 1px 2px 0px #0000004d, 0px 2px 8px 0px #00000040; /** Raised resting shadow: a tight contact shadow plus a soft 8px falloff. Use it for selected segments, notification cards and secondary buttons that should read as lifted off their surface. Used by Button (`secondary` variant). */
+  --storm-color-emphasis-hovered: #d4d4d4; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% brighter) */
   --storm-color-emphasis-disabled: #676769; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 15% over oklch(0.3839 0.0045 286.26)) */
-  --storm-color-ink-hovered: #cccccd; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 25% brighter) */
+  --storm-color-ink-hovered: #bdbdbe; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 25% brighter) */
   --storm-color-ink-disabled: #606062; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26)) */
-  --storm-color-subtle-hovered: #b4b4b6; /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% brighter) */
+  --storm-color-subtle-hovered: #b2b3b4; /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% brighter) */
   --storm-color-subtle-disabled: #5e5e60; /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-sunken-hovered: #323233; /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 15% brighter) */
   --storm-color-sunken-active: #353537; /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 30% brighter) */
-  --storm-color-sunken-inactive: #2c2c2e; /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 10% darker) */
+  --storm-color-sunken-inactive: #2c2c2e; /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 10% less bright) */
   --storm-color-sunken-disabled: #4b4b4e; /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-canvas-hovered: #39393d; /** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 15% brighter) */
   --storm-color-canvas-active: #3e3e41; /** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 30% brighter) */
-  --storm-color-canvas-inactive: #313135; /** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 10% darker) */
+  --storm-color-canvas-inactive: #313135; /** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 10% less bright) */
   --storm-color-canvas-disabled: #4d4d50; /** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-surface-hovered: #3f3f41; /** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 15% brighter) */
   --storm-color-surface-active: #454547; /** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 30% brighter) */
-  --storm-color-surface-inactive: #363638; /** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 10% darker) */
+  --storm-color-surface-inactive: #363638; /** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 10% less bright) */
   --storm-color-surface-disabled: #4e4e50; /** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-elevated-hovered: #424244; /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% brighter) */
   --storm-color-elevated-active: #48484a; /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% brighter) */
-  --storm-color-elevated-inactive: #37373a; /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% darker) */
+  --storm-color-elevated-inactive: #37373a; /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% less bright) */
   --storm-color-elevated-disabled: #4f4f51; /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-floating-hovered: #464749; /** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 15% brighter) */
   --storm-color-floating-active: #4d4e50; /** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 30% brighter) */
-  --storm-color-floating-inactive: #3b3c3f; /** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 10% darker) */
+  --storm-color-floating-inactive: #3b3c3f; /** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 10% less bright) */
   --storm-color-floating-disabled: #4f5052; /** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-hairline-hovered: #767679; /** Low-contrast color for borders, dividers and separators. (hovered, 40% brighter) */
   --storm-color-hairline-disabled: #555557; /** Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26)) */
@@ -1118,9 +1120,6 @@
   --storm-color-base-primary-active: var(
     --storm-color-white
   ); /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, dark contrast primitive) */
-  --storm-color-base-secondary-inactive: var(
-    --storm-color-base-primary-inactive
-  ); /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 50% darker) */
   --storm-color-brand-link: var(
     --storm-color-brand-primary
   ); /** Generated brand hyperlink text color (matches primary) */
@@ -1135,13 +1134,13 @@
   ); /** Generated low-emphasis brand background for the dark theme (active, 25% brighter) */
   --storm-color-brand-link-hovered: var(
     --storm-color-brand-primary-hovered
-  ); /** Generated brand hyperlink text color (matches primary) (hovered, 12% darker) */
+  ); /** Generated brand hyperlink text color (matches primary) (hovered, 13% less bright) */
   --storm-color-brand-link-active: var(
     --storm-color-brand-primary-active
-  ); /** Generated brand hyperlink text color (matches primary) (active, 25% darker) */
+  ); /** Generated brand hyperlink text color (matches primary) (active, 25% brighter) */
   --storm-color-brand-link-inactive: var(
     --storm-color-brand-primary-inactive
-  ); /** Generated brand hyperlink text color (matches primary) (inactive, 20% brighter) */
+  ); /** Generated brand hyperlink text color (matches primary) (inactive, 20% less bright) */
   --storm-color-brand-link-disabled: var(
     --storm-color-brand-primary-disabled
   ); /** Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26)) */
@@ -1162,7 +1161,7 @@
   ); /** Generated danger hyperlink text color (matches primary) (active, 25% brighter) */
   --storm-color-danger-link-inactive: var(
     --storm-color-danger-primary-inactive
-  ); /** Generated danger hyperlink text color (matches primary) (inactive, 20% darker) */
+  ); /** Generated danger hyperlink text color (matches primary) (inactive, 20% less bright) */
   --storm-color-danger-link-disabled: var(
     --storm-color-danger-primary-disabled
   ); /** Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26)) */
@@ -1183,13 +1182,13 @@
   ); /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (active, 25% brighter) */
   --storm-color-warning-link-hovered: var(
     --storm-color-warning-primary-hovered
-  ); /** Generated warning hyperlink text color (matches primary) (hovered, 12% darker) */
+  ); /** Generated warning hyperlink text color (matches primary) (hovered, 13% less bright) */
   --storm-color-warning-link-active: var(
     --storm-color-warning-primary-active
-  ); /** Generated warning hyperlink text color (matches primary) (active, 25% darker) */
+  ); /** Generated warning hyperlink text color (matches primary) (active, 25% brighter) */
   --storm-color-warning-link-inactive: var(
     --storm-color-warning-primary-inactive
-  ); /** Generated warning hyperlink text color (matches primary) (inactive, 20% brighter) */
+  ); /** Generated warning hyperlink text color (matches primary) (inactive, 20% less bright) */
   --storm-color-warning-link-disabled: var(
     --storm-color-warning-primary-disabled
   ); /** Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26)) */
@@ -1216,7 +1215,7 @@
   ); /** Generated info hyperlink text color (matches primary) (active, 25% brighter) */
   --storm-color-info-link-inactive: var(
     --storm-color-info-primary-inactive
-  ); /** Generated info hyperlink text color (matches primary) (inactive, 20% darker) */
+  ); /** Generated info hyperlink text color (matches primary) (inactive, 20% less bright) */
   --storm-color-info-link-disabled: var(
     --storm-color-info-primary-disabled
   ); /** Generated info hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26)) */
@@ -1243,7 +1242,7 @@
   ); /** Generated discovery hyperlink text color (matches primary) (active, 25% brighter) */
   --storm-color-discovery-link-inactive: var(
     --storm-color-discovery-primary-inactive
-  ); /** Generated discovery hyperlink text color (matches primary) (inactive, 20% darker) */
+  ); /** Generated discovery hyperlink text color (matches primary) (inactive, 20% less bright) */
   --storm-color-discovery-link-disabled: var(
     --storm-color-discovery-primary-disabled
   ); /** Generated discovery hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26)) */
@@ -1267,7 +1266,7 @@
   ); /** Generated success hyperlink text color (matches primary) (active, 25% brighter) */
   --storm-color-success-link-inactive: var(
     --storm-color-success-primary-inactive
-  ); /** Generated success hyperlink text color (matches primary) (inactive, 20% darker) */
+  ); /** Generated success hyperlink text color (matches primary) (inactive, 20% less bright) */
   --storm-color-success-link-disabled: var(
     --storm-color-success-primary-disabled
   ); /** Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26)) */
@@ -1343,33 +1342,30 @@
   --storm-color-data-pink-subtle: var(
     --storm-color-pink-9
   ); /** Low-emphasis pink data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `pink.emphasis` series. */
-  --storm-color-emphasis-hovered: var(
-    --storm-color-white
-  ); /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% brighter) */
   --storm-color-emphasis-active: var(
     --storm-color-white
   ); /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, dark contrast primitive) */
   --storm-color-emphasis-inactive: var(
     --storm-color-base-primary-inactive
-  ); /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% darker) */
+  ); /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% of the dark contrast primitive's brightness) */
   --storm-color-ink-active: var(
     --storm-color-white
   ); /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, dark contrast primitive) */
   --storm-color-ink-inactive: var(
     --storm-color-base-primary-inactive
-  ); /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 50% darker) */
+  ); /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 50% of the dark contrast primitive's brightness) */
   --storm-color-subtle-active: var(
     --storm-color-white
   ); /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, dark contrast primitive) */
   --storm-color-subtle-inactive: var(
     --storm-color-base-primary-inactive
-  ); /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker) */
+  ); /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% of the dark contrast primitive's brightness) */
   --storm-color-hairline-active: var(
     --storm-color-white
   ); /** Low-contrast color for borders, dividers and separators. (active, dark contrast primitive) */
   --storm-color-hairline-inactive: var(
     --storm-color-base-primary-inactive
-  ); /** Low-contrast color for borders, dividers and separators. (inactive, 50% darker) */
+  ); /** Low-contrast color for borders, dividers and separators. (inactive, 50% of the dark contrast primitive's brightness) */
   --storm-border-radius-container: var(
     --storm-border-radius-lg
   ); /** Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText. */

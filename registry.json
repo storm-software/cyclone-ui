@@ -4013,8 +4013,7 @@
       "registryDependencies": [
         "@cyclone-ui/body-text",
         "@cyclone-ui/heading-text",
-        "@cyclone-ui/icons",
-        "@cyclone-ui/vectors"
+        "@cyclone-ui/icons"
       ],
       "files": [
         {
