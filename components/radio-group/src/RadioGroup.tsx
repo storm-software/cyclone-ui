@@ -269,7 +269,7 @@ const RadioGroupItemContainer = createStyledHOC(
     // Another item of the group is selected.
     const inactive = !selected && Boolean(group.value);
 
-    const idleColor = hasValidationMessage ? "primary" : "outline";
+    const idleColor = hasValidationMessage ? "primary" : "hairline";
     const borderColor = disabled
       ? "primary-disabled"
       : selected
@@ -286,7 +286,7 @@ const RadioGroupItemContainer = createStyledHOC(
       ? "primary-active"
       : hasValidationMessage
         ? "primary-active"
-        : "outline-active";
+        : "hairline-active";
     const textColor = (color: "emphasis" | "ink") =>
       disabled
         ? "primary-disabled group-hover/item:primary-disabled"

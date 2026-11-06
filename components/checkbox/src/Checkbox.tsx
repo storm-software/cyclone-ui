@@ -60,6 +60,7 @@ const CheckboxGroupFrame = styled(View, {
   minWidth: 0,
   borderRadius: "checkbox",
   tabIndex: 0,
+
   variants: {
     // The v2 `borderRadius: props.circular ? 100_000 : "control"` from this
     // variant is covered by the base `borderRadius` and the `circular` variant.
@@ -190,6 +191,7 @@ export const Checkbox = createStyledHOC(
       onBlur = formControl?.onBlur,
       ...rest
     } = props;
+
     useFieldLabelDefaults(size === "sm" ? INLINE_LABEL_SM : INLINE_LABEL);
     const formOnChange = formControl?.onChange;
     const handleCheckedChange = useCallback(
@@ -199,13 +201,15 @@ export const Checkbox = createStyledHOC(
       },
       [formOnChange, onCheckedChange]
     );
+
     const hasValidationMessage = useFieldHasValidationMessage();
     const idleColor = hasValidationMessage ? "primary" : "hairline";
     const focusColor = hasValidationMessage
       ? "primary-active"
       : "hairline-active";
+
     // The full 3px ring overwhelms the small checkbox, so use the 1px ring.
-    const ring = size === "sm" ? "ring-subtle" : "ring-offset";
+    const ring = size === "sm" ? "ring-subtle" : "ring";
 
     return (
       <CheckboxGroupFrame
@@ -215,7 +219,11 @@ export const Checkbox = createStyledHOC(
         size={size}
         // A call-site base replaces every lower-tier clause for the property
         // in v3, so restate the v2 frame/variant hover and disabled press here.
-        borderColor={`${focused ? focusColor : idleColor} hover:${disabled ? "primary-disabled" : "primary-hovered"}${disabled ? " press:primary-disabled" : ""} group-hover/field:${focused ? focusColor : "primary-hovered"} focus:${focusColor} focus-visible:${focusColor}`}
+        borderColor={`${focused ? focusColor : idleColor} hover:${
+          disabled ? "primary-disabled" : "primary-hovered"
+        }${disabled ? " press:primary-disabled" : ""} group-hover/field:${
+          focused ? focusColor : "primary-hovered"
+        } focus:${focusColor} focus-visible:${focusColor}`}
         boxShadow={`focus:${ring} focus-visible:${ring}`}>
         <BaseCheckbox
           ref={forwardedRef}
@@ -245,7 +253,7 @@ export const Checkbox = createStyledHOC(
                 <MinusIcon
                   width={getSized(checkboxSizeTokens[size]) * 0.5}
                   height={getSized(checkboxSizeTokens[size]) * 0.13}
-                  backgroundColor={focused ? focusColor : "emphasis"}
+                  backgroundColor="emphasis"
                 />
               </View>
             ) : (
@@ -256,7 +264,7 @@ export const Checkbox = createStyledHOC(
                 strokeWidth={4}
                 width={getSized(checkboxSizeTokens[size]) * 0.6}
                 height={getSized(checkboxSizeTokens[size]) * 0.75}
-                color={focused ? focusColor : "emphasis"}
+                color="emphasis"
               />
             )}
           </TamaguiCheckbox.Indicator>

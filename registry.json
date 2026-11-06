@@ -23,6 +23,7 @@
         "react-native@^0.87.1"
       ],
       "registryDependencies": [
+        "@cyclone-ui/container",
         "@cyclone-ui/heading-text",
         "@cyclone-ui/icons",
         "@cyclone-ui/vectors"
@@ -292,7 +293,7 @@
       "name": "@cyclone-ui/button",
       "type": "registry:component",
       "title": "@cyclone-ui/button",
-      "description": "A pressable button with Button.Text and Button.Icon subcomponents and primary, secondary, tertiary, outlined, ghost, link and cascade hover variants. It supports sizes, circular and rounded shapes, ringed and disabled states, press ripples, and rendering as an anchor with href.",
+      "description": "A pressable button with Button.Text and Button.Icon subcomponents and the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating), whose background is drawn by a Container, plus ghost, link and cascade hover variants. It also has Container shadow styles and glass, noise and accented options. It supports sizes, circular and rounded shapes, ringed and disabled states, press ripples, and rendering as an anchor with href.",
       "dependencies": [
         "@tamagui/core@3.2.0",
         "@tamagui/helpers@3.2.0",
@@ -307,6 +308,7 @@
       ],
       "registryDependencies": [
         "@cyclone-ui/body-text",
+        "@cyclone-ui/container",
         "@cyclone-ui/ripple-animation",
         "@cyclone-ui/themeable-icon",
         "@cyclone-ui/tooltip"
@@ -735,8 +737,8 @@
       "name": "@cyclone-ui/container",
       "type": "registry:component",
       "title": "@cyclone-ui/container",
-      "description": "A themed surface Container that wraps content in a padded, rounded box. Variants include primary, secondary, tertiary, sunken, canvas, elevated (the default), floating, overlay, outlined and glass, which adds a blurred gradient background. It also has size-based padding and bordered, shadowed, circular and tight options. Use it for cards and panels.",
-      "dependencies": ["@tamagui/core@3.2.0", "@tamagui/linear-gradient@3.2.0"],
+      "description": "A themed surface Container that wraps content in a padded, rounded box. Variants include primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated (the default) and floating. It also has size-based padding, shadow styles, and circular, tight and accented options, a glass option that turns the background into translucent frosted glass, and a noise option that overlays a fine film grain. Use it for cards and panels.",
+      "dependencies": ["@tamagui/core@3.2.0"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
         "react@^19.3.1",
@@ -765,6 +767,7 @@
       ],
       "registryDependencies": [
         "@cyclone-ui/body-text",
+        "@cyclone-ui/container",
         "@cyclone-ui/icons",
         "@cyclone-ui/popover",
         "@cyclone-ui/tooltip"
@@ -802,7 +805,9 @@
       ],
       "registryDependencies": [
         "@cyclone-ui/input",
-        "@cyclone-ui/password-input"
+        "@cyclone-ui/password-input",
+        "@cyclone-ui/heading-text",
+        "@cyclone-ui/eyebrow-text"
       ],
       "files": [
         {
@@ -3829,7 +3834,11 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": ["@cyclone-ui/scroll-view", "@cyclone-ui/sheet"],
+      "registryDependencies": [
+        "@cyclone-ui/container",
+        "@cyclone-ui/scroll-view",
+        "@cyclone-ui/sheet"
+      ],
       "files": [
         {
           "path": "components/popover/src/Popover.tsx",
@@ -4269,6 +4278,7 @@
       ],
       "registryDependencies": [
         "@cyclone-ui/body-text",
+        "@cyclone-ui/container",
         "@cyclone-ui/heading-text",
         "@cyclone-ui/scroll-view"
       ],
@@ -4341,7 +4351,7 @@
       "name": "@cyclone-ui/stepper",
       "type": "registry:component",
       "title": "@cyclone-ui/stepper",
-      "description": "A multi-step wizard built on Tamagui Tabs with a vertical header list that marks completed and current steps with check icons, plus optional step numbers. Compound parts are Stepper.Header.Item, Stepper.Content.Item, Stepper.NextButton and Stepper.PreviousButton, and it tracks which steps have been visited. Use it for guided, ordered flows.",
+      "description": "A multi-step wizard built on Tamagui Tabs with a vertical or horizontal header list whose ring markers and connecting lines fill in as steps are reached, in sm or lg sizes, with optional step numbers, descriptions and custom markers. Compound parts are Stepper.Header.Item, Stepper.Marker, Stepper.Content.Item, Stepper.NextButton and Stepper.PreviousButton, and only visited steps can be selected again. Use it for guided, ordered flows.",
       "dependencies": [
         "@tamagui/animate-presence@3.2.0",
         "@tamagui/core@3.2.0",
@@ -4468,7 +4478,10 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": ["@cyclone-ui/heading-text"],
+      "registryDependencies": [
+        "@cyclone-ui/container",
+        "@cyclone-ui/heading-text"
+      ],
       "files": [
         {
           "path": "components/tabs/src/fluid.tsx",
@@ -4501,6 +4514,7 @@
         "react-native@^0.87.1"
       ],
       "registryDependencies": [
+        "@cyclone-ui/container",
         "@cyclone-ui/icons",
         "@cyclone-ui/ripple-animation"
       ],
@@ -4702,6 +4716,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
+      "registryDependencies": ["@cyclone-ui/container"],
       "files": [
         {
           "path": "components/toggle/src/Toggle.tsx",
@@ -4746,6 +4761,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
+      "registryDependencies": ["@cyclone-ui/container"],
       "files": [
         {
           "path": "components/tooltip/src/Tooltip.tsx",

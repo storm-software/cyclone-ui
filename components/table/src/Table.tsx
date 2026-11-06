@@ -91,7 +91,7 @@ const TableRow = styled(YStack, {
   render: "tr",
   flexDirection: "row",
   borderWidth: 0,
-  borderColor: "hairline focus-visible:outline-active",
+  borderColor: "hairline focus-visible:hairline-active",
   borderStyle: "solid",
   justifyContent: "flex-start",
   position: "relative",
@@ -186,7 +186,7 @@ const TableCell = styled(YStack, {
   flexShrink: 1,
   borderWidth: 0,
   borderBottomWidth: 1,
-  borderColor: "hairline focus-visible:outline-active",
+  borderColor: "hairline focus-visible:hairline-active",
   justifyContent: "flex-start",
   paddingHorizontal: "xl",
 

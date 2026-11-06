@@ -416,7 +416,7 @@ export const File = ({
       borderRadius="card"
       // The status outline overlays below stand in for the border.
       borderColor={
-        failed || showSuccess ? "transparent" : "outline hover:outline-hovered"
+        failed || showSuccess ? "transparent" : "hairline hover:hairline-hovered"
       }
       borderWidth={1}
       boxShadow="none hover:ring-offset"

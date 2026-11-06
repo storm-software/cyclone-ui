@@ -16,49 +16,96 @@
 
  ------------------------------------------------------------------- */
 
+import type { IconProps } from "@cyclone-ui/icons";
+import { Briefcase, ClipboardList, Cog, Confirm } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Text } from "@tamagui/core";
 import { XStack } from "@tamagui/stacks";
+import type { ComponentType } from "react";
+import { expect, userEvent, within } from "storybook/test";
+import type { StepperLineStyle } from "./Stepper";
 import { Stepper } from "./Stepper";
 
-const meta: Meta<typeof Stepper> = {
-  title: "Containers/Stepper",
-  component: Stepper,
-  tags: ["autodocs"],
-  render: ({ children, ...rest }: any) => (
+const steps: {
+  value: string;
+  name: string;
+  description: string;
+  icon: ComponentType<IconProps>;
+  content: string;
+}[] = [
+  {
+    value: "tab1",
+    name: "Step One",
+    description: "Pick the items to order.",
+    icon: ClipboardList,
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    value: "tab2",
+    name: "Step Two",
+    description: "Choose how they are packed.",
+    icon: Cog,
+    content:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    value: "tab3",
+    name: "Step Three",
+    description: "Enter the shipping details.",
+    icon: Briefcase,
+    content:
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  },
+  {
+    value: "tab4",
+    name: "Step Four",
+    description: "Review and place the order.",
+    icon: Confirm,
+    content:
+      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  }
+];
+
+const renderStepper =
+  ({
+    descriptions = false,
+    markers = false,
+    lineStyle
+  }: {
+    descriptions?: boolean;
+    markers?: boolean;
+    lineStyle?: (index: number) => StepperLineStyle;
+  } = {}) =>
+  ({ children: _children, ...rest }: any) => (
     <Stepper gap="xl" {...rest}>
       <Stepper.Header>
-        <Stepper.Header.Item value="tab1">Step One</Stepper.Header.Item>
-        <Stepper.Header.Item value="tab2">Step Two</Stepper.Header.Item>
-        <Stepper.Header.Item value="tab3">Step Three</Stepper.Header.Item>
-        <Stepper.Header.Item value="tab4">Step Four</Stepper.Header.Item>
+        {steps.map((step, index) => (
+          <Stepper.Header.Item
+            key={step.value}
+            value={step.value}
+            lineStyle={lineStyle?.(index)}
+            description={descriptions ? step.description : undefined}
+            marker={
+              markers
+                ? ({ color }) => (
+                    <Stepper.Marker>
+                      <step.icon color={color} size={20} />
+                    </Stepper.Marker>
+                  )
+                : undefined
+            }>
+            {step.name}
+          </Stepper.Header.Item>
+        ))}
       </Stepper.Header>
 
       <Stepper.Content>
-        <Stepper.Content.Item value="tab1">
-          <Text color="ink">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </Text>
-        </Stepper.Content.Item>
-        <Stepper.Content.Item value="tab2">
-          <Text color="ink">
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat.
-          </Text>
-        </Stepper.Content.Item>
-        <Stepper.Content.Item value="tab3">
-          <Text color="ink">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur.
-          </Text>
-        </Stepper.Content.Item>
-        <Stepper.Content.Item value="tab4">
-          <Text color="ink">
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum.
-          </Text>
-        </Stepper.Content.Item>
+        {steps.map(step => (
+          <Stepper.Content.Item key={step.value} value={step.value}>
+            <Text color="ink">{step.content}</Text>
+          </Stepper.Content.Item>
+        ))}
       </Stepper.Content>
 
       <XStack gap="xl">
@@ -66,7 +113,13 @@ const meta: Meta<typeof Stepper> = {
         <Stepper.NextButton />
       </XStack>
     </Stepper>
-  )
+  );
+
+const meta: Meta<typeof Stepper> = {
+  title: "Containers/Stepper",
+  component: Stepper,
+  tags: ["autodocs"],
+  render: renderStepper()
 } satisfies Meta<typeof Stepper>;
 
 export default meta;
@@ -93,6 +146,77 @@ export const Numbered: Story = {
     numbered: true,
     children:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  }
+};
+
+export const Small: Story = {
+  args: {
+    size: "sm"
+  }
+};
+
+export const Horizontal: Story = {
+  args: {
+    orientation: "horizontal"
+  },
+  render: renderStepper({ descriptions: true })
+};
+
+export const Descriptions: Story = {
+  args: {
+    showDescription: "always"
+  },
+  render: renderStepper({ descriptions: true })
+};
+
+export const ActiveDescription: Story = {
+  args: {
+    showDescription: "active"
+  },
+  render: renderStepper({ descriptions: true })
+};
+
+export const DashedLines: Story = {
+  render: renderStepper({ lineStyle: () => "dashed" })
+};
+
+export const DashedHorizontal: Story = {
+  args: {
+    orientation: "horizontal"
+  },
+  render: renderStepper({ lineStyle: () => "dashed" })
+};
+
+export const MixedLines: Story = {
+  render: renderStepper({
+    descriptions: true,
+    // Only the line into the last (optional) step is dashed
+    lineStyle: index => (index === steps.length - 1 ? "dashed" : "solid")
+  })
+};
+
+export const CustomMarkers: Story = {
+  render: renderStepper({ descriptions: true, markers: true })
+};
+
+export const Navigation: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const tab = (name: string) => canvas.getByRole("tab", { name });
+
+    await userEvent.click(canvas.getByRole("button", { name: /next/i }));
+    await expect(tab("Step Two")).toHaveAttribute("aria-selected", "true");
+
+    // Steps that haven't been reached are locked.
+    await expect(tab("Step Four")).toHaveAttribute("aria-disabled", "true");
+    await userEvent.click(tab("Step Four"));
+    await expect(tab("Step Two")).toHaveAttribute("aria-selected", "true");
+
+    // Visited steps can be selected again, earlier or later.
+    await userEvent.click(tab("Step One"));
+    await expect(tab("Step One")).toHaveAttribute("aria-selected", "true");
+    await userEvent.click(tab("Step Two"));
+    await expect(tab("Step Two")).toHaveAttribute("aria-selected", "true");
   }
 };
 

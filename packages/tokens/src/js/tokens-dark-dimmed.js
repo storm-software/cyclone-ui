@@ -2529,38 +2529,11 @@ module.exports = {
       },
       path: ["color", "subtle"]
     },
-    outline: {
-      key: "{color.outline}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#626364",
-      $description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
-      group: "border",
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-      isSource: true,
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.neutral.10}",
-        $description:
-          "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
-        group: "border",
-        key: "{color.outline}"
-      },
-      name: "ColorOutline",
-      attributes: {
-        category: "color",
-        type: "outline"
-      },
-      path: ["color", "outline"]
-    },
     hairline: {
       key: "{color.hairline}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#45464a",
+      $value: "#57575a",
       $description: "Low-contrast color for borders, dividers and separators.",
       group: "border",
       filePath:
@@ -2569,7 +2542,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.12}",
+        $value: "{color.neutral.11}",
         $description:
           "Low-contrast color for borders, dividers and separators.",
         group: "border",
@@ -2927,9 +2900,9 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#4d4f52",
+        $value: "#535458",
         $description:
-          "Generated base border color for secondary backgrounds (secondary, 15% brighter)",
+          "Generated base border color for secondary backgrounds (secondary, 25% brighter)",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -2942,12 +2915,12 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.30196078431372547, 0.30980392156862746, 0.3215686274509804
+              0.3254901960784314, 0.32941176470588235, 0.34509803921568627
             ],
-            hex: "#4d4f52"
+            hex: "#535458"
           },
           $description:
-            "Generated base border color for secondary backgrounds (secondary, 15% brighter)",
+            "Generated base border color for secondary backgrounds (secondary, 25% brighter)",
           semantic: true,
           key: "{color.base.border}"
         },
@@ -3609,9 +3582,9 @@ module.exports = {
         group: "brand",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#3f7568",
+        $value: "#4c7d70",
         $description:
-          "Generated brand border color for secondary backgrounds (secondary, 15% brighter)",
+          "Generated brand border color for secondary backgrounds (secondary, 25% brighter)",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -3624,12 +3597,12 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.24705882352941178, 0.4588235294117647, 0.40784313725490196
+              0.2980392156862745, 0.49019607843137253, 0.4392156862745098
             ],
-            hex: "#3f7568"
+            hex: "#4c7d70"
           },
           $description:
-            "Generated brand border color for secondary backgrounds (secondary, 15% brighter)",
+            "Generated brand border color for secondary backgrounds (secondary, 25% brighter)",
           semantic: true,
           key: "{color.brand.border}"
         },
@@ -3805,13 +3778,7 @@ module.exports = {
           group: "brand",
           $type: "color",
           colorSpace: "display-p3",
-          $value: {
-            colorSpace: "srgb",
-            components: [
-              0.2980392156862745, 0.49019607843137253, 0.4392156862745098
-            ],
-            hex: "#4c7d70"
-          },
+          $value: "{color.brand.border}",
           $description:
             "Generated low-emphasis brand background for the dark theme (hovered, 25% brighter)",
           semantic: true,
@@ -3843,7 +3810,7 @@ module.exports = {
           group: "brand",
           $type: "color",
           colorSpace: "display-p3",
-          $value: "{color.brand.secondary-hovered}",
+          $value: "{color.brand.border}",
           $description:
             "Generated low-emphasis brand background for the dark theme (active, 25% brighter)",
           semantic: true,
@@ -4126,38 +4093,6 @@ module.exports = {
         },
         path: ["color", "danger", "link"]
       },
-      outline: {
-        key: "{color.danger.outline}",
-        theme: "danger",
-        group: "danger",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#b15e73",
-        $description:
-          "Generated danger border and divider color (matches primary)",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "danger",
-          group: "danger",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: "{color.danger.primary}",
-          $description:
-            "Generated danger border and divider color (matches primary)",
-          semantic: true,
-          key: "{color.danger.outline}"
-        },
-        name: "ColorDangerOutline",
-        attributes: {
-          category: "color",
-          type: "danger",
-          item: "outline"
-        },
-        path: ["color", "danger", "outline"]
-      },
       "on-primary": {
         key: "{color.danger.on-primary}",
         theme: "danger",
@@ -4311,9 +4246,9 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#7b384b",
+        $value: "#814252",
         $description:
-          "Generated danger border color for secondary backgrounds (secondary, 15% brighter)",
+          "Generated danger border color for secondary backgrounds (secondary, 25% brighter)",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -4326,12 +4261,12 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.4823529411764706, 0.2196078431372549, 0.29411764705882354
+              0.5058823529411764, 0.25882352941176473, 0.3215686274509804
             ],
-            hex: "#7b384b"
+            hex: "#814252"
           },
           $description:
-            "Generated danger border color for secondary backgrounds (secondary, 15% brighter)",
+            "Generated danger border color for secondary backgrounds (secondary, 25% brighter)",
           semantic: true,
           key: "{color.danger.border}"
         },
@@ -4507,13 +4442,7 @@ module.exports = {
           group: "danger",
           $type: "color",
           colorSpace: "display-p3",
-          $value: {
-            colorSpace: "srgb",
-            components: [
-              0.5058823529411764, 0.25882352941176473, 0.3215686274509804
-            ],
-            hex: "#814252"
-          },
+          $value: "{color.danger.border}",
           $description:
             "Generated low-emphasis danger background for the dark theme (hovered, 25% brighter)",
           semantic: true,
@@ -4545,7 +4474,7 @@ module.exports = {
           group: "danger",
           $type: "color",
           colorSpace: "display-p3",
-          $value: "{color.danger.secondary-hovered}",
+          $value: "{color.danger.border}",
           $description:
             "Generated low-emphasis danger background for the dark theme (active, 25% brighter)",
           semantic: true,
@@ -4760,140 +4689,6 @@ module.exports = {
           item: "link-disabled"
         },
         path: ["color", "danger", "link-disabled"]
-      },
-      "outline-hovered": {
-        key: "{color.danger.outline-hovered}",
-        theme: "danger",
-        group: "danger",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#dc889f",
-        $description:
-          "Generated danger border and divider color (matches primary) (hovered, 40% brighter)",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "danger",
-          group: "danger",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: {
-            colorSpace: "srgb",
-            components: [
-              0.8627450980392157, 0.5333333333333333, 0.6235294117647059
-            ],
-            hex: "#dc889f"
-          },
-          $description:
-            "Generated danger border and divider color (matches primary) (hovered, 40% brighter)",
-          semantic: true,
-          key: "{color.danger.outline-hovered}"
-        },
-        name: "ColorDangerOutlineHovered",
-        attributes: {
-          category: "color",
-          type: "danger",
-          item: "outline-hovered"
-        },
-        path: ["color", "danger", "outline-hovered"]
-      },
-      "outline-active": {
-        key: "{color.danger.outline-active}",
-        theme: "danger",
-        group: "danger",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#dc889f",
-        $description:
-          "Generated danger border and divider color (matches primary) (active, 40% brighter)",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "danger",
-          group: "danger",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: "{color.danger.outline-hovered}",
-          $description:
-            "Generated danger border and divider color (matches primary) (active, 40% brighter)",
-          semantic: true,
-          key: "{color.danger.outline-active}"
-        },
-        name: "ColorDangerOutlineActive",
-        attributes: {
-          category: "color",
-          type: "danger",
-          item: "outline-active"
-        },
-        path: ["color", "danger", "outline-active"]
-      },
-      "outline-inactive": {
-        key: "{color.danger.outline-inactive}",
-        theme: "danger",
-        group: "danger",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#963859",
-        $description:
-          "Generated danger border and divider color (matches primary) (inactive, 20% darker)",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "danger",
-          group: "danger",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: "{color.danger.primary-inactive}",
-          $description:
-            "Generated danger border and divider color (matches primary) (inactive, 20% darker)",
-          semantic: true,
-          key: "{color.danger.outline-inactive}"
-        },
-        name: "ColorDangerOutlineInactive",
-        attributes: {
-          category: "color",
-          type: "danger",
-          item: "outline-inactive"
-        },
-        path: ["color", "danger", "outline-inactive"]
-      },
-      "outline-disabled": {
-        key: "{color.danger.outline-disabled}",
-        theme: "danger",
-        group: "danger",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#745b61",
-        $description:
-          "Generated danger border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "danger",
-          group: "danger",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: "{color.danger.primary-disabled}",
-          $description:
-            "Generated danger border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-          semantic: true,
-          key: "{color.danger.outline-disabled}"
-        },
-        name: "ColorDangerOutlineDisabled",
-        attributes: {
-          category: "color",
-          type: "danger",
-          item: "outline-disabled"
-        },
-        path: ["color", "danger", "outline-disabled"]
       }
     },
     warning: {
@@ -4992,38 +4787,6 @@ module.exports = {
           item: "link"
         },
         path: ["color", "warning", "link"]
-      },
-      outline: {
-        key: "{color.warning.outline}",
-        theme: "warning",
-        group: "warning",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#d0ad6d",
-        $description:
-          "Generated warning border and divider color (matches primary)",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "warning",
-          group: "warning",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: "{color.warning.primary}",
-          $description:
-            "Generated warning border and divider color (matches primary)",
-          semantic: true,
-          key: "{color.warning.outline}"
-        },
-        name: "ColorWarningOutline",
-        attributes: {
-          category: "color",
-          type: "warning",
-          item: "outline"
-        },
-        path: ["color", "warning", "outline"]
       },
       "on-primary": {
         key: "{color.warning.on-primary}",
@@ -5134,9 +4897,9 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#a2875b",
+        $value: "#b19467",
         $description:
-          "Generated warning border color for secondary backgrounds (secondary, 15% brighter)",
+          "Generated warning border color for secondary backgrounds (secondary, 25% brighter)",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -5149,12 +4912,12 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.6352941176470588, 0.5294117647058824, 0.3568627450980392
+              0.6941176470588235, 0.5803921568627451, 0.403921568627451
             ],
-            hex: "#a2875b"
+            hex: "#b19467"
           },
           $description:
-            "Generated warning border color for secondary backgrounds (secondary, 15% brighter)",
+            "Generated warning border color for secondary backgrounds (secondary, 25% brighter)",
           semantic: true,
           key: "{color.warning.border}"
         },
@@ -5330,13 +5093,7 @@ module.exports = {
           group: "warning",
           $type: "color",
           colorSpace: "display-p3",
-          $value: {
-            colorSpace: "srgb",
-            components: [
-              0.6941176470588235, 0.5803921568627451, 0.403921568627451
-            ],
-            hex: "#b19467"
-          },
+          $value: "{color.warning.border}",
           $description:
             "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 25% brighter)",
           semantic: true,
@@ -5368,7 +5125,7 @@ module.exports = {
           group: "warning",
           $type: "color",
           colorSpace: "display-p3",
-          $value: "{color.warning.secondary-hovered}",
+          $value: "{color.warning.border}",
           $description:
             "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (active, 25% brighter)",
           semantic: true,
@@ -5585,140 +5342,6 @@ module.exports = {
           item: "link-disabled"
         },
         path: ["color", "warning", "link-disabled"]
-      },
-      "outline-hovered": {
-        key: "{color.warning.outline-hovered}",
-        theme: "warning",
-        group: "warning",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#876527",
-        $description:
-          "Generated warning border and divider color (matches primary) (hovered, 40% darker)",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "warning",
-          group: "warning",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: {
-            colorSpace: "srgb",
-            components: [
-              0.5294117647058824, 0.396078431372549, 0.15294117647058825
-            ],
-            hex: "#876527"
-          },
-          $description:
-            "Generated warning border and divider color (matches primary) (hovered, 40% darker)",
-          semantic: true,
-          key: "{color.warning.outline-hovered}"
-        },
-        name: "ColorWarningOutlineHovered",
-        attributes: {
-          category: "color",
-          type: "warning",
-          item: "outline-hovered"
-        },
-        path: ["color", "warning", "outline-hovered"]
-      },
-      "outline-active": {
-        key: "{color.warning.outline-active}",
-        theme: "warning",
-        group: "warning",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#876527",
-        $description:
-          "Generated warning border and divider color (matches primary) (active, 40% darker)",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "warning",
-          group: "warning",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: "{color.warning.outline-hovered}",
-          $description:
-            "Generated warning border and divider color (matches primary) (active, 40% darker)",
-          semantic: true,
-          key: "{color.warning.outline-active}"
-        },
-        name: "ColorWarningOutlineActive",
-        attributes: {
-          category: "color",
-          type: "warning",
-          item: "outline-active"
-        },
-        path: ["color", "warning", "outline-active"]
-      },
-      "outline-inactive": {
-        key: "{color.warning.outline-inactive}",
-        theme: "warning",
-        group: "warning",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#ddd589",
-        $description:
-          "Generated warning border and divider color (matches primary) (inactive, 20% brighter)",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "warning",
-          group: "warning",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: "{color.warning.primary-inactive}",
-          $description:
-            "Generated warning border and divider color (matches primary) (inactive, 20% brighter)",
-          semantic: true,
-          key: "{color.warning.outline-inactive}"
-        },
-        name: "ColorWarningOutlineInactive",
-        attributes: {
-          category: "color",
-          type: "warning",
-          item: "outline-inactive"
-        },
-        path: ["color", "warning", "outline-inactive"]
-      },
-      "outline-disabled": {
-        key: "{color.warning.outline-disabled}",
-        theme: "warning",
-        group: "warning",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#7d7465",
-        $description:
-          "Generated warning border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "warning",
-          group: "warning",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: "{color.warning.primary-disabled}",
-          $description:
-            "Generated warning border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-          semantic: true,
-          key: "{color.warning.outline-disabled}"
-        },
-        name: "ColorWarningOutlineDisabled",
-        attributes: {
-          category: "color",
-          type: "warning",
-          item: "outline-disabled"
-        },
-        path: ["color", "warning", "outline-disabled"]
       }
     },
     info: {
@@ -5815,38 +5438,6 @@ module.exports = {
           item: "link"
         },
         path: ["color", "info", "link"]
-      },
-      outline: {
-        key: "{color.info.outline}",
-        theme: "info",
-        group: "info",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#638cd2",
-        $description:
-          "Generated info border and divider color (matches primary)",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "info",
-          group: "info",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: "{color.info.primary}",
-          $description:
-            "Generated info border and divider color (matches primary)",
-          semantic: true,
-          key: "{color.info.outline}"
-        },
-        name: "ColorInfoOutline",
-        attributes: {
-          category: "color",
-          type: "info",
-          item: "outline"
-        },
-        path: ["color", "info", "outline"]
       },
       "on-primary": {
         key: "{color.info.on-primary}",
@@ -5957,9 +5548,9 @@ module.exports = {
         group: "info",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#4a638f",
+        $value: "#536c97",
         $description:
-          "Generated info border color for secondary backgrounds (secondary, 15% brighter)",
+          "Generated info border color for secondary backgrounds (secondary, 25% brighter)",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -5972,12 +5563,12 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.2901960784313726, 0.38823529411764707, 0.5607843137254902
+              0.3254901960784314, 0.4235294117647059, 0.592156862745098
             ],
-            hex: "#4a638f"
+            hex: "#536c97"
           },
           $description:
-            "Generated info border color for secondary backgrounds (secondary, 15% brighter)",
+            "Generated info border color for secondary backgrounds (secondary, 25% brighter)",
           semantic: true,
           key: "{color.info.border}"
         },
@@ -6153,13 +5744,7 @@ module.exports = {
           group: "info",
           $type: "color",
           colorSpace: "display-p3",
-          $value: {
-            colorSpace: "srgb",
-            components: [
-              0.3254901960784314, 0.4235294117647059, 0.592156862745098
-            ],
-            hex: "#536c97"
-          },
+          $value: "{color.info.border}",
           $description:
             "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% brighter)",
           semantic: true,
@@ -6191,7 +5776,7 @@ module.exports = {
           group: "info",
           $type: "color",
           colorSpace: "display-p3",
-          $value: "{color.info.secondary-hovered}",
+          $value: "{color.info.border}",
           $description:
             "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% brighter)",
           semantic: true,
@@ -6408,140 +5993,6 @@ module.exports = {
           item: "link-disabled"
         },
         path: ["color", "info", "link-disabled"]
-      },
-      "outline-hovered": {
-        key: "{color.info.outline-hovered}",
-        theme: "info",
-        group: "info",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#90c9df",
-        $description:
-          "Generated info border and divider color (matches primary) (hovered, 40% brighter)",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "info",
-          group: "info",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: {
-            colorSpace: "srgb",
-            components: [
-              0.5647058823529412, 0.788235294117647, 0.8745098039215686
-            ],
-            hex: "#90c9df"
-          },
-          $description:
-            "Generated info border and divider color (matches primary) (hovered, 40% brighter)",
-          semantic: true,
-          key: "{color.info.outline-hovered}"
-        },
-        name: "ColorInfoOutlineHovered",
-        attributes: {
-          category: "color",
-          type: "info",
-          item: "outline-hovered"
-        },
-        path: ["color", "info", "outline-hovered"]
-      },
-      "outline-active": {
-        key: "{color.info.outline-active}",
-        theme: "info",
-        group: "info",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#90c9df",
-        $description:
-          "Generated info border and divider color (matches primary) (active, 40% brighter)",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "info",
-          group: "info",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: "{color.info.outline-hovered}",
-          $description:
-            "Generated info border and divider color (matches primary) (active, 40% brighter)",
-          semantic: true,
-          key: "{color.info.outline-active}"
-        },
-        name: "ColorInfoOutlineActive",
-        attributes: {
-          category: "color",
-          type: "info",
-          item: "outline-active"
-        },
-        path: ["color", "info", "outline-active"]
-      },
-      "outline-inactive": {
-        key: "{color.info.outline-inactive}",
-        theme: "info",
-        group: "info",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#4d70ac",
-        $description:
-          "Generated info border and divider color (matches primary) (inactive, 20% darker)",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "info",
-          group: "info",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: "{color.info.primary-inactive}",
-          $description:
-            "Generated info border and divider color (matches primary) (inactive, 20% darker)",
-          semantic: true,
-          key: "{color.info.outline-inactive}"
-        },
-        name: "ColorInfoOutlineInactive",
-        attributes: {
-          category: "color",
-          type: "info",
-          item: "outline-inactive"
-        },
-        path: ["color", "info", "outline-inactive"]
-      },
-      "outline-disabled": {
-        key: "{color.info.outline-disabled}",
-        theme: "info",
-        group: "info",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#5e697e",
-        $description:
-          "Generated info border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "info",
-          group: "info",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: "{color.info.primary-disabled}",
-          $description:
-            "Generated info border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-          semantic: true,
-          key: "{color.info.outline-disabled}"
-        },
-        name: "ColorInfoOutlineDisabled",
-        attributes: {
-          category: "color",
-          type: "info",
-          item: "outline-disabled"
-        },
-        path: ["color", "info", "outline-disabled"]
       }
     },
     discovery: {
@@ -6640,38 +6091,6 @@ module.exports = {
           item: "link"
         },
         path: ["color", "discovery", "link"]
-      },
-      outline: {
-        key: "{color.discovery.outline}",
-        theme: "discovery",
-        group: "discovery",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#8e7dbb",
-        $description:
-          "Generated discovery border and divider color (matches primary)",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "discovery",
-          group: "discovery",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: "{color.discovery.primary}",
-          $description:
-            "Generated discovery border and divider color (matches primary)",
-          semantic: true,
-          key: "{color.discovery.outline}"
-        },
-        name: "ColorDiscoveryOutline",
-        attributes: {
-          category: "color",
-          type: "discovery",
-          item: "outline"
-        },
-        path: ["color", "discovery", "outline"]
       },
       "on-primary": {
         key: "{color.discovery.on-primary}",
@@ -6782,9 +6201,9 @@ module.exports = {
         group: "discovery",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#554c72",
+        $value: "#5c5378",
         $description:
-          "Generated discovery border color for secondary backgrounds (secondary, 15% brighter)",
+          "Generated discovery border color for secondary backgrounds (secondary, 25% brighter)",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -6797,12 +6216,12 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.3333333333333333, 0.2980392156862745, 0.4470588235294118
+              0.3607843137254902, 0.3254901960784314, 0.47058823529411764
             ],
-            hex: "#554c72"
+            hex: "#5c5378"
           },
           $description:
-            "Generated discovery border color for secondary backgrounds (secondary, 15% brighter)",
+            "Generated discovery border color for secondary backgrounds (secondary, 25% brighter)",
           semantic: true,
           key: "{color.discovery.border}"
         },
@@ -6976,13 +6395,7 @@ module.exports = {
           group: "discovery",
           $type: "color",
           colorSpace: "display-p3",
-          $value: {
-            colorSpace: "srgb",
-            components: [
-              0.3607843137254902, 0.3254901960784314, 0.47058823529411764
-            ],
-            hex: "#5c5378"
-          },
+          $value: "{color.discovery.border}",
           $description:
             "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% brighter)",
           semantic: true,
@@ -7014,7 +6427,7 @@ module.exports = {
           group: "discovery",
           $type: "color",
           colorSpace: "display-p3",
-          $value: "{color.discovery.secondary-hovered}",
+          $value: "{color.discovery.border}",
           $description:
             "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 25% brighter)",
           semantic: true,
@@ -7231,140 +6644,6 @@ module.exports = {
           item: "link-disabled"
         },
         path: ["color", "discovery", "link-disabled"]
-      },
-      "outline-hovered": {
-        key: "{color.discovery.outline-hovered}",
-        theme: "discovery",
-        group: "discovery",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#c4a6e5",
-        $description:
-          "Generated discovery border and divider color (matches primary) (hovered, 40% brighter)",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "discovery",
-          group: "discovery",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: {
-            colorSpace: "srgb",
-            components: [
-              0.7686274509803922, 0.6509803921568628, 0.8980392156862745
-            ],
-            hex: "#c4a6e5"
-          },
-          $description:
-            "Generated discovery border and divider color (matches primary) (hovered, 40% brighter)",
-          semantic: true,
-          key: "{color.discovery.outline-hovered}"
-        },
-        name: "ColorDiscoveryOutlineHovered",
-        attributes: {
-          category: "color",
-          type: "discovery",
-          item: "outline-hovered"
-        },
-        path: ["color", "discovery", "outline-hovered"]
-      },
-      "outline-active": {
-        key: "{color.discovery.outline-active}",
-        theme: "discovery",
-        group: "discovery",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#c4a6e5",
-        $description:
-          "Generated discovery border and divider color (matches primary) (active, 40% brighter)",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "discovery",
-          group: "discovery",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: "{color.discovery.outline-hovered}",
-          $description:
-            "Generated discovery border and divider color (matches primary) (active, 40% brighter)",
-          semantic: true,
-          key: "{color.discovery.outline-active}"
-        },
-        name: "ColorDiscoveryOutlineActive",
-        attributes: {
-          category: "color",
-          type: "discovery",
-          item: "outline-active"
-        },
-        path: ["color", "discovery", "outline-active"]
-      },
-      "outline-inactive": {
-        key: "{color.discovery.outline-inactive}",
-        theme: "discovery",
-        group: "discovery",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#75669a",
-        $description:
-          "Generated discovery border and divider color (matches primary) (inactive, 20% darker)",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "discovery",
-          group: "discovery",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: "{color.discovery.primary-inactive}",
-          $description:
-            "Generated discovery border and divider color (matches primary) (inactive, 20% darker)",
-          semantic: true,
-          key: "{color.discovery.outline-inactive}"
-        },
-        name: "ColorDiscoveryOutlineInactive",
-        attributes: {
-          category: "color",
-          type: "discovery",
-          item: "outline-inactive"
-        },
-        path: ["color", "discovery", "outline-inactive"]
-      },
-      "outline-disabled": {
-        key: "{color.discovery.outline-disabled}",
-        theme: "discovery",
-        group: "discovery",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#696577",
-        $description:
-          "Generated discovery border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "discovery",
-          group: "discovery",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: "{color.discovery.primary-disabled}",
-          $description:
-            "Generated discovery border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-          semantic: true,
-          key: "{color.discovery.outline-disabled}"
-        },
-        name: "ColorDiscoveryOutlineDisabled",
-        attributes: {
-          category: "color",
-          type: "discovery",
-          item: "outline-disabled"
-        },
-        path: ["color", "discovery", "outline-disabled"]
       }
     },
     success: {
@@ -7431,38 +6710,6 @@ module.exports = {
           item: "link"
         },
         path: ["color", "success", "link"]
-      },
-      outline: {
-        key: "{color.success.outline}",
-        theme: "success",
-        group: "success",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#60a88a",
-        $description:
-          "Generated success border and divider color (matches primary)",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "success",
-          group: "success",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: "{color.success.primary}",
-          $description:
-            "Generated success border and divider color (matches primary)",
-          semantic: true,
-          key: "{color.success.outline}"
-        },
-        name: "ColorSuccessOutline",
-        attributes: {
-          category: "color",
-          type: "success",
-          item: "outline"
-        },
-        path: ["color", "success", "outline"]
       },
       "on-primary": {
         key: "{color.success.on-primary}",
@@ -7611,9 +6858,9 @@ module.exports = {
         group: "success",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#3f765f",
+        $value: "#4c7d68",
         $description:
-          "Generated success border color for secondary backgrounds (secondary, 15% brighter)",
+          "Generated success border color for secondary backgrounds (secondary, 25% brighter)",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -7626,12 +6873,12 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.24705882352941178, 0.4627450980392157, 0.37254901960784315
+              0.2980392156862745, 0.49019607843137253, 0.40784313725490196
             ],
-            hex: "#3f765f"
+            hex: "#4c7d68"
           },
           $description:
-            "Generated success border color for secondary backgrounds (secondary, 15% brighter)",
+            "Generated success border color for secondary backgrounds (secondary, 25% brighter)",
           semantic: true,
           key: "{color.success.border}"
         },
@@ -7807,13 +7054,7 @@ module.exports = {
           group: "success",
           $type: "color",
           colorSpace: "display-p3",
-          $value: {
-            colorSpace: "srgb",
-            components: [
-              0.2980392156862745, 0.49019607843137253, 0.40784313725490196
-            ],
-            hex: "#4c7d68"
-          },
+          $value: "{color.success.border}",
           $description:
             "Generated low-emphasis success background for the dark theme (hovered, 25% brighter)",
           semantic: true,
@@ -7845,7 +7086,7 @@ module.exports = {
           group: "success",
           $type: "color",
           colorSpace: "display-p3",
-          $value: "{color.success.secondary-hovered}",
+          $value: "{color.success.border}",
           $description:
             "Generated low-emphasis success background for the dark theme (active, 25% brighter)",
           semantic: true,
@@ -8062,140 +7303,6 @@ module.exports = {
           item: "link-disabled"
         },
         path: ["color", "success", "link-disabled"]
-      },
-      "outline-hovered": {
-        key: "{color.success.outline-hovered}",
-        theme: "success",
-        group: "success",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#91dfc7",
-        $description:
-          "Generated success border and divider color (matches primary) (hovered, 40% brighter)",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "success",
-          group: "success",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: {
-            colorSpace: "srgb",
-            components: [
-              0.5686274509803921, 0.8745098039215686, 0.7803921568627451
-            ],
-            hex: "#91dfc7"
-          },
-          $description:
-            "Generated success border and divider color (matches primary) (hovered, 40% brighter)",
-          semantic: true,
-          key: "{color.success.outline-hovered}"
-        },
-        name: "ColorSuccessOutlineHovered",
-        attributes: {
-          category: "color",
-          type: "success",
-          item: "outline-hovered"
-        },
-        path: ["color", "success", "outline-hovered"]
-      },
-      "outline-active": {
-        key: "{color.success.outline-active}",
-        theme: "success",
-        group: "success",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#91dfc7",
-        $description:
-          "Generated success border and divider color (matches primary) (active, 40% brighter)",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "success",
-          group: "success",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: "{color.success.outline-hovered}",
-          $description:
-            "Generated success border and divider color (matches primary) (active, 40% brighter)",
-          semantic: true,
-          key: "{color.success.outline-active}"
-        },
-        name: "ColorSuccessOutlineActive",
-        attributes: {
-          category: "color",
-          type: "success",
-          item: "outline-active"
-        },
-        path: ["color", "success", "outline-active"]
-      },
-      "outline-inactive": {
-        key: "{color.success.outline-inactive}",
-        theme: "success",
-        group: "success",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#298e6c",
-        $description:
-          "Generated success border and divider color (matches primary) (inactive, 20% darker)",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "success",
-          group: "success",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: "{color.success.primary-inactive}",
-          $description:
-            "Generated success border and divider color (matches primary) (inactive, 20% darker)",
-          semantic: true,
-          key: "{color.success.outline-inactive}"
-        },
-        name: "ColorSuccessOutlineInactive",
-        attributes: {
-          category: "color",
-          type: "success",
-          item: "outline-inactive"
-        },
-        path: ["color", "success", "outline-inactive"]
-      },
-      "outline-disabled": {
-        key: "{color.success.outline-disabled}",
-        theme: "success",
-        group: "success",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#5d736a",
-        $description:
-          "Generated success border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "success",
-          group: "success",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: "{color.success.primary-disabled}",
-          $description:
-            "Generated success border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-          semantic: true,
-          key: "{color.success.outline-disabled}"
-        },
-        name: "ColorSuccessOutlineDisabled",
-        attributes: {
-          category: "color",
-          type: "success",
-          item: "outline-disabled"
-        },
-        path: ["color", "success", "outline-disabled"]
       }
     },
     shadow: {
@@ -9640,9 +8747,9 @@ module.exports = {
       key: "{color.sunken-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#3b3b3d",
+      $value: "#464649",
       $description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -9653,12 +8760,12 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.23137254901960785, 0.23137254901960785, 0.23921568627450981
+            0.27450980392156865, 0.27450980392156865, 0.28627450980392155
           ],
-          hex: "#3b3b3d"
+          hex: "#464649"
         },
         $description:
-          "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+          "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
         group: "background",
         key: "{color.sunken-disabled}"
       },
@@ -9772,9 +8879,9 @@ module.exports = {
       key: "{color.canvas-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#3f3f42",
+      $value: "#49494b",
       $description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -9785,12 +8892,12 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.24705882352941178, 0.24705882352941178, 0.25882352941176473
+            0.28627450980392155, 0.28627450980392155, 0.29411764705882354
           ],
-          hex: "#3f3f42"
+          hex: "#49494b"
         },
         $description:
-          "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+          "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
         group: "background",
         key: "{color.canvas-disabled}"
       },
@@ -9904,9 +9011,9 @@ module.exports = {
       key: "{color.surface-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#434345",
+      $value: "#4b4b4d",
       $description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -9914,9 +9021,15 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.surface-hovered}",
+        $value: {
+          colorSpace: "srgb",
+          components: [
+            0.29411764705882354, 0.29411764705882354, 0.30196078431372547
+          ],
+          hex: "#4b4b4d"
+        },
         $description:
-          "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+          "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
         group: "background",
         key: "{color.surface-disabled}"
       },
@@ -10030,9 +9143,9 @@ module.exports = {
       key: "{color.elevated-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#444446",
+      $value: "#4c4c4e",
       $description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -10043,12 +9156,12 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.26666666666666666, 0.26666666666666666, 0.27450980392156865
+            0.2980392156862745, 0.2980392156862745, 0.3058823529411765
           ],
-          hex: "#444446"
+          hex: "#4c4c4e"
         },
         $description:
-          "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+          "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
         group: "background",
         key: "{color.elevated-disabled}"
       },
@@ -10162,9 +9275,9 @@ module.exports = {
       key: "{color.floating-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#464749",
+      $value: "#4d4d50",
       $description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -10175,12 +9288,12 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.27450980392156865, 0.2784313725490196, 0.28627450980392155
+            0.30196078431372547, 0.30196078431372547, 0.3137254901960784
           ],
-          hex: "#464749"
+          hex: "#4d4d50"
         },
         $description:
-          "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+          "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
         group: "background",
         key: "{color.floating-disabled}"
       },
@@ -10191,13 +9304,13 @@ module.exports = {
       },
       path: ["color", "floating-disabled"]
     },
-    "outline-hovered": {
-      key: "{color.outline-hovered}",
+    "hairline-hovered": {
+      key: "{color.hairline-hovered}",
       $type: "color",
       colorSpace: "display-p3",
       $value: "#d9d9d9",
       $description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, dark contrast primitive)",
+        "Low-contrast color for borders, dividers and separators. (hovered, dark contrast primitive)",
       group: "border",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -10207,24 +9320,24 @@ module.exports = {
         colorSpace: "display-p3",
         $value: "{color.white}",
         $description:
-          "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, dark contrast primitive)",
+          "Low-contrast color for borders, dividers and separators. (hovered, dark contrast primitive)",
         group: "border",
-        key: "{color.outline-hovered}"
+        key: "{color.hairline-hovered}"
       },
-      name: "ColorOutlineHovered",
+      name: "ColorHairlineHovered",
       attributes: {
         category: "color",
-        type: "outline-hovered"
+        type: "hairline-hovered"
       },
-      path: ["color", "outline-hovered"]
+      path: ["color", "hairline-hovered"]
     },
-    "outline-active": {
-      key: "{color.outline-active}",
+    "hairline-active": {
+      key: "{color.hairline-active}",
       $type: "color",
       colorSpace: "display-p3",
       $value: "#d9d9d9",
       $description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, dark contrast primitive)",
+        "Low-contrast color for borders, dividers and separators. (active, dark contrast primitive)",
       group: "border",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -10234,24 +9347,24 @@ module.exports = {
         colorSpace: "display-p3",
         $value: "{color.white}",
         $description:
-          "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, dark contrast primitive)",
+          "Low-contrast color for borders, dividers and separators. (active, dark contrast primitive)",
         group: "border",
-        key: "{color.outline-active}"
+        key: "{color.hairline-active}"
       },
-      name: "ColorOutlineActive",
+      name: "ColorHairlineActive",
       attributes: {
         category: "color",
-        type: "outline-active"
+        type: "hairline-active"
       },
-      path: ["color", "outline-active"]
+      path: ["color", "hairline-active"]
     },
-    "outline-inactive": {
-      key: "{color.outline-inactive}",
+    "hairline-inactive": {
+      key: "{color.hairline-inactive}",
       $type: "color",
       colorSpace: "display-p3",
       $value: "#6c6c6c",
       $description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 50% darker)",
+        "Low-contrast color for borders, dividers and separators. (inactive, 50% darker)",
       group: "border",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -10261,24 +9374,24 @@ module.exports = {
         colorSpace: "display-p3",
         $value: "{color.base.primary-inactive}",
         $description:
-          "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 50% darker)",
+          "Low-contrast color for borders, dividers and separators. (inactive, 50% darker)",
         group: "border",
-        key: "{color.outline-inactive}"
+        key: "{color.hairline-inactive}"
       },
-      name: "ColorOutlineInactive",
+      name: "ColorHairlineInactive",
       attributes: {
         category: "color",
-        type: "outline-inactive"
+        type: "hairline-inactive"
       },
-      path: ["color", "outline-inactive"]
+      path: ["color", "hairline-inactive"]
     },
-    "outline-disabled": {
-      key: "{color.outline-disabled}",
+    "hairline-disabled": {
+      key: "{color.hairline-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#595a5c",
+      $value: "#565658",
       $description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       group: "border",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -10289,21 +9402,21 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.34901960784313724, 0.35294117647058826, 0.3607843137254902
+            0.33725490196078434, 0.33725490196078434, 0.34509803921568627
           ],
-          hex: "#595a5c"
+          hex: "#565658"
         },
         $description:
-          "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+          "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         group: "border",
-        key: "{color.outline-disabled}"
+        key: "{color.hairline-disabled}"
       },
-      name: "ColorOutlineDisabled",
+      name: "ColorHairlineDisabled",
       attributes: {
         category: "color",
-        type: "outline-disabled"
+        type: "hairline-disabled"
       },
-      path: ["color", "outline-disabled"]
+      path: ["color", "hairline-disabled"]
     }
   },
   size: {

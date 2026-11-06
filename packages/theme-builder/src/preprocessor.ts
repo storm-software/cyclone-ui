@@ -525,7 +525,7 @@ const BACKGROUND_COLOR_STATE_INACTIVE: ColorStateVariant = {
 
 const BACKGROUND_COLOR_STATE_DISABLED: ColorStateVariant = {
   ...COLOR_STATE_DISABLED,
-  opacity: 0.675,
+  opacity: 0.375,
   saturation: 0.925
 };
 
@@ -559,7 +559,7 @@ function themeColorGroups(
   );
 }
 
-const OUTLINE_COLOR_STATE_VARIANTS: ColorStateVariants = {
+const HAIRLINE_COLOR_STATE_VARIANTS: ColorStateVariants = {
   lowSaturation: [
     INCREASED_LOW_SATURATION_COLOR_STATE_ACTIVE,
     LOW_SATURATION_COLOR_STATE_INACTIVE,
@@ -579,8 +579,7 @@ const OUTLINE_COLOR_STATE_VARIANTS: ColorStateVariants = {
 const THEME_COLOR_STATE_VARIANTS: Record<string, ColorStateVariants> = {
   primary: DEFAULT_COLOR_STATE_VARIANTS,
   secondary: SUBTLE_COLOR_STATE_VARIANTS,
-  link: DEFAULT_COLOR_STATE_VARIANTS,
-  outline: OUTLINE_COLOR_STATE_VARIANTS
+  link: DEFAULT_COLOR_STATE_VARIANTS
 };
 
 /**
@@ -617,7 +616,7 @@ const COLOR_STATE_TOKEN_GROUPS: Record<string, ColorStateVariants> = {
 
 /** Standalone color tokens that receive state variants. */
 const COLOR_STATE_VARIANTS: Record<string, ColorStateVariants> = {
-  outline: OUTLINE_COLOR_STATE_VARIANTS
+  hairline: HAIRLINE_COLOR_STATE_VARIANTS
 };
 
 /** OKLCH chroma below which a color uses the low-saturation state variants. */
@@ -633,7 +632,7 @@ const SUBTLE_COLOR_GAMUT_SEARCH_ITERATIONS = 32;
 const BACKDROP_BRIGHTNESS = 0.375;
 const BACKDROP_OPACITY = 0.15;
 /** OKLCH lightness step for the rim around `secondary` backgrounds (brighter in dark, darker in light themes). */
-const BORDER_LIGHTNESS_STEP = 0.15;
+const BORDER_LIGHTNESS_STEP = 0.25;
 /** OKLCH lightness shift for hovered colors already near the contrast primitive. */
 const CONTRAST_SIDE_ACTIVE_LIGHTNESS_SHIFT = 0.25;
 
@@ -1342,12 +1341,11 @@ function addColorStateTokens(
 /**
  * Fill in a theme color group (`color.danger`, …): generate a missing
  * `secondary` low-emphasis background from `primary` and the parent theme,
- * missing `link` color and, for `status` groups, `outline` color (both
- * aliasing `primary`), `on-primary` /
+ * a missing `link` color (aliasing `primary`), `on-primary` /
  * `on-secondary` text colors, a `backdrop` overlay color (`primary` 30% darker
  * at 75% opacity, no state variants), a `border` color (`secondary` 15% brighter, or
  * 15% darker in light themes, no state variants), and state variants for `primary`, `secondary`,
- * `link` and `outline`. Every token in the group gets the group name as
+ * and `link`. Every token in the group gets the group name as
  * its `theme` and `group`, so Tamagui places it in that child theme (e.g.
  * `danger.on-primary` → `onPrimary` in the `danger` theme).
  */
@@ -1371,15 +1369,6 @@ function addThemeColorGroupTokens(
     $value: `{color.${name}.primary}`,
     $description: `Generated ${name} hyperlink text color (matches primary)`
   };
-
-  if (group.group === "status") {
-    result.outline ??= {
-      ...token,
-      $type: "color",
-      $value: `{color.${name}.primary}`,
-      $description: `Generated ${name} border and divider color (matches primary)`
-    };
-  }
 
   result["on-primary"] ??= {
     ...token,
@@ -1457,7 +1446,7 @@ function addThemeColorGroupTokens(
 
 /**
  * Add a `group` (the main token name) to each state and `on-*` color token
- * that does not define one, e.g. `outline-active` → `outline`.
+ * that does not define one, e.g. `hairline-active` → `hairline`.
  */
 function addColorTokenGroups(
   group: Record<string, unknown>
@@ -1588,15 +1577,14 @@ function injectColorStateVariants(
 /**
  * Style Dictionary preprocessor: rewrite color `$value`s (and nested shadow
  * colors) to hex so generators emit `#rrggbb` / `#rrggbbaa` instead of
- * `oklch()`. Root colors (emphasis, ink, subtle, outline, backgrounds)
+ * `oklch()`. Root colors (emphasis, ink, subtle, hairline, backgrounds)
  * stay in the root light and dark themes without rings. For each color group
  * with a `primary` token (except excluded groups), a missing `secondary` background and `on-primary` /
  * `on-secondary` text colors are generated, a missing `border` is derived from
  * `secondary` (15% brighter, or darker in light themes), then hovered, active, inactive,
- * and disabled variants are added to the outline, `foreground` and
+ * and disabled variants are added to the `hairline`, `foreground` and
  * `background` group colors, and each theme color group's `primary`, `secondary`
- * `link` and `outline` (`link`, and `outline` in `status` groups, default to
- * `primary` when missing).
+ * and `link` (`link` defaults to `primary` when missing).
  * Low-saturation colors derive their states from the parent theme's contrast
  * primitive (backgrounds use a half-strength shift of their own lightness; hovered
  * colors already near that primitive shift toward the middle, while active
@@ -1604,8 +1592,8 @@ function injectColorStateVariants(
  * colors scale their own lightness. Foreground and background hovered states
  * take a smaller step than their active states. Tokens in a theme color group get the
  * group name as `theme` and `group`, unless already set; root state and `on-*`
- * tokens get their main token name as `group` (e.g. `outline-active` →
- * `outline`).
+ * tokens get their main token name as `group` (e.g. `hairline-active` →
+ * `hairline`).
  * Finally, focus rings are generated for each theme color group.
  */
 export function tamaguiPreprocessor(

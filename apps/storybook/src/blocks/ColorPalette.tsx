@@ -165,10 +165,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-disabled"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "canvas-disabled": "#242427"
+              "canvas-disabled": "#323235"
             }}
           />
           <ColorItem
@@ -210,10 +210,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-disabled"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#2b2b2d"
+              "elevated-disabled": "#363638"
             }}
           />
           <ColorItem
@@ -255,10 +255,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-disabled"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "floating-disabled": "#2e2f32"
+              "floating-disabled": "#37383b"
             }}
           />
           <ColorItem
@@ -300,10 +300,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-disabled"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "sunken-disabled": "#1e1e20"
+              "sunken-disabled": "#2e2e31"
             }}
           />
           <ColorItem
@@ -345,10 +345,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-disabled"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "surface-disabled": "#29292b"
+              "surface-disabled": "#343437"
             }}
           />
           <ColorItem
@@ -380,52 +380,43 @@ const COLOR_VARIANTS = {
               "Low-contrast color for borders, dividers and separators."
             }
             colors={{
-              hairline: "#2d2e33"
+              hairline: "#46464a"
             }}
           />
           <ColorItem
-            title={"color.outline"}
+            title={"color.hairline-active"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."
+              "Low-contrast color for borders, dividers and separators. (active, dark contrast primitive)"
             }
             colors={{
-              outline: "#555659"
+              "hairline-active": "#ffffff"
             }}
           />
           <ColorItem
-            title={"color.outline-active"}
+            title={"color.hairline-disabled"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, dark contrast primitive)"
+              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "outline-active": "#ffffff"
+              "hairline-disabled": "#444447"
             }}
           />
           <ColorItem
-            title={"color.outline-disabled"}
+            title={"color.hairline-hovered"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Low-contrast color for borders, dividers and separators. (hovered, dark contrast primitive)"
             }
             colors={{
-              "outline-disabled": "#494a4d"
+              "hairline-hovered": "#ffffff"
             }}
           />
           <ColorItem
-            title={"color.outline-hovered"}
+            title={"color.hairline-inactive"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, dark contrast primitive)"
+              "Low-contrast color for borders, dividers and separators. (inactive, 50% darker)"
             }
             colors={{
-              "outline-hovered": "#ffffff"
-            }}
-          />
-          <ColorItem
-            title={"color.outline-inactive"}
-            subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 50% darker)"
-            }
-            colors={{
-              "outline-inactive": "#636363"
+              "hairline-inactive": "#636363"
             }}
           />
         </ColorPalette>
@@ -632,7 +623,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#151518",
                 backdrop: "#41414126",
                 "on-secondary": "#FAFAFA",
-                border: "#383a3f",
+                border: "#404147",
                 "primary-hovered": "#aeaeae",
                 "primary-active": "#ffffff",
                 "primary-inactive": "#636363",
@@ -664,7 +655,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#151518",
                 backdrop: "#00442a26",
                 "on-secondary": "#ffffff",
-                border: "#22735f",
+                border: "#31806b",
                 "primary-hovered": "#00a17e",
                 "primary-active": "#00a17e",
                 "primary-inactive": "#81fff4",
@@ -696,7 +687,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#FAFAFA",
                 backdrop: "#53000726",
                 "on-secondary": "#ffb6c0",
-                border: "#7b1734",
+                border: "#86233c",
                 "primary-hovered": "#ff7393",
                 "primary-active": "#ff7393",
                 "primary-inactive": "#aa1046",
@@ -708,12 +699,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#ff7393",
                 "link-active": "#ff7393",
                 "link-inactive": "#aa1046",
-                "link-disabled": "#724853",
-                "outline-hovered": "#ff91af",
-                "outline-active": "#ff91af",
-                "outline-inactive": "#aa1046",
-                "outline-disabled": "#724853",
-                outline: "#d44267"
+                "link-disabled": "#724853"
               }}
             />
           </ColorPalette>
@@ -733,7 +719,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#FAFAFA",
                 backdrop: "#28005b26",
                 "on-secondary": "#FAFAFA",
-                border: "#42336f",
+                border: "#4b3c79",
                 "primary-hovered": "#c3a9ff",
                 "primary-active": "#c3a9ff",
                 "primary-inactive": "#6d51b0",
@@ -745,12 +731,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#c3a9ff",
                 "link-active": "#c3a9ff",
                 "link-inactive": "#6d51b0",
-                "link-disabled": "#5e5776",
-                "outline-hovered": "#e2c8ff",
-                "outline-active": "#e2c8ff",
-                "outline-inactive": "#6d51b0",
-                "outline-disabled": "#5e5776",
-                outline: "#9277da"
+                "link-disabled": "#5e5776"
               }}
             />
           </ColorPalette>
@@ -770,7 +751,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#FAFAFA",
                 backdrop: "#00007526",
                 "on-secondary": "#FAFAFA",
-                border: "#2a549f",
+                border: "#3560ac",
                 "primary-hovered": "#7fc4ff",
                 "primary-active": "#7fc4ff",
                 "primary-inactive": "#2564d1",
@@ -782,12 +763,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#7fc4ff",
                 "link-active": "#7fc4ff",
                 "link-inactive": "#2564d1",
-                "link-disabled": "#4b5e81",
-                "outline-hovered": "#9fe5ff",
-                "outline-active": "#9fe5ff",
-                "outline-inactive": "#2564d1",
-                "outline-disabled": "#4b5e81",
-                outline: "#4d8eff"
+                "link-disabled": "#4b5e81"
               }}
             />
           </ColorPalette>
@@ -807,7 +783,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#FAFAFA",
                 backdrop: "#003a1026",
                 "on-secondary": "#ffffff",
-                border: "#217452",
+                border: "#31815e",
                 "primary-hovered": "#89ffcc",
                 "primary-active": "#89ffcc",
                 "primary-inactive": "#009865",
@@ -819,12 +795,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#89ffcc",
                 "link-active": "#89ffcc",
                 "link-inactive": "#009865",
-                "link-disabled": "#4c7062",
-                "outline-hovered": "#a1ffe2",
-                "outline-active": "#a1ffe2",
-                "outline-inactive": "#009865",
-                "outline-disabled": "#4c7062",
-                outline: "#45c791"
+                "link-disabled": "#4c7062"
               }}
             />
           </ColorPalette>
@@ -844,7 +815,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#151518",
                 backdrop: "#53240026",
                 "on-secondary": "#FAFAFA",
-                border: "#be8e3e",
+                border: "#d1a052",
                 "primary-hovered": "#b37f00",
                 "primary-active": "#b37f00",
                 "primary-inactive": "#fff592",
@@ -856,12 +827,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#b37f00",
                 "link-active": "#b37f00",
                 "link-inactive": "#fff592",
-                "link-disabled": "#807056",
-                "outline-hovered": "#8c5a00",
-                "outline-active": "#8c5a00",
-                "outline-inactive": "#fff592",
-                "outline-disabled": "#807056",
-                outline: "#f9c25e"
+                "link-disabled": "#807056"
               }}
             />
           </ColorPalette>
@@ -1027,10 +993,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-disabled"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "canvas-disabled": "#3f3f42"
+              "canvas-disabled": "#49494b"
             }}
           />
           <ColorItem
@@ -1072,10 +1038,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-disabled"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#444446"
+              "elevated-disabled": "#4c4c4e"
             }}
           />
           <ColorItem
@@ -1117,10 +1083,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-disabled"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "floating-disabled": "#464749"
+              "floating-disabled": "#4d4d50"
             }}
           />
           <ColorItem
@@ -1162,10 +1128,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-disabled"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "sunken-disabled": "#3b3b3d"
+              "sunken-disabled": "#464649"
             }}
           />
           <ColorItem
@@ -1207,10 +1173,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-disabled"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "surface-disabled": "#434345"
+              "surface-disabled": "#4b4b4d"
             }}
           />
           <ColorItem
@@ -1242,52 +1208,43 @@ const COLOR_VARIANTS = {
               "Low-contrast color for borders, dividers and separators."
             }
             colors={{
-              hairline: "#45464a"
+              hairline: "#57575a"
             }}
           />
           <ColorItem
-            title={"color.outline"}
+            title={"color.hairline-active"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."
+              "Low-contrast color for borders, dividers and separators. (active, dark contrast primitive)"
             }
             colors={{
-              outline: "#626364"
+              "hairline-active": "#d9d9d9"
             }}
           />
           <ColorItem
-            title={"color.outline-active"}
+            title={"color.hairline-disabled"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, dark contrast primitive)"
+              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "outline-active": "#d9d9d9"
+              "hairline-disabled": "#565658"
             }}
           />
           <ColorItem
-            title={"color.outline-disabled"}
+            title={"color.hairline-hovered"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Low-contrast color for borders, dividers and separators. (hovered, dark contrast primitive)"
             }
             colors={{
-              "outline-disabled": "#595a5c"
+              "hairline-hovered": "#d9d9d9"
             }}
           />
           <ColorItem
-            title={"color.outline-hovered"}
+            title={"color.hairline-inactive"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, dark contrast primitive)"
+              "Low-contrast color for borders, dividers and separators. (inactive, 50% darker)"
             }
             colors={{
-              "outline-hovered": "#d9d9d9"
-            }}
-          />
-          <ColorItem
-            title={"color.outline-inactive"}
-            subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 50% darker)"
-            }
-            colors={{
-              "outline-inactive": "#6c6c6c"
+              "hairline-inactive": "#6c6c6c"
             }}
           />
         </ColorPalette>
@@ -1494,7 +1451,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#343438",
                 backdrop: "#54545426",
                 "on-secondary": "#d5d5d5",
-                border: "#4d4f52",
+                border: "#535458",
                 "primary-hovered": "#a0a0a0",
                 "primary-active": "#d9d9d9",
                 "primary-inactive": "#6c6c6c",
@@ -1526,7 +1483,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#343438",
                 backdrop: "#1c604626",
                 "on-secondary": "#d9d9d9",
-                border: "#3f7568",
+                border: "#4c7d70",
                 "primary-hovered": "#2b937c",
                 "primary-active": "#2b937c",
                 "primary-inactive": "#7fdad2",
@@ -1558,7 +1515,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#d5d5d5",
                 backdrop: "#681e2526",
                 "on-secondary": "#e29ca6",
-                border: "#7b384b",
+                border: "#814252",
                 "primary-hovered": "#d8788e",
                 "primary-active": "#d8788e",
                 "primary-inactive": "#963859",
@@ -1570,12 +1527,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#d8788e",
                 "link-active": "#d8788e",
                 "link-inactive": "#963859",
-                "link-disabled": "#745b61",
-                "outline-hovered": "#dc889f",
-                "outline-active": "#dc889f",
-                "outline-inactive": "#963859",
-                "outline-disabled": "#745b61",
-                outline: "#b15e73"
+                "link-disabled": "#745b61"
               }}
             />
           </ColorPalette>
@@ -1595,7 +1547,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#d5d5d5",
                 backdrop: "#41206d26",
                 "on-secondary": "#d5d5d5",
-                border: "#554c72",
+                border: "#5c5378",
                 "primary-hovered": "#ac95e0",
                 "primary-active": "#ac95e0",
                 "primary-inactive": "#75669a",
@@ -1607,12 +1559,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#ac95e0",
                 "link-active": "#ac95e0",
                 "link-inactive": "#75669a",
-                "link-disabled": "#696577",
-                "outline-hovered": "#c4a6e5",
-                "outline-active": "#c4a6e5",
-                "outline-inactive": "#75669a",
-                "outline-disabled": "#696577",
-                outline: "#8e7dbb"
+                "link-disabled": "#696577"
               }}
             />
           </ColorPalette>
@@ -1632,7 +1579,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#d5d5d5",
                 backdrop: "#24247b26",
                 "on-secondary": "#d5d5d5",
-                border: "#4a638f",
+                border: "#536c97",
                 "primary-hovered": "#7eb0da",
                 "primary-active": "#7eb0da",
                 "primary-inactive": "#4d70ac",
@@ -1644,12 +1591,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#7eb0da",
                 "link-active": "#7eb0da",
                 "link-inactive": "#4d70ac",
-                "link-disabled": "#5e697e",
-                "outline-hovered": "#90c9df",
-                "outline-active": "#90c9df",
-                "outline-inactive": "#4d70ac",
-                "outline-disabled": "#5e697e",
-                outline: "#638cd2"
+                "link-disabled": "#5e697e"
               }}
             />
           </ColorPalette>
@@ -1669,7 +1611,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#d5d5d5",
                 backdrop: "#1a5b2c26",
                 "on-secondary": "#d9d9d9",
-                border: "#3f765f",
+                border: "#4c7d68",
                 "primary-hovered": "#84dbb5",
                 "primary-active": "#84dbb5",
                 "primary-inactive": "#298e6c",
@@ -1681,12 +1623,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#84dbb5",
                 "link-active": "#84dbb5",
                 "link-inactive": "#298e6c",
-                "link-disabled": "#5d736a",
-                "outline-hovered": "#91dfc7",
-                "outline-active": "#91dfc7",
-                "outline-inactive": "#298e6c",
-                "outline-disabled": "#5d736a",
-                outline: "#60a88a"
+                "link-disabled": "#5d736a"
               }}
             />
           </ColorPalette>
@@ -1706,7 +1643,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#343438",
                 backdrop: "#683e1e26",
                 "on-secondary": "#d5d5d5",
-                border: "#a2875b",
+                border: "#b19467",
                 "primary-hovered": "#9c7c2d",
                 "primary-active": "#9c7c2d",
                 "primary-inactive": "#ddd589",
@@ -1718,12 +1655,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#9c7c2d",
                 "link-active": "#9c7c2d",
                 "link-inactive": "#ddd589",
-                "link-disabled": "#7d7465",
-                "outline-hovered": "#876527",
-                "outline-active": "#876527",
-                "outline-inactive": "#ddd589",
-                "outline-disabled": "#7d7465",
-                outline: "#d0ad6d"
+                "link-disabled": "#7d7465"
               }}
             />
           </ColorPalette>
@@ -1889,10 +1821,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-disabled"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "canvas-disabled": "#000000"
+              "canvas-disabled": "#101013"
             }}
           />
           <ColorItem
@@ -1934,10 +1866,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-disabled"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#060607"
+              "elevated-disabled": "#151518"
             }}
           />
           <ColorItem
@@ -1979,10 +1911,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-disabled"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "floating-disabled": "#0b0c0e"
+              "floating-disabled": "#17181c"
             }}
           />
           <ColorItem
@@ -2024,10 +1956,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-disabled"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "sunken-disabled": "#000000"
+              "sunken-disabled": "#0a0a0d"
             }}
           />
           <ColorItem
@@ -2069,10 +2001,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-disabled"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "surface-disabled": "#030304"
+              "surface-disabled": "#121216"
             }}
           />
           <ColorItem
@@ -2104,52 +2036,43 @@ const COLOR_VARIANTS = {
               "Low-contrast color for borders, dividers and separators."
             }
             colors={{
-              hairline: "#0b0b0e"
+              hairline: "#2b2b33"
             }}
           />
           <ColorItem
-            title={"color.outline"}
+            title={"color.hairline-active"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."
+              "Low-contrast color for borders, dividers and separators. (active, dark contrast primitive)"
             }
             colors={{
-              outline: "#3f424a"
+              "hairline-active": "#ffffff"
             }}
           />
           <ColorItem
-            title={"color.outline-active"}
+            title={"color.hairline-disabled"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, dark contrast primitive)"
+              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "outline-active": "#ffffff"
+              "hairline-disabled": "#28282f"
             }}
           />
           <ColorItem
-            title={"color.outline-disabled"}
+            title={"color.hairline-hovered"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Low-contrast color for borders, dividers and separators. (hovered, dark contrast primitive)"
             }
             colors={{
-              "outline-disabled": "#2f3138"
+              "hairline-hovered": "#ffffff"
             }}
           />
           <ColorItem
-            title={"color.outline-hovered"}
+            title={"color.hairline-inactive"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, dark contrast primitive)"
+              "Low-contrast color for borders, dividers and separators. (inactive, 50% darker)"
             }
             colors={{
-              "outline-hovered": "#ffffff"
-            }}
-          />
-          <ColorItem
-            title={"color.outline-inactive"}
-            subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 50% darker)"
-            }
-            colors={{
-              "outline-inactive": "#565656"
+              "hairline-inactive": "#565656"
             }}
           />
         </ColorPalette>
@@ -2356,7 +2279,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#000000",
                 backdrop: "#25252526",
                 "on-secondary": "#ffffff",
-                border: "#191b21",
+                border: "#24252d",
                 "primary-hovered": "#c3c3c3",
                 "primary-active": "#ffffff",
                 "primary-inactive": "#565656",
@@ -2388,7 +2311,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#000000",
                 backdrop: "#00000026",
                 "on-secondary": "#ffffff",
-                border: "#0b5a47",
+                border: "#19755d",
                 "primary-hovered": "#00775d",
                 "primary-active": "#00775d",
                 "primary-inactive": "#bbfff9",
@@ -2420,7 +2343,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#ffffff",
                 backdrop: "#06000026",
                 "on-secondary": "#ffffff",
-                border: "#60011d",
+                border: "#780a26",
                 "primary-hovered": "#ffa7bb",
                 "primary-active": "#ffa7bb",
                 "primary-inactive": "#9b0036",
@@ -2432,12 +2355,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#ffa7bb",
                 "link-active": "#ffa7bb",
                 "link-inactive": "#9b0036",
-                "link-disabled": "#693240",
-                "outline-hovered": "#ffd2de",
-                "outline-active": "#ffd2de",
-                "outline-inactive": "#9b0036",
-                "outline-disabled": "#693240",
-                outline: "#f42c5f"
+                "link-disabled": "#693240"
               }}
             />
           </ColorPalette>
@@ -2457,7 +2375,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#ffffff",
                 backdrop: "#08001126",
                 "on-secondary": "#ffffff",
-                border: "#2c1b5d",
+                border: "#37256f",
                 "primary-hovered": "#f8f5ff",
                 "primary-active": "#f8f5ff",
                 "primary-inactive": "#643bc7",
@@ -2469,12 +2387,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#f8f5ff",
                 "link-active": "#f8f5ff",
                 "link-inactive": "#643bc7",
-                "link-disabled": "#4f4472",
-                "outline-hovered": "#ffffff",
-                "outline-active": "#ffffff",
-                "outline-inactive": "#643bc7",
-                "outline-disabled": "#4f4472",
-                outline: "#a283f3"
+                "link-disabled": "#4f4472"
               }}
             />
           </ColorPalette>
@@ -2494,7 +2407,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#ffffff",
                 backdrop: "#00003726",
                 "on-secondary": "#ffffff",
-                border: "#0f44a2",
+                border: "#1953bb",
                 "primary-hovered": "#b8deff",
                 "primary-active": "#b8deff",
                 "primary-inactive": "#0159f1",
@@ -2506,12 +2419,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#b8deff",
                 "link-active": "#b8deff",
                 "link-inactive": "#0159f1",
-                "link-disabled": "#36507f",
-                "outline-hovered": "#e7f8ff",
-                "outline-active": "#e7f8ff",
-                "outline-inactive": "#0159f1",
-                "outline-disabled": "#36507f",
-                outline: "#70a4ff"
+                "link-disabled": "#36507f"
               }}
             />
           </ColorPalette>
@@ -2531,7 +2439,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#ffffff",
                 backdrop: "#00000026",
                 "on-secondary": "#ffffff",
-                border: "#0a5b3a",
+                border: "#19774e",
                 "primary-hovered": "#c7ffe7",
                 "primary-active": "#c7ffe7",
                 "primary-inactive": "#006a46",
@@ -2543,12 +2451,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#c7ffe7",
                 "link-active": "#c7ffe7",
                 "link-inactive": "#006a46",
-                "link-disabled": "#376754",
-                "outline-hovered": "#e9fff8",
-                "outline-active": "#e9fff8",
-                "outline-inactive": "#006a46",
-                "outline-disabled": "#376754",
-                outline: "#2de498"
+                "link-disabled": "#376754"
               }}
             />
           </ColorPalette>
@@ -2568,7 +2471,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#000000",
                 backdrop: "#06020026",
                 "on-secondary": "#ffffff",
-                border: "#da9421",
+                border: "#eead45",
                 "primary-hovered": "#916700",
                 "primary-active": "#916700",
                 "primary-inactive": "#fffbd4",
@@ -2580,12 +2483,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#916700",
                 "link-active": "#916700",
                 "link-inactive": "#fffbd4",
-                "link-disabled": "#816943",
-                "outline-hovered": "#583900",
-                "outline-active": "#583900",
-                "outline-inactive": "#fffbd4",
-                "outline-disabled": "#816943",
-                outline: "#ffd280"
+                "link-disabled": "#816943"
               }}
             />
           </ColorPalette>
@@ -2751,10 +2649,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-disabled"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 68% over oklch(0.3839 0.0045 286.26))"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "canvas-disabled": "#b4b4b5"
+              "canvas-disabled": "#828284"
             }}
           />
           <ColorItem
@@ -2796,10 +2694,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-disabled"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#bfbfc0"
+              "elevated-disabled": "#88888a"
             }}
           />
           <ColorItem
@@ -2841,10 +2739,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-disabled"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "floating-disabled": "#c2c2c3"
+              "floating-disabled": "#8a8a8b"
             }}
           />
           <ColorItem
@@ -2886,10 +2784,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-disabled"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "sunken-disabled": "#aeaeaf"
+              "sunken-disabled": "#7e7e80"
             }}
           />
           <ColorItem
@@ -2931,10 +2829,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-disabled"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 68% over oklch(0.3839 0.0045 286.26))"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "surface-disabled": "#b8b8b9"
+              "surface-disabled": "#848486"
             }}
           />
           <ColorItem
@@ -3110,48 +3008,39 @@ const COLOR_VARIANTS = {
             }}
           />
           <ColorItem
-            title={"color.outline"}
+            title={"color.hairline-active"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."
+              "Low-contrast color for borders, dividers and separators. (active, light contrast primitive)"
             }
             colors={{
-              outline: "#c0c0c1"
+              "hairline-active": "#0c0c0d"
             }}
           />
           <ColorItem
-            title={"color.outline-active"}
+            title={"color.hairline-disabled"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, light contrast primitive)"
+              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "outline-active": "#0c0c0d"
+              "hairline-disabled": "#747477"
             }}
           />
           <ColorItem
-            title={"color.outline-disabled"}
+            title={"color.hairline-hovered"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Low-contrast color for borders, dividers and separators. (hovered, light contrast primitive)"
             }
             colors={{
-              "outline-disabled": "#6f6f71"
+              "hairline-hovered": "#0c0c0d"
             }}
           />
           <ColorItem
-            title={"color.outline-hovered"}
+            title={"color.hairline-inactive"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, light contrast primitive)"
+              "Low-contrast color for borders, dividers and separators. (inactive, 50% darker)"
             }
             colors={{
-              "outline-hovered": "#0c0c0d"
-            }}
-          />
-          <ColorItem
-            title={"color.outline-inactive"}
-            subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 50% darker)"
-            }
-            colors={{
-              "outline-inactive": "#020102"
+              "hairline-inactive": "#020102"
             }}
           />
         </ColorPalette>
@@ -3218,7 +3107,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#FAFAFA",
                 backdrop: "#02020326",
                 "on-secondary": "#FAFAFA",
-                border: "#8d8d8e",
+                border: "#777778",
                 "primary-hovered": "#5c5c5f",
                 "primary-active": "#000000",
                 "primary-inactive": "#020102",
@@ -3250,7 +3139,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#FAFAFA",
                 backdrop: "#00332c26",
                 "on-secondary": "#005a53",
-                border: "#a7cfc9",
+                border: "#89b0ab",
                 "primary-hovered": "#007c72",
                 "primary-active": "#007c72",
                 "primary-inactive": "#5ddfd2",
@@ -3282,7 +3171,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#FAFAFA",
                 backdrop: "#35000126",
                 "on-secondary": "#200006",
-                border: "#cb5b71",
+                border: "#b2455c",
                 "primary-hovered": "#6a0022",
                 "primary-active": "#6a0022",
                 "primary-inactive": "#ab3e56",
@@ -3294,12 +3183,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#6a0022",
                 "link-active": "#6a0022",
                 "link-inactive": "#ab3e56",
-                "link-disabled": "#5a3c44",
-                "outline-hovered": "#550013",
-                "outline-active": "#550013",
-                "outline-inactive": "#ab3e56",
-                "outline-disabled": "#5a3c44",
-                outline: "#8e223e"
+                "link-disabled": "#5a3c44"
               }}
             />
           </ColorPalette>
@@ -3319,7 +3203,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#FAFAFA",
                 backdrop: "#17004026",
                 "on-secondary": "#FAFAFA",
-                border: "#8670be",
+                border: "#725ba7",
                 "primary-hovered": "#3c2372",
                 "primary-active": "#3c2372",
                 "primary-inactive": "#725db2",
@@ -3331,12 +3215,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#3c2372",
                 "link-active": "#3c2372",
                 "link-inactive": "#725db2",
-                "link-disabled": "#4a445f",
-                "outline-hovered": "#2c0d5e",
-                "outline-active": "#2c0d5e",
-                "outline-inactive": "#725db2",
-                "outline-disabled": "#4a445f",
-                outline: "#594395"
+                "link-disabled": "#4a445f"
               }}
             />
           </ColorPalette>
@@ -3356,7 +3235,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#FAFAFA",
                 backdrop: "#00005526",
                 "on-secondary": "#FAFAFA",
-                border: "#4d80da",
+                border: "#396ac2",
                 "primary-hovered": "#00318d",
                 "primary-active": "#00318d",
                 "primary-inactive": "#3b72d3",
@@ -3368,12 +3247,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#00318d",
                 "link-active": "#00318d",
                 "link-inactive": "#3b72d3",
-                "link-disabled": "#3b4a68",
-                "outline-hovered": "#001a76",
-                "outline-active": "#001a76",
-                "outline-inactive": "#3b72d3",
-                "outline-disabled": "#3b4a68",
-                outline: "#2055b3"
+                "link-disabled": "#3b4a68"
               }}
             />
           </ColorPalette>
@@ -3393,7 +3267,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#FAFAFA",
                 backdrop: "#001b0926",
                 "on-secondary": "#002015",
-                border: "#52977e",
+                border: "#3b8168",
                 "primary-hovered": "#004933",
                 "primary-active": "#004933",
                 "primary-inactive": "#40876e",
@@ -3405,12 +3279,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#004933",
                 "link-active": "#004933",
                 "link-inactive": "#40876e",
-                "link-disabled": "#3c504b",
-                "outline-hovered": "#003622",
-                "outline-active": "#003622",
-                "outline-inactive": "#40876e",
-                "outline-disabled": "#3c504b",
-                outline: "#216b53"
+                "link-disabled": "#3c504b"
               }}
             />
           </ColorPalette>
@@ -3430,7 +3299,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#FAFAFA",
                 backdrop: "#24070026",
                 "on-secondary": "#241500",
-                border: "#a78249",
+                border: "#906c33",
                 "primary-hovered": "#543400",
                 "primary-active": "#543400",
                 "primary-inactive": "#926f36",
@@ -3442,12 +3311,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#543400",
                 "link-active": "#543400",
                 "link-inactive": "#926f36",
-                "link-disabled": "#53493b",
-                "outline-hovered": "#402100",
-                "outline-active": "#402100",
-                "outline-inactive": "#926f36",
-                "outline-disabled": "#53493b",
-                outline: "#765417"
+                "link-disabled": "#53493b"
               }}
             />
           </ColorPalette>
@@ -3613,10 +3477,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-disabled"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 68% over oklch(0.3839 0.0045 286.26))"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "canvas-disabled": "#a4a4a5"
+              "canvas-disabled": "#818183"
             }}
           />
           <ColorItem
@@ -3658,10 +3522,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-disabled"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#acacad"
+              "elevated-disabled": "#868687"
             }}
           />
           <ColorItem
@@ -3703,10 +3567,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-disabled"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "floating-disabled": "#aeaeaf"
+              "floating-disabled": "#878787"
             }}
           />
           <ColorItem
@@ -3748,10 +3612,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-disabled"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "sunken-disabled": "#a0a0a1"
+              "sunken-disabled": "#7f7f80"
             }}
           />
           <ColorItem
@@ -3793,10 +3657,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-disabled"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 68% over oklch(0.3839 0.0045 286.26))"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "surface-disabled": "#a7a7a8"
+              "surface-disabled": "#838384"
             }}
           />
           <ColorItem
@@ -3972,48 +3836,39 @@ const COLOR_VARIANTS = {
             }}
           />
           <ColorItem
-            title={"color.outline"}
+            title={"color.hairline-active"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."
+              "Low-contrast color for borders, dividers and separators. (active, light contrast primitive)"
             }
             colors={{
-              outline: "#adadad"
+              "hairline-active": "#2e2e30"
             }}
           />
           <ColorItem
-            title={"color.outline-active"}
+            title={"color.hairline-disabled"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, light contrast primitive)"
+              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "outline-active": "#2e2e30"
+              "hairline-disabled": "#787879"
             }}
           />
           <ColorItem
-            title={"color.outline-disabled"}
+            title={"color.hairline-hovered"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Low-contrast color for borders, dividers and separators. (hovered, light contrast primitive)"
             }
             colors={{
-              "outline-disabled": "#747475"
+              "hairline-hovered": "#2e2e30"
             }}
           />
           <ColorItem
-            title={"color.outline-hovered"}
+            title={"color.hairline-inactive"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, light contrast primitive)"
+              "Low-contrast color for borders, dividers and separators. (inactive, 50% darker)"
             }
             colors={{
-              "outline-hovered": "#2e2e30"
-            }}
-          />
-          <ColorItem
-            title={"color.outline-inactive"}
-            subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 50% darker)"
-            }
-            colors={{
-              "outline-inactive": "#2f202f"
+              "hairline-inactive": "#2f202f"
             }}
           />
         </ColorPalette>
@@ -4080,7 +3935,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#d5d5d5",
                 backdrop: "#24242c26",
                 "on-secondary": "#d5d5d5",
-                border: "#89898a",
+                border: "#7a7a7a",
                 "primary-hovered": "#676769",
                 "primary-active": "#262626",
                 "primary-inactive": "#2f202f",
@@ -4112,7 +3967,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#d5d5d5",
                 backdrop: "#19574e26",
                 "on-secondary": "#1f6c66",
-                border: "#9bb7b3",
+                border: "#889f9c",
                 "primary-hovered": "#257f77",
                 "primary-active": "#257f77",
                 "primary-inactive": "#6ebcb4",
@@ -4144,7 +3999,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#d5d5d5",
                 backdrop: "#581a1b26",
                 "on-secondary": "#4d1620",
-                border: "#ae6d79",
+                border: "#9b5e6b",
                 "primary-hovered": "#75223c",
                 "primary-active": "#75223c",
                 "primary-inactive": "#975967",
@@ -4156,12 +4011,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#75223c",
                 "link-active": "#75223c",
                 "link-inactive": "#975967",
-                "link-disabled": "#655156",
-                "outline-hovered": "#691f2f",
-                "outline-active": "#691f2f",
-                "outline-inactive": "#975967",
-                "outline-disabled": "#655156",
-                outline: "#864254"
+                "link-disabled": "#655156"
               }}
             />
           </ColorPalette>
@@ -4181,7 +4031,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#d5d5d5",
                 backdrop: "#331b5e26",
                 "on-secondary": "#d5d5d5",
-                border: "#8679a7",
+                border: "#786c96",
                 "primary-hovered": "#514075",
                 "primary-active": "#514075",
                 "primary-inactive": "#796d9d",
@@ -4193,12 +4043,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#514075",
                 "link-active": "#514075",
                 "link-inactive": "#796d9d",
-                "link-disabled": "#5a5768",
-                "outline-hovered": "#442c6b",
-                "outline-active": "#442c6b",
-                "outline-inactive": "#796d9d",
-                "outline-disabled": "#5a5768",
-                outline: "#675a8a"
+                "link-disabled": "#5a5768"
               }}
             />
           </ColorPalette>
@@ -4218,7 +4063,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#d5d5d5",
                 backdrop: "#1f1f6926",
                 "on-secondary": "#d5d5d5",
-                border: "#6582b6",
+                border: "#5873a4",
                 "primary-hovered": "#274988",
                 "primary-active": "#274988",
                 "primary-inactive": "#5a79af",
@@ -4230,12 +4075,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#274988",
                 "link-active": "#274988",
                 "link-inactive": "#5a79af",
-                "link-disabled": "#515a6e",
-                "outline-hovered": "#24377b",
-                "outline-active": "#24377b",
-                "outline-inactive": "#5a79af",
-                "outline-disabled": "#515a6e",
-                outline: "#45649b"
+                "link-disabled": "#515a6e"
               }}
             />
           </ColorPalette>
@@ -4255,7 +4095,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#d5d5d5",
                 backdrop: "#154a2726",
                 "on-secondary": "#164d3a",
-                border: "#648b7d",
+                border: "#537d6e",
                 "primary-hovered": "#1d634e",
                 "primary-active": "#1d634e",
                 "primary-inactive": "#578172",
@@ -4267,12 +4107,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#1d634e",
                 "link-active": "#1d634e",
                 "link-inactive": "#578172",
-                "link-disabled": "#505e5b",
-                "outline-hovered": "#1a5941",
-                "outline-active": "#1a5941",
-                "outline-inactive": "#578172",
-                "outline-disabled": "#505e5b",
-                outline: "#3e7160"
+                "link-disabled": "#505e5b"
               }}
             />
           </ColorPalette>
@@ -4292,7 +4127,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#d5d5d5",
                 backdrop: "#4f221726",
                 "on-secondary": "#4f3817",
-                border: "#958060",
+                border: "#86714f",
                 "primary-hovered": "#694d1e",
                 "primary-active": "#694d1e",
                 "primary-inactive": "#887351",
@@ -4304,12 +4139,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#694d1e",
                 "link-active": "#694d1e",
                 "link-inactive": "#887351",
-                "link-disabled": "#605950",
-                "outline-hovered": "#5e3e1b",
-                "outline-active": "#5e3e1b",
-                "outline-inactive": "#887351",
-                "outline-disabled": "#605950",
-                outline: "#786137"
+                "link-disabled": "#605950"
               }}
             />
           </ColorPalette>
@@ -4475,10 +4305,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-disabled"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 68% over oklch(0.3839 0.0045 286.26))"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "canvas-disabled": "#c9c9cf"
+              "canvas-disabled": "#7d7d8c"
             }}
           />
           <ColorItem
@@ -4520,10 +4350,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-disabled"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#dadade"
+              "elevated-disabled": "#868694"
             }}
           />
           <ColorItem
@@ -4565,10 +4395,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-disabled"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "floating-disabled": "#dfdfe3"
+              "floating-disabled": "#898996"
             }}
           />
           <ColorItem
@@ -4610,10 +4440,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-disabled"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "sunken-disabled": "#c0c0c7"
+              "sunken-disabled": "#777786"
             }}
           />
           <ColorItem
@@ -4655,10 +4485,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-disabled"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 68% over oklch(0.3839 0.0045 286.26))"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "surface-disabled": "#cfcfd5"
+              "surface-disabled": "#80808f"
             }}
           />
           <ColorItem
@@ -4834,48 +4664,39 @@ const COLOR_VARIANTS = {
             }}
           />
           <ColorItem
-            title={"color.outline"}
+            title={"color.hairline-active"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."
+              "Low-contrast color for borders, dividers and separators. (active, light contrast primitive)"
             }
             colors={{
-              outline: "#dcdce0"
+              "hairline-active": "#000000"
             }}
           />
           <ColorItem
-            title={"color.outline-active"}
+            title={"color.hairline-disabled"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, light contrast primitive)"
+              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "outline-active": "#000000"
+              "hairline-disabled": "#696979"
             }}
           />
           <ColorItem
-            title={"color.outline-disabled"}
+            title={"color.hairline-hovered"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Low-contrast color for borders, dividers and separators. (hovered, light contrast primitive)"
             }
             colors={{
-              "outline-disabled": "#636370"
+              "hairline-hovered": "#000000"
             }}
           />
           <ColorItem
-            title={"color.outline-hovered"}
+            title={"color.hairline-inactive"}
             subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, light contrast primitive)"
+              "Low-contrast color for borders, dividers and separators. (inactive, 50% darker)"
             }
             colors={{
-              "outline-hovered": "#000000"
-            }}
-          />
-          <ColorItem
-            title={"color.outline-inactive"}
-            subtitle={
-              "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 50% darker)"
-            }
-            colors={{
-              "outline-inactive": "#000000"
+              "hairline-inactive": "#000000"
             }}
           />
         </ColorPalette>
@@ -4942,7 +4763,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#ffffff",
                 backdrop: "#00000026",
                 "on-secondary": "#ffffff",
-                border: "#8e8e9a",
+                border: "#6d6d7a",
                 "primary-hovered": "#494954",
                 "primary-active": "#000000",
                 "primary-inactive": "#000000",
@@ -4974,7 +4795,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#ffffff",
                 backdrop: "#00000026",
                 "on-secondary": "#00100f",
-                border: "#c3e8e3",
+                border: "#8ec5be",
                 "primary-hovered": "#00413c",
                 "primary-active": "#00413c",
                 "primary-inactive": "#5cfbeb",
@@ -5006,7 +4827,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#ffffff",
                 backdrop: "#00000026",
                 "on-secondary": "#000000",
-                border: "#e6516f",
+                border: "#c82b4c",
                 "primary-hovered": "#27000c",
                 "primary-active": "#27000c",
                 "primary-inactive": "#bc2445",
@@ -5018,12 +4839,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#27000c",
                 "link-active": "#27000c",
                 "link-inactive": "#bc2445",
-                "link-disabled": "#44232c",
-                "outline-hovered": "#080002",
-                "outline-active": "#080002",
-                "outline-inactive": "#bc2445",
-                "outline-disabled": "#44232c",
-                outline: "#840929"
+                "link-disabled": "#44232c"
               }}
             />
           </ColorPalette>
@@ -5043,7 +4859,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#ffffff",
                 backdrop: "#00000026",
                 "on-secondary": "#ffffff",
-                border: "#8b6ed6",
+                border: "#6b48bb",
                 "primary-hovered": "#240c59",
                 "primary-active": "#240c59",
                 "primary-inactive": "#6c4ec9",
@@ -5055,12 +4871,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#240c59",
                 "link-active": "#240c59",
                 "link-inactive": "#6c4ec9",
-                "link-disabled": "#342c4d",
-                "outline-hovered": "#0f0028",
-                "outline-active": "#0f0028",
-                "outline-inactive": "#6c4ec9",
-                "outline-disabled": "#342c4d",
-                outline: "#492b9b"
+                "link-disabled": "#342c4d"
               }}
             />
           </ColorPalette>
@@ -5080,7 +4891,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#ffffff",
                 backdrop: "#00000826",
                 "on-secondary": "#ffffff",
-                border: "#4083f9",
+                border: "#1b61df",
                 "primary-hovered": "#001f5a",
                 "primary-active": "#001f5a",
                 "primary-inactive": "#216df4",
@@ -5092,12 +4903,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#001f5a",
                 "link-active": "#001f5a",
                 "link-inactive": "#216df4",
-                "link-disabled": "#233457",
-                "outline-hovered": "#000c38",
-                "outline-active": "#000c38",
-                "outline-inactive": "#216df4",
-                "outline-disabled": "#233457",
-                outline: "#0145be"
+                "link-disabled": "#233457"
               }}
             />
           </ColorPalette>
@@ -5117,7 +4923,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#ffffff",
                 backdrop: "#00000026",
                 "on-secondary": "#000000",
-                border: "#3da27d",
+                border: "#237b5b",
                 "primary-hovered": "#000000",
                 "primary-active": "#000000",
                 "primary-inactive": "#298565",
@@ -5129,12 +4935,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#000000",
                 "link-active": "#000000",
                 "link-inactive": "#298565",
-                "link-disabled": "#213731",
-                "outline-hovered": "#000000",
-                "outline-active": "#000000",
-                "outline-inactive": "#298565",
-                "outline-disabled": "#213731",
-                outline: "#0a4e38"
+                "link-disabled": "#213731"
               }}
             />
           </ColorPalette>
@@ -5154,7 +4955,7 @@ const COLOR_VARIANTS = {
                 "on-primary": "#ffffff",
                 backdrop: "#00000026",
                 "on-secondary": "#000000",
-                border: "#b88331",
+                border: "#8e611a",
                 "primary-hovered": "#070400",
                 "primary-active": "#070400",
                 "primary-inactive": "#92661d",
@@ -5166,12 +4967,7 @@ const COLOR_VARIANTS = {
                 "link-hovered": "#070400",
                 "link-active": "#070400",
                 "link-inactive": "#92661d",
-                "link-disabled": "#3a3021",
-                "outline-hovered": "#000000",
-                "outline-active": "#000000",
-                "outline-inactive": "#92661d",
-                "outline-disabled": "#3a3021",
-                outline: "#583902"
+                "link-disabled": "#3a3021"
               }}
             />
           </ColorPalette>

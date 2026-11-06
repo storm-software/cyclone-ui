@@ -347,13 +347,12 @@ const DayPicker = () => {
                     {...swapOnClick(dayButton(day))}
                     theme="base"
                     variant={
-                      day.now
-                        ? "outlined"
-                        : !day.inCurrentMonth
-                          ? "ghost"
-                          : day.selected || day.range === "in-range"
-                            ? "primary"
-                            : "ghost"
+                      day.inCurrentMonth &&
+                      (day.selected || day.range === "in-range")
+                        ? "primary"
+                        : day.now
+                          ? "outlined"
+                          : "ghost"
                     }
                     size={cellSize}
                     width={cellSize}

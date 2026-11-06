@@ -773,19 +773,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.outline",
-      type: "color",
-      value: "#555659",
-      cssVar: "--cu-color-outline",
-      description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.hairline",
       type: "color",
-      value: "#2d2e33",
+      value: "#46464a",
       cssVar: "--cu-color-hairline",
       description: "Low-contrast color for borders, dividers and separators.",
       theme: undefined,
@@ -902,10 +892,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.border",
       type: "color",
-      value: "#383a3f",
+      value: "#404147",
       cssVar: "--cu-color-base-border",
       description:
-        "Generated base border color for secondary backgrounds (secondary, 15% brighter)",
+        "Generated base border color for secondary backgrounds (secondary, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1086,10 +1076,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.border",
       type: "color",
-      value: "#22735f",
+      value: "#31806b",
       cssVar: "--cu-color-brand-border",
       description:
-        "Generated brand border color for secondary backgrounds (secondary, 15% brighter)",
+        "Generated brand border color for secondary backgrounds (secondary, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1233,16 +1223,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.danger.outline",
-      type: "color",
-      value: "#d44267",
-      cssVar: "--cu-color-danger-outline",
-      description:
-        "Generated danger border and divider color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.danger.on-primary",
       type: "color",
       value: "#FAFAFA",
@@ -1285,10 +1265,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.border",
       type: "color",
-      value: "#7b1734",
+      value: "#86233c",
       cssVar: "--cu-color-danger-border",
       description:
-        "Generated danger border color for secondary backgrounds (secondary, 15% brighter)",
+        "Generated danger border color for secondary backgrounds (secondary, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1413,46 +1393,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.danger.outline-hovered",
-      type: "color",
-      value: "#ff91af",
-      cssVar: "--cu-color-danger-outline-hovered",
-      description:
-        "Generated danger border and divider color (matches primary) (hovered, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.danger.outline-active",
-      type: "color",
-      value: "#ff91af",
-      cssVar: "--cu-color-danger-outline-active",
-      description:
-        "Generated danger border and divider color (matches primary) (active, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.danger.outline-inactive",
-      type: "color",
-      value: "#aa1046",
-      cssVar: "--cu-color-danger-outline-inactive",
-      description:
-        "Generated danger border and divider color (matches primary) (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.danger.outline-disabled",
-      type: "color",
-      value: "#724853",
-      cssVar: "--cu-color-danger-outline-disabled",
-      description:
-        "Generated danger border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.warning.primary",
       type: "color",
       value: "#f9c25e",
@@ -1478,16 +1418,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#f9c25e",
       cssVar: "--cu-color-warning-link",
       description: "Generated warning hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline",
-      type: "color",
-      value: "#f9c25e",
-      cssVar: "--cu-color-warning-outline",
-      description:
-        "Generated warning border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -1524,10 +1454,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.border",
       type: "color",
-      value: "#be8e3e",
+      value: "#d1a052",
       cssVar: "--cu-color-warning-border",
       description:
-        "Generated warning border color for secondary backgrounds (secondary, 15% brighter)",
+        "Generated warning border color for secondary backgrounds (secondary, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1652,46 +1582,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.warning.outline-hovered",
-      type: "color",
-      value: "#8c5a00",
-      cssVar: "--cu-color-warning-outline-hovered",
-      description:
-        "Generated warning border and divider color (matches primary) (hovered, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline-active",
-      type: "color",
-      value: "#8c5a00",
-      cssVar: "--cu-color-warning-outline-active",
-      description:
-        "Generated warning border and divider color (matches primary) (active, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline-inactive",
-      type: "color",
-      value: "#fff592",
-      cssVar: "--cu-color-warning-outline-inactive",
-      description:
-        "Generated warning border and divider color (matches primary) (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline-disabled",
-      type: "color",
-      value: "#807056",
-      cssVar: "--cu-color-warning-outline-disabled",
-      description:
-        "Generated warning border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.info.primary",
       type: "color",
       value: "#4d8eff",
@@ -1717,15 +1607,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#4d8eff",
       cssVar: "--cu-color-info-link",
       description: "Generated info hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline",
-      type: "color",
-      value: "#4d8eff",
-      cssVar: "--cu-color-info-outline",
-      description: "Generated info border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -1761,10 +1642,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.border",
       type: "color",
-      value: "#2a549f",
+      value: "#3560ac",
       cssVar: "--cu-color-info-border",
       description:
-        "Generated info border color for secondary backgrounds (secondary, 15% brighter)",
+        "Generated info border color for secondary backgrounds (secondary, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1889,46 +1770,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.info.outline-hovered",
-      type: "color",
-      value: "#9fe5ff",
-      cssVar: "--cu-color-info-outline-hovered",
-      description:
-        "Generated info border and divider color (matches primary) (hovered, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline-active",
-      type: "color",
-      value: "#9fe5ff",
-      cssVar: "--cu-color-info-outline-active",
-      description:
-        "Generated info border and divider color (matches primary) (active, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline-inactive",
-      type: "color",
-      value: "#2564d1",
-      cssVar: "--cu-color-info-outline-inactive",
-      description:
-        "Generated info border and divider color (matches primary) (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline-disabled",
-      type: "color",
-      value: "#4b5e81",
-      cssVar: "--cu-color-info-outline-disabled",
-      description:
-        "Generated info border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.discovery.primary",
       type: "color",
       value: "#9277da",
@@ -1954,16 +1795,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#9277da",
       cssVar: "--cu-color-discovery-link",
       description: "Generated discovery hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline",
-      type: "color",
-      value: "#9277da",
-      cssVar: "--cu-color-discovery-outline",
-      description:
-        "Generated discovery border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -2000,10 +1831,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.border",
       type: "color",
-      value: "#42336f",
+      value: "#4b3c79",
       cssVar: "--cu-color-discovery-border",
       description:
-        "Generated discovery border color for secondary backgrounds (secondary, 15% brighter)",
+        "Generated discovery border color for secondary backgrounds (secondary, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2128,46 +1959,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.discovery.outline-hovered",
-      type: "color",
-      value: "#e2c8ff",
-      cssVar: "--cu-color-discovery-outline-hovered",
-      description:
-        "Generated discovery border and divider color (matches primary) (hovered, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline-active",
-      type: "color",
-      value: "#e2c8ff",
-      cssVar: "--cu-color-discovery-outline-active",
-      description:
-        "Generated discovery border and divider color (matches primary) (active, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline-inactive",
-      type: "color",
-      value: "#6d51b0",
-      cssVar: "--cu-color-discovery-outline-inactive",
-      description:
-        "Generated discovery border and divider color (matches primary) (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline-disabled",
-      type: "color",
-      value: "#5e5776",
-      cssVar: "--cu-color-discovery-outline-disabled",
-      description:
-        "Generated discovery border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.success.primary",
       type: "color",
       value: "#45c791",
@@ -2183,16 +1974,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#45c791",
       cssVar: "--cu-color-success-link",
       description: "Generated success hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline",
-      type: "color",
-      value: "#45c791",
-      cssVar: "--cu-color-success-outline",
-      description:
-        "Generated success border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -2239,10 +2020,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.border",
       type: "color",
-      value: "#217452",
+      value: "#31815e",
       cssVar: "--cu-color-success-border",
       description:
-        "Generated success border color for secondary backgrounds (secondary, 15% brighter)",
+        "Generated success border color for secondary backgrounds (secondary, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2363,46 +2144,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-success-link-disabled",
       description:
         "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-hovered",
-      type: "color",
-      value: "#a1ffe2",
-      cssVar: "--cu-color-success-outline-hovered",
-      description:
-        "Generated success border and divider color (matches primary) (hovered, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-active",
-      type: "color",
-      value: "#a1ffe2",
-      cssVar: "--cu-color-success-outline-active",
-      description:
-        "Generated success border and divider color (matches primary) (active, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-inactive",
-      type: "color",
-      value: "#009865",
-      cssVar: "--cu-color-success-outline-inactive",
-      description:
-        "Generated success border and divider color (matches primary) (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-disabled",
-      type: "color",
-      value: "#4c7062",
-      cssVar: "--cu-color-success-outline-disabled",
-      description:
-        "Generated success border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -2809,10 +2550,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sunken-disabled",
       type: "color",
-      value: "#1e1e20",
+      value: "#2e2e31",
       cssVar: "--cu-color-sunken-disabled",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -2849,10 +2590,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.canvas-disabled",
       type: "color",
-      value: "#242427",
+      value: "#323235",
       cssVar: "--cu-color-canvas-disabled",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -2889,10 +2630,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-disabled",
       type: "color",
-      value: "#29292b",
+      value: "#343437",
       cssVar: "--cu-color-surface-disabled",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -2929,10 +2670,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-disabled",
       type: "color",
-      value: "#2b2b2d",
+      value: "#363638",
       cssVar: "--cu-color-elevated-disabled",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -2969,50 +2710,50 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-disabled",
       type: "color",
-      value: "#2e2f32",
+      value: "#37383b",
       cssVar: "--cu-color-floating-disabled",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-hovered",
+      path: "color.hairline-hovered",
       type: "color",
       value: "#ffffff",
-      cssVar: "--cu-color-outline-hovered",
+      cssVar: "--cu-color-hairline-hovered",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, dark contrast primitive)",
+        "Low-contrast color for borders, dividers and separators. (hovered, dark contrast primitive)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-active",
+      path: "color.hairline-active",
       type: "color",
       value: "#ffffff",
-      cssVar: "--cu-color-outline-active",
+      cssVar: "--cu-color-hairline-active",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, dark contrast primitive)",
+        "Low-contrast color for borders, dividers and separators. (active, dark contrast primitive)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-inactive",
+      path: "color.hairline-inactive",
       type: "color",
       value: "#636363",
-      cssVar: "--cu-color-outline-inactive",
+      cssVar: "--cu-color-hairline-inactive",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 50% darker)",
+        "Low-contrast color for borders, dividers and separators. (inactive, 50% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-disabled",
+      path: "color.hairline-disabled",
       type: "color",
-      value: "#494a4d",
-      cssVar: "--cu-color-outline-disabled",
+      value: "#444447",
+      cssVar: "--cu-color-hairline-disabled",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -6495,19 +6236,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.outline",
-      type: "color",
-      value: "#626364",
-      cssVar: "--cu-color-outline",
-      description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.hairline",
       type: "color",
-      value: "#45464a",
+      value: "#57575a",
       cssVar: "--cu-color-hairline",
       description: "Low-contrast color for borders, dividers and separators.",
       theme: undefined,
@@ -6624,10 +6355,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.border",
       type: "color",
-      value: "#4d4f52",
+      value: "#535458",
       cssVar: "--cu-color-base-border",
       description:
-        "Generated base border color for secondary backgrounds (secondary, 15% brighter)",
+        "Generated base border color for secondary backgrounds (secondary, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -6808,10 +6539,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.border",
       type: "color",
-      value: "#3f7568",
+      value: "#4c7d70",
       cssVar: "--cu-color-brand-border",
       description:
-        "Generated brand border color for secondary backgrounds (secondary, 15% brighter)",
+        "Generated brand border color for secondary backgrounds (secondary, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -6955,16 +6686,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.danger.outline",
-      type: "color",
-      value: "#b15e73",
-      cssVar: "--cu-color-danger-outline",
-      description:
-        "Generated danger border and divider color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.danger.on-primary",
       type: "color",
       value: "#d5d5d5",
@@ -7007,10 +6728,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.border",
       type: "color",
-      value: "#7b384b",
+      value: "#814252",
       cssVar: "--cu-color-danger-border",
       description:
-        "Generated danger border color for secondary backgrounds (secondary, 15% brighter)",
+        "Generated danger border color for secondary backgrounds (secondary, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -7135,46 +6856,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.danger.outline-hovered",
-      type: "color",
-      value: "#dc889f",
-      cssVar: "--cu-color-danger-outline-hovered",
-      description:
-        "Generated danger border and divider color (matches primary) (hovered, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.danger.outline-active",
-      type: "color",
-      value: "#dc889f",
-      cssVar: "--cu-color-danger-outline-active",
-      description:
-        "Generated danger border and divider color (matches primary) (active, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.danger.outline-inactive",
-      type: "color",
-      value: "#963859",
-      cssVar: "--cu-color-danger-outline-inactive",
-      description:
-        "Generated danger border and divider color (matches primary) (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.danger.outline-disabled",
-      type: "color",
-      value: "#745b61",
-      cssVar: "--cu-color-danger-outline-disabled",
-      description:
-        "Generated danger border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.warning.primary",
       type: "color",
       value: "#d0ad6d",
@@ -7200,16 +6881,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#d0ad6d",
       cssVar: "--cu-color-warning-link",
       description: "Generated warning hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline",
-      type: "color",
-      value: "#d0ad6d",
-      cssVar: "--cu-color-warning-outline",
-      description:
-        "Generated warning border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -7246,10 +6917,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.border",
       type: "color",
-      value: "#a2875b",
+      value: "#b19467",
       cssVar: "--cu-color-warning-border",
       description:
-        "Generated warning border color for secondary backgrounds (secondary, 15% brighter)",
+        "Generated warning border color for secondary backgrounds (secondary, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -7374,46 +7045,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.warning.outline-hovered",
-      type: "color",
-      value: "#876527",
-      cssVar: "--cu-color-warning-outline-hovered",
-      description:
-        "Generated warning border and divider color (matches primary) (hovered, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline-active",
-      type: "color",
-      value: "#876527",
-      cssVar: "--cu-color-warning-outline-active",
-      description:
-        "Generated warning border and divider color (matches primary) (active, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline-inactive",
-      type: "color",
-      value: "#ddd589",
-      cssVar: "--cu-color-warning-outline-inactive",
-      description:
-        "Generated warning border and divider color (matches primary) (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline-disabled",
-      type: "color",
-      value: "#7d7465",
-      cssVar: "--cu-color-warning-outline-disabled",
-      description:
-        "Generated warning border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.info.primary",
       type: "color",
       value: "#638cd2",
@@ -7439,15 +7070,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#638cd2",
       cssVar: "--cu-color-info-link",
       description: "Generated info hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline",
-      type: "color",
-      value: "#638cd2",
-      cssVar: "--cu-color-info-outline",
-      description: "Generated info border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -7483,10 +7105,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.border",
       type: "color",
-      value: "#4a638f",
+      value: "#536c97",
       cssVar: "--cu-color-info-border",
       description:
-        "Generated info border color for secondary backgrounds (secondary, 15% brighter)",
+        "Generated info border color for secondary backgrounds (secondary, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -7611,46 +7233,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.info.outline-hovered",
-      type: "color",
-      value: "#90c9df",
-      cssVar: "--cu-color-info-outline-hovered",
-      description:
-        "Generated info border and divider color (matches primary) (hovered, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline-active",
-      type: "color",
-      value: "#90c9df",
-      cssVar: "--cu-color-info-outline-active",
-      description:
-        "Generated info border and divider color (matches primary) (active, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline-inactive",
-      type: "color",
-      value: "#4d70ac",
-      cssVar: "--cu-color-info-outline-inactive",
-      description:
-        "Generated info border and divider color (matches primary) (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline-disabled",
-      type: "color",
-      value: "#5e697e",
-      cssVar: "--cu-color-info-outline-disabled",
-      description:
-        "Generated info border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.discovery.primary",
       type: "color",
       value: "#8e7dbb",
@@ -7676,16 +7258,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#8e7dbb",
       cssVar: "--cu-color-discovery-link",
       description: "Generated discovery hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline",
-      type: "color",
-      value: "#8e7dbb",
-      cssVar: "--cu-color-discovery-outline",
-      description:
-        "Generated discovery border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -7722,10 +7294,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.border",
       type: "color",
-      value: "#554c72",
+      value: "#5c5378",
       cssVar: "--cu-color-discovery-border",
       description:
-        "Generated discovery border color for secondary backgrounds (secondary, 15% brighter)",
+        "Generated discovery border color for secondary backgrounds (secondary, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -7850,46 +7422,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.discovery.outline-hovered",
-      type: "color",
-      value: "#c4a6e5",
-      cssVar: "--cu-color-discovery-outline-hovered",
-      description:
-        "Generated discovery border and divider color (matches primary) (hovered, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline-active",
-      type: "color",
-      value: "#c4a6e5",
-      cssVar: "--cu-color-discovery-outline-active",
-      description:
-        "Generated discovery border and divider color (matches primary) (active, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline-inactive",
-      type: "color",
-      value: "#75669a",
-      cssVar: "--cu-color-discovery-outline-inactive",
-      description:
-        "Generated discovery border and divider color (matches primary) (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline-disabled",
-      type: "color",
-      value: "#696577",
-      cssVar: "--cu-color-discovery-outline-disabled",
-      description:
-        "Generated discovery border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.success.primary",
       type: "color",
       value: "#60a88a",
@@ -7905,16 +7437,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#60a88a",
       cssVar: "--cu-color-success-link",
       description: "Generated success hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline",
-      type: "color",
-      value: "#60a88a",
-      cssVar: "--cu-color-success-outline",
-      description:
-        "Generated success border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -7961,10 +7483,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.border",
       type: "color",
-      value: "#3f765f",
+      value: "#4c7d68",
       cssVar: "--cu-color-success-border",
       description:
-        "Generated success border color for secondary backgrounds (secondary, 15% brighter)",
+        "Generated success border color for secondary backgrounds (secondary, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -8085,46 +7607,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-success-link-disabled",
       description:
         "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-hovered",
-      type: "color",
-      value: "#91dfc7",
-      cssVar: "--cu-color-success-outline-hovered",
-      description:
-        "Generated success border and divider color (matches primary) (hovered, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-active",
-      type: "color",
-      value: "#91dfc7",
-      cssVar: "--cu-color-success-outline-active",
-      description:
-        "Generated success border and divider color (matches primary) (active, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-inactive",
-      type: "color",
-      value: "#298e6c",
-      cssVar: "--cu-color-success-outline-inactive",
-      description:
-        "Generated success border and divider color (matches primary) (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-disabled",
-      type: "color",
-      value: "#5d736a",
-      cssVar: "--cu-color-success-outline-disabled",
-      description:
-        "Generated success border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -8531,10 +8013,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sunken-disabled",
       type: "color",
-      value: "#3b3b3d",
+      value: "#464649",
       cssVar: "--cu-color-sunken-disabled",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -8571,10 +8053,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.canvas-disabled",
       type: "color",
-      value: "#3f3f42",
+      value: "#49494b",
       cssVar: "--cu-color-canvas-disabled",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -8611,10 +8093,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-disabled",
       type: "color",
-      value: "#434345",
+      value: "#4b4b4d",
       cssVar: "--cu-color-surface-disabled",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -8651,10 +8133,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-disabled",
       type: "color",
-      value: "#444446",
+      value: "#4c4c4e",
       cssVar: "--cu-color-elevated-disabled",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -8691,50 +8173,50 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-disabled",
       type: "color",
-      value: "#464749",
+      value: "#4d4d50",
       cssVar: "--cu-color-floating-disabled",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-hovered",
+      path: "color.hairline-hovered",
       type: "color",
       value: "#d9d9d9",
-      cssVar: "--cu-color-outline-hovered",
+      cssVar: "--cu-color-hairline-hovered",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, dark contrast primitive)",
+        "Low-contrast color for borders, dividers and separators. (hovered, dark contrast primitive)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-active",
+      path: "color.hairline-active",
       type: "color",
       value: "#d9d9d9",
-      cssVar: "--cu-color-outline-active",
+      cssVar: "--cu-color-hairline-active",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, dark contrast primitive)",
+        "Low-contrast color for borders, dividers and separators. (active, dark contrast primitive)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-inactive",
+      path: "color.hairline-inactive",
       type: "color",
       value: "#6c6c6c",
-      cssVar: "--cu-color-outline-inactive",
+      cssVar: "--cu-color-hairline-inactive",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 50% darker)",
+        "Low-contrast color for borders, dividers and separators. (inactive, 50% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-disabled",
+      path: "color.hairline-disabled",
       type: "color",
-      value: "#595a5c",
-      cssVar: "--cu-color-outline-disabled",
+      value: "#565658",
+      cssVar: "--cu-color-hairline-disabled",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -12217,19 +11699,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.outline",
-      type: "color",
-      value: "#3f424a",
-      cssVar: "--cu-color-outline",
-      description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.hairline",
       type: "color",
-      value: "#0b0b0e",
+      value: "#2b2b33",
       cssVar: "--cu-color-hairline",
       description: "Low-contrast color for borders, dividers and separators.",
       theme: undefined,
@@ -12346,10 +11818,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.border",
       type: "color",
-      value: "#191b21",
+      value: "#24252d",
       cssVar: "--cu-color-base-border",
       description:
-        "Generated base border color for secondary backgrounds (secondary, 15% brighter)",
+        "Generated base border color for secondary backgrounds (secondary, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -12530,10 +12002,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.border",
       type: "color",
-      value: "#0b5a47",
+      value: "#19755d",
       cssVar: "--cu-color-brand-border",
       description:
-        "Generated brand border color for secondary backgrounds (secondary, 15% brighter)",
+        "Generated brand border color for secondary backgrounds (secondary, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -12677,16 +12149,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.danger.outline",
-      type: "color",
-      value: "#f42c5f",
-      cssVar: "--cu-color-danger-outline",
-      description:
-        "Generated danger border and divider color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.danger.on-primary",
       type: "color",
       value: "#ffffff",
@@ -12729,10 +12191,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.border",
       type: "color",
-      value: "#60011d",
+      value: "#780a26",
       cssVar: "--cu-color-danger-border",
       description:
-        "Generated danger border color for secondary backgrounds (secondary, 15% brighter)",
+        "Generated danger border color for secondary backgrounds (secondary, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -12857,46 +12319,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.danger.outline-hovered",
-      type: "color",
-      value: "#ffd2de",
-      cssVar: "--cu-color-danger-outline-hovered",
-      description:
-        "Generated danger border and divider color (matches primary) (hovered, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.danger.outline-active",
-      type: "color",
-      value: "#ffd2de",
-      cssVar: "--cu-color-danger-outline-active",
-      description:
-        "Generated danger border and divider color (matches primary) (active, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.danger.outline-inactive",
-      type: "color",
-      value: "#9b0036",
-      cssVar: "--cu-color-danger-outline-inactive",
-      description:
-        "Generated danger border and divider color (matches primary) (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.danger.outline-disabled",
-      type: "color",
-      value: "#693240",
-      cssVar: "--cu-color-danger-outline-disabled",
-      description:
-        "Generated danger border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.warning.primary",
       type: "color",
       value: "#ffd280",
@@ -12922,16 +12344,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#ffd280",
       cssVar: "--cu-color-warning-link",
       description: "Generated warning hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline",
-      type: "color",
-      value: "#ffd280",
-      cssVar: "--cu-color-warning-outline",
-      description:
-        "Generated warning border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -12968,10 +12380,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.border",
       type: "color",
-      value: "#da9421",
+      value: "#eead45",
       cssVar: "--cu-color-warning-border",
       description:
-        "Generated warning border color for secondary backgrounds (secondary, 15% brighter)",
+        "Generated warning border color for secondary backgrounds (secondary, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -13096,46 +12508,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.warning.outline-hovered",
-      type: "color",
-      value: "#583900",
-      cssVar: "--cu-color-warning-outline-hovered",
-      description:
-        "Generated warning border and divider color (matches primary) (hovered, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline-active",
-      type: "color",
-      value: "#583900",
-      cssVar: "--cu-color-warning-outline-active",
-      description:
-        "Generated warning border and divider color (matches primary) (active, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline-inactive",
-      type: "color",
-      value: "#fffbd4",
-      cssVar: "--cu-color-warning-outline-inactive",
-      description:
-        "Generated warning border and divider color (matches primary) (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline-disabled",
-      type: "color",
-      value: "#816943",
-      cssVar: "--cu-color-warning-outline-disabled",
-      description:
-        "Generated warning border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.info.primary",
       type: "color",
       value: "#70a4ff",
@@ -13161,15 +12533,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#70a4ff",
       cssVar: "--cu-color-info-link",
       description: "Generated info hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline",
-      type: "color",
-      value: "#70a4ff",
-      cssVar: "--cu-color-info-outline",
-      description: "Generated info border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -13205,10 +12568,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.border",
       type: "color",
-      value: "#0f44a2",
+      value: "#1953bb",
       cssVar: "--cu-color-info-border",
       description:
-        "Generated info border color for secondary backgrounds (secondary, 15% brighter)",
+        "Generated info border color for secondary backgrounds (secondary, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -13333,46 +12696,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.info.outline-hovered",
-      type: "color",
-      value: "#e7f8ff",
-      cssVar: "--cu-color-info-outline-hovered",
-      description:
-        "Generated info border and divider color (matches primary) (hovered, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline-active",
-      type: "color",
-      value: "#e7f8ff",
-      cssVar: "--cu-color-info-outline-active",
-      description:
-        "Generated info border and divider color (matches primary) (active, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline-inactive",
-      type: "color",
-      value: "#0159f1",
-      cssVar: "--cu-color-info-outline-inactive",
-      description:
-        "Generated info border and divider color (matches primary) (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline-disabled",
-      type: "color",
-      value: "#36507f",
-      cssVar: "--cu-color-info-outline-disabled",
-      description:
-        "Generated info border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.discovery.primary",
       type: "color",
       value: "#a283f3",
@@ -13398,16 +12721,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#a283f3",
       cssVar: "--cu-color-discovery-link",
       description: "Generated discovery hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline",
-      type: "color",
-      value: "#a283f3",
-      cssVar: "--cu-color-discovery-outline",
-      description:
-        "Generated discovery border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -13444,10 +12757,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.border",
       type: "color",
-      value: "#2c1b5d",
+      value: "#37256f",
       cssVar: "--cu-color-discovery-border",
       description:
-        "Generated discovery border color for secondary backgrounds (secondary, 15% brighter)",
+        "Generated discovery border color for secondary backgrounds (secondary, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -13572,46 +12885,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.discovery.outline-hovered",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-discovery-outline-hovered",
-      description:
-        "Generated discovery border and divider color (matches primary) (hovered, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline-active",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-discovery-outline-active",
-      description:
-        "Generated discovery border and divider color (matches primary) (active, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline-inactive",
-      type: "color",
-      value: "#643bc7",
-      cssVar: "--cu-color-discovery-outline-inactive",
-      description:
-        "Generated discovery border and divider color (matches primary) (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline-disabled",
-      type: "color",
-      value: "#4f4472",
-      cssVar: "--cu-color-discovery-outline-disabled",
-      description:
-        "Generated discovery border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.success.primary",
       type: "color",
       value: "#2de498",
@@ -13627,16 +12900,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#2de498",
       cssVar: "--cu-color-success-link",
       description: "Generated success hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline",
-      type: "color",
-      value: "#2de498",
-      cssVar: "--cu-color-success-outline",
-      description:
-        "Generated success border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -13683,10 +12946,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.border",
       type: "color",
-      value: "#0a5b3a",
+      value: "#19774e",
       cssVar: "--cu-color-success-border",
       description:
-        "Generated success border color for secondary backgrounds (secondary, 15% brighter)",
+        "Generated success border color for secondary backgrounds (secondary, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -13807,46 +13070,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-success-link-disabled",
       description:
         "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-hovered",
-      type: "color",
-      value: "#e9fff8",
-      cssVar: "--cu-color-success-outline-hovered",
-      description:
-        "Generated success border and divider color (matches primary) (hovered, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-active",
-      type: "color",
-      value: "#e9fff8",
-      cssVar: "--cu-color-success-outline-active",
-      description:
-        "Generated success border and divider color (matches primary) (active, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-inactive",
-      type: "color",
-      value: "#006a46",
-      cssVar: "--cu-color-success-outline-inactive",
-      description:
-        "Generated success border and divider color (matches primary) (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-disabled",
-      type: "color",
-      value: "#376754",
-      cssVar: "--cu-color-success-outline-disabled",
-      description:
-        "Generated success border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -14253,10 +13476,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sunken-disabled",
       type: "color",
-      value: "#000000",
+      value: "#0a0a0d",
       cssVar: "--cu-color-sunken-disabled",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -14293,10 +13516,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.canvas-disabled",
       type: "color",
-      value: "#000000",
+      value: "#101013",
       cssVar: "--cu-color-canvas-disabled",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -14333,10 +13556,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-disabled",
       type: "color",
-      value: "#030304",
+      value: "#121216",
       cssVar: "--cu-color-surface-disabled",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -14373,10 +13596,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-disabled",
       type: "color",
-      value: "#060607",
+      value: "#151518",
       cssVar: "--cu-color-elevated-disabled",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -14413,50 +13636,50 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-disabled",
       type: "color",
-      value: "#0b0c0e",
+      value: "#17181c",
       cssVar: "--cu-color-floating-disabled",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-hovered",
+      path: "color.hairline-hovered",
       type: "color",
       value: "#ffffff",
-      cssVar: "--cu-color-outline-hovered",
+      cssVar: "--cu-color-hairline-hovered",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, dark contrast primitive)",
+        "Low-contrast color for borders, dividers and separators. (hovered, dark contrast primitive)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-active",
+      path: "color.hairline-active",
       type: "color",
       value: "#ffffff",
-      cssVar: "--cu-color-outline-active",
+      cssVar: "--cu-color-hairline-active",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, dark contrast primitive)",
+        "Low-contrast color for borders, dividers and separators. (active, dark contrast primitive)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-inactive",
+      path: "color.hairline-inactive",
       type: "color",
       value: "#565656",
-      cssVar: "--cu-color-outline-inactive",
+      cssVar: "--cu-color-hairline-inactive",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 50% darker)",
+        "Low-contrast color for borders, dividers and separators. (inactive, 50% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-disabled",
+      path: "color.hairline-disabled",
       type: "color",
-      value: "#2f3138",
-      cssVar: "--cu-color-outline-disabled",
+      value: "#28282f",
+      cssVar: "--cu-color-hairline-disabled",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -17939,16 +17162,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.outline",
-      type: "color",
-      value: "#c0c0c1",
-      cssVar: "--cu-color-outline",
-      description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.hairline",
       type: "color",
       value: "#d0d0d1",
@@ -18068,10 +17281,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.border",
       type: "color",
-      value: "#8d8d8e",
+      value: "#777778",
       cssVar: "--cu-color-base-border",
       description:
-        "Generated base border color for secondary backgrounds (secondary, 15% darker)",
+        "Generated base border color for secondary backgrounds (secondary, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -18254,10 +17467,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.border",
       type: "color",
-      value: "#a7cfc9",
+      value: "#89b0ab",
       cssVar: "--cu-color-brand-border",
       description:
-        "Generated brand border color for secondary backgrounds (secondary, 15% darker)",
+        "Generated brand border color for secondary backgrounds (secondary, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -18401,16 +17614,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.danger.outline",
-      type: "color",
-      value: "#8e223e",
-      cssVar: "--cu-color-danger-outline",
-      description:
-        "Generated danger border and divider color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.danger.on-primary",
       type: "color",
       value: "#FAFAFA",
@@ -18453,10 +17656,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.border",
       type: "color",
-      value: "#cb5b71",
+      value: "#b2455c",
       cssVar: "--cu-color-danger-border",
       description:
-        "Generated danger border color for secondary backgrounds (secondary, 15% darker)",
+        "Generated danger border color for secondary backgrounds (secondary, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -18581,46 +17784,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.danger.outline-hovered",
-      type: "color",
-      value: "#550013",
-      cssVar: "--cu-color-danger-outline-hovered",
-      description:
-        "Generated danger border and divider color (matches primary) (hovered, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.danger.outline-active",
-      type: "color",
-      value: "#550013",
-      cssVar: "--cu-color-danger-outline-active",
-      description:
-        "Generated danger border and divider color (matches primary) (active, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.danger.outline-inactive",
-      type: "color",
-      value: "#ab3e56",
-      cssVar: "--cu-color-danger-outline-inactive",
-      description:
-        "Generated danger border and divider color (matches primary) (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.danger.outline-disabled",
-      type: "color",
-      value: "#5a3c44",
-      cssVar: "--cu-color-danger-outline-disabled",
-      description:
-        "Generated danger border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.warning.primary",
       type: "color",
       value: "#765417",
@@ -18636,16 +17799,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#765417",
       cssVar: "--cu-color-warning-link",
       description: "Generated warning hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline",
-      type: "color",
-      value: "#765417",
-      cssVar: "--cu-color-warning-outline",
-      description:
-        "Generated warning border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -18692,10 +17845,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.border",
       type: "color",
-      value: "#a78249",
+      value: "#906c33",
       cssVar: "--cu-color-warning-border",
       description:
-        "Generated warning border color for secondary backgrounds (secondary, 15% darker)",
+        "Generated warning border color for secondary backgrounds (secondary, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -18820,46 +17973,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.warning.outline-hovered",
-      type: "color",
-      value: "#402100",
-      cssVar: "--cu-color-warning-outline-hovered",
-      description:
-        "Generated warning border and divider color (matches primary) (hovered, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline-active",
-      type: "color",
-      value: "#402100",
-      cssVar: "--cu-color-warning-outline-active",
-      description:
-        "Generated warning border and divider color (matches primary) (active, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline-inactive",
-      type: "color",
-      value: "#926f36",
-      cssVar: "--cu-color-warning-outline-inactive",
-      description:
-        "Generated warning border and divider color (matches primary) (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline-disabled",
-      type: "color",
-      value: "#53493b",
-      cssVar: "--cu-color-warning-outline-disabled",
-      description:
-        "Generated warning border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.info.primary",
       type: "color",
       value: "#2055b3",
@@ -18885,15 +17998,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#2055b3",
       cssVar: "--cu-color-info-link",
       description: "Generated info hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline",
-      type: "color",
-      value: "#2055b3",
-      cssVar: "--cu-color-info-outline",
-      description: "Generated info border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -18929,10 +18033,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.border",
       type: "color",
-      value: "#4d80da",
+      value: "#396ac2",
       cssVar: "--cu-color-info-border",
       description:
-        "Generated info border color for secondary backgrounds (secondary, 15% darker)",
+        "Generated info border color for secondary backgrounds (secondary, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -19057,46 +18161,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.info.outline-hovered",
-      type: "color",
-      value: "#001a76",
-      cssVar: "--cu-color-info-outline-hovered",
-      description:
-        "Generated info border and divider color (matches primary) (hovered, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline-active",
-      type: "color",
-      value: "#001a76",
-      cssVar: "--cu-color-info-outline-active",
-      description:
-        "Generated info border and divider color (matches primary) (active, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline-inactive",
-      type: "color",
-      value: "#3b72d3",
-      cssVar: "--cu-color-info-outline-inactive",
-      description:
-        "Generated info border and divider color (matches primary) (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline-disabled",
-      type: "color",
-      value: "#3b4a68",
-      cssVar: "--cu-color-info-outline-disabled",
-      description:
-        "Generated info border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.discovery.primary",
       type: "color",
       value: "#594395",
@@ -19122,16 +18186,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#594395",
       cssVar: "--cu-color-discovery-link",
       description: "Generated discovery hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline",
-      type: "color",
-      value: "#594395",
-      cssVar: "--cu-color-discovery-outline",
-      description:
-        "Generated discovery border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -19168,10 +18222,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.border",
       type: "color",
-      value: "#8670be",
+      value: "#725ba7",
       cssVar: "--cu-color-discovery-border",
       description:
-        "Generated discovery border color for secondary backgrounds (secondary, 15% darker)",
+        "Generated discovery border color for secondary backgrounds (secondary, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -19296,46 +18350,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.discovery.outline-hovered",
-      type: "color",
-      value: "#2c0d5e",
-      cssVar: "--cu-color-discovery-outline-hovered",
-      description:
-        "Generated discovery border and divider color (matches primary) (hovered, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline-active",
-      type: "color",
-      value: "#2c0d5e",
-      cssVar: "--cu-color-discovery-outline-active",
-      description:
-        "Generated discovery border and divider color (matches primary) (active, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline-inactive",
-      type: "color",
-      value: "#725db2",
-      cssVar: "--cu-color-discovery-outline-inactive",
-      description:
-        "Generated discovery border and divider color (matches primary) (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline-disabled",
-      type: "color",
-      value: "#4a445f",
-      cssVar: "--cu-color-discovery-outline-disabled",
-      description:
-        "Generated discovery border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.success.primary",
       type: "color",
       value: "#216b53",
@@ -19351,16 +18365,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#216b53",
       cssVar: "--cu-color-success-link",
       description: "Generated success hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline",
-      type: "color",
-      value: "#216b53",
-      cssVar: "--cu-color-success-outline",
-      description:
-        "Generated success border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -19407,10 +18411,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.border",
       type: "color",
-      value: "#52977e",
+      value: "#3b8168",
       cssVar: "--cu-color-success-border",
       description:
-        "Generated success border color for secondary backgrounds (secondary, 15% darker)",
+        "Generated success border color for secondary backgrounds (secondary, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -19531,46 +18535,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-success-link-disabled",
       description:
         "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-hovered",
-      type: "color",
-      value: "#003622",
-      cssVar: "--cu-color-success-outline-hovered",
-      description:
-        "Generated success border and divider color (matches primary) (hovered, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-active",
-      type: "color",
-      value: "#003622",
-      cssVar: "--cu-color-success-outline-active",
-      description:
-        "Generated success border and divider color (matches primary) (active, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-inactive",
-      type: "color",
-      value: "#40876e",
-      cssVar: "--cu-color-success-outline-inactive",
-      description:
-        "Generated success border and divider color (matches primary) (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-disabled",
-      type: "color",
-      value: "#3c504b",
-      cssVar: "--cu-color-success-outline-disabled",
-      description:
-        "Generated success border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -19977,10 +18941,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sunken-disabled",
       type: "color",
-      value: "#aeaeaf",
+      value: "#7e7e80",
       cssVar: "--cu-color-sunken-disabled",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -20017,10 +18981,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.canvas-disabled",
       type: "color",
-      value: "#b4b4b5",
+      value: "#828284",
       cssVar: "--cu-color-canvas-disabled",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -20057,10 +19021,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-disabled",
       type: "color",
-      value: "#b8b8b9",
+      value: "#848486",
       cssVar: "--cu-color-surface-disabled",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -20097,10 +19061,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-disabled",
       type: "color",
-      value: "#bfbfc0",
+      value: "#88888a",
       cssVar: "--cu-color-elevated-disabled",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -20137,50 +19101,50 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-disabled",
       type: "color",
-      value: "#c2c2c3",
+      value: "#8a8a8b",
       cssVar: "--cu-color-floating-disabled",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-hovered",
+      path: "color.hairline-hovered",
       type: "color",
       value: "#0c0c0d",
-      cssVar: "--cu-color-outline-hovered",
+      cssVar: "--cu-color-hairline-hovered",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, light contrast primitive)",
+        "Low-contrast color for borders, dividers and separators. (hovered, light contrast primitive)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-active",
+      path: "color.hairline-active",
       type: "color",
       value: "#0c0c0d",
-      cssVar: "--cu-color-outline-active",
+      cssVar: "--cu-color-hairline-active",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, light contrast primitive)",
+        "Low-contrast color for borders, dividers and separators. (active, light contrast primitive)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-inactive",
+      path: "color.hairline-inactive",
       type: "color",
       value: "#020102",
-      cssVar: "--cu-color-outline-inactive",
+      cssVar: "--cu-color-hairline-inactive",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 50% darker)",
+        "Low-contrast color for borders, dividers and separators. (inactive, 50% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-disabled",
+      path: "color.hairline-disabled",
       type: "color",
-      value: "#6f6f71",
-      cssVar: "--cu-color-outline-disabled",
+      value: "#747477",
+      cssVar: "--cu-color-hairline-disabled",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -23663,16 +22627,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.outline",
-      type: "color",
-      value: "#adadad",
-      cssVar: "--cu-color-outline",
-      description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.hairline",
       type: "color",
       value: "#b8b8b9",
@@ -23792,10 +22746,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.border",
       type: "color",
-      value: "#89898a",
+      value: "#7a7a7a",
       cssVar: "--cu-color-base-border",
       description:
-        "Generated base border color for secondary backgrounds (secondary, 15% darker)",
+        "Generated base border color for secondary backgrounds (secondary, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -23978,10 +22932,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.border",
       type: "color",
-      value: "#9bb7b3",
+      value: "#889f9c",
       cssVar: "--cu-color-brand-border",
       description:
-        "Generated brand border color for secondary backgrounds (secondary, 15% darker)",
+        "Generated brand border color for secondary backgrounds (secondary, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -24125,16 +23079,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.danger.outline",
-      type: "color",
-      value: "#864254",
-      cssVar: "--cu-color-danger-outline",
-      description:
-        "Generated danger border and divider color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.danger.on-primary",
       type: "color",
       value: "#d5d5d5",
@@ -24177,10 +23121,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.border",
       type: "color",
-      value: "#ae6d79",
+      value: "#9b5e6b",
       cssVar: "--cu-color-danger-border",
       description:
-        "Generated danger border color for secondary backgrounds (secondary, 15% darker)",
+        "Generated danger border color for secondary backgrounds (secondary, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -24305,46 +23249,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.danger.outline-hovered",
-      type: "color",
-      value: "#691f2f",
-      cssVar: "--cu-color-danger-outline-hovered",
-      description:
-        "Generated danger border and divider color (matches primary) (hovered, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.danger.outline-active",
-      type: "color",
-      value: "#691f2f",
-      cssVar: "--cu-color-danger-outline-active",
-      description:
-        "Generated danger border and divider color (matches primary) (active, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.danger.outline-inactive",
-      type: "color",
-      value: "#975967",
-      cssVar: "--cu-color-danger-outline-inactive",
-      description:
-        "Generated danger border and divider color (matches primary) (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.danger.outline-disabled",
-      type: "color",
-      value: "#655156",
-      cssVar: "--cu-color-danger-outline-disabled",
-      description:
-        "Generated danger border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.warning.primary",
       type: "color",
       value: "#786137",
@@ -24360,16 +23264,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#786137",
       cssVar: "--cu-color-warning-link",
       description: "Generated warning hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline",
-      type: "color",
-      value: "#786137",
-      cssVar: "--cu-color-warning-outline",
-      description:
-        "Generated warning border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -24416,10 +23310,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.border",
       type: "color",
-      value: "#958060",
+      value: "#86714f",
       cssVar: "--cu-color-warning-border",
       description:
-        "Generated warning border color for secondary backgrounds (secondary, 15% darker)",
+        "Generated warning border color for secondary backgrounds (secondary, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -24544,46 +23438,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.warning.outline-hovered",
-      type: "color",
-      value: "#5e3e1b",
-      cssVar: "--cu-color-warning-outline-hovered",
-      description:
-        "Generated warning border and divider color (matches primary) (hovered, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline-active",
-      type: "color",
-      value: "#5e3e1b",
-      cssVar: "--cu-color-warning-outline-active",
-      description:
-        "Generated warning border and divider color (matches primary) (active, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline-inactive",
-      type: "color",
-      value: "#887351",
-      cssVar: "--cu-color-warning-outline-inactive",
-      description:
-        "Generated warning border and divider color (matches primary) (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline-disabled",
-      type: "color",
-      value: "#605950",
-      cssVar: "--cu-color-warning-outline-disabled",
-      description:
-        "Generated warning border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.info.primary",
       type: "color",
       value: "#45649b",
@@ -24609,15 +23463,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#45649b",
       cssVar: "--cu-color-info-link",
       description: "Generated info hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline",
-      type: "color",
-      value: "#45649b",
-      cssVar: "--cu-color-info-outline",
-      description: "Generated info border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -24653,10 +23498,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.border",
       type: "color",
-      value: "#6582b6",
+      value: "#5873a4",
       cssVar: "--cu-color-info-border",
       description:
-        "Generated info border color for secondary backgrounds (secondary, 15% darker)",
+        "Generated info border color for secondary backgrounds (secondary, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -24781,46 +23626,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.info.outline-hovered",
-      type: "color",
-      value: "#24377b",
-      cssVar: "--cu-color-info-outline-hovered",
-      description:
-        "Generated info border and divider color (matches primary) (hovered, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline-active",
-      type: "color",
-      value: "#24377b",
-      cssVar: "--cu-color-info-outline-active",
-      description:
-        "Generated info border and divider color (matches primary) (active, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline-inactive",
-      type: "color",
-      value: "#5a79af",
-      cssVar: "--cu-color-info-outline-inactive",
-      description:
-        "Generated info border and divider color (matches primary) (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline-disabled",
-      type: "color",
-      value: "#515a6e",
-      cssVar: "--cu-color-info-outline-disabled",
-      description:
-        "Generated info border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.discovery.primary",
       type: "color",
       value: "#675a8a",
@@ -24846,16 +23651,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#675a8a",
       cssVar: "--cu-color-discovery-link",
       description: "Generated discovery hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline",
-      type: "color",
-      value: "#675a8a",
-      cssVar: "--cu-color-discovery-outline",
-      description:
-        "Generated discovery border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -24892,10 +23687,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.border",
       type: "color",
-      value: "#8679a7",
+      value: "#786c96",
       cssVar: "--cu-color-discovery-border",
       description:
-        "Generated discovery border color for secondary backgrounds (secondary, 15% darker)",
+        "Generated discovery border color for secondary backgrounds (secondary, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -25020,46 +23815,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.discovery.outline-hovered",
-      type: "color",
-      value: "#442c6b",
-      cssVar: "--cu-color-discovery-outline-hovered",
-      description:
-        "Generated discovery border and divider color (matches primary) (hovered, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline-active",
-      type: "color",
-      value: "#442c6b",
-      cssVar: "--cu-color-discovery-outline-active",
-      description:
-        "Generated discovery border and divider color (matches primary) (active, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline-inactive",
-      type: "color",
-      value: "#796d9d",
-      cssVar: "--cu-color-discovery-outline-inactive",
-      description:
-        "Generated discovery border and divider color (matches primary) (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline-disabled",
-      type: "color",
-      value: "#5a5768",
-      cssVar: "--cu-color-discovery-outline-disabled",
-      description:
-        "Generated discovery border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.success.primary",
       type: "color",
       value: "#3e7160",
@@ -25075,16 +23830,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#3e7160",
       cssVar: "--cu-color-success-link",
       description: "Generated success hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline",
-      type: "color",
-      value: "#3e7160",
-      cssVar: "--cu-color-success-outline",
-      description:
-        "Generated success border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -25131,10 +23876,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.border",
       type: "color",
-      value: "#648b7d",
+      value: "#537d6e",
       cssVar: "--cu-color-success-border",
       description:
-        "Generated success border color for secondary backgrounds (secondary, 15% darker)",
+        "Generated success border color for secondary backgrounds (secondary, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -25255,46 +24000,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-success-link-disabled",
       description:
         "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-hovered",
-      type: "color",
-      value: "#1a5941",
-      cssVar: "--cu-color-success-outline-hovered",
-      description:
-        "Generated success border and divider color (matches primary) (hovered, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-active",
-      type: "color",
-      value: "#1a5941",
-      cssVar: "--cu-color-success-outline-active",
-      description:
-        "Generated success border and divider color (matches primary) (active, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-inactive",
-      type: "color",
-      value: "#578172",
-      cssVar: "--cu-color-success-outline-inactive",
-      description:
-        "Generated success border and divider color (matches primary) (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-disabled",
-      type: "color",
-      value: "#505e5b",
-      cssVar: "--cu-color-success-outline-disabled",
-      description:
-        "Generated success border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -25701,10 +24406,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sunken-disabled",
       type: "color",
-      value: "#a0a0a1",
+      value: "#7f7f80",
       cssVar: "--cu-color-sunken-disabled",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -25741,10 +24446,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.canvas-disabled",
       type: "color",
-      value: "#a4a4a5",
+      value: "#818183",
       cssVar: "--cu-color-canvas-disabled",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -25781,10 +24486,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-disabled",
       type: "color",
-      value: "#a7a7a8",
+      value: "#838384",
       cssVar: "--cu-color-surface-disabled",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -25821,10 +24526,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-disabled",
       type: "color",
-      value: "#acacad",
+      value: "#868687",
       cssVar: "--cu-color-elevated-disabled",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -25861,50 +24566,50 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-disabled",
       type: "color",
-      value: "#aeaeaf",
+      value: "#878787",
       cssVar: "--cu-color-floating-disabled",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-hovered",
+      path: "color.hairline-hovered",
       type: "color",
       value: "#2e2e30",
-      cssVar: "--cu-color-outline-hovered",
+      cssVar: "--cu-color-hairline-hovered",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, light contrast primitive)",
+        "Low-contrast color for borders, dividers and separators. (hovered, light contrast primitive)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-active",
+      path: "color.hairline-active",
       type: "color",
       value: "#2e2e30",
-      cssVar: "--cu-color-outline-active",
+      cssVar: "--cu-color-hairline-active",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, light contrast primitive)",
+        "Low-contrast color for borders, dividers and separators. (active, light contrast primitive)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-inactive",
+      path: "color.hairline-inactive",
       type: "color",
       value: "#2f202f",
-      cssVar: "--cu-color-outline-inactive",
+      cssVar: "--cu-color-hairline-inactive",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 50% darker)",
+        "Low-contrast color for borders, dividers and separators. (inactive, 50% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-disabled",
+      path: "color.hairline-disabled",
       type: "color",
-      value: "#747475",
-      cssVar: "--cu-color-outline-disabled",
+      value: "#787879",
+      cssVar: "--cu-color-hairline-disabled",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -29387,16 +28092,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.outline",
-      type: "color",
-      value: "#dcdce0",
-      cssVar: "--cu-color-outline",
-      description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.hairline",
       type: "color",
       value: "#f4f4f6",
@@ -29516,10 +28211,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.border",
       type: "color",
-      value: "#8e8e9a",
+      value: "#6d6d7a",
       cssVar: "--cu-color-base-border",
       description:
-        "Generated base border color for secondary backgrounds (secondary, 15% darker)",
+        "Generated base border color for secondary backgrounds (secondary, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -29702,10 +28397,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.border",
       type: "color",
-      value: "#c3e8e3",
+      value: "#8ec5be",
       cssVar: "--cu-color-brand-border",
       description:
-        "Generated brand border color for secondary backgrounds (secondary, 15% darker)",
+        "Generated brand border color for secondary backgrounds (secondary, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -29849,16 +28544,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.danger.outline",
-      type: "color",
-      value: "#840929",
-      cssVar: "--cu-color-danger-outline",
-      description:
-        "Generated danger border and divider color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.danger.on-primary",
       type: "color",
       value: "#ffffff",
@@ -29901,10 +28586,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.border",
       type: "color",
-      value: "#e6516f",
+      value: "#c82b4c",
       cssVar: "--cu-color-danger-border",
       description:
-        "Generated danger border color for secondary backgrounds (secondary, 15% darker)",
+        "Generated danger border color for secondary backgrounds (secondary, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -30029,46 +28714,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.danger.outline-hovered",
-      type: "color",
-      value: "#080002",
-      cssVar: "--cu-color-danger-outline-hovered",
-      description:
-        "Generated danger border and divider color (matches primary) (hovered, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.danger.outline-active",
-      type: "color",
-      value: "#080002",
-      cssVar: "--cu-color-danger-outline-active",
-      description:
-        "Generated danger border and divider color (matches primary) (active, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.danger.outline-inactive",
-      type: "color",
-      value: "#bc2445",
-      cssVar: "--cu-color-danger-outline-inactive",
-      description:
-        "Generated danger border and divider color (matches primary) (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.danger.outline-disabled",
-      type: "color",
-      value: "#44232c",
-      cssVar: "--cu-color-danger-outline-disabled",
-      description:
-        "Generated danger border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.warning.primary",
       type: "color",
       value: "#583902",
@@ -30084,16 +28729,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#583902",
       cssVar: "--cu-color-warning-link",
       description: "Generated warning hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline",
-      type: "color",
-      value: "#583902",
-      cssVar: "--cu-color-warning-outline",
-      description:
-        "Generated warning border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -30140,10 +28775,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.border",
       type: "color",
-      value: "#b88331",
+      value: "#8e611a",
       cssVar: "--cu-color-warning-border",
       description:
-        "Generated warning border color for secondary backgrounds (secondary, 15% darker)",
+        "Generated warning border color for secondary backgrounds (secondary, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -30268,46 +28903,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.warning.outline-hovered",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-warning-outline-hovered",
-      description:
-        "Generated warning border and divider color (matches primary) (hovered, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline-active",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-warning-outline-active",
-      description:
-        "Generated warning border and divider color (matches primary) (active, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline-inactive",
-      type: "color",
-      value: "#92661d",
-      cssVar: "--cu-color-warning-outline-inactive",
-      description:
-        "Generated warning border and divider color (matches primary) (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.outline-disabled",
-      type: "color",
-      value: "#3a3021",
-      cssVar: "--cu-color-warning-outline-disabled",
-      description:
-        "Generated warning border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.info.primary",
       type: "color",
       value: "#0145be",
@@ -30333,15 +28928,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#0145be",
       cssVar: "--cu-color-info-link",
       description: "Generated info hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline",
-      type: "color",
-      value: "#0145be",
-      cssVar: "--cu-color-info-outline",
-      description: "Generated info border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -30377,10 +28963,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.border",
       type: "color",
-      value: "#4083f9",
+      value: "#1b61df",
       cssVar: "--cu-color-info-border",
       description:
-        "Generated info border color for secondary backgrounds (secondary, 15% darker)",
+        "Generated info border color for secondary backgrounds (secondary, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -30505,46 +29091,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.info.outline-hovered",
-      type: "color",
-      value: "#000c38",
-      cssVar: "--cu-color-info-outline-hovered",
-      description:
-        "Generated info border and divider color (matches primary) (hovered, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline-active",
-      type: "color",
-      value: "#000c38",
-      cssVar: "--cu-color-info-outline-active",
-      description:
-        "Generated info border and divider color (matches primary) (active, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline-inactive",
-      type: "color",
-      value: "#216df4",
-      cssVar: "--cu-color-info-outline-inactive",
-      description:
-        "Generated info border and divider color (matches primary) (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.info.outline-disabled",
-      type: "color",
-      value: "#233457",
-      cssVar: "--cu-color-info-outline-disabled",
-      description:
-        "Generated info border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.discovery.primary",
       type: "color",
       value: "#492b9b",
@@ -30570,16 +29116,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#492b9b",
       cssVar: "--cu-color-discovery-link",
       description: "Generated discovery hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline",
-      type: "color",
-      value: "#492b9b",
-      cssVar: "--cu-color-discovery-outline",
-      description:
-        "Generated discovery border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -30616,10 +29152,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.border",
       type: "color",
-      value: "#8b6ed6",
+      value: "#6b48bb",
       cssVar: "--cu-color-discovery-border",
       description:
-        "Generated discovery border color for secondary backgrounds (secondary, 15% darker)",
+        "Generated discovery border color for secondary backgrounds (secondary, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -30744,46 +29280,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.discovery.outline-hovered",
-      type: "color",
-      value: "#0f0028",
-      cssVar: "--cu-color-discovery-outline-hovered",
-      description:
-        "Generated discovery border and divider color (matches primary) (hovered, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline-active",
-      type: "color",
-      value: "#0f0028",
-      cssVar: "--cu-color-discovery-outline-active",
-      description:
-        "Generated discovery border and divider color (matches primary) (active, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline-inactive",
-      type: "color",
-      value: "#6c4ec9",
-      cssVar: "--cu-color-discovery-outline-inactive",
-      description:
-        "Generated discovery border and divider color (matches primary) (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.discovery.outline-disabled",
-      type: "color",
-      value: "#342c4d",
-      cssVar: "--cu-color-discovery-outline-disabled",
-      description:
-        "Generated discovery border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.success.primary",
       type: "color",
       value: "#0a4e38",
@@ -30799,16 +29295,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#0a4e38",
       cssVar: "--cu-color-success-link",
       description: "Generated success hyperlink text color (matches primary)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline",
-      type: "color",
-      value: "#0a4e38",
-      cssVar: "--cu-color-success-outline",
-      description:
-        "Generated success border and divider color (matches primary)",
       theme: undefined,
       typography: false
     },
@@ -30855,10 +29341,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.border",
       type: "color",
-      value: "#3da27d",
+      value: "#237b5b",
       cssVar: "--cu-color-success-border",
       description:
-        "Generated success border color for secondary backgrounds (secondary, 15% darker)",
+        "Generated success border color for secondary backgrounds (secondary, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -30979,46 +29465,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-success-link-disabled",
       description:
         "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-hovered",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-success-outline-hovered",
-      description:
-        "Generated success border and divider color (matches primary) (hovered, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-active",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-success-outline-active",
-      description:
-        "Generated success border and divider color (matches primary) (active, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-inactive",
-      type: "color",
-      value: "#298565",
-      cssVar: "--cu-color-success-outline-inactive",
-      description:
-        "Generated success border and divider color (matches primary) (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.success.outline-disabled",
-      type: "color",
-      value: "#213731",
-      cssVar: "--cu-color-success-outline-disabled",
-      description:
-        "Generated success border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -31425,10 +29871,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sunken-disabled",
       type: "color",
-      value: "#c0c0c7",
+      value: "#777786",
       cssVar: "--cu-color-sunken-disabled",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -31465,10 +29911,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.canvas-disabled",
       type: "color",
-      value: "#c9c9cf",
+      value: "#7d7d8c",
       cssVar: "--cu-color-canvas-disabled",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -31505,10 +29951,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-disabled",
       type: "color",
-      value: "#cfcfd5",
+      value: "#80808f",
       cssVar: "--cu-color-surface-disabled",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -31545,10 +29991,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-disabled",
       type: "color",
-      value: "#dadade",
+      value: "#868694",
       cssVar: "--cu-color-elevated-disabled",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -31585,50 +30031,50 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-disabled",
       type: "color",
-      value: "#dfdfe3",
+      value: "#898996",
       cssVar: "--cu-color-floating-disabled",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-hovered",
+      path: "color.hairline-hovered",
       type: "color",
       value: "#000000",
-      cssVar: "--cu-color-outline-hovered",
+      cssVar: "--cu-color-hairline-hovered",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, light contrast primitive)",
+        "Low-contrast color for borders, dividers and separators. (hovered, light contrast primitive)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-active",
+      path: "color.hairline-active",
       type: "color",
       value: "#000000",
-      cssVar: "--cu-color-outline-active",
+      cssVar: "--cu-color-hairline-active",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, light contrast primitive)",
+        "Low-contrast color for borders, dividers and separators. (active, light contrast primitive)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-inactive",
+      path: "color.hairline-inactive",
       type: "color",
       value: "#000000",
-      cssVar: "--cu-color-outline-inactive",
+      cssVar: "--cu-color-hairline-inactive",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 50% darker)",
+        "Low-contrast color for borders, dividers and separators. (inactive, 50% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.outline-disabled",
+      path: "color.hairline-disabled",
       type: "color",
-      value: "#636370",
-      cssVar: "--cu-color-outline-disabled",
+      value: "#696979",
+      cssVar: "--cu-color-hairline-disabled",
       description:
-        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },

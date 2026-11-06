@@ -124,11 +124,12 @@ const TooltipArrow = (props: GetProps<typeof TamaguiTooltip.Arrow>) => {
 // The `ContainerBackground` draws the surface. Positioned for it (Popper
 // positions a wrapper, not this frame), and `isolation` makes the stacking
 // context: Tamagui hands a content `zIndex` to the portal instead.
+// No `context: TooltipContext`: it would merge the context's `size` into the
+// content's props, and v3's content has no `size`, so it reached the DOM.
 const TooltipContent = styled(
   TamaguiTooltip.Content,
   {
     displayName: "Tooltip",
-    context: TooltipContext,
     position: "relative",
     isolation: "isolate",
     transition: "200ms",

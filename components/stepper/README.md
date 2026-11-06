@@ -68,8 +68,10 @@ A package containing the Stepper component used by Storm Software
 ## Quick Features
 
 - Multi-step wizard built on Tamagui `Tabs`.
-- Vertical header list with check, pencil, and lock icons for each step state.
-- Optional step numbers (`numbered`).
+- Vertical or horizontal header list (`orientation`) in `sm` or `lg` sizes.
+- Ring markers and solid or dashed (`lineStyle`) connecting lines that fill in as the stepper moves between steps.
+- Check, pencil, and lock icons for each step state, or custom markers (`marker`).
+- Optional step numbers (`numbered`) and descriptions (`description`, `showDescription`).
 - `Stepper.NextButton` and `Stepper.PreviousButton` helpers.
 
 ## Installing

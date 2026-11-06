@@ -94,7 +94,11 @@ const PopoverFrameImpl = createStyledHOC(
       <PopoverContext.Provider size={size} {...surface}>
         {/* Not `PopoverFrame`: a styled frame consumes `offset` as the CSS
             `offset` style, so it never reaches the popper. */}
-        <TamaguiPopover ref={forwardedRef} allowFlip={true} {...props}>
+        <TamaguiPopover
+          ref={forwardedRef}
+          allowFlip={true}
+          stayInFrame={true}
+          {...props}>
           {children}
 
           {shouldAdapt && (
@@ -138,6 +142,8 @@ const PopoverContent = styled(TamaguiPopover.Content, {
   borderWidth: 0,
   borderRadius: "popover",
   marginHorizontal: "auto",
+  // Never wider than the viewport; `stayInFrame`'s 10px padding on each side.
+  maxWidth: "calc(100vw - 20px)",
   outlineStyle: "focus-visible:solid",
   outlineWidth: "focus-visible:2px",
   outlineColor: "focus-visible:primary-active",
@@ -168,6 +174,7 @@ const PopoverContentImpl = createStyledHOC(
       backgroundColor,
       borderColor,
       borderWidth,
+      borderRadius = "popover",
       ...props
     }: Omit<GetProps<typeof PopoverContent>, "variant"> &
       PopoverContentExtraProps,
@@ -194,9 +201,13 @@ const PopoverContentImpl = createStyledHOC(
       <PopoverContent
         ref={forwardedRef}
         boxShadow={containerShadows[shadowStyle]}
+        borderRadius={borderRadius}
         {...backing}
         {...props}>
+        {/* Explicit, not `inherit`: Tamagui wraps the children in unstyled
+            focus-scope and theme nodes, which would pass on a 0 radius. */}
         <ContainerBackground
+          borderRadius={borderRadius}
           variant={variant}
           shadowStyle={shadowStyle}
           glass={glass}

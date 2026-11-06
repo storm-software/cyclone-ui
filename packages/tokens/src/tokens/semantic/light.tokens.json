@@ -22,13 +22,6 @@
       "$description": "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
       "group": "foreground"
     },
-    "outline": {
-      "$type": "color",
-      "colorSpace": "display-p3",
-      "$value": "{color.neutral.6}",
-      "$description": "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
-      "group": "separator"
-    },
     "hairline": {
       "$type": "color",
       "colorSpace": "display-p3",

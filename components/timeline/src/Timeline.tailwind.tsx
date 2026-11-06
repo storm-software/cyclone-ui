@@ -128,7 +128,7 @@ export const Timeline = forwardRef(
                 {marker ? marker(item, index) : <TimelineMarker />}
                 {!last && (
                   <View
-                    className={`flex-1 bg-outline ${vertical ? "my-xl w-[2px]" : "mx-xl h-[2px]"}`}
+                    className={`flex-1 bg-hairline ${vertical ? "my-xl w-[2px]" : "mx-xl h-[2px]"}`}
                   />
                 )}
               </View>

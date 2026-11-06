@@ -109,7 +109,7 @@ const InputGroup = styled(XStack, {
   alignItems: "center",
   backgroundColor: "surface",
   borderWidth: 1,
-  borderColor: "outline",
+  borderColor: "hairline",
   outlineWidth: 0,
   outlineColor: "transparent",
   boxShadow: "none",
@@ -312,13 +312,13 @@ const InputGroupImpl = createStyledHOC(
     const active = focused || locallyActive;
     const hasValidationMessage = useFieldHasValidationMessage();
     const labelPlacement = useFieldLabelPlacement();
-    const idleColor = hasValidationMessage ? "primary" : "outline";
+    const idleColor = hasValidationMessage ? "primary" : "hairline";
     const focusColor = hasValidationMessage
       ? "primary-active"
-      : "outline-active";
+      : "hairline-active";
     const hoverColor = hasValidationMessage
       ? "primary-hovered"
-      : "outline-hovered";
+      : "hairline-hovered";
     const borderColor = `${active ? focusColor : idleColor} group-hover/field:${disabled ? "primary-disabled" : active ? focusColor : hoverColor}`;
 
     const behavior = useMemo(
@@ -390,7 +390,7 @@ const InputSeparator = styled(View, {
   opacity: "enter:0",
   // Drawn as a underlined 1px bar rather than a left border: `XGroup.Item` zeroes
   // `borderLeftWidth` on every non-first item, which hid the line.
-  backgroundColor: "outline hover:outline-hovered",
+  backgroundColor: "hairline hover:hairline-hovered",
   width: 1,
   flexShrink: 0,
   height: "60%",
@@ -398,7 +398,7 @@ const InputSeparator = styled(View, {
   variants: {
     focused: {
       true: {
-        backgroundColor: "outline-active"
+        backgroundColor: "hairline-active"
       }
     },
 
@@ -419,7 +419,7 @@ const InputSeparator = styled(View, {
     disabled: {
       true: {
         backgroundColor:
-          "outline-inactive hover:outline-inactive press:outline-inactive focus:outline-inactive"
+          "hairline-inactive hover:hairline-inactive press:hairline-inactive focus:hairline-inactive"
       }
     }
   } as const,
@@ -435,19 +435,19 @@ const InputSeparatorImpl = createStyledHOC(
   (props, forwardedRef) => {
     const { disabled, focused, hasValidationMessage } =
       InputContext.useStyledContext();
-    const idleColor = hasValidationMessage ? "primary" : "outline";
+    const idleColor = hasValidationMessage ? "primary" : "hairline";
     const focusColor = hasValidationMessage
       ? "primary-active"
-      : "outline-active";
+      : "hairline-active";
     const hoverColor = hasValidationMessage
       ? "primary-hovered"
-      : "outline-hovered";
+      : "hairline-hovered";
 
     return (
       <XGroup.Item>
         <InputSeparator
           ref={forwardedRef}
-          backgroundColor={`${focused ? focusColor : idleColor} group-hover/field:${disabled ? "outline-inactive" : focused ? focusColor : hoverColor}`}
+          backgroundColor={`${focused ? focusColor : idleColor} group-hover/field:${disabled ? "hairline-inactive" : focused ? focusColor : hoverColor}`}
           hasValidationMessage={hasValidationMessage}
           {...props}
         />

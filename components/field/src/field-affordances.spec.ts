@@ -101,10 +101,10 @@ describe("field affordance color states", () => {
     );
 
     expect(themeIcon).toContain("theme={theme}");
-    expect(themeIcon).toContain('"outline focus-visible:outline-active"');
+    expect(themeIcon).toContain('"hairline focus-visible:hairline-active"');
     expect(themeIcon).toContain('"primary focus-visible:primary-active"');
     expect(themeIcon).toMatch(
-      /arrowBorderColor=\{\s*isNeutral\s*\?\s*"outline focus-visible:outline-active"\s*:\s*"primary focus-visible:primary-active"\s*\}/
+      /arrowBorderColor=\{\s*isNeutral\s*\?\s*"hairline focus-visible:hairline-active"\s*:\s*"primary focus-visible:primary-active"\s*\}/
     );
   });
 });

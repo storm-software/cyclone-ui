@@ -134,7 +134,7 @@ export const Rating = forwardRef<TamaguiElement, RatingProps>(
       iconVariant = "filled",
       emptyIconVariant = "regular",
       color = "primary",
-      emptyColor = hasValidationMessage ? "primary" : "outline",
+      emptyColor = hasValidationMessage ? "primary" : "hairline",
       highlightSelectedOnly = false,
       getLabelText = defaultGetLabelText,
       onKeyDown,

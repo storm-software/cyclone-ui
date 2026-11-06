@@ -131,7 +131,7 @@ export const Timeline = forwardRef(
                 {!last && (
                   <View
                     flex={1}
-                    backgroundColor="outline"
+                    backgroundColor="hairline"
                     {...(vertical
                       ? { width: 2, marginVertical: "xl" as const }
                       : { height: 2, marginHorizontal: "xl" as const })}

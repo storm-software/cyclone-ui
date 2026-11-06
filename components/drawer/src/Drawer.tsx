@@ -206,11 +206,47 @@ const DrawerHeaderImpl: FC<DrawerHeaderProps> = ({
   );
 };
 
+// `right` is the reference: `lg` on the handle and above the footer, `2xl` on
+// the other edges. The handle edge follows `direction`.
+const drawerContentMargins: Record<
+  DrawerDirection,
+  {
+    marginTop: "2xl" | "lg";
+    marginRight: "2xl" | "lg";
+    marginBottom: "lg";
+    marginLeft: "2xl" | "lg";
+  }
+> = {
+  right: {
+    marginTop: "2xl",
+    marginRight: "2xl",
+    marginBottom: "lg",
+    marginLeft: "lg"
+  },
+  left: {
+    marginTop: "2xl",
+    marginRight: "lg",
+    marginBottom: "lg",
+    marginLeft: "2xl"
+  },
+  top: {
+    marginTop: "2xl",
+    marginRight: "2xl",
+    marginBottom: "lg",
+    marginLeft: "2xl"
+  },
+  bottom: {
+    marginTop: "lg",
+    marginRight: "2xl",
+    marginBottom: "lg",
+    marginLeft: "2xl"
+  }
+};
+
 const DrawerContentFrame = styled(YStack, {
   displayName: "DrawerContent",
   flexGrow: 1,
   flexShrink: 1,
-  margin: "lg",
   paddingTop: "5xl",
   gap: "6xl",
   backgroundColor: "canvas",
@@ -227,11 +263,12 @@ const isDrawerHeader = (child: ReactNode) =>
 // `Drawer.Header` children stay pinned, and the rest scrolls once it
 // outgrows the panel.
 const DrawerContent: FC<DrawerContentProps> = ({ children, ...props }) => {
+  const { direction } = use(DrawerContext);
   const items = Children.toArray(children);
   const header = items.filter(isDrawerHeader);
 
   return (
-    <DrawerContentFrame {...props}>
+    <DrawerContentFrame {...drawerContentMargins[direction]} {...props}>
       {header.length > 0 && (
         <YStack flexShrink={0} paddingHorizontal="6xl">
           {header}

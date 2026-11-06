@@ -133,7 +133,7 @@ const FilePickerGroupFrame = styled(View, {
   borderStyle: "dashed",
   borderWidth: 2,
   borderRadius: "container",
-  borderColor: "outline hover:outline-hovered",
+  borderColor: "hairline hover:hairline-hovered",
   backgroundColor: "surface hover:surface-hovered",
   tabIndex: 0,
   variants: {
@@ -158,7 +158,7 @@ const FilePickerGroupFrame = styled(View, {
 
     active: {
       true: {
-        borderColor: "outline-active hover:outline-active",
+        borderColor: "hairline-active hover:hairline-active",
         backgroundColor: "surface-active hover:surface-active"
       }
     },
@@ -450,6 +450,7 @@ const FilePickerTrigger = createStyledHOC(
               <Lock
                 size={getSized("9xl") * getFormSizeScale(size) * 0.75}
                 color="currentColor"
+                variant="filled"
               />
             ) : (
               <Upload
@@ -488,10 +489,10 @@ const FilePickerTriggerButton = createStyledHOC(
           borderRightWidth={1}
           borderColor={
             disabled
-              ? "outline-disabled"
+              ? "hairline-disabled"
               : hasValidationMessage
                 ? "primary group-hover/file-picker:primary-hovered"
-                : "outline group-hover/file-picker:outline-hovered"
+                : "hairline group-hover/file-picker:hairline-hovered"
           }
           backgroundColor={
             disabled

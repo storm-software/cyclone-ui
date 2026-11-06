@@ -69,7 +69,7 @@ const TextAreaFrame = styled(InputValue, {
   backgroundColor: "surface",
   color: "primary",
   borderWidth: 1,
-  borderColor: "outline hover:outline-hovered focus-visible:primary-active",
+  borderColor: "hairline hover:hairline-hovered focus-visible:primary-active",
   borderRadius: "control",
   boxShadow: "none focus-visible:ring-offset",
   outlineWidth: 0,
@@ -108,7 +108,7 @@ const TextAreaFrame = styled(InputValue, {
         backgroundColor: "transparent",
         borderWidth: 0,
         borderBottomWidth: 1,
-        borderColor: "outline hover:outline-hovered focus-visible:primary",
+        borderColor: "hairline hover:hairline-hovered focus-visible:primary",
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
         boxShadow: "none focus-visible:none"
@@ -215,13 +215,13 @@ export const TextArea = createStyledHOC(
     const [focused, setActive] = useState(false);
     const hasValidationMessage = useFieldHasValidationMessage();
     const labelPlacement = useFieldLabelPlacement();
-    const idleColor = hasValidationMessage ? "primary" : "outline";
+    const idleColor = hasValidationMessage ? "primary" : "hairline";
     const focusColor = hasValidationMessage
       ? "primary-active"
-      : "outline-active";
+      : "hairline-active";
     const hoverColor = hasValidationMessage
       ? "primary-hovered"
-      : "outline-hovered";
+      : "hairline-hovered";
     const isFocused = focusedProp ?? focused;
     const borderColor = `${isFocused ? focusColor : idleColor} hover:${disabled ? "primary-disabled" : isFocused ? focusColor : hoverColor} focus-visible:${focusColor} group-hover/field:${disabled ? "primary-disabled" : isFocused ? focusColor : hoverColor}`;
     const handleFocus = useCallback(

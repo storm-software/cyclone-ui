@@ -21,6 +21,8 @@
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/input": "workspace:*",
     "@cyclone-ui/password-input": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/eyebrow-text": "workspace:*",
     "@maskito/core": "catalog:",
     "@maskito/kit": "^3.11.1",
     "@maskito/react": "catalog:",

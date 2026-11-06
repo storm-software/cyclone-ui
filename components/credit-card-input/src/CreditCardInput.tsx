@@ -18,6 +18,8 @@
 
 "use client";
 
+import { EyebrowText } from "@cyclone-ui/eyebrow-text";
+import { HeadingExtraSmallText } from "@cyclone-ui/heading-text";
 import { useFieldOptions, useFormControl } from "@cyclone-ui/helpers";
 import type { InputChangeEventHandler } from "@cyclone-ui/input";
 import { Input } from "@cyclone-ui/input";
@@ -30,7 +32,6 @@ import {
   createStyledHOC,
   getVariableValue,
   styled,
-  Text,
   useTheme,
   View,
   withStaticProperties
@@ -938,21 +939,16 @@ const CreditCardInputCardFrame = styled(View, {
   overflow: "hidden"
 });
 
-const CreditCardInputCardText = styled(Text, {
+const CreditCardInputCardText = styled(HeadingExtraSmallText, {
   displayName: "CreditCardInputCard",
-  fontFamily: "display",
-  fontSize: "xs",
-  lineHeight: "xs",
-  fontWeight: "700",
+  fontSize: "sm",
+  fontWeight: "medium",
   color: "emphasis"
 });
 
-const CreditCardInputCardCaption = styled(Text, {
+const CreditCardInputCardCaption = styled(EyebrowText, {
   displayName: "CreditCardInputCard",
-  fontFamily: "display",
   fontSize: "xxs",
-  lineHeight: "xxs",
-  fontWeight: "500",
   color: "subtle",
   opacity: 0.75,
   textTransform: "uppercase"
@@ -1006,9 +1002,9 @@ const CreditCardInputCard = createStyledHOC(
             height={48}
             position="relative">
             <CreditCardInputCardText
-              fontSize="sm"
+              fontSize="md"
               lineHeight="sm"
-              fontWeight="600">
+              fontWeight="medium">
               {bankName}
             </CreditCardInputCardText>
             {brand.logo && (
@@ -1029,31 +1025,32 @@ const CreditCardInputCard = createStyledHOC(
             )}
           </CreditCardInputCardRow>
 
-          <Svg width={44} height={37} viewBox="400.732 29.993 73.89 61.466">
-            <G>
+          <View flex={1} justifyContent="center" gap="3xl" marginBottom="sm">
+            <Svg width={44} height={37} viewBox="400.732 29.993 73.89 61.466">
               <G>
-                <Path
-                  fill="#F7D072"
-                  d="M474.622,33.917v53.619c0,2.158-1.765,3.923-3.923,3.923h-66.043
+                <G>
+                  <Path
+                    fill="#F7D072"
+                    d="M474.622,33.917v53.619c0,2.158-1.765,3.923-3.923,3.923h-66.043
 					c-2.158,0-3.923-1.765-3.923-3.923V33.917c0-2.158,1.765-3.923,3.923-3.923h66.043
 					C472.856,29.993,474.622,31.759,474.622,33.917z"
-                />
-              </G>
-              <Path
-                opacity="0.2"
-                fill="#FFFFFF"
-                d="M460.115,42.984l11.488-11.488h-3.728l-9.89,9.966l-1.521,1.522l-1.141,1.065
+                  />
+                </G>
+                <Path
+                  opacity="0.2"
+                  fill="#FFFFFF"
+                  d="M460.115,42.984l11.488-11.488h-3.728l-9.89,9.966l-1.521,1.522l-1.141,1.065
 				l-7.836,7.836h-17.041l-1.522-1.522l-6.314-6.314l-2.511-2.587l-9.966-9.966h-3.728l9.89,9.966l1.522,1.522h-15.748v2.586h18.41
 				l4.869,4.945l1.293,1.37v3.042h-24.573v2.663h24.573v9.357h-24.573v2.586h24.573v3.119h0.152L422,77.37l-1.522,1.522h-18.41
 				v2.663h15.748l-9.89,9.89h3.728l9.89-9.89l8.901-8.9h17.041l18.868,18.791h3.651l-9.89-9.89h14.53v-2.663h-17.117l-6.238-6.238
 				v-3.119h23.356v-2.586H451.29v-9.357h23.356v-2.663H451.29v-3.042l6.238-6.315h17.117v-2.586H460.115z M448.704,69.991h-19.476
 				V54.472h19.476V69.991z"
-              />
-              <G>
+                />
                 <G>
-                  <Path
-                    fill="#717070"
-                    d="M429.152,50.363l2.587,2.586h11.868l1.065-1.064l1.522-1.522H429.152z M429.152,50.363
+                  <G>
+                    <Path
+                      fill="#717070"
+                      d="M429.152,50.363l2.587,2.586h11.868l1.065-1.064l1.522-1.522H429.152z M429.152,50.363
 						l2.587,2.586h11.868l1.065-1.064l1.522-1.522H429.152z M429.152,50.363l2.587,2.586h11.868l1.065-1.064l1.522-1.522H429.152z
 						 M429.152,50.363l2.587,2.586h11.868l1.065-1.064l1.522-1.522H429.152z M445.128,69.991l-1.521-1.521h-11.868l-1.445,1.521
 						h-0.076l-1.065,1.141h17.041L445.128,69.991z M429.152,50.363l2.587,2.586h11.868l1.065-1.064l1.522-1.522H429.152z
@@ -1062,93 +1059,98 @@ const CreditCardInputCard = createStyledHOC(
 						 M429.152,50.363l2.587,2.586h11.868l1.065-1.064l1.522-1.522H429.152z M429.152,50.363l2.587,2.586h11.868l1.065-1.064
 						l1.522-1.522H429.152z M429.152,50.363l2.587,2.586h11.868l1.065-1.064l1.522-1.522H429.152z M429.152,50.363l2.587,2.586
 						h11.868l1.065-1.064l1.522-1.522H429.152z"
-                  />
-                </G>
-                <G>
-                  <G>
-                    <Polygon
-                      fill="#717070"
-                      points="420.234,41.436 422.85,44.052 400.732,44.052 400.732,41.436"
-                    />
-                    <Polygon
-                      fill="#717070"
-                      points="474.622,41.436 474.622,44.052 452.504,44.052 455.119,41.436"
                     />
                   </G>
                   <G>
-                    <Rect
-                      x="400.732"
-                      y="53.425"
-                      fill="#717070"
-                      width="27.218"
-                      height="2.616"
-                    />
-                    <Rect
-                      x="447.403"
-                      y="53.425"
-                      fill="#717070"
-                      width="27.218"
-                      height="2.616"
-                    />
+                    <G>
+                      <Polygon
+                        fill="#717070"
+                        points="420.234,41.436 422.85,44.052 400.732,44.052 400.732,41.436"
+                      />
+                      <Polygon
+                        fill="#717070"
+                        points="474.622,41.436 474.622,44.052 452.504,44.052 455.119,41.436"
+                      />
+                    </G>
+                    <G>
+                      <Rect
+                        x="400.732"
+                        y="53.425"
+                        fill="#717070"
+                        width="27.218"
+                        height="2.616"
+                      />
+                      <Rect
+                        x="447.403"
+                        y="53.425"
+                        fill="#717070"
+                        width="27.218"
+                        height="2.616"
+                      />
+                    </G>
+                    <G>
+                      <Rect
+                        x="400.732"
+                        y="65.415"
+                        fill="#717070"
+                        width="27.218"
+                        height="2.616"
+                      />
+                      <Rect
+                        x="447.403"
+                        y="65.415"
+                        fill="#717070"
+                        width="27.218"
+                        height="2.616"
+                      />
+                    </G>
+                    <G>
+                      <Polygon
+                        fill="#717070"
+                        points="422.853,77.4 420.237,80.016 400.732,80.016 400.732,77.4"
+                      />
+                      <Polygon
+                        fill="#717070"
+                        points="474.622,77.4 474.622,80.016 455.116,80.016 452.501,77.4"
+                      />
+                    </G>
                   </G>
                   <G>
-                    <Rect
-                      x="400.732"
-                      y="65.415"
+                    <Polygon
                       fill="#717070"
-                      width="27.218"
-                      height="2.616"
+                      points="431.762,68.491 408.794,91.459 405.097,91.459 428.065,68.491"
                     />
-                    <Rect
-                      x="447.403"
-                      y="65.415"
+                    <Polygon
                       fill="#717070"
-                      width="27.218"
-                      height="2.616"
+                      points="470.26,29.993 447.292,52.961 443.595,52.961 466.563,29.993"
                     />
                   </G>
                   <G>
                     <Polygon
                       fill="#717070"
-                      points="422.853,77.4 420.237,80.016 400.732,80.016 400.732,77.4"
+                      points="431.759,52.961 428.061,52.961 405.093,29.993 408.791,29.993"
                     />
                     <Polygon
                       fill="#717070"
-                      points="474.622,77.4 474.622,80.016 455.116,80.016 452.501,77.4"
+                      points="470.257,91.459 466.559,91.459 446.207,71.107 445.118,70.018 443.591,68.491 447.289,68.491 448.711,69.913 449.905,71.107 451.327,72.529 456.198,77.4 457.725,78.927 458.814,80.016 460.341,81.543"
                     />
                   </G>
-                </G>
-                <G>
-                  <Polygon
-                    fill="#717070"
-                    points="431.762,68.491 408.794,91.459 405.097,91.459 428.065,68.491"
-                  />
-                  <Polygon
-                    fill="#717070"
-                    points="470.26,29.993 447.292,52.961 443.595,52.961 466.563,29.993"
-                  />
-                </G>
-                <G>
-                  <Polygon
-                    fill="#717070"
-                    points="431.759,52.961 428.061,52.961 405.093,29.993 408.791,29.993"
-                  />
-                  <Polygon
-                    fill="#717070"
-                    points="470.257,91.459 466.559,91.459 446.207,71.107 445.118,70.018 443.591,68.491 447.289,68.491 448.711,69.913 449.905,71.107 451.327,72.529 456.198,77.4 457.725,78.927 458.814,80.016 460.341,81.543"
-                  />
                 </G>
               </G>
-            </G>
-          </Svg>
+            </Svg>
 
-          <CreditCardInputCardText
-            fontFamily="code"
-            fontSize="lg"
-            lineHeight="lg"
-            letterSpacing={2}>
-            {groupDigits(values.number.padEnd(numberLength, "•"), brand.groups)}
-          </CreditCardInputCardText>
+            <CreditCardInputCardText
+              fontFamily="code"
+              fontSize="lg"
+              lineHeight="lg"
+              letterSpacing={2}
+              fontWeight="medium">
+              {groupDigits(
+                values.number.padEnd(numberLength, "•"),
+                brand.groups
+              )}
+            </CreditCardInputCardText>
+          </View>
 
           <CreditCardInputCardRow>
             <View flex={1} minWidth={0}>

@@ -258,7 +258,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-base-border",
       type: "color",
       category: "color",
-      value: "#8d8d8e"
+      value: "#777778"
     },
     {
       path: "color.base.link",
@@ -463,7 +463,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-brand-border",
       type: "color",
       category: "color",
-      value: "#a7cfc9"
+      value: "#89b0ab"
     },
     {
       path: "color.brand.link",
@@ -605,7 +605,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-canvas-disabled",
       type: "color",
       category: "color",
-      value: "#b4b4b5"
+      value: "#828284"
     },
     {
       path: "color.canvas-hovered",
@@ -633,7 +633,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-danger-border",
       type: "color",
       category: "color",
-      value: "#cb5b71"
+      value: "#b2455c"
     },
     {
       path: "color.danger.link",
@@ -684,42 +684,6 @@ export const manifest: DesignSystemManifest = {
       type: "color",
       category: "color",
       value: "#200006"
-    },
-    {
-      path: "color.danger.outline",
-      cssVar: "--storm-color-danger-outline",
-      type: "color",
-      category: "color",
-      value: "#8e223e",
-      alias: true
-    },
-    {
-      path: "color.danger.outline-active",
-      cssVar: "--storm-color-danger-outline-active",
-      type: "color",
-      category: "color",
-      value: "#550013"
-    },
-    {
-      path: "color.danger.outline-disabled",
-      cssVar: "--storm-color-danger-outline-disabled",
-      type: "color",
-      category: "color",
-      value: "#5a3c44"
-    },
-    {
-      path: "color.danger.outline-hovered",
-      cssVar: "--storm-color-danger-outline-hovered",
-      type: "color",
-      category: "color",
-      value: "#550013"
-    },
-    {
-      path: "color.danger.outline-inactive",
-      cssVar: "--storm-color-danger-outline-inactive",
-      type: "color",
-      category: "color",
-      value: "#ab3e56"
     },
     {
       path: "color.danger.primary",
@@ -932,7 +896,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-discovery-border",
       type: "color",
       category: "color",
-      value: "#8670be"
+      value: "#725ba7"
     },
     {
       path: "color.discovery.link",
@@ -983,42 +947,6 @@ export const manifest: DesignSystemManifest = {
       type: "color",
       category: "color",
       value: "#FAFAFA"
-    },
-    {
-      path: "color.discovery.outline",
-      cssVar: "--storm-color-discovery-outline",
-      type: "color",
-      category: "color",
-      value: "#594395",
-      alias: true
-    },
-    {
-      path: "color.discovery.outline-active",
-      cssVar: "--storm-color-discovery-outline-active",
-      type: "color",
-      category: "color",
-      value: "#2c0d5e"
-    },
-    {
-      path: "color.discovery.outline-disabled",
-      cssVar: "--storm-color-discovery-outline-disabled",
-      type: "color",
-      category: "color",
-      value: "#4a445f"
-    },
-    {
-      path: "color.discovery.outline-hovered",
-      cssVar: "--storm-color-discovery-outline-hovered",
-      type: "color",
-      category: "color",
-      value: "#2c0d5e"
-    },
-    {
-      path: "color.discovery.outline-inactive",
-      cssVar: "--storm-color-discovery-outline-inactive",
-      type: "color",
-      category: "color",
-      value: "#725db2"
     },
     {
       path: "color.discovery.primary",
@@ -1112,7 +1040,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-elevated-disabled",
       type: "color",
       category: "color",
-      value: "#bfbfc0"
+      value: "#88888a"
     },
     {
       path: "color.elevated-hovered",
@@ -1184,7 +1112,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-floating-disabled",
       type: "color",
       category: "color",
-      value: "#c2c2c3"
+      value: "#8a8a8b"
     },
     {
       path: "color.floating-hovered",
@@ -1272,6 +1200,34 @@ export const manifest: DesignSystemManifest = {
       alias: true
     },
     {
+      path: "color.hairline-active",
+      cssVar: "--storm-color-hairline-active",
+      type: "color",
+      category: "color",
+      value: "#0c0c0d"
+    },
+    {
+      path: "color.hairline-disabled",
+      cssVar: "--storm-color-hairline-disabled",
+      type: "color",
+      category: "color",
+      value: "#747477"
+    },
+    {
+      path: "color.hairline-hovered",
+      cssVar: "--storm-color-hairline-hovered",
+      type: "color",
+      category: "color",
+      value: "#0c0c0d"
+    },
+    {
+      path: "color.hairline-inactive",
+      cssVar: "--storm-color-hairline-inactive",
+      type: "color",
+      category: "color",
+      value: "#020102"
+    },
+    {
       path: "color.info.backdrop",
       cssVar: "--storm-color-info-backdrop",
       type: "color",
@@ -1283,7 +1239,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-info-border",
       type: "color",
       category: "color",
-      value: "#4d80da"
+      value: "#396ac2"
     },
     {
       path: "color.info.link",
@@ -1334,42 +1290,6 @@ export const manifest: DesignSystemManifest = {
       type: "color",
       category: "color",
       value: "#FAFAFA"
-    },
-    {
-      path: "color.info.outline",
-      cssVar: "--storm-color-info-outline",
-      type: "color",
-      category: "color",
-      value: "#2055b3",
-      alias: true
-    },
-    {
-      path: "color.info.outline-active",
-      cssVar: "--storm-color-info-outline-active",
-      type: "color",
-      category: "color",
-      value: "#001a76"
-    },
-    {
-      path: "color.info.outline-disabled",
-      cssVar: "--storm-color-info-outline-disabled",
-      type: "color",
-      category: "color",
-      value: "#3b4a68"
-    },
-    {
-      path: "color.info.outline-hovered",
-      cssVar: "--storm-color-info-outline-hovered",
-      type: "color",
-      category: "color",
-      value: "#001a76"
-    },
-    {
-      path: "color.info.outline-inactive",
-      cssVar: "--storm-color-info-outline-inactive",
-      type: "color",
-      category: "color",
-      value: "#3b72d3"
     },
     {
       path: "color.info.primary",
@@ -1653,42 +1573,6 @@ export const manifest: DesignSystemManifest = {
       type: "color",
       category: "color",
       value: "#803000"
-    },
-    {
-      path: "color.outline",
-      cssVar: "--storm-color-outline",
-      type: "color",
-      category: "color",
-      value: "#c0c0c1",
-      alias: true
-    },
-    {
-      path: "color.outline-active",
-      cssVar: "--storm-color-outline-active",
-      type: "color",
-      category: "color",
-      value: "#0c0c0d"
-    },
-    {
-      path: "color.outline-disabled",
-      cssVar: "--storm-color-outline-disabled",
-      type: "color",
-      category: "color",
-      value: "#6f6f71"
-    },
-    {
-      path: "color.outline-hovered",
-      cssVar: "--storm-color-outline-hovered",
-      type: "color",
-      category: "color",
-      value: "#0c0c0d"
-    },
-    {
-      path: "color.outline-inactive",
-      cssVar: "--storm-color-outline-inactive",
-      type: "color",
-      category: "color",
-      value: "#020102"
     },
     {
       path: "color.pink.1",
@@ -1998,7 +1882,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-success-border",
       type: "color",
       category: "color",
-      value: "#52977e"
+      value: "#3b8168"
     },
     {
       path: "color.success.link",
@@ -2049,42 +1933,6 @@ export const manifest: DesignSystemManifest = {
       type: "color",
       category: "color",
       value: "#002015"
-    },
-    {
-      path: "color.success.outline",
-      cssVar: "--storm-color-success-outline",
-      type: "color",
-      category: "color",
-      value: "#216b53",
-      alias: true
-    },
-    {
-      path: "color.success.outline-active",
-      cssVar: "--storm-color-success-outline-active",
-      type: "color",
-      category: "color",
-      value: "#003622"
-    },
-    {
-      path: "color.success.outline-disabled",
-      cssVar: "--storm-color-success-outline-disabled",
-      type: "color",
-      category: "color",
-      value: "#3c504b"
-    },
-    {
-      path: "color.success.outline-hovered",
-      cssVar: "--storm-color-success-outline-hovered",
-      type: "color",
-      category: "color",
-      value: "#003622"
-    },
-    {
-      path: "color.success.outline-inactive",
-      cssVar: "--storm-color-success-outline-inactive",
-      type: "color",
-      category: "color",
-      value: "#40876e"
     },
     {
       path: "color.success.primary",
@@ -2177,7 +2025,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-sunken-disabled",
       type: "color",
       category: "color",
-      value: "#aeaeaf"
+      value: "#7e7e80"
     },
     {
       path: "color.sunken-hovered",
@@ -2213,7 +2061,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-surface-disabled",
       type: "color",
       category: "color",
-      value: "#b8b8b9"
+      value: "#848486"
     },
     {
       path: "color.surface-hovered",
@@ -2241,7 +2089,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-warning-border",
       type: "color",
       category: "color",
-      value: "#a78249"
+      value: "#906c33"
     },
     {
       path: "color.warning.link",
@@ -2292,42 +2140,6 @@ export const manifest: DesignSystemManifest = {
       type: "color",
       category: "color",
       value: "#241500"
-    },
-    {
-      path: "color.warning.outline",
-      cssVar: "--storm-color-warning-outline",
-      type: "color",
-      category: "color",
-      value: "#765417",
-      alias: true
-    },
-    {
-      path: "color.warning.outline-active",
-      cssVar: "--storm-color-warning-outline-active",
-      type: "color",
-      category: "color",
-      value: "#402100"
-    },
-    {
-      path: "color.warning.outline-disabled",
-      cssVar: "--storm-color-warning-outline-disabled",
-      type: "color",
-      category: "color",
-      value: "#53493b"
-    },
-    {
-      path: "color.warning.outline-hovered",
-      cssVar: "--storm-color-warning-outline-hovered",
-      type: "color",
-      category: "color",
-      value: "#402100"
-    },
-    {
-      path: "color.warning.outline-inactive",
-      cssVar: "--storm-color-warning-outline-inactive",
-      type: "color",
-      category: "color",
-      value: "#926f36"
     },
     {
       path: "color.warning.primary",

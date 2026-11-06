@@ -88,7 +88,7 @@ const SwitchFrame = styled(View, {
   backgroundColor: "surface",
   borderWidth: 1,
   borderColor:
-    "outline hover:outline-hovered focus:primary-active focus-visible:primary-active",
+    "hairline hover:hairline-hovered focus:primary-active focus-visible:primary-active",
   boxShadow: "none focus:ring-offset focus-visible:ring-offset",
   tabIndex: 0,
   variants: {
@@ -292,10 +292,10 @@ const BaseSwitchImpl = createStyledHOC(
       ...props
     } = allProps;
     const hasValidationMessage = useFieldHasValidationMessage();
-    const idleColor = hasValidationMessage ? "primary" : "outline";
+    const idleColor = hasValidationMessage ? "primary" : "hairline";
     const focusColor = hasValidationMessage
       ? "primary-active"
-      : "outline-active";
+      : "hairline-active";
 
     return (
       <SwitchContext.Provider

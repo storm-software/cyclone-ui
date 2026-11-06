@@ -25,14 +25,14 @@ describe("field focus colors", () => {
     expect(source).toContain(
       '(!theme || theme === "base") && !formControl?.hasValidationMessage'
     );
-    expect(source).toContain('validated ? "primary" : "outline"');
-    expect(source).toContain('validated ? "primary-active" : "outline-active"');
+    expect(source).toContain('validated ? "primary" : "hairline"');
+    expect(source).toContain('validated ? "primary-active" : "hairline-active"');
     expect(source).toMatch(/focused\s*\?\s*focusColor\s*:\s*restColor/);
   });
 
   it("hovers to the validation or outline hover token, not the brand color", () => {
     expect(fieldIconColorSource()).toContain(
-      'validated ? "primary-hovered" : "outline-hovered"'
+      'validated ? "primary-hovered" : "hairline-hovered"'
     );
 
     for (const source of [
@@ -41,7 +41,7 @@ describe("field focus colors", () => {
       readComponent("../../text-area/src/TextArea.tsx")
     ]) {
       expect(source).toMatch(
-        /hasValidationMessage\s*\?\s*"primary-hovered"\s*:\s*"outline-hovered"/
+        /hasValidationMessage\s*\?\s*"primary-hovered"\s*:\s*"hairline-hovered"/
       );
       expect(source).not.toMatch(/group-hover\/field:[^`]*: "primary-hovered"/);
     }
@@ -60,7 +60,7 @@ describe("field focus colors", () => {
       readComponent("../../input/src/Input.tsx"),
       readComponent("../../select/src/Select.tsx")
     ]) {
-      expect(source).toContain('hasValidationMessage ? "primary" : "outline"');
+      expect(source).toContain('hasValidationMessage ? "primary" : "hairline"');
     }
   });
 
@@ -97,7 +97,7 @@ describe("field focus colors", () => {
 
     for (const source of components) {
       expect(source).toMatch(
-        /hasValidationMessage\s*\?\s*"primary-active"\s*:\s*"outline-active"/
+        /hasValidationMessage\s*\?\s*"primary-active"\s*:\s*"hairline-active"/
       );
     }
   });

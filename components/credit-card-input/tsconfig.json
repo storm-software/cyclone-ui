@@ -17,6 +17,12 @@
       "path": "../../tools/config"
     },
     {
+      "path": "../eyebrow-text"
+    },
+    {
+      "path": "../heading-text"
+    },
+    {
       "path": "../password-input"
     },
     {

@@ -2051,6 +2051,12 @@ importers:
 
   components/credit-card-input:
     dependencies:
+      '@cyclone-ui/eyebrow-text':
+        specifier: workspace:*
+        version: link:../eyebrow-text
+      '@cyclone-ui/heading-text':
+        specifier: workspace:*
+        version: link:../heading-text
       '@cyclone-ui/helpers':
         specifier: workspace:*
         version: link:../../packages/helpers

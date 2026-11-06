@@ -1367,12 +1367,12 @@ const InnerFieldThemeIcon = createStyledHOC(
           theme={theme}
           borderColor={
             isNeutral
-              ? "outline focus-visible:outline-active"
+              ? "hairline focus-visible:hairline-active"
               : "primary focus-visible:primary-active"
           }
           arrowBorderColor={
             isNeutral
-              ? "outline focus-visible:outline-active"
+              ? "hairline focus-visible:hairline-active"
               : "primary focus-visible:primary-active"
           }>
           <Theme name="base">

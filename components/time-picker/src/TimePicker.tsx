@@ -403,7 +403,7 @@ const TimePickerClock = ({
                   left={center + tickRadius * Math.sin(tickAngle) - width / 2}
                   top={center - tickRadius * Math.cos(tickAngle) - length / 2}
                   rotate={`${minute * 6}deg`}
-                  backgroundColor={major ? "subtle" : "outline"}
+                  backgroundColor={major ? "subtle" : "hairline"}
                 />
               );
             })}
