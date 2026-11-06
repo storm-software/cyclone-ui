@@ -469,7 +469,7 @@ export function ChartBrushView({
           bottom: 0,
           touchAction: "none",
           borderRadius: 4,
-          border: "1px solid var(--outline)",
+          border: "1px solid var(--hairline)",
           left: leftPosition,
           width: selectedWidth
         }}
@@ -622,7 +622,7 @@ function BrushHandle({
           paddingHorizontal="xl"
           paddingVertical="md"
           borderWidth={1}
-          borderColor="outline"
+          borderColor="hairline"
           borderRadius="tooltip"
           backgroundColor="elevated"
           boxShadow={getVariable(getTokens().shadow?.xl)}

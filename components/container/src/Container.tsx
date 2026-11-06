@@ -18,11 +18,10 @@
 
 "use client";
 
-import { getSized, getSpaced } from "@cyclone-ui/helpers";
+import { getSpaced } from "@cyclone-ui/helpers";
 import { BackgroundNoise } from "@cyclone-ui/vectors";
 import type { GetProps, SizeTokens, TamaguiElement } from "@tamagui/core";
 import { createStyledHOC, styled, useThemeName, View } from "@tamagui/core";
-import { LinearGradient } from "@tamagui/linear-gradient";
 import type { Ref } from "react";
 import { createContext, use } from "react";
 
@@ -31,41 +30,136 @@ import { createContext, use } from "react";
 const isSizeToken = (val: unknown, tokens: { size: object }): val is string =>
   typeof val === "string" && val in tokens.size;
 
-export type ContainerVariant =
-  | "primary"
-  | "secondary"
-  | "tertiary"
-  | "sunken"
-  | "canvas"
-  | "elevated"
-  | "floating"
-  | "overlay"
-  | "outlined"
-  | "glass";
+/**
+ * The surface of each `variant`. Components that draw a variant's colors on
+ * their own frame (e.g. an arrow or a state shade) read them from here.
+ */
+export const containerVariants = {
+  primary: {
+    backgroundColor: "primary",
+    borderWidth: 0,
+    borderColor: "transparent"
+  },
 
-// The hovered shade of each variant's background; transparent variants have none.
-const HOVERED_BACKGROUND: Partial<Record<ContainerVariant, string>> = {
-  primary: "primary-hovered",
-  secondary: "secondary-hovered",
-  tertiary: "surface-hovered",
-  sunken: "sunken-hovered",
-  canvas: "canvas-hovered",
-  elevated: "surface-hovered",
-  floating: "elevated-hovered",
-  overlay: "floating-hovered"
+  secondary: {
+    backgroundColor: "secondary",
+    borderWidth: 1,
+    borderColor: "border"
+  },
+
+  tertiary: {
+    backgroundColor: "surface",
+    borderWidth: 1,
+    borderColor: "hairline"
+  },
+
+  outlined: {
+    backgroundColor: "transparent",
+    borderWidth: 2,
+    borderColor: "primary"
+  },
+
+  sunken: {
+    backgroundColor: "sunken",
+    borderWidth: 1,
+    borderColor: "border"
+  },
+
+  canvas: {
+    backgroundColor: "canvas",
+    borderWidth: 1,
+    borderColor: "border"
+  },
+
+  surface: {
+    backgroundColor: "surface",
+    borderWidth: 1,
+    borderColor: "border"
+  },
+
+  elevated: {
+    backgroundColor: "elevated",
+    borderWidth: 1,
+    borderColor: "border"
+  },
+
+  floating: {
+    backgroundColor: "floating",
+    borderWidth: 1,
+    borderColor: "border"
+  }
+} as const;
+
+export type ContainerVariant = keyof typeof containerVariants;
+
+/**
+ * The `boxShadow` of each `shadowStyle`, for a component that draws its
+ * `ContainerBackground` inside a frame that clips its overflow (and so the
+ * layer's shadow), and puts the shadow on that frame instead.
+ */
+export const containerShadows = {
+  none: "none",
+  raised: "color-shadow-resting-raised",
+  elevated: "0px 4px 30px #0D0C0766",
+  // Also drops the border, which the `Container` itself draws.
+  flat: "none"
+} as const;
+
+export type ContainerShadowStyle = keyof typeof containerShadows;
+
+/**
+ * The `Container` props that style a surface, for components that draw theirs
+ * with a `Container` or a `ContainerBackground`. Each component documents its
+ * own defaults.
+ */
+export interface ContainerSurfaceProps {
+  /** The surface's background and border; see `Container`'s variants. */
+  variant?: ContainerVariant;
+
+  /** The surface's shadow. */
+  shadowStyle?: ContainerShadowStyle;
+
+  /** Turn the background into translucent frosted glass. */
+  glass?: boolean;
+
+  /** Overlay a fine film grain on the background. */
+  noise?: boolean;
+
+  /** Draw the border in the `primary` color. */
+  accented?: boolean;
+}
+
+// The background of a variant, or `undefined` for a transparent one.
+const getBackground = (variant: ContainerVariant) => {
+  const color: string = containerVariants[variant].backgroundColor;
+
+  return color === "transparent" ? undefined : color;
 };
 
-// The text and icon color on the filled variants; the others leave content in
-// its own colors. `on-secondary` is faint on the uncolored themes' light
-// `secondary`, so those use `primary` there, as `Button` does.
-const getForeground = (
+// `dark_brand` / `brand` -> `brand`; `light`, `dark` and `dark_base` are
+// uncolored.
+const isUncoloredTheme = (themeName: string | null | undefined) => {
+  const parts = themeName?.split("_") ?? [];
+  const color = parts.length > 1 ? parts[1] : parts[0];
+
+  return !color || color === "base" || color === "light" || color === "dark";
+};
+
+/**
+ * The text and icon color for content on a `variant` surface: `on-primary` on
+ * `primary`, `on-secondary` on `secondary`, and `undefined` on the other
+ * variants, which leave content in its own colors. `on-secondary` is faint on
+ * the uncolored themes' light `secondary`, so those use `primary` there, as
+ * `Button` does.
+ */
+export const getContainerForeground = (
   variant: ContainerVariant | undefined,
-  colorTheme: string | undefined
+  themeName: string | null | undefined
 ) =>
   variant === "primary"
     ? "on-primary"
     : variant === "secondary"
-      ? !colorTheme || colorTheme === "base"
+      ? isUncoloredTheme(themeName)
         ? "primary"
         : "on-secondary"
       : undefined;
@@ -73,9 +167,8 @@ const getForeground = (
 const ContainerForegroundContext = createContext<string | undefined>(undefined);
 
 /**
- * The text and icon color for content inside the nearest `primary` (
- * `on-primary`) or `secondary` (`on-secondary`, or `primary` on an uncolored
- * theme) Container, or `undefined` inside any other variant.
+ * The text and icon color for content inside the nearest `Container` (see
+ * `getContainerForeground`), in that container's own theme.
  */
 export const useContainerForeground = () => use(ContainerForegroundContext);
 
@@ -93,88 +186,28 @@ const ContainerFrame = styled(View, {
   outlineColor: "focus-visible:transparent",
 
   variants: {
-    variant: {
-      primary: {
-        backgroundColor: "primary",
-        borderWidth: 0,
-        borderColor: "transparent"
-      },
-
-      secondary: {
-        backgroundColor: "secondary",
-        borderWidth: 1,
-        borderColor: "border",
-        boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
-      },
-
-      tertiary: {
-        backgroundColor: "surface",
-        borderWidth: 1,
-        borderColor: "hairline",
-        boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
-      },
-
-      sunken: {
-        backgroundColor: "sunken",
-        borderWidth: 1,
-        borderColor: "hairline"
-      },
-
-      canvas: {
-        backgroundColor: "canvas",
-        borderWidth: 1,
-        borderColor: "hairline",
-        boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
-      },
-
-      elevated: {
-        backgroundColor: "surface",
-        borderWidth: 1,
-        borderColor: "hairline",
-        boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
-      },
-
-      floating: {
-        backgroundColor: "elevated",
-        borderWidth: 1,
-        borderColor: "hairline",
-        boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
-      },
-
-      overlay: {
-        backgroundColor: "floating",
-        borderWidth: 1,
-        borderColor: "hairline",
-        boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
-      },
-
-      outlined: {
-        backgroundColor: "transparent",
-        borderWidth: 2,
-        borderColor: "primary"
-      },
-
-      glass: {
-        backgroundColor: "transparent",
-        borderWidth: 1,
-        borderColor: "outline",
-        boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
-      }
-    },
-
-    bordered: styled.dynamic<boolean | SizeTokens>((val, { tokens }) => ({
-      borderColor: val === false ? "transparent" : undefined,
-      borderWidth:
-        val === false ? 0 : isSizeToken(val, tokens) ? getSized(val) : undefined
-    })),
+    variant: containerVariants,
 
     size: styled.dynamic<SizeTokens | number>((val, { tokens }) => ({
       padding: isSizeToken(val, tokens) ? getSpaced(val) : undefined
     })),
 
-    shadowed: {
-      true: {
-        boxShadow: "0px 4px 30px #0D0C0766"
+    // Each keeps the base focus ring, which an unconditional variant value
+    // would otherwise replace.
+    shadowStyle: {
+      raised: {
+        boxShadow: `${containerShadows.raised} focus-visible:ring`
+      },
+      elevated: {
+        boxShadow: `${containerShadows.elevated} focus-visible:ring`
+      },
+      flat: {
+        boxShadow: `${containerShadows.none} focus-visible:ring`,
+        borderWidth: 0,
+        borderColor: "transparent"
+      },
+      none: {
+        boxShadow: `${containerShadows.none} focus-visible:ring`
       }
     },
 
@@ -185,15 +218,27 @@ const ContainerFrame = styled(View, {
       }
     },
 
-    noPadding: {
+    tight: {
       true: {
         padding: 0,
         height: "fit-content"
       }
     },
 
-    // Declared after `variant` so it overrides that variant's border color.
-    accentBordered: {
+    // Frosted glass. `Container` swaps the variant's background for a
+    // translucent copy of it, which this blurs whatever is behind.
+    glass: {
+      true: {
+        backdropFilter: "blur(24px) saturate(160%)",
+        // light catching the top edge of the pane
+        backgroundImage:
+          "linear-gradient(160deg, rgb(255 255 255 / 0.1), rgb(255 255 255 / 0.02) 45%, rgb(255 255 255 / 0))",
+        borderColor: "rgb(255 255 255 / 0.1)"
+      }
+    },
+
+    // Declared after `glass` so it overrides the glass border color.
+    accented: {
       true: {
         borderColor: "primary"
       }
@@ -202,12 +247,12 @@ const ContainerFrame = styled(View, {
 
   defaultVariants: {
     variant: "elevated",
+    shadowStyle: "none",
     size: true,
-    shadowed: false,
     circular: false,
-    bordered: true,
-    noPadding: false,
-    accentBordered: false
+    tight: false,
+    glass: false,
+    accented: false
   }
 });
 
@@ -220,9 +265,10 @@ const ContainerSurface = (
   props: ContainerFrameProps & { ref?: Ref<TamaguiElement>; noise?: boolean }
 ) => {
   const { children, noise, ...frameProps } = props;
-
-  // e.g. `dark_brand` -> `brand`; `dark` and `dark_base` are uncolored.
-  const colorTheme = useThemeName()?.split("_")[1];
+  const foreground = getContainerForeground(
+    props.variant as ContainerVariant,
+    useThemeName()
+  );
 
   return (
     <ContainerFrame
@@ -230,42 +276,26 @@ const ContainerSurface = (
       // `zIndex: 0` makes the frame a stacking context, so the noise's
       // negative `zIndex` paints above the frame's background but below the
       // in-flow children; `overflow` clips the noise to the rounded frame.
-      {...(noise && { position: "relative", overflow: "hidden", zIndex: 0 })}
-      accentBordered={
-        props.variant === "tertiary" &&
-        props.bordered !== false &&
-        !!colorTheme &&
-        colorTheme !== "base"
-      }>
+      {...(noise && { position: "relative", overflow: "hidden", zIndex: 0 })}>
       {noise && (
-        <View position="absolute" inset={0} zIndex={-1} pointerEvents="none">
-          {/* `slice` scales the square noise to cover any aspect ratio */}
-          <BackgroundNoise
-            width="100%"
-            height="100%"
-            preserveAspectRatio="xMidYMid slice"
-            opacity={0.075}
-          />
+        // The blend mode sits on this layer, not the SVG: the layer's `zIndex`
+        // makes it a stacking context, which would isolate a blend inside it.
+        <View
+          position="absolute"
+          inset={0}
+          zIndex={-1}
+          pointerEvents="none"
+          mixBlendMode="hard-light"
+          opacity={0.12}>
+          <BackgroundNoise />
         </View>
       )}
-      <ContainerForegroundContext.Provider
-        value={getForeground(props.variant as ContainerVariant, colorTheme)}>
+      <ContainerForegroundContext.Provider value={foreground}>
         {children}
       </ContainerForegroundContext.Provider>
     </ContainerFrame>
   );
 };
-
-// `LinearGradient` is not a plain styled view; v3 `styled()` only keeps style
-// defaults for it, so the gradient geometry is passed as props at the call site.
-const ContainerGlassBackground = styled(LinearGradient, {
-  displayName: "Container",
-
-  transition: "200ms",
-  opacity: 0.6,
-  backdropFilter: "blur(35px)",
-  filter: "blur(35px)"
-});
 
 const ContainerGroup = styled(View, {
   displayName: "Container",
@@ -292,57 +322,61 @@ export const Container = createStyledHOC(
     {
       variant = "elevated",
       size = true,
-      shadowed = false,
+      shadowStyle = "none",
       circular = false,
-      bordered = true,
-      noPadding = false,
+      tight = false,
+      glass = false,
       noise = false,
+      accented = false,
       hovered = false,
+      hoverGroup,
       borderRadius = "container",
-      // The `variant` and `bordered` variants own these, so they are dropped
-      // rather than forwarded over the variant styles.
-      backgroundColor: _backgroundColor,
-      borderColor: _borderColor,
-      borderWidth: _borderWidth,
       children,
       ...props
     }: ContainerFrameProps & {
       noise?: boolean;
       /** Show the variant's hovered background, e.g. while a parent is hovered. */
       hovered?: boolean;
+      /**
+       * Show the variant's hovered background while the ancestor with this
+       * `group` name is hovered, e.g. `"button"`. Unlike `hovered`, this is
+       * pure CSS, so it doesn't lag behind the pointer.
+       */
+      hoverGroup?: string;
     },
     forwardedRef
   ) => {
+    const tint = (color: string) => (glass ? `${color}/60` : color);
+    const resting = getBackground(variant as ContainerVariant);
+
+    const background = !resting
+      ? undefined
+      : hovered
+        ? tint(`${resting}-hovered`)
+        : hoverGroup
+          ? `${tint(resting)} group-hover/${hoverGroup}:${tint(`${resting}-hovered`)}`
+          : glass
+            ? tint(resting)
+            : undefined;
+
     return (
       <ContainerGroup
         group={true}
         circular={circular}
         borderRadius={borderRadius}>
-        {variant === "glass" && (
-          <ContainerGlassBackground
-            theme="base"
-            position="absolute"
-            inset={0}
-            colors={["surface", "primary"]}
-            start={{ x: 0.1, y: 0.5 }}
-            end={{ x: 0.9, y: 0.5 }}
-          />
-        )}
         <ContainerSurface
           ref={forwardedRef}
           {...props}
           variant={variant}
           size={size}
-          shadowed={shadowed}
+          shadowStyle={shadowStyle}
           circular={circular}
-          bordered={bordered}
-          noPadding={noPadding}
+          tight={tight}
+          glass={glass}
+          accented={accented}
           noise={noise}
           borderRadius={borderRadius}
-          {...(hovered &&
-            HOVERED_BACKGROUND[variant as ContainerVariant] && {
-              backgroundColor: HOVERED_BACKGROUND[variant as ContainerVariant]
-            })}>
+          {...(background && { backgroundColor: background })}>
           {children}
         </ContainerSurface>
       </ContainerGroup>
@@ -354,3 +388,34 @@ export const Container = createStyledHOC(
 );
 
 export type ContainerProps = GetProps<typeof Container>;
+
+/**
+ * A `Container` drawn as its parent's background: stretched over the parent's
+ * padding box behind its in-flow children, following its `borderRadius`,
+ * click-through and hidden from assistive tech. The parent must be positioned
+ * (e.g. `position: "relative"`; Tamagui views aren't by default) and a stacking
+ * context (e.g. `zIndex: 0`), so the layer fills it and its negative `zIndex`
+ * paints above the parent's own background. The parent should leave its own
+ * background and border clear.
+ *
+ * The layer draws no shadow, which a parent that clips its overflow would clip:
+ * the parent draws `containerShadows[shadowStyle]` itself. Pass it the
+ * `shadowStyle` anyway, so `flat` still drops the layer's border.
+ */
+export const ContainerBackground = ({ shadowStyle, ...props }: ContainerProps) => (
+  <View
+    position="absolute"
+    inset={0}
+    zIndex={-1}
+    pointerEvents="none"
+    borderRadius="inherit"
+    aria-hidden={true}>
+    <Container
+      tight={true}
+      flexGrow={1}
+      borderRadius="inherit"
+      {...props}
+      shadowStyle={shadowStyle === "flat" ? "flat" : "none"}
+    />
+  </View>
+);

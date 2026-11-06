@@ -142,3 +142,46 @@ export const Outlined: Story = {
     variant: "outlined"
   }
 };
+
+export const Floating: Story = {
+  args: {
+    ...Base.args,
+    variant: "floating"
+  }
+};
+
+export const Raised: Story = {
+  args: {
+    ...Base.args,
+    shadowStyle: "elevated"
+  }
+};
+
+export const Accented: Story = {
+  args: {
+    ...Base.args,
+    accented: true
+  }
+};
+
+export const Glass: Story = {
+  args: {
+    ...Base.args,
+    glass: true
+  }
+};
+
+export const Noise: Story = {
+  args: {
+    ...Base.args,
+    variant: "primary",
+    noise: true
+  }
+};
+
+export const Flat: Story = {
+  args: {
+    ...Base.args,
+    shadowStyle: "flat"
+  }
+};

@@ -19,6 +19,12 @@
 "use client";
 
 import { BodyText } from "@cyclone-ui/body-text";
+import type { ContainerVariant } from "@cyclone-ui/container";
+import {
+  ContainerBackground,
+  containerShadows,
+  containerVariants
+} from "@cyclone-ui/container";
 import type { FormControlSize, TokenValue } from "@cyclone-ui/helpers";
 import {
   formSizeVariants,
@@ -74,14 +80,23 @@ type ButtonReverseCascadeVariant = `reverse-${ButtonCascadeEffect}`;
 
 type ButtonCascadeVariant = ButtonCascadeEffect | ButtonReverseCascadeVariant;
 
-type ButtonVariant =
-  | "tertiary"
-  | "secondary"
-  | "primary"
-  | "outlined"
-  | ButtonCascadeVariant
-  | "ghost"
-  | "link";
+type ButtonVariant = ContainerVariant | ButtonCascadeVariant | "ghost" | "link";
+
+// The variants whose fill and border are drawn by a `Container` layer.
+const isContainerVariant = (
+  variant: ButtonVariant | undefined
+): variant is ContainerVariant =>
+  variant !== undefined && Object.hasOwn(containerVariants, variant);
+
+// The container variants with a neutral surface fill, where content keeps the
+// `primary` color.
+const isSurfaceVariant = (variant: ButtonVariant | undefined) =>
+  variant === "tertiary" ||
+  variant === "sunken" ||
+  variant === "canvas" ||
+  variant === "surface" ||
+  variant === "elevated" ||
+  variant === "floating";
 
 const isCascadeVariant = (
   variant: ButtonVariant | undefined
@@ -239,7 +254,7 @@ export type ButtonContextProps = TextContextStyles & {
    *
    * @defaultValue false
    */
-  noPadding: boolean;
+  tight: boolean;
 
   /**
    * Should the pressed, scale animation be applied
@@ -290,6 +305,27 @@ type ButtonExtraProps = TextParentStyles & {
      * tech when no `aria-label` is set.
      */
     tooltip?: string;
+
+    /**
+     * Turn a container variant's background into translucent frosted glass
+     *
+     * @defaultValue false
+     */
+    glass?: boolean;
+
+    /**
+     * Overlay a fine film grain on a container variant's background
+     *
+     * @defaultValue false
+     */
+    noise?: boolean;
+
+    /**
+     * Draw a container variant's border in the `primary` color
+     *
+     * @defaultValue false
+     */
+    accented?: boolean;
   };
 
 export const ButtonContext = createStyledContext<
@@ -302,7 +338,7 @@ export const ButtonContext = createStyledContext<
   | "rounded"
   | "ringed"
   | "disabled"
-  | "noPadding"
+  | "tight"
   | "animate"
 >(
   {
@@ -317,7 +353,7 @@ export const ButtonContext = createStyledContext<
     rounded: false,
     ringed: false,
     disabled: false,
-    noPadding: false,
+    tight: false,
     animate: true
   } as ButtonContextProps,
   {
@@ -330,38 +366,41 @@ export const ButtonContext = createStyledContext<
       "rounded",
       "ringed",
       "disabled",
-      "noPadding",
+      "tight",
       "animate"
     ]
   }
 );
 
-const getDisabledFrameStyle = (variant: ButtonVariant | undefined) => {
+/**
+ * The background and border colors of a disabled button, or `undefined` to keep
+ * the variant's own (the surface container variants).
+ */
+const getDisabledColors = (variant: ButtonVariant | undefined) => {
   if (variant === "tertiary") {
-    return disabledFrameStyle("surface", "primary-disabled");
+    return disabledColors("surface", "primary-disabled");
   } else if (variant === "secondary") {
-    return disabledFrameStyle("secondary-disabled", "hairlineInactive");
+    return disabledColors("secondary-disabled", "hairlineInactive");
   } else if (variant === "primary" || isReverseCascadeVariant(variant)) {
-    return disabledFrameStyle("secondary-disabled", "primary-disabled");
+    return disabledColors("secondary-disabled", "primary-disabled");
   } else if (variant === "outlined" || isCascadeVariant(variant)) {
-    return disabledFrameStyle("transparent", "primary-disabled");
+    return disabledColors("transparent", "primary-disabled");
   } else if (variant === "ghost" || variant === "link") {
-    return disabledFrameStyle("transparent", "transparent");
+    return disabledColors("transparent", "transparent");
   }
 
-  return disabledFrameStyle(undefined, undefined);
+  return undefined;
 };
 
-const disabledFrameStyle = (
-  backgroundColor: string | undefined,
-  borderColor: string | undefined
-) =>
-  ({
-    cursor: "not-allowed",
-    pointerEvents: "none",
-    backgroundColor,
-    borderColor
-  }) as const;
+const disabledColors = (backgroundColor: string, borderColor: string) =>
+  ({ backgroundColor, borderColor }) as const;
+
+// The frame of a container variant stays clear: its `Container` layer draws
+// the fill and border.
+const containerFrameStyle = {
+  backgroundColor: "transparent",
+  borderWidth: 0
+} as const;
 
 const ButtonFrame = styled(View, {
   displayName: "Button",
@@ -386,36 +425,23 @@ const ButtonFrame = styled(View, {
   minWidth: "fit-content",
   paddingHorizontal: "2xl",
   boxShadow: "focus-visible:ring-offset",
+  // A stacking context, so the `Container` layer's negative `zIndex` paints
+  // above the frame but below in-flow children.
+  zIndex: 0,
 
   // No `press:` background colors: a press draws a `ButtonRipple` from the
   // press point instead.
   variants: {
     variant: {
-      tertiary: {
-        borderWidth: 1,
-        borderColor: "hairline hover:hairline-hovered press:hairline-active",
-        backgroundColor: "surface hover:surface-hovered",
-        boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
-      },
-
-      secondary: {
-        borderWidth: 1,
-        borderColor: "border hover:border press:border",
-        backgroundColor: "secondary hover:secondary-hovered",
-        boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
-      },
-
-      primary: {
-        borderWidth: 0,
-        borderColor: "transparent hover:transparent press:transparent",
-        backgroundColor: "primary hover:primary-hovered"
-      },
-
-      outlined: {
-        backgroundColor: "transparent hover:transparent press:transparent",
-        borderWidth: 2,
-        borderColor: "primary hover:primary-hovered press:primary-active"
-      },
+      primary: containerFrameStyle,
+      secondary: containerFrameStyle,
+      tertiary: containerFrameStyle,
+      outlined: containerFrameStyle,
+      sunken: containerFrameStyle,
+      canvas: containerFrameStyle,
+      surface: containerFrameStyle,
+      elevated: containerFrameStyle,
+      floating: containerFrameStyle,
 
       cascade: cascadeFrameStyle,
       "double-cascade": cascadeFrameStyle,
@@ -463,6 +489,24 @@ const ButtonFrame = styled(View, {
     // Styled by the `.resolve` below because the colors depend on `variant`.
     disabled: styled.dynamic<boolean>(),
 
+    // The `Container` shadow styles. They sit on the frame, not the
+    // `Container` layer, which the frame's `overflow` would clip; the layer
+    // takes `flat` for its border.
+    shadowStyle: {
+      raised: {
+        boxShadow: `${containerShadows.raised} focus-visible:ring-offset`
+      },
+      elevated: {
+        boxShadow: `${containerShadows.elevated} focus-visible:ring-offset`
+      },
+      flat: {
+        boxShadow: `${containerShadows.flat} focus-visible:ring-offset`
+      },
+      none: {
+        boxShadow: `${containerShadows.none} focus-visible:ring-offset`
+      }
+    },
+
     ringed: {
       true: {
         boxShadow: "hover:ring-offset press:ring-offset"
@@ -481,7 +525,7 @@ const ButtonFrame = styled(View, {
       }
     },
 
-    noPadding: {
+    tight: {
       true: {
         padding: 0
       }
@@ -505,10 +549,11 @@ const ButtonFrame = styled(View, {
     variant: "tertiary",
     frameSize: "5xl",
     disabled: false,
+    shadowStyle: "none",
     ringed: false,
     circular: false,
     rounded: false,
-    noPadding: false,
+    tight: false,
     animate: true
   }
 }).resolve((props, env) => {
@@ -519,17 +564,21 @@ const ButtonFrame = styled(View, {
 
   return {
     ...sized,
-    // The resolved padding would otherwise override the `noPadding` variant.
-    paddingHorizontal: props.noPadding ? 0 : sized?.paddingHorizontal,
+    // The resolved padding would otherwise override the `tight` variant.
+    paddingHorizontal: props.tight ? 0 : sized?.paddingHorizontal,
     // The `circular` and `rounded` variants own the radius when set.
     borderRadius:
       props.circular || props.rounded ? undefined : sized?.borderRadius,
     // A circle keeps its square box instead of growing along the parent's
     // main axis.
     flexGrow: props.circular ? 0 : undefined,
-    ...(props.disabled
-      ? getDisabledFrameStyle(props.variant as ButtonVariant | undefined)
-      : undefined)
+    ...(props.disabled && {
+      cursor: "not-allowed",
+      pointerEvents: "none",
+      // A container variant's colors are on its `Container` layer.
+      ...(!isContainerVariant(props.variant as ButtonVariant) &&
+        getDisabledColors(props.variant as ButtonVariant))
+    })
   };
 });
 
@@ -582,6 +631,26 @@ const ButtonTextFrame = styled(Text, {
       },
 
       outlined: {
+        color: "primary"
+      },
+
+      sunken: {
+        color: "primary"
+      },
+
+      canvas: {
+        color: "primary"
+      },
+
+      surface: {
+        color: "primary"
+      },
+
+      elevated: {
+        color: "primary"
+      },
+
+      floating: {
         color: "primary"
       },
 
@@ -762,7 +831,7 @@ const hoverColorForVariant = (
   }
 
   if (
-    variant === "tertiary" ||
+    isSurfaceVariant(variant) ||
     variant === "ghost" ||
     (variant === "secondary" && themeName?.endsWith("base")) ||
     isReverseCascadeVariant(variant)
@@ -1132,7 +1201,7 @@ const ButtonContainerImpl = createStyledHOC(
       disabled = false,
       circular = false,
       rounded = false,
-      noPadding = false,
+      tight = false,
       ringed = false,
       animate = true,
       children,
@@ -1144,6 +1213,10 @@ const ButtonContainerImpl = createStyledHOC(
       type = "button",
       ghostOpacity = 0.75,
       tooltip,
+      glass = false,
+      noise = false,
+      accented = false,
+      shadowStyle = "none",
       ...props
     }: GetProps<typeof ButtonFrame> & ButtonProps,
     forwardedRef
@@ -1197,7 +1270,7 @@ const ButtonContainerImpl = createStyledHOC(
           : {})}
         // Before `{...props}`: Tamagui applies props in order, so the variant's
         // `padding: 0` would otherwise override explicit padding props.
-        noPadding={noPadding}
+        tight={tight}
         {...props}
         aria-label={props["aria-label"] ?? tooltip}
         onPress={handlePress}
@@ -1206,9 +1279,27 @@ const ButtonContainerImpl = createStyledHOC(
         rounded={rounded}
         variant={variant}
         disabled={disabled}
+        shadowStyle={shadowStyle}
         ringed={ringed}
         animate={animate}
         width={circular ? undefined : props.width}>
+        {isContainerVariant(variant) && (
+          <ContainerBackground
+            variant={variant}
+            shadowStyle={shadowStyle}
+            transition="400ms"
+            glass={glass}
+            noise={noise}
+            accented={accented}
+            hoverGroup={disabled ? undefined : "button"}
+            {...(disabled
+              ? getDisabledColors(variant)
+              : variant === "outlined" && {
+                  borderColor:
+                    "primary group-hover/button:primary-hovered group-press/button:primary-active"
+                })}
+          />
+        )}
         {variant === "ghost" && (
           <ButtonHoverBackground
             effect="ghost"
@@ -1287,7 +1378,7 @@ const ButtonContainerImpl = createStyledHOC(
         disabled={disabled}
         circular={circular}
         rounded={rounded}
-        noPadding={noPadding}
+        tight={tight}
         ringed={ringed}
         animate={animate}>
         {tooltip ? (

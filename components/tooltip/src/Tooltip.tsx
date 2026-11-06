@@ -18,6 +18,15 @@
 
 "use client";
 
+import type {
+  ContainerSurfaceProps,
+  ContainerVariant
+} from "@cyclone-ui/container";
+import {
+  ContainerBackground,
+  containerShadows,
+  containerVariants
+} from "@cyclone-ui/container";
 import type { GetProps, SizeTokens } from "@tamagui/core";
 import {
   createStyledContext,
@@ -25,59 +34,36 @@ import {
   styled,
   withStaticProperties
 } from "@tamagui/core";
+import { usePopperContext } from "@tamagui/popper";
 import type { TooltipProps as TamaguiTooltipProps } from "@tamagui/tooltip";
 import { Tooltip as TamaguiTooltip } from "@tamagui/tooltip";
 
-export type TooltipVariant = "primary" | "secondary" | "tertiary" | "outlined";
+export type TooltipVariant = ContainerVariant;
 
-export interface TooltipContextProps {
+/**
+ * The surface of the tooltip's content and arrow, drawn by a `Container`.
+ * `Tooltip.Content` can also set its own. `variant` defaults to `tertiary` and
+ * `shadowStyle` to `raised`; an `outlined` tooltip keeps an opaque `elevated`
+ * backing so its text stays readable over the page. A tooltip is too small for
+ * `Container`'s `noise`.
+ */
+export interface TooltipContextProps extends Omit<
+  ContainerSurfaceProps,
+  "noise"
+> {
   size: SizeTokens;
-
-  /**
-   * The surface of the tooltip's content and arrow: `primary` fills it with
-   * `primary`, `secondary` with `secondary` and a `border` border, `tertiary`
-   * with `surface` and a `hairline` border, and `outlined` draws a 2px
-   * `primary` border. Unset keeps the `elevated` surface with an `outline`
-   * border.
-   */
-  variant?: TooltipVariant;
 }
 
 export const TooltipContext = createStyledContext<TooltipContextProps, "size">(
   {
-    size: "12xl",
-    variant: "tertiary"
+    size: "12xl"
   } as TooltipContextProps,
   {
-    // Not `variant`: `TooltipContentImpl` turns it into surface props.
+    // Not the surface props: `TooltipContentImpl` turns them into a
+    // `ContainerBackground` and the arrow's colors.
     keys: ["size"]
   }
 );
-
-// Unlike `Button`'s `outlined`, an outlined tooltip keeps an opaque surface so
-// its text stays readable over the page. The shadow belongs to `elevated`.
-const tooltipSurfaces = {
-  primary: {
-    backgroundColor: "primary",
-    borderColor: "transparent",
-    borderWidth: 0
-  },
-  secondary: {
-    backgroundColor: "secondary",
-    borderColor: "border",
-    borderWidth: 1
-  },
-  tertiary: {
-    backgroundColor: "surface",
-    borderColor: "hairline",
-    borderWidth: 1
-  },
-  outlined: {
-    backgroundColor: "elevated",
-    borderColor: "primary",
-    borderWidth: 2
-  }
-} as const;
 
 const TooltipFrame = styled(TamaguiTooltip, {
   displayName: "Tooltip",
@@ -91,12 +77,20 @@ const TooltipFrameImpl = createStyledHOC(
       children,
       size = true,
       variant,
+      shadowStyle,
+      glass,
+      accented,
       ...props
     }: TamaguiTooltipProps & Partial<TooltipContextProps>,
     forwardedRef
   ) => {
     return (
-      <TooltipContext.Provider size={size} variant={variant}>
+      <TooltipContext.Provider
+        size={size}
+        variant={variant}
+        shadowStyle={shadowStyle}
+        glass={glass}
+        accented={accented}>
         {/* v3's Tooltip (Popper) has no `size` prop; size lives in context. */}
         <TamaguiTooltip ref={forwardedRef} {...props}>
           {children}
@@ -107,27 +101,43 @@ const TooltipFrameImpl = createStyledHOC(
   { displayName: "Tooltip" }
 );
 
-const TooltipArrow = styled(TamaguiTooltip.Arrow, {
-  displayName: "Tooltip",
-  context: TooltipContext,
-  backgroundColor: "elevated",
-  borderWidth: 1,
-  borderColor: "primary"
-});
+// The rotated arrow is centered on the box edge, so the content border draws
+// across its base. Shift it inward by the border width; its fill covers the line.
+const TooltipArrow = (props: GetProps<typeof TamaguiTooltip.Arrow>) => {
+  const { placement } = usePopperContext("");
+  const borderWidth =
+    typeof props.borderWidth === "number" ? props.borderWidth : 0;
+  const side = placement?.split("-")[0];
+  const inset = !borderWidth
+    ? undefined
+    : side === "top"
+      ? { marginBottom: borderWidth }
+      : side === "left"
+        ? { marginRight: borderWidth }
+        : side === "right"
+          ? { marginLeft: borderWidth }
+          : { marginTop: borderWidth };
 
+  return <TamaguiTooltip.Arrow {...props} {...inset} />;
+};
+
+// The `ContainerBackground` draws the surface. Positioned for it (Popper
+// positions a wrapper, not this frame), and `isolation` makes the stacking
+// context: Tamagui hands a content `zIndex` to the portal instead.
 const TooltipContent = styled(
   TamaguiTooltip.Content,
   {
     displayName: "Tooltip",
     context: TooltipContext,
+    position: "relative",
+    isolation: "isolate",
     transition: "200ms",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "elevated",
+    backgroundColor: "transparent",
     paddingVertical: "3xl",
     paddingHorizontal: "2xl",
-    borderWidth: 1,
-    borderColor: "primary focus-visible:primary-active",
+    borderWidth: 0,
     borderRadius: "tooltip",
     x: "enter:0 exit:0",
     y: "enter:-5px exit:-5px",
@@ -136,31 +146,20 @@ const TooltipContent = styled(
     outlineColor: "focus-visible:primary-active",
     outlineWidth: "focus-visible:3px",
     outlineOffset: "focus-visible:lg",
-    outlineStyle: "focus-visible:solid",
-
-    variants: {
-      elevated: {
-        true: {
-          boxShadow: "0px 4px 30px #0D0C0766"
-        }
-      }
-    } as const,
-
-    defaultVariants: {
-      elevated: true
-    }
+    outlineStyle: "focus-visible:solid"
   },
   // Tamagui's `Tooltip.Content` HOC passes `backgroundColor="background"` to its
   // inner content, and `styled()` turns ours into a class that loses to it, so
-  // forward it as a prop instead or the body won't match the arrow.
+  // forward it as a prop instead or the content shows Tamagui's background.
   { inlineProps: new Set(["backgroundColor"]) }
 );
 
-interface TooltipContentExtraProps {
+interface TooltipContentExtraProps extends Omit<
+  ContainerSurfaceProps,
+  "noise"
+> {
   hasArrow?: boolean;
   arrowBorderColor?: GetProps<typeof TooltipContent>["borderColor"];
-  /** Overrides the `Tooltip`'s `variant`. */
-  variant?: TooltipVariant;
 }
 
 const TooltipContentImpl = createStyledHOC(
@@ -171,43 +170,57 @@ const TooltipContentImpl = createStyledHOC(
       hasArrow = true,
       arrowBorderColor,
       variant: variantProp,
-      borderColor: borderColorProp,
+      shadowStyle: shadowStyleProp,
+      glass: glassProp,
+      accented: accentedProp,
       backgroundColor: backgroundColorProp,
-      borderWidth: borderWidthProp,
-      elevated: elevatedProp,
+      borderColor,
+      borderWidth,
       ...props
-    }: GetProps<typeof TooltipContent> & TooltipContentExtraProps,
+    }: Omit<GetProps<typeof TooltipContent>, "variant"> &
+      TooltipContentExtraProps,
     forwardedRef
   ) => {
-    const variant = variantProp ?? TooltipContext.useStyledContext().variant;
-    const surface = variant ? tooltipSurfaces[variant] : undefined;
-    const borderColor = borderColorProp ?? surface?.borderColor;
-    // Keep the arrow on the same background as the body
+    const context = TooltipContext.useStyledContext();
+    const variant = variantProp ?? context.variant ?? "tertiary";
+    const shadowStyle = shadowStyleProp ?? context.shadowStyle ?? "raised";
+    const glass = glassProp ?? context.glass;
+    const accented = accentedProp ?? context.accented;
+    // Unlike `Button`'s `outlined`, an outlined tooltip keeps an opaque
+    // backing so its text stays readable over the page.
     const backgroundColor =
-      backgroundColorProp ?? surface?.backgroundColor;
-    const borderWidth = borderWidthProp ?? surface?.borderWidth;
-    // A `variant` brings its own shadow, like `Button`'s.
-    const elevated = elevatedProp ?? variant === undefined;
+      variant === "outlined" && !glass ? "elevated" : "transparent";
+    // Explicit colors and widths win over the variant's, on the surface the
+    // `ContainerBackground` draws and on the arrow.
+    const overrides = {
+      ...(backgroundColorProp !== undefined && {
+        backgroundColor: backgroundColorProp
+      }),
+      ...(borderColor !== undefined && { borderColor }),
+      ...(borderWidth !== undefined && { borderWidth })
+    };
 
     return (
       <TooltipContent
         ref={forwardedRef}
-        // Without the floating shadow, the raised variants keep `Button`'s
-        // resting one.
-        {...(!elevated &&
-          (variant === "secondary" || variant === "tertiary") && {
-            boxShadow: "color-shadow-resting-raised"
-          })}
-        {...props}
-        elevated={elevated}
+        boxShadow={containerShadows[shadowStyle]}
         backgroundColor={backgroundColor}
-        borderColor={borderColor}
-        {...(borderWidth !== undefined && { borderWidth })}>
+        {...props}>
+        <ContainerBackground
+          variant={variant}
+          shadowStyle={shadowStyle}
+          glass={glass}
+          accented={accented}
+          {...overrides}
+        />
         {hasArrow && (
           <TooltipArrow
-            backgroundColor={backgroundColor}
-            borderColor={arrowBorderColor || borderColor}
-            {...(borderWidth !== undefined && { borderWidth })}
+            {...containerVariants[variant]}
+            {...(backgroundColor !== "transparent" && { backgroundColor })}
+            {...(accented && { borderColor: "primary" })}
+            {...(shadowStyle === "flat" && { borderWidth: 0 })}
+            {...overrides}
+            {...(arrowBorderColor && { borderColor: arrowBorderColor })}
           />
         )}
         {children}

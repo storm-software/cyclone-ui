@@ -1,6 +1,6 @@
 ---
 title: Tag
-description: A compact label chip with text and icon parts. It supports primary and secondary variants, outlined, circular, pressable, removable, and editable modes.
+description: A compact label chip with text and icon parts. It takes the Container variants, circular, pressable, removable, and editable modes.
 documentType: reference
 tags: [component, tag, chip, label]
 ---
@@ -49,7 +49,9 @@ export function Example() {
 
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
-| `variant` | `"primary" \| "secondary" \| "tertiary" \| "outlined"` | `"primary"` | The style, following the [Button](./button.md) variants. See below. |
+| `variant` | [Container](./container.md) variant | `"primary"` | The surface, drawn by a Container as on [Button](./button.md). See below. |
+| `shadowStyle` | `"none" \| "raised" \| "elevated" \| "flat"` | `"none"` | The tag's shadow. `flat` also removes the border, including an `outlined` tag's. |
+| `glass`, `accented` | `boolean` | `false` | The [Container](./container.md) options: frosted glass and a `primary` border. A tag is too small for `noise`. |
 | `size` | `SizeTokens \| number` | `true` | Sets the padding. `Tag.Text` and `Tag.Icon` also follow it. |
 | `outlined` | `boolean` | `false` | Deprecated: use `variant="outlined"`. Outlines the tag in the `primary` or `secondary` variant's color. |
 | `circular` | `boolean` | `false` | Fully rounds the tag. The `Rounded` story uses this prop. |
@@ -75,9 +77,7 @@ export function Example() {
 
 ## Variants and states
 
-- **`primary`:** A `primary` background with no border or shadow, and `on-primary` text.
-- **`secondary`:** A `secondary` background, a 1px `border` border, and the `color-shadow-resting-raised` shadow. The text is `on-secondary` (`primary` on the uncolored base theme's light `secondary`).
-- **`tertiary`:** A `surface` background, a 1px `hairline` border, the `color-shadow-resting-raised` shadow, and `primary` text.
+- **Surface:** A [Container](./container.md) of the `variant` draws the background and border (see its variant table). The text is `on-primary` on `primary`, `on-secondary` on `secondary` (`primary` on the uncolored base theme's light `secondary`), and `primary` on the other variants.
 - **`outlined`:** A transparent background with a 2px `primary` border and `primary` text. With the deprecated `outlined` flag, a `secondary` tag outlines in `secondary` instead.
 - **Pressable:** The background (or the outlined border) changes to its `-hovered` shade on hover. A ripple starts at the press point. The focus ring uses `ring-offset`.
 - **Removable:** Hovering or focusing the remove button switches the whole tag to the `danger` theme. The tag fades and shrinks to `0.8` scale on exit, over 200ms.

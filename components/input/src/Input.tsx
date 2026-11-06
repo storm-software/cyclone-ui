@@ -563,7 +563,7 @@ const InputTrigger = createStyledHOC(
             ref={forwardedRef}
             variant="link"
             borderRadius={circular ? 100_000 : "button"}
-            noPadding={true}
+            tight={true}
             color="on-primary"
             disabled={disabled}
             {...props}

@@ -57,9 +57,10 @@ The first header item becomes the current tab when no tab is set.
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
 | `tabStyle` | `"underline" \| "floating" \| "tabbed" \| "fluid"` | `"floating"` | The layout style. Named `variant` before. |
-| `variant` | `"primary" \| "secondary" \| "tertiary" \| "outlined"` | — | The colors, in any `tabStyle`. See [Color variants](#color-variants). Unset keeps the style's own colors. |
+| `variant` | [Container](./container.md) variant | — | The selected tab's indicator in the `floating` and `fluid` styles. See [Indicator variants](#indicator-variants). |
+| `shadowStyle`, `glass`, `noise`, `accented` | Container props | — | The rest of the `floating` pill's surface. |
 | `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | The direction of the tab list. |
-| `bordered` | `boolean` | `true` | Shows the borders that the style and variant own. |
+| `bordered` | `boolean` | `true` | Shows the borders that the style owns, and the `floating` pill's border. |
 | `size` | `SizeTokens` | `true` | Sets the item padding and label size. Only size token names restyle the root. |
 | `onValueChange` | `(value: string) => void` | — | Called with the selected tab value. |
 | `theme` | Tamagui theme name | Inherited | The stories use `brand`, `discovery`, `danger`, `warning`, `info`, and `success`. |
@@ -71,30 +72,24 @@ The first header item becomes the current tab when no tab is set.
 | `tabStyle` | Header style | Indicator |
 | --- | --- | --- |
 | `underline` | A `sunken` bottom border (`lg` width) with no radius. | An active bar and a hover bar. |
-| `floating` | A `sunken` background, `hairline` border, and the `tabs` radius. | None. |
+| `floating` | A `sunken` background, `hairline` border, and the `tabs` radius. | A pill under the selected tab, drawn by a [Container](./container.md). |
 | `tabbed` | No background and no padding. Each item has its own border and the `tab` radius. | None. Items and panel use `surface` when selected. The panel has a `surface` background. |
 
 - **Selected item:** The label uses `primary-active` and `semibold`. Other labels use `primary-inactive` and `medium`.
 - **Hover:** A label uses `primary` when the pointer is over its item. The `tabbed` items use `canvas-hovered` on hover.
 - **Vertical:** The header list has a minimum width of `20xl`. The panel takes the remaining space.
-- **Borderless:** Set `bordered={false}` to remove the style and variant borders.
+- **Borderless:** Set `bordered={false}` to remove the style's borders and the pill's border.
 - **Panels:** Only the active panel is in the layout. The others are positioned absolutely.
 
-The stories cover `Floating`, `Underline`, `Tabbed`, their borderless forms, `TabbedVertical`, `Horizontal`, and `Vertical`, plus each color variant per style (for example `UnderlinePrimary`, `TabbedOutlined`).
+The stories cover `Floating`, `Underline`, `Tabbed`, their borderless forms, `TabbedVertical`, `Horizontal`, and `Vertical`, plus the indicator variants (for example `Primary`, `FloatingSurface`, `Glass`, `FluidSecondary`).
 
-## Color variants
+## Indicator variants
 
-`variant` follows the [Button](./button.md) variants and combines with every `tabStyle`.
+The surface props style only the selected tab's indicator. The tab list, the items, and the panel keep their `tabStyle` styling.
 
-| `variant` | Surface | Border | Shadow |
-| --- | --- | --- | --- |
-| `primary` | `primary` | None | None |
-| `secondary` | `secondary` | 1px `border` | `color-shadow-resting-raised` |
-| `tertiary` | `surface` | 1px `hairline` | `color-shadow-resting-raised` |
-| `outlined` | Transparent | 2px `primary` | None |
-
-- The surface goes on the tab list. With `tabStyle="tabbed"` the list stays bare, and the selected tab and the panel take the surface instead.
-- On `primary` and `secondary`, labels use `on-primary` / `on-secondary` (`primary` on the uncolored base theme's light `secondary`). The underline bar and the `fluid` pill switch to `on-primary` on a `primary` list so they stay visible. The `floating` pill keeps its `surface` (`elevated` on a `tertiary` list).
+- **`floating`:** The pill is a [Container](./container.md) of the `variant` (any Container variant, the same set as [Button](./button.md)), `tertiary` with the `raised` shadow by default. It takes `shadowStyle`, `glass`, `noise`, and `accented` too. The selected label uses `on-primary` / `on-secondary` on `primary` / `secondary` (`primary` on the uncolored base theme's light `secondary`).
+- **`fluid`:** The pill takes the `variant`'s background (`primary` by default and for `outlined`), and the label it covers takes that variant's text color. The other surface props don't apply to the WebGL pill.
+- **`underline` and `tabbed`:** The surface props don't apply.
 
 ## Accessibility
 

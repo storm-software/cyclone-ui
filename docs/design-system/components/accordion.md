@@ -61,7 +61,9 @@ The root also accepts the props of the Tamagui accordion, such as `defaultValue`
 | --------------- | ----------------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------ |
 | `type`          | `"single" \| "multiple"`                                                                  | `"multiple"` | Whether one or many items can be open.                             |
 | `single`        | `boolean`                                                                                 | `false`      | Same as `type="single"`.                                           |
-| `variant`       | `"primary" \| "secondary" \| "tertiary" \| "sunken" \| "canvas" \| "surface" \| "elevated" \| "floating" \| "outlined" \| "ghost"` | `"surface"`  | The background style.                                              |
+| `variant`       | [Container](./container.md) variant, or `"ghost"`                                          | `"surface"`  | The background style.                                              |
+| `shadowStyle`   | `"none" \| "raised" \| "elevated" \| "flat"`                                                        | -            | The shadow of the group, or of each item when `separated`.         |
+| `glass`, `noise`, `accented` | `boolean`                                                                    | `false`      | The [Container](./container.md) options: frosted glass, film grain, and a `primary` border. |
 | `bordered`      | `boolean`                                                                                 | `true`       | Shows the borders and the item dividers.                           |
 | `separated`     | `boolean`                                                                                 | `false`      | Draws each item as its own box with a gap between items.           |
 | `numbered`      | `boolean`                                                                                 | `false`      | Shows a two-digit number before each heading (`01`, `02`, ...).    |
@@ -78,20 +80,11 @@ The root also accepts the props of the Tamagui accordion, such as `defaultValue`
 
 ## Variants
 
-`primary`, `secondary`, `tertiary`, and `outlined` follow the [Button](./button.md) variants; when `separated`, each item takes the variant's border and shadow. The other filled variants use the background token with the same name. See [Design tokens](../tokens/index.md).
+Every variant but `ghost` is a [Container](./container.md) variant, the same set as [Button](./button.md): a Container draws the surface behind the group or, when `separated`, behind each item. See the [Container variants](./container.md#variants) for each background and border. `surface` is the default.
 
-| Variant    | Background    | Notes                                                       |
-| ---------- | ------------- | ----------------------------------------------------------- |
-| `primary`  | `primary`     | No border or shadow. Headings, numbers, and icons use `on-primary`. |
-| `secondary`| `secondary`   | `border` border, `color-shadow-resting-raised` shadow. Headings use `on-secondary` (`primary` on the uncolored base theme). |
-| `tertiary` | `surface`     | `hairline` border, `color-shadow-resting-raised` shadow.    |
-| `sunken`   | `sunken`      |                                                             |
-| `canvas`   | `canvas`      |                                                             |
-| `surface`  | `surface`     | The default.                                                |
-| `elevated` | `elevated`    |                                                             |
-| `floating` | `floating`    |                                                             |
-| `outlined` | `transparent` | 2px `primary` border. Headers use `surface-hovered` on hover when `separated`. |
-| `ghost`    | `transparent` | No outer border or padding. Each header has an underline.   |
+- On `primary` and `secondary`, headings, numbers, and icons use `on-primary` / `on-secondary` (`primary` on `secondary` with the uncolored base theme).
+- When `separated`, a header shows its item's `-hovered` shade on hover (`surface-hovered` for `outlined`).
+- `ghost` has no surface, outer border, or padding. Each header has an underline.
 
 ## States and behavior
 

@@ -369,8 +369,10 @@ type CardFrameImplProps = Omit<
   /**
    * The surface of the card. `primary` and `secondary` also draw the card's
    * heading, text, icon, accent bar and link in `on-primary` / `on-secondary`.
+   * The card also takes `Container`'s `shadowStyle`, `glass`, `noise` and
+   * `accented` props.
    *
-   * @defaultValue "floating"
+   * @defaultValue "elevated"
    */
   variant?: CardVariant;
   color?: ColorTokens | ThemeTokens;
@@ -385,7 +387,7 @@ const CardFrameImpl = createStyledHOC(
       theme,
       size = true,
       cardStyle = "top",
-      variant = "floating",
+      variant = "elevated",
       onPointerMove,
       onPointerEnter,
       onPointerLeave,

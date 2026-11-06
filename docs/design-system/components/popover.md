@@ -59,7 +59,9 @@ The root accepts the Tamagui `Popover` props plus the props below. It sets `allo
 | --- | --- | --- | --- |
 | `size` | `SizeTokens` | `true` | Size, shared with the parts through `PopoverContext`. |
 | `shouldAdapt` | `boolean` | `true` | Renders the content in a bottom `Sheet` on small screens. |
-| `variant` | `"primary" \| "secondary" \| "tertiary" \| "outlined"` | — | The surface of the content, the arrow, and the small-screen sheet. See [Variants](#variants). |
+| `variant` | [Container](./container.md) variant | `"elevated"` | The surface of the content, the arrow, and the small-screen sheet. See [Variants](#variants). |
+| `shadowStyle` | `"none" \| "raised" \| "elevated" \| "flat"` | `"elevated"` | The content's shadow. |
+| `glass`, `noise`, `accented` | `boolean` | `false` | The [Container](./container.md) options: frosted glass, film grain, and a `primary` border. |
 | `theme` | theme name | — | Theme. |
 
 ### `Popover.Content`
@@ -69,31 +71,24 @@ It accepts the Tamagui `Popover.Content` props plus the props below.
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
 | `hasArrow` | `boolean` | `false` | Shows an arrow that points to the trigger. |
-| `variant` | Same as `Popover` | The `Popover`'s | Overrides the root's `variant` for this content. |
-| `elevated` | `boolean` | `true`, or `false` with a `variant` | Adds the shadow `0px 4px 30px #0D0C0766`. |
+| `variant`, `shadowStyle`, `glass`, `noise`, `accented` | Same as `Popover` | The `Popover`'s | Override the root's surface for this content. `shadowStyle` replaces the former `elevated` flag. |
 
 ## Appearance
 
-- Background `elevated`, padding `3xl`, border radius `popover`.
-- Border `1` wide in `hairline`. It changes to `primary-active` on `focus-visible`.
+- A [Container](./container.md) draws the surface behind the content: `elevated` with a 1px `border` border and the `elevated` shadow by default.
+- Padding `3xl`, border radius `popover`. A 2px `primary-active` outline shows on `focus-visible`.
 - Enter and exit: the content fades and moves `-10px` on `y` in `100ms`.
 
 ## Variants
 
-`variant` follows the [Button](./button.md) variants. Without it, the popover keeps the appearance above.
+`variant` takes any [Container](./container.md) variant, the same set as [Button](./button.md). The arrow takes the variant's background and border.
 
-| `variant` | Surface | Border | Shadow |
-| --- | --- | --- | --- |
-| `primary` | `primary` | None | None |
-| `secondary` | `secondary` | 1px `border` | `color-shadow-resting-raised` |
-| `tertiary` | `surface` | 1px `hairline` | `color-shadow-resting-raised` |
-| `outlined` | `elevated` | 2px `primary` | None |
+- An `outlined` popover keeps an opaque `elevated` backing so its content stays readable over the page.
+- Explicit `backgroundColor`, `borderColor`, and `borderWidth` on `Popover.Content` win over the variant, on the surface and the arrow.
+- The content is yours, so text inside a `primary` or `secondary` popover should use `getContainerForeground(variant, themeName)` from `@cyclone-ui/container` (`on-primary` / `on-secondary`, or `primary` on `secondary` with the uncolored base theme).
+- On small screens, the surface props pass to the adapted [Sheet](./sheet.md).
 
-- An `outlined` popover keeps an opaque `elevated` surface so its content stays readable over the page.
-- The content is yours, so text inside a `primary` or `secondary` popover should use `on-primary` / `on-secondary` (use `primary` on `secondary` with the uncolored base theme).
-- Pass `elevated` to add the floating shadow to a variant.
-
-The stories show the default popover, `hasArrow`, each `variant` (with `PrimaryArrow` and `OutlinedArrow`), and the themes `brand`, `discovery`, `danger`, `warning`, `info`, and `success`.
+The stories show the default popover, `hasArrow`, each Button `variant` (with `PrimaryArrow` and `OutlinedArrow`), `Floating`, `Raised`, `Accented`, `Glass`, `Noise`, and the themes `brand`, `discovery`, `danger`, `warning`, `info`, and `success`.
 
 ## Related
 

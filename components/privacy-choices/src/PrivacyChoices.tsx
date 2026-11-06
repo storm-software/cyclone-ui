@@ -249,7 +249,7 @@ export const PrivacyChoices = createStyledHOC(
             ref={forwardedRef}
             variant="link"
             flexGrow={0}
-            noPadding={true}
+            tight={true}
             gap="xl"
             {...props}>
             {privacyOptionsIcon}
@@ -273,7 +273,7 @@ export const PrivacyChoices = createStyledHOC(
               </Dialog.Heading>
               <Button
                 aria-label="Close"
-                tooltip="Close dialog"
+                tooltip="Close"
                 variant="ghost"
                 circular={true}
                 flexGrow={0}

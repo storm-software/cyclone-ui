@@ -19,6 +19,15 @@
 "use client";
 
 import { BodyText } from "@cyclone-ui/body-text";
+import type {
+  ContainerSurfaceProps,
+  ContainerVariant
+} from "@cyclone-ui/container";
+import {
+  ContainerBackground,
+  containerShadows,
+  getContainerForeground
+} from "@cyclone-ui/container";
 import { HeadingLargeText } from "@cyclone-ui/heading-text";
 import {
   SCROLL_VIEW_CLASS_NAME,
@@ -50,7 +59,7 @@ import { PanResponder, Platform } from "react-native";
 
 export type SheetDirection = "top" | "right" | "bottom" | "left";
 export type SheetSize = "sm" | "md" | "lg";
-export type SheetVariant = "primary" | "secondary" | "tertiary" | "outlined";
+export type SheetVariant = ContainerVariant;
 
 const sheetSizeStyles: Record<
   SheetDirection,
@@ -88,7 +97,7 @@ interface SheetContextValue {
   pointerHandlers: Record<string, unknown>;
   setFrameSize: (size: number) => void;
   transition: SheetProps["transition"];
-  variant?: SheetVariant;
+  surface: ContainerSurfaceProps;
 }
 
 const SheetContext = createContext<SheetContextValue | null>(null);
@@ -109,56 +118,50 @@ const sheetSurfaceStyles = {
   borderColor: "transparent"
 };
 
-// Unlike `Button`'s `outlined`, an outlined sheet keeps an opaque surface so
-// its content stays readable over the page.
-const sheetVariantSurfaces = {
-  primary: {
-    backgroundColor: "primary",
-    borderWidth: 0,
-    borderColor: "transparent"
-  },
-  secondary: {
-    backgroundColor: "secondary",
-    borderWidth: 1,
-    borderColor: "border",
-    boxShadow: "color-shadow-resting-raised"
-  },
-  tertiary: {
-    backgroundColor: "surface",
-    borderWidth: 1,
-    borderColor: "hairline",
-    boxShadow: "color-shadow-resting-raised"
-  },
-  outlined: {
-    backgroundColor: "elevated",
-    borderWidth: 2,
-    borderColor: "primary"
-  }
-} as const;
+// Without a `variant`, `glass`, `noise` or `accented`, the sheet keeps its
+// borderless `elevated` surface and needs no `Container`.
+const hasContainerSurface = ({
+  variant,
+  glass,
+  noise,
+  accented
+}: ContainerSurfaceProps) =>
+  variant !== undefined ||
+  glass === true ||
+  noise === true ||
+  accented === true;
 
-// `dark_brand` / `brand` -> `brand`; `dark`, `base` and `dark_base` are
-// uncolored.
-const isUncoloredTheme = (themeName: string | null | undefined) => {
-  const parts = themeName?.split("_") ?? [];
-  const color = parts.length > 1 ? parts[1] : parts[0];
+/**
+ * The `Container` layer that draws a sheet's surface, and the frame styles
+ * around it: the frame's own surface gives way to the layer (an outlined
+ * sheet keeps an opaque `elevated` backing so its content stays readable over
+ * the page), and the frame draws the shadow, which its overflow would clip.
+ */
+const getSheetSurface = (surface: ContainerSurfaceProps) => {
+  const { shadowStyle } = surface;
 
-  return !color || color === "base" || color === "light" || color === "dark";
+  return hasContainerSurface(surface)
+    ? {
+        layer: (
+          <ContainerBackground
+            {...surface}
+            variant={surface.variant ?? "elevated"}
+            {...(surface.variant === undefined && { borderWidth: 0 })}
+          />
+        ),
+        frame: {
+          backgroundColor:
+            surface.variant === "outlined" && !surface.glass
+              ? "elevated"
+              : "transparent",
+          ...(shadowStyle && { boxShadow: containerShadows[shadowStyle] })
+        }
+      }
+    : {
+        layer: null,
+        frame: shadowStyle ? { boxShadow: containerShadows[shadowStyle] } : {}
+      };
 };
-
-// The text color on the `primary` / `secondary` surfaces. `on-secondary` is
-// faint on the uncolored themes' light `secondary`, so those use `primary`
-// there, as `Button` does.
-const getSheetForeground = (
-  variant: SheetVariant | undefined,
-  themeName: string | null | undefined
-) =>
-  variant === "primary"
-    ? "on-primary"
-    : variant === "secondary"
-      ? isUncoloredTheme(themeName)
-        ? "primary"
-        : "on-secondary"
-      : undefined;
 
 const sheetLayoutStyles = {
   flexDirection: "column" as const,
@@ -262,6 +265,8 @@ const SheetSheetContainer = styled(TamaguiSheet.Container, {
 
 const SheetSheetBackground = styled(TamaguiSheet.Background, {
   displayName: "SheetBackground",
+  // A stacking context for a `Container` layer's negative `zIndex`.
+  isolation: "isolate",
 
   ...sheetSurfaceStyles
 });
@@ -389,13 +394,16 @@ const SheetDialogContainer: FC<SheetContainerProps> = ({
     dragging,
     setFrameSize,
     transition: sheetTransition,
-    variant
+    surface
   } = useSheetContext();
   const {
     onLayout,
     transition = sheetTransition ?? "400ms",
     ...frameProps
   } = props;
+  // Drawn by the frame, not `Sheet.Background`: `Sheet.Frame` callers render
+  // no background in these directions.
+  const { layer, frame } = getSheetSurface(surface);
   const isVertical = direction === "top";
   // v2 passed the presence offset as runtime `enterStyle`/`exitStyle` objects;
   // in v3 it is an `enter:`/`exit:` clause on the dragged axis.
@@ -410,7 +418,7 @@ const SheetDialogContainer: FC<SheetContainerProps> = ({
       ]}
       {...(size ? sheetSizeStyles[direction][size] : {})}
       {...sheetFrameHandleInsetStyles[direction]}
-      {...(variant && sheetVariantSurfaces[variant])}
+      {...frame}
       {...frameProps}
       x={isVertical ? 0 : draggedOffset}
       y={isVertical ? draggedOffset : 0}
@@ -420,6 +428,7 @@ const SheetDialogContainer: FC<SheetContainerProps> = ({
         setFrameSize(isVertical ? height : width);
         onLayout?.(event);
       }}>
+      {layer}
       {children}
     </SheetDialogFrame>
   );
@@ -443,21 +452,21 @@ const SheetContainer: FC<SheetContainerProps> = ({ children, ...props }) => {
 };
 
 const SheetBackground: FC<SheetBackgroundProps> = props => {
-  const { direction, variant } = useSheetContext();
+  const { direction, surface } = useSheetContext();
 
-  return direction === "bottom" ? (
-    <SheetSheetBackground
-      {...(variant && sheetVariantSurfaces[variant])}
-      {...props}
-    />
-  ) : (
-    // The dialog frame draws the variant's border and shadow.
-    <SheetDialogBackground
-      {...(variant && {
-        backgroundColor: sheetVariantSurfaces[variant].backgroundColor
-      })}
-      {...props}
-    />
+  if (direction !== "bottom") {
+    // The dialog frame draws a `Container` surface itself.
+    return hasContainerSurface(surface) ? null : (
+      <SheetDialogBackground {...props} />
+    );
+  }
+
+  const { layer, frame } = getSheetSurface(surface);
+
+  return (
+    <SheetSheetBackground {...frame} {...props}>
+      {layer}
+    </SheetSheetBackground>
   );
 };
 
@@ -560,8 +569,8 @@ const SheetBodyText = styled(BodyText, {
 
 /** The `on-primary` / `on-secondary` text color on a filled sheet. */
 const useSheetForeground = () => {
-  const foreground = getSheetForeground(
-    useSheetContext().variant,
+  const foreground = getContainerForeground(
+    useSheetContext().surface.variant,
     useThemeName()
   );
 
@@ -632,22 +641,20 @@ const SheetFooter: FC<SheetFooterProps> = props => {
   );
 };
 
+/**
+ * The `ContainerSurfaceProps` draw the sheet's surface with a `Container`: in
+ * `Sheet.Background` for a bottom sheet, and in the frame for the other
+ * directions. `primary` and `secondary` also draw `Sheet.Heading`, `Sheet.Body`
+ * and `Sheet.Description` in `on-primary` / `on-secondary`. Without a
+ * `variant` (or `glass`, `noise` or `accented`), the sheet keeps its borderless
+ * `elevated` surface.
+ */
 export type SheetProps = Omit<GetProps<typeof TamaguiSheet>, "size"> & {
   children: ReactNode;
   theme?: string;
   direction?: SheetDirection;
   size?: SheetSize;
-
-  /**
-   * The sheet's surface: `primary` fills it with `primary`, `secondary` with
-   * `secondary` and a `border` border, `tertiary` with `surface` and a
-   * `hairline` border, and `outlined` draws a 2px `primary` border. `primary`
-   * and `secondary` also draw `Sheet.Heading`, `Sheet.Body` and
-   * `Sheet.Description` in `on-primary` / `on-secondary`. Unset keeps the
-   * borderless `elevated` surface.
-   */
-  variant?: SheetVariant;
-};
+} & ContainerSurfaceProps;
 
 const SNAP_POINTS = [80];
 const EMPTY_PAN_HANDLERS = {};
@@ -677,10 +684,18 @@ const SheetFrameImpl: FC<SheetProps> = ({
   snapPointsMode,
   transition,
   variant,
+  shadowStyle,
+  glass,
+  noise,
+  accented,
   onOpenChange,
   open,
   ...props
 }: SheetProps) => {
+  const surface = useMemo(
+    () => ({ variant, shadowStyle, glass, noise, accented }),
+    [variant, shadowStyle, glass, noise, accented]
+  );
   // Upstream portal implementations initialize non-deterministic browser
   // contexts. Defer portals while preserving inline nonmodal bottom sheets.
   const mounted = useSyncExternalStore(
@@ -874,7 +889,7 @@ const SheetFrameImpl: FC<SheetProps> = ({
       pointerHandlers,
       setFrameSize,
       transition,
-      variant
+      surface
     }),
     [
       direction,
@@ -885,7 +900,7 @@ const SheetFrameImpl: FC<SheetProps> = ({
       panHandlers,
       pointerHandlers,
       transition,
-      variant
+      surface
     ]
   );
   const deferPortal = !mounted && (modal || direction !== "bottom");

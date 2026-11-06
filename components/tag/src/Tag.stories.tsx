@@ -499,3 +499,56 @@ export const SuccessSecondaryOutlined: Story = {
     outlined: true
   }
 };
+
+export const Surface: Story = {
+  args: {
+    children: "Tag Text",
+    variant: "surface"
+  }
+};
+
+export const Floating: Story = {
+  args: {
+    children: "Tag Text",
+    variant: "floating"
+  }
+};
+
+export const PressableSurface: Story = {
+  args: {
+    children: "Tag Text",
+    variant: "surface",
+    pressable: true
+  }
+};
+
+export const Accented: Story = {
+  args: {
+    children: "Tag Text",
+    variant: "elevated",
+    accented: true
+  }
+};
+
+export const Raised: Story = {
+  args: {
+    children: "Tag Text",
+    variant: "elevated",
+    shadowStyle: "raised"
+  }
+};
+
+export const Glass: Story = {
+  args: {
+    children: "Tag Text",
+    glass: true
+  }
+};
+
+export const Flat: Story = {
+  args: {
+    children: "Tag Text",
+    variant: "surface",
+    shadowStyle: "flat"
+  }
+};

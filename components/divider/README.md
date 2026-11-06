@@ -47,23 +47,25 @@ A `Divider` component used to render a horizontal or vertical divider line. It i
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Quick Features](#quick-features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Reduced Package Size](#reduced-package-size)
-- [Development](#development)
-  - [Building](#building)
-  - [Running unit tests](#running-unit-tests)
-  - [Linting](#linting)
-- [Storm Workspaces](#storm-workspaces)
-- [Roadmap](#roadmap)
-- [Support](#support)
-- [License](#license)
-  - [Documentation](#documentation)
-- [Changelog](#changelog)
-- [Contributing](#contributing)
-- [Contributors](#contributors)
-  - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
+- [Divider](#divider)
+  - [Table of Contents](#table-of-contents)
+  - [Quick Features](#quick-features)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Reduced Package Size](#reduced-package-size)
+  - [Development](#development)
+    - [Building](#building)
+    - [Running unit tests](#running-unit-tests)
+    - [Linting](#linting)
+  - [Storm Workspaces](#storm-workspaces)
+  - [Roadmap](#roadmap)
+  - [Support](#support)
+  - [License](#license)
+    - [Documentation](#documentation)
+  - [Changelog](#changelog)
+  - [Contributing](#contributing)
+  - [Contributors](#contributors)
+    - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer-1)
 
 <!-- END doctoc -->
 
@@ -71,7 +73,7 @@ A `Divider` component used to render a horizontal or vertical divider line. It i
 
 - Horizontal and vertical directions.
 - Three thicknesses: `sm` (1px), `md` (2px), and `lg` (3px).
-- Any color token, with a theme `hairline` or `outline` color by default.
+- Any color token, with a theme `hairline` or `border` color by default.
 - Accepts other Tamagui view props, such as margins.
 
 ## Installation

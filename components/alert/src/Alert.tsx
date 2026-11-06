@@ -56,7 +56,7 @@ export const AlertContext = createStyledContext<AlertContextProps, "type">(
 );
 
 // `Button` is a styled HOC; v3 `styled()` only keeps style defaults for it, so
-// the behavioral props (`variant`, `circular`, `noPadding`, …) are passed at the
+// the behavioral props (`variant`, `circular`, `tight`, …) are passed at the
 // call site below.
 const AlertClose = styled(Button, {
   displayName: "AlertTrigger",
@@ -77,7 +77,7 @@ const AlertCloseImpl = createStyledHOC(
           theme="base"
           variant="ghost"
           circular={true}
-          noPadding={true}
+          tight={true}
           tooltip="Dismiss"
           {...props}
           padding="md"
@@ -111,10 +111,10 @@ const AlertFrameImpl = ({
       <Container
         {...props}
         hovered={hovered}
-        variant="overlay"
+        variant="floating"
         themeShallow={true}
-        bordered={false}
-        noPadding={true}
+        borderWidth={0}
+        tight={true}
         overflow="hidden">
         <Theme name={type ?? theme}>
           <XStack gap="3xl" paddingRight="md">

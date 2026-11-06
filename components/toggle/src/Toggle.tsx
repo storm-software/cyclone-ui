@@ -18,6 +18,16 @@
 
 "use client";
 
+import type {
+  ContainerShadowStyle,
+  ContainerVariant
+} from "@cyclone-ui/container";
+import {
+  ContainerBackground,
+  containerShadows,
+  containerVariants,
+  getContainerForeground
+} from "@cyclone-ui/container";
 import type { FormControlSize, StyleEnv } from "@cyclone-ui/helpers";
 import {
   formSizeVariants,
@@ -32,51 +42,23 @@ import type { ReactNode } from "react";
 import { forwardRef, useCallback, useState } from "react";
 
 export type ToggleSize = FormControlSize;
-export type ToggleVariant = "primary" | "secondary" | "tertiary" | "outlined";
+export type ToggleVariant = ContainerVariant;
 
-// `dark_brand` / `brand` -> `brand`; `dark`, `base` and `dark_base` are
-// uncolored.
-const isUncoloredTheme = (themeName: string | null | undefined) => {
-  const parts = themeName?.split("_") ?? [];
-  const color = parts.length > 1 ? parts[1] : parts[0];
-
-  return !color || color === "base" || color === "light" || color === "dark";
-};
-
-// The text color on the variant's indicator, as on a `Button` of the variant.
-// `on-secondary` is faint on the uncolored themes' light `secondary`, so those
-// use `primary` there, as `Button` does.
-const getToggleForeground = (
-  variant: ToggleVariant,
-  themeName: string | null | undefined
-) =>
-  variant === "primary"
-    ? "on-primary"
-    : variant === "secondary" && !isUncoloredTheme(themeName)
-      ? "on-secondary"
-      : "primary";
-
-// The indicator drawn as a `Button` of the variant, in the color's `-inactive`
-// shade while off and `-active` while on.
-const getIndicatorStyle = (variant: ToggleVariant, pressed: boolean) => {
+// The indicator's colors over its `Container` of the variant: the background
+// (or, when `outlined`, the border) in the color's `-inactive` shade while off
+// and `-active` while on.
+const getIndicatorColors = (variant: ToggleVariant, pressed: boolean) => {
   const state = pressed ? "active" : "inactive";
   if (variant === "outlined") {
     return {
-      borderWidth: 2,
       borderColor: `primary-${state} group-hover/toggle:primary-hovered`
     };
   }
 
-  const fill = variant === "tertiary" ? "surface" : variant;
+  const fill = containerVariants[variant].backgroundColor;
 
   return {
-    backgroundColor: `${fill}-${state} group-hover/toggle:${fill}-hovered`,
-    borderColor:
-      variant === "secondary"
-        ? "border"
-        : variant === "tertiary"
-          ? "hairline"
-          : "transparent"
+    backgroundColor: `${fill}-${state} group-hover/toggle:${fill}-hovered`
   };
 };
 
@@ -173,6 +155,10 @@ const ToggleFrame = styled(View, {
 
 const ToggleIndicator = styled(View, {
   displayName: "ToggleIndicator",
+  // Positioned and a stacking context, so a variant's `ContainerBackground`
+  // fills the indicator and paints above it but below its content.
+  position: "relative",
+  zIndex: 0,
 
   transition: "400ms",
   flexGrow: 1,
@@ -277,14 +263,15 @@ export interface ToggleProps extends Omit<
   /** The control size. */
   size?: ToggleSize;
   /**
-   * Draws the indicator as a `Button` of the variant, inside the sunken frame
-   * (or alone when `borderless`): `primary` fills it with `primary`,
-   * `secondary` with `secondary` and a `border` border, `tertiary` with
-   * `surface` and a `hairline` border, and `outlined` draws a 2px `primary`
-   * border. The color is its `-inactive` shade while off and its `-active`
-   * shade while on. Unset shows a raised indicator only while on.
+   * Draws the indicator as a `Container` of the variant (as `Button` does),
+   * inside the sunken frame (or alone when `borderless`). Its background (or,
+   * when `outlined`, its border) is the color's `-inactive` shade while off
+   * and its `-active` shade while on. Unset shows a raised indicator only
+   * while on.
    */
   variant?: ToggleVariant;
+  /** The indicator's shadow, while it shows. */
+  shadowStyle?: ContainerShadowStyle;
   /**
    * The toggle content. Strings are wrapped in styled text; pass a function
    * to render different content (e.g. "On"/"Off" or icons) per state.
@@ -309,6 +296,7 @@ export const Toggle = forwardRef<TamaguiElement, ToggleProps>(
       onPressedChange,
       size = "md",
       variant,
+      shadowStyle,
       invalid = false,
       disabled = false,
       borderless = false,
@@ -342,10 +330,10 @@ export const Toggle = forwardRef<TamaguiElement, ToggleProps>(
     const content =
       typeof children === "function" ? children(pressed) : children;
     const foreground = variant
-      ? getToggleForeground(
+      ? (getContainerForeground(
           variant,
           props.theme ?? (invalid ? "danger" : themeName)
-        )
+        ) ?? "primary")
       : undefined;
 
     return (
@@ -375,11 +363,29 @@ export const Toggle = forwardRef<TamaguiElement, ToggleProps>(
           circular={circular}
           rounded={rounded}
           {...(variant
-            ? getIndicatorStyle(variant, pressed)
+            ? // The `Container` draws the border.
+              { borderWidth: 0 }
             : borderless &&
               pressed && {
                 backgroundColor: `${pressedBackgroundColor} group-hover/toggle:${pressedBackgroundColor}`
-              })}>
+              })}
+          {...(shadowStyle &&
+            (variant || pressed) && {
+              boxShadow: containerShadows[shadowStyle]
+            })}
+          // Keeps the 1px width, so the indicator's size doesn't change.
+          {...(shadowStyle === "flat" &&
+            !variant && {
+              borderColor: "transparent group-hover/toggle:transparent"
+            })}>
+          {variant && (
+            <ContainerBackground
+              variant={variant}
+              shadowStyle={shadowStyle}
+              transition="400ms"
+              {...getIndicatorColors(variant, pressed)}
+            />
+          )}
           {typeof content === "string" || typeof content === "number" ? (
             <ToggleText
               textSize={size}

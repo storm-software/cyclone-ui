@@ -269,7 +269,7 @@ const DataTableRowActions = <TData extends RowData>({
             variant="ghost"
             ghostOpacity={0.4}
             circular={true}
-            noPadding={true}
+            tight={true}
             color="primary"
             size="6xl"
             padding="lg"
@@ -716,7 +716,7 @@ function DataTableImpl<TData extends RowData>({
                         theme="base"
                         variant="ghost"
                         circular={true}
-                        noPadding={true}
+                        tight={true}
                         size="6xl"
                         padding="lg"
                         aria-label="Clear selection"
@@ -1339,7 +1339,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
                 theme="base"
                 variant="ghost"
                 circular={true}
-                noPadding={true}
+                tight={true}
                 size="6xl"
                 padding="lg"
                 tooltip="Filter">

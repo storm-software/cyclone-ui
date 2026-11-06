@@ -26,18 +26,6 @@ const meta: Meta<typeof Tabs> = {
   component: Tabs,
   tags: ["autodocs"],
   render: ({ theme, ...rest }: any) => {
-    // The panel text keeps its own color; on a filled `tabbed` panel it uses
-    // the matching `on-*` color.
-    const color =
-      rest.tabStyle === "tabbed" && rest.variant === "primary"
-        ? "on-primary"
-        : rest.tabStyle === "tabbed" && rest.variant === "secondary"
-          ? // `on-secondary` is faint on the base theme's light `secondary`.
-            theme && theme !== "base"
-            ? "on-secondary"
-            : "primary"
-          : undefined;
-
     return (
       <Tabs {...rest} theme={theme}>
         <Tabs.Header>
@@ -54,19 +42,19 @@ const meta: Meta<typeof Tabs> = {
 
         <Tabs.Content>
           <Tabs.Content.Item key="tab1" value="tab1" padding="2xl">
-            <BodyText {...(color && { color })}>
+            <BodyText>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </BodyText>
           </Tabs.Content.Item>
           <Tabs.Content.Item key="tab2" value="tab2" padding="2xl">
-            <BodyText {...(color && { color })}>
+            <BodyText>
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </BodyText>
           </Tabs.Content.Item>
           <Tabs.Content.Item key="tab3" value="tab3" padding="2xl">
-            <BodyText {...(color && { color })}>
+            <BodyText>
               Duis aute irure dolor in reprehenderit in voluptate velit esse
               cillum dolore eu fugiat nulla pariatur.
             </BodyText>
@@ -246,62 +234,6 @@ export const Outlined: Story = {
   }
 };
 
-export const UnderlinePrimary: Story = {
-  args: {
-    tabStyle: "underline",
-    variant: "primary"
-  }
-};
-
-export const UnderlineSecondary: Story = {
-  args: {
-    tabStyle: "underline",
-    variant: "secondary"
-  }
-};
-
-export const UnderlineTertiary: Story = {
-  args: {
-    tabStyle: "underline",
-    variant: "tertiary"
-  }
-};
-
-export const UnderlineOutlined: Story = {
-  args: {
-    tabStyle: "underline",
-    variant: "outlined"
-  }
-};
-
-export const TabbedPrimary: Story = {
-  args: {
-    tabStyle: "tabbed",
-    variant: "primary"
-  }
-};
-
-export const TabbedSecondary: Story = {
-  args: {
-    tabStyle: "tabbed",
-    variant: "secondary"
-  }
-};
-
-export const TabbedTertiary: Story = {
-  args: {
-    tabStyle: "tabbed",
-    variant: "tertiary"
-  }
-};
-
-export const TabbedOutlined: Story = {
-  args: {
-    tabStyle: "tabbed",
-    variant: "outlined"
-  }
-};
-
 export const FluidPrimary: Story = {
   args: {
     tabStyle: "fluid",
@@ -323,9 +255,41 @@ export const FluidTertiary: Story = {
   }
 };
 
-export const FluidOutlined: Story = {
+export const FluidFloating: Story = {
   args: {
     tabStyle: "fluid",
-    variant: "outlined"
+    variant: "floating"
+  }
+};
+
+export const FloatingSurface: Story = {
+  args: {
+    variant: "floating"
+  }
+};
+
+export const Flat: Story = {
+  args: {
+    shadowStyle: "flat"
+  }
+};
+
+export const Accented: Story = {
+  args: {
+    accented: true
+  }
+};
+
+export const Glass: Story = {
+  args: {
+    variant: "primary",
+    glass: true
+  }
+};
+
+export const Noise: Story = {
+  args: {
+    variant: "primary",
+    noise: true
   }
 };

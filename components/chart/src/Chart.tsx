@@ -67,7 +67,7 @@ export function useChart() {
 const CHART_STYLES = `
 .cyclone-chart .recharts-cartesian-axis-tick text { fill: var(--subtle); }
 .cyclone-chart .recharts-cartesian-grid line[stroke='#ccc'] { stroke: var(--hairline); }
-.cyclone-chart .recharts-curve.recharts-tooltip-cursor { stroke: var(--outline); }
+.cyclone-chart .recharts-curve.recharts-tooltip-cursor { stroke: var(--hairline); }
 .cyclone-chart .recharts-polar-grid [stroke='#ccc'] { stroke: var(--hairline); }
 .cyclone-chart .recharts-polar-angle-axis-tick text, .cyclone-chart .recharts-polar-radius-axis-tick text { fill: var(--subtle); }
 .cyclone-chart .recharts-radial-bar-background-sector { fill: var(--sunken); }
@@ -158,7 +158,7 @@ export function LoadingIndicator({ isLoading }: { isLoading: boolean }) {
         paddingHorizontal="xl"
         paddingVertical="md"
         borderWidth={1}
-        borderColor="outline"
+        borderColor="hairline"
         borderRadius="md"
         backgroundColor="elevated">
         <Spinner size="small" color="var(--primary)" />

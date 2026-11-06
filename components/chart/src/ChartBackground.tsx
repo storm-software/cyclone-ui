@@ -35,7 +35,7 @@ export type BackgroundVariant =
   | "wiggle-lines"
   | "bubbles";
 
-const PATTERN_COLOR = "var(--outline)";
+const PATTERN_COLOR = "var(--hairline)";
 
 interface PatternProps {
   id: string;

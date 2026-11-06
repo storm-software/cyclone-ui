@@ -20,6 +20,9 @@
       "path": "../body-text"
     },
     {
+      "path": "../container"
+    },
+    {
       "path": "../themeable-icon"
     },
     {

@@ -283,3 +283,45 @@ export const PrimaryPressed: Story = {
     variant: "primary"
   }
 };
+
+export const Surface: Story = {
+  args: {
+    variant: "surface"
+  }
+};
+
+export const Floating: Story = {
+  args: {
+    variant: "floating"
+  }
+};
+
+export const SurfacePressed: Story = {
+  args: {
+    defaultPressed: true,
+    variant: "surface"
+  }
+};
+
+export const Raised: Story = {
+  args: {
+    defaultPressed: true,
+    variant: "elevated",
+    shadowStyle: "raised"
+  }
+};
+
+export const Flat: Story = {
+  args: {
+    defaultPressed: true,
+    shadowStyle: "flat"
+  }
+};
+
+export const SurfaceFlat: Story = {
+  args: {
+    defaultPressed: true,
+    variant: "surface",
+    shadowStyle: "flat"
+  }
+};

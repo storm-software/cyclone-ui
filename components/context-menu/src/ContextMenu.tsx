@@ -27,7 +27,8 @@ import {
   getSpaced
 } from "@cyclone-ui/helpers";
 import { ChevronRight, Confirm, Lock } from "@cyclone-ui/icons";
-import type { PopoverVariant } from "@cyclone-ui/popover";
+import type { ContainerVariant } from "@cyclone-ui/container";
+import { getContainerForeground } from "@cyclone-ui/container";
 import { Popover } from "@cyclone-ui/popover";
 import { Tooltip } from "@cyclone-ui/tooltip";
 import type { GetProps, LayoutEvent, ThemeName } from "@tamagui/core";
@@ -75,41 +76,21 @@ interface ContextMenuContextValue {
   size: FormControlSize;
   value?: string;
   onValueChange?: (value: string) => void;
-  variant?: PopoverVariant;
+  variant?: ContainerVariant;
 }
 
 // A hovered, focused or highlighted item's background on each filled menu;
 // the other menus use `floating-active`.
-const ITEM_HIGHLIGHTS: Partial<Record<PopoverVariant, string>> = {
+const ITEM_HIGHLIGHTS: Partial<Record<ContainerVariant, string>> = {
   primary: "primary-hovered",
   secondary: "secondary-hovered",
   tertiary: "surface-hovered"
 };
 
-// `dark_brand` / `brand` -> `brand`; `dark`, `base` and `dark_base` are
-// uncolored.
-const isUncoloredTheme = (themeName: string | null | undefined) => {
-  const parts = themeName?.split("_") ?? [];
-  const color = parts.length > 1 ? parts[1] : parts[0];
-
-  return !color || color === "base" || color === "light" || color === "dark";
-};
-
 // The text and icon color on the `primary` / `secondary` menus, in every item
-// state: the `on-*` colors have no state shades. `on-secondary` is faint on
-// the uncolored themes' light `secondary`, so those use `primary` there, as
-// `Button` does.
-const useItemForeground = (variant: PopoverVariant | undefined) => {
-  const themeName = useThemeName();
-
-  return variant === "primary"
-    ? "on-primary"
-    : variant === "secondary"
-      ? isUncoloredTheme(themeName)
-        ? "primary"
-        : "on-secondary"
-      : undefined;
-};
+// state: the `on-*` colors have no state shades.
+const useItemForeground = (variant: ContainerVariant | undefined) =>
+  getContainerForeground(variant, useThemeName());
 
 // The text, chevron and (when themed) icon color of an item in each state.
 // Themed items rest at their theme's `primary`, not `primary-inactive`.
@@ -151,10 +132,11 @@ export interface ContextMenuExtraProps {
   size?: FormControlSize;
 
   /**
-   * The menu's surface (see `Popover`'s `variant`). `primary` and `secondary`
-   * also draw the items in `on-primary` / `on-secondary`.
+   * The menu's surface, with `Popover`'s other surface props (`shadowStyle`,
+   * `glass`, `noise`, `accented`). `primary` and `secondary` also draw the
+   * items in `on-primary` / `on-secondary`.
    */
-  variant?: PopoverVariant;
+  variant?: ContainerVariant;
 
   /**
    * The `value` of the selected item, which displays a check mark.

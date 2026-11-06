@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/accordion",
   "version": "0.3.54",
   "private": false,
-  "description": "A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.Heading, Item.Content) built on Tamagui's accordion. It supports single or multiple open items, primary, secondary, tertiary, outlined, surface and ghost variants, separated and borderless layouts, numbered headers, toggle or chevron icons with a configurable side, and an up or down direction. Use it for FAQs or grouped sections that users expand.",
+  "description": "A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.Heading, Item.Content) built on Tamagui's accordion. It supports single or multiple open items, the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating) and ghost, shadow, glass, noise and accented options, separated and borderless layouts, numbered headers, toggle or chevron icons with a configurable side, and an up or down direction. Use it for FAQs or grouped sections that users expand.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
@@ -25,6 +25,7 @@
   "source": "src/index.ts",
   "types": "./dist/index.d.cts",
   "dependencies": {
+    "@cyclone-ui/container": "workspace:*",
     "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/vectors": "workspace:*",

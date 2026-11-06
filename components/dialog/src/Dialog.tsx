@@ -20,7 +20,7 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
-import type { ContainerVariant } from "@cyclone-ui/container";
+import type { ContainerSurfaceProps } from "@cyclone-ui/container";
 import { Container, useContainerForeground } from "@cyclone-ui/container";
 import { HeadingLargeText } from "@cyclone-ui/heading-text";
 import type { OverlayProps } from "@cyclone-ui/overlay";
@@ -50,18 +50,15 @@ import {
 import { withStaticProperties } from "@tamagui/helpers";
 import * as React from "react";
 
-export interface DialogContextProps {
+/**
+ * The surface of `Dialog.Container` (`variant` defaults to `elevated`), which
+ * can also set its own along with the rest of `Container`'s props. `primary`
+ * and `secondary` draw `Dialog.Heading` and `Dialog.Body` in `on-primary` /
+ * `on-secondary`.
+ */
+export interface DialogContextProps extends ContainerSurfaceProps {
   theme: string;
   overlay: boolean;
-
-  /**
-   * The surface of `Dialog.Container`, which can also set its own. `primary`
-   * and `secondary` draw `Dialog.Heading` and `Dialog.Body` in `on-primary` /
-   * `on-secondary`.
-   *
-   * @defaultValue "floating"
-   */
-  variant?: ContainerVariant;
 }
 
 export const DialogContext = createStyledContext<
@@ -229,10 +226,21 @@ const DialogFrame: React.FC<
   theme = "base",
   overlay = true,
   variant,
+  shadowStyle,
+  glass,
+  noise,
+  accented,
   ...props
 }) => {
   return (
-    <DialogContext.Provider theme={theme} overlay={overlay} variant={variant}>
+    <DialogContext.Provider
+      theme={theme}
+      overlay={overlay}
+      variant={variant}
+      shadowStyle={shadowStyle}
+      glass={glass}
+      noise={noise}
+      accented={accented}>
       <Theme name={theme}>
         <TamaguiDialog modal={modal} {...props}>
           {children}
@@ -247,15 +255,18 @@ const DialogContainer = createStyledHOC(
   (
     {
       children,
-      bordered = true,
       variant: variantProp,
+      shadowStyle,
+      glass,
+      noise,
+      accented,
       maxWidth,
       ...props
     }: GetProps<typeof Container> & TamaguiDialogContentProps,
     forwardedRef
   ) => {
-    const variant =
-      variantProp ?? DialogContext.useStyledContext().variant ?? "floating";
+    const context = DialogContext.useStyledContext();
+    const variant = variantProp ?? context.variant ?? "elevated";
 
     return (
       <TamaguiDialogContent
@@ -287,7 +298,10 @@ const DialogContainer = createStyledHOC(
           borderRadius="dialog"
           {...props}
           variant={variant}
-          bordered={bordered}>
+          shadowStyle={shadowStyle ?? context.shadowStyle}
+          glass={glass ?? context.glass}
+          noise={noise ?? context.noise}
+          accented={accented ?? context.accented}>
           {children}
         </Container>
       </TamaguiDialogContent>

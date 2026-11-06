@@ -453,7 +453,7 @@ export const File = ({
             variant="ghost"
             ghostOpacity={0.75}
             size={buttonSize}
-            noPadding={true}
+            tight={true}
             circular={true}>
             <Button.Icon>
               <Download />
@@ -508,7 +508,7 @@ export const File = ({
             tooltip={`${uploading ? "Cancel uploading" : "Remove"} ${name || "file"}`}
             onPress={handleRemove}
             size={buttonSize}
-            noPadding={true}
+            tight={true}
             circular={true}>
             <Button.Icon>{uploading ? <Close /> : <Trash />}</Button.Icon>
           </Button>

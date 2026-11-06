@@ -45,6 +45,7 @@ A `Button` component used to trigger actions. It supports many variants (includi
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 ## Table of Contents
 
 - [Quick Features](#quick-features)
@@ -70,9 +71,10 @@ A `Button` component used to trigger actions. It supports many variants (includi
 ## Quick Features
 
 - Compound API: `Button`, `Button.Text` and `Button.Icon`.
-- Variants: `primary`, `secondary`, `tertiary`, `outlined`, `ghost`, `link`, and cascade hover effects (`cascade`, `double-cascade`, diagonal and reverse forms).
+- Variants: the `Container` variants (`primary`, `secondary`, `tertiary`, `outlined`, `sunken`, `canvas`, `surface`, `elevated`, `floating`), whose background is drawn by a `Container`, plus `ghost`, `link`, and cascade hover effects (`cascade`, `double-cascade`, diagonal and reverse forms).
 - Sizes `sm`, `md` and `lg`, or any size token.
-- Shape options: `circular`, `rounded`, `ringed` and `noPadding`.
+- Shape options: `circular`, `rounded`, `ringed` and `tight`.
+- Container options: `shadowStyle`, `glass`, `noise` and `accented`.
 - Color themes (for example `brand`, `danger`, `warning`, `success`, `info`).
 - Press ripple and scale animation, and a `disabled` state.
 
@@ -105,13 +107,13 @@ yarn add -D @cyclone-ui/button
 ## Usage
 
 ```tsx
-import { Button } from "@cyclone-ui/button";
+import { Button } from "@cyclone-ui/button"
 
 export const Example = () => (
   <Button variant="primary" theme="brand" onPress={() => console.log("saved")}>
     <Button.Text>Save</Button.Text>
   </Button>
-);
+)
 ```
 
 See the [component reference](../../docs/design-system/components/button.md) for all props and variants.

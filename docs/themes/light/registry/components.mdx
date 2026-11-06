@@ -9,7 +9,7 @@ description: "Components available in the Cyclone UI (Light)."
 
 ## @cyclone-ui/accordion
 
-A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.Heading, Item.Content) built on Tamagui's accordion. It supports single or multiple open items, primary, secondary, tertiary, outlined, surface and ghost variants, separated and borderless layouts, numbered headers, toggle or chevron icons with a configurable side, and an up or down direction. Use it for FAQs or grouped sections that users expand.
+A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.Heading, Item.Content) built on Tamagui's accordion. It supports single or multiple open items, the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating) and ghost, shadow, glass, noise and accented options, separated and borderless layouts, numbered headers, toggle or chevron icons with a configurable side, and an up or down direction. Use it for FAQs or grouped sections that users expand.
 
 - **Name:** `@cyclone-ui/accordion`
 - **Type:** `component`
@@ -593,7 +593,7 @@ An invisible anchor that bursts a ring of accent-colored confetti squares out of
 
 ## @cyclone-ui/container
 
-A themed surface Container that wraps content in a padded, rounded box. Variants include primary, secondary, tertiary, sunken, canvas, elevated (the default), floating, overlay, outlined and glass, which adds a blurred gradient background. It also has size-based padding and bordered, shadowed, circular and noPadding options. Use it for cards and panels.
+A themed surface Container that wraps content in a padded, rounded box. Variants include primary, secondary, tertiary, sunken, canvas, elevated (the default), floating, overlay, outlined and glass, which adds a blurred gradient background. It also has size-based padding and bordered, shadowed, circular and tight options. Use it for cards and panels.
 
 - **Name:** `@cyclone-ui/container`
 - **Type:** `component`
@@ -613,7 +613,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 ## @cyclone-ui/context-menu
 
-A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, a sm, md or lg size, and primary, secondary, tertiary or outlined variants. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option), take a `theme` that colors its text and icons with that theme's primary tokens, and list child `items` in a submenu behind a right chevron (expanded inline in the small-screen sheet). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, a sm, md or lg size, and the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating) with the popover's shadow, glass, noise and accented options. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option), take a `theme` that colors its text and icons with that theme's primary tokens, and list child `items` in a submenu behind a right chevron (expanded inline in the small-screen sheet). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
@@ -2028,7 +2028,7 @@ A composable pie and donut chart built on Recharts and the shared Cyclone chart 
 
 ## @cyclone-ui/popover
 
-A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Anchor, Popover.Content (with an optional arrow, a ScrollView and Close) parts. Content is elevated by default, takes primary, secondary, tertiary or outlined variants and animates in, and on small screens it turns into a bottom sheet unless shouldAdapt is false. Use it for contextual menus, filters or extra details.
+A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Anchor, Popover.Content (with an optional arrow, a ScrollView and Close) parts. Content is elevated by default, takes the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating) with shadow, glass, noise and accented options, and animates in, and on small screens it turns into a bottom sheet unless shouldAdapt is false. Use it for contextual menus, filters or extra details.
 
 - **Name:** `@cyclone-ui/popover`
 - **Type:** `component`
@@ -2392,7 +2392,7 @@ A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items sub
 
 ## @cyclone-ui/sheet
 
-A modal panel that slides in from the top, right, bottom or left edge. It uses a draggable Tamagui Sheet for the bottom direction and a dialog for the other edges, can be dragged to dismiss, and supports sm, md and lg sizes and primary, secondary, tertiary and outlined variants. Parts include Overlay, Handle, ScrollView, Heading, Body and Footer.
+A modal panel that slides in from the top, right, bottom or left edge. It uses a draggable Tamagui Sheet for the bottom direction and a dialog for the other edges, can be dragged to dismiss, and supports sm, md and lg sizes and the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating) with shadow, glass, noise and accented options. Parts include Overlay, Handle, ScrollView, Heading, Body and Footer.
 
 - **Name:** `@cyclone-ui/sheet`
 - **Type:** `component`
@@ -2563,7 +2563,7 @@ A page navigation list built from an array of heading items, each with a title, 
 
 ## @cyclone-ui/tabs
 
-A tabbed interface with Header.Item triggers and Content.Item panels. It offers underline, floating, tabbed and fluid (gooey WebGL pill) tab styles, each with primary, secondary, tertiary or outlined color variants, in horizontal or vertical orientation, optional borders and sizes, and an animated active indicator. onValueChange reports the selected tab.
+A tabbed interface with Header.Item triggers and Content.Item panels. It offers underline, floating, tabbed and fluid (gooey WebGL pill) tab styles in horizontal or vertical orientation, optional borders and sizes, and an animated active indicator. The floating style's indicator pill is a Container that takes the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating) and its shadow, glass, noise and accented options, and the fluid pill takes the variant's color. onValueChange reports the selected tab.
 
 - **Name:** `@cyclone-ui/tabs`
 - **Type:** `component`
@@ -2589,7 +2589,7 @@ A tabbed interface with Header.Item triggers and Content.Item panels. It offers 
 
 ## @cyclone-ui/tag
 
-A compact label chip with Tag.Text and Tag.Icon subcomponents. It has primary, secondary, tertiary and outlined variants, rounded, circular and pressable styles, and sizes. A removable tag has a remove button and an animated exit, with onBeforeRemove and onAfterRemove callbacks.
+A compact label chip with Tag.Text and Tag.Icon subcomponents. It has the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating), shadow, glass and accented options, rounded, circular and pressable styles, and sizes. A removable tag has a remove button and an animated exit, with onBeforeRemove and onAfterRemove callbacks.
 
 - **Name:** `@cyclone-ui/tag`
 - **Type:** `component`
@@ -2768,7 +2768,7 @@ A Timeline that renders a list of events joined by a line, vertically or horizon
 
 ## @cyclone-ui/toggle
 
-A clickable toggle component that exists in either an "on" or "off" state, with primary, secondary, tertiary and outlined variants and various styles and sizes.
+A clickable toggle component that exists in either an "on" or "off" state, with the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating) drawn on its indicator, shadow styles and various styles and sizes.
 
 - **Name:** `@cyclone-ui/toggle`
 - **Type:** `component`
@@ -2786,7 +2786,7 @@ A clickable toggle component that exists in either an "on" or "off" state, with 
 
 ## @cyclone-ui/toggle-group
 
-A clickable group of toggle components that exists in either an "on" or "off" state, with primary, secondary, tertiary and outlined variants and various styles and sizes.
+A clickable group of toggle components that exists in either an "on" or "off" state, with the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating) drawn on its indicators, shadow styles and various styles and sizes.
 
 - **Name:** `@cyclone-ui/toggle-group`
 - **Type:** `component`
@@ -2805,7 +2805,7 @@ A clickable group of toggle components that exists in either an "on" or "off" st
 
 ## @cyclone-ui/tooltip
 
-A tooltip built on the Tamagui Tooltip with Trigger and Content parts. The content is elevated, takes primary, secondary, tertiary or outlined variants, animates in and out, and shows an arrow by default, and the arrow and border colors can be customized. Use it to show short supplemental information on hover or focus.
+A tooltip built on the Tamagui Tooltip with Trigger and Content parts. The content is elevated, takes the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating) with shadow, glass and accented options, animates in and out, and shows an arrow by default, and the arrow and border colors can be customized. Use it to show short supplemental information on hover or focus.
 
 - **Name:** `@cyclone-ui/tooltip`
 - **Type:** `component`

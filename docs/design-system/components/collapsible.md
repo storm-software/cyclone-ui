@@ -50,7 +50,7 @@ import { Collapsible } from "@cyclone-ui/collapsible";
 
 The component always sets `collapsible`, `single`, and `type="single"`. It also sets `icon="chevron"`.
 
-`variant` takes the Accordion variants, including `primary`, `secondary`, and `tertiary`. See [Accordion variants](./accordion.md#variants).
+`variant` takes the Accordion variants: the [Container](./container.md) variants and `ghost`. The Accordion's `shadowStyle`, `glass`, `noise`, and `accented` props work too. See [Accordion variants](./accordion.md#variants).
 
 `getCollapsibleValue` maps `true` to the item value `"collapsible"` and any other value to `undefined`. That helper is exported from `@cyclone-ui/collapsible`.
 

@@ -31,13 +31,14 @@ describe("field affordance color states", () => {
     const fieldIcon = getDeclaration(formControlSource(), "useFieldIconColor");
 
     for (const affordance of [inputSeparator, selectSeparator, fieldIcon]) {
-      expect(affordance).toContain("outline");
-      expect(affordance).toContain("outline-active");
+      expect(affordance).toContain("hairline");
+      expect(affordance).toContain("hairline-active");
     }
     for (const separator of [inputSeparator, selectSeparator]) {
-      expect(separator).toContain("outline-inactive");
+      expect(separator).toContain("hairline-inactive");
     }
-    expect(fieldIcon).toContain("outline-disabled");
+
+    expect(fieldIcon).toContain("hairline-disabled");
   });
 
   it("fades every textbox divider in over 200ms on mount", () => {

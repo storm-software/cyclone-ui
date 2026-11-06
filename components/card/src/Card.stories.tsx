@@ -25,6 +25,22 @@ import { Card } from "./Card";
 // `icon` is a story-only arg consumed by the custom `render` below.
 type CardStoryArgs = ComponentProps<typeof Card> & { icon?: ReactNode };
 
+const renderCard = ({ icon, ...args }: CardStoryArgs) => (
+  <Card {...args} width="500px">
+    <Card.Header>
+      <Card.Header.Icon>{icon}</Card.Header.Icon>
+      <YStack gap="md">
+        <Card.Header.Eyebrow>Card Eyebrow</Card.Header.Eyebrow>
+        <Card.Header.Heading>Card Heading</Card.Header.Heading>
+      </YStack>
+    </Card.Header>
+    <Card.Body>{args.children}</Card.Body>
+    <Card.Footer>
+      <Card.Footer.Link href="#">Card Link</Card.Footer.Link>
+    </Card.Footer>
+  </Card>
+);
+
 const meta: Meta<CardStoryArgs> = {
   title: "Containers/Card",
   component: Card,
@@ -36,24 +52,24 @@ const meta: Meta<CardStoryArgs> = {
     },
     variant: {
       control: "select",
-      options: ["primary", "secondary", "tertiary", "outlined", "floating"]
+      options: [
+        "primary",
+        "secondary",
+        "tertiary",
+        "outlined",
+        "sunken",
+        "canvas",
+        "surface",
+        "elevated",
+        "floating"
+      ]
+    },
+    shadowStyle: {
+      control: "select",
+      options: ["none", "raised", "elevated", "flat"]
     }
   },
-  render: ({ icon, ...args }: CardStoryArgs) => (
-    <Card {...args} width="500px">
-      <Card.Header>
-        <Card.Header.Icon>{icon}</Card.Header.Icon>
-        <YStack gap="md">
-          <Card.Header.Eyebrow>Card Eyebrow</Card.Header.Eyebrow>
-          <Card.Header.Heading>Card Heading</Card.Header.Heading>
-        </YStack>
-      </Card.Header>
-      <Card.Body>{args.children}</Card.Body>
-      <Card.Footer>
-        <Card.Footer.Link href="#">Card Link</Card.Footer.Link>
-      </Card.Footer>
-    </Card>
-  )
+  render: renderCard
 } satisfies Meta<CardStoryArgs>;
 
 export default meta;
@@ -202,6 +218,58 @@ export const Outlined: Story = {
   }
 };
 
+export const Floating: Story = {
+  args: {
+    ...Base.args,
+    variant: "floating"
+  }
+};
+
+export const Raised: Story = {
+  args: {
+    ...Base.args,
+    shadowStyle: "raised"
+  }
+};
+
+export const Accented: Story = {
+  args: {
+    ...Base.args,
+    accented: true
+  }
+};
+
+export const Noise: Story = {
+  args: {
+    ...Base.args,
+    variant: "primary",
+    noise: true
+  }
+};
+
+export const Glass: Story = {
+  args: {
+    ...Base.args,
+    glass: true
+  },
+  render: args => (
+    // A shape behind the card, so the frosted glass has something to blur.
+    <YStack position="relative" padding="6xl" backgroundColor="canvas">
+      <YStack
+        theme="info"
+        position="absolute"
+        top={0}
+        right="10%"
+        width={240}
+        height={240}
+        borderRadius={1000}
+        backgroundColor="primary"
+      />
+      {renderCard(args)}
+    </YStack>
+  )
+};
+
 export const BrandPrimary: Story = {
   args: {
     ...Base.args,
@@ -236,4 +304,11 @@ export const WithTag: Story = {
       </Card.Footer>
     </Card>
   )
+};
+
+export const Flat: Story = {
+  args: {
+    ...Base.args,
+    shadowStyle: "flat"
+  }
 };

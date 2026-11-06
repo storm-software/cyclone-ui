@@ -15,6 +15,9 @@
   },
   "references": [
     {
+      "path": "../container"
+    },
+    {
       "path": "../../tools/config"
     },
     {

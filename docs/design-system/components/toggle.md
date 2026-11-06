@@ -47,7 +47,8 @@ A string or number child is wrapped in styled `ToggleText`. Any other child rend
 | `defaultPressed` | `boolean` | `false` | The initial state when uncontrolled. |
 | `onPressedChange` | `(pressed: boolean) => void` | — | Called with the new state on press. |
 | `size` | `"sm" \| "md" \| "lg"` | `"md"` | The control size. |
-| `variant` | `"primary" \| "secondary" \| "tertiary" \| "outlined"` | — | Draws the indicator as a Button of the variant, in its `-inactive` shade while off and `-active` shade while on. See below. |
+| `variant` | [Container](./container.md) variant | — | Draws the indicator as a Container of the variant, as [Button](./button.md) does, in its `-inactive` shade while off and `-active` shade while on. See below. |
+| `shadowStyle` | `"none" \| "raised" \| "elevated" \| "flat"` | — | The indicator's shadow while it shows. `flat` also removes the indicator's border. |
 | `children` | `ReactNode \| (pressed: boolean) => ReactNode` | — | The content. |
 | `fluid` | `boolean` | `false` | Spans the parent width. |
 | `borderless` | `boolean` | `false` | Hides the border and background. A transparent 1px border stays, so the size does not change. |
@@ -63,11 +64,11 @@ The package also exports `ToggleText`, `getToggleInset(size)`, and the `ToggleSi
 
 - **Not pressed:** The frame uses a `sunken` background and a `hairline` border. The text is `subtle`. Hover changes the background to `sunken-hovered` and the text to `ink`.
 - **Pressed:** The indicator uses a `surface` background, a `hairline` border, and an `sm` shadow. The text is `emphasis`.
-- **Variants:** `variant` draws the indicator as a [Button](./button.md) of the variant in both states. The sunken frame stays around it, or is hidden when `borderless`. Not pressed uses the color's `-inactive` shade and pressed uses its `-active` shade. Hover changes either to the `-hovered` shade. `primary` fills with `primary-*` and uses `on-primary` text. `secondary` fills with `secondary-*`, has a `border` border, and uses `on-secondary` text (`primary` with the uncolored base theme). `tertiary` fills with `surface-*`, has a `hairline` border, and uses `primary` text. `outlined` draws a 2px `primary-*` border with `primary` text.
+- **Variants:** `variant` draws the indicator as a [Container](./container.md) of the variant in both states, with the variant's border. Any Container variant works, the same set as [Button](./button.md). The sunken frame stays around it, or is hidden when `borderless`. Not pressed uses the background's `-inactive` shade and pressed uses its `-active` shade (`tertiary` uses `surface-*`, and `outlined` shades its 2px `primary-*` border instead). Hover changes either to the `-hovered` shade. The text is `on-primary` on `primary`, `on-secondary` on `secondary` (`primary` with the uncolored base theme), and `primary` otherwise. `glass`, `noise`, and `accented` aren't offered: the state shades replace the Container's background.
 - **Focus:** A keyboard focus shows a `ring-offset` shadow.
 - **Sizes:** `sm`, `md`, and `lg`. The frame height comes from the form size token.
 
-The stories show `Base`, `Icon`, `RenderProps`, `Controlled`, `Sizes`, `Fluid`, `Borderless`, `Rounded`, `Circular`, `Invalid`, `Disabled`, each `variant`, and `PrimaryPressed`.
+The stories show `Base`, `Icon`, `RenderProps`, `Controlled`, `Sizes`, `Fluid`, `Borderless`, `Rounded`, `Circular`, `Invalid`, `Disabled`, each Button `variant`, `PrimaryPressed`, `Surface`, `Floating`, `SurfacePressed`, and `Raised`.
 
 ## Accessibility
 

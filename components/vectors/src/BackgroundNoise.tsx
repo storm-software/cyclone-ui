@@ -19,8 +19,7 @@
 "use client";
 
 import type { IconProps } from "@tamagui/helpers-icon";
-import { useCurrentColor } from "@tamagui/helpers-tamagui";
-import { memo } from "react";
+import { memo, useId } from "react";
 import * as ReactNativeSvg from "react-native-svg";
 import { Defs, Rect, Svg } from "react-native-svg";
 import type { ThemedIconBodyProps } from "./themed-icon";
@@ -28,59 +27,44 @@ import { themedIcon } from "./themed-icon";
 
 const Filter = (ReactNativeSvg as any).Filter ?? "filter";
 const FeTurbulence = (ReactNativeSvg as any).FeTurbulence ?? "feTurbulence";
-const FeSpecularLighting =
-  (ReactNativeSvg as any).FeSpecularLighting ?? "feSpecularLighting";
-const FeDistantLight =
-  (ReactNativeSvg as any).FeDistantLight ?? "feDistantLight";
+const FeColorMatrix = (ReactNativeSvg as any).FeColorMatrix ?? "feColorMatrix";
 
+/**
+ * A fine, monochrome film grain that fills its parent. The grain is drawn in
+ * pixels (there is no `viewBox`), so it keeps the same size on any surface.
+ * Its tones center on mid grey, so with `mixBlendMode: "hard-light"` it
+ * lightens and darkens the colors beneath it, even pure white and black.
+ */
 const Icon = (props: ThemedIconBodyProps<IconProps>) => {
-  const color = useCurrentColor((props.color || "on-primary") as any);
+  // Instances must not share a filter id: a reference resolves to the first
+  // match, which may be inside a hidden subtree.
+  const id = useId();
 
   return (
-    <Svg viewBox="0 0 700 700" width="700" height="700" {...props}>
+    <Svg width="100%" height="100%" {...props}>
       <Defs>
         <Filter
-          id="noise-filter"
-          x="-20%"
-          y="-20%"
-          width="140%"
-          height="140%"
-          filterUnits="objectBoundingBox"
-          primitiveUnits="userSpaceOnUse"
-          colorInterpolationFilters="linearRGB">
+          id={id}
+          x="0"
+          y="0"
+          width="100%"
+          height="100%"
+          colorInterpolationFilters="sRGB">
           <FeTurbulence
             type="fractalNoise"
-            baseFrequency="0.102"
+            baseFrequency="0.8"
             numOctaves="4"
-            seed="15"
             stitchTiles="stitch"
-            x="0%"
-            y="0%"
-            width="100%"
-            height="100%"
-            result="turbulence"
           />
-          <FeSpecularLighting
-            surfaceScale="15"
-            specularConstant="0.75"
-            specularExponent="20"
-            lightingColor={color}
-            x="0%"
-            y="0%"
-            width="100%"
-            height="100%"
-            in="turbulence"
-            result="specularLighting">
-            <FeDistantLight azimuth="3" elevation="100" />
-          </FeSpecularLighting>
+          {/* the red channel, at 3x contrast around mid grey, as an opaque
+              grey; the alpha channel is noise too */}
+          <FeColorMatrix
+            type="matrix"
+            values="3 0 0 0 -1  3 0 0 0 -1  3 0 0 0 -1  0 0 0 0 1"
+          />
         </Filter>
       </Defs>
-      <Rect width="700" height="700" fill="transparent"></Rect>
-      <Rect
-        width="700"
-        height="700"
-        fill={color}
-        filter="url(#noise-filter)"></Rect>
+      <Rect width="100%" height="100%" filter={`url(#${id})`} />
     </Svg>
   );
 };

@@ -77,6 +77,7 @@ interface ToggleGroupContextValue {
   select: (value: string) => void;
   size: FormControlSize;
   variant?: ToggleVariant;
+  shadowStyle?: ToggleProps["shadowStyle"];
   fluid: boolean;
   invalid: boolean;
   disabled: boolean;
@@ -107,6 +108,8 @@ export interface ToggleGroupProps extends Omit<
   size?: FormControlSize;
   /** Every toggle's colors; see `Toggle`'s `variant`. */
   variant?: ToggleVariant;
+  /** Every toggle's indicator shadow; see `Toggle`'s `shadowStyle`. */
+  shadowStyle?: ToggleProps["shadowStyle"];
   /** Show the failed-validation style. */
   invalid?: boolean;
   /** Disable every toggle in the group. */
@@ -151,6 +154,7 @@ const ToggleGroupFrameImpl = forwardRef<TamaguiElement, ToggleGroupProps>(
       allowEmpty = true,
       size = "md",
       variant,
+      shadowStyle,
       fluid = false,
       invalid = false,
       disabled = false,
@@ -188,6 +192,7 @@ const ToggleGroupFrameImpl = forwardRef<TamaguiElement, ToggleGroupProps>(
           select,
           size,
           variant,
+          shadowStyle,
           fluid,
           invalid,
           disabled,
@@ -245,6 +250,7 @@ const ToggleGroupItem = forwardRef<TamaguiElement, ToggleGroupItemProps>(
         size={group.size}
         invalid={group.invalid}
         variant={group.variant}
+        shadowStyle={group.shadowStyle}
         borderless={group.borderless}
         rounded={group.rounded}
         borderWidth={0}

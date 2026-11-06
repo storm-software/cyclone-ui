@@ -14,7 +14,7 @@ Use it for actions. To style a button as a link, set `variant="link"`. To render
 ## Import
 
 ```tsx
-import { Button } from "@cyclone-ui/button";
+import { Button } from "@cyclone-ui/button"
 ```
 
 ## Usage
@@ -33,54 +33,61 @@ import { Button } from "@cyclone-ui/button";
 
 ## Anatomy
 
-| Part          | Purpose                                      |
-| ------------- | -------------------------------------------- |
+| Part          | Purpose                                        |
+| ------------- | ---------------------------------------------- |
 | `Button`      | The frame. It holds the state and the variant. |
-| `Button.Text` | The label.                                   |
-| `Button.Icon` | An icon.                                     |
+| `Button.Text` | The label.                                     |
+| `Button.Icon` | An icon.                                       |
 
 ## Props
 
 `Button` also accepts the props of a Tamagui `View` (except `size`).
 
-| Prop           | Type                                       | Default      | Description                                                                 |
-| -------------- | ------------------------------------------ | ------------ | --------------------------------------------------------------------------- |
-| `variant`      | `ButtonVariant`                            | `"tertiary"` | The visual style. See [Variants](#variants).                                |
-| `size`         | `"sm" \| "md" \| "lg"` or a size token     | `"md"`       | `sm`, `md`, and `lg` also scale the text and icon. A raw size token (such as `13xl`) is also allowed. |
-| `theme`        | theme name                                 | -            | The color theme. The stories use `brand`, `danger`, `warning`, `success`, and `info`. |
-| `disabled`     | `boolean`                                  | `false`      | Disables the button. Presses are ignored.                                   |
-| `circular`     | `boolean`                                  | `false`      | Makes the button a circle.                                                  |
-| `rounded`      | `boolean`                                  | `false`      | Fully rounds the left and right sides.                                      |
-| `ringed`       | `boolean`                                  | `false`      | Adds a ringed outline.                                                      |
-| `noPadding`    | `boolean`                                  | `false`      | Removes the default padding.                                                |
-| `animate`      | `boolean`                                  | `true`       | Applies the scale animation on press.                                       |
-| `unstyled`     | `boolean`                                  | `false`      | Removes the default styles.                                                 |
-| `borderRadius` | radius token                               | `"button"`   | The radius of the border.                                                   |
-| `color`        | color token or string                      | -            | Overrides the text color.                                                   |
-| `onPress`      | `(event) => void`                          | -            | Called on press.                                                            |
-| `onClick`      | `(event?) => void`                         | -            | Another way to set a press handler. It runs after `onPress`.                |
-| `href`         | `string`                                   | -            | The URL for the button when it renders as an anchor (`render="a"`).         |
-| `download`     | `boolean`                                  | -            | Makes the anchor a download link.                                           |
-| `ghostOpacity` | `number`                                   | `0.5`        | The opacity of the ghost background on hover.                               |
-| `render`       | element name                               | -            | The element to render. The press handler calls `preventDefault` unless this is `"a"`. |
-| `tooltip`      | `string`                                   | -            | Describes what pressing the button does (for example `"Close dialog"`). It shows in a `Tooltip` after the pointer rests on the button for 1 second, or right away on keyboard focus. Touch screens (a coarse primary pointer) never show it. It is also the `aria-label` when none is set. |
+| Prop           | Type                                   | Default      | Description                                                                                                                                                                                                                                                                                |
+| -------------- | -------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `variant`      | `ButtonVariant`                        | `"tertiary"` | The visual style. See [Variants](#variants).                                                                                                                                                                                                                                               |
+| `size`         | `"sm" \| "md" \| "lg"` or a size token | `"md"`       | `sm`, `md`, and `lg` also scale the text and icon. A raw size token (such as `13xl`) is also allowed.                                                                                                                                                                                      |
+| `theme`        | theme name                             | -            | The color theme. The stories use `brand`, `danger`, `warning`, `success`, and `info`.                                                                                                                                                                                                      |
+| `disabled`     | `boolean`                              | `false`      | Disables the button. Presses are ignored.                                                                                                                                                                                                                                                  |
+| `circular`     | `boolean`                              | `false`      | Makes the button a circle.                                                                                                                                                                                                                                                                 |
+| `rounded`      | `boolean`                              | `false`      | Fully rounds the left and right sides.                                                                                                                                                                                                                                                     |
+| `ringed`       | `boolean`                              | `false`      | Adds a ringed outline.                                                                                                                                                                                                                                                                     |
+| `tight`        | `boolean`                              | `false`      | Removes the default padding.                                                                                                                                                                                                                                                               |
+| `shadowStyle`  | `"raised" \| "elevated" \| "flat" \| "none"`     | `"none"`     | The `Container` shadow under the button.                                                                                                                                                                                                                                                   |
+| `glass`        | `boolean`                              | `false`      | Turns a container variant's background into translucent frosted glass.                                                                                                                                                                                                                     |
+| `noise`        | `boolean`                              | `false`      | Overlays a fine film grain on a container variant's background.                                                                                                                                                                                                                            |
+| `accented`     | `boolean`                              | `false`      | Draws a container variant's border in the `primary` color.                                                                                                                                                                                                                                 |
+| `animate`      | `boolean`                              | `true`       | Applies the scale animation on press.                                                                                                                                                                                                                                                      |
+| `unstyled`     | `boolean`                              | `false`      | Removes the default styles.                                                                                                                                                                                                                                                                |
+| `borderRadius` | radius token                           | `"button"`   | The radius of the border.                                                                                                                                                                                                                                                                  |
+| `color`        | color token or string                  | -            | Overrides the text color.                                                                                                                                                                                                                                                                  |
+| `onPress`      | `(event) => void`                      | -            | Called on press.                                                                                                                                                                                                                                                                           |
+| `onClick`      | `(event?) => void`                     | -            | Another way to set a press handler. It runs after `onPress`.                                                                                                                                                                                                                               |
+| `href`         | `string`                               | -            | The URL for the button when it renders as an anchor (`render="a"`).                                                                                                                                                                                                                        |
+| `download`     | `boolean`                              | -            | Makes the anchor a download link.                                                                                                                                                                                                                                                          |
+| `ghostOpacity` | `number`                               | `0.5`        | The opacity of the ghost background on hover.                                                                                                                                                                                                                                              |
+| `render`       | element name                           | -            | The element to render. The press handler calls `preventDefault` unless this is `"a"`.                                                                                                                                                                                                      |
+| `tooltip`      | `string`                               | -            | Describes what pressing the button does (for example `"Close dialog"`). It shows in a `Tooltip` after the pointer rests on the button for 1 second, or right away on keyboard focus. Touch screens (a coarse primary pointer) never show it. It is also the `aria-label` when none is set. |
 
 ## Variants
 
-| Variant                      | Notes                                                                       |
-| ---------------------------- | --------------------------------------------------------------------------- |
-| `primary`                    |                                                                             |
-| `secondary`                  |                                                                             |
-| `tertiary`                   | The default.                                                                |
-| `outlined`                   |                                                                             |
-| `ghost`                      | Shows a background on hover.                                                |
-| `link`                       | Has no ripple.                                                              |
-| `cascade`                    | On hover, a fill slides in from the left. The frame has a 3 px border that becomes 1 px. |
-| `cascade-top`, `cascade-left`, `cascade-bottom`, `cascade-right` | The fill enters from that side.                  |
-| `double-cascade`             | Two fills slide in. One moves more slowly.                                  |
-| `diagonal-cascade`, `diagonal-cascade-top`, `-left`, `-bottom`, `-right` | A diagonal fill.                    |
-| `double-diagonal-cascade`    | Two diagonal fills.                                                         |
-| `reverse-<cascade variant>`  | The reverse of any cascade variant above. The frame starts filled and the fill leaves on hover. |
+| Variant                                                                  | Notes                                                                                           |
+| ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| `primary`                                                                |                                                                                                 |
+| `secondary`                                                              |                                                                                                 |
+| `tertiary`                                                               | The default.                                                                                    |
+| `outlined`                                                               |                                                                                                 |
+| `sunken`, `canvas`, `surface`, `elevated`, `floating`                    | Neutral surface fills, matching the `Container` variants of the same name.                      |
+| `ghost`                                                                  | Shows a background on hover.                                                                    |
+| `link`                                                                   | Has no ripple.                                                                                  |
+| `cascade`                                                                | On hover, a fill slides in from the left. The frame has a 3 px border that becomes 1 px.        |
+| `cascade-top`, `cascade-left`, `cascade-bottom`, `cascade-right`         | The fill enters from that side.                                                                 |
+| `double-cascade`                                                         | Two fills slide in. One moves more slowly.                                                      |
+| `diagonal-cascade`, `diagonal-cascade-top`, `-left`, `-bottom`, `-right` | A diagonal fill.                                                                                |
+| `double-diagonal-cascade`                                                | Two diagonal fills.                                                                             |
+| `reverse-<cascade variant>`                                              | The reverse of any cascade variant above. The frame starts filled and the fill leaves on hover. |
+
+The `primary` through `floating` variants are the [`Container`](./container.md) variants: a `Container` layer under the label draws their background and border, and switches to the variant's hovered background while the button is hovered. `glass`, `noise`, and `accented` apply to these variants only. The button still colors its own text and icons.
 
 ## Sizes
 

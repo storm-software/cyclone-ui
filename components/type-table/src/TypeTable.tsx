@@ -220,7 +220,7 @@ export const TypeTable = ({ id, type, ...props }: TypeTableProps) => {
   const names = Object.keys(type);
 
   return (
-    <TypeTableFrame id={id} noPadding {...props}>
+    <TypeTableFrame id={id} tight {...props}>
       <TypeTableRow>
         <ColumnLabel width="25%">Prop</ColumnLabel>
         <TypeColumn>Type</TypeColumn>

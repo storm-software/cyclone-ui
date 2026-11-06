@@ -172,3 +172,56 @@ export const Scrollable: Story = {
       "Sheet.ScrollView keeps long content reachable without changing the sheet's modal behavior."
   }
 };
+
+export const Floating: Story = {
+  args: {
+    ...Base.args,
+    variant: "floating"
+  }
+};
+
+export const Raised: Story = {
+  args: {
+    ...Base.args,
+    variant: "surface",
+    shadowStyle: "elevated"
+  }
+};
+
+export const Accented: Story = {
+  args: {
+    ...Base.args,
+    variant: "elevated",
+    accented: true
+  }
+};
+
+export const Glass: Story = {
+  args: {
+    ...Base.args,
+    glass: true
+  }
+};
+
+export const Noise: Story = {
+  args: {
+    ...Base.args,
+    variant: "primary",
+    noise: true
+  }
+};
+
+export const RightGlass: Story = {
+  args: {
+    ...RightPrimary.args,
+    glass: true
+  }
+};
+
+export const Flat: Story = {
+  args: {
+    ...Base.args,
+    variant: "secondary",
+    shadowStyle: "flat"
+  }
+};

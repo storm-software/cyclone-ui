@@ -413,7 +413,7 @@ const FilePickerTrigger = createStyledHOC(
               <Button
                 variant="ghost"
                 circular={true}
-                noPadding={true}
+                tight={true}
                 size={clearSize}
                 aria-label={max > 1 ? "Remove files" : "Remove file"}
                 tooltip={max > 1 ? "Remove all files" : "Remove file"}

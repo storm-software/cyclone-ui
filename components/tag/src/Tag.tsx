@@ -18,6 +18,16 @@
 
 "use client";
 
+import type {
+  ContainerShadowStyle,
+  ContainerSurfaceProps,
+  ContainerVariant
+} from "@cyclone-ui/container";
+import {
+  ContainerBackground,
+  containerShadows,
+  getContainerForeground
+} from "@cyclone-ui/container";
 import { Close } from "@cyclone-ui/icons";
 import type { RippleAnimationHandle } from "@cyclone-ui/ripple-animation";
 import { RippleAnimation } from "@cyclone-ui/ripple-animation";
@@ -52,7 +62,16 @@ import type { ViewStyle } from "react-native";
 
 export type TagSize = SizeTokens | number;
 
-export type TagVariant = "primary" | "secondary" | "tertiary" | "outlined";
+export type TagVariant = ContainerVariant;
+
+/**
+ * The `Container` props that style the tag's surface; `noise` is too fine to
+ * show on a tag.
+ */
+export type TagSurfaceProps = Pick<
+  ContainerSurfaceProps,
+  "shadowStyle" | "glass" | "accented"
+>;
 
 export interface TagContextProps {
   /**
@@ -72,10 +91,9 @@ export interface TagContextProps {
   outlined: boolean;
 
   /**
-   * The variant style of the tag: `primary` fills it with `primary`,
-   * `secondary` with `secondary` and a `border` border, `tertiary` with
-   * `surface` and a `hairline` border, and `outlined` draws a 2px `primary`
-   * border on a transparent background
+   * The tag's surface, drawn by a `Container` of the variant (see `Button`):
+   * the text is `on-primary` on `primary`, `on-secondary` on `secondary`, and
+   * `primary` on the others
    *
    * @defaultValue "primary"
    */
@@ -146,43 +164,8 @@ const isOutlined = (
 const getOutlineColor = (variant: TagVariant | undefined) =>
   variant === "secondary" ? "secondary" : "primary";
 
-// The filled variants' background, its hovered shade and the border.
-const TAG_FILLS = {
-  primary: {
-    backgroundColor: "primary",
-    hovered: "primary-hovered",
-    borderWidth: 0,
-    borderColor: "transparent",
-    raised: false
-  },
-  secondary: {
-    backgroundColor: "secondary",
-    hovered: "secondary-hovered",
-    borderWidth: 1,
-    borderColor: "border",
-    raised: true
-  },
-  tertiary: {
-    backgroundColor: "surface",
-    hovered: "surface-hovered",
-    borderWidth: 1,
-    borderColor: "hairline",
-    raised: true
-  }
-} as const;
-
-// `dark_brand` / `brand` -> `brand`; `dark`, `base` and `dark_base` are
-// uncolored.
-const isUncoloredTheme = (themeName: string | null | undefined) => {
-  const parts = themeName?.split("_") ?? [];
-  const color = parts.length > 1 ? parts[1] : parts[0];
-
-  return !color || color === "base" || color === "light" || color === "dark";
-};
-
-// Outlined tags draw the text in the outline color, filled ones in the color
-// made for their background. `on-secondary` is faint on the uncolored themes'
-// light `secondary`, so those use `primary` there, as `Button` does.
+// Outlined tags draw the text in the outline color, the others in the color
+// made for their background.
 const getTextColor = (
   variant: TagVariant | undefined,
   outlined: boolean | undefined,
@@ -190,13 +173,7 @@ const getTextColor = (
 ) =>
   isOutlined(variant, outlined)
     ? getOutlineColor(variant)
-    : variant === "secondary"
-      ? isUncoloredTheme(themeName)
-        ? "primary"
-        : "on-secondary"
-      : variant === "tertiary"
-        ? "primary"
-        : "on-primary";
+    : (getContainerForeground(variant ?? "primary", themeName) ?? "primary");
 
 // The hovered counterpart of a variant color; the `on*` text colors have none.
 const getHoveredColor = (color: string) =>
@@ -206,14 +183,22 @@ const getHoveredColor = (color: string) =>
       ? "secondary-hovered"
       : undefined;
 
+// The frame stays clear: its `ContainerBackground` draws the fill and border.
 const TagFrame = styled(View, {
   displayName: TAG_NAME,
   context: TagContext,
+  group: "tag",
 
   transition: "200ms",
   flexDirection: "row",
   width: "fit-content",
-  boxShadow: "none",
+  backgroundColor: "transparent",
+  borderWidth: 0,
+  // Positioned and a stacking context, so the `ContainerBackground` fills the
+  // frame and its negative `zIndex` paints above the frame but below its
+  // children.
+  position: "relative",
+  zIndex: 0,
   borderRadius: "tag",
   paddingHorizontal: "3xl",
   paddingVertical: "lg",
@@ -227,10 +212,14 @@ const TagFrame = styled(View, {
       }
     },
 
-    // Styled by the `.resolve` below because the colors depend on `variant`,
-    // `outlined` and `pressable` together.
+    // Drawn by `TagFrameImpl`'s `ContainerBackground`; declared so the
+    // context values aren't forwarded to the DOM.
     variant: styled.dynamic<TagVariant>(),
     outlined: styled.dynamic<boolean>(),
+
+    // Styled by the `.resolve` below because the focus ring depends on
+    // `pressable`.
+    shadowStyle: styled.dynamic<ContainerShadowStyle>(),
 
     size: styled.dynamic<TagSize>((val, { tokens }) => {
       const matched = isSizeToken(val, tokens);
@@ -244,9 +233,7 @@ const TagFrame = styled(View, {
     // `tabIndex` / `role` are not styles, so the frame sets them when pressable.
     pressable: {
       true: {
-        boxShadow: "focus-visible:ring-offset",
         // Clips the press ripple to the tag's shape.
-        position: "relative",
         overflow: "hidden"
       }
     }
@@ -256,38 +243,12 @@ const TagFrame = styled(View, {
     outlined: false,
     pressable: false
   }
-}).resolve(({ variant, outlined, pressable }) => {
-  // Each property is returned whole (with its `hover:` clause): an
-  // unconditional resolver value replaces every lower-tier value for that
-  // property, including a variant's conditional ones. Like `Button`, only a
-  // pressable tag shows the hovered shade.
-  const withHover = (color: string, hovered: string) =>
-    pressable ? `${color} hover:${hovered}` : color;
-
-  if (isOutlined(variant as TagVariant | undefined, outlined === true)) {
-    const color = getOutlineColor(variant as TagVariant | undefined);
-
-    return {
-      backgroundColor: "transparent",
-      borderColor: withHover(color, `${color}-hovered`),
-      borderWidth: 2
-    };
-  }
-
-  const fill =
-    TAG_FILLS[(variant as keyof typeof TAG_FILLS | undefined) ?? "primary"] ??
-    TAG_FILLS.primary;
+}).resolve(({ shadowStyle, pressable }) => {
+  // On the frame, not the `ContainerBackground`: a pressable frame clips it.
+  const shadow = containerShadows[(shadowStyle as ContainerShadowStyle) ?? "none"];
 
   return {
-    backgroundColor: withHover(fill.backgroundColor, fill.hovered),
-    borderColor: fill.borderColor,
-    borderWidth: fill.borderWidth,
-    // Keeps the pressable focus ring the shadow would otherwise replace.
-    boxShadow: fill.raised
-      ? pressable
-        ? "color-shadow-resting-raised focus-visible:ring-offset"
-        : "color-shadow-resting-raised"
-      : undefined
+    boxShadow: pressable ? `${shadow} focus-visible:ring-offset` : shadow
   };
 });
 
@@ -671,8 +632,12 @@ export interface TagEditableProps {
   onEdit?: (value: string) => void;
 }
 
-export type TagProps = Omit<GetProps<typeof TagFrame>, keyof TagContextProps> &
+export type TagProps = Omit<
+  GetProps<typeof TagFrame>,
+  keyof TagContextProps | "shadowStyle"
+> &
   Partial<TagContextProps> &
+  TagSurfaceProps &
   TagRemovableProps &
   TagEditableProps;
 
@@ -685,6 +650,8 @@ const TagFrameImpl = createStyledHOC(
       pressable: pressableProp = false,
       size = true,
       variant = "primary",
+      glass = false,
+      accented = false,
       removable = false,
       removeButtonLabel = "Remove",
       onBeforeRemove,
@@ -700,6 +667,10 @@ const TagFrameImpl = createStyledHOC(
   ) => {
     // An editable tag responds to hover like a pressable one.
     const pressable = pressableProp || editable;
+    // Like `Button`, only a pressable tag shows the hovered shade.
+    const withHover = (color: string) =>
+      pressable ? `${color} group-hover/tag:${color}-hovered` : color;
+    const outline = isOutlined(variant, outlined);
 
     const themeName = useThemeName();
 
@@ -760,6 +731,17 @@ const TagFrameImpl = createStyledHOC(
               pressable={pressable}
               size={size}
               variant={variant}>
+              <ContainerBackground
+                variant={outline ? "outlined" : variant}
+                shadowStyle={props.shadowStyle}
+                transition="200ms"
+                glass={glass}
+                accented={accented}
+                hoverGroup={pressable ? "tag" : undefined}
+                {...(outline && {
+                  borderColor: withHover(getOutlineColor(variant))
+                })}
+              />
               {pressable && ripple.ripples}
               <TagEditContext.Provider
                 value={

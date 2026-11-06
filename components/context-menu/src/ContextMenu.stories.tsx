@@ -46,8 +46,18 @@ const meta: Meta<typeof ContextMenu> = {
       options: ["sm", "md", "lg"]
     },
     variant: {
-      control: "inline-radio",
-      options: ["primary", "secondary", "tertiary", "outlined"]
+      control: "select",
+      options: [
+        "primary",
+        "secondary",
+        "tertiary",
+        "outlined",
+        "sunken",
+        "canvas",
+        "surface",
+        "elevated",
+        "floating"
+      ]
     }
   },
   render: function Render(args) {
@@ -147,6 +157,14 @@ export const Secondary: Story = { args: { variant: "secondary" } };
 export const Tertiary: Story = { args: { variant: "tertiary" } };
 
 export const Outlined: Story = { args: { variant: "outlined" } };
+
+export const Floating: Story = { args: { variant: "floating" } };
+
+export const Accented: Story = { args: { accented: true } };
+
+export const Glass: Story = { args: { glass: true } };
+
+export const Flat: Story = { args: { shadowStyle: "flat" } };
 
 export const ThemedAndChildItems: Story = {
   render: function Render(args) {

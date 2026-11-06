@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/tooltip",
   "version": "0.5.54",
   "type": "module",
-  "description": "A tooltip built on the Tamagui Tooltip with Trigger and Content parts. The content is elevated, takes primary, secondary, tertiary or outlined variants, animates in and out, and shows an arrow by default, and the arrow and border colors can be customized. Use it to show short supplemental information on hover or focus.",
+  "description": "A tooltip built on the Tamagui Tooltip with Trigger and Content parts. The content is elevated, takes the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating) with shadow, glass and accented options, animates in and out, and shows an arrow by default, and the arrow and border colors can be customized. Use it to show short supplemental information on hover or focus.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
@@ -18,6 +18,7 @@
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/container": "workspace:*",
     "@tamagui/core": "catalog:",
     "@tamagui/popover": "catalog:",
     "@tamagui/popper": "catalog:",

@@ -126,7 +126,7 @@ export function ChartTooltipContent({
       paddingHorizontal="2xl"
       paddingVertical="xl"
       borderWidth={1}
-      borderColor="outline"
+      borderColor="hairline"
       borderRadius={roundness ?? "tooltip"}
       boxShadow={getVariable(getTokens().shadow?.xl)}
       {...(variant === "frosted-glass"

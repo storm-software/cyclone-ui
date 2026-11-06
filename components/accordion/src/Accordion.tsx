@@ -20,6 +20,16 @@
 
 /* eslint-disable react/no-children-to-array */
 
+import type {
+  ContainerSurfaceProps,
+  ContainerVariant
+} from "@cyclone-ui/container";
+import {
+  ContainerBackground,
+  containerShadows,
+  containerVariants,
+  getContainerForeground
+} from "@cyclone-ui/container";
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import { ChevronDown } from "@cyclone-ui/icons";
 import { AccordionToggle } from "@cyclone-ui/vectors";
@@ -63,89 +73,50 @@ type BaseAccordionProps = Omit<
   backgroundColor?: never;
 };
 
-export type AccordionVariant =
-  | "primary"
-  | "secondary"
-  | "tertiary"
-  | "sunken"
-  | "canvas"
-  | "surface"
-  | "elevated"
-  | "floating"
-  | "outlined"
-  | "ghost";
+export type AccordionVariant = ContainerVariant | "ghost";
 
 export type AccordionIcon = "toggle" | "chevron";
 export type AccordionIconDirection = "left" | "right";
 export type AccordionDirection = "up" | "down";
 
-// The surface variants use the background token of the same name, and
-// `primary` / `secondary` / `tertiary` follow `Button`'s variants. Separated
-// items paint their own background (and hover) since the group behind them is
-// transparent.
-const ITEM_BACKGROUNDS = {
-  primary: "primary",
-  secondary: "secondary",
-  tertiary: "surface",
-  sunken: "sunken",
-  canvas: "canvas",
-  surface: "surface",
-  elevated: "elevated",
-  floating: "floating",
-  outlined: "transparent",
-  ghost: "transparent"
-} as const;
+/**
+ * The `Container` layer that draws the surface of the group or, when
+ * `separated`, of an item: every variant but `ghost`, which has none.
+ */
+const AccordionSurface = ({
+  variant,
+  bordered,
+  shadowStyle,
+  glass,
+  noise,
+  accented
+}: Pick<AccordionContextProps, "variant" | "bordered"> &
+  Omit<ContainerSurfaceProps, "variant">) =>
+  variant === "ghost" ? null : (
+    <ContainerBackground
+      variant={variant}
+      shadowStyle={shadowStyle}
+      glass={glass}
+      noise={noise}
+      accented={accented}
+      {...(!bordered && { borderWidth: 0 })}
+    />
+  );
 
-const HEADER_BACKGROUNDS = {
-  primary: "primary hover:primary-hovered",
-  secondary: "secondary hover:secondary-hovered",
-  tertiary: "surface hover:surface-hovered",
-  sunken: "sunken hover:sunken-hovered",
-  canvas: "canvas hover:canvas-hovered",
-  surface: "surface hover:surface-hovered",
-  elevated: "elevated hover:elevated-hovered",
-  floating: "floating hover:floating-hovered",
-  outlined: "transparent hover:surface-hovered",
-  ghost: "transparent"
-} as const;
+// A separated item's header shows the hovered shade of the item's surface.
+const getHeaderBackground = (variant: ContainerVariant, glass?: boolean) => {
+  const color: string = containerVariants[variant].backgroundColor;
+  const hovered = `${color === "transparent" ? "surface" : color}-hovered`;
 
-// The border and shadow of a separated item, where it differs from the
-// separated default (a 1px `border` border).
-const SEPARATED_ITEM_FRAMES: Partial<
-  Record<AccordionVariant, Record<string, string | number>>
-> = {
-  primary: { borderWidth: 0 },
-  secondary: { boxShadow: "color-shadow-resting-raised" },
-  tertiary: {
-    borderColor: "hairline",
-    boxShadow: "color-shadow-resting-raised"
-  },
-  outlined: { borderWidth: 2, borderColor: "primary" }
+  return `transparent hover:${glass ? `${hovered}/60` : hovered}`;
 };
 
-// `dark_brand` / `brand` -> `brand`; `dark`, `base` and `dark_base` are
-// uncolored.
-const isUncoloredTheme = (themeName: string | null | undefined) => {
-  const parts = themeName?.split("_") ?? [];
-  const color = parts.length > 1 ? parts[1] : parts[0];
-
-  return !color || color === "base" || color === "light" || color === "dark";
-};
-
-// The text and icon color on the `primary` / `secondary` backgrounds.
-// `on-secondary` is faint on the uncolored themes' light `secondary`, so those
-// use `primary` there, as `Button` does.
-const useForeground = (variant: AccordionVariant | undefined) => {
-  const themeName = useThemeName();
-
-  return variant === "primary"
-    ? "on-primary"
-    : variant === "secondary"
-      ? isUncoloredTheme(themeName)
-        ? "primary"
-        : "on-secondary"
-      : undefined;
-};
+// The text and icon color on the `primary` / `secondary` surfaces.
+const useForeground = (variant: AccordionVariant) =>
+  getContainerForeground(
+    variant === "ghost" ? undefined : variant,
+    useThemeName()
+  );
 
 const getOpenValues = (value?: string | string[]) =>
   isString(value) ? [value] : (value ?? []);
@@ -153,7 +124,8 @@ const getOpenValues = (value?: string | string[]) =>
 const getSingleValue = (value?: string | string[]) =>
   isString(value) ? value : value?.[0];
 
-export interface AccordionContextProps {
+export interface AccordionContextProps
+  extends Omit<ContainerSurfaceProps, "variant"> {
   open: string[];
   setOpen: (open: string[]) => void;
   variant: AccordionVariant;
@@ -178,6 +150,10 @@ export const AccordionContext = createStyledContext<
   | "icon"
   | "iconDirection"
   | "direction"
+  | "shadowStyle"
+  | "glass"
+  | "noise"
+  | "accented"
 >(
   {
     open: [],
@@ -203,61 +179,34 @@ const AccordionGroup = styled(YGroup, {
   context: AccordionContext,
   width: "100%",
   borderRadius: "container",
-  borderWidth: 1,
-  borderColor: "border",
   paddingHorizontal: "6xl",
   paddingVertical: "lg",
   overflow: "hidden",
   variants: {
+    // An `AccordionSurface` draws every variant but `ghost`.
     variant: {
-      primary: {
-        backgroundColor: "primary",
-        borderWidth: 0
-      },
-      secondary: {
-        backgroundColor: "secondary",
-        boxShadow: "color-shadow-resting-raised"
-      },
-      tertiary: {
-        backgroundColor: "surface",
-        borderColor: "hairline",
-        boxShadow: "color-shadow-resting-raised"
-      },
-      sunken: {
-        backgroundColor: "sunken"
-      },
-      canvas: {
-        backgroundColor: "canvas"
-      },
-      surface: {
-        backgroundColor: "surface"
-      },
-      elevated: {
-        backgroundColor: "elevated"
-      },
-      floating: {
-        backgroundColor: "floating"
-      },
-      outlined: {
-        backgroundColor: "transparent",
-        borderWidth: 2,
-        borderColor: "primary"
-      },
+      primary: {},
+      secondary: {},
+      tertiary: {},
+      sunken: {},
+      canvas: {},
+      surface: {},
+      elevated: {},
+      floating: {},
+      outlined: {},
       ghost: {
         backgroundColor: "transparent",
         borderWidth: 0,
         padding: 0
       }
     },
-    // Declared after `variant`: the items carry the background and borders.
+    // Declared after `variant`: the items carry the surfaces.
     separated: {
       true: {
         gap: "lg",
         padding: 0,
         overflow: "visible",
         borderRadius: 0,
-        borderWidth: 0,
-        backgroundColor: "transparent",
         boxShadow: "none"
       }
     },
@@ -272,7 +221,8 @@ const AccordionGroup = styled(YGroup, {
 // eslint-disable-next-line react-refresh/only-export-components
 const AccordionFrameImpl = forwardRef<
   TamaguiElement,
-  BaseAccordionProps & {
+  BaseAccordionProps &
+    Omit<ContainerSurfaceProps, "variant"> & {
     variant?: AccordionVariant;
     bordered?: boolean;
     separated?: boolean;
@@ -295,6 +245,10 @@ const AccordionFrameImpl = forwardRef<
       icon = "toggle",
       iconDirection = "right",
       direction = "down",
+      shadowStyle,
+      glass,
+      noise,
+      accented,
       defaultValue,
       onValueChange,
       backgroundColor: _backgroundColor,
@@ -340,10 +294,17 @@ const AccordionFrameImpl = forwardRef<
         numbered={numbered}
         icon={icon}
         iconDirection={iconDirection}
-        direction={direction}>
+        direction={direction}
+        shadowStyle={shadowStyle}
+        glass={glass}
+        noise={noise}
+        accented={accented}>
         <TamaguiAccordion
           ref={forwardedRef}
           theme="base"
+          // Positioned and a stacking context for the `AccordionSurface`.
+          position="relative"
+          zIndex={0}
           {...props}
           {...(isSingle
             ? {
@@ -362,11 +323,25 @@ const AccordionFrameImpl = forwardRef<
           borderRadius={borderRadius}
           width="100%"
           onValueChange={handleValueChange}>
+          {/* Beside the group, not in it: a `YGroup` counts its children to
+              find the first and last item. */}
+          {!separated && (
+            <AccordionSurface
+              variant={variant}
+              bordered={bordered}
+              shadowStyle={shadowStyle}
+              glass={glass}
+              noise={noise}
+              accented={accented}
+            />
+          )}
           <AccordionGroup
             borderRadius={borderRadius}
             variant={variant}
             bordered={bordered}
-            separated={separated}>
+            separated={separated}
+            {...(!separated &&
+              shadowStyle && { boxShadow: containerShadows[shadowStyle] })}>
             {
               // eslint-disable-next-line ts/promise-function-async
               Children.toArray(children).map((child, index, items) => {
@@ -413,11 +388,14 @@ const AccordionItem = styled(TamaguiAccordion.Item, {
   borderBottomColor: "border",
 
   variants: {
+    // An `AccordionSurface` draws the item's border. Positioned and a
+    // stacking context for it.
     separated: {
       true: {
         borderRadius: "container",
-        borderWidth: 1,
-        borderColor: "border"
+        borderBottomWidth: 0,
+        position: "relative",
+        zIndex: 0
       }
     },
 
@@ -451,11 +429,7 @@ const AccordionItem = styled(TamaguiAccordion.Item, {
       }
     }
   } as const
-}).resolve(({ separated, bordered, variant }) =>
-  separated && bordered !== false
-    ? SEPARATED_ITEM_FRAMES[variant as AccordionVariant]
-    : undefined
-);
+});
 
 const AccordionItemImpl = createStyledHOC(
   AccordionItem,
@@ -468,8 +442,17 @@ const AccordionItemImpl = createStyledHOC(
     }: GetProps<typeof AccordionItem> & { index?: number },
     forwardedRef
   ) => {
-    const { direction, open, separated, variant } =
-      AccordionContext.useStyledContext();
+    const {
+      direction,
+      open,
+      separated,
+      variant,
+      bordered,
+      shadowStyle,
+      glass,
+      noise,
+      accented
+    } = AccordionContext.useStyledContext();
     const isOpen = open.includes(value);
 
     return (
@@ -479,11 +462,21 @@ const AccordionItemImpl = createStyledHOC(
             ref={forwardedRef as Ref<TamaguiElement>}
             key={value}
             value={value}
-            backgroundColor={
-              separated ? ITEM_BACKGROUNDS[variant] : "transparent"
-            }
+            backgroundColor="transparent"
+            {...(separated &&
+              shadowStyle && { boxShadow: containerShadows[shadowStyle] })}
             {...props}
             flexDirection={direction === "up" ? "column-reverse" : "column"}>
+            {separated && (
+              <AccordionSurface
+                variant={variant}
+                bordered={bordered}
+                shadowStyle={shadowStyle}
+                glass={glass}
+                noise={noise}
+                accented={accented}
+              />
+            )}
             {children}
           </AccordionItem>
         </AccordionItemContext.Provider>
@@ -546,8 +539,15 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
 const AccordionItemHeaderImpl = createStyledHOC(
   AccordionItemHeader,
   ({ children, ...props }, forwardedRef) => {
-    const { numbered, direction, icon, iconDirection, separated, variant } =
-      AccordionContext.useStyledContext();
+    const {
+      numbered,
+      direction,
+      icon,
+      iconDirection,
+      separated,
+      variant,
+      glass
+    } = AccordionContext.useStyledContext();
     const { index, open } = AccordionItemContext.useStyledContext();
     const foreground = useForeground(variant);
 
@@ -558,7 +558,10 @@ const AccordionItemHeaderImpl = createStyledHOC(
         flexDirection={iconDirection === "left" ? "row-reverse" : "row"}
         justifyContent="space-between"
         alignItems="center"
-        {...(separated && { backgroundColor: HEADER_BACKGROUNDS[variant] })}
+        {...(separated &&
+          variant !== "ghost" && {
+            backgroundColor: getHeaderBackground(variant, glass)
+          })}
         {...props}>
         {numbered ? (
           <XStack alignItems="center" flex={1} gap="6xl">

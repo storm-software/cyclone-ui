@@ -61,7 +61,7 @@ const ModalFrameImpl: FC<ModalFrameProps> = ({
     <Dialog.Overlay key="overlay" />
     <Dialog.Container
       key="content"
-      variant="elevated"
+      variant="surface"
       padding={0}
       maxWidth={maxWidth}
       maxHeight={maxHeight}

@@ -308,3 +308,26 @@ export const OutlinedBorderless: Story = {
     borderless: true
   }
 };
+
+export const Surface: Story = {
+  args: {
+    defaultValue: "left",
+    variant: "surface"
+  }
+};
+
+export const Raised: Story = {
+  args: {
+    defaultValue: "left",
+    variant: "elevated",
+    shadowStyle: "raised"
+  }
+};
+
+export const Flat: Story = {
+  args: {
+    defaultValue: "left",
+    variant: "surface",
+    shadowStyle: "flat"
+  }
+};

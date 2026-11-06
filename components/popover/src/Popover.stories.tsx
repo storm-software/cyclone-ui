@@ -18,6 +18,7 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
+import { getContainerForeground } from "@cyclone-ui/container";
 import { HeadingText } from "@cyclone-ui/heading-text";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { YStack } from "@tamagui/stacks";
@@ -34,15 +35,7 @@ const meta: Meta<PopoverStoryArgs> = {
   render: ({ hasArrow, ...props }) => {
     // Content keeps its own colors; on a filled popover it uses the variant's
     // foreground, like the components with built-in text do.
-    const color =
-      props.variant === "primary"
-        ? "on-primary"
-        : props.variant === "secondary"
-          ? // `on-secondary` is faint on the base theme's light `secondary`.
-            props.theme && props.theme !== "base"
-            ? "on-secondary"
-            : "primary"
-          : undefined;
+    const color = getContainerForeground(props.variant, props.theme);
 
     return (
       <Popover {...props}>
@@ -158,6 +151,46 @@ export const PrimaryArrow: Story = {
 export const OutlinedArrow: Story = {
   args: {
     variant: "outlined",
+    hasArrow: true
+  }
+};
+
+export const Floating: Story = {
+  args: {
+    variant: "floating"
+  }
+};
+
+export const Raised: Story = {
+  args: {
+    variant: "surface",
+    shadowStyle: "raised"
+  }
+};
+
+export const Accented: Story = {
+  args: {
+    accented: true,
+    hasArrow: true
+  }
+};
+
+export const Glass: Story = {
+  args: {
+    glass: true
+  }
+};
+
+export const Noise: Story = {
+  args: {
+    variant: "primary",
+    noise: true
+  }
+};
+
+export const Flat: Story = {
+  args: {
+    shadowStyle: "flat",
     hasArrow: true
   }
 };

@@ -467,7 +467,7 @@ const TimePickerClock = ({
                   size={item.inner ? innerCellSize : cellSize}
                   width={item.inner ? innerCellSize : cellSize}
                   circular={true}
-                  noPadding={true}
+                  tight={true}
                   // The face handles pointer input (so the hand can be dragged);
                   // the buttons stay for keyboard users.
                   pointerEvents="none"

@@ -196,13 +196,13 @@ const BreadcrumbSeparator = () => {
   const { separator, size } = BreadcrumbContext.useStyledContext();
 
   if (separator === "chevron") {
-    return <ChevronRight color="outline" size="2xl" />;
+    return <ChevronRight color="border" size="2xl" />;
   } else if (separator === "double") {
-    return <ChevronDoubleRight color="outline" size="2xl" />;
+    return <ChevronDoubleRight color="border" size="2xl" />;
   } else if (separator === "slash") {
     return (
       <SizableText
-        color="outline"
+        color="border"
         fontFamily="body"
         fontSize={size === "lg" ? "md" : "sm"}
         lineHeight="sm"
@@ -241,7 +241,7 @@ const BreadcrumbEllipsis = ({
           <Button
             variant="ghost"
             circular={true}
-            noPadding={true}
+            tight={true}
             size="6xl"
             aria-label={expandText}
             tooltip={expandText}>

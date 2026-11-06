@@ -18,6 +18,15 @@
 
 "use client";
 
+import type {
+  ContainerSurfaceProps,
+  ContainerVariant
+} from "@cyclone-ui/container";
+import {
+  ContainerBackground,
+  containerShadows,
+  containerVariants
+} from "@cyclone-ui/container";
 import { ScrollView } from "@cyclone-ui/scroll-view";
 import { Sheet } from "@cyclone-ui/sheet";
 import type { AdaptWhen } from "@tamagui/adapt";
@@ -31,19 +40,16 @@ import {
 } from "@tamagui/core";
 import { Popover as TamaguiPopover } from "@tamagui/popover";
 
-export type PopoverVariant = "primary" | "secondary" | "tertiary" | "outlined";
+export type PopoverVariant = ContainerVariant;
 
-export interface PopoverContextProps {
+/**
+ * The surface of the popover's content, arrow and small-screen sheet, drawn by
+ * a `Container`. `Popover.Content` can also set its own. `variant` defaults to
+ * `elevated` and `shadowStyle` to `elevated`; an `outlined` popover keeps an
+ * opaque `elevated` backing so its content stays readable over the page.
+ */
+export interface PopoverContextProps extends ContainerSurfaceProps {
   size: SizeTokens;
-
-  /**
-   * The surface of the popover's content, arrow and small-screen sheet:
-   * `primary` fills it with `primary`, `secondary` with `secondary` and a
-   * `border` border, `tertiary` with `surface` and a `hairline` border, and
-   * `outlined` draws a 2px `primary` border. Unset keeps the `elevated`
-   * surface with a `hairline` border.
-   */
-  variant?: PopoverVariant;
 }
 
 export const PopoverContext = createStyledContext<PopoverContextProps, "size">(
@@ -51,33 +57,11 @@ export const PopoverContext = createStyledContext<PopoverContextProps, "size">(
     size: true
   } as PopoverContextProps,
   {
-    // Not `variant`: `PopoverContentImpl` passes it on, so a `variant` set on
-    // `Popover.Content` reaches the arrow too.
+    // Not the surface props: `PopoverContentImpl` passes them on, so a
+    // surface set on `Popover.Content` reaches the arrow too.
     keys: ["size"]
   }
 );
-
-// Unlike `Button`'s `outlined`, an outlined popover keeps an opaque surface so
-// its content stays readable over the page. The shadow belongs to `elevated`.
-const popoverSurfaces = {
-  primary: {
-    backgroundColor: "primary",
-    borderWidth: 0
-  },
-  secondary: {
-    backgroundColor: "secondary",
-    borderColor: "border"
-  },
-  tertiary: {
-    backgroundColor: "surface",
-    borderColor: "hairline"
-  },
-  outlined: {
-    backgroundColor: "elevated",
-    borderWidth: 2,
-    borderColor: "primary"
-  }
-} as const;
 
 const PopoverFrame = styled(TamaguiPopover, {
   displayName: "Popover",
@@ -96,12 +80,18 @@ const PopoverFrameImpl = createStyledHOC(
       size = true,
       shouldAdapt = true,
       variant,
+      shadowStyle,
+      glass,
+      noise,
+      accented,
       ...props
     }: GetProps<typeof PopoverFrame> & PopoverFrameExtraProps,
     forwardedRef
   ) => {
+    const surface = { variant, shadowStyle, glass, noise, accented };
+
     return (
-      <PopoverContext.Provider size={size} variant={variant}>
+      <PopoverContext.Provider size={size} {...surface}>
         {/* Not `PopoverFrame`: a styled frame consumes `offset` as the CSS
             `offset` style, so it never reaches the popper. */}
         <TamaguiPopover ref={forwardedRef} allowFlip={true} {...props}>
@@ -113,10 +103,7 @@ const PopoverFrameImpl = createStyledHOC(
             // declared by the app config, which this package's typecheck
             // doesn't load.
             <Adapt when={"max-sm" as unknown as AdaptWhen}>
-              <Sheet
-                snapPoints={["fit"]}
-                snapPointsMode="fit"
-                variant={variant}>
+              <Sheet snapPoints={["fit"]} snapPointsMode="fit" {...surface}>
                 <Sheet.Overlay />
                 <Sheet.Container padding="5xl">
                   <Sheet.Background />
@@ -135,69 +122,35 @@ const PopoverFrameImpl = createStyledHOC(
 
 const PopoverArrow = styled(TamaguiPopover.Arrow, {
   displayName: "Popover",
-  context: PopoverContext,
-  backgroundColor: "elevated",
-  borderWidth: 1,
-  borderColor: "hairline",
-
-  variants: {
-    variant: popoverSurfaces
-  } as const
+  context: PopoverContext
 });
 
+// The `ContainerBackground` draws the surface. Positioned for it (Popper
+// positions a wrapper, not this frame), and `isolation` makes the stacking
+// context: Tamagui hands a content `zIndex` to the portal instead.
 const PopoverContent = styled(TamaguiPopover.Content, {
   displayName: "Popover",
   context: PopoverContext,
-  backgroundColor: "elevated",
+  position: "relative",
+  isolation: "isolate",
+  backgroundColor: "transparent",
   padding: "3xl",
-  borderWidth: 1,
-  borderColor: "hairline focus-visible:primary-active",
+  borderWidth: 0,
   borderRadius: "popover",
   marginHorizontal: "auto",
+  outlineStyle: "focus-visible:solid",
+  outlineWidth: "focus-visible:2px",
+  outlineColor: "focus-visible:primary-active",
   y: "enter:-10px exit:-10px",
   opacity: "enter:0 exit:0",
 
   transition: {
     duration: "100ms",
     opacity: { duration: "100ms", spring: { overshootClamping: true } }
-  },
-
-  variants: {
-    variant: {
-      primary: popoverSurfaces.primary,
-      secondary: {
-        ...popoverSurfaces.secondary,
-        borderColor: "border focus-visible:primary-active"
-      },
-      tertiary: {
-        ...popoverSurfaces.tertiary,
-        borderColor: "hairline focus-visible:primary-active"
-      },
-      outlined: {
-        ...popoverSurfaces.outlined,
-        borderColor: "primary focus-visible:primary-active"
-      }
-    },
-
-    elevated: {
-      true: {
-        boxShadow: "0px 4px 30px #0D0C0766"
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    elevated: true
   }
-}).resolve(({ elevated, variant }) =>
-  // Without the floating shadow (the default with a `variant`), the raised
-  // variants keep `Button`'s resting one.
-  elevated === false && (variant === "secondary" || variant === "tertiary")
-    ? { boxShadow: "color-shadow-resting-raised" }
-    : undefined
-);
+});
 
-interface PopoverContentExtraProps {
+interface PopoverContentExtraProps extends ContainerSurfaceProps {
   hasArrow?: boolean;
 }
 
@@ -208,21 +161,58 @@ const PopoverContentImpl = createStyledHOC(
       children,
       hasArrow = false,
       variant: variantProp,
-      elevated,
+      shadowStyle: shadowStyleProp,
+      glass: glassProp,
+      noise: noiseProp,
+      accented: accentedProp,
+      backgroundColor,
+      borderColor,
+      borderWidth,
       ...props
-    }: GetProps<typeof PopoverContent> & PopoverContentExtraProps,
+    }: Omit<GetProps<typeof PopoverContent>, "variant"> &
+      PopoverContentExtraProps,
     forwardedRef
   ) => {
-    const variant = variantProp ?? PopoverContext.useStyledContext().variant;
+    const context = PopoverContext.useStyledContext();
+    const variant = variantProp ?? context.variant ?? "elevated";
+    const shadowStyle = shadowStyleProp ?? context.shadowStyle ?? "elevated";
+    const glass = glassProp ?? context.glass;
+    const accented = accentedProp ?? context.accented;
+    // Unlike `Button`'s `outlined`, an outlined popover keeps an opaque
+    // backing so its content stays readable over the page.
+    const backing =
+      variant === "outlined" && !glass ? { backgroundColor: "elevated" } : null;
+    // Explicit colors and widths win over the variant's, on the surface the
+    // `ContainerBackground` draws and on the arrow.
+    const overrides = {
+      ...(backgroundColor !== undefined && { backgroundColor }),
+      ...(borderColor !== undefined && { borderColor }),
+      ...(borderWidth !== undefined && { borderWidth })
+    };
 
     return (
       <PopoverContent
         ref={forwardedRef}
-        {...props}
-        variant={variant}
-        // A `variant` brings its own shadow, like `Button`'s.
-        elevated={elevated ?? variant === undefined}>
-        {hasArrow && <PopoverArrow variant={variant} />}
+        boxShadow={containerShadows[shadowStyle]}
+        {...backing}
+        {...props}>
+        <ContainerBackground
+          variant={variant}
+          shadowStyle={shadowStyle}
+          glass={glass}
+          noise={noiseProp ?? context.noise}
+          accented={accented}
+          {...overrides}
+        />
+        {hasArrow && (
+          <PopoverArrow
+            {...containerVariants[variant]}
+            {...backing}
+            {...(accented && { borderColor: "primary" })}
+            {...(shadowStyle === "flat" && { borderWidth: 0 })}
+            {...overrides}
+          />
+        )}
         {children}
       </PopoverContent>
     );

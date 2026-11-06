@@ -181,3 +181,21 @@ export const GhostBorderless: Story = {
     variant: "ghost"
   }
 };
+
+export const Raised: Story = {
+  args: {
+    shadowStyle: "raised"
+  }
+};
+
+export const Accented: Story = {
+  args: {
+    accented: true
+  }
+};
+
+export const Flat: Story = {
+  args: {
+    shadowStyle: "flat"
+  }
+};

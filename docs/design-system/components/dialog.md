@@ -57,7 +57,8 @@ import { Dialog } from "@cyclone-ui/dialog";
 | `modal` | `boolean` | `true` | Makes the dialog modal. |
 | `theme` | `string` | `"base"` | The theme name applied to the dialog and its parts. |
 | `overlay` | `boolean` | `true` | Set to `false` to hide the overlay. |
-| `variant` | [Container](./container.md) variant | `"floating"` | The surface of `Dialog.Container`, which can also set its own `variant`. |
+| `variant` | [Container](./container.md) variant | `"elevated"` | The surface of `Dialog.Container`, which can also set its own. |
+| `shadowStyle`, `glass`, `noise`, `accented` | Container props | - | The rest of the surface, passed to `Dialog.Container` the same way. |
 
 ### Parts
 
@@ -66,7 +67,7 @@ import { Dialog } from "@cyclone-ui/dialog";
 | `Dialog.Trigger` | The Tamagui dialog trigger. Use `asChild` to render your own button. |
 | `Dialog.Portal` | The Tamagui dialog portal. |
 | `Dialog.Overlay` | The shared [Overlay](./overlay.md) inside the Tamagui dialog overlay. It has a 200ms transition and is hidden when `overlay` is `false`. |
-| `Dialog.Container` | The dialog content. It wraps a [Container](./container.md) with the dialog's `variant` (default `"floating"`), `bordered`, and the `dialog` border radius. It accepts the `Container` props. |
+| `Dialog.Container` | The dialog content. It wraps a [Container](./container.md) with the dialog's surface props (`variant` defaults to `"elevated"`) and the `dialog` border radius. It accepts all the `Container` props. |
 | `Dialog.Heading` | A `HeadingLargeText` wrapped in the dialog title. |
 | `Dialog.Body` | A `BodyText` with the `ink` color, wrapped in the dialog description. |
 | `Dialog.Close` | A [Button](./button.md) with `variant="outlined"` (`"tertiary"` in a `primary` dialog) that closes the dialog. It has `Text` and `Icon` slots. |
@@ -84,7 +85,7 @@ import { Dialog } from "@cyclone-ui/dialog";
 
 `variant` follows the [Button](./button.md) variants through Container: `primary`, `secondary`, `tertiary`, and `outlined`, alongside the other Container surfaces. On `primary` and `secondary`, `Dialog.Heading` and `Dialog.Body` use `on-primary` / `on-secondary` (`primary` on `secondary` with the uncolored base theme). An `outlined` dialog sits on an opaque `elevated` backing, so its content stays readable over the overlay.
 
-The stories show the default theme, these `theme` values: `brand`, `discovery`, `danger`, `warning`, `info`, and `success`, and the `Primary`, `Secondary`, `Tertiary`, and `Outlined` variants.
+The stories show the default theme, these `theme` values: `brand`, `discovery`, `danger`, `warning`, `info`, and `success`, the `Primary`, `Secondary`, `Tertiary`, `Outlined`, and `Floating` variants, and `Raised`, `Accented`, `Glass`, and `Noise`.
 
 ## Accessibility
 

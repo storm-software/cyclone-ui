@@ -573,7 +573,7 @@ export const SearchDialog = createStyledHOC(
               <Button
                 variant="ghost"
                 circular={true}
-                noPadding={true}
+                tight={true}
                 size="6xl"
                 tabIndex={-1}
                 aria-hidden={true}
@@ -715,7 +715,7 @@ export const SearchDialog = createStyledHOC(
                       variant="link"
                       size="sm"
                       flexGrow={0}
-                      noPadding={true}
+                      tight={true}
                       paddingHorizontal="2xl"
                       aria-label="Clear recent results"
                       tooltip="Clear recent results"
@@ -843,7 +843,7 @@ export const SearchDialog = createStyledHOC(
                 <Button
                   variant="ghost"
                   circular={true}
-                  noPadding={true}
+                  tight={true}
                   size="8xl"
                   aria-label={`${label} settings`}
                   tooltip={`${label} settings`}

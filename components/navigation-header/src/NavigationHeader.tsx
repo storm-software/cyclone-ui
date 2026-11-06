@@ -949,7 +949,7 @@ const NavigationHeaderRoot = createStyledHOC(
         {/* Nudged onto the labels' x-height center, which sits below their
                 cap-height center; without them it centers with the menu. */}
         {search && (
-          <SearchDialog {...search.props} y="2px max-xl:0" noPadding={true} />
+          <SearchDialog {...search.props} y="2px max-xl:0" tight={true} />
         )}
       </NavigationHeaderCenter>
     );
@@ -1011,7 +1011,7 @@ const NavigationHeaderRoot = createStyledHOC(
           <NavigationHeaderMenuButtonSlot>
             <Button
               variant="ghost"
-              noPadding={true}
+              tight={true}
               circular={true}
               flexGrow={0}
               aria-controls={mobileNavigationId}

@@ -17,6 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { BodyText } from "@cyclone-ui/body-text";
+import { getContainerForeground } from "@cyclone-ui/container";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Tooltip } from "./Tooltip";
 
@@ -27,15 +28,7 @@ const meta: Meta<typeof Tooltip> = {
   render: (props: any) => {
     // Content keeps its own colors; on a filled tooltip it uses the variant's
     // foreground, like the components with built-in text do.
-    const color =
-      props.variant === "primary"
-        ? "on-primary"
-        : props.variant === "secondary"
-          ? // `on-secondary` is faint on the base theme's light `secondary`.
-            props.theme && props.theme !== "base"
-            ? "on-secondary"
-            : "primary"
-          : undefined;
+    const color = getContainerForeground(props.variant, props.theme);
 
     return (
       <Tooltip {...props}>
@@ -119,5 +112,36 @@ export const Tertiary: Story = {
 export const Outlined: Story = {
   args: {
     variant: "outlined"
+  }
+};
+
+export const Floating: Story = {
+  args: {
+    variant: "floating"
+  }
+};
+
+export const Elevated: Story = {
+  args: {
+    shadowStyle: "elevated"
+  }
+};
+
+export const Accented: Story = {
+  args: {
+    accented: true
+  }
+};
+
+export const Glass: Story = {
+  args: {
+    variant: "primary",
+    glass: true
+  }
+};
+
+export const Flat: Story = {
+  args: {
+    shadowStyle: "flat"
   }
 };

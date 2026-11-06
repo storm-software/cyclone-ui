@@ -97,7 +97,7 @@ export const Circular: Story = {
 export const NoPadding: Story = {
   args: {
     icon: <Close />,
-    noPadding: true,
+    tight: true,
     paddingHorizontal: "2xl"
   }
 };
@@ -165,6 +165,86 @@ export const Outlined: Story = {
     children: "Button Text",
     variant: "outlined",
     disabled: false,
+    animate: false
+  }
+};
+
+export const Sunken: Story = {
+  args: {
+    children: "Button Text",
+    variant: "sunken",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const Canvas: Story = {
+  args: {
+    children: "Button Text",
+    variant: "canvas",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const Surface: Story = {
+  args: {
+    children: "Button Text",
+    variant: "surface",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const Elevated: Story = {
+  args: {
+    children: "Button Text",
+    variant: "elevated",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const Floating: Story = {
+  args: {
+    children: "Button Text",
+    variant: "floating",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const Raised: Story = {
+  args: {
+    children: "Button Text",
+    shadowStyle: "raised",
+    animate: false
+  }
+};
+
+export const Accented: Story = {
+  args: {
+    children: "Button Text",
+    variant: "elevated",
+    accented: true,
+    animate: false
+  }
+};
+
+export const Glass: Story = {
+  args: {
+    children: "Button Text",
+    variant: "primary",
+    glass: true,
+    animate: false
+  }
+};
+
+export const Noise: Story = {
+  args: {
+    children: "Button Text",
+    variant: "primary",
+    noise: true,
     animate: false
   }
 };
@@ -711,5 +791,14 @@ export const DiscoveryDisabled: Story = {
     theme: "discovery",
     variant: "primary",
     disabled: true
+  }
+};
+
+export const Flat: Story = {
+  args: {
+    children: "Button Text",
+    variant: "secondary",
+    shadowStyle: "flat",
+    animate: false
   }
 };

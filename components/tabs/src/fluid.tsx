@@ -22,8 +22,8 @@
 // (https://reactbits.dev/components/gooey-nav). A WebGL2 signed distance field
 // renders the active pill, which bursts into droplets that flow to the newly
 // selected tab. Each tab's `[data-fluid-overlay]` text copy is clipped to the
-// same shape so labels switch to `on-primary` exactly where the pill covers them
-// (or to `primary` where an `on-primary` pill covers them).
+// same shape so labels switch to the pill's foreground (e.g. `on-primary`)
+// exactly where the pill covers them.
 
 import { useThemeName } from "@tamagui/core";
 import type { CSSProperties } from "react";

@@ -16,14 +16,40 @@
 
  ------------------------------------------------------------------- */
 
+
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { View } from "@tamagui/core";
 import { Container } from "./Container";
 
 const meta: Meta<typeof Container> = {
   title: "Containers/Container",
   component: Container,
   tags: ["autodocs"],
-  render: ({ children, ...rest }: any) => (
+  args: {
+    children: "Container Text"
+  },
+  argTypes: {
+    variant: {
+      control: "select",
+      options: [
+        "primary",
+        "secondary",
+        "tertiary",
+        "outlined",
+        "sunken",
+        "canvas",
+        "surface",
+        "elevated",
+        "floating"
+      ]
+    },
+    shadowStyle: {
+      control: "select",
+      options: ["none", "raised", "elevated", "flat"]
+    },
+    children: { control: "text" }
+  },
+  render: ({ children, ...rest }) => (
     <Container {...rest} height="300px">
       {children}
     </Container>
@@ -36,713 +62,234 @@ type Story = StoryObj<typeof Container>;
 
 // Default theme
 
-export const Base: Story = {
-  args: {
-    children: "Container Text"
-  }
-};
+export const Base: Story = {};
 
 export const Primary: Story = {
   args: {
-    children: "Container Text",
     variant: "primary"
-  }
-};
-
-export const PrimaryNoBorder: Story = {
-  args: {
-    children: "Container Text",
-    variant: "primary",
-    bordered: false
   }
 };
 
 export const Secondary: Story = {
   args: {
-    children: "Container Text",
     variant: "secondary"
-  }
-};
-
-export const SecondaryNoBorder: Story = {
-  args: {
-    children: "Container Text",
-    variant: "secondary",
-    bordered: false
   }
 };
 
 export const Tertiary: Story = {
   args: {
-    children: "Container Text",
     variant: "tertiary"
-  }
-};
-
-export const TertiaryNoBorder: Story = {
-  args: {
-    children: "Container Text",
-    variant: "tertiary",
-    bordered: false
   }
 };
 
 export const Outlined: Story = {
   args: {
-    children: "Container Text",
     variant: "outlined"
   }
 };
 
-export const OutlinedNoBorder: Story = {
+// Shapes behind the container, so the frosted glass has something to blur.
+const renderOverShapes: Story["render"] = ({ children, ...rest }) => (
+  <View position="relative" padding="6xl" backgroundColor="canvas">
+    <View
+      theme="info"
+      position="absolute"
+      top={0}
+      right="10%"
+      width={240}
+      height={240}
+      borderRadius={1000}
+      backgroundColor="primary"
+    />
+    <View
+      theme="discovery"
+      position="absolute"
+      bottom={0}
+      left="5%"
+      width={180}
+      height={180}
+      borderRadius={1000}
+      backgroundColor="primary"
+    />
+    <Container {...rest} height="300px">
+      {children}
+    </Container>
+  </View>
+);
+
+export const Glass: Story = {
   args: {
-    children: "Container Text",
-    variant: "outlined",
-    bordered: false
-  }
+    glass: true
+  },
+  render: renderOverShapes
+};
+
+export const GlassNoise: Story = {
+  args: {
+    glass: true,
+    noise: true
+  },
+  render: renderOverShapes
 };
 
 export const Sunken: Story = {
   args: {
-    children: "Container Text",
     variant: "sunken"
-  }
-};
-
-export const SunkenNoBorder: Story = {
-  args: {
-    children: "Container Text",
-    variant: "sunken",
-    bordered: false
   }
 };
 
 export const Canvas: Story = {
   args: {
-    children: "Container Text",
     variant: "canvas"
   }
 };
 
-export const CanvasNoBorder: Story = {
+export const Surface: Story = {
   args: {
-    children: "Container Text",
-    variant: "canvas",
-    bordered: false
+    variant: "surface"
   }
 };
 
 export const Elevated: Story = {
   args: {
-    children: "Container Text",
     variant: "elevated"
-  }
-};
-
-export const ElevatedNoBorder: Story = {
-  args: {
-    children: "Container Text",
-    variant: "elevated",
-    bordered: false
   }
 };
 
 export const Floating: Story = {
   args: {
-    children: "Container Text",
     variant: "floating"
-  }
-};
-
-export const FloatingNoBorder: Story = {
-  args: {
-    children: "Container Text",
-    variant: "floating",
-    bordered: false
-  }
-};
-
-export const Overlay: Story = {
-  args: {
-    children: "Container Text",
-    variant: "overlay"
-  }
-};
-
-export const OverlayNoBorder: Story = {
-  args: {
-    children: "Container Text",
-    variant: "overlay",
-    bordered: false
-  }
-};
-
-export const Glass: Story = {
-  args: {
-    children: "Container Text",
-    variant: "glass"
-  }
-};
-
-export const GlassNoBorder: Story = {
-  args: {
-    children: "Container Text",
-    variant: "glass",
-    bordered: false
   }
 };
 
 export const Circular: Story = {
   args: {
-    children: "Container Text",
     variant: "secondary",
     circular: true
   }
 };
 
-export const CircularNoBorder: Story = {
+export const Tight: Story = {
   args: {
-    children: "Container Text",
     variant: "secondary",
-    circular: true,
-    bordered: false
+    tight: true
   }
 };
 
-// Discovery theme
-
-export const DiscoveryPrimary: Story = {
+export const Accented: Story = {
   args: {
-    theme: "discovery",
-    children: "Container Text",
-    variant: "primary"
+    variant: "surface",
+    accented: true
   }
 };
 
-export const DiscoveryPrimaryNoBorder: Story = {
+export const Hovered: Story = {
   args: {
-    theme: "discovery",
-    children: "Container Text",
     variant: "primary",
-    bordered: false
+    hovered: true
   }
 };
 
-export const DiscoverySecondary: Story = {
+export const ShadowRaised: Story = {
   args: {
-    theme: "discovery",
-    children: "Container Text",
-    variant: "secondary"
+    variant: "elevated",
+    shadowStyle: "raised"
   }
 };
 
-export const DiscoverySecondaryNoBorder: Story = {
+export const ShadowElevated: Story = {
   args: {
-    theme: "discovery",
-    children: "Container Text",
-    variant: "secondary",
-    bordered: false
+    variant: "elevated",
+    shadowStyle: "elevated"
   }
 };
 
-export const DiscoveryTertiary: Story = {
+export const ShadowFlat: Story = {
   args: {
-    theme: "discovery",
-    children: "Container Text",
-    variant: "tertiary"
-  }
-};
-
-export const DiscoveryTertiaryNoBorder: Story = {
-  args: {
-    theme: "discovery",
-    children: "Container Text",
-    variant: "tertiary",
-    bordered: false
-  }
-};
-
-export const DiscoveryOutlined: Story = {
-  args: {
-    theme: "discovery",
-    children: "Container Text",
-    variant: "outlined"
-  }
-};
-
-export const DiscoveryOutlinedNoBorder: Story = {
-  args: {
-    theme: "discovery",
-    children: "Container Text",
-    variant: "outlined",
-    bordered: false
-  }
-};
-
-export const DiscoveryGlass: Story = {
-  args: {
-    theme: "discovery",
-    children: "Container Text",
-    variant: "glass"
-  }
-};
-
-export const DiscoveryGlassNoBorder: Story = {
-  args: {
-    theme: "discovery",
-    children: "Container Text",
-    variant: "glass",
-    bordered: false
-  }
-};
-
-export const DiscoveryCircular: Story = {
-  args: {
-    theme: "discovery",
-    children: "Container Text",
-    variant: "secondary",
-    circular: true
-  }
-};
-
-export const DiscoveryCircularNoBorder: Story = {
-  args: {
-    theme: "discovery",
-    children: "Container Text",
-    variant: "secondary",
-    circular: true,
-    bordered: false
-  }
-};
-
-// Success theme
-
-export const SuccessPrimary: Story = {
-  args: {
-    theme: "success",
-    children: "Container Text",
-    variant: "primary"
-  }
-};
-
-export const SuccessPrimaryNoBorder: Story = {
-  args: {
-    theme: "success",
-    children: "Container Text",
-    variant: "primary",
-    bordered: false
-  }
-};
-
-export const SuccessSecondary: Story = {
-  args: {
-    theme: "success",
-    children: "Container Text",
-    variant: "secondary"
-  }
-};
-
-export const SuccessSecondaryNoBorder: Story = {
-  args: {
-    theme: "success",
-    children: "Container Text",
-    variant: "secondary",
-    bordered: false
-  }
-};
-
-export const SuccessTertiary: Story = {
-  args: {
-    theme: "success",
-    children: "Container Text",
-    variant: "tertiary"
-  }
-};
-
-export const SuccessTertiaryNoBorder: Story = {
-  args: {
-    theme: "success",
-    children: "Container Text",
-    variant: "tertiary",
-    bordered: false
-  }
-};
-
-export const SuccessOutlined: Story = {
-  args: {
-    theme: "success",
-    children: "Container Text",
-    variant: "outlined"
-  }
-};
-
-export const SuccessOutlinedNoBorder: Story = {
-  args: {
-    theme: "success",
-    children: "Container Text",
-    variant: "outlined",
-    bordered: false
-  }
-};
-
-export const SuccessGlass: Story = {
-  args: {
-    theme: "success",
-    children: "Container Text",
-    variant: "glass"
-  }
-};
-
-export const SuccessGlassNoBorder: Story = {
-  args: {
-    theme: "success",
-    children: "Container Text",
-    variant: "glass",
-    bordered: false
-  }
-};
-
-export const SuccessCircular: Story = {
-  args: {
-    theme: "success",
-    children: "Container Text",
-    variant: "secondary",
-    circular: true
-  }
-};
-
-export const SuccessCircularNoBorder: Story = {
-  args: {
-    theme: "success",
-    children: "Container Text",
-    variant: "secondary",
-    circular: true,
-    bordered: false
-  }
-};
-
-// Info theme
-
-export const InfoPrimary: Story = {
-  args: {
-    theme: "info",
-    children: "Container Text",
-    variant: "primary"
-  }
-};
-
-export const InfoPrimaryNoBorder: Story = {
-  args: {
-    theme: "info",
-    children: "Container Text",
-    variant: "primary",
-    bordered: false
-  }
-};
-
-export const InfoSecondary: Story = {
-  args: {
-    theme: "info",
-    children: "Container Text",
-    variant: "secondary"
-  }
-};
-
-export const InfoSecondaryNoBorder: Story = {
-  args: {
-    theme: "info",
-    children: "Container Text",
-    variant: "secondary",
-    bordered: false
-  }
-};
-
-export const InfoTertiary: Story = {
-  args: {
-    theme: "info",
-    children: "Container Text",
-    variant: "tertiary"
-  }
-};
-
-export const InfoTertiaryNoBorder: Story = {
-  args: {
-    theme: "info",
-    children: "Container Text",
-    variant: "tertiary",
-    bordered: false
-  }
-};
-
-export const InfoOutlined: Story = {
-  args: {
-    theme: "info",
-    children: "Container Text",
-    variant: "outlined"
-  }
-};
-
-export const InfoOutlinedNoBorder: Story = {
-  args: {
-    theme: "info",
-    children: "Container Text",
-    variant: "outlined",
-    bordered: false
-  }
-};
-
-export const InfoGlass: Story = {
-  args: {
-    theme: "info",
-    children: "Container Text",
-    variant: "glass"
-  }
-};
-
-export const InfoGlassNoBorder: Story = {
-  args: {
-    theme: "info",
-    children: "Container Text",
-    variant: "glass",
-    bordered: false
-  }
-};
-
-export const InfoCircular: Story = {
-  args: {
-    theme: "info",
-    children: "Container Text",
-    variant: "secondary",
-    circular: true
-  }
-};
-
-export const InfoCircularNoBorder: Story = {
-  args: {
-    theme: "info",
-    children: "Container Text",
-    variant: "secondary",
-    circular: true,
-    bordered: false
-  }
-};
-
-// Error theme
-
-export const ErrorPrimary: Story = {
-  args: {
-    theme: "danger",
-    children: "Container Text",
-    variant: "primary"
-  }
-};
-
-export const ErrorPrimaryNoBorder: Story = {
-  args: {
-    theme: "danger",
-    children: "Container Text",
-    variant: "primary",
-    bordered: false
-  }
-};
-
-export const ErrorSecondary: Story = {
-  args: {
-    theme: "danger",
-    children: "Container Text",
-    variant: "secondary"
-  }
-};
-
-export const ErrorSecondaryNoBorder: Story = {
-  args: {
-    theme: "danger",
-    children: "Container Text",
-    variant: "secondary",
-    bordered: false
-  }
-};
-
-export const ErrorTertiary: Story = {
-  args: {
-    theme: "danger",
-    children: "Container Text",
-    variant: "tertiary"
-  }
-};
-
-export const ErrorTertiaryNoBorder: Story = {
-  args: {
-    theme: "danger",
-    children: "Container Text",
-    variant: "tertiary",
-    bordered: false
-  }
-};
-
-export const ErrorOutlined: Story = {
-  args: {
-    theme: "danger",
-    children: "Container Text",
-    variant: "outlined"
-  }
-};
-
-export const ErrorOutlinedNoBorder: Story = {
-  args: {
-    theme: "danger",
-    children: "Container Text",
-    variant: "outlined",
-    bordered: false
-  }
-};
-
-export const ErrorGlass: Story = {
-  args: {
-    theme: "danger",
-    children: "Container Text",
-    variant: "glass"
-  }
-};
-
-export const ErrorGlassNoBorder: Story = {
-  args: {
-    theme: "danger",
-    children: "Container Text",
-    variant: "glass",
-    bordered: false
-  }
-};
-
-export const ErrorCircular: Story = {
-  args: {
-    theme: "danger",
-    children: "Container Text",
-    variant: "secondary",
-    circular: true
-  }
-};
-
-export const ErrorCircularNoBorder: Story = {
-  args: {
-    theme: "danger",
-    children: "Container Text",
-    variant: "secondary",
-    circular: true,
-    bordered: false
-  }
-};
-
-// Warning theme
-
-export const WarningPrimary: Story = {
-  args: {
-    theme: "warning",
-    children: "Container Text",
-    variant: "primary"
-  }
-};
-
-export const WarningPrimaryNoBorder: Story = {
-  args: {
-    theme: "warning",
-    children: "Container Text",
-    variant: "primary",
-    bordered: false
-  }
-};
-
-export const WarningSecondary: Story = {
-  args: {
-    theme: "warning",
-    children: "Container Text",
-    variant: "secondary"
-  }
-};
-
-export const WarningSecondaryNoBorder: Story = {
-  args: {
-    theme: "warning",
-    children: "Container Text",
-    variant: "secondary",
-    bordered: false
-  }
-};
-
-export const WarningTertiary: Story = {
-  args: {
-    theme: "warning",
-    children: "Container Text",
-    variant: "tertiary"
-  }
-};
-
-export const WarningTertiaryNoBorder: Story = {
-  args: {
-    theme: "warning",
-    children: "Container Text",
-    variant: "tertiary",
-    bordered: false
-  }
-};
-
-export const WarningOutlined: Story = {
-  args: {
-    theme: "warning",
-    children: "Container Text",
-    variant: "outlined"
-  }
-};
-
-export const WarningOutlinedNoBorder: Story = {
-  args: {
-    theme: "warning",
-    children: "Container Text",
-    variant: "outlined",
-    bordered: false
-  }
-};
-
-export const WarningGlass: Story = {
-  args: {
-    theme: "warning",
-    children: "Container Text",
-    variant: "glass"
-  }
-};
-
-export const WarningGlassNoBorder: Story = {
-  args: {
-    theme: "warning",
-    children: "Container Text",
-    variant: "glass",
-    bordered: false
-  }
-};
-
-export const WarningCircular: Story = {
-  args: {
-    theme: "warning",
-    children: "Container Text",
-    variant: "secondary",
-    circular: true
-  }
-};
-
-export const WarningCircularNoBorder: Story = {
-  args: {
-    theme: "warning",
-    children: "Container Text",
-    variant: "secondary",
-    circular: true,
-    bordered: false
+    variant: "elevated",
+    shadowStyle: "flat"
   }
 };
 
 export const Noise: Story = {
   args: {
-    children: "Container Text",
     variant: "elevated",
     noise: true
   }
+};
+
+export const PrimaryNoise: Story = {
+  args: {
+    variant: "primary",
+    noise: true
+  }
+};
+
+export const Sized: Story = {
+  args: {
+    variant: "surface",
+    size: "6xl"
+  }
+};
+
+export const NumericSize: Story = {
+  args: {
+    variant: "surface",
+    size: 8
+  }
+};
+
+const SIZE_STEPS = ["xs", "sm", "md", "lg", "2xl", "6xl"] as const;
+
+export const Sizes: Story = {
+  render: () => (
+    <View flexDirection="row" gap="lg" flexWrap="wrap" alignItems="flex-start">
+      {SIZE_STEPS.map(size => (
+        <Container key={size} variant="surface" size={size} width="auto">
+          {size}
+        </Container>
+      ))}
+    </View>
+  )
+};
+
+const THEME_VARIANTS = [
+  "primary",
+  "secondary",
+  "tertiary",
+  "outlined",
+  "sunken",
+  "canvas",
+  "surface",
+  "elevated",
+  "floating"
+] as const;
+
+export const Themes: Story = {
+  render: () => (
+    <View gap="xl">
+      {(
+        [
+          ["discovery", "discovery"],
+          ["success", "success"],
+          ["info", "info"],
+          ["danger", "danger"],
+          ["warning", "warning"]
+        ] as const
+      ).map(([label, theme]) => (
+        <View flexDirection="row" key={theme} gap="lg" flexWrap="wrap">
+          {THEME_VARIANTS.map(variant => (
+            <Container
+              key={variant}
+              theme={theme}
+              variant={variant}
+              width="180px"
+              height="120px">
+              {`${label} ${variant}`}
+            </Container>
+          ))}
+        </View>
+      ))}
+    </View>
+  )
 };

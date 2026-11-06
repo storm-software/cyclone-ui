@@ -19,10 +19,10 @@ describe("Container background layers", () => {
       /noise && \{ position: "relative", overflow: "hidden", zIndex: 0 \}/
     );
     expect(source).toMatch(
-      /\{noise && \(\s*<View position="absolute" inset=\{0\} zIndex=\{-1\}/
+      /\{noise && \([\s\S]*?<View\s+position="absolute"\s+inset=\{0\}\s+zIndex=\{-1\}/
     );
     expect(source).toMatch(
-      /<BackgroundNoise[\s\S]*preserveAspectRatio="xMidYMid slice"/
+      /zIndex=\{-1\}[\s\S]*mixBlendMode="hard-light"[\s\S]*<BackgroundNoise/
     );
   });
 });

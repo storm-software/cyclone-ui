@@ -351,3 +351,56 @@ export const IconRight: Story = {
     );
   }
 };
+
+export const Raised: Story = {
+  args: {
+    shadowStyle: "raised",
+    children: "Some collapsed content"
+  }
+};
+
+export const SeparatedRaised: Story = {
+  args: {
+    separated: true,
+    shadowStyle: "raised",
+    children: "Some collapsed content"
+  }
+};
+
+export const Accented: Story = {
+  args: {
+    accented: true,
+    children: "Some collapsed content"
+  }
+};
+
+export const Glass: Story = {
+  args: {
+    variant: "primary",
+    glass: true,
+    children: "Some collapsed content"
+  }
+};
+
+export const Noise: Story = {
+  args: {
+    variant: "primary",
+    noise: true,
+    children: "Some collapsed content"
+  }
+};
+
+export const Flat: Story = {
+  args: {
+    shadowStyle: "flat",
+    children: "Some collapsed content"
+  }
+};
+
+export const SeparatedFlat: Story = {
+  args: {
+    separated: true,
+    shadowStyle: "flat",
+    children: "Some collapsed content"
+  }
+};

@@ -65,7 +65,7 @@ export const Divider = forwardRef<TamaguiElement, DividerProps>(
       alignSelf: horizontal ? undefined : "stretch",
       backgroundColor:
         color ||
-        (size === "sm" ? "hairline" : size === "md" ? "hairline" : "outline"),
+        (size === "sm" ? "hairline" : size === "md" ? "hairline" : "border"),
       flexShrink: 0,
       height: horizontal ? thickness : "100%",
       width: horizontal ? "100%" : thickness

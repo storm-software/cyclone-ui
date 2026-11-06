@@ -359,7 +359,7 @@ const DayPicker = () => {
                     width={cellSize}
                     flexGrow={0}
                     flexShrink={0}
-                    noPadding={true}
+                    tight={true}
                     borderRadius="button"
                     disabled={!day.inCurrentMonth}>
                     <Button.Text
@@ -400,7 +400,7 @@ function YearRangeSlider() {
         width={cellSize}
         flexGrow={0}
         flexShrink={0}
-        noPadding={true}
+        tight={true}
         tooltip="Show earlier years"
         {...swapOnClick(previousYearsButton())}>
         <Button.Icon>
@@ -430,7 +430,7 @@ function YearRangeSlider() {
         width={cellSize}
         flexGrow={0}
         flexShrink={0}
-        noPadding={true}
+        tight={true}
         tooltip="Show later years"
         {...swapOnClick(nextYearsButton())}>
         <Button.Icon>
@@ -466,7 +466,7 @@ function YearSlider() {
         width={cellSize}
         flexGrow={0}
         flexShrink={0}
-        noPadding={true}
+        tight={true}
         tooltip="Go to previous year"
         {...swapOnClick(subtractOffset({ months: 12 }))}>
         <Button.Icon>
@@ -491,7 +491,7 @@ function YearSlider() {
         width={cellSize}
         flexGrow={0}
         flexShrink={0}
-        noPadding={true}
+        tight={true}
         tooltip="Go to next year"
         {...swapOnClick(subtractOffset({ months: -12 }))}>
         <Button.Icon>
@@ -534,7 +534,7 @@ const CalendarHeader = () => {
         width={cellSize}
         flexGrow={0}
         flexShrink={0}
-        noPadding={true}
+        tight={true}
         tooltip="Go to previous month"
         {...swapOnClick(subtractOffset({ months: 1 }))}>
         <Button.Icon>
@@ -569,7 +569,7 @@ const CalendarHeader = () => {
         width={cellSize}
         flexGrow={0}
         flexShrink={0}
-        noPadding={true}
+        tight={true}
         tooltip="Go to next month"
         {...swapOnClick(subtractOffset({ months: -1 }))}>
         <Button.Icon>

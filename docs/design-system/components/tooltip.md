@@ -54,7 +54,9 @@ export function Example() {
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
 | `size` | `SizeTokens` | `true` | Stored in the tooltip context. The Tamagui tooltip has no `size` prop. |
-| `variant` | `"primary" \| "secondary" \| "tertiary" \| "outlined"` | — | The surface of the content and the arrow. See below. |
+| `variant` | [Container](./container.md) variant | `"tertiary"` | The surface of the content and the arrow. See below. |
+| `shadowStyle` | `"none" \| "raised" \| "elevated" \| "flat"` | `"raised"` | The content's shadow. |
+| `glass`, `accented` | `boolean` | `false` | The [Container](./container.md) options: frosted glass and a `primary` border. A tooltip is too small for `noise`. |
 | `theme` | Tamagui theme name | Inherited | The stories use `brand`, `discovery`, `danger`, `warning`, `info`, and `success`. |
 
 The root passes all other props to the Tamagui `Tooltip`. The source does not list them, so see the Tamagui docs for placement and delay.
@@ -64,11 +66,8 @@ The root passes all other props to the Tamagui `Tooltip`. The source does not li
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
 | `hasArrow` | `boolean` | `true` | Shows the arrow. |
-| `variant` | Same as `Tooltip` | The `Tooltip`'s | Overrides the root's `variant` for this content. |
-| `arrowBorderColor` | color token | Content `borderColor` | The arrow border color. |
-| `borderColor` | color token | `"outline"`, or the variant's | The content border color. |
-| `backgroundColor` | color token | `"elevated"`, or the variant's | The content and arrow background. |
-| `elevated` | `boolean` | `true`, or `false` with a `variant` | Adds the `0px 4px 30px #0D0C0766` shadow. |
+| `variant`, `shadowStyle`, `glass`, `accented` | Same as `Tooltip` | The `Tooltip`'s | Override the root's surface for this content. `shadowStyle` replaces the former `elevated` flag. |
+| `arrowBorderColor` | color token | The variant's border | The arrow border color. |
 
 ## Variants and states
 
@@ -76,7 +75,7 @@ The root passes all other props to the Tamagui `Tooltip`. The source does not li
 - **Focus:** The content shows a `3px` solid `primary-active` outline when it has keyboard focus.
 - **Shape:** The content uses the `tooltip` radius, a `3xl` vertical padding, and a `2xl` horizontal padding.
 - **Context size:** The default context size is `12xl`.
-- **Variants:** `variant` follows the [Button](./button.md) variants. `primary` uses a `primary` surface with no border. `secondary` uses `secondary` with a 1px `border` border. `tertiary` uses `surface` with a 1px `hairline` border. `secondary` and `tertiary` also get the `color-shadow-resting-raised` shadow. `outlined` uses a 2px `primary` border on an opaque `elevated` surface. Explicit `backgroundColor`, `borderColor`, and `borderWidth` props win over the variant. Text inside a `primary` or `secondary` tooltip should use `on-primary` / `on-secondary`.
+- **Variants:** a [Container](./container.md) of the `variant` (any Container variant, the same set as [Button](./button.md)) draws the surface behind the content, and the arrow takes its background and border. `outlined` keeps an opaque `elevated` backing. Explicit `backgroundColor`, `borderColor`, and `borderWidth` on `Tooltip.Content` win over the variant, on the surface and the arrow. Text inside a `primary` or `secondary` tooltip should use `getContainerForeground(variant, themeName)` from `@cyclone-ui/container`.
 
 ## Accessibility
 

@@ -98,8 +98,7 @@ const AlertDialogContainer = createStyledHOC(
           // Leaves room for the dialog's margin; `Content` scrolls past this.
           maxHeight="85vh"
           {...props}
-          bordered={true}
-          noPadding={true}>
+          tight={true}>
           {children}
         </Dialog.Container>
       </Dialog.Portal>
