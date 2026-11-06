@@ -22,7 +22,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Text } from "@tamagui/core";
 import { XStack } from "@tamagui/stacks";
 import type { ComponentType } from "react";
-import { expect, userEvent, within } from "storybook/test";
+import { expect, userEvent, waitFor, within } from "storybook/test";
 import type { StepperLineStyle } from "./Stepper";
 import { Stepper } from "./Stepper";
 
@@ -174,6 +174,43 @@ export const ActiveDescription: Story = {
     showDescription: "active"
   },
   render: renderStepper({ descriptions: true })
+};
+
+export const CurrentDetails: Story = {
+  args: {
+    details: "current"
+  },
+  render: renderStepper({ descriptions: true })
+};
+
+export const CurrentDetailsNumbered: Story = {
+  args: {
+    details: "current",
+    numbered: true,
+    orientation: "horizontal"
+  },
+  render: renderStepper({ descriptions: true }),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    // NumberFlow labels its value.
+    await expect(canvas.getByRole("img", { name: "1" })).toBeInTheDocument();
+    await expect(canvas.getByText("Step One")).toBeVisible();
+    await expect(canvas.getByText("Step Two")).not.toBeVisible();
+
+    await userEvent.click(canvas.getByRole("button", { name: /next/i }));
+    await expect(canvas.getByRole("tab", { name: "Step Two" })).toHaveAttribute(
+      "aria-selected",
+      "true"
+    );
+    await expect(canvas.getByRole("img", { name: "2" })).toBeInTheDocument();
+    await waitFor(async () =>
+      expect(canvas.getByText("Step One")).not.toBeVisible()
+    );
+    await waitFor(async () =>
+      expect(canvas.getByText("Step Two")).toBeVisible()
+    );
+  }
 };
 
 export const DashedLines: Story = {

@@ -165,19 +165,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-disabled"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "canvas-disabled": "#323235"
+              "canvas-disabled": "#38383b"
             }}
           />
           <ColorItem
             title={"color.canvas-hovered"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% brighter)"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 15% brighter)"
             }
             colors={{
-              "canvas-hovered": "#202024"
+              "canvas-hovered": "#1c1c1f"
             }}
           />
           <ColorItem
@@ -210,19 +210,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-disabled"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#363638"
+              "elevated-disabled": "#3a3a3d"
             }}
           />
           <ColorItem
             title={"color.elevated-hovered"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% brighter)"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% brighter)"
             }
             colors={{
-              "elevated-hovered": "#2e2e30"
+              "elevated-hovered": "#28282a"
             }}
           />
           <ColorItem
@@ -255,19 +255,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-disabled"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "floating-disabled": "#37383b"
+              "floating-disabled": "#3b3c3f"
             }}
           />
           <ColorItem
             title={"color.floating-hovered"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% brighter)"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 15% brighter)"
             }
             colors={{
-              "floating-hovered": "#343539"
+              "floating-hovered": "#2e2f32"
             }}
           />
           <ColorItem
@@ -300,19 +300,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-disabled"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "sunken-disabled": "#2e2e31"
+              "sunken-disabled": "#353538"
             }}
           />
           <ColorItem
             title={"color.sunken-hovered"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% brighter)"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 15% brighter)"
             }
             colors={{
-              "sunken-hovered": "#141415"
+              "sunken-hovered": "#111112"
             }}
           />
           <ColorItem
@@ -345,19 +345,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-disabled"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "surface-disabled": "#343437"
+              "surface-disabled": "#39393c"
             }}
           />
           <ColorItem
             title={"color.surface-hovered"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% brighter)"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 15% brighter)"
             }
             colors={{
-              "surface-hovered": "#2a2a2c"
+              "surface-hovered": "#242426"
             }}
           />
           <ColorItem
@@ -395,19 +395,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.hairline-disabled"}
             subtitle={
-              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "hairline-disabled": "#444447"
+              "hairline-disabled": "#434346"
             }}
           />
           <ColorItem
             title={"color.hairline-hovered"}
             subtitle={
-              "Low-contrast color for borders, dividers and separators. (hovered, dark contrast primitive)"
+              "Low-contrast color for borders, dividers and separators. (hovered, 40% brighter)"
             }
             colors={{
-              "hairline-hovered": "#ffffff"
+              "hairline-hovered": "#727276"
             }}
           />
           <ColorItem
@@ -445,10 +445,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.emphasis-disabled"}
             subtitle={
-              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))"
+              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "emphasis-disabled": "#808082"
+              "emphasis-disabled": "#5d5d60"
             }}
           />
           <ColorItem
@@ -490,10 +490,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.ink-disabled"}
             subtitle={
-              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "ink-disabled": "#69696b"
+              "ink-disabled": "#535356"
             }}
           />
           <ColorItem
@@ -535,10 +535,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.subtle-disabled"}
             subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "subtle-disabled": "#606063"
+              "subtle-disabled": "#4f4f52"
             }}
           />
           <ColorItem
@@ -627,15 +627,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#aeaeae",
                 "primary-active": "#ffffff",
                 "primary-inactive": "#636363",
-                "primary-disabled": "#858587",
-                "secondary-hovered": "#3a3b41",
+                "primary-disabled": "#5f5f62",
+                "secondary-hovered": "#333439",
                 "secondary-active": "#3a3b41",
                 "secondary-inactive": "#636363",
-                "secondary-disabled": "#3b3c3f",
-                "link-hovered": "#6bfaff",
+                "secondary-disabled": "#404043",
+                "link-hovered": "#45dbff",
                 "link-active": "#6bfaff",
                 "link-inactive": "#008ccc",
-                "link-disabled": "#436d83"
+                "link-disabled": "#435560"
               }}
             />
           </ColorPalette>
@@ -656,18 +656,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#00442a26",
                 "on-secondary": "#ffffff",
                 border: "#31806b",
-                "primary-hovered": "#00a17e",
+                "primary-hovered": "#00c29e",
                 "primary-active": "#00a17e",
                 "primary-inactive": "#81fff4",
-                "primary-disabled": "#4e7a70",
-                "secondary-hovered": "#31806b",
+                "primary-disabled": "#485b58",
+                "secondary-hovered": "#1d705c",
                 "secondary-active": "#31806b",
                 "secondary-inactive": "#004836",
-                "secondary-disabled": "#354c49",
-                "link-hovered": "#00a17e",
+                "secondary-disabled": "#3d4747",
+                "link-hovered": "#00c29e",
                 "link-active": "#00a17e",
                 "link-inactive": "#81fff4",
-                "link-disabled": "#4e7a70"
+                "link-disabled": "#485b58"
               }}
             />
           </ColorPalette>
@@ -688,18 +688,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#53000726",
                 "on-secondary": "#ffb6c0",
                 border: "#86233c",
-                "primary-hovered": "#ff7393",
+                "primary-hovered": "#ef5b7d",
                 "primary-active": "#ff7393",
                 "primary-inactive": "#aa1046",
-                "primary-disabled": "#724853",
-                "secondary-hovered": "#86233c",
+                "primary-disabled": "#57454c",
+                "secondary-hovered": "#791332",
                 "secondary-active": "#86233c",
                 "secondary-inactive": "#550017",
-                "secondary-disabled": "#4f323c",
-                "link-hovered": "#ff7393",
+                "secondary-disabled": "#483c42",
+                "link-hovered": "#ef5b7d",
                 "link-active": "#ff7393",
                 "link-inactive": "#aa1046",
-                "link-disabled": "#724853"
+                "link-disabled": "#57454c"
               }}
             />
           </ColorPalette>
@@ -720,18 +720,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#28005b26",
                 "on-secondary": "#FAFAFA",
                 border: "#4b3c79",
-                "primary-hovered": "#c3a9ff",
+                "primary-hovered": "#aa90f5",
                 "primary-active": "#c3a9ff",
                 "primary-inactive": "#6d51b0",
-                "primary-disabled": "#5e5776",
-                "secondary-hovered": "#4b3c79",
+                "primary-disabled": "#4f4b5b",
+                "secondary-hovered": "#40316d",
                 "secondary-active": "#4b3c79",
                 "secondary-inactive": "#27144e",
-                "secondary-disabled": "#3e3a4d",
-                "link-hovered": "#c3a9ff",
+                "secondary-disabled": "#413f49",
+                "link-hovered": "#aa90f5",
                 "link-active": "#c3a9ff",
                 "link-inactive": "#6d51b0",
-                "link-disabled": "#5e5776"
+                "link-disabled": "#4f4b5b"
               }}
             />
           </ColorPalette>
@@ -752,18 +752,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#00007526",
                 "on-secondary": "#FAFAFA",
                 border: "#3560ac",
-                "primary-hovered": "#7fc4ff",
+                "primary-hovered": "#66a9ff",
                 "primary-active": "#7fc4ff",
                 "primary-inactive": "#2564d1",
-                "primary-disabled": "#4b5e81",
-                "secondary-hovered": "#3560ac",
+                "primary-disabled": "#464f5f",
+                "secondary-hovered": "#27519c",
                 "secondary-active": "#3560ac",
                 "secondary-inactive": "#022c73",
-                "secondary-disabled": "#37445b",
-                "link-hovered": "#7fc4ff",
+                "secondary-disabled": "#3e434f",
+                "link-hovered": "#66a9ff",
                 "link-active": "#7fc4ff",
                 "link-inactive": "#2564d1",
-                "link-disabled": "#4b5e81"
+                "link-disabled": "#464f5f"
               }}
             />
           </ColorPalette>
@@ -784,18 +784,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#003a1026",
                 "on-secondary": "#ffffff",
                 border: "#31815e",
-                "primary-hovered": "#89ffcc",
+                "primary-hovered": "#68e6ae",
                 "primary-active": "#89ffcc",
                 "primary-inactive": "#009865",
-                "primary-disabled": "#4c7062",
-                "secondary-hovered": "#31815e",
+                "primary-disabled": "#475652",
+                "secondary-hovered": "#1d714f",
                 "secondary-active": "#31815e",
                 "secondary-inactive": "#004829",
-                "secondary-disabled": "#354d45",
-                "link-hovered": "#89ffcc",
+                "secondary-disabled": "#3d4746",
+                "link-hovered": "#68e6ae",
                 "link-active": "#89ffcc",
                 "link-inactive": "#009865",
-                "link-disabled": "#4c7062"
+                "link-disabled": "#475652"
               }}
             />
           </ColorPalette>
@@ -816,18 +816,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#53240026",
                 "on-secondary": "#FAFAFA",
                 border: "#d1a052",
-                "primary-hovered": "#b37f00",
+                "primary-hovered": "#d6a038",
                 "primary-active": "#b37f00",
                 "primary-inactive": "#fff592",
-                "primary-disabled": "#807056",
-                "secondary-hovered": "#d1a052",
+                "primary-disabled": "#5d564d",
+                "secondary-hovered": "#b98939",
                 "secondary-active": "#d1a052",
                 "secondary-inactive": "#7e5100",
-                "secondary-disabled": "#635540",
-                "link-hovered": "#b37f00",
+                "secondary-disabled": "#514b43",
+                "link-hovered": "#d6a038",
                 "link-active": "#b37f00",
                 "link-inactive": "#fff592",
-                "link-disabled": "#807056"
+                "link-disabled": "#5d564d"
               }}
             />
           </ColorPalette>
@@ -993,19 +993,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-disabled"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "canvas-disabled": "#49494b"
+              "canvas-disabled": "#4d4d50"
             }}
           />
           <ColorItem
             title={"color.canvas-hovered"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% brighter)"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 15% brighter)"
             }
             colors={{
-              "canvas-hovered": "#3c3c40"
+              "canvas-hovered": "#39393d"
             }}
           />
           <ColorItem
@@ -1038,19 +1038,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-disabled"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#4c4c4e"
+              "elevated-disabled": "#4f4f51"
             }}
           />
           <ColorItem
             title={"color.elevated-hovered"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% brighter)"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% brighter)"
             }
             colors={{
-              "elevated-hovered": "#464648"
+              "elevated-hovered": "#424244"
             }}
           />
           <ColorItem
@@ -1083,19 +1083,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-disabled"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "floating-disabled": "#4d4d50"
+              "floating-disabled": "#4f5052"
             }}
           />
           <ColorItem
             title={"color.floating-hovered"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% brighter)"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 15% brighter)"
             }
             colors={{
-              "floating-hovered": "#4a4b4e"
+              "floating-hovered": "#464749"
             }}
           />
           <ColorItem
@@ -1128,19 +1128,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-disabled"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "sunken-disabled": "#464649"
+              "sunken-disabled": "#4b4b4e"
             }}
           />
           <ColorItem
             title={"color.sunken-hovered"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% brighter)"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 15% brighter)"
             }
             colors={{
-              "sunken-hovered": "#343435"
+              "sunken-hovered": "#323233"
             }}
           />
           <ColorItem
@@ -1173,19 +1173,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-disabled"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "surface-disabled": "#4b4b4d"
+              "surface-disabled": "#4e4e50"
             }}
           />
           <ColorItem
             title={"color.surface-hovered"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% brighter)"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 15% brighter)"
             }
             colors={{
-              "surface-hovered": "#434345"
+              "surface-hovered": "#3f3f41"
             }}
           />
           <ColorItem
@@ -1223,19 +1223,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.hairline-disabled"}
             subtitle={
-              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "hairline-disabled": "#565658"
+              "hairline-disabled": "#555557"
             }}
           />
           <ColorItem
             title={"color.hairline-hovered"}
             subtitle={
-              "Low-contrast color for borders, dividers and separators. (hovered, dark contrast primitive)"
+              "Low-contrast color for borders, dividers and separators. (hovered, 40% brighter)"
             }
             colors={{
-              "hairline-hovered": "#d9d9d9"
+              "hairline-hovered": "#767679"
             }}
           />
           <ColorItem
@@ -1273,10 +1273,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.emphasis-disabled"}
             subtitle={
-              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))"
+              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "emphasis-disabled": "#808081"
+              "emphasis-disabled": "#676769"
             }}
           />
           <ColorItem
@@ -1318,10 +1318,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.ink-disabled"}
             subtitle={
-              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "ink-disabled": "#707071"
+              "ink-disabled": "#606062"
             }}
           />
           <ColorItem
@@ -1363,10 +1363,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.subtle-disabled"}
             subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "subtle-disabled": "#6a6a6b"
+              "subtle-disabled": "#5e5e60"
             }}
           />
           <ColorItem
@@ -1455,15 +1455,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#a0a0a0",
                 "primary-active": "#d9d9d9",
                 "primary-inactive": "#6c6c6c",
-                "primary-disabled": "#838385",
-                "secondary-hovered": "#4f4f54",
+                "primary-disabled": "#69696b",
+                "secondary-hovered": "#4a4b4e",
                 "secondary-active": "#4f4f54",
                 "secondary-inactive": "#6c6c6c",
-                "secondary-disabled": "#4f5052",
-                "link-hovered": "#73d3d6",
+                "secondary-disabled": "#535355",
+                "link-hovered": "#5fbad0",
                 "link-active": "#73d3d6",
                 "link-inactive": "#3184aa",
-                "link-disabled": "#58727f"
+                "link-disabled": "#566269"
               }}
             />
           </ColorPalette>
@@ -1484,18 +1484,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#1c604626",
                 "on-secondary": "#d9d9d9",
                 border: "#4c7d70",
-                "primary-hovered": "#2b937c",
+                "primary-hovered": "#30a58f",
                 "primary-active": "#2b937c",
                 "primary-inactive": "#7fdad2",
-                "primary-disabled": "#5f7973",
-                "secondary-hovered": "#4c7d70",
+                "primary-disabled": "#596563",
+                "secondary-hovered": "#3b7466",
                 "secondary-active": "#4c7d70",
                 "secondary-inactive": "#1d6251",
-                "secondary-disabled": "#4b5c59",
-                "link-hovered": "#2b937c",
+                "secondary-disabled": "#515858",
+                "link-hovered": "#30a58f",
                 "link-active": "#2b937c",
                 "link-inactive": "#7fdad2",
-                "link-disabled": "#5f7973"
+                "link-disabled": "#596563"
               }}
             />
           </ColorPalette>
@@ -1516,18 +1516,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#681e2526",
                 "on-secondary": "#e29ca6",
                 border: "#814252",
-                "primary-hovered": "#d8788e",
+                "primary-hovered": "#c86c81",
                 "primary-active": "#d8788e",
                 "primary-inactive": "#963859",
-                "primary-disabled": "#745b61",
-                "secondary-hovered": "#814252",
+                "primary-disabled": "#63575c",
+                "secondary-hovered": "#7a344a",
                 "secondary-active": "#814252",
                 "secondary-inactive": "#691f33",
-                "secondary-disabled": "#5e4950",
-                "link-hovered": "#d8788e",
+                "secondary-disabled": "#595054",
+                "link-hovered": "#c86c81",
                 "link-active": "#d8788e",
                 "link-inactive": "#963859",
-                "link-disabled": "#745b61"
+                "link-disabled": "#63575c"
               }}
             />
           </ColorPalette>
@@ -1548,18 +1548,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#41206d26",
                 "on-secondary": "#d5d5d5",
                 border: "#5c5378",
-                "primary-hovered": "#ac95e0",
+                "primary-hovered": "#9c89d3",
                 "primary-active": "#ac95e0",
                 "primary-inactive": "#75669a",
-                "primary-disabled": "#696577",
-                "secondary-hovered": "#5c5378",
+                "primary-disabled": "#5e5b65",
+                "secondary-hovered": "#544a71",
                 "secondary-active": "#5c5378",
                 "secondary-inactive": "#403160",
-                "secondary-disabled": "#524f5c",
-                "link-hovered": "#ac95e0",
+                "secondary-disabled": "#545259",
+                "link-hovered": "#9c89d3",
                 "link-active": "#ac95e0",
                 "link-inactive": "#75669a",
-                "link-disabled": "#696577"
+                "link-disabled": "#5e5b65"
               }}
             />
           </ColorPalette>
@@ -1580,18 +1580,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#24247b26",
                 "on-secondary": "#d5d5d5",
                 border: "#536c97",
-                "primary-hovered": "#7eb0da",
+                "primary-hovered": "#719dd6",
                 "primary-active": "#7eb0da",
                 "primary-inactive": "#4d70ac",
-                "primary-disabled": "#5e697e",
-                "secondary-hovered": "#536c97",
+                "primary-disabled": "#585e68",
+                "secondary-hovered": "#47618e",
                 "secondary-active": "#536c97",
                 "secondary-inactive": "#254479",
-                "secondary-disabled": "#4d5665",
-                "link-hovered": "#7eb0da",
+                "secondary-disabled": "#52555d",
+                "link-hovered": "#719dd6",
                 "link-active": "#7eb0da",
                 "link-inactive": "#4d70ac",
-                "link-disabled": "#5e697e"
+                "link-disabled": "#585e68"
               }}
             />
           </ColorPalette>
@@ -1612,18 +1612,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#1a5b2c26",
                 "on-secondary": "#d9d9d9",
                 border: "#4c7d68",
-                "primary-hovered": "#84dbb5",
+                "primary-hovered": "#74c2a0",
                 "primary-active": "#84dbb5",
                 "primary-inactive": "#298e6c",
-                "primary-disabled": "#5d736a",
-                "secondary-hovered": "#4c7d68",
+                "primary-disabled": "#58625f",
+                "secondary-hovered": "#3b755d",
                 "secondary-active": "#4c7d68",
                 "secondary-inactive": "#1d6244",
-                "secondary-disabled": "#4b5c57",
-                "link-hovered": "#84dbb5",
+                "secondary-disabled": "#515857",
+                "link-hovered": "#74c2a0",
                 "link-active": "#84dbb5",
                 "link-inactive": "#298e6c",
-                "link-disabled": "#5d736a"
+                "link-disabled": "#58625f"
               }}
             />
           </ColorPalette>
@@ -1644,18 +1644,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#683e1e26",
                 "on-secondary": "#d5d5d5",
                 border: "#b19467",
-                "primary-hovered": "#9c7c2d",
+                "primary-hovered": "#b19358",
                 "primary-active": "#9c7c2d",
                 "primary-inactive": "#ddd589",
-                "primary-disabled": "#7d7465",
-                "secondary-hovered": "#b19467",
+                "primary-disabled": "#67625d",
+                "secondary-hovered": "#9f8457",
                 "secondary-active": "#b19467",
                 "secondary-inactive": "#805f25",
-                "secondary-disabled": "#6b6254",
-                "link-hovered": "#9c7c2d",
+                "secondary-disabled": "#5f5b55",
+                "link-hovered": "#b19358",
                 "link-active": "#9c7c2d",
                 "link-inactive": "#ddd589",
-                "link-disabled": "#7d7465"
+                "link-disabled": "#67625d"
               }}
             />
           </ColorPalette>
@@ -1821,16 +1821,16 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-disabled"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "canvas-disabled": "#101013"
+              "canvas-disabled": "#18181c"
             }}
           />
           <ColorItem
             title={"color.canvas-hovered"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% brighter)"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 15% brighter)"
             }
             colors={{
               "canvas-hovered": "#000000"
@@ -1866,19 +1866,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-disabled"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#151518"
+              "elevated-disabled": "#1a1a1f"
             }}
           />
           <ColorItem
             title={"color.elevated-hovered"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% brighter)"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% brighter)"
             }
             colors={{
-              "elevated-hovered": "#0a0a0c"
+              "elevated-hovered": "#020202"
             }}
           />
           <ColorItem
@@ -1911,19 +1911,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-disabled"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "floating-disabled": "#17181c"
+              "floating-disabled": "#1c1e22"
             }}
           />
           <ColorItem
             title={"color.floating-hovered"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% brighter)"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 15% brighter)"
             }
             colors={{
-              "floating-hovered": "#131418"
+              "floating-hovered": "#0b0c0e"
             }}
           />
           <ColorItem
@@ -1956,16 +1956,16 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-disabled"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "sunken-disabled": "#0a0a0d"
+              "sunken-disabled": "#141418"
             }}
           />
           <ColorItem
             title={"color.sunken-hovered"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% brighter)"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 15% brighter)"
             }
             colors={{
               "sunken-hovered": "#000000"
@@ -2001,19 +2001,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-disabled"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "surface-disabled": "#121216"
+              "surface-disabled": "#19191e"
             }}
           />
           <ColorItem
             title={"color.surface-hovered"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% brighter)"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 15% brighter)"
             }
             colors={{
-              "surface-hovered": "#050505"
+              "surface-hovered": "#000000"
             }}
           />
           <ColorItem
@@ -2051,19 +2051,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.hairline-disabled"}
             subtitle={
-              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "hairline-disabled": "#28282f"
+              "hairline-disabled": "#27272d"
             }}
           />
           <ColorItem
             title={"color.hairline-hovered"}
             subtitle={
-              "Low-contrast color for borders, dividers and separators. (hovered, dark contrast primitive)"
+              "Low-contrast color for borders, dividers and separators. (hovered, 40% brighter)"
             }
             colors={{
-              "hairline-hovered": "#ffffff"
+              "hairline-hovered": "#676777"
             }}
           />
           <ColorItem
@@ -2101,10 +2101,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.emphasis-disabled"}
             subtitle={
-              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))"
+              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "emphasis-disabled": "#7a7a89"
+              "emphasis-disabled": "#4a4a55"
             }}
           />
           <ColorItem
@@ -2146,10 +2146,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.ink-disabled"}
             subtitle={
-              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "ink-disabled": "#5a5a66"
+              "ink-disabled": "#3c3c46"
             }}
           />
           <ColorItem
@@ -2191,10 +2191,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.subtle-disabled"}
             subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "subtle-disabled": "#4e4e5a"
+              "subtle-disabled": "#373740"
             }}
           />
           <ColorItem
@@ -2283,15 +2283,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#c3c3c3",
                 "primary-active": "#ffffff",
                 "primary-inactive": "#565656",
-                "primary-disabled": "#828290",
-                "secondary-hovered": "#1c1d24",
+                "primary-disabled": "#4d4d58",
+                "secondary-hovered": "#121318",
                 "secondary-active": "#1c1d24",
                 "secondary-inactive": "#565656",
-                "secondary-disabled": "#1c1e22",
-                "link-hovered": "#9bfcff",
+                "secondary-disabled": "#232329",
+                "link-hovered": "#64e1ff",
                 "link-active": "#9bfcff",
                 "link-inactive": "#007cb5",
-                "link-disabled": "#2c6380"
+                "link-disabled": "#2b414e"
               }}
             />
           </ColorPalette>
@@ -2312,18 +2312,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#00000026",
                 "on-secondary": "#ffffff",
                 border: "#19755d",
-                "primary-hovered": "#00775d",
+                "primary-hovered": "#00a788",
                 "primary-active": "#00775d",
                 "primary-inactive": "#bbfff9",
-                "primary-disabled": "#397668",
-                "secondary-hovered": "#19755d",
+                "primary-disabled": "#304945",
+                "secondary-hovered": "#075340",
                 "secondary-active": "#19755d",
                 "secondary-inactive": "#000000",
-                "secondary-disabled": "#1a2f2c",
-                "link-hovered": "#00775d",
+                "secondary-disabled": "#202c2c",
+                "link-hovered": "#00a788",
                 "link-active": "#00775d",
                 "link-inactive": "#bbfff9",
-                "link-disabled": "#397668"
+                "link-disabled": "#304945"
               }}
             />
           </ColorPalette>
@@ -2344,18 +2344,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#06000026",
                 "on-secondary": "#ffffff",
                 border: "#780a26",
-                "primary-hovered": "#ffa7bb",
+                "primary-hovered": "#ff6d8e",
                 "primary-active": "#ffa7bb",
                 "primary-inactive": "#9b0036",
-                "primary-disabled": "#693240",
-                "secondary-hovered": "#780a26",
+                "primary-disabled": "#432c35",
+                "secondary-hovered": "#58001b",
                 "secondary-active": "#780a26",
                 "secondary-inactive": "#080002",
-                "secondary-disabled": "#311720",
-                "link-hovered": "#ffa7bb",
+                "secondary-disabled": "#2d2026",
+                "link-hovered": "#ff6d8e",
                 "link-active": "#ffa7bb",
                 "link-inactive": "#9b0036",
-                "link-disabled": "#693240"
+                "link-disabled": "#432c35"
               }}
             />
           </ColorPalette>
@@ -2376,18 +2376,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#08001126",
                 "on-secondary": "#ffffff",
                 border: "#37256f",
-                "primary-hovered": "#f8f5ff",
+                "primary-hovered": "#d2c2ff",
                 "primary-active": "#f8f5ff",
                 "primary-inactive": "#643bc7",
-                "primary-disabled": "#4f4472",
-                "secondary-hovered": "#37256f",
+                "primary-disabled": "#39344a",
+                "secondary-hovered": "#291959",
                 "secondary-active": "#37256f",
                 "secondary-inactive": "#0a0219",
-                "secondary-disabled": "#231f32",
-                "link-hovered": "#f8f5ff",
+                "secondary-disabled": "#26232f",
+                "link-hovered": "#d2c2ff",
                 "link-active": "#f8f5ff",
                 "link-inactive": "#643bc7",
-                "link-disabled": "#4f4472"
+                "link-disabled": "#39344a"
               }}
             />
           </ColorPalette>
@@ -2408,18 +2408,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#00003726",
                 "on-secondary": "#ffffff",
                 border: "#1953bb",
-                "primary-hovered": "#b8deff",
+                "primary-hovered": "#94c3ff",
                 "primary-active": "#b8deff",
                 "primary-inactive": "#0159f1",
-                "primary-disabled": "#36507f",
-                "secondary-hovered": "#1953bb",
+                "primary-disabled": "#2e3a4e",
+                "secondary-hovered": "#0c409c",
                 "secondary-active": "#1953bb",
                 "secondary-inactive": "#001437",
-                "secondary-disabled": "#1e2b43",
-                "link-hovered": "#b8deff",
+                "secondary-disabled": "#232936",
+                "link-hovered": "#94c3ff",
                 "link-active": "#b8deff",
                 "link-inactive": "#0159f1",
-                "link-disabled": "#36507f"
+                "link-disabled": "#2e3a4e"
               }}
             />
           </ColorPalette>
@@ -2440,18 +2440,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#00000026",
                 "on-secondary": "#ffffff",
                 border: "#19774e",
-                "primary-hovered": "#c7ffe7",
+                "primary-hovered": "#73ffc1",
                 "primary-active": "#c7ffe7",
                 "primary-inactive": "#006a46",
-                "primary-disabled": "#376754",
-                "secondary-hovered": "#19774e",
+                "primary-disabled": "#2e433d",
+                "secondary-hovered": "#075435",
                 "secondary-active": "#19774e",
                 "secondary-inactive": "#000000",
-                "secondary-disabled": "#1a3029",
-                "link-hovered": "#c7ffe7",
+                "secondary-disabled": "#202c2b",
+                "link-hovered": "#73ffc1",
                 "link-active": "#c7ffe7",
                 "link-inactive": "#006a46",
-                "link-disabled": "#376754"
+                "link-disabled": "#2e433d"
               }}
             />
           </ColorPalette>
@@ -2472,18 +2472,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#06020026",
                 "on-secondary": "#ffffff",
                 border: "#eead45",
-                "primary-hovered": "#916700",
+                "primary-hovered": "#f8ad1d",
                 "primary-active": "#916700",
                 "primary-inactive": "#fffbd4",
-                "primary-disabled": "#816943",
-                "secondary-hovered": "#eead45",
+                "primary-disabled": "#4e4336",
+                "secondary-hovered": "#d08d1c",
                 "secondary-active": "#eead45",
                 "secondary-inactive": "#442c00",
-                "secondary-disabled": "#514128",
-                "link-hovered": "#916700",
+                "secondary-disabled": "#3b3329",
+                "link-hovered": "#f8ad1d",
                 "link-active": "#916700",
                 "link-inactive": "#fffbd4",
-                "link-disabled": "#816943"
+                "link-disabled": "#4e4336"
               }}
             />
           </ColorPalette>
@@ -2649,19 +2649,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-disabled"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "canvas-disabled": "#828284"
+              "canvas-disabled": "#6d6d6f"
             }}
           />
           <ColorItem
             title={"color.canvas-hovered"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% darker)"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 15% darker)"
             }
             colors={{
-              "canvas-hovered": "#9f9f9f"
+              "canvas-hovered": "#bcbcbc"
             }}
           />
           <ColorItem
@@ -2694,19 +2694,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-disabled"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#88888a"
+              "elevated-disabled": "#717173"
             }}
           />
           <ColorItem
             title={"color.elevated-hovered"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% darker)"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% darker)"
             }
             colors={{
-              "elevated-hovered": "#aaaaaa"
+              "elevated-hovered": "#c9c9c9"
             }}
           />
           <ColorItem
@@ -2739,19 +2739,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-disabled"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "floating-disabled": "#8a8a8b"
+              "floating-disabled": "#727274"
             }}
           />
           <ColorItem
             title={"color.floating-hovered"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% darker)"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 15% darker)"
             }
             colors={{
-              "floating-hovered": "#aeaeae"
+              "floating-hovered": "#cecece"
             }}
           />
           <ColorItem
@@ -2784,19 +2784,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-disabled"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "sunken-disabled": "#7e7e80"
+              "sunken-disabled": "#6b6b6d"
             }}
           />
           <ColorItem
             title={"color.sunken-hovered"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% darker)"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 15% darker)"
             }
             colors={{
-              "sunken-hovered": "#999999"
+              "sunken-hovered": "#b5b5b5"
             }}
           />
           <ColorItem
@@ -2829,19 +2829,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-disabled"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "surface-disabled": "#848486"
+              "surface-disabled": "#6f6f71"
             }}
           />
           <ColorItem
             title={"color.surface-hovered"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% darker)"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 15% darker)"
             }
             colors={{
-              "surface-hovered": "#a4a4a4"
+              "surface-hovered": "#c2c2c2"
             }}
           />
           <ColorItem
@@ -2879,10 +2879,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.emphasis-disabled"}
             subtitle={
-              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "emphasis-disabled": "#363639"
+              "emphasis-disabled": "#3e3e40"
             }}
           />
           <ColorItem
@@ -2924,10 +2924,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.ink-disabled"}
             subtitle={
-              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "ink-disabled": "#494a4d"
+              "ink-disabled": "#464649"
             }}
           />
           <ColorItem
@@ -2969,10 +2969,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.subtle-disabled"}
             subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "subtle-disabled": "#606063"
+              "subtle-disabled": "#4f4f52"
             }}
           />
           <ColorItem
@@ -3019,19 +3019,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.hairline-disabled"}
             subtitle={
-              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "hairline-disabled": "#747477"
+              "hairline-disabled": "#58585b"
             }}
           />
           <ColorItem
             title={"color.hairline-hovered"}
             subtitle={
-              "Low-contrast color for borders, dividers and separators. (hovered, light contrast primitive)"
+              "Low-contrast color for borders, dividers and separators. (hovered, 40% darker)"
             }
             colors={{
-              "hairline-hovered": "#0c0c0d"
+              "hairline-hovered": "#676768"
             }}
           />
           <ColorItem
@@ -3108,18 +3108,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#02020326",
                 "on-secondary": "#FAFAFA",
                 border: "#777778",
-                "primary-hovered": "#5c5c5f",
+                "primary-hovered": "#2a2a2c",
                 "primary-active": "#000000",
                 "primary-inactive": "#020102",
-                "primary-disabled": "#353538",
-                "secondary-hovered": "#878788",
+                "primary-disabled": "#3d3d40",
+                "secondary-hovered": "#9d9d9e",
                 "secondary-active": "#878788",
                 "secondary-inactive": "#020102",
-                "secondary-disabled": "#69696b",
-                "link-hovered": "#0057a0",
+                "secondary-disabled": "#535356",
+                "link-hovered": "#006db8",
                 "link-active": "#0057a0",
                 "link-inactive": "#40aaf9",
-                "link-disabled": "#3c5a72"
+                "link-disabled": "#404d59"
               }}
             />
           </ColorPalette>
@@ -3140,18 +3140,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#00332c26",
                 "on-secondary": "#005a53",
                 border: "#89b0ab",
-                "primary-hovered": "#007c72",
+                "primary-hovered": "#00978c",
                 "primary-active": "#007c72",
                 "primary-inactive": "#5ddfd2",
-                "primary-disabled": "#436967",
-                "secondary-hovered": "#89b0ab",
+                "primary-disabled": "#435354",
+                "secondary-hovered": "#afd7d1",
                 "secondary-active": "#89b0ab",
                 "secondary-inactive": "#e0ffff",
-                "secondary-disabled": "#788484",
-                "link-hovered": "#007c72",
+                "secondary-disabled": "#5a5f61",
+                "link-hovered": "#00978c",
                 "link-active": "#007c72",
                 "link-inactive": "#5ddfd2",
-                "link-disabled": "#436967"
+                "link-disabled": "#435354"
               }}
             />
           </ColorPalette>
@@ -3172,18 +3172,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#35000126",
                 "on-secondary": "#200006",
                 border: "#b2455c",
-                "primary-hovered": "#6a0022",
+                "primary-hovered": "#7c0c30",
                 "primary-active": "#6a0022",
                 "primary-inactive": "#ab3e56",
-                "primary-disabled": "#5a3c44",
-                "secondary-hovered": "#b2455c",
+                "primary-disabled": "#4d4045",
+                "secondary-hovered": "#d16176",
                 "secondary-active": "#b2455c",
                 "secondary-inactive": "#ffabbe",
-                "secondary-disabled": "#7c5a61",
-                "link-hovered": "#6a0022",
+                "secondary-disabled": "#5c4d52",
+                "link-hovered": "#7c0c30",
                 "link-active": "#6a0022",
                 "link-inactive": "#ab3e56",
-                "link-disabled": "#5a3c44"
+                "link-disabled": "#4d4045"
               }}
             />
           </ColorPalette>
@@ -3204,18 +3204,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#17004026",
                 "on-secondary": "#FAFAFA",
                 border: "#725ba7",
-                "primary-hovered": "#3c2372",
+                "primary-hovered": "#4a3383",
                 "primary-active": "#3c2372",
                 "primary-inactive": "#725db2",
-                "primary-disabled": "#4a445f",
-                "secondary-hovered": "#725ba7",
+                "primary-disabled": "#464451",
+                "secondary-hovered": "#8b75c4",
                 "secondary-active": "#725ba7",
                 "secondary-inactive": "#d2bcff",
-                "secondary-disabled": "#655f79",
-                "link-hovered": "#3c2372",
+                "secondary-disabled": "#524f5c",
+                "link-hovered": "#4a3383",
                 "link-active": "#3c2372",
                 "link-inactive": "#725db2",
-                "link-disabled": "#4a445f"
+                "link-disabled": "#464451"
               }}
             />
           </ColorPalette>
@@ -3236,18 +3236,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#00005526",
                 "on-secondary": "#FAFAFA",
                 border: "#396ac2",
-                "primary-hovered": "#00318d",
+                "primary-hovered": "#0d43a0",
                 "primary-active": "#00318d",
                 "primary-inactive": "#3b72d3",
-                "primary-disabled": "#3b4a68",
-                "secondary-hovered": "#396ac2",
+                "primary-disabled": "#3f4654",
+                "secondary-hovered": "#5386e0",
                 "secondary-active": "#396ac2",
                 "secondary-inactive": "#99d1ff",
-                "secondary-disabled": "#556582",
-                "link-hovered": "#00318d",
+                "secondary-disabled": "#4b5160",
+                "link-hovered": "#0d43a0",
                 "link-active": "#00318d",
                 "link-inactive": "#3b72d3",
-                "link-disabled": "#3b4a68"
+                "link-disabled": "#3f4654"
               }}
             />
           </ColorPalette>
@@ -3268,18 +3268,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#001b0926",
                 "on-secondary": "#002015",
                 border: "#3b8168",
-                "primary-hovered": "#004933",
+                "primary-hovered": "#065a43",
                 "primary-active": "#004933",
                 "primary-inactive": "#40876e",
-                "primary-disabled": "#3c504b",
-                "secondary-hovered": "#3b8168",
+                "primary-disabled": "#404948",
+                "secondary-hovered": "#589d83",
                 "secondary-active": "#3b8168",
                 "secondary-inactive": "#a3eacd",
-                "secondary-disabled": "#586c66",
-                "link-hovered": "#004933",
+                "secondary-disabled": "#4c5554",
+                "link-hovered": "#065a43",
                 "link-active": "#004933",
                 "link-inactive": "#40876e",
-                "link-disabled": "#3c504b"
+                "link-disabled": "#404948"
               }}
             />
           </ColorPalette>
@@ -3300,18 +3300,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#24070026",
                 "on-secondary": "#241500",
                 border: "#906c33",
-                "primary-hovered": "#543400",
+                "primary-hovered": "#654400",
                 "primary-active": "#543400",
                 "primary-inactive": "#926f36",
-                "primary-disabled": "#53493b",
-                "secondary-hovered": "#906c33",
+                "primary-disabled": "#4a4641",
+                "secondary-hovered": "#ac884f",
                 "secondary-active": "#906c33",
                 "secondary-inactive": "#fbd399",
-                "secondary-disabled": "#716557",
-                "link-hovered": "#543400",
+                "secondary-disabled": "#57524d",
+                "link-hovered": "#654400",
                 "link-active": "#543400",
                 "link-inactive": "#926f36",
-                "link-disabled": "#53493b"
+                "link-disabled": "#4a4641"
               }}
             />
           </ColorPalette>
@@ -3477,19 +3477,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-disabled"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "canvas-disabled": "#818183"
+              "canvas-disabled": "#737374"
             }}
           />
           <ColorItem
             title={"color.canvas-hovered"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% darker)"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 15% darker)"
             }
             colors={{
-              "canvas-hovered": "#969696"
+              "canvas-hovered": "#aaaaaa"
             }}
           />
           <ColorItem
@@ -3522,19 +3522,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-disabled"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#868687"
+              "elevated-disabled": "#757577"
             }}
           />
           <ColorItem
             title={"color.elevated-hovered"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% darker)"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% darker)"
             }
             colors={{
-              "elevated-hovered": "#9d9d9d"
+              "elevated-hovered": "#b3b3b3"
             }}
           />
           <ColorItem
@@ -3567,19 +3567,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-disabled"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "floating-disabled": "#878787"
+              "floating-disabled": "#767677"
             }}
           />
           <ColorItem
             title={"color.floating-hovered"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% darker)"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 15% darker)"
             }
             colors={{
-              "floating-hovered": "#a0a0a0"
+              "floating-hovered": "#b6b6b6"
             }}
           />
           <ColorItem
@@ -3612,19 +3612,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-disabled"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "sunken-disabled": "#7f7f80"
+              "sunken-disabled": "#717172"
             }}
           />
           <ColorItem
             title={"color.sunken-hovered"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% darker)"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 15% darker)"
             }
             colors={{
-              "sunken-hovered": "#919191"
+              "sunken-hovered": "#a5a5a5"
             }}
           />
           <ColorItem
@@ -3657,19 +3657,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-disabled"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "surface-disabled": "#838384"
+              "surface-disabled": "#747475"
             }}
           />
           <ColorItem
             title={"color.surface-hovered"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% darker)"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 15% darker)"
             }
             colors={{
-              "surface-hovered": "#999999"
+              "surface-hovered": "#aeaeae"
             }}
           />
           <ColorItem
@@ -3707,10 +3707,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.emphasis-disabled"}
             subtitle={
-              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "emphasis-disabled": "#4c4c4e"
+              "emphasis-disabled": "#525253"
             }}
           />
           <ColorItem
@@ -3752,10 +3752,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.ink-disabled"}
             subtitle={
-              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "ink-disabled": "#595a5c"
+              "ink-disabled": "#575759"
             }}
           />
           <ColorItem
@@ -3797,10 +3797,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.subtle-disabled"}
             subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "subtle-disabled": "#6a6a6b"
+              "subtle-disabled": "#5e5e60"
             }}
           />
           <ColorItem
@@ -3847,19 +3847,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.hairline-disabled"}
             subtitle={
-              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "hairline-disabled": "#787879"
+              "hairline-disabled": "#646466"
             }}
           />
           <ColorItem
             title={"color.hairline-hovered"}
             subtitle={
-              "Low-contrast color for borders, dividers and separators. (hovered, light contrast primitive)"
+              "Low-contrast color for borders, dividers and separators. (hovered, 40% darker)"
             }
             colors={{
-              "hairline-hovered": "#2e2e30"
+              "hairline-hovered": "#6e6e6f"
             }}
           />
           <ColorItem
@@ -3936,18 +3936,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#24242c26",
                 "on-secondary": "#d5d5d5",
                 border: "#7a7a7a",
-                "primary-hovered": "#676769",
+                "primary-hovered": "#434345",
                 "primary-active": "#262626",
                 "primary-inactive": "#2f202f",
-                "primary-disabled": "#4b4b4e",
-                "secondary-hovered": "#858585",
+                "primary-disabled": "#515153",
+                "secondary-hovered": "#949495",
                 "secondary-active": "#858585",
                 "secondary-inactive": "#2f202f",
-                "secondary-disabled": "#707071",
-                "link-hovered": "#2a6392",
+                "secondary-disabled": "#606062",
+                "link-hovered": "#2e719f",
                 "link-active": "#2a6392",
                 "link-inactive": "#5c9ccb",
-                "link-disabled": "#526574"
+                "link-disabled": "#545c64"
               }}
             />
           </ColorPalette>
@@ -3968,18 +3968,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#19574e26",
                 "on-secondary": "#1f6c66",
                 border: "#889f9c",
-                "primary-hovered": "#257f77",
+                "primary-hovered": "#298d86",
                 "primary-active": "#257f77",
                 "primary-inactive": "#6ebcb4",
-                "primary-disabled": "#566e6d",
-                "secondary-hovered": "#889f9c",
+                "primary-disabled": "#556061",
+                "secondary-hovered": "#a0bdb9",
                 "secondary-active": "#889f9c",
                 "secondary-inactive": "#b3e9e9",
-                "secondary-disabled": "#7b8282",
-                "link-hovered": "#257f77",
+                "secondary-disabled": "#66696a",
+                "link-hovered": "#298d86",
                 "link-active": "#257f77",
                 "link-inactive": "#6ebcb4",
-                "link-disabled": "#566e6d"
+                "link-disabled": "#556061"
               }}
             />
           </ColorPalette>
@@ -4000,18 +4000,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#581a1b26",
                 "on-secondary": "#4d1620",
                 border: "#9b5e6b",
-                "primary-hovered": "#75223c",
+                "primary-hovered": "#7d2f48",
                 "primary-active": "#75223c",
                 "primary-inactive": "#975967",
-                "primary-disabled": "#655156",
-                "secondary-hovered": "#9b5e6b",
+                "primary-disabled": "#5c5357",
+                "secondary-hovered": "#b2707d",
                 "secondary-active": "#9b5e6b",
                 "secondary-inactive": "#e196a7",
-                "secondary-disabled": "#7b676b",
-                "link-hovered": "#75223c",
+                "secondary-disabled": "#665d60",
+                "link-hovered": "#7d2f48",
                 "link-active": "#75223c",
                 "link-inactive": "#975967",
-                "link-disabled": "#655156"
+                "link-disabled": "#5c5357"
               }}
             />
           </ColorPalette>
@@ -4032,18 +4032,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#331b5e26",
                 "on-secondary": "#d5d5d5",
                 border: "#786c96",
-                "primary-hovered": "#514075",
+                "primary-hovered": "#5b4d7f",
                 "primary-active": "#514075",
                 "primary-inactive": "#796d9d",
-                "primary-disabled": "#5a5768",
-                "secondary-hovered": "#786c96",
+                "primary-disabled": "#57565f",
+                "secondary-hovered": "#897cab",
                 "secondary-active": "#786c96",
                 "secondary-inactive": "#b69fe3",
-                "secondary-disabled": "#6e6a79",
-                "link-hovered": "#514075",
+                "secondary-disabled": "#605e66",
+                "link-hovered": "#5b4d7f",
                 "link-active": "#514075",
                 "link-inactive": "#796d9d",
-                "link-disabled": "#5a5768"
+                "link-disabled": "#57565f"
               }}
             />
           </ColorPalette>
@@ -4064,18 +4064,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#1f1f6926",
                 "on-secondary": "#d5d5d5",
                 border: "#5873a4",
-                "primary-hovered": "#274988",
+                "primary-hovered": "#355791",
                 "primary-active": "#274988",
                 "primary-inactive": "#5a79af",
-                "primary-disabled": "#515a6e",
-                "secondary-hovered": "#5873a4",
+                "primary-disabled": "#535761",
+                "secondary-hovered": "#6886bb",
                 "secondary-active": "#5873a4",
                 "secondary-inactive": "#8cb9de",
-                "secondary-disabled": "#646e7f",
-                "link-hovered": "#274988",
+                "secondary-disabled": "#5b5f69",
+                "link-hovered": "#355791",
                 "link-active": "#274988",
                 "link-inactive": "#5a79af",
-                "link-disabled": "#515a6e"
+                "link-disabled": "#535761"
               }}
             />
           </ColorPalette>
@@ -4096,18 +4096,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#154a2726",
                 "on-secondary": "#164d3a",
                 border: "#537d6e",
-                "primary-hovered": "#1d634e",
+                "primary-hovered": "#256a57",
                 "primary-active": "#1d634e",
                 "primary-inactive": "#578172",
-                "primary-disabled": "#505e5b",
-                "secondary-hovered": "#537d6e",
+                "primary-disabled": "#535959",
+                "secondary-hovered": "#698f81",
                 "secondary-active": "#537d6e",
                 "secondary-inactive": "#96ccb6",
-                "secondary-disabled": "#65716d",
-                "link-hovered": "#1d634e",
+                "secondary-disabled": "#5c6261",
+                "link-hovered": "#256a57",
                 "link-active": "#1d634e",
                 "link-inactive": "#578172",
-                "link-disabled": "#505e5b"
+                "link-disabled": "#535959"
               }}
             />
           </ColorPalette>
@@ -4128,18 +4128,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#4f221726",
                 "on-secondary": "#4f3817",
                 border: "#86714f",
-                "primary-hovered": "#694d1e",
+                "primary-hovered": "#725821",
                 "primary-active": "#694d1e",
                 "primary-inactive": "#887351",
-                "primary-disabled": "#605950",
-                "secondary-hovered": "#86714f",
+                "primary-disabled": "#5a5754",
+                "secondary-hovered": "#988464",
                 "secondary-active": "#86714f",
                 "secondary-inactive": "#dabb8d",
-                "secondary-disabled": "#746d65",
-                "link-hovered": "#694d1e",
+                "secondary-disabled": "#63605c",
+                "link-hovered": "#725821",
                 "link-active": "#694d1e",
                 "link-inactive": "#887351",
-                "link-disabled": "#605950"
+                "link-disabled": "#5a5754"
               }}
             />
           </ColorPalette>
@@ -4305,19 +4305,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-disabled"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "canvas-disabled": "#7d7d8c"
+              "canvas-disabled": "#60606c"
             }}
           />
           <ColorItem
             title={"color.canvas-hovered"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% darker)"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 15% darker)"
             }
             colors={{
-              "canvas-hovered": "#adadad"
+              "canvas-hovered": "#d7d7d7"
             }}
           />
           <ColorItem
@@ -4350,19 +4350,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-disabled"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#868694"
+              "elevated-disabled": "#656573"
             }}
           />
           <ColorItem
             title={"color.elevated-hovered"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% darker)"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% darker)"
             }
             colors={{
-              "elevated-hovered": "#bdbdbd"
+              "elevated-hovered": "#eaeaea"
             }}
           />
           <ColorItem
@@ -4395,19 +4395,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-disabled"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "floating-disabled": "#898996"
+              "floating-disabled": "#676774"
             }}
           />
           <ColorItem
             title={"color.floating-hovered"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% darker)"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 15% darker)"
             }
             colors={{
-              "floating-hovered": "#c3c3c3"
+              "floating-hovered": "#f1f1f1"
             }}
           />
           <ColorItem
@@ -4440,19 +4440,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-disabled"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "sunken-disabled": "#777786"
+              "sunken-disabled": "#5d5d69"
             }}
           />
           <ColorItem
             title={"color.sunken-hovered"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% darker)"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 15% darker)"
             }
             colors={{
-              "sunken-hovered": "#a4a4a4"
+              "sunken-hovered": "#cdcdcd"
             }}
           />
           <ColorItem
@@ -4485,19 +4485,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-disabled"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 38% over oklch(0.3839 0.0045 286.26))"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "surface-disabled": "#80808f"
+              "surface-disabled": "#636370"
             }}
           />
           <ColorItem
             title={"color.surface-hovered"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% darker)"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 15% darker)"
             }
             colors={{
-              "surface-hovered": "#b4b4b4"
+              "surface-hovered": "#e0e0e0"
             }}
           />
           <ColorItem
@@ -4535,10 +4535,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.emphasis-disabled"}
             subtitle={
-              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "emphasis-disabled": "#151519"
+              "emphasis-disabled": "#202024"
             }}
           />
           <ColorItem
@@ -4580,10 +4580,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.ink-disabled"}
             subtitle={
-              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "ink-disabled": "#2f3138"
+              "ink-disabled": "#2b2b32"
             }}
           />
           <ColorItem
@@ -4625,10 +4625,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.subtle-disabled"}
             subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "subtle-disabled": "#4e4e5a"
+              "subtle-disabled": "#373740"
             }}
           />
           <ColorItem
@@ -4675,19 +4675,19 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.hairline-disabled"}
             subtitle={
-              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"
+              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "hairline-disabled": "#696979"
+              "hairline-disabled": "#43434e"
             }}
           />
           <ColorItem
             title={"color.hairline-hovered"}
             subtitle={
-              "Low-contrast color for borders, dividers and separators. (hovered, light contrast primitive)"
+              "Low-contrast color for borders, dividers and separators. (hovered, 40% darker)"
             }
             colors={{
-              "hairline-hovered": "#000000"
+              "hairline-hovered": "#575762"
             }}
           />
           <ColorItem
@@ -4764,18 +4764,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#00000026",
                 "on-secondary": "#ffffff",
                 border: "#6d6d7a",
-                "primary-hovered": "#494954",
+                "primary-hovered": "#050505",
                 "primary-active": "#000000",
                 "primary-inactive": "#000000",
-                "primary-disabled": "#141418",
-                "secondary-hovered": "#858592",
+                "primary-disabled": "#1f1f24",
+                "secondary-hovered": "#a6a6b0",
                 "secondary-active": "#858592",
                 "secondary-inactive": "#000000",
-                "secondary-disabled": "#5a5a66",
-                "link-hovered": "#004075",
+                "secondary-disabled": "#3c3c46",
+                "link-hovered": "#005a98",
                 "link-active": "#004075",
                 "link-inactive": "#54b6ff",
-                "link-disabled": "#254865"
+                "link-disabled": "#273644"
               }}
             />
           </ColorPalette>
@@ -4796,18 +4796,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#00000026",
                 "on-secondary": "#00100f",
                 border: "#8ec5be",
-                "primary-hovered": "#00413c",
+                "primary-hovered": "#006861",
                 "primary-active": "#00413c",
                 "primary-inactive": "#5cfbeb",
-                "primary-disabled": "#2c5b58",
-                "secondary-hovered": "#8ec5be",
+                "primary-disabled": "#2a3d3f",
+                "secondary-hovered": "#d3f0ec",
                 "secondary-active": "#8ec5be",
                 "secondary-inactive": "#ffffff",
-                "secondary-disabled": "#6f8c8c",
-                "link-hovered": "#00413c",
+                "secondary-disabled": "#465256",
+                "link-hovered": "#006861",
                 "link-active": "#00413c",
                 "link-inactive": "#5cfbeb",
-                "link-disabled": "#2c5b58"
+                "link-disabled": "#2a3d3f"
               }}
             />
           </ColorPalette>
@@ -4828,18 +4828,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#00000026",
                 "on-secondary": "#000000",
                 border: "#c82b4c",
-                "primary-hovered": "#27000c",
+                "primary-hovered": "#52001b",
                 "primary-active": "#27000c",
                 "primary-inactive": "#bc2445",
-                "primary-disabled": "#44232c",
-                "secondary-hovered": "#c82b4c",
+                "primary-disabled": "#35252b",
+                "secondary-hovered": "#ec5d78",
                 "secondary-active": "#c82b4c",
                 "secondary-inactive": "#fff8fa",
-                "secondary-disabled": "#7c4853",
-                "link-hovered": "#27000c",
+                "secondary-disabled": "#4c363d",
+                "link-hovered": "#52001b",
                 "link-active": "#27000c",
                 "link-inactive": "#bc2445",
-                "link-disabled": "#44232c"
+                "link-disabled": "#35252b"
               }}
             />
           </ColorPalette>
@@ -4860,18 +4860,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#00000026",
                 "on-secondary": "#ffffff",
                 border: "#6b48bb",
-                "primary-hovered": "#240c59",
+                "primary-hovered": "#361b7b",
                 "primary-active": "#240c59",
                 "primary-inactive": "#6c4ec9",
-                "primary-disabled": "#342c4d",
-                "secondary-hovered": "#6b48bb",
+                "primary-disabled": "#2d2a3b",
+                "secondary-hovered": "#9377dc",
                 "secondary-active": "#6b48bb",
                 "secondary-inactive": "#ffffff",
-                "secondary-disabled": "#584e78",
-                "link-hovered": "#240c59",
+                "secondary-disabled": "#3d384d",
+                "link-hovered": "#361b7b",
                 "link-active": "#240c59",
                 "link-inactive": "#6c4ec9",
-                "link-disabled": "#342c4d"
+                "link-disabled": "#2d2a3b"
               }}
             />
           </ColorPalette>
@@ -4892,18 +4892,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#00000826",
                 "on-secondary": "#ffffff",
                 border: "#1b61df",
-                "primary-hovered": "#001f5a",
+                "primary-hovered": "#003288",
                 "primary-active": "#001f5a",
                 "primary-inactive": "#216df4",
-                "primary-disabled": "#233457",
-                "secondary-hovered": "#1b61df",
+                "primary-disabled": "#252d3d",
+                "secondary-hovered": "#4d8dfe",
                 "secondary-active": "#1b61df",
                 "secondary-inactive": "#def0ff",
-                "secondary-disabled": "#425983",
-                "link-hovered": "#001f5a",
+                "secondary-disabled": "#343c51",
+                "link-hovered": "#003288",
                 "link-active": "#001f5a",
                 "link-inactive": "#216df4",
-                "link-disabled": "#233457"
+                "link-disabled": "#252d3d"
               }}
             />
           </ColorPalette>
@@ -4924,18 +4924,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#00000026",
                 "on-secondary": "#000000",
                 border: "#237b5b",
-                "primary-hovered": "#000000",
+                "primary-hovered": "#001812",
                 "primary-active": "#000000",
                 "primary-inactive": "#298565",
-                "primary-disabled": "#213731",
-                "secondary-hovered": "#237b5b",
+                "primary-disabled": "#24302e",
+                "secondary-hovered": "#45ac85",
                 "secondary-active": "#237b5b",
                 "secondary-inactive": "#d0fdea",
-                "secondary-disabled": "#45655b",
-                "link-hovered": "#000000",
+                "secondary-disabled": "#344341",
+                "link-hovered": "#001812",
                 "link-active": "#000000",
                 "link-inactive": "#298565",
-                "link-disabled": "#213731"
+                "link-disabled": "#24302e"
               }}
             />
           </ColorPalette>
@@ -4956,18 +4956,18 @@ const COLOR_VARIANTS = {
                 backdrop: "#00000026",
                 "on-secondary": "#000000",
                 border: "#8e611a",
-                "primary-hovered": "#070400",
+                "primary-hovered": "#201500",
                 "primary-active": "#070400",
                 "primary-inactive": "#92661d",
-                "primary-disabled": "#3a3021",
-                "secondary-hovered": "#8e611a",
+                "primary-disabled": "#312c25",
+                "secondary-hovered": "#c18c38",
                 "secondary-active": "#8e611a",
                 "secondary-inactive": "#ffefd8",
-                "secondary-disabled": "#6b5944",
-                "link-hovered": "#070400",
+                "secondary-disabled": "#463e35",
+                "link-hovered": "#201500",
                 "link-active": "#070400",
                 "link-inactive": "#92661d",
-                "link-disabled": "#3a3021"
+                "link-disabled": "#312c25"
               }}
             />
           </ColorPalette>

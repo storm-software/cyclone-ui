@@ -485,7 +485,7 @@ const LOW_SATURATION_COLOR_STATE_INACTIVE: ColorStateVariant = {
 
 const COLOR_STATE_DISABLED: ColorStateVariant = {
   name: "disabled",
-  opacity: 0.35,
+  opacity: 0.15,
   saturation: 0.85,
   fadeOver: "oklch(0.3839 0.0045 286.26)"
 };
@@ -525,7 +525,7 @@ const BACKGROUND_COLOR_STATE_INACTIVE: ColorStateVariant = {
 
 const BACKGROUND_COLOR_STATE_DISABLED: ColorStateVariant = {
   ...COLOR_STATE_DISABLED,
-  opacity: 0.375,
+  opacity: 0.25,
   saturation: 0.925
 };
 
@@ -561,11 +561,13 @@ function themeColorGroups(
 
 const HAIRLINE_COLOR_STATE_VARIANTS: ColorStateVariants = {
   lowSaturation: [
+    { name: "hovered", brightness: 1.4 },
     INCREASED_LOW_SATURATION_COLOR_STATE_ACTIVE,
     LOW_SATURATION_COLOR_STATE_INACTIVE,
     COLOR_STATE_DISABLED
   ],
   saturated: [
+    { name: "hovered", brightness: 1.2 },
     {
       name: "active",
       brightness: 1.4
@@ -575,11 +577,34 @@ const HAIRLINE_COLOR_STATE_VARIANTS: ColorStateVariants = {
   ]
 };
 
+/**
+ * Theme color group hovered states take about half the step of active, and
+ * never jump to the contrast primitive (so they stay distinct from active).
+ */
+const THEME_COLOR_STATE_HOVERED_VARIANTS: ColorStateVariants = {
+  lowSaturation: [
+    { name: "hovered", brightness: 1.25 },
+    ...DEFAULT_COLOR_STATE_VARIANTS.lowSaturation
+  ],
+  saturated: [
+    { name: "hovered", brightness: 1.125 },
+    ...DEFAULT_COLOR_STATE_VARIANTS.saturated
+  ]
+};
+
+const SUBTLE_COLOR_STATE_HOVERED_VARIANTS: ColorStateVariants = {
+  lowSaturation: [
+    { name: "hovered", brightness: 1.08 },
+    ...SUBTLE_COLOR_STATE_VARIANTS.lowSaturation
+  ],
+  saturated: THEME_COLOR_STATE_HOVERED_VARIANTS.saturated
+};
+
 /** State variants for the tokens inside each theme color group. */
 const THEME_COLOR_STATE_VARIANTS: Record<string, ColorStateVariants> = {
-  primary: DEFAULT_COLOR_STATE_VARIANTS,
-  secondary: SUBTLE_COLOR_STATE_VARIANTS,
-  link: DEFAULT_COLOR_STATE_VARIANTS
+  primary: THEME_COLOR_STATE_HOVERED_VARIANTS,
+  secondary: SUBTLE_COLOR_STATE_HOVERED_VARIANTS,
+  link: THEME_COLOR_STATE_HOVERED_VARIANTS
 };
 
 /**
@@ -599,7 +624,7 @@ const FOREGROUND_COLOR_STATE_VARIANTS: ColorStateVariants = {
 
 const BACKGROUND_COLOR_STATE_HOVERED_VARIANTS: ColorStateVariants = {
   lowSaturation: [
-    { name: "hovered", brightness: 1.25 },
+    { name: "hovered", brightness: 1.15 },
     ...BACKGROUND_COLOR_STATE_VARIANTS.lowSaturation
   ],
   saturated: [

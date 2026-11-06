@@ -4013,7 +4013,8 @@
       "registryDependencies": [
         "@cyclone-ui/body-text",
         "@cyclone-ui/heading-text",
-        "@cyclone-ui/icons"
+        "@cyclone-ui/icons",
+        "@cyclone-ui/vectors"
       ],
       "files": [
         {
@@ -4371,6 +4372,7 @@
         "@cyclone-ui/heading-text",
         "@cyclone-ui/icons",
         "@cyclone-ui/next-button",
+        "@cyclone-ui/number-text",
         "@cyclone-ui/previous-button"
       ],
       "files": [

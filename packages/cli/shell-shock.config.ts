@@ -75,7 +75,7 @@ const config: UserConfig = defineConfig({
           text: color("ink"),
           muted: color("subtle"),
           link: color("brand.link"),
-          border: color("outline"),
+          border: color("hairline"),
           success: color("success.primary"),
           info: color("info.primary"),
           help: color("discovery.primary"),

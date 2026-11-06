@@ -32,6 +32,7 @@ import {
   useFormControl
 } from "@cyclone-ui/helpers";
 import { Lock } from "@cyclone-ui/icons";
+import { Check } from "@cyclone-ui/vectors";
 import type { SelectOption } from "@stryke/types/form";
 import type { ColorTokens, GetProps } from "@tamagui/core";
 import {
@@ -75,9 +76,15 @@ export const RadioGroupContext = createStyledContext<
   }
 );
 
+/**
+ * How a selected item is marked: a check in its top right corner (`check`),
+ * the radio's filled circle (`circle`), or only its colors (`none`).
+ */
+export type RadioGroupIndicatorStyle = "check" | "circle" | "none";
+
 // A plain React context: a nested styled context Provider would reset `size`
 // to its defaults.
-const ShowIndicatorContext = createContext(false);
+const IndicatorStyleContext = createContext<RadioGroupIndicatorStyle>("check");
 
 // Out of sight, the radio still gives the item its role, arrow-key navigation
 // and form value.
@@ -141,6 +148,18 @@ const RadioGroupItemIndicator = styled(TamaguiRadioGroup.Indicator, {
   opacity: "1 enter:0"
 });
 
+const RadioGroupItemCheck = styled(View, {
+  displayName: "RadioGroupItemCheck",
+  transition: "200ms",
+  position: "absolute",
+  borderRadius: 100_000,
+  alignItems: "center",
+  justifyContent: "center",
+  pointerEvents: "none",
+  scale: "1 enter:0.4",
+  opacity: "1 enter:0"
+});
+
 const RadioGroupItemContainerFrame = styled(XStack, {
   displayName: "RadioGroupItem",
   context: RadioGroupContext,
@@ -154,6 +173,8 @@ const RadioGroupItemContainerFrame = styled(XStack, {
   paddingHorizontal: "3xl",
   paddingVertical: "2xl",
   alignItems: "center",
+  // Anchors the `check` indicator.
+  position: "relative",
   tabIndex: 0,
   variants: {
     size: styled.dynamic<FormControlSize>(
@@ -260,7 +281,7 @@ const RadioGroupItemContainer = createStyledHOC(
   ) => {
     const { size } = RadioGroupContext.useStyledContext();
     const group = use(TamaguiRadioGroupContext);
-    const showIndicator = use(ShowIndicatorContext);
+    const indicatorStyle = use(IndicatorStyleContext);
     const hasValidationMessage = useFieldHasValidationMessage();
     const id = useId();
     const itemValue = String(value);
@@ -287,6 +308,8 @@ const RadioGroupItemContainer = createStyledHOC(
       : hasValidationMessage
         ? "primary-active"
         : "hairline-active";
+    const scale = getFormSizeScale(size);
+    const checkSize = getSized("5xl") * scale * 0.75;
     const textColor = (color: "emphasis" | "ink") =>
       disabled
         ? "primary-disabled group-hover/item:primary-disabled"
@@ -335,7 +358,13 @@ const RadioGroupItemContainer = createStyledHOC(
         aria-disabled={disabled || undefined}
         onPress={handlePress}
         disabled={disabled}>
-        <YStack gap="md" justifyContent="flex-start" flex={1} minWidth={0}>
+        <YStack
+          gap="md"
+          justifyContent="flex-start"
+          flex={1}
+          minWidth={0}
+          // Keep the text clear of the corner check.
+          paddingRight={indicatorStyle === "check" ? checkSize : undefined}>
           <RadioGroupItemLabel htmlFor={id} disabled={disabled}>
             {/* The heading sets its own color, so the label's can't reach it. */}
             <HeadingSmallText transition="200ms" color={textColor("emphasis")}>
@@ -355,7 +384,7 @@ const RadioGroupItemContainer = createStyledHOC(
         <View
           alignSelf="center"
           onPress={e => e.stopPropagation()}
-          {...(!showIndicator && hiddenIndicatorStyle)}>
+          {...(indicatorStyle !== "circle" && hiddenIndicatorStyle)}>
           <RadioGroupItem
             id={id}
             size={size}
@@ -364,7 +393,7 @@ const RadioGroupItemContainer = createStyledHOC(
             disabled={disabled}>
             {disabled ? (
               <Lock
-                size={getSized("5xl") * getFormSizeScale(size) * 0.6}
+                size={getSized("5xl") * scale * 0.6}
                 color="primary-disabled"
               />
             ) : (
@@ -372,6 +401,21 @@ const RadioGroupItemContainer = createStyledHOC(
             )}
           </RadioGroupItem>
         </View>
+
+        {indicatorStyle === "check" && selected && (
+          <RadioGroupItemCheck
+            top={getSpaced("xl") * scale}
+            right={getSpaced("xl") * scale}
+            width={checkSize}
+            height={checkSize}
+            backgroundColor={disabled ? "primary-disabled" : "primary-active"}>
+            <Check
+              strokeWidth={3}
+              size={checkSize * 0.6}
+              color="on-primary"
+            />
+          </RadioGroupItemCheck>
+        )}
       </RadioGroupItemContainerFrame>
     );
   },
@@ -419,8 +463,8 @@ const RadioGroupImpl = createStyledHOC(
     props: GetProps<typeof RadioGroupFrame> & {
       defaultValue?: string | null;
       size?: FormControlSize;
-      /** Show each item's radio indicator. Defaults to `false`. */
-      showIndicator?: boolean;
+      /** How a selected item is marked. Defaults to `"check"`. */
+      indicatorStyle?: RadioGroupIndicatorStyle;
     },
     forwardedRef
   ) => {
@@ -453,7 +497,7 @@ const RadioGroupImpl = createStyledHOC(
       onFocus = formControl?.onFocus,
       onBlur = formOnBlur ? handleBlur : undefined,
       onValueChange = formControl?.onChange,
-      showIndicator = false,
+      indicatorStyle = "check",
       ...rest
     } = props;
     const items = formControl?.items;
@@ -479,7 +523,7 @@ const RadioGroupImpl = createStyledHOC(
         defaultValue={defaultValue == null ? undefined : String(defaultValue)}
         required={required}
         disabled={disabled}>
-        <ShowIndicatorContext value={showIndicator}>
+        <IndicatorStyleContext value={indicatorStyle}>
           <YStack
             justifyContent="flex-start"
             gap="2xl"
@@ -499,7 +543,7 @@ const RadioGroupImpl = createStyledHOC(
                 </RadioGroupItemContainer>
               ))}
           </YStack>
-        </ShowIndicatorContext>
+        </IndicatorStyleContext>
       </RadioGroupFrame>
     );
   },

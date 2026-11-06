@@ -22,6 +22,7 @@
     "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/vectors": "workspace:*",
     "@stryke/types": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/label": "catalog:",

@@ -73,7 +73,7 @@ A package containing the Radio Group component used by Storm Software
 - Each item has a label and an optional description.
 - `sm`, `md`, and `lg` sizes.
 - Connects to forms: inside a `Field`, it reads its value, size, and disabled state.
-- The radio indicator is hidden unless `showIndicator` is set; disabled items show a lock in its place.
+- `indicatorStyle` marks the selected item with a corner check (`check`, the default), the radio's filled circle (`circle`), or only its colors (`none`); with `circle`, disabled items show a lock in its place.
 
 ## Installing
 

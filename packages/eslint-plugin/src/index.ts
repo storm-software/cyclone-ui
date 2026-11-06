@@ -281,14 +281,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-base-link-disabled",
       type: "color",
       category: "color",
-      value: "#3c5a72"
+      value: "#404d59"
     },
     {
       path: "color.base.link-hovered",
       cssVar: "--storm-color-base-link-hovered",
       type: "color",
       category: "color",
-      value: "#0057a0"
+      value: "#006db8"
     },
     {
       path: "color.base.link-inactive",
@@ -331,14 +331,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-base-primary-disabled",
       type: "color",
       category: "color",
-      value: "#353538"
+      value: "#3d3d40"
     },
     {
       path: "color.base.primary-hovered",
       cssVar: "--storm-color-base-primary-hovered",
       type: "color",
       category: "color",
-      value: "#5c5c5f"
+      value: "#2a2a2c"
     },
     {
       path: "color.base.primary-inactive",
@@ -367,14 +367,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-base-secondary-disabled",
       type: "color",
       category: "color",
-      value: "#69696b"
+      value: "#535356"
     },
     {
       path: "color.base.secondary-hovered",
       cssVar: "--storm-color-base-secondary-hovered",
       type: "color",
       category: "color",
-      value: "#878788"
+      value: "#9d9d9e"
     },
     {
       path: "color.base.secondary-inactive",
@@ -487,14 +487,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-brand-link-disabled",
       type: "color",
       category: "color",
-      value: "#436967"
+      value: "#435354"
     },
     {
       path: "color.brand.link-hovered",
       cssVar: "--storm-color-brand-link-hovered",
       type: "color",
       category: "color",
-      value: "#007c72"
+      value: "#00978c"
     },
     {
       path: "color.brand.link-inactive",
@@ -536,14 +536,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-brand-primary-disabled",
       type: "color",
       category: "color",
-      value: "#436967"
+      value: "#435354"
     },
     {
       path: "color.brand.primary-hovered",
       cssVar: "--storm-color-brand-primary-hovered",
       type: "color",
       category: "color",
-      value: "#007c72"
+      value: "#00978c"
     },
     {
       path: "color.brand.primary-inactive",
@@ -571,14 +571,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-brand-secondary-disabled",
       type: "color",
       category: "color",
-      value: "#788484"
+      value: "#5a5f61"
     },
     {
       path: "color.brand.secondary-hovered",
       cssVar: "--storm-color-brand-secondary-hovered",
       type: "color",
       category: "color",
-      value: "#89b0ab"
+      value: "#afd7d1"
     },
     {
       path: "color.brand.secondary-inactive",
@@ -607,14 +607,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-canvas-disabled",
       type: "color",
       category: "color",
-      value: "#828284"
+      value: "#6d6d6f"
     },
     {
       path: "color.canvas-hovered",
       cssVar: "--storm-color-canvas-hovered",
       type: "color",
       category: "color",
-      value: "#9f9f9f"
+      value: "#bcbcbc"
     },
     {
       path: "color.canvas-inactive",
@@ -657,14 +657,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-danger-link-disabled",
       type: "color",
       category: "color",
-      value: "#5a3c44"
+      value: "#4d4045"
     },
     {
       path: "color.danger.link-hovered",
       cssVar: "--storm-color-danger-link-hovered",
       type: "color",
       category: "color",
-      value: "#6a0022"
+      value: "#7c0c30"
     },
     {
       path: "color.danger.link-inactive",
@@ -707,14 +707,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-danger-primary-disabled",
       type: "color",
       category: "color",
-      value: "#5a3c44"
+      value: "#4d4045"
     },
     {
       path: "color.danger.primary-hovered",
       cssVar: "--storm-color-danger-primary-hovered",
       type: "color",
       category: "color",
-      value: "#6a0022"
+      value: "#7c0c30"
     },
     {
       path: "color.danger.primary-inactive",
@@ -742,14 +742,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-danger-secondary-disabled",
       type: "color",
       category: "color",
-      value: "#7c5a61"
+      value: "#5c4d52"
     },
     {
       path: "color.danger.secondary-hovered",
       cssVar: "--storm-color-danger-secondary-hovered",
       type: "color",
       category: "color",
-      value: "#b2455c"
+      value: "#d16176"
     },
     {
       path: "color.danger.secondary-inactive",
@@ -920,14 +920,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-discovery-link-disabled",
       type: "color",
       category: "color",
-      value: "#4a445f"
+      value: "#464451"
     },
     {
       path: "color.discovery.link-hovered",
       cssVar: "--storm-color-discovery-link-hovered",
       type: "color",
       category: "color",
-      value: "#3c2372"
+      value: "#4a3383"
     },
     {
       path: "color.discovery.link-inactive",
@@ -970,14 +970,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-discovery-primary-disabled",
       type: "color",
       category: "color",
-      value: "#4a445f"
+      value: "#464451"
     },
     {
       path: "color.discovery.primary-hovered",
       cssVar: "--storm-color-discovery-primary-hovered",
       type: "color",
       category: "color",
-      value: "#3c2372"
+      value: "#4a3383"
     },
     {
       path: "color.discovery.primary-inactive",
@@ -1006,14 +1006,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-discovery-secondary-disabled",
       type: "color",
       category: "color",
-      value: "#655f79"
+      value: "#524f5c"
     },
     {
       path: "color.discovery.secondary-hovered",
       cssVar: "--storm-color-discovery-secondary-hovered",
       type: "color",
       category: "color",
-      value: "#725ba7"
+      value: "#8b75c4"
     },
     {
       path: "color.discovery.secondary-inactive",
@@ -1042,14 +1042,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-elevated-disabled",
       type: "color",
       category: "color",
-      value: "#88888a"
+      value: "#717173"
     },
     {
       path: "color.elevated-hovered",
       cssVar: "--storm-color-elevated-hovered",
       type: "color",
       category: "color",
-      value: "#aaaaaa"
+      value: "#c9c9c9"
     },
     {
       path: "color.elevated-inactive",
@@ -1078,7 +1078,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-emphasis-disabled",
       type: "color",
       category: "color",
-      value: "#363639"
+      value: "#3e3e40"
     },
     {
       path: "color.emphasis-hovered",
@@ -1114,14 +1114,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-floating-disabled",
       type: "color",
       category: "color",
-      value: "#8a8a8b"
+      value: "#727274"
     },
     {
       path: "color.floating-hovered",
       cssVar: "--storm-color-floating-hovered",
       type: "color",
       category: "color",
-      value: "#aeaeae"
+      value: "#cecece"
     },
     {
       path: "color.floating-inactive",
@@ -1213,14 +1213,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-hairline-disabled",
       type: "color",
       category: "color",
-      value: "#747477"
+      value: "#58585b"
     },
     {
       path: "color.hairline-hovered",
       cssVar: "--storm-color-hairline-hovered",
       type: "color",
       category: "color",
-      value: "#0c0c0d"
+      value: "#676768"
     },
     {
       path: "color.hairline-inactive",
@@ -1263,14 +1263,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-info-link-disabled",
       type: "color",
       category: "color",
-      value: "#3b4a68"
+      value: "#3f4654"
     },
     {
       path: "color.info.link-hovered",
       cssVar: "--storm-color-info-link-hovered",
       type: "color",
       category: "color",
-      value: "#00318d"
+      value: "#0d43a0"
     },
     {
       path: "color.info.link-inactive",
@@ -1313,14 +1313,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-info-primary-disabled",
       type: "color",
       category: "color",
-      value: "#3b4a68"
+      value: "#3f4654"
     },
     {
       path: "color.info.primary-hovered",
       cssVar: "--storm-color-info-primary-hovered",
       type: "color",
       category: "color",
-      value: "#00318d"
+      value: "#0d43a0"
     },
     {
       path: "color.info.primary-inactive",
@@ -1349,14 +1349,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-info-secondary-disabled",
       type: "color",
       category: "color",
-      value: "#556582"
+      value: "#4b5160"
     },
     {
       path: "color.info.secondary-hovered",
       cssVar: "--storm-color-info-secondary-hovered",
       type: "color",
       category: "color",
-      value: "#396ac2"
+      value: "#5386e0"
     },
     {
       path: "color.info.secondary-inactive",
@@ -1385,7 +1385,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-ink-disabled",
       type: "color",
       category: "color",
-      value: "#494a4d"
+      value: "#464649"
     },
     {
       path: "color.ink-hovered",
@@ -1856,7 +1856,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-subtle-disabled",
       type: "color",
       category: "color",
-      value: "#606063"
+      value: "#4f4f52"
     },
     {
       path: "color.subtle-hovered",
@@ -1906,14 +1906,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-success-link-disabled",
       type: "color",
       category: "color",
-      value: "#3c504b"
+      value: "#404948"
     },
     {
       path: "color.success.link-hovered",
       cssVar: "--storm-color-success-link-hovered",
       type: "color",
       category: "color",
-      value: "#004933"
+      value: "#065a43"
     },
     {
       path: "color.success.link-inactive",
@@ -1956,14 +1956,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-success-primary-disabled",
       type: "color",
       category: "color",
-      value: "#3c504b"
+      value: "#404948"
     },
     {
       path: "color.success.primary-hovered",
       cssVar: "--storm-color-success-primary-hovered",
       type: "color",
       category: "color",
-      value: "#004933"
+      value: "#065a43"
     },
     {
       path: "color.success.primary-inactive",
@@ -1991,14 +1991,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-success-secondary-disabled",
       type: "color",
       category: "color",
-      value: "#586c66"
+      value: "#4c5554"
     },
     {
       path: "color.success.secondary-hovered",
       cssVar: "--storm-color-success-secondary-hovered",
       type: "color",
       category: "color",
-      value: "#3b8168"
+      value: "#589d83"
     },
     {
       path: "color.success.secondary-inactive",
@@ -2027,14 +2027,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-sunken-disabled",
       type: "color",
       category: "color",
-      value: "#7e7e80"
+      value: "#6b6b6d"
     },
     {
       path: "color.sunken-hovered",
       cssVar: "--storm-color-sunken-hovered",
       type: "color",
       category: "color",
-      value: "#999999"
+      value: "#b5b5b5"
     },
     {
       path: "color.sunken-inactive",
@@ -2063,14 +2063,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-surface-disabled",
       type: "color",
       category: "color",
-      value: "#848486"
+      value: "#6f6f71"
     },
     {
       path: "color.surface-hovered",
       cssVar: "--storm-color-surface-hovered",
       type: "color",
       category: "color",
-      value: "#a4a4a4"
+      value: "#c2c2c2"
     },
     {
       path: "color.surface-inactive",
@@ -2113,14 +2113,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-warning-link-disabled",
       type: "color",
       category: "color",
-      value: "#53493b"
+      value: "#4a4641"
     },
     {
       path: "color.warning.link-hovered",
       cssVar: "--storm-color-warning-link-hovered",
       type: "color",
       category: "color",
-      value: "#543400"
+      value: "#654400"
     },
     {
       path: "color.warning.link-inactive",
@@ -2163,14 +2163,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-warning-primary-disabled",
       type: "color",
       category: "color",
-      value: "#53493b"
+      value: "#4a4641"
     },
     {
       path: "color.warning.primary-hovered",
       cssVar: "--storm-color-warning-primary-hovered",
       type: "color",
       category: "color",
-      value: "#543400"
+      value: "#654400"
     },
     {
       path: "color.warning.primary-inactive",
@@ -2198,14 +2198,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-warning-secondary-disabled",
       type: "color",
       category: "color",
-      value: "#716557"
+      value: "#57524d"
     },
     {
       path: "color.warning.secondary-hovered",
       cssVar: "--storm-color-warning-secondary-hovered",
       type: "color",
       category: "color",
-      value: "#906c33"
+      value: "#ac884f"
     },
     {
       path: "color.warning.secondary-inactive",

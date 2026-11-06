@@ -21,6 +21,7 @@
     "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/next-button": "workspace:*",
+    "@cyclone-ui/number-text": "workspace:*",
     "@cyclone-ui/previous-button": "workspace:*",
     "@tamagui/animate-presence": "catalog:",
     "@tamagui/core": "catalog:",

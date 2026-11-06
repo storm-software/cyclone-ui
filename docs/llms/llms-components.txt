@@ -2795,6 +2795,7 @@ A RadioGroup compound component (RadioGroup.Item) built on Tamagui's radio group
 - `@cyclone-ui/heading-text`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/vectors`: `workspace:*`
 - `@stryke/types`: `catalog:`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/label`: `catalog:`
@@ -3203,6 +3204,7 @@ A multi-step wizard built on Tamagui Tabs with a vertical or horizontal header l
 - `@cyclone-ui/heading-text`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/next-button`: `workspace:*`
+- `@cyclone-ui/number-text`: `workspace:*`
 - `@cyclone-ui/previous-button`: `workspace:*`
 - `@tamagui/animate-presence`: `catalog:`
 - `@tamagui/core`: `catalog:`

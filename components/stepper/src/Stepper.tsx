@@ -22,6 +22,7 @@ import { HeadingExtraSmallText } from "@cyclone-ui/heading-text";
 import { ConfirmCircle, Lock, Pencil } from "@cyclone-ui/icons";
 import type { NextButtonProps } from "@cyclone-ui/next-button";
 import { NextButton } from "@cyclone-ui/next-button";
+import { NumberText } from "@cyclone-ui/number-text";
 import type { PreviousButtonProps } from "@cyclone-ui/previous-button";
 import { PreviousButton } from "@cyclone-ui/previous-button";
 import { AnimatePresence } from "@tamagui/animate-presence";
@@ -40,7 +41,7 @@ import {
   View,
   withStaticProperties
 } from "@tamagui/core";
-import { YStack } from "@tamagui/stacks";
+import { XStack, YStack } from "@tamagui/stacks";
 import type {
   TabLayout as TamaguiTabLayout,
   TabsContentProps as TamaguiTabsContentProps,
@@ -49,7 +50,13 @@ import type {
 } from "@tamagui/tabs";
 import { Tabs as TamaguiTabs } from "@tamagui/tabs";
 import { SizableText } from "@tamagui/text";
-import type { Dispatch, ReactNode, Ref, SetStateAction } from "react";
+import type {
+  Dispatch,
+  ReactElement,
+  ReactNode,
+  Ref,
+  SetStateAction
+} from "react";
 import {
   Children,
   cloneElement,
@@ -67,6 +74,12 @@ export type StepperSize = "sm" | "lg";
 export type StepperOrientation = "horizontal" | "vertical";
 
 export type StepperLineStyle = "solid" | "dashed";
+
+/**
+ * `all` shows every step's title and description next to its marker.
+ * `current` shows only the current step's, above the markers.
+ */
+export type StepperDetails = "all" | "current";
 
 /**
  * `complete` steps come before the current one. Later steps are `visited`
@@ -167,6 +180,7 @@ const defaultContextValues = {
   size: "lg" as StepperSize,
   orientation: "vertical" as StepperOrientation,
   showDescription: "always" as "always" | "active",
+  details: "all" as StepperDetails,
   theme: "base"
 } as const;
 
@@ -179,6 +193,7 @@ export const InternalStateContext = createStyledContext<{
   size: StepperSize;
   orientation: StepperOrientation;
   showDescription: "always" | "active";
+  details: StepperDetails;
   theme: string;
 }>(defaultContextValues);
 
@@ -204,6 +219,7 @@ export const StepperFrame = createStyledHOC(
       size = "lg",
       orientation = "vertical",
       showDescription = "always",
+      details = "all",
       onValueChange,
       ...rest
     }: Omit<TamaguiTabsProps, "orientation"> & {
@@ -213,6 +229,8 @@ export const StepperFrame = createStyledHOC(
       orientation?: StepperOrientation;
       /** Show each step's description always, or only on the current step. */
       showDescription?: "always" | "active";
+      /** Show every step's title and description, or only the current step's. */
+      details?: StepperDetails;
     },
     forwardedRef
   ) => {
@@ -271,6 +289,7 @@ export const StepperFrame = createStyledHOC(
         size={size}
         orientation={orientation}
         showDescription={showDescription}
+        details={details}
         theme="base">
         <TamaguiTabs
           ref={forwardedRef}
@@ -297,7 +316,8 @@ export const StepperFrame = createStyledHOC(
 export const StepperHeaderList = createStyledHOC(
   YStack,
   ({ children, ...rest }: ViewProps, forwardedRef) => {
-    const { state } = InternalStateContext.useStyledContext();
+    const { details, numbered, size, state } =
+      InternalStateContext.useStyledContext();
     const {
       activeAt,
       intentAt: _intentAt,
@@ -313,8 +333,67 @@ export const StepperHeaderList = createStyledHOC(
       return activeAt.x > prevActiveAt.x ? -1 : 1;
     })();
 
+    const items = Children.toArray(children).filter(
+      isValidElement
+    ) as ReactElement<{
+      value: string;
+      children?: ReactNode;
+      description?: ReactNode;
+    }>[];
+    const current = Math.max(
+      0,
+      items.findIndex(item => item.props.value === state.currentStep)
+    );
+
     return (
-      <YStack ref={forwardedRef} {...rest}>
+      <YStack ref={forwardedRef} gap="3xl" {...rest}>
+        {details === "current" && (
+          <XStack gap="2xl" alignItems="baseline">
+            {numbered && (
+              <XStack>
+                <NumberText fontSize="xs" fontWeight="medium" lineHeight="sm">
+                  {current + 1}
+                </NumberText>
+                <StepperText fontSize="xs" fontWeight="medium" lineHeight="sm">
+                  {` / ${items.length}`}
+                </StepperText>
+              </XStack>
+            )}
+            {/* Every step's details share one grid cell, so it keeps the size
+            of the largest. The current step's fade in while the others
+            slide off to their side of it. */}
+            <View display="grid" flexShrink={1}>
+              {items.map(({ props: item }, index) => (
+                <YStack
+                  key={item.value}
+                  gridColumn="1"
+                  gridRow="1"
+                  transition="300ms"
+                  opacity={index === current ? 1 : 0}
+                  x={index === current ? 0 : index < current ? -20 : 20}
+                  pointerEvents={index === current ? "auto" : "none"}
+                  aria-hidden={index !== current || undefined}>
+                  <HeadingExtraSmallText
+                    {...(size === "sm" && { fontSize: "sm" })}
+                    lineHeight="sm"
+                    color="emphasis">
+                    {item.children}
+                  </HeadingExtraSmallText>
+                  {!!item.description && (
+                    <StepperText
+                      fontFamily="body"
+                      size={size === "sm" ? "sm" : "md"}
+                      fontWeight="normal"
+                      color="subtle">
+                      {item.description}
+                    </StepperText>
+                  )}
+                </YStack>
+              ))}
+            </View>
+          </XStack>
+        )}
+
         {/* <AnimatePresence>
           {intentAt && (
             <StepperRovingIndicatorImpl
@@ -523,6 +602,7 @@ export const StepperHeaderItem = createStyledHOC(
     forwardedRef
   ) => {
     const {
+      details,
       handleOnInteraction,
       numbered,
       orientation,
@@ -597,6 +677,12 @@ export const StepperHeaderItem = createStyledHOC(
                 : "default"
           }
           aria-disabled={status === "locked" || undefined}
+          // Without its details, the tab is named by its title.
+          aria-label={
+            details === "current" && typeof children === "string"
+              ? children
+              : undefined
+          }
           {...rest}
           value={value}
           onInteraction={handleOnInteraction}
@@ -618,63 +704,65 @@ export const StepperHeaderItem = createStyledHOC(
             )}
           </StepperStepContext.Provider>
 
-          <YStack
-            flexDirection="row"
-            alignItems="flex-end"
-            justifyContent="center"
-            gap="2xl">
-            {numbered && (
-              <StepperText
-                transition="200ms"
-                fontSize="xs"
-                fontWeight="medium"
-                lineHeight="sm"
-                color={
-                  hovered
-                    ? "ink-hovered"
-                    : (orientation === "horizontal" && filled) ||
-                        status === "current"
-                      ? "ink"
-                      : "ink-inactive"
-                }>
-                {`${String(itemIndex + 1).padStart(2, "0")}.`}
-              </StepperText>
-            )}
-            <YStack flexShrink={1}>
-              <HeadingExtraSmallText
-                transition="200ms"
-                {...(size === "sm" && { fontSize: "sm" })}
-                lineHeight="sm"
-                color={
-                  hovered
-                    ? "emphasis-hovered"
-                    : (orientation === "horizontal" && filled) ||
-                        status === "current"
-                      ? "emphasis"
-                      : "emphasis-inactive"
-                }>
-                {children}
-              </HeadingExtraSmallText>
-              {!!description &&
-                (showDescription === "always" || status === "current") && (
-                  <StepperText
-                    transition="200ms"
-                    fontFamily="body"
-                    size={size === "sm" ? "sm" : "md"}
-                    fontWeight="normal"
-                    color={
-                      hovered
-                        ? "subtle-hovered"
-                        : (orientation === "horizontal" && filled) ||
-                            status === "current"
-                          ? "subtle"
-                          : "subtle-inactive"
-                    }>
-                    {description}
-                  </StepperText>
-                )}
+          {details === "all" && (
+            <YStack
+              flexDirection="row"
+              alignItems="flex-end"
+              justifyContent="center"
+              gap="2xl">
+              {numbered && (
+                <StepperText
+                  transition="200ms"
+                  fontSize="xs"
+                  fontWeight="medium"
+                  lineHeight="sm"
+                  color={
+                    hovered
+                      ? "ink-hovered"
+                      : (orientation === "horizontal" && filled) ||
+                          status === "current"
+                        ? "ink"
+                        : "ink-inactive"
+                  }>
+                  {`${String(itemIndex + 1).padStart(2, "0")}.`}
+                </StepperText>
+              )}
+              <YStack flexShrink={1}>
+                <HeadingExtraSmallText
+                  transition="200ms"
+                  {...(size === "sm" && { fontSize: "sm" })}
+                  lineHeight="sm"
+                  color={
+                    hovered
+                      ? "emphasis-hovered"
+                      : (orientation === "horizontal" && filled) ||
+                          status === "current"
+                        ? "emphasis"
+                        : "emphasis-inactive"
+                  }>
+                  {children}
+                </HeadingExtraSmallText>
+                {!!description &&
+                  (showDescription === "always" || status === "current") && (
+                    <StepperText
+                      transition="200ms"
+                      fontFamily="body"
+                      size={size === "sm" ? "sm" : "md"}
+                      fontWeight="normal"
+                      color={
+                        hovered
+                          ? "subtle-hovered"
+                          : (orientation === "horizontal" && filled) ||
+                              status === "current"
+                            ? "subtle"
+                            : "subtle-inactive"
+                      }>
+                      {description}
+                    </StepperText>
+                  )}
+              </YStack>
             </YStack>
-          </YStack>
+          )}
         </TamaguiTabs.Tab>
       </View>
     );

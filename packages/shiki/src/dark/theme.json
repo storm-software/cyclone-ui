@@ -86,7 +86,7 @@
     "editor.inactiveSelectionBackground": "#1c1c1e",
     "editorLineNumber.foreground": "#959698",
     "editorLineNumber.activeForeground": "#b0b0b1",
-    "editorIndentGuide.background1": "#959698",
+    "editorIndentGuide.background1": "#46464a",
     "editorIndentGuide.activeBackground1": "#959698",
     "editorWhitespace.foreground": "#959698"
   }

@@ -932,20 +932,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.primary-disabled",
       type: "color",
-      value: "#858587",
+      value: "#5f5f62",
       cssVar: "--cu-color-base-primary-disabled",
       description:
-        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))",
+        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.base.secondary-hovered",
       type: "color",
-      value: "#3a3b41",
+      value: "#333439",
       cssVar: "--cu-color-base-secondary-hovered",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 18% brighter)",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 8% brighter)",
       theme: undefined,
       typography: false
     },
@@ -972,19 +972,19 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-disabled",
       type: "color",
-      value: "#3b3c3f",
+      value: "#404043",
       cssVar: "--cu-color-base-secondary-disabled",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.base.link-hovered",
       type: "color",
-      value: "#6bfaff",
+      value: "#45dbff",
       cssVar: "--cu-color-base-link-hovered",
-      description: "The color used for hyperlink text. (hovered, 25% brighter)",
+      description: "The color used for hyperlink text. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1009,10 +1009,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.link-disabled",
       type: "color",
-      value: "#436d83",
+      value: "#435560",
       cssVar: "--cu-color-base-link-disabled",
       description:
-        "The color used for hyperlink text. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "The color used for hyperlink text. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -1086,10 +1086,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.primary-hovered",
       type: "color",
-      value: "#00a17e",
+      value: "#00c29e",
       cssVar: "--cu-color-brand-primary-hovered",
       description:
-        "The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker)",
+        "The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -1116,20 +1116,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.primary-disabled",
       type: "color",
-      value: "#4e7a70",
+      value: "#485b58",
       cssVar: "--cu-color-brand-primary-disabled",
       description:
-        "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.brand.secondary-hovered",
       type: "color",
-      value: "#31806b",
+      value: "#1d705c",
       cssVar: "--cu-color-brand-secondary-hovered",
       description:
-        "Generated low-emphasis brand background for the dark theme (hovered, 25% brighter)",
+        "Generated low-emphasis brand background for the dark theme (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1156,20 +1156,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.secondary-disabled",
       type: "color",
-      value: "#354c49",
+      value: "#3d4747",
       cssVar: "--cu-color-brand-secondary-disabled",
       description:
-        "Generated low-emphasis brand background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated low-emphasis brand background for the dark theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.brand.link-hovered",
       type: "color",
-      value: "#00a17e",
+      value: "#00c29e",
       cssVar: "--cu-color-brand-link-hovered",
       description:
-        "Generated brand hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated brand hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -1196,10 +1196,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.link-disabled",
       type: "color",
-      value: "#4e7a70",
+      value: "#485b58",
       cssVar: "--cu-color-brand-link-disabled",
       description:
-        "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -1275,10 +1275,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-hovered",
       type: "color",
-      value: "#ff7393",
+      value: "#ef5b7d",
       cssVar: "--cu-color-danger-primary-hovered",
       description:
-        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% brighter)",
+        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1305,20 +1305,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-disabled",
       type: "color",
-      value: "#724853",
+      value: "#57454c",
       cssVar: "--cu-color-danger-primary-disabled",
       description:
-        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.danger.secondary-hovered",
       type: "color",
-      value: "#86233c",
+      value: "#791332",
       cssVar: "--cu-color-danger-secondary-hovered",
       description:
-        "Generated low-emphasis danger background for the dark theme (hovered, 25% brighter)",
+        "Generated low-emphasis danger background for the dark theme (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1345,20 +1345,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.secondary-disabled",
       type: "color",
-      value: "#4f323c",
+      value: "#483c42",
       cssVar: "--cu-color-danger-secondary-disabled",
       description:
-        "Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.danger.link-hovered",
       type: "color",
-      value: "#ff7393",
+      value: "#ef5b7d",
       cssVar: "--cu-color-danger-link-hovered",
       description:
-        "Generated danger hyperlink text color (matches primary) (hovered, 25% brighter)",
+        "Generated danger hyperlink text color (matches primary) (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1385,10 +1385,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.link-disabled",
       type: "color",
-      value: "#724853",
+      value: "#57454c",
       cssVar: "--cu-color-danger-link-disabled",
       description:
-        "Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -1464,10 +1464,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-hovered",
       type: "color",
-      value: "#b37f00",
+      value: "#d6a038",
       cssVar: "--cu-color-warning-primary-hovered",
       description:
-        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
+        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -1494,20 +1494,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-disabled",
       type: "color",
-      value: "#807056",
+      value: "#5d564d",
       cssVar: "--cu-color-warning-primary-disabled",
       description:
-        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.warning.secondary-hovered",
       type: "color",
-      value: "#d1a052",
+      value: "#b98939",
       cssVar: "--cu-color-warning-secondary-hovered",
       description:
-        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 25% brighter)",
+        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1534,20 +1534,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-disabled",
       type: "color",
-      value: "#635540",
+      value: "#514b43",
       cssVar: "--cu-color-warning-secondary-disabled",
       description:
-        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.warning.link-hovered",
       type: "color",
-      value: "#b37f00",
+      value: "#d6a038",
       cssVar: "--cu-color-warning-link-hovered",
       description:
-        "Generated warning hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated warning hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -1574,10 +1574,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-disabled",
       type: "color",
-      value: "#807056",
+      value: "#5d564d",
       cssVar: "--cu-color-warning-link-disabled",
       description:
-        "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -1652,10 +1652,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.primary-hovered",
       type: "color",
-      value: "#7fc4ff",
+      value: "#66a9ff",
       cssVar: "--cu-color-info-primary-hovered",
       description:
-        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% brighter)",
+        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1682,20 +1682,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.primary-disabled",
       type: "color",
-      value: "#4b5e81",
+      value: "#464f5f",
       cssVar: "--cu-color-info-primary-disabled",
       description:
-        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.info.secondary-hovered",
       type: "color",
-      value: "#3560ac",
+      value: "#27519c",
       cssVar: "--cu-color-info-secondary-hovered",
       description:
-        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% brighter)",
+        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1722,20 +1722,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.secondary-disabled",
       type: "color",
-      value: "#37445b",
+      value: "#3e434f",
       cssVar: "--cu-color-info-secondary-disabled",
       description:
-        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.info.link-hovered",
       type: "color",
-      value: "#7fc4ff",
+      value: "#66a9ff",
       cssVar: "--cu-color-info-link-hovered",
       description:
-        "Generated info hyperlink text color (matches primary) (hovered, 25% brighter)",
+        "Generated info hyperlink text color (matches primary) (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1762,10 +1762,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.link-disabled",
       type: "color",
-      value: "#4b5e81",
+      value: "#464f5f",
       cssVar: "--cu-color-info-link-disabled",
       description:
-        "Generated info hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated info hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -1841,10 +1841,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.primary-hovered",
       type: "color",
-      value: "#c3a9ff",
+      value: "#aa90f5",
       cssVar: "--cu-color-discovery-primary-hovered",
       description:
-        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% brighter)",
+        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1871,20 +1871,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.primary-disabled",
       type: "color",
-      value: "#5e5776",
+      value: "#4f4b5b",
       cssVar: "--cu-color-discovery-primary-disabled",
       description:
-        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.discovery.secondary-hovered",
       type: "color",
-      value: "#4b3c79",
+      value: "#40316d",
       cssVar: "--cu-color-discovery-secondary-hovered",
       description:
-        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% brighter)",
+        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1911,20 +1911,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.secondary-disabled",
       type: "color",
-      value: "#3e3a4d",
+      value: "#413f49",
       cssVar: "--cu-color-discovery-secondary-disabled",
       description:
-        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.discovery.link-hovered",
       type: "color",
-      value: "#c3a9ff",
+      value: "#aa90f5",
       cssVar: "--cu-color-discovery-link-hovered",
       description:
-        "Generated discovery hyperlink text color (matches primary) (hovered, 25% brighter)",
+        "Generated discovery hyperlink text color (matches primary) (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1951,10 +1951,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.link-disabled",
       type: "color",
-      value: "#5e5776",
+      value: "#4f4b5b",
       cssVar: "--cu-color-discovery-link-disabled",
       description:
-        "Generated discovery hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated discovery hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -2030,10 +2030,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.primary-hovered",
       type: "color",
-      value: "#89ffcc",
+      value: "#68e6ae",
       cssVar: "--cu-color-success-primary-hovered",
       description:
-        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% brighter)",
+        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2060,20 +2060,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.primary-disabled",
       type: "color",
-      value: "#4c7062",
+      value: "#475652",
       cssVar: "--cu-color-success-primary-disabled",
       description:
-        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.success.secondary-hovered",
       type: "color",
-      value: "#31815e",
+      value: "#1d714f",
       cssVar: "--cu-color-success-secondary-hovered",
       description:
-        "Generated low-emphasis success background for the dark theme (hovered, 25% brighter)",
+        "Generated low-emphasis success background for the dark theme (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2100,20 +2100,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.secondary-disabled",
       type: "color",
-      value: "#354d45",
+      value: "#3d4746",
       cssVar: "--cu-color-success-secondary-disabled",
       description:
-        "Generated low-emphasis success background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated low-emphasis success background for the dark theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.success.link-hovered",
       type: "color",
-      value: "#89ffcc",
+      value: "#68e6ae",
       cssVar: "--cu-color-success-link-hovered",
       description:
-        "Generated success hyperlink text color (matches primary) (hovered, 25% brighter)",
+        "Generated success hyperlink text color (matches primary) (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2140,10 +2140,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.link-disabled",
       type: "color",
-      value: "#4c7062",
+      value: "#475652",
       cssVar: "--cu-color-success-link-disabled",
       description:
-        "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -2430,10 +2430,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis-disabled",
       type: "color",
-      value: "#808082",
+      value: "#5d5d60",
       cssVar: "--cu-color-emphasis-disabled",
       description:
-        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))",
+        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -2470,10 +2470,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink-disabled",
       type: "color",
-      value: "#69696b",
+      value: "#535356",
       cssVar: "--cu-color-ink-disabled",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -2510,20 +2510,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.subtle-disabled",
       type: "color",
-      value: "#606063",
+      value: "#4f4f52",
       cssVar: "--cu-color-subtle-disabled",
       description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.sunken-hovered",
       type: "color",
-      value: "#141415",
+      value: "#111112",
       cssVar: "--cu-color-sunken-hovered",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% brighter)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2550,20 +2550,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sunken-disabled",
       type: "color",
-      value: "#2e2e31",
+      value: "#353538",
       cssVar: "--cu-color-sunken-disabled",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.canvas-hovered",
       type: "color",
-      value: "#202024",
+      value: "#1c1c1f",
       cssVar: "--cu-color-canvas-hovered",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% brighter)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2590,20 +2590,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.canvas-disabled",
       type: "color",
-      value: "#323235",
+      value: "#38383b",
       cssVar: "--cu-color-canvas-disabled",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.surface-hovered",
       type: "color",
-      value: "#2a2a2c",
+      value: "#242426",
       cssVar: "--cu-color-surface-hovered",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% brighter)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2630,20 +2630,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-disabled",
       type: "color",
-      value: "#343437",
+      value: "#39393c",
       cssVar: "--cu-color-surface-disabled",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.elevated-hovered",
       type: "color",
-      value: "#2e2e30",
+      value: "#28282a",
       cssVar: "--cu-color-elevated-hovered",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% brighter)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2670,20 +2670,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-disabled",
       type: "color",
-      value: "#363638",
+      value: "#3a3a3d",
       cssVar: "--cu-color-elevated-disabled",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.floating-hovered",
       type: "color",
-      value: "#343539",
+      value: "#2e2f32",
       cssVar: "--cu-color-floating-hovered",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% brighter)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2710,20 +2710,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-disabled",
       type: "color",
-      value: "#37383b",
+      value: "#3b3c3f",
       cssVar: "--cu-color-floating-disabled",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.hairline-hovered",
       type: "color",
-      value: "#ffffff",
+      value: "#727276",
       cssVar: "--cu-color-hairline-hovered",
       description:
-        "Low-contrast color for borders, dividers and separators. (hovered, dark contrast primitive)",
+        "Low-contrast color for borders, dividers and separators. (hovered, 40% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2750,10 +2750,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-disabled",
       type: "color",
-      value: "#444447",
+      value: "#434346",
       cssVar: "--cu-color-hairline-disabled",
       description:
-        "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -6395,20 +6395,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.primary-disabled",
       type: "color",
-      value: "#838385",
+      value: "#69696b",
       cssVar: "--cu-color-base-primary-disabled",
       description:
-        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))",
+        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.base.secondary-hovered",
       type: "color",
-      value: "#4f4f54",
+      value: "#4a4b4e",
       cssVar: "--cu-color-base-secondary-hovered",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 18% brighter)",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 8% brighter)",
       theme: undefined,
       typography: false
     },
@@ -6435,19 +6435,19 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-disabled",
       type: "color",
-      value: "#4f5052",
+      value: "#535355",
       cssVar: "--cu-color-base-secondary-disabled",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.base.link-hovered",
       type: "color",
-      value: "#73d3d6",
+      value: "#5fbad0",
       cssVar: "--cu-color-base-link-hovered",
-      description: "The color used for hyperlink text. (hovered, 25% brighter)",
+      description: "The color used for hyperlink text. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -6472,10 +6472,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.link-disabled",
       type: "color",
-      value: "#58727f",
+      value: "#566269",
       cssVar: "--cu-color-base-link-disabled",
       description:
-        "The color used for hyperlink text. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "The color used for hyperlink text. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -6549,10 +6549,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.primary-hovered",
       type: "color",
-      value: "#2b937c",
+      value: "#30a58f",
       cssVar: "--cu-color-brand-primary-hovered",
       description:
-        "The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker)",
+        "The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -6579,20 +6579,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.primary-disabled",
       type: "color",
-      value: "#5f7973",
+      value: "#596563",
       cssVar: "--cu-color-brand-primary-disabled",
       description:
-        "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.brand.secondary-hovered",
       type: "color",
-      value: "#4c7d70",
+      value: "#3b7466",
       cssVar: "--cu-color-brand-secondary-hovered",
       description:
-        "Generated low-emphasis brand background for the dark theme (hovered, 25% brighter)",
+        "Generated low-emphasis brand background for the dark theme (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -6619,20 +6619,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.secondary-disabled",
       type: "color",
-      value: "#4b5c59",
+      value: "#515858",
       cssVar: "--cu-color-brand-secondary-disabled",
       description:
-        "Generated low-emphasis brand background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated low-emphasis brand background for the dark theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.brand.link-hovered",
       type: "color",
-      value: "#2b937c",
+      value: "#30a58f",
       cssVar: "--cu-color-brand-link-hovered",
       description:
-        "Generated brand hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated brand hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -6659,10 +6659,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.link-disabled",
       type: "color",
-      value: "#5f7973",
+      value: "#596563",
       cssVar: "--cu-color-brand-link-disabled",
       description:
-        "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -6738,10 +6738,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-hovered",
       type: "color",
-      value: "#d8788e",
+      value: "#c86c81",
       cssVar: "--cu-color-danger-primary-hovered",
       description:
-        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% brighter)",
+        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -6768,20 +6768,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-disabled",
       type: "color",
-      value: "#745b61",
+      value: "#63575c",
       cssVar: "--cu-color-danger-primary-disabled",
       description:
-        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.danger.secondary-hovered",
       type: "color",
-      value: "#814252",
+      value: "#7a344a",
       cssVar: "--cu-color-danger-secondary-hovered",
       description:
-        "Generated low-emphasis danger background for the dark theme (hovered, 25% brighter)",
+        "Generated low-emphasis danger background for the dark theme (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -6808,20 +6808,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.secondary-disabled",
       type: "color",
-      value: "#5e4950",
+      value: "#595054",
       cssVar: "--cu-color-danger-secondary-disabled",
       description:
-        "Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.danger.link-hovered",
       type: "color",
-      value: "#d8788e",
+      value: "#c86c81",
       cssVar: "--cu-color-danger-link-hovered",
       description:
-        "Generated danger hyperlink text color (matches primary) (hovered, 25% brighter)",
+        "Generated danger hyperlink text color (matches primary) (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -6848,10 +6848,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.link-disabled",
       type: "color",
-      value: "#745b61",
+      value: "#63575c",
       cssVar: "--cu-color-danger-link-disabled",
       description:
-        "Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -6927,10 +6927,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-hovered",
       type: "color",
-      value: "#9c7c2d",
+      value: "#b19358",
       cssVar: "--cu-color-warning-primary-hovered",
       description:
-        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
+        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -6957,20 +6957,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-disabled",
       type: "color",
-      value: "#7d7465",
+      value: "#67625d",
       cssVar: "--cu-color-warning-primary-disabled",
       description:
-        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.warning.secondary-hovered",
       type: "color",
-      value: "#b19467",
+      value: "#9f8457",
       cssVar: "--cu-color-warning-secondary-hovered",
       description:
-        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 25% brighter)",
+        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -6997,20 +6997,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-disabled",
       type: "color",
-      value: "#6b6254",
+      value: "#5f5b55",
       cssVar: "--cu-color-warning-secondary-disabled",
       description:
-        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.warning.link-hovered",
       type: "color",
-      value: "#9c7c2d",
+      value: "#b19358",
       cssVar: "--cu-color-warning-link-hovered",
       description:
-        "Generated warning hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated warning hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -7037,10 +7037,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-disabled",
       type: "color",
-      value: "#7d7465",
+      value: "#67625d",
       cssVar: "--cu-color-warning-link-disabled",
       description:
-        "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -7115,10 +7115,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.primary-hovered",
       type: "color",
-      value: "#7eb0da",
+      value: "#719dd6",
       cssVar: "--cu-color-info-primary-hovered",
       description:
-        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% brighter)",
+        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -7145,20 +7145,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.primary-disabled",
       type: "color",
-      value: "#5e697e",
+      value: "#585e68",
       cssVar: "--cu-color-info-primary-disabled",
       description:
-        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.info.secondary-hovered",
       type: "color",
-      value: "#536c97",
+      value: "#47618e",
       cssVar: "--cu-color-info-secondary-hovered",
       description:
-        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% brighter)",
+        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -7185,20 +7185,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.secondary-disabled",
       type: "color",
-      value: "#4d5665",
+      value: "#52555d",
       cssVar: "--cu-color-info-secondary-disabled",
       description:
-        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.info.link-hovered",
       type: "color",
-      value: "#7eb0da",
+      value: "#719dd6",
       cssVar: "--cu-color-info-link-hovered",
       description:
-        "Generated info hyperlink text color (matches primary) (hovered, 25% brighter)",
+        "Generated info hyperlink text color (matches primary) (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -7225,10 +7225,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.link-disabled",
       type: "color",
-      value: "#5e697e",
+      value: "#585e68",
       cssVar: "--cu-color-info-link-disabled",
       description:
-        "Generated info hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated info hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -7304,10 +7304,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.primary-hovered",
       type: "color",
-      value: "#ac95e0",
+      value: "#9c89d3",
       cssVar: "--cu-color-discovery-primary-hovered",
       description:
-        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% brighter)",
+        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -7334,20 +7334,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.primary-disabled",
       type: "color",
-      value: "#696577",
+      value: "#5e5b65",
       cssVar: "--cu-color-discovery-primary-disabled",
       description:
-        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.discovery.secondary-hovered",
       type: "color",
-      value: "#5c5378",
+      value: "#544a71",
       cssVar: "--cu-color-discovery-secondary-hovered",
       description:
-        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% brighter)",
+        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -7374,20 +7374,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.secondary-disabled",
       type: "color",
-      value: "#524f5c",
+      value: "#545259",
       cssVar: "--cu-color-discovery-secondary-disabled",
       description:
-        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.discovery.link-hovered",
       type: "color",
-      value: "#ac95e0",
+      value: "#9c89d3",
       cssVar: "--cu-color-discovery-link-hovered",
       description:
-        "Generated discovery hyperlink text color (matches primary) (hovered, 25% brighter)",
+        "Generated discovery hyperlink text color (matches primary) (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -7414,10 +7414,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.link-disabled",
       type: "color",
-      value: "#696577",
+      value: "#5e5b65",
       cssVar: "--cu-color-discovery-link-disabled",
       description:
-        "Generated discovery hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated discovery hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -7493,10 +7493,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.primary-hovered",
       type: "color",
-      value: "#84dbb5",
+      value: "#74c2a0",
       cssVar: "--cu-color-success-primary-hovered",
       description:
-        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% brighter)",
+        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -7523,20 +7523,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.primary-disabled",
       type: "color",
-      value: "#5d736a",
+      value: "#58625f",
       cssVar: "--cu-color-success-primary-disabled",
       description:
-        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.success.secondary-hovered",
       type: "color",
-      value: "#4c7d68",
+      value: "#3b755d",
       cssVar: "--cu-color-success-secondary-hovered",
       description:
-        "Generated low-emphasis success background for the dark theme (hovered, 25% brighter)",
+        "Generated low-emphasis success background for the dark theme (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -7563,20 +7563,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.secondary-disabled",
       type: "color",
-      value: "#4b5c57",
+      value: "#515857",
       cssVar: "--cu-color-success-secondary-disabled",
       description:
-        "Generated low-emphasis success background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated low-emphasis success background for the dark theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.success.link-hovered",
       type: "color",
-      value: "#84dbb5",
+      value: "#74c2a0",
       cssVar: "--cu-color-success-link-hovered",
       description:
-        "Generated success hyperlink text color (matches primary) (hovered, 25% brighter)",
+        "Generated success hyperlink text color (matches primary) (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -7603,10 +7603,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.link-disabled",
       type: "color",
-      value: "#5d736a",
+      value: "#58625f",
       cssVar: "--cu-color-success-link-disabled",
       description:
-        "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -7893,10 +7893,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis-disabled",
       type: "color",
-      value: "#808081",
+      value: "#676769",
       cssVar: "--cu-color-emphasis-disabled",
       description:
-        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))",
+        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -7933,10 +7933,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink-disabled",
       type: "color",
-      value: "#707071",
+      value: "#606062",
       cssVar: "--cu-color-ink-disabled",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -7973,20 +7973,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.subtle-disabled",
       type: "color",
-      value: "#6a6a6b",
+      value: "#5e5e60",
       cssVar: "--cu-color-subtle-disabled",
       description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.sunken-hovered",
       type: "color",
-      value: "#343435",
+      value: "#323233",
       cssVar: "--cu-color-sunken-hovered",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% brighter)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -8013,20 +8013,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sunken-disabled",
       type: "color",
-      value: "#464649",
+      value: "#4b4b4e",
       cssVar: "--cu-color-sunken-disabled",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.canvas-hovered",
       type: "color",
-      value: "#3c3c40",
+      value: "#39393d",
       cssVar: "--cu-color-canvas-hovered",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% brighter)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -8053,20 +8053,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.canvas-disabled",
       type: "color",
-      value: "#49494b",
+      value: "#4d4d50",
       cssVar: "--cu-color-canvas-disabled",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.surface-hovered",
       type: "color",
-      value: "#434345",
+      value: "#3f3f41",
       cssVar: "--cu-color-surface-hovered",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% brighter)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -8093,20 +8093,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-disabled",
       type: "color",
-      value: "#4b4b4d",
+      value: "#4e4e50",
       cssVar: "--cu-color-surface-disabled",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.elevated-hovered",
       type: "color",
-      value: "#464648",
+      value: "#424244",
       cssVar: "--cu-color-elevated-hovered",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% brighter)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -8133,20 +8133,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-disabled",
       type: "color",
-      value: "#4c4c4e",
+      value: "#4f4f51",
       cssVar: "--cu-color-elevated-disabled",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.floating-hovered",
       type: "color",
-      value: "#4a4b4e",
+      value: "#464749",
       cssVar: "--cu-color-floating-hovered",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% brighter)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -8173,20 +8173,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-disabled",
       type: "color",
-      value: "#4d4d50",
+      value: "#4f5052",
       cssVar: "--cu-color-floating-disabled",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.hairline-hovered",
       type: "color",
-      value: "#d9d9d9",
+      value: "#767679",
       cssVar: "--cu-color-hairline-hovered",
       description:
-        "Low-contrast color for borders, dividers and separators. (hovered, dark contrast primitive)",
+        "Low-contrast color for borders, dividers and separators. (hovered, 40% brighter)",
       theme: undefined,
       typography: false
     },
@@ -8213,10 +8213,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-disabled",
       type: "color",
-      value: "#565658",
+      value: "#555557",
       cssVar: "--cu-color-hairline-disabled",
       description:
-        "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -11858,20 +11858,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.primary-disabled",
       type: "color",
-      value: "#828290",
+      value: "#4d4d58",
       cssVar: "--cu-color-base-primary-disabled",
       description:
-        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))",
+        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.base.secondary-hovered",
       type: "color",
-      value: "#1c1d24",
+      value: "#121318",
       cssVar: "--cu-color-base-secondary-hovered",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 18% brighter)",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 8% brighter)",
       theme: undefined,
       typography: false
     },
@@ -11898,19 +11898,19 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-disabled",
       type: "color",
-      value: "#1c1e22",
+      value: "#232329",
       cssVar: "--cu-color-base-secondary-disabled",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.base.link-hovered",
       type: "color",
-      value: "#9bfcff",
+      value: "#64e1ff",
       cssVar: "--cu-color-base-link-hovered",
-      description: "The color used for hyperlink text. (hovered, 25% brighter)",
+      description: "The color used for hyperlink text. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -11935,10 +11935,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.link-disabled",
       type: "color",
-      value: "#2c6380",
+      value: "#2b414e",
       cssVar: "--cu-color-base-link-disabled",
       description:
-        "The color used for hyperlink text. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "The color used for hyperlink text. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -12012,10 +12012,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.primary-hovered",
       type: "color",
-      value: "#00775d",
+      value: "#00a788",
       cssVar: "--cu-color-brand-primary-hovered",
       description:
-        "The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker)",
+        "The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -12042,20 +12042,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.primary-disabled",
       type: "color",
-      value: "#397668",
+      value: "#304945",
       cssVar: "--cu-color-brand-primary-disabled",
       description:
-        "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.brand.secondary-hovered",
       type: "color",
-      value: "#19755d",
+      value: "#075340",
       cssVar: "--cu-color-brand-secondary-hovered",
       description:
-        "Generated low-emphasis brand background for the dark theme (hovered, 25% brighter)",
+        "Generated low-emphasis brand background for the dark theme (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -12082,20 +12082,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.secondary-disabled",
       type: "color",
-      value: "#1a2f2c",
+      value: "#202c2c",
       cssVar: "--cu-color-brand-secondary-disabled",
       description:
-        "Generated low-emphasis brand background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated low-emphasis brand background for the dark theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.brand.link-hovered",
       type: "color",
-      value: "#00775d",
+      value: "#00a788",
       cssVar: "--cu-color-brand-link-hovered",
       description:
-        "Generated brand hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated brand hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -12122,10 +12122,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.link-disabled",
       type: "color",
-      value: "#397668",
+      value: "#304945",
       cssVar: "--cu-color-brand-link-disabled",
       description:
-        "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -12201,10 +12201,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-hovered",
       type: "color",
-      value: "#ffa7bb",
+      value: "#ff6d8e",
       cssVar: "--cu-color-danger-primary-hovered",
       description:
-        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% brighter)",
+        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -12231,20 +12231,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-disabled",
       type: "color",
-      value: "#693240",
+      value: "#432c35",
       cssVar: "--cu-color-danger-primary-disabled",
       description:
-        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.danger.secondary-hovered",
       type: "color",
-      value: "#780a26",
+      value: "#58001b",
       cssVar: "--cu-color-danger-secondary-hovered",
       description:
-        "Generated low-emphasis danger background for the dark theme (hovered, 25% brighter)",
+        "Generated low-emphasis danger background for the dark theme (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -12271,20 +12271,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.secondary-disabled",
       type: "color",
-      value: "#311720",
+      value: "#2d2026",
       cssVar: "--cu-color-danger-secondary-disabled",
       description:
-        "Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.danger.link-hovered",
       type: "color",
-      value: "#ffa7bb",
+      value: "#ff6d8e",
       cssVar: "--cu-color-danger-link-hovered",
       description:
-        "Generated danger hyperlink text color (matches primary) (hovered, 25% brighter)",
+        "Generated danger hyperlink text color (matches primary) (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -12311,10 +12311,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.link-disabled",
       type: "color",
-      value: "#693240",
+      value: "#432c35",
       cssVar: "--cu-color-danger-link-disabled",
       description:
-        "Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -12390,10 +12390,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-hovered",
       type: "color",
-      value: "#916700",
+      value: "#f8ad1d",
       cssVar: "--cu-color-warning-primary-hovered",
       description:
-        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
+        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -12420,20 +12420,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-disabled",
       type: "color",
-      value: "#816943",
+      value: "#4e4336",
       cssVar: "--cu-color-warning-primary-disabled",
       description:
-        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.warning.secondary-hovered",
       type: "color",
-      value: "#eead45",
+      value: "#d08d1c",
       cssVar: "--cu-color-warning-secondary-hovered",
       description:
-        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 25% brighter)",
+        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -12460,20 +12460,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-disabled",
       type: "color",
-      value: "#514128",
+      value: "#3b3329",
       cssVar: "--cu-color-warning-secondary-disabled",
       description:
-        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.warning.link-hovered",
       type: "color",
-      value: "#916700",
+      value: "#f8ad1d",
       cssVar: "--cu-color-warning-link-hovered",
       description:
-        "Generated warning hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated warning hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -12500,10 +12500,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-disabled",
       type: "color",
-      value: "#816943",
+      value: "#4e4336",
       cssVar: "--cu-color-warning-link-disabled",
       description:
-        "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -12578,10 +12578,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.primary-hovered",
       type: "color",
-      value: "#b8deff",
+      value: "#94c3ff",
       cssVar: "--cu-color-info-primary-hovered",
       description:
-        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% brighter)",
+        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -12608,20 +12608,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.primary-disabled",
       type: "color",
-      value: "#36507f",
+      value: "#2e3a4e",
       cssVar: "--cu-color-info-primary-disabled",
       description:
-        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.info.secondary-hovered",
       type: "color",
-      value: "#1953bb",
+      value: "#0c409c",
       cssVar: "--cu-color-info-secondary-hovered",
       description:
-        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% brighter)",
+        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -12648,20 +12648,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.secondary-disabled",
       type: "color",
-      value: "#1e2b43",
+      value: "#232936",
       cssVar: "--cu-color-info-secondary-disabled",
       description:
-        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.info.link-hovered",
       type: "color",
-      value: "#b8deff",
+      value: "#94c3ff",
       cssVar: "--cu-color-info-link-hovered",
       description:
-        "Generated info hyperlink text color (matches primary) (hovered, 25% brighter)",
+        "Generated info hyperlink text color (matches primary) (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -12688,10 +12688,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.link-disabled",
       type: "color",
-      value: "#36507f",
+      value: "#2e3a4e",
       cssVar: "--cu-color-info-link-disabled",
       description:
-        "Generated info hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated info hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -12767,10 +12767,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.primary-hovered",
       type: "color",
-      value: "#f8f5ff",
+      value: "#d2c2ff",
       cssVar: "--cu-color-discovery-primary-hovered",
       description:
-        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% brighter)",
+        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -12797,20 +12797,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.primary-disabled",
       type: "color",
-      value: "#4f4472",
+      value: "#39344a",
       cssVar: "--cu-color-discovery-primary-disabled",
       description:
-        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.discovery.secondary-hovered",
       type: "color",
-      value: "#37256f",
+      value: "#291959",
       cssVar: "--cu-color-discovery-secondary-hovered",
       description:
-        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% brighter)",
+        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -12837,20 +12837,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.secondary-disabled",
       type: "color",
-      value: "#231f32",
+      value: "#26232f",
       cssVar: "--cu-color-discovery-secondary-disabled",
       description:
-        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.discovery.link-hovered",
       type: "color",
-      value: "#f8f5ff",
+      value: "#d2c2ff",
       cssVar: "--cu-color-discovery-link-hovered",
       description:
-        "Generated discovery hyperlink text color (matches primary) (hovered, 25% brighter)",
+        "Generated discovery hyperlink text color (matches primary) (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -12877,10 +12877,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.link-disabled",
       type: "color",
-      value: "#4f4472",
+      value: "#39344a",
       cssVar: "--cu-color-discovery-link-disabled",
       description:
-        "Generated discovery hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated discovery hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -12956,10 +12956,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.primary-hovered",
       type: "color",
-      value: "#c7ffe7",
+      value: "#73ffc1",
       cssVar: "--cu-color-success-primary-hovered",
       description:
-        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% brighter)",
+        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -12986,20 +12986,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.primary-disabled",
       type: "color",
-      value: "#376754",
+      value: "#2e433d",
       cssVar: "--cu-color-success-primary-disabled",
       description:
-        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.success.secondary-hovered",
       type: "color",
-      value: "#19774e",
+      value: "#075435",
       cssVar: "--cu-color-success-secondary-hovered",
       description:
-        "Generated low-emphasis success background for the dark theme (hovered, 25% brighter)",
+        "Generated low-emphasis success background for the dark theme (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -13026,20 +13026,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.secondary-disabled",
       type: "color",
-      value: "#1a3029",
+      value: "#202c2b",
       cssVar: "--cu-color-success-secondary-disabled",
       description:
-        "Generated low-emphasis success background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated low-emphasis success background for the dark theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.success.link-hovered",
       type: "color",
-      value: "#c7ffe7",
+      value: "#73ffc1",
       cssVar: "--cu-color-success-link-hovered",
       description:
-        "Generated success hyperlink text color (matches primary) (hovered, 25% brighter)",
+        "Generated success hyperlink text color (matches primary) (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -13066,10 +13066,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.link-disabled",
       type: "color",
-      value: "#376754",
+      value: "#2e433d",
       cssVar: "--cu-color-success-link-disabled",
       description:
-        "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -13356,10 +13356,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis-disabled",
       type: "color",
-      value: "#7a7a89",
+      value: "#4a4a55",
       cssVar: "--cu-color-emphasis-disabled",
       description:
-        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))",
+        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -13396,10 +13396,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink-disabled",
       type: "color",
-      value: "#5a5a66",
+      value: "#3c3c46",
       cssVar: "--cu-color-ink-disabled",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -13436,10 +13436,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.subtle-disabled",
       type: "color",
-      value: "#4e4e5a",
+      value: "#373740",
       cssVar: "--cu-color-subtle-disabled",
       description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -13449,7 +13449,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#000000",
       cssVar: "--cu-color-sunken-hovered",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% brighter)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -13476,10 +13476,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sunken-disabled",
       type: "color",
-      value: "#0a0a0d",
+      value: "#141418",
       cssVar: "--cu-color-sunken-disabled",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -13489,7 +13489,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#000000",
       cssVar: "--cu-color-canvas-hovered",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% brighter)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -13516,20 +13516,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.canvas-disabled",
       type: "color",
-      value: "#101013",
+      value: "#18181c",
       cssVar: "--cu-color-canvas-disabled",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.surface-hovered",
       type: "color",
-      value: "#050505",
+      value: "#000000",
       cssVar: "--cu-color-surface-hovered",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% brighter)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -13556,20 +13556,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-disabled",
       type: "color",
-      value: "#121216",
+      value: "#19191e",
       cssVar: "--cu-color-surface-disabled",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.elevated-hovered",
       type: "color",
-      value: "#0a0a0c",
+      value: "#020202",
       cssVar: "--cu-color-elevated-hovered",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% brighter)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -13596,20 +13596,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-disabled",
       type: "color",
-      value: "#151518",
+      value: "#1a1a1f",
       cssVar: "--cu-color-elevated-disabled",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.floating-hovered",
       type: "color",
-      value: "#131418",
+      value: "#0b0c0e",
       cssVar: "--cu-color-floating-hovered",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% brighter)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 15% brighter)",
       theme: undefined,
       typography: false
     },
@@ -13636,20 +13636,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-disabled",
       type: "color",
-      value: "#17181c",
+      value: "#1c1e22",
       cssVar: "--cu-color-floating-disabled",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 38% over oklch(0.3839 0.0045 286.26))",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.hairline-hovered",
       type: "color",
-      value: "#ffffff",
+      value: "#676777",
       cssVar: "--cu-color-hairline-hovered",
       description:
-        "Low-contrast color for borders, dividers and separators. (hovered, dark contrast primitive)",
+        "Low-contrast color for borders, dividers and separators. (hovered, 40% brighter)",
       theme: undefined,
       typography: false
     },
@@ -13676,10 +13676,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-disabled",
       type: "color",
-      value: "#28282f",
+      value: "#27272d",
       cssVar: "--cu-color-hairline-disabled",
       description:
-        "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -17291,10 +17291,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.primary-hovered",
       type: "color",
-      value: "#5c5c5f",
+      value: "#2a2a2c",
       cssVar: "--cu-color-base-primary-hovered",
       description:
-        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)",
+        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -17321,20 +17321,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.primary-disabled",
       type: "color",
-      value: "#353538",
+      value: "#3d3d40",
       cssVar: "--cu-color-base-primary-disabled",
       description:
-        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.base.secondary-hovered",
       type: "color",
-      value: "#878788",
+      value: "#9d9d9e",
       cssVar: "--cu-color-base-secondary-hovered",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 18% darker)",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 8% darker)",
       theme: undefined,
       typography: false
     },
@@ -17361,19 +17361,19 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-disabled",
       type: "color",
-      value: "#69696b",
+      value: "#535356",
       cssVar: "--cu-color-base-secondary-disabled",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.base.link-hovered",
       type: "color",
-      value: "#0057a0",
+      value: "#006db8",
       cssVar: "--cu-color-base-link-hovered",
-      description: "The color used for hyperlink text. (hovered, 25% darker)",
+      description: "The color used for hyperlink text. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -17399,10 +17399,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.link-disabled",
       type: "color",
-      value: "#3c5a72",
+      value: "#404d59",
       cssVar: "--cu-color-base-link-disabled",
       description:
-        "The color used for hyperlink text. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "The color used for hyperlink text. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -17477,10 +17477,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.primary-hovered",
       type: "color",
-      value: "#007c72",
+      value: "#00978c",
       cssVar: "--cu-color-brand-primary-hovered",
       description:
-        "The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker)",
+        "The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -17507,20 +17507,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.primary-disabled",
       type: "color",
-      value: "#436967",
+      value: "#435354",
       cssVar: "--cu-color-brand-primary-disabled",
       description:
-        "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.brand.secondary-hovered",
       type: "color",
-      value: "#89b0ab",
+      value: "#afd7d1",
       cssVar: "--cu-color-brand-secondary-hovered",
       description:
-        "Generated low-emphasis brand background for the light theme (hovered, 25% darker)",
+        "Generated low-emphasis brand background for the light theme (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -17547,20 +17547,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.secondary-disabled",
       type: "color",
-      value: "#788484",
+      value: "#5a5f61",
       cssVar: "--cu-color-brand-secondary-disabled",
       description:
-        "Generated low-emphasis brand background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated low-emphasis brand background for the light theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.brand.link-hovered",
       type: "color",
-      value: "#007c72",
+      value: "#00978c",
       cssVar: "--cu-color-brand-link-hovered",
       description:
-        "Generated brand hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated brand hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -17587,10 +17587,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.link-disabled",
       type: "color",
-      value: "#436967",
+      value: "#435354",
       cssVar: "--cu-color-brand-link-disabled",
       description:
-        "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -17666,10 +17666,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-hovered",
       type: "color",
-      value: "#6a0022",
+      value: "#7c0c30",
       cssVar: "--cu-color-danger-primary-hovered",
       description:
-        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% darker)",
+        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -17696,20 +17696,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-disabled",
       type: "color",
-      value: "#5a3c44",
+      value: "#4d4045",
       cssVar: "--cu-color-danger-primary-disabled",
       description:
-        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.danger.secondary-hovered",
       type: "color",
-      value: "#b2455c",
+      value: "#d16176",
       cssVar: "--cu-color-danger-secondary-hovered",
       description:
-        "Generated low-emphasis danger background for the light theme (hovered, 25% darker)",
+        "Generated low-emphasis danger background for the light theme (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -17736,20 +17736,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.secondary-disabled",
       type: "color",
-      value: "#7c5a61",
+      value: "#5c4d52",
       cssVar: "--cu-color-danger-secondary-disabled",
       description:
-        "Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.danger.link-hovered",
       type: "color",
-      value: "#6a0022",
+      value: "#7c0c30",
       cssVar: "--cu-color-danger-link-hovered",
       description:
-        "Generated danger hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated danger hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -17776,10 +17776,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.link-disabled",
       type: "color",
-      value: "#5a3c44",
+      value: "#4d4045",
       cssVar: "--cu-color-danger-link-disabled",
       description:
-        "Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -17855,10 +17855,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-hovered",
       type: "color",
-      value: "#543400",
+      value: "#654400",
       cssVar: "--cu-color-warning-primary-hovered",
       description:
-        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
+        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -17885,20 +17885,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-disabled",
       type: "color",
-      value: "#53493b",
+      value: "#4a4641",
       cssVar: "--cu-color-warning-primary-disabled",
       description:
-        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.warning.secondary-hovered",
       type: "color",
-      value: "#906c33",
+      value: "#ac884f",
       cssVar: "--cu-color-warning-secondary-hovered",
       description:
-        "Generated low-emphasis warning background for the light theme (hovered, 25% darker)",
+        "Generated low-emphasis warning background for the light theme (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -17925,20 +17925,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-disabled",
       type: "color",
-      value: "#716557",
+      value: "#57524d",
       cssVar: "--cu-color-warning-secondary-disabled",
       description:
-        "Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.warning.link-hovered",
       type: "color",
-      value: "#543400",
+      value: "#654400",
       cssVar: "--cu-color-warning-link-hovered",
       description:
-        "Generated warning hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated warning hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -17965,10 +17965,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-disabled",
       type: "color",
-      value: "#53493b",
+      value: "#4a4641",
       cssVar: "--cu-color-warning-link-disabled",
       description:
-        "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -18043,10 +18043,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.primary-hovered",
       type: "color",
-      value: "#00318d",
+      value: "#0d43a0",
       cssVar: "--cu-color-info-primary-hovered",
       description:
-        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker)",
+        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -18073,20 +18073,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.primary-disabled",
       type: "color",
-      value: "#3b4a68",
+      value: "#3f4654",
       cssVar: "--cu-color-info-primary-disabled",
       description:
-        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.info.secondary-hovered",
       type: "color",
-      value: "#396ac2",
+      value: "#5386e0",
       cssVar: "--cu-color-info-secondary-hovered",
       description:
-        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker)",
+        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -18113,20 +18113,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.secondary-disabled",
       type: "color",
-      value: "#556582",
+      value: "#4b5160",
       cssVar: "--cu-color-info-secondary-disabled",
       description:
-        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.info.link-hovered",
       type: "color",
-      value: "#00318d",
+      value: "#0d43a0",
       cssVar: "--cu-color-info-link-hovered",
       description:
-        "Generated info hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated info hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -18153,10 +18153,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.link-disabled",
       type: "color",
-      value: "#3b4a68",
+      value: "#3f4654",
       cssVar: "--cu-color-info-link-disabled",
       description:
-        "Generated info hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated info hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -18232,10 +18232,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.primary-hovered",
       type: "color",
-      value: "#3c2372",
+      value: "#4a3383",
       cssVar: "--cu-color-discovery-primary-hovered",
       description:
-        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% darker)",
+        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -18262,20 +18262,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.primary-disabled",
       type: "color",
-      value: "#4a445f",
+      value: "#464451",
       cssVar: "--cu-color-discovery-primary-disabled",
       description:
-        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.discovery.secondary-hovered",
       type: "color",
-      value: "#725ba7",
+      value: "#8b75c4",
       cssVar: "--cu-color-discovery-secondary-hovered",
       description:
-        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% darker)",
+        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -18302,20 +18302,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.secondary-disabled",
       type: "color",
-      value: "#655f79",
+      value: "#524f5c",
       cssVar: "--cu-color-discovery-secondary-disabled",
       description:
-        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.discovery.link-hovered",
       type: "color",
-      value: "#3c2372",
+      value: "#4a3383",
       cssVar: "--cu-color-discovery-link-hovered",
       description:
-        "Generated discovery hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated discovery hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -18342,10 +18342,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.link-disabled",
       type: "color",
-      value: "#4a445f",
+      value: "#464451",
       cssVar: "--cu-color-discovery-link-disabled",
       description:
-        "Generated discovery hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated discovery hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -18421,10 +18421,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.primary-hovered",
       type: "color",
-      value: "#004933",
+      value: "#065a43",
       cssVar: "--cu-color-success-primary-hovered",
       description:
-        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% darker)",
+        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -18451,20 +18451,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.primary-disabled",
       type: "color",
-      value: "#3c504b",
+      value: "#404948",
       cssVar: "--cu-color-success-primary-disabled",
       description:
-        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.success.secondary-hovered",
       type: "color",
-      value: "#3b8168",
+      value: "#589d83",
       cssVar: "--cu-color-success-secondary-hovered",
       description:
-        "Generated low-emphasis success background for the light theme (hovered, 25% darker)",
+        "Generated low-emphasis success background for the light theme (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -18491,20 +18491,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.secondary-disabled",
       type: "color",
-      value: "#586c66",
+      value: "#4c5554",
       cssVar: "--cu-color-success-secondary-disabled",
       description:
-        "Generated low-emphasis success background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated low-emphasis success background for the light theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.success.link-hovered",
       type: "color",
-      value: "#004933",
+      value: "#065a43",
       cssVar: "--cu-color-success-link-hovered",
       description:
-        "Generated success hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated success hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -18531,10 +18531,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.link-disabled",
       type: "color",
-      value: "#3c504b",
+      value: "#404948",
       cssVar: "--cu-color-success-link-disabled",
       description:
-        "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -18821,10 +18821,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis-disabled",
       type: "color",
-      value: "#363639",
+      value: "#3e3e40",
       cssVar: "--cu-color-emphasis-disabled",
       description:
-        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -18861,10 +18861,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink-disabled",
       type: "color",
-      value: "#494a4d",
+      value: "#464649",
       cssVar: "--cu-color-ink-disabled",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -18901,20 +18901,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.subtle-disabled",
       type: "color",
-      value: "#606063",
+      value: "#4f4f52",
       cssVar: "--cu-color-subtle-disabled",
       description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.sunken-hovered",
       type: "color",
-      value: "#999999",
+      value: "#b5b5b5",
       cssVar: "--cu-color-sunken-hovered",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% darker)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -18941,20 +18941,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sunken-disabled",
       type: "color",
-      value: "#7e7e80",
+      value: "#6b6b6d",
       cssVar: "--cu-color-sunken-disabled",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.canvas-hovered",
       type: "color",
-      value: "#9f9f9f",
+      value: "#bcbcbc",
       cssVar: "--cu-color-canvas-hovered",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% darker)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -18981,20 +18981,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.canvas-disabled",
       type: "color",
-      value: "#828284",
+      value: "#6d6d6f",
       cssVar: "--cu-color-canvas-disabled",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.surface-hovered",
       type: "color",
-      value: "#a4a4a4",
+      value: "#c2c2c2",
       cssVar: "--cu-color-surface-hovered",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% darker)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -19021,20 +19021,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-disabled",
       type: "color",
-      value: "#848486",
+      value: "#6f6f71",
       cssVar: "--cu-color-surface-disabled",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.elevated-hovered",
       type: "color",
-      value: "#aaaaaa",
+      value: "#c9c9c9",
       cssVar: "--cu-color-elevated-hovered",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% darker)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -19061,20 +19061,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-disabled",
       type: "color",
-      value: "#88888a",
+      value: "#717173",
       cssVar: "--cu-color-elevated-disabled",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.floating-hovered",
       type: "color",
-      value: "#aeaeae",
+      value: "#cecece",
       cssVar: "--cu-color-floating-hovered",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% darker)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -19101,20 +19101,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-disabled",
       type: "color",
-      value: "#8a8a8b",
+      value: "#727274",
       cssVar: "--cu-color-floating-disabled",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.hairline-hovered",
       type: "color",
-      value: "#0c0c0d",
+      value: "#676768",
       cssVar: "--cu-color-hairline-hovered",
       description:
-        "Low-contrast color for borders, dividers and separators. (hovered, light contrast primitive)",
+        "Low-contrast color for borders, dividers and separators. (hovered, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -19141,10 +19141,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-disabled",
       type: "color",
-      value: "#747477",
+      value: "#58585b",
       cssVar: "--cu-color-hairline-disabled",
       description:
-        "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -22756,10 +22756,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.primary-hovered",
       type: "color",
-      value: "#676769",
+      value: "#434345",
       cssVar: "--cu-color-base-primary-hovered",
       description:
-        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)",
+        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -22786,20 +22786,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.primary-disabled",
       type: "color",
-      value: "#4b4b4e",
+      value: "#515153",
       cssVar: "--cu-color-base-primary-disabled",
       description:
-        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.base.secondary-hovered",
       type: "color",
-      value: "#858585",
+      value: "#949495",
       cssVar: "--cu-color-base-secondary-hovered",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 18% darker)",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 8% darker)",
       theme: undefined,
       typography: false
     },
@@ -22826,19 +22826,19 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-disabled",
       type: "color",
-      value: "#707071",
+      value: "#606062",
       cssVar: "--cu-color-base-secondary-disabled",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.base.link-hovered",
       type: "color",
-      value: "#2a6392",
+      value: "#2e719f",
       cssVar: "--cu-color-base-link-hovered",
-      description: "The color used for hyperlink text. (hovered, 25% darker)",
+      description: "The color used for hyperlink text. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -22864,10 +22864,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.link-disabled",
       type: "color",
-      value: "#526574",
+      value: "#545c64",
       cssVar: "--cu-color-base-link-disabled",
       description:
-        "The color used for hyperlink text. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "The color used for hyperlink text. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -22942,10 +22942,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.primary-hovered",
       type: "color",
-      value: "#257f77",
+      value: "#298d86",
       cssVar: "--cu-color-brand-primary-hovered",
       description:
-        "The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker)",
+        "The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -22972,20 +22972,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.primary-disabled",
       type: "color",
-      value: "#566e6d",
+      value: "#556061",
       cssVar: "--cu-color-brand-primary-disabled",
       description:
-        "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.brand.secondary-hovered",
       type: "color",
-      value: "#889f9c",
+      value: "#a0bdb9",
       cssVar: "--cu-color-brand-secondary-hovered",
       description:
-        "Generated low-emphasis brand background for the light theme (hovered, 25% darker)",
+        "Generated low-emphasis brand background for the light theme (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -23012,20 +23012,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.secondary-disabled",
       type: "color",
-      value: "#7b8282",
+      value: "#66696a",
       cssVar: "--cu-color-brand-secondary-disabled",
       description:
-        "Generated low-emphasis brand background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated low-emphasis brand background for the light theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.brand.link-hovered",
       type: "color",
-      value: "#257f77",
+      value: "#298d86",
       cssVar: "--cu-color-brand-link-hovered",
       description:
-        "Generated brand hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated brand hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -23052,10 +23052,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.link-disabled",
       type: "color",
-      value: "#566e6d",
+      value: "#556061",
       cssVar: "--cu-color-brand-link-disabled",
       description:
-        "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -23131,10 +23131,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-hovered",
       type: "color",
-      value: "#75223c",
+      value: "#7d2f48",
       cssVar: "--cu-color-danger-primary-hovered",
       description:
-        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% darker)",
+        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -23161,20 +23161,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-disabled",
       type: "color",
-      value: "#655156",
+      value: "#5c5357",
       cssVar: "--cu-color-danger-primary-disabled",
       description:
-        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.danger.secondary-hovered",
       type: "color",
-      value: "#9b5e6b",
+      value: "#b2707d",
       cssVar: "--cu-color-danger-secondary-hovered",
       description:
-        "Generated low-emphasis danger background for the light theme (hovered, 25% darker)",
+        "Generated low-emphasis danger background for the light theme (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -23201,20 +23201,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.secondary-disabled",
       type: "color",
-      value: "#7b676b",
+      value: "#665d60",
       cssVar: "--cu-color-danger-secondary-disabled",
       description:
-        "Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.danger.link-hovered",
       type: "color",
-      value: "#75223c",
+      value: "#7d2f48",
       cssVar: "--cu-color-danger-link-hovered",
       description:
-        "Generated danger hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated danger hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -23241,10 +23241,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.link-disabled",
       type: "color",
-      value: "#655156",
+      value: "#5c5357",
       cssVar: "--cu-color-danger-link-disabled",
       description:
-        "Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -23320,10 +23320,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-hovered",
       type: "color",
-      value: "#694d1e",
+      value: "#725821",
       cssVar: "--cu-color-warning-primary-hovered",
       description:
-        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
+        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -23350,20 +23350,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-disabled",
       type: "color",
-      value: "#605950",
+      value: "#5a5754",
       cssVar: "--cu-color-warning-primary-disabled",
       description:
-        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.warning.secondary-hovered",
       type: "color",
-      value: "#86714f",
+      value: "#988464",
       cssVar: "--cu-color-warning-secondary-hovered",
       description:
-        "Generated low-emphasis warning background for the light theme (hovered, 25% darker)",
+        "Generated low-emphasis warning background for the light theme (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -23390,20 +23390,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-disabled",
       type: "color",
-      value: "#746d65",
+      value: "#63605c",
       cssVar: "--cu-color-warning-secondary-disabled",
       description:
-        "Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.warning.link-hovered",
       type: "color",
-      value: "#694d1e",
+      value: "#725821",
       cssVar: "--cu-color-warning-link-hovered",
       description:
-        "Generated warning hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated warning hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -23430,10 +23430,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-disabled",
       type: "color",
-      value: "#605950",
+      value: "#5a5754",
       cssVar: "--cu-color-warning-link-disabled",
       description:
-        "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -23508,10 +23508,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.primary-hovered",
       type: "color",
-      value: "#274988",
+      value: "#355791",
       cssVar: "--cu-color-info-primary-hovered",
       description:
-        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker)",
+        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -23538,20 +23538,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.primary-disabled",
       type: "color",
-      value: "#515a6e",
+      value: "#535761",
       cssVar: "--cu-color-info-primary-disabled",
       description:
-        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.info.secondary-hovered",
       type: "color",
-      value: "#5873a4",
+      value: "#6886bb",
       cssVar: "--cu-color-info-secondary-hovered",
       description:
-        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker)",
+        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -23578,20 +23578,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.secondary-disabled",
       type: "color",
-      value: "#646e7f",
+      value: "#5b5f69",
       cssVar: "--cu-color-info-secondary-disabled",
       description:
-        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.info.link-hovered",
       type: "color",
-      value: "#274988",
+      value: "#355791",
       cssVar: "--cu-color-info-link-hovered",
       description:
-        "Generated info hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated info hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -23618,10 +23618,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.link-disabled",
       type: "color",
-      value: "#515a6e",
+      value: "#535761",
       cssVar: "--cu-color-info-link-disabled",
       description:
-        "Generated info hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated info hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -23697,10 +23697,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.primary-hovered",
       type: "color",
-      value: "#514075",
+      value: "#5b4d7f",
       cssVar: "--cu-color-discovery-primary-hovered",
       description:
-        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% darker)",
+        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -23727,20 +23727,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.primary-disabled",
       type: "color",
-      value: "#5a5768",
+      value: "#57565f",
       cssVar: "--cu-color-discovery-primary-disabled",
       description:
-        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.discovery.secondary-hovered",
       type: "color",
-      value: "#786c96",
+      value: "#897cab",
       cssVar: "--cu-color-discovery-secondary-hovered",
       description:
-        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% darker)",
+        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -23767,20 +23767,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.secondary-disabled",
       type: "color",
-      value: "#6e6a79",
+      value: "#605e66",
       cssVar: "--cu-color-discovery-secondary-disabled",
       description:
-        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.discovery.link-hovered",
       type: "color",
-      value: "#514075",
+      value: "#5b4d7f",
       cssVar: "--cu-color-discovery-link-hovered",
       description:
-        "Generated discovery hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated discovery hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -23807,10 +23807,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.link-disabled",
       type: "color",
-      value: "#5a5768",
+      value: "#57565f",
       cssVar: "--cu-color-discovery-link-disabled",
       description:
-        "Generated discovery hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated discovery hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -23886,10 +23886,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.primary-hovered",
       type: "color",
-      value: "#1d634e",
+      value: "#256a57",
       cssVar: "--cu-color-success-primary-hovered",
       description:
-        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% darker)",
+        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -23916,20 +23916,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.primary-disabled",
       type: "color",
-      value: "#505e5b",
+      value: "#535959",
       cssVar: "--cu-color-success-primary-disabled",
       description:
-        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.success.secondary-hovered",
       type: "color",
-      value: "#537d6e",
+      value: "#698f81",
       cssVar: "--cu-color-success-secondary-hovered",
       description:
-        "Generated low-emphasis success background for the light theme (hovered, 25% darker)",
+        "Generated low-emphasis success background for the light theme (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -23956,20 +23956,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.secondary-disabled",
       type: "color",
-      value: "#65716d",
+      value: "#5c6261",
       cssVar: "--cu-color-success-secondary-disabled",
       description:
-        "Generated low-emphasis success background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated low-emphasis success background for the light theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.success.link-hovered",
       type: "color",
-      value: "#1d634e",
+      value: "#256a57",
       cssVar: "--cu-color-success-link-hovered",
       description:
-        "Generated success hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated success hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -23996,10 +23996,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.link-disabled",
       type: "color",
-      value: "#505e5b",
+      value: "#535959",
       cssVar: "--cu-color-success-link-disabled",
       description:
-        "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -24286,10 +24286,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis-disabled",
       type: "color",
-      value: "#4c4c4e",
+      value: "#525253",
       cssVar: "--cu-color-emphasis-disabled",
       description:
-        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -24326,10 +24326,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink-disabled",
       type: "color",
-      value: "#595a5c",
+      value: "#575759",
       cssVar: "--cu-color-ink-disabled",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -24366,20 +24366,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.subtle-disabled",
       type: "color",
-      value: "#6a6a6b",
+      value: "#5e5e60",
       cssVar: "--cu-color-subtle-disabled",
       description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.sunken-hovered",
       type: "color",
-      value: "#919191",
+      value: "#a5a5a5",
       cssVar: "--cu-color-sunken-hovered",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% darker)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -24406,20 +24406,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sunken-disabled",
       type: "color",
-      value: "#7f7f80",
+      value: "#717172",
       cssVar: "--cu-color-sunken-disabled",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.canvas-hovered",
       type: "color",
-      value: "#969696",
+      value: "#aaaaaa",
       cssVar: "--cu-color-canvas-hovered",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% darker)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -24446,20 +24446,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.canvas-disabled",
       type: "color",
-      value: "#818183",
+      value: "#737374",
       cssVar: "--cu-color-canvas-disabled",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.surface-hovered",
       type: "color",
-      value: "#999999",
+      value: "#aeaeae",
       cssVar: "--cu-color-surface-hovered",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% darker)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -24486,20 +24486,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-disabled",
       type: "color",
-      value: "#838384",
+      value: "#747475",
       cssVar: "--cu-color-surface-disabled",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.elevated-hovered",
       type: "color",
-      value: "#9d9d9d",
+      value: "#b3b3b3",
       cssVar: "--cu-color-elevated-hovered",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% darker)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -24526,20 +24526,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-disabled",
       type: "color",
-      value: "#868687",
+      value: "#757577",
       cssVar: "--cu-color-elevated-disabled",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.floating-hovered",
       type: "color",
-      value: "#a0a0a0",
+      value: "#b6b6b6",
       cssVar: "--cu-color-floating-hovered",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% darker)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -24566,20 +24566,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-disabled",
       type: "color",
-      value: "#878787",
+      value: "#767677",
       cssVar: "--cu-color-floating-disabled",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.hairline-hovered",
       type: "color",
-      value: "#2e2e30",
+      value: "#6e6e6f",
       cssVar: "--cu-color-hairline-hovered",
       description:
-        "Low-contrast color for borders, dividers and separators. (hovered, light contrast primitive)",
+        "Low-contrast color for borders, dividers and separators. (hovered, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -24606,10 +24606,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-disabled",
       type: "color",
-      value: "#787879",
+      value: "#646466",
       cssVar: "--cu-color-hairline-disabled",
       description:
-        "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -28221,10 +28221,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.primary-hovered",
       type: "color",
-      value: "#494954",
+      value: "#050505",
       cssVar: "--cu-color-base-primary-hovered",
       description:
-        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)",
+        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -28251,20 +28251,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.primary-disabled",
       type: "color",
-      value: "#141418",
+      value: "#1f1f24",
       cssVar: "--cu-color-base-primary-disabled",
       description:
-        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.base.secondary-hovered",
       type: "color",
-      value: "#858592",
+      value: "#a6a6b0",
       cssVar: "--cu-color-base-secondary-hovered",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 18% darker)",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 8% darker)",
       theme: undefined,
       typography: false
     },
@@ -28291,19 +28291,19 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-disabled",
       type: "color",
-      value: "#5a5a66",
+      value: "#3c3c46",
       cssVar: "--cu-color-base-secondary-disabled",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.base.link-hovered",
       type: "color",
-      value: "#004075",
+      value: "#005a98",
       cssVar: "--cu-color-base-link-hovered",
-      description: "The color used for hyperlink text. (hovered, 25% darker)",
+      description: "The color used for hyperlink text. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -28329,10 +28329,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.link-disabled",
       type: "color",
-      value: "#254865",
+      value: "#273644",
       cssVar: "--cu-color-base-link-disabled",
       description:
-        "The color used for hyperlink text. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "The color used for hyperlink text. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -28407,10 +28407,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.primary-hovered",
       type: "color",
-      value: "#00413c",
+      value: "#006861",
       cssVar: "--cu-color-brand-primary-hovered",
       description:
-        "The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker)",
+        "The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -28437,20 +28437,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.primary-disabled",
       type: "color",
-      value: "#2c5b58",
+      value: "#2a3d3f",
       cssVar: "--cu-color-brand-primary-disabled",
       description:
-        "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.brand.secondary-hovered",
       type: "color",
-      value: "#8ec5be",
+      value: "#d3f0ec",
       cssVar: "--cu-color-brand-secondary-hovered",
       description:
-        "Generated low-emphasis brand background for the light theme (hovered, 25% darker)",
+        "Generated low-emphasis brand background for the light theme (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -28477,20 +28477,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.secondary-disabled",
       type: "color",
-      value: "#6f8c8c",
+      value: "#465256",
       cssVar: "--cu-color-brand-secondary-disabled",
       description:
-        "Generated low-emphasis brand background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated low-emphasis brand background for the light theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.brand.link-hovered",
       type: "color",
-      value: "#00413c",
+      value: "#006861",
       cssVar: "--cu-color-brand-link-hovered",
       description:
-        "Generated brand hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated brand hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -28517,10 +28517,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.link-disabled",
       type: "color",
-      value: "#2c5b58",
+      value: "#2a3d3f",
       cssVar: "--cu-color-brand-link-disabled",
       description:
-        "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -28596,10 +28596,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-hovered",
       type: "color",
-      value: "#27000c",
+      value: "#52001b",
       cssVar: "--cu-color-danger-primary-hovered",
       description:
-        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% darker)",
+        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -28626,20 +28626,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.primary-disabled",
       type: "color",
-      value: "#44232c",
+      value: "#35252b",
       cssVar: "--cu-color-danger-primary-disabled",
       description:
-        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.danger.secondary-hovered",
       type: "color",
-      value: "#c82b4c",
+      value: "#ec5d78",
       cssVar: "--cu-color-danger-secondary-hovered",
       description:
-        "Generated low-emphasis danger background for the light theme (hovered, 25% darker)",
+        "Generated low-emphasis danger background for the light theme (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -28666,20 +28666,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.secondary-disabled",
       type: "color",
-      value: "#7c4853",
+      value: "#4c363d",
       cssVar: "--cu-color-danger-secondary-disabled",
       description:
-        "Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.danger.link-hovered",
       type: "color",
-      value: "#27000c",
+      value: "#52001b",
       cssVar: "--cu-color-danger-link-hovered",
       description:
-        "Generated danger hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated danger hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -28706,10 +28706,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.link-disabled",
       type: "color",
-      value: "#44232c",
+      value: "#35252b",
       cssVar: "--cu-color-danger-link-disabled",
       description:
-        "Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -28785,10 +28785,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-hovered",
       type: "color",
-      value: "#070400",
+      value: "#201500",
       cssVar: "--cu-color-warning-primary-hovered",
       description:
-        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
+        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -28815,20 +28815,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.primary-disabled",
       type: "color",
-      value: "#3a3021",
+      value: "#312c25",
       cssVar: "--cu-color-warning-primary-disabled",
       description:
-        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.warning.secondary-hovered",
       type: "color",
-      value: "#8e611a",
+      value: "#c18c38",
       cssVar: "--cu-color-warning-secondary-hovered",
       description:
-        "Generated low-emphasis warning background for the light theme (hovered, 25% darker)",
+        "Generated low-emphasis warning background for the light theme (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -28855,20 +28855,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-disabled",
       type: "color",
-      value: "#6b5944",
+      value: "#463e35",
       cssVar: "--cu-color-warning-secondary-disabled",
       description:
-        "Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.warning.link-hovered",
       type: "color",
-      value: "#070400",
+      value: "#201500",
       cssVar: "--cu-color-warning-link-hovered",
       description:
-        "Generated warning hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated warning hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -28895,10 +28895,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.link-disabled",
       type: "color",
-      value: "#3a3021",
+      value: "#312c25",
       cssVar: "--cu-color-warning-link-disabled",
       description:
-        "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -28973,10 +28973,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.primary-hovered",
       type: "color",
-      value: "#001f5a",
+      value: "#003288",
       cssVar: "--cu-color-info-primary-hovered",
       description:
-        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker)",
+        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -29003,20 +29003,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.primary-disabled",
       type: "color",
-      value: "#233457",
+      value: "#252d3d",
       cssVar: "--cu-color-info-primary-disabled",
       description:
-        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.info.secondary-hovered",
       type: "color",
-      value: "#1b61df",
+      value: "#4d8dfe",
       cssVar: "--cu-color-info-secondary-hovered",
       description:
-        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker)",
+        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -29043,20 +29043,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.secondary-disabled",
       type: "color",
-      value: "#425983",
+      value: "#343c51",
       cssVar: "--cu-color-info-secondary-disabled",
       description:
-        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.info.link-hovered",
       type: "color",
-      value: "#001f5a",
+      value: "#003288",
       cssVar: "--cu-color-info-link-hovered",
       description:
-        "Generated info hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated info hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -29083,10 +29083,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.link-disabled",
       type: "color",
-      value: "#233457",
+      value: "#252d3d",
       cssVar: "--cu-color-info-link-disabled",
       description:
-        "Generated info hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated info hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -29162,10 +29162,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.primary-hovered",
       type: "color",
-      value: "#240c59",
+      value: "#361b7b",
       cssVar: "--cu-color-discovery-primary-hovered",
       description:
-        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% darker)",
+        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -29192,20 +29192,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.primary-disabled",
       type: "color",
-      value: "#342c4d",
+      value: "#2d2a3b",
       cssVar: "--cu-color-discovery-primary-disabled",
       description:
-        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.discovery.secondary-hovered",
       type: "color",
-      value: "#6b48bb",
+      value: "#9377dc",
       cssVar: "--cu-color-discovery-secondary-hovered",
       description:
-        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% darker)",
+        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -29232,20 +29232,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.secondary-disabled",
       type: "color",
-      value: "#584e78",
+      value: "#3d384d",
       cssVar: "--cu-color-discovery-secondary-disabled",
       description:
-        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.discovery.link-hovered",
       type: "color",
-      value: "#240c59",
+      value: "#361b7b",
       cssVar: "--cu-color-discovery-link-hovered",
       description:
-        "Generated discovery hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated discovery hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -29272,10 +29272,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.link-disabled",
       type: "color",
-      value: "#342c4d",
+      value: "#2d2a3b",
       cssVar: "--cu-color-discovery-link-disabled",
       description:
-        "Generated discovery hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated discovery hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -29351,10 +29351,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.primary-hovered",
       type: "color",
-      value: "#000000",
+      value: "#001812",
       cssVar: "--cu-color-success-primary-hovered",
       description:
-        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% darker)",
+        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -29381,20 +29381,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.primary-disabled",
       type: "color",
-      value: "#213731",
+      value: "#24302e",
       cssVar: "--cu-color-success-primary-disabled",
       description:
-        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.success.secondary-hovered",
       type: "color",
-      value: "#237b5b",
+      value: "#45ac85",
       cssVar: "--cu-color-success-secondary-hovered",
       description:
-        "Generated low-emphasis success background for the light theme (hovered, 25% darker)",
+        "Generated low-emphasis success background for the light theme (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -29421,20 +29421,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.secondary-disabled",
       type: "color",
-      value: "#45655b",
+      value: "#344341",
       cssVar: "--cu-color-success-secondary-disabled",
       description:
-        "Generated low-emphasis success background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated low-emphasis success background for the light theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.success.link-hovered",
       type: "color",
-      value: "#000000",
+      value: "#001812",
       cssVar: "--cu-color-success-link-hovered",
       description:
-        "Generated success hyperlink text color (matches primary) (hovered, 25% darker)",
+        "Generated success hyperlink text color (matches primary) (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -29461,10 +29461,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.link-disabled",
       type: "color",
-      value: "#213731",
+      value: "#24302e",
       cssVar: "--cu-color-success-link-disabled",
       description:
-        "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -29751,10 +29751,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis-disabled",
       type: "color",
-      value: "#151519",
+      value: "#202024",
       cssVar: "--cu-color-emphasis-disabled",
       description:
-        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -29791,10 +29791,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink-disabled",
       type: "color",
-      value: "#2f3138",
+      value: "#2b2b32",
       cssVar: "--cu-color-ink-disabled",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -29831,20 +29831,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.subtle-disabled",
       type: "color",
-      value: "#4e4e5a",
+      value: "#373740",
       cssVar: "--cu-color-subtle-disabled",
       description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.sunken-hovered",
       type: "color",
-      value: "#a4a4a4",
+      value: "#cdcdcd",
       cssVar: "--cu-color-sunken-hovered",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 25% darker)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -29871,20 +29871,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sunken-disabled",
       type: "color",
-      value: "#777786",
+      value: "#5d5d69",
       cssVar: "--cu-color-sunken-disabled",
       description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.canvas-hovered",
       type: "color",
-      value: "#adadad",
+      value: "#d7d7d7",
       cssVar: "--cu-color-canvas-hovered",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% darker)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -29911,20 +29911,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.canvas-disabled",
       type: "color",
-      value: "#7d7d8c",
+      value: "#60606c",
       cssVar: "--cu-color-canvas-disabled",
       description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.surface-hovered",
       type: "color",
-      value: "#b4b4b4",
+      value: "#e0e0e0",
       cssVar: "--cu-color-surface-hovered",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% darker)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -29951,20 +29951,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface-disabled",
       type: "color",
-      value: "#80808f",
+      value: "#636370",
       cssVar: "--cu-color-surface-disabled",
       description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.elevated-hovered",
       type: "color",
-      value: "#bdbdbd",
+      value: "#eaeaea",
       cssVar: "--cu-color-elevated-hovered",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 25% darker)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -29991,20 +29991,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-disabled",
       type: "color",
-      value: "#868694",
+      value: "#656573",
       cssVar: "--cu-color-elevated-disabled",
       description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.floating-hovered",
       type: "color",
-      value: "#c3c3c3",
+      value: "#f1f1f1",
       cssVar: "--cu-color-floating-hovered",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 25% darker)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 15% darker)",
       theme: undefined,
       typography: false
     },
@@ -30031,20 +30031,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.floating-disabled",
       type: "color",
-      value: "#898996",
+      value: "#676774",
       cssVar: "--cu-color-floating-disabled",
       description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 38% over oklch(0.3839 0.0045 286.26))",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
       path: "color.hairline-hovered",
       type: "color",
-      value: "#000000",
+      value: "#575762",
       cssVar: "--cu-color-hairline-hovered",
       description:
-        "Low-contrast color for borders, dividers and separators. (hovered, light contrast primitive)",
+        "Low-contrast color for borders, dividers and separators. (hovered, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -30071,10 +30071,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-disabled",
       type: "color",
-      value: "#696979",
+      value: "#43434e",
       cssVar: "--cu-color-hairline-disabled",
       description:
-        "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },

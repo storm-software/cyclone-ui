@@ -21,11 +21,12 @@ import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, userEvent, waitFor, within } from "storybook/test";
+import type { RadioGroupIndicatorStyle } from "./RadioGroup";
 import { RadioGroup } from "./RadioGroup";
 
-// Story args configure the wrapping `Field`, apart from `showIndicator`.
+// Story args configure the wrapping `Field`, apart from `indicatorStyle`.
 type RadioGroupStoryArgs = Omit<FieldProps<string>, "children" | "name"> & {
-  showIndicator?: boolean;
+  indicatorStyle?: RadioGroupIndicatorStyle;
 };
 
 const options: {
@@ -62,13 +63,13 @@ const options: {
 
 const renderGroup =
   (items = options) =>
-  ({ defaultValue, showIndicator, ...props }: any, { id }: { id: string }) => (
+  ({ defaultValue, indicatorStyle, ...props }: any, { id }: { id: string }) => (
     <Form name={`formName-${id}`} initialValues={{ selectName: defaultValue }}>
       <Field name="selectName" {...props}>
         <Field.Label>Label Text</Field.Label>
         <RadioGroup
           size={props.size}
-          showIndicator={showIndicator}
+          indicatorStyle={indicatorStyle}
           width="500px">
           {items.map(option => (
             <RadioGroup.Item
@@ -119,9 +120,16 @@ export const Base: Story = {
   args: {}
 };
 
-export const ShowIndicator: Story = {
+export const CircleIndicator: Story = {
   args: {
-    showIndicator: true,
+    indicatorStyle: "circle",
+    defaultValue: "Blackberry"
+  }
+};
+
+export const NoIndicator: Story = {
+  args: {
+    indicatorStyle: "none",
     defaultValue: "Blackberry"
   }
 };

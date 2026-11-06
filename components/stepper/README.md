@@ -72,6 +72,7 @@ A package containing the Stepper component used by Storm Software
 - Ring markers and solid or dashed (`lineStyle`) connecting lines that fill in as the stepper moves between steps.
 - Check, pencil, and lock icons for each step state, or custom markers (`marker`).
 - Optional step numbers (`numbered`) and descriptions (`description`, `showDescription`).
+- Step titles and descriptions shown inline, or only the current step's above the markers with an animated `x / y` counter (`details`).
 - `Stepper.NextButton` and `Stepper.PreviousButton` helpers.
 
 ## Installing

@@ -58,7 +58,7 @@ export const Callout = ({
 const dividerSizes = {
   sm: "border-t-[1px] border-t-hairline",
   md: "border-t-[2px] border-t-hairline",
-  lg: "border-t-[3px] border-t-outline"
+  lg: "border-t-[3px] border-t-border"
 } as const;
 
 export interface DividerProps extends ComponentProps<typeof Hr> {

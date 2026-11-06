@@ -165,7 +165,7 @@ export default defineConfig({
             color.elevated as string
           );
           const onSelection = page;
-          const border = tokenValue(color.outline, subtleInk);
+          const border = tokenValue(color.hairline, subtleInk);
 
           return {
             name: `cyclone-${theme
@@ -347,7 +347,7 @@ export default defineConfig({
             appBg: tokenValue(color.canvas),
             appContentBg: tokenValue(color.canvas),
             appPreviewBg: tokenValue(color.canvas),
-            appBorderColor: tokenValue(color.outline),
+            appBorderColor: tokenValue(color.hairline),
             appBorderRadius: tokenValue(tokens?.[theme]?.radius?.md),
 
             barTextColor: tokenValue(color.ink),
@@ -359,7 +359,7 @@ export default defineConfig({
             buttonBorder: tokenValue(color.hairline),
 
             inputBg: tokenValue(color.elevated),
-            inputBorder: tokenValue(color.outline),
+            inputBorder: tokenValue(color.hairline),
             inputTextColor: tokenValue(color.ink),
             inputBorderRadius: tokenValue(tokens?.[theme]?.radius?.md),
 

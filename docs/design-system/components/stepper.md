@@ -48,7 +48,7 @@ Each `Stepper.Header.Item` and `Stepper.Content.Item` pair share the same `value
 | --- | --- |
 | `Stepper` | The root. Holds the current step and the list of visited steps. |
 | `Stepper.Header` | The list of step headers, laid out in the root's `orientation`. It has the label `Stepper`. |
-| `Stepper.Header.Item` | One step header. Needs a `value`. Its children are the step title. |
+| `Stepper.Header.Item` | One step header. Needs a `value`. Its children are the step title. With `details="current"`, a string title also becomes the tab's `aria-label`. |
 | `Stepper.Marker` | The default step marker: a ring that fills when the stepper reaches the step. Render it in a step's `marker` around your own icon. |
 | `Stepper.Content` | The container for the step panels. |
 | `Stepper.Content.Item` | The panel of one step. Needs the `value` of its header. |
@@ -67,6 +67,7 @@ It accepts the Tamagui `Tabs` props plus the props below.
 | `size` | `"sm" \| "lg"` | `"lg"` | `sm` draws smaller markers with thinner rings and lines. |
 | `orientation` | `"horizontal" \| "vertical"` | `"vertical"` | The direction of the header list. Horizontal puts the content below the header. |
 | `showDescription` | `"always" \| "active"` | `"always"` | Shows each step's description always, or only on the current step. |
+| `details` | `"all" \| "current"` | `"all"` | `all` shows each step's title and description next to its marker. `current` shows only the current step's, above the markers; it slides out and the next step's slides in as the stepper moves. With `numbered`, a counter (`2 / 4`) next to the title animates with [NumberText](./number-text.md). |
 | `onValueChange` | `(value: string) => void` | — | Called with the new current step. |
 | `theme` | theme name | — | Theme. |
 
@@ -113,7 +114,7 @@ Hovering a selectable step shows a pointer cursor and its hovered colors: `prima
 
 ## Variants
 
-The stories show the default stepper, `numbered`, `size="sm"`, `orientation="horizontal"`, descriptions (`always` and `active`), dashed and mixed `lineStyle`s, custom markers, and the themes `brand`, `discovery`, `danger`, `warning`, `info`, and `success`.
+The stories show the default stepper, `numbered`, `size="sm"`, `orientation="horizontal"`, descriptions (`always` and `active`), `details="current"` (with and without `numbered`), dashed and mixed `lineStyle`s, custom markers, and the themes `brand`, `discovery`, `danger`, `warning`, `info`, and `success`.
 
 ## Related
 

@@ -3868,6 +3868,9 @@ importers:
       '@cyclone-ui/icons':
         specifier: workspace:*
         version: link:../icons
+      '@cyclone-ui/vectors':
+        specifier: workspace:*
+        version: link:../vectors
       '@stryke/types':
         specifier: 'catalog:'
         version: 0.12.45
@@ -4335,6 +4338,9 @@ importers:
       '@cyclone-ui/next-button':
         specifier: workspace:*
         version: link:../next-button
+      '@cyclone-ui/number-text':
+        specifier: workspace:*
+        version: link:../number-text
       '@cyclone-ui/previous-button':
         specifier: workspace:*
         version: link:../previous-button
