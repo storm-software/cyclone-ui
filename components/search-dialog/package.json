@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/search-dialog",
   "version": "0.0.32",
   "type": "module",
-  "description": "A search icon Button that opens a Dialog for searching the application, like the fumadocs search dialog. It also opens with ⌘K / Ctrl+K. A debounced `search` function (static index or API) returns page, heading and text results with breadcrumbs and highlighted query words, narrowed by optional filter toggles. The arrow keys move through the results and Enter opens one. The last results chosen are saved in localStorage and listed as \"Recent\" when it opens, where they can be removed one by one or cleared.",
+  "description": "A search icon Button that opens a Dialog for searching the application, like the fumadocs search dialog. It also opens with ⌘K / Ctrl+K. A debounced `search` function (static index or API) returns page, heading and text results with breadcrumbs and highlighted query words, narrowed by optional filter toggles under the search box. The arrow keys move through the results and Enter opens one. The last results chosen are saved in localStorage and listed as \"Recent\" when it opens, where they can be removed one by one or cleared. A footer shows the keyboard shortcuts as `Kbd` keys, with an optional settings button in its corner.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
@@ -23,6 +23,7 @@
     "@cyclone-ui/dialog": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/input": "workspace:*",
+    "@cyclone-ui/kbd": "workspace:*",
     "@cyclone-ui/toggle-group": "workspace:*",
     "@cyclone-ui/vectors": "workspace:*",
     "@cyclone-ui/visually-hidden": "workspace:*",

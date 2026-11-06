@@ -26,11 +26,11 @@ import { Close } from "@cyclone-ui/icons";
 import { ScrollView } from "@cyclone-ui/scroll-view";
 import { Switch } from "@cyclone-ui/switch";
 import { Tabs } from "@cyclone-ui/tabs";
-import type { GetProps } from "@tamagui/core";
+import type { GetProps, TamaguiWebElement } from "@tamagui/core";
 import { createStyledHOC, styled, View } from "@tamagui/core";
 import { useControllableState } from "@tamagui/use-controllable-state";
 import type { ReactNode } from "react";
-import { useId, useState } from "react";
+import { useCallback, useId, useRef, useState } from "react";
 import { Path, Svg } from "react-native-svg";
 
 export interface PrivacyChoicesCategory {
@@ -158,10 +158,11 @@ const PrivacyChoicesHeader = styled(View, {
 
 const PrivacyChoicesPanel = styled(View, {
   displayName: "PrivacyChoicesPanel",
-  // Fades in when its tab is selected, since only the active tab is mounted.
-  // The `enter` key keeps a restyle during the fade from snapping it to 1.
-  transition: { duration: "150ms", enter: "150ms" },
+  // Fades and rises in when its tab is selected, since only the active tab is
+  // mounted. The `enter` key keeps a restyle during the fade from snapping it.
+  transition: { duration: "250ms", enter: "250ms" },
   opacity: "enter:0",
+  y: "enter:12px",
   gap: "3xl",
   padding: "5xl max-sm:3xl"
 });
@@ -214,6 +215,33 @@ export const PrivacyChoices = createStyledHOC(
       setOpen(next);
     };
 
+    // Animates the dialog's height as tabs change: the frame follows the tabs'
+    // height, written straight to the DOM in the observer callback (after
+    // layout, before paint) so it never chases a Tamagui tween. Its overflow
+    // also clips the panels' rise, which would otherwise flash a scroll bar.
+    const contentRef = useRef<TamaguiWebElement>(null);
+    const followContentHeight = useCallback(
+      (frame: TamaguiWebElement | null) => {
+        const content = contentRef.current;
+        if (!frame || !content || typeof ResizeObserver === "undefined") {
+          return;
+        }
+
+        const updateHeight = () => {
+          frame.style.height = `${content.offsetHeight}px`;
+        };
+        updateHeight();
+        // Set after the first height, so the dialog never animates in on open.
+        frame.style.transition = "height 250ms ease-out";
+
+        const resizeObserver = new ResizeObserver(updateHeight);
+        resizeObserver.observe(content);
+
+        return () => resizeObserver.disconnect();
+      },
+      []
+    );
+
     return (
       <Dialog open={open} onOpenChange={handleOpenChange}>
         <Dialog.Trigger asChild={true}>
@@ -263,79 +291,87 @@ export const PrivacyChoices = createStyledHOC(
               flexShrink={1}
               size="lg"
               style={{ scrollbarGutter: "auto" }}>
-              <Tabs
-                orientation="vertical"
-                tabStyle="tabbed"
-                bordered={false}
-                height="auto"
-                // The category list sits above the panel on small screens.
-                flexDirection="row max-sm:column">
-                <Tabs.Header flexBasis="280px max-sm:auto" flexShrink={0}>
-                  <Tabs.Header.Item value={OVERVIEW}>
-                    {headerLabel}
-                  </Tabs.Header.Item>
-                  {categories.map(category => (
-                    <Tabs.Header.Item key={category.id} value={category.id}>
-                      {category.label}
-                    </Tabs.Header.Item>
-                  ))}
-                </Tabs.Header>
+              <View ref={followContentHeight} overflow="hidden">
+                <View ref={contentRef}>
+                  <Tabs
+                    orientation="vertical"
+                    tabStyle="tabbed"
+                    bordered={false}
+                    height="auto"
+                    // The category list sits above the panel on small screens.
+                    flexDirection="row max-sm:column">
+                    <Tabs.Header flexBasis="280px max-sm:auto" flexShrink={0}>
+                      <Tabs.Header.Item value={OVERVIEW}>
+                        {headerLabel}
+                      </Tabs.Header.Item>
+                      {categories.map(category => (
+                        <Tabs.Header.Item key={category.id} value={category.id}>
+                          {category.label}
+                        </Tabs.Header.Item>
+                      ))}
+                    </Tabs.Header>
 
-                <Tabs.Content
-                  flexGrow={1}
-                  flexShrink={1}
-                  // A zero basis collapses the panel once the tabs stack.
-                  flexBasis="0px max-sm:auto"
-                  minWidth={0}>
-                  <Tabs.Content.Item value={OVERVIEW}>
-                    <PrivacyChoicesPanel>
-                      <BodyText color="ink">{description}</BodyText>
-                    </PrivacyChoicesPanel>
-                  </Tabs.Content.Item>
-
-                  {categories.map(category => {
-                    const switchId = `${id}-${category.id}`;
-
-                    return (
-                      <Tabs.Content.Item key={category.id} value={category.id}>
+                    <Tabs.Content
+                      flexGrow={1}
+                      flexShrink={1}
+                      // A zero basis collapses the panel once the tabs stack.
+                      flexBasis="0px max-sm:auto"
+                      minWidth={0}>
+                      <Tabs.Content.Item value={OVERVIEW}>
                         <PrivacyChoicesPanel>
-                          <View
-                            flexDirection="row"
-                            alignItems="center"
-                            justifyContent="space-between"
-                            gap="3xl">
-                            <HeadingSmallText
-                              id={`${switchId}-label`}
-                              color="primary">
-                              {category.label}
-                            </HeadingSmallText>
-                            {category.required ? (
-                              <BodyText color="emphasis" fontWeight="semibold">
-                                {requiredLabel}
-                              </BodyText>
-                            ) : (
-                              <Switch
-                                name={switchId}
-                                aria-labelledby={`${switchId}-label`}
-                                checked={draft[category.id]}
-                                onCheckedChange={checked =>
-                                  setDraft(current => ({
-                                    ...current,
-                                    [category.id]: checked
-                                  }))
-                                }
-                              />
-                            )}
-                          </View>
-                          <BodyText color="ink">
-                            {category.description}
-                          </BodyText>
+                          <BodyText color="ink">{description}</BodyText>
                         </PrivacyChoicesPanel>
                       </Tabs.Content.Item>
-                    );
-                  })}
-                </Tabs.Content>
-              </Tabs>
+
+                      {categories.map(category => {
+                        const switchId = `${id}-${category.id}`;
+
+                        return (
+                          <Tabs.Content.Item
+                            key={category.id}
+                            value={category.id}>
+                            <PrivacyChoicesPanel>
+                              <View
+                                flexDirection="row"
+                                alignItems="center"
+                                justifyContent="space-between"
+                                gap="3xl">
+                                <HeadingSmallText
+                                  id={`${switchId}-label`}
+                                  color="primary">
+                                  {category.label}
+                                </HeadingSmallText>
+                                {category.required ? (
+                                  <BodyText
+                                    color="emphasis"
+                                    fontWeight="semibold">
+                                    {requiredLabel}
+                                  </BodyText>
+                                ) : (
+                                  <Switch
+                                    name={switchId}
+                                    aria-labelledby={`${switchId}-label`}
+                                    checked={draft[category.id]}
+                                    onCheckedChange={checked =>
+                                      setDraft(current => ({
+                                        ...current,
+                                        [category.id]: checked
+                                      }))
+                                    }
+                                  />
+                                )}
+                              </View>
+                              <BodyText color="ink">
+                                {category.description}
+                              </BodyText>
+                            </PrivacyChoicesPanel>
+                          </Tabs.Content.Item>
+                        );
+                      })}
+                    </Tabs.Content>
+                  </Tabs>
+                </View>
+              </View>
             </ScrollView>
 
             <PrivacyChoicesActions>

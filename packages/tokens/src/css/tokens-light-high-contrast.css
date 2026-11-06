@@ -653,12 +653,12 @@
     0,
     0,
     0,
-    0.45098039215686275
+    0.14901960784313725
   ); /** Generated base overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-base-border: #8e8e9a; /** Generated base border color for secondary backgrounds (secondary, 15% darker) */
   --storm-color-base-primary-hovered: #494954; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter) */
   --storm-color-base-primary-disabled: #141418; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
-  --storm-color-base-secondary-hovered: #9797a2; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 12% darker) */
+  --storm-color-base-secondary-hovered: #858592; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 18% darker) */
   --storm-color-base-secondary-disabled: #5a5a66; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-base-link-hovered: #004075; /** The color used for hyperlink text. (hovered, 25% darker) */
   --storm-color-base-link-inactive: #54b6ff; /** The color used for hyperlink text. (inactive, 20% brighter) */
@@ -692,7 +692,7 @@
     0,
     0,
     8,
-    0.45098039215686275
+    0.14901960784313725
   ); /** Generated info overlay backdrop color (primary, 30% darker at 75% opacity) */
   --storm-color-info-border: #4083f9; /** Generated info border color for secondary backgrounds (secondary, 15% darker) */
   --storm-color-info-primary-hovered: #001f5a; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker) */
@@ -1074,7 +1074,7 @@
   ); /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% darker) */
   --storm-color-base-secondary-active: var(
     --storm-color-base-secondary-hovered
-  ); /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 12% darker) */
+  ); /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 18% darker) */
   --storm-color-base-secondary-inactive: var(
     --storm-color-neutral-13
   ); /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 50% darker) */

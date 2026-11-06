@@ -426,7 +426,7 @@ const themes = {
     "surface-inactive": "oklch(0.205481 0.003923 286.049)"
   },
   dark_base: {
-    backdrop: "oklch(0.375299 0 0 / 0.451)",
+    backdrop: "oklch(0.375299 0 0 / 0.149)",
     border: "oklch(0.348424 0.009089 268.401)",
     link: "oklch(0.748414 0.1551 233.252)",
     "link-active": "oklch(0.90939 0.122701 198.412)",
@@ -445,13 +445,13 @@ const themes = {
     "ring-subtle": "0px 0px 0px 1px #ffffff1a",
     "ring-subtle-offset": "0px 0px 0px 2px #1f1f21, 0px 0px 0px 3px #ffffff1a",
     secondary: tokens.color.neutral12,
-    "secondary-active": "oklch(0.341625 0.00879 276.892)",
+    "secondary-active": "oklch(0.353638 0.010421 278.31)",
     "secondary-disabled": "oklch(0.356319 0.005327 271.266)",
-    "secondary-hovered": "oklch(0.341625 0.00879 276.892)",
+    "secondary-hovered": "oklch(0.353638 0.010421 278.31)",
     "secondary-inactive": "oklch(0.499696 0 0)"
   },
   dark_brand: {
-    backdrop: "oklch(0.341174 0.077104 160.061 / 0.451)",
+    backdrop: "oklch(0.341174 0.077104 160.061 / 0.149)",
     border: "oklch(0.501556 0.083543 172.932)",
     link: "oklch(0.825828 0.144837 173.563)",
     "link-active": "oklch(0.630716 0.124588 170.203)",
@@ -476,7 +476,7 @@ const themes = {
     "secondary-inactive": "oklch(0.357066 0.071253 169.276)"
   },
   dark_danger: {
-    backdrop: "oklch(0.278608 0.112944 24.988 / 0.451)",
+    backdrop: "oklch(0.278608 0.112944 24.988 / 0.149)",
     border: "oklch(0.387453 0.134306 9.721)",
     link: tokens.color.red4,
     "link-active": "oklch(0.730891 0.172264 8.1)",
@@ -506,7 +506,7 @@ const themes = {
     "secondary-inactive": "oklch(0.285746 0.11424 15.021)"
   },
   dark_discovery: {
-    backdrop: "oklch(0.248073 0.138052 292.745 / 0.451)",
+    backdrop: "oklch(0.248073 0.138052 292.745 / 0.149)",
     border: "oklch(0.369313 0.099907 292.323)",
     link: tokens.color.purple4,
     "link-active": "oklch(0.789049 0.12248 297.421)",
@@ -536,7 +536,7 @@ const themes = {
     "secondary-inactive": "oklch(0.256581 0.100598 292.987)"
   },
   dark_info: {
-    backdrop: "oklch(0.254215 0.176153 264.052 / 0.451)",
+    backdrop: "oklch(0.254215 0.176153 264.052 / 0.149)",
     border: "oklch(0.457571 0.130694 260.968)",
     link: tokens.color.blue4,
     "link-active": "oklch(0.797163 0.109493 245.556)",
@@ -566,7 +566,7 @@ const themes = {
     "secondary-inactive": "oklch(0.318783 0.130149 260.588)"
   },
   dark_success: {
-    backdrop: "oklch(0.30363 0.089727 147.212 / 0.451)",
+    backdrop: "oklch(0.30363 0.089727 147.212 / 0.149)",
     border: "oklch(0.500375 0.096033 161.806)",
     link: tokens.color.green4,
     "link-active": "oklch(0.9169 0.13001 163.782)",
@@ -596,7 +596,7 @@ const themes = {
     "secondary-inactive": "oklch(0.353497 0.084003 157.11)"
   },
   dark_warning: {
-    backdrop: "oklch(0.321495 0.083102 51.617 / 0.451)",
+    backdrop: "oklch(0.321495 0.083102 51.617 / 0.149)",
     border: "oklch(0.67785 0.112603 77.465)",
     link: tokens.color.yellow2,
     "link-active": "oklch(0.632126 0.131014 79.769)",
@@ -692,7 +692,7 @@ const themes = {
     "surface-inactive": tokens.color.white
   },
   light_base: {
-    backdrop: "oklch(0.085973 0.005553 285.173 / 0.451)",
+    backdrop: "oklch(0.085973 0.005553 285.173 / 0.149)",
     border: "oklch(0.643721 0.001468 286.359)",
     link: "oklch(0.593348 0.150515 245.368)",
     "link-active": "oklch(0.455409 0.137645 252.341)",
@@ -711,13 +711,13 @@ const themes = {
     "ring-subtle": "0px 0px 0px 1px #1c1c1e1a",
     "ring-subtle-offset": "0px 0px 0px 2px #fafafa, 0px 0px 0px 3px #1c1c1e1a",
     secondary: tokens.color.neutral7,
-    "secondary-active": "oklch(0.663564 0.001457 286.36)",
+    "secondary-active": "oklch(0.623723 0.00148 286.357)",
     "secondary-disabled": "oklch(0.521468 0.003099 286.292)",
-    "secondary-hovered": "oklch(0.663564 0.001457 286.36)",
+    "secondary-hovered": "oklch(0.623723 0.00148 286.357)",
     "secondary-inactive": "oklch(0.074227 0.009824 326.51)"
   },
   light_brand: {
-    backdrop: "oklch(0.287808 0.052013 180.59 / 0.451)",
+    backdrop: "oklch(0.287808 0.052013 180.59 / 0.149)",
     border: "oklch(0.824039 0.043063 185.212)",
     link: "oklch(0.689733 0.115563 186.097)",
     "link-active": "oklch(0.527193 0.092884 185.044)",
@@ -742,7 +742,7 @@ const themes = {
     "secondary-inactive": "oklch(0.977858 0.032029 196.64)"
   },
   light_danger: {
-    backdrop: "oklch(0.206808 0.084456 27.707 / 0.451)",
+    backdrop: "oklch(0.206808 0.084456 27.707 / 0.149)",
     border: "oklch(0.616028 0.143319 10.06)",
     link: tokens.color.red7,
     "link-active": "oklch(0.33398 0.133464 12.997)",
@@ -772,7 +772,7 @@ const themes = {
     "secondary-inactive": "oklch(0.827696 0.101024 4.72)"
   },
   light_discovery: {
-    backdrop: "oklch(0.191397 0.108838 289.207 / 0.451)",
+    backdrop: "oklch(0.191397 0.108838 289.207 / 0.149)",
     border: "oklch(0.598697 0.117771 295.615)",
     link: tokens.color.purple7,
     "link-active": "oklch(0.337037 0.128688 292.702)",
@@ -802,7 +802,7 @@ const themes = {
     "secondary-inactive": "oklch(0.836592 0.094933 299.401)"
   },
   light_info: {
-    backdrop: "oklch(0.203195 0.1408 264.052 / 0.451)",
+    backdrop: "oklch(0.203195 0.1408 264.052 / 0.149)",
     border: "oklch(0.607898 0.147788 260.915)",
     link: tokens.color.blue7,
     "link-active": "oklch(0.354654 0.159775 261.635)",
@@ -832,7 +832,7 @@ const themes = {
     "secondary-inactive": "oklch(0.838568 0.086857 243.852)"
   },
   light_success: {
-    backdrop: "oklch(0.194674 0.050455 152.689 / 0.451)",
+    backdrop: "oklch(0.194674 0.050455 152.689 / 0.149)",
     border: "oklch(0.623483 0.08057 168.157)",
     link: tokens.color.green7,
     "link-active": "oklch(0.359241 0.075319 165.208)",
@@ -862,7 +862,7 @@ const themes = {
     "secondary-inactive": "oklch(0.882027 0.081698 167.143)"
   },
   light_warning: {
-    backdrop: "oklch(0.179632 0.054113 42.091 / 0.451)",
+    backdrop: "oklch(0.179632 0.054113 42.091 / 0.149)",
     border: "oklch(0.629842 0.087518 76.873)",
     link: tokens.color.yellow9,
     "link-active": "oklch(0.355177 0.076137 71.799)",

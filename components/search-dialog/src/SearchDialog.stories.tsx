@@ -135,7 +135,8 @@ const meta: Meta<typeof SearchDialog> = {
       }
     ],
     defaultResults: [installation, theming, button],
-    onSelect: fn()
+    onSelect: fn(),
+    onSettingsPress: fn()
   }
 } satisfies Meta<typeof SearchDialog>;
 
@@ -168,18 +169,27 @@ export const Base: Story = {
       body.queryByRole("option", { name: /Installation/ })
     ).not.toBeInTheDocument();
 
-    // No guide mentions buttons; deselecting the filter brings them back.
+    // No guide mentions buttons; clearing the filter brings them back.
     await userEvent.click(body.getByRole("button", { name: "Guides" }));
     await expect(await body.findByRole("status")).toHaveTextContent(
-      'No results for "button"'
+      /No results found.*matching "button"/
     );
-    await userEvent.click(body.getByRole("button", { name: "Guides" }));
+    await userEvent.click(body.getByRole("button", { name: "Clear filters" }));
     await waitFor(async () =>
       expect(body.getByRole("option", { name: /Variants/ })).toBeVisible()
     );
+    await expect(body.getByRole("button", { name: "Guides" })).toHaveAttribute(
+      "aria-pressed",
+      "false"
+    );
 
-    // Back in the text box (the toggle kept focus), the first result starts
-    // active; ArrowDown moves on to "Variants".
+    await userEvent.click(
+      body.getByRole("button", { name: "Search settings" })
+    );
+    await expect(args.onSettingsPress).toHaveBeenCalled();
+
+    // Back in the text box, the first result starts active; ArrowDown moves
+    // on to "Variants".
     await userEvent.click(input);
     await userEvent.keyboard("{ArrowDown}{Enter}");
     await expect(args.onSelect).toHaveBeenCalledWith(
@@ -283,6 +293,7 @@ export const Remote: Story = {
 export const NoFilters: Story = {
   args: {
     filters: undefined,
-    defaultResults: undefined
+    defaultResults: undefined,
+    onSettingsPress: undefined
   }
 };

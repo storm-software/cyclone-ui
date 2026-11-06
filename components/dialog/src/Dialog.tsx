@@ -284,10 +284,10 @@ const DialogContainer = createStyledHOC(
           ref={forwardedRef}
           overflow="hidden"
           themeShallow={true}
+          borderRadius="dialog"
           {...props}
           variant={variant}
-          bordered={bordered}
-          borderRadius="dialog">
+          bordered={bordered}>
           {children}
         </Container>
       </TamaguiDialogContent>

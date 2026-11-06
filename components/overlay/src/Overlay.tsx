@@ -54,8 +54,8 @@ const OverlayFrame = styled(YStack, {
   transition: "200ms",
   pointerEvents: "auto",
   opacity: "0.75 enter:0 exit:0",
-  backdropFilter: "blur(35px)",
-  filter: "blur(35px)",
+  backdropFilter: "blur(250px)",
+  filter: "blur(250px)",
   backgroundColor: "backdrop",
   position: "absolute",
   inset: 0

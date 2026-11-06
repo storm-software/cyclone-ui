@@ -17,15 +17,15 @@ colors:
   base-secondary: "#b0b0b1"
   base-link: "#0084d1"
   base-on-primary: "#FAFAFA"
-  base-backdrop: "#02020373"
+  base-backdrop: "#02020326"
   base-on-secondary: "#FAFAFA"
   base-border: "#8d8d8e"
   base-primary-hovered: "#5c5c5f"
   base-primary-active: "#000000"
   base-primary-inactive: "#020102"
   base-primary-disabled: "#353538"
-  base-secondary-hovered: "#939394"
-  base-secondary-active: "#939394"
+  base-secondary-hovered: "#878788"
+  base-secondary-active: "#878788"
   base-secondary-inactive: "#020102"
   base-secondary-disabled: "#69696b"
   base-link-hovered: "#0057a0"
@@ -35,7 +35,7 @@ colors:
   brand-primary: "#1fb2a6"
   brand-link: "#1fb2a6"
   brand-on-primary: "#FAFAFA"
-  brand-backdrop: "#00332c73"
+  brand-backdrop: "#00332c26"
   brand-secondary: "#d6fff9"
   brand-on-secondary: "#005a53"
   brand-border: "#a7cfc9"
@@ -55,7 +55,7 @@ colors:
   danger-link: "#8e223e"
   danger-outline: "#8e223e"
   danger-on-primary: "#FAFAFA"
-  danger-backdrop: "#35000173"
+  danger-backdrop: "#35000126"
   danger-secondary: "#f17d91"
   danger-on-secondary: "#200006"
   danger-border: "#cb5b71"
@@ -79,7 +79,7 @@ colors:
   warning-link: "#765417"
   warning-outline: "#765417"
   warning-on-primary: "#FAFAFA"
-  warning-backdrop: "#24070073"
+  warning-backdrop: "#24070026"
   warning-secondary: "#caa46b"
   warning-on-secondary: "#241500"
   warning-border: "#a78249"
@@ -104,7 +104,7 @@ colors:
   info-link: "#2055b3"
   info-outline: "#2055b3"
   info-on-primary: "#FAFAFA"
-  info-backdrop: "#00005573"
+  info-backdrop: "#00005526"
   info-on-secondary: "#FAFAFA"
   info-border: "#4d80da"
   info-primary-hovered: "#00318d"
@@ -128,7 +128,7 @@ colors:
   discovery-link: "#594395"
   discovery-outline: "#594395"
   discovery-on-primary: "#FAFAFA"
-  discovery-backdrop: "#17004073"
+  discovery-backdrop: "#17004026"
   discovery-on-secondary: "#FAFAFA"
   discovery-border: "#8670be"
   discovery-primary-hovered: "#3c2372"
@@ -151,7 +151,7 @@ colors:
   success-link: "#216b53"
   success-outline: "#216b53"
   success-on-primary: "#FAFAFA"
-  success-backdrop: "#001b0973"
+  success-backdrop: "#001b0926"
   success-secondary: "#74ba9f"
   success-on-secondary: "#002015"
   success-border: "#52977e"
@@ -337,15 +337,15 @@ Cyclone UI design tokens — 220 color tokens, 6 typography tokens, 70 spacing t
 - **Base Secondary (#b0b0b1):** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.
 - **Base Link (#0084d1):** The color used for hyperlink text.
 - **Base On Primary (#FAFAFA):** Generated text and icon color on base primary backgrounds
-- **Base Backdrop (#02020373):** Generated base overlay backdrop color (primary, 30% darker at 75% opacity)
+- **Base Backdrop (#02020326):** Generated base overlay backdrop color (primary, 30% darker at 75% opacity)
 - **Base On Secondary (#FAFAFA):** Generated text and icon color on base secondary backgrounds
 - **Base Border (#8d8d8e):** Generated base border color for secondary backgrounds (secondary, 15% darker)
 - **Base Primary Hovered (#5c5c5f):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)
 - **Base Primary Active (#000000):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)
 - **Base Primary Inactive (#020102):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% darker)
 - **Base Primary Disabled (#353538):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
-- **Base Secondary Hovered (#939394):** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 12% darker)
-- **Base Secondary Active (#939394):** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 12% darker)
+- **Base Secondary Hovered (#878788):** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 18% darker)
+- **Base Secondary Active (#878788):** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 18% darker)
 - **Base Secondary Inactive (#020102):** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 50% darker)
 - **Base Secondary Disabled (#69696b):** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
 - **Base Link Hovered (#0057a0):** The color used for hyperlink text. (hovered, 25% darker)
@@ -355,7 +355,7 @@ Cyclone UI design tokens — 220 color tokens, 6 typography tokens, 70 spacing t
 - **Brand Primary (#1fb2a6):** The Storm Teal color is used as the primary brand color for Storm Software.
 - **Brand Link (#1fb2a6):** Generated brand hyperlink text color (matches primary)
 - **Brand On Primary (#FAFAFA):** Generated text and icon color on brand primary backgrounds
-- **Brand Backdrop (#00332c73):** Generated brand overlay backdrop color (primary, 30% darker at 75% opacity)
+- **Brand Backdrop (#00332c26):** Generated brand overlay backdrop color (primary, 30% darker at 75% opacity)
 - **Brand Secondary (#d6fff9):** Generated low-emphasis brand background for the light theme
 - **Brand On Secondary (#005a53):** Generated text and icon color on brand secondary backgrounds
 - **Brand Border (#a7cfc9):** Generated brand border color for secondary backgrounds (secondary, 15% darker)
@@ -375,7 +375,7 @@ Cyclone UI design tokens — 220 color tokens, 6 typography tokens, 70 spacing t
 - **Danger Link (#8e223e):** Generated danger hyperlink text color (matches primary)
 - **Danger Outline (#8e223e):** Generated danger border and divider color (matches primary)
 - **Danger On Primary (#FAFAFA):** Generated text and icon color on danger primary backgrounds
-- **Danger Backdrop (#35000173):** Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)
+- **Danger Backdrop (#35000126):** Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)
 - **Danger Secondary (#f17d91):** Generated low-emphasis danger background for the light theme
 - **Danger On Secondary (#200006):** Generated text and icon color on danger secondary backgrounds
 - **Danger Border (#cb5b71):** Generated danger border color for secondary backgrounds (secondary, 15% darker)
@@ -399,7 +399,7 @@ Cyclone UI design tokens — 220 color tokens, 6 typography tokens, 70 spacing t
 - **Warning Link (#765417):** Generated warning hyperlink text color (matches primary)
 - **Warning Outline (#765417):** Generated warning border and divider color (matches primary)
 - **Warning On Primary (#FAFAFA):** Generated text and icon color on warning primary backgrounds
-- **Warning Backdrop (#24070073):** Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)
+- **Warning Backdrop (#24070026):** Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)
 - **Warning Secondary (#caa46b):** Generated low-emphasis warning background for the light theme
 - **Warning On Secondary (#241500):** Generated text and icon color on warning secondary backgrounds
 - **Warning Border (#a78249):** Generated warning border color for secondary backgrounds (secondary, 15% darker)
@@ -424,7 +424,7 @@ Cyclone UI design tokens — 220 color tokens, 6 typography tokens, 70 spacing t
 - **Info Link (#2055b3):** Generated info hyperlink text color (matches primary)
 - **Info Outline (#2055b3):** Generated info border and divider color (matches primary)
 - **Info On Primary (#FAFAFA):** Generated text and icon color on info primary backgrounds
-- **Info Backdrop (#00005573):** Generated info overlay backdrop color (primary, 30% darker at 75% opacity)
+- **Info Backdrop (#00005526):** Generated info overlay backdrop color (primary, 30% darker at 75% opacity)
 - **Info On Secondary (#FAFAFA):** Generated text and icon color on info secondary backgrounds
 - **Info Border (#4d80da):** Generated info border color for secondary backgrounds (secondary, 15% darker)
 - **Info Primary Hovered (#00318d):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker)
@@ -448,7 +448,7 @@ Cyclone UI design tokens — 220 color tokens, 6 typography tokens, 70 spacing t
 - **Discovery Link (#594395):** Generated discovery hyperlink text color (matches primary)
 - **Discovery Outline (#594395):** Generated discovery border and divider color (matches primary)
 - **Discovery On Primary (#FAFAFA):** Generated text and icon color on discovery primary backgrounds
-- **Discovery Backdrop (#17004073):** Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity)
+- **Discovery Backdrop (#17004026):** Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity)
 - **Discovery On Secondary (#FAFAFA):** Generated text and icon color on discovery secondary backgrounds
 - **Discovery Border (#8670be):** Generated discovery border color for secondary backgrounds (secondary, 15% darker)
 - **Discovery Primary Hovered (#3c2372):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% darker)
@@ -471,7 +471,7 @@ Cyclone UI design tokens — 220 color tokens, 6 typography tokens, 70 spacing t
 - **Success Link (#216b53):** Generated success hyperlink text color (matches primary)
 - **Success Outline (#216b53):** Generated success border and divider color (matches primary)
 - **Success On Primary (#FAFAFA):** Generated text and icon color on success primary backgrounds
-- **Success Backdrop (#001b0973):** Generated success overlay backdrop color (primary, 30% darker at 75% opacity)
+- **Success Backdrop (#001b0926):** Generated success overlay backdrop color (primary, 30% darker at 75% opacity)
 - **Success Secondary (#74ba9f):** Generated low-emphasis success background for the light theme
 - **Success On Secondary (#002015):** Generated text and icon color on success secondary backgrounds
 - **Success Border (#52977e):** Generated success border color for secondary backgrounds (secondary, 15% darker)

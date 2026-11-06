@@ -2838,7 +2838,7 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#41414173",
+        $value: "#41414126",
         $description:
           "Generated base overlay backdrop color (primary, 30% darker at 75% opacity)",
         semantic: true,
@@ -2855,7 +2855,7 @@ module.exports = {
             components: [
               0.2549019607843137, 0.2549019607843137, 0.2549019607843137
             ],
-            alpha: 0.45098039215686275,
+            alpha: 0.14901960784313725,
             hex: "#414141"
           },
           $description:
@@ -3093,9 +3093,9 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#37383d",
+        $value: "#3a3b41",
         $description:
-          "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 13% brighter)",
+          "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 18% brighter)",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -3108,12 +3108,12 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.21568627450980393, 0.2196078431372549, 0.23921568627450981
+              0.22745098039215686, 0.23137254901960785, 0.2549019607843137
             ],
-            hex: "#37383d"
+            hex: "#3a3b41"
           },
           $description:
-            "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 13% brighter)",
+            "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 18% brighter)",
           semantic: true,
           key: "{color.base.secondary-hovered}"
         },
@@ -3131,9 +3131,9 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#37383d",
+        $value: "#3a3b41",
         $description:
-          "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 13% brighter)",
+          "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 18% brighter)",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -3145,7 +3145,7 @@ module.exports = {
           colorSpace: "display-p3",
           $value: "{color.base.secondary-hovered}",
           $description:
-            "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 13% brighter)",
+            "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 18% brighter)",
           semantic: true,
           key: "{color.base.secondary-active}"
         },
@@ -3478,7 +3478,7 @@ module.exports = {
         group: "brand",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#00442a73",
+        $value: "#00442a26",
         $description:
           "Generated brand overlay backdrop color (primary, 30% darker at 75% opacity)",
         semantic: true,
@@ -3493,7 +3493,7 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [0, 0.26666666666666666, 0.16470588235294117],
-            alpha: 0.45098039215686275,
+            alpha: 0.14901960784313725,
             hex: "#00442a"
           },
           $description:
@@ -4164,7 +4164,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#53000773",
+        $value: "#53000726",
         $description:
           "Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)",
         semantic: true,
@@ -4179,7 +4179,7 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [0.3254901960784314, 0, 0.027450980392156862],
-            alpha: 0.45098039215686275,
+            alpha: 0.14901960784313725,
             hex: "#530007"
           },
           $description:
@@ -5021,7 +5021,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#53240073",
+        $value: "#53240026",
         $description:
           "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
         semantic: true,
@@ -5036,7 +5036,7 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [0.3254901960784314, 0.1411764705882353, 0],
-            alpha: 0.45098039215686275,
+            alpha: 0.14901960784313725,
             hex: "#532400"
           },
           $description:
@@ -5834,7 +5834,7 @@ module.exports = {
         group: "info",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#00007573",
+        $value: "#00007526",
         $description:
           "Generated info overlay backdrop color (primary, 30% darker at 75% opacity)",
         semantic: true,
@@ -5849,7 +5849,7 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [0, 0, 0.4588235294117647],
-            alpha: 0.45098039215686275,
+            alpha: 0.14901960784313725,
             hex: "#000075"
           },
           $description:
@@ -6653,7 +6653,7 @@ module.exports = {
         group: "discovery",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#28005b73",
+        $value: "#28005b26",
         $description:
           "Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity)",
         semantic: true,
@@ -6668,7 +6668,7 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [0.1568627450980392, 0, 0.3568627450980392],
-            alpha: 0.45098039215686275,
+            alpha: 0.14901960784313725,
             hex: "#28005b"
           },
           $description:
@@ -7438,7 +7438,7 @@ module.exports = {
         group: "success",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#003a1073",
+        $value: "#003a1026",
         $description:
           "Generated success overlay backdrop color (primary, 30% darker at 75% opacity)",
         semantic: true,
@@ -7453,7 +7453,7 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [0, 0.22745098039215686, 0.06274509803921569],
-            alpha: 0.45098039215686275,
+            alpha: 0.14901960784313725,
             hex: "#003a10"
           },
           $description:

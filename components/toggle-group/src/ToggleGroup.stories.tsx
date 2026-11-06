@@ -255,10 +255,27 @@ export const Primary: Story = {
   }
 };
 
+export const PrimaryBorderless: Story = {
+  args: {
+    defaultValue: "left",
+    variant: "primary",
+    borderless: true
+  }
+};
+
+
 export const Secondary: Story = {
   args: {
     defaultValue: "left",
     variant: "secondary"
+  }
+};
+
+export const SecondaryBorderless: Story = {
+  args: {
+    defaultValue: "left",
+    variant: "secondary",
+    borderless: true
   }
 };
 
@@ -269,9 +286,25 @@ export const Tertiary: Story = {
   }
 };
 
+export const TertiaryBorderless: Story = {
+  args: {
+    defaultValue: "left",
+    variant: "tertiary",
+    borderless: true
+  }
+};
+
 export const Outlined: Story = {
   args: {
     defaultValue: "left",
     variant: "outlined"
+  }
+};
+
+export const OutlinedBorderless: Story = {
+  args: {
+    defaultValue: "left",
+    variant: "outlined",
+    borderless: true
   }
 };

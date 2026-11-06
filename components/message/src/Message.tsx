@@ -63,7 +63,10 @@ const MessageTimer = ({
   onComplete: () => void;
 }) => {
   const remainingRef = useRef(duration);
-  const [progress, setProgress] = useState(1);
+  // Web node; this package's tsconfig has no DOM lib.
+  const barRef = useRef<{
+    style: { setProperty: (name: string, value: string) => void };
+  }>(null);
   const complete = useEvent(onComplete);
 
   useEffect(() => {
@@ -74,7 +77,12 @@ const MessageTimer = ({
     const end = Date.now() + remainingRef.current;
     let frame = requestAnimationFrame(function tick() {
       remainingRef.current = Math.max(0, end - Date.now());
-      setProgress(remainingRef.current / duration);
+      // Written straight to the node: a per-frame `width` prop re-renders and
+      // inserts a new atomic CSS rule every frame, which makes the bar stutter.
+      barRef.current?.style.setProperty(
+        "transform",
+        `scaleX(${remainingRef.current / duration})`
+      );
       if (remainingRef.current === 0) {
         complete();
       } else {
@@ -97,8 +105,10 @@ const MessageTimer = ({
       zIndex={30}
       pointerEvents="none">
       <View
+        ref={barRef as any}
         height="100%"
-        width={`${progress * 100}%`}
+        width="100%"
+        transformOrigin="left"
         backgroundColor="secondary"
       />
     </View>
@@ -130,12 +140,23 @@ const MessageItem = ({
     [toast]
   );
 
+  // Collapsed, the library offsets each card behind the front one by `gap` but
+  // also scales it down from its bottom edge (by 5% per step), which on a tall
+  // message eats the whole offset. Filling the wrapper (sized to the front card)
+  // and lifting by the shrunk share leaves a full `gap` of each card showing.
+  const stacked = !expanded && index > 0;
+  const shrink = 0.05 * index;
+
   return (
     <Toast.Item
       index={index}
       toast={item}
       width="100%"
       maxWidth="1000px max-sm:800px"
+      flex={stacked ? 1 : undefined}
+      minHeight={0}
+      y={stacked ? `${(-shrink / (1 - shrink)) * 100}%` : 0}
+      transition="400ms"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onFocus={() => setHovered(true)}
@@ -147,7 +168,8 @@ const MessageItem = ({
         hovered={paused}
         boxShadow="0px 1px 2px 0px #0000000a, 0px 4px 16px 0px #0000000d">
         <Alert.Icon>{toast.icon}</Alert.Icon>
-        <Alert.Content>
+        {/* Only the card edge peeks out from the stack, not clipped text. */}
+        <Alert.Content opacity={stacked ? 0 : 1} transition="400ms">
           <Alert.Content.Heading>
             {typeof toast.title === "function" ? toast.title() : toast.title}
           </Alert.Content.Heading>

@@ -43,20 +43,42 @@ const isUncoloredTheme = (themeName: string | null | undefined) => {
   return !color || color === "base" || color === "light" || color === "dark";
 };
 
-// The unpressed text color on the `primary` / `secondary` frames.
+// The text color on the variant's indicator, as on a `Button` of the variant.
 // `on-secondary` is faint on the uncolored themes' light `secondary`, so those
 // use `primary` there, as `Button` does.
 const getToggleForeground = (
-  variant: ToggleVariant | undefined,
+  variant: ToggleVariant,
   themeName: string | null | undefined
 ) =>
   variant === "primary"
     ? "on-primary"
-    : variant === "secondary"
-      ? isUncoloredTheme(themeName)
-        ? "primary"
-        : "on-secondary"
-      : undefined;
+    : variant === "secondary" && !isUncoloredTheme(themeName)
+      ? "on-secondary"
+      : "primary";
+
+// The indicator drawn as a `Button` of the variant, in the color's `-inactive`
+// shade while off and `-active` while on.
+const getIndicatorStyle = (variant: ToggleVariant, pressed: boolean) => {
+  const state = pressed ? "active" : "inactive";
+  if (variant === "outlined") {
+    return {
+      borderWidth: 2,
+      borderColor: `primary-${state} group-hover/toggle:primary-hovered`
+    };
+  }
+
+  const fill = variant === "tertiary" ? "surface" : variant;
+
+  return {
+    backgroundColor: `${fill}-${state} group-hover/toggle:${fill}-hovered`,
+    borderColor:
+      variant === "secondary"
+        ? "border"
+        : variant === "tertiary"
+          ? "hairline"
+          : "transparent"
+  };
+};
 
 /** Gap between the frame and the inner indicator at the medium size. */
 const BASE_INSET = 2.5;
@@ -102,31 +124,6 @@ const ToggleFrame = styled(View, {
       true: {
         alignSelf: "stretch",
         width: "100%"
-      }
-    },
-
-    // `Button`'s variants on the frame; the pressed indicator stays a raised
-    // surface. Unset keeps the sunken frame.
-    variant: {
-      primary: {
-        backgroundColor: "primary hover:primary-hovered",
-        // Transparent rather than removed, so the indicator keeps its size.
-        borderColor: "transparent"
-      },
-      secondary: {
-        backgroundColor: "secondary hover:secondary-hovered",
-        borderColor: "border",
-        boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
-      },
-      tertiary: {
-        backgroundColor: "surface hover:surface-hovered",
-        borderColor: "hairline",
-        boxShadow: "color-shadow-resting-raised focus-visible:ring-offset"
-      },
-      outlined: {
-        backgroundColor: "transparent",
-        borderWidth: 2,
-        borderColor: "primary hover:primary-hovered"
       }
     },
 
@@ -280,10 +277,12 @@ export interface ToggleProps extends Omit<
   /** The control size. */
   size?: ToggleSize;
   /**
-   * The frame's colors: `primary` fills it with `primary`, `secondary` with
-   * `secondary` and a `border` border, `tertiary` with `surface` and a
-   * `hairline` border, and `outlined` draws a 2px `primary` border. Unset
-   * keeps the sunken frame. Ignored when `borderless`.
+   * Draws the indicator as a `Button` of the variant, inside the sunken frame
+   * (or alone when `borderless`): `primary` fills it with `primary`,
+   * `secondary` with `secondary` and a `border` border, `tertiary` with
+   * `surface` and a `hairline` border, and `outlined` draws a 2px `primary`
+   * border. The color is its `-inactive` shade while off and its `-active`
+   * shade while on. Unset shows a raised indicator only while on.
    */
   variant?: ToggleVariant;
   /**
@@ -291,7 +290,10 @@ export interface ToggleProps extends Omit<
    * to render different content (e.g. "On"/"Off" or icons) per state.
    */
   children?: ReactNode | ((pressed: boolean) => ReactNode);
-  /** The indicator color while pressed and `borderless`. Defaults to `subtle`. */
+  /**
+   * The indicator color while pressed and `borderless` without a `variant`.
+   * Defaults to `subtle`.
+   */
   pressedBackgroundColor?: string;
 }
 
@@ -339,20 +341,16 @@ export const Toggle = forwardRef<TamaguiElement, ToggleProps>(
 
     const content =
       typeof children === "function" ? children(pressed) : children;
-    // The pressed text sits on the indicator instead.
-    const foreground =
-      pressed || borderless
-        ? undefined
-        : getToggleForeground(
-            variant,
-            props.theme ?? (invalid ? "danger" : themeName)
-          );
+    const foreground = variant
+      ? getToggleForeground(
+          variant,
+          props.theme ?? (invalid ? "danger" : themeName)
+        )
+      : undefined;
 
     return (
       <ToggleFrame
         theme={invalid ? "danger" : themeName}
-        // Before `props`, so explicit colors (e.g. `ToggleGroup.Item`'s) win.
-        variant={borderless ? undefined : variant}
         {...props}
         ref={forwardedRef}
         frameSize={size}
@@ -371,14 +369,17 @@ export const Toggle = forwardRef<TamaguiElement, ToggleProps>(
         aria-invalid={invalid || undefined}
         onPress={disabled ? undefined : handlePress}>
         <ToggleIndicator
-          active={pressed}
+          // A variant shows the state through its color instead.
+          active={pressed && !variant}
           borderless={borderless}
           circular={circular}
           rounded={rounded}
-          {...(borderless &&
-            pressed && {
-              backgroundColor: `${pressedBackgroundColor} group-hover/toggle:${pressedBackgroundColor}`
-            })}>
+          {...(variant
+            ? getIndicatorStyle(variant, pressed)
+            : borderless &&
+              pressed && {
+                backgroundColor: `${pressedBackgroundColor} group-hover/toggle:${pressedBackgroundColor}`
+              })}>
           {typeof content === "string" || typeof content === "number" ? (
             <ToggleText
               textSize={size}

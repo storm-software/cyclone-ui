@@ -21,8 +21,9 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { Dialog } from "@cyclone-ui/dialog";
-import { AlignLeft, Close, FileDocument, Hash } from "@cyclone-ui/icons";
+import { AlignLeft, Close, Cog, FileDocument, Hash } from "@cyclone-ui/icons";
 import { Input } from "@cyclone-ui/input";
+import { Kbd, KbdGroup } from "@cyclone-ui/kbd";
 import { ToggleGroup } from "@cyclone-ui/toggle-group";
 import { SearchTrigger } from "@cyclone-ui/vectors";
 import { VisuallyHidden } from "@cyclone-ui/visually-hidden";
@@ -93,7 +94,7 @@ export interface SearchDialogExtraProps {
     options: SearchDialogSearchOptions
   ) => SearchDialogResult[] | Promise<SearchDialogResult[]>;
 
-  /** Toggles shown under the results, such as a section of the docs. */
+  /** Toggles shown under the search box, such as a section of the docs. */
   filters?: SearchDialogFilter[];
 
   /**
@@ -126,6 +127,12 @@ export interface SearchDialogExtraProps {
    * @defaultValue "cyclone-ui:search-dialog-history"
    */
   historyKey?: string;
+
+  /**
+   * Shows a settings button in the footer's corner, which calls this when
+   * pressed.
+   */
+  onSettingsPress?: () => void;
 }
 
 export type SearchDialogProps = GetProps<typeof Button> &
@@ -136,6 +143,26 @@ const SEARCH_DELAY = 100;
 const EMPTY_RESULTS: SearchDialogResult[] = [];
 const resultIcons = { page: FileDocument, heading: Hash, text: AlignLeft };
 const HISTORY_SIZE = 5;
+const FOOTER_HINTS = [
+  { keys: ["↵"], label: "Select" },
+  { keys: ["↑", "↓"], label: "Navigate" },
+  { keys: ["Esc"], label: "Close" }
+];
+// The empty state's result icons, fanned out like cards.
+const EMPTY_ICONS = [
+  { Icon: FileDocument, rotate: "-12deg", y: 4 },
+  { Icon: Hash, rotate: "0deg", y: -4 },
+  { Icon: AlignLeft, rotate: "12deg", y: 4 }
+];
+// A grid fading out from behind the empty state's icons (web only).
+const EMPTY_GRID_STYLE = {
+  backgroundImage:
+    "linear-gradient(var(--hairline) 1px, transparent 1px), linear-gradient(90deg, var(--hairline) 1px, transparent 1px)",
+  backgroundSize: "24px 24px",
+  backgroundPosition: "center",
+  // Centered on the icons, and faded out above the text.
+  maskImage: "radial-gradient(200px 90px at 50% 65px, black 30%, transparent)"
+};
 
 /** The results chosen before, newest first, saved in `localStorage`. */
 const readHistory = (key: string): SearchDialogResult[] => {
@@ -225,21 +252,55 @@ const SearchDialogMatch = styled(Text, {
   fontWeight: "bold"
 });
 
-const SearchDialogMessage = styled(BodyText, {
-  displayName: "SearchDialogMessage",
-  color: "subtle",
-  textAlign: "center",
-  padding: "7xl"
+const SearchDialogFilters = styled(View, {
+  displayName: "SearchDialogFilters",
+  flexDirection: "row",
+  gap: "2xl",
+  paddingHorizontal: "2xl",
+  paddingVertical: "xl",
+  // Scrolls sideways rather than wrapping, like a tab bar.
+  overflowX: "auto",
+  borderBottomWidth: 1,
+  borderBottomColor: "hairline",
+  backgroundColor: "floating"
+});
+
+const SearchDialogEmpty = styled(View, {
+  displayName: "SearchDialogEmpty",
+  position: "relative",
+  alignItems: "center",
+  gap: "xl",
+  paddingHorizontal: "7xl",
+  paddingVertical: "9xl",
+  overflow: "hidden"
+});
+
+const SearchDialogEmptyIcon = styled(View, {
+  displayName: "SearchDialogEmptyIcon",
+  alignItems: "center",
+  justifyContent: "center",
+  width: "12xl",
+  height: "12xl",
+  marginHorizontal: -3,
+  borderRadius: "xl",
+  borderWidth: 1,
+  borderColor: "hairline",
+  backgroundColor: "floating",
+  boxShadow: "sm"
 });
 
 const SearchDialogFooter = styled(View, {
   displayName: "SearchDialogFooter",
   flexDirection: "row",
-  flexWrap: "wrap",
+  alignItems: "center",
   gap: "2xl",
-  padding: "2xl",
+  minHeight: "12xl",
+  paddingHorizontal: "4xl",
+  paddingVertical: "xl",
   borderTopWidth: 1,
-  borderTopColor: "hairline"
+  borderTopColor: "hairline",
+  // A shade lighter than the dialog, and the keys a shade darker.
+  backgroundColor: "floating"
 });
 
 interface SearchState {
@@ -272,6 +333,7 @@ export const SearchDialog = createStyledHOC(
       label = "Search",
       placeholder = "Search...",
       historyKey = "cyclone-ui:search-dialog-history",
+      onSettingsPress,
       size = "9xl",
       ...props
     }: SearchDialogProps,
@@ -316,6 +378,8 @@ export const SearchDialog = createStyledHOC(
     );
     const active = results[activeIndex];
     const pattern = getQueryPattern(term);
+    // Multiple-choice filters hold arrays, the others a string.
+    const filtered = Object.values(filterValues).some(value => value?.length);
 
     // An effect event, so an inline `search` doesn't search on every render.
     const runSearch = useEffectEvent(search);
@@ -445,9 +509,15 @@ export const SearchDialog = createStyledHOC(
       !term || state.term === undefined
         ? undefined
         : state.failed
-          ? "The search failed, please try again."
+          ? {
+              title: "Search failed",
+              description: "The search failed, please try again."
+            }
           : results.length === 0
-            ? `No results for "${state.term}"`
+            ? {
+                title: "No results found",
+                description: `We couldn't find anything matching "${state.term}". Try adjusting your keywords${filtered ? " or clearing the filters" : ""}.`
+              }
             : undefined;
 
     const renderOption = (result: SearchDialogResult, index: number) => {
@@ -550,15 +620,18 @@ export const SearchDialog = createStyledHOC(
             maxWidth={640}
             flexGrow={1}
             padding={0}
+            borderRadius="2xl"
             borderColor="hairline"
             style={{ color: "var(--primary)" }}>
             <VisuallyHidden>
               <Dialog.Heading>{label}</Dialog.Heading>
             </VisuallyHidden>
 
+            {/* Like the filters and footer, a shade off the results. */}
             <Input
               variant="underlined"
               size="lg"
+              backgroundColor="floating"
               onChange={event => setQuery(event.detail)}>
               <Input.TextBox>
                 <SearchDialogIcon>
@@ -590,6 +663,39 @@ export const SearchDialog = createStyledHOC(
                 </Input.Trigger.Icon>
               </Input.Trigger>
             </Input>
+
+            {filters?.length ? (
+              <SearchDialogFilters>
+                {filters.map(filter => (
+                  <ToggleGroup
+                    key={filter.name}
+                    aria-label={filter.label}
+                    size="sm"
+                    multiple={true}
+                    borderless={true}
+                    flexShrink={0}
+                    value={filterValues[filter.name] ?? null}
+                    onValueChange={value =>
+                      setFilterValues(current => ({
+                        ...current,
+                        [filter.name]: value as string | null
+                      }))
+                    }>
+                    {filter.options.map(option => (
+                      <ToggleGroup.Item
+                        key={option.value}
+                        value={option.value}
+                        // Separate chips, on the group's borderless frame.
+                        borderWidth={1}
+                        borderColor="hairline"
+                        pressedBackgroundColor="hairline">
+                        {option.label}
+                      </ToggleGroup.Item>
+                    ))}
+                  </ToggleGroup>
+                ))}
+              </SearchDialogFilters>
+            ) : null}
 
             {results.length > 0 && (
               <SearchDialogList>
@@ -642,37 +748,109 @@ export const SearchDialog = createStyledHOC(
               </SearchDialogList>
             )}
 
-            {!results.length || message ? (
-              <SearchDialogMessage role="status" minHeight={75}>
-                {message || ""}
-              </SearchDialogMessage>
-            ) : null}
-
-            {filters?.length ? (
-              <SearchDialogFooter>
-                {filters.map(filter => (
-                  <ToggleGroup
-                    key={filter.name}
-                    aria-label={filter.label}
+            {results.length === 0 && (
+              <SearchDialogEmpty>
+                {message && (
+                  <>
+                    <View
+                      position="absolute"
+                      inset={0}
+                      pointerEvents="none"
+                      style={EMPTY_GRID_STYLE}
+                    />
+                    <View
+                      flexDirection="row"
+                      marginBottom="5xl"
+                      aria-hidden={true}>
+                      {EMPTY_ICONS.map(({ Icon, rotate, y }) => (
+                        <SearchDialogEmptyIcon
+                          key={rotate}
+                          rotate={rotate}
+                          y={y}>
+                          <Icon size={22} color="subtle" />
+                        </SearchDialogEmptyIcon>
+                      ))}
+                    </View>
+                  </>
+                )}
+                {/* Mounted before the message, so it is announced. */}
+                <View role="status" alignItems="center" gap="md">
+                  {message && (
+                    <>
+                      <BodyText
+                        fontWeight="semibold"
+                        color="emphasis"
+                        textAlign="center">
+                        {message.title}
+                      </BodyText>
+                      <BodyText
+                        size="sm"
+                        color="subtle"
+                        textAlign="center"
+                        maxWidth={360}>
+                        {message.description}
+                      </BodyText>
+                    </>
+                  )}
+                </View>
+                {message && filtered ? (
+                  <Button
+                    variant="tertiary"
                     size="sm"
-                    multiple={true}
-                    flexWrap="wrap"
-                    value={filterValues[filter.name] ?? null}
-                    onValueChange={value =>
-                      setFilterValues(current => ({
-                        ...current,
-                        [filter.name]: value as string | null
-                      }))
-                    }>
-                    {filter.options.map(option => (
-                      <ToggleGroup.Item key={option.value} value={option.value}>
-                        {option.label}
-                      </ToggleGroup.Item>
-                    ))}
-                  </ToggleGroup>
+                    flexGrow={0}
+                    marginTop="xl"
+                    onPress={() => {
+                      setFilterValues({});
+                      inputRef.current?.focus();
+                    }}>
+                    <Button.Text>Clear filters</Button.Text>
+                  </Button>
+                ) : null}
+              </SearchDialogEmpty>
+            )}
+
+            <SearchDialogFooter>
+              {/* Wraps on its own, keeping the settings in the corner. */}
+              <View
+                flex={1}
+                flexDirection="row"
+                flexWrap="wrap"
+                columnGap="6xl"
+                rowGap="xl">
+                {FOOTER_HINTS.map(hint => (
+                  <View
+                    key={hint.label}
+                    flexDirection="row"
+                    alignItems="center"
+                    gap="xl">
+                    <KbdGroup>
+                      {hint.keys.map(key => (
+                        <Kbd key={key} size="lg">
+                          {key}
+                        </Kbd>
+                      ))}
+                    </KbdGroup>
+                    <BodyText render="span" size="sm" color="subtle">
+                      {hint.label}
+                    </BodyText>
+                  </View>
                 ))}
-              </SearchDialogFooter>
-            ) : null}
+              </View>
+              {onSettingsPress && (
+                <Button
+                  variant="ghost"
+                  circular={true}
+                  noPadding={true}
+                  size="8xl"
+                  aria-label={`${label} settings`}
+                  onPress={onSettingsPress}>
+                  {/* A size up, or the glyph scales down to a few px. */}
+                  <Button.Icon size="9xl">
+                    <Cog />
+                  </Button.Icon>
+                </Button>
+              )}
+            </SearchDialogFooter>
           </Dialog.Container>
         </Dialog.Portal>
       </Dialog>

@@ -253,7 +253,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-base-backdrop",
       type: "color",
       category: "color",
-      value: "#02020373"
+      value: "#02020326"
     },
     {
       path: "color.base.border",
@@ -360,7 +360,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-base-secondary-active",
       type: "color",
       category: "color",
-      value: "#939394"
+      value: "#878788"
     },
     {
       path: "color.base.secondary-disabled",
@@ -374,7 +374,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-base-secondary-hovered",
       type: "color",
       category: "color",
-      value: "#939394"
+      value: "#878788"
     },
     {
       path: "color.base.secondary-inactive",
@@ -458,7 +458,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-brand-backdrop",
       type: "color",
       category: "color",
-      value: "#00332c73"
+      value: "#00332c26"
     },
     {
       path: "color.brand.border",
@@ -628,7 +628,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-danger-backdrop",
       type: "color",
       category: "color",
-      value: "#35000173"
+      value: "#35000126"
     },
     {
       path: "color.danger.border",
@@ -927,7 +927,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-discovery-backdrop",
       type: "color",
       category: "color",
-      value: "#17004073"
+      value: "#17004026"
     },
     {
       path: "color.discovery.border",
@@ -1278,7 +1278,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-info-backdrop",
       type: "color",
       category: "color",
-      value: "#00005573"
+      value: "#00005526"
     },
     {
       path: "color.info.border",
@@ -1993,7 +1993,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-success-backdrop",
       type: "color",
       category: "color",
-      value: "#001b0973"
+      value: "#001b0926"
     },
     {
       path: "color.success.border",
@@ -2236,7 +2236,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-warning-backdrop",
       type: "color",
       category: "color",
-      value: "#24070073"
+      value: "#24070026"
     },
     {
       path: "color.warning.border",
@@ -4572,6 +4572,11 @@ export const manifest: DesignSystemManifest = {
       name: "@cyclone-ui/input",
       jsx: ["Input"],
       roles: ["text-input"]
+    },
+    {
+      name: "@cyclone-ui/kbd",
+      jsx: ["Kbd"],
+      roles: []
     },
     {
       name: "@cyclone-ui/like-button",

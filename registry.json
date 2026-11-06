@@ -3308,6 +3308,25 @@
       ]
     },
     {
+      "name": "@cyclone-ui/kbd",
+      "type": "registry:component",
+      "title": "@cyclone-ui/kbd",
+      "description": "Keyboard keys and shortcuts shown inline, like shadcn/ui's Kbd. A `Kbd` renders a `<kbd>` key cap in a small bordered box, in `sm`, `md` or `lg`, that sits inside text, buttons and tooltips. A `KbdGroup` lays several keys out side by side for a combination such as Ctrl + K.",
+      "dependencies": ["@tamagui/core@3.2.0"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.5",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "files": [
+        {
+          "path": "components/kbd/src/Kbd.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/like-button",
       "type": "registry:component",
       "title": "@cyclone-ui/like-button",
@@ -4122,7 +4141,7 @@
       "name": "@cyclone-ui/search-dialog",
       "type": "registry:component",
       "title": "@cyclone-ui/search-dialog",
-      "description": "A search icon Button that opens a Dialog for searching the application, like the fumadocs search dialog. It also opens with ⌘K / Ctrl+K. A debounced `search` function (static index or API) returns page, heading and text results with breadcrumbs and highlighted query words, narrowed by optional filter toggles. The arrow keys move through the results and Enter opens one. The last results chosen are saved in localStorage and listed as \"Recent\" when it opens, where they can be removed one by one or cleared.",
+      "description": "A search icon Button that opens a Dialog for searching the application, like the fumadocs search dialog. It also opens with ⌘K / Ctrl+K. A debounced `search` function (static index or API) returns page, heading and text results with breadcrumbs and highlighted query words, narrowed by optional filter toggles under the search box. The arrow keys move through the results and Enter opens one. The last results chosen are saved in localStorage and listed as \"Recent\" when it opens, where they can be removed one by one or cleared. A footer shows the keyboard shortcuts as `Kbd` keys, with an optional settings button in its corner.",
       "dependencies": ["@tamagui/core@3.2.0"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.5",
@@ -4136,6 +4155,7 @@
         "@cyclone-ui/dialog",
         "@cyclone-ui/icons",
         "@cyclone-ui/input",
+        "@cyclone-ui/kbd",
         "@cyclone-ui/toggle-group",
         "@cyclone-ui/vectors",
         "@cyclone-ui/visually-hidden"

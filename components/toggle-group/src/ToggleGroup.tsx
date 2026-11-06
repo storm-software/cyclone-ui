@@ -51,29 +51,6 @@ const ToggleGroupFrame = styled(View, {
       }
     },
 
-    // `Toggle`'s variants; the items stay transparent on top.
-    variant: {
-      primary: {
-        backgroundColor: "primary",
-        borderColor: "transparent"
-      },
-      secondary: {
-        backgroundColor: "secondary",
-        borderColor: "border",
-        boxShadow: "color-shadow-resting-raised"
-      },
-      tertiary: {
-        backgroundColor: "surface",
-        borderColor: "hairline",
-        boxShadow: "color-shadow-resting-raised"
-      },
-      outlined: {
-        backgroundColor: "transparent",
-        borderWidth: 2,
-        borderColor: "primary"
-      }
-    },
-
     borderless: {
       true: {
         borderColor: "transparent",
@@ -128,7 +105,7 @@ export interface ToggleGroupProps extends Omit<
   allowEmpty?: boolean;
   /** The size of every toggle in the group. */
   size?: FormControlSize;
-  /** The shared frame's colors; see `Toggle`'s `variant`. */
+  /** Every toggle's colors; see `Toggle`'s `variant`. */
   variant?: ToggleVariant;
   /** Show the failed-validation style. */
   invalid?: boolean;
@@ -219,7 +196,6 @@ const ToggleGroupFrameImpl = forwardRef<TamaguiElement, ToggleGroupProps>(
         }}>
         <ToggleGroupFrame
           theme={invalid ? "danger" : themeName}
-          variant={borderless ? undefined : variant}
           // Space the items like a toggle insets its indicator.
           padding={getToggleInset(size)}
           gap={getToggleInset(size)}
@@ -259,11 +235,9 @@ const ToggleGroupItem = forwardRef<TamaguiElement, ToggleGroupItemProps>(
 
     // The group frame draws the border and inset, so the item is just its
     // indicator, keeping the group as tall as a standalone toggle.
-    const frameBorder =
-      group.variant === "outlined" && !group.borderless ? 2 : 1;
     const height =
       getSized(getFormSizeToken(group.size)) -
-      2 * (frameBorder + getToggleInset(group.size));
+      2 * (1 + getToggleInset(group.size));
 
     return (
       <Toggle
@@ -279,8 +253,6 @@ const ToggleGroupItem = forwardRef<TamaguiElement, ToggleGroupItemProps>(
         height={height}
         minHeight={height}
         backgroundColor="transparent"
-        // The group frame carries the variant's shadow.
-        boxShadow="none focus-visible:ring-offset"
         {...(group.fluid && { flexGrow: 1, flexBasis: 0, width: "auto" })}
         {...props}
         disabled={group.disabled || disabled}

@@ -882,7 +882,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.backdrop",
       type: "color",
-      value: "#41414173",
+      value: "#41414126",
       cssVar: "--cu-color-base-backdrop",
       description:
         "Generated base overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -952,20 +952,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-hovered",
       type: "color",
-      value: "#37383d",
+      value: "#3a3b41",
       cssVar: "--cu-color-base-secondary-hovered",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 13% brighter)",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 18% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.base.secondary-active",
       type: "color",
-      value: "#37383d",
+      value: "#3a3b41",
       cssVar: "--cu-color-base-secondary-active",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 13% brighter)",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 18% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1057,7 +1057,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.backdrop",
       type: "color",
-      value: "#00442a73",
+      value: "#00442a26",
       cssVar: "--cu-color-brand-backdrop",
       description:
         "Generated brand overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -1255,7 +1255,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.backdrop",
       type: "color",
-      value: "#53000773",
+      value: "#53000726",
       cssVar: "--cu-color-danger-backdrop",
       description:
         "Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -1504,7 +1504,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.backdrop",
       type: "color",
-      value: "#53240073",
+      value: "#53240026",
       cssVar: "--cu-color-warning-backdrop",
       description:
         "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -1741,7 +1741,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.backdrop",
       type: "color",
-      value: "#00007573",
+      value: "#00007526",
       cssVar: "--cu-color-info-backdrop",
       description:
         "Generated info overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -1980,7 +1980,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.backdrop",
       type: "color",
-      value: "#28005b73",
+      value: "#28005b26",
       cssVar: "--cu-color-discovery-backdrop",
       description:
         "Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -2209,7 +2209,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.backdrop",
       type: "color",
-      value: "#003a1073",
+      value: "#003a1026",
       cssVar: "--cu-color-success-backdrop",
       description:
         "Generated success overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -6604,7 +6604,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.backdrop",
       type: "color",
-      value: "#54545473",
+      value: "#54545426",
       cssVar: "--cu-color-base-backdrop",
       description:
         "Generated base overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -6674,20 +6674,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-hovered",
       type: "color",
-      value: "#4d4d51",
+      value: "#4f4f54",
       cssVar: "--cu-color-base-secondary-hovered",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 13% brighter)",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 18% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.base.secondary-active",
       type: "color",
-      value: "#4d4d51",
+      value: "#4f4f54",
       cssVar: "--cu-color-base-secondary-active",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 13% brighter)",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 18% brighter)",
       theme: undefined,
       typography: false
     },
@@ -6779,7 +6779,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.backdrop",
       type: "color",
-      value: "#1c604673",
+      value: "#1c604626",
       cssVar: "--cu-color-brand-backdrop",
       description:
         "Generated brand overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -6977,7 +6977,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.backdrop",
       type: "color",
-      value: "#681e2573",
+      value: "#681e2526",
       cssVar: "--cu-color-danger-backdrop",
       description:
         "Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -7226,7 +7226,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.backdrop",
       type: "color",
-      value: "#683e1e73",
+      value: "#683e1e26",
       cssVar: "--cu-color-warning-backdrop",
       description:
         "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -7463,7 +7463,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.backdrop",
       type: "color",
-      value: "#24247b73",
+      value: "#24247b26",
       cssVar: "--cu-color-info-backdrop",
       description:
         "Generated info overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -7702,7 +7702,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.backdrop",
       type: "color",
-      value: "#41206d73",
+      value: "#41206d26",
       cssVar: "--cu-color-discovery-backdrop",
       description:
         "Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -7931,7 +7931,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.backdrop",
       type: "color",
-      value: "#1a5b2c73",
+      value: "#1a5b2c26",
       cssVar: "--cu-color-success-backdrop",
       description:
         "Generated success overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -12326,7 +12326,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.backdrop",
       type: "color",
-      value: "#25252573",
+      value: "#25252526",
       cssVar: "--cu-color-base-backdrop",
       description:
         "Generated base overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -12396,20 +12396,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-hovered",
       type: "color",
-      value: "#18191e",
+      value: "#1c1d24",
       cssVar: "--cu-color-base-secondary-hovered",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 13% brighter)",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 18% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.base.secondary-active",
       type: "color",
-      value: "#18191e",
+      value: "#1c1d24",
       cssVar: "--cu-color-base-secondary-active",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 13% brighter)",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 18% brighter)",
       theme: undefined,
       typography: false
     },
@@ -12501,7 +12501,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.backdrop",
       type: "color",
-      value: "#00000073",
+      value: "#00000026",
       cssVar: "--cu-color-brand-backdrop",
       description:
         "Generated brand overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -12699,7 +12699,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.backdrop",
       type: "color",
-      value: "#06000073",
+      value: "#06000026",
       cssVar: "--cu-color-danger-backdrop",
       description:
         "Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -12948,7 +12948,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.backdrop",
       type: "color",
-      value: "#06020073",
+      value: "#06020026",
       cssVar: "--cu-color-warning-backdrop",
       description:
         "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -13185,7 +13185,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.backdrop",
       type: "color",
-      value: "#00003773",
+      value: "#00003726",
       cssVar: "--cu-color-info-backdrop",
       description:
         "Generated info overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -13424,7 +13424,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.backdrop",
       type: "color",
-      value: "#08001173",
+      value: "#08001126",
       cssVar: "--cu-color-discovery-backdrop",
       description:
         "Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -13653,7 +13653,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.backdrop",
       type: "color",
-      value: "#00000073",
+      value: "#00000026",
       cssVar: "--cu-color-success-backdrop",
       description:
         "Generated success overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -18048,7 +18048,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.backdrop",
       type: "color",
-      value: "#02020373",
+      value: "#02020326",
       cssVar: "--cu-color-base-backdrop",
       description:
         "Generated base overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -18118,20 +18118,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-hovered",
       type: "color",
-      value: "#939394",
+      value: "#878788",
       cssVar: "--cu-color-base-secondary-hovered",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 12% darker)",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 18% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.base.secondary-active",
       type: "color",
-      value: "#939394",
+      value: "#878788",
       cssVar: "--cu-color-base-secondary-active",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 12% darker)",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 18% darker)",
       theme: undefined,
       typography: false
     },
@@ -18224,7 +18224,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.backdrop",
       type: "color",
-      value: "#00332c73",
+      value: "#00332c26",
       cssVar: "--cu-color-brand-backdrop",
       description:
         "Generated brand overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -18423,7 +18423,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.backdrop",
       type: "color",
-      value: "#35000173",
+      value: "#35000126",
       cssVar: "--cu-color-danger-backdrop",
       description:
         "Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -18662,7 +18662,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.backdrop",
       type: "color",
-      value: "#24070073",
+      value: "#24070026",
       cssVar: "--cu-color-warning-backdrop",
       description:
         "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -18909,7 +18909,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.backdrop",
       type: "color",
-      value: "#00005573",
+      value: "#00005526",
       cssVar: "--cu-color-info-backdrop",
       description:
         "Generated info overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -19148,7 +19148,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.backdrop",
       type: "color",
-      value: "#17004073",
+      value: "#17004026",
       cssVar: "--cu-color-discovery-backdrop",
       description:
         "Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -19377,7 +19377,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.backdrop",
       type: "color",
-      value: "#001b0973",
+      value: "#001b0926",
       cssVar: "--cu-color-success-backdrop",
       description:
         "Generated success overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -23772,7 +23772,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.backdrop",
       type: "color",
-      value: "#24242c73",
+      value: "#24242c26",
       cssVar: "--cu-color-base-backdrop",
       description:
         "Generated base overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -23842,20 +23842,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-hovered",
       type: "color",
-      value: "#8d8d8e",
+      value: "#858585",
       cssVar: "--cu-color-base-secondary-hovered",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 12% darker)",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 18% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.base.secondary-active",
       type: "color",
-      value: "#8d8d8e",
+      value: "#858585",
       cssVar: "--cu-color-base-secondary-active",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 12% darker)",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 18% darker)",
       theme: undefined,
       typography: false
     },
@@ -23948,7 +23948,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.backdrop",
       type: "color",
-      value: "#19574e73",
+      value: "#19574e26",
       cssVar: "--cu-color-brand-backdrop",
       description:
         "Generated brand overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -24147,7 +24147,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.backdrop",
       type: "color",
-      value: "#581a1b73",
+      value: "#581a1b26",
       cssVar: "--cu-color-danger-backdrop",
       description:
         "Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -24386,7 +24386,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.backdrop",
       type: "color",
-      value: "#4f221773",
+      value: "#4f221726",
       cssVar: "--cu-color-warning-backdrop",
       description:
         "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -24633,7 +24633,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.backdrop",
       type: "color",
-      value: "#1f1f6973",
+      value: "#1f1f6926",
       cssVar: "--cu-color-info-backdrop",
       description:
         "Generated info overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -24872,7 +24872,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.backdrop",
       type: "color",
-      value: "#331b5e73",
+      value: "#331b5e26",
       cssVar: "--cu-color-discovery-backdrop",
       description:
         "Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -25101,7 +25101,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.backdrop",
       type: "color",
-      value: "#154a2773",
+      value: "#154a2726",
       cssVar: "--cu-color-success-backdrop",
       description:
         "Generated success overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -29496,7 +29496,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.backdrop",
       type: "color",
-      value: "#00000073",
+      value: "#00000026",
       cssVar: "--cu-color-base-backdrop",
       description:
         "Generated base overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -29566,20 +29566,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.base.secondary-hovered",
       type: "color",
-      value: "#9797a2",
+      value: "#858592",
       cssVar: "--cu-color-base-secondary-hovered",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 12% darker)",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 18% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.base.secondary-active",
       type: "color",
-      value: "#9797a2",
+      value: "#858592",
       cssVar: "--cu-color-base-secondary-active",
       description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 12% darker)",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 18% darker)",
       theme: undefined,
       typography: false
     },
@@ -29672,7 +29672,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.brand.backdrop",
       type: "color",
-      value: "#00000073",
+      value: "#00000026",
       cssVar: "--cu-color-brand-backdrop",
       description:
         "Generated brand overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -29871,7 +29871,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger.backdrop",
       type: "color",
-      value: "#00000073",
+      value: "#00000026",
       cssVar: "--cu-color-danger-backdrop",
       description:
         "Generated danger overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -30110,7 +30110,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.backdrop",
       type: "color",
-      value: "#00000073",
+      value: "#00000026",
       cssVar: "--cu-color-warning-backdrop",
       description:
         "Generated warning overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -30357,7 +30357,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.info.backdrop",
       type: "color",
-      value: "#00000873",
+      value: "#00000826",
       cssVar: "--cu-color-info-backdrop",
       description:
         "Generated info overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -30596,7 +30596,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.discovery.backdrop",
       type: "color",
-      value: "#00000073",
+      value: "#00000026",
       cssVar: "--cu-color-discovery-backdrop",
       description:
         "Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity)",
@@ -30825,7 +30825,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success.backdrop",
       type: "color",
-      value: "#00000073",
+      value: "#00000026",
       cssVar: "--cu-color-success-backdrop",
       description:
         "Generated success overlay backdrop color (primary, 30% darker at 75% opacity)",

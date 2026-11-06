@@ -47,7 +47,7 @@ Use these documented design-token names and values as the source of truth; do no
 
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
-| `color.base.backdrop` | `color` | `#00000073` | Generated base overlay backdrop color (primary, 30% darker at 75% opacity) |
+| `color.base.backdrop` | `color` | `#00000026` | Generated base overlay backdrop color (primary, 30% darker at 75% opacity) |
 | `color.base.border` | `color` | `#8e8e9a` | Generated base border color for secondary backgrounds (secondary, 15% darker) |
 | `color.base.link` | `color` | `#0077bc` | The color used for hyperlink text. |
 | `color.base.link-active` | `color` | `#004075` | The color used for hyperlink text. (active, 25% darker) |
@@ -62,9 +62,9 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.base.primary-hovered` | `color` | `#494954` | Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter) |
 | `color.base.primary-inactive` | `color` | `#000000` | Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% darker) |
 | `color.base.secondary` | `color` | `var(--color-neutral-7)` | Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. |
-| `color.base.secondary-active` | `color` | `#9797a2` | Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 12% darker) |
+| `color.base.secondary-active` | `color` | `#858592` | Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 18% darker) |
 | `color.base.secondary-disabled` | `color` | `#5a5a66` | Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) |
-| `color.base.secondary-hovered` | `color` | `#9797a2` | Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 12% darker) |
+| `color.base.secondary-hovered` | `color` | `#858592` | Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 18% darker) |
 | `color.base.secondary-inactive` | `color` | `#000000` | Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 50% darker) |
 | `color.black` | `color` | `#000000` | Near-black neutral. |
 | `color.blue.1` | `color` | `#f8fbff` | Pale periwinkle blue. |
@@ -76,7 +76,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.blue.7` | `color` | `#0145be` | Deep azure blue. |
 | `color.blue.8` | `color` | `#012e7c` | Vivid cerulean blue. |
 | `color.blue.9` | `color` | `#00163b` | Rich cerulean blue. |
-| `color.brand.backdrop` | `color` | `#00000073` | Generated brand overlay backdrop color (primary, 30% darker at 75% opacity) |
+| `color.brand.backdrop` | `color` | `#00000026` | Generated brand overlay backdrop color (primary, 30% darker at 75% opacity) |
 | `color.brand.border` | `color` | `#c3e8e3` | Generated brand border color for secondary backgrounds (secondary, 15% darker) |
 | `color.brand.link` | `color` | `var(--color-brand-primary)` | Generated brand hyperlink text color (matches primary) |
 | `color.brand.link-active` | `color` | `#00413c` | Generated brand hyperlink text color (matches primary) (active, 25% darker) |
@@ -100,7 +100,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.canvas-disabled` | `color` | `#c9c9cf` | Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 68% over oklch(0.3839 0.0045 286.26)) |
 | `color.canvas-hovered` | `color` | `#adadad` | Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 25% darker) |
 | `color.canvas-inactive` | `color` | `#ffffff` | Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 10% brighter) |
-| `color.danger.backdrop` | `color` | `#00000073` | Generated danger overlay backdrop color (primary, 30% darker at 75% opacity) |
+| `color.danger.backdrop` | `color` | `#00000026` | Generated danger overlay backdrop color (primary, 30% darker at 75% opacity) |
 | `color.danger.border` | `color` | `#e6516f` | Generated danger border color for secondary backgrounds (secondary, 15% darker) |
 | `color.danger.link` | `color` | `var(--color-danger-primary)` | Generated danger hyperlink text color (matches primary) |
 | `color.danger.link-active` | `color` | `#27000c` | Generated danger hyperlink text color (matches primary) (active, 25% darker) |
@@ -140,7 +140,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.data.red.subtle` | `color` | `var(--color-red-2)` | Low-emphasis red data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `red.emphasis` series. |
 | `color.data.yellow.emphasis` | `color` | `var(--color-yellow-9)` | High-emphasis yellow data color. Use it for the primary mark of a yellow series, such as lines, bars, points and legend swatches. |
 | `color.data.yellow.subtle` | `color` | `var(--color-yellow-3)` | Low-emphasis yellow data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `yellow.emphasis` series. |
-| `color.discovery.backdrop` | `color` | `#00000073` | Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity) |
+| `color.discovery.backdrop` | `color` | `#00000026` | Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity) |
 | `color.discovery.border` | `color` | `#8b6ed6` | Generated discovery border color for secondary backgrounds (secondary, 15% darker) |
 | `color.discovery.link` | `color` | `var(--color-discovery-primary)` | Generated discovery hyperlink text color (matches primary) |
 | `color.discovery.link-active` | `color` | `#240c59` | Generated discovery hyperlink text color (matches primary) (active, 25% darker) |
@@ -189,7 +189,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.green.8` | `color` | `#031611` | Deep forest green. |
 | `color.green.9` | `color` | `#000000` | Dark emerald green. |
 | `color.hairline` | `color` | `var(--color-neutral-5)` | Low-contrast color for borders, dividers and separators. |
-| `color.info.backdrop` | `color` | `#00000873` | Generated info overlay backdrop color (primary, 30% darker at 75% opacity) |
+| `color.info.backdrop` | `color` | `#00000826` | Generated info overlay backdrop color (primary, 30% darker at 75% opacity) |
 | `color.info.border` | `color` | `#4083f9` | Generated info border color for secondary backgrounds (secondary, 15% darker) |
 | `color.info.link` | `color` | `var(--color-info-primary)` | Generated info hyperlink text color (matches primary) |
 | `color.info.link-active` | `color` | `#001f5a` | Generated info hyperlink text color (matches primary) (active, 25% darker) |
@@ -289,7 +289,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.subtle-disabled` | `color` | `#4e4e5a` | Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) |
 | `color.subtle-hovered` | `color` | `#53535f` | Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% darker) |
 | `color.subtle-inactive` | `color` | `#000000` | Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker) |
-| `color.success.backdrop` | `color` | `#00000073` | Generated success overlay backdrop color (primary, 30% darker at 75% opacity) |
+| `color.success.backdrop` | `color` | `#00000026` | Generated success overlay backdrop color (primary, 30% darker at 75% opacity) |
 | `color.success.border` | `color` | `#3da27d` | Generated success border color for secondary backgrounds (secondary, 15% darker) |
 | `color.success.link` | `color` | `var(--color-success-primary)` | Generated success hyperlink text color (matches primary) |
 | `color.success.link-active` | `color` | `#000000` | Generated success hyperlink text color (matches primary) (active, 25% darker) |
@@ -323,7 +323,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.surface-disabled` | `color` | `#cfcfd5` | Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 68% over oklch(0.3839 0.0045 286.26)) |
 | `color.surface-hovered` | `color` | `#b4b4b4` | Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 25% darker) |
 | `color.surface-inactive` | `color` | `#ffffff` | Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 10% brighter) |
-| `color.warning.backdrop` | `color` | `#00000073` | Generated warning overlay backdrop color (primary, 30% darker at 75% opacity) |
+| `color.warning.backdrop` | `color` | `#00000026` | Generated warning overlay backdrop color (primary, 30% darker at 75% opacity) |
 | `color.warning.border` | `color` | `#b88331` | Generated warning border color for secondary backgrounds (secondary, 15% darker) |
 | `color.warning.link` | `color` | `var(--color-warning-primary)` | Generated warning hyperlink text color (matches primary) |
 | `color.warning.link-active` | `color` | `#070400` | Generated warning hyperlink text color (matches primary) (active, 25% darker) |

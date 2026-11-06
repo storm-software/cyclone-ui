@@ -48,7 +48,7 @@ Set `multiple` to allow more than one selected item. The value is then a `string
 | `onValueChange` | `(value: string \| string[] \| null) => void` | — | Called with the new selection. It receives an array when `multiple` is set. Otherwise it receives a string or `null`. |
 | `allowEmpty` | `boolean` | `true` | Lets the user clear the last selected item. |
 | `size` | `"sm" \| "md" \| "lg"` | `"md"` | The size of every item. |
-| `variant` | `"primary" \| "secondary" \| "tertiary" \| "outlined"` | — | The shared frame colors, as on [Toggle](./toggle.md). The items stay transparent on top and take the variant's text color. Ignored when `borderless`. |
+| `variant` | `"primary" \| "secondary" \| "tertiary" \| "outlined"` | — | Every item's indicator colors, as on [Toggle](./toggle.md). The shared frame stays `sunken`. |
 | `invalid` | `boolean` | `false` | Switches to the `danger` theme. |
 | `disabled` | `boolean` | `false` | Disables every item. |
 | `fluid` | `boolean` | `false` | Spans the parent width. The items share it evenly. |

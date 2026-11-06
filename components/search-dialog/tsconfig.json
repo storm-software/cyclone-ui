@@ -33,6 +33,9 @@
       "path": "../input"
     },
     {
+      "path": "../kbd"
+    },
+    {
       "path": "../toggle-group"
     },
     {

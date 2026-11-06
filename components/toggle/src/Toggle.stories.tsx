@@ -231,9 +231,23 @@ export const Primary: Story = {
   }
 };
 
+export const PrimaryBorderless: Story = {
+  args: {
+    variant: "primary",
+    borderless: true
+  }
+};
+
 export const Secondary: Story = {
   args: {
     variant: "secondary"
+  }
+};
+
+export const SecondaryBorderless: Story = {
+  args: {
+    variant: "secondary",
+    borderless: true
   }
 };
 
@@ -243,9 +257,23 @@ export const Tertiary: Story = {
   }
 };
 
+export const TertiaryBorderless: Story = {
+  args: {
+    variant: "tertiary",
+    borderless: true
+  }
+};
+
 export const Outlined: Story = {
   args: {
     variant: "outlined"
+  }
+};
+
+export const OutlinedBorderless: Story = {
+  args: {
+    variant: "outlined",
+    borderless: true
   }
 };
 

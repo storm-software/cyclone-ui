@@ -103,6 +103,9 @@
       "path": "./components/inline-code-text"
     },
     {
+      "path": "./components/kbd"
+    },
+    {
       "path": "./components/container"
     },
     {

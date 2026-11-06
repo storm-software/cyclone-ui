@@ -463,12 +463,7 @@ const COLOR_STATE_ACTIVE: ColorStateVariant = {
 
 const SUBTLE_LOW_SATURATION_COLOR_STATE_ACTIVE: ColorStateVariant = {
   name: "active",
-  brightness: 1.125
-};
-
-const HAIRLINE_COLOR_STATE_ACTIVE: ColorStateVariant = {
-  name: "active",
-  brightness: 1.4
+  brightness: 1.175
 };
 
 const INCREASED_LOW_SATURATION_COLOR_STATE_ACTIVE: ColorStateVariant = {
@@ -571,7 +566,10 @@ const OUTLINE_COLOR_STATE_VARIANTS: ColorStateVariants = {
     COLOR_STATE_DISABLED
   ],
   saturated: [
-    HAIRLINE_COLOR_STATE_ACTIVE,
+    {
+      name: "active",
+      brightness: 1.4
+    },
     COLOR_STATE_INACTIVE,
     COLOR_STATE_DISABLED
   ]
@@ -633,7 +631,7 @@ const SUBTLE_COLOR_LIGHTNESS_STEP = 0.01;
 const MAX_SUBTLE_COLOR_ADJUSTMENTS = 100;
 const SUBTLE_COLOR_GAMUT_SEARCH_ITERATIONS = 32;
 const BACKDROP_BRIGHTNESS = 0.375;
-const BACKDROP_OPACITY = 0.45;
+const BACKDROP_OPACITY = 0.15;
 /** OKLCH lightness step for the rim around `secondary` backgrounds (brighter in dark, darker in light themes). */
 const BORDER_LIGHTNESS_STEP = 0.15;
 /** OKLCH lightness shift for hovered colors already near the contrast primitive. */
@@ -1373,6 +1371,7 @@ function addThemeColorGroupTokens(
     $value: `{color.${name}.primary}`,
     $description: `Generated ${name} hyperlink text color (matches primary)`
   };
+
   if (group.group === "status") {
     result.outline ??= {
       ...token,
@@ -1381,6 +1380,7 @@ function addThemeColorGroupTokens(
       $description: `Generated ${name} border and divider color (matches primary)`
     };
   }
+
   result["on-primary"] ??= {
     ...token,
     $type: "color",
