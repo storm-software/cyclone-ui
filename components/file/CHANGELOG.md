@@ -2,6 +2,27 @@
 
 # Changelog for Cyclone UI - File
 
+## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/file%400.0.6) (11/06/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Resolve issue generating color token variants ([bd2fc29c9](https://github.com/storm-software/cyclone-ui/commit/bd2fc29c9))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.53**
+- Updated **button** to **v0.6.56**
+- Updated **bytes-text** to **v0.5.53**
+- Updated **heading-text** to **v0.5.54**
+- Updated **helpers** to **v0.3.53**
+- Updated **icons** to **v0.0.51**
+- Updated **link** to **v0.5.56**
+- Updated **number-text** to **v0.5.53**
+- Updated **pdf-document-display** to **v0.5.55**
+- Updated **progress** to **v0.5.53**
+- Updated **state** to **v0.0.55**
+- Updated **themeable-icon** to **v0.6.55**
+
 ## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/file%400.0.5) (11/06/2026)
 
 ### Features

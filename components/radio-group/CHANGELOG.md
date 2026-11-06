@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Radio Group
 
+## [0.5.57](https://github.com/storm-software/cyclone-ui/releases/tag/radio-group%400.5.57) (11/06/2026)
+
+### Features
+
+- **radio-group:** Added the `indicatorStyle` property to `RadioGroup` ([a2f16a2a6](https://github.com/storm-software/cyclone-ui/commit/a2f16a2a6))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.53**
+- Updated **field** to **v0.5.56**
+- Updated **form** to **v0.9.54**
+- Updated **heading-text** to **v0.5.54**
+- Updated **helpers** to **v0.3.53**
+- Updated **icons** to **v0.0.51**
+
 ## [0.5.56](https://github.com/storm-software/cyclone-ui/releases/tag/radio-group%400.5.56) (11/06/2026)
 
 ### Features

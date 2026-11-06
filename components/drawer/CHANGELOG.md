@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Drawer
 
+## [0.1.57](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.57) (11/06/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Resolve issue generating color token variants ([bd2fc29c9](https://github.com/storm-software/cyclone-ui/commit/bd2fc29c9))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.53**
+- Updated **button** to **v0.6.56**
+- Updated **icons** to **v0.0.51**
+- Updated **sheet** to **v0.0.56**
+
 ## [0.1.56](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.56) (11/06/2026)
 
 ### Features

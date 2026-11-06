@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - ESLint Plugin
 
+## [0.0.43](https://github.com/storm-software/cyclone-ui/releases/tag/eslint-plugin%400.0.43) (11/06/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Resolve issue generating color token variants ([bd2fc29c9](https://github.com/storm-software/cyclone-ui/commit/bd2fc29c9))
+
 ## [0.0.42](https://github.com/storm-software/cyclone-ui/releases/tag/eslint-plugin%400.0.42) (11/06/2026)
 
 ### Features

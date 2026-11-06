@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Search Dialog
 
+## [0.0.34](https://github.com/storm-software/cyclone-ui/releases/tag/search-dialog%400.0.34) (11/06/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Resolve issue generating color token variants ([bd2fc29c9](https://github.com/storm-software/cyclone-ui/commit/bd2fc29c9))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.53**
+- Updated **button** to **v0.6.56**
+- Updated **dialog** to **v0.3.57**
+- Updated **icons** to **v0.0.51**
+- Updated **input** to **v0.6.56**
+- Updated **kbd** to **v0.0.3**
+- Updated **toggle-group** to **v0.0.45**
+- Updated **vectors** to **v0.5.55**
+- Updated **visually-hidden** to **v0.5.53**
+
 ## [0.0.33](https://github.com/storm-software/cyclone-ui/releases/tag/search-dialog%400.0.33) (11/06/2026)
 
 ### Features

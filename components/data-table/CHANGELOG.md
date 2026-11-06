@@ -2,6 +2,29 @@
 
 # Changelog for Cyclone UI - Data Table
 
+## [0.6.57](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.57) (11/06/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Resolve issue generating color token variants ([bd2fc29c9](https://github.com/storm-software/cyclone-ui/commit/bd2fc29c9))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.53**
+- Updated **button** to **v0.6.56**
+- Updated **checkbox** to **v0.5.56**
+- Updated **context-menu** to **v0.0.47**
+- Updated **field** to **v0.5.56**
+- Updated **form** to **v0.9.54**
+- Updated **heading-text** to **v0.5.54**
+- Updated **icons** to **v0.0.51**
+- Updated **pagination** to **v0.8.56**
+- Updated **popover** to **v0.5.57**
+- Updated **search-input** to **v0.1.57**
+- Updated **select** to **v0.6.57**
+- Updated **state** to **v0.0.55**
+- Updated **table** to **v0.4.55**
+
 ## [0.6.56](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.56) (11/06/2026)
 
 ### Features

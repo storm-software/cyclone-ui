@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/file",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "description": "A file card that shows a file's name, size, modified date and MIME type over an image, text or PDF preview, with download and remove buttons. While an upload is underway, it shows an inline progress bar with the uploaded percentage.",
   "repository": {

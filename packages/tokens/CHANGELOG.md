@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Tokens
 
+## [0.3.42](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.42) (11/06/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Resolve issue generating color token variants ([bd2fc29c9](https://github.com/storm-software/cyclone-ui/commit/bd2fc29c9))
+
 ## [0.3.41](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.41) (11/06/2026)
 
 ### Features

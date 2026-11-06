@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Modal
 
+## [0.0.19](https://github.com/storm-software/cyclone-ui/releases/tag/modal%400.0.19) (11/06/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Resolve issue generating color token variants ([bd2fc29c9](https://github.com/storm-software/cyclone-ui/commit/bd2fc29c9))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.53**
+- Updated **button** to **v0.6.56**
+- Updated **dialog** to **v0.3.57**
+- Updated **field** to **v0.5.56**
+- Updated **form** to **v0.9.54**
+- Updated **icons** to **v0.0.51**
+- Updated **input** to **v0.6.56**
+- Updated **scroll-view** to **v0.5.55**
+- Updated **select** to **v0.6.57**
+
 ## [0.0.18](https://github.com/storm-software/cyclone-ui/releases/tag/modal%400.0.18) (11/06/2026)
 
 ### Features

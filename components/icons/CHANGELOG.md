@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Icons
 
+## [0.0.51](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.51) (11/06/2026)
+
+### Features
+
+- **radio-group:** Added the `indicatorStyle` property to `RadioGroup` ([a2f16a2a6](https://github.com/storm-software/cyclone-ui/commit/a2f16a2a6))
+
 ## [0.0.46](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.46) (11/05/2026)
 
 ### Bug Fixes

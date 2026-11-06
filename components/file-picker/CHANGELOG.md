@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - File Picker
 
+## [0.5.57](https://github.com/storm-software/cyclone-ui/releases/tag/file-picker%400.5.57) (11/06/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Resolve issue generating color token variants ([bd2fc29c9](https://github.com/storm-software/cyclone-ui/commit/bd2fc29c9))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.56**
+- Updated **field** to **v0.5.56**
+- Updated **file** to **v0.0.6**
+- Updated **form** to **v0.9.54**
+- Updated **helpers** to **v0.3.53**
+- Updated **icons** to **v0.0.51**
+- Updated **state** to **v0.0.55**
+
 ## [0.5.56](https://github.com/storm-software/cyclone-ui/releases/tag/file-picker%400.5.56) (11/06/2026)
 
 ### Features

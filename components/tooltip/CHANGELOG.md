@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Tooltip
 
+## [0.5.56](https://github.com/storm-software/cyclone-ui/releases/tag/tooltip%400.5.56) (11/06/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Resolve issue generating color token variants ([bd2fc29c9](https://github.com/storm-software/cyclone-ui/commit/bd2fc29c9))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.53**
+- Updated **container** to **v0.6.55**
+
 ## [0.5.55](https://github.com/storm-software/cyclone-ui/releases/tag/tooltip%400.5.55) (11/06/2026)
 
 ### Features

@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Inline Code Text
 
+## [0.5.52](https://github.com/storm-software/cyclone-ui/releases/tag/inline-code-text%400.5.52) (11/06/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.53**
+
 ## [0.5.51](https://github.com/storm-software/cyclone-ui/releases/tag/inline-code-text%400.5.51) (11/06/2026)
 
 ### Updated Dependencies

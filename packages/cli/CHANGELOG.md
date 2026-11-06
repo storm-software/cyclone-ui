@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - CLI
 
+## [0.6.45](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.45) (11/06/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Resolve issue generating color token variants ([bd2fc29c9](https://github.com/storm-software/cyclone-ui/commit/bd2fc29c9))
+
+### Updated Dependencies
+
+- Updated **registry-api** to **v0.3.53**
+- Updated **theme-builder** to **v0.0.43**
+
 ## [0.6.44](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.44) (11/06/2026)
 
 ### Features
