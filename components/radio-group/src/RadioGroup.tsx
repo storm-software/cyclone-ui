@@ -31,8 +31,7 @@ import {
   useFieldHasValidationMessage,
   useFormControl
 } from "@cyclone-ui/helpers";
-import { Lock } from "@cyclone-ui/icons";
-import { Check } from "@cyclone-ui/vectors";
+import { Confirm, Lock } from "@cyclone-ui/icons";
 import type { SelectOption } from "@stryke/types/form";
 import type { ColorTokens, GetProps } from "@tamagui/core";
 import {
@@ -290,30 +289,24 @@ const RadioGroupItemContainer = createStyledHOC(
     // Another item of the group is selected.
     const inactive = !selected && Boolean(group.value);
 
+    // Nothing selected: the normal colors. Once one is: `-active` for it and
+    // `-inactive` for the rest.
+    const state = (color: string) =>
+      selected ? `${color}-active` : inactive ? `${color}-inactive` : color;
     const idleColor = hasValidationMessage ? "primary" : "hairline";
-    const borderColor = disabled
-      ? "primary-disabled"
-      : selected
-        ? "primary-active"
-        : inactive
-          ? `${idleColor}-inactive`
-          : idleColor;
+    const borderColor = disabled ? "primary-disabled" : state(idleColor);
     const hoverColor = disabled
       ? "primary-disabled"
       : selected
-        ? "primary-active"
+        ? borderColor
         : "primary-hovered";
-    const focusColor = selected
-      ? "primary-active"
-      : hasValidationMessage
-        ? "primary-active"
-        : "hairline-active";
+    const focusColor = `${idleColor}-active`;
     const scale = getFormSizeScale(size);
     const checkSize = getSized("5xl") * scale * 0.75;
     const textColor = (color: "emphasis" | "ink") =>
       disabled
         ? "primary-disabled group-hover/item:primary-disabled"
-        : `${inactive ? `${color}-inactive` : color} group-hover/item:${color}`;
+        : `${state(color)} group-hover/item:${selected ? state(color) : color}`;
 
     const onChange = group.onChange;
     const handlePress = useCallback(
@@ -336,7 +329,7 @@ const RadioGroupItemContainer = createStyledHOC(
             ? "surface-disabled hover:surface-disabled"
             : selected
               ? "surface-active hover:surface-active"
-              : `${inactive ? "surface-inactive" : "surface"} hover:surface-hovered`
+              : `${state("surface")} hover:surface-hovered`
         }
         {...props}
         group="item"
@@ -364,7 +357,11 @@ const RadioGroupItemContainer = createStyledHOC(
           flex={1}
           minWidth={0}
           // Keep the text clear of the corner check.
-          paddingRight={indicatorStyle === "check" ? checkSize : undefined}>
+          paddingRight={
+            indicatorStyle === "check"
+              ? checkSize + getSpaced("xl") * scale
+              : undefined
+          }>
           <RadioGroupItemLabel htmlFor={id} disabled={disabled}>
             {/* The heading sets its own color, so the label's can't reach it. */}
             <HeadingSmallText transition="200ms" color={textColor("emphasis")}>
@@ -404,16 +401,10 @@ const RadioGroupItemContainer = createStyledHOC(
 
         {indicatorStyle === "check" && selected && (
           <RadioGroupItemCheck
-            top={getSpaced("xl") * scale}
-            right={getSpaced("xl") * scale}
-            width={checkSize}
-            height={checkSize}
-            backgroundColor={disabled ? "primary-disabled" : "primary-active"}>
-            <Check
-              strokeWidth={3}
-              size={checkSize * 0.6}
-              color="on-primary"
-            />
+            top={getSpaced("2xl") * scale}
+            right={getSpaced("3xl") * scale}>
+            <Confirm size={checkSize} variant="bold" color={
+              disabled ? "primary-disabled" : "primary-active"} />
           </RadioGroupItemCheck>
         )}
       </RadioGroupItemContainerFrame>

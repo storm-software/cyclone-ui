@@ -46,6 +46,13 @@ type IconVariant = (typeof VARIANTS)[number];
 const STROKE_SCALE = 0.75;
 
 /**
+ * Per-icon stroke factors for the `bold` variant, for icons whose original line-md strokes read too thin.
+ */
+const BOLD_STROKE_SCALE: Record<string, number> = {
+  confirm: 1.5
+};
+
+/**
  * The stroke width of the visible lines in line-md.
  *
  * @remarks
@@ -705,7 +712,11 @@ async function readIcons(
     const svg = await readFile(path, "utf8");
     icon.variants[parsed.variant] = parseSvg(svg, path);
     if (parsed.variant === "regular") {
-      icon.variants.bold = parseSvg(svg, path, 1);
+      icon.variants.bold = parseSvg(
+        svg,
+        path,
+        BOLD_STROKE_SCALE[parsed.name] ?? 1
+      );
     }
     icons.set(parsed.name, icon);
   }

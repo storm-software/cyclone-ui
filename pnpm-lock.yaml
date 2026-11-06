@@ -3868,9 +3868,6 @@ importers:
       '@cyclone-ui/icons':
         specifier: workspace:*
         version: link:../icons
-      '@cyclone-ui/vectors':
-        specifier: workspace:*
-        version: link:../vectors
       '@stryke/types':
         specifier: 'catalog:'
         version: 0.12.45
