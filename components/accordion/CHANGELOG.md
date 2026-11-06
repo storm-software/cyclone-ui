@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Accordion
 
+## [0.3.55](https://github.com/storm-software/cyclone-ui/releases/tag/accordion%400.3.55) (11/06/2026)
+
+### Features
+
+- **container:** Added various new variants, and the `glass` and `noise` properties ([c6943e288](https://github.com/storm-software/cyclone-ui/commit/c6943e288))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.52**
+- Updated **container** to **v0.6.54**
+- Updated **heading-text** to **v0.5.53**
+- Updated **icons** to **v0.0.50**
+- Updated **vectors** to **v0.5.54**
+
 ## [0.3.54](https://github.com/storm-software/cyclone-ui/releases/tag/accordion%400.3.54) (11/05/2026)
 
 ### Updated Dependencies

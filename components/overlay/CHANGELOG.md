@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Overlay
 
+## [0.0.39](https://github.com/storm-software/cyclone-ui/releases/tag/overlay%400.0.39) (11/06/2026)
+
+### Features
+
+- **kbd:** Added the `Kbd` keybord display components ([c8c84cb3e](https://github.com/storm-software/cyclone-ui/commit/c8c84cb3e))
+
 ## [0.0.33](https://github.com/storm-software/cyclone-ui/releases/tag/overlay%400.0.33) (11/04/2026)
 
 ### Miscellaneous

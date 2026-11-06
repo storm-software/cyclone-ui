@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Checkbox
 
+## [0.5.55](https://github.com/storm-software/cyclone-ui/releases/tag/checkbox%400.5.55) (11/06/2026)
+
+### Features
+
+- **monorepo:** Reduced the amount of tokens by removing extra theme border colors ([f01400d25](https://github.com/storm-software/cyclone-ui/commit/f01400d25))
+- **container:** Added various new variants, and the `glass` and `noise` properties ([c6943e288](https://github.com/storm-software/cyclone-ui/commit/c6943e288))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.55**
+- Updated **form** to **v0.9.53**
+- Updated **helpers** to **v0.3.52**
+- Updated **vectors** to **v0.5.54**
+
 ## [0.5.54](https://github.com/storm-software/cyclone-ui/releases/tag/checkbox%400.5.54) (11/05/2026)
 
 ### Updated Dependencies

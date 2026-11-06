@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/theme-builder",
-  "version": "0.0.41",
+  "version": "0.0.42",
   "private": false,
   "publishConfig": {
     "access": "public"

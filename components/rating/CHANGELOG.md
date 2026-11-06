@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Rating
 
+## [0.0.51](https://github.com/storm-software/cyclone-ui/releases/tag/rating%400.0.51) (11/06/2026)
+
+### Features
+
+- **monorepo:** Reduced the amount of tokens by removing extra theme border colors ([f01400d25](https://github.com/storm-software/cyclone-ui/commit/f01400d25))
+
+### Updated Dependencies
+
+- Updated **confetti-burst** to **v0.0.42**
+- Updated **field** to **v0.5.55**
+- Updated **form** to **v0.9.53**
+- Updated **helpers** to **v0.3.52**
+- Updated **icons** to **v0.0.50**
+- Updated **tokens** to **v0.3.41**
+
 ## [0.0.50](https://github.com/storm-software/cyclone-ui/releases/tag/rating%400.0.50) (11/05/2026)
 
 ### Updated Dependencies

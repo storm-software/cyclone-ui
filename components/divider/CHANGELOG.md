@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Divider
 
+## [0.0.48](https://github.com/storm-software/cyclone-ui/releases/tag/divider%400.0.48) (11/06/2026)
+
+### Features
+
+- **container:** Added various new variants, and the `glass` and `noise` properties ([c6943e288](https://github.com/storm-software/cyclone-ui/commit/c6943e288))
+
+### Updated Dependencies
+
+- Updated **tokens** to **v0.3.41**
+
 ## [0.0.47](https://github.com/storm-software/cyclone-ui/releases/tag/divider%400.0.47) (11/05/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Vectors
 
+## [0.5.54](https://github.com/storm-software/cyclone-ui/releases/tag/vectors%400.5.54) (11/06/2026)
+
+### Features
+
+- **container:** Added various new variants, and the `glass` and `noise` properties ([c6943e288](https://github.com/storm-software/cyclone-ui/commit/c6943e288))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.52**
+- Updated **icons** to **v0.0.50**
+
 ## [0.5.53](https://github.com/storm-software/cyclone-ui/releases/tag/vectors%400.5.53) (11/05/2026)
 
 ### Updated Dependencies

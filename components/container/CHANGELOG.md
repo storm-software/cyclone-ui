@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Container
 
+## [0.6.54](https://github.com/storm-software/cyclone-ui/releases/tag/container%400.6.54) (11/06/2026)
+
+### Features
+
+- **container:** Added various new variants, and the `glass` and `noise` properties ([c6943e288](https://github.com/storm-software/cyclone-ui/commit/c6943e288))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.52**
+- Updated **vectors** to **v0.5.54**
+
 ## [0.6.53](https://github.com/storm-software/cyclone-ui/releases/tag/container%400.6.53) (11/05/2026)
 
 ### Updated Dependencies

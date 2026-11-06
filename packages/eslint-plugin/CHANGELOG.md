@@ -2,6 +2,14 @@
 
 # Changelog for Cyclone UI - ESLint Plugin
 
+## [0.0.42](https://github.com/storm-software/cyclone-ui/releases/tag/eslint-plugin%400.0.42) (11/06/2026)
+
+### Features
+
+- **stepper:** Added the `details` property to `Stepper` component ([5d3ffa8f5](https://github.com/storm-software/cyclone-ui/commit/5d3ffa8f5))
+- **monorepo:** Reduced the amount of tokens by removing extra theme border colors ([f01400d25](https://github.com/storm-software/cyclone-ui/commit/f01400d25))
+- **kbd:** Added the `Kbd` keybord display components ([c8c84cb3e](https://github.com/storm-software/cyclone-ui/commit/c8c84cb3e))
+
 ## [0.0.39](https://github.com/storm-software/cyclone-ui/releases/tag/eslint-plugin%400.0.39) (11/05/2026)
 
 ### Features

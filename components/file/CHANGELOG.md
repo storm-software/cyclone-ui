@@ -2,6 +2,29 @@
 
 # Changelog for Cyclone UI - File
 
+## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/file%400.0.5) (11/06/2026)
+
+### Features
+
+- **monorepo:** Reduced the amount of tokens by removing extra theme border colors ([f01400d25](https://github.com/storm-software/cyclone-ui/commit/f01400d25))
+- **container:** Added various new variants, and the `glass` and `noise` properties ([c6943e288](https://github.com/storm-software/cyclone-ui/commit/c6943e288))
+- **button:** Added `tooltip` property to `Button` component ([ff0b89e87](https://github.com/storm-software/cyclone-ui/commit/ff0b89e87))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.52**
+- Updated **button** to **v0.6.55**
+- Updated **bytes-text** to **v0.5.52**
+- Updated **heading-text** to **v0.5.53**
+- Updated **helpers** to **v0.3.52**
+- Updated **icons** to **v0.0.50**
+- Updated **link** to **v0.5.55**
+- Updated **number-text** to **v0.5.52**
+- Updated **pdf-document-display** to **v0.5.54**
+- Updated **progress** to **v0.5.52**
+- Updated **state** to **v0.0.54**
+- Updated **themeable-icon** to **v0.6.54**
+
 ## [0.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/file%400.0.4) (11/05/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Button
 
+## [0.6.55](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.55) (11/06/2026)
+
+### Features
+
+- **container:** Added various new variants, and the `glass` and `noise` properties ([c6943e288](https://github.com/storm-software/cyclone-ui/commit/c6943e288))
+- **button:** Added `tooltip` property to `Button` component ([ff0b89e87](https://github.com/storm-software/cyclone-ui/commit/ff0b89e87))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.52**
+- Updated **container** to **v0.6.54**
+- Updated **helpers** to **v0.3.52**
+- Updated **icons** to **v0.0.50**
+- Updated **ripple-animation** to **v0.0.29**
+- Updated **themeable-icon** to **v0.6.54**
+- Updated **tooltip** to **v0.5.55**
+
 ## [0.6.54](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.54) (11/05/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Popover
 
+## [0.5.56](https://github.com/storm-software/cyclone-ui/releases/tag/popover%400.5.56) (11/06/2026)
+
+### Features
+
+- **monorepo:** Reduced the amount of tokens by removing extra theme border colors ([f01400d25](https://github.com/storm-software/cyclone-ui/commit/f01400d25))
+- **container:** Added various new variants, and the `glass` and `noise` properties ([c6943e288](https://github.com/storm-software/cyclone-ui/commit/c6943e288))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.52**
+- Updated **button** to **v0.6.55**
+- Updated **container** to **v0.6.54**
+- Updated **heading-text** to **v0.5.53**
+- Updated **scroll-view** to **v0.5.54**
+- Updated **sheet** to **v0.0.55**
+
 ## [0.5.55](https://github.com/storm-software/cyclone-ui/releases/tag/popover%400.5.55) (11/05/2026)
 
 ### Updated Dependencies

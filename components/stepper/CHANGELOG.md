@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Stepper
 
+## [0.3.56](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.56) (11/06/2026)
+
+### Features
+
+- **stepper:** Added the `details` property to `Stepper` component ([5d3ffa8f5](https://github.com/storm-software/cyclone-ui/commit/5d3ffa8f5))
+- **monorepo:** Reduced the amount of tokens by removing extra theme border colors ([f01400d25](https://github.com/storm-software/cyclone-ui/commit/f01400d25))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.53**
+- Updated **icons** to **v0.0.50**
+- Updated **next-button** to **v0.5.55**
+- Updated **number-text** to **v0.5.52**
+- Updated **previous-button** to **v0.5.55**
+
 ## [0.3.55](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.55) (11/05/2026)
 
 ### Updated Dependencies

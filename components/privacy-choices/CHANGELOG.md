@@ -2,6 +2,25 @@
 
 # Changelog for Cyclone UI - Privacy Choices
 
+## [0.0.19](https://github.com/storm-software/cyclone-ui/releases/tag/privacy-choices%400.0.19) (11/06/2026)
+
+### Features
+
+- **container:** Added various new variants, and the `glass` and `noise` properties ([c6943e288](https://github.com/storm-software/cyclone-ui/commit/c6943e288))
+- **button:** Added `tooltip` property to `Button` component ([ff0b89e87](https://github.com/storm-software/cyclone-ui/commit/ff0b89e87))
+- **kbd:** Added the `Kbd` keybord display components ([c8c84cb3e](https://github.com/storm-software/cyclone-ui/commit/c8c84cb3e))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.52**
+- Updated **button** to **v0.6.55**
+- Updated **dialog** to **v0.3.56**
+- Updated **heading-text** to **v0.5.53**
+- Updated **icons** to **v0.0.50**
+- Updated **scroll-view** to **v0.5.54**
+- Updated **switch** to **v0.5.55**
+- Updated **tabs** to **v0.3.54**
+
 ## [0.0.18](https://github.com/storm-software/cyclone-ui/releases/tag/privacy-choices%400.0.18) (11/05/2026)
 
 ### Updated Dependencies

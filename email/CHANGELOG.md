@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Email
 
+## [0.0.23](https://github.com/storm-software/cyclone-ui/releases/tag/email%400.0.23) (11/06/2026)
+
+### Features
+
+- **stepper:** Added the `details` property to `Stepper` component ([5d3ffa8f5](https://github.com/storm-software/cyclone-ui/commit/5d3ffa8f5))
+
+### Updated Dependencies
+
+- Updated **tokens** to **v0.3.41**
+
 ## [0.0.22](https://github.com/storm-software/cyclone-ui/releases/tag/email%400.0.22) (11/05/2026)
 
 ### Updated Dependencies

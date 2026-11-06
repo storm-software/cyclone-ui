@@ -2,6 +2,31 @@
 
 # Changelog for Cyclone UI - Field
 
+## [0.5.55](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.55) (11/06/2026)
+
+### Bug Fixes
+
+- **input:** Resolve issue with overlapping label and placeholder text ([729586d9b](https://github.com/storm-software/cyclone-ui/commit/729586d9b))
+
+### Features
+
+- **monorepo:** Reduced the amount of tokens by removing extra theme border colors ([f01400d25](https://github.com/storm-software/cyclone-ui/commit/f01400d25))
+- **container:** Added various new variants, and the `glass` and `noise` properties ([c6943e288](https://github.com/storm-software/cyclone-ui/commit/c6943e288))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.52**
+- Updated **button** to **v0.6.55**
+- Updated **form** to **v0.9.53**
+- Updated **helpers** to **v0.3.52**
+- Updated **icons** to **v0.0.50**
+- Updated **link** to **v0.5.55**
+- Updated **spinner** to **v0.5.52**
+- Updated **state** to **v0.0.54**
+- Updated **themeable-icon** to **v0.6.54**
+- Updated **tooltip** to **v0.5.55**
+- Updated **validation-text** to **v0.5.54**
+
 ## [0.5.54](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.54) (11/05/2026)
 
 ### Updated Dependencies

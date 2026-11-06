@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Next Button
 
+## [0.5.55](https://github.com/storm-software/cyclone-ui/releases/tag/next-button%400.5.55) (11/06/2026)
+
+### Features
+
+- **button:** Added `tooltip` property to `Button` component ([ff0b89e87](https://github.com/storm-software/cyclone-ui/commit/ff0b89e87))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.55**
+- Updated **vectors** to **v0.5.54**
+
 ## [0.5.54](https://github.com/storm-software/cyclone-ui/releases/tag/next-button%400.5.54) (11/05/2026)
 
 ### Updated Dependencies

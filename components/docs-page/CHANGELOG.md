@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Docs Page
 
+## [0.0.31](https://github.com/storm-software/cyclone-ui/releases/tag/docs-page%400.0.31) (11/06/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.52**
+- Updated **breadcrumb** to **v0.4.57**
+- Updated **button** to **v0.6.55**
+- Updated **divider** to **v0.0.48**
+- Updated **heading-text** to **v0.5.53**
+- Updated **icons** to **v0.0.50**
+- Updated **inline-code-text** to **v0.5.51**
+- Updated **page** to **v0.0.50**
+- Updated **table-of-contents** to **v0.0.51**
+
 ## [0.0.30](https://github.com/storm-software/cyclone-ui/releases/tag/docs-page%400.0.30) (11/05/2026)
 
 ### Updated Dependencies

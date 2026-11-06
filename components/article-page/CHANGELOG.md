@@ -2,6 +2,27 @@
 
 # Changelog for Cyclone UI - Article Page
 
+## [0.0.43](https://github.com/storm-software/cyclone-ui/releases/tag/article-page%400.0.43) (11/06/2026)
+
+### Features
+
+- **button:** Added `tooltip` property to `Button` component ([ff0b89e87](https://github.com/storm-software/cyclone-ui/commit/ff0b89e87))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.52**
+- Updated **breadcrumb** to **v0.4.57**
+- Updated **button** to **v0.6.55**
+- Updated **card** to **v0.6.56**
+- Updated **feedback** to **v0.0.46**
+- Updated **heading-text** to **v0.5.53**
+- Updated **icons** to **v0.0.50**
+- Updated **inline-code-text** to **v0.5.51**
+- Updated **link** to **v0.5.55**
+- Updated **table-of-contents** to **v0.0.51**
+- Updated **tag** to **v0.0.50**
+- Updated **terrain-footer** to **v0.0.15**
+
 ## [0.0.42](https://github.com/storm-software/cyclone-ui/releases/tag/article-page%400.0.42) (11/05/2026)
 
 ### Updated Dependencies

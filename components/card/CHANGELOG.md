@@ -2,6 +2,25 @@
 
 # Changelog for Cyclone UI - Card
 
+## [0.6.56](https://github.com/storm-software/cyclone-ui/releases/tag/card%400.6.56) (11/06/2026)
+
+### Features
+
+- **container:** Added various new variants, and the `glass` and `noise` properties ([c6943e288](https://github.com/storm-software/cyclone-ui/commit/c6943e288))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.52**
+- Updated **container** to **v0.6.54**
+- Updated **eyebrow-text** to **v0.5.52**
+- Updated **heading-text** to **v0.5.53**
+- Updated **helpers** to **v0.3.52**
+- Updated **icons** to **v0.0.50**
+- Updated **link** to **v0.5.55**
+- Updated **tag** to **v0.0.50**
+- Updated **themeable-icon** to **v0.6.54**
+- Updated **vectors** to **v0.5.54**
+
 ## [0.6.55](https://github.com/storm-software/cyclone-ui/releases/tag/card%400.6.55) (11/05/2026)
 
 ### Updated Dependencies

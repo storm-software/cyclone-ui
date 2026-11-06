@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/button",
-  "version": "0.6.54",
+  "version": "0.6.55",
   "type": "module",
   "description": "A pressable button with Button.Text and Button.Icon subcomponents and the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating), whose background is drawn by a Container, plus ghost, link and cascade hover variants. It also has Container shadow styles and glass, noise and accented options. It supports sizes, circular and rounded shapes, ringed and disabled states, press ripples, and rendering as an anchor with href.",
   "repository": {

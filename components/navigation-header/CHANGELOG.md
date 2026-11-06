@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Navigation Header
 
+## [0.0.54](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-header%400.0.54) (11/06/2026)
+
+### Features
+
+- **container:** Added various new variants, and the `glass` and `noise` properties ([c6943e288](https://github.com/storm-software/cyclone-ui/commit/c6943e288))
+- **button:** Added `tooltip` property to `Button` component ([ff0b89e87](https://github.com/storm-software/cyclone-ui/commit/ff0b89e87))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.55**
+- Updated **eyebrow-text** to **v0.5.52**
+- Updated **heading-text** to **v0.5.53**
+- Updated **icons** to **v0.0.50**
+- Updated **link** to **v0.5.55**
+- Updated **redacted-animation** to **v0.0.50**
+- Updated **search-dialog** to **v0.0.33**
+- Updated **vectors** to **v0.5.54**
+
 ## [0.0.53](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-header%400.0.53) (11/05/2026)
 
 ### Bug Fixes

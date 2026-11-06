@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Drawer
 
+## [0.1.56](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.56) (11/06/2026)
+
+### Features
+
+- **monorepo:** Reduced the amount of tokens by removing extra theme border colors ([f01400d25](https://github.com/storm-software/cyclone-ui/commit/f01400d25))
+- **button:** Added `tooltip` property to `Button` component ([ff0b89e87](https://github.com/storm-software/cyclone-ui/commit/ff0b89e87))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.52**
+- Updated **button** to **v0.6.55**
+- Updated **icons** to **v0.0.50**
+- Updated **sheet** to **v0.0.55**
+
 ## [0.1.55](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.55) (11/05/2026)
 
 ### Updated Dependencies

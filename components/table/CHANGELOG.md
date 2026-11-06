@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Table
 
+## [0.4.54](https://github.com/storm-software/cyclone-ui/releases/tag/table%400.4.54) (11/06/2026)
+
+### Features
+
+- **monorepo:** Reduced the amount of tokens by removing extra theme border colors ([f01400d25](https://github.com/storm-software/cyclone-ui/commit/f01400d25))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.53**
+
 ## [0.4.53](https://github.com/storm-software/cyclone-ui/releases/tag/table%400.4.53) (11/05/2026)
 
 ### Updated Dependencies

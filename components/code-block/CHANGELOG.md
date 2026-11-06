@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Code Block
 
+## [0.6.56](https://github.com/storm-software/cyclone-ui/releases/tag/code-block%400.6.56) (11/06/2026)
+
+### Features
+
+- **button:** Added `tooltip` property to `Button` component ([ff0b89e87](https://github.com/storm-software/cyclone-ui/commit/ff0b89e87))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.55**
+- Updated **icons** to **v0.0.50**
+- Updated **scroll-view** to **v0.5.54**
+- Updated **themeable-icon** to **v0.6.54**
+- Updated **vectors** to **v0.5.54**
+
 ## [0.6.55](https://github.com/storm-software/cyclone-ui/releases/tag/code-block%400.6.55) (11/05/2026)
 
 ### Updated Dependencies

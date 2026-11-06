@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Credit Card Input
 
+## [0.0.39](https://github.com/storm-software/cyclone-ui/releases/tag/credit-card-input%400.0.39) (11/06/2026)
+
+### Features
+
+- **monorepo:** Reduced the amount of tokens by removing extra theme border colors ([f01400d25](https://github.com/storm-software/cyclone-ui/commit/f01400d25))
+
+### Updated Dependencies
+
+- Updated **eyebrow-text** to **v0.5.52**
+- Updated **field** to **v0.5.55**
+- Updated **form** to **v0.9.53**
+- Updated **heading-text** to **v0.5.53**
+- Updated **helpers** to **v0.3.52**
+- Updated **input** to **v0.6.55**
+- Updated **password-input** to **v0.0.54**
+
 ## [0.0.38](https://github.com/storm-software/cyclone-ui/releases/tag/credit-card-input%400.0.38) (11/05/2026)
 
 ### Updated Dependencies

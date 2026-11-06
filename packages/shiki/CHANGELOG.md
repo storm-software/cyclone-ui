@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Shiki
 
+## [0.0.42](https://github.com/storm-software/cyclone-ui/releases/tag/shiki%400.0.42) (11/06/2026)
+
+### Features
+
+- **stepper:** Added the `details` property to `Stepper` component ([5d3ffa8f5](https://github.com/storm-software/cyclone-ui/commit/5d3ffa8f5))
+- **monorepo:** Reduced the amount of tokens by removing extra theme border colors ([f01400d25](https://github.com/storm-software/cyclone-ui/commit/f01400d25))
+
 ## [0.0.40](https://github.com/storm-software/cyclone-ui/releases/tag/shiki%400.0.40) (11/05/2026)
 
 ### Features

@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Select
 
+## [0.6.56](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.56) (11/06/2026)
+
+### Features
+
+- **monorepo:** Reduced the amount of tokens by removing extra theme border colors ([f01400d25](https://github.com/storm-software/cyclone-ui/commit/f01400d25))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.52**
+- Updated **context-menu** to **v0.0.46**
+- Updated **field** to **v0.5.55**
+- Updated **form** to **v0.9.53**
+- Updated **helpers** to **v0.3.52**
+- Updated **icons** to **v0.0.50**
+- Updated **input** to **v0.6.55**
+
 ## [0.6.55](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.55) (11/05/2026)
 
 ### Updated Dependencies

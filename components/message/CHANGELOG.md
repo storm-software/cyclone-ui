@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Message
 
+## [0.6.56](https://github.com/storm-software/cyclone-ui/releases/tag/message%400.6.56) (11/06/2026)
+
+### Features
+
+- **button:** Added `tooltip` property to `Button` component ([ff0b89e87](https://github.com/storm-software/cyclone-ui/commit/ff0b89e87))
+- **kbd:** Added the `Kbd` keybord display components ([c8c84cb3e](https://github.com/storm-software/cyclone-ui/commit/c8c84cb3e))
+
+### Updated Dependencies
+
+- Updated **alert** to **v0.4.56**
+- Updated **button** to **v0.6.55**
+- Updated **state** to **v0.0.54**
+
 ## [0.6.55](https://github.com/storm-software/cyclone-ui/releases/tag/message%400.6.55) (11/05/2026)
 
 ### Updated Dependencies

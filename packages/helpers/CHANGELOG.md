@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Helpers
 
+## [0.3.52](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.52) (11/06/2026)
+
+### Features
+
+- **monorepo:** Reduced the amount of tokens by removing extra theme border colors ([f01400d25](https://github.com/storm-software/cyclone-ui/commit/f01400d25))
+
 ## [0.3.46](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.46) (11/04/2026)
 
 ### Miscellaneous

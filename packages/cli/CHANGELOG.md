@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - CLI
 
+## [0.6.44](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.44) (11/06/2026)
+
+### Features
+
+- **stepper:** Added the `details` property to `Stepper` component ([5d3ffa8f5](https://github.com/storm-software/cyclone-ui/commit/5d3ffa8f5))
+
+### Updated Dependencies
+
+- Updated **registry-api** to **v0.3.52**
+- Updated **theme-builder** to **v0.0.42**
+
 ## [0.6.43](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.43) (11/05/2026)
 
 ### Updated Dependencies

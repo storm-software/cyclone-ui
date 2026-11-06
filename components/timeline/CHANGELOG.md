@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Timeline
 
+## [0.0.45](https://github.com/storm-software/cyclone-ui/releases/tag/timeline%400.0.45) (11/06/2026)
+
+### Features
+
+- **monorepo:** Reduced the amount of tokens by removing extra theme border colors ([f01400d25](https://github.com/storm-software/cyclone-ui/commit/f01400d25))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.52**
+- Updated **heading-text** to **v0.5.53**
+- Updated **icons** to **v0.0.50**
+
 ## [0.0.44](https://github.com/storm-software/cyclone-ui/releases/tag/timeline%400.0.44) (11/05/2026)
 
 ### Updated Dependencies
