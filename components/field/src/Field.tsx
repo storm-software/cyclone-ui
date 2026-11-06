@@ -1088,10 +1088,19 @@ const FieldLabel = createStyledHOC(
     const name = field.name.get();
     const disabled = field.disabled.get();
     const required = field.required.get();
-    const { setLabelVariant, labelDefaults } = useFieldPresentation();
+    const {
+      setLabelVariant,
+      labelDefaults,
+      labelVariant: registeredVariant
+    } = useFieldPresentation();
     const variant = variantProp ?? labelDefaults?.variant ?? "above";
     const inline = labelDefaults?.inline;
-    const floating = useFieldLabelFloated(variant);
+    // Controls only hide their placeholder once the field has registered the
+    // floating variant (below), so resting over the control any earlier would
+    // draw the label over the placeholder: stay floated until then.
+    const floating =
+      useFieldLabelFloated(variant) ||
+      (variant === "floating" && registeredVariant !== "floating");
 
     useLayoutEffect(() => {
       setLabelVariant(variant);

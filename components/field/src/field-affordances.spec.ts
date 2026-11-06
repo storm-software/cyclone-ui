@@ -160,6 +160,14 @@ describe("floating field label visibility", () => {
       "(hasFieldValue(formControl?.formattedValue) || Boolean(formControl?.focused))"
     );
   });
+
+  it("keeps the label floated until the field registers it, so it never rests over a placeholder", () => {
+    const label = getDeclaration(readComponent("./Field.tsx"), "FieldLabel ");
+
+    expect(label).toMatch(
+      /useFieldLabelFloated\(variant\) \|\|\s*\(variant === "floating" && registeredVariant !== "floating"\)/
+    );
+  });
 });
 
 describe("floating required field labels", () => {
