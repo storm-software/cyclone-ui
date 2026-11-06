@@ -63,6 +63,7 @@ import { Button } from "@cyclone-ui/button";
 | `download`     | `boolean`                                  | -            | Makes the anchor a download link.                                           |
 | `ghostOpacity` | `number`                                   | `0.5`        | The opacity of the ghost background on hover.                               |
 | `render`       | element name                               | -            | The element to render. The press handler calls `preventDefault` unless this is `"a"`. |
+| `tooltip`      | `string`                                   | -            | Describes what pressing the button does (for example `"Close dialog"`). It shows in a `Tooltip` after the pointer rests on the button for 1 second, or right away on keyboard focus. Touch screens (a coarse primary pointer) never show it. It is also the `aria-label` when none is set. |
 
 ## Variants
 

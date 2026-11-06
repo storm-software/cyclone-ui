@@ -17,7 +17,6 @@
  ------------------------------------------------------------------- */
 
 import { BodyText } from "@cyclone-ui/body-text";
-import { Button } from "@cyclone-ui/button";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Tooltip } from "./Tooltip";
 
@@ -40,10 +39,11 @@ const meta: Meta<typeof Tooltip> = {
 
     return (
       <Tooltip {...props}>
+        {/* Not a `Button`: it depends on this package for its `tooltip`. */}
         <Tooltip.Trigger asChild={true}>
-          <Button>
-            <Button.Text>Open Tooltip</Button.Text>
-          </Button>
+          <BodyText tabIndex={0} alignSelf="flex-start">
+            Hover for a tooltip
+          </BodyText>
         </Tooltip.Trigger>
 
         <Tooltip.Content>

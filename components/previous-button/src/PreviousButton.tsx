@@ -54,6 +54,7 @@ export const PreviousButton: TamaguiComponent<
       <Button
         ref={ref}
         aria-label="Previous"
+        tooltip="Previous"
         justifyContent="center"
         {...props}>
         <XStack gap="2xl" alignItems="center">

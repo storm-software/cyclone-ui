@@ -577,6 +577,7 @@ export const SearchDialog = createStyledHOC(
                 size="6xl"
                 tabIndex={-1}
                 aria-hidden={true}
+                tooltip="Remove from recent results"
                 onPress={event => {
                   // Or the option's `onPress` opens the result too.
                   event.stopPropagation();
@@ -599,6 +600,7 @@ export const SearchDialog = createStyledHOC(
           <Button
             ref={forwardedRef}
             aria-label={label}
+            tooltip={label}
             aria-keyshortcuts="Meta+K Control+K"
             variant="ghost"
             circular={true}
@@ -716,6 +718,7 @@ export const SearchDialog = createStyledHOC(
                       noPadding={true}
                       paddingHorizontal="2xl"
                       aria-label="Clear recent results"
+                      tooltip="Clear recent results"
                       onPress={() => updateHistory(EMPTY_RESULTS)}>
                       <Button.Text>Clear</Button.Text>
                     </Button>
@@ -843,6 +846,7 @@ export const SearchDialog = createStyledHOC(
                   noPadding={true}
                   size="8xl"
                   aria-label={`${label} settings`}
+                  tooltip={`${label} settings`}
                   onPress={onSettingsPress}>
                   {/* A size up, or the glyph scales down to a few px. */}
                   <Button.Icon size="9xl">

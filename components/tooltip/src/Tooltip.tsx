@@ -45,7 +45,8 @@ export interface TooltipContextProps {
 
 export const TooltipContext = createStyledContext<TooltipContextProps, "size">(
   {
-    size: "12xl"
+    size: "12xl",
+    variant: "tertiary"
   } as TooltipContextProps,
   {
     // Not `variant`: `TooltipContentImpl` turns it into surface props.
@@ -180,10 +181,10 @@ const TooltipContentImpl = createStyledHOC(
   ) => {
     const variant = variantProp ?? TooltipContext.useStyledContext().variant;
     const surface = variant ? tooltipSurfaces[variant] : undefined;
-    const borderColor = borderColorProp ?? surface?.borderColor ?? "outline";
+    const borderColor = borderColorProp ?? surface?.borderColor;
     // Keep the arrow on the same background as the body
     const backgroundColor =
-      backgroundColorProp ?? surface?.backgroundColor ?? "elevated";
+      backgroundColorProp ?? surface?.backgroundColor;
     const borderWidth = borderWidthProp ?? surface?.borderWidth;
     // A `variant` brings its own shadow, like `Button`'s.
     const elevated = elevatedProp ?? variant === undefined;

@@ -18,9 +18,11 @@
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/ripple-animation": "workspace:*",
     "@cyclone-ui/themeable-icon": "workspace:*",
+    "@cyclone-ui/tooltip": "workspace:*",
     "@tamagui/core": "catalog:",
     "@tamagui/helpers": "catalog:",
     "@tamagui/stacks": "catalog:",

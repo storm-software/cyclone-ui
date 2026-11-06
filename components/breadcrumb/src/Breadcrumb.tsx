@@ -243,7 +243,8 @@ const BreadcrumbEllipsis = ({
             circular={true}
             noPadding={true}
             size="6xl"
-            aria-label={expandText}>
+            aria-label={expandText}
+            tooltip={expandText}>
             <Button.Icon>
               <DotsHorizontal
                 color={getBreadcrumbEllipsisColor(context)}

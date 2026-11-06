@@ -348,9 +348,11 @@ A pressable button with Button.Text and Button.Icon subcomponents and primary, s
 
 ### Dependencies
 
+- `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/ripple-animation`: `workspace:*`
 - `@cyclone-ui/themeable-icon`: `workspace:*`
+- `@cyclone-ui/tooltip`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/helpers`: `catalog:`
 - `@tamagui/stacks`: `catalog:`
@@ -3659,7 +3661,6 @@ A tooltip built on the Tamagui Tooltip with Trigger and Content parts. The conte
 ### Development Dependencies
 
 - `@cyclone-ui/body-text`: `workspace:*`
-- `@cyclone-ui/button`: `workspace:*`
 - `@storybook/react-vite`: `catalog:`
 - `react`: `catalog:`
 - `react-dom`: `catalog:`

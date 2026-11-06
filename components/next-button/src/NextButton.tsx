@@ -52,7 +52,7 @@ export const NextButton: TamaguiComponent<NextButtonProps, TamaguiElement> =
       );
 
       return (
-        <Button ref={ref} aria-label="Next" justifyContent="center" {...props}>
+        <Button ref={ref} aria-label="Next" tooltip="Next" justifyContent="center" {...props}>
           <View display="unset">
             <XStack gap="2xl" alignItems="center">
               {!hideText && <Button.Text>{children || "Next"}</Button.Text>}

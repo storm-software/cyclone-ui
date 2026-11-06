@@ -1017,6 +1017,7 @@ const NavigationHeaderRoot = createStyledHOC(
               aria-controls={mobileNavigationId}
               aria-expanded={menuOpen}
               aria-label={menuOpen ? `Close ${menuLabel}` : `Open ${menuLabel}`}
+              tooltip={menuOpen ? "Close" : "Open"}
               onMouseEnter={() => setMenuButtonHovered(true)}
               onMouseLeave={() => setMenuButtonHovered(false)}
               onPress={() => setMenuOpen(open => !open)}>

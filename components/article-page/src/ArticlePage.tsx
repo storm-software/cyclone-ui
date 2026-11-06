@@ -216,6 +216,7 @@ const ArticlePageShare = createStyledHOC(
           href={href}
           {...{ target: "_blank", rel: "noopener noreferrer" }}
           aria-label={`Share on ${network}`}
+          tooltip={`Share on ${network}`}
           variant="ghost"
           circular={true}
           flexGrow={0}

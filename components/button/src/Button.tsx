@@ -18,6 +18,7 @@
 
 "use client";
 
+import { BodyText } from "@cyclone-ui/body-text";
 import type { FormControlSize, TokenValue } from "@cyclone-ui/helpers";
 import {
   formSizeVariants,
@@ -30,6 +31,7 @@ import type { RippleAnimationHandle } from "@cyclone-ui/ripple-animation";
 import { RippleAnimation } from "@cyclone-ui/ripple-animation";
 import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
+import { Tooltip } from "@cyclone-ui/tooltip";
 import type {
   ColorTokens,
   GetProps,
@@ -44,6 +46,7 @@ import {
   createStyledHOC,
   styled,
   Text,
+  useMedia,
   useThemeName,
   View
 } from "@tamagui/core";
@@ -279,6 +282,14 @@ type ButtonExtraProps = TextParentStyles & {
      * @defaultValue 0.75
      */
     ghostOpacity?: number;
+
+    /**
+     * Short text describing what pressing the button does, e.g. "Close
+     * dialog". It shows in a `Tooltip` once the pointer rests on the button
+     * (or right away on keyboard focus), and labels the button for assistive
+     * tech when no `aria-label` is set.
+     */
+    tooltip?: string;
   };
 
 export const ButtonContext = createStyledContext<
@@ -1106,6 +1117,9 @@ const ButtonRipple = ({ ref }: { ref: Ref<RippleAnimationHandle> }) => {
   );
 };
 
+/** How long the pointer rests on a button before its `tooltip` shows. */
+const TOOLTIP_DELAY = { open: 1000 };
+
 export type ButtonProps = ButtonExtraProps &
   Omit<GetProps<typeof ButtonFrame>, "frameSize" | "size">;
 
@@ -1129,11 +1143,15 @@ const ButtonContainerImpl = createStyledHOC(
       download,
       type = "button",
       ghostOpacity = 0.75,
+      tooltip,
       ...props
     }: GetProps<typeof ButtonFrame> & ButtonProps,
     forwardedRef
   ) => {
     const rippleRef = useRef<RippleAnimationHandle>(null);
+    // Touch screens (a coarse primary pointer) never show the `tooltip`: a tap
+    // would leave it stuck open.
+    const touchable = useMedia().touchable ?? false;
 
     const handlePress = useCallback(
       (event: ButtonPressEvent) => {
@@ -1181,6 +1199,7 @@ const ButtonContainerImpl = createStyledHOC(
         // `padding: 0` would otherwise override explicit padding props.
         noPadding={noPadding}
         {...props}
+        aria-label={props["aria-label"] ?? tooltip}
         onPress={handlePress}
         frameSize={resolveSizeToken(size)}
         circular={circular}
@@ -1271,7 +1290,28 @@ const ButtonContainerImpl = createStyledHOC(
         noPadding={noPadding}
         ringed={ringed}
         animate={animate}>
-        {frame}
+        {tooltip ? (
+          <Tooltip
+            delay={TOOLTIP_DELAY}
+            // Held closed rather than unmounted, so the button doesn't remount
+            // when `touchable` settles after the first render.
+            open={touchable ? false : undefined}
+            placement="top">
+            {/* The trigger marks its child `aria-expanded`, but the button
+                doesn't expand anything. A wrapping Popover/Dialog trigger's
+                own `aria-expanded` still reaches the frame. */}
+            <Tooltip.Trigger asChild={true} aria-expanded={undefined}>
+              {frame}
+            </Tooltip.Trigger>
+            <Tooltip.Content>
+              <View paddingVertical="2xl" paddingHorizontal="3xl">
+                <BodyText>{tooltip}</BodyText>
+              </View>
+            </Tooltip.Content>
+          </Tooltip>
+        ) : (
+          frame
+        )}
       </ButtonContext.Provider>
     );
   },

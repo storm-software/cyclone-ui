@@ -306,8 +306,10 @@
         "react-native@^0.87.1"
       ],
       "registryDependencies": [
+        "@cyclone-ui/body-text",
         "@cyclone-ui/ripple-animation",
-        "@cyclone-ui/themeable-icon"
+        "@cyclone-ui/themeable-icon",
+        "@cyclone-ui/tooltip"
       ],
       "files": [
         {

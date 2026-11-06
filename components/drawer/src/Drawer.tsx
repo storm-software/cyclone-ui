@@ -174,6 +174,7 @@ const DrawerHeaderImpl: FC<DrawerHeaderProps> = ({
       {onBack && (
         <Button
           aria-label="Back"
+          tooltip="Back"
           variant="ghost"
           size="sm"
           circular={true}
@@ -190,6 +191,7 @@ const DrawerHeaderImpl: FC<DrawerHeaderProps> = ({
       {closable && (
         <Button
           aria-label="Close"
+          tooltip="Close"
           variant="ghost"
           size="sm"
           circular={true}

@@ -416,6 +416,7 @@ const FilePickerTrigger = createStyledHOC(
                 noPadding={true}
                 size={clearSize}
                 aria-label={max > 1 ? "Remove files" : "Remove file"}
+                tooltip={max > 1 ? "Remove all files" : "Remove file"}
                 onPress={() => onChange([])}>
                 <Button.Icon>
                   <Close />

@@ -297,6 +297,7 @@ export const CodeBlockCopyButton = ({
       {...props}
       theme={theme}
       aria-label={copied ? "Copied text" : "Copy text"}
+      tooltip={copied ? "Copied to clipboard" : "Copy to clipboard"}
       data-checked={copied || undefined}
       variant="ghost"
       ghostOpacity={0.5}

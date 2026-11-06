@@ -71,6 +71,15 @@ export const Icon: Story = {
   }
 };
 
+export const WithTooltip: Story = {
+  args: {
+    icon: <Close />,
+    variant: "ghost",
+    circular: true,
+    tooltip: "Close dialog"
+  }
+};
+
 export const Rounded: Story = {
   args: {
     icon: <Close />,

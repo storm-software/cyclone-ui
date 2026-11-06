@@ -449,6 +449,7 @@ export const File = ({
             // Button types `download` as a boolean; the `<a>` attribute also
             // accepts the suggested file name.
             {...{ download: name }}
+            tooltip="Download"
             variant="ghost"
             ghostOpacity={0.75}
             size={buttonSize}
@@ -503,7 +504,8 @@ export const File = ({
             variant="ghost"
             theme="danger"
             ghostOpacity={0.25}
-            aria-label={`${uploading ? "Cancel upload of" : "Remove"} ${name || "file"}`}
+            aria-label={`${uploading ? "Cancel uploading" : "Remove"} ${name || "file"}`}
+            tooltip={`${uploading ? "Cancel uploading" : "Remove"} ${name || "file"}`}
             onPress={handleRemove}
             size={buttonSize}
             noPadding={true}

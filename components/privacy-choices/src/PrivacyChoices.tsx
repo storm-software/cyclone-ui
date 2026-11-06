@@ -273,6 +273,7 @@ export const PrivacyChoices = createStyledHOC(
               </Dialog.Heading>
               <Button
                 aria-label="Close"
+                tooltip="Close dialog"
                 variant="ghost"
                 circular={true}
                 flexGrow={0}

@@ -25,7 +25,6 @@
   },
   "devDependencies": {
     "@cyclone-ui/body-text": "workspace:*",
-    "@cyclone-ui/button": "workspace:*",
     "@storybook/react-vite": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",

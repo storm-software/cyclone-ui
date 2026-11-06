@@ -181,7 +181,7 @@ const MessageItem = ({
             </Alert.Content.Body>
           )}
         </Alert.Content>
-        <Alert.Close onPress={handleClose} />
+        <Alert.Close tooltip="Dismiss" onPress={handleClose} />
         {Number.isFinite(timeout) && (
           <MessageTimer
             duration={timeout}

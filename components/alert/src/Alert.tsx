@@ -78,6 +78,7 @@ const AlertCloseImpl = createStyledHOC(
           variant="ghost"
           circular={true}
           noPadding={true}
+          tooltip="Dismiss"
           {...props}
           padding="md"
           size="10xl"

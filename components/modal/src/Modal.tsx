@@ -88,6 +88,7 @@ const ModalHeaderImpl: FC<ModalHeaderProps> = ({
     {onBack && (
       <Button
         aria-label="Back"
+        tooltip="Back"
         variant="ghost"
         size="sm"
         circular={true}
@@ -105,6 +106,7 @@ const ModalHeaderImpl: FC<ModalHeaderProps> = ({
       <DialogClose asChild={true}>
         <Button
           aria-label="Close"
+          tooltip="Close"
           variant="ghost"
           size="sm"
           circular={true}

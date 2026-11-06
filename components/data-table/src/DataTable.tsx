@@ -273,7 +273,8 @@ const DataTableRowActions = <TData extends RowData>({
             color="primary"
             size="6xl"
             padding="lg"
-            aria-label={`Actions for row ${row.index + 1}`}>
+            aria-label={`Actions for row ${row.index + 1}`}
+            tooltip="Show row actions">
             <Button.Icon>
               <DotsVertical size="2xl" />
             </Button.Icon>
@@ -719,6 +720,7 @@ function DataTableImpl<TData extends RowData>({
                         size="6xl"
                         padding="lg"
                         aria-label="Clear selection"
+                        tooltip="Clear selection"
                         onPress={() => table.resetRowSelection(true)}>
                         <Button.Icon>
                           <Close size="2xl" />
@@ -1339,7 +1341,8 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
                 circular={true}
                 noPadding={true}
                 size="6xl"
-                padding="lg">
+                padding="lg"
+                tooltip="Filter">
                 <Button.Icon>
                   <Filter size="2xl" />
                 </Button.Icon>

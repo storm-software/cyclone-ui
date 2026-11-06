@@ -401,6 +401,7 @@ function YearRangeSlider() {
         flexGrow={0}
         flexShrink={0}
         noPadding={true}
+        tooltip="Show earlier years"
         {...swapOnClick(previousYearsButton())}>
         <Button.Icon>
           <ChevronLeft />
@@ -430,6 +431,7 @@ function YearRangeSlider() {
         flexGrow={0}
         flexShrink={0}
         noPadding={true}
+        tooltip="Show later years"
         {...swapOnClick(nextYearsButton())}>
         <Button.Icon>
           <ChevronRight />
@@ -465,6 +467,7 @@ function YearSlider() {
         flexGrow={0}
         flexShrink={0}
         noPadding={true}
+        tooltip="Go to previous year"
         {...swapOnClick(subtractOffset({ months: 12 }))}>
         <Button.Icon>
           <ChevronLeft />
@@ -489,6 +492,7 @@ function YearSlider() {
         flexGrow={0}
         flexShrink={0}
         noPadding={true}
+        tooltip="Go to next year"
         {...swapOnClick(subtractOffset({ months: -12 }))}>
         <Button.Icon>
           <ChevronRight />
@@ -531,6 +535,7 @@ const CalendarHeader = () => {
         flexGrow={0}
         flexShrink={0}
         noPadding={true}
+        tooltip="Go to previous month"
         {...swapOnClick(subtractOffset({ months: 1 }))}>
         <Button.Icon>
           <ChevronLeft />
@@ -565,6 +570,7 @@ const CalendarHeader = () => {
         flexGrow={0}
         flexShrink={0}
         noPadding={true}
+        tooltip="Go to next month"
         {...swapOnClick(subtractOffset({ months: -1 }))}>
         <Button.Icon>
           <ChevronRight />
