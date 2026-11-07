@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Theme Builder
 
+## [0.0.46](https://github.com/storm-software/cyclone-ui/releases/tag/theme-builder%400.0.46) (11/07/2026)
+
+### Bug Fixes
+
+- **field:** Update field's using the `above` label to display `description` below the text ([a94ad2e7d](https://github.com/storm-software/cyclone-ui/commit/a94ad2e7d))
+
 ## [0.0.44](https://github.com/storm-software/cyclone-ui/releases/tag/theme-builder%400.0.44) (11/07/2026)
 
 ### Features

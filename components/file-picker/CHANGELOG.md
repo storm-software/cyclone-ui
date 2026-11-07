@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - File Picker
 
+## [0.5.60](https://github.com/storm-software/cyclone-ui/releases/tag/file-picker%400.5.60) (11/07/2026)
+
+### Bug Fixes
+
+- **field:** Update field's using the `above` label to display `description` below the text ([a94ad2e7d](https://github.com/storm-software/cyclone-ui/commit/a94ad2e7d))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.59**
+- Updated **field** to **v0.5.59**
+- Updated **file** to **v0.0.9**
+- Updated **form** to **v0.9.57**
+- Updated **helpers** to **v0.3.56**
+- Updated **icons** to **v0.0.54**
+- Updated **state** to **v0.0.58**
+
 ## [0.5.59](https://github.com/storm-software/cyclone-ui/releases/tag/file-picker%400.5.59) (11/07/2026)
 
 ### Updated Dependencies

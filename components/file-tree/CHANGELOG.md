@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - File Tree
 
+## [0.0.56](https://github.com/storm-software/cyclone-ui/releases/tag/file-tree%400.0.56) (11/07/2026)
+
+### Updated Dependencies
+
+- Updated **icons** to **v0.0.54**
+
 ## [0.0.55](https://github.com/storm-software/cyclone-ui/releases/tag/file-tree%400.0.55) (11/07/2026)
 
 ### Updated Dependencies

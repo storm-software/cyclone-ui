@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - CLI
 
+## [0.6.48](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.48) (11/07/2026)
+
+### Bug Fixes
+
+- **field:** Update field's using the `above` label to display `description` below the text ([a94ad2e7d](https://github.com/storm-software/cyclone-ui/commit/a94ad2e7d))
+
+### Updated Dependencies
+
+- Updated **registry-api** to **v0.3.56**
+- Updated **theme-builder** to **v0.0.46**
+
 ## [0.6.47](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.47) (11/07/2026)
 
 ### Updated Dependencies

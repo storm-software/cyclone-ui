@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Tokens
 
+## [0.3.45](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.45) (11/07/2026)
+
+### Bug Fixes
+
+- **field:** Update field's using the `above` label to display `description` below the text ([a94ad2e7d](https://github.com/storm-software/cyclone-ui/commit/a94ad2e7d))
+
 ## [0.3.43](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.43) (11/07/2026)
 
 ### Features

@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Select
 
+## [0.6.60](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.60) (11/07/2026)
+
+### Bug Fixes
+
+- **field:** Update field's using the `above` label to display `description` below the text ([a94ad2e7d](https://github.com/storm-software/cyclone-ui/commit/a94ad2e7d))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.56**
+- Updated **context-menu** to **v0.0.50**
+- Updated **field** to **v0.5.59**
+- Updated **form** to **v0.9.57**
+- Updated **helpers** to **v0.3.56**
+- Updated **icons** to **v0.0.54**
+- Updated **input** to **v0.6.59**
+
 ## [0.6.59](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.59) (11/07/2026)
 
 ### Updated Dependencies

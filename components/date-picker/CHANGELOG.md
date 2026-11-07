@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Date Picker
 
+## [0.5.60](https://github.com/storm-software/cyclone-ui/releases/tag/date-picker%400.5.60) (11/07/2026)
+
+### Bug Fixes
+
+- **field:** Update field's using the `above` label to display `description` below the text ([a94ad2e7d](https://github.com/storm-software/cyclone-ui/commit/a94ad2e7d))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.59**
+- Updated **calendar** to **v0.0.45**
+- Updated **field** to **v0.5.59**
+- Updated **form** to **v0.9.57**
+- Updated **helpers** to **v0.3.56**
+- Updated **icons** to **v0.0.54**
+- Updated **input** to **v0.6.59**
+- Updated **popover** to **v0.5.60**
+
 ## [0.5.59](https://github.com/storm-software/cyclone-ui/releases/tag/date-picker%400.5.59) (11/07/2026)
 
 ### Updated Dependencies

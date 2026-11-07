@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Color Picker
 
+## [0.0.44](https://github.com/storm-software/cyclone-ui/releases/tag/color-picker%400.0.44) (11/07/2026)
+
+### Bug Fixes
+
+- **field:** Update field's using the `above` label to display `description` below the text ([a94ad2e7d](https://github.com/storm-software/cyclone-ui/commit/a94ad2e7d))
+
+### Updated Dependencies
+
+- Updated **color-area** to **v0.0.40**
+- Updated **field** to **v0.5.59**
+- Updated **form** to **v0.9.57**
+- Updated **helpers** to **v0.3.56**
+- Updated **input** to **v0.6.59**
+- Updated **popover** to **v0.5.60**
+- Updated **toggle-group** to **v0.0.48**
+
 ## [0.0.43](https://github.com/storm-software/cyclone-ui/releases/tag/color-picker%400.0.43) (11/07/2026)
 
 ### Updated Dependencies
