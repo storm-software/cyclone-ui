@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/container",
-  "version": "0.6.55",
+  "version": "0.6.56",
   "type": "module",
   "description": "A themed surface Container that wraps content in a padded, rounded box. Variants include primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated (the default) and floating. It also has size-based padding, shadow styles, and circular, tight and accented options, a glass option that turns the background into translucent frosted glass, and a noise option that overlays a fine film grain. Use it for cards and panels.",
   "repository": {

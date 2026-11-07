@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Stepper
 
+## [0.3.58](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.58) (11/07/2026)
+
+### Features
+
+- **stepper:** Added inline display for `Stepper` component ([5465a81ae](https://github.com/storm-software/cyclone-ui/commit/5465a81ae))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.55**
+- Updated **icons** to **v0.0.52**
+- Updated **next-button** to **v0.5.57**
+- Updated **number-text** to **v0.5.54**
+- Updated **previous-button** to **v0.5.57**
+
 ## [0.3.57](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.57) (11/06/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Tokens
 
+## [0.3.43](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.43) (11/07/2026)
+
+### Features
+
+- **stepper:** Added inline display for `Stepper` component ([5465a81ae](https://github.com/storm-software/cyclone-ui/commit/5465a81ae))
+
 ## [0.3.42](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.42) (11/06/2026)
 
 ### Bug Fixes
