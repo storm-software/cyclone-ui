@@ -102,7 +102,7 @@ const config: UserConfig = defineConfig({
               // Match the banner icon (rendered with the header color), header and footer to the outline
               banner: {
                 title: CYCLONE_BLUE,
-                command: color("ink"),
+                command: color("base.primary"),
                 description: color("subtle"),
                 icon: CYCLONE_BLUE,
                 header: CYCLONE_BLUE,

@@ -1,0 +1,48 @@
+{
+  "name": "@cyclone-ui/dropdown-button",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A split Button: a main action joined to a chevron Button that opens a ContextMenu of related actions, like a \"Copy page\" button with a menu of other copy options. It takes all Button props (variant, size, disabled, theme and the surface options are shared by both halves), the menu's `items`, a `menuLabel` for the chevron's label and tooltip, and `value` / `onValueChange` for the menu; pressing an item with a `value` closes the menu.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/dropdown-button"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/context-menu": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": ["*.css"],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./DropdownButton": {
+      "import": "./dist/DropdownButton.mjs",
+      "require": "./dist/DropdownButton.cjs"
+    },
+    "./*": "./*"
+  }
+}

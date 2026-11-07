@@ -1004,6 +1004,30 @@
       ]
     },
     {
+      "name": "@cyclone-ui/dropdown-button",
+      "type": "registry:component",
+      "title": "@cyclone-ui/dropdown-button",
+      "description": "A split Button: a main action joined to a chevron Button that opens a ContextMenu of related actions, like a \"Copy page\" button with a menu of other copy options. It takes all Button props (variant, size, disabled, theme and the surface options are shared by both halves), the menu's `items`, a `menuLabel` for the chevron's label and tooltip, and `value` / `onValueChange` for the menu; pressing an item with a `value` closes the menu.",
+      "dependencies": ["@tamagui/core@3.2.0"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.6",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/button",
+        "@cyclone-ui/context-menu",
+        "@cyclone-ui/icons"
+      ],
+      "files": [
+        {
+          "path": "components/dropdown-button/src/DropdownButton.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/eyebrow-text",
       "type": "registry:component",
       "title": "@cyclone-ui/eyebrow-text",

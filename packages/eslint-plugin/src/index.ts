@@ -4321,6 +4321,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/dropdown-button",
+      jsx: ["DropdownButton"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/eyebrow-text",
       jsx: ["EyebrowText"],
       roles: []

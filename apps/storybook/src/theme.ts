@@ -28,7 +28,7 @@ export default {
     inputTextColor: "#b0b0b1",
     booleanBg: "#1f1f21",
     booleanSelectedBg: "#959698",
-    brandImage: "https://public.storm-cdn.com/cyclone-ui/assets/dark.svg",
+    brandImage: "https://public.storm-cdn.com/cyclone-ui/assets/logo-dark.webp",
     brandTitle: "Cyclone UI",
     brandUrl: "https://cyclone-ui.com"
   }),
@@ -54,7 +54,8 @@ export default {
     inputTextColor: "#555659",
     booleanBg: "#fafafa",
     booleanSelectedBg: "#959698",
-    brandImage: "https://public.storm-cdn.com/cyclone-ui/assets/light.svg",
+    brandImage:
+      "https://public.storm-cdn.com/cyclone-ui/assets/logo-light.webp",
     brandTitle: "Cyclone UI",
     brandUrl: "https://cyclone-ui.com"
   })

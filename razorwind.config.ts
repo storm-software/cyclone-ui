@@ -373,11 +373,11 @@ export default defineConfig({
         return {
           dark: mapTheme(
             "dark",
-            "https://public.storm-cdn.com/cyclone-ui/assets/dark.svg"
+            "https://public.storm-cdn.com/cyclone-ui/assets/logo-dark.webp"
           ),
           light: mapTheme(
             "light",
-            "https://public.storm-cdn.com/cyclone-ui/assets/light.svg"
+            "https://public.storm-cdn.com/cyclone-ui/assets/logo-light.webp"
           )
         };
       }

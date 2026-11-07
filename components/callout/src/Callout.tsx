@@ -30,7 +30,6 @@ import {
   createStyledContext,
   createStyledHOC,
   styled,
-  Theme,
   useThemeName,
   withStaticProperties
 } from "@tamagui/core";
@@ -87,6 +86,15 @@ const CalloutBackgroundDiagonal = styled(YStack, {
   zIndex: "10"
 });
 
+const CalloutBackgroundOverlay = styled(LinearGradient, {
+  displayName: "Callout",
+  position: "absolute",
+  inset: 0,
+  opacity: 0.85,
+  pointerEvents: "none",
+  zIndex: "25"
+});
+
 const CalloutContent = styled(YStack, {
   displayName: "Callout",
   transition: "200ms",
@@ -96,7 +104,7 @@ const CalloutContent = styled(YStack, {
   flexDirection: "column",
   maxHeight: "fit-content",
   zIndex: "30",
-  gap: "xl",
+  gap: "lg",
   padding: "xs"
 });
 
@@ -109,9 +117,13 @@ const CalloutFrameImpl = createStyledHOC(
       <CalloutContext.Provider theme={theme}>
         <Container
           ref={forwardedRef}
+          tight={true}
+          padding="lg"
+          borderWidth={3}
           {...rest}
           theme={theme}
           position="relative"
+
           // Clip the background layers to the padding box so their corners
           // follow the border's inner radius.
           overflow="hidden"
@@ -149,6 +161,11 @@ const CalloutFrameImpl = createStyledHOC(
               width="100%"
             />
           </CalloutBackgroundDiagonal>
+          <CalloutBackgroundOverlay
+            start={[1.0, 1.0]}
+            end={[0, 0]}
+            colors={["transparent", "#000"]}
+          />
           <CalloutContent>{children}</CalloutContent>
         </Container>
       </CalloutContext.Provider>
@@ -185,19 +202,18 @@ const CalloutIcon = ({ children, ...props }: ThemeableIconProps) => {
 
 const CalloutHeading = styled(HeadingLargeText, {
   displayName: "CalloutHeading",
-  color: "primary",
-  zIndex: "20"
+  color: "emphasis",
+  zIndex: "20",
+  fontSize: "3xl"
 });
 
 const CalloutHeadingImpl = createStyledHOC(
   CalloutHeading,
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Theme name="base">
-        <CalloutHeading ref={forwardedRef} {...props}>
-          {children}
-        </CalloutHeading>
-      </Theme>
+      <CalloutHeading ref={forwardedRef} {...props}>
+        {children}
+      </CalloutHeading>
     );
   },
   {
@@ -229,7 +245,9 @@ const CalloutEyebrowImpl = createStyledHOC(
 
 const CalloutBody = styled(BodyText, {
   displayName: "CalloutBody",
-  color: "ink-active",
+  color: "emphasis",
+  fontWeight: "medium",
+  fontSize: "md",
   zIndex: "20",
   paddingVertical: 0
 });
@@ -238,11 +256,9 @@ const CalloutBodyImpl = createStyledHOC(
   CalloutBody,
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Theme name="base">
-        <CalloutBody ref={forwardedRef} {...props}>
-          {children}
-        </CalloutBody>
-      </Theme>
+      <CalloutBody ref={forwardedRef} {...props}>
+        {children}
+      </CalloutBody>
     );
   },
   {

@@ -259,6 +259,8 @@ export const TextArea = createStyledHOC(
         style={
           {
             ...(style as object),
+            // The control sizes itself, so never show the browser's resize grip.
+            resize: "none",
             "--placeholderColor":
               theme[placeholderTextColor]?.variable || placeholderTextColor
           } as typeof style
