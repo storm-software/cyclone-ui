@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Vectors
 
+## [0.5.57](https://github.com/storm-software/cyclone-ui/releases/tag/vectors%400.5.57) (11/07/2026)
+
+### Bug Fixes
+
+- **navigation-header:** Improve display or navigation header on smaller screens ([ae90d2838](https://github.com/storm-software/cyclone-ui/commit/ae90d2838))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.55**
+- Updated **icons** to **v0.0.53**
+
 ## [0.5.56](https://github.com/storm-software/cyclone-ui/releases/tag/vectors%400.5.56) (11/07/2026)
 
 ### Updated Dependencies

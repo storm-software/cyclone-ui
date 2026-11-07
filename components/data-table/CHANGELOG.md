@@ -2,6 +2,29 @@
 
 # Changelog for Cyclone UI - Data Table
 
+## [0.6.59](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.59) (11/07/2026)
+
+### Bug Fixes
+
+- **navigation-header:** Improve display or navigation header on smaller screens ([ae90d2838](https://github.com/storm-software/cyclone-ui/commit/ae90d2838))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.55**
+- Updated **button** to **v0.6.58**
+- Updated **checkbox** to **v0.5.58**
+- Updated **context-menu** to **v0.0.49**
+- Updated **field** to **v0.5.58**
+- Updated **form** to **v0.9.56**
+- Updated **heading-text** to **v0.5.56**
+- Updated **icons** to **v0.0.53**
+- Updated **pagination** to **v0.8.58**
+- Updated **popover** to **v0.5.59**
+- Updated **search-input** to **v0.1.59**
+- Updated **select** to **v0.6.59**
+- Updated **state** to **v0.0.57**
+- Updated **table** to **v0.4.57**
+
 ## [0.6.58](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.58) (11/07/2026)
 
 ### Updated Dependencies

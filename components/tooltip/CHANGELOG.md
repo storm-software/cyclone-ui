@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Tooltip
 
+## [0.5.58](https://github.com/storm-software/cyclone-ui/releases/tag/tooltip%400.5.58) (11/07/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.55**
+- Updated **container** to **v0.6.57**
+
 ## [0.5.57](https://github.com/storm-software/cyclone-ui/releases/tag/tooltip%400.5.57) (11/07/2026)
 
 ### Updated Dependencies

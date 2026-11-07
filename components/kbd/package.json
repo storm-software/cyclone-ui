@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/kbd",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "description": "Keyboard keys and shortcuts shown inline, like shadcn/ui's Kbd. A `Kbd` renders a `<kbd>` key cap in a small bordered box, in `sm`, `md` or `lg`, that sits inside text, buttons and tooltips. A `KbdGroup` lays several keys out side by side for a combination such as Ctrl + K.",
   "repository": {

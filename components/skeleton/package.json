@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/skeleton",
-  "version": "0.0.38",
+  "version": "0.0.39",
   "type": "module",
   "description": "A skeleton component for loading states.",
   "repository": {
