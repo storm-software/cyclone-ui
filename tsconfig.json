@@ -109,6 +109,9 @@
       "path": "./components/dropdown-button"
     },
     {
+      "path": "./components/copy-page-dropdown-button"
+    },
+    {
       "path": "./components/container"
     },
     {

@@ -4286,6 +4286,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/copy-page-dropdown-button",
+      jsx: ["CopyPageDropdownButton"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/credit-card-input",
       jsx: ["CreditCardInput"],
       roles: []

@@ -1,0 +1,55 @@
+{
+  "name": "@cyclone-ui/copy-page-dropdown-button",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A docs \"Copy page\" DropdownButton: the main button copies the page's Markdown source (fetched from `markdownUrl`) to the clipboard, and its menu opens that Markdown or asks Claude, ChatGPT, T3 Chat or Cursor about the page. It takes all DropdownButton props except `items`, `value` and `onValueChange`.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/copy-page-dropdown-button"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:",
+    "react-native-svg": "^15.15.5"
+  },
+  "dependencies": {
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/context-menu": "workspace:*",
+    "@cyclone-ui/dropdown-button": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:",
+    "react-native-svg": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./CopyPageDropdownButton": {
+      "import": "./dist/CopyPageDropdownButton.mjs",
+      "require": "./dist/CopyPageDropdownButton.cjs"
+    },
+    "./*": "./*"
+  }
+}

@@ -785,6 +785,32 @@
       ]
     },
     {
+      "name": "@cyclone-ui/copy-page-dropdown-button",
+      "type": "registry:component",
+      "title": "@cyclone-ui/copy-page-dropdown-button",
+      "description": "A docs \"Copy page\" DropdownButton: the main button copies the page's Markdown source (fetched from `markdownUrl`) to the clipboard, and its menu opens that Markdown or asks Claude, ChatGPT, T3 Chat or Cursor about the page. It takes all DropdownButton props except `items`, `value` and `onValueChange`.",
+      "dependencies": ["@tamagui/core@3.2.0"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.6",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1",
+        "react-native-svg@^15.16.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/button",
+        "@cyclone-ui/context-menu",
+        "@cyclone-ui/dropdown-button",
+        "@cyclone-ui/icons"
+      ],
+      "files": [
+        {
+          "path": "components/copy-page-dropdown-button/src/CopyPageDropdownButton.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/credit-card-input",
       "type": "registry:component",
       "title": "@cyclone-ui/credit-card-input",

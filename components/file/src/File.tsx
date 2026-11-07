@@ -30,7 +30,13 @@ import {
   getFormSizeScale,
   getSized
 } from "@cyclone-ui/helpers";
-import { AlertCircle, Close, Download, Trash } from "@cyclone-ui/icons";
+import {
+  AlertCircle,
+  Close,
+  Download,
+  Trash,
+  Uploading
+} from "@cyclone-ui/icons";
 import { Link } from "@cyclone-ui/link";
 import { NumberText } from "@cyclone-ui/number-text";
 import { Progress } from "@cyclone-ui/progress";
@@ -416,7 +422,9 @@ export const File = ({
       borderRadius="card"
       // The status outline overlays below stand in for the border.
       borderColor={
-        failed || showSuccess ? "transparent" : "hairline hover:hairline-hovered"
+        failed || showSuccess
+          ? "transparent"
+          : "hairline hover:hairline-hovered"
       }
       borderWidth={1}
       boxShadow="none hover:ring-offset"
@@ -441,24 +449,40 @@ export const File = ({
         left={buttonInset}
         top="50%"
         y="-50%"
-        opacity="0 group-hover/file:1 touchable:1">
-        {uri && (
-          <Button
-            render="a"
-            href={uri}
-            // Button types `download` as a boolean; the `<a>` attribute also
-            // accepts the suggested file name.
-            {...{ download: name }}
-            tooltip="Download"
-            variant="ghost"
-            ghostOpacity={0.75}
-            size={buttonSize}
-            tight={true}
-            circular={true}>
-            <Button.Icon>
-              <Download />
-            </Button.Icon>
-          </Button>
+        opacity={uploading ? 1 : "0 group-hover/file:1 touchable:1"}>
+        {uploading ? (
+          <View
+            display="flex"
+            width={buttonSize}
+            height={buttonSize}
+            alignItems="center"
+            justifyContent="center"
+            aria-hidden={true}>
+            <Uploading
+              variant="loop"
+              size={getSized("4xl") * scale}
+              color="subtle"
+            />
+          </View>
+        ) : (
+          uri && (
+            <Button
+              render="a"
+              href={uri}
+              // Button types `download` as a boolean; the `<a>` attribute also
+              // accepts the suggested file name.
+              {...{ download: name }}
+              tooltip="Download"
+              variant="ghost"
+              ghostOpacity={0.75}
+              size={buttonSize}
+              tight={true}
+              circular={true}>
+              <Button.Icon>
+                <Download />
+              </Button.Icon>
+            </Button>
+          )
         )}
       </View>
 
@@ -510,7 +534,9 @@ export const File = ({
             size={buttonSize}
             tight={true}
             circular={true}>
-            <Button.Icon>{uploading ? <Close variant="bold" /> : <Trash />}</Button.Icon>
+            <Button.Icon>
+              {uploading ? <Close variant="bold" /> : <Trash />}
+            </Button.Icon>
           </Button>
         </View>
       )}

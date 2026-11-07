@@ -207,14 +207,17 @@ export const TextArea = createStyledHOC(
       style,
       ...rest
     } = props;
+
     const theme = useTheme();
     const shouldShowPlaceholder = useFieldShouldShowPlaceholder(
       formControl?.formattedValue
     );
+
     const ref = useComposedRefs(forwardedRef, formControl?.inputRef);
     const [focused, setActive] = useState(false);
     const hasValidationMessage = useFieldHasValidationMessage();
     const labelPlacement = useFieldLabelPlacement();
+
     const idleColor = hasValidationMessage ? "primary" : "hairline";
     const focusColor = hasValidationMessage
       ? "primary-active"
@@ -224,6 +227,7 @@ export const TextArea = createStyledHOC(
       : "hairline-hovered";
     const isFocused = focusedProp ?? focused;
     const borderColor = `${isFocused ? focusColor : idleColor} hover:${disabled ? "primary-disabled" : isFocused ? focusColor : hoverColor} focus-visible:${focusColor} group-hover/field:${disabled ? "primary-disabled" : isFocused ? focusColor : hoverColor}`;
+
     const handleFocus = useCallback(
       (event: TextAreaFocusEvent) => {
         setActive(true);
@@ -231,6 +235,7 @@ export const TextArea = createStyledHOC(
       },
       [onFocus]
     );
+
     const handleBlur = useCallback(
       (event: TextAreaFocusEvent) => {
         setActive(false);
