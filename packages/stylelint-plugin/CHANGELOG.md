@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.47](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.47) (11/07/2026)
+
+### Features
+
+- **dropdown-button:** Initial check-in of the `DropdownButton` component package ([e723cbc41](https://github.com/storm-software/cyclone-ui/commit/e723cbc41))
+
 ## [0.0.46](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.46) (11/07/2026)
 
 ### Bug Fixes

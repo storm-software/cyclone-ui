@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Text Area
 
+## [0.1.60](https://github.com/storm-software/cyclone-ui/releases/tag/text-area%400.1.60) (11/07/2026)
+
+### Features
+
+- **dropdown-button:** Initial check-in of the `DropdownButton` component package ([e723cbc41](https://github.com/storm-software/cyclone-ui/commit/e723cbc41))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.60**
+- Updated **form** to **v0.9.58**
+- Updated **helpers** to **v0.3.57**
+- Updated **input** to **v0.6.60**
+- Updated **scroll-view** to **v0.5.59**
+
 ## [0.1.59](https://github.com/storm-software/cyclone-ui/releases/tag/text-area%400.1.59) (11/07/2026)
 
 ### Bug Fixes

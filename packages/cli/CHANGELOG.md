@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - CLI
 
+## [0.6.49](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.49) (11/07/2026)
+
+### Features
+
+- **dropdown-button:** Initial check-in of the `DropdownButton` component package ([e723cbc41](https://github.com/storm-software/cyclone-ui/commit/e723cbc41))
+
+### Updated Dependencies
+
+- Updated **registry-api** to **v0.3.57**
+- Updated **theme-builder** to **v0.0.47**
+
 ## [0.6.48](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.48) (11/07/2026)
 
 ### Bug Fixes
