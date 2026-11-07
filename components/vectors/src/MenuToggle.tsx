@@ -29,17 +29,27 @@ import { themedIcon } from "./themed-icon";
 export type MenuToggleProps = IconProps & {
   isOpen?: boolean;
   isHovered?: boolean;
+  /** Multiplies the length of the closed bars; the open X keeps its size. */
+  closedLength?: number;
+  /** Distance between the closed bars, in 24 unit viewBox units. */
+  closedGap?: number;
 };
 
 const lerp = (from: number, to: number, t: number) => from + (to - from) * t;
 
 // Builds one bar of the icon. Closed, the two bars sit stacked and spread apart
 // on hover; open, they cross into an X that turns a quarter and pinches on hover.
-const bar = (index: number, open: number, hover: number) => {
+const bar = (
+  index: number,
+  open: number,
+  hover: number,
+  closedLength: number,
+  closedGap: number
+) => {
   const side = index * 2 - 1;
 
-  const cy = lerp(12 + side * (3 + hover), 12, open);
-  const length = lerp(9, 8.5 - 1.5 * hover, open);
+  const cy = lerp(12 + side * (closedGap / 2 + hover), 12, open);
+  const length = lerp(9 * closedLength, 8.5 - 1.5 * hover, open);
   const angle = (open * (side * -45 + 90 * hover) * Math.PI) / 180;
 
   const dx = length * Math.cos(angle);
@@ -53,6 +63,8 @@ const Icon = ({
   isHovered = false,
   size = 24,
   strokeWidth = 2,
+  closedLength = 1,
+  closedGap = 6,
   ...props
 }: ThemedIconBodyProps<MenuToggleProps>) => {
   const color = useCurrentColor((props.color || "on-primary") as any);
@@ -85,11 +97,14 @@ const Icon = ({
     return () => controls.stop();
   }, [isHovered, hoverPosition]);
 
+  // Widens the canvas for longer bars, keeping the default 3 unit margin.
+  const halfWidth = Math.max(12, 9 * closedLength + 3);
+
   return (
     <Svg
-      width={size}
+      width={(size * halfWidth) / 12}
       height={size}
-      viewBox="0 0 24 24"
+      viewBox={`${12 - halfWidth} 0 ${halfWidth * 2} 24`}
       fill="none"
       stroke={color}
       strokeLinecap="round"
@@ -98,7 +113,7 @@ const Icon = ({
       {[0, 1].map(index => (
         <Path
           key={index}
-          d={bar(index, open, hover)}
+          d={bar(index, open, hover, closedLength, closedGap)}
           stroke={color}
           strokeWidth={strokeWidth}
         />

@@ -222,8 +222,6 @@ const NavigationHeaderBar = styled(View, {
 const NavigationHeaderEdge = styled(View, {
   displayName: "NavigationHeaderEdge",
   minWidth: 0,
-  flexBasis: 0,
-  flexGrow: 1,
   flexShrink: 1,
   alignItems: "center",
   flexDirection: "row"
@@ -247,6 +245,10 @@ const NavigationHeaderCenter = styled(View, {
   height: "100%",
   order: "0 max-xl:1",
   flexShrink: 0,
+  // Auto margins split the free space, so the center sits midway between the
+  // logo and actions; compact screens push it right, beside the menu button.
+  marginLeft: "auto",
+  marginRight: "auto max-xl:0",
   alignItems: "center",
   flexDirection: "row",
   // Navigation's `6xl` gap minus the search button's inner padding, so the
@@ -421,7 +423,7 @@ const NavigationHeaderActions = styled(NavigationHeaderEdge, {
   displayName: "NavigationHeaderActions",
   paddingVertical: "2xl",
   justifyContent: "flex-end",
-  display: "max-md:none"
+  display: "max-xl:none"
 });
 
 const NavigationHeaderActionsContent = styled(View, {
@@ -433,12 +435,12 @@ const NavigationHeaderActionsContent = styled(View, {
 
 const NavigationHeaderMenuButtonSlot = styled(View, {
   displayName: "NavigationHeaderMenuButtonSlot",
-  // Overlaps the buttons' transparent padding, so the menu glyph sits near the
-  // search glyph and aligns with the bar's right padding.
+  // Sized for the long closed glyph (`closedLength` 2.1), so it sits near the
+  // search glyph and inside the bar's right padding.
   display: "none max-xl:flex",
   order: 2,
-  marginLeft: -8,
-  marginRight: -11
+  marginLeft: 0,
+  marginRight: -4
 });
 
 // Kept separate from the animated panel so inline animation styles cannot
@@ -481,7 +483,7 @@ const NavigationHeaderMobileNavigation = styled(View, {
 
 const NavigationHeaderMobileActions = styled(View, {
   displayName: "NavigationHeaderMobileActions",
-  display: "none max-md:flex",
+  display: "none max-xl:flex",
   marginTop: "2xl",
   paddingTop: "5xl",
   paddingHorizontal: "2xl",
@@ -799,9 +801,10 @@ const NavigationHeaderRoot = createStyledHOC(
     const isAtTop = useIsAtTop();
     const prefersReducedMotion = usePrefersReducedMotion();
     const mobileNavigationId = useId();
-    // Only the scroll-lock side effect needs the current viewport in JS.
+    // Only the scroll lock and menu icon length need the viewport in JS.
     // All responsive visibility, ordering and scaling are handled by CSS.
-    const compact = useMedia()["max-xl"];
+    const media = useMedia();
+    const compact = media["max-xl"];
     useLockPageScroll(menuOpen && Boolean(compact));
     const logo = getSlot<NavigationHeaderLogoProps>(
       children,
@@ -954,7 +957,6 @@ const NavigationHeaderRoot = createStyledHOC(
       </NavigationHeaderCenter>
     );
 
-    // CSS order moves the actions before search without changing the markup.
     const actionsSlot = actions ? (
       <NavigationHeaderActions key="actions">
         <NavigationHeaderActionsContent>
@@ -963,7 +965,7 @@ const NavigationHeaderRoot = createStyledHOC(
       </NavigationHeaderActions>
     ) : (
       // Hidden like the actions, so the search sits by the menu button.
-      <NavigationHeaderEdge key="actions" display="max-md:none" />
+      <NavigationHeaderEdge key="actions" display="max-xl:none" />
     );
 
     return (
@@ -990,11 +992,13 @@ const NavigationHeaderRoot = createStyledHOC(
             setHoveredDropdownItem(null);
           }
         }}>
-        {/* Kept opaque while the compact menu is open, so the bar matches the
-            panel beneath it. */}
+        {/* Solid while a menu is open, so the bar matches the panel beneath
+            it. */}
         <NavigationHeaderBackground
-          variant={variant}
-          opacity={transparentAtTop && isAtTop && !menuOpen ? 0 : 1}
+          variant={menuOpen || submenuOpen ? "filled" : variant}
+          opacity={
+            transparentAtTop && isAtTop && !menuOpen && !submenuOpen ? 0 : 1
+          }
           transition={prefersReducedMotion ? "none" : "400ms"}
         />
 
@@ -1011,6 +1015,7 @@ const NavigationHeaderRoot = createStyledHOC(
           <NavigationHeaderMenuButtonSlot>
             <Button
               variant="ghost"
+              ghostOpacity={0.25}
               tight={true}
               circular={true}
               flexGrow={0}
@@ -1026,6 +1031,11 @@ const NavigationHeaderRoot = createStyledHOC(
                   aria-hidden={true}
                   isOpen={menuOpen}
                   isHovered={menuButtonHovered}
+                  // Longer bars read as a menu at a glance on small and
+                  // touch screens.
+                  closedLength={compact || media.touchable ? 2.1 : 1}
+                  // 2px wider than the default gap at the 20px icon size.
+                  closedGap={compact || media.touchable ? 8.4 : undefined}
                 />
               </Button.Icon>
             </Button>
@@ -1159,7 +1169,7 @@ const NavigationHeaderRoot = createStyledHOC(
                       {/* Mounts on open so the reveal replays each time. */}
                       {menuOpen ? (
                         <RedactedAnimation
-                          delay={200 + index * entranceStagger}>
+                          delay={350 + index * entranceStagger}>
                           {item.label}
                         </RedactedAnimation>
                       ) : (

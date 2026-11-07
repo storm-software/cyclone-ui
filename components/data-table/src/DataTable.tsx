@@ -710,7 +710,7 @@ function DataTableImpl<TData extends RowData>({
                     <HeadingExtraSmallText
                       fontWeight="medium"
                       aria-live="polite">{`${selectedRows.length} selected`}</HeadingExtraSmallText>
-                    <XStack alignItems="center" gap="md">
+                    <XStack alignItems="center" gap="xl max-md:md">
                       {children}
                       <Button
                         theme="base"
@@ -719,6 +719,7 @@ function DataTableImpl<TData extends RowData>({
                         tight={true}
                         size="6xl"
                         padding="lg"
+                        marginLeft="4xl max-md:lg"
                         aria-label="Clear selection"
                         tooltip="Clear selection"
                         onPress={() => table.resetRowSelection(true)}>
@@ -1110,18 +1111,23 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
         {intrinsicFilterLabels}
       </HeadingExtraSmallText>
 
-      <YStack gap="xl">
-        <Field name={SEARCH_FIELD_NAME} size="sm" onChange={handleSearchChange}>
-          <SearchInput>
-            <SearchInput.TextBox placeholder="Filter..." />
-          </SearchInput>
-        </Field>
+      <YStack gap="2xl">
+        <View marginHorizontal="xl" marginTop="lg">
+          <Field
+            name={SEARCH_FIELD_NAME}
+            size="sm"
+            onChange={handleSearchChange}>
+            <SearchInput>
+              <SearchInput.TextBox placeholder="Filter..." />
+            </SearchInput>
+          </Field>
+        </View>
 
         <Popover.Content.ScrollView
           ref={scrollRef as any}
           size="lg"
           maxHeight="30xl">
-          <YStack gap="xl" width="100%" minWidth="28xl" padding="xl">
+          <YStack gap="xl" width="100%" minWidth="28xl" paddingHorizontal="xl" paddingTop="0" paddingBottom="2xl">
             <Field name={SELECT_ALL_FIELD_NAME}>
               <XStack gap="xl" alignItems="center" justifyContent="flex-start">
                 <Checkbox
@@ -1302,7 +1308,10 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
         </DataTableColumnHeading>
         {isSorted && !desc && (
           <XStack gap="xxs" alignItems="center">
-            <SortAscending size="4xl" color="emphasis group-hover/header:emphasis-hovered" />
+            <SortAscending
+              size="4xl"
+              color="emphasis group-hover/header:emphasis-hovered"
+            />
             <DataTableColumnHeading
               transition="200ms"
               fontWeight={600}
@@ -1313,7 +1322,10 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
         )}
         {isSorted && desc && (
           <XStack gap="xxs" alignItems="center">
-            <SortDescending size="4xl" color="emphasis group-hover/header:emphasis-hovered" />
+            <SortDescending
+              size="4xl"
+              color="emphasis group-hover/header:emphasis-hovered"
+            />
             <DataTableColumnHeading
               transition="200ms"
               fontWeight={600}
@@ -1507,7 +1519,10 @@ export function DataTablePagination<TData extends RowData>({
                   size="sm"
                   onChange={handlePageSizeChange}>
                   <XStack alignItems="center" gap="3xl">
-                    <Field.Label variant="above" flexShrink={0} fontWeight="medium">
+                    <Field.Label
+                      variant="above"
+                      flexShrink={0}
+                      fontWeight="medium">
                       Per page:
                     </Field.Label>
                     <View width="18xl" flexShrink={0}>
@@ -1528,7 +1543,9 @@ export function DataTablePagination<TData extends RowData>({
                 justifyContent="space-between"
                 alignItems="center"
                 gap="xl">
-                <HeadingExtraSmallText fontWeight="medium">Filtering:</HeadingExtraSmallText>
+                <HeadingExtraSmallText fontWeight="medium">
+                  Filtering:
+                </HeadingExtraSmallText>
                 <HeadingExtraSmallText>
                   {`${totalCount - unfilteredCount} ${totalCount - unfilteredCount === 1 ? "row" : "rows"}`}
                 </HeadingExtraSmallText>
