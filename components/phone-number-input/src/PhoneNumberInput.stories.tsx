@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import type { FieldProps } from "@cyclone-ui/field";
+import type { FieldLabelVariant, FieldProps } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
@@ -26,7 +26,8 @@ import { PhoneNumberInput } from "./PhoneNumberInput";
 
 /**
  * Story-only args consumed by the custom `render`: Field options plus the
- * PhoneNumberInput's own `defaultCountry`.
+ * PhoneNumberInput's own `defaultCountry`, the `labelVariant` passed to
+ * `Field.Label`, and the `description` rendered as its `Field.Details`.
  */
 type PhoneNumberInputStoryArgs = Pick<
   FieldProps,
@@ -39,6 +40,8 @@ type PhoneNumberInputStoryArgs = Pick<
 > &
   Pick<PhoneNumberInputProps, "defaultCountry"> & {
     defaultValue?: string;
+    labelVariant?: FieldLabelVariant;
+    description?: string;
   };
 
 const meta = {
@@ -46,19 +49,26 @@ const meta = {
   component: PhoneNumberInput,
   tags: ["autodocs"],
   render: (
-    { defaultValue = "", defaultCountry, ...props }: PhoneNumberInputStoryArgs,
+    {
+      defaultValue = "",
+      defaultCountry,
+      labelVariant,
+      description,
+      ...props
+    }: PhoneNumberInputStoryArgs,
     { id }: { id: string }
   ) => (
     <Form
       name={`formName-${id}`}
       initialValues={{ inputFieldName: defaultValue }}>
       <Field name="inputFieldName" {...props}>
-        <Field.Label>Label Text</Field.Label>
+        <Field.Label variant={labelVariant}>Label Text</Field.Label>
         <PhoneNumberInput defaultCountry={defaultCountry}>
           <PhoneNumberInput.TextBox>
             <PhoneNumberInput.TextBox.Value placeholder="Phone number" />
           </PhoneNumberInput.TextBox>
         </PhoneNumberInput>
+        {description && <Field.Details>{description}</Field.Details>}
       </Field>
     </Form>
   )
@@ -160,6 +170,14 @@ export const Required: Story = {
     const canvas = within(canvasElement);
 
     await expect(canvas.queryByText("(Optional)")).not.toBeInTheDocument();
+  }
+};
+
+export const Description: Story = {
+  args: {
+    labelVariant: "above",
+    description:
+      "This is a description that is longer than the label and will wrap to multiple lines. It is used to provide more information about the field."
   }
 };
 

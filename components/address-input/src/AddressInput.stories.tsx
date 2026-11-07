@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import type { FieldProps } from "@cyclone-ui/field";
+import type { FieldLabelVariant, FieldProps } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
@@ -48,14 +48,18 @@ const ADDRESSES: AddressOption[] = [
 ];
 
 /**
- * Story-only args consumed by the custom `render`: Field options plus the
- * AddressInput's own props.
+ * Story-only args consumed by the custom `render`: Field options, the
+ * AddressInput's own props, the `labelVariant` passed to `Field.Label`, and the
+ * `description` rendered as its `Field.Details`.
  */
 type AddressInputStoryArgs = Pick<
   FieldProps,
   "size" | "disabled" | "required"
 > &
-  Pick<AddressInputProps, "endpoint" | "defaultAddress" | "onAddressChange">;
+  Pick<AddressInputProps, "endpoint" | "defaultAddress" | "onAddressChange"> & {
+    labelVariant?: FieldLabelVariant;
+    description?: string;
+  };
 
 const meta: Meta<AddressInputStoryArgs> = {
   title: "Form/AddressInput",
@@ -98,6 +102,8 @@ const meta: Meta<AddressInputStoryArgs> = {
       endpoint,
       defaultAddress,
       onAddressChange,
+      labelVariant,
+      description,
       ...props
     }: AddressInputStoryArgs,
     { id }: { id: string }
@@ -112,10 +118,11 @@ const meta: Meta<AddressInputStoryArgs> = {
         maxWidth={480}>
         <AddressInput.Map />
         <Field name="addressFieldName" {...props}>
-          <Field.Label>Address Details</Field.Label>
+          <Field.Label variant={labelVariant}>Address Details</Field.Label>
           <AddressInput.Search>
             <AddressInput.TextBox placeholder="Search for an address" />
           </AddressInput.Search>
+          {description && <Field.Details>{description}</Field.Details>}
         </Field>
       </AddressInput>
     </Form>
@@ -157,6 +164,14 @@ export const Base: Story = {
       expect(args.onAddressChange).toHaveBeenLastCalledWith(undefined)
     );
     await expect(canvas.queryByRole("img")).not.toBeInTheDocument();
+  }
+};
+
+export const Description: Story = {
+  args: {
+    labelVariant: "above",
+    description:
+      "This is a description that is longer than the label and will wrap to multiple lines. It is used to provide more information about the field."
   }
 };
 

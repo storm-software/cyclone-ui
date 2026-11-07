@@ -23,9 +23,11 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 import { Select } from "./Select";
 
-// Story args configure the wrapping `Field`, not the `Select` itself.
+// Story args configure the wrapping `Field`, not the `Select` itself, apart from
+// `description` (rendered as its `Field.Details`).
 type SelectStoryArgs = Omit<FieldProps<string>, "children" | "name"> & {
   labelVariant?: FieldLabelVariant;
+  description?: string;
 };
 
 const meta: Meta<SelectStoryArgs> = {
@@ -33,7 +35,7 @@ const meta: Meta<SelectStoryArgs> = {
   component: Select,
   tags: ["autodocs"],
   render: (
-    { defaultValue, labelVariant, variant, ...props }: any,
+    { defaultValue, description, labelVariant, variant, ...props }: any,
     { id }: { id: string }
   ) => (
     <Form name={`formName-${id}`} initialValues={{ selectName: defaultValue }}>
@@ -57,6 +59,7 @@ const meta: Meta<SelectStoryArgs> = {
             ))}
           </Select.Items>
         </Select>
+        {description && <Field.Details>{description}</Field.Details>}
       </Field>
     </Form>
   )
@@ -221,6 +224,14 @@ export const InlinedAbove: Story = {
   args: {
     variant: "inlined",
     labelVariant: "above"
+  }
+};
+
+export const Description: Story = {
+  args: {
+    labelVariant: "above",
+    description:
+      "This is a description that is longer than the label and will wrap to multiple lines. It is used to provide more information about the field."
   }
 };
 

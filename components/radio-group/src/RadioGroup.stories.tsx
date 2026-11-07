@@ -24,9 +24,11 @@ import { expect, userEvent, waitFor, within } from "storybook/test";
 import type { RadioGroupIndicatorStyle } from "./RadioGroup";
 import { RadioGroup } from "./RadioGroup";
 
-// Story args configure the wrapping `Field`, apart from `indicatorStyle`.
+// Story args configure the wrapping `Field`, apart from `indicatorStyle` and
+// `description` (rendered as its `Field.Details`).
 type RadioGroupStoryArgs = Omit<FieldProps<string>, "children" | "name"> & {
   indicatorStyle?: RadioGroupIndicatorStyle;
+  description?: string;
 };
 
 const options: {
@@ -63,7 +65,10 @@ const options: {
 
 const renderGroup =
   (items = options) =>
-  ({ defaultValue, indicatorStyle, ...props }: any, { id }: { id: string }) => (
+  (
+    { defaultValue, indicatorStyle, description, ...props }: any,
+    { id }: { id: string }
+  ) => (
     <Form name={`formName-${id}`} initialValues={{ selectName: defaultValue }}>
       <Field name="selectName" {...props}>
         <Field.Label>Label Text</Field.Label>
@@ -81,6 +86,7 @@ const renderGroup =
             </RadioGroup.Item>
           ))}
         </RadioGroup>
+        {description && <Field.Details>{description}</Field.Details>}
       </Field>
     </Form>
   );
@@ -137,6 +143,13 @@ export const NoIndicator: Story = {
 export const Required: Story = {
   args: {
     required: true
+  }
+};
+
+export const Description: Story = {
+  args: {
+    description:
+      "This is a description that is longer than the label and will wrap to multiple lines. It is used to provide more information about the radio group item."
   }
 };
 

@@ -33,6 +33,7 @@ interface DatePickerValidation {
 /** Story-only args consumed by the custom `render` (the Form and Field). */
 type DatePickerStoryArgs = GetProps<typeof DatePicker> & {
   labelVariant?: FieldLabelVariant;
+  description?: string;
   required?: boolean;
   validate?: DatePickerValidation;
   showErrorsBeforeBlur?: boolean;
@@ -43,7 +44,7 @@ const meta: Meta<DatePickerStoryArgs> = {
   component: DatePicker,
   tags: ["autodocs"],
   render: (
-    { labelVariant, mode, separator, variant, ...props }: any,
+    { description, labelVariant, mode, separator, variant, ...props }: any,
     { id }: { id: string }
   ) => {
     return (
@@ -56,6 +57,7 @@ const meta: Meta<DatePickerStoryArgs> = {
             variant={variant}
             size={props.size}
           />
+          {description && <Field.Details>{description}</Field.Details>}
         </Field>
       </Form>
     );
@@ -135,6 +137,14 @@ export const InlinedAbove: Story = {
   args: {
     variant: "inlined",
     labelVariant: "above"
+  }
+};
+
+export const Description: Story = {
+  args: {
+    labelVariant: "above",
+    description:
+      "This is a description that is longer than the label and will wrap to multiple lines. It is used to provide more information about the field."
   }
 };
 

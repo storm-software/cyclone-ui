@@ -25,9 +25,15 @@ import { expect, fn, userEvent, within } from "storybook/test";
 import type { OtpInputProps } from "./OtpInput";
 import { OtpInput } from "./OtpInput";
 
-/** Field props plus the `length` and `onComplete` passed to `OtpInput`. */
+/**
+ * Field props plus the `length` and `onComplete` passed to `OtpInput`, and a
+ * `description` rendered as its `Field.Details`.
+ */
 type OtpInputStoryArgs = Partial<FieldProps> &
-  Pick<OtpInputProps, "length" | "onComplete"> & { defaultValue?: string };
+  Pick<OtpInputProps, "length" | "onComplete"> & {
+    defaultValue?: string;
+    description?: string;
+  };
 
 const meta: Meta<OtpInputStoryArgs> = {
   title: "Form/OtpInput",
@@ -39,13 +45,14 @@ const meta: Meta<OtpInputStoryArgs> = {
     onComplete: fn()
   },
   render: (
-    { defaultValue = "", length, onComplete, ...props }: any,
+    { defaultValue = "", length, onComplete, description, ...props }: any,
     { id }: { id: string }
   ) => (
     <Form name={`formName-${id}`} initialValues={{ code: defaultValue }}>
       <Field name="code" {...props}>
         <Field.Label>Code</Field.Label>
         <OtpInput length={length} onComplete={onComplete} />
+        {description && <Field.Details>{description}</Field.Details>}
       </Field>
     </Form>
   )
@@ -119,6 +126,13 @@ export const Required: Story = {
     const canvas = within(canvasElement);
 
     await expect(canvas.queryByText("(Optional)")).not.toBeInTheDocument();
+  }
+};
+
+export const Description: Story = {
+  args: {
+    description:
+      "This is a description that is longer than the label and will wrap to multiple lines. It is used to provide more information about the field."
   }
 };
 

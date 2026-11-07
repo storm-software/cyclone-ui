@@ -487,7 +487,7 @@ const LOW_SATURATION_COLOR_STATE_INACTIVE: ColorStateVariant = {
 
 const COLOR_STATE_DISABLED: ColorStateVariant = {
   name: "disabled",
-  opacity: 0.15,
+  opacity: 0.3,
   saturation: 0.85,
   fadeOver: "oklch(0.3839 0.0045 286.26)"
 };

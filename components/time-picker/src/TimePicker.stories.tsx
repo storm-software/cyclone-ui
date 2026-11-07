@@ -34,6 +34,7 @@ interface TimePickerValidation {
 type TimePickerStoryArgs = GetProps<typeof TimePicker> & {
   initialValue?: string;
   labelVariant?: FieldLabelVariant;
+  description?: string;
   required?: boolean;
   validate?: TimePickerValidation;
   showErrorsBeforeBlur?: boolean;
@@ -44,7 +45,14 @@ const meta: Meta<TimePickerStoryArgs> = {
   component: TimePicker,
   tags: ["autodocs"],
   render: (
-    { hourCycle, initialValue, labelVariant, variant, ...props }: any,
+    {
+      description,
+      hourCycle,
+      initialValue,
+      labelVariant,
+      variant,
+      ...props
+    }: any,
     { id }: { id: string }
   ) => {
     return (
@@ -58,6 +66,7 @@ const meta: Meta<TimePickerStoryArgs> = {
             variant={variant}
             size={props.size}
           />
+          {description && <Field.Details>{description}</Field.Details>}
         </Field>
       </Form>
     );
@@ -137,6 +146,14 @@ export const InlinedAbove: Story = {
   args: {
     variant: "inlined",
     labelVariant: "above"
+  }
+};
+
+export const Description: Story = {
+  args: {
+    labelVariant: "above",
+    description:
+      "This is a description that is longer than the label and will wrap to multiple lines. It is used to provide more information about the field."
   }
 };
 

@@ -42,6 +42,8 @@ function tokenColors(tokens: Record<string, any>) {
   };
 }
 
+const CYCLONE_BLUE = "#a5f3fc";
+
 const config: UserConfig = defineConfig({
   skipCache: true,
   name: "cyclone-ui",
@@ -69,13 +71,12 @@ const config: UserConfig = defineConfig({
 
         const theme = paletteToTheme({
           name: "dark",
-          primary: color("base.primary"),
-          secondary: color("ink"),
-          tertiary: color("subtle"),
+          primary: CYCLONE_BLUE,
+          secondary: color("emphasis"),
+          tertiary: color("ink"),
           text: color("ink"),
-          muted: color("hairline"),
+          muted: color("subtle"),
           link: color("base.link"),
-          border: color("hairline"),
           success: color("success.primary"),
           info: color("info.primary"),
           help: color("discovery.primary"),
@@ -92,20 +93,27 @@ const config: UserConfig = defineConfig({
           ...theme,
           colors: {
             ...colors,
+            border: {
+              ...colors.border,
+              banner: CYCLONE_BLUE
+            },
             text: {
               ...colors.text,
               // Match the banner icon (rendered with the header color), header and footer to the outline
               banner: {
-                ...colors.text.banner,
-                header: color("brand.primary"),
-                footer: color("brand.primary")
+                title: CYCLONE_BLUE,
+                command: color("ink"),
+                description: color("subtle"),
+                icon: CYCLONE_BLUE,
+                header: CYCLONE_BLUE,
+                footer: CYCLONE_BLUE
               },
               tags: {
                 $default: color("brand.primary"),
                 utility: color("subtle"),
                 deprecated: color("danger.primary"),
                 experimental: color("discovery.primary"),
-                designSystem: color("brand.primary"),
+                designSystem: CYCLONE_BLUE,
                 ai: color("discovery.primary"),
                 mcp: color("discovery.primary"),
                 tokens: "#FF6693",

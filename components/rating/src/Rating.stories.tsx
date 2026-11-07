@@ -31,7 +31,10 @@ type RatingStoryArgs = RatingProps &
   Pick<
     FieldProps<number>,
     "required" | "theme" | "validate" | "showErrorsBeforeBlur"
-  >;
+  > & {
+    /** Rendered as the `Field.Details`. */
+    description?: string;
+  };
 
 const meta: Meta<RatingStoryArgs> = {
   title: "Form/Rating",
@@ -65,6 +68,7 @@ const meta: Meta<RatingStoryArgs> = {
       theme,
       showErrorsBeforeBlur,
       validate,
+      description,
       ...control
     }: RatingStoryArgs,
     { id }: { id: string }
@@ -80,6 +84,7 @@ const meta: Meta<RatingStoryArgs> = {
         validate={validate}>
         <Field.Label>Label Text</Field.Label>
         <Rating {...control} />
+        {description && <Field.Details>{description}</Field.Details>}
       </Field>
     </Form>
   )
@@ -148,6 +153,13 @@ export const Base: Story = {
 export const Required: Story = {
   args: {
     required: true
+  }
+};
+
+export const Description: Story = {
+  args: {
+    description:
+      "This is a description that is longer than the label and will wrap to multiple lines. It is used to provide more information about the field."
   }
 };
 

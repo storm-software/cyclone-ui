@@ -29,6 +29,7 @@ import { TagPicker } from "./TagPicker";
 type TagPickerStoryArgs = Omit<TagPickerProps, "name"> &
   Omit<FieldProps<string[]>, "children" | "name"> & {
     labelVariant?: FieldLabelVariant;
+    description?: string;
   };
 
 const meta: Meta<TagPickerStoryArgs> = {
@@ -42,6 +43,7 @@ const meta: Meta<TagPickerStoryArgs> = {
   render: (
     {
       defaultValue = [],
+      description = "Press Enter to add a topic",
       disabled,
       labelVariant,
       required,
@@ -76,7 +78,7 @@ const meta: Meta<TagPickerStoryArgs> = {
             tagVariant={tagVariant}
             variant={variant}
           />
-          <Field.Details>Press Enter to add a topic</Field.Details>
+          <Field.Details>{description}</Field.Details>
         </Field>
       </View>
     </Form>
@@ -356,6 +358,14 @@ export const InlinedAbove: Story = {
   args: {
     variant: "inlined",
     labelVariant: "above"
+  }
+};
+
+export const Description: Story = {
+  args: {
+    labelVariant: "above",
+    description:
+      "This is a description that is longer than the label and will wrap to multiple lines. It is used to provide more information about the field."
   }
 };
 

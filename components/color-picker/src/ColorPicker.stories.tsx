@@ -35,6 +35,7 @@ interface ColorPickerValidation {
 /** Story-only args consumed by the custom `render` (the Form and Field). */
 type ColorPickerStoryArgs = GetProps<typeof ColorPicker> & {
   labelVariant?: FieldLabelVariant;
+  description?: string;
   required?: boolean;
   validate?: ColorPickerValidation;
   showErrorsBeforeBlur?: boolean;
@@ -60,7 +61,14 @@ const meta: Meta<ColorPickerStoryArgs> = {
     defaultValue: "#0485F7"
   },
   render: (
-    { defaultValue, labelVariant, variant, swatches, ...props }: any,
+    {
+      defaultValue,
+      description,
+      labelVariant,
+      variant,
+      swatches,
+      ...props
+    }: any,
     { id }: { id: string }
   ) => (
     <Form
@@ -69,6 +77,7 @@ const meta: Meta<ColorPickerStoryArgs> = {
       <Field name="colorPickerName" {...props} variant={variant}>
         <Field.Label variant={labelVariant}>Label Text</Field.Label>
         <ColorPicker variant={variant} size={props.size} swatches={swatches} />
+        {description && <Field.Details>{description}</Field.Details>}
       </Field>
     </Form>
   )
@@ -150,6 +159,14 @@ export const UnderlinedAbove: Story = {
 
 export const InlinedAbove: Story = {
   args: { variant: "inlined", labelVariant: "above" }
+};
+
+export const Description: Story = {
+  args: {
+    labelVariant: "above",
+    description:
+      "This is a description that is longer than the label and will wrap to multiple lines. It is used to provide more information about the field."
+  }
 };
 
 /** The popover holds only what its children compose, like HeroUI's basic picker. */

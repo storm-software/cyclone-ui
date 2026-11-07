@@ -31,9 +31,13 @@ import {
 } from "storybook/test";
 import { PasswordInput } from "./PasswordInput";
 
-/** Field props plus the story-only `labelVariant`, passed to `Field.Label`. */
+/**
+ * Field props plus the story-only `labelVariant`, passed to `Field.Label`, and
+ * `description`, rendered as its `Field.Details`.
+ */
 type PasswordInputStoryArgs = Partial<FieldProps> & {
   labelVariant?: FieldLabelVariant;
+  description?: string;
   defaultValue?: string;
   delay?: number;
   showStrength?: boolean;
@@ -65,6 +69,7 @@ const meta: Meta<PasswordInputStoryArgs> = {
       defaultValue = "",
       delay,
       labelVariant,
+      description,
       showStrength = true,
       validateStrength = true,
       ...props
@@ -85,6 +90,7 @@ const meta: Meta<PasswordInputStoryArgs> = {
           </PasswordInput.TextBox>
           <PasswordInput.Trigger />
         </PasswordInput>
+        {description && <Field.Details>{description}</Field.Details>}
       </Field>
     </Form>
   )
@@ -247,6 +253,14 @@ export const Required: Story = {
     const canvas = within(canvasElement);
 
     await expect(canvas.queryByText("(Optional)")).not.toBeInTheDocument();
+  }
+};
+
+export const Description: Story = {
+  args: {
+    labelVariant: "above",
+    description:
+      "This is a description that is longer than the label and will wrap to multiple lines. It is used to provide more information about the field."
   }
 };
 

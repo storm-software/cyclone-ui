@@ -27,6 +27,7 @@ import { TextArea } from "./TextArea";
 type TextAreaStoryArgs = GetProps<typeof TextArea> &
   Omit<FieldProps<string>, "children" | "name"> & {
     labelVariant?: FieldLabelVariant;
+    description?: string;
   };
 
 const meta: Meta<TextAreaStoryArgs> = {
@@ -40,6 +41,7 @@ const meta: Meta<TextAreaStoryArgs> = {
   render: (
     {
       defaultValue = "",
+      description,
       disabled,
       labelVariant,
       placeholder,
@@ -67,6 +69,7 @@ const meta: Meta<TextAreaStoryArgs> = {
           size={size}
           variant={variant}
         />
+        {description && <Field.Details>{description}</Field.Details>}
       </Field>
     </Form>
   )
@@ -198,6 +201,14 @@ export const InlinedAbove: Story = {
   args: {
     variant: "inlined",
     labelVariant: "above"
+  }
+};
+
+export const Description: Story = {
+  args: {
+    labelVariant: "above",
+    description:
+      "This is a description that is longer than the label and will wrap to multiple lines. It is used to provide more information about the field."
   }
 };
 

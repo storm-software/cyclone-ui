@@ -36,6 +36,7 @@ type FilePickerStoryArgs = GetProps<typeof FilePicker> & {
   required?: boolean;
   validate?: FilePickerValidation;
   showErrorsBeforeBlur?: boolean;
+  description?: string;
 };
 
 const meta: Meta<FilePickerStoryArgs> = {
@@ -43,7 +44,7 @@ const meta: Meta<FilePickerStoryArgs> = {
   component: FilePicker,
   tags: ["autodocs"],
   render: (
-    { defaultValue, disabled, children, ...props }: any,
+    { defaultValue, disabled, children, description, ...props }: any,
     { id }: { id: string }
   ) => (
     <Form
@@ -68,6 +69,7 @@ const meta: Meta<FilePickerStoryArgs> = {
             <FilePicker.Trigger.Button>{children}</FilePicker.Trigger.Button>
           </FilePicker.Trigger>
         </FilePicker>
+        {description && <Field.Details>{description}</Field.Details>}
       </Field>
     </Form>
   )
@@ -180,6 +182,13 @@ export const SimpleLargeSize: Story = {
 export const Required: Story = {
   args: {
     required: true
+  }
+};
+
+export const Description: Story = {
+  args: {
+    description:
+      "This is a description that is longer than the label and will wrap to multiple lines. It is used to provide more information about the field."
   }
 };
 

@@ -568,27 +568,15 @@ const FieldDetails = styled(SizableText, {
   }
 });
 
-const FieldDetailsImpl = createStyledHOC(
+const FieldDetailsText = createStyledHOC(
   FieldDetails,
   (props, forwardedRef) => {
     const { children, ...rest } = props;
 
     const field = FieldApi.use();
-    const setDetails = use(FieldDetailsSetterContext);
-    const messages = field.messages.get();
     const disabled = field.disabled.get();
     const theme = field.theme.get();
     const size = field.size.get();
-
-    useLayoutEffect(() => {
-      setDetails(children);
-
-      return () => setDetails(null);
-    }, [children, setDetails]);
-
-    if (messages && messages.length > 0) {
-      return null;
-    }
 
     return (
       <FieldDetails
@@ -602,6 +590,45 @@ const FieldDetailsImpl = createStyledHOC(
         disabled={disabled}>
         {children}
       </FieldDetails>
+    );
+  },
+  { displayName: "FieldDetails" }
+);
+
+/**
+ * Whether the field's details render under an "above" label (see
+ * `FieldLabel`) instead of under the control.
+ */
+const useFieldDetailsUnderLabel = () => {
+  const { labelVariant, labelDefaults } = useFieldPresentation();
+
+  return labelVariant === "above" && !labelDefaults?.inline;
+};
+
+const FieldDetailsImpl = createStyledHOC(
+  FieldDetails,
+  (props, forwardedRef) => {
+    const { children, ...rest } = props;
+
+    const field = FieldApi.use();
+    const setDetails = use(FieldDetailsSetterContext);
+    const messages = field.messages.get();
+    const underLabel = useFieldDetailsUnderLabel();
+
+    useLayoutEffect(() => {
+      setDetails(children);
+
+      return () => setDetails(null);
+    }, [children, setDetails]);
+
+    if (underLabel || (messages && messages.length > 0)) {
+      return null;
+    }
+
+    return (
+      <FieldDetailsText ref={forwardedRef} {...rest}>
+        {children}
+      </FieldDetailsText>
     );
   },
   { displayName: "FieldDetails" }
@@ -1090,10 +1117,13 @@ const FieldLabel = createStyledHOC(
     const disabled = field.disabled.get();
     const required = field.required.get();
     const {
+      variant: fieldVariant,
       setLabelVariant,
       labelDefaults,
       labelVariant: registeredVariant
     } = useFieldPresentation();
+    const details = use(FieldDetailsContext);
+    const detailsUnderLabel = useFieldDetailsUnderLabel();
     const variant = variantProp ?? labelDefaults?.variant ?? "above";
     const inline = labelDefaults?.inline;
     // Controls only hide their placeholder once the field has registered the
@@ -1108,6 +1138,19 @@ const FieldLabel = createStyledHOC(
 
       return () => setLabelVariant(undefined);
     }, [setLabelVariant, variant]);
+
+    const label = (
+        <FieldLabelTextImpl
+          ref={forwardedRef}
+          {...props}
+          htmlFor={name}
+          disabled={disabled}
+          required={required}
+          labelVariant={variant}
+          floating={floating}>
+          {children}
+        </FieldLabelTextImpl>
+    );
 
     return inline ? (
       // A compact label beside its control (checkbox, switch).
@@ -1130,17 +1173,18 @@ const FieldLabel = createStyledHOC(
         </FieldLabelTextImpl>
         {disabled && <FieldThemeIcon disabled={true} />}
       </XStack>
+    ) : detailsUnderLabel && details ? (
+      // Unlike under the control, these details stay up while a validation
+      // message shows.
+      <YStack gap="sm">
+        {label}
+        <FieldDetailsText
+          marginLeft={fieldVariant === "underlined" ? "zero" : "md"}>
+          {details}
+        </FieldDetailsText>
+      </YStack>
     ) : (
-      <FieldLabelTextImpl
-        ref={forwardedRef}
-        {...props}
-        htmlFor={name}
-        disabled={disabled}
-        required={required}
-        labelVariant={variant}
-        floating={floating}>
-        {children}
-      </FieldLabelTextImpl>
+      label
     );
   },
   { displayName: "FieldLabel" }

@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import type { FieldProps } from "@cyclone-ui/field";
+import type { FieldLabelVariant, FieldProps } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
@@ -24,9 +24,17 @@ import { expect, userEvent, within } from "storybook/test";
 import type { NumberInputProps } from "./NumberInput";
 import { NumberInput } from "./NumberInput";
 
-/** Field props plus the `increment` passed to `NumberInput`. */
+/**
+ * Field props plus the `increment` passed to `NumberInput`, the
+ * `labelVariant` of its `Field.Label`, and a `description` rendered as its
+ * `Field.Details`.
+ */
 type NumberInputStoryArgs = Partial<FieldProps> &
-  Pick<NumberInputProps, "increment"> & { defaultValue?: string };
+  Pick<NumberInputProps, "increment"> & {
+    defaultValue?: string;
+    labelVariant?: FieldLabelVariant;
+    description?: string;
+  };
 
 // Annotated rather than inferred: the inferred type reaches `MaskitoOptions`
 // through the Field props, which is not portable from this package.
@@ -35,19 +43,20 @@ const meta: Meta<NumberInputStoryArgs> = {
   component: NumberInput,
   tags: ["autodocs"],
   render: (
-    { defaultValue = "", increment, ...props }: any,
+    { defaultValue = "", increment, labelVariant, description, ...props }: any,
     { id }: { id: string }
   ) => (
     <Form
       name={`formName-${id}`}
       initialValues={{ inputFieldName: defaultValue }}>
       <Field name="inputFieldName" {...props}>
-        <Field.Label>Label Text</Field.Label>
+        <Field.Label variant={labelVariant}>Label Text</Field.Label>
         <NumberInput increment={increment}>
           <NumberInput.TextBox>
             <NumberInput.TextBox.Value placeholder="0" />
           </NumberInput.TextBox>
         </NumberInput>
+        {description && <Field.Details>{description}</Field.Details>}
       </Field>
     </Form>
   )
@@ -119,6 +128,14 @@ export const Required: Story = {
     const canvas = within(canvasElement);
 
     await expect(canvas.queryByText("(Optional)")).not.toBeInTheDocument();
+  }
+};
+
+export const Description: Story = {
+  args: {
+    description:
+      "This is a description that is longer than the label and will wrap to multiple lines. It is used to provide more information about the field.",
+    labelVariant: "above"
   }
 };
 

@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import type { FieldProps } from "@cyclone-ui/field";
+import type { FieldLabelVariant, FieldProps } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
@@ -26,7 +26,8 @@ import { CreditCardInput } from "./CreditCardInput";
 
 /**
  * Story-only args consumed by the custom `render`: options for every Field
- * plus the form's initial values.
+ * plus the form's initial values, and the first field's `labelVariant` (passed
+ * to its `Field.Label`) and `description` (rendered as its `Field.Details`).
  */
 type CreditCardInputStoryArgs = Pick<FieldProps, "size" | "disabled"> & {
   initialValues?: {
@@ -36,6 +37,8 @@ type CreditCardInputStoryArgs = Pick<FieldProps, "size" | "disabled"> & {
     nameOnCard?: string;
   };
   bankName?: string;
+  labelVariant?: FieldLabelVariant;
+  description?: string;
 };
 
 const meta = {
@@ -43,7 +46,13 @@ const meta = {
   component: CreditCardInput,
   tags: ["autodocs"],
   render: (
-    { initialValues, bankName, ...props }: CreditCardInputStoryArgs,
+    {
+      initialValues,
+      bankName,
+      labelVariant,
+      description,
+      ...props
+    }: CreditCardInputStoryArgs,
     { id }: { id: string }
   ) => (
     <Form
@@ -58,8 +67,9 @@ const meta = {
       <CreditCardInput maxWidth={480}>
         <CreditCardInput.Card bankName={bankName} />
         <Field name="cardNumber" required={true} {...props}>
-          <Field.Label>Card number</Field.Label>
+          <Field.Label variant={labelVariant}>Card number</Field.Label>
           <CreditCardInput.Number />
+          {description && <Field.Details>{description}</Field.Details>}
         </Field>
         <View flexDirection="row" gap="4xl">
           <View flex={1}>
@@ -114,6 +124,14 @@ export const Base: Story = {
     await expect(canvas.getByText("Jane Doe")).toBeInTheDocument();
     await expect(canvas.getAllByText("Visa")).toHaveLength(2);
     await expect(canvas.queryByText(/invalid|incomplete|expired/)).toBeNull();
+  }
+};
+
+export const Description: Story = {
+  args: {
+    labelVariant: "above",
+    description:
+      "This is a description that is longer than the label and will wrap to multiple lines. It is used to provide more information about the field."
   }
 };
 

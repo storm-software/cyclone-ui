@@ -31,7 +31,10 @@ type SliderStoryArgs = SliderProps &
   Pick<
     FieldProps<SliderValue>,
     "required" | "theme" | "validate" | "showErrorsBeforeBlur"
-  >;
+  > & {
+    /** Rendered as the `Field.Details`. */
+    description?: string;
+  };
 
 const meta: Meta<SliderStoryArgs> = {
   title: "Form/Slider",
@@ -83,6 +86,7 @@ const meta: Meta<SliderStoryArgs> = {
       theme,
       showErrorsBeforeBlur,
       validate,
+      description,
       ...control
     }: SliderStoryArgs,
     { id }: { id: string }
@@ -98,6 +102,7 @@ const meta: Meta<SliderStoryArgs> = {
         validate={validate}>
         <Field.Label>Label Text</Field.Label>
         <Slider {...control} />
+        {description && <Field.Details>{description}</Field.Details>}
       </Field>
     </Form>
   )
@@ -157,6 +162,13 @@ export const NoInitialValue: Story = {
 export const Required: Story = {
   args: {
     required: true
+  }
+};
+
+export const Description: Story = {
+  args: {
+    description:
+      "This is a description that is longer than the label and will wrap to multiple lines. It is used to provide more information about the field."
   }
 };
 

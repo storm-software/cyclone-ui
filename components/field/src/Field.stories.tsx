@@ -219,3 +219,75 @@ export const SmallSize: Story = { args: { size: "sm" } };
 export const MediumSize: Story = { args: { size: "md" } };
 
 export const LargeSize: Story = { args: { size: "lg" } };
+
+const renderWithDetails =
+  (labelVariant: "above" | "floating") =>
+  (props: any, { id }: { id: string }) => (
+    <Form name={`formName-${id}`} initialValues={{ fieldName: "" }}>
+      <Field
+        showErrorsBeforeBlur={true}
+        validate={validation("danger")}
+        {...props}
+        name="fieldName">
+        <Field.Label variant={labelVariant}>Label Text</Field.Label>
+        <MessageStateProbe />
+        <Field.Details>Supporting details text</Field.Details>
+      </Field>
+    </Form>
+  );
+
+export const AboveWithDetails: Story = {
+  render: renderWithDetails("above"),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const label = canvas.getByText("Label Text");
+    const details = canvas.getByText("Supporting details text");
+
+    // Renders under the label text, before the control.
+    await expect(
+      label.compareDocumentPosition(details) &
+        Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
+    await expect(
+      details.compareDocumentPosition(
+        canvas.getByRole("button", { name: "Validate field" })
+      ) & Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
+
+    await userEvent.click(
+      canvas.getByRole("button", { name: "Validate field" })
+    );
+    await waitFor(async () =>
+      expect(canvas.getByTestId("field-message-state")).toHaveTextContent(
+        "true"
+      )
+    );
+    // Stays visible alongside the validation message (after both fade in).
+    await waitFor(async () => {
+      await expect(
+        canvas.getByText("This is an example validation message")
+      ).toBeVisible();
+      await expect(canvas.getByText("Supporting details text")).toBeVisible();
+    });
+  }
+};
+
+export const FloatingWithDetails: Story = {
+  render: renderWithDetails("floating"),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await waitFor(async () =>
+      expect(canvas.getByText("Supporting details text")).toBeVisible()
+    );
+    await userEvent.click(
+      canvas.getByRole("button", { name: "Validate field" })
+    );
+    // Hidden while a validation message shows.
+    await waitFor(async () =>
+      expect(
+        canvas.queryByText("Supporting details text")
+      ).not.toBeInTheDocument()
+    );
+  }
+};

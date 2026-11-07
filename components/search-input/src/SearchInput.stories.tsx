@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import type { FieldProps } from "@cyclone-ui/field";
+import type { FieldLabelVariant, FieldProps } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import { Filter } from "@cyclone-ui/icons";
@@ -28,7 +28,8 @@ import { SearchInput } from "./SearchInput";
 
 /**
  * Story-only args consumed by the custom `render`: Field options plus the
- * SearchInput's own `suggestions`.
+ * SearchInput's own `suggestions`, the `labelVariant` passed to `Field.Label`,
+ * and the `description` rendered as its `Field.Details`.
  */
 type SearchInputStoryArgs = Pick<
   FieldProps,
@@ -43,6 +44,8 @@ type SearchInputStoryArgs = Pick<
   Pick<SearchInputProps, "suggestions"> & {
     defaultValue?: string;
     icon?: ReactNode;
+    labelVariant?: FieldLabelVariant;
+    description?: string;
   };
 
 const meta: Meta<SearchInputStoryArgs> = {
@@ -50,17 +53,25 @@ const meta: Meta<SearchInputStoryArgs> = {
   component: SearchInput,
   tags: ["autodocs"],
   render: (
-    { defaultValue = "", suggestions, icon, ...props }: SearchInputStoryArgs,
+    {
+      defaultValue = "",
+      suggestions,
+      icon,
+      labelVariant,
+      description,
+      ...props
+    }: SearchInputStoryArgs,
     { id }: { id: string }
   ) => (
     <Form
       name={`formName-${id}`}
       initialValues={{ searchInputFieldName: defaultValue }}>
       <Field name="searchInputFieldName" {...props}>
-        <Field.Label>Label Text</Field.Label>
+        <Field.Label variant={labelVariant}>Label Text</Field.Label>
         <SearchInput suggestions={suggestions}>
           <SearchInput.TextBox icon={icon} />
         </SearchInput>
+        {description && <Field.Details>{description}</Field.Details>}
       </Field>
     </Form>
   )
@@ -109,6 +120,14 @@ export const NoIcon: Story = {
 export const Required: Story = {
   args: {
     required: true
+  }
+};
+
+export const Description: Story = {
+  args: {
+    labelVariant: "above",
+    description:
+      "This is a description that is longer than the label and will wrap to multiple lines. It is used to provide more information about the field."
   }
 };
 

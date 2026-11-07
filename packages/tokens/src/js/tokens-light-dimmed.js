@@ -3052,9 +3052,9 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#515153",
+        $value: "#4d4d4f",
         $description:
-          "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -3067,12 +3067,12 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.3176470588235294, 0.3176470588235294, 0.3254901960784314
+              0.30196078431372547, 0.30196078431372547, 0.30980392156862746
             ],
-            hex: "#515153"
+            hex: "#4d4d4f"
           },
           $description:
-            "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+            "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
           semantic: true,
           key: "{color.base.primary-disabled}"
         },
@@ -3204,9 +3204,9 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#606062",
+        $value: "#6c6c6e",
         $description:
-          "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -3219,12 +3219,12 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.3764705882352941, 0.3764705882352941, 0.3843137254901961
+              0.4235294117647059, 0.4235294117647059, 0.43137254901960786
             ],
-            hex: "#606062"
+            hex: "#6c6c6e"
           },
           $description:
-            "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+            "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
           semantic: true,
           key: "{color.base.secondary-disabled}"
         },
@@ -3356,9 +3356,9 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#545c64",
+        $value: "#536370",
         $description:
-          "The color used for hyperlink text. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "The color used for hyperlink text. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -3371,12 +3371,12 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.32941176470588235, 0.3607843137254902, 0.39215686274509803
+              0.3254901960784314, 0.38823529411764707, 0.4392156862745098
             ],
-            hex: "#545c64"
+            hex: "#536370"
           },
           $description:
-            "The color used for hyperlink text. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+            "The color used for hyperlink text. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
           semantic: true,
           key: "{color.base.link-disabled}"
         },
@@ -3762,9 +3762,9 @@ module.exports = {
         group: "brand",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#556061",
+        $value: "#566b6a",
         $description:
-          "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -3777,12 +3777,12 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.3333333333333333, 0.3764705882352941, 0.3803921568627451
+              0.33725490196078434, 0.4196078431372549, 0.41568627450980394
             ],
-            hex: "#556061"
+            hex: "#566b6a"
           },
           $description:
-            "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+            "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
           semantic: true,
           key: "{color.brand.primary-disabled}"
         },
@@ -3902,9 +3902,9 @@ module.exports = {
         group: "brand",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#66696a",
+        $value: "#767c7c",
         $description:
-          "Generated low-emphasis brand background for the light theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "Generated low-emphasis brand background for the light theme (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -3916,11 +3916,13 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [0.4, 0.4117647058823529, 0.41568627450980394],
-            hex: "#66696a"
+            components: [
+              0.4627450980392157, 0.48627450980392156, 0.48627450980392156
+            ],
+            hex: "#767c7c"
           },
           $description:
-            "Generated low-emphasis brand background for the light theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+            "Generated low-emphasis brand background for the light theme (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
           semantic: true,
           key: "{color.brand.secondary-disabled}"
         },
@@ -4034,9 +4036,9 @@ module.exports = {
         group: "brand",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#556061",
+        $value: "#566b6a",
         $description:
-          "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -4048,7 +4050,7 @@ module.exports = {
           colorSpace: "display-p3",
           $value: "{color.brand.primary-disabled}",
           $description:
-            "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+            "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
           semantic: true,
           key: "{color.brand.link-disabled}"
         },
@@ -4430,9 +4432,9 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#5c5357",
+        $value: "#635157",
         $description:
-          "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -4445,12 +4447,12 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.3607843137254902, 0.3254901960784314, 0.3411764705882353
+              0.38823529411764707, 0.3176470588235294, 0.3411764705882353
             ],
-            hex: "#5c5357"
+            hex: "#635157"
           },
           $description:
-            "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+            "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
           semantic: true,
           key: "{color.danger.primary-disabled}"
         },
@@ -4576,9 +4578,9 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#665d60",
+        $value: "#766568",
         $description:
-          "Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -4590,11 +4592,13 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [0.4, 0.36470588235294116, 0.3764705882352941],
-            hex: "#665d60"
+            components: [
+              0.4627450980392157, 0.396078431372549, 0.40784313725490196
+            ],
+            hex: "#766568"
           },
           $description:
-            "Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+            "Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
           semantic: true,
           key: "{color.danger.secondary-disabled}"
         },
@@ -4708,9 +4712,9 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#5c5357",
+        $value: "#635157",
         $description:
-          "Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -4722,7 +4726,7 @@ module.exports = {
           colorSpace: "display-p3",
           $value: "{color.danger.primary-disabled}",
           $description:
-            "Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+            "Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
           semantic: true,
           key: "{color.danger.link-disabled}"
         },
@@ -5105,9 +5109,9 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#5a5754",
+        $value: "#5f5950",
         $description:
-          "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -5120,12 +5124,12 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.35294117647058826, 0.3411764705882353, 0.32941176470588235
+              0.37254901960784315, 0.34901960784313724, 0.3137254901960784
             ],
-            hex: "#5a5754"
+            hex: "#5f5950"
           },
           $description:
-            "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+            "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
           semantic: true,
           key: "{color.warning.primary-disabled}"
         },
@@ -5251,9 +5255,9 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#63605c",
+        $value: "#6f6962",
         $description:
-          "Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -5266,12 +5270,12 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.38823529411764707, 0.3764705882352941, 0.3607843137254902
+              0.43529411764705883, 0.4117647058823529, 0.3843137254901961
             ],
-            hex: "#63605c"
+            hex: "#6f6962"
           },
           $description:
-            "Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+            "Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
           semantic: true,
           key: "{color.warning.secondary-disabled}"
         },
@@ -5385,9 +5389,9 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#5a5754",
+        $value: "#5f5950",
         $description:
-          "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -5399,7 +5403,7 @@ module.exports = {
           colorSpace: "display-p3",
           $value: "{color.warning.primary-disabled}",
           $description:
-            "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+            "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
           semantic: true,
           key: "{color.warning.link-disabled}"
         },
@@ -5768,9 +5772,9 @@ module.exports = {
         group: "info",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#535761",
+        $value: "#515a6b",
         $description:
-          "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -5783,12 +5787,12 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.3254901960784314, 0.3411764705882353, 0.3803921568627451
+              0.3176470588235294, 0.35294117647058826, 0.4196078431372549
             ],
-            hex: "#535761"
+            hex: "#515a6b"
           },
           $description:
-            "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+            "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
           semantic: true,
           key: "{color.info.primary-disabled}"
         },
@@ -5914,9 +5918,9 @@ module.exports = {
         group: "info",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#5b5f69",
+        $value: "#626a79",
         $description:
-          "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -5929,12 +5933,12 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.3568627450980392, 0.37254901960784315, 0.4117647058823529
+              0.3843137254901961, 0.41568627450980394, 0.4745098039215686
             ],
-            hex: "#5b5f69"
+            hex: "#626a79"
           },
           $description:
-            "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+            "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
           semantic: true,
           key: "{color.info.secondary-disabled}"
         },
@@ -6048,9 +6052,9 @@ module.exports = {
         group: "info",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#535761",
+        $value: "#515a6b",
         $description:
-          "Generated info hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "Generated info hyperlink text color (matches primary) (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -6062,7 +6066,7 @@ module.exports = {
           colorSpace: "display-p3",
           $value: "{color.info.primary-disabled}",
           $description:
-            "Generated info hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+            "Generated info hyperlink text color (matches primary) (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
           semantic: true,
           key: "{color.info.link-disabled}"
         },
@@ -6431,9 +6435,9 @@ module.exports = {
         group: "discovery",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#57565f",
+        $value: "#5a5665",
         $description:
-          "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -6446,12 +6450,12 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.3411764705882353, 0.33725490196078434, 0.37254901960784315
+              0.35294117647058826, 0.33725490196078434, 0.396078431372549
             ],
-            hex: "#57565f"
+            hex: "#5a5665"
           },
           $description:
-            "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+            "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
           semantic: true,
           key: "{color.discovery.primary-disabled}"
         },
@@ -6577,9 +6581,9 @@ module.exports = {
         group: "discovery",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#605e66",
+        $value: "#6a6775",
         $description:
-          "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -6591,11 +6595,13 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [0.3764705882352941, 0.3686274509803922, 0.4],
-            hex: "#605e66"
+            components: [
+              0.41568627450980394, 0.403921568627451, 0.4588235294117647
+            ],
+            hex: "#6a6775"
           },
           $description:
-            "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+            "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
           semantic: true,
           key: "{color.discovery.secondary-disabled}"
         },
@@ -6709,9 +6715,9 @@ module.exports = {
         group: "discovery",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#57565f",
+        $value: "#5a5665",
         $description:
-          "Generated discovery hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "Generated discovery hyperlink text color (matches primary) (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -6723,7 +6729,7 @@ module.exports = {
           colorSpace: "display-p3",
           $value: "{color.discovery.primary-disabled}",
           $description:
-            "Generated discovery hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+            "Generated discovery hyperlink text color (matches primary) (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
           semantic: true,
           key: "{color.discovery.link-disabled}"
         },
@@ -7106,9 +7112,9 @@ module.exports = {
         group: "success",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#535959",
+        $value: "#515d5a",
         $description:
-          "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -7121,12 +7127,12 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.3254901960784314, 0.34901960784313724, 0.34901960784313724
+              0.3176470588235294, 0.36470588235294116, 0.35294117647058826
             ],
-            hex: "#535959"
+            hex: "#515d5a"
           },
           $description:
-            "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+            "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
           semantic: true,
           key: "{color.success.primary-disabled}"
         },
@@ -7250,9 +7256,9 @@ module.exports = {
         group: "success",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#5c6261",
+        $value: "#636d6a",
         $description:
-          "Generated low-emphasis success background for the light theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "Generated low-emphasis success background for the light theme (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -7265,12 +7271,12 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.3607843137254902, 0.3843137254901961, 0.3803921568627451
+              0.38823529411764707, 0.42745098039215684, 0.41568627450980394
             ],
-            hex: "#5c6261"
+            hex: "#636d6a"
           },
           $description:
-            "Generated low-emphasis success background for the light theme (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+            "Generated low-emphasis success background for the light theme (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
           semantic: true,
           key: "{color.success.secondary-disabled}"
         },
@@ -7384,9 +7390,9 @@ module.exports = {
         group: "success",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#535959",
+        $value: "#515d5a",
         $description:
-          "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -7398,7 +7404,7 @@ module.exports = {
           colorSpace: "display-p3",
           $value: "{color.success.primary-disabled}",
           $description:
-            "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+            "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
           semantic: true,
           key: "{color.success.link-disabled}"
         },
@@ -8489,9 +8495,9 @@ module.exports = {
       key: "{color.emphasis-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#525253",
+      $value: "#4d4d50",
       $description:
-        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
       group: "foreground",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -8502,12 +8508,12 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.3215686274509804, 0.3215686274509804, 0.3254901960784314
+            0.30196078431372547, 0.30196078431372547, 0.3137254901960784
           ],
-          hex: "#525253"
+          hex: "#4d4d50"
         },
         $description:
-          "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         group: "foreground",
         key: "{color.emphasis-disabled}"
       },
@@ -8532,13 +8538,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.30196078431372547, 0.30196078431372547, 0.3137254901960784
-          ],
-          hex: "#4d4d50"
-        },
+        $value: "{color.emphasis-disabled}",
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 25% brighter)",
         group: "foreground",
@@ -8609,9 +8609,9 @@ module.exports = {
       key: "{color.ink-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#575759",
+      $value: "#59595b",
       $description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
       group: "foreground",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -8622,12 +8622,12 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.3411764705882353, 0.3411764705882353, 0.34901960784313724
+            0.34901960784313724, 0.34901960784313724, 0.3568627450980392
           ],
-          hex: "#575759"
+          hex: "#59595b"
         },
         $description:
-          "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         group: "foreground",
         key: "{color.ink-disabled}"
       },
@@ -8652,13 +8652,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.4235294117647059, 0.4235294117647059, 0.43137254901960786
-          ],
-          hex: "#6c6c6e"
-        },
+        $value: "{color.base.secondary-disabled}",
         $description:
           "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% brighter)",
         group: "foreground",
@@ -8729,9 +8723,9 @@ module.exports = {
       key: "{color.subtle-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#5e5e60",
+      $value: "#676769",
       $description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
       group: "foreground",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -8739,9 +8733,15 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.emphasis-hovered}",
+        $value: {
+          colorSpace: "srgb",
+          components: [
+            0.403921568627451, 0.403921568627451, 0.4117647058823529
+          ],
+          hex: "#676769"
+        },
         $description:
-          "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         group: "foreground",
         key: "{color.subtle-disabled}"
       },
@@ -9473,9 +9473,9 @@ module.exports = {
       key: "{color.hairline-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#646466",
+      $value: "#737374",
       $description:
-        "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+        "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
       group: "separator",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
@@ -9483,13 +9483,9 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [0.39215686274509803, 0.39215686274509803, 0.4],
-          hex: "#646466"
-        },
+        $value: "{color.canvas-disabled}",
         $description:
-          "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))",
+          "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
         group: "separator",
         key: "{color.hairline-disabled}"
       },

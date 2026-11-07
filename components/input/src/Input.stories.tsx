@@ -27,8 +27,9 @@ import { Input } from "./Input";
 
 /**
  * Story-only args consumed by the custom `render`: Field options plus the
- * Input's own `variant`. Spreading every Input prop into the Field would also
- * forward style props (such as the CSS `mask`) that clash with field options.
+ * Input's own `variant` and `description` (rendered as its `Field.Details`).
+ * Spreading every Input prop into the Field would also forward style props
+ * (such as the CSS `mask`) that clash with field options.
  */
 type InputStoryArgs = Pick<
   FieldProps,
@@ -43,6 +44,7 @@ type InputStoryArgs = Pick<
   variant?: InputProps["variant"];
   labelVariant?: FieldLabelVariant;
   defaultValue?: string;
+  description?: string;
 };
 
 const meta: Meta<InputStoryArgs> = {
@@ -50,7 +52,13 @@ const meta: Meta<InputStoryArgs> = {
   component: Input,
   tags: ["autodocs"],
   render: (
-    { defaultValue, variant, labelVariant, ...props }: InputStoryArgs,
+    {
+      defaultValue,
+      variant,
+      labelVariant,
+      description,
+      ...props
+    }: InputStoryArgs,
     { id }: { id: string }
   ) => (
     <Form name={`formName-${id}`} initialValues={{ inputName: defaultValue }}>
@@ -61,6 +69,7 @@ const meta: Meta<InputStoryArgs> = {
             <Input.TextBox.Value placeholder="email@example.com" />
           </Input.TextBox>
         </Input>
+        {description && <Field.Details>{description}</Field.Details>}
       </Field>
     </Form>
   )
@@ -324,6 +333,14 @@ export const InlinedAbove: Story = {
   args: {
     variant: "inlined",
     labelVariant: "above"
+  }
+};
+
+export const Description: Story = {
+  args: {
+    labelVariant: "above",
+    description:
+      "This is a description that is longer than the label and will wrap to multiple lines. It is used to provide more information about the field."
   }
 };
 

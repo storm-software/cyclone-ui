@@ -395,10 +395,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.hairline-disabled"}
             subtitle={
-              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
+              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "hairline-disabled": "#434346"
+              "hairline-disabled": "#444447"
             }}
           />
           <ColorItem
@@ -445,10 +445,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.emphasis-disabled"}
             subtitle={
-              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 15% over oklch(0.3839 0.0045 286.26))"
+              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "emphasis-disabled": "#5d5d60"
+              "emphasis-disabled": "#777779"
             }}
           />
           <ColorItem
@@ -490,10 +490,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.ink-disabled"}
             subtitle={
-              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
+              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "ink-disabled": "#535356"
+              "ink-disabled": "#646466"
             }}
           />
           <ColorItem
@@ -535,10 +535,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.subtle-disabled"}
             subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
+              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "subtle-disabled": "#4f4f52"
+              "subtle-disabled": "#5c5c5f"
             }}
           />
           <ColorItem
@@ -627,15 +627,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#aeaeae",
                 "primary-active": "#ffffff",
                 "primary-inactive": "#636363",
-                "primary-disabled": "#5f5f62",
+                "primary-disabled": "#7b7b7e",
                 "secondary-hovered": "#333439",
                 "secondary-active": "#3a3b41",
                 "secondary-inactive": "#1e1f24",
-                "secondary-disabled": "#404043",
+                "secondary-disabled": "#3c3d40",
                 "link-hovered": "#8bd6ff",
                 "link-active": "#a5dfff",
                 "link-inactive": "#008bbe",
-                "link-disabled": "#435560"
+                "link-disabled": "#43677a"
               }}
             />
           </ColorPalette>
@@ -659,15 +659,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#00c19e",
                 "primary-active": "#74ffdb",
                 "primary-inactive": "#00ab8c",
-                "primary-disabled": "#485b58",
+                "primary-disabled": "#4c726a",
                 "secondary-hovered": "#1d705c",
                 "secondary-active": "#31806b",
                 "secondary-inactive": "#004537",
-                "secondary-disabled": "#3d4747",
+                "secondary-disabled": "#374b48",
                 "link-hovered": "#00c19e",
                 "link-active": "#74ffdb",
                 "link-inactive": "#00ab8c",
-                "link-disabled": "#485b58"
+                "link-disabled": "#4c726a"
               }}
             />
           </ColorPalette>
@@ -691,15 +691,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#ef5b7d",
                 "primary-active": "#ff7e97",
                 "primary-inactive": "#aa1046",
-                "primary-disabled": "#57454c",
+                "primary-disabled": "#6b4751",
                 "secondary-hovered": "#791332",
                 "secondary-active": "#86233c",
                 "secondary-inactive": "#4e001a",
-                "secondary-disabled": "#483c42",
+                "secondary-disabled": "#4d353e",
                 "link-hovered": "#ef5b7d",
                 "link-active": "#ff7e97",
                 "link-inactive": "#aa1046",
-                "link-disabled": "#57454c"
+                "link-disabled": "#6b4751"
               }}
             />
           </ColorPalette>
@@ -723,15 +723,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#aa90f5",
                 "primary-active": "#c1aeff",
                 "primary-inactive": "#6d51b0",
-                "primary-disabled": "#4f4b5b",
+                "primary-disabled": "#5a546f",
                 "secondary-hovered": "#40316d",
                 "secondary-active": "#4b3c79",
                 "secondary-inactive": "#27144e",
-                "secondary-disabled": "#413f49",
+                "secondary-disabled": "#3f3b4c",
                 "link-hovered": "#aa90f5",
                 "link-active": "#c1aeff",
                 "link-inactive": "#6d51b0",
-                "link-disabled": "#4f4b5b"
+                "link-disabled": "#5a546f"
               }}
             />
           </ColorPalette>
@@ -755,15 +755,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#7aabff",
                 "primary-active": "#a6c7ff",
                 "primary-inactive": "#2564d1",
-                "primary-disabled": "#464f5f",
+                "primary-disabled": "#4a5a79",
                 "secondary-hovered": "#27519c",
                 "secondary-active": "#3560ac",
                 "secondary-inactive": "#022c73",
-                "secondary-disabled": "#3e434f",
+                "secondary-disabled": "#394458",
                 "link-hovered": "#7aabff",
                 "link-active": "#a6c7ff",
                 "link-inactive": "#2564d1",
-                "link-disabled": "#464f5f"
+                "link-disabled": "#4a5a79"
               }}
             />
           </ColorPalette>
@@ -787,15 +787,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#68e6ae",
                 "primary-active": "#74f1b9",
                 "primary-inactive": "#009666",
-                "primary-disabled": "#475652",
+                "primary-disabled": "#4b695e",
                 "secondary-hovered": "#1d714f",
                 "secondary-active": "#31815e",
                 "secondary-inactive": "#00462d",
-                "secondary-disabled": "#3d4746",
+                "secondary-disabled": "#374b45",
                 "link-hovered": "#68e6ae",
                 "link-active": "#74f1b9",
                 "link-inactive": "#009666",
-                "link-disabled": "#475652"
+                "link-disabled": "#4b695e"
               }}
             />
           </ColorPalette>
@@ -819,15 +819,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#d6a038",
                 "primary-active": "#ffe1af",
                 "primary-inactive": "#c18c1c",
-                "primary-disabled": "#5d564d",
+                "primary-disabled": "#786a54",
                 "secondary-hovered": "#b98939",
                 "secondary-active": "#d1a052",
                 "secondary-inactive": "#7a5300",
-                "secondary-disabled": "#514b43",
+                "secondary-disabled": "#5e5241",
                 "link-hovered": "#d6a038",
                 "link-active": "#ffe1af",
                 "link-inactive": "#c18c1c",
-                "link-disabled": "#5d564d"
+                "link-disabled": "#786a54"
               }}
             />
           </ColorPalette>
@@ -1223,10 +1223,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.hairline-disabled"}
             subtitle={
-              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
+              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "hairline-disabled": "#555557"
+              "hairline-disabled": "#565658"
             }}
           />
           <ColorItem
@@ -1273,10 +1273,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.emphasis-disabled"}
             subtitle={
-              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 15% over oklch(0.3839 0.0045 286.26))"
+              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "emphasis-disabled": "#676769"
+              "emphasis-disabled": "#7a7a7b"
             }}
           />
           <ColorItem
@@ -1318,10 +1318,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.ink-disabled"}
             subtitle={
-              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
+              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "ink-disabled": "#606062"
+              "ink-disabled": "#6c6c6e"
             }}
           />
           <ColorItem
@@ -1363,10 +1363,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.subtle-disabled"}
             subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
+              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "subtle-disabled": "#5e5e60"
+              "subtle-disabled": "#676769"
             }}
           />
           <ColorItem
@@ -1455,15 +1455,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#a0a0a0",
                 "primary-active": "#d9d9d9",
                 "primary-inactive": "#6c6c6c",
-                "primary-disabled": "#69696b",
+                "primary-disabled": "#7d7d7e",
                 "secondary-hovered": "#4a4b4e",
                 "secondary-active": "#4f4f54",
                 "secondary-inactive": "#3a3b40",
-                "secondary-disabled": "#535355",
+                "secondary-disabled": "#505153",
                 "link-hovered": "#85bddc",
                 "link-active": "#93c4e0",
                 "link-inactive": "#2f83a2",
-                "link-disabled": "#566269"
+                "link-disabled": "#586e79"
               }}
             />
           </ColorPalette>
@@ -1487,15 +1487,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#30a48f",
                 "primary-active": "#78d8bf",
                 "primary-inactive": "#2c9884",
-                "primary-disabled": "#596563",
+                "primary-disabled": "#5d746f",
                 "secondary-hovered": "#3b7466",
                 "secondary-active": "#4c7d70",
                 "secondary-inactive": "#1c6153",
-                "secondary-disabled": "#515858",
+                "secondary-disabled": "#4d5b59",
                 "link-hovered": "#30a48f",
                 "link-active": "#78d8bf",
                 "link-inactive": "#2c9884",
-                "link-disabled": "#596563"
+                "link-disabled": "#5d746f"
               }}
             />
           </ColorPalette>
@@ -1519,15 +1519,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#c86c81",
                 "primary-active": "#d97e90",
                 "primary-inactive": "#963859",
-                "primary-disabled": "#63575c",
+                "primary-disabled": "#705960",
                 "secondary-hovered": "#7a344a",
                 "secondary-active": "#814252",
                 "secondary-inactive": "#661d36",
-                "secondary-disabled": "#595054",
+                "secondary-disabled": "#5c4b52",
                 "link-hovered": "#c86c81",
                 "link-active": "#d97e90",
                 "link-inactive": "#963859",
-                "link-disabled": "#63575c"
+                "link-disabled": "#705960"
               }}
             />
           </ColorPalette>
@@ -1551,15 +1551,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#9c89d3",
                 "primary-active": "#a998e1",
                 "primary-inactive": "#75669a",
-                "primary-disabled": "#5e5b65",
+                "primary-disabled": "#666273",
                 "secondary-hovered": "#544a71",
                 "secondary-active": "#5c5378",
                 "secondary-inactive": "#403160",
-                "secondary-disabled": "#545259",
+                "secondary-disabled": "#52505b",
                 "link-hovered": "#9c89d3",
                 "link-active": "#a998e1",
                 "link-inactive": "#75669a",
-                "link-disabled": "#5e5b65"
+                "link-disabled": "#666273"
               }}
             />
           </ColorPalette>
@@ -1583,15 +1583,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#7c9ed9",
                 "primary-active": "#93b0e0",
                 "primary-inactive": "#4d70ac",
-                "primary-disabled": "#585e68",
+                "primary-disabled": "#5c6679",
                 "secondary-hovered": "#47618e",
                 "secondary-active": "#536c97",
                 "secondary-inactive": "#254479",
-                "secondary-disabled": "#52555d",
+                "secondary-disabled": "#4f5663",
                 "link-hovered": "#7c9ed9",
                 "link-active": "#93b0e0",
                 "link-inactive": "#4d70ac",
-                "link-disabled": "#585e68"
+                "link-disabled": "#5c6679"
               }}
             />
           </ColorPalette>
@@ -1615,15 +1615,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#74c2a0",
                 "primary-active": "#7acca7",
                 "primary-inactive": "#298d6d",
-                "primary-disabled": "#58625f",
+                "primary-disabled": "#5c6f68",
                 "secondary-hovered": "#3b755d",
                 "secondary-active": "#4c7d68",
                 "secondary-inactive": "#1c6149",
-                "secondary-disabled": "#515857",
+                "secondary-disabled": "#4d5b57",
                 "link-hovered": "#74c2a0",
                 "link-active": "#7acca7",
                 "link-inactive": "#298d6d",
-                "link-disabled": "#58625f"
+                "link-disabled": "#5c6f68"
               }}
             />
           </ColorPalette>
@@ -1647,15 +1647,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#b19358",
                 "primary-active": "#e1c698",
                 "primary-inactive": "#a38544",
-                "primary-disabled": "#67625d",
+                "primary-disabled": "#787063",
                 "secondary-hovered": "#9f8457",
                 "secondary-active": "#b19467",
                 "secondary-inactive": "#7d6124",
-                "secondary-disabled": "#5f5b55",
+                "secondary-disabled": "#676054",
                 "link-hovered": "#b19358",
                 "link-active": "#e1c698",
                 "link-inactive": "#a38544",
-                "link-disabled": "#67625d"
+                "link-disabled": "#787063"
               }}
             />
           </ColorPalette>
@@ -2051,10 +2051,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.hairline-disabled"}
             subtitle={
-              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
+              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "hairline-disabled": "#27272d"
+              "hairline-disabled": "#28282f"
             }}
           />
           <ColorItem
@@ -2101,10 +2101,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.emphasis-disabled"}
             subtitle={
-              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 15% over oklch(0.3839 0.0045 286.26))"
+              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "emphasis-disabled": "#4a4a55"
+              "emphasis-disabled": "#6d6d7c"
             }}
           />
           <ColorItem
@@ -2146,10 +2146,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.ink-disabled"}
             subtitle={
-              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
+              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "ink-disabled": "#3c3c46"
+              "ink-disabled": "#53535f"
             }}
           />
           <ColorItem
@@ -2191,10 +2191,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.subtle-disabled"}
             subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
+              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "subtle-disabled": "#373740"
+              "subtle-disabled": "#494954"
             }}
           />
           <ColorItem
@@ -2283,15 +2283,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#c3c3c3",
                 "primary-active": "#ffffff",
                 "primary-inactive": "#565656",
-                "primary-disabled": "#4d4d58",
+                "primary-disabled": "#737383",
                 "secondary-hovered": "#121318",
                 "secondary-active": "#1c1d24",
                 "secondary-inactive": "#000000",
-                "secondary-disabled": "#232329",
+                "secondary-disabled": "#1d1f24",
                 "link-hovered": "#caecff",
                 "link-active": "#eff9ff",
                 "link-inactive": "#0076a1",
-                "link-disabled": "#2b414e"
+                "link-disabled": "#2c5b73"
               }}
             />
           </ColorPalette>
@@ -2315,15 +2315,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#00a587",
                 "primary-active": "#a8ffe9",
                 "primary-inactive": "#00856d",
-                "primary-disabled": "#304945",
+                "primary-disabled": "#376a5f",
                 "secondary-hovered": "#075340",
                 "secondary-active": "#19755d",
                 "secondary-inactive": "#000000",
-                "secondary-disabled": "#202c2c",
+                "secondary-disabled": "#1b2e2c",
                 "link-hovered": "#00a587",
                 "link-active": "#a8ffe9",
                 "link-inactive": "#00856d",
-                "link-disabled": "#304945"
+                "link-disabled": "#376a5f"
               }}
             />
           </ColorPalette>
@@ -2347,15 +2347,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#ff6d8e",
                 "primary-active": "#ffb7c5",
                 "primary-inactive": "#9b0036",
-                "primary-disabled": "#432c35",
+                "primary-disabled": "#5f313d",
                 "secondary-hovered": "#58001b",
                 "secondary-active": "#780a26",
                 "secondary-inactive": "#000000",
-                "secondary-disabled": "#2d2026",
+                "secondary-disabled": "#301a22",
                 "link-hovered": "#ff6d8e",
                 "link-active": "#ffb7c5",
                 "link-inactive": "#9b0036",
-                "link-disabled": "#432c35"
+                "link-disabled": "#5f313d"
               }}
             />
           </ColorPalette>
@@ -2379,15 +2379,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#d2c2ff",
                 "primary-active": "#fdfcff",
                 "primary-inactive": "#643bc7",
-                "primary-disabled": "#39344a",
+                "primary-disabled": "#494068",
                 "secondary-hovered": "#291959",
                 "secondary-active": "#37256f",
                 "secondary-inactive": "#0a0219",
-                "secondary-disabled": "#26232f",
+                "secondary-disabled": "#242031",
                 "link-hovered": "#d2c2ff",
                 "link-active": "#fdfcff",
                 "link-inactive": "#643bc7",
-                "link-disabled": "#39344a"
+                "link-disabled": "#494068"
               }}
             />
           </ColorPalette>
@@ -2411,15 +2411,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#b1ceff",
                 "primary-active": "#f1f6ff",
                 "primary-inactive": "#0159f1",
-                "primary-disabled": "#2e3a4e",
+                "primary-disabled": "#344a74",
                 "secondary-hovered": "#0c409c",
                 "secondary-active": "#1953bb",
                 "secondary-inactive": "#001437",
-                "secondary-disabled": "#232936",
+                "secondary-disabled": "#202b40",
                 "link-hovered": "#b1ceff",
                 "link-active": "#f1f6ff",
                 "link-inactive": "#0159f1",
-                "link-disabled": "#2e3a4e"
+                "link-disabled": "#344a74"
               }}
             />
           </ColorPalette>
@@ -2443,15 +2443,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#73ffc1",
                 "primary-active": "#94ffcf",
                 "primary-inactive": "#006746",
-                "primary-disabled": "#2e433d",
+                "primary-disabled": "#355d4e",
                 "secondary-hovered": "#075435",
                 "secondary-active": "#19774e",
                 "secondary-inactive": "#000000",
-                "secondary-disabled": "#202c2b",
+                "secondary-disabled": "#1b2e29",
                 "link-hovered": "#73ffc1",
                 "link-active": "#94ffcf",
                 "link-inactive": "#006746",
-                "link-disabled": "#2e433d"
+                "link-disabled": "#355d4e"
               }}
             />
           </ColorPalette>
@@ -2475,15 +2475,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#f8ad1d",
                 "primary-active": "#fffffe",
                 "primary-inactive": "#ce8c00",
-                "primary-disabled": "#4e4336",
+                "primary-disabled": "#756040",
                 "secondary-hovered": "#d08d1c",
                 "secondary-active": "#eead45",
                 "secondary-inactive": "#3e2a00",
-                "secondary-disabled": "#3b3329",
+                "secondary-disabled": "#4b3d29",
                 "link-hovered": "#f8ad1d",
                 "link-active": "#fffffe",
                 "link-inactive": "#ce8c00",
-                "link-disabled": "#4e4336"
+                "link-disabled": "#756040"
               }}
             />
           </ColorPalette>
@@ -2879,10 +2879,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.emphasis-disabled"}
             subtitle={
-              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
+              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "emphasis-disabled": "#3e3e40"
+              "emphasis-disabled": "#38383b"
             }}
           />
           <ColorItem
@@ -2924,10 +2924,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.ink-disabled"}
             subtitle={
-              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
+              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "ink-disabled": "#464649"
+              "ink-disabled": "#48494c"
             }}
           />
           <ColorItem
@@ -2969,10 +2969,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.subtle-disabled"}
             subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
+              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "subtle-disabled": "#4f4f52"
+              "subtle-disabled": "#5c5c5f"
             }}
           />
           <ColorItem
@@ -3019,10 +3019,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.hairline-disabled"}
             subtitle={
-              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
+              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "hairline-disabled": "#58585b"
+              "hairline-disabled": "#6d6d70"
             }}
           />
           <ColorItem
@@ -3111,15 +3111,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#4d4d4f",
                 "primary-active": "#000000",
                 "primary-inactive": "#79797b",
-                "primary-disabled": "#3d3d40",
+                "primary-disabled": "#37373a",
                 "secondary-hovered": "#9d9d9e",
                 "secondary-active": "#878788",
                 "secondary-inactive": "#e1e1e2",
-                "secondary-disabled": "#535356",
+                "secondary-disabled": "#646466",
                 "link-hovered": "#006eaf",
                 "link-active": "#00588e",
                 "link-inactive": "#40aaf9",
-                "link-disabled": "#404d59"
+                "link-disabled": "#3d576c"
               }}
             />
           </ColorPalette>
@@ -3143,15 +3143,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#00958b",
                 "primary-active": "#007970",
                 "primary-inactive": "#5ddfd2",
-                "primary-disabled": "#435354",
+                "primary-disabled": "#436362",
                 "secondary-hovered": "#afd7d1",
                 "secondary-active": "#89b0ab",
                 "secondary-inactive": "#ffffff",
-                "secondary-disabled": "#5a5f61",
+                "secondary-disabled": "#717b7b",
                 "link-hovered": "#00958b",
                 "link-active": "#007970",
                 "link-inactive": "#5ddfd2",
-                "link-disabled": "#435354"
+                "link-disabled": "#436362"
               }}
             />
           </ColorPalette>
@@ -3175,15 +3175,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#7c0c30",
                 "primary-active": "#660024",
                 "primary-inactive": "#ab3e56",
-                "primary-disabled": "#4d4045",
+                "primary-disabled": "#573d45",
                 "secondary-hovered": "#d16176",
                 "secondary-active": "#b2455c",
                 "secondary-inactive": "#ffc2c9",
-                "secondary-disabled": "#5c4d52",
+                "secondary-disabled": "#74575d",
                 "link-hovered": "#7c0c30",
                 "link-active": "#660024",
                 "link-inactive": "#ab3e56",
-                "link-disabled": "#4d4045"
+                "link-disabled": "#573d45"
               }}
             />
           </ColorPalette>
@@ -3207,15 +3207,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#4a3383",
                 "primary-active": "#3c2372",
                 "primary-inactive": "#725db2",
-                "primary-disabled": "#464451",
+                "primary-disabled": "#49445b",
                 "secondary-hovered": "#8b75c4",
                 "secondary-active": "#725ba7",
                 "secondary-inactive": "#d0c1ff",
-                "secondary-disabled": "#524f5c",
+                "secondary-disabled": "#605b72",
                 "link-hovered": "#4a3383",
                 "link-active": "#3c2372",
                 "link-inactive": "#725db2",
-                "link-disabled": "#464451"
+                "link-disabled": "#49445b"
               }}
             />
           </ColorPalette>
@@ -3239,15 +3239,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#0d43a0",
                 "primary-active": "#003388",
                 "primary-inactive": "#3b72d3",
-                "primary-disabled": "#3f4654",
+                "primary-disabled": "#3c4963",
                 "secondary-hovered": "#5386e0",
                 "secondary-active": "#396ac2",
                 "secondary-inactive": "#b8d2ff",
-                "secondary-disabled": "#4b5160",
+                "secondary-disabled": "#52607a",
                 "link-hovered": "#0d43a0",
                 "link-active": "#003388",
                 "link-inactive": "#3b72d3",
-                "link-disabled": "#3f4654"
+                "link-disabled": "#3c4963"
               }}
             />
           </ColorPalette>
@@ -3271,15 +3271,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#065a43",
                 "primary-active": "#004835",
                 "primary-inactive": "#40876e",
-                "primary-disabled": "#404948",
+                "primary-disabled": "#3d4e4a",
                 "secondary-hovered": "#589d83",
                 "secondary-active": "#3b8168",
                 "secondary-inactive": "#a3eacd",
-                "secondary-disabled": "#4c5554",
+                "secondary-disabled": "#556661",
                 "link-hovered": "#065a43",
                 "link-active": "#004835",
                 "link-inactive": "#40876e",
-                "link-disabled": "#404948"
+                "link-disabled": "#3d4e4a"
               }}
             />
           </ColorPalette>
@@ -3303,15 +3303,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#644400",
                 "primary-active": "#503500",
                 "primary-inactive": "#926f36",
-                "primary-disabled": "#4a4641",
+                "primary-disabled": "#51483c",
                 "secondary-hovered": "#ac884f",
                 "secondary-active": "#906c33",
                 "secondary-inactive": "#fbd399",
-                "secondary-disabled": "#57524d",
+                "secondary-disabled": "#6a6054",
                 "link-hovered": "#644400",
                 "link-active": "#503500",
                 "link-inactive": "#926f36",
-                "link-disabled": "#4a4641"
+                "link-disabled": "#51483c"
               }}
             />
           </ColorPalette>
@@ -3707,10 +3707,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.emphasis-disabled"}
             subtitle={
-              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
+              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "emphasis-disabled": "#525253"
+              "emphasis-disabled": "#4d4d50"
             }}
           />
           <ColorItem
@@ -3752,10 +3752,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.ink-disabled"}
             subtitle={
-              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
+              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "ink-disabled": "#575759"
+              "ink-disabled": "#59595b"
             }}
           />
           <ColorItem
@@ -3797,10 +3797,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.subtle-disabled"}
             subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
+              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "subtle-disabled": "#5e5e60"
+              "subtle-disabled": "#676769"
             }}
           />
           <ColorItem
@@ -3847,10 +3847,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.hairline-disabled"}
             subtitle={
-              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
+              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "hairline-disabled": "#646466"
+              "hairline-disabled": "#737374"
             }}
           />
           <ColorItem
@@ -3939,15 +3939,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#5c5c5e",
                 "primary-active": "#262626",
                 "primary-inactive": "#7b7b7c",
-                "primary-disabled": "#515153",
+                "primary-disabled": "#4d4d4f",
                 "secondary-hovered": "#949495",
                 "secondary-active": "#858585",
                 "secondary-inactive": "#c4c4c5",
-                "secondary-disabled": "#606062",
+                "secondary-disabled": "#6c6c6e",
                 "link-hovered": "#2d729a",
                 "link-active": "#286488",
                 "link-inactive": "#5c9ccb",
-                "link-disabled": "#545c64"
+                "link-disabled": "#536370"
               }}
             />
           </ColorPalette>
@@ -3971,15 +3971,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#298c85",
                 "primary-active": "#247d76",
                 "primary-inactive": "#6ebcb4",
-                "primary-disabled": "#556061",
+                "primary-disabled": "#566b6a",
                 "secondary-hovered": "#a0bdb9",
                 "secondary-active": "#889f9c",
                 "secondary-inactive": "#d9d9d9",
-                "secondary-disabled": "#66696a",
+                "secondary-disabled": "#767c7c",
                 "link-hovered": "#298c85",
                 "link-active": "#247d76",
                 "link-inactive": "#6ebcb4",
-                "link-disabled": "#556061"
+                "link-disabled": "#566b6a"
               }}
             />
           </ColorPalette>
@@ -4003,15 +4003,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#7d2f48",
                 "primary-active": "#73213e",
                 "primary-inactive": "#975967",
-                "primary-disabled": "#5c5357",
+                "primary-disabled": "#635157",
                 "secondary-hovered": "#b2707d",
                 "secondary-active": "#9b5e6b",
                 "secondary-inactive": "#e4a3aa",
-                "secondary-disabled": "#665d60",
+                "secondary-disabled": "#766568",
                 "link-hovered": "#7d2f48",
                 "link-active": "#73213e",
                 "link-inactive": "#975967",
-                "link-disabled": "#5c5357"
+                "link-disabled": "#635157"
               }}
             />
           </ColorPalette>
@@ -4035,15 +4035,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#5b4d7f",
                 "primary-active": "#514075",
                 "primary-inactive": "#796d9d",
-                "primary-disabled": "#57565f",
+                "primary-disabled": "#5a5665",
                 "secondary-hovered": "#897cab",
                 "secondary-active": "#786c96",
                 "secondary-inactive": "#b2a2e4",
-                "secondary-disabled": "#605e66",
+                "secondary-disabled": "#6a6775",
                 "link-hovered": "#5b4d7f",
                 "link-active": "#514075",
                 "link-inactive": "#796d9d",
-                "link-disabled": "#57565f"
+                "link-disabled": "#5a5665"
               }}
             />
           </ColorPalette>
@@ -4067,15 +4067,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#355791",
                 "primary-active": "#274a85",
                 "primary-inactive": "#5a79af",
-                "primary-disabled": "#535761",
+                "primary-disabled": "#515a6b",
                 "secondary-hovered": "#6886bb",
                 "secondary-active": "#5873a4",
                 "secondary-inactive": "#9db7e3",
-                "secondary-disabled": "#5b5f69",
+                "secondary-disabled": "#626a79",
                 "link-hovered": "#355791",
                 "link-active": "#274a85",
                 "link-inactive": "#5a79af",
-                "link-disabled": "#535761"
+                "link-disabled": "#515a6b"
               }}
             />
           </ColorPalette>
@@ -4099,15 +4099,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#256a57",
                 "primary-active": "#1d6250",
                 "primary-inactive": "#578172",
-                "primary-disabled": "#535959",
+                "primary-disabled": "#515d5a",
                 "secondary-hovered": "#698f81",
                 "secondary-active": "#537d6e",
                 "secondary-inactive": "#96ccb6",
-                "secondary-disabled": "#5c6261",
+                "secondary-disabled": "#636d6a",
                 "link-hovered": "#256a57",
                 "link-active": "#1d6250",
                 "link-inactive": "#578172",
-                "link-disabled": "#535959"
+                "link-disabled": "#515d5a"
               }}
             />
           </ColorPalette>
@@ -4131,15 +4131,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#725821",
                 "primary-active": "#674e1e",
                 "primary-inactive": "#887351",
-                "primary-disabled": "#5a5754",
+                "primary-disabled": "#5f5950",
                 "secondary-hovered": "#988464",
                 "secondary-active": "#86714f",
                 "secondary-inactive": "#dabb8d",
-                "secondary-disabled": "#63605c",
+                "secondary-disabled": "#6f6962",
                 "link-hovered": "#725821",
                 "link-active": "#674e1e",
                 "link-inactive": "#887351",
-                "link-disabled": "#5a5754"
+                "link-disabled": "#5f5950"
               }}
             />
           </ColorPalette>
@@ -4535,10 +4535,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.emphasis-disabled"}
             subtitle={
-              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
+              "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "emphasis-disabled": "#202024"
+              "emphasis-disabled": "#18181c"
             }}
           />
           <ColorItem
@@ -4580,10 +4580,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.ink-disabled"}
             subtitle={
-              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
+              "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "ink-disabled": "#2b2b32"
+              "ink-disabled": "#2e3036"
             }}
           />
           <ColorItem
@@ -4625,10 +4625,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.subtle-disabled"}
             subtitle={
-              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
+              "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "subtle-disabled": "#373740"
+              "subtle-disabled": "#494954"
             }}
           />
           <ColorItem
@@ -4675,10 +4675,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.hairline-disabled"}
             subtitle={
-              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 15% over oklch(0.3839 0.0045 286.26))"
+              "Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "hairline-disabled": "#43434e"
+              "hairline-disabled": "#60606e"
             }}
           />
           <ColorItem
@@ -4767,15 +4767,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#34343b",
                 "primary-active": "#000000",
                 "primary-inactive": "#70707f",
-                "primary-disabled": "#1f1f24",
+                "primary-disabled": "#16161b",
                 "secondary-hovered": "#a6a6b0",
                 "secondary-active": "#858592",
                 "secondary-inactive": "#ffffff",
-                "secondary-disabled": "#3c3c46",
+                "secondary-disabled": "#53535f",
                 "link-hovered": "#00578b",
                 "link-active": "#00385b",
                 "link-inactive": "#54b6ff",
-                "link-disabled": "#273644"
+                "link-disabled": "#25445d"
               }}
             />
           </ColorPalette>
@@ -4799,15 +4799,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#00655f",
                 "primary-active": "#003d38",
                 "primary-inactive": "#5cfbeb",
-                "primary-disabled": "#2a3d3f",
+                "primary-disabled": "#2b5351",
                 "secondary-hovered": "#d3f0ec",
                 "secondary-active": "#8ec5be",
                 "secondary-inactive": "#ffffff",
-                "secondary-disabled": "#465256",
+                "secondary-disabled": "#667e7e",
                 "link-hovered": "#00655f",
                 "link-active": "#003d38",
                 "link-inactive": "#5cfbeb",
-                "link-disabled": "#2a3d3f"
+                "link-disabled": "#2b5351"
               }}
             />
           </ColorPalette>
@@ -4831,15 +4831,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#52001b",
                 "primary-active": "#21000c",
                 "primary-inactive": "#bc2445",
-                "primary-disabled": "#35252b",
+                "primary-disabled": "#40242c",
                 "secondary-hovered": "#ec5d78",
                 "secondary-active": "#c82b4c",
                 "secondary-inactive": "#ffffff",
-                "secondary-disabled": "#4c363d",
+                "secondary-disabled": "#70444d",
                 "link-hovered": "#52001b",
                 "link-active": "#21000c",
                 "link-inactive": "#bc2445",
-                "link-disabled": "#35252b"
+                "link-disabled": "#40242c"
               }}
             />
           </ColorPalette>
@@ -4863,15 +4863,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#361b7b",
                 "primary-active": "#240c59",
                 "primary-inactive": "#6c4ec9",
-                "primary-disabled": "#2d2a3b",
+                "primary-disabled": "#322c48",
                 "secondary-hovered": "#9377dc",
                 "secondary-active": "#6b48bb",
                 "secondary-inactive": "#ffffff",
-                "secondary-disabled": "#3d384d",
+                "secondary-disabled": "#51496e",
                 "link-hovered": "#361b7b",
                 "link-active": "#240c59",
                 "link-inactive": "#6c4ec9",
-                "link-disabled": "#2d2a3b"
+                "link-disabled": "#322c48"
               }}
             />
           </ColorPalette>
@@ -4895,15 +4895,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#003288",
                 "primary-active": "#001f52",
                 "primary-inactive": "#216df4",
-                "primary-disabled": "#252d3d",
+                "primary-disabled": "#243350",
                 "secondary-hovered": "#4d8dfe",
                 "secondary-active": "#1b61df",
                 "secondary-inactive": "#ffffff",
-                "secondary-disabled": "#343c51",
+                "secondary-disabled": "#3e5277",
                 "link-hovered": "#003288",
                 "link-active": "#001f52",
                 "link-inactive": "#216df4",
-                "link-disabled": "#252d3d"
+                "link-disabled": "#243350"
               }}
             />
           </ColorPalette>
@@ -4927,15 +4927,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#001812",
                 "primary-active": "#000000",
                 "primary-inactive": "#298565",
-                "primary-disabled": "#24302e",
+                "primary-disabled": "#223530",
                 "secondary-hovered": "#45ac85",
                 "secondary-active": "#237b5b",
                 "secondary-inactive": "#d0fdea",
-                "secondary-disabled": "#344341",
+                "secondary-disabled": "#415c54",
                 "link-hovered": "#001812",
                 "link-active": "#000000",
                 "link-inactive": "#298565",
-                "link-disabled": "#24302e"
+                "link-disabled": "#223530"
               }}
             />
           </ColorPalette>
@@ -4959,15 +4959,15 @@ const COLOR_VARIANTS = {
                 "primary-hovered": "#1e1500",
                 "primary-active": "#010100",
                 "primary-inactive": "#92661d",
-                "primary-disabled": "#312c25",
+                "primary-disabled": "#382e22",
                 "secondary-hovered": "#c18c38",
                 "secondary-active": "#8e611a",
                 "secondary-inactive": "#ffefd8",
-                "secondary-disabled": "#463e35",
+                "secondary-disabled": "#615240",
                 "link-hovered": "#1e1500",
                 "link-active": "#010100",
                 "link-inactive": "#92661d",
-                "link-disabled": "#312c25"
+                "link-disabled": "#382e22"
               }}
             />
           </ColorPalette>
