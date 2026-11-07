@@ -292,59 +292,62 @@ export const InputValue = createStyledHOC(
           </style>
         )}
 
+        {/* Rendered directly, not through `asChild`: Tamagui v3 drops a
+            component's own config styles (all of `baseInputStyle`) when
+            `asChild` is set, leaving the browser's native field look. */}
         <BaseInputValueImpl
-          asChild
           {...finalProps}
+          render={render === "textarea" ? "textarea" : "input"}
+          className={
+            [
+              rest.className,
+              render === "textarea" ? undefined : "cyclone-input-value"
+            ]
+              .filter(Boolean)
+              .join(" ") || undefined
+          }
+          ref={composedRefs}
+          name={name}
           disabled={disabled}
-          id={name}>
-          {render === "textarea" ? (
-            <textarea
-              ref={composedRefs as any}
-              name={name}
-              style={{
-                color: "var(--color)",
-                flex: 1,
-                minWidth: 0,
-                margin: 0,
-                paddingInlineStart: flushStart ? 0 : paddingInline,
-                paddingInlineEnd: paddingInline
-              }}
-              onChange={handleInput}
-              onBlur={(inputOnBlur ?? contextOnBlur) as any}
-              onFocus={(inputOnFocus ?? contextOnFocus) as any}
-            />
-          ) : (
-            <input
-              className="cyclone-input-value"
-              ref={composedRefs as any}
-              name={name}
-              style={{
-                height: "100%",
-                flex: 1,
-                minWidth: 0,
-                margin: 0,
-                // No `padding` shorthand: merged style order varies by size,
-                // and a later shorthand would reset `paddingInline` to 0.
-                paddingBottom: 0,
-                // Drop the text under a floating label by the extra height an
-                // inset label adds over a border one (see `getFieldLabelInset`).
-                paddingTop: labelPlacement
-                  ? 7 * getFormSizeScale(inProps.size ?? contextSize) +
-                    getFieldLabelInset(
-                      labelPlacement,
-                      inProps.size ?? contextSize
-                    ) -
-                    getFieldLabelInset("border")
-                  : 0,
-                paddingInlineStart: flushStart ? 0 : paddingInline,
-                paddingInlineEnd: paddingInline
-              }}
-              onChange={handleInput}
-              onBlur={(inputOnBlur ?? contextOnBlur) as any}
-              onFocus={(inputOnFocus ?? contextOnFocus) as any}
-            />
-          )}
-        </BaseInputValueImpl>
+          id={name}
+          style={{
+            ...finalProps.style,
+            ...(render === "textarea"
+              ? {
+                  color: "var(--color)",
+                  flex: 1,
+                  minWidth: 0,
+                  margin: 0,
+                  paddingInlineStart: flushStart ? 0 : paddingInline,
+                  paddingInlineEnd: paddingInline
+                }
+              : {
+                  height: "100%",
+                  flex: 1,
+                  minWidth: 0,
+                  margin: 0,
+                  // No `padding` shorthand: merged style order varies by
+                  // size, and a later shorthand would reset `paddingInline`.
+                  paddingBottom: 0,
+                  // Drop the text under a floating label by the extra height
+                  // an inset label adds over a border one (see
+                  // `getFieldLabelInset`).
+                  paddingTop: labelPlacement
+                    ? 7 * getFormSizeScale(inProps.size ?? contextSize) +
+                      getFieldLabelInset(
+                        labelPlacement,
+                        inProps.size ?? contextSize
+                      ) -
+                      getFieldLabelInset("border")
+                    : 0,
+                  paddingInlineStart: flushStart ? 0 : paddingInline,
+                  paddingInlineEnd: paddingInline
+                })
+          }}
+          onChange={handleInput}
+          onBlur={inputOnBlur ?? contextOnBlur}
+          onFocus={inputOnFocus ?? contextOnFocus}
+        />
       </>
     );
   },

@@ -1076,7 +1076,7 @@ function createMutedColor(
 }
 
 /** Low-saturation colors only count as white / black past ≈ #dddddd / #262626. */
-const LOW_SATURATION_WHITE_LIGHTNESS = hexToOklch("#fefefe").lightness;
+const LOW_SATURATION_WHITE_LIGHTNESS = hexToOklch("#dddddd").lightness;
 const LOW_SATURATION_BLACK_LIGHTNESS = hexToOklch("#262626").lightness;
 
 function isWhiteColor(hex: string): boolean {

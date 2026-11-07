@@ -236,6 +236,21 @@ export const CustomMarkers: Story = {
   render: renderStepper({ descriptions: true, markers: true })
 };
 
+export const Themed: Story = {
+  args: {
+    themed: true,
+    orientation: "horizontal"
+  },
+  render: renderStepper({ descriptions: true }),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const next = canvas.getByRole("button", { name: /next/i });
+
+    await userEvent.click(next);
+    await userEvent.click(next);
+  }
+};
+
 export const Navigation: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);

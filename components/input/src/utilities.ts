@@ -91,6 +91,12 @@ export const baseInputStyle: BaseInputStyle = [
     margin: 0,
     padding: 0,
     paddingHorizontal: "xl",
+    // Clear the browser's native field chrome, which a `color-scheme: dark`
+    // page paints gray. The frame draws the background, border and focus ring;
+    // don't rely on a global reset such as `@tamagui/core/reset.css`.
+    backgroundColor: "transparent",
+    borderWidth: 0,
+    outlineStyle: "none",
 
     tabIndex: 0,
 

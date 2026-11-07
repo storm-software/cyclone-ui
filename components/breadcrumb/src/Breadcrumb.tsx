@@ -196,9 +196,9 @@ const BreadcrumbSeparator = () => {
   const { separator, size } = BreadcrumbContext.useStyledContext();
 
   if (separator === "chevron") {
-    return <ChevronRight color="border" size="2xl" />;
+    return <ChevronRight color="border" size="2xl" variant="bold" />;
   } else if (separator === "double") {
-    return <ChevronDoubleRight color="border" size="2xl" />;
+    return <ChevronDoubleRight color="border" size="2xl" variant="bold" />;
   } else if (separator === "slash") {
     return (
       <SizableText

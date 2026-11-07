@@ -391,7 +391,7 @@ const themes = {
     emphasis: tokens.color.neutral2,
     "emphasis-active": tokens.color.white,
     "emphasis-disabled": "oklch(0.47938 0.004751 286.219)",
-    "emphasis-hovered": "oklch(0.979129 0 0)",
+    "emphasis-hovered": "oklch(0.718705 0 0)",
     "emphasis-inactive": "oklch(0.499696 0 0)",
     floating: tokens.color.neutral13,
     "floating-active": "oklch(0.344726 0.005372 271.259)",

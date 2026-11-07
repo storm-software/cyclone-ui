@@ -37,7 +37,9 @@ import {
   createStyledHOC,
   getVariableValue,
   styled,
+  Theme,
   useTheme,
+  useThemeName,
   View,
   withStaticProperties
 } from "@tamagui/core";
@@ -181,6 +183,7 @@ const defaultContextValues = {
   orientation: "vertical" as StepperOrientation,
   showDescription: "always" as "always" | "active",
   details: "all" as StepperDetails,
+  themed: false,
   theme: "base"
 } as const;
 
@@ -194,6 +197,7 @@ export const InternalStateContext = createStyledContext<{
   orientation: StepperOrientation;
   showDescription: "always" | "active";
   details: StepperDetails;
+  themed: boolean;
   theme: string;
 }>(defaultContextValues);
 
@@ -220,6 +224,7 @@ export const StepperFrame = createStyledHOC(
       orientation = "vertical",
       showDescription = "always",
       details = "all",
+      themed = false,
       onValueChange,
       ...rest
     }: Omit<TamaguiTabsProps, "orientation"> & {
@@ -231,6 +236,8 @@ export const StepperFrame = createStyledHOC(
       showDescription?: "always" | "active";
       /** Show every step's title and description, or only the current step's. */
       details?: StepperDetails;
+      /** Draw completed steps' markers and lines with the `success` theme. */
+      themed?: boolean;
     },
     forwardedRef
   ) => {
@@ -290,6 +297,7 @@ export const StepperFrame = createStyledHOC(
         orientation={orientation}
         showDescription={showDescription}
         details={details}
+        themed={themed}
         theme="base">
         <TamaguiTabs
           ref={forwardedRef}
@@ -350,14 +358,19 @@ export const StepperHeaderList = createStyledHOC(
         {details === "current" && (
           <XStack gap="2xl" alignItems="baseline">
             {numbered && (
-              <XStack>
-                <NumberText fontSize="xs" fontWeight="medium" lineHeight="sm">
+              // One inline run, so the animated numerator shares the
+              // denominator's baseline. A flex row top-aligns them, and
+              // NumberFlow's mask padding then drops the numerator.
+              <StepperText fontSize="xs" fontWeight="medium" lineHeight="sm">
+                <NumberText
+                  display="inline"
+                  fontSize="xs"
+                  fontWeight="medium"
+                  lineHeight="sm">
                   {current + 1}
                 </NumberText>
-                <StepperText fontSize="xs" fontWeight="medium" lineHeight="sm">
-                  {` / ${items.length}`}
-                </StepperText>
-              </XStack>
+                {` / ${items.length}`}
+              </StepperText>
             )}
             {/* Every step's details share one grid cell, so it keeps the size
             of the largest. The current step's fade in while the others
@@ -609,8 +622,10 @@ export const StepperHeaderItem = createStyledHOC(
       setState,
       showDescription,
       size,
-      state
+      state,
+      themed
     } = InternalStateContext.useStyledContext();
+    const themeName = useThemeName();
     const { currentStep, previousStep, steps, visitedSteps } = state;
     const [pointerOver, setPointerOver] = useState(false);
 
@@ -631,6 +646,9 @@ export const StepperHeaderItem = createStyledHOC(
       hovered ? "-hovered" : ""
     }`;
     const StatusIcon = STATUS_ICONS[status];
+    // Always a named theme: switching from none to a name remounts the
+    // children, which would cut the fill transitions short.
+    const vectorTheme = themed && status === "complete" ? "success" : themeName;
 
     // Segment `2i - 1` is step i's line and `2i` its ring. Moving from one
     // step to another fills (or empties) the segments between them in order.
@@ -654,13 +672,15 @@ export const StepperHeaderItem = createStyledHOC(
         flex={orientation === "vertical" || itemIndex === 0 ? undefined : 1}
         gap="3xl">
         {itemIndex > 0 && (
-          <StepperLine
-            filled={filled}
-            delay={delayOf(index * 2 - 1)}
-            duration={duration}
-            reverse={to < from}
-            lineStyle={lineStyle}
-          />
+          <Theme name={vectorTheme}>
+            <StepperLine
+              filled={filled}
+              delay={delayOf(index * 2 - 1)}
+              duration={duration}
+              reverse={to < from}
+              lineStyle={lineStyle}
+            />
+          </Theme>
         )}
 
         <TamaguiTabs.Tab
@@ -695,13 +715,15 @@ export const StepperHeaderItem = createStyledHOC(
               delay: delayOf(index * 2),
               duration
             }}>
-            {marker ? (
-              marker({ index: itemIndex, status, hovered, color })
-            ) : (
-              <StepperMarker>
-                <StatusIcon color={color} size={STEPPER_SIZES[size].icon} />
-              </StepperMarker>
-            )}
+            <Theme name={vectorTheme}>
+              {marker ? (
+                marker({ index: itemIndex, status, hovered, color })
+              ) : (
+                <StepperMarker>
+                  <StatusIcon color={color} size={STEPPER_SIZES[size].icon} />
+                </StepperMarker>
+              )}
+            </Theme>
           </StepperStepContext.Provider>
 
           {details === "all" && (

@@ -1187,7 +1187,7 @@ const ButtonRipple = ({ ref }: { ref: Ref<RippleAnimationHandle> }) => {
 };
 
 /** How long the pointer rests on a button before its `tooltip` shows. */
-const TOOLTIP_DELAY = { open: 1000 };
+const TOOLTIP_DELAY = { open: 2000 };
 
 export type ButtonProps = ButtonExtraProps &
   Omit<GetProps<typeof ButtonFrame>, "frameSize" | "size">;

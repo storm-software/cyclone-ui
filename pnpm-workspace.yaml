@@ -25,10 +25,10 @@ catalog:
   "@shell-shock/nx": ^0.0.109
   "@shell-shock/preset-cli": ^0.9.48
   "@storm-software/eslint-plugin-pnpm": ^0.0.120
-  "@storybook/addon-docs": ^10.6.5
-  "@storybook/addon-vitest": ^10.6.5
-  "@storybook/react": ^10.6.5
-  "@storybook/react-vite": ^10.6.5
+  "@storybook/addon-docs": ^10.6.6
+  "@storybook/addon-vitest": ^10.6.6
+  "@storybook/react": ^10.6.6
+  "@storybook/react-vite": ^10.6.6
   "@stryke/date": ^0.0.29
   "@tamagui/accordion": 3.2.0
   "@tamagui/adapt": 3.2.0
@@ -165,23 +165,23 @@ catalog:
   react-dom: ^19.3.1
   react-native: ^0.87.1
   react-native-safe-area-context: ^4.14.1
-  react-native-svg: ^15.16.0
+  react-native-svg: ^15.16.1
   react-native-web: 0.19.12
   react-refresh: ^0.10.0
   recharts: 3.8.0
-  react-email: ^6.11.6
-  "@react-email/ui": ^6.11.6
+  react-email: ^6.11.7
+  "@react-email/ui": ^6.11.7
   "@opentelemetry/api": ^1.10.0
   motion: ^11.18.2
   next: ^16.4.5
   sherif: ^1.13.0
-  storybook: ^10.6.5
+  storybook: ^10.6.6
   tamagui: 3.2.0
   tslib: ^2.9.1
   tsdown: ^0.22.14
   copyfiles: ^2.4.1
   verdaccio: 6.7.2
-  vite: ^8.3.5
+  vite: ^8.3.6
   vite-plugin-react-native-web: ^1.2.0
   vitest: ~4.1.12
   untyped: ^2.0.0
@@ -190,7 +190,7 @@ catalog:
   zod: ^3.25.76
   zx: ^8.8.5
   "@storm-software/tsdoc": ^0.13.309
-  playwright: ^1.64.1
+  playwright: ^1.65.0
   style-dictionary: ^5.8.0
   "@maskito/phone": 3.11.1
   libphonenumber-js: 1.12.31
