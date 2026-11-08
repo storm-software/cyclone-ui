@@ -21,6 +21,7 @@
 import type { FieldLabelPlacement, FormControlSize } from "@cyclone-ui/helpers";
 import {
   FieldNotchedOutline,
+  FormControlFrameContext,
   getFieldLabelInset,
   getFormFontScale,
   getFormSizeScale,
@@ -52,6 +53,9 @@ import { useCallback, useState } from "react";
 
 // Text areas float their field label by default.
 const FLOATING_LABEL = { variant: "floating" } as const;
+
+// Parts (such as `Field.Button`) float over the text area's bottom corner.
+const MULTILINE_FRAME = { multiline: true } as const;
 
 const isFormControlSize = (value: unknown): value is FormControlSize =>
   value === "sm" || value === "md" || value === "lg";
@@ -181,6 +185,7 @@ export const TextArea = createStyledHOC(
     const formOnChange = formControl?.onChange;
     const formOnBlur = formControl?.onBlur;
     const {
+      children,
       rows = 3,
       render: _render,
       focused: focusedProp = formControl?.focused,
@@ -290,7 +295,7 @@ export const TextArea = createStyledHOC(
     );
 
     const content =
-      variant === "outlined" && labelPlacement !== "border" ? (
+      variant === "outlined" && labelPlacement !== "border" && !children ? (
         <>
           {isWeb ? <style>{SCROLL_VIEW_STYLES}</style> : null}
           {textArea}
@@ -308,6 +313,10 @@ export const TextArea = createStyledHOC(
               backgroundColor={disabled ? "primary-disabled" : focusColor}
             />
           ) : null}
+          {/* After the outline, so parts (and their focus rings) paint over it. */}
+          <FormControlFrameContext.Provider value={MULTILINE_FRAME}>
+            {children}
+          </FormControlFrameContext.Provider>
         </TextAreaDecorationFrame>
       );
 

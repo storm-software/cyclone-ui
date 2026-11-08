@@ -271,3 +271,77 @@ export const SmallSize: Story = { args: { size: "sm" } };
 export const MediumSize: Story = { args: { size: "md" } };
 
 export const LargeSize: Story = { args: { size: "lg" } };
+
+const buttonVariants = ["outlined", "underlined", "inlined"] as const;
+
+const longMessage =
+  "A message long enough to run under the button in the corner, which floats above the text instead of pushing it aside.";
+
+/**
+ * `Field.Button` floats over the text area's bottom end corner, above its
+ * text.
+ */
+export const WithButton: Story = {
+  args: {
+    labelVariant: "floating"
+  },
+  render: (
+    { labelVariant, rows, size, variant: _variant, ...props }: any,
+    {
+      id
+    }: {
+      id: string;
+    }
+  ) => (
+    <Form
+      name={`formName-${id}`}
+      initialValues={Object.fromEntries(
+        buttonVariants.map(variant => [variant, longMessage])
+      )}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 32,
+          width: 360
+        }}>
+        {buttonVariants.map(variant => (
+          <Field
+            key={variant}
+            {...props}
+            name={variant}
+            size={size}
+            variant={variant}>
+            <Field.Label
+              variant={labelVariant}>{`${variant} message`}</Field.Label>
+            <TextArea rows={rows} size={size} variant={variant}>
+              <Field.Button>Send</Field.Button>
+            </TextArea>
+          </Field>
+        ))}
+      </div>
+    </Form>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const textAreas = canvas.getAllByRole("textbox");
+    const buttons = canvas.getAllByRole("button", { name: "Send" });
+
+    await expect(buttons).toHaveLength(buttonVariants.length);
+    for (const [index, button] of buttons.entries()) {
+      const box = textAreas[index]!.getBoundingClientRect();
+      const rect = button.getBoundingClientRect();
+      // Inside the 1px border, inset by the 4px margin (flush with an
+      // underline's end).
+      const sideInset = buttonVariants[index] === "underlined" ? 0 : 5;
+
+      await expect(getBrowserStyle(button.parentElement!).position).toBe(
+        "absolute"
+      );
+      await expect(Math.abs(box.bottom - rect.bottom - 5)).toBeLessThan(1);
+      await expect(Math.abs(box.right - rect.right - sideInset)).toBeLessThan(
+        1
+      );
+    }
+  }
+};

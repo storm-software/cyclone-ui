@@ -31,6 +31,7 @@ import type {
 } from "@cyclone-ui/helpers";
 import {
   FormControlContext,
+  FormControlFrameContext,
   getFieldLabelInset,
   getFontSized,
   getFormFontScale,
@@ -39,7 +40,6 @@ import {
   getFormSizeToken,
   getSized,
   getSpaced,
-  useFieldHasStartIcon,
   useFieldIconColor,
   useFieldLabelFloated,
   useFieldLabelPlacement,
@@ -90,6 +90,7 @@ import {
   isValidElement,
   use,
   useCallback,
+  useId,
   useLayoutEffect,
   useMemo,
   useRef,
@@ -134,9 +135,43 @@ const useFieldPresentation = () => useFormControl() as FormControlState;
 export const getFieldLabelId = (name: string) => `${name}-label`;
 
 const FieldDetailsContext = createContext<ReactNode>(null);
+
 const FieldDetailsSetterContext = createContext<(details: ReactNode) => void>(
   () => undefined
 );
+
+type FieldButtonPosition = "start" | "end";
+
+interface FieldButtonEntry {
+  position: FieldButtonPosition;
+  /** The button's measured width, including its margin. */
+  width: number;
+}
+
+/**
+ * The field's inline `Field.Button`s: the widths they take up at each end of
+ * the control, so a resting floating label stays clear of them, and the end
+ * button that renders the field's status icons (`endAdornment`) before itself,
+ * so the button stays at the very end of the control.
+ */
+interface FieldButtons {
+  start: number;
+  end: number;
+  /** Whether a start `Field.Icon` (not a button) sits before the text. */
+  startIcon: boolean;
+  /** The id of the end button that renders `endAdornment`: the first one. */
+  endAdornmentOwner?: string;
+  endAdornment?: ReactNode;
+  /** Register (or, without a `button`, remove) a button by its id. */
+  setButton: (id: string, button?: FieldButtonEntry) => void;
+}
+
+const FieldButtonsContext = createContext<FieldButtons>({
+  start: 0,
+  end: 0,
+  startIcon: false,
+  setButton: () => undefined
+});
 
 const FieldGroupFrame = styled(YStack, {
   displayName: "Field",
@@ -396,6 +431,17 @@ const FieldGroupInnerImpl = createStyledHOC(
       [clearable, disabled, formattedValue, handleClear]
     );
 
+    // The first end `Field.Button` renders the status icons before itself
+    // instead of the text box after it, so the button stays at the end.
+    const buttons = use(FieldButtonsContext);
+    const fieldButtons = useMemo(
+      () => ({ ...buttons, endAdornment }),
+      [buttons, endAdornment]
+    );
+    const textBoxEndAdornment = buttons.endAdornmentOwner
+      ? undefined
+      : endAdornment;
+
     const hasValidationMessage = messages.length > 0;
     const formControl = useMemo<FormControlState>(
       () => ({
@@ -417,7 +463,7 @@ const FieldGroupInnerImpl = createStyledHOC(
         onFocus,
         onBlur,
         setMessage,
-        endAdornment
+        endAdornment: textBoxEndAdornment
       }),
       [
         presentation,
@@ -438,27 +484,29 @@ const FieldGroupInnerImpl = createStyledHOC(
         onFocus,
         onBlur,
         setMessage,
-        endAdornment
+        textBoxEndAdornment
       ]
     );
 
     return (
       <Theme name={theme}>
         <FormControlContext.Provider value={formControl}>
-          <FieldDetailsSetterContext.Provider value={setDetails}>
-            <FieldDetailsContext.Provider value={details}>
-              <YStack group={"field"} gap="lg" disabled={disabled}>
-                <FieldGroupFrame
-                  ref={forwardedRef}
-                  {...rest}
-                  disabled={disabled}
-                  variant={variant}>
-                  {children}
-                </FieldGroupFrame>
-                <FieldValidationTextImpl />
-              </YStack>
-            </FieldDetailsContext.Provider>
-          </FieldDetailsSetterContext.Provider>
+          <FieldButtonsContext.Provider value={fieldButtons}>
+            <FieldDetailsSetterContext.Provider value={setDetails}>
+              <FieldDetailsContext.Provider value={details}>
+                <YStack group={"field"} gap="lg" disabled={disabled}>
+                  <FieldGroupFrame
+                    ref={forwardedRef}
+                    {...rest}
+                    disabled={disabled}
+                    variant={variant}>
+                    {children}
+                  </FieldGroupFrame>
+                  <FieldValidationTextImpl />
+                </YStack>
+              </FieldDetailsContext.Provider>
+            </FieldDetailsSetterContext.Provider>
+          </FieldButtonsContext.Provider>
         </FormControlContext.Provider>
       </Theme>
     );
@@ -498,6 +546,45 @@ const FieldGroup = createStyledHOC(
 
       return () => setStartIconCount(count => Math.max(0, count - 1));
     }, []);
+    const [buttonEntries, setButtonEntries] = useState<
+      (FieldButtonEntry & { id: string })[]
+    >([]);
+    const setButton = useCallback(
+      (id: string, button?: FieldButtonEntry) =>
+        setButtonEntries(entries => {
+          if (!button) {
+            return entries.filter(entry => entry.id !== id);
+          }
+
+          // Updated in place, so the first end button keeps the status icons.
+          return entries.some(entry => entry.id === id)
+            ? entries.map(entry =>
+                entry.id === id ? { id, ...button } : entry
+              )
+            : [...entries, { id, ...button }];
+        }),
+      []
+    );
+    const hasStartButton = buttonEntries.some(
+      entry => entry.position === "start"
+    );
+    const buttons = useMemo<FieldButtons>(() => {
+      const widthAt = (position: FieldButtonPosition) =>
+        buttonEntries.reduce(
+          (width, entry) =>
+            entry.position === position ? width + entry.width : width,
+          0
+        );
+
+      return {
+        start: widthAt("start"),
+        end: widthAt("end"),
+        startIcon: startIconCount > 0,
+        endAdornmentOwner: buttonEntries.find(entry => entry.position === "end")
+          ?.id,
+        setButton
+      };
+    }, [buttonEntries, startIconCount, setButton]);
     const presentation = useMemo<FormControlState>(
       () => ({
         variant,
@@ -508,7 +595,8 @@ const FieldGroup = createStyledHOC(
         hasPlaceholder,
         hasValidationMessage: false,
         endIconCount,
-        hasStartIcon: startIconCount > 0,
+        // Start buttons also push the control's text off its start edge.
+        hasStartIcon: startIconCount > 0 || hasStartButton,
         labelContentRef,
         setLabelVariant,
         setHasPlaceholder,
@@ -522,6 +610,7 @@ const FieldGroup = createStyledHOC(
         hasPlaceholder,
         endIconCount,
         startIconCount,
+        hasStartButton,
         registerEndIcon,
         registerStartIcon
       ]
@@ -533,9 +622,11 @@ const FieldGroup = createStyledHOC(
         {...rest}
         {...(controlOptions?.overrides as Partial<FieldProps>)}>
         <FormControlContext.Provider value={presentation}>
-          <FieldGroupInnerImpl ref={forwardedRef} variant={variant}>
-            {children}
-          </FieldGroupInnerImpl>
+          <FieldButtonsContext.Provider value={buttons}>
+            <FieldGroupInnerImpl ref={forwardedRef} variant={variant}>
+              {children}
+            </FieldGroupInnerImpl>
+          </FieldButtonsContext.Provider>
         </FormControlContext.Provider>
       </FieldProvider>
     );
@@ -809,16 +900,18 @@ const FieldLabelTextImpl = createStyledHOC(
     const name = field.name.get();
     const size = field.size.get();
     const controlSize = getFormSizeToken(size);
-    // A floating label rests past a start icon (or the control's own leading
-    // content), unless placed explicitly.
-    const hasStartIcon = useFieldHasStartIcon();
+    const iconWidth =
+      getSized(controlSize, { shift: -2 }) +
+      getSpaced("2xl") * 2 * getFormSizeScale(size);
+    const buttons = use(FieldButtonsContext);
+    // A floating label rests past a start icon and buttons (or the control's
+    // own leading content), unless placed explicitly.
+    const startInset = (buttons.startIcon ? iconWidth : 0) + buttons.start;
     const resolvedFloatingLabelLeft =
       floatingLabelLeft ??
       labelDefaults?.floatingLabelLeft ??
-      (hasStartIcon
-        ? getSpaced("4xl") * getFormSizeScale(size) +
-          getSized(controlSize, { shift: -2 }) +
-          getSpaced("2xl") * 2 * getFormSizeScale(size)
+      (startInset
+        ? getSpaced("4xl") * getFormSizeScale(size) + startInset
         : undefined);
 
     const isFloatingVariant = labelVariant === "floating";
@@ -841,11 +934,10 @@ const FieldLabelTextImpl = createStyledHOC(
           2
       : undefined;
 
-    const endIconWidth =
-      getSized(controlSize, { shift: -2 }) +
-      getSpaced("2xl") * 2 * getFormSizeScale(size);
     const floatingLabelRight =
-      getSpaced("4xl") * getFormSizeScale(size) + endIconCount * endIconWidth;
+      getSpaced("4xl") * getFormSizeScale(size) +
+      endIconCount * iconWidth +
+      buttons.end;
     const hasOptionalLabel =
       hideRequired !== true && required !== true && showOptional === true;
     const updateOptionalLabelVisibility = useCallback(() => {
@@ -1380,6 +1472,133 @@ const FieldIconButtonImpl = createStyledHOC(
   { displayName: "FieldIcon" }
 );
 
+const FieldButtonImpl = createStyledHOC(
+  Button,
+  (
+    {
+      children,
+      position = "end",
+      controlSize,
+      size: sizeProp,
+      ...props
+    }: GetProps<typeof Button> & {
+      /**
+       * Which end of the control the button sits at (over a multiline
+       * control, which bottom corner), so a resting floating label stays
+       * clear of it.
+       *
+       * @defaultValue "end"
+       */
+      position?: FieldButtonPosition;
+      controlSize?: FormControlSize;
+      size?: FormControlSize;
+    },
+    forwardedRef
+  ) => {
+    const formControl = useFormControl();
+    const { circular, multiline, setOverflowVisible } = use(
+      FormControlFrameContext
+    );
+    const { setButton, endAdornmentOwner, endAdornment } =
+      use(FieldButtonsContext);
+    const id = useId();
+    const size = controlSize ?? sizeProp ?? formControl?.size ?? "md";
+    const scale = getFormSizeScale(size);
+    const margin = getSpaced("lg") * scale;
+    const underlined = formControl?.variant === "underlined";
+    const [width, setWidth] = useState(0);
+    const [focused, setFocused] = useState(false);
+
+    // A multiline control's button floats over its bottom corner, clear of
+    // the label and the status icons.
+    useLayoutEffect(
+      () => setButton(id, multiline ? undefined : { position, width }),
+      [id, multiline, position, setButton, width]
+    );
+    useLayoutEffect(() => () => setButton(id), [id, setButton]);
+
+    // The frame clips its content, which would cut off the focus ring.
+    useLayoutEffect(() => {
+      if (!focused || !setOverflowVisible) {
+        return;
+      }
+
+      setOverflowVisible(true);
+
+      return () => setOverflowVisible(false);
+    }, [focused, setOverflowVisible]);
+
+    const wrapperProps = {
+      flexShrink: 0,
+      // Raised while focused so its focus ring paints over the frame's
+      // border, outline and other parts.
+      zIndex: focused ? 1 : 0,
+      onFocus: () => setFocused(true),
+      onBlur: () => setFocused(false)
+    } as const;
+    // Inside the frame's 1px border; an underlined control has no side border
+    // to inset from, so the button lines up with the end of its underline.
+    const inset = 1 + margin;
+    const sideInset = underlined ? 0 : inset;
+
+    const button = (
+      <Button
+        ref={forwardedRef}
+        variant="primary"
+        disabled={formControl?.disabled}
+        // The control's text inset, not a standalone button's padding.
+        paddingHorizontal={getSpaced("4xl") * scale}
+        {...props}
+        size={size}
+        // Rounds with a circular control; otherwise a radius a step under the
+        // control's keeps the corners concentric with its frame. Not
+        // `borderRadius={undefined}`, which would wipe the `rounded` radius.
+        rounded={circular}
+        {...(circular ? null : { borderRadius: "xs" })}
+        // Fill the text box, whatever its height (floating label insets,
+        // underlined or outlined frames). Over a multiline control, match the
+        // button of a single line control of the same size.
+        height={
+          multiline ? getSized(getFormSizeToken(size)) - 2 * inset : "100%"
+        }
+        minHeight={0}>
+        {typeof children === "string" || typeof children === "number" ? (
+          <Button.Text>{children}</Button.Text>
+        ) : (
+          children
+        )}
+      </Button>
+    );
+
+    return multiline ? (
+      <View
+        {...wrapperProps}
+        position="absolute"
+        bottom={inset}
+        {...(position === "end" ? { right: sideInset } : { left: sideInset })}>
+        {button}
+      </View>
+    ) : (
+      <>
+        {endAdornmentOwner === id && endAdornment}
+        <View
+          {...wrapperProps}
+          position="relative"
+          alignSelf="stretch"
+          padding={margin}
+          {...(underlined &&
+            (position === "end" ? { paddingRight: 0 } : { paddingLeft: 0 }))}
+          onLayout={event =>
+            setWidth(Math.ceil(event.nativeEvent.layout.width))
+          }>
+          {button}
+        </View>
+      </>
+    );
+  },
+  { displayName: "FieldButton" }
+);
+
 const InnerFieldThemeIcon = createStyledHOC(
   FieldIconButtonImpl,
   (
@@ -1521,7 +1740,11 @@ export const Field = withStaticProperties(FieldGroup, {
   Link: FieldLink,
   Details: FieldDetailsImpl,
   Icon: FieldIconButtonImpl,
-  ThemeIcon: FieldThemeIcon
+  ThemeIcon: FieldThemeIcon,
+  Button: withStaticProperties(FieldButtonImpl, {
+    Text: Button.Text,
+    Icon: Button.Icon
+  })
 });
 
 /**
@@ -1529,6 +1752,7 @@ export const Field = withStaticProperties(FieldGroup, {
  * client module (`Field.Label` is undefined on the server).
  */
 export {
+  FieldButtonImpl as FieldButton,
   FieldDetailsImpl as FieldDetails,
   FieldIconButtonImpl as FieldIconButton,
   FieldLabel,

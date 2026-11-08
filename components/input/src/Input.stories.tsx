@@ -530,3 +530,185 @@ export const SmallSize: Story = { args: { size: "sm" } };
 export const MediumSize: Story = { args: { size: "md" } };
 
 export const LargeSize: Story = { args: { size: "lg" } };
+
+const buttonStyles = [
+  { variant: "outlined", circular: false },
+  { variant: "outlined", circular: true },
+  { variant: "underlined", circular: false },
+  { variant: "inlined", circular: false },
+  { variant: "inlined", circular: true }
+] as const;
+
+const getButtonStyleName = ({
+  variant,
+  circular
+}: (typeof buttonStyles)[number]) => `${variant}${circular ? " circular" : ""}`;
+
+/**
+ * `Field.Button` fills the text box, inset by a small margin, in every input
+ * style, and rounds to match a circular input.
+ */
+export const WithButton: Story = {
+  args: {
+    labelVariant: "floating"
+  },
+  render: ({ labelVariant, variant: _variant, ...props }, { id }) => (
+    <Form
+      name={`formName-${id}`}
+      initialValues={Object.fromEntries(
+        buttonStyles.map((_, index) => [`input${index}`, ""])
+      )}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 32,
+          width: 360
+        }}>
+        {buttonStyles.map((style, index) => (
+          <Field
+            key={getButtonStyleName(style)}
+            {...props}
+            name={`input${index}`}
+            variant={style.variant}>
+            <Field.Label variant={labelVariant}>
+              {`A long ${getButtonStyleName(style)} label beside the button`}
+            </Field.Label>
+            <Input
+              variant={style.variant}
+              circular={style.circular}
+              size={props.size}>
+              <Input.TextBox>
+                <Input.TextBox.Value placeholder="email@example.com" />
+                <Field.Button>Subscribe</Field.Button>
+              </Input.TextBox>
+            </Input>
+          </Field>
+        ))}
+      </div>
+    </Form>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const buttons = canvas.getAllByRole("button", { name: "Subscribe" });
+
+    await expect(buttons).toHaveLength(buttonStyles.length);
+    for (const [index, button] of buttons.entries()) {
+      let textBox = button.parentElement;
+      while (textBox && !textBox.querySelector("input")) {
+        textBox = textBox.parentElement;
+      }
+
+      const box = textBox!.getBoundingClientRect();
+      const rect = button.getBoundingClientRect();
+      const radius = Number.parseFloat(
+        getComputedStyle(button).borderTopLeftRadius
+      );
+
+      // Fills the text box's height, inset by the 4px margin.
+      await expect(Math.abs(rect.top - box.top - 4)).toBeLessThan(1);
+      await expect(Math.abs(box.bottom - rect.bottom - 4)).toBeLessThan(1);
+      if (buttonStyles[index]!.circular) {
+        await expect(radius).toBeGreaterThanOrEqual(rect.height / 2);
+      } else {
+        await expect(radius).toBeLessThan(rect.height / 2);
+      }
+
+      // The resting floating label truncates before the button.
+      const label = canvas
+        .getByText(
+          `A long ${getButtonStyleName(buttonStyles[index]!)} label beside the button`
+        )
+        .closest("label")!;
+      await waitFor(async () =>
+        expect(label.getBoundingClientRect().right).toBeLessThanOrEqual(
+          rect.left
+        )
+      );
+    }
+  }
+};
+
+/** The ancestors (below the canvas) that clip the element's overflow. */
+const getClippingAncestors = (element: HTMLElement, root: HTMLElement) => {
+  const clipping: HTMLElement[] = [];
+  for (
+    let ancestor = element.parentElement;
+    ancestor && ancestor !== root;
+    ancestor = ancestor.parentElement
+  ) {
+    const { overflowX, overflowY } = getComputedStyle(ancestor);
+    if ([overflowX, overflowY].some(value => value !== "visible")) {
+      clipping.push(ancestor);
+    }
+  }
+
+  return clipping;
+};
+
+/**
+ * An end `Field.Button` stays at the very end of the text box, after the
+ * field's clear and status icons, and its focus ring is never clipped.
+ */
+export const WithButtonAndStatus: Story = {
+  args: {
+    labelVariant: "floating",
+    clearable: true,
+    showErrorsBeforeBlur: true,
+    validate: validation("danger")
+  },
+  render: ({ labelVariant, variant, ...props }, { id }) => (
+    <Form name={`formName-${id}`} initialValues={{ inputName: "" }}>
+      <div style={{ width: 360 }}>
+        <Field {...props} name="inputName" variant={variant}>
+          <Field.Label variant={labelVariant}>Email</Field.Label>
+          <Input variant={variant} size={props.size}>
+            <Input.TextBox data-testid="text-box">
+              <Input.TextBox.Value />
+              <Field.Button>Subscribe</Field.Button>
+            </Input.TextBox>
+          </Input>
+        </Field>
+      </div>
+    </Form>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const input = canvas.getByRole("textbox");
+    const button = canvas.getByRole("button", { name: "Subscribe" });
+    const textBox = canvas.getByTestId("text-box");
+
+    await userEvent.type(input, "hello");
+    // The clear and status icons render before the button.
+    await waitFor(async () => {
+      const icons = [...textBox.querySelectorAll("svg")];
+      await expect(icons.length).toBeGreaterThanOrEqual(2);
+      for (const icon of icons) {
+        await expect(icon.getBoundingClientRect().right).toBeLessThanOrEqual(
+          button.getBoundingClientRect().left
+        );
+      }
+    });
+
+    // The frame clips its content until the button takes focus.
+    await expect(
+      getClippingAncestors(button, canvasElement).length
+    ).toBeGreaterThan(0);
+    for (let step = 0; step < 5 && document.activeElement !== button; step++) {
+      await userEvent.tab();
+    }
+    await expect(button).toHaveFocus();
+    await waitFor(async () =>
+      expect(getClippingAncestors(button, canvasElement)).toHaveLength(0)
+    );
+
+    // The button is last in tab order, too.
+    await userEvent.tab();
+    await expect(textBox.contains(document.activeElement)).toBe(false);
+    await waitFor(async () =>
+      expect(
+        getClippingAncestors(button, canvasElement).length
+      ).toBeGreaterThan(0)
+    );
+  }
+};

@@ -672,6 +672,7 @@ export const File = ({
                         size={getSized("4xl") * scale}
                         color="currentColor"
                         animated={false}
+                        variant="bold"
                       />
                     </Text>
                     <FileMetadataText

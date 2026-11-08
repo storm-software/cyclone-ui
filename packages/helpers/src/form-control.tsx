@@ -132,6 +132,29 @@ export const FormControlContext = createContext<FormControlState | undefined>(
 export const useFormControl = () => use(FormControlContext);
 
 /**
+ * What a text box style control's frame (such as `Input`'s or `TextArea`'s)
+ * tells the parts drawn inside it, such as `Field.Button`.
+ */
+export interface FormControlFrameState {
+  /** The frame is circular, so parts round to match. */
+  circular?: boolean;
+
+  /**
+   * The control is multiline, so parts float over its bottom corner instead
+   * of sitting inline with its text.
+   */
+  multiline?: boolean;
+
+  /**
+   * Let content (such as a focused part's focus ring) paint outside the
+   * frame, which otherwise clips it.
+   */
+  setOverflowVisible?: (visible: boolean) => void;
+}
+
+export const FormControlFrameContext = createContext<FormControlFrameState>({});
+
+/**
  * How a control prefers the enclosing field's label to be displayed.
  */
 export interface FieldLabelDefaults {

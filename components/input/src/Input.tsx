@@ -22,6 +22,7 @@ import { Button } from "@cyclone-ui/button";
 import type { FieldLabelPlacement, FormControlSize } from "@cyclone-ui/helpers";
 import {
   FieldNotchedOutline,
+  FormControlFrameContext,
   getFormSizeToken,
   getSized,
   useFieldHasValidationMessage,
@@ -325,6 +326,11 @@ const InputGroupImpl = createStyledHOC(
       () => ({ onChange, onInput, onFocus, onBlur }),
       [onChange, onInput, onFocus, onBlur]
     );
+    // The frame clips its content to its rounded corners, except while a part
+    // (such as a focused `Field.Button`) needs its focus ring to show in full.
+    const [overflowVisible, setOverflowVisible] = useState(false);
+    const circular = Boolean(rest.circular);
+    const frame = useMemo(() => ({ circular, setOverflowVisible }), [circular]);
 
     return (
       <InputBehaviorContext.Provider value={behavior}>
@@ -340,38 +346,41 @@ const InputGroupImpl = createStyledHOC(
           focused={active}
           hasValidationMessage={hasValidationMessage}
           disabled={disabled}>
-          <InputGroup
-            ref={forwardedRef}
-            {...rest}
-            frameSize={frameSize}
-            variant={variant}
-            labelPlacement={labelPlacement}
-            focused={active}
-            hasValidationMessage={hasValidationMessage}
-            disabled={disabled}
-            borderColor={borderColor}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            onMouseDown={handleMouseDown}
-            transition="200ms">
-            <XGroup display="contents" disabled={disabled}>
-              {children}
-              {variant === "underlined" && (
-                <ControlUnderline
-                  bottom={-1}
-                  focused={active}
-                  disabled={disabled}
-                  backgroundColor={disabled ? "primary-disabled" : focusColor}
-                />
-              )}
-              {labelPlacement === "border" && (
-                <FieldNotchedOutline
-                  borderColor={borderColor}
-                  borderRadius={rest.circular ? 100_000 : "control"}
-                />
-              )}
-            </XGroup>
-          </InputGroup>
+          <FormControlFrameContext.Provider value={frame}>
+            <InputGroup
+              ref={forwardedRef}
+              {...rest}
+              frameSize={frameSize}
+              variant={variant}
+              labelPlacement={labelPlacement}
+              focused={active}
+              hasValidationMessage={hasValidationMessage}
+              disabled={disabled}
+              borderColor={borderColor}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              onMouseDown={handleMouseDown}
+              {...(overflowVisible && { overflow: "visible" })}
+              transition="200ms">
+              <XGroup display="contents" disabled={disabled}>
+                {children}
+                {variant === "underlined" && (
+                  <ControlUnderline
+                    bottom={-1}
+                    focused={active}
+                    disabled={disabled}
+                    backgroundColor={disabled ? "primary-disabled" : focusColor}
+                  />
+                )}
+                {labelPlacement === "border" && (
+                  <FieldNotchedOutline
+                    borderColor={borderColor}
+                    borderRadius={rest.circular ? 100_000 : "control"}
+                  />
+                )}
+              </XGroup>
+            </InputGroup>
+          </FormControlFrameContext.Provider>
         </InputContext.Provider>
       </InputBehaviorContext.Provider>
     );

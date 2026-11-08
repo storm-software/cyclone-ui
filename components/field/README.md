@@ -71,7 +71,7 @@ A form field wrapper that connects a control to Cyclone UI form state and provid
 ## Quick Features
 
 - Connects a control to the surrounding `Form` state.
-- Parts: `Field.Label`, `Field.Link`, `Field.Details`, `Field.Icon`, and `Field.ThemeIcon`.
+- Parts: `Field.Label`, `Field.Link`, `Field.Details`, `Field.Icon`, `Field.Button`, and `Field.ThemeIcon`.
 - Shows validation messages and status icons automatically.
 - `outlined`, `underlined`, and `inlined` variants, with `floating` or `above` labels.
 - `sm`, `md`, and `lg` sizes.

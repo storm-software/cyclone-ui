@@ -1385,6 +1385,7 @@ A pill-shaped toolbar fixed to the bottom of the viewport for page-level control
 - `@cyclone-ui/container`: `workspace:*`
 - `@cyclone-ui/divider`: `workspace:*`
 - `@cyclone-ui/table-of-contents`: `workspace:*`
+- `@tamagui/animate-presence`: `catalog:`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/stacks`: `catalog:`
 
@@ -1415,6 +1416,7 @@ A responsive site footer layout with compound parts for an introduction, action,
 ### Dependencies
 
 - `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/eyebrow-text`: `workspace:*`
 - `@cyclone-ui/heading-text`: `workspace:*`
 - `@cyclone-ui/link`: `workspace:*`
 - `@tamagui/core`: `catalog:`
