@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<defs>
+		<mask id="tor-mask">
+			<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+				<path d="M12 9C12.5 11 18 11.5 18 16C18 19.5 15 21 12 21M12 9C11.5 11 6 11.5 6 16C6 19.5 9 21 12 21" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="19"><animate attributeName="fill-opacity" begin="0.8s" dur="0.4s" fill="freeze" to="1" /><animate attributeName="stroke-dashoffset" dur="0.5s" fill="freeze" values="19;0" /></path>
+				<path d="M12 9C12 6.5 12.5 4.75 13.5 3M12 9C13 6.5 14.5 4.5 17 3" stroke="#fff" stroke-dasharray="9" stroke-dashoffset="9"><animate attributeName="stroke-dashoffset" begin="0.5s" dur="0.3s" fill="freeze" to="0" /></path>
+				<path d="M11.75 12.25a4.25 3.75 0 0 0 0 7.5" stroke="#000" stroke-width="0.5" stroke-dasharray="14" stroke-dashoffset="14"><animate attributeName="stroke-dashoffset" begin="1.2s" dur="0.3s" fill="freeze" to="0" /></path>
+				<path d="M11.25 14a2 2 0 0 0 0 4" stroke="#000" stroke-width="1.5" stroke-dasharray="7" stroke-dashoffset="7"><animate attributeName="stroke-dashoffset" begin="1.5s" dur="0.2s" fill="freeze" to="0" /></path>
+			</g>
+		</mask>
+	</defs>
+	<path d="M0 0h24v24H0z" fill="currentColor" mask="url(#tor-mask)" />
+</svg>

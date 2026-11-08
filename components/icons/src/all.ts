@@ -82,6 +82,10 @@ import { AutoFix } from "./icons/AutoFix";
 import { AutoMode } from "./icons/AutoMode";
 import { Aws } from "./icons/Aws";
 import { BackupRestore } from "./icons/BackupRestore";
+import { BadgeAccount } from "./icons/BadgeAccount";
+import { BadgeAccountHorizontal } from "./icons/BadgeAccountHorizontal";
+import { Bank } from "./icons/Bank";
+import { BankCircle } from "./icons/BankCircle";
 import { Barcode } from "./icons/Barcode";
 import { BarcodeScan } from "./icons/BarcodeScan";
 import { Beer } from "./icons/Beer";
@@ -110,6 +114,7 @@ import { Cake } from "./icons/Cake";
 import { Calendar } from "./icons/Calendar";
 import { Camera } from "./icons/Camera";
 import { Cancel } from "./icons/Cancel";
+import { CardAccountDetails } from "./icons/CardAccountDetails";
 import { CarLight } from "./icons/CarLight";
 import { CarLightAlert } from "./icons/CarLightAlert";
 import { CarLightAlertOff } from "./icons/CarLightAlertOff";
@@ -121,10 +126,14 @@ import { CartVariant } from "./icons/CartVariant";
 import { Cctv } from "./icons/Cctv";
 import { CctvOff } from "./icons/CctvOff";
 import { Cellphone } from "./icons/Cellphone";
+import { CellphoneAndroid } from "./icons/CellphoneAndroid";
 import { CellphoneArrowDown } from "./icons/CellphoneArrowDown";
 import { CellphoneArrowUp } from "./icons/CellphoneArrowUp";
+import { CellphoneCheck } from "./icons/CellphoneCheck";
+import { CellphoneKey } from "./icons/CellphoneKey";
 import { CellphoneOff } from "./icons/CellphoneOff";
 import { CellphoneScreenshot } from "./icons/CellphoneScreenshot";
+import { Certificate } from "./icons/Certificate";
 import { Chat } from "./icons/Chat";
 import { ChatAlert } from "./icons/ChatAlert";
 import { ChatAlertOff } from "./icons/ChatAlertOff";
@@ -219,6 +228,7 @@ import { CookiePlus } from "./icons/CookiePlus";
 import { CookieRemove } from "./icons/CookieRemove";
 import { CookieSettings } from "./icons/CookieSettings";
 import { Discord } from "./icons/Discord";
+import { Dns } from "./icons/Dns";
 import { Document } from "./icons/Document";
 import { DocumentAdd } from "./icons/DocumentAdd";
 import { DocumentCode } from "./icons/DocumentCode";
@@ -291,8 +301,13 @@ import { FilterMinus } from "./icons/FilterMinus";
 import { FilterOff } from "./icons/FilterOff";
 import { FilterPlus } from "./icons/FilterPlus";
 import { FilterRemove } from "./icons/FilterRemove";
+import { FilterVariant } from "./icons/FilterVariant";
 import { Fingerprint } from "./icons/Fingerprint";
 import { FingerprintPattern } from "./icons/FingerprintPattern";
+import { FlipHorizontal } from "./icons/FlipHorizontal";
+import { FlipToBack } from "./icons/FlipToBack";
+import { FlipToFront } from "./icons/FlipToFront";
+import { FlipVertical } from "./icons/FlipVertical";
 import { Folder } from "./icons/Folder";
 import { FolderArrowDown } from "./icons/FolderArrowDown";
 import { FolderArrowLeft } from "./icons/FolderArrowLeft";
@@ -318,7 +333,9 @@ import { GaugeFull } from "./icons/GaugeFull";
 import { GaugeLow } from "./icons/GaugeLow";
 import { Gift } from "./icons/Gift";
 import { Github } from "./icons/Github";
+import { GithubBox } from "./icons/GithubBox";
 import { Grid3 } from "./icons/Grid3";
+import { HandClap } from "./icons/HandClap";
 import { Hash } from "./icons/Hash";
 import { HashSmall } from "./icons/HashSmall";
 import { HazardLights } from "./icons/HazardLights";
@@ -333,8 +350,11 @@ import { Iconify1 } from "./icons/Iconify1";
 import { Iconify2 } from "./icons/Iconify2";
 import { Iconify2Static } from "./icons/Iconify2Static";
 import { Image } from "./icons/Image";
+import { InformationSlabCircle } from "./icons/InformationSlabCircle";
 import { Instagram } from "./icons/Instagram";
 import { Key } from "./icons/Key";
+import { KeyVariant } from "./icons/KeyVariant";
+import { Kubernetes } from "./icons/Kubernetes";
 import { LanguageC } from "./icons/LanguageC";
 import { LanguageCpp } from "./icons/LanguageCpp";
 import { LanguageCsharp } from "./icons/LanguageCsharp";
@@ -350,6 +370,7 @@ import { LanguageRust } from "./icons/LanguageRust";
 import { LanguageTypescript } from "./icons/LanguageTypescript";
 import { Laptop } from "./icons/Laptop";
 import { LaptopOff } from "./icons/LaptopOff";
+import { License } from "./icons/License";
 import { Lightbulb } from "./icons/Lightbulb";
 import { LightbulbOff } from "./icons/LightbulbOff";
 import { LightDark } from "./icons/LightDark";
@@ -387,11 +408,14 @@ import { MapTrifold } from "./icons/MapTrifold";
 import { Marker } from "./icons/Marker";
 import { Mastodon } from "./icons/Mastodon";
 import { MedicalServices } from "./icons/MedicalServices";
+import { Medium } from "./icons/Medium";
 import { Menu } from "./icons/Menu";
 import { MenuFoldLeft } from "./icons/MenuFoldLeft";
 import { MenuFoldRight } from "./icons/MenuFoldRight";
 import { MenuUnfoldLeft } from "./icons/MenuUnfoldLeft";
 import { MenuUnfoldRight } from "./icons/MenuUnfoldRight";
+import { Microphone } from "./icons/Microphone";
+import { MicrophoneOff } from "./icons/MicrophoneOff";
 import { Minus } from "./icons/Minus";
 import { MinusCircle } from "./icons/MinusCircle";
 import { MinusSquare } from "./icons/MinusSquare";
@@ -419,8 +443,10 @@ import { NavigationLeftDown } from "./icons/NavigationLeftDown";
 import { NavigationLeftUp } from "./icons/NavigationLeftUp";
 import { NavigationRightDown } from "./icons/NavigationRightDown";
 import { NavigationRightUp } from "./icons/NavigationRightUp";
+import { NewspaperVariant } from "./icons/NewspaperVariant";
 import { Nix } from "./icons/Nix";
 import { Notebook } from "./icons/Notebook";
+import { OpenSourceInitiative } from "./icons/OpenSourceInitiative";
 import { PaintDrop } from "./icons/PaintDrop";
 import { PaintDropHalf } from "./icons/PaintDropHalf";
 import { PaletteSwatchVariant } from "./icons/PaletteSwatchVariant";
@@ -474,13 +500,17 @@ import { RoundRampRight } from "./icons/RoundRampRight";
 import { Rss } from "./icons/Rss";
 import { RssBox } from "./icons/RssBox";
 import { SafeSquare } from "./icons/SafeSquare";
+import { SatelliteUplink } from "./icons/SatelliteUplink";
+import { SatelliteVariant } from "./icons/SatelliteVariant";
 import { Search } from "./icons/Search";
 import { Security } from "./icons/Security";
 import { SecurityOff } from "./icons/SecurityOff";
 import { Send } from "./icons/Send";
+import { Server } from "./icons/Server";
 import { Share } from "./icons/Share";
 import { ShareVariant } from "./icons/ShareVariant";
 import { Shimmer } from "./icons/Shimmer";
+import { Skull } from "./icons/Skull";
 import { SortAscending } from "./icons/SortAscending";
 import { SortDescending } from "./icons/SortDescending";
 import { Soundcloud } from "./icons/Soundcloud";
@@ -499,6 +529,7 @@ import { StarRightHalf } from "./icons/StarRightHalf";
 import { StarRightHalfAlt } from "./icons/StarRightHalfAlt";
 import { Steering } from "./icons/Steering";
 import { SteeringOff } from "./icons/SteeringOff";
+import { Storefront } from "./icons/Storefront";
 import { Sunny } from "./icons/Sunny";
 import { SunnyOff } from "./icons/SunnyOff";
 import { SunnyOutline } from "./icons/SunnyOutline";
@@ -511,13 +542,23 @@ import { TabletArrowUp } from "./icons/TabletArrowUp";
 import { TabletOff } from "./icons/TabletOff";
 import { TabletScreenshot } from "./icons/TabletScreenshot";
 import { Taco } from "./icons/Taco";
+import { Tag } from "./icons/Tag";
+import { TagOff } from "./icons/TagOff";
+import { TagPlus } from "./icons/TagPlus";
+import { Tailwind } from "./icons/Tailwind";
 import { Telegram } from "./icons/Telegram";
+import { Terraform } from "./icons/Terraform";
 import { TextBox } from "./icons/TextBox";
 import { TextBoxMultiple } from "./icons/TextBoxMultiple";
 import { ThumbsDown } from "./icons/ThumbsDown";
 import { ThumbsUp } from "./icons/ThumbsUp";
 import { Tiktok } from "./icons/Tiktok";
+import { Tor } from "./icons/Tor";
 import { Trash } from "./icons/Trash";
+import { TrayArrowDown } from "./icons/TrayArrowDown";
+import { TrayArrowUp } from "./icons/TrayArrowUp";
+import { Tune } from "./icons/Tune";
+import { TuneVertical } from "./icons/TuneVertical";
 import { TurnLeft } from "./icons/TurnLeft";
 import { TurnRight } from "./icons/TurnRight";
 import { TurnSharpLeft } from "./icons/TurnSharpLeft";
@@ -527,11 +568,14 @@ import { TurnSlightRight } from "./icons/TurnSlightRight";
 import { Twitter } from "./icons/Twitter";
 import { TwitterX } from "./icons/TwitterX";
 import { TwitterXAlt } from "./icons/TwitterXAlt";
+import { TwoFactorAuthentication } from "./icons/TwoFactorAuthentication";
+import { Update } from "./icons/Update";
 import { Upload } from "./icons/Upload";
 import { Uploading } from "./icons/Uploading";
 import { UploadOff } from "./icons/UploadOff";
 import { UploadOffOutline } from "./icons/UploadOffOutline";
 import { UploadOutline } from "./icons/UploadOutline";
+import { UsbFlashDrive } from "./icons/UsbFlashDrive";
 import { UTurnLeft } from "./icons/UTurnLeft";
 import { UTurnRight } from "./icons/UTurnRight";
 import { ValignBaseline } from "./icons/ValignBaseline";
@@ -552,6 +596,8 @@ import { WatchOff } from "./icons/WatchOff";
 import { Water } from "./icons/Water";
 import { WaterOff } from "./icons/WaterOff";
 import { WeatherCloudy } from "./icons/WeatherCloudy";
+import { Web } from "./icons/Web";
+import { WebBox } from "./icons/WebBox";
 import { Youtube } from "./icons/Youtube";
 import type { IconComponent } from "./types";
 
@@ -623,6 +669,10 @@ export const allIcons: { [component: string]: IconComponent } = {
   AutoMode,
   Aws,
   BackupRestore,
+  BadgeAccount,
+  BadgeAccountHorizontal,
+  Bank,
+  BankCircle,
   Barcode,
   BarcodeScan,
   Beer,
@@ -651,6 +701,7 @@ export const allIcons: { [component: string]: IconComponent } = {
   Calendar,
   Camera,
   Cancel,
+  CardAccountDetails,
   CarLight,
   CarLightAlert,
   CarLightAlertOff,
@@ -662,10 +713,14 @@ export const allIcons: { [component: string]: IconComponent } = {
   Cctv,
   CctvOff,
   Cellphone,
+  CellphoneAndroid,
   CellphoneArrowDown,
   CellphoneArrowUp,
+  CellphoneCheck,
+  CellphoneKey,
   CellphoneOff,
   CellphoneScreenshot,
+  Certificate,
   Chat,
   ChatAlert,
   ChatAlertOff,
@@ -760,6 +815,7 @@ export const allIcons: { [component: string]: IconComponent } = {
   CookieRemove,
   CookieSettings,
   Discord,
+  Dns,
   Document,
   DocumentAdd,
   DocumentCode,
@@ -832,8 +888,13 @@ export const allIcons: { [component: string]: IconComponent } = {
   FilterOff,
   FilterPlus,
   FilterRemove,
+  FilterVariant,
   Fingerprint,
   FingerprintPattern,
+  FlipHorizontal,
+  FlipToBack,
+  FlipToFront,
+  FlipVertical,
   Folder,
   FolderArrowDown,
   FolderArrowLeft,
@@ -859,7 +920,9 @@ export const allIcons: { [component: string]: IconComponent } = {
   GaugeLow,
   Gift,
   Github,
+  GithubBox,
   Grid3,
+  HandClap,
   Hash,
   HashSmall,
   HazardLights,
@@ -874,8 +937,11 @@ export const allIcons: { [component: string]: IconComponent } = {
   Iconify2,
   Iconify2Static,
   Image,
+  InformationSlabCircle,
   Instagram,
   Key,
+  KeyVariant,
+  Kubernetes,
   LanguageC,
   LanguageCpp,
   LanguageCsharp,
@@ -891,6 +957,7 @@ export const allIcons: { [component: string]: IconComponent } = {
   LanguageTypescript,
   Laptop,
   LaptopOff,
+  License,
   Lightbulb,
   LightbulbOff,
   LightDark,
@@ -928,11 +995,14 @@ export const allIcons: { [component: string]: IconComponent } = {
   Marker,
   Mastodon,
   MedicalServices,
+  Medium,
   Menu,
   MenuFoldLeft,
   MenuFoldRight,
   MenuUnfoldLeft,
   MenuUnfoldRight,
+  Microphone,
+  MicrophoneOff,
   Minus,
   MinusCircle,
   MinusSquare,
@@ -960,8 +1030,10 @@ export const allIcons: { [component: string]: IconComponent } = {
   NavigationLeftUp,
   NavigationRightDown,
   NavigationRightUp,
+  NewspaperVariant,
   Nix,
   Notebook,
+  OpenSourceInitiative,
   PaintDrop,
   PaintDropHalf,
   PaletteSwatchVariant,
@@ -1015,13 +1087,17 @@ export const allIcons: { [component: string]: IconComponent } = {
   Rss,
   RssBox,
   SafeSquare,
+  SatelliteUplink,
+  SatelliteVariant,
   Search,
   Security,
   SecurityOff,
   Send,
+  Server,
   Share,
   ShareVariant,
   Shimmer,
+  Skull,
   SortAscending,
   SortDescending,
   Soundcloud,
@@ -1040,6 +1116,7 @@ export const allIcons: { [component: string]: IconComponent } = {
   StarRightHalfAlt,
   Steering,
   SteeringOff,
+  Storefront,
   Sunny,
   SunnyOff,
   SunnyOutline,
@@ -1052,13 +1129,23 @@ export const allIcons: { [component: string]: IconComponent } = {
   TabletOff,
   TabletScreenshot,
   Taco,
+  Tag,
+  TagOff,
+  TagPlus,
+  Tailwind,
   Telegram,
+  Terraform,
   TextBox,
   TextBoxMultiple,
   ThumbsDown,
   ThumbsUp,
   Tiktok,
+  Tor,
   Trash,
+  TrayArrowDown,
+  TrayArrowUp,
+  Tune,
+  TuneVertical,
   TurnLeft,
   TurnRight,
   TurnSharpLeft,
@@ -1068,11 +1155,14 @@ export const allIcons: { [component: string]: IconComponent } = {
   Twitter,
   TwitterX,
   TwitterXAlt,
+  TwoFactorAuthentication,
+  Update,
   Upload,
   Uploading,
   UploadOff,
   UploadOffOutline,
   UploadOutline,
+  UsbFlashDrive,
   UTurnLeft,
   UTurnRight,
   ValignBaseline,
@@ -1093,5 +1183,7 @@ export const allIcons: { [component: string]: IconComponent } = {
   Water,
   WaterOff,
   WeatherCloudy,
+  Web,
+  WebBox,
   Youtube
 };

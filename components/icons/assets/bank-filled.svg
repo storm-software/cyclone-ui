@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<defs>
+		<mask id="bank-mask">
+			<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+				<path d="M12 2L21 7H12M12 2L3 7H12" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="20"><animate attributeName="fill-opacity" begin="0.9s" dur="0.4s" fill="freeze" to="1" /><animate attributeName="stroke-dashoffset" dur="0.4s" fill="freeze" values="20;0" /></path>
+				<path d="M6 11.5v4M12 11.5v4M18 11.5v4" stroke="#fff" stroke-width="4" stroke-dasharray="5" stroke-dashoffset="5"><animate attributeName="stroke-dashoffset" begin="0.4s" dur="0.2s" fill="freeze" to="0" /></path>
+				<path d="M3.5 20.5h17" stroke="#fff" stroke-width="4" stroke-dasharray="18" stroke-dashoffset="18"><animate attributeName="stroke-dashoffset" begin="0.6s" dur="0.3s" fill="freeze" to="0" /></path>
+			</g>
+		</mask>
+	</defs>
+	<path d="M0 0h24v24H0z" fill="currentColor" mask="url(#bank-mask)" />
+</svg>

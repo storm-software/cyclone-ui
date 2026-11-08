@@ -28,35 +28,117 @@ import { createIcon } from "../create-icon";
 export const ThumbsUp = createIcon("ThumbsUp", {
   regular: [
     {
-      type: "path",
+      type: "g",
       props: {
-        d: "M7 11l5 -8l3 1l-1 6h7v3l-3 7h-11h-4v-9h4v9",
-        stroke: "currentColor",
         fill: "none",
-        strokeWidth: 1.5,
         strokeLinecap: "round",
         strokeLinejoin: "round",
-        strokeDasharray: 76
+        strokeWidth: 1.5,
+        stroke: "currentColor"
       },
-      animations: [
-        { prop: "strokeDashoffset", dur: 0.6, values: [76, 0], freeze: true }
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M8 9.5c0 -0.3 0.1 -0.5 0.3 -0.7L14.2 2.9l0.55 0.55c0.2 0.2 0.3 0.5 0.25 0.8L13.9 9H21a1 1 0 0 1 1 1v1.8c0 0.15 0 0.3 -0.1 0.4l-2.95 6.9c-0.15 0.4 -0.55 0.9 -1.05 0.9H9a1 1 0 0 1 -1 -1Z",
+            strokeDasharray: 56
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.5,
+              values: [56, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M4 10v10h-2v-10Z",
+            strokeDasharray: 25,
+            strokeDashoffset: 25
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.5,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M1.25 9.25h3.5v11.5h-3.5Z",
+            stroke: "none",
+            fill: "currentColor",
+            opacity: 0
+          },
+          animations: [
+            { prop: "opacity", begin: 0.7, dur: 0.2, values: [1], freeze: true }
+          ]
+        }
       ]
     }
   ],
   bold: [
     {
-      type: "path",
+      type: "g",
       props: {
-        d: "M7 11l5 -8l3 1l-1 6h7v3l-3 7h-11h-4v-9h4v9",
-        stroke: "currentColor",
         fill: "none",
-        strokeWidth: 2,
         strokeLinecap: "round",
         strokeLinejoin: "round",
-        strokeDasharray: 76
+        strokeWidth: 2,
+        stroke: "currentColor"
       },
-      animations: [
-        { prop: "strokeDashoffset", dur: 0.6, values: [76, 0], freeze: true }
+      children: [
+        {
+          type: "path",
+          props: {
+            d: "M8 9.5c0 -0.3 0.1 -0.5 0.3 -0.7L14.2 2.9l0.55 0.55c0.2 0.2 0.3 0.5 0.25 0.8L13.9 9H21a1 1 0 0 1 1 1v1.8c0 0.15 0 0.3 -0.1 0.4l-2.95 6.9c-0.15 0.4 -0.55 0.9 -1.05 0.9H9a1 1 0 0 1 -1 -1Z",
+            strokeDasharray: 56
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              dur: 0.5,
+              values: [56, 0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M4 10v10h-2v-10Z",
+            strokeDasharray: 25,
+            strokeDashoffset: 25
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.5,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M1.25 9.25h3.5v11.5h-3.5Z",
+            stroke: "none",
+            fill: "currentColor",
+            opacity: 0
+          },
+          animations: [
+            { prop: "opacity", begin: 0.7, dur: 0.2, values: [1], freeze: true }
+          ]
+        }
       ]
     }
   ],
@@ -69,50 +151,65 @@ export const ThumbsUp = createIcon("ThumbsUp", {
           props: { id: "m0" },
           children: [
             {
-              type: "path",
+              type: "g",
               props: {
-                d: "M7 11l5 -8l3 1l-1 6h7v3l-3 7h-11h-4v-9h4v9",
-                fill: "#fff",
-                fillOpacity: 0,
-                stroke: "#fff",
-                strokeWidth: 1.5,
+                fill: "none",
                 strokeLinecap: "round",
                 strokeLinejoin: "round",
-                strokeDasharray: 76
+                strokeWidth: 1.5
               },
-              animations: [
+              children: [
                 {
-                  prop: "strokeDashoffset",
-                  dur: 0.6,
-                  values: [76, 0],
-                  freeze: true
+                  type: "path",
+                  props: {
+                    d: "M8 9.5c0 -0.3 0.1 -0.5 0.3 -0.7L14.2 2.9l0.55 0.55c0.2 0.2 0.3 0.5 0.25 0.8L13.9 9H21a1 1 0 0 1 1 1v1.8c0 0.15 0 0.3 -0.1 0.4l-2.95 6.9c-0.15 0.4 -0.55 0.9 -1.05 0.9H9a1 1 0 0 1 -1 -1Z",
+                    stroke: "#fff",
+                    fill: "#fff",
+                    fillOpacity: 0,
+                    strokeDasharray: 56
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      dur: 0.5,
+                      values: [56, 0],
+                      freeze: true
+                    },
+                    {
+                      prop: "fillOpacity",
+                      begin: 0.7,
+                      dur: 0.4,
+                      values: [1],
+                      freeze: true
+                    }
+                  ]
                 },
                 {
-                  prop: "fillOpacity",
-                  begin: 0.6,
-                  dur: 0.4,
-                  values: [1],
-                  freeze: true
-                }
-              ]
-            },
-            {
-              type: "path",
-              props: {
-                d: "M7 9v12",
-                stroke: "#000",
-                strokeWidth: 1,
-                strokeLinecap: "round",
-                strokeDasharray: 12,
-                strokeDashoffset: 12
-              },
-              animations: [
-                {
-                  prop: "strokeDashoffset",
-                  begin: 0.6,
-                  dur: 0.2,
-                  values: [0],
-                  freeze: true
+                  type: "path",
+                  props: {
+                    d: "M4 10v10h-2v-10Z",
+                    stroke: "#fff",
+                    fill: "#fff",
+                    fillOpacity: 0,
+                    strokeDasharray: 25,
+                    strokeDashoffset: 25
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      begin: 0.5,
+                      dur: 0.2,
+                      values: [0],
+                      freeze: true
+                    },
+                    {
+                      prop: "fillOpacity",
+                      begin: 0.7,
+                      dur: 0.4,
+                      values: [1],
+                      freeze: true
+                    }
+                  ]
                 }
               ]
             }

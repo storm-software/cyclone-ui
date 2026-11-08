@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<defs>
+		<mask id="satellite-variant-mask">
+			<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+				<path d="M4.93 4.93L5.64 4.22a1 1 0 0 1 1.41 0L11.65 8.82a1 1 0 0 1 0 1.41L10.23 11.65a1 1 0 0 1 -1.41 0L4.22 7.05a1 1 0 0 1 0 -1.41Z" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="24"><animate attributeName="fill-opacity" begin="1.6s" dur="0.4s" fill="freeze" to="1" /><animate attributeName="stroke-dashoffset" dur="0.4s" fill="freeze" values="24;0" /></path>
+				<path d="M10.59 7.76l2.3 -2.3M7.76 10.59l-2.3 2.3" stroke="#fff" stroke-dasharray="4" stroke-dashoffset="4"><animate attributeName="stroke-dashoffset" begin="0.4s" dur="0.1s" fill="freeze" to="0" /></path>
+				<path d="M11.12 2.63l0.53 -0.53l4.6 4.6l-1.06 1.06l-4.6 -4.6ZM2.63 11.12l0.53 -0.53l4.6 4.6l-1.06 1.06l-4.6 -4.6Z" stroke="#fff" stroke-dasharray="17" stroke-dashoffset="17"><animate attributeName="stroke-dashoffset" begin="0.5s" dur="0.3s" fill="freeze" to="0" /></path>
+				<path d="M10.94 10.94L12.35 12.35a2 2 0 0 1 2.83 0L12.35 15.18a2 2 0 0 1 0 -2.83" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="13" stroke-dashoffset="13"><animate attributeName="fill-opacity" begin="1.6s" dur="0.4s" fill="freeze" to="1" /><animate attributeName="stroke-dashoffset" begin="0.8s" dur="0.3s" fill="freeze" to="0" /></path>
+				<path d="M17.3 14.3A3 3 0 0 1 14.3 17.3" stroke="#fff" stroke-dasharray="6" stroke-dashoffset="6"><animate attributeName="stroke-dashoffset" begin="1.1s" dur="0.2s" fill="freeze" to="0" /></path>
+				<path d="M21.3 14.3A7 7 0 0 1 14.3 21.3" stroke="#fff" stroke-dasharray="12" stroke-dashoffset="12"><animate attributeName="stroke-dashoffset" begin="1.3s" dur="0.3s" fill="freeze" to="0" /></path>
+			</g>
+		</mask>
+	</defs>
+	<path d="M0 0h24v24H0z" fill="currentColor" mask="url(#satellite-variant-mask)" />
+</svg>

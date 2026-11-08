@@ -315,6 +315,22 @@
       "import": "./dist/icons/BackupRestore.mjs",
       "require": "./dist/icons/BackupRestore.cjs"
     },
+    "./icons/BadgeAccount": {
+      "import": "./dist/icons/BadgeAccount.mjs",
+      "require": "./dist/icons/BadgeAccount.cjs"
+    },
+    "./icons/BadgeAccountHorizontal": {
+      "import": "./dist/icons/BadgeAccountHorizontal.mjs",
+      "require": "./dist/icons/BadgeAccountHorizontal.cjs"
+    },
+    "./icons/Bank": {
+      "import": "./dist/icons/Bank.mjs",
+      "require": "./dist/icons/Bank.cjs"
+    },
+    "./icons/BankCircle": {
+      "import": "./dist/icons/BankCircle.mjs",
+      "require": "./dist/icons/BankCircle.cjs"
+    },
     "./icons/Barcode": {
       "import": "./dist/icons/Barcode.mjs",
       "require": "./dist/icons/Barcode.cjs"
@@ -427,6 +443,10 @@
       "import": "./dist/icons/Cancel.mjs",
       "require": "./dist/icons/Cancel.cjs"
     },
+    "./icons/CardAccountDetails": {
+      "import": "./dist/icons/CardAccountDetails.mjs",
+      "require": "./dist/icons/CardAccountDetails.cjs"
+    },
     "./icons/CarLight": {
       "import": "./dist/icons/CarLight.mjs",
       "require": "./dist/icons/CarLight.cjs"
@@ -471,6 +491,10 @@
       "import": "./dist/icons/Cellphone.mjs",
       "require": "./dist/icons/Cellphone.cjs"
     },
+    "./icons/CellphoneAndroid": {
+      "import": "./dist/icons/CellphoneAndroid.mjs",
+      "require": "./dist/icons/CellphoneAndroid.cjs"
+    },
     "./icons/CellphoneArrowDown": {
       "import": "./dist/icons/CellphoneArrowDown.mjs",
       "require": "./dist/icons/CellphoneArrowDown.cjs"
@@ -479,6 +503,14 @@
       "import": "./dist/icons/CellphoneArrowUp.mjs",
       "require": "./dist/icons/CellphoneArrowUp.cjs"
     },
+    "./icons/CellphoneCheck": {
+      "import": "./dist/icons/CellphoneCheck.mjs",
+      "require": "./dist/icons/CellphoneCheck.cjs"
+    },
+    "./icons/CellphoneKey": {
+      "import": "./dist/icons/CellphoneKey.mjs",
+      "require": "./dist/icons/CellphoneKey.cjs"
+    },
     "./icons/CellphoneOff": {
       "import": "./dist/icons/CellphoneOff.mjs",
       "require": "./dist/icons/CellphoneOff.cjs"
@@ -486,6 +518,10 @@
     "./icons/CellphoneScreenshot": {
       "import": "./dist/icons/CellphoneScreenshot.mjs",
       "require": "./dist/icons/CellphoneScreenshot.cjs"
+    },
+    "./icons/Certificate": {
+      "import": "./dist/icons/Certificate.mjs",
+      "require": "./dist/icons/Certificate.cjs"
     },
     "./icons/Chat": {
       "import": "./dist/icons/Chat.mjs",
@@ -863,6 +899,10 @@
       "import": "./dist/icons/Discord.mjs",
       "require": "./dist/icons/Discord.cjs"
     },
+    "./icons/Dns": {
+      "import": "./dist/icons/Dns.mjs",
+      "require": "./dist/icons/Dns.cjs"
+    },
     "./icons/Document": {
       "import": "./dist/icons/Document.mjs",
       "require": "./dist/icons/Document.cjs"
@@ -1151,6 +1191,10 @@
       "import": "./dist/icons/FilterRemove.mjs",
       "require": "./dist/icons/FilterRemove.cjs"
     },
+    "./icons/FilterVariant": {
+      "import": "./dist/icons/FilterVariant.mjs",
+      "require": "./dist/icons/FilterVariant.cjs"
+    },
     "./icons/Fingerprint": {
       "import": "./dist/icons/Fingerprint.mjs",
       "require": "./dist/icons/Fingerprint.cjs"
@@ -1158,6 +1202,22 @@
     "./icons/FingerprintPattern": {
       "import": "./dist/icons/FingerprintPattern.mjs",
       "require": "./dist/icons/FingerprintPattern.cjs"
+    },
+    "./icons/FlipHorizontal": {
+      "import": "./dist/icons/FlipHorizontal.mjs",
+      "require": "./dist/icons/FlipHorizontal.cjs"
+    },
+    "./icons/FlipToBack": {
+      "import": "./dist/icons/FlipToBack.mjs",
+      "require": "./dist/icons/FlipToBack.cjs"
+    },
+    "./icons/FlipToFront": {
+      "import": "./dist/icons/FlipToFront.mjs",
+      "require": "./dist/icons/FlipToFront.cjs"
+    },
+    "./icons/FlipVertical": {
+      "import": "./dist/icons/FlipVertical.mjs",
+      "require": "./dist/icons/FlipVertical.cjs"
     },
     "./icons/Folder": {
       "import": "./dist/icons/Folder.mjs",
@@ -1259,9 +1319,17 @@
       "import": "./dist/icons/Github.mjs",
       "require": "./dist/icons/Github.cjs"
     },
+    "./icons/GithubBox": {
+      "import": "./dist/icons/GithubBox.mjs",
+      "require": "./dist/icons/GithubBox.cjs"
+    },
     "./icons/Grid3": {
       "import": "./dist/icons/Grid3.mjs",
       "require": "./dist/icons/Grid3.cjs"
+    },
+    "./icons/HandClap": {
+      "import": "./dist/icons/HandClap.mjs",
+      "require": "./dist/icons/HandClap.cjs"
     },
     "./icons/Hash": {
       "import": "./dist/icons/Hash.mjs",
@@ -1319,6 +1387,10 @@
       "import": "./dist/icons/Image.mjs",
       "require": "./dist/icons/Image.cjs"
     },
+    "./icons/InformationSlabCircle": {
+      "import": "./dist/icons/InformationSlabCircle.mjs",
+      "require": "./dist/icons/InformationSlabCircle.cjs"
+    },
     "./icons/Instagram": {
       "import": "./dist/icons/Instagram.mjs",
       "require": "./dist/icons/Instagram.cjs"
@@ -1326,6 +1398,14 @@
     "./icons/Key": {
       "import": "./dist/icons/Key.mjs",
       "require": "./dist/icons/Key.cjs"
+    },
+    "./icons/KeyVariant": {
+      "import": "./dist/icons/KeyVariant.mjs",
+      "require": "./dist/icons/KeyVariant.cjs"
+    },
+    "./icons/Kubernetes": {
+      "import": "./dist/icons/Kubernetes.mjs",
+      "require": "./dist/icons/Kubernetes.cjs"
     },
     "./icons/LanguageC": {
       "import": "./dist/icons/LanguageC.mjs",
@@ -1386,6 +1466,10 @@
     "./icons/LaptopOff": {
       "import": "./dist/icons/LaptopOff.mjs",
       "require": "./dist/icons/LaptopOff.cjs"
+    },
+    "./icons/License": {
+      "import": "./dist/icons/License.mjs",
+      "require": "./dist/icons/License.cjs"
     },
     "./icons/Lightbulb": {
       "import": "./dist/icons/Lightbulb.mjs",
@@ -1535,6 +1619,10 @@
       "import": "./dist/icons/MedicalServices.mjs",
       "require": "./dist/icons/MedicalServices.cjs"
     },
+    "./icons/Medium": {
+      "import": "./dist/icons/Medium.mjs",
+      "require": "./dist/icons/Medium.cjs"
+    },
     "./icons/Menu": {
       "import": "./dist/icons/Menu.mjs",
       "require": "./dist/icons/Menu.cjs"
@@ -1554,6 +1642,14 @@
     "./icons/MenuUnfoldRight": {
       "import": "./dist/icons/MenuUnfoldRight.mjs",
       "require": "./dist/icons/MenuUnfoldRight.cjs"
+    },
+    "./icons/Microphone": {
+      "import": "./dist/icons/Microphone.mjs",
+      "require": "./dist/icons/Microphone.cjs"
+    },
+    "./icons/MicrophoneOff": {
+      "import": "./dist/icons/MicrophoneOff.mjs",
+      "require": "./dist/icons/MicrophoneOff.cjs"
     },
     "./icons/Minus": {
       "import": "./dist/icons/Minus.mjs",
@@ -1663,6 +1759,10 @@
       "import": "./dist/icons/NavigationRightUp.mjs",
       "require": "./dist/icons/NavigationRightUp.cjs"
     },
+    "./icons/NewspaperVariant": {
+      "import": "./dist/icons/NewspaperVariant.mjs",
+      "require": "./dist/icons/NewspaperVariant.cjs"
+    },
     "./icons/Nix": {
       "import": "./dist/icons/Nix.mjs",
       "require": "./dist/icons/Nix.cjs"
@@ -1670,6 +1770,10 @@
     "./icons/Notebook": {
       "import": "./dist/icons/Notebook.mjs",
       "require": "./dist/icons/Notebook.cjs"
+    },
+    "./icons/OpenSourceInitiative": {
+      "import": "./dist/icons/OpenSourceInitiative.mjs",
+      "require": "./dist/icons/OpenSourceInitiative.cjs"
     },
     "./icons/PaintDrop": {
       "import": "./dist/icons/PaintDrop.mjs",
@@ -1883,6 +1987,14 @@
       "import": "./dist/icons/SafeSquare.mjs",
       "require": "./dist/icons/SafeSquare.cjs"
     },
+    "./icons/SatelliteUplink": {
+      "import": "./dist/icons/SatelliteUplink.mjs",
+      "require": "./dist/icons/SatelliteUplink.cjs"
+    },
+    "./icons/SatelliteVariant": {
+      "import": "./dist/icons/SatelliteVariant.mjs",
+      "require": "./dist/icons/SatelliteVariant.cjs"
+    },
     "./icons/Search": {
       "import": "./dist/icons/Search.mjs",
       "require": "./dist/icons/Search.cjs"
@@ -1899,6 +2011,10 @@
       "import": "./dist/icons/Send.mjs",
       "require": "./dist/icons/Send.cjs"
     },
+    "./icons/Server": {
+      "import": "./dist/icons/Server.mjs",
+      "require": "./dist/icons/Server.cjs"
+    },
     "./icons/Share": {
       "import": "./dist/icons/Share.mjs",
       "require": "./dist/icons/Share.cjs"
@@ -1910,6 +2026,10 @@
     "./icons/Shimmer": {
       "import": "./dist/icons/Shimmer.mjs",
       "require": "./dist/icons/Shimmer.cjs"
+    },
+    "./icons/Skull": {
+      "import": "./dist/icons/Skull.mjs",
+      "require": "./dist/icons/Skull.cjs"
     },
     "./icons/SortAscending": {
       "import": "./dist/icons/SortAscending.mjs",
@@ -1983,6 +2103,10 @@
       "import": "./dist/icons/SteeringOff.mjs",
       "require": "./dist/icons/SteeringOff.cjs"
     },
+    "./icons/Storefront": {
+      "import": "./dist/icons/Storefront.mjs",
+      "require": "./dist/icons/Storefront.cjs"
+    },
     "./icons/Sunny": {
       "import": "./dist/icons/Sunny.mjs",
       "require": "./dist/icons/Sunny.cjs"
@@ -2031,9 +2155,29 @@
       "import": "./dist/icons/Taco.mjs",
       "require": "./dist/icons/Taco.cjs"
     },
+    "./icons/Tag": {
+      "import": "./dist/icons/Tag.mjs",
+      "require": "./dist/icons/Tag.cjs"
+    },
+    "./icons/TagOff": {
+      "import": "./dist/icons/TagOff.mjs",
+      "require": "./dist/icons/TagOff.cjs"
+    },
+    "./icons/TagPlus": {
+      "import": "./dist/icons/TagPlus.mjs",
+      "require": "./dist/icons/TagPlus.cjs"
+    },
+    "./icons/Tailwind": {
+      "import": "./dist/icons/Tailwind.mjs",
+      "require": "./dist/icons/Tailwind.cjs"
+    },
     "./icons/Telegram": {
       "import": "./dist/icons/Telegram.mjs",
       "require": "./dist/icons/Telegram.cjs"
+    },
+    "./icons/Terraform": {
+      "import": "./dist/icons/Terraform.mjs",
+      "require": "./dist/icons/Terraform.cjs"
     },
     "./icons/TextBox": {
       "import": "./dist/icons/TextBox.mjs",
@@ -2055,9 +2199,29 @@
       "import": "./dist/icons/Tiktok.mjs",
       "require": "./dist/icons/Tiktok.cjs"
     },
+    "./icons/Tor": {
+      "import": "./dist/icons/Tor.mjs",
+      "require": "./dist/icons/Tor.cjs"
+    },
     "./icons/Trash": {
       "import": "./dist/icons/Trash.mjs",
       "require": "./dist/icons/Trash.cjs"
+    },
+    "./icons/TrayArrowDown": {
+      "import": "./dist/icons/TrayArrowDown.mjs",
+      "require": "./dist/icons/TrayArrowDown.cjs"
+    },
+    "./icons/TrayArrowUp": {
+      "import": "./dist/icons/TrayArrowUp.mjs",
+      "require": "./dist/icons/TrayArrowUp.cjs"
+    },
+    "./icons/Tune": {
+      "import": "./dist/icons/Tune.mjs",
+      "require": "./dist/icons/Tune.cjs"
+    },
+    "./icons/TuneVertical": {
+      "import": "./dist/icons/TuneVertical.mjs",
+      "require": "./dist/icons/TuneVertical.cjs"
     },
     "./icons/TurnLeft": {
       "import": "./dist/icons/TurnLeft.mjs",
@@ -2095,6 +2259,14 @@
       "import": "./dist/icons/TwitterXAlt.mjs",
       "require": "./dist/icons/TwitterXAlt.cjs"
     },
+    "./icons/TwoFactorAuthentication": {
+      "import": "./dist/icons/TwoFactorAuthentication.mjs",
+      "require": "./dist/icons/TwoFactorAuthentication.cjs"
+    },
+    "./icons/Update": {
+      "import": "./dist/icons/Update.mjs",
+      "require": "./dist/icons/Update.cjs"
+    },
     "./icons/Upload": {
       "import": "./dist/icons/Upload.mjs",
       "require": "./dist/icons/Upload.cjs"
@@ -2114,6 +2286,10 @@
     "./icons/UploadOutline": {
       "import": "./dist/icons/UploadOutline.mjs",
       "require": "./dist/icons/UploadOutline.cjs"
+    },
+    "./icons/UsbFlashDrive": {
+      "import": "./dist/icons/UsbFlashDrive.mjs",
+      "require": "./dist/icons/UsbFlashDrive.cjs"
     },
     "./icons/UTurnLeft": {
       "import": "./dist/icons/UTurnLeft.mjs",
@@ -2194,6 +2370,14 @@
     "./icons/WeatherCloudy": {
       "import": "./dist/icons/WeatherCloudy.mjs",
       "require": "./dist/icons/WeatherCloudy.cjs"
+    },
+    "./icons/Web": {
+      "import": "./dist/icons/Web.mjs",
+      "require": "./dist/icons/Web.cjs"
+    },
+    "./icons/WebBox": {
+      "import": "./dist/icons/WebBox.mjs",
+      "require": "./dist/icons/WebBox.cjs"
     },
     "./icons/Youtube": {
       "import": "./dist/icons/Youtube.mjs",

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<defs>
+		<mask id="facebook-mask">
+			<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+				<path d="M12 3a9 9 0 1 1 0 18a9 9 0 1 1 0 -18Z" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="58"><animate attributeName="fill-opacity" begin="0.6s" dur="0.4s" fill="freeze" to="1" /><animate attributeName="stroke-dashoffset" dur="0.6s" fill="freeze" values="58;0" /></path>
+				<path d="M16 7h-1.5c-1.6 0 -2.5 1 -2.5 2.6V23" stroke="#000" stroke-width="2.6" stroke-dasharray="20" stroke-dashoffset="20"><animate attributeName="stroke-dashoffset" begin="1s" dur="0.4s" fill="freeze" to="0" /></path>
+				<path d="M8.4 12.6h7.6" stroke="#000" stroke-width="2.4" stroke-dasharray="9" stroke-dashoffset="9"><animate attributeName="stroke-dashoffset" begin="1.4s" dur="0.2s" fill="freeze" to="0" /></path>
+			</g>
+		</mask>
+	</defs>
+	<path d="M0 0h24v24H0z" fill="currentColor" mask="url(#facebook-mask)" />
+</svg>

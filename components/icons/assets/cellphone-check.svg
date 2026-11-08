@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<defs>
+		<mask id="cellphone-check-mask">
+			<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+				<path d="M12 2h5c0.55 0 1 0.45 1 1v18c0 0.55 -0.45 1 -1 1h-10c-0.55 0 -1 -0.45 -1 -1v-18c0 -0.55 0.45 -1 1 -1Z" stroke="#fff" stroke-dasharray="63"><animate attributeName="stroke-dashoffset" dur="0.6s" fill="freeze" values="63;0" /></path>
+				<path d="M6 2h12v0h-12ZM6 22h12v0h-12Z" fill="#fff"><animate attributeName="d" begin="0.6s" dur="0.2s" fill="freeze" to="M6 2h12v3h-12ZM6 22h12v-3h-12Z" /></path>
+				<circle cx="18.5" cy="18.5" r="5.5" fill="#000" opacity="0"><set attributeName="opacity" to="1" begin="0.8s" fill="freeze" /></circle>
+			</g>
+		</mask>
+	</defs>
+	<path d="M0 0h24v24H0z" fill="currentColor" mask="url(#cellphone-check-mask)" />
+	<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor">
+		<path d="M15.5 18.5l2 2l4 -4" stroke-dasharray="9" stroke-dashoffset="9"><animate attributeName="stroke-dashoffset" begin="0.8s" dur="0.2s" fill="freeze" to="0" /></path>
+	</g>
+</svg>

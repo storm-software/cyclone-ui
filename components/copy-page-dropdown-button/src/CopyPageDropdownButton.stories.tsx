@@ -28,7 +28,7 @@ const meta: Meta<typeof CopyPageDropdownButton> = {
     markdownUrl:
       "https://raw.githubusercontent.com/storm-software/cyclone-ui/main/README.md",
     size: "md",
-    variant: "outlined",
+    variant: "tertiary",
     onPress: fn()
   },
   argTypes: {

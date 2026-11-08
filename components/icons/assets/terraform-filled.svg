@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<defs>
+		<mask id="terraform-mask">
+			<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+				<path d="M4 3.6L7.6 5.7V9.8L4 7.7Z" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="18"><animate attributeName="fill-opacity" begin="1s" dur="0.4s" fill="freeze" to="1" /><animate attributeName="stroke-dashoffset" dur="0.25s" fill="freeze" values="18;0" /></path>
+				<path d="M10.2 7.2L13.8 9.3V13.3L10.2 11.2Z" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="17" stroke-dashoffset="17"><animate attributeName="fill-opacity" begin="1s" dur="0.4s" fill="freeze" to="1" /><animate attributeName="stroke-dashoffset" begin="0.25s" dur="0.25s" fill="freeze" to="0" /></path>
+				<path d="M16.4 9.3L20 7.2V11.2L16.4 13.3Z" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="17" stroke-dashoffset="17"><animate attributeName="fill-opacity" begin="1s" dur="0.4s" fill="freeze" to="1" /><animate attributeName="stroke-dashoffset" begin="0.5s" dur="0.25s" fill="freeze" to="0" /></path>
+				<path d="M10.2 14.2L13.8 16.3V20.3L10.2 18.2Z" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="17" stroke-dashoffset="17"><animate attributeName="fill-opacity" begin="1s" dur="0.4s" fill="freeze" to="1" /><animate attributeName="stroke-dashoffset" begin="0.75s" dur="0.25s" fill="freeze" to="0" /></path>
+			</g>
+		</mask>
+	</defs>
+	<path d="M0 0h24v24H0z" fill="currentColor" mask="url(#terraform-mask)" />
+</svg>

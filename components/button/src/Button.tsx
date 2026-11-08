@@ -566,6 +566,9 @@ const ButtonFrame = styled(View, {
     ...sized,
     // The resolved padding would otherwise override the `tight` variant.
     paddingHorizontal: props.tight ? 0 : sized?.paddingHorizontal,
+    // A fixed space between an icon and its label at every size, instead of
+    // the sized gap (which matches the padding).
+    gap: props.circular ? 0 : "2xl",
     // The `circular` and `rounded` variants own the radius when set.
     borderRadius:
       props.circular || props.rounded ? undefined : sized?.borderRadius,
