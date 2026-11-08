@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Icons
 
+## [0.0.59](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.59) (11/08/2026)
+
+### Features
+
+- **manual-address-input:** Initial check-in of the Manual Address Input component ([1da71a61d](https://github.com/storm-software/cyclone-ui/commit/1da71a61d))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.61**
+
 ## [0.0.58](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.58) (11/08/2026)
 
 ### Bug Fixes

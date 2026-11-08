@@ -2,6 +2,25 @@
 
 # Changelog for Cyclone UI - Field
 
+## [0.5.64](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.64) (11/08/2026)
+
+### Features
+
+- **manual-address-input:** Initial check-in of the Manual Address Input component ([1da71a61d](https://github.com/storm-software/cyclone-ui/commit/1da71a61d))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.61**
+- Updated **button** to **v0.6.64**
+- Updated **form** to **v0.9.62**
+- Updated **helpers** to **v0.3.61**
+- Updated **icons** to **v0.0.59**
+- Updated **link** to **v0.5.64**
+- Updated **spinner** to **v0.5.61**
+- Updated **state** to **v0.0.63**
+- Updated **tooltip** to **v0.5.64**
+- Updated **validation-text** to **v0.5.63**
+
 ## [0.5.63](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.63) (11/08/2026)
 
 ### Bug Fixes

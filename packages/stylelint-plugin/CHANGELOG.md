@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.51](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.51) (11/08/2026)
+
+### Features
+
+- **manual-address-input:** Initial check-in of the Manual Address Input component ([1da71a61d](https://github.com/storm-software/cyclone-ui/commit/1da71a61d))
+
 ## [0.0.50](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.50) (11/08/2026)
 
 ### Bug Fixes

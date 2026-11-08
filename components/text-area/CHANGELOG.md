@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Text Area
 
+## [0.1.64](https://github.com/storm-software/cyclone-ui/releases/tag/text-area%400.1.64) (11/08/2026)
+
+### Features
+
+- **manual-address-input:** Initial check-in of the Manual Address Input component ([1da71a61d](https://github.com/storm-software/cyclone-ui/commit/1da71a61d))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.64**
+- Updated **form** to **v0.9.62**
+- Updated **helpers** to **v0.3.61**
+- Updated **input** to **v0.6.64**
+- Updated **scroll-view** to **v0.5.63**
+
 ## [0.1.63](https://github.com/storm-software/cyclone-ui/releases/tag/text-area%400.1.63) (11/08/2026)
 
 ### Updated Dependencies

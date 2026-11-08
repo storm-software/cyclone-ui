@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Tokens
 
+## [0.3.50](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.50) (11/08/2026)
+
+### Features
+
+- **manual-address-input:** Initial check-in of the Manual Address Input component ([1da71a61d](https://github.com/storm-software/cyclone-ui/commit/1da71a61d))
+
 ## [0.3.45](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.45) (11/07/2026)
 
 ### Bug Fixes

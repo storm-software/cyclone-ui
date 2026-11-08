@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Theme Builder
 
+## [0.0.51](https://github.com/storm-software/cyclone-ui/releases/tag/theme-builder%400.0.51) (11/08/2026)
+
+### Features
+
+- **manual-address-input:** Initial check-in of the Manual Address Input component ([1da71a61d](https://github.com/storm-software/cyclone-ui/commit/1da71a61d))
+
 ## [0.0.46](https://github.com/storm-software/cyclone-ui/releases/tag/theme-builder%400.0.46) (11/07/2026)
 
 ### Bug Fixes

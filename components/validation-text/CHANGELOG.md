@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Validation Text
 
+## [0.5.63](https://github.com/storm-software/cyclone-ui/releases/tag/validation-text%400.5.63) (11/08/2026)
+
+### Features
+
+- **manual-address-input:** Initial check-in of the Manual Address Input component ([1da71a61d](https://github.com/storm-software/cyclone-ui/commit/1da71a61d))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.61**
+- Updated **icons** to **v0.0.59**
+
 ## [0.5.62](https://github.com/storm-software/cyclone-ui/releases/tag/validation-text%400.5.62) (11/08/2026)
 
 ### Updated Dependencies
