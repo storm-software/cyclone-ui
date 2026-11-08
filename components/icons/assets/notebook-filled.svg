@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<defs>
+		<mask id="notebook-mask">
+			<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+				<path d="M7 3h13c0.55 0 1 0.45 1 1v16c0 0.55 -0.45 1 -1 1h-13c-0.55 0 -1 -0.45 -1 -1v-16c0 -0.55 0.45 -1 1 -1Z" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="66">
+					<animate attributeName="fill-opacity" begin="0.9s" dur="0.4s" fill="freeze" to="1" />
+					<animate attributeName="stroke-dashoffset" dur="0.6s" fill="freeze" values="66;0" />
+				</path>
+				<path d="M13.5 3v6l1.75-1.5L17 9V3" stroke="#000" stroke-dasharray="18" stroke-dashoffset="18">
+					<animate attributeName="stroke-dashoffset" begin="1.3s" dur="0.2s" fill="freeze" to="0" />
+				</path>
+			</g>
+		</mask>
+	</defs>
+	<path d="M0 0h24v24H0z" fill="currentColor" mask="url(#notebook-mask)" />
+	<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor">
+		<path d="M3.5 6h4" stroke-dasharray="5" stroke-dashoffset="5">
+			<animate attributeName="stroke-dashoffset" begin="0.6s" dur="0.1s" fill="freeze" to="0" />
+		</path>
+		<path d="M3.5 12h4" stroke-dasharray="5" stroke-dashoffset="5">
+			<animate attributeName="stroke-dashoffset" begin="0.7s" dur="0.1s" fill="freeze" to="0" />
+		</path>
+		<path d="M3.5 18h4" stroke-dasharray="5" stroke-dashoffset="5">
+			<animate attributeName="stroke-dashoffset" begin="0.8s" dur="0.1s" fill="freeze" to="0" />
+		</path>
+	</g>
+</svg>

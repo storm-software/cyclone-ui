@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<defs>
+		<mask id="console-mask">
+			<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+				<path d="M4 4h16c0.55 0 1 0.45 1 1v14c0 0.55 -0.45 1 -1 1h-16c-0.55 0 -1 -0.45 -1 -1v-14c0 -0.55 0.45 -1 1 -1Z" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="68">
+					<animate attributeName="fill-opacity" begin="0.6s" dur="0.4s" fill="freeze" to="1" />
+					<animate attributeName="stroke-dashoffset" dur="0.6s" fill="freeze" values="68;0" />
+				</path>
+				<path d="M7 10l3 3l-3 3" stroke="#000" stroke-dasharray="10" stroke-dashoffset="10">
+					<animate attributeName="stroke-dashoffset" begin="1s" dur="0.2s" fill="freeze" to="0" />
+				</path>
+				<path d="M13.5 16h4" stroke="#000" stroke-dasharray="5" stroke-dashoffset="5">
+					<animate attributeName="stroke-dashoffset" begin="1.2s" dur="0.2s" fill="freeze" to="0" />
+					<animate attributeName="opacity" begin="1.6s" dur="1.2s" repeatCount="indefinite" keyTimes="0;0.49;0.5;0.99;1" values="1;1;0;0;1" />
+				</path>
+			</g>
+		</mask>
+	</defs>
+	<path d="M0 0h24v24H0z" fill="currentColor" mask="url(#console-mask)" />
+</svg>

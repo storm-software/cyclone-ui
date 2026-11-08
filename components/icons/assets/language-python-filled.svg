@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<defs>
+		<mask id="language-python-mask">
+			<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+				<path d="M4 16.5V11A2 2 0 0 1 6 9h2V5.5A2 2 0 0 1 10 3.5h4A2 2 0 0 1 16 5.5v3.5A2 2 0 0 1 14 11H9.5A2.5 2.5 0 0 0 7 13.5v3Z" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="47">
+					<animate attributeName="fill-opacity" begin="1.2s" dur="0.4s" fill="freeze" to="1" />
+					<animate attributeName="stroke-dashoffset" dur="0.6s" fill="freeze" values="47;0" />
+				</path>
+				<path d="M20 7.5V13A2 2 0 0 1 18 15h-2v3.5A2 2 0 0 1 14 20.5h-4A2 2 0 0 1 8 18.5V15A2 2 0 0 1 10 13h4.5A2.5 2.5 0 0 0 17 10.5v-3Z" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="47" stroke-dashoffset="47">
+					<animate attributeName="fill-opacity" begin="1.2s" dur="0.4s" fill="freeze" to="1" />
+					<animate attributeName="stroke-dashoffset" begin="0.6s" dur="0.6s" fill="freeze" to="0" />
+				</path>
+				<circle cx="10" cy="6" fill="#000" r="0">
+					<animate attributeName="r" begin="1.6s" dur="0.1s" fill="freeze" to="0.9" />
+				</circle>
+				<circle cx="14" cy="18" fill="#000" r="0">
+					<animate attributeName="r" begin="1.6s" dur="0.1s" fill="freeze" to="0.9" />
+				</circle>
+			</g>
+		</mask>
+	</defs>
+	<path d="M0 0h24v24H0z" fill="currentColor" mask="url(#language-python-mask)" />
+</svg>

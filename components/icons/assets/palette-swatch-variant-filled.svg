@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<defs>
+		<mask id="palette-swatch-variant-mask">
+			<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+				<path d="M3 12V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="19">
+					<animate attributeName="fill-opacity" begin="1.2s" dur="0.4s" fill="freeze" to="1" />
+					<animate attributeName="stroke-dashoffset" dur="0.3s" fill="freeze" values="19;0" />
+				</path>
+				<path d="M7 12L13.6 5.4a1.5 1.5 0 0 1 2.1 0l2.9 2.9a1.5 1.5 0 0 1 0 2.1L17.4 11.6" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="21" stroke-dashoffset="21">
+					<animate attributeName="fill-opacity" begin="1.2s" dur="0.4s" fill="freeze" to="1" />
+					<animate attributeName="stroke-dashoffset" begin="0.3s" dur="0.4s" fill="freeze" to="0" />
+				</path>
+				<path d="M6 15h14c0.55 0 1 0.45 1 1v4c0 0.55-0.45 1-1 1H6a3 3 0 0 1 0-6Z" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="46" stroke-dashoffset="46">
+					<animate attributeName="fill-opacity" begin="1.2s" dur="0.4s" fill="freeze" to="1" />
+					<animate attributeName="stroke-dashoffset" begin="0.7s" dur="0.5s" fill="freeze" to="0" />
+				</path>
+				<path d="M6 18v0.01" stroke="#000" stroke-dasharray="2" stroke-dashoffset="2">
+					<animate attributeName="stroke-dashoffset" begin="1.6s" dur="0.1s" fill="freeze" to="0" />
+				</path>
+			</g>
+		</mask>
+	</defs>
+	<path d="M0 0h24v24H0z" fill="currentColor" mask="url(#palette-swatch-variant-mask)" />
+</svg>

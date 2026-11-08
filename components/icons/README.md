@@ -132,7 +132,7 @@ pnpm --filter @cyclone-ui/icons generate
 
 - Only the `regular`, `loop`, `filled`, and `filled-loop` variants are included; `twotone` and `-transition` icons are skipped.
 - Strokes are scaled to 75% (2px lines render at 1.5px) so the icons sit closer to [Material Design Light](https://github.com/Templarian/MaterialDesignLight). Change `STROKE_SCALE` in the generator to adjust. Each `regular` file is also read unscaled as the `bold` variant, which matches the original line-md icons.
-- `assets/` holds icons line-md does not have (for example `Lock`, `Clock`, `DotsHorizontal`), drawn in the same style: 24×24 grid, 2px round strokes, and `stroke-dashoffset` draw-in animations. Name variant files `<name>-filled.svg`, `<name>-loop.svg`, and `<name>-filled-loop.svg`.
+- `assets/` holds icons line-md does not have (for example `Lock`, `Clock`, `DotsHorizontal`, and the [Material Design Icons](https://pictogrammers.com/library/mdi/) shapes such as `Alarm`, `Robot`, `Qrcode`, and the `Language*` logos), drawn in the same style: 24×24 grid, 2px round strokes, and `stroke-dashoffset` draw-in animations. An asset with the same name as a line-md icon (`clipboard`, `rss`, `share`) replaces it. Name variant files `<name>-filled.svg`, `<name>-loop.svg`, and `<name>-filled-loop.svg`.
 
 The line-md artwork is © Vjacheslav Trushkin and is licensed under the [MIT License](https://github.com/cyberalien/line-md/blob/main/license.txt).
 

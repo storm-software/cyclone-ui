@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<defs>
+		<mask id="safe-square-mask">
+			<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+				<path d="M4 3h16c0.55 0 1 0.45 1 1v16c0 0.55 -0.45 1 -1 1h-16c-0.55 0 -1 -0.45 -1 -1v-16c0 -0.55 0.45 -1 1 -1Z" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="72">
+					<animate attributeName="fill-opacity" begin="0.7s" dur="0.4s" fill="freeze" to="1" />
+					<animate attributeName="stroke-dashoffset" dur="0.6s" fill="freeze" values="72;0" />
+				</path>
+				<path d="M12 9.5c1.38 0 2.5 1.12 2.5 2.5c0 1.38 -1.12 2.5 -2.5 2.5c-1.38 0 -2.5 -1.12 -2.5 -2.5c0 -1.38 1.12 -2.5 2.5 -2.5Z" stroke="#000" stroke-dasharray="17" stroke-dashoffset="17">
+					<animate attributeName="stroke-dashoffset" begin="1.1s" dur="0.3s" fill="freeze" to="0" />
+				</path>
+				<path d="M14.7 14.7l1.3 1.3M9.3 14.7l-1.3 1.3M14.7 9.3l1.3-1.3M9.3 9.3l-1.3-1.3" stroke="#000" stroke-dasharray="9" stroke-dashoffset="9">
+					<animate attributeName="stroke-dashoffset" begin="1.4s" dur="0.2s" fill="freeze" to="0" />
+				</path>
+			</g>
+		</mask>
+	</defs>
+	<path d="M0 0h24v24H0z" fill="currentColor" mask="url(#safe-square-mask)" />
+	<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor">
+		<path d="M5.5 22.5h2.5M16 22.5h2.5" stroke-dasharray="6" stroke-dashoffset="6">
+			<animate attributeName="stroke-dashoffset" begin="0.6s" dur="0.1s" fill="freeze" to="0" />
+		</path>
+	</g>
+</svg>

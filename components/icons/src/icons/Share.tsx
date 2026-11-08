@@ -31,93 +31,24 @@ export const Share = createIcon("Share", {
       type: "g",
       props: {
         fill: "none",
-        stroke: "currentColor",
-        strokeWidth: 1.5,
         strokeLinecap: "round",
-        strokeLinejoin: "round"
+        strokeLinejoin: "round",
+        strokeWidth: 1.5,
+        stroke: "currentColor"
       },
       children: [
         {
-          type: "g",
-          props: { fill: "none", strokeDasharray: 16 },
-          children: [
+          type: "path",
+          props: {
+            d: "M14.5 6v3.4C8.3 10.4 5.2 14.9 4.2 19.2c2.5-3 5.8-4.5 10.3-4.6V18l6-6Z",
+            strokeDasharray: 52
+          },
+          animations: [
             {
-              type: "path",
-              props: {
-                d: "M6 9.5c1.38 0 2.5 1.12 2.5 2.5c0 1.38 -1.12 2.5 -2.5 2.5c-1.38 0 -2.5 -1.12 -2.5 -2.5c0 -1.38 1.12 -2.5 2.5 -2.5Z"
-              },
-              animations: [
-                {
-                  prop: "strokeDashoffset",
-                  dur: 0.3,
-                  values: [16, 0],
-                  freeze: true
-                }
-              ]
-            },
-            {
-              type: "path",
-              props: {
-                d: "M18 2.5c1.38 0 2.5 1.12 2.5 2.5c0 1.38 -1.12 2.5 -2.5 2.5c-1.38 0 -2.5 -1.12 -2.5 -2.5c0 -1.38 1.12 -2.5 2.5 -2.5Z",
-                strokeDashoffset: 16
-              },
-              animations: [
-                {
-                  prop: "strokeDashoffset",
-                  begin: 0.6,
-                  dur: 0.3,
-                  values: [0],
-                  freeze: true
-                }
-              ]
-            },
-            {
-              type: "path",
-              props: {
-                d: "M18 16.5c1.38 0 2.5 1.12 2.5 2.5c0 1.38 -1.12 2.5 -2.5 2.5c-1.38 0 -2.5 -1.12 -2.5 -2.5c0 -1.38 1.12 -2.5 2.5 -2.5Z",
-                strokeDashoffset: 16
-              },
-              animations: [
-                {
-                  prop: "strokeDashoffset",
-                  begin: 0.6,
-                  dur: 0.3,
-                  values: [0],
-                  freeze: true
-                }
-              ]
-            }
-          ]
-        },
-        {
-          type: "g",
-          props: { strokeDasharray: 10, strokeDashoffset: 10 },
-          children: [
-            {
-              type: "path",
-              props: { d: "M8.16 10.74l7.68 -4.48" },
-              animations: [
-                {
-                  prop: "strokeDashoffset",
-                  begin: 0.3,
-                  dur: 0.3,
-                  values: [10, 0],
-                  freeze: true
-                }
-              ]
-            },
-            {
-              type: "path",
-              props: { d: "M8.16 13.26l7.68 4.48" },
-              animations: [
-                {
-                  prop: "strokeDashoffset",
-                  begin: 0.3,
-                  dur: 0.3,
-                  values: [10, 0],
-                  freeze: true
-                }
-              ]
+              prop: "strokeDashoffset",
+              dur: 0.7,
+              values: [52, 0],
+              freeze: true
             }
           ]
         }
@@ -129,93 +60,24 @@ export const Share = createIcon("Share", {
       type: "g",
       props: {
         fill: "none",
-        stroke: "currentColor",
-        strokeWidth: 2,
         strokeLinecap: "round",
-        strokeLinejoin: "round"
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        stroke: "currentColor"
       },
       children: [
         {
-          type: "g",
-          props: { fill: "none", strokeDasharray: 16 },
-          children: [
+          type: "path",
+          props: {
+            d: "M14.5 6v3.4C8.3 10.4 5.2 14.9 4.2 19.2c2.5-3 5.8-4.5 10.3-4.6V18l6-6Z",
+            strokeDasharray: 52
+          },
+          animations: [
             {
-              type: "path",
-              props: {
-                d: "M6 9.5c1.38 0 2.5 1.12 2.5 2.5c0 1.38 -1.12 2.5 -2.5 2.5c-1.38 0 -2.5 -1.12 -2.5 -2.5c0 -1.38 1.12 -2.5 2.5 -2.5Z"
-              },
-              animations: [
-                {
-                  prop: "strokeDashoffset",
-                  dur: 0.3,
-                  values: [16, 0],
-                  freeze: true
-                }
-              ]
-            },
-            {
-              type: "path",
-              props: {
-                d: "M18 2.5c1.38 0 2.5 1.12 2.5 2.5c0 1.38 -1.12 2.5 -2.5 2.5c-1.38 0 -2.5 -1.12 -2.5 -2.5c0 -1.38 1.12 -2.5 2.5 -2.5Z",
-                strokeDashoffset: 16
-              },
-              animations: [
-                {
-                  prop: "strokeDashoffset",
-                  begin: 0.6,
-                  dur: 0.3,
-                  values: [0],
-                  freeze: true
-                }
-              ]
-            },
-            {
-              type: "path",
-              props: {
-                d: "M18 16.5c1.38 0 2.5 1.12 2.5 2.5c0 1.38 -1.12 2.5 -2.5 2.5c-1.38 0 -2.5 -1.12 -2.5 -2.5c0 -1.38 1.12 -2.5 2.5 -2.5Z",
-                strokeDashoffset: 16
-              },
-              animations: [
-                {
-                  prop: "strokeDashoffset",
-                  begin: 0.6,
-                  dur: 0.3,
-                  values: [0],
-                  freeze: true
-                }
-              ]
-            }
-          ]
-        },
-        {
-          type: "g",
-          props: { strokeDasharray: 10, strokeDashoffset: 10 },
-          children: [
-            {
-              type: "path",
-              props: { d: "M8.16 10.74l7.68 -4.48" },
-              animations: [
-                {
-                  prop: "strokeDashoffset",
-                  begin: 0.3,
-                  dur: 0.3,
-                  values: [10, 0],
-                  freeze: true
-                }
-              ]
-            },
-            {
-              type: "path",
-              props: { d: "M8.16 13.26l7.68 4.48" },
-              animations: [
-                {
-                  prop: "strokeDashoffset",
-                  begin: 0.3,
-                  dur: 0.3,
-                  values: [10, 0],
-                  freeze: true
-                }
-              ]
+              prop: "strokeDashoffset",
+              dur: 0.7,
+              values: [52, 0],
+              freeze: true
             }
           ]
         }
@@ -227,114 +89,33 @@ export const Share = createIcon("Share", {
       type: "g",
       props: {
         fill: "none",
-        stroke: "currentColor",
-        strokeWidth: 1.5,
         strokeLinecap: "round",
-        strokeLinejoin: "round"
+        strokeLinejoin: "round",
+        strokeWidth: 1.5,
+        stroke: "currentColor"
       },
       children: [
         {
-          type: "g",
-          props: { fill: "currentColor", fillOpacity: 0, strokeDasharray: 16 },
-          children: [
+          type: "path",
+          props: {
+            d: "M14.5 6v3.4C8.3 10.4 5.2 14.9 4.2 19.2c2.5-3 5.8-4.5 10.3-4.6V18l6-6Z",
+            fill: "currentColor",
+            fillOpacity: 0,
+            strokeDasharray: 52
+          },
+          animations: [
             {
-              type: "path",
-              props: {
-                d: "M6 9.5c1.38 0 2.5 1.12 2.5 2.5c0 1.38 -1.12 2.5 -2.5 2.5c-1.38 0 -2.5 -1.12 -2.5 -2.5c0 -1.38 1.12 -2.5 2.5 -2.5Z"
-              },
-              animations: [
-                {
-                  prop: "strokeDashoffset",
-                  dur: 0.3,
-                  values: [16, 0],
-                  freeze: true
-                },
-                {
-                  prop: "fillOpacity",
-                  begin: 0.9,
-                  dur: 0.3,
-                  values: [0, 1],
-                  freeze: true
-                }
-              ]
+              prop: "strokeDashoffset",
+              dur: 0.7,
+              values: [52, 0],
+              freeze: true
             },
             {
-              type: "path",
-              props: {
-                d: "M18 2.5c1.38 0 2.5 1.12 2.5 2.5c0 1.38 -1.12 2.5 -2.5 2.5c-1.38 0 -2.5 -1.12 -2.5 -2.5c0 -1.38 1.12 -2.5 2.5 -2.5Z",
-                strokeDashoffset: 16
-              },
-              animations: [
-                {
-                  prop: "strokeDashoffset",
-                  begin: 0.6,
-                  dur: 0.3,
-                  values: [0],
-                  freeze: true
-                },
-                {
-                  prop: "fillOpacity",
-                  begin: 0.9,
-                  dur: 0.3,
-                  values: [0, 1],
-                  freeze: true
-                }
-              ]
-            },
-            {
-              type: "path",
-              props: {
-                d: "M18 16.5c1.38 0 2.5 1.12 2.5 2.5c0 1.38 -1.12 2.5 -2.5 2.5c-1.38 0 -2.5 -1.12 -2.5 -2.5c0 -1.38 1.12 -2.5 2.5 -2.5Z",
-                strokeDashoffset: 16
-              },
-              animations: [
-                {
-                  prop: "strokeDashoffset",
-                  begin: 0.6,
-                  dur: 0.3,
-                  values: [0],
-                  freeze: true
-                },
-                {
-                  prop: "fillOpacity",
-                  begin: 0.9,
-                  dur: 0.3,
-                  values: [0, 1],
-                  freeze: true
-                }
-              ]
-            }
-          ]
-        },
-        {
-          type: "g",
-          props: { strokeDasharray: 10, strokeDashoffset: 10 },
-          children: [
-            {
-              type: "path",
-              props: { d: "M8.16 10.74l7.68 -4.48" },
-              animations: [
-                {
-                  prop: "strokeDashoffset",
-                  begin: 0.3,
-                  dur: 0.3,
-                  values: [10, 0],
-                  freeze: true
-                }
-              ]
-            },
-            {
-              type: "path",
-              props: { d: "M8.16 13.26l7.68 4.48" },
-              animations: [
-                {
-                  prop: "strokeDashoffset",
-                  begin: 0.3,
-                  dur: 0.3,
-                  values: [10, 0],
-                  freeze: true
-                }
-              ]
+              prop: "fillOpacity",
+              begin: 0.7,
+              dur: 0.4,
+              values: [1],
+              freeze: true
             }
           ]
         }

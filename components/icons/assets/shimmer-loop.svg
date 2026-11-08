@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor">
+		<path d="M9 1.5L10.47 6.53L15.5 8L10.47 9.47L9 14.5L7.53 9.47L2.5 8L7.53 6.53Z" style="transform-origin: 9px 8px" stroke-dasharray="43">
+			<animate attributeName="stroke-dashoffset" dur="0.4s" fill="freeze" values="43;0" />
+			<animateTransform attributeName="transform" type="scale" begin="1.4s" dur="3s" repeatCount="indefinite" keyTimes="0;0.1;0.2;1" values="1;0.7;1;1" />
+		</path>
+		<path d="M21.04 12.96L19.1 16.5L21.04 20.04L17.5 18.1L13.96 20.04L15.9 16.5L13.96 12.96L17.5 14.9Z" style="transform-origin: 17.5px 16.5px" stroke-dasharray="34" stroke-dashoffset="34">
+			<animate attributeName="stroke-dashoffset" begin="0.4s" dur="0.3s" fill="freeze" to="0" />
+			<animateTransform attributeName="transform" type="scale" begin="1.9s" dur="3s" repeatCount="indefinite" keyTimes="0;0.1;0.2;1" values="1;0.7;1;1" />
+		</path>
+		<path d="M9.19 16.81L7.72 19.5L9.19 22.19L6.5 20.72L3.81 22.19L5.28 19.5L3.81 16.81L6.5 18.28Z" style="transform-origin: 6.5px 19.5px" stroke-dasharray="26" stroke-dashoffset="26">
+			<animate attributeName="stroke-dashoffset" begin="0.7s" dur="0.3s" fill="freeze" to="0" />
+			<animateTransform attributeName="transform" type="scale" begin="2.4s" dur="3s" repeatCount="indefinite" keyTimes="0;0.1;0.2;1" values="1;0.7;1;1" />
+		</path>
+	</g>
+</svg>

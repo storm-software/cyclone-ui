@@ -1394,6 +1394,10 @@
           "type": "registry:component"
         },
         {
+          "path": "components/icons/src/icons/AccountCircle.tsx",
+          "type": "registry:component"
+        },
+        {
           "path": "components/icons/src/icons/AccountDelete.tsx",
           "type": "registry:component"
         },
@@ -1403,6 +1407,22 @@
         },
         {
           "path": "components/icons/src/icons/AccountSmall.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/Alarm.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/AlarmCheck.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/AlarmOff.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/AlarmPlus.tsx",
           "type": "registry:component"
         },
         {
@@ -1431,6 +1451,10 @@
         },
         {
           "path": "components/icons/src/icons/AlignRight.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/Anchor.tsx",
           "type": "registry:component"
         },
         {
@@ -1594,7 +1618,31 @@
           "type": "registry:component"
         },
         {
+          "path": "components/icons/src/icons/Attachment.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/AutoFix.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/AutoMode.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/Aws.tsx",
+          "type": "registry:component"
+        },
+        {
           "path": "components/icons/src/icons/BackupRestore.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/Barcode.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/BarcodeScan.tsx",
           "type": "registry:component"
         },
         {
@@ -1611,6 +1659,22 @@
         },
         {
           "path": "components/icons/src/icons/BellAlert.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/BellOff.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/BellPlus.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/BellRemove.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/BellRing.tsx",
           "type": "registry:component"
         },
         {
@@ -1662,6 +1726,10 @@
           "type": "registry:component"
         },
         {
+          "path": "components/icons/src/icons/Bug.tsx",
+          "type": "registry:component"
+        },
+        {
           "path": "components/icons/src/icons/BuyMeACoffee.tsx",
           "type": "registry:component"
         },
@@ -1671,6 +1739,10 @@
         },
         {
           "path": "components/icons/src/icons/Calendar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/Camera.tsx",
           "type": "registry:component"
         },
         {
@@ -1699,6 +1771,22 @@
         },
         {
           "path": "components/icons/src/icons/CarLightOff.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/Cart.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/CartVariant.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/Cctv.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/CctvOff.tsx",
           "type": "registry:component"
         },
         {
@@ -1938,6 +2026,10 @@
           "type": "registry:component"
         },
         {
+          "path": "components/icons/src/icons/ClipboardText.tsx",
+          "type": "registry:component"
+        },
+        {
           "path": "components/icons/src/icons/Clock.tsx",
           "type": "registry:component"
         },
@@ -2047,6 +2139,14 @@
         },
         {
           "path": "components/icons/src/icons/ConfirmSquare.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/Console.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/ConsoleLine.tsx",
           "type": "registry:component"
         },
         {
@@ -2374,6 +2474,14 @@
           "type": "registry:component"
         },
         {
+          "path": "components/icons/src/icons/Fingerprint.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/FingerprintPattern.tsx",
+          "type": "registry:component"
+        },
+        {
           "path": "components/icons/src/icons/Folder.tsx",
           "type": "registry:component"
         },
@@ -2466,6 +2574,10 @@
           "type": "registry:component"
         },
         {
+          "path": "components/icons/src/icons/Gift.tsx",
+          "type": "registry:component"
+        },
+        {
           "path": "components/icons/src/icons/Github.tsx",
           "type": "registry:component"
         },
@@ -2534,6 +2646,62 @@
           "type": "registry:component"
         },
         {
+          "path": "components/icons/src/icons/Key.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/LanguageC.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/LanguageCpp.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/LanguageCsharp.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/LanguageGo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/LanguageHtml5.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/LanguageJava.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/LanguageJavascript.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/LanguageJsx.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/LanguageMarkdown.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/LanguagePhp.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/LanguagePython.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/LanguageRust.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/LanguageTypescript.tsx",
+          "type": "registry:component"
+        },
+        {
           "path": "components/icons/src/icons/Laptop.tsx",
           "type": "registry:component"
         },
@@ -2574,6 +2742,10 @@
           "type": "registry:component"
         },
         {
+          "path": "components/icons/src/icons/ListBox.tsx",
+          "type": "registry:component"
+        },
+        {
           "path": "components/icons/src/icons/ListIndented.tsx",
           "type": "registry:component"
         },
@@ -2611,6 +2783,14 @@
         },
         {
           "path": "components/icons/src/icons/LogOut2.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/Magnify.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/Mailbox.tsx",
           "type": "registry:component"
         },
         {
@@ -2806,11 +2986,23 @@
           "type": "registry:component"
         },
         {
+          "path": "components/icons/src/icons/Nix.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/Notebook.tsx",
+          "type": "registry:component"
+        },
+        {
           "path": "components/icons/src/icons/PaintDrop.tsx",
           "type": "registry:component"
         },
         {
           "path": "components/icons/src/icons/PaintDropHalf.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/PaletteSwatchVariant.tsx",
           "type": "registry:component"
         },
         {
@@ -2894,6 +3086,10 @@
           "type": "registry:component"
         },
         {
+          "path": "components/icons/src/icons/Pin.tsx",
+          "type": "registry:component"
+        },
+        {
           "path": "components/icons/src/icons/Pixelfed.tsx",
           "type": "registry:component"
         },
@@ -2930,6 +3126,14 @@
           "type": "registry:component"
         },
         {
+          "path": "components/icons/src/icons/Puzzle.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/Qrcode.tsx",
+          "type": "registry:component"
+        },
+        {
           "path": "components/icons/src/icons/Question.tsx",
           "type": "registry:component"
         },
@@ -2951,6 +3155,10 @@
         },
         {
           "path": "components/icons/src/icons/Remove.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/Robot.tsx",
           "type": "registry:component"
         },
         {
@@ -2990,6 +3198,14 @@
           "type": "registry:component"
         },
         {
+          "path": "components/icons/src/icons/RssBox.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/SafeSquare.tsx",
+          "type": "registry:component"
+        },
+        {
           "path": "components/icons/src/icons/Search.tsx",
           "type": "registry:component"
         },
@@ -3002,7 +3218,19 @@
           "type": "registry:component"
         },
         {
+          "path": "components/icons/src/icons/Send.tsx",
+          "type": "registry:component"
+        },
+        {
           "path": "components/icons/src/icons/Share.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/ShareVariant.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/Shimmer.tsx",
           "type": "registry:component"
         },
         {

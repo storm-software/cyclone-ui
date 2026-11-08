@@ -1,6 +1,6 @@
 ---
 title: "Icons"
-description: "Catalog of all 478 Cyclone UI icon components, with import paths and the size, color, variant, animated, and mirrored props."
+description: "Catalog of all 535 Cyclone UI icon components, with import paths and the size, color, variant, animated, and mirrored props."
 documentType: reference
 tags: [icons, line-md, tamagui, animation]
 ---
@@ -117,16 +117,21 @@ The `Display/Icons` story has a `Gallery` view. It shows a preview of every icon
 
 ## Catalog
 
-The catalog has 478 icons. 13 of them (marked *) are drawn for Cyclone UI in the line-md style. The variant counts are: `regular` 469, `loop` 71, `filled` 239, `filled-loop` 42.
+The catalog has 535 icons. 74 of them (marked *) are drawn for Cyclone UI in the line-md style, most of them after [Material Design Icons](https://pictogrammers.com/library/mdi/) shapes. The variant counts are: `regular` 525, `loop` 79, `filled` 276, `filled-loop` 46.
 
 | Component                   | `regular` | `loop` | `filled` | `filled-loop` |
 | --------------------------- | :-------: | :----: | :------: | :-----------: |
 | `Account`                   |     ✓     |        |          |               |
 | `AccountAdd`                |     ✓     |        |          |               |
 | `AccountAlert`              |     ✓     |   ✓    |          |               |
+| `AccountCircle` *           |     ✓     |        |    ✓     |               |
 | `AccountDelete`             |     ✓     |        |          |               |
 | `AccountRemove`             |     ✓     |        |          |               |
 | `AccountSmall`              |     ✓     |        |          |               |
+| `Alarm` *                   |     ✓     |   ✓    |    ✓     |       ✓       |
+| `AlarmCheck` *              |     ✓     |        |    ✓     |               |
+| `AlarmOff` *                |     ✓     |        |    ✓     |               |
+| `AlarmPlus` *               |     ✓     |        |    ✓     |               |
 | `Alert`                     |     ✓     |   ✓    |          |               |
 | `AlertCircle`               |     ✓     |   ✓    |          |               |
 | `AlertSquare`               |     ✓     |   ✓    |          |               |
@@ -134,6 +139,7 @@ The catalog has 478 icons. 13 of them (marked *) are drawn for Cyclone UI in the
 | `AlignJustify`              |     ✓     |        |          |               |
 | `AlignLeft`                 |     ✓     |        |          |               |
 | `AlignRight`                |     ✓     |        |          |               |
+| `Anchor` *                  |     ✓     |        |          |               |
 | `ArrowAlignBottom`          |     ✓     |        |          |               |
 | `ArrowAlignCenter`          |     ✓     |        |          |               |
 | `ArrowAlignLeft`            |     ✓     |        |          |               |
@@ -162,7 +168,7 @@ The catalog has 478 icons. 13 of them (marked *) are drawn for Cyclone UI in the
 | `ArrowsHorizontal`          |     ✓     |        |          |               |
 | `ArrowsHorizontalAlt`       |     ✓     |        |          |               |
 | `ArrowsLongDiagonal`        |     ✓     |        |          |               |
-| `ArrowsLongDiagonalRotated` |     ✓     |        |          |               |
+| `ArrowsLongDiagonalRotated` |           |        |          |               |
 | `ArrowSmallDown`            |     ✓     |        |          |               |
 | `ArrowSmallLeft`            |     ✓     |        |          |               |
 | `ArrowSmallRight`           |     ✓     |        |          |               |
@@ -174,11 +180,21 @@ The catalog has 478 icons. 13 of them (marked *) are drawn for Cyclone UI in the
 | `ArrowUpSquare`             |     ✓     |        |          |               |
 | `Asterisk` *                |     ✓     |        |          |               |
 | `At`                        |     ✓     |        |          |               |
+| `Attachment` *              |     ✓     |        |          |               |
+| `AutoFix` *                 |     ✓     |   ✓    |          |               |
+| `AutoMode` *                |     ✓     |   ✓    |          |               |
+| `Aws` *                     |     ✓     |        |          |               |
 | `BackupRestore`             |     ✓     |        |          |               |
+| `Barcode` *                 |     ✓     |        |          |               |
+| `BarcodeScan` *             |     ✓     |        |          |               |
 | `Beer`                      |     ✓     |   ✓    |    ✓     |       ✓       |
 | `BeerAlt`                   |     ✓     |   ✓    |    ✓     |       ✓       |
 | `Bell`                      |     ✓     |   ✓    |    ✓     |       ✓       |
 | `BellAlert`                 |     ✓     |   ✓    |    ✓     |       ✓       |
+| `BellOff` *                 |     ✓     |        |    ✓     |               |
+| `BellPlus` *                |     ✓     |        |    ✓     |               |
+| `BellRemove` *              |     ✓     |        |    ✓     |               |
+| `BellRing` *                |     ✓     |   ✓    |    ✓     |       ✓       |
 | `Bluesky`                   |     ✓     |        |    ✓     |               |
 | `Brake`                     |     ✓     |        |    ✓     |               |
 | `BrakeAbs`                  |     ✓     |        |    ✓     |               |
@@ -191,9 +207,11 @@ The catalog has 478 icons. 13 of them (marked *) are drawn for Cyclone UI in the
 | `BriefcaseMinus`            |     ✓     |        |    ✓     |               |
 | `BriefcasePlus`             |     ✓     |        |    ✓     |               |
 | `BriefcaseRemove`           |     ✓     |        |    ✓     |               |
+| `Bug` *                     |     ✓     |        |    ✓     |               |
 | `BuyMeACoffee`              |     ✓     |        |    ✓     |               |
 | `Cake`                      |     ✓     |        |    ✓     |               |
 | `Calendar`                  |     ✓     |        |          |               |
+| `Camera` *                  |     ✓     |        |    ✓     |               |
 | `Cancel`                    |     ✓     |        |          |               |
 | `CarLight`                  |     ✓     |        |    ✓     |               |
 | `CarLightAlert`             |     ✓     |        |    ✓     |               |
@@ -201,6 +219,10 @@ The catalog has 478 icons. 13 of them (marked *) are drawn for Cyclone UI in the
 | `CarLightDimmed`            |     ✓     |        |    ✓     |               |
 | `CarLightDimmedOff`         |     ✓     |        |    ✓     |               |
 | `CarLightOff`               |     ✓     |        |    ✓     |               |
+| `Cart` *                    |     ✓     |        |    ✓     |               |
+| `CartVariant` *             |     ✓     |        |          |               |
+| `Cctv` *                    |     ✓     |        |          |               |
+| `CctvOff` *                 |     ✓     |        |          |               |
 | `Cellphone`                 |     ✓     |        |          |               |
 | `CellphoneArrowDown`        |     ✓     |        |          |               |
 | `CellphoneArrowUp`          |     ✓     |        |          |               |
@@ -253,13 +275,14 @@ The catalog has 478 icons. 13 of them (marked *) are drawn for Cyclone UI in the
 | `ChevronUpCircle`           |     ✓     |        |          |               |
 | `ChevronUpSquare`           |     ✓     |        |          |               |
 | `Circle`                    |     ✓     |        |    ✓     |               |
-| `Clipboard`                 |     ✓     |        |          |               |
+| `Clipboard` *               |     ✓     |        |    ✓     |               |
 | `ClipboardArrow`            |     ✓     |        |          |               |
 | `ClipboardCheck`            |     ✓     |        |          |               |
 | `ClipboardList`             |     ✓     |        |          |               |
 | `ClipboardMinus`            |     ✓     |        |          |               |
 | `ClipboardPlus`             |     ✓     |        |          |               |
 | `ClipboardRemove`           |     ✓     |        |          |               |
+| `ClipboardText` *           |     ✓     |        |    ✓     |               |
 | `Clock` *                   |     ✓     |   ✓    |    ✓     |       ✓       |
 | `Close`                     |     ✓     |        |          |               |
 | `CloseCircle`               |     ✓     |        |    ✓     |               |
@@ -288,6 +311,8 @@ The catalog has 478 icons. 13 of them (marked *) are drawn for Cyclone UI in the
 | `Confirm`                   |     ✓     |        |          |               |
 | `ConfirmCircle`             |     ✓     |        |    ✓     |               |
 | `ConfirmSquare`             |     ✓     |        |    ✓     |               |
+| `Console` *                 |     ✓     |   ✓    |    ✓     |       ✓       |
+| `ConsoleLine` *             |     ✓     |   ✓    |          |               |
 | `Construction`              |     ✓     |        |          |               |
 | `Cookie`                    |     ✓     |        |    ✓     |               |
 | `CookieCheck`               |     ✓     |        |    ✓     |               |
@@ -369,6 +394,8 @@ The catalog has 478 icons. 13 of them (marked *) are drawn for Cyclone UI in the
 | `FilterOff`                 |     ✓     |        |    ✓     |               |
 | `FilterPlus`                |     ✓     |        |    ✓     |               |
 | `FilterRemove`              |     ✓     |        |    ✓     |               |
+| `Fingerprint` *             |     ✓     |        |          |               |
+| `FingerprintPattern` *      |     ✓     |        |          |               |
 | `Folder`                    |     ✓     |        |    ✓     |               |
 | `FolderArrowDown`           |     ✓     |        |    ✓     |               |
 | `FolderArrowLeft`           |     ✓     |        |    ✓     |               |
@@ -392,6 +419,7 @@ The catalog has 478 icons. 13 of them (marked *) are drawn for Cyclone UI in the
 | `GaugeEmpty`                |     ✓     |        |          |               |
 | `GaugeFull`                 |     ✓     |        |          |               |
 | `GaugeLow`                  |     ✓     |        |          |               |
+| `Gift` *                    |     ✓     |        |    ✓     |               |
 | `Github`                    |     ✓     |   ✓    |          |               |
 | `Grid3`                     |     ✓     |        |    ✓     |               |
 | `Hash`                      |     ✓     |        |          |               |
@@ -409,6 +437,20 @@ The catalog has 478 icons. 13 of them (marked *) are drawn for Cyclone UI in the
 | `Iconify2Static`            |     ✓     |        |          |               |
 | `Image`                     |     ✓     |        |    ✓     |               |
 | `Instagram`                 |     ✓     |        |          |               |
+| `Key` *                     |     ✓     |        |    ✓     |               |
+| `LanguageC` *               |     ✓     |        |          |               |
+| `LanguageCpp` *             |     ✓     |        |          |               |
+| `LanguageCsharp` *          |     ✓     |        |          |               |
+| `LanguageGo` *              |     ✓     |        |          |               |
+| `LanguageHtml5` *           |     ✓     |        |    ✓     |               |
+| `LanguageJava` *            |     ✓     |        |          |               |
+| `LanguageJavascript` *      |     ✓     |        |    ✓     |               |
+| `LanguageJsx` *             |     ✓     |        |    ✓     |               |
+| `LanguageMarkdown` *        |     ✓     |        |    ✓     |               |
+| `LanguagePhp` *             |     ✓     |        |    ✓     |               |
+| `LanguagePython` *          |     ✓     |        |    ✓     |               |
+| `LanguageRust` *            |     ✓     |        |          |               |
+| `LanguageTypescript` *      |     ✓     |        |    ✓     |               |
 | `Laptop`                    |     ✓     |        |    ✓     |               |
 | `LaptopOff`                 |     ✓     |        |    ✓     |               |
 | `Lightbulb`                 |     ✓     |        |    ✓     |               |
@@ -419,6 +461,7 @@ The catalog has 478 icons. 13 of them (marked *) are drawn for Cyclone UI in the
 | `Linkedin`                  |     ✓     |        |          |               |
 | `List`                      |     ✓     |        |          |               |
 | `List3`                     |     ✓     |        |    ✓     |               |
+| `ListBox` *                 |     ✓     |        |    ✓     |               |
 | `ListIndented`              |     ✓     |        |          |               |
 | `ListIndentedReversed`      |     ✓     |        |          |               |
 | `Loading`                   |           |   ✓    |          |               |
@@ -426,9 +469,11 @@ The catalog has 478 icons. 13 of them (marked *) are drawn for Cyclone UI in the
 | `Lock` *                    |     ✓     |        |    ✓     |               |
 | `LockOpen` *                |     ✓     |        |    ✓     |               |
 | `Login`                     |     ✓     |        |          |               |
-| `LogIn`                     |     ✓     |        |          |               |
+| `LogIn2`                    |     ✓     |        |          |               |
 | `Logout`                    |     ✓     |        |          |               |
-| `LogOut`                    |     ✓     |        |          |               |
+| `LogOut2`                   |     ✓     |        |          |               |
+| `Magnify` *                 |     ✓     |        |    ✓     |               |
+| `Mailbox` *                 |     ✓     |        |    ✓     |               |
 | `MapMarker`                 |     ✓     |   ✓    |    ✓     |       ✓       |
 | `MapMarkerAlt`              |     ✓     |   ✓    |    ✓     |       ✓       |
 | `MapMarkerAltOff`           |     ✓     |   ✓    |    ✓     |       ✓       |
@@ -477,8 +522,11 @@ The catalog has 478 icons. 13 of them (marked *) are drawn for Cyclone UI in the
 | `NavigationLeftUp`          |     ✓     |        |          |               |
 | `NavigationRightDown`       |     ✓     |        |          |               |
 | `NavigationRightUp`         |     ✓     |        |          |               |
+| `Nix` *                     |     ✓     |        |          |               |
+| `Notebook` *                |     ✓     |        |    ✓     |               |
 | `PaintDrop`                 |     ✓     |        |    ✓     |               |
 | `PaintDropHalf`             |           |        |    ✓     |               |
+| `PaletteSwatchVariant` *    |     ✓     |        |    ✓     |               |
 | `Patreon`                   |     ✓     |        |          |               |
 | `Pause`                     |     ✓     |        |          |               |
 | `PauseOff`                  |     ✓     |        |          |               |
@@ -499,6 +547,7 @@ The catalog has 478 icons. 13 of them (marked *) are drawn for Cyclone UI in the
 | `PhoneOff`                  |     ✓     |   ✓    |    ✓     |       ✓       |
 | `PhoneOutgoing`             |     ✓     |        |    ✓     |               |
 | `PhoneRemove`               |     ✓     |        |    ✓     |               |
+| `Pin` *                     |     ✓     |        |    ✓     |               |
 | `Pixelfed`                  |     ✓     |        |    ✓     |               |
 | `Pizza`                     |     ✓     |        |    ✓     |               |
 | `PizzaOff`                  |     ✓     |        |    ✓     |               |
@@ -508,12 +557,15 @@ The catalog has 478 icons. 13 of them (marked *) are drawn for Cyclone UI in the
 | `Plus`                      |     ✓     |        |          |               |
 | `PlusCircle`                |     ✓     |        |    ✓     |               |
 | `PlusSquare`                |     ✓     |        |    ✓     |               |
+| `Puzzle` *                  |     ✓     |        |    ✓     |               |
+| `Qrcode` *                  |     ✓     |        |          |               |
 | `Question`                  |     ✓     |        |          |               |
 | `QuestionCircle`            |     ✓     |        |          |               |
 | `QuestionSquare`            |     ✓     |        |          |               |
 | `Reddit`                    |     ✓     |   ✓    |          |               |
 | `RedditCircle`              |     ✓     |   ✓    |          |               |
 | `Remove`                    |     ✓     |        |          |               |
+| `Robot` *                   |     ✓     |        |    ✓     |               |
 | `Rotate90`                  |     ✓     |        |          |               |
 | `Rotate180`                 |     ✓     |        |          |               |
 | `Rotate270`                 |     ✓     |        |          |               |
@@ -522,11 +574,16 @@ The catalog has 478 icons. 13 of them (marked *) are drawn for Cyclone UI in the
 | `RoundaboutRight`           |     ✓     |        |          |               |
 | `RoundRampLeft`             |     ✓     |        |          |               |
 | `RoundRampRight`            |     ✓     |        |          |               |
-| `Rss`                       |     ✓     |        |          |               |
+| `Rss` *                     |     ✓     |   ✓    |          |               |
+| `RssBox` *                  |     ✓     |        |    ✓     |               |
+| `SafeSquare` *              |     ✓     |        |    ✓     |               |
 | `Search`                    |     ✓     |        |    ✓     |               |
 | `Security`                  |     ✓     |        |    ✓     |               |
 | `SecurityOff`               |     ✓     |        |    ✓     |               |
+| `Send` *                    |     ✓     |        |    ✓     |               |
 | `Share` *                   |     ✓     |        |    ✓     |               |
+| `ShareVariant` *            |     ✓     |        |    ✓     |               |
+| `Shimmer` *                 |     ✓     |   ✓    |    ✓     |       ✓       |
 | `SortAscending` *           |     ✓     |        |          |               |
 | `SortDescending` *          |     ✓     |        |          |               |
 | `Soundcloud`                |     ✓     |        |          |               |
@@ -560,8 +617,8 @@ The catalog has 478 icons. 13 of them (marked *) are drawn for Cyclone UI in the
 | `Telegram`                  |     ✓     |        |          |               |
 | `TextBox`                   |     ✓     |        |          |               |
 | `TextBoxMultiple`           |     ✓     |        |          |               |
-| `ThumbsDown`                |     ✓     |        |    ✓     |               |
-| `ThumbsUp`                  |     ✓     |        |    ✓     |               |
+| `ThumbsDown` *              |     ✓     |        |    ✓     |               |
+| `ThumbsUp` *                |     ✓     |        |    ✓     |               |
 | `Tiktok`                    |     ✓     |        |          |               |
 | `Trash`                     |     ✓     |        |          |               |
 | `TurnLeft`                  |     ✓     |        |          |               |

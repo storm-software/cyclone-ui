@@ -21,9 +21,14 @@
 import { Account } from "./icons/Account";
 import { AccountAdd } from "./icons/AccountAdd";
 import { AccountAlert } from "./icons/AccountAlert";
+import { AccountCircle } from "./icons/AccountCircle";
 import { AccountDelete } from "./icons/AccountDelete";
 import { AccountRemove } from "./icons/AccountRemove";
 import { AccountSmall } from "./icons/AccountSmall";
+import { Alarm } from "./icons/Alarm";
+import { AlarmCheck } from "./icons/AlarmCheck";
+import { AlarmOff } from "./icons/AlarmOff";
+import { AlarmPlus } from "./icons/AlarmPlus";
 import { Alert } from "./icons/Alert";
 import { AlertCircle } from "./icons/AlertCircle";
 import { AlertSquare } from "./icons/AlertSquare";
@@ -31,6 +36,7 @@ import { AlignCenter } from "./icons/AlignCenter";
 import { AlignJustify } from "./icons/AlignJustify";
 import { AlignLeft } from "./icons/AlignLeft";
 import { AlignRight } from "./icons/AlignRight";
+import { Anchor } from "./icons/Anchor";
 import { ArrowAlignBottom } from "./icons/ArrowAlignBottom";
 import { ArrowAlignCenter } from "./icons/ArrowAlignCenter";
 import { ArrowAlignLeft } from "./icons/ArrowAlignLeft";
@@ -71,11 +77,21 @@ import { ArrowUpCircle } from "./icons/ArrowUpCircle";
 import { ArrowUpSquare } from "./icons/ArrowUpSquare";
 import { Asterisk } from "./icons/Asterisk";
 import { At } from "./icons/At";
+import { Attachment } from "./icons/Attachment";
+import { AutoFix } from "./icons/AutoFix";
+import { AutoMode } from "./icons/AutoMode";
+import { Aws } from "./icons/Aws";
 import { BackupRestore } from "./icons/BackupRestore";
+import { Barcode } from "./icons/Barcode";
+import { BarcodeScan } from "./icons/BarcodeScan";
 import { Beer } from "./icons/Beer";
 import { BeerAlt } from "./icons/BeerAlt";
 import { Bell } from "./icons/Bell";
 import { BellAlert } from "./icons/BellAlert";
+import { BellOff } from "./icons/BellOff";
+import { BellPlus } from "./icons/BellPlus";
+import { BellRemove } from "./icons/BellRemove";
+import { BellRing } from "./icons/BellRing";
 import { Bluesky } from "./icons/Bluesky";
 import { Brake } from "./icons/Brake";
 import { BrakeAbs } from "./icons/BrakeAbs";
@@ -88,9 +104,11 @@ import { BriefcaseCheck } from "./icons/BriefcaseCheck";
 import { BriefcaseMinus } from "./icons/BriefcaseMinus";
 import { BriefcasePlus } from "./icons/BriefcasePlus";
 import { BriefcaseRemove } from "./icons/BriefcaseRemove";
+import { Bug } from "./icons/Bug";
 import { BuyMeACoffee } from "./icons/BuyMeACoffee";
 import { Cake } from "./icons/Cake";
 import { Calendar } from "./icons/Calendar";
+import { Camera } from "./icons/Camera";
 import { Cancel } from "./icons/Cancel";
 import { CarLight } from "./icons/CarLight";
 import { CarLightAlert } from "./icons/CarLightAlert";
@@ -98,6 +116,10 @@ import { CarLightAlertOff } from "./icons/CarLightAlertOff";
 import { CarLightDimmed } from "./icons/CarLightDimmed";
 import { CarLightDimmedOff } from "./icons/CarLightDimmedOff";
 import { CarLightOff } from "./icons/CarLightOff";
+import { Cart } from "./icons/Cart";
+import { CartVariant } from "./icons/CartVariant";
+import { Cctv } from "./icons/Cctv";
+import { CctvOff } from "./icons/CctvOff";
 import { Cellphone } from "./icons/Cellphone";
 import { CellphoneArrowDown } from "./icons/CellphoneArrowDown";
 import { CellphoneArrowUp } from "./icons/CellphoneArrowUp";
@@ -157,6 +179,7 @@ import { ClipboardList } from "./icons/ClipboardList";
 import { ClipboardMinus } from "./icons/ClipboardMinus";
 import { ClipboardPlus } from "./icons/ClipboardPlus";
 import { ClipboardRemove } from "./icons/ClipboardRemove";
+import { ClipboardText } from "./icons/ClipboardText";
 import { Clock } from "./icons/Clock";
 import { Close } from "./icons/Close";
 import { CloseCircle } from "./icons/CloseCircle";
@@ -185,6 +208,8 @@ import { ComputerOff } from "./icons/ComputerOff";
 import { Confirm } from "./icons/Confirm";
 import { ConfirmCircle } from "./icons/ConfirmCircle";
 import { ConfirmSquare } from "./icons/ConfirmSquare";
+import { Console } from "./icons/Console";
+import { ConsoleLine } from "./icons/ConsoleLine";
 import { Construction } from "./icons/Construction";
 import { Cookie } from "./icons/Cookie";
 import { CookieCheck } from "./icons/CookieCheck";
@@ -266,6 +291,8 @@ import { FilterMinus } from "./icons/FilterMinus";
 import { FilterOff } from "./icons/FilterOff";
 import { FilterPlus } from "./icons/FilterPlus";
 import { FilterRemove } from "./icons/FilterRemove";
+import { Fingerprint } from "./icons/Fingerprint";
+import { FingerprintPattern } from "./icons/FingerprintPattern";
 import { Folder } from "./icons/Folder";
 import { FolderArrowDown } from "./icons/FolderArrowDown";
 import { FolderArrowLeft } from "./icons/FolderArrowLeft";
@@ -289,6 +316,7 @@ import { Gauge } from "./icons/Gauge";
 import { GaugeEmpty } from "./icons/GaugeEmpty";
 import { GaugeFull } from "./icons/GaugeFull";
 import { GaugeLow } from "./icons/GaugeLow";
+import { Gift } from "./icons/Gift";
 import { Github } from "./icons/Github";
 import { Grid3 } from "./icons/Grid3";
 import { Hash } from "./icons/Hash";
@@ -306,6 +334,20 @@ import { Iconify2 } from "./icons/Iconify2";
 import { Iconify2Static } from "./icons/Iconify2Static";
 import { Image } from "./icons/Image";
 import { Instagram } from "./icons/Instagram";
+import { Key } from "./icons/Key";
+import { LanguageC } from "./icons/LanguageC";
+import { LanguageCpp } from "./icons/LanguageCpp";
+import { LanguageCsharp } from "./icons/LanguageCsharp";
+import { LanguageGo } from "./icons/LanguageGo";
+import { LanguageHtml5 } from "./icons/LanguageHtml5";
+import { LanguageJava } from "./icons/LanguageJava";
+import { LanguageJavascript } from "./icons/LanguageJavascript";
+import { LanguageJsx } from "./icons/LanguageJsx";
+import { LanguageMarkdown } from "./icons/LanguageMarkdown";
+import { LanguagePhp } from "./icons/LanguagePhp";
+import { LanguagePython } from "./icons/LanguagePython";
+import { LanguageRust } from "./icons/LanguageRust";
+import { LanguageTypescript } from "./icons/LanguageTypescript";
 import { Laptop } from "./icons/Laptop";
 import { LaptopOff } from "./icons/LaptopOff";
 import { Lightbulb } from "./icons/Lightbulb";
@@ -316,6 +358,7 @@ import { Link } from "./icons/Link";
 import { Linkedin } from "./icons/Linkedin";
 import { List } from "./icons/List";
 import { List3 } from "./icons/List3";
+import { ListBox } from "./icons/ListBox";
 import { ListIndented } from "./icons/ListIndented";
 import { ListIndentedReversed } from "./icons/ListIndentedReversed";
 import { Loading } from "./icons/Loading";
@@ -326,6 +369,8 @@ import { Login } from "./icons/Login";
 import { LogIn2 } from "./icons/LogIn2";
 import { Logout } from "./icons/Logout";
 import { LogOut2 } from "./icons/LogOut2";
+import { Magnify } from "./icons/Magnify";
+import { Mailbox } from "./icons/Mailbox";
 import { MapMarker } from "./icons/MapMarker";
 import { MapMarkerAlt } from "./icons/MapMarkerAlt";
 import { MapMarkerAltOff } from "./icons/MapMarkerAltOff";
@@ -374,8 +419,11 @@ import { NavigationLeftDown } from "./icons/NavigationLeftDown";
 import { NavigationLeftUp } from "./icons/NavigationLeftUp";
 import { NavigationRightDown } from "./icons/NavigationRightDown";
 import { NavigationRightUp } from "./icons/NavigationRightUp";
+import { Nix } from "./icons/Nix";
+import { Notebook } from "./icons/Notebook";
 import { PaintDrop } from "./icons/PaintDrop";
 import { PaintDropHalf } from "./icons/PaintDropHalf";
+import { PaletteSwatchVariant } from "./icons/PaletteSwatchVariant";
 import { Patreon } from "./icons/Patreon";
 import { Pause } from "./icons/Pause";
 import { PauseOff } from "./icons/PauseOff";
@@ -396,6 +444,7 @@ import { PhoneIncoming } from "./icons/PhoneIncoming";
 import { PhoneOff } from "./icons/PhoneOff";
 import { PhoneOutgoing } from "./icons/PhoneOutgoing";
 import { PhoneRemove } from "./icons/PhoneRemove";
+import { Pin } from "./icons/Pin";
 import { Pixelfed } from "./icons/Pixelfed";
 import { Pizza } from "./icons/Pizza";
 import { PizzaOff } from "./icons/PizzaOff";
@@ -405,12 +454,15 @@ import { Pleroma } from "./icons/Pleroma";
 import { Plus } from "./icons/Plus";
 import { PlusCircle } from "./icons/PlusCircle";
 import { PlusSquare } from "./icons/PlusSquare";
+import { Puzzle } from "./icons/Puzzle";
+import { Qrcode } from "./icons/Qrcode";
 import { Question } from "./icons/Question";
 import { QuestionCircle } from "./icons/QuestionCircle";
 import { QuestionSquare } from "./icons/QuestionSquare";
 import { Reddit } from "./icons/Reddit";
 import { RedditCircle } from "./icons/RedditCircle";
 import { Remove } from "./icons/Remove";
+import { Robot } from "./icons/Robot";
 import { Rotate180 } from "./icons/Rotate180";
 import { Rotate270 } from "./icons/Rotate270";
 import { Rotate90 } from "./icons/Rotate90";
@@ -420,10 +472,15 @@ import { RoundaboutRight } from "./icons/RoundaboutRight";
 import { RoundRampLeft } from "./icons/RoundRampLeft";
 import { RoundRampRight } from "./icons/RoundRampRight";
 import { Rss } from "./icons/Rss";
+import { RssBox } from "./icons/RssBox";
+import { SafeSquare } from "./icons/SafeSquare";
 import { Search } from "./icons/Search";
 import { Security } from "./icons/Security";
 import { SecurityOff } from "./icons/SecurityOff";
+import { Send } from "./icons/Send";
 import { Share } from "./icons/Share";
+import { ShareVariant } from "./icons/ShareVariant";
+import { Shimmer } from "./icons/Shimmer";
 import { SortAscending } from "./icons/SortAscending";
 import { SortDescending } from "./icons/SortDescending";
 import { Soundcloud } from "./icons/Soundcloud";
@@ -505,9 +562,14 @@ export const allIcons: { [component: string]: IconComponent } = {
   Account,
   AccountAdd,
   AccountAlert,
+  AccountCircle,
   AccountDelete,
   AccountRemove,
   AccountSmall,
+  Alarm,
+  AlarmCheck,
+  AlarmOff,
+  AlarmPlus,
   Alert,
   AlertCircle,
   AlertSquare,
@@ -515,6 +577,7 @@ export const allIcons: { [component: string]: IconComponent } = {
   AlignJustify,
   AlignLeft,
   AlignRight,
+  Anchor,
   ArrowAlignBottom,
   ArrowAlignCenter,
   ArrowAlignLeft,
@@ -555,11 +618,21 @@ export const allIcons: { [component: string]: IconComponent } = {
   ArrowUpSquare,
   Asterisk,
   At,
+  Attachment,
+  AutoFix,
+  AutoMode,
+  Aws,
   BackupRestore,
+  Barcode,
+  BarcodeScan,
   Beer,
   BeerAlt,
   Bell,
   BellAlert,
+  BellOff,
+  BellPlus,
+  BellRemove,
+  BellRing,
   Bluesky,
   Brake,
   BrakeAbs,
@@ -572,9 +645,11 @@ export const allIcons: { [component: string]: IconComponent } = {
   BriefcaseMinus,
   BriefcasePlus,
   BriefcaseRemove,
+  Bug,
   BuyMeACoffee,
   Cake,
   Calendar,
+  Camera,
   Cancel,
   CarLight,
   CarLightAlert,
@@ -582,6 +657,10 @@ export const allIcons: { [component: string]: IconComponent } = {
   CarLightDimmed,
   CarLightDimmedOff,
   CarLightOff,
+  Cart,
+  CartVariant,
+  Cctv,
+  CctvOff,
   Cellphone,
   CellphoneArrowDown,
   CellphoneArrowUp,
@@ -641,6 +720,7 @@ export const allIcons: { [component: string]: IconComponent } = {
   ClipboardMinus,
   ClipboardPlus,
   ClipboardRemove,
+  ClipboardText,
   Clock,
   Close,
   CloseCircle,
@@ -669,6 +749,8 @@ export const allIcons: { [component: string]: IconComponent } = {
   Confirm,
   ConfirmCircle,
   ConfirmSquare,
+  Console,
+  ConsoleLine,
   Construction,
   Cookie,
   CookieCheck,
@@ -750,6 +832,8 @@ export const allIcons: { [component: string]: IconComponent } = {
   FilterOff,
   FilterPlus,
   FilterRemove,
+  Fingerprint,
+  FingerprintPattern,
   Folder,
   FolderArrowDown,
   FolderArrowLeft,
@@ -773,6 +857,7 @@ export const allIcons: { [component: string]: IconComponent } = {
   GaugeEmpty,
   GaugeFull,
   GaugeLow,
+  Gift,
   Github,
   Grid3,
   Hash,
@@ -790,6 +875,20 @@ export const allIcons: { [component: string]: IconComponent } = {
   Iconify2Static,
   Image,
   Instagram,
+  Key,
+  LanguageC,
+  LanguageCpp,
+  LanguageCsharp,
+  LanguageGo,
+  LanguageHtml5,
+  LanguageJava,
+  LanguageJavascript,
+  LanguageJsx,
+  LanguageMarkdown,
+  LanguagePhp,
+  LanguagePython,
+  LanguageRust,
+  LanguageTypescript,
   Laptop,
   LaptopOff,
   Lightbulb,
@@ -800,6 +899,7 @@ export const allIcons: { [component: string]: IconComponent } = {
   Linkedin,
   List,
   List3,
+  ListBox,
   ListIndented,
   ListIndentedReversed,
   Loading,
@@ -810,6 +910,8 @@ export const allIcons: { [component: string]: IconComponent } = {
   LogIn2,
   Logout,
   LogOut2,
+  Magnify,
+  Mailbox,
   MapMarker,
   MapMarkerAlt,
   MapMarkerAltOff,
@@ -858,8 +960,11 @@ export const allIcons: { [component: string]: IconComponent } = {
   NavigationLeftUp,
   NavigationRightDown,
   NavigationRightUp,
+  Nix,
+  Notebook,
   PaintDrop,
   PaintDropHalf,
+  PaletteSwatchVariant,
   Patreon,
   Pause,
   PauseOff,
@@ -880,6 +985,7 @@ export const allIcons: { [component: string]: IconComponent } = {
   PhoneOff,
   PhoneOutgoing,
   PhoneRemove,
+  Pin,
   Pixelfed,
   Pizza,
   PizzaOff,
@@ -889,12 +995,15 @@ export const allIcons: { [component: string]: IconComponent } = {
   Plus,
   PlusCircle,
   PlusSquare,
+  Puzzle,
+  Qrcode,
   Question,
   QuestionCircle,
   QuestionSquare,
   Reddit,
   RedditCircle,
   Remove,
+  Robot,
   Rotate90,
   Rotate180,
   Rotate270,
@@ -904,10 +1013,15 @@ export const allIcons: { [component: string]: IconComponent } = {
   RoundRampLeft,
   RoundRampRight,
   Rss,
+  RssBox,
+  SafeSquare,
   Search,
   Security,
   SecurityOff,
+  Send,
   Share,
+  ShareVariant,
+  Shimmer,
   SortAscending,
   SortDescending,
   Soundcloud,
