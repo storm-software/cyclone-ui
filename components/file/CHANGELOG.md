@@ -2,6 +2,26 @@
 
 # Changelog for Cyclone UI - File
 
+## [0.0.13](https://github.com/storm-software/cyclone-ui/releases/tag/file%400.0.13) (11/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Clean up component packages to reduce excess count ([81f64b0c8](https://github.com/storm-software/cyclone-ui/commit/81f64b0c8))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.60**
+- Updated **button** to **v0.6.63**
+- Updated **bytes-text** to **v0.5.60**
+- Updated **heading-text** to **v0.5.61**
+- Updated **helpers** to **v0.3.60**
+- Updated **icons** to **v0.0.58**
+- Updated **link** to **v0.5.63**
+- Updated **number-text** to **v0.5.60**
+- Updated **pdf-document-display** to **v0.5.62**
+- Updated **progress** to **v0.5.60**
+- Updated **state** to **v0.0.62**
+
 ## [0.0.12](https://github.com/storm-software/cyclone-ui/releases/tag/file%400.0.12) (11/08/2026)
 
 ### Features

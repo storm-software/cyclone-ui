@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Input
 
+## [0.6.63](https://github.com/storm-software/cyclone-ui/releases/tag/input%400.6.63) (11/08/2026)
+
+### Bug Fixes
+
+- **anchor:** Added `icon` property to `Anchor` component ([ea2346966](https://github.com/storm-software/cyclone-ui/commit/ea2346966))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.63**
+- Updated **field** to **v0.5.63**
+- Updated **form** to **v0.9.61**
+- Updated **helpers** to **v0.3.60**
+- Updated **icons** to **v0.0.58**
+
 ## [0.6.62](https://github.com/storm-software/cyclone-ui/releases/tag/input%400.6.62) (11/08/2026)
 
 ### Features

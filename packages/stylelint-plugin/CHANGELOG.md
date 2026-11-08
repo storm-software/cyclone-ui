@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.50](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.50) (11/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Clean up component packages to reduce excess count ([81f64b0c8](https://github.com/storm-software/cyclone-ui/commit/81f64b0c8))
+
 ## [0.0.49](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.49) (11/08/2026)
 
 ### Features

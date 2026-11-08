@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Next Button
 
+## [0.5.63](https://github.com/storm-software/cyclone-ui/releases/tag/next-button%400.5.63) (11/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Clean up component packages to reduce excess count ([81f64b0c8](https://github.com/storm-software/cyclone-ui/commit/81f64b0c8))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.63**
+- Updated **icons** to **v0.0.58**
+
 ## [0.5.62](https://github.com/storm-software/cyclone-ui/releases/tag/next-button%400.5.62) (11/08/2026)
 
 ### Updated Dependencies

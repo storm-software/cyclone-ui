@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Callout
 
+## [0.4.64](https://github.com/storm-software/cyclone-ui/releases/tag/callout%400.4.64) (11/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Clean up component packages to reduce excess count ([81f64b0c8](https://github.com/storm-software/cyclone-ui/commit/81f64b0c8))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.60**
+- Updated **container** to **v0.6.62**
+- Updated **eyebrow-text** to **v0.5.60**
+- Updated **heading-text** to **v0.5.61**
+- Updated **icons** to **v0.0.58**
+- Updated **state** to **v0.0.62**
+
 ## [0.4.63](https://github.com/storm-software/cyclone-ui/releases/tag/callout%400.4.63) (11/08/2026)
 
 ### Updated Dependencies

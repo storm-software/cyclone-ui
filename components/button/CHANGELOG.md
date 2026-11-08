@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Button
 
+## [0.6.63](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.63) (11/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Clean up component packages to reduce excess count ([81f64b0c8](https://github.com/storm-software/cyclone-ui/commit/81f64b0c8))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.60**
+- Updated **container** to **v0.6.62**
+- Updated **helpers** to **v0.3.60**
+- Updated **icons** to **v0.0.58**
+- Updated **ripple-animation** to **v0.0.37**
+- Updated **tooltip** to **v0.5.63**
+
 ## [0.6.62](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.62) (11/08/2026)
 
 ### Bug Fixes

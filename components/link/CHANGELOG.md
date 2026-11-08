@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Link
 
+## [0.5.63](https://github.com/storm-software/cyclone-ui/releases/tag/link%400.5.63) (11/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Clean up component packages to reduce excess count ([81f64b0c8](https://github.com/storm-software/cyclone-ui/commit/81f64b0c8))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.60**
+- Updated **icons** to **v0.0.58**
+- Updated **link-text** to **v0.5.62**
+
 ## [0.5.62](https://github.com/storm-software/cyclone-ui/releases/tag/link%400.5.62) (11/08/2026)
 
 ### Updated Dependencies

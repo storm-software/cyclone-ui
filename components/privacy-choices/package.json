@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/privacy-choices",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "type": "module",
   "description": "A \"Your Privacy Choices\" link, marked with the California privacy options icon, that opens a Dialog where users review their privacy rights and turn categories of cookies or data sharing on or off. Categories are listed in vertical Tabs with a Switch each, and required ones are shown as always active. Choices stay a draft until the user confirms them or rejects all but the necessary ones, then `onValueChange` receives every category's choice. Use it in a site footer.",
   "repository": {

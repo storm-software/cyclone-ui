@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Helpers
 
+## [0.3.60](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.60) (11/08/2026)
+
+### Bug Fixes
+
+- **anchor:** Added `icon` property to `Anchor` component ([ea2346966](https://github.com/storm-software/cyclone-ui/commit/ea2346966))
+
 ## [0.3.59](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.59) (11/08/2026)
 
 ### Features
