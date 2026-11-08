@@ -2,6 +2,27 @@
 
 # Changelog for Cyclone UI - File
 
+## [0.0.11](https://github.com/storm-software/cyclone-ui/releases/tag/file%400.0.11) (11/08/2026)
+
+### Features
+
+- **copy-page-dropdown-button:** Initial check-in of the `CopyPasteDropdownButton` component ([e5ff4e5ad](https://github.com/storm-software/cyclone-ui/commit/e5ff4e5ad))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.58**
+- Updated **button** to **v0.6.61**
+- Updated **bytes-text** to **v0.5.58**
+- Updated **heading-text** to **v0.5.59**
+- Updated **helpers** to **v0.3.58**
+- Updated **icons** to **v0.0.56**
+- Updated **link** to **v0.5.61**
+- Updated **number-text** to **v0.5.58**
+- Updated **pdf-document-display** to **v0.5.60**
+- Updated **progress** to **v0.5.58**
+- Updated **state** to **v0.0.60**
+- Updated **themeable-icon** to **v0.6.60**
+
 ## [0.0.10](https://github.com/storm-software/cyclone-ui/releases/tag/file%400.0.10) (11/07/2026)
 
 ### Updated Dependencies

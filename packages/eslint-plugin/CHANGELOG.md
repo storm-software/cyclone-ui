@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - ESLint Plugin
 
+## [0.0.48](https://github.com/storm-software/cyclone-ui/releases/tag/eslint-plugin%400.0.48) (11/08/2026)
+
+### Features
+
+- **copy-page-dropdown-button:** Initial check-in of the `CopyPasteDropdownButton` component ([e5ff4e5ad](https://github.com/storm-software/cyclone-ui/commit/e5ff4e5ad))
+
 ## [0.0.47](https://github.com/storm-software/cyclone-ui/releases/tag/eslint-plugin%400.0.47) (11/07/2026)
 
 ### Features

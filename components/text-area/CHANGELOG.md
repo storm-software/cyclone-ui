@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Text Area
 
+## [0.1.61](https://github.com/storm-software/cyclone-ui/releases/tag/text-area%400.1.61) (11/08/2026)
+
+### Features
+
+- **copy-page-dropdown-button:** Initial check-in of the `CopyPasteDropdownButton` component ([e5ff4e5ad](https://github.com/storm-software/cyclone-ui/commit/e5ff4e5ad))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.61**
+- Updated **form** to **v0.9.59**
+- Updated **helpers** to **v0.3.58**
+- Updated **input** to **v0.6.61**
+- Updated **scroll-view** to **v0.5.60**
+
 ## [0.1.60](https://github.com/storm-software/cyclone-ui/releases/tag/text-area%400.1.60) (11/07/2026)
 
 ### Features
