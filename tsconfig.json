@@ -325,6 +325,9 @@
       "path": "./components/address-input"
     },
     {
+      "path": "./components/manual-address-input"
+    },
+    {
       "path": "./components/color-area"
     },
     {

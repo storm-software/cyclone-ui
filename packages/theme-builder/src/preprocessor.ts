@@ -531,7 +531,7 @@ const BACKGROUND_COLOR_STATE_INACTIVE: ColorStateVariant = {
 
 const BACKGROUND_COLOR_STATE_DISABLED: ColorStateVariant = {
   ...COLOR_STATE_DISABLED,
-  opacity: 0.25,
+  opacity: 0.65,
   saturation: 0.925
 };
 

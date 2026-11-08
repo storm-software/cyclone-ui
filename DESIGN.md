@@ -1,7 +1,7 @@
 ---
 version: alpha
 name: "Cyclone UI"
-description: "A modern and minimal style over an intuitive, well-structured design system. Cyclone UI was built with a deep focus on color theory, cross-platform design, and user experience."
+description: "A modern and minimal style applied to an intuitive, well-structured design system. Cyclone UI was built with a deep focus on color theory, cross-platform design, and user experience."
 colors:
   emphasis: "#1f1f21"
   ink: "#555659"
@@ -176,23 +176,23 @@ colors:
   sunken-hovered: "#b5b5b5"
   sunken-active: "#8b8b8b"
   sunken-inactive: "#ffffff"
-  sunken-disabled: "#6b6b6d"
+  sunken-disabled: "#aaaaab"
   canvas-hovered: "#bcbcbc"
   canvas-active: "#919191"
   canvas-inactive: "#ffffff"
-  canvas-disabled: "#6d6d6f"
+  canvas-disabled: "#b0b0b1"
   surface-hovered: "#c2c2c2"
   surface-active: "#959595"
   surface-inactive: "#ffffff"
-  surface-disabled: "#6f6f71"
+  surface-disabled: "#b4b4b5"
   elevated-hovered: "#c9c9c9"
   elevated-active: "#9b9b9b"
   elevated-inactive: "#ffffff"
-  elevated-disabled: "#717173"
+  elevated-disabled: "#bababb"
   floating-hovered: "#cecece"
   floating-active: "#9e9e9e"
   floating-inactive: "#ffffff"
-  floating-disabled: "#727274"
+  floating-disabled: "#bdbdbe"
   hairline-hovered: "#676768"
   hairline-active: "#0c0c0d"
   hairline-inactive: "#79797b"
@@ -470,23 +470,23 @@ Cyclone UI design tokens — 194 color tokens, 6 typography tokens, 70 spacing t
 - **Sunken Hovered (#b5b5b5):** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 15% brighter)
 - **Sunken Active (#8b8b8b):** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 30% brighter)
 - **Sunken Inactive (#ffffff):** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 10% less bright)
-- **Sunken Disabled (#6b6b6d):** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))
+- **Sunken Disabled (#aaaaab):** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 65% over oklch(0.3839 0.0045 286.26))
 - **Canvas Hovered (#bcbcbc):** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 15% brighter)
 - **Canvas Active (#919191):** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 30% brighter)
 - **Canvas Inactive (#ffffff):** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 10% less bright)
-- **Canvas Disabled (#6d6d6f):** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 25% over oklch(0.3839 0.0045 286.26))
+- **Canvas Disabled (#b0b0b1):** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 65% over oklch(0.3839 0.0045 286.26))
 - **Surface Hovered (#c2c2c2):** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 15% brighter)
 - **Surface Active (#959595):** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 30% brighter)
 - **Surface Inactive (#ffffff):** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 10% less bright)
-- **Surface Disabled (#6f6f71):** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 25% over oklch(0.3839 0.0045 286.26))
+- **Surface Disabled (#b4b4b5):** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 65% over oklch(0.3839 0.0045 286.26))
 - **Elevated Hovered (#c9c9c9):** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% brighter)
 - **Elevated Active (#9b9b9b):** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% brighter)
 - **Elevated Inactive (#ffffff):** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% less bright)
-- **Elevated Disabled (#717173):** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))
+- **Elevated Disabled (#bababb):** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 65% over oklch(0.3839 0.0045 286.26))
 - **Floating Hovered (#cecece):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 15% brighter)
 - **Floating Active (#9e9e9e):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 30% brighter)
 - **Floating Inactive (#ffffff):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 10% less bright)
-- **Floating Disabled (#727274):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))
+- **Floating Disabled (#bdbdbe):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 65% over oklch(0.3839 0.0045 286.26))
 - **Hairline Hovered (#676768):** Low-contrast color for borders, dividers and separators. (hovered, 40% brighter)
 - **Hairline Active (#0c0c0d):** Low-contrast color for borders, dividers and separators. (active, light contrast primitive)
 - **Hairline Inactive (#79797b):** Low-contrast color for borders, dividers and separators. (inactive, 50% of the light contrast primitive's brightness)

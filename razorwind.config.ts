@@ -42,7 +42,7 @@ export default defineConfig({
   name: "cyclone-ui",
   title: "Cyclone UI",
   description:
-    "A modern and minimal style over an intuitive, well-structured design system. Cyclone UI was built with a deep focus on color theory, cross-platform design, and user experience.",
+    "A modern and minimal style applied to an intuitive, well-structured design system. Cyclone UI was built with a deep focus on color theory, cross-platform design, and user experience.",
   homepage: "https://cyclone-ui.com",
   logo: "https://public.storm-cdn.com/cyclone-ui/assets/dark-logo.svg",
   verbose: true,

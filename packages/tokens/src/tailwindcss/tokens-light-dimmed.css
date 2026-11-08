@@ -632,7 +632,7 @@
   --color-brand-secondary-inactive: var(--color-white);
   --color-canvas: var(--color-neutral-3);
   --color-canvas-active: #8c8c8c;
-  --color-canvas-disabled: #737374;
+  --color-canvas-disabled: var(--color-neutral-7);
   --color-canvas-hovered: #aaaaaa;
   --color-canvas-inactive: var(--color-white);
   --color-danger-backdrop: #581a1b26;
@@ -691,7 +691,7 @@
   --color-discovery-secondary-inactive: #b2a2e4;
   --color-elevated: var(--color-neutral-1);
   --color-elevated-active: #939393;
-  --color-elevated-disabled: #757577;
+  --color-elevated-disabled: #a8a8a9;
   --color-elevated-hovered: #b3b3b3;
   --color-elevated-inactive: var(--color-white);
   --color-emphasis: var(--color-neutral-14);
@@ -701,7 +701,7 @@
   --color-emphasis-inactive: var(--color-base-primary-inactive);
   --color-floating: var(--color-white);
   --color-floating-active: #959595;
-  --color-floating-disabled: #767677;
+  --color-floating-disabled: #ababab;
   --color-floating-hovered: #b6b6b6;
   --color-floating-inactive: var(--color-white);
   --color-green-1: #b2d5b8;
@@ -715,7 +715,7 @@
   --color-green-9: #284b41;
   --color-hairline: var(--color-neutral-5);
   --color-hairline-active: var(--color-black);
-  --color-hairline-disabled: var(--color-canvas-disabled);
+  --color-hairline-disabled: #737374;
   --color-hairline-hovered: #6e6e6f;
   --color-hairline-inactive: var(--color-base-primary-inactive);
   --color-info-backdrop: #1f1f6926;
@@ -830,12 +830,12 @@
   --color-success-secondary-inactive: #96ccb6;
   --color-sunken: var(--color-neutral-4);
   --color-sunken-active: #888888;
-  --color-sunken-disabled: #717172;
+  --color-sunken-disabled: #9d9d9e;
   --color-sunken-hovered: #a5a5a5;
   --color-sunken-inactive: var(--color-white);
   --color-surface: var(--color-neutral-2);
   --color-surface-active: #8f8f8f;
-  --color-surface-disabled: #747475;
+  --color-surface-disabled: #a4a4a5;
   --color-surface-hovered: #aeaeae;
   --color-surface-inactive: var(--color-white);
   --color-warning-backdrop: #4f221726;

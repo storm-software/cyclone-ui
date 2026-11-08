@@ -3996,6 +3996,35 @@
       ]
     },
     {
+      "name": "@cyclone-ui/manual-address-input",
+      "type": "registry:component",
+      "title": "@cyclone-ui/manual-address-input",
+      "description": "Address fields for entering an address by hand inside a Form: country, address lines 1-3, city, state and ZIP code. The country sets each field's label (ZIP Code or Postal Code, State or Province), whether it shows and is required, the postal code format, the state options and the field order. Address lines 2 and 3 stay disabled until the line before them is filled in.",
+      "dependencies": ["@tamagui/core@3.2.0"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.6",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/field",
+        "@cyclone-ui/input",
+        "@cyclone-ui/select"
+      ],
+      "files": [
+        {
+          "path": "components/manual-address-input/src/address-format.ts",
+          "type": "registry:file",
+          "target": "components/manual-address-input/src/address-format.ts"
+        },
+        {
+          "path": "components/manual-address-input/src/ManualAddressInput.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/message",
       "type": "registry:component",
       "title": "@cyclone-ui/message",

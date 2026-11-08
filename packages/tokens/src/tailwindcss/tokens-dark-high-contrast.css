@@ -632,7 +632,7 @@
   --color-brand-secondary-inactive: var(--color-neutral-13);
   --color-canvas: var(--color-neutral-16);
   --color-canvas-active: var(--color-neutral-13);
-  --color-canvas-disabled: #18181c;
+  --color-canvas-disabled: var(--color-neutral-13);
   --color-canvas-hovered: var(--color-neutral-13);
   --color-canvas-inactive: var(--color-neutral-13);
   --color-danger-backdrop: #06000026;
@@ -691,7 +691,7 @@
   --color-discovery-secondary-inactive: #0a0219;
   --color-elevated: var(--color-neutral-14);
   --color-elevated-active: #0e0e10;
-  --color-elevated-disabled: #1a1a1f;
+  --color-elevated-disabled: #070709;
   --color-elevated-hovered: #020202;
   --color-elevated-inactive: var(--color-neutral-13);
   --color-emphasis: var(--color-neutral-2);
@@ -701,7 +701,7 @@
   --color-emphasis-inactive: var(--color-base-primary-inactive);
   --color-floating: var(--color-neutral-13);
   --color-floating-active: #18191d;
-  --color-floating-disabled: #1c1e22;
+  --color-floating-disabled: #0c0d0f;
   --color-floating-hovered: #0b0c0e;
   --color-floating-inactive: var(--color-neutral-13);
   --color-green-1: var(--color-neutral-1);
@@ -830,12 +830,12 @@
   --color-success-secondary-inactive: var(--color-neutral-13);
   --color-sunken: var(--color-black);
   --color-sunken-active: var(--color-neutral-13);
-  --color-sunken-disabled: #141418;
+  --color-sunken-disabled: var(--color-neutral-13);
   --color-sunken-hovered: var(--color-neutral-13);
   --color-sunken-inactive: var(--color-neutral-13);
   --color-surface: var(--color-neutral-15);
   --color-surface-active: #080809;
-  --color-surface-disabled: #19191e;
+  --color-surface-disabled: #050505;
   --color-surface-hovered: var(--color-neutral-13);
   --color-surface-inactive: var(--color-neutral-13);
   --color-warning-backdrop: #06020026;

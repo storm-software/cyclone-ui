@@ -1,6 +1,6 @@
 # Cyclone UI (Light High Contrast)
 
-> A modern and minimal style over an intuitive, well-structured design system. Cyclone UI was built with a deep focus on color theory, cross-platform design, and user experience.
+> A modern and minimal style applied to an intuitive, well-structured design system. Cyclone UI was built with a deep focus on color theory, cross-platform design, and user experience.
 
 Do not change installed or added Cyclone UI component files unless the user specifically instructs you to do so. Use components.json to identify the configured component path and installed files; copied source is not permission to edit it. This includes fixes, refactors, formatting, renaming, deleting, and registry updates or overwrites (including add --overwrite, update-components, and forced initialization). A request to build a feature, style a page, or fix an application does not authorize component changes. Prefer supported props, composition, application-owned wrappers, and theme configuration outside the installed components. If a component change is necessary, explain why and ask for specific instructions before changing it. When the user explicitly requests a component addition or change, keep it scoped and preserve unrelated installed files and local edits.
 

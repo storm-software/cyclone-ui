@@ -125,6 +125,7 @@ const TextAreaFrame = styled(InputValue, {
 
     disabled: {
       true: {
+        backgroundColor: "surface-disabled",
         borderColor:
           "primary-disabled hover:primary-disabled focus:primary-disabled"
       }

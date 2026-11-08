@@ -632,7 +632,7 @@
   --color-brand-secondary-inactive: var(--color-white);
   --color-canvas: var(--color-neutral-3);
   --color-canvas-active: #919191;
-  --color-canvas-disabled: #6d6d6f;
+  --color-canvas-disabled: var(--color-neutral-7);
   --color-canvas-hovered: #bcbcbc;
   --color-canvas-inactive: var(--color-white);
   --color-danger-backdrop: #35000126;
@@ -691,7 +691,7 @@
   --color-discovery-secondary-inactive: #d0c1ff;
   --color-elevated: var(--color-neutral-1);
   --color-elevated-active: #9b9b9b;
-  --color-elevated-disabled: #717173;
+  --color-elevated-disabled: #bababb;
   --color-elevated-hovered: #c9c9c9;
   --color-elevated-inactive: var(--color-white);
   --color-emphasis: var(--color-neutral-14);
@@ -701,7 +701,7 @@
   --color-emphasis-inactive: var(--color-base-primary-inactive);
   --color-floating: var(--color-white);
   --color-floating-active: #9e9e9e;
-  --color-floating-disabled: #727274;
+  --color-floating-disabled: #bdbdbe;
   --color-floating-hovered: #cecece;
   --color-floating-inactive: var(--color-white);
   --color-green-1: #d1f1d6;
@@ -830,12 +830,12 @@
   --color-success-secondary-inactive: #a3eacd;
   --color-sunken: var(--color-neutral-4);
   --color-sunken-active: #8b8b8b;
-  --color-sunken-disabled: #6b6b6d;
+  --color-sunken-disabled: #aaaaab;
   --color-sunken-hovered: #b5b5b5;
   --color-sunken-inactive: var(--color-white);
   --color-surface: var(--color-neutral-2);
   --color-surface-active: #959595;
-  --color-surface-disabled: #6f6f71;
+  --color-surface-disabled: #b4b4b5;
   --color-surface-hovered: #c2c2c2;
   --color-surface-inactive: var(--color-white);
   --color-warning-backdrop: #24070026;

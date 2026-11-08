@@ -40,6 +40,7 @@ type InputStoryArgs = Pick<
   | "validate"
   | "showErrorsBeforeBlur"
   | "clearable"
+  | "showDisabledMessage"
 > & {
   variant?: InputProps["variant"];
   labelVariant?: FieldLabelVariant;

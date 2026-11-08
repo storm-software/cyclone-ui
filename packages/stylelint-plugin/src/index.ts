@@ -605,7 +605,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-canvas-disabled",
       type: "color",
       category: "color",
-      value: "#6d6d6f"
+      value: "#b0b0b1"
     },
     {
       path: "color.canvas-hovered",
@@ -1040,7 +1040,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-elevated-disabled",
       type: "color",
       category: "color",
-      value: "#717173"
+      value: "#bababb"
     },
     {
       path: "color.elevated-hovered",
@@ -1112,7 +1112,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-floating-disabled",
       type: "color",
       category: "color",
-      value: "#727274"
+      value: "#bdbdbe"
     },
     {
       path: "color.floating-hovered",
@@ -2025,7 +2025,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-sunken-disabled",
       type: "color",
       category: "color",
-      value: "#6b6b6d"
+      value: "#aaaaab"
     },
     {
       path: "color.sunken-hovered",
@@ -2061,7 +2061,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-surface-disabled",
       type: "color",
       category: "color",
-      value: "#6f6f71"
+      value: "#b4b4b5"
     },
     {
       path: "color.surface-hovered",
@@ -4421,6 +4421,11 @@ export const manifest: DesignSystemManifest = {
     {
       name: "@cyclone-ui/link-text",
       jsx: ["LinkText"],
+      roles: []
+    },
+    {
+      name: "@cyclone-ui/manual-address-input",
+      jsx: ["ManualAddressInput"],
       roles: []
     },
     {

@@ -1,0 +1,55 @@
+{
+  "name": "@cyclone-ui/manual-address-input",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Address fields for entering an address by hand inside a Form: country, address lines 1-3, city, state and ZIP code. The country sets each field's label (ZIP Code or Postal Code, State or Province), whether it shows and is required, the postal code format, the state options and the field order. Address lines 2 and 3 stay disabled until the line before them is filled in.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/manual-address-input"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/input": "workspace:*",
+    "@cyclone-ui/select": "workspace:*",
+    "@cyclone-ui/state": "workspace:*",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/form": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": ["*.css"],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./address-format": {
+      "import": "./dist/address-format.mjs",
+      "require": "./dist/address-format.cjs"
+    },
+    "./ManualAddressInput": {
+      "import": "./dist/ManualAddressInput.mjs",
+      "require": "./dist/ManualAddressInput.cjs"
+    },
+    "./*": "./*"
+  }
+}

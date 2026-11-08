@@ -37,6 +37,7 @@ export const ValidationText = createStyledHOC(
   (
     {
       disabled,
+      showDisabledMessage = true,
       theme: themeProp,
       messages = [],
       ...props
@@ -44,6 +45,12 @@ export const ValidationText = createStyledHOC(
       messages?: ValidationDetails[];
       theme?: string;
       disabled?: boolean;
+      /**
+       * Whether a disabled field shows "This field is disabled".
+       *
+       * @defaultValue true
+       */
+      showDisabledMessage?: boolean;
     },
     forwardedRef
   ) => {
@@ -52,10 +59,11 @@ export const ValidationText = createStyledHOC(
     // `base` theme here resolved `primary` against the root theme.
     const themeName = useThemeName();
     const theme = themeProp ?? themeName;
+    const showDisabledNotice = Boolean(disabled && showDisabledMessage);
 
-    if ((messages.length === 1 && messages[0]?.message) || disabled) {
+    if ((messages.length === 1 && messages[0]?.message) || showDisabledNotice) {
       const message =
-        (disabled && (!theme || theme.endsWith("base"))) ||
+        (showDisabledNotice && (!theme || theme.endsWith("base"))) ||
         messages.length === 0
           ? "This field is disabled"
           : messages[0]?.message;

@@ -165,10 +165,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-disabled"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "canvas-disabled": "#38383b"
+              "canvas-disabled": "#252528"
             }}
           />
           <ColorItem
@@ -210,10 +210,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-disabled"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#3a3a3d"
+              "elevated-disabled": "#2c2c2e"
             }}
           />
           <ColorItem
@@ -255,10 +255,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-disabled"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "floating-disabled": "#3b3c3f"
+              "floating-disabled": "#2f3033"
             }}
           />
           <ColorItem
@@ -300,10 +300,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-disabled"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "sunken-disabled": "#353538"
+              "sunken-disabled": "#1f1f21"
             }}
           />
           <ColorItem
@@ -345,10 +345,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-disabled"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "surface-disabled": "#39393c"
+              "surface-disabled": "#2a2a2c"
             }}
           />
           <ColorItem
@@ -993,10 +993,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-disabled"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "canvas-disabled": "#4d4d50"
+              "canvas-disabled": "#404043"
             }}
           />
           <ColorItem
@@ -1038,10 +1038,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-disabled"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#4f4f51"
+              "elevated-disabled": "#454547"
             }}
           />
           <ColorItem
@@ -1083,10 +1083,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-disabled"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "floating-disabled": "#4f5052"
+              "floating-disabled": "#47484a"
             }}
           />
           <ColorItem
@@ -1128,10 +1128,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-disabled"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "sunken-disabled": "#4b4b4e"
+              "sunken-disabled": "#3c3c3e"
             }}
           />
           <ColorItem
@@ -1173,10 +1173,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-disabled"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "surface-disabled": "#4e4e50"
+              "surface-disabled": "#434345"
             }}
           />
           <ColorItem
@@ -1821,10 +1821,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-disabled"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "canvas-disabled": "#18181c"
+              "canvas-disabled": "#000000"
             }}
           />
           <ColorItem
@@ -1866,10 +1866,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-disabled"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#1a1a1f"
+              "elevated-disabled": "#070709"
             }}
           />
           <ColorItem
@@ -1911,10 +1911,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-disabled"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "floating-disabled": "#1c1e22"
+              "floating-disabled": "#0c0d0f"
             }}
           />
           <ColorItem
@@ -1956,10 +1956,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-disabled"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "sunken-disabled": "#141418"
+              "sunken-disabled": "#000000"
             }}
           />
           <ColorItem
@@ -2001,10 +2001,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-disabled"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 25% over oklch(0.3839 0.0045 286.26))"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "surface-disabled": "#19191e"
+              "surface-disabled": "#050505"
             }}
           />
           <ColorItem
@@ -2649,10 +2649,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-disabled"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "canvas-disabled": "#6d6d6f"
+              "canvas-disabled": "#b0b0b1"
             }}
           />
           <ColorItem
@@ -2694,10 +2694,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-disabled"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#717173"
+              "elevated-disabled": "#bababb"
             }}
           />
           <ColorItem
@@ -2739,10 +2739,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-disabled"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "floating-disabled": "#727274"
+              "floating-disabled": "#bdbdbe"
             }}
           />
           <ColorItem
@@ -2784,10 +2784,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-disabled"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "sunken-disabled": "#6b6b6d"
+              "sunken-disabled": "#aaaaab"
             }}
           />
           <ColorItem
@@ -2829,10 +2829,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-disabled"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "surface-disabled": "#6f6f71"
+              "surface-disabled": "#b4b4b5"
             }}
           />
           <ColorItem
@@ -3477,10 +3477,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-disabled"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "canvas-disabled": "#737374"
+              "canvas-disabled": "#a1a1a2"
             }}
           />
           <ColorItem
@@ -3522,10 +3522,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-disabled"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#757577"
+              "elevated-disabled": "#a8a8a9"
             }}
           />
           <ColorItem
@@ -3567,10 +3567,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-disabled"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "floating-disabled": "#767677"
+              "floating-disabled": "#ababab"
             }}
           />
           <ColorItem
@@ -3612,10 +3612,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-disabled"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "sunken-disabled": "#717172"
+              "sunken-disabled": "#9d9d9e"
             }}
           />
           <ColorItem
@@ -3657,10 +3657,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-disabled"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "surface-disabled": "#747475"
+              "surface-disabled": "#a4a4a5"
             }}
           />
           <ColorItem
@@ -4305,10 +4305,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.canvas-disabled"}
             subtitle={
-              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
+              "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "canvas-disabled": "#60606c"
+              "canvas-disabled": "#c3c3ca"
             }}
           />
           <ColorItem
@@ -4350,10 +4350,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.elevated-disabled"}
             subtitle={
-              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
+              "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#656573"
+              "elevated-disabled": "#d3d3d8"
             }}
           />
           <ColorItem
@@ -4395,10 +4395,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.floating-disabled"}
             subtitle={
-              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
+              "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "floating-disabled": "#676774"
+              "floating-disabled": "#d7d7dc"
             }}
           />
           <ColorItem
@@ -4440,10 +4440,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.sunken-disabled"}
             subtitle={
-              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
+              "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "sunken-disabled": "#5d5d69"
+              "sunken-disabled": "#babac2"
             }}
           />
           <ColorItem
@@ -4485,10 +4485,10 @@ const COLOR_VARIANTS = {
           <ColorItem
             title={"color.surface-disabled"}
             subtitle={
-              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 25% over oklch(0.3839 0.0045 286.26))"
+              "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "surface-disabled": "#636370"
+              "surface-disabled": "#c9c9cf"
             }}
           />
           <ColorItem

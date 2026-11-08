@@ -102,6 +102,7 @@ const CheckboxGroupFrame = styled(View, {
 
     disabled: {
       true: {
+        backgroundColor: "surface-disabled",
         userSelect: "none",
         cursor: "not-allowed",
         borderColor:

@@ -139,6 +139,7 @@ const TagPickerFrame = styled(XStack, {
 
     disabled: {
       true: {
+        backgroundColor: "surface-disabled",
         userSelect: "none",
         cursor: "not-allowed"
       }

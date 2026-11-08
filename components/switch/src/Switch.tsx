@@ -115,6 +115,7 @@ const SwitchFrame = styled(View, {
 
     disabled: {
       true: {
+        backgroundColor: "surface-disabled",
         userSelect: "none",
         cursor: "not-allowed",
         borderColor:
@@ -164,7 +165,17 @@ const SwitchThumb = styled(View, {
 const SwitchThumbImpl = createStyledHOC(
   SwitchThumb,
   (props, forwardedRef) => {
-    return <SwitchThumb ref={forwardedRef} {...props} />;
+    const { disabled } = SwitchContext.useStyledContext();
+
+    return (
+      <SwitchThumb
+        ref={forwardedRef}
+        {...props}
+        backgroundColor={
+          disabled ? "secondary-disabled" : props.backgroundColor
+        }
+      />
+    );
   },
   {
     displayName: "SwitchThumb"
@@ -307,7 +318,7 @@ const BaseSwitchImpl = createStyledHOC(
         <BaseSwitch
           ref={forwardedRef}
           activeStyle={{
-            backgroundColor: "primary"
+            backgroundColor: disabled ? "primary-disabled" : "primary"
           }}
           {...props}
           id={name}

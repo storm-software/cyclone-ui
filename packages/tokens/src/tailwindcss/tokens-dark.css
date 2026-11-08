@@ -632,7 +632,7 @@
   --color-brand-secondary-inactive: #004537;
   --color-canvas: var(--color-neutral-16);
   --color-canvas-active: #232326;
-  --color-canvas-disabled: #38383b;
+  --color-canvas-disabled: #252528;
   --color-canvas-hovered: #1c1c1f;
   --color-canvas-inactive: #111114;
   --color-danger-backdrop: #53000726;
@@ -691,7 +691,7 @@
   --color-discovery-secondary-inactive: #27144e;
   --color-elevated: var(--color-neutral-14);
   --color-elevated-active: #313133;
-  --color-elevated-disabled: #3a3a3d;
+  --color-elevated-disabled: #2c2c2e;
   --color-elevated-hovered: #28282a;
   --color-elevated-inactive: #19191b;
   --color-emphasis: var(--color-neutral-2);
@@ -701,7 +701,7 @@
   --color-emphasis-inactive: var(--color-base-primary-inactive);
   --color-floating: var(--color-neutral-13);
   --color-floating-active: #38393c;
-  --color-floating-disabled: #3b3c3f;
+  --color-floating-disabled: #2f3033;
   --color-floating-hovered: #2e2f32;
   --color-floating-inactive: #1e1f22;
   --color-green-1: #d1f1d6;
@@ -830,12 +830,12 @@
   --color-success-secondary-inactive: #00462d;
   --color-sunken: var(--color-black);
   --color-sunken-active: #161617;
-  --color-sunken-disabled: #353538;
+  --color-sunken-disabled: var(--color-neutral-14);
   --color-sunken-hovered: #111112;
   --color-sunken-inactive: #09090a;
   --color-surface: var(--color-neutral-15);
   --color-surface-active: #2c2c2f;
-  --color-surface-disabled: #39393c;
+  --color-surface-disabled: #2a2a2c;
   --color-surface-hovered: #242426;
   --color-surface-inactive: #171719;
   --color-warning-backdrop: #53240026;

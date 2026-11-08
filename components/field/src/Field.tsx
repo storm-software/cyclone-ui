@@ -89,6 +89,7 @@ import {
   isValidElement,
   use,
   useCallback,
+  useEffect,
   useId,
   useLayoutEffect,
   useMemo,
@@ -314,7 +315,13 @@ const FieldValidationText = styled(ValidationText, {
 const FieldValidationTextImpl = createStyledHOC(
   FieldValidationText,
   (props, forwardedRef) => {
-    const { children, ...rest } = props;
+    const {
+      children,
+      showDisabledMessage = false,
+      ...rest
+    } = props as GetProps<typeof FieldValidationText> & {
+      showDisabledMessage?: boolean;
+    };
 
     const field = FieldApi.use();
     const disabled = field.disabled.get();
@@ -330,6 +337,7 @@ const FieldValidationTextImpl = createStyledHOC(
         // Track the control's border so the message reads as part of the field.
         color={`${disabled ? "primary-disabled" : focused ? "primary-active" : "primary"} group-hover/field:${disabled ? "primary-disabled" : focused ? "primary-active" : "primary-hovered"}`}
         messages={messages}
+        showDisabledMessage={showDisabledMessage}
         disabled={disabled}>
         {children}
       </FieldValidationText>
@@ -341,7 +349,12 @@ const FieldValidationTextImpl = createStyledHOC(
 const FieldGroupInnerImpl = createStyledHOC(
   FieldGroupFrame,
   (props, forwardedRef) => {
-    const { children, variant = "outlined", ...rest } = props;
+    const {
+      children,
+      variant = "outlined",
+      showDisabledMessage = false,
+      ...rest
+    } = props as typeof props & { showDisabledMessage?: boolean };
 
     const field = FieldApi.use();
     const name = field.name.get();
@@ -501,7 +514,9 @@ const FieldGroupInnerImpl = createStyledHOC(
                     variant={variant}>
                     {children}
                   </FieldGroupFrame>
-                  <FieldValidationTextImpl />
+                  <FieldValidationTextImpl
+                    showDisabledMessage={showDisabledMessage}
+                  />
                 </YStack>
               </FieldDetailsContext.Provider>
             </FieldDetailsSetterContext.Provider>
@@ -516,6 +531,13 @@ const FieldGroupInnerImpl = createStyledHOC(
 export type FieldProps<TFieldValue = any> =
   FieldProviderOptions<TFieldValue> & {
     variant?: FieldVariant;
+    /**
+     * Whether a disabled field shows "This field is disabled" under the
+     * control. The lock icon's tooltip still shows it.
+     *
+     * @defaultValue false
+     */
+    showDisabledMessage?: boolean;
   };
 
 const FieldGroup = createStyledHOC(
@@ -527,7 +549,12 @@ const FieldGroup = createStyledHOC(
       FieldProps,
     forwardedRef
   ) => {
-    const { children, variant = "outlined", ...rest } = props;
+    const {
+      children,
+      variant = "outlined",
+      showDisabledMessage = false,
+      ...rest
+    } = props;
     const [labelVariant, setLabelVariant] = useState<FieldLabelVariant>();
     const [labelDefaults, setLabelDefaults] = useState<FieldLabelDefaults>();
     const [controlOptions, setControlOptions] = useState<FieldControlOptions>();
@@ -622,7 +649,10 @@ const FieldGroup = createStyledHOC(
         {...(controlOptions?.overrides as Partial<FieldProps>)}>
         <FormControlContext.Provider value={presentation}>
           <FieldButtonsContext.Provider value={buttons}>
-            <FieldGroupInnerImpl ref={forwardedRef} variant={variant}>
+            <FieldGroupInnerImpl
+              ref={forwardedRef}
+              variant={variant}
+              showDisabledMessage={showDisabledMessage}>
               {children}
             </FieldGroupInnerImpl>
           </FieldButtonsContext.Provider>
@@ -895,6 +925,16 @@ const FieldLabelTextImpl = createStyledHOC(
     const [hideOptionalForOverflow, setHideOptionalForOverflow] =
       useState(false);
     const [truncated, setTruncated] = useState(false);
+    // The label's variant and position settle over the mount's layout effects
+    // (the control registers its label defaults, then the label its variant),
+    // which the animation driver would otherwise animate: jump until then.
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => {
+      const frame = requestAnimationFrame(() => setMounted(true));
+
+      return () => cancelAnimationFrame(frame);
+    }, []);
+    const transition = (duration: string) => (mounted ? duration : null);
     const fieldDisabled = field.disabled.get();
     const name = field.name.get();
     const size = field.size.get();
@@ -1063,7 +1103,9 @@ const FieldLabelTextImpl = createStyledHOC(
         ellipsis={true}
         disabled={disabled}
         floating={floating}
-        controlSize={size}>
+        controlSize={size}
+        transition={transition("250ms")}
+        cursor={disabled ? "not-allowed" : "pointer"}>
         {children}
       </FieldLabelText>
     );
@@ -1072,6 +1114,7 @@ const FieldLabelTextImpl = createStyledHOC(
       <FieldLabelPositioner
         ref={labelPositionerRef}
         labelVariant={labelVariant}
+        transition={transition("250ms")}
         top={labelTop}
         // Labels floated onto a border sit slightly above it, centered on
         // the notch `FieldNotchedOutline` opens; every other floating label
@@ -1092,13 +1135,17 @@ const FieldLabelTextImpl = createStyledHOC(
             ? (resolvedFloatingLabelLeft ??
               (underlined ? 0 : getSpaced("4xl") * getFormSizeScale(size)))
             : undefined
-        }>
+        }
+        cursor={disabled ? "not-allowed" : "pointer"}>
         <TamaguiLabel
           ref={forwardedRef}
           id={getFieldLabelId(name)}
           htmlFor={name}
           marginLeft={`${isFloatingVariant || underlined ? "zero" : "md"}`}>
-          <LabelXStack disabled={disabled} floating={floating}>
+          <LabelXStack
+            disabled={disabled}
+            floating={floating}
+            transition={transition("200ms")}>
             <FieldLabelContent ref={labelContentRef}>
               <Theme name={baseTheme}>
                 {truncated ? (
@@ -1122,13 +1169,13 @@ const FieldLabelTextImpl = createStyledHOC(
                     <>
                       {hideAsterisk !== true && (
                         <View
-                          transition="250ms"
+                          transition={transition("250ms")}
                           position="relative"
                           alignSelf="stretch"
                           width={`${floating ? "lg" : "2xl"}`}>
                           <Theme name="danger">
                             <Asterisk
-                              transition="250ms"
+                              transition={transition("250ms")}
                               color="primary"
                               size={floating ? "lg" : "2xl"}
                               position="absolute"
@@ -1161,7 +1208,8 @@ const FieldLabelTextImpl = createStyledHOC(
                           color="subtle"
                           disabled={disabled}
                           floating={floating}
-                          controlSize={size}>
+                          controlSize={size}
+                          transition={transition("250ms")}>
                           (Optional)
                         </FieldOptionalLabelText>
                       )}
@@ -1231,16 +1279,16 @@ const FieldLabel = createStyledHOC(
     }, [setLabelVariant, variant]);
 
     const label = (
-        <FieldLabelTextImpl
-          ref={forwardedRef}
-          {...props}
-          htmlFor={name}
-          disabled={disabled}
-          required={required}
-          labelVariant={variant}
-          floating={floating}>
-          {children}
-        </FieldLabelTextImpl>
+      <FieldLabelTextImpl
+        ref={forwardedRef}
+        {...props}
+        htmlFor={name}
+        disabled={disabled}
+        required={required}
+        labelVariant={variant}
+        floating={floating}>
+        {children}
+      </FieldLabelTextImpl>
     );
 
     return inline ? (

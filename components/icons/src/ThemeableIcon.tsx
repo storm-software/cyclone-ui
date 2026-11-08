@@ -63,7 +63,7 @@ export const getIconByTheme = ({
   ...props
 }: BaseThemeIconProps) => {
   if (disabled) {
-    return <Lock {...props} />;
+    return <Lock variant="filled" {...props} />;
   } else if (theme?.includes("danger")) {
     return <ErrorCircle {...props} />;
   } else if (theme?.includes("warning")) {

@@ -114,6 +114,7 @@ const SelectGroup = styled(XStack, {
 
     disabled: {
       true: {
+        backgroundColor: "surface-disabled",
         borderColor:
           "primary-disabled hover:primary-disabled press:primary-disabled focus:primary-disabled",
         userSelect: "none",
@@ -352,19 +353,23 @@ const SelectTextBoxImpl = createStyledHOC(
               </View>
             </XGroup.Item>
 
-            <XGroup.Item>
-              <SelectSeparator
-                ref={forwardedRef}
-                focused={focused}
-                hasValidationMessage={hasValidationMessage}
-                disabled={disabled}
-                borderColor={`${focused ? focusColor : idleColor} group-hover/field:${disabled ? "hairline-inactive" : focused ? focusColor : hoverColor}`}
-              />
-            </XGroup.Item>
+            {!disabled && (
+              <>
+                <XGroup.Item>
+                  <SelectSeparator
+                    ref={forwardedRef}
+                    focused={focused}
+                    hasValidationMessage={hasValidationMessage}
+                    disabled={disabled}
+                    borderColor={`${focused ? focusColor : idleColor} group-hover/field:${focused ? focusColor : hoverColor}`}
+                  />
+                </XGroup.Item>
 
-            <XGroup.Item>
-              <SelectTrigger />
-            </XGroup.Item>
+                <XGroup.Item>
+                  <SelectTrigger />
+                </XGroup.Item>
+              </>
+            )}
           </SelectTextBox>
           {variant === "underlined" && (
             <ControlUnderline

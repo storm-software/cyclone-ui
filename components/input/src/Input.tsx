@@ -158,6 +158,7 @@ const InputGroup = styled(XStack, {
       true: {
         userSelect: "none",
         cursor: "not-allowed",
+        backgroundColor: "surface-disabled",
         borderColor:
           "primary-disabled hover:primary-disabled press:primary-disabled focus:primary-disabled"
       }
