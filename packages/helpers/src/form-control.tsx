@@ -405,6 +405,7 @@ export const FieldNotchedOutline = createStyledHOC(
     const formControl = useFormControl();
     const labelContentRef = formControl?.labelContentRef;
     const labelVariant = formControl?.labelVariant;
+    const focused = Boolean(formControl?.focused);
     const size = formControl?.size;
     const outlineRef = useRef<TamaguiWebElement>(null);
     const legendRef = useRef<TamaguiWebElement>(null);
@@ -443,14 +444,27 @@ export const FieldNotchedOutline = createStyledHOC(
         legend.style.width = `${(labelRect.width + gap * 2) * open}px`;
       };
 
-      update();
+      // The label's position animates without a resize, and that animation
+      // does not emit `transitionend`. Keep measuring until it has landed,
+      // or the notch stays open across the top border after blur.
+      let raf = 0;
+      const started = performance.now();
+      const follow = () => {
+        update();
+        if (
+          typeof requestAnimationFrame === "function" &&
+          performance.now() - started < 400
+        ) {
+          raf = requestAnimationFrame(follow);
+        }
+      };
+      follow();
 
-      // A label that only moves (its positioner's `top` or `transform` still
-      // transitioning after its size settled, as when a default value floats
-      // it on mount) never resizes, so also re-measure once it lands.
       const document = outline.ownerDocument;
       const handleTransitionEnd = (event: Event) => {
-        if ((event.target as Node).contains(label)) {
+        const target = event.target as Node | null;
+        // The size transition runs on the label text, inside `label`.
+        if (target && (label.contains(target) || target.contains(label))) {
           update();
         }
       };
@@ -465,6 +479,9 @@ export const FieldNotchedOutline = createStyledHOC(
       resizeObserver?.observe(label);
 
       return () => {
+        if (typeof cancelAnimationFrame === "function") {
+          cancelAnimationFrame(raf);
+        }
         resizeObserver?.disconnect();
         document.removeEventListener(
           "transitionend",
@@ -477,7 +494,7 @@ export const FieldNotchedOutline = createStyledHOC(
           true
         );
       };
-    }, [gap, labelContentRef, labelVariant]);
+    }, [focused, gap, labelContentRef, labelVariant]);
 
     return (
       <FieldNotchedOutlineFrame ref={composedRef} aria-hidden {...props}>

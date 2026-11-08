@@ -543,7 +543,7 @@ export function useActiveTableOfContentsItem(
     let ancestor = targets[0]?.element.parentElement;
     while (ancestor) {
       if (
-        /^(auto|scroll|overlay)$/.test(
+        /^(?:auto|scroll|overlay)$/.test(
           browserWindow.getComputedStyle(ancestor).overflowY
         )
       ) {

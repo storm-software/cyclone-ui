@@ -18,7 +18,7 @@
 
 "use client";
 
-import { Link as AnchorIcon } from "@cyclone-ui/icons";
+import { Link as LinkIcon, Anchor as AnchorIcon } from "@cyclone-ui/icons";
 import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, View } from "@tamagui/core";
 import { useState } from "react";
@@ -51,6 +51,7 @@ export interface AnchorExtraProps {
   rel?: string;
   download?: string;
   permalinkLabel?: string;
+  icon?: "link" | "anchor";
 }
 
 export const Anchor = createStyledHOC(
@@ -63,6 +64,7 @@ export const Anchor = createStyledHOC(
       rel,
       download,
       permalinkLabel,
+      icon = "link",
       ...props
     }: GetProps<typeof AnchorFrame> & AnchorExtraProps,
     forwardedRef
@@ -95,13 +97,23 @@ export const Anchor = createStyledHOC(
           group="anchorIcon"
           onMouseEnter={() => setIconHovered(true)}
           onMouseLeave={() => setIconHovered(false)}>
-          <AnchorIcon
+          {icon === "link" ? (
+            <LinkIcon
             aria-hidden={true}
             transition="200ms"
             color={isIconHovered ? "primary" : "neutral7"}
             height="90%"
             maxHeight="7xl"
           />
+          ) : (
+            <AnchorIcon
+              aria-hidden={true}
+              transition="200ms"
+              color={isIconHovered ? "primary" : "neutral7"}
+              height="90%"
+              maxHeight="7xl"
+            />
+          )}
         </Permalink>
       </AnchorFrame>
     );

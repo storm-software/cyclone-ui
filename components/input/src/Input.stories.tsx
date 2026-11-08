@@ -626,6 +626,17 @@ export const WithButton: Story = {
         )
       );
     }
+
+    // Focusing the field opens the outline notch under the floated label.
+    // Tabbing out rests the label; the notch has to close with it.
+    const input = canvas.getAllByRole("textbox")[0]!;
+    await userEvent.click(input);
+    await userEvent.tab();
+    await userEvent.tab();
+    const legend = canvasElement.querySelector("legend")!;
+    await waitFor(() =>
+      expect(Number.parseFloat(getComputedStyle(legend).width)).toBe(0)
+    );
   }
 };
 
