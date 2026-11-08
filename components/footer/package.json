@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/eyebrow-text": "workspace:*",
     "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/link": "workspace:*",
     "@tamagui/core": "catalog:"

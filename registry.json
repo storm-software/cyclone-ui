@@ -1261,6 +1261,38 @@
       ]
     },
     {
+      "name": "@cyclone-ui/floating-toolbar",
+      "type": "registry:component",
+      "title": "@cyclone-ui/floating-toolbar",
+      "description": "A pill-shaped toolbar fixed to the bottom of the viewport for page-level controls: a frosted `floating` Container surface holding `Row`s of buttons, brand marks, selects and toggles separated by `Divider`s. Its `TableOfContents` part shows the heading the reader is in with a reading-progress ring and expands the page's TableOfContents upward in a Collapsible.",
+      "dependencies": ["@tamagui/core@3.2.0", "@tamagui/stacks@3.2.0"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.6",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/circular-progress",
+        "@cyclone-ui/collapsible",
+        "@cyclone-ui/container",
+        "@cyclone-ui/divider",
+        "@cyclone-ui/table-of-contents"
+      ],
+      "files": [
+        {
+          "path": "components/floating-toolbar/src/FloatingToolbar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/floating-toolbar/src/utilities.ts",
+          "type": "registry:file",
+          "target": "components/floating-toolbar/src/utilities.ts"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/footer",
       "type": "registry:component",
       "title": "@cyclone-ui/footer",

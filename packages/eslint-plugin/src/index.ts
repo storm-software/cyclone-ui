@@ -4361,6 +4361,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/floating-toolbar",
+      jsx: ["FloatingToolbar"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/footer",
       jsx: ["Footer"],
       roles: []

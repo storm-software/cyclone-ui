@@ -39,6 +39,7 @@ const MOTION_EASING = "cubic-bezier(0.22, 1, 0.36, 1)";
 
 interface BrowserElement {
   getBoundingClientRect: () => { top: number };
+  parentElement: (BrowserElement & ScrollMetrics) | null;
 }
 
 interface ScrollMetrics {
@@ -70,6 +71,7 @@ interface BrowserMediaQuery {
 
 interface BrowserWindow {
   innerHeight: number;
+  getComputedStyle: (element: BrowserElement) => { overflowY: string };
   matchMedia: (query: string) => BrowserMediaQuery;
   requestAnimationFrame: (callback: () => void) => number;
   cancelAnimationFrame: (frame: number) => void;
@@ -143,7 +145,7 @@ const TableOfContentsHeading = styled(XStack, {
 const TableOfContentsHeadingText = styled(BodyText, {
   render: "span",
   color: "subtle",
-  fontWeight: "medium"
+  fontWeight: "normal"
 });
 
 const TableOfContentsItems = styled(View, {
@@ -487,6 +489,127 @@ function TableOfContentsRail({
   );
 }
 
+export interface ActiveTableOfContentsItem {
+  /** The index into `items` of the heading the reader is in; `0` with no match. */
+  activeIndex: number;
+  /** The `url` of the heading the reader is in. */
+  activeUrl: string;
+  /** Whether the content is scrolled to its end, which selects the last item. */
+  scrolledToEnd: boolean;
+  /** Selects a heading, e.g. when its link is pressed. */
+  setActiveUrl: (url: string) => void;
+}
+
+/**
+ * Tracks which of the `items` the reader is in. On web it follows the scroll
+ * position of the headings the items point at; elsewhere the first item (or the
+ * one passed to `setActiveUrl`) stays active.
+ */
+export function useActiveTableOfContentsItem(
+  items: readonly TableOfContentsItem[]
+): ActiveTableOfContentsItem {
+  const [activeUrl, setActiveUrl] = useState(items[0]?.url ?? "");
+  const [scrolledToEnd, setScrolledToEnd] = useState(false);
+  const activeIndex = Math.max(
+    0,
+    items.findIndex(item => item.url === activeUrl)
+  );
+
+  useEffect(() => {
+    const { window: browserWindow, document: browserDocument } =
+      getBrowserGlobals();
+    if (
+      Platform.OS !== "web" ||
+      !browserWindow ||
+      !browserDocument ||
+      items.length === 0
+    ) {
+      return;
+    }
+
+    const targets = items.flatMap(item => {
+      const id = getHashId(item.url);
+      const element = id ? browserDocument.getElementById(id) : null;
+
+      return element ? [{ element, url: item.url }] : [];
+    });
+
+    if (targets.length === 0) return;
+
+    let frame = 0;
+    // The list can mount after scrolling (for example inside a collapsible).
+    // Find its scroller now instead of waiting for another scroll event.
+    let scroller = browserDocument.scrollingElement ?? undefined;
+    let ancestor = targets[0]?.element.parentElement;
+    while (ancestor) {
+      if (
+        /^(auto|scroll|overlay)$/.test(
+          browserWindow.getComputedStyle(ancestor).overflowY
+        )
+      ) {
+        scroller = ancestor;
+        break;
+      }
+      ancestor = ancestor.parentElement;
+    }
+    const updateActiveItem = () => {
+      frame = 0;
+      const activationLine = Math.min(browserWindow.innerHeight * 0.35, 180);
+      let next = targets[0];
+      const atEnd = !!scroller && isScrolledToEnd(scroller);
+      // eslint-disable-next-line react/set-state-in-effect
+      setScrolledToEnd(atEnd);
+
+      // The last headings can't scroll up to the activation line, so the
+      // end of the content selects the last item.
+      if (atEnd) {
+        next = targets.at(-1);
+      } else {
+        for (const target of targets) {
+          if (target.element.getBoundingClientRect().top <= activationLine) {
+            next = target;
+          } else {
+            break;
+          }
+        }
+      }
+
+      if (next) {
+        // eslint-disable-next-line react/set-state-in-effect
+        setActiveUrl(current => (current === next.url ? current : next.url));
+      }
+    };
+    const scheduleUpdate = (event?: { target?: unknown }) => {
+      const target = getScrollContainer(event?.target, browserDocument);
+
+      // Ignores unrelated scroll areas, such as a side nav.
+      if (targets[0] && target?.contains(targets[0].element)) {
+        scroller = target;
+      }
+
+      if (!frame) {
+        frame = browserWindow.requestAnimationFrame(updateActiveItem);
+      }
+    };
+
+    updateActiveItem();
+    browserWindow.addEventListener("scroll", scheduleUpdate, true);
+    browserWindow.addEventListener("resize", scheduleUpdate, {
+      passive: true
+    });
+    browserWindow.addEventListener("hashchange", scheduleUpdate);
+
+    return () => {
+      browserWindow.cancelAnimationFrame(frame);
+      browserWindow.removeEventListener("scroll", scheduleUpdate, true);
+      browserWindow.removeEventListener("resize", scheduleUpdate);
+      browserWindow.removeEventListener("hashchange", scheduleUpdate);
+    };
+  }, [items]);
+
+  return { activeIndex, activeUrl, scrolledToEnd, setActiveUrl };
+}
+
 export const TableOfContents = createStyledHOC(
   TableOfContentsFrame,
   (
@@ -497,13 +620,9 @@ export const TableOfContents = createStyledHOC(
     }: GetProps<typeof TableOfContentsFrame> & TableOfContentsExtraProps,
     forwardedRef
   ) => {
-    const [activeUrl, setActiveUrl] = useState(items[0]?.url ?? "");
-    const [scrolledToEnd, setScrolledToEnd] = useState(false);
+    const { activeIndex, scrolledToEnd, setActiveUrl } =
+      useActiveTableOfContentsItem(items);
     const prefersReducedMotion = usePrefersReducedMotion();
-    const activeIndex = Math.max(
-      0,
-      items.findIndex(item => item.url === activeUrl)
-    );
     const minDepth = items.length ? Math.min(...items.map(getItemDepth)) : 0;
     const activePathIndexes = useMemo(() => {
       const result = new Set([activeIndex]);
@@ -520,84 +639,6 @@ export const TableOfContents = createStyledHOC(
 
       return result;
     }, [activeIndex, items, minDepth]);
-
-    useEffect(() => {
-      const { window: browserWindow, document: browserDocument } =
-        getBrowserGlobals();
-      if (
-        Platform.OS !== "web" ||
-        !browserWindow ||
-        !browserDocument ||
-        items.length === 0
-      ) {
-        return;
-      }
-
-      const targets = items.flatMap(item => {
-        const id = getHashId(item.url);
-        const element = id ? browserDocument.getElementById(id) : null;
-
-        return element ? [{ element, url: item.url }] : [];
-      });
-
-      if (targets.length === 0) return;
-
-      let frame = 0;
-      let scroller: ScrollMetrics | undefined;
-      const updateActiveItem = () => {
-        frame = 0;
-        const activationLine = Math.min(browserWindow.innerHeight * 0.35, 180);
-        let next = targets[0];
-        const atEnd = !!scroller && isScrolledToEnd(scroller);
-        // eslint-disable-next-line react/set-state-in-effect
-        setScrolledToEnd(atEnd);
-
-        // The last headings can't scroll up to the activation line, so the
-        // end of the content selects the last item.
-        if (atEnd) {
-          next = targets.at(-1);
-        } else {
-          for (const target of targets) {
-            if (target.element.getBoundingClientRect().top <= activationLine) {
-              next = target;
-            } else {
-              break;
-            }
-          }
-        }
-
-        if (next) {
-          // eslint-disable-next-line react/set-state-in-effect
-          setActiveUrl(current => (current === next.url ? current : next.url));
-        }
-      };
-      const scheduleUpdate = (event?: { target?: unknown }) => {
-        const target = getScrollContainer(event?.target, browserDocument);
-
-        // Ignores unrelated scroll areas, such as a side nav.
-        if (targets[0] && target?.contains(targets[0].element)) {
-          scroller = target;
-        }
-
-        if (!frame) {
-          frame = browserWindow.requestAnimationFrame(updateActiveItem);
-        }
-      };
-
-      updateActiveItem();
-      browserWindow.addEventListener("scroll", scheduleUpdate, true);
-      browserWindow.addEventListener("resize", scheduleUpdate, {
-        passive: true
-      });
-      browserWindow.addEventListener("hashchange", scheduleUpdate);
-
-      return () => {
-        browserWindow.cancelAnimationFrame(frame);
-        browserWindow.removeEventListener("scroll", scheduleUpdate, true);
-        browserWindow.removeEventListener("resize", scheduleUpdate);
-        browserWindow.removeEventListener("hashchange", scheduleUpdate);
-      };
-    }, [items]);
 
     if (items.length === 0) return null;
 

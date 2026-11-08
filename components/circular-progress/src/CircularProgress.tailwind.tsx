@@ -27,12 +27,21 @@ import type { TailwindViewElement } from "@tamagui/tailwind";
 import { styled, View } from "@tamagui/tailwind";
 import type { ComponentPropsWithoutRef } from "react";
 import { forwardRef, useEffect, useRef, useState } from "react";
-import { Circle, Svg } from "react-native-svg";
+import { Circle, Path, Svg } from "react-native-svg";
 
 const VIEWBOX_SIZE = 24;
 const STROKE_WIDTH = 2.5;
 const RADIUS = VIEWBOX_SIZE / 2 - STROKE_WIDTH / 2;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
+// Clockwise from 12 o'clock. A `Circle` with `rotation` doesn't rotate on web.
+const INDICATOR_PATH = `M ${VIEWBOX_SIZE / 2} ${STROKE_WIDTH / 2} a ${RADIUS} ${RADIUS} 0 1 1 0 ${2 * RADIUS} a ${RADIUS} ${RADIUS} 0 1 1 0 ${-2 * RADIUS}`;
+
+// Web-only CSS transition: react-native-svg passes `style` to the DOM, but
+// its shape types don't declare it.
+// ponytail: native snaps to the new value; drive strokeDashoffset with Reanimated if native needs the animation
+const indicatorTransition: object = {
+  style: { transition: "stroke-dashoffset 300ms ease-out, stroke 200ms" }
+};
 const DASHED_SEGMENTS = 20;
 const POP_DURATION = 150;
 
@@ -133,7 +142,7 @@ export interface CircularProgressProps extends Omit<
   getValueLabel?: (value: number, max: number) => string;
   color?: ColorTokens | ThemeTokens;
   /**
-   * `solid` draws a continuous ring. `dashed` splits the ring into segments
+   * `solid` draws a continuous ring that sweeps to each new value. `dashed` splits the ring into segments
    * that light up (with a brief scale pop) as the value increases.
    */
   variant?: "solid" | "dashed";
@@ -231,18 +240,15 @@ export const CircularProgress = forwardRef<
               stroke={trackColor}
               strokeWidth={STROKE_WIDTH}
             />
-            <Circle
-              cx={VIEWBOX_SIZE / 2}
-              cy={VIEWBOX_SIZE / 2}
+            <Path
+              d={INDICATOR_PATH}
               fill="none"
-              origin={`${VIEWBOX_SIZE / 2}, ${VIEWBOX_SIZE / 2}`}
-              r={RADIUS}
-              rotation="-90"
               stroke={indicatorColor}
               strokeDasharray={CIRCUMFERENCE}
               strokeDashoffset={CIRCUMFERENCE * (1 - progressRatio)}
               strokeLinecap="round"
               strokeWidth={STROKE_WIDTH}
+              {...indicatorTransition}
             />
           </Svg>
         )}

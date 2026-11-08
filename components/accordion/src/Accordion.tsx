@@ -285,7 +285,8 @@ const AccordionFrameImpl = forwardRef<
 
     return (
       <AccordionContext.Provider
-        open={open}
+        // A controlled `value` wins, so programmatic changes reach the items.
+        open={value === undefined ? open : getOpenValues(value)}
         setOpen={setOpen}
         variant={variant}
         bordered={bordered}

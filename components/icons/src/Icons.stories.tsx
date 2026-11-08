@@ -192,15 +192,23 @@ export const Gallery: Story = {
             Icon.variants.map(variant => (
               <View
                 key={`${name}-${variant}`}
-                width={96}
+                width={120}
+                maxWidth="100%"
+                flexShrink={0}
                 alignItems="center"
                 gap="xs"
-                paddingVertical="2xl">
+                paddingVertical="2xl"
+                paddingHorizontal="xs">
                 <Icon {...args} variant={variant} />
-                <Text fontSize={10} color="color" textAlign="center">
+                <Text
+                  width="100%"
+                  fontSize={10}
+                  color="color"
+                  textAlign="center"
+                  overflowWrap="anywhere">
                   {name}
                 </Text>
-                <Text fontSize={10} color="color" opacity={0.6}>
+                <Text fontSize={10} color="color" opacity={0.6} textAlign="center">
                   {variant}
                 </Text>
               </View>

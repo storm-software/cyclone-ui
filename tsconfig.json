@@ -112,6 +112,9 @@
       "path": "./components/copy-page-dropdown-button"
     },
     {
+      "path": "./components/floating-toolbar"
+    },
+    {
       "path": "./components/container"
     },
     {

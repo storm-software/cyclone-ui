@@ -460,7 +460,7 @@ export const File = ({
             aria-hidden={true}>
             <Uploading
               variant="loop"
-              size={getSized("4xl") * scale}
+              size={getSized("8xl") * scale}
               color="subtle"
             />
           </View>

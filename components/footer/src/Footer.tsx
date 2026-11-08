@@ -19,6 +19,7 @@
 "use client";
 
 import { BodyText } from "@cyclone-ui/body-text";
+import { EyebrowText } from "@cyclone-ui/eyebrow-text";
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import { Link } from "@cyclone-ui/link";
 import type { GetProps } from "@tamagui/core";
@@ -56,10 +57,10 @@ const FooterContainer = styled(View, {
   width: "100%",
   maxWidth: 1440,
   marginHorizontal: "auto",
-  paddingTop: "7xl max-md:5xl",
-  paddingHorizontal: "4xl max-md:2xl",
-  paddingBottom: "7xl max-md:5xl",
-  gap: "10xl max-md:10xl"
+  paddingTop: "14xl max-md:11xl",
+  paddingHorizontal: "8xl max-md:4xl",
+  paddingBottom: "12xl max-md:10xl",
+  gap: "12xl max-md:10xl"
 });
 
 const FooterMain = styled(View, {
@@ -73,12 +74,12 @@ const FooterMain = styled(View, {
 
 const FooterIntroduction = styled(View, {
   displayName: "FooterIntroduction",
-  flexBasis: "0px max-md:auto",
-  flexGrow: 1,
+  flexBasis: "400px max-md:auto",
+  flexGrow: 0,
   minWidth: 0,
-  maxWidth: "440px max-md:none",
+  maxWidth: "400px max-md:none",
   flexShrink: 1,
-  gap: "5xl max-md:6xl",
+  gap: "4xl",
   width: "max-md:100%"
 });
 
@@ -97,7 +98,8 @@ const FooterDescription = styled(BodyText, {
   maxWidth: 560,
   margin: 0,
   color: "primary",
-  opacity: 0.85
+  opacity: 0.85,
+  lineHeight: "1.75em"
 });
 
 const FooterAction = styled(View, {
@@ -115,7 +117,7 @@ const FooterNavigation = styled(View, {
   flexBasis: "0px max-md:auto",
   flexGrow: 1,
   minWidth: 0,
-  maxWidth: "440px max-md:none",
+  maxWidth: "760px max-md:none",
   flexDirection: "row",
   flexWrap: "wrap",
   alignItems: "flex-start",
@@ -132,19 +134,17 @@ const FooterSectionFrame = styled(View, {
   gap: "4xl"
 });
 
-const FooterSectionTitle = styled(HeadingSmallText, {
+const FooterSectionTitle = styled(EyebrowText, {
   displayName: "FooterSectionTitle",
   render: "h3",
   margin: 0,
-  color: "primary",
-  textTransform: "uppercase",
-  letterSpacing: 2
+  letterSpacing: 1
 });
 
 const FooterSectionLinks = styled(View, {
   displayName: "FooterSectionLinks",
   alignItems: "flex-start",
-  gap: "2xl"
+  gap: "5xl"
 });
 
 const FooterLink = styled(Link, {
@@ -163,7 +163,9 @@ const FooterLink = styled(Link, {
 const FooterRail = styled(View, {
   displayName: "FooterRail",
   width: "100%",
-  paddingTop: "5xl",
+  paddingTop: "4xl",
+  borderTopWidth: 1,
+  borderTopColor: "hairline",
   flexDirection: "row max-md:column",
   alignItems: "center max-md:flex-start",
   justifyContent: "space-between",
@@ -182,9 +184,8 @@ const FooterBrand = styled(View, {
 const FooterCopyright = styled(BodyText, {
   displayName: "FooterCopyright",
   render: "span",
-  color: "primary",
-  fontSize: "md",
-  opacity: 0.85
+  color: "subtle",
+  fontSize: "sm"
 });
 
 const FooterLegalNavigation = styled(View, {
@@ -196,27 +197,22 @@ const FooterLegalNavigation = styled(View, {
   gap: "5xl"
 });
 
+/**
+ * Oversized wordmark bleeding off the bottom edge of the footer. Children are
+ * stretched to the content width and faded out toward the bottom.
+ */
 const FooterBackgroundLogo = styled(View, {
   displayName: "FooterBackgroundLogo",
-  display: "flex",
-  alignItems: "center",
-  position: "absolute",
-  top: "2xl",
-  zIndex: "40",
-  paddingHorizontal: "9xl"
+  pointerEvents: "none",
+  width: "100%",
+  maxWidth: 1440,
+  marginHorizontal: "auto",
+  paddingHorizontal: "8xl max-md:4xl",
+  // Percentages resolve against the width, so the crop scales with the logo.
+  marginBottom: "-2%",
+  opacity: 0.18,
+  maskImage: "linear-gradient(to bottom, #000, transparent)"
 });
-
-const FooterBackgroundLogoImpl = createStyledHOC(
-  FooterBackgroundLogo,
-  ({ children, ...props }, forwardedRef) => (
-    <FooterBackgroundLogo ref={forwardedRef} {...props}>
-      <View opacity={0.075} display="flex" alignItems="center">
-        {children}
-      </View>
-    </FooterBackgroundLogo>
-  ),
-  { displayName: "FooterBackgroundLogo" }
-);
 
 export type FooterProps = GetProps<typeof FooterFrame>;
 
@@ -295,7 +291,7 @@ const FooterFrameImpl = createStyledHOC(
 export const Footer = withStaticProperties(FooterFrameImpl, {
   Container: FooterContainer,
   Main: FooterMain,
-  BackgroundLogo: FooterBackgroundLogoImpl,
+  BackgroundLogo: FooterBackgroundLogo,
   Introduction: FooterIntroduction,
   Statement: FooterStatement,
   Description: FooterDescription,
@@ -320,7 +316,7 @@ export const Footer = withStaticProperties(FooterFrameImpl, {
  */
 export {
   FooterAction,
-  FooterBackgroundLogoImpl as FooterBackgroundLogo,
+  FooterBackgroundLogo,
   FooterBrand,
   FooterContainer,
   FooterCopyright,

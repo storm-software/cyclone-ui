@@ -1,0 +1,51 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/floating-toolbar/tsconfig.tsbuildinfo",
+    "jsx": "preserve",
+    "lib": ["ESnext", "DOM"],
+    "ignoreDeprecations": "6.0",
+    "rootDir": ".",
+    "types": [
+      "node",
+      "@nx/react/typings/cssmodule.d.ts",
+      "@nx/react/typings/image.d.ts"
+    ],
+    "outDir": "../../dist/out-tsc/components/floating-toolbar"
+  },
+  "references": [
+    {
+      "path": "../../tools/config"
+    },
+    {
+      "path": "../button"
+    },
+    {
+      "path": "../circular-progress"
+    },
+    {
+      "path": "../container"
+    },
+    {
+      "path": "../divider"
+    },
+    {
+      "path": "../icons"
+    },
+    {
+      "path": "../collapsible"
+    },
+    {
+      "path": "../table-of-contents"
+    },
+    {
+      "path": "../body-text"
+    },
+    {
+      "path": "../toggle-group"
+    }
+  ],
+  "files": [],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+}
