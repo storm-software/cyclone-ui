@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Table of Contents
 
+## [0.0.58](https://github.com/storm-software/cyclone-ui/releases/tag/table-of-contents%400.0.58) (11/08/2026)
+
+### Features
+
+- **floating-toolbar:** Initial check-in of the `FloatingToolbar` component package ([6b2dbcaf3](https://github.com/storm-software/cyclone-ui/commit/6b2dbcaf3))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.59**
+- Updated **icons** to **v0.0.57**
+
 ## [0.0.57](https://github.com/storm-software/cyclone-ui/releases/tag/table-of-contents%400.0.57) (11/08/2026)
 
 ### Updated Dependencies

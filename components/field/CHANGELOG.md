@@ -2,6 +2,26 @@
 
 # Changelog for Cyclone UI - Field
 
+## [0.5.62](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.62) (11/08/2026)
+
+### Features
+
+- **input:** Added a `Button` compound component to the fields ([9a4c0bdf2](https://github.com/storm-software/cyclone-ui/commit/9a4c0bdf2))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.59**
+- Updated **button** to **v0.6.62**
+- Updated **form** to **v0.9.60**
+- Updated **helpers** to **v0.3.59**
+- Updated **icons** to **v0.0.57**
+- Updated **link** to **v0.5.62**
+- Updated **spinner** to **v0.5.59**
+- Updated **state** to **v0.0.61**
+- Updated **themeable-icon** to **v0.6.61**
+- Updated **tooltip** to **v0.5.62**
+- Updated **validation-text** to **v0.5.61**
+
 ## [0.5.61](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.61) (11/08/2026)
 
 ### Updated Dependencies

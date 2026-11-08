@@ -2,6 +2,14 @@
 
 # Changelog for Cyclone UI - Dropdown Button
 
+## [0.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/dropdown-button%400.0.4) (11/08/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.62**
+- Updated **context-menu** to **v0.0.53**
+- Updated **icons** to **v0.0.57**
+
 ## [0.0.3](https://github.com/storm-software/cyclone-ui/releases/tag/dropdown-button%400.0.3) (11/08/2026)
 
 ### Updated Dependencies

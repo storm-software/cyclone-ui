@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Icons
 
+## [0.0.57](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.57) (11/08/2026)
+
+### Bug Fixes
+
+- **icons:** Added new items to the icons gallery ([649926b44](https://github.com/storm-software/cyclone-ui/commit/649926b44))
+
+### Features
+
+- **floating-toolbar:** Initial check-in of the `FloatingToolbar` component package ([6b2dbcaf3](https://github.com/storm-software/cyclone-ui/commit/6b2dbcaf3))
+
 ## [0.0.56](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.56) (11/08/2026)
 
 ### Features

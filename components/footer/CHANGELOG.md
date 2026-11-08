@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Footer
 
+## [0.0.61](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.61) (11/08/2026)
+
+### Features
+
+- **floating-toolbar:** Initial check-in of the `FloatingToolbar` component package ([6b2dbcaf3](https://github.com/storm-software/cyclone-ui/commit/6b2dbcaf3))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.59**
+- Updated **eyebrow-text** to **v0.5.59**
+- Updated **heading-text** to **v0.5.60**
+- Updated **icons** to **v0.0.57**
+- Updated **link** to **v0.5.62**
+
 ## [0.0.60](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.60) (11/08/2026)
 
 ### Updated Dependencies

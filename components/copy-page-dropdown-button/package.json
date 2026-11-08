@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/copy-page-dropdown-button",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "description": "A docs \"Copy page\" DropdownButton: the main button copies the page's Markdown source (fetched from `markdownUrl`) to the clipboard, and its menu opens that Markdown or asks Claude, ChatGPT, T3 Chat or Cursor about the page. It takes all DropdownButton props except `items`, `value` and `onValueChange`.",
   "repository": {

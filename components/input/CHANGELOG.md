@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Input
 
+## [0.6.62](https://github.com/storm-software/cyclone-ui/releases/tag/input%400.6.62) (11/08/2026)
+
+### Features
+
+- **input:** Added a `Button` compound component to the fields ([9a4c0bdf2](https://github.com/storm-software/cyclone-ui/commit/9a4c0bdf2))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.62**
+- Updated **field** to **v0.5.62**
+- Updated **form** to **v0.9.60**
+- Updated **helpers** to **v0.3.59**
+- Updated **icons** to **v0.0.57**
+
 ## [0.6.61](https://github.com/storm-software/cyclone-ui/releases/tag/input%400.6.61) (11/08/2026)
 
 ### Updated Dependencies

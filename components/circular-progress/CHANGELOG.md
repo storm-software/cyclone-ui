@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Circular Progress
 
+## [0.0.57](https://github.com/storm-software/cyclone-ui/releases/tag/circular-progress%400.0.57) (11/08/2026)
+
+### Features
+
+- **floating-toolbar:** Initial check-in of the `FloatingToolbar` component package ([6b2dbcaf3](https://github.com/storm-software/cyclone-ui/commit/6b2dbcaf3))
+
 ## [0.0.48](https://github.com/storm-software/cyclone-ui/releases/tag/circular-progress%400.0.48) (11/05/2026)
 
 ### Features

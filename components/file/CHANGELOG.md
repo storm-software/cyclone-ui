@@ -2,6 +2,28 @@
 
 # Changelog for Cyclone UI - File
 
+## [0.0.12](https://github.com/storm-software/cyclone-ui/releases/tag/file%400.0.12) (11/08/2026)
+
+### Features
+
+- **input:** Added a `Button` compound component to the fields ([9a4c0bdf2](https://github.com/storm-software/cyclone-ui/commit/9a4c0bdf2))
+- **floating-toolbar:** Initial check-in of the `FloatingToolbar` component package ([6b2dbcaf3](https://github.com/storm-software/cyclone-ui/commit/6b2dbcaf3))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.59**
+- Updated **button** to **v0.6.62**
+- Updated **bytes-text** to **v0.5.59**
+- Updated **heading-text** to **v0.5.60**
+- Updated **helpers** to **v0.3.59**
+- Updated **icons** to **v0.0.57**
+- Updated **link** to **v0.5.62**
+- Updated **number-text** to **v0.5.59**
+- Updated **pdf-document-display** to **v0.5.61**
+- Updated **progress** to **v0.5.59**
+- Updated **state** to **v0.0.61**
+- Updated **themeable-icon** to **v0.6.61**
+
 ## [0.0.11](https://github.com/storm-software/cyclone-ui/releases/tag/file%400.0.11) (11/08/2026)
 
 ### Features

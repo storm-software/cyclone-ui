@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Helpers
 
+## [0.3.59](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.59) (11/08/2026)
+
+### Features
+
+- **input:** Added a `Button` compound component to the fields ([9a4c0bdf2](https://github.com/storm-software/cyclone-ui/commit/9a4c0bdf2))
+
 ## [0.3.52](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.52) (11/06/2026)
 
 ### Features

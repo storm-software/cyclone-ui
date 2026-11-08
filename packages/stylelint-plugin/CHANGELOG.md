@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.49](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.49) (11/08/2026)
+
+### Features
+
+- **floating-toolbar:** Initial check-in of the `FloatingToolbar` component package ([6b2dbcaf3](https://github.com/storm-software/cyclone-ui/commit/6b2dbcaf3))
+
 ## [0.0.48](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.48) (11/08/2026)
 
 ### Features
