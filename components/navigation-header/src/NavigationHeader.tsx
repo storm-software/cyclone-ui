@@ -26,7 +26,7 @@ import { Link } from "@cyclone-ui/link";
 import { RedactedAnimation } from "@cyclone-ui/redacted-animation";
 import type { SearchDialogProps } from "@cyclone-ui/search-dialog";
 import { SearchDialog } from "@cyclone-ui/search-dialog";
-import { MenuToggle } from "@cyclone-ui/vectors";
+import { MenuToggle } from "@cyclone-ui/icons/vectors";
 import type { GetProps } from "@tamagui/core";
 import {
   createStyledHOC,

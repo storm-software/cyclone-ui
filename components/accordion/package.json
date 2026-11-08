@@ -28,7 +28,6 @@
     "@cyclone-ui/container": "workspace:*",
     "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
-    "@cyclone-ui/vectors": "workspace:*",
     "@stryke/type-checks": "catalog:",
     "@tamagui/accordion": "catalog:",
     "@tamagui/collapsible": "catalog:",

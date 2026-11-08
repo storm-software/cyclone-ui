@@ -43,9 +43,6 @@
       "path": "./components/visually-hidden"
     },
     {
-      "path": "./components/themeable-icon"
-    },
-    {
       "path": "./components/alert-dialog"
     },
     {
@@ -146,9 +143,6 @@
     },
     {
       "path": "./components/tooltip"
-    },
-    {
-      "path": "./components/vectors"
     },
     {
       "path": "./components/button"

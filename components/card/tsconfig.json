@@ -18,13 +18,7 @@
       "path": "../../tools/config"
     },
     {
-      "path": "../vectors"
-    },
-    {
       "path": "../icons"
-    },
-    {
-      "path": "../themeable-icon"
     },
     {
       "path": "../link"

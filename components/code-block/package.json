@@ -9,9 +9,7 @@
     "directory": "components/code-block"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -21,8 +19,6 @@
     "@cyclone-ui/button": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/scroll-view": "workspace:*",
-    "@cyclone-ui/themeable-icon": "workspace:*",
-    "@cyclone-ui/vectors": "workspace:*",
     "@tamagui/core": "catalog:",
     "@tamagui/create-context": "catalog:",
     "@tamagui/group": "catalog:",

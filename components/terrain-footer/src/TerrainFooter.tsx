@@ -20,7 +20,7 @@
 
 import type { FooterProps } from "@cyclone-ui/footer";
 import { Footer, FooterContainer } from "@cyclone-ui/footer";
-import { BackgroundNoise } from "@cyclone-ui/vectors";
+import { BackgroundNoise } from "@cyclone-ui/icons/vectors";
 import type { GetProps } from "@tamagui/core";
 import {
   createStyledHOC,

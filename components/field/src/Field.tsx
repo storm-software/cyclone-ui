@@ -45,7 +45,7 @@ import {
   useFieldLabelPlacement,
   useFormControl
 } from "@cyclone-ui/helpers";
-import { Asterisk, Close } from "@cyclone-ui/icons";
+import { Asterisk, Close, getIconByTheme } from "@cyclone-ui/icons";
 import { Link } from "@cyclone-ui/link";
 import type { SpinnerProps } from "@cyclone-ui/spinner";
 import { Spinner } from "@cyclone-ui/spinner";
@@ -57,7 +57,6 @@ import {
   useFieldRef,
   ValidationCause
 } from "@cyclone-ui/state/form";
-import { getIconByTheme } from "@cyclone-ui/themeable-icon";
 import { Tooltip } from "@cyclone-ui/tooltip";
 import { ValidationText } from "@cyclone-ui/validation-text";
 import type { ValidationDetail as ValidationDetails } from "@stryke/types/validations";

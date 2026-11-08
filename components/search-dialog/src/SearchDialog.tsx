@@ -25,7 +25,7 @@ import { AlignLeft, Close, Cog, FileDocument, Hash } from "@cyclone-ui/icons";
 import { Input } from "@cyclone-ui/input";
 import { Kbd, KbdGroup } from "@cyclone-ui/kbd";
 import { ToggleGroup } from "@cyclone-ui/toggle-group";
-import { SearchTrigger } from "@cyclone-ui/vectors";
+import { SearchTrigger } from "@cyclone-ui/icons/vectors";
 import { VisuallyHidden } from "@cyclone-ui/visually-hidden";
 import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, Text, View } from "@tamagui/core";

@@ -18,16 +18,10 @@
       "path": "../../tools/config"
     },
     {
-      "path": "../vectors"
-    },
-    {
-      "path": "../themeable-icon"
+      "path": "../icons"
     },
     {
       "path": "../scroll-view"
-    },
-    {
-      "path": "../icons"
     },
     {
       "path": "../button"

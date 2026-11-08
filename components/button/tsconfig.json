@@ -23,16 +23,13 @@
       "path": "../container"
     },
     {
-      "path": "../themeable-icon"
+      "path": "../icons"
     },
     {
       "path": "../ripple-animation"
     },
     {
       "path": "../../packages/helpers"
-    },
-    {
-      "path": "../icons"
     }
   ],
   "files": [],

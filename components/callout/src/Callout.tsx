@@ -22,10 +22,10 @@ import { BodyText } from "@cyclone-ui/body-text";
 import { Container } from "@cyclone-ui/container";
 import { EyebrowText } from "@cyclone-ui/eyebrow-text";
 import { HeadingLargeText } from "@cyclone-ui/heading-text";
+import type { ThemeableIconProps } from "@cyclone-ui/icons";
+import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/icons";
+import { Diagonal } from "@cyclone-ui/icons/vectors";
 import type { ColorThemeName } from "@cyclone-ui/state/theme";
-import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
-import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
-import { Diagonal } from "@cyclone-ui/vectors";
 import {
   createStyledContext,
   createStyledHOC,

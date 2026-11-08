@@ -24,12 +24,12 @@ import { Container, useContainerForeground } from "@cyclone-ui/container";
 import { EyebrowText } from "@cyclone-ui/eyebrow-text";
 import { HeadingLargeText } from "@cyclone-ui/heading-text";
 import { getSpaced } from "@cyclone-ui/helpers";
+import type { ThemeableIconProps } from "@cyclone-ui/icons";
+import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/icons";
+import { RightArrow } from "@cyclone-ui/icons/vectors";
 import { Link } from "@cyclone-ui/link";
 import type { TagProps } from "@cyclone-ui/tag";
 import { Tag } from "@cyclone-ui/tag";
-import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
-import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
-import { RightArrow } from "@cyclone-ui/vectors";
 import type {
   ColorTokens,
   FontSizeTokens,

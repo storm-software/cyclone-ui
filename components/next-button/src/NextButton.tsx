@@ -20,8 +20,8 @@
 
 import type { ButtonProps } from "@cyclone-ui/button";
 import { Button } from "@cyclone-ui/button";
-import type { RightArrowProps } from "@cyclone-ui/vectors";
-import { RightArrow } from "@cyclone-ui/vectors";
+import type { RightArrowProps } from "@cyclone-ui/icons/vectors";
+import { RightArrow } from "@cyclone-ui/icons/vectors";
 import { useHover } from "@stryke/hooks";
 import type { TamaguiComponent, TamaguiElement } from "@tamagui/core";
 import { createStyledHOC, useComposedRefs, View } from "@tamagui/core";

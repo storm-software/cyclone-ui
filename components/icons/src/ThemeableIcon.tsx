@@ -19,14 +19,6 @@
 "use client";
 
 import { getSized } from "@cyclone-ui/helpers";
-import { Lock } from "@cyclone-ui/icons";
-import {
-  AlertCircle,
-  CheckCircle,
-  DiscoveryCircle,
-  ErrorCircle,
-  InfoCircle
-} from "@cyclone-ui/vectors";
 import type {
   FontSizeTokens,
   GetProps,
@@ -41,6 +33,14 @@ import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
 import type { PropsWithChildren } from "react";
 import { useMemo } from "react";
 import type { OpaqueColorValue } from "react-native";
+import { Lock } from "./icons/Lock";
+import {
+  AlertCircle,
+  CheckCircle,
+  DiscoveryCircle,
+  ErrorCircle,
+  InfoCircle
+} from "./vectors";
 
 const ThemeableIconFrame = styled(View, {
   transition: "200ms",

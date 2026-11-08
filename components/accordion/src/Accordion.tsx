@@ -32,7 +32,7 @@ import {
 } from "@cyclone-ui/container";
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import { ChevronDown } from "@cyclone-ui/icons";
-import { AccordionToggle } from "@cyclone-ui/vectors";
+import { AccordionToggle } from "@cyclone-ui/icons/vectors";
 import { isString } from "@stryke/type-checks/is-string";
 import type { AccordionSingleProps } from "@tamagui/accordion";
 import { Accordion as TamaguiAccordion } from "@tamagui/accordion";

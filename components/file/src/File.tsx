@@ -34,6 +34,8 @@ import {
   AlertCircle,
   Close,
   Download,
+  getIconByTheme,
+  ThemeableIcon,
   Trash,
   Uploading
 } from "@cyclone-ui/icons";
@@ -41,7 +43,6 @@ import { Link } from "@cyclone-ui/link";
 import { NumberText } from "@cyclone-ui/number-text";
 import { Progress } from "@cyclone-ui/progress";
 import type { ClientFileResult } from "@cyclone-ui/state";
-import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import { formatDate } from "@stryke/date/format";
 import type { TamaguiWebElement } from "@tamagui/core";
 import { styled, Text, Theme, View } from "@tamagui/core";

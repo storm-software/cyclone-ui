@@ -25,8 +25,7 @@
       "registryDependencies": [
         "@cyclone-ui/container",
         "@cyclone-ui/heading-text",
-        "@cyclone-ui/icons",
-        "@cyclone-ui/vectors"
+        "@cyclone-ui/icons"
       ],
       "files": [
         {
@@ -82,8 +81,7 @@
         "@cyclone-ui/button",
         "@cyclone-ui/container",
         "@cyclone-ui/heading-text",
-        "@cyclone-ui/icons",
-        "@cyclone-ui/themeable-icon"
+        "@cyclone-ui/icons"
       ],
       "files": [
         {
@@ -111,8 +109,7 @@
       "registryDependencies": [
         "@cyclone-ui/dialog",
         "@cyclone-ui/icons",
-        "@cyclone-ui/scroll-view",
-        "@cyclone-ui/themeable-icon"
+        "@cyclone-ui/scroll-view"
       ],
       "files": [
         {
@@ -309,8 +306,8 @@
       "registryDependencies": [
         "@cyclone-ui/body-text",
         "@cyclone-ui/container",
+        "@cyclone-ui/icons",
         "@cyclone-ui/ripple-animation",
-        "@cyclone-ui/themeable-icon",
         "@cyclone-ui/tooltip"
       ],
       "files": [
@@ -404,9 +401,7 @@
         "@cyclone-ui/container",
         "@cyclone-ui/eyebrow-text",
         "@cyclone-ui/heading-text",
-        "@cyclone-ui/icons",
-        "@cyclone-ui/themeable-icon",
-        "@cyclone-ui/vectors"
+        "@cyclone-ui/icons"
       ],
       "files": [
         {
@@ -441,9 +436,7 @@
         "@cyclone-ui/heading-text",
         "@cyclone-ui/icons",
         "@cyclone-ui/link",
-        "@cyclone-ui/tag",
-        "@cyclone-ui/themeable-icon",
-        "@cyclone-ui/vectors"
+        "@cyclone-ui/tag"
       ],
       "files": [
         {
@@ -528,7 +521,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": ["@cyclone-ui/vectors"],
+      "registryDependencies": ["@cyclone-ui/icons"],
       "files": [
         {
           "path": "components/checkbox/src/Checkbox.tsx",
@@ -583,9 +576,7 @@
       "registryDependencies": [
         "@cyclone-ui/button",
         "@cyclone-ui/icons",
-        "@cyclone-ui/scroll-view",
-        "@cyclone-ui/themeable-icon",
-        "@cyclone-ui/vectors"
+        "@cyclone-ui/scroll-view"
       ],
       "files": [
         {
@@ -745,7 +736,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": ["@cyclone-ui/vectors"],
+      "registryDependencies": ["@cyclone-ui/icons"],
       "files": [
         {
           "path": "components/container/src/Container.tsx",
@@ -1131,7 +1122,6 @@
         "@cyclone-ui/icons",
         "@cyclone-ui/link",
         "@cyclone-ui/spinner",
-        "@cyclone-ui/themeable-icon",
         "@cyclone-ui/tooltip",
         "@cyclone-ui/validation-text"
       ],
@@ -1171,8 +1161,7 @@
         "@cyclone-ui/link",
         "@cyclone-ui/number-text",
         "@cyclone-ui/pdf-document-display",
-        "@cyclone-ui/progress",
-        "@cyclone-ui/themeable-icon"
+        "@cyclone-ui/progress"
       ],
       "files": [
         {
@@ -1387,10 +1376,13 @@
       "name": "@cyclone-ui/icons",
       "type": "registry:component",
       "title": "@cyclone-ui/icons",
-      "description": "Animated Tamagui icon components for web and React Native covering the Material Line Icons (line-md) collection, plus the createIcon factory used to build them. Each icon is themed, draws itself in on mount, and accepts color, size (pixels or tokens), mirrored, animated, and a variant of regular, bold, loop, filled or filled-loop.",
+      "description": "Animated Tamagui icon components for web and React Native covering the Material Line Icons (line-md) collection, plus the createIcon factory used to build them. Each icon is themed, draws itself in on mount, and accepts color, size (pixels or tokens), mirrored, animated, and a variant of regular, bold, loop, filled or filled-loop. Includes custom SVG graphics under the vectors entry point.",
       "dependencies": [
         "@tamagui/core@3.2.0",
+        "@tamagui/helpers@3.2.0",
         "@tamagui/helpers-icon@3.2.0",
+        "@tamagui/helpers-tamagui@3.2.0",
+        "motion@^11.18.2",
         "react-native-svg@^15.16.1"
       ],
       "devDependencies": [
@@ -3743,9 +3735,95 @@
           "type": "registry:component"
         },
         {
+          "path": "components/icons/src/index.ts",
+          "type": "registry:file",
+          "target": "components/icons/src/index.ts"
+        },
+        {
+          "path": "components/icons/src/ThemeableIcon.tsx",
+          "type": "registry:component"
+        },
+        {
           "path": "components/icons/src/types.ts",
           "type": "registry:file",
           "target": "components/icons/src/types.ts"
+        },
+        {
+          "path": "components/icons/src/vectors.ts",
+          "type": "registry:file",
+          "target": "components/icons/src/vectors.ts"
+        },
+        {
+          "path": "components/icons/src/vectors/AccordionToggle.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/vectors/AlertCircle.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/vectors/Arrow.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/vectors/BackgroundNoise.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/vectors/Binary.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/vectors/Check.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/vectors/CheckCircle.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/vectors/CheckerBoard.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/vectors/Diagonal.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/vectors/DiscoveryCircle.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/vectors/ErrorCircle.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/vectors/InfoCircle.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/vectors/MenuToggle.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/vectors/PdfIcon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/vectors/SearchTrigger.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/vectors/StormLogoIcon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/vectors/StormLogoText.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/vectors/themed-icon.tsx",
+          "type": "registry:component"
         }
       ]
     },
@@ -3885,11 +3963,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/icons",
-        "@cyclone-ui/link-text",
-        "@cyclone-ui/themeable-icon"
-      ],
+      "registryDependencies": ["@cyclone-ui/icons", "@cyclone-ui/link-text"],
       "files": [
         {
           "path": "components/link/src/Link.tsx",
@@ -3996,8 +4070,7 @@
         "@cyclone-ui/icons",
         "@cyclone-ui/link",
         "@cyclone-ui/redacted-animation",
-        "@cyclone-ui/search-dialog",
-        "@cyclone-ui/vectors"
+        "@cyclone-ui/search-dialog"
       ],
       "files": [
         {
@@ -4022,7 +4095,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": ["@cyclone-ui/button", "@cyclone-ui/vectors"],
+      "registryDependencies": ["@cyclone-ui/button", "@cyclone-ui/icons"],
       "files": [
         {
           "path": "components/next-button/src/NextButton.tsx",
@@ -4252,8 +4325,8 @@
         "react-native@^0.87.1"
       ],
       "registryDependencies": [
+        "@cyclone-ui/icons",
         "@cyclone-ui/spinner",
-        "@cyclone-ui/vectors",
         "@cyclone-ui/visually-hidden"
       ],
       "files": [
@@ -4385,7 +4458,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": ["@cyclone-ui/button", "@cyclone-ui/vectors"],
+      "registryDependencies": ["@cyclone-ui/button", "@cyclone-ui/icons"],
       "files": [
         {
           "path": "components/previous-button/src/PreviousButton.tsx",
@@ -4667,7 +4740,6 @@
         "@cyclone-ui/input",
         "@cyclone-ui/kbd",
         "@cyclone-ui/toggle-group",
-        "@cyclone-ui/vectors",
         "@cyclone-ui/visually-hidden"
       ],
       "files": [
@@ -4899,7 +4971,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": ["@cyclone-ui/themeable-icon"],
+      "registryDependencies": ["@cyclone-ui/icons"],
       "files": [
         {
           "path": "components/switch/src/Switch.tsx",
@@ -5066,7 +5138,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": ["@cyclone-ui/footer", "@cyclone-ui/vectors"],
+      "registryDependencies": ["@cyclone-ui/footer", "@cyclone-ui/icons"],
       "files": [
         {
           "path": "components/terrain-footer/src/FooterTerrain.tsx",
@@ -5117,32 +5189,6 @@
       "files": [
         {
           "path": "components/themeable-gradient/src/ThemeableGradient.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "@cyclone-ui/themeable-icon",
-      "type": "registry:component",
-      "title": "@cyclone-ui/themeable-icon",
-      "description": "An icon wrapper that applies size and color tokens to its child icon and animates when it enters or exits. It includes ThemedIcon and a getIconByTheme helper that pick a matching status icon (danger, warning, info, discovery, success, positive, negative) or a lock icon when disabled. Use it for status icons that follow the current theme.",
-      "dependencies": [
-        "@tamagui/core@3.2.0",
-        "@tamagui/helpers@3.2.0",
-        "@tamagui/helpers-icon@3.2.0",
-        "@tamagui/helpers-tamagui@3.2.0",
-        "react-native-svg@^15.16.1"
-      ],
-      "devDependencies": [
-        "@storybook/react-vite@^10.6.6",
-        "react@^19.3.1",
-        "react-dom@^19.3.1",
-        "react-native@^0.87.1"
-      ],
-      "registryDependencies": ["@cyclone-ui/icons", "@cyclone-ui/vectors"],
-      "files": [
-        {
-          "path": "components/themeable-icon/src/ThemeableIcon.tsx",
           "type": "registry:component"
         }
       ]
@@ -5320,100 +5366,6 @@
       "files": [
         {
           "path": "components/validation-text/src/ValidationText.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "@cyclone-ui/vectors",
-      "type": "registry:component",
-      "title": "@cyclone-ui/vectors",
-      "description": "A set of custom themed SVG graphics for Tamagui, including status circles (alert, check, error, info, discovery), arrows in four directions, check, accordion toggle and binary on/off indicators, background patterns (noise, checkerboard, diagonal), a PDF icon and Storm logos. Several have state props such as isExpanded, isComplete or state.",
-      "dependencies": [
-        "@tamagui/core@3.2.0",
-        "@tamagui/helpers-icon@3.2.0",
-        "@tamagui/helpers-tamagui@3.2.0",
-        "motion@^11.18.2"
-      ],
-      "devDependencies": [
-        "@storybook/react-vite@^10.6.6",
-        "react@^19.3.1",
-        "react-dom@^19.3.1",
-        "react-native@^0.87.1",
-        "react-native-svg@^15.16.1"
-      ],
-      "registryDependencies": ["@cyclone-ui/icons"],
-      "files": [
-        {
-          "path": "components/vectors/src/AccordionToggle.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/vectors/src/AlertCircle.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/vectors/src/Arrow.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/vectors/src/BackgroundNoise.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/vectors/src/Binary.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/vectors/src/Check.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/vectors/src/CheckCircle.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/vectors/src/CheckerBoard.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/vectors/src/Diagonal.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/vectors/src/DiscoveryCircle.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/vectors/src/ErrorCircle.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/vectors/src/InfoCircle.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/vectors/src/MenuToggle.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/vectors/src/PdfIcon.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/vectors/src/SearchTrigger.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/vectors/src/StormLogoIcon.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/vectors/src/StormLogoText.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/vectors/src/themed-icon.tsx",
           "type": "registry:component"
         }
       ]

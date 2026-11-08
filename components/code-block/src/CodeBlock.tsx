@@ -19,10 +19,9 @@
 "use client";
 
 import { Button } from "@cyclone-ui/button";
-import { Clipboard } from "@cyclone-ui/icons";
+import { Clipboard, ThemeableIcon } from "@cyclone-ui/icons";
 import { ScrollView } from "@cyclone-ui/scroll-view";
-import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
-import { Check } from "@cyclone-ui/vectors";
+import { Check } from "@cyclone-ui/icons/vectors";
 import type { TamaguiElement } from "@tamagui/core";
 import {
   createStyledHOC,

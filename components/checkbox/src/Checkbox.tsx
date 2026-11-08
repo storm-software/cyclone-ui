@@ -27,7 +27,7 @@ import {
   useFieldLabelDefaults,
   useFormControl
 } from "@cyclone-ui/helpers";
-import { Check } from "@cyclone-ui/vectors";
+import { Check } from "@cyclone-ui/icons/vectors";
 import { Checkbox as TamaguiCheckbox } from "@tamagui/checkbox";
 import type { CheckedState } from "@tamagui/checkbox-headless";
 import type { GetProps } from "@tamagui/core";

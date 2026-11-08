@@ -14,13 +14,10 @@
   },
   "references": [
     {
-      "path": "../themeable-icon"
+      "path": "../icons"
     },
     {
       "path": "../link-text"
-    },
-    {
-      "path": "../icons"
     },
     {
       "path": "../body-text"

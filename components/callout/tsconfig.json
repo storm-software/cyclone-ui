@@ -17,10 +17,7 @@
       "path": "../../tools/config"
     },
     {
-      "path": "../vectors"
-    },
-    {
-      "path": "../themeable-icon"
+      "path": "../icons"
     },
     {
       "path": "../../packages/state"
@@ -36,9 +33,6 @@
     },
     {
       "path": "../body-text"
-    },
-    {
-      "path": "../icons"
     }
   ],
   "files": [],

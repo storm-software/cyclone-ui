@@ -17,16 +17,13 @@
       "path": "../../tools/config"
     },
     {
-      "path": "../themeable-icon"
+      "path": "../icons"
     },
     {
       "path": "../scroll-view"
     },
     {
       "path": "../dialog"
-    },
-    {
-      "path": "../icons"
     },
     {
       "path": "../button"

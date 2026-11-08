@@ -122,6 +122,31 @@ The `size` prop accepts a number of pixels or a token. A string is resolved agai
 
 line-md icons are animated with SVG `<animate>` elements, which `react-native-svg` does not run. The generator turns each animation into data, and `createIcon` plays it with `requestAnimationFrame`, so icons animate the same way on web and React Native. `loop` and `filled-loop` variants keep animating while mounted. When the user prefers reduced motion (`AccessibilityInfo.isReduceMotionEnabled`), the final frame is shown and loops stay still.
 
+## Custom SVG vectors
+
+Custom SVG components live in `src/vectors/`, alongside the generated `src/icons/` folder. Import them from the vectors entry point or an individual component path:
+
+```tsx
+import { Check, StormLogoIcon } from "@cyclone-ui/icons/vectors"
+import { BackgroundNoise } from "@cyclone-ui/icons/vectors/BackgroundNoise"
+```
+
+The package root also exposes the `vectors` namespace. Custom components keep their own props and animations; names such as `Check` and `AlertCircle` remain separate from the generated icons. Existing `@cyclone-ui/vectors` imports should use `@cyclone-ui/icons/vectors` instead.
+
+## Themeable icons
+
+`ThemeableIcon` applies size and color tokens to a child icon. `ThemedIcon` and `getIconByTheme` select a status icon for the current theme, or a lock when disabled.
+
+```tsx
+import { Lock, ThemeableIcon, ThemedIcon } from "@cyclone-ui/icons";
+import type { ThemeableIconProps, ThemedIconProps } from "@cyclone-ui/icons";
+
+<ThemeableIcon size="lg"><Lock /></ThemeableIcon>
+<ThemedIcon theme="success" />
+```
+
+The same exports are available from `@cyclone-ui/icons/ThemeableIcon`. Replace existing `@cyclone-ui/themeable-icon` imports with `@cyclone-ui/icons`.
+
 ## Generating the icons
 
 The files in `src/icons/`, plus `src/index.ts` and `src/all.ts`, are **generated**. Do not edit them by hand. The [Power Plant](https://github.com/storm-software/power-plant) generator in [`scripts/generate.ts`](./scripts/generate.ts) reads the animated SVGs from the [`line-md`](https://github.com/cyberalien/line-md) package and from [`assets/`](./assets), then writes, formats, and prunes the components. To regenerate after upgrading `line-md` or editing `assets/`, run:

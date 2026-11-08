@@ -9,9 +9,7 @@
     "directory": "components/card"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -26,8 +24,6 @@
     "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/link": "workspace:*",
     "@cyclone-ui/tag": "workspace:*",
-    "@cyclone-ui/themeable-icon": "workspace:*",
-    "@cyclone-ui/vectors": "workspace:*",
     "@tamagui/core": "catalog:",
     "@tamagui/get-font-sized": "catalog:",
     "@tamagui/helpers": "catalog:",
@@ -44,9 +40,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

@@ -45,9 +45,28 @@ const FooterFrame = styled(View, {
   position: "relative",
   width: "100%",
   overflow: "hidden",
-  backgroundColor: "secondary",
   borderTopWidth: 1,
-  borderTopColor: "hairline"
+
+  variants: {
+    variant: {
+      primary: {
+        backgroundColor: "primary",
+        borderTopColor: "transparent",
+      },
+      secondary: {
+        backgroundColor: "secondary",
+        borderTopColor: "border",
+      },
+      tertiary: {
+        backgroundColor: "surface",
+        borderTopColor: "hairline",
+      },
+    },
+  },
+
+  defaultVariants: {
+    variant: "tertiary"
+  }
 });
 
 const FooterContainer = styled(View, {

@@ -20,9 +20,8 @@
 
 import type { DialogProps } from "@cyclone-ui/dialog";
 import { Dialog, DialogContext } from "@cyclone-ui/dialog";
-import { AlertCircle } from "@cyclone-ui/icons";
+import { AlertCircle, getIconByTheme, ThemeableIcon } from "@cyclone-ui/icons";
 import { ScrollView } from "@cyclone-ui/scroll-view";
-import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import {
   createStyledHOC,
   Theme,

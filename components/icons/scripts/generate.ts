@@ -651,12 +651,16 @@ const renderIndex = (spec: IconsSpec) => `${HEADER}
 ${GENERATED_NOTICE(LINE_MD_SOURCE(spec.version))}
 // organize-imports-ignore -- it sorts \`Rotate90\` after \`Rotate270\`, unlike the lint rules
 
+import * as vectors from "./vectors";
+
 export * from "./all";
 export * from "./create-icon";
 ${spec.icons
   .map(icon => `export { ${icon.component} } from "./icons/${icon.component}";`)
   .join("\n")}
+export * from "./ThemeableIcon";
 export * from "./types";
+export { vectors };
 `;
 
 const renderAll = (spec: IconsSpec) => `${HEADER}

@@ -28,8 +28,8 @@ import {
   useFieldLabelDefaults,
   useFormControl
 } from "@cyclone-ui/helpers";
-import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
-import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
+import type { ThemeableIconProps } from "@cyclone-ui/icons";
+import { ThemeableIcon } from "@cyclone-ui/icons";
 import type { ColorTokens, GetProps } from "@tamagui/core";
 import {
   createStyledContext,

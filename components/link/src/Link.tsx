@@ -18,9 +18,8 @@
 
 "use client";
 
-import { ExternalLink } from "@cyclone-ui/icons";
+import { ExternalLink, ThemeableIcon } from "@cyclone-ui/icons";
 import { LinkText } from "@cyclone-ui/link-text";
-import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import { isWeb } from "@tamagui/constants";
 import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, View } from "@tamagui/core";

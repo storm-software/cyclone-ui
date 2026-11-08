@@ -25,7 +25,6 @@
     "@cyclone-ui/link": "workspace:*",
     "@cyclone-ui/redacted-animation": "workspace:*",
     "@cyclone-ui/search-dialog": "workspace:*",
-    "@cyclone-ui/vectors": "workspace:*",
     "@tamagui/core": "catalog:"
   },
   "devDependencies": {

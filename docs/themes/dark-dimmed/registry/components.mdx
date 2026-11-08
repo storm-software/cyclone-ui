@@ -5,7 +5,7 @@ description: "Components available in the Cyclone UI (Dark Dimmed)."
 
 # Components
 
-112 `component` items in the component registry.
+110 `component` items in the component registry.
 
 ## @cyclone-ui/accordion
 
@@ -19,7 +19,6 @@ A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.
 - `@cyclone-ui/container@0.6.60`
 - `@cyclone-ui/heading-text@0.5.59`
 - `@cyclone-ui/icons@0.0.56`
-- `@cyclone-ui/vectors@0.5.60`
 - `@stryke/type-checks@^0.6.50`
 - `@tamagui/accordion@3.2.0`
 - `@tamagui/collapsible@3.2.0`
@@ -72,7 +71,6 @@ An inline alert banner with compound parts (Alert.Icon, Alert.Content.Heading, A
 - `@cyclone-ui/container@0.6.60`
 - `@cyclone-ui/heading-text@0.5.59`
 - `@cyclone-ui/icons@0.0.56`
-- `@cyclone-ui/themeable-icon@0.6.60`
 - `@tamagui/core@3.2.0`
 - `@tamagui/stacks@3.2.0`
 - `@tamagui/web@3.2.0`
@@ -95,7 +93,6 @@ A modal alert dialog built on the Cyclone UI Dialog, with an overlay, a theme-ba
 - `@cyclone-ui/dialog@0.3.62`
 - `@cyclone-ui/icons@0.0.56`
 - `@cyclone-ui/scroll-view@0.5.60`
-- `@cyclone-ui/themeable-icon@0.6.60`
 - `@tamagui/core@3.2.0`
 - `@tamagui/stacks@3.2.0`
 - `@tamagui/web@3.2.0`
@@ -259,8 +256,8 @@ A pressable button with Button.Text and Button.Icon subcomponents and the Contai
 - `@cyclone-ui/body-text@0.5.58`
 - `@cyclone-ui/container@0.6.60`
 - `@cyclone-ui/helpers@0.3.58`
+- `@cyclone-ui/icons@0.0.56`
 - `@cyclone-ui/ripple-animation@0.0.35`
-- `@cyclone-ui/themeable-icon@0.6.60`
 - `@cyclone-ui/tooltip@0.5.61`
 - `@tamagui/core@3.2.0`
 - `@tamagui/helpers@3.2.0`
@@ -334,8 +331,6 @@ A highlighted content panel with a theme-colored gradient and diagonal pattern b
 - `@cyclone-ui/heading-text@0.5.59`
 - `@cyclone-ui/icons@0.0.56`
 - `@cyclone-ui/state@0.0.60`
-- `@cyclone-ui/themeable-icon@0.6.60`
-- `@cyclone-ui/vectors@0.5.60`
 - `@tamagui/core@3.2.0`
 - `@tamagui/linear-gradient@3.2.0`
 - `@tamagui/stacks@3.2.0`
@@ -364,8 +359,6 @@ A themed card container with a gradient background and an optional accent color.
 - `@cyclone-ui/icons@0.0.56`
 - `@cyclone-ui/link@0.5.61`
 - `@cyclone-ui/tag@0.0.56`
-- `@cyclone-ui/themeable-icon@0.6.60`
-- `@cyclone-ui/vectors@0.5.60`
 - `@tamagui/core@3.2.0`
 - `@tamagui/get-font-sized@3.2.0`
 - `@tamagui/helpers@3.2.0`
@@ -418,7 +411,7 @@ A themed checkbox built on the Tamagui Checkbox, showing a check or a minus indi
 ### Dependencies
 
 - `@cyclone-ui/helpers@0.3.58`
-- `@cyclone-ui/vectors@0.5.60`
+- `@cyclone-ui/icons@0.0.56`
 - `@tamagui/checkbox@3.2.0`
 - `@tamagui/checkbox-headless@3.2.0`
 - `@tamagui/core@3.2.0`
@@ -462,8 +455,6 @@ A figure that displays Shiki-highlighted code, with an optional title and icon, 
 - `@cyclone-ui/button@0.6.61`
 - `@cyclone-ui/icons@0.0.56`
 - `@cyclone-ui/scroll-view@0.5.60`
-- `@cyclone-ui/themeable-icon@0.6.60`
-- `@cyclone-ui/vectors@0.5.60`
 - `@tamagui/core@3.2.0`
 - `@tamagui/create-context@3.2.0`
 - `@tamagui/group@3.2.0`
@@ -603,7 +594,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 ### Dependencies
 
 - `@cyclone-ui/helpers@0.3.58`
-- `@cyclone-ui/vectors@0.5.60`
+- `@cyclone-ui/icons@0.0.56`
 - `@tamagui/core@3.2.0`
 
 ### Files
@@ -920,7 +911,6 @@ A form field wrapper that connects a control to Cyclone UI form state and provid
 - `@cyclone-ui/link@0.5.61`
 - `@cyclone-ui/spinner@0.5.58`
 - `@cyclone-ui/state@0.0.60`
-- `@cyclone-ui/themeable-icon@0.6.60`
 - `@cyclone-ui/tooltip@0.5.61`
 - `@cyclone-ui/validation-text@0.5.60`
 - `@stryke/types@^0.12.45`
@@ -956,7 +946,6 @@ A file card that shows a file's name, size, modified date and MIME type over an 
 - `@cyclone-ui/pdf-document-display@0.5.60`
 - `@cyclone-ui/progress@0.5.58`
 - `@cyclone-ui/state@0.0.60`
-- `@cyclone-ui/themeable-icon@0.6.60`
 - `@stryke/date@^0.0.29`
 - `@tamagui/core@3.2.0`
 - `@tamagui/image@3.2.0`
@@ -1131,15 +1120,19 @@ Themed heading text components: HeadingHeroText, HeadingTitleText, HeadingLargeT
 
 ## @cyclone-ui/icons
 
-Animated Tamagui icon components for web and React Native covering the Material Line Icons (line-md) collection, plus the createIcon factory used to build them. Each icon is themed, draws itself in on mount, and accepts color, size (pixels or tokens), mirrored, animated, and a variant of regular, bold, loop, filled or filled-loop.
+Animated Tamagui icon components for web and React Native covering the Material Line Icons (line-md) collection, plus the createIcon factory used to build them. Each icon is themed, draws itself in on mount, and accepts color, size (pixels or tokens), mirrored, animated, and a variant of regular, bold, loop, filled or filled-loop. Includes custom SVG graphics under the vectors entry point.
 
 - **Name:** `@cyclone-ui/icons`
 - **Type:** `component`
 
 ### Dependencies
 
+- `@cyclone-ui/helpers@0.3.58`
 - `@tamagui/core@3.2.0`
+- `@tamagui/helpers@3.2.0`
 - `@tamagui/helpers-icon@3.2.0`
+- `@tamagui/helpers-tamagui@3.2.0`
+- `motion@^11.18.2`
 - `react-native-svg@^15.16.1`
 
 ### Files
@@ -1730,7 +1723,28 @@ Animated Tamagui icon components for web and React Native covering the Material 
 | `components/icons/src/icons/Web.tsx`                       | `component` | —      |
 | `components/icons/src/icons/WebBox.tsx`                    | `component` | —      |
 | `components/icons/src/icons/Youtube.tsx`                   | `component` | —      |
+| `components/icons/src/index.ts`                            | `file`      | —      |
+| `components/icons/src/ThemeableIcon.tsx`                   | `component` | —      |
 | `components/icons/src/types.ts`                            | `file`      | —      |
+| `components/icons/src/vectors.ts`                          | `file`      | —      |
+| `components/icons/src/vectors/AccordionToggle.tsx`         | `component` | —      |
+| `components/icons/src/vectors/AlertCircle.tsx`             | `component` | —      |
+| `components/icons/src/vectors/Arrow.tsx`                   | `component` | —      |
+| `components/icons/src/vectors/BackgroundNoise.tsx`         | `component` | —      |
+| `components/icons/src/vectors/Binary.tsx`                  | `component` | —      |
+| `components/icons/src/vectors/Check.tsx`                   | `component` | —      |
+| `components/icons/src/vectors/CheckCircle.tsx`             | `component` | —      |
+| `components/icons/src/vectors/CheckerBoard.tsx`            | `component` | —      |
+| `components/icons/src/vectors/Diagonal.tsx`                | `component` | —      |
+| `components/icons/src/vectors/DiscoveryCircle.tsx`         | `component` | —      |
+| `components/icons/src/vectors/ErrorCircle.tsx`             | `component` | —      |
+| `components/icons/src/vectors/InfoCircle.tsx`              | `component` | —      |
+| `components/icons/src/vectors/MenuToggle.tsx`              | `component` | —      |
+| `components/icons/src/vectors/PdfIcon.tsx`                 | `component` | —      |
+| `components/icons/src/vectors/SearchTrigger.tsx`           | `component` | —      |
+| `components/icons/src/vectors/StormLogoIcon.tsx`           | `component` | —      |
+| `components/icons/src/vectors/StormLogoText.tsx`           | `component` | —      |
+| `components/icons/src/vectors/themed-icon.tsx`             | `component` | —      |
 
 ## @cyclone-ui/inline-code-text
 
@@ -1844,7 +1858,6 @@ A themed text link that renders an anchor with href and target on web and opens 
 
 - `@cyclone-ui/icons@0.0.56`
 - `@cyclone-ui/link-text@0.5.60`
-- `@cyclone-ui/themeable-icon@0.6.60`
 - `@tamagui/constants@3.2.0`
 - `@tamagui/core@3.2.0`
 
@@ -1937,7 +1950,6 @@ A responsive site header made of Logo, Navigation, Actions and MenuButton slots.
 - `@cyclone-ui/link@0.5.61`
 - `@cyclone-ui/redacted-animation@0.0.56`
 - `@cyclone-ui/search-dialog@0.0.39`
-- `@cyclone-ui/vectors@0.5.60`
 - `@tamagui/core@3.2.0`
 
 ### Files
@@ -1956,7 +1968,7 @@ A Button preset labeled "Next" by default, with a right-arrow icon that animates
 ### Dependencies
 
 - `@cyclone-ui/button@0.6.61`
-- `@cyclone-ui/vectors@0.5.60`
+- `@cyclone-ui/icons@0.0.56`
 - `@stryke/hooks@^0.4.134`
 - `@tamagui/core@3.2.0`
 - `@tamagui/stacks@3.2.0`
@@ -2142,8 +2154,8 @@ Renders one page of a PDF from a URL or FileResult using react-pdf, with a spinn
 
 ### Dependencies
 
+- `@cyclone-ui/icons@0.0.56`
 - `@cyclone-ui/spinner@0.5.58`
-- `@cyclone-ui/vectors@0.5.60`
 - `@cyclone-ui/visually-hidden@0.5.58`
 - `@stryke/type-checks@^0.6.50`
 - `@stryke/types@^0.12.45`
@@ -2256,7 +2268,7 @@ A button with an animated left-arrow icon and a default "Previous" label. The la
 ### Dependencies
 
 - `@cyclone-ui/button@0.6.61`
-- `@cyclone-ui/vectors@0.5.60`
+- `@cyclone-ui/icons@0.0.56`
 - `@stryke/hooks@^0.4.134`
 - `@tamagui/core@3.2.0`
 - `@tamagui/stacks@3.2.0`
@@ -2502,7 +2514,6 @@ A search icon Button that opens a Dialog for searching the application, like the
 - `@cyclone-ui/input@0.6.61`
 - `@cyclone-ui/kbd@0.0.8`
 - `@cyclone-ui/toggle-group@0.0.50`
-- `@cyclone-ui/vectors@0.5.60`
 - `@cyclone-ui/visually-hidden@0.5.58`
 - `@tamagui/core@3.2.0`
 
@@ -2684,7 +2695,7 @@ A toggle switch with an animated thumb, sm, md and lg sizes, and a disabled stat
 ### Dependencies
 
 - `@cyclone-ui/helpers@0.3.58`
-- `@cyclone-ui/themeable-icon@0.6.60`
+- `@cyclone-ui/icons@0.0.56`
 - `@tamagui/core@3.2.0`
 - `@tamagui/get-token@3.2.0`
 - `@tamagui/react-native-types@3.2.0`
@@ -2825,7 +2836,7 @@ A site footer block built on the Cyclone UI Footer that draws a wireframe terrai
 ### Dependencies
 
 - `@cyclone-ui/footer@0.0.60`
-- `@cyclone-ui/vectors@0.5.60`
+- `@cyclone-ui/icons@0.0.56`
 - `@tamagui/core@3.2.0`
 - `react-native-svg@^15.16.1`
 
@@ -2876,30 +2887,6 @@ A ThemeableGradient component that renders a diagonal LinearGradient. Its color 
 | Path                                                      | Type        | Target |
 | --------------------------------------------------------- | ----------- | ------ |
 | `components/themeable-gradient/src/ThemeableGradient.tsx` | `component` | —      |
-
-## @cyclone-ui/themeable-icon
-
-An icon wrapper that applies size and color tokens to its child icon and animates when it enters or exits. It includes ThemedIcon and a getIconByTheme helper that pick a matching status icon (danger, warning, info, discovery, success, positive, negative) or a lock icon when disabled. Use it for status icons that follow the current theme.
-
-- **Name:** `@cyclone-ui/themeable-icon`
-- **Type:** `component`
-
-### Dependencies
-
-- `@cyclone-ui/helpers@0.3.58`
-- `@cyclone-ui/icons@0.0.56`
-- `@cyclone-ui/vectors@0.5.60`
-- `@tamagui/core@3.2.0`
-- `@tamagui/helpers@3.2.0`
-- `@tamagui/helpers-icon@3.2.0`
-- `@tamagui/helpers-tamagui@3.2.0`
-- `react-native-svg@^15.16.1`
-
-### Files
-
-| Path                                              | Type        | Target |
-| ------------------------------------------------- | ----------- | ------ |
-| `components/themeable-icon/src/ThemeableIcon.tsx` | `component` | —      |
 
 ## @cyclone-ui/time-picker
 
@@ -3048,45 +3035,6 @@ A ValidationText component that shows field validation messages in caption text 
 | Path                                                | Type        | Target |
 | --------------------------------------------------- | ----------- | ------ |
 | `components/validation-text/src/ValidationText.tsx` | `component` | —      |
-
-## @cyclone-ui/vectors
-
-A set of custom themed SVG graphics for Tamagui, including status circles (alert, check, error, info, discovery), arrows in four directions, check, accordion toggle and binary on/off indicators, background patterns (noise, checkerboard, diagonal), a PDF icon and Storm logos. Several have state props such as isExpanded, isComplete or state.
-
-- **Name:** `@cyclone-ui/vectors`
-- **Type:** `component`
-
-### Dependencies
-
-- `@cyclone-ui/helpers@0.3.58`
-- `@cyclone-ui/icons@0.0.56`
-- `@tamagui/core@3.2.0`
-- `@tamagui/helpers-icon@3.2.0`
-- `@tamagui/helpers-tamagui@3.2.0`
-- `motion@^11.18.2`
-
-### Files
-
-| Path                                         | Type        | Target |
-| -------------------------------------------- | ----------- | ------ |
-| `components/vectors/src/AccordionToggle.tsx` | `component` | —      |
-| `components/vectors/src/AlertCircle.tsx`     | `component` | —      |
-| `components/vectors/src/Arrow.tsx`           | `component` | —      |
-| `components/vectors/src/BackgroundNoise.tsx` | `component` | —      |
-| `components/vectors/src/Binary.tsx`          | `component` | —      |
-| `components/vectors/src/Check.tsx`           | `component` | —      |
-| `components/vectors/src/CheckCircle.tsx`     | `component` | —      |
-| `components/vectors/src/CheckerBoard.tsx`    | `component` | —      |
-| `components/vectors/src/Diagonal.tsx`        | `component` | —      |
-| `components/vectors/src/DiscoveryCircle.tsx` | `component` | —      |
-| `components/vectors/src/ErrorCircle.tsx`     | `component` | —      |
-| `components/vectors/src/InfoCircle.tsx`      | `component` | —      |
-| `components/vectors/src/MenuToggle.tsx`      | `component` | —      |
-| `components/vectors/src/PdfIcon.tsx`         | `component` | —      |
-| `components/vectors/src/SearchTrigger.tsx`   | `component` | —      |
-| `components/vectors/src/StormLogoIcon.tsx`   | `component` | —      |
-| `components/vectors/src/StormLogoText.tsx`   | `component` | —      |
-| `components/vectors/src/themed-icon.tsx`     | `component` | —      |
 
 ## @cyclone-ui/visually-hidden
 

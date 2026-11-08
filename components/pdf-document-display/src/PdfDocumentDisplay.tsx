@@ -19,7 +19,7 @@
 "use client";
 
 import { Spinner } from "@cyclone-ui/spinner";
-import { PdfIcon } from "@cyclone-ui/vectors";
+import { PdfIcon } from "@cyclone-ui/icons/vectors";
 import { VisuallyHidden } from "@cyclone-ui/visually-hidden";
 import { isString } from "@stryke/type-checks/is-string";
 import type { FileResult } from "@stryke/types/file";

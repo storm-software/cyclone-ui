@@ -18,8 +18,8 @@
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/spinner": "workspace:*",
-    "@cyclone-ui/vectors": "workspace:*",
     "@cyclone-ui/visually-hidden": "workspace:*",
     "@stryke/type-checks": "catalog:",
     "@stryke/types": "catalog:",

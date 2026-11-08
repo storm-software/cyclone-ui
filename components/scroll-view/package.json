@@ -23,7 +23,7 @@
     "@tamagui/scroll-view": "catalog:"
   },
   "devDependencies": {
-    "@cyclone-ui/vectors": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
     "@storybook/react-vite": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",

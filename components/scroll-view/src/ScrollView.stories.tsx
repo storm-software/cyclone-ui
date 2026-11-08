@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { Diagonal } from "@cyclone-ui/vectors";
+import { Diagonal } from "@cyclone-ui/icons/vectors";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { View } from "@tamagui/core";
 import { ScrollView } from "./ScrollView";

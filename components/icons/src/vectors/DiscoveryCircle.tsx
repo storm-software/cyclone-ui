@@ -19,7 +19,7 @@
 "use client";
 
 import { getSized } from "@cyclone-ui/helpers";
-import { Lightbulb } from "@cyclone-ui/icons";
+import { Lightbulb } from "../icons/Lightbulb";
 import type { IconProps } from "@tamagui/helpers-icon";
 import { useCurrentColor } from "@tamagui/helpers-tamagui";
 import { animate, useMotionValue, useMotionValueEvent } from "motion/react";

@@ -20,7 +20,7 @@ import { BodyText } from "@cyclone-ui/body-text";
 import { HeadingHeroText, HeadingSmallText } from "@cyclone-ui/heading-text";
 import { Lightning } from "@cyclone-ui/icons";
 import { Link } from "@cyclone-ui/link";
-import { StormLogoText } from "@cyclone-ui/vectors";
+import { StormLogoText } from "@cyclone-ui/icons/vectors";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { styled, Text, View } from "@tamagui/core";
 import type { ComponentProps, ReactNode } from "react";

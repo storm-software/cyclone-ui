@@ -18,7 +18,7 @@
 
 import { Button } from "@cyclone-ui/button";
 import { Account, Discord, Github } from "@cyclone-ui/icons";
-import { StormLogoIcon, StormLogoText } from "@cyclone-ui/vectors";
+import { StormLogoIcon, StormLogoText } from "@cyclone-ui/icons/vectors";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { styled, View } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";

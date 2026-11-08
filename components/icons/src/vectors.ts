@@ -16,20 +16,20 @@
 
  ------------------------------------------------------------------- */
 
-export * from "./AccordionToggle";
-export * from "./AlertCircle";
-export * from "./Arrow";
-export * from "./BackgroundNoise";
-export * from "./Binary";
-export * from "./Check";
-export * from "./CheckCircle";
-export * from "./CheckerBoard";
-export * from "./Diagonal";
-export * from "./DiscoveryCircle";
-export * from "./ErrorCircle";
-export * from "./InfoCircle";
-export * from "./MenuToggle";
-export * from "./PdfIcon";
-export * from "./SearchTrigger";
-export * from "./StormLogoIcon";
-export * from "./StormLogoText";
+export * from "./vectors/AccordionToggle";
+export * from "./vectors/AlertCircle";
+export * from "./vectors/Arrow";
+export * from "./vectors/BackgroundNoise";
+export * from "./vectors/Binary";
+export * from "./vectors/Check";
+export * from "./vectors/CheckCircle";
+export * from "./vectors/CheckerBoard";
+export * from "./vectors/Diagonal";
+export * from "./vectors/DiscoveryCircle";
+export * from "./vectors/ErrorCircle";
+export * from "./vectors/InfoCircle";
+export * from "./vectors/MenuToggle";
+export * from "./vectors/PdfIcon";
+export * from "./vectors/SearchTrigger";
+export * from "./vectors/StormLogoIcon";
+export * from "./vectors/StormLogoText";

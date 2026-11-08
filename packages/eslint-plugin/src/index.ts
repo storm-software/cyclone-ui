@@ -4656,11 +4656,6 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
-      name: "@cyclone-ui/themeable-icon",
-      jsx: ["ThemeableIcon"],
-      roles: []
-    },
-    {
       name: "@cyclone-ui/time-picker",
       jsx: ["TimePicker"],
       roles: []
@@ -4693,11 +4688,6 @@ export const manifest: DesignSystemManifest = {
     {
       name: "@cyclone-ui/validation-text",
       jsx: ["ValidationText"],
-      roles: []
-    },
-    {
-      name: "@cyclone-ui/vectors",
-      jsx: ["Vectors"],
       roles: []
     },
     {

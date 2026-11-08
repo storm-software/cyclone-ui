@@ -33,10 +33,10 @@ import {
   getFormSizeToken,
   getSized
 } from "@cyclone-ui/helpers";
+import type { ThemeableIconProps } from "@cyclone-ui/icons";
+import { ThemeableIcon } from "@cyclone-ui/icons";
 import type { RippleAnimationHandle } from "@cyclone-ui/ripple-animation";
 import { RippleAnimation } from "@cyclone-ui/ripple-animation";
-import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
-import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import { Tooltip } from "@cyclone-ui/tooltip";
 import type {
   ColorTokens,

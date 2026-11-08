@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/icons",
   "version": "0.0.57",
   "type": "module",
-  "description": "Animated Tamagui icon components for web and React Native covering the Material Line Icons (line-md) collection, plus the createIcon factory used to build them. Each icon is themed, draws itself in on mount, and accepts color, size (pixels or tokens), mirrored, animated, and a variant of regular, bold, loop, filled or filled-loop.",
+  "description": "Animated Tamagui icon components for web and React Native covering the Material Line Icons (line-md) collection, plus the createIcon factory used to build them. Each icon is themed, draws itself in on mount, and accepts color, size (pixels or tokens), mirrored, animated, and a variant of regular, bold, loop, filled or filled-loop. Includes custom SVG graphics under the vectors entry point.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
@@ -21,8 +21,12 @@
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/helpers": "workspace:*",
     "@tamagui/core": "catalog:",
+    "@tamagui/helpers": "catalog:",
     "@tamagui/helpers-icon": "catalog:",
+    "@tamagui/helpers-tamagui": "catalog:",
+    "motion": "catalog:",
     "react-native-svg": "catalog:"
   },
   "devDependencies": {
@@ -2383,9 +2387,89 @@
       "import": "./dist/icons/Youtube.mjs",
       "require": "./dist/icons/Youtube.cjs"
     },
+    "./ThemeableIcon": {
+      "import": "./dist/ThemeableIcon.mjs",
+      "require": "./dist/ThemeableIcon.cjs"
+    },
     "./types": {
       "import": "./dist/types.mjs",
       "require": "./dist/types.cjs"
+    },
+    "./vectors": {
+      "import": "./dist/vectors.mjs",
+      "require": "./dist/vectors.cjs"
+    },
+    "./vectors/AccordionToggle": {
+      "import": "./dist/vectors/AccordionToggle.mjs",
+      "require": "./dist/vectors/AccordionToggle.cjs"
+    },
+    "./vectors/AlertCircle": {
+      "import": "./dist/vectors/AlertCircle.mjs",
+      "require": "./dist/vectors/AlertCircle.cjs"
+    },
+    "./vectors/Arrow": {
+      "import": "./dist/vectors/Arrow.mjs",
+      "require": "./dist/vectors/Arrow.cjs"
+    },
+    "./vectors/BackgroundNoise": {
+      "import": "./dist/vectors/BackgroundNoise.mjs",
+      "require": "./dist/vectors/BackgroundNoise.cjs"
+    },
+    "./vectors/Binary": {
+      "import": "./dist/vectors/Binary.mjs",
+      "require": "./dist/vectors/Binary.cjs"
+    },
+    "./vectors/Check": {
+      "import": "./dist/vectors/Check.mjs",
+      "require": "./dist/vectors/Check.cjs"
+    },
+    "./vectors/CheckCircle": {
+      "import": "./dist/vectors/CheckCircle.mjs",
+      "require": "./dist/vectors/CheckCircle.cjs"
+    },
+    "./vectors/CheckerBoard": {
+      "import": "./dist/vectors/CheckerBoard.mjs",
+      "require": "./dist/vectors/CheckerBoard.cjs"
+    },
+    "./vectors/Diagonal": {
+      "import": "./dist/vectors/Diagonal.mjs",
+      "require": "./dist/vectors/Diagonal.cjs"
+    },
+    "./vectors/DiscoveryCircle": {
+      "import": "./dist/vectors/DiscoveryCircle.mjs",
+      "require": "./dist/vectors/DiscoveryCircle.cjs"
+    },
+    "./vectors/ErrorCircle": {
+      "import": "./dist/vectors/ErrorCircle.mjs",
+      "require": "./dist/vectors/ErrorCircle.cjs"
+    },
+    "./vectors/InfoCircle": {
+      "import": "./dist/vectors/InfoCircle.mjs",
+      "require": "./dist/vectors/InfoCircle.cjs"
+    },
+    "./vectors/MenuToggle": {
+      "import": "./dist/vectors/MenuToggle.mjs",
+      "require": "./dist/vectors/MenuToggle.cjs"
+    },
+    "./vectors/PdfIcon": {
+      "import": "./dist/vectors/PdfIcon.mjs",
+      "require": "./dist/vectors/PdfIcon.cjs"
+    },
+    "./vectors/SearchTrigger": {
+      "import": "./dist/vectors/SearchTrigger.mjs",
+      "require": "./dist/vectors/SearchTrigger.cjs"
+    },
+    "./vectors/StormLogoIcon": {
+      "import": "./dist/vectors/StormLogoIcon.mjs",
+      "require": "./dist/vectors/StormLogoIcon.cjs"
+    },
+    "./vectors/StormLogoText": {
+      "import": "./dist/vectors/StormLogoText.mjs",
+      "require": "./dist/vectors/StormLogoText.cjs"
+    },
+    "./vectors/themed-icon": {
+      "import": "./dist/vectors/themed-icon.mjs",
+      "require": "./dist/vectors/themed-icon.cjs"
     },
     "./*": "./*"
   }

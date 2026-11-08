@@ -19,7 +19,7 @@
 "use client";
 
 import { getSpaced } from "@cyclone-ui/helpers";
-import { BackgroundNoise } from "@cyclone-ui/vectors";
+import { BackgroundNoise } from "@cyclone-ui/icons/vectors";
 import type { GetProps, SizeTokens, TamaguiElement } from "@tamagui/core";
 import { createStyledHOC, styled, useThemeName, View } from "@tamagui/core";
 import type { Ref } from "react";

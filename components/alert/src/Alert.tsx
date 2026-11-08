@@ -23,8 +23,12 @@ import { Button } from "@cyclone-ui/button";
 import type { ContainerProps } from "@cyclone-ui/container";
 import { Container } from "@cyclone-ui/container";
 import { HeadingMediumText } from "@cyclone-ui/heading-text";
-import { AlertCircle, Close } from "@cyclone-ui/icons";
-import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
+import {
+  AlertCircle,
+  Close,
+  getIconByTheme,
+  ThemeableIcon
+} from "@cyclone-ui/icons";
 import {
   createStyledContext,
   createStyledHOC,

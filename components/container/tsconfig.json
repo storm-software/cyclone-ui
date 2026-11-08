@@ -14,7 +14,7 @@
   },
   "references": [
     {
-      "path": "../vectors"
+      "path": "../icons"
     },
     {
       "path": "../../packages/helpers"

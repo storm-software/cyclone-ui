@@ -19,14 +19,13 @@
   },
   "dependencies": {
     "@cyclone-ui/footer": "workspace:*",
-    "@cyclone-ui/vectors": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
     "@tamagui/core": "catalog:",
     "react-native-svg": "catalog:"
   },
   "devDependencies": {
     "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/heading-text": "workspace:*",
-    "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/link": "workspace:*",
     "@storybook/react-vite": "catalog:",
     "react": "catalog:",

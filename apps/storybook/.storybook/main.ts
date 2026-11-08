@@ -50,7 +50,7 @@ function getAbsolutePath(value: string): string {
  *
  * `@tamagui/vite-plugin` aliases `react-native-svg` to the bare specifier
  * `@tamagui/react-native-svg`. Vite then resolves that specifier from the
- * importing file (e.g. `components/vectors`), which cannot see Storybook's
+ * importing file (e.g. `components/icons`), which cannot see Storybook's
  * dependency under pnpm isolation unless the alias is an absolute path.
  */
 function resolvePackageFile(value: string): string {

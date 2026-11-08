@@ -9,9 +9,7 @@
     "directory": "components/alert"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -23,7 +21,6 @@
     "@cyclone-ui/container": "workspace:*",
     "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
-    "@cyclone-ui/themeable-icon": "workspace:*",
     "@tamagui/core": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/web": "catalog:"
@@ -38,9 +35,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

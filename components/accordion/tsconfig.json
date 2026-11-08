@@ -17,13 +17,10 @@
       "path": "../container"
     },
     {
-      "path": "../vectors"
+      "path": "../icons"
     },
     {
       "path": "../heading-text"
-    },
-    {
-      "path": "../icons"
     },
     {
       "path": "../body-text"

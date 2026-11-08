@@ -9,9 +9,7 @@
     "directory": "components/link"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -20,7 +18,6 @@
   "dependencies": {
     "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/link-text": "workspace:*",
-    "@cyclone-ui/themeable-icon": "workspace:*",
     "@tamagui/constants": "catalog:",
     "@tamagui/core": "catalog:"
   },
@@ -34,9 +31,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",

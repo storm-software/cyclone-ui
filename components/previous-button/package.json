@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@cyclone-ui/button": "workspace:*",
-    "@cyclone-ui/vectors": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
     "@stryke/hooks": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/stacks": "catalog:"
