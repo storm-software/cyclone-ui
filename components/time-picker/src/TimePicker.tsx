@@ -600,6 +600,7 @@ const TimePickerControlImpl = createStyledHOC(
       name = formControl?.name,
       size = formControl?.size,
       disabled = formControl?.disabled,
+      readOnly = formControl?.readOnly ?? false,
       focused = formControl?.focused,
       variant = formControl ? fieldVariant : "outlined",
       hourCycle = 12,
@@ -647,6 +648,7 @@ const TimePickerControlImpl = createStyledHOC(
 
     const handleInput = useCallback(
       (event: CustomEvent<string>) => {
+        if (readOnly) return;
         const value = event.detail;
         setInputValue(value);
 
@@ -654,7 +656,7 @@ const TimePickerControlImpl = createStyledHOC(
           formOnChange?.(value);
         }
       },
-      [formOnChange, hourCycle]
+      [formOnChange, hourCycle, readOnly]
     );
 
     const handleBlur = useCallback(() => {
@@ -664,6 +666,7 @@ const TimePickerControlImpl = createStyledHOC(
 
     const handleKeyDown = useCallback(
       (event: any) => {
+        if (readOnly) return;
         if (event.defaultPrevented) {
           return;
         }
@@ -699,7 +702,7 @@ const TimePickerControlImpl = createStyledHOC(
         setInputValue(toInputValue(nextTime, hourCycle));
         formOnChange?.(toValue(nextTime));
       },
-      [formOnChange, hourCycle]
+      [formOnChange, hourCycle, readOnly]
     );
 
     const fieldState = useMemo(
@@ -720,6 +723,7 @@ const TimePickerControlImpl = createStyledHOC(
 
     const handleClockChange = useCallback(
       (time: Time, part: TimePart, final: boolean) => {
+        if (readOnly) return;
         if (final && part === "hours") {
           setView("minutes");
         }
@@ -736,11 +740,12 @@ const TimePickerControlImpl = createStyledHOC(
           }
         }
       },
-      [formControl, formOnBlur, formOnChange, hourCycle, onChangeProp]
+      [formControl, formOnBlur, formOnChange, hourCycle, onChangeProp, readOnly]
     );
 
     const handleOpenChanged = useCallback(
       (open: boolean) => {
+        if (open && readOnly) return;
         if (open) {
           setView("hours");
           onFocus?.();
@@ -748,14 +753,14 @@ const TimePickerControlImpl = createStyledHOC(
           onBlur?.();
         }
       },
-      [onFocus, onBlur]
+      [onFocus, onBlur, readOnly]
     );
 
     return (
       <TimePickerFieldContext value={fieldState}>
         <Popover
           keepChildrenMounted={true}
-          open={!!focused}
+          open={!!focused && !readOnly}
           onOpenChange={handleOpenChanged}
           placement="bottom"
           // Floating UI applies the offset on whichever side the popover flips to.
@@ -767,6 +772,7 @@ const TimePickerControlImpl = createStyledHOC(
               name={name}
               size={size}
               disabled={disabled}
+              readOnly={readOnly}
               focused={focused}
               variant={variant}
               onChange={noop}

@@ -61,6 +61,8 @@ export interface SliderProps extends Omit<
   valueLabelFormat?: string | ((value: number, index: number) => ReactNode);
   /** The id of the element labelling the slider, applied to every thumb. */
   "aria-labelledby"?: string;
+  /** Prevent changes without applying disabled colors. */
+  readOnly?: boolean;
   /** Build the accessible name of a thumb. */
   getAriaLabel?: (index: number) => string;
   /** Build the accessible description of a thumb's value. */
@@ -211,6 +213,7 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
       dir,
       name = formControl?.name,
       disabled = formControl?.disabled ?? false,
+      readOnly = formControl?.readOnly ?? false,
       size = formControl?.size ?? "md",
       marks = false,
       track = "normal",
@@ -293,6 +296,7 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
 
     const handleValueChange = useCallback(
       (next: number[]) => {
+        if (readOnly) return;
         const previous = valuesRef.current;
         const changed = next.findIndex(
           (item, index) => item !== previous[index]
@@ -304,28 +308,30 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
         }
         onChange?.(toOutput(next), changed === -1 ? focusedThumb : changed);
       },
-      [controlled, focusedThumb, onChange, toOutput]
+      [controlled, focusedThumb, onChange, readOnly, toOutput]
     );
 
     const handleSlideStart = useCallback<
       NonNullable<TamaguiSliderProps["onSlideStart"]>
     >(
       (event, value, target) => {
+        if (readOnly) return;
         setDragging(true);
         onSlideStart?.(event, value, target);
       },
-      [onSlideStart]
+      [onSlideStart, readOnly]
     );
 
     const handleSlideEnd = useCallback<
       NonNullable<TamaguiSliderProps["onSlideEnd"]>
     >(
       (event, value) => {
+        if (readOnly) return;
         setDragging(false);
         onSlideEnd?.(event, value);
         onChangeCommitted?.(toOutput(valuesRef.current));
       },
-      [onChangeCommitted, onSlideEnd, toOutput]
+      [onChangeCommitted, onSlideEnd, readOnly, toOutput]
     );
 
     // A key press is committed on key up, once the Tamagui frame has applied it.
@@ -378,6 +384,7 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
         orientation={orientation}
         dir={dir}
         disabled={disabled}
+        aria-readonly={readOnly || undefined}
         size={geometry.thumb}
         value={values}
         onValueChange={handleValueChange}
@@ -544,6 +551,7 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
               aria-label={getAriaLabel?.(index)}
               aria-labelledby={ariaLabelledBy}
               aria-valuetext={getAriaValueText?.(value, index)}
+              aria-readonly={readOnly || undefined}
               onFocus={(event: any) => {
                 setFocusedThumb(index);
                 setFocusVisibleThumb(

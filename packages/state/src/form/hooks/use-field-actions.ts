@@ -149,7 +149,7 @@ export const useFieldActions = <TFieldValue = any>() => {
         nextValue: TFieldValue,
         touch = false
       ) => {
-        if (!get(field.disabled)) {
+        if (!get(field.disabled) && !get(field.readOnly)) {
           if (!get(field.touched) && touch) {
             set(field.touched, touch);
           }

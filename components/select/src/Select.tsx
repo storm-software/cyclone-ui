@@ -411,6 +411,7 @@ const SelectGroupImpl = createStyledHOC(
          * Shown while nothing is selected, by the value a `Select` renders inside a `Field` when it is given no children.
          */
         placeholder?: string;
+        readOnly?: boolean;
       },
     forwardedRef
   ) => {
@@ -423,6 +424,7 @@ const SelectGroupImpl = createStyledHOC(
     const {
       name = formControl?.name,
       disabled = formControl?.disabled,
+      readOnly = formControl?.readOnly ?? false,
       focused = formControl?.focused,
       variant = formControl ? fieldVariant : "outlined",
       children,
@@ -453,7 +455,7 @@ const SelectGroupImpl = createStyledHOC(
 
     const handleOpenChanged = useCallback(
       (nextOpen: boolean) => {
-        if (nextOpen && disabled) {
+        if (nextOpen && (disabled || readOnly)) {
           return;
         }
 
@@ -465,11 +467,12 @@ const SelectGroupImpl = createStyledHOC(
           onBlur?.();
         }
       },
-      [disabled, onFocus, onBlur]
+      [disabled, readOnly, onFocus, onBlur]
     );
 
     const handleChanged = useCallback(
       (nextValue: string) => {
+        if (readOnly) return;
         setUncontrolledValue(nextValue);
         onChange?.(
           new CustomEvent("change", {
@@ -478,7 +481,7 @@ const SelectGroupImpl = createStyledHOC(
         );
         handleOpenChanged(false);
       },
-      [onChange, handleOpenChanged]
+      [onChange, handleOpenChanged, readOnly]
     );
 
     return (
@@ -500,6 +503,7 @@ const SelectGroupImpl = createStyledHOC(
         onChange={onChange}>
         <ContextMenu
           ref={forwardedRef}
+          aria-readonly={readOnly || undefined}
           placement="bottom"
           {...rest}
           size={size}

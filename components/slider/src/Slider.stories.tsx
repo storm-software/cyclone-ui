@@ -81,6 +81,7 @@ const meta: Meta<SliderStoryArgs> = {
     {
       defaultValue,
       disabled,
+      readOnly,
       required,
       size,
       theme,
@@ -95,6 +96,7 @@ const meta: Meta<SliderStoryArgs> = {
       <Field
         name="sliderName"
         disabled={disabled}
+        readOnly={readOnly}
         required={required}
         size={size}
         theme={theme}
@@ -380,6 +382,18 @@ export const Disabled: Story = {
   args: {
     disabled: true,
     marks: temperatureMarks
+  }
+};
+
+export const ReadOnly: Story = {
+  args: { readOnly: true, defaultValue: 40 },
+  play: async ({ canvasElement }) => {
+    const slider = within(canvasElement).getByRole("slider");
+    await expect(slider).toHaveAttribute("aria-readonly", "true");
+    await expect(slider).not.toBeDisabled();
+    slider.focus();
+    await userEvent.keyboard("{ArrowRight}");
+    await expect(slider).toHaveAttribute("aria-valuenow", "40");
   }
 };
 

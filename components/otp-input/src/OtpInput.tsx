@@ -64,6 +64,9 @@ export interface OtpInputProps {
    */
   disabled?: boolean;
 
+  /** Prevent editing without applying disabled colors. */
+  readOnly?: boolean;
+
   /**
    * The code, for a controlled input. Inside a `Field`, the field holds the value instead.
    */
@@ -99,6 +102,7 @@ export const OtpInput = createStyledHOC(
       name: nameProp,
       size: sizeProp,
       disabled: disabledProp,
+      readOnly: readOnlyProp,
       value: valueProp,
       defaultValue = "",
       onChange,
@@ -112,6 +116,7 @@ export const OtpInput = createStyledHOC(
     const name = nameProp ?? formControl?.name ?? id;
     const size = sizeProp ?? formControl?.size;
     const disabled = disabledProp ?? formControl?.disabled ?? false;
+    const readOnly = readOnlyProp ?? formControl?.readOnly ?? false;
     const focused = formControl?.focused ?? false;
     const length = Math.max(1, Math.floor(lengthProp));
     const [localValue, setLocalValue] = useState(defaultValue);
@@ -178,6 +183,7 @@ export const OtpInput = createStyledHOC(
     );
     const updateValue = useCallback(
       (nextDigits: string[]) => {
+        if (readOnly) return;
         const nextValue = nextDigits.join("").slice(0, length);
         setLocalValue(nextValue);
         onValueChange?.(nextValue);
@@ -186,7 +192,7 @@ export const OtpInput = createStyledHOC(
           onComplete?.(nextValue);
         }
       },
-      [length, onComplete, onValueChange]
+      [length, onComplete, onValueChange, readOnly]
     );
     const applyInput = useCallback(
       (index: number, input: string) => {
@@ -318,6 +324,7 @@ export const OtpInput = createStyledHOC(
               flex={0}
               focused={(focused || hasFocus) && activeIndex === index}
               disabled={disabled}
+              readOnly={readOnly}
               tabIndex={-1}
               onChange={event => handleChange(index, event)}>
               <Input.TextBox>
@@ -341,13 +348,7 @@ export const OtpInput = createStyledHOC(
                   paddingHorizontal="zero"
                   tabIndex={0}
                   onKeyDown={event =>
-                    handleKeyDown(
-                      index,
-                      event as unknown as {
-                        key: string;
-                        preventDefault: () => void;
-                      }
-                    )
+                    handleKeyDown(index, event)
                   }
                   onPaste={event => handlePaste(index, event)}
                   onFocus={event => {

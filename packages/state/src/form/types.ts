@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { type FormControlSize } from "@cyclone-ui/helpers";
+import type { FormControlSize } from "@cyclone-ui/helpers";
 import type { MaskitoOptions } from "@maskito/core";
 import type { MaybePromise } from "@stryke/types/base";
 import type { SelectOption, SelectOptionValue } from "@stryke/types/form";
@@ -280,6 +280,11 @@ export interface FormAtoms<
     [SetStateActionWithReset<InferFormState<TFormValues, boolean>>],
     void
   >;
+  readOnlyFields: WritableAtom<
+    InferFormState<TFormValues, boolean>,
+    [SetStateActionWithReset<InferFormState<TFormValues, boolean>>],
+    void
+  >;
   touchedFields: WritableAtom<
     InferFormState<TFormValues, boolean>,
     [SetStateActionWithReset<InferFormState<TFormValues, boolean>>],
@@ -487,6 +492,9 @@ export interface FieldOptions<TFieldValue> {
    */
   disabled?: boolean;
 
+  /** Prevent user edits while preserving the field's normal appearance. */
+  readOnly?: boolean;
+
   /**
    * Whether the field's value can be cleared by its control.
    *
@@ -603,6 +611,7 @@ export type FieldOptionsState<TFieldValue = any> = FieldOptions<TFieldValue> &
       | "debounceMs"
       | "isEqual"
       | "disabled"
+      | "readOnly"
       | "clearable"
       | "required"
       | "initialValue"
@@ -631,6 +640,11 @@ export interface FieldAtoms<TFieldValue> {
     void
   >;
   disabled: WritableAtom<
+    InferFieldState<TFieldValue, boolean>,
+    [SetStateAction<InferFieldState<TFieldValue, boolean>>],
+    void
+  >;
+  readOnly: WritableAtom<
     InferFieldState<TFieldValue, boolean>,
     [SetStateAction<InferFieldState<TFieldValue, boolean>>],
     void

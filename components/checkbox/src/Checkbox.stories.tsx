@@ -21,6 +21,7 @@ import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { XStack } from "@tamagui/stacks";
+import { expect, userEvent, within } from "storybook/test";
 import { Checkbox } from "./Checkbox";
 
 type CheckboxStoryArgs = Omit<FieldProps<boolean>, "children" | "name">;
@@ -82,6 +83,17 @@ export const Required: Story = {
 export const Disabled: Story = {
   args: {
     disabled: true
+  }
+};
+
+export const ReadOnly: Story = {
+  args: { readOnly: true, defaultValue: true },
+  play: async ({ canvasElement }) => {
+    const checkbox = within(canvasElement).getByRole("checkbox");
+    await expect(checkbox).toHaveAttribute("aria-readonly", "true");
+    await expect(checkbox).not.toBeDisabled();
+    await userEvent.click(checkbox);
+    await expect(checkbox).toBeChecked();
   }
 };
 

@@ -50,8 +50,11 @@ export const InputValue: ComponentType<InputComponentProps> = createStyledHOC(
       InputComponentProps,
     forwardedRef
   ) => {
-    const { disabled: contextDisabled, name: contextName } =
-      InputContext.useStyledContext();
+    const {
+      disabled: contextDisabled,
+      readOnly: contextReadOnly,
+      name: contextName
+    } = InputContext.useStyledContext();
     const {
       onChange: contextOnChange,
       onInput: contextOnInput,
@@ -74,6 +77,7 @@ export const InputValue: ComponentType<InputComponentProps> = createStyledHOC(
       required,
       step,
       disabled: _disabled,
+      readOnly: _readOnly,
       id,
       caretColor,
       rows,
@@ -85,6 +89,7 @@ export const InputValue: ComponentType<InputComponentProps> = createStyledHOC(
       ...rest
     } = inProps;
     const disabled = inProps.disabled ?? contextDisabled;
+    const readOnly = inProps.readOnly ?? contextReadOnly;
     const name = inProps.name ?? contextName;
     const onChange = inputOnChange ?? contextOnChange;
     const onInput = inputOnInput ?? contextOnInput;
@@ -210,8 +215,8 @@ export const InputValue: ComponentType<InputComponentProps> = createStyledHOC(
         ref={composedRefs}
         onBlur={onBlur}
         onFocus={onFocus}
-        editable={!disabled}
         {...finalProps}
+        editable={!disabled && !readOnly}
       />
     );
   }

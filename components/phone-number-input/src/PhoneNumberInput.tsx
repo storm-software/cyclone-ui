@@ -181,7 +181,7 @@ const CountryListItem = memo(
 );
 
 const CountryCodeSelector = (): JSX.Element => {
-  const { disabled, size } = InputContext.useStyledContext();
+  const { disabled, readOnly, size } = InputContext.useStyledContext();
   const { width: viewportWidth } = useWindowDimensions();
   const { countryCode, selectCountry } = use(PhoneNumberContext);
   const selectedCountry: CountryOption = COUNTRY_OPTIONS.find(
@@ -209,19 +209,24 @@ const CountryCodeSelector = (): JSX.Element => {
     event => setSearch(event.detail),
     []
   );
-  const handleOpenChange = useCallback((nextOpen: boolean): void => {
-    setOpen(nextOpen);
-    if (!nextOpen) {
-      setSearch("");
-    }
-  }, []);
+  const handleOpenChange = useCallback(
+    (nextOpen: boolean): void => {
+      if (nextOpen && readOnly) return;
+      setOpen(nextOpen);
+      if (!nextOpen) {
+        setSearch("");
+      }
+    },
+    [readOnly]
+  );
   const handleSelect = useCallback(
     (country: CountryOption): void => {
+      if (readOnly) return;
       selectCountry(country.code);
       setOpen(false);
       setSearch("");
     },
-    [selectCountry]
+    [selectCountry, readOnly]
   );
 
   return (
@@ -293,6 +298,7 @@ const PhoneNumberInputGroup = createStyledHOC(
     forwardedRef
   ): JSX.Element => {
     const formControl = useFormControl();
+    const readOnly = props.readOnly ?? formControl?.readOnly ?? false;
     const [countryCode, setCountryCode] = useState<CountryCode>(defaultCountry);
     const prefix: string = `+${getCountryCallingCode(countryCode)} `;
 
@@ -354,6 +360,7 @@ const PhoneNumberInputGroup = createStyledHOC(
     const formOnChange = formControl?.onChange;
     const onChange = useCallback<InputChangeEventHandler>(
       event => {
+        if (readOnly) return;
         setLocalValue(parsePhoneNumber(event.detail));
         if (onChangeProp) {
           return onChangeProp(event);
@@ -361,7 +368,7 @@ const PhoneNumberInputGroup = createStyledHOC(
 
         formOnChange?.(event.detail);
       },
-      [formOnChange, onChangeProp, parsePhoneNumber]
+      [formOnChange, onChangeProp, parsePhoneNumber, readOnly]
     );
 
     // Pick the country from the first non-empty value.
@@ -388,10 +395,11 @@ const PhoneNumberInputGroup = createStyledHOC(
 
     const selectCountry = useCallback(
       (nextCountryCode: CountryCode): void => {
+        if (readOnly) return;
         setCountryCode(nextCountryCode);
         onChange(new CustomEvent("change", { detail: "" }));
       },
-      [onChange]
+      [onChange, readOnly]
     );
 
     const value =
@@ -412,7 +420,11 @@ const PhoneNumberInputGroup = createStyledHOC(
 
     return (
       <PhoneNumberContext value={contextValue}>
-        <Input ref={forwardedRef} {...props} onChange={onChange}>
+        <Input
+          ref={forwardedRef}
+          {...props}
+          readOnly={readOnly}
+          onChange={onChange}>
           <CountryCodeSelector />
           <Input.Separator />
           {children}

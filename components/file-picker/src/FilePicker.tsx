@@ -69,6 +69,7 @@ export interface FilePickerContextProps {
   color?: ColorTokens | string;
   required: boolean;
   disabled: boolean;
+  readOnly: boolean;
   active: boolean;
   hasValidationMessage: boolean;
 }
@@ -89,6 +90,7 @@ export const FilePickerContext = createStyledContext<
   | "color"
   | "required"
   | "disabled"
+  | "readOnly"
   | "active"
   | "hasValidationMessage"
 >(
@@ -107,6 +109,7 @@ export const FilePickerContext = createStyledContext<
     color: undefined,
     required: false,
     disabled: false,
+    readOnly: false,
     active: false,
     hasValidationMessage: false
   } as FilePickerContextProps,
@@ -223,6 +226,7 @@ const FilePickerGroup = createStyledHOC(
       files = formControl?.value ?? [],
       onChange = formControl?.onChange,
       disabled = formControl?.disabled ?? false,
+      readOnly = formControl?.readOnly ?? false,
       typeOfPicker = "file",
       mediaTypes = [MediaTypeOptions.All],
       max = 1,
@@ -232,6 +236,7 @@ const FilePickerGroup = createStyledHOC(
     const hasValidationMessage = useFieldHasValidationMessage();
     const handlePick = useCallback(
       async ({ webFiles, nativeFiles }: PickFileProps) => {
+        if (readOnly) return;
         // Ids continue past the highest one in use: `files.length` repeats an
         // id still in the list once a file has been removed.
         const nextId = files.reduce(
@@ -288,7 +293,7 @@ const FilePickerGroup = createStyledHOC(
           }
         }
       },
-      [onChange, files, max]
+      [onChange, files, max, readOnly]
     );
 
     const { onOpen, getInputProps, getRootProps, dragStatus } = useFilePicker({
@@ -303,10 +308,16 @@ const FilePickerGroup = createStyledHOC(
     const handleOpen = useCallback(() => {
       // Once `max` files are attached, picking again replaces the oldest
       // (`handlePick` keeps the last `max`).
-      if (!disabled) {
+      if (!disabled && !readOnly) {
         onOpen();
       }
-    }, [disabled, onOpen]);
+    }, [disabled, onOpen, readOnly]);
+    const handleChange = useCallback(
+      (nextFiles: ClientFileResult[]) => {
+        if (!readOnly) return onChange?.(nextFiles);
+      },
+      [onChange, readOnly]
+    );
 
     return (
       // @ts-ignore reason: getRootProps() which is web specific return some react-native incompatible props, but it's fine
@@ -334,10 +345,11 @@ const FilePickerGroup = createStyledHOC(
           variant={variant}
           name={name}
           files={files}
-          onOpen={onOpen}
+          onOpen={handleOpen}
           onPick={handlePick}
-          onChange={onChange}
+          onChange={handleChange}
           disabled={disabled}
+          readOnly={readOnly}
           active={Boolean(dragStatus?.isDragActive)}
           hasValidationMessage={hasValidationMessage}
           typeOfPicker={typeOfPicker}
@@ -371,7 +383,7 @@ const FilePickerGroup = createStyledHOC(
 const FilePickerTrigger = createStyledHOC(
   YStack,
   ({ children, ...props }, forwardedRef) => {
-    const { disabled, files, max, size, variant, onChange } =
+    const { disabled, readOnly, files, max, size, variant, onChange } =
       FilePickerContext.useStyledContext();
     const { iconColor, hoverIconColor } = useFieldIconColor();
 
@@ -402,7 +414,7 @@ const FilePickerTrigger = createStyledHOC(
                 ? files[0]?.name || "Unnamed File"
                 : `${files.length} files`}
           </FileMetadataText>
-          {!disabled && files.length > 0 && (
+          {!disabled && !readOnly && files.length > 0 && (
             // Keep the press from bubbling to the frame, which opens the picker.
             <View
               flexShrink={0}
@@ -587,7 +599,7 @@ export type FilePickerFileProps = FileProps;
 
 /** A `File` card wired to the picker: removing it updates the picked files. */
 const FilePickerFile = (props: FilePickerFileProps) => {
-  const { disabled, onChange, files, size } =
+  const { disabled, readOnly, onChange, files, size } =
     FilePickerContext.useStyledContext();
   const { id } = props;
 
@@ -598,10 +610,10 @@ const FilePickerFile = (props: FilePickerFileProps) => {
 
   return (
     <FileCard
+      {...props}
       controlSize={size}
       disabled={disabled}
-      onRemove={handleRemove}
-      {...props}
+      onRemove={readOnly ? undefined : handleRemove}
     />
   );
 };

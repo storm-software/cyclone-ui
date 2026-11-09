@@ -172,6 +172,7 @@ export const Checkbox = createStyledHOC(
     props: GetProps<typeof BaseCheckbox> & {
       focused?: CheckboxGroupFrameProps["focused"];
       size?: FormControlSize;
+      readOnly?: boolean;
     },
     forwardedRef
   ) => {
@@ -181,6 +182,7 @@ export const Checkbox = createStyledHOC(
     const {
       focused = formControl?.focused ?? false,
       disabled = formControl?.disabled,
+      readOnly = formControl?.readOnly ?? false,
       name = formControl?.name,
       size = formControl?.size ?? "md",
       checked = formControl ? formControl.value || false : true,
@@ -197,10 +199,11 @@ export const Checkbox = createStyledHOC(
     const formOnChange = formControl?.onChange;
     const handleCheckedChange = useCallback(
       (next: CheckedState) => {
+        if (readOnly) return;
         formOnChange?.(next);
         onCheckedChange?.(next);
       },
-      [formOnChange, onCheckedChange]
+      [formOnChange, onCheckedChange, readOnly]
     );
 
     const hasValidationMessage = useFieldHasValidationMessage();
@@ -230,9 +233,10 @@ export const Checkbox = createStyledHOC(
           ref={forwardedRef}
           {...rest}
           id={name}
+          aria-readonly={readOnly || undefined}
           onFocus={onFocus}
           onBlur={onBlur}
-          onCheckedChange={formOnChange ? handleCheckedChange : onCheckedChange}
+          onCheckedChange={handleCheckedChange}
           checked={checked}
           defaultChecked={defaultChecked}
           size={size}

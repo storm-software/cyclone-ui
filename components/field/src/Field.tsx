@@ -370,6 +370,7 @@ const FieldGroupInnerImpl = createStyledHOC(
     const size = field.size.get();
     const theme = field.theme.get();
     const disabled = field.disabled.get();
+    const readOnly = field.readOnly.get();
     const required = field.required.get();
     const focused = field.focused.get();
     const clearable = field.clearable.get();
@@ -434,7 +435,7 @@ const FieldGroupInnerImpl = createStyledHOC(
     const endAdornment = useMemo(
       () => (
         <>
-          {clearable && Boolean(formattedValue) && (
+          {clearable && !readOnly && Boolean(formattedValue) && (
             <FieldThemeIcon position="end" onClick={handleClear}>
               <Close
                 variant="bold"
@@ -445,7 +446,7 @@ const FieldGroupInnerImpl = createStyledHOC(
           <FieldThemeIcon position="end" />
         </>
       ),
-      [clearable, disabled, formattedValue, handleClear]
+      [clearable, disabled, readOnly, formattedValue, handleClear]
     );
 
     // The first end `Field.Button` renders the status icons before itself
@@ -471,6 +472,7 @@ const FieldGroupInnerImpl = createStyledHOC(
         size,
         theme,
         disabled,
+        readOnly,
         required,
         focused,
         clearable,
@@ -492,6 +494,7 @@ const FieldGroupInnerImpl = createStyledHOC(
         size,
         theme,
         disabled,
+        readOnly,
         required,
         focused,
         clearable,

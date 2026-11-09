@@ -19,7 +19,11 @@
 "use client";
 
 import type { FormControlSize } from "@cyclone-ui/helpers";
-import { getFormSizeToken, getSized } from "@cyclone-ui/helpers";
+import {
+  getFormSizeToken,
+  getSized,
+  useFormControl
+} from "@cyclone-ui/helpers";
 import type { ToggleProps, ToggleVariant } from "@cyclone-ui/toggle";
 import { getToggleInset, Toggle } from "@cyclone-ui/toggle";
 import type { GetProps, TamaguiElement } from "@tamagui/core";
@@ -81,6 +85,7 @@ interface ToggleGroupContextValue {
   fluid: boolean;
   invalid: boolean;
   disabled: boolean;
+  readOnly: boolean;
   borderless: boolean;
   rounded: boolean;
 }
@@ -114,6 +119,8 @@ export interface ToggleGroupProps extends Omit<
   invalid?: boolean;
   /** Disable every toggle in the group. */
   disabled?: boolean;
+  /** Prevent selection changes without applying disabled colors. */
+  readOnly?: boolean;
   /** Span the parent's width, sharing it evenly between the toggles. */
   fluid?: boolean;
   /** Drop the shared frame's border and background. */
@@ -157,7 +164,8 @@ const ToggleGroupFrameImpl = forwardRef<TamaguiElement, ToggleGroupProps>(
       shadowStyle,
       fluid = false,
       invalid = false,
-      disabled = false,
+      disabled: disabledProp,
+      readOnly: readOnlyProp,
       borderless = false,
       rounded = false,
       children,
@@ -165,6 +173,9 @@ const ToggleGroupFrameImpl = forwardRef<TamaguiElement, ToggleGroupProps>(
     },
     forwardedRef
   ) => {
+    const formControl = useFormControl();
+    const disabled = disabledProp ?? formControl?.disabled ?? false;
+    const readOnly = readOnlyProp ?? formControl?.readOnly ?? false;
     const [uncontrolledSelected, setUncontrolledSelected] = useState(() =>
       toArray(defaultValue)
     );
@@ -175,6 +186,7 @@ const ToggleGroupFrameImpl = forwardRef<TamaguiElement, ToggleGroupProps>(
     const themeName = useThemeName();
 
     const select = (value: string) => {
+      if (readOnly) return;
       const next = getNextSelection(selected, value, multiple, allowEmpty);
       if (!next) {
         return;
@@ -196,6 +208,7 @@ const ToggleGroupFrameImpl = forwardRef<TamaguiElement, ToggleGroupProps>(
           fluid,
           invalid,
           disabled,
+          readOnly,
           borderless,
           rounded
         }}>
@@ -210,7 +223,8 @@ const ToggleGroupFrameImpl = forwardRef<TamaguiElement, ToggleGroupProps>(
           borderless={borderless}
           rounded={rounded}
           aria-invalid={invalid || undefined}
-          aria-disabled={disabled || undefined}>
+          aria-disabled={disabled || undefined}
+          aria-readonly={readOnly || undefined}>
           {children}
         </ToggleGroupFrame>
       </ToggleGroupContext.Provider>
@@ -262,6 +276,7 @@ const ToggleGroupItem = forwardRef<TamaguiElement, ToggleGroupItemProps>(
         {...(group.fluid && { flexGrow: 1, flexBasis: 0, width: "auto" })}
         {...props}
         disabled={group.disabled || disabled}
+        readOnly={group.readOnly || props.readOnly}
         pressed={group.selected.includes(value)}
         onPressedChange={() => group.select(value)}
       />

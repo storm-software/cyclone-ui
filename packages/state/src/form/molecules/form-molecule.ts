@@ -143,6 +143,9 @@ export const FormApi = createMoleculeApi(
     const disabledFieldsAtom = atomWithReset(
       {} as InferFormState<TFormValues, boolean>
     );
+    const readOnlyFieldsAtom = atomWithReset(
+      {} as InferFormState<TFormValues, boolean>
+    );
     const touchedFieldsAtom = atomWithReset(
       {} as InferFormState<TFormValues, boolean>
     );
@@ -344,6 +347,7 @@ export const FormApi = createMoleculeApi(
       focusedFields: focusedFieldsAtom,
       requiredFields: requiredFieldsAtom,
       disabledFields: disabledFieldsAtom,
+      readOnlyFields: readOnlyFieldsAtom,
       touchedFields: touchedFieldsAtom,
       blurredFields: blurredFieldsAtom,
       validatingFields: validatingFieldsAtom,

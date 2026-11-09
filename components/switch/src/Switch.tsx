@@ -280,6 +280,7 @@ const BaseSwitchImpl = createStyledHOC(
     allProps: GetProps<typeof BaseSwitch> & {
       focused?: boolean;
       size?: FormControlSize;
+      readOnly?: boolean;
     },
     forwardedRef
   ) => {
@@ -291,6 +292,7 @@ const BaseSwitchImpl = createStyledHOC(
       name = formControl?.name,
       size = formControl?.size ?? "md",
       disabled = formControl?.disabled ?? false,
+      readOnly = formControl?.readOnly ?? false,
       checked = formControl?.value || false,
       defaultChecked = formControl
         ? formControl.defaultValue || false
@@ -322,10 +324,11 @@ const BaseSwitchImpl = createStyledHOC(
           }}
           {...props}
           id={name}
+          aria-readonly={readOnly || undefined}
           size={size}
           checked={checked}
           defaultChecked={defaultChecked}
-          onCheckedChange={onCheckedChange}
+          onCheckedChange={readOnly ? undefined : onCheckedChange}
           onFocus={onFocus}
           onBlur={onBlur}
           // In v2 the `hasValidationMessage` / `disabled` variants came after

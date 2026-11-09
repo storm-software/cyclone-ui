@@ -241,6 +241,7 @@ const InputGroupImpl = createStyledHOC(
       onMouseDown,
       focused = formControl?.focused ?? false,
       disabled = formControl?.disabled ?? false,
+      readOnly = formControl?.readOnly ?? false,
       ...rest
     } = props;
     const formOnChange = formControl?.onChange;
@@ -346,7 +347,8 @@ const InputGroupImpl = createStyledHOC(
           labelPlacement={labelPlacement}
           focused={active}
           hasValidationMessage={hasValidationMessage}
-          disabled={disabled}>
+          disabled={disabled}
+          readOnly={readOnly}>
           <FormControlFrameContext.Provider value={frame}>
             <InputGroup
               ref={forwardedRef}

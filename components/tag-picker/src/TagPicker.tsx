@@ -223,6 +223,7 @@ interface TagPickerItemProps {
   tag: string;
   pop: boolean;
   disabled: boolean;
+  readOnly: boolean;
   tagVariant: TagVariant;
   removeButtonLabel: string;
   geometry: ReturnType<typeof getTagPickerGeometry>;
@@ -234,6 +235,7 @@ const TagPickerItem = ({
   tag,
   pop,
   disabled,
+  readOnly,
   tagVariant,
   removeButtonLabel,
   geometry,
@@ -243,8 +245,8 @@ const TagPickerItem = ({
   <TagPickerItemFrame pop={pop}>
     <Tag
       variant={tagVariant}
-      removable={!disabled}
-      editable={!disabled}
+      removable={!disabled && !readOnly}
+      editable={!disabled && !readOnly}
       editInputLabel={`Edit ${tag}`}
       onEdit={draft => onEdit(tag, draft)}
       removeButtonLabel={removeButtonLabel}
@@ -319,6 +321,9 @@ export interface TagPickerOwnProps {
    */
   disabled?: boolean;
 
+  /** Prevent editing tags without applying disabled colors. */
+  readOnly?: boolean;
+
   /**
    * Should the frame show its focus highlight even while focus is outside it
    *
@@ -376,6 +381,7 @@ const TagPickerImpl = createStyledHOC(
       size = formControl?.size ?? "md",
       variant = formControl ? fieldVariant : "outlined",
       disabled = formControl?.disabled ?? false,
+      readOnly = formControl?.readOnly ?? false,
       focused = formControl?.focused ?? false,
       tagVariant = "secondary",
       removeButtonLabel = getTagRemoveButtonLabel,
@@ -416,13 +422,14 @@ const TagPickerImpl = createStyledHOC(
 
     const commit = useCallback(
       (next: readonly string[]) => {
+        if (readOnly) return;
         if (value === undefined) {
           setUncontrolledTags(next);
         }
 
         onChange?.([...next]);
       },
-      [onChange, value]
+      [onChange, value, readOnly]
     );
 
     // An event rather than a callback: a leaving pill keeps the props it last
@@ -456,9 +463,12 @@ const TagPickerImpl = createStyledHOC(
       }
     });
 
-    const handleInput = useCallback((event: CustomEvent<string>) => {
-      setDraft(event.detail);
-    }, []);
+    const handleInput = useCallback(
+      (event: CustomEvent<string>) => {
+        if (!readOnly) setDraft(event.detail);
+      },
+      [readOnly]
+    );
 
     // Tamagui v3 types `onKeyDown` as an intersection of the web and native
     // handlers; this handler reads the web keyboard event.
@@ -466,6 +476,7 @@ const TagPickerImpl = createStyledHOC(
       (event: any) => {
         if (
           disabled ||
+          readOnly ||
           event.defaultPrevented ||
           event.nativeEvent?.isComposing
         ) {
@@ -499,7 +510,7 @@ const TagPickerImpl = createStyledHOC(
           commit(tags.slice(0, -1));
         }
       },
-      [commit, disabled, draft, tags]
+      [commit, disabled, readOnly, draft, tags]
     );
 
     // Focus moving between the text box and the remove buttons stays inside
@@ -568,7 +579,8 @@ const TagPickerImpl = createStyledHOC(
         variant="outlined"
         focused={active}
         hasValidationMessage={hasValidationMessage}
-        disabled={disabled}>
+        disabled={disabled}
+        readOnly={readOnly}>
         <TagPickerFrame
           ref={forwardedRef}
           {...rest}
@@ -604,6 +616,7 @@ const TagPickerImpl = createStyledHOC(
                   tag={tag}
                   pop={addedTags.has(tag)}
                   disabled={disabled}
+                  readOnly={readOnly}
                   tagVariant={tagVariant}
                   removeButtonLabel={removeButtonLabel(tag)}
                   geometry={geometry}

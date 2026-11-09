@@ -34,7 +34,8 @@ import {
   getFormFontSize,
   getFormSizeScale,
   getFormSizeToken,
-  getSized
+  getSized,
+  useFormControl
 } from "@cyclone-ui/helpers";
 import type { GetProps, TamaguiElement } from "@tamagui/core";
 import { styled, Text, useThemeName, View } from "@tamagui/core";
@@ -260,6 +261,8 @@ export interface ToggleProps extends Omit<
   defaultPressed?: boolean;
   /** Called with the new state when the toggle is pressed. */
   onPressedChange?: (pressed: boolean) => void;
+  /** Prevent changes without applying disabled colors. */
+  readOnly?: boolean;
   /** The control size. */
   size?: ToggleSize;
   /**
@@ -298,7 +301,8 @@ export const Toggle = forwardRef<TamaguiElement, ToggleProps>(
       variant,
       shadowStyle,
       invalid = false,
-      disabled = false,
+      disabled: disabledProp,
+      readOnly: readOnlyProp,
       borderless = false,
       circular = false,
       rounded = false,
@@ -308,6 +312,9 @@ export const Toggle = forwardRef<TamaguiElement, ToggleProps>(
     },
     forwardedRef
   ) => {
+    const formControl = useFormControl();
+    const disabled = disabledProp ?? formControl?.disabled ?? false;
+    const readOnly = readOnlyProp ?? formControl?.readOnly ?? false;
     const [uncontrolledPressed, setUncontrolledPressed] =
       useState(defaultPressed);
     const controlled = pressedProp !== undefined;
@@ -317,12 +324,13 @@ export const Toggle = forwardRef<TamaguiElement, ToggleProps>(
     const themeName = useThemeName();
 
     const handlePress = useCallback(() => {
+      if (readOnly) return;
       const next = !pressed;
       if (!controlled) {
         setUncontrolledPressed(next);
       }
       onPressedChange?.(next);
-    }, [controlled, onPressedChange, pressed]);
+    }, [controlled, onPressedChange, pressed, readOnly]);
 
     // A circle keeps its square box instead of following `width`/`fluid`.
     const circleSize = circular ? getSized(getFormSizeToken(size)) : undefined;
@@ -354,8 +362,9 @@ export const Toggle = forwardRef<TamaguiElement, ToggleProps>(
           flexGrow: 0
         })}
         aria-pressed={pressed}
+        aria-readonly={readOnly || undefined}
         aria-invalid={invalid || undefined}
-        onPress={disabled ? undefined : handlePress}>
+        onPress={disabled || readOnly ? undefined : handlePress}>
         <ToggleIndicator
           // A variant shows the state through its color instead.
           active={pressed && !variant}

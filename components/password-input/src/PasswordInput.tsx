@@ -195,6 +195,7 @@ const PasswordInputImpl = createStyledHOC(
     forwardedRef
   ) => {
     const formControl = useFormControl();
+    const readOnly = props.readOnly ?? formControl?.readOnly ?? false;
     useFieldOptions(
       validateStrength ? PASSWORD_FIELD_OPTIONS : NO_FIELD_OPTIONS
     );
@@ -215,10 +216,11 @@ const PasswordInputImpl = createStyledHOC(
     );
     const handleInput = useCallback<InputChangeEventHandler>(
       event => {
+        if (readOnly) return;
         setTypedValue(event.detail);
         onInput?.(event);
       },
-      [onInput]
+      [onInput, readOnly]
     );
 
     return (
@@ -232,7 +234,11 @@ const PasswordInputImpl = createStyledHOC(
               ? getSpaced("lg") - getSpaced("xl")
               : undefined
           }>
-          <Input ref={forwardedRef} {...props} onInput={handleInput}>
+          <Input
+            ref={forwardedRef}
+            {...props}
+            readOnly={readOnly}
+            onInput={handleInput}>
             {children}
           </Input>
           {showStrength && (

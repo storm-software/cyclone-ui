@@ -36,6 +36,7 @@ type InputStoryArgs = Pick<
   | "theme"
   | "size"
   | "disabled"
+  | "readOnly"
   | "required"
   | "validate"
   | "showErrorsBeforeBlur"
@@ -120,6 +121,25 @@ export const Base: Story = {
     ).toBeLessThan(2);
     await userEvent.type(input, "input value");
     await expect(input).toHaveValue("input value");
+  }
+};
+
+export const ReadOnly: Story = {
+  args: {
+    readOnly: true,
+    clearable: true,
+    defaultValue: "Keep me"
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const input = canvas.getByRole("textbox");
+
+    await expect(input).toHaveAttribute("readonly");
+    await expect(input).not.toBeDisabled();
+    await expect(input).toHaveValue("Keep me");
+    await userEvent.type(input, " changed");
+    await expect(input).toHaveValue("Keep me");
+    await expect(canvas.queryByRole("button", { name: /clear/i })).toBeNull();
   }
 };
 

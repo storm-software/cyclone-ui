@@ -48,6 +48,7 @@ export const InputContext = createStyledContext<
   | "size"
   | "circular"
   | "disabled"
+  | "readOnly"
   | "focused"
   | "hasValidationMessage"
   | "variant"
@@ -56,6 +57,7 @@ export const InputContext = createStyledContext<
     size: "md",
     circular: false,
     disabled: false,
+    readOnly: false,
     focused: false,
     hasValidationMessage: false,
     variant: "outlined"
@@ -65,6 +67,7 @@ export const InputContext = createStyledContext<
       "size",
       "circular",
       "disabled",
+      "readOnly",
       "focused",
       "hasValidationMessage",
       "variant"

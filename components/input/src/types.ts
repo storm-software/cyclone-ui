@@ -184,6 +184,9 @@ export interface InputContextProps {
    */
   disabled: boolean;
 
+  /** Prevent editing without applying disabled colors. */
+  readOnly: boolean;
+
   /**
    * The input's current focused status value.
    */

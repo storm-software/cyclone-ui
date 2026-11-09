@@ -227,6 +227,8 @@ export interface ColorAreaProps
     Omit<StatelyColorAreaProps, "isDisabled"> {
   /** Block interaction and grey out the area. */
   disabled?: boolean;
+  /** Prevent color changes without applying disabled colors. */
+  readOnly?: boolean;
   /** Overlay a dot grid, for precision picking (web only). */
   showDots?: boolean;
   /** The thumb, `<ColorArea.Thumb />` by default. */
@@ -249,6 +251,7 @@ const ColorAreaFrame = forwardRef<TamaguiElement, ColorAreaProps>(
       yChannel,
       colorSpace,
       disabled = false,
+      readOnly = false,
       showDots = false,
       borderRadius = 16,
       children = DEFAULT_THUMB,
@@ -303,7 +306,7 @@ const ColorAreaFrame = forwardRef<TamaguiElement, ColorAreaProps>(
         Home: () => state.decrementX(state.xChannelPageStep),
         End: () => state.incrementX(state.xChannelPageStep)
       }[event.key as string];
-      if (!step || disabled) {
+      if (!step || disabled || readOnly) {
         return;
       }
 
@@ -321,6 +324,7 @@ const ColorAreaFrame = forwardRef<TamaguiElement, ColorAreaProps>(
       "aria-labelledby": ariaLabelledBy,
       "aria-roledescription": "2D slider",
       "aria-disabled": disabled,
+      "aria-readonly": readOnly,
       "aria-valuemin": color.getChannelRange(x).minValue,
       "aria-valuemax": color.getChannelRange(x).maxValue,
       "aria-valuenow": state.xValue,
@@ -368,7 +372,7 @@ const ColorAreaFrame = forwardRef<TamaguiElement, ColorAreaProps>(
           {...props}
           ref={forwardedRef}
           onPointerDown={(event: PointerEvent) => {
-            if (disabled || event.button !== 0) {
+            if (disabled || readOnly || event.button !== 0) {
               return;
             }
 
@@ -385,7 +389,7 @@ const ColorAreaFrame = forwardRef<TamaguiElement, ColorAreaProps>(
             pointerFocusRef.current = false;
           }}
           onPointerMove={(event: PointerEvent) =>
-            state.isDragging && moveTo(event)
+            !readOnly && state.isDragging && moveTo(event)
           }
           onPointerUp={endDrag}
           onPointerCancel={endDrag}>

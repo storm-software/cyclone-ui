@@ -176,6 +176,9 @@ export interface ManualAddressInputExtraProps {
   /** Disable every field. */
   disabled?: boolean;
 
+  /** Prevent edits to every field while preserving its normal colors. */
+  readOnly?: boolean;
+
   size?: FormControlSize;
   variant?: FieldVariant;
   labelVariant?: FieldLabelVariant;
@@ -217,6 +220,7 @@ export const ManualAddressInput = createStyledHOC(
       countries,
       required = false,
       disabled,
+      readOnly,
       size,
       variant,
       labelVariant,
@@ -335,6 +339,7 @@ export const ManualAddressInput = createStyledHOC(
         variant={variant}
         required={options.required ?? false}
         disabled={(disabled ?? false) || (options.disabled ?? false)}
+        readOnly={readOnly}
         validate={options.validate}>
         <Field.Label variant={labelVariant}>{label}</Field.Label>
         <Input size={size} variant={variant}>
@@ -367,6 +372,7 @@ export const ManualAddressInput = createStyledHOC(
             variant={variant}
             required={required && format.stateRequired}
             disabled={disabled}
+            readOnly={readOnly}
             items={stateItems}>
             <Field.Label variant={labelVariant}>
               {format.stateLabel}
@@ -422,6 +428,7 @@ export const ManualAddressInput = createStyledHOC(
           variant={variant}
           required={required}
           disabled={disabled}
+          readOnly={readOnly}
           items={countryItems}>
           <Field.Label variant={labelVariant}>Country</Field.Label>
           <Select size={size} variant={variant}>

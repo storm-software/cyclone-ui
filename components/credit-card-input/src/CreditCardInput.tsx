@@ -759,6 +759,7 @@ const createCreditCardPart = (
       forwardedRef
     ) => {
       const formControl = useFormControl();
+      const readOnly = props.readOnly ?? formControl?.readOnly ?? false;
       const { values, setValue } = use(CreditCardInputContext);
 
       // Inside a `Field`, the field holds the (parsed) value.
@@ -803,10 +804,11 @@ const createCreditCardPart = (
 
       const handleInput = useCallback<InputChangeEventHandler>(
         event => {
+          if (readOnly) return;
           setLocalValue(rule.parse?.(event.detail) ?? event.detail);
           onInput?.(event);
         },
-        [onInput]
+        [onInput, readOnly]
       );
 
       const password = rule.passwordDelay !== undefined;
@@ -816,6 +818,7 @@ const createCreditCardPart = (
         <Control
           ref={forwardedRef}
           {...props}
+          readOnly={readOnly}
           {...(password && { delay })}
           onInput={handleInput}>
           <Control.TextBox>

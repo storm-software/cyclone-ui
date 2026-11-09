@@ -567,6 +567,7 @@ const ColorPickerImpl = createStyledHOC(
     const formControl = useFormControl();
     const size = props.size ?? formControl?.size ?? "md";
     const disabled = props.disabled ?? formControl?.disabled ?? false;
+    const readOnly = props.readOnly ?? formControl?.readOnly ?? false;
 
     // Float the field's label past the swatch trigger and separator, where
     // the text starts. Runs after `Input`'s own (floating) defaults, as a
@@ -604,6 +605,7 @@ const ColorPickerImpl = createStyledHOC(
     const formOnChange = formControl?.onChange;
     const setColor = useCallback(
       (next: Color | null) => {
+        if (readOnly) return;
         lastColorRef.current = next;
         setLocalValue(next);
         if (onChange) {
@@ -612,7 +614,7 @@ const ColorPickerImpl = createStyledHOC(
           formOnChange?.(next ? formatColor(next) : null);
         }
       },
-      [formOnChange, onChange]
+      [formOnChange, onChange, readOnly]
     );
 
     // The text being typed, applied live whenever it parses; reformatted on
@@ -620,13 +622,14 @@ const ColorPickerImpl = createStyledHOC(
     const [draft, setDraft] = useState<string | null>(null);
     const handleInput = useCallback<InputChangeEventHandler>(
       event => {
+        if (readOnly) return;
         setDraft(event.detail);
         const next = toColor(event.detail);
         if (next) {
           setColor(next);
         }
       },
-      [setColor]
+      [setColor, readOnly]
     );
     const commitDraft = () => {
       if (draft !== null && !draft.trim()) {
@@ -640,10 +643,11 @@ const ColorPickerImpl = createStyledHOC(
     const formOnBlur = formControl?.onBlur;
     const handleOpenChange = useCallback(
       (next: boolean) => {
+        if (next && readOnly) return;
         setOpen(next);
         (next ? formOnFocus : formOnBlur)?.();
       },
-      [formOnBlur, formOnFocus]
+      [formOnBlur, formOnFocus, readOnly]
     );
 
     const context = useMemo(
@@ -655,7 +659,7 @@ const ColorPickerImpl = createStyledHOC(
     return (
       <ColorPickerContext value={context}>
         <Popover
-          open={open && !disabled}
+          open={open && !disabled && !readOnly}
           onOpenChange={handleOpenChange}
           placement="bottom-start"
           // Floating UI applies the offset on whichever side the popover flips to.
@@ -666,6 +670,7 @@ const ColorPickerImpl = createStyledHOC(
               {...props}
               size={size}
               disabled={disabled}
+              readOnly={readOnly}
               focused={props.focused ?? (open || undefined)}
               onBlur={open ? noop : props.onBlur}
               onChange={handleInput}>

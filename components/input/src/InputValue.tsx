@@ -81,6 +81,7 @@ export const InputValue = createStyledHOC(
   ) => {
     const {
       disabled: contextDisabled,
+      readOnly: contextReadOnly,
       name: contextName,
       labelPlacement,
       size: contextSize,
@@ -151,6 +152,7 @@ export const InputValue = createStyledHOC(
       ...rest
     } = inProps;
     const disabled = inProps.disabled ?? contextDisabled;
+    const readOnly = inProps.readOnly ?? contextReadOnly;
     const name = inProps.name ?? contextName;
 
     const ref =
@@ -219,6 +221,7 @@ export const InputValue = createStyledHOC(
       autoComplete,
       inputMode,
       disabled,
+      readOnly,
       caretColor,
       enterKeyHint,
       style: {
@@ -309,6 +312,7 @@ export const InputValue = createStyledHOC(
           ref={composedRefs}
           name={name}
           disabled={disabled}
+          readOnly={readOnly}
           id={name}
           style={{
             ...finalProps.style,

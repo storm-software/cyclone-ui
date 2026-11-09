@@ -386,6 +386,7 @@ const DatePickerControlImpl = createStyledHOC(
       name = formControl?.name,
       size = formControl?.size,
       disabled = formControl?.disabled,
+      readOnly = formControl?.readOnly ?? false,
       focused = formControl?.focused,
       mode = "single",
       separator = "/",
@@ -451,15 +452,17 @@ const DatePickerControlImpl = createStyledHOC(
 
     const handleChange = useCallback(
       (event: CustomEvent<Date | null>) => {
+        if (readOnly) return;
         setInputValue(format(event.detail, separator));
         formOnChange?.(event.detail);
         formOnBlur?.();
       },
-      [formOnBlur, formOnChange, separator]
+      [formOnBlur, formOnChange, separator, readOnly]
     );
 
     const handleDatesChange = useCallback(
       (event: CustomEvent<Date[]>) => {
+        if (readOnly) return;
         setInputValue(formatRange(event.detail, separator));
         formOnChange?.(event.detail);
 
@@ -467,11 +470,12 @@ const DatePickerControlImpl = createStyledHOC(
           formOnBlur?.();
         }
       },
-      [formOnBlur, formOnChange, separator]
+      [formOnBlur, formOnChange, separator, readOnly]
     );
 
     const handleInput = useCallback(
       (event: CustomEvent<string>) => {
+        if (readOnly) return;
         const value = event.detail;
         setInputValue(value);
 
@@ -483,7 +487,7 @@ const DatePickerControlImpl = createStyledHOC(
           formOnChange?.(value);
         }
       },
-      [formOnChange, mode, separator]
+      [formOnChange, mode, separator, readOnly]
     );
 
     const handleBlur = useCallback(() => {
@@ -493,6 +497,7 @@ const DatePickerControlImpl = createStyledHOC(
 
     const handleKeyDown = useCallback(
       (event: any) => {
+        if (readOnly) return;
         if (
           event.defaultPrevented ||
           (event.key !== "ArrowUp" && event.key !== "ArrowDown")
@@ -550,7 +555,7 @@ const DatePickerControlImpl = createStyledHOC(
           formOnChange?.(nextDate);
         }
       },
-      [formOnChange, mode, separator]
+      [formOnChange, mode, separator, readOnly]
     );
 
     const fieldState = useMemo(
@@ -561,12 +566,14 @@ const DatePickerControlImpl = createStyledHOC(
       [formControl, handleKeyDown, inputValue]
     );
 
-    const onChange =
-      onChangeProp ??
-      (formControl && mode === "single" ? handleChange : undefined);
-    const onDatesChange =
-      onDatesChangeProp ??
-      (formControl && mode === "range" ? handleDatesChange : undefined);
+    const onChange = readOnly
+      ? undefined
+      : (onChangeProp ??
+        (formControl && mode === "single" ? handleChange : undefined));
+    const onDatesChange = readOnly
+      ? undefined
+      : (onDatesChangeProp ??
+        (formControl && mode === "range" ? handleDatesChange : undefined));
     const onInput = onInputProp ?? (formControl ? handleInput : undefined);
     const onFocus = onFocusProp ?? formControl?.onFocus;
     const onBlur = onBlurProp ?? (formControl ? handleBlur : undefined);
@@ -581,13 +588,14 @@ const DatePickerControlImpl = createStyledHOC(
 
     const handleOpenChanged = useCallback(
       (open: boolean, _via?: "hover" | "press") => {
+        if (open && readOnly) return;
         if (open) {
           onFocus?.();
         } else {
           onBlur?.();
         }
       },
-      [onFocus, onBlur]
+      [onFocus, onBlur, readOnly]
     );
 
     return (
@@ -607,7 +615,7 @@ const DatePickerControlImpl = createStyledHOC(
           variant={variant}>
           <Popover
             keepChildrenMounted={true}
-            open={!!focused}
+            open={!!focused && !readOnly}
             onOpenChange={handleOpenChanged}
             placement="bottom"
             // Floating UI applies the offset on whichever side the popover flips to.
@@ -619,6 +627,7 @@ const DatePickerControlImpl = createStyledHOC(
                 name={name}
                 size={size}
                 disabled={disabled}
+                readOnly={readOnly}
                 focused={focused}
                 variant={variant}
                 onChange={noop}

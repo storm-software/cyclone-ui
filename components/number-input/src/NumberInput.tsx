@@ -73,6 +73,7 @@ const NumberInputImpl = createStyledHOC(
     forwardedRef
   ) => {
     const formControl = useFormControl();
+    const readOnly = props.readOnly ?? formControl?.readOnly ?? false;
     const [localValue, setLocalValue] = useState(defaultValue);
     const value = valueProp ?? (formControl ? formControl.value : localValue);
     const displayValue = valueProp ?? (formControl ? undefined : localValue);
@@ -80,6 +81,7 @@ const NumberInputImpl = createStyledHOC(
     const formOnChange = formControl?.onChange;
     const handleChange = useCallback<InputChangeEventHandler>(
       event => {
+        if (readOnly) return;
         setLocalValue(event.detail);
         if (onChange) {
           onChange(event);
@@ -87,7 +89,7 @@ const NumberInputImpl = createStyledHOC(
           formOnChange?.(event.detail);
         }
       },
-      [formOnChange, onChange]
+      [formOnChange, onChange, readOnly]
     );
     const context = useMemo(
       () => ({
@@ -102,7 +104,11 @@ const NumberInputImpl = createStyledHOC(
 
     return (
       <NumberInputContext value={context}>
-        <Input ref={forwardedRef} {...props} onChange={handleChange}>
+        <Input
+          ref={forwardedRef}
+          {...props}
+          readOnly={readOnly}
+          onChange={handleChange}>
           {children}
         </Input>
       </NumberInputContext>
@@ -114,16 +120,17 @@ const NumberInputImpl = createStyledHOC(
 const NumberInputTextBox = createStyledHOC(
   Input.TextBox,
   ({ children, ...props }, forwardedRef) => {
-    const { disabled } = InputContext.useStyledContext();
+    const { disabled, readOnly } = InputContext.useStyledContext();
     const { increment, value, change } = use(NumberInputContext);
     const updateValue = useCallback(
       (direction: 1 | -1) => {
+        if (readOnly) return;
         const numericValue = Number(value);
         const currentValue = Number.isFinite(numericValue) ? numericValue : 0;
 
         change(String(currentValue + direction * increment));
       },
-      [change, increment, value]
+      [change, increment, value, readOnly]
     );
 
     return (

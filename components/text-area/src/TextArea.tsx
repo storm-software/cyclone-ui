@@ -174,7 +174,10 @@ export const TextArea = createStyledHOC(
   (
     props: GetProps<typeof TextAreaFrame> &
       Partial<
-        Pick<InputContextProps, "size" | "focused" | "variant" | "disabled">
+        Pick<
+          InputContextProps,
+          "size" | "focused" | "variant" | "disabled" | "readOnly"
+        >
       >,
     forwardedRef
   ) => {
@@ -191,6 +194,7 @@ export const TextArea = createStyledHOC(
       render: _render,
       focused: focusedProp = formControl?.focused,
       disabled = formControl?.disabled ?? false,
+      readOnly = formControl?.readOnly ?? false,
       placeholderTextColor = "primary-disabled",
       onBlur = formOnBlur
         ? // Focus moving within the text area is not a blur.
@@ -281,6 +285,7 @@ export const TextArea = createStyledHOC(
         variant={variant}
         labelPlacement={labelPlacement}
         disabled={disabled}
+        readOnly={readOnly}
         // `FieldNotchedOutline` draws a notched field's border instead.
         borderColor={labelPlacement === "border" ? "transparent" : borderColor}
         boxShadow={`focus-visible:${

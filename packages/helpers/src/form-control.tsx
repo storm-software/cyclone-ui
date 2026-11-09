@@ -78,6 +78,7 @@ export interface FormControlState {
   size?: FormControlSize;
   theme?: string;
   disabled?: boolean;
+  readOnly?: boolean;
   required?: boolean;
   focused?: boolean;
   clearable?: boolean;

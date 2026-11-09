@@ -160,6 +160,7 @@ const SearchInputGroup = createStyledHOC(
     useFieldOptions(CLEARABLE_BY_DEFAULT);
 
     const formControl = useFormControl();
+    const readOnly = props.readOnly ?? formControl?.readOnly ?? false;
     const [localValue, setLocalValue] = useState(defaultValue ?? "");
     const value = valueProp ?? formControl?.formattedValue ?? localValue;
 
@@ -168,6 +169,7 @@ const SearchInputGroup = createStyledHOC(
     const formOnChange = formControl?.onChange;
     const onChange = useCallback<InputChangeEventHandler>(
       event => {
+        if (readOnly) return;
         setLocalValue(event.detail);
         if (onChangeProp) {
           return onChangeProp(event);
@@ -175,7 +177,7 @@ const SearchInputGroup = createStyledHOC(
 
         formOnChange?.(event.detail);
       },
-      [formOnChange, onChangeProp]
+      [formOnChange, onChangeProp, readOnly]
     );
 
     const contextValue = useMemo(
@@ -185,7 +187,11 @@ const SearchInputGroup = createStyledHOC(
 
     return (
       <SearchInputContext value={contextValue}>
-        <Input ref={forwardedRef} {...props} onChange={onChange}>
+        <Input
+          ref={forwardedRef}
+          {...props}
+          readOnly={readOnly}
+          onChange={onChange}>
           {children}
         </Input>
       </SearchInputContext>
@@ -216,7 +222,7 @@ const SearchInputTextBox = createStyledHOC(
     }: SearchInputTextBoxProps,
     forwardedRef
   ) => {
-    const { disabled, size } = InputContext.useStyledContext();
+    const { disabled, readOnly, size } = InputContext.useStyledContext();
     const { onChange } = useInputBehavior();
     const { suggestions, filterSuggestions, renderSuggestion, value } =
       use(SearchInputContext);
@@ -241,7 +247,8 @@ const SearchInputTextBox = createStyledHOC(
           : EMPTY_SUGGESTIONS,
       [filterSuggestions, normalizedValue, suggestions]
     );
-    const isOpen = open && !disabled && filteredSuggestions.length > 0;
+    const isOpen =
+      open && !disabled && !readOnly && filteredSuggestions.length > 0;
     const activeSuggestion = filteredSuggestions[activeIndex];
 
     const handleInput = useCallback((event: CustomEvent<string>) => {

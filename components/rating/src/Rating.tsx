@@ -126,7 +126,7 @@ export const Rating = forwardRef<TamaguiElement, RatingProps>(
       precision = 1,
       onChange: onChangeProp,
       onChangeActive,
-      readOnly = false,
+      readOnly = formControl?.readOnly ?? false,
       disabled = formControl?.disabled ?? false,
       size = formControl?.size ?? "md",
       icon: Icon = Star,

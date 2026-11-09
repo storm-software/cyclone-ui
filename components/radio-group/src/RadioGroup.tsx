@@ -84,6 +84,7 @@ export type RadioGroupIndicatorStyle = "check" | "circle" | "none";
 // A plain React context: a nested styled context Provider would reset `size`
 // to its defaults.
 const IndicatorStyleContext = createContext<RadioGroupIndicatorStyle>("check");
+const ReadOnlyContext = createContext(false);
 
 // Out of sight, the radio still gives the item its role, arrow-key navigation
 // and form value.
@@ -281,6 +282,7 @@ const RadioGroupItemContainer = createStyledHOC(
     const { size } = RadioGroupContext.useStyledContext();
     const group = use(TamaguiRadioGroupContext);
     const indicatorStyle = use(IndicatorStyleContext);
+    const readOnly = use(ReadOnlyContext);
     const hasValidationMessage = useFieldHasValidationMessage();
     const id = useId();
     const itemValue = String(value);
@@ -311,12 +313,13 @@ const RadioGroupItemContainer = createStyledHOC(
     const onChange = group.onChange;
     const handlePress = useCallback(
       (event: GestureResponderEvent) => {
+        if (readOnly) return;
         onPress?.(event);
         if (!disabled && !selected) {
           onChange?.(itemValue);
         }
       },
-      [onPress, disabled, selected, onChange, itemValue]
+      [onPress, disabled, readOnly, selected, onChange, itemValue]
     );
 
     return (
@@ -403,8 +406,11 @@ const RadioGroupItemContainer = createStyledHOC(
           <RadioGroupItemCheck
             top={getSpaced("2xl") * scale}
             right={getSpaced("3xl") * scale}>
-            <Confirm size={checkSize} variant="bold" color={
-              disabled ? "primary-disabled" : "primary-active"} />
+            <Confirm
+              size={checkSize}
+              variant="bold"
+              color={disabled ? "primary-disabled" : "primary-active"}
+            />
           </RadioGroupItemCheck>
         )}
       </RadioGroupItemContainerFrame>
@@ -456,6 +462,7 @@ const RadioGroupImpl = createStyledHOC(
       size?: FormControlSize;
       /** How a selected item is marked. Defaults to `"check"`. */
       indicatorStyle?: RadioGroupIndicatorStyle;
+      readOnly?: boolean;
     },
     forwardedRef
   ) => {
@@ -482,6 +489,7 @@ const RadioGroupImpl = createStyledHOC(
       name = formControl?.name,
       required,
       disabled = formControl?.disabled,
+      readOnly = formControl?.readOnly ?? false,
       value = formControl?.formattedValue,
       defaultValue = formControl?.defaultValue,
       size = formControl?.size ?? contextSize,
@@ -496,6 +504,7 @@ const RadioGroupImpl = createStyledHOC(
     return (
       <RadioGroupFrame
         id={name}
+        aria-readonly={readOnly || undefined}
         ref={forwardedRef}
         size={size}
         {...rest}
@@ -504,37 +513,44 @@ const RadioGroupImpl = createStyledHOC(
         // The radios' values are strings, so report the field item's own
         // value (which may be a number or boolean).
         onValueChange={next =>
+          !readOnly &&
           onValueChange?.(
             (items?.find(item => String(item.value) === next)?.value ??
               next) as string
           )
         }
         // Stay controlled inside a form control, uncontrolled outside of one.
-        value={formControl || value != null ? String(value ?? "") : undefined}
+        value={
+          formControl || readOnly || value != null
+            ? String(value ?? defaultValue ?? "")
+            : undefined
+        }
         defaultValue={defaultValue == null ? undefined : String(defaultValue)}
         required={required}
         disabled={disabled}>
-        <IndicatorStyleContext value={indicatorStyle}>
-          <YStack
-            justifyContent="flex-start"
-            gap="2xl"
-            width="100%"
-            paddingHorizontal="max-sm:5xl"
-            paddingVertical="max-sm:6xl">
-            {/* Without children, the form control's items are rendered. */}
-            {children ??
-              items?.map((item, i) => (
-                <RadioGroupItemContainer
-                  // eslint-disable-next-line react/no-array-index-key
-                  key={i}
-                  value={item.value}
-                  description={item.description}
-                  disabled={item.disabled}>
-                  {item.name}
-                </RadioGroupItemContainer>
-              ))}
-          </YStack>
-        </IndicatorStyleContext>
+        <ReadOnlyContext value={readOnly}>
+          <IndicatorStyleContext value={indicatorStyle}>
+            <YStack
+              justifyContent="flex-start"
+              gap="2xl"
+              width="100%"
+              paddingHorizontal="max-sm:5xl"
+              paddingVertical="max-sm:6xl">
+              {/* Without children, the form control's items are rendered. */}
+              {children ??
+                items?.map((item, i) => (
+                  <RadioGroupItemContainer
+                    // eslint-disable-next-line react/no-array-index-key
+                    key={i}
+                    value={item.value}
+                    description={item.description}
+                    disabled={item.disabled}>
+                    {item.name}
+                  </RadioGroupItemContainer>
+                ))}
+            </YStack>
+          </IndicatorStyleContext>
+        </ReadOnlyContext>
       </RadioGroupFrame>
     );
   },

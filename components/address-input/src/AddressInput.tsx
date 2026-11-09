@@ -190,6 +190,7 @@ const AddressInputSearch = createStyledHOC(
 
     // Same resolution as `SearchInput`, which needs the text to look it up.
     const formControl = useFormControl();
+    const readOnly = props.readOnly ?? formControl?.readOnly ?? false;
     const size = props.size ?? formControl?.size ?? "md";
     const renderSuggestion = useCallback(
       (label: string, query: string) =>
@@ -204,6 +205,7 @@ const AddressInputSearch = createStyledHOC(
     const formOnChange = formControl?.onChange;
     const onChange = useCallback<NonNullable<SearchInputProps["onChange"]>>(
       event => {
+        if (readOnly) return;
         setLocalValue(event.detail);
         if (onChangeProp) {
           return onChangeProp(event);
@@ -211,7 +213,7 @@ const AddressInputSearch = createStyledHOC(
 
         formOnChange?.(event.detail);
       },
-      [formOnChange, onChangeProp]
+      [formOnChange, onChangeProp, readOnly]
     );
 
     const selected = useMemo(
@@ -227,7 +229,7 @@ const AddressInputSearch = createStyledHOC(
     const query = value.trim();
     const isSelected = Boolean(selected);
     useEffect(() => {
-      if (!query || isSelected) {
+      if (!query || isSelected || readOnly) {
         return;
       }
 
@@ -259,7 +261,7 @@ const AddressInputSearch = createStyledHOC(
         clearTimeout(timeout);
         controller.abort();
       };
-    }, [endpoint, isSelected, query, setMessage]);
+    }, [endpoint, isSelected, query, readOnly, setMessage]);
 
     const suggestions = useMemo(
       () => options.map(option => option.label),
@@ -270,6 +272,7 @@ const AddressInputSearch = createStyledHOC(
       <SearchInput
         ref={forwardedRef}
         {...props}
+        readOnly={readOnly}
         value={value}
         onChange={onChange}
         suggestions={suggestions}

@@ -54,6 +54,7 @@ export const DEFAULT_FIELD_OPTIONS: FieldOptionsState = {
   isEqual,
   required: false,
   disabled: false,
+  readOnly: false,
   clearable: false,
   initialValue: null
 } as const;
@@ -132,6 +133,9 @@ export const FieldApi = createMoleculeApi(
     const disabledStateAtom = focusAtom(form.disabledFields, optic =>
       optic.path(...path)
     ) as unknown as FieldAtoms<TFieldValue>["disabled"];
+    const readOnlyStateAtom = focusAtom(form.readOnlyFields, optic =>
+      optic.path(...path)
+    ) as unknown as FieldAtoms<TFieldValue>["readOnly"];
     const requiredAtom = atom<
       InferFieldState<TFieldValue, boolean>,
       [SetStateAction<InferFieldState<TFieldValue, boolean>>],
@@ -150,6 +154,16 @@ export const FieldApi = createMoleculeApi(
       get => get(disabledStateAtom) ?? get(optionsAtom).disabled,
       (_get, set, update) => {
         set(disabledStateAtom, update);
+      }
+    );
+    const readOnlyAtom = atom<
+      InferFieldState<TFieldValue, boolean>,
+      [SetStateAction<InferFieldState<TFieldValue, boolean>>],
+      void
+    >(
+      get => get(readOnlyStateAtom) ?? get(optionsAtom).readOnly,
+      (_get, set, update) => {
+        set(readOnlyStateAtom, update);
       }
     );
     const clearableAtom = atom(get => get(optionsAtom).clearable);
@@ -315,6 +329,7 @@ export const FieldApi = createMoleculeApi(
       focused: focusedAtom,
       required: requiredAtom,
       disabled: disabledAtom,
+      readOnly: readOnlyAtom,
       clearable: clearableAtom,
       touched: touchedAtom,
       blurred: blurredAtom,
