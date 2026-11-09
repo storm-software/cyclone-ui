@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Icons
 
+## [0.0.62](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.62) (11/09/2026)
+
+### Features
+
+- **navigation-sidebar:** Initial check-in of the Navigation Sidebar component ([8a4892036](https://github.com/storm-software/cyclone-ui/commit/8a4892036))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.64**
+
 ## [0.0.61](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.61) (11/09/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Terrain Footer
 
+## [0.0.27](https://github.com/storm-software/cyclone-ui/releases/tag/terrain-footer%400.0.27) (11/09/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.63**
+- Updated **footer** to **v0.0.66**
+- Updated **heading-text** to **v0.5.64**
+- Updated **icons** to **v0.0.62**
+- Updated **link** to **v0.5.67**
+
 ## [0.0.26](https://github.com/storm-software/cyclone-ui/releases/tag/terrain-footer%400.0.26) (11/09/2026)
 
 ### Updated Dependencies

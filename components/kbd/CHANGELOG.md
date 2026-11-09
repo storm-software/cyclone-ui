@@ -2,6 +2,14 @@
 
 # Changelog for Cyclone UI - Kbd
 
+## [0.0.14](https://github.com/storm-software/cyclone-ui/releases/tag/kbd%400.0.14) (11/09/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.63**
+- Updated **button** to **v0.6.67**
+- Updated **icons** to **v0.0.62**
+
 ## [0.0.13](https://github.com/storm-software/cyclone-ui/releases/tag/kbd%400.0.13) (11/09/2026)
 
 ### Updated Dependencies

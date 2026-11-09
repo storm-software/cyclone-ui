@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Manual Address Input
 
+## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/manual-address-input%400.0.5) (11/09/2026)
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.67**
+- Updated **form** to **v0.9.65**
+- Updated **helpers** to **v0.3.64**
+- Updated **input** to **v0.6.67**
+- Updated **select** to **v0.6.68**
+- Updated **state** to **v0.0.66**
+
 ## [0.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/manual-address-input%400.0.4) (11/09/2026)
 
 ### Features

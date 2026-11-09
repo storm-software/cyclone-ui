@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - ESLint Plugin
 
+## [0.0.53](https://github.com/storm-software/cyclone-ui/releases/tag/eslint-plugin%400.0.53) (11/09/2026)
+
+### Features
+
+- **navigation-sidebar:** Initial check-in of the Navigation Sidebar component ([8a4892036](https://github.com/storm-software/cyclone-ui/commit/8a4892036))
+
 ## [0.0.51](https://github.com/storm-software/cyclone-ui/releases/tag/eslint-plugin%400.0.51) (11/08/2026)
 
 ### Features
