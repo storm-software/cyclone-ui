@@ -389,6 +389,9 @@
     },
     {
       "path": "./packages/vite"
+    },
+    {
+      "path": "./components/navigation-sidebar"
     }
   ],
   "files": []

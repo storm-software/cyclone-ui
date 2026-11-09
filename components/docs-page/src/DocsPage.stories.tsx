@@ -26,11 +26,9 @@ import {
   HeadingTitleText
 } from "@cyclone-ui/heading-text";
 import {
-  ArrowsVertical,
   ChatRound,
   ChatRoundDots,
   ChevronDown,
-  ChevronRight,
   Cog,
   Construction,
   DocumentCode,
@@ -45,99 +43,12 @@ import {
   TextBoxMultiple
 } from "@cyclone-ui/icons";
 import { InlineCodeText } from "@cyclone-ui/inline-code-text";
+import { NavigationSidebar } from "@cyclone-ui/navigation-sidebar";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { styled, View } from "@tamagui/core";
+import { View } from "@tamagui/core";
 import type { ReactNode } from "react";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 import { DocsPage } from "./DocsPage";
-
-const StoryNavItemFrame = styled(View, {
-  render: "a",
-  flexDirection: "row",
-  alignItems: "center",
-  gap: "2xl",
-  paddingHorizontal: "2xl",
-  paddingVertical: "xl",
-  borderRadius: "lg",
-  backgroundColor: "transparent hover:secondary",
-  variants: {
-    active: {
-      true: {
-        backgroundColor: "secondary"
-      }
-    }
-  } as const
-});
-
-const StoryNavItem = ({
-  icon,
-  end,
-  active,
-  children
-}: {
-  icon?: ReactNode;
-  end?: ReactNode;
-  active?: boolean;
-  children: string;
-}) => (
-  <StoryNavItemFrame
-    {...{ href: `#${children.toLowerCase().replace(/\s+/g, "-")}` }}
-    style={{ textDecorationLine: "none" }}
-    active={active}
-    aria-current={active ? "page" : undefined}>
-    {icon}
-    <BodyText
-      render="span"
-      size="sm"
-      flexGrow={1}
-      color={active ? "primary" : "ink"}
-      fontWeight={active ? "600" : undefined}>
-      {children}
-    </BodyText>
-    {end}
-  </StoryNavItemFrame>
-);
-
-const StoryNavGroupLabel = styled(BodyText, {
-  render: "span",
-  size: "sm",
-  color: "ink",
-  fontWeight: "600",
-  paddingHorizontal: "2xl",
-  paddingTop: "7xl",
-  paddingBottom: "md"
-});
-
-const StoryNavFolderItems = styled(View, {
-  marginLeft: "4xl",
-  paddingLeft: "lg",
-  borderLeftWidth: 1,
-  borderLeftColor: "hairline"
-});
-
-const StoryBoxButton = styled(View, {
-  render: "button",
-  flexDirection: "row",
-  alignItems: "center",
-  gap: "2xl",
-  height: 40,
-  paddingHorizontal: "2xl",
-  cursor: "pointer",
-  backgroundColor: "surface hover:secondary",
-  borderWidth: 1,
-  borderColor: "hairline",
-  borderRadius: "xl"
-});
-
-const StoryKey = styled(BodyText, {
-  render: "kbd",
-  size: "sm",
-  color: "ink",
-  paddingHorizontal: "md",
-  borderWidth: 1,
-  borderColor: "hairline",
-  borderRadius: "sm"
-});
 
 const StoryIconButton = ({
   label,
@@ -156,85 +67,104 @@ const StoryIconButton = ({
   </Button>
 );
 
+const navIcon = (Icon: typeof FileDocument) => (
+  <Icon aria-hidden={true} size={16} color="currentColor" />
+);
+
 const StorySideNav = () => (
   <DocsPage.SideNav>
-    <DocsPage.SideNav.Header>
-      <View alignItems="center" flexDirection="row" gap="xl">
-        <View
-          width={24}
-          height={24}
-          alignItems="center"
-          justifyContent="center"
-          backgroundColor="primary"
-          borderRadius="full">
-          <Lightning size={12} color="on-primary" variant="filled" />
+    <NavigationSidebar render="div">
+      <NavigationSidebar.Header>
+        <View alignItems="center" flexDirection="row" gap="xl">
+          <View
+            width={24}
+            height={24}
+            alignItems="center"
+            justifyContent="center"
+            backgroundColor="primary"
+            borderRadius="full">
+            <Lightning size={12} color="on-primary" variant="filled" />
+          </View>
+          <BodyText
+            render="span"
+            color="emphasis"
+            fontWeight="700"
+            flexGrow={1}>
+            Cyclone UI
+          </BodyText>
+          <DocsPage.SideNavToggle />
         </View>
-        <BodyText render="span" color="emphasis" fontWeight="700" flexGrow={1}>
-          Cyclone UI
-        </BodyText>
-        <DocsPage.SideNavToggle />
-      </View>
-      <StoryBoxButton aria-label="Switch documentation">
-        <Grid3 aria-hidden={true} size={16} color="primary" />
-        <BodyText render="span" size="sm" color="emphasis" flexGrow={1}>
-          Cyclone Core
-        </BodyText>
-        <ArrowsVertical aria-hidden={true} size={14} color="ink" />
-      </StoryBoxButton>
-      <StoryBoxButton aria-label="Search">
-        <Search aria-hidden={true} size={16} color="ink" />
-        <BodyText render="span" size="sm" color="ink" flexGrow={1}>
-          Search
-        </BodyText>
-        <StoryKey>Ctrl</StoryKey>
-        <StoryKey>K</StoryKey>
-      </StoryBoxButton>
-    </DocsPage.SideNav.Header>
-    <DocsPage.SideNav.Body>
-      <StoryNavGroupLabel paddingTop="md">Guide</StoryNavGroupLabel>
-      <StoryNavItem icon={<FileDocument aria-hidden={true} size={16} />}>
-        Introduction
-      </StoryNavItem>
-      <StoryNavItem
-        icon={<Search aria-hidden={true} size={16} />}
-        end={<ChevronRight aria-hidden={true} size={14} color="ink" />}>
-        Search
-      </StoryNavItem>
-      <StoryNavGroupLabel>API References</StoryNavGroupLabel>
-      <StoryNavItem icon={<ListIndented aria-hidden={true} size={16} />}>
-        Page Tree
-      </StoryNavItem>
-      <StoryNavItem
-        icon={<ChatRoundDots aria-hidden={true} size={16} />}
-        end={<ChevronRight aria-hidden={true} size={14} color="ink" />}>
-        Internationalization
-      </StoryNavItem>
-      <StoryNavItem
-        icon={<Cog aria-hidden={true} size={16} />}
-        end={<ChevronRight aria-hidden={true} size={14} color="ink" />}>
-        Components
-      </StoryNavItem>
-      <StoryNavItem
-        icon={<Construction aria-hidden={true} size={16} />}
-        end={<ChevronRight aria-hidden={true} size={14} color="ink" />}>
-        Utilities
-      </StoryNavItem>
-      <StoryNavItem
-        icon={<DocumentCode aria-hidden={true} size={16} />}
-        end={<ChevronDown aria-hidden={true} size={14} color="ink" />}>
-        MDX Plugins
-      </StoryNavItem>
-      <StoryNavFolderItems>
-        <StoryNavItem active={true}>Headings</StoryNavItem>
-        {storyPlugins.map(plugin => (
-          <StoryNavItem key={plugin}>{plugin}</StoryNavItem>
-        ))}
-      </StoryNavFolderItems>
-      <StoryNavGroupLabel>Packages</StoryNavGroupLabel>
-      <StoryNavItem icon={<FolderZip aria-hidden={true} size={16} />}>
-        Installation
-      </StoryNavItem>
-    </DocsPage.SideNav.Body>
+        <NavigationSidebar.Switcher
+          title="Cyclone Core"
+          description="v3 documentation"
+          logo={<Grid3 aria-hidden={true} size={16} color="on-primary" />}
+          aria-label="Switch documentation"
+        />
+        <NavigationSidebar.Search shortcut={["Ctrl", "K"]} />
+      </NavigationSidebar.Header>
+      <NavigationSidebar.Body>
+        <NavigationSidebar.Group label="Guide">
+          <NavigationSidebar.Item
+            href="#introduction"
+            icon={navIcon(FileDocument)}>
+            Introduction
+          </NavigationSidebar.Item>
+          <NavigationSidebar.Folder label="Search" icon={navIcon(Search)}>
+            <NavigationSidebar.Item href="#search-dialog">
+              Search Dialog
+            </NavigationSidebar.Item>
+          </NavigationSidebar.Folder>
+        </NavigationSidebar.Group>
+        <NavigationSidebar.Group label="API References">
+          <NavigationSidebar.Item
+            href="#page-tree"
+            icon={navIcon(ListIndented)}>
+            Page Tree
+          </NavigationSidebar.Item>
+          <NavigationSidebar.Folder
+            label="Internationalization"
+            icon={navIcon(ChatRoundDots)}>
+            <NavigationSidebar.Item href="#i18n-setup">
+              Setup
+            </NavigationSidebar.Item>
+          </NavigationSidebar.Folder>
+          <NavigationSidebar.Folder label="Components" icon={navIcon(Cog)}>
+            <NavigationSidebar.Item href="#components-overview">
+              Overview
+            </NavigationSidebar.Item>
+          </NavigationSidebar.Folder>
+          <NavigationSidebar.Folder
+            label="Utilities"
+            icon={navIcon(Construction)}>
+            <NavigationSidebar.Item href="#utilities-overview">
+              Overview
+            </NavigationSidebar.Item>
+          </NavigationSidebar.Folder>
+          <NavigationSidebar.Folder
+            label="MDX Plugins"
+            icon={navIcon(DocumentCode)}
+            defaultOpen={true}>
+            <NavigationSidebar.Item href="#headings" active={true}>
+              Headings
+            </NavigationSidebar.Item>
+            {storyPlugins.map(plugin => (
+              <NavigationSidebar.Item
+                key={plugin}
+                href={`#${plugin.toLowerCase().replace(/\s+/g, "-")}`}>
+                {plugin}
+              </NavigationSidebar.Item>
+            ))}
+          </NavigationSidebar.Folder>
+        </NavigationSidebar.Group>
+        <NavigationSidebar.Group label="Packages">
+          <NavigationSidebar.Item
+            href="#installation"
+            icon={navIcon(FolderZip)}>
+            Installation
+          </NavigationSidebar.Item>
+        </NavigationSidebar.Group>
+      </NavigationSidebar.Body>
+    </NavigationSidebar>
   </DocsPage.SideNav>
 );
 

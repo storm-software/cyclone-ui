@@ -14,6 +14,9 @@
   },
   "references": [
     {
+      "path": "../navigation-sidebar"
+    },
+    {
       "path": "../table-of-contents"
     },
     {

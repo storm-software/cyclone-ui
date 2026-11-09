@@ -142,6 +142,10 @@ interface FileExtensionIconExtraProps {
   extension: string;
 }
 
+type FileExtensionIconRenderProps = GetProps<typeof FileExtensionIconFrame> &
+  Pick<IconProps, "color" | "size" | "variant" | "animated" | "mirrored"> &
+  FileExtensionIconExtraProps;
+
 export const getIconByFileExtension = ({
   extension,
   ...props
@@ -162,7 +166,7 @@ export const FileExtensionIcon = createStyledHOC(
       animated = false,
       mirrored = false,
       ...props
-    }: IconProps & FileExtensionIconExtraProps,
+    }: FileExtensionIconRenderProps,
     forwardedRef
   ) => {
     return (

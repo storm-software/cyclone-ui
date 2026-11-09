@@ -4444,6 +4444,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/navigation-sidebar",
+      jsx: ["NavigationSidebar"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/next-button",
       jsx: ["NextButton"],
       roles: []

@@ -1,0 +1,49 @@
+{
+  "name": "@cyclone-ui/navigation-sidebar",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A NavigationSidebar block for app and docs navigation. A Header holds a workspace Switcher and a Search button with a keyboard shortcut, the scrolling Body holds labeled Groups of Items (icons, counts, active and disabled states) and expandable Folders, and the Footer shows the signed-in Account. It fills its container, so it works on its own or inside Page.SideNav and DocsPage.SideNav.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/navigation-sidebar"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/kbd": "workspace:*",
+    "@cyclone-ui/scroll-view": "workspace:*",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": ["*.css"],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./NavigationSidebar": {
+      "import": "./dist/NavigationSidebar.mjs",
+      "require": "./dist/NavigationSidebar.cjs"
+    },
+    "./*": "./*"
+  }
+}
