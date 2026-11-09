@@ -20,8 +20,8 @@
 
 import { Button } from "@cyclone-ui/button";
 import { ClipboardText, ThemeableIcon } from "@cyclone-ui/icons";
-import { ScrollView } from "@cyclone-ui/scroll-view";
 import { Check } from "@cyclone-ui/icons/vectors";
+import { ScrollView } from "@cyclone-ui/scroll-view";
 import type { TamaguiElement } from "@tamagui/core";
 import {
   createStyledHOC,
@@ -31,7 +31,7 @@ import {
   withStaticProperties
 } from "@tamagui/core";
 import { XStack } from "@tamagui/stacks";
-import { Tabs as TamaguiTabs } from "@tamagui/tabs";
+import { Tabs as TamaguiTabs, useTabsContext } from "@tamagui/tabs";
 import type { GetProps, ViewProps } from "@tamagui/web";
 import type {
   ComponentProps,
@@ -73,10 +73,7 @@ const CODE_BLOCK_STYLES = `
 .cyclone-code-block-viewport .diff.remove { background: color-mix(in srgb, #ef4444 14%, transparent); opacity: .7; }
 .cyclone-code-block-viewport .highlighted.error { background: color-mix(in srgb, #ef4444 14%, transparent); }
 .cyclone-code-block-viewport .highlighted.warning { background: color-mix(in srgb, #eab308 14%, transparent); }
-.cyclone-code-block-tabs-trigger[data-state="active"] { background-color: var(--elevated) !important; border-bottom-color: var(--elevated) !important; }
-.cyclone-code-block-tabs-trigger[data-state="active"]:hover { background-color: var(--elevated) !important; }
 .cyclone-code-block-tabs-trigger[data-state="active"]::after { position: absolute; right: 1px; bottom: -1px; left: 1px; height: 2px; background-color: var(--elevated); content: ""; }
-.cyclone-code-block-tabs-trigger[data-state="active"] > * { color: var(--primary); }
 .cyclone-code-block-tabs-trigger > * { text-box: trim-both cap alphabetic; }
 `;
 
@@ -162,7 +159,7 @@ const CodeBlockHeaderHeading = styled(Text, {
   fontFamily: "display",
   fontSize: "sm",
   lineHeight: "sm",
-  fontWeight: "600"
+  fontWeight: "medium"
 });
 
 // `ScrollView` is a styled HOC; v3 `styled()` over it swallows `className` and
@@ -379,7 +376,7 @@ const CodeBlockImpl = createStyledHOC(
                 dangerouslySetInnerHTML={{ __html: icon }}
               />
             ) : (
-              <ThemeableIcon size="xl" color="subtle">
+              <ThemeableIcon size="xl" color="emphasis">
                 {icon}
               </ThemeableIcon>
             )}
@@ -491,40 +488,56 @@ export type CodeBlockTabsTriggerProps = ComponentProps<typeof TamaguiTabs.Tab>;
 export const CodeBlockTabsTrigger = forwardRef<
   TamaguiElement,
   CodeBlockTabsTriggerProps
->(({ children, ...props }, forwardedRef) => (
-  <TamaguiTabs.Tab
-    ref={forwardedRef}
-    {...props}
-    flexGrow={0}
-    flexShrink={0}
-    paddingHorizontal="2xl"
-    position="relative"
-    zIndex={2}
-    borderWidth={1}
-    borderTopColor="hairline"
-    borderRightColor="hairline"
-    borderLeftColor="hairline"
-    borderBottomColor="hairline"
-    borderTopLeftRadius="container"
-    borderTopRightRadius="container"
-    borderBottomLeftRadius={0}
-    borderBottomRightRadius={0}
-    backgroundColor="canvas hover:canvas-hovered"
-    cursor="pointer"
-    className="cyclone-code-block-tabs-trigger">
-    <Text
-      color="ink"
-      fontFamily="display"
-      fontSize="xs"
-      lineHeight="xs"
-      fontWeight="700"
-      textAlign="center"
-      whiteSpace="nowrap"
-      marginVertical="xl">
-      {children}
-    </Text>
-  </TamaguiTabs.Tab>
-));
+>(({ children, value, ...props }, forwardedRef) => {
+  const active = useTabsContext().value === value;
+
+  return (
+    <TamaguiTabs.Tab
+      ref={forwardedRef}
+      {...props}
+      value={value}
+      transition="200ms"
+      group="cyclone-code-block-tabs-trigger"
+      flexGrow={0}
+      flexShrink={0}
+      paddingHorizontal="2xl"
+      position="relative"
+      zIndex={2}
+      borderWidth={1}
+      borderTopColor="hairline"
+      borderRightColor="hairline"
+      borderLeftColor="hairline"
+      borderBottomColor={active ? "elevated" : "hairline"}
+      borderTopLeftRadius="container"
+      borderTopRightRadius="container"
+      borderBottomLeftRadius={0}
+      borderBottomRightRadius={0}
+      backgroundColor={
+        active
+          ? "elevated hover:elevated press:elevated focus:elevated"
+          : "canvas hover:canvas-hovered"
+      }
+      cursor="pointer"
+      className="cyclone-code-block-tabs-trigger">
+      <Text
+        transition="200ms"
+        color={
+          active
+            ? "emphasis-active group-hover/cyclone-code-block-tabs-trigger:emphasis-hovered"
+            : "emphasis-inactive group-hover/cyclone-code-block-tabs-trigger:emphasis-hovered"
+        }
+        fontFamily="display"
+        fontSize="sm"
+        lineHeight="xs"
+        fontWeight={active ? "medium" : "normal"}
+        textAlign="center"
+        whiteSpace="nowrap"
+        marginVertical="xl">
+        {children}
+      </Text>
+    </TamaguiTabs.Tab>
+  );
+});
 
 export type CodeBlockTabProps = ComponentProps<typeof TamaguiTabs.Content>;
 export const CodeBlockTab = forwardRef<TamaguiElement, CodeBlockTabProps>(
@@ -542,7 +555,7 @@ export const CodeBlockTab = forwardRef<TamaguiElement, CodeBlockTabProps>(
       borderBottomLeftRadius="container"
       borderBottomRightRadius="container"
       overflow="hidden"
-      backgroundColor="surface"
+      backgroundColor="elevated"
       outlineStyle="none"
       className={`cyclone-code-block-tabs-content${
         className ? ` ${className}` : ""
