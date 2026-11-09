@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Circular Progress
 
+## [0.0.60](https://github.com/storm-software/cyclone-ui/releases/tag/circular-progress%400.0.60) (11/09/2026)
+
+### Features
+
+- **floating-toolbar:** Added support for dragging and hiding component off-screen ([d1f0b45d7](https://github.com/storm-software/cyclone-ui/commit/d1f0b45d7))
+
 ## [0.0.57](https://github.com/storm-software/cyclone-ui/releases/tag/circular-progress%400.0.57) (11/08/2026)
 
 ### Features

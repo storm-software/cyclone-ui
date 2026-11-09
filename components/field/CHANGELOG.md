@@ -2,6 +2,25 @@
 
 # Changelog for Cyclone UI - Field
 
+## [0.5.65](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.65) (11/09/2026)
+
+### Features
+
+- **floating-toolbar:** Added support for dragging and hiding component off-screen ([d1f0b45d7](https://github.com/storm-software/cyclone-ui/commit/d1f0b45d7))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.62**
+- Updated **button** to **v0.6.65**
+- Updated **form** to **v0.9.63**
+- Updated **helpers** to **v0.3.62**
+- Updated **icons** to **v0.0.60**
+- Updated **link** to **v0.5.65**
+- Updated **spinner** to **v0.5.62**
+- Updated **state** to **v0.0.64**
+- Updated **tooltip** to **v0.5.65**
+- Updated **validation-text** to **v0.5.64**
+
 ## [0.5.64](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.64) (11/08/2026)
 
 ### Features

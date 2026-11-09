@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Callout
 
+## [0.4.66](https://github.com/storm-software/cyclone-ui/releases/tag/callout%400.4.66) (11/09/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.62**
+- Updated **container** to **v0.6.64**
+- Updated **eyebrow-text** to **v0.5.62**
+- Updated **heading-text** to **v0.5.63**
+- Updated **icons** to **v0.0.60**
+- Updated **state** to **v0.0.64**
+
 ## [0.4.65](https://github.com/storm-software/cyclone-ui/releases/tag/callout%400.4.65) (11/08/2026)
 
 ### Updated Dependencies

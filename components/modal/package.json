@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/modal",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "type": "module",
   "description": "A centered modal built on the Cyclone UI Dialog, with the same parts as the Drawer: Trigger, Frame, Content, Header (with optional back and close buttons), Title, Description, Body and Footer. The Frame is a bordered shell that holds an inset Content panel above a Footer for actions; the Header stays pinned and the rest of the Content scrolls once it overflows. Use it for short forms and confirmations.",
   "repository": {

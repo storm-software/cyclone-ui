@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Composed Chart
 
+## [0.0.34](https://github.com/storm-software/cyclone-ui/releases/tag/composed-chart%400.0.34) (11/09/2026)
+
+### Updated Dependencies
+
+- Updated **chart** to **v0.0.34**
+
 ## [0.0.33](https://github.com/storm-software/cyclone-ui/releases/tag/composed-chart%400.0.33) (11/08/2026)
 
 ### Updated Dependencies

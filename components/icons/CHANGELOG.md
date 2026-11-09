@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Icons
 
+## [0.0.60](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.60) (11/09/2026)
+
+### Features
+
+- **icons:** Added the `FileExtensionIcon` icon helper component ([5ec4b8c45](https://github.com/storm-software/cyclone-ui/commit/5ec4b8c45))
+- **floating-toolbar:** Added support for dragging and hiding component off-screen ([d1f0b45d7](https://github.com/storm-software/cyclone-ui/commit/d1f0b45d7))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.62**
+
 ## [0.0.59](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.59) (11/08/2026)
 
 ### Features

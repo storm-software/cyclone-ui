@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - File Tree
 
+## [0.0.62](https://github.com/storm-software/cyclone-ui/releases/tag/file-tree%400.0.62) (11/09/2026)
+
+### Features
+
+- **floating-toolbar:** Added support for dragging and hiding component off-screen ([d1f0b45d7](https://github.com/storm-software/cyclone-ui/commit/d1f0b45d7))
+
+### Updated Dependencies
+
+- Updated **icons** to **v0.0.60**
+
 ## [0.0.61](https://github.com/storm-software/cyclone-ui/releases/tag/file-tree%400.0.61) (11/08/2026)
 
 ### Updated Dependencies

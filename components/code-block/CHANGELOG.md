@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Code Block
 
+## [0.6.66](https://github.com/storm-software/cyclone-ui/releases/tag/code-block%400.6.66) (11/09/2026)
+
+### Features
+
+- **icons:** Added the `FileExtensionIcon` icon helper component ([5ec4b8c45](https://github.com/storm-software/cyclone-ui/commit/5ec4b8c45))
+- **floating-toolbar:** Added support for dragging and hiding component off-screen ([d1f0b45d7](https://github.com/storm-software/cyclone-ui/commit/d1f0b45d7))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.65**
+- Updated **icons** to **v0.0.60**
+- Updated **scroll-view** to **v0.5.64**
+
 ## [0.6.65](https://github.com/storm-software/cyclone-ui/releases/tag/code-block%400.6.65) (11/08/2026)
 
 ### Updated Dependencies

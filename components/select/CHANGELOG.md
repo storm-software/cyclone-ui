@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Select
 
+## [0.6.66](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.66) (11/09/2026)
+
+### Features
+
+- **floating-toolbar:** Added support for dragging and hiding component off-screen ([d1f0b45d7](https://github.com/storm-software/cyclone-ui/commit/d1f0b45d7))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.62**
+- Updated **context-menu** to **v0.0.56**
+- Updated **field** to **v0.5.65**
+- Updated **form** to **v0.9.63**
+- Updated **helpers** to **v0.3.62**
+- Updated **icons** to **v0.0.60**
+- Updated **input** to **v0.6.65**
+- Updated **tooltip** to **v0.5.65**
+
 ## [0.6.65](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.65) (11/08/2026)
 
 ### Features

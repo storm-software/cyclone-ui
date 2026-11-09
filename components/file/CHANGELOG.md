@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - File
 
+## [0.0.15](https://github.com/storm-software/cyclone-ui/releases/tag/file%400.0.15) (11/09/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.62**
+- Updated **button** to **v0.6.65**
+- Updated **bytes-text** to **v0.5.62**
+- Updated **heading-text** to **v0.5.63**
+- Updated **helpers** to **v0.3.62**
+- Updated **icons** to **v0.0.60**
+- Updated **link** to **v0.5.65**
+- Updated **number-text** to **v0.5.62**
+- Updated **pdf-document-display** to **v0.5.64**
+- Updated **progress** to **v0.5.62**
+- Updated **state** to **v0.0.64**
+
 ## [0.0.14](https://github.com/storm-software/cyclone-ui/releases/tag/file%400.0.14) (11/08/2026)
 
 ### Updated Dependencies
