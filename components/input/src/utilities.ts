@@ -29,6 +29,7 @@ import {
   getSpaced,
   sizeToSpace
 } from "@cyclone-ui/helpers";
+import type { TextStyle } from "@tamagui/core";
 import { createStyledContext, getVariableValue } from "@tamagui/core";
 import { createContext, use } from "react";
 import type {
@@ -153,7 +154,16 @@ const toFlatLength = (value: unknown) => {
 export const getInputValueTypography = (
   size: FormControlSize,
   env: Parameters<typeof getFormFontSize>[1]
-) => {
+): Pick<
+  TextStyle,
+  | "fontFamily"
+  | "fontWeight"
+  | "fontStyle"
+  | "letterSpacing"
+  | "textTransform"
+  | "fontSize"
+  | "lineHeight"
+> => {
   const font = getFormFontSize(size, env);
 
   return {
