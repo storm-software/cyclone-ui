@@ -2753,6 +2753,9 @@ importers:
       '@cyclone-ui/divider':
         specifier: workspace:*
         version: link:../divider
+      '@cyclone-ui/icons':
+        specifier: workspace:*
+        version: link:../icons
       '@cyclone-ui/table-of-contents':
         specifier: workspace:*
         version: link:../table-of-contents
@@ -2769,9 +2772,6 @@ importers:
       '@cyclone-ui/button':
         specifier: workspace:*
         version: link:../button
-      '@cyclone-ui/icons':
-        specifier: workspace:*
-        version: link:../icons
       '@cyclone-ui/toggle-group':
         specifier: workspace:*
         version: link:../toggle-group
@@ -4286,6 +4286,9 @@ importers:
       '@cyclone-ui/input':
         specifier: workspace:*
         version: link:../input
+      '@cyclone-ui/tooltip':
+        specifier: workspace:*
+        version: link:../tooltip
       '@stryke/types':
         specifier: 'catalog:'
         version: 0.12.45

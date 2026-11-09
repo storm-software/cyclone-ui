@@ -40,14 +40,14 @@ export const LanguageMarkdown = createIcon("LanguageMarkdown", {
         {
           type: "path",
           props: {
-            d: "M3.6 7h16.8c0.33 0 0.6 0.27 0.6 0.6v8.8c0 0.33 -0.27 0.6 -0.6 0.6h-16.8c-0.33 0 -0.6 -0.27 -0.6 -0.6v-8.8c0 -0.33 0.27 -0.6 0.6 -0.6Z",
-            strokeDasharray: 56
+            d: "M12 6.5H20.5a1 1 0 0 1 1 1V16.5a1 1 0 0 1 -1 1H12M12 6.5H3.5a1 1 0 0 0 -1 1V16.5a1 1 0 0 0 1 1H12",
+            strokeDasharray: 30
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              dur: 0.6,
-              values: [56, 0],
+              dur: 0.5,
+              values: [30, 0],
               freeze: true
             }
           ]
@@ -55,14 +55,14 @@ export const LanguageMarkdown = createIcon("LanguageMarkdown", {
         {
           type: "path",
           props: {
-            d: "M5.8 14.5V9.5l2.4 2.9l2.4-2.9v5",
-            strokeDasharray: 19,
-            strokeDashoffset: 19
+            d: "M5.6 14.5V9.5L8.55 12.75L11.5 9.5V14.5",
+            strokeDasharray: 20,
+            strokeDashoffset: 20
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.6,
+              begin: 0.5,
               dur: 0.3,
               values: [0],
               freeze: true
@@ -72,14 +72,31 @@ export const LanguageMarkdown = createIcon("LanguageMarkdown", {
         {
           type: "path",
           props: {
-            d: "M16.5 9.5v5M14 12l2.5 2.5l2.5-2.5",
-            strokeDasharray: 14,
-            strokeDashoffset: 14
+            d: "M16.45 9.5V14.5",
+            strokeDasharray: 6,
+            strokeDashoffset: 6
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.9,
+              begin: 0.8,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M16.45 14.5l-2.05 -2.05M16.45 14.5l2.05 -2.05",
+            strokeDasharray: 4,
+            strokeDashoffset: 4
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 1,
               dur: 0.2,
               values: [0],
               freeze: true
@@ -103,14 +120,14 @@ export const LanguageMarkdown = createIcon("LanguageMarkdown", {
         {
           type: "path",
           props: {
-            d: "M3.6 7h16.8c0.33 0 0.6 0.27 0.6 0.6v8.8c0 0.33 -0.27 0.6 -0.6 0.6h-16.8c-0.33 0 -0.6 -0.27 -0.6 -0.6v-8.8c0 -0.33 0.27 -0.6 0.6 -0.6Z",
-            strokeDasharray: 56
+            d: "M12 6.5H20.5a1 1 0 0 1 1 1V16.5a1 1 0 0 1 -1 1H12M12 6.5H3.5a1 1 0 0 0 -1 1V16.5a1 1 0 0 0 1 1H12",
+            strokeDasharray: 30
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              dur: 0.6,
-              values: [56, 0],
+              dur: 0.5,
+              values: [30, 0],
               freeze: true
             }
           ]
@@ -118,14 +135,14 @@ export const LanguageMarkdown = createIcon("LanguageMarkdown", {
         {
           type: "path",
           props: {
-            d: "M5.8 14.5V9.5l2.4 2.9l2.4-2.9v5",
-            strokeDasharray: 19,
-            strokeDashoffset: 19
+            d: "M5.6 14.5V9.5L8.55 12.75L11.5 9.5V14.5",
+            strokeDasharray: 20,
+            strokeDashoffset: 20
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.6,
+              begin: 0.5,
               dur: 0.3,
               values: [0],
               freeze: true
@@ -135,14 +152,31 @@ export const LanguageMarkdown = createIcon("LanguageMarkdown", {
         {
           type: "path",
           props: {
-            d: "M16.5 9.5v5M14 12l2.5 2.5l2.5-2.5",
-            strokeDasharray: 14,
-            strokeDashoffset: 14
+            d: "M16.45 9.5V14.5",
+            strokeDasharray: 6,
+            strokeDashoffset: 6
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.9,
+              begin: 0.8,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M16.45 14.5l-2.05 -2.05M16.45 14.5l2.05 -2.05",
+            strokeDasharray: 4,
+            strokeDashoffset: 4
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 1,
               dur: 0.2,
               values: [0],
               freeze: true
@@ -172,22 +206,22 @@ export const LanguageMarkdown = createIcon("LanguageMarkdown", {
                 {
                   type: "path",
                   props: {
-                    d: "M3.6 7h16.8c0.33 0 0.6 0.27 0.6 0.6v8.8c0 0.33 -0.27 0.6 -0.6 0.6h-16.8c-0.33 0 -0.6 -0.27 -0.6 -0.6v-8.8c0 -0.33 0.27 -0.6 0.6 -0.6Z",
+                    d: "M12 7H20.4a0.6 0.6 0 0 1 0.6 0.6V16.4a0.6 0.6 0 0 1 -0.6 0.6H12M12 7H3.6a0.6 0.6 0 0 0 -0.6 0.6V16.4a0.6 0.6 0 0 0 0.6 0.6H12",
                     stroke: "#fff",
                     fill: "#fff",
                     fillOpacity: 0,
-                    strokeDasharray: 56
+                    strokeDasharray: 28
                   },
                   animations: [
                     {
                       prop: "strokeDashoffset",
-                      dur: 0.6,
-                      values: [56, 0],
+                      dur: 0.5,
+                      values: [28, 0],
                       freeze: true
                     },
                     {
                       prop: "fillOpacity",
-                      begin: 0.6,
+                      begin: 0.5,
                       dur: 0.4,
                       values: [1],
                       freeze: true
@@ -197,16 +231,16 @@ export const LanguageMarkdown = createIcon("LanguageMarkdown", {
                 {
                   type: "path",
                   props: {
-                    d: "M5.8 14.5V9.5l2.4 2.9l2.4-2.9v5",
+                    d: "M5.85 14.25V9.7L8.73 12.5L11.6 9.7V14.25",
                     stroke: "#000",
-                    strokeDasharray: 19,
-                    strokeDashoffset: 19,
-                    strokeWidth: 2.5
+                    strokeWidth: 1.9,
+                    strokeDasharray: 18,
+                    strokeDashoffset: 18
                   },
                   animations: [
                     {
                       prop: "strokeDashoffset",
-                      begin: 1,
+                      begin: 0.9,
                       dur: 0.3,
                       values: [0],
                       freeze: true
@@ -216,16 +250,35 @@ export const LanguageMarkdown = createIcon("LanguageMarkdown", {
                 {
                   type: "path",
                   props: {
-                    d: "M16.5 9.5v5M14 12l2.5 2.5l2.5-2.5",
+                    d: "M16.8 9.75V14.3",
                     stroke: "#000",
-                    strokeDasharray: 14,
-                    strokeDashoffset: 14,
-                    strokeWidth: 2.5
+                    strokeWidth: 1.9,
+                    strokeDasharray: 6,
+                    strokeDashoffset: 6
                   },
                   animations: [
                     {
                       prop: "strokeDashoffset",
-                      begin: 1.3,
+                      begin: 1.2,
+                      dur: 0.2,
+                      values: [0],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M16.8 14.3l-1.95 -1.95M16.8 14.3l1.95 -1.95",
+                    stroke: "#000",
+                    strokeWidth: 1.9,
+                    strokeDasharray: 4,
+                    strokeDashoffset: 4
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      begin: 1.4,
                       dur: 0.2,
                       values: [0],
                       freeze: true

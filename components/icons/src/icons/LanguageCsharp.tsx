@@ -40,8 +40,7 @@ export const LanguageCsharp = createIcon("LanguageCsharp", {
         {
           type: "path",
           props: {
-            d: "M11.54 8.46A5 5 0 1 0 11.54 15.54",
-            strokeWidth: 2.25,
+            d: "M11.2 6.75C10.45 6.25 9.75 6 8.9 6C5.4 6 3 8.5 3 12C3 15.6 5.35 18 8.85 18C9.75 18 10.6 17.8 11.25 17.4",
             strokeDasharray: 25
           },
           animations: [
@@ -56,15 +55,15 @@ export const LanguageCsharp = createIcon("LanguageCsharp", {
         {
           type: "path",
           props: {
-            d: "M16 6.5l-1.4 11M20 6.5l-1.4 11",
-            strokeDasharray: 24,
-            strokeDashoffset: 24
+            d: "M16.95 6L15.05 18M19.95 6L18.05 18",
+            strokeDasharray: 13,
+            strokeDashoffset: 13
           },
           animations: [
             {
               prop: "strokeDashoffset",
               begin: 0.5,
-              dur: 0.3,
+              dur: 0.2,
               values: [0],
               freeze: true
             }
@@ -73,15 +72,15 @@ export const LanguageCsharp = createIcon("LanguageCsharp", {
         {
           type: "path",
           props: {
-            d: "M13.5 10h8M13 14h8",
-            strokeDasharray: 17,
-            strokeDashoffset: 17
+            d: "M14.83 10H20.83M14.17 14H20.16",
+            strokeDasharray: 7,
+            strokeDashoffset: 7
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.8,
-              dur: 0.3,
+              begin: 0.7,
+              dur: 0.2,
               values: [0],
               freeze: true
             }
@@ -104,8 +103,7 @@ export const LanguageCsharp = createIcon("LanguageCsharp", {
         {
           type: "path",
           props: {
-            d: "M11.54 8.46A5 5 0 1 0 11.54 15.54",
-            strokeWidth: 3,
+            d: "M11.2 6.75C10.45 6.25 9.75 6 8.9 6C5.4 6 3 8.5 3 12C3 15.6 5.35 18 8.85 18C9.75 18 10.6 17.8 11.25 17.4",
             strokeDasharray: 25
           },
           animations: [
@@ -120,15 +118,15 @@ export const LanguageCsharp = createIcon("LanguageCsharp", {
         {
           type: "path",
           props: {
-            d: "M16 6.5l-1.4 11M20 6.5l-1.4 11",
-            strokeDasharray: 24,
-            strokeDashoffset: 24
+            d: "M16.95 6L15.05 18M19.95 6L18.05 18",
+            strokeDasharray: 13,
+            strokeDashoffset: 13
           },
           animations: [
             {
               prop: "strokeDashoffset",
               begin: 0.5,
-              dur: 0.3,
+              dur: 0.2,
               values: [0],
               freeze: true
             }
@@ -137,15 +135,15 @@ export const LanguageCsharp = createIcon("LanguageCsharp", {
         {
           type: "path",
           props: {
-            d: "M13.5 10h8M13 14h8",
-            strokeDasharray: 17,
-            strokeDashoffset: 17
+            d: "M14.83 10H20.83M14.17 14H20.16",
+            strokeDasharray: 7,
+            strokeDashoffset: 7
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.8,
-              dur: 0.3,
+              begin: 0.7,
+              dur: 0.2,
               values: [0],
               freeze: true
             }

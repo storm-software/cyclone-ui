@@ -40,26 +40,25 @@ export const Aws = createIcon("Aws", {
         {
           type: "path",
           props: {
-            d: "M4.8 8c1.1 0 2 0.9 2 2c0 1.1 -0.9 2 -2 2c-1.1 0 -2 -0.9 -2 -2c0 -1.1 0.9 -2 2 -2Z",
-            strokeDasharray: 14
+            d: "M3.6 6.95C4.1 6.68 4.65 6.55 5.25 6.55C6.45 6.55 7 7.15 7 8.35V11.85",
+            strokeDasharray: 9
           },
           animations: [
-            {
-              prop: "strokeDashoffset",
-              dur: 0.2,
-              values: [14, 0],
-              freeze: true
-            }
+            { prop: "strokeDashoffset", dur: 0.2, values: [9, 0], freeze: true }
           ]
         },
         {
           type: "path",
-          props: { d: "M6.8 8v4", strokeDasharray: 5, strokeDashoffset: 5 },
+          props: {
+            d: "M7 9.2C6.4 9.1 5.85 9.05 5.3 9.05C4.1 9.05 3.35 9.65 3.35 10.5C3.35 11.3 3.95 11.85 4.8 11.85C5.85 11.85 6.65 11.3 7 10.6",
+            strokeDasharray: 10,
+            strokeDashoffset: 10
+          },
           animations: [
             {
               prop: "strokeDashoffset",
               begin: 0.2,
-              dur: 0.1,
+              dur: 0.15,
               values: [0],
               freeze: true
             }
@@ -68,14 +67,14 @@ export const Aws = createIcon("Aws", {
         {
           type: "path",
           props: {
-            d: "M8.8 8l1.5 4l1.5-4l1.5 4l1.5-4",
-            strokeDasharray: 19,
-            strokeDashoffset: 19
+            d: "M9.35 6.8L10.79 11.6L12.23 6.8L13.66 11.6L15.1 6.8",
+            strokeDasharray: 21,
+            strokeDashoffset: 21
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.3,
+              begin: 0.35,
               dur: 0.3,
               values: [0],
               freeze: true
@@ -85,15 +84,15 @@ export const Aws = createIcon("Aws", {
         {
           type: "path",
           props: {
-            d: "M19.8 8.8c-0.4-0.6-1.1-0.9-1.9-0.8c-1 0.1-1.6 0.8-1.4 1.5c0.3 0.8 1.3 0.8 2.3 1.1c1.1 0.4 1.1 1.5 0.3 2c-0.9 0.5-2.1 0.3-2.6-0.4",
-            strokeDasharray: 14,
-            strokeDashoffset: 14
+            d: "M20.45 7C19.95 6.7 19.5 6.55 18.95 6.55C18.1 6.55 17.55 7.05 17.55 7.8C17.55 8.5 18 8.85 18.65 9.05L19.5 9.3C20.25 9.55 20.65 10 20.65 10.65C20.65 11.4 20 11.85 18.95 11.85C18.35 11.85 17.7 11.7 17.2 11.4",
+            strokeDasharray: 13,
+            strokeDashoffset: 13
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.6,
-              dur: 0.3,
+              begin: 0.65,
+              dur: 0.25,
               values: [0],
               freeze: true
             }
@@ -102,9 +101,9 @@ export const Aws = createIcon("Aws", {
         {
           type: "path",
           props: {
-            d: "M2.5 15c3 2.5 6.3 3.5 9.5 3.5c3 0 5.8-0.7 8-1.8",
-            strokeDasharray: 20,
-            strokeDashoffset: 20
+            d: "M2.75 14.5C5.6 16.4 8.8 17.4 12 17.4C14.15 17.4 16.2 17.1 18 16.6",
+            strokeDasharray: 17,
+            strokeDashoffset: 17
           },
           animations: [
             {
@@ -119,9 +118,9 @@ export const Aws = createIcon("Aws", {
         {
           type: "path",
           props: {
-            d: "M17.8 14.6c1.3-0.7 2.7-0.7 3.7 0c0 1.3-0.6 2.6-1.5 3.4",
-            strokeDasharray: 9,
-            strokeDashoffset: 9
+            d: "M19.4 14.45C20.2 14.3 21.05 14.25 21.55 14.45C21.7 15 21.45 16 20.9 16.8",
+            strokeDasharray: 6,
+            strokeDashoffset: 6
           },
           animations: [
             {
@@ -150,26 +149,25 @@ export const Aws = createIcon("Aws", {
         {
           type: "path",
           props: {
-            d: "M4.8 8c1.1 0 2 0.9 2 2c0 1.1 -0.9 2 -2 2c-1.1 0 -2 -0.9 -2 -2c0 -1.1 0.9 -2 2 -2Z",
-            strokeDasharray: 14
+            d: "M3.6 6.95C4.1 6.68 4.65 6.55 5.25 6.55C6.45 6.55 7 7.15 7 8.35V11.85",
+            strokeDasharray: 9
           },
           animations: [
-            {
-              prop: "strokeDashoffset",
-              dur: 0.2,
-              values: [14, 0],
-              freeze: true
-            }
+            { prop: "strokeDashoffset", dur: 0.2, values: [9, 0], freeze: true }
           ]
         },
         {
           type: "path",
-          props: { d: "M6.8 8v4", strokeDasharray: 5, strokeDashoffset: 5 },
+          props: {
+            d: "M7 9.2C6.4 9.1 5.85 9.05 5.3 9.05C4.1 9.05 3.35 9.65 3.35 10.5C3.35 11.3 3.95 11.85 4.8 11.85C5.85 11.85 6.65 11.3 7 10.6",
+            strokeDasharray: 10,
+            strokeDashoffset: 10
+          },
           animations: [
             {
               prop: "strokeDashoffset",
               begin: 0.2,
-              dur: 0.1,
+              dur: 0.15,
               values: [0],
               freeze: true
             }
@@ -178,14 +176,14 @@ export const Aws = createIcon("Aws", {
         {
           type: "path",
           props: {
-            d: "M8.8 8l1.5 4l1.5-4l1.5 4l1.5-4",
-            strokeDasharray: 19,
-            strokeDashoffset: 19
+            d: "M9.35 6.8L10.79 11.6L12.23 6.8L13.66 11.6L15.1 6.8",
+            strokeDasharray: 21,
+            strokeDashoffset: 21
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.3,
+              begin: 0.35,
               dur: 0.3,
               values: [0],
               freeze: true
@@ -195,15 +193,15 @@ export const Aws = createIcon("Aws", {
         {
           type: "path",
           props: {
-            d: "M19.8 8.8c-0.4-0.6-1.1-0.9-1.9-0.8c-1 0.1-1.6 0.8-1.4 1.5c0.3 0.8 1.3 0.8 2.3 1.1c1.1 0.4 1.1 1.5 0.3 2c-0.9 0.5-2.1 0.3-2.6-0.4",
-            strokeDasharray: 14,
-            strokeDashoffset: 14
+            d: "M20.45 7C19.95 6.7 19.5 6.55 18.95 6.55C18.1 6.55 17.55 7.05 17.55 7.8C17.55 8.5 18 8.85 18.65 9.05L19.5 9.3C20.25 9.55 20.65 10 20.65 10.65C20.65 11.4 20 11.85 18.95 11.85C18.35 11.85 17.7 11.7 17.2 11.4",
+            strokeDasharray: 13,
+            strokeDashoffset: 13
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.6,
-              dur: 0.3,
+              begin: 0.65,
+              dur: 0.25,
               values: [0],
               freeze: true
             }
@@ -212,9 +210,9 @@ export const Aws = createIcon("Aws", {
         {
           type: "path",
           props: {
-            d: "M2.5 15c3 2.5 6.3 3.5 9.5 3.5c3 0 5.8-0.7 8-1.8",
-            strokeDasharray: 20,
-            strokeDashoffset: 20
+            d: "M2.75 14.5C5.6 16.4 8.8 17.4 12 17.4C14.15 17.4 16.2 17.1 18 16.6",
+            strokeDasharray: 17,
+            strokeDashoffset: 17
           },
           animations: [
             {
@@ -229,9 +227,9 @@ export const Aws = createIcon("Aws", {
         {
           type: "path",
           props: {
-            d: "M17.8 14.6c1.3-0.7 2.7-0.7 3.7 0c0 1.3-0.6 2.6-1.5 3.4",
-            strokeDasharray: 9,
-            strokeDashoffset: 9
+            d: "M19.4 14.45C20.2 14.3 21.05 14.25 21.55 14.45C21.7 15 21.45 16 20.9 16.8",
+            strokeDasharray: 6,
+            strokeDashoffset: 6
           },
           animations: [
             {

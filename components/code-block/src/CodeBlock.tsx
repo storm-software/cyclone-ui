@@ -19,7 +19,7 @@
 "use client";
 
 import { Button } from "@cyclone-ui/button";
-import { Clipboard, ThemeableIcon } from "@cyclone-ui/icons";
+import { ClipboardText, ThemeableIcon } from "@cyclone-ui/icons";
 import { ScrollView } from "@cyclone-ui/scroll-view";
 import { Check } from "@cyclone-ui/icons/vectors";
 import type { TamaguiElement } from "@tamagui/core";
@@ -306,7 +306,7 @@ export const CodeBlockCopyButton = ({
       flexGrow={0}
       onPress={onPress}>
       <Button.Icon size="8xl">
-        {copied ? <Check strokeWidth={3} /> : <Clipboard />}
+        {copied ? <Check strokeWidth={3} /> : <ClipboardText />}
       </Button.Icon>
     </Button>
   );

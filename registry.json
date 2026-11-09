@@ -1271,6 +1271,7 @@
         "@cyclone-ui/collapsible",
         "@cyclone-ui/container",
         "@cyclone-ui/divider",
+        "@cyclone-ui/icons",
         "@cyclone-ui/table-of-contents"
       ],
       "files": [
@@ -4826,7 +4827,8 @@
         "@cyclone-ui/context-menu",
         "@cyclone-ui/field",
         "@cyclone-ui/icons",
-        "@cyclone-ui/input"
+        "@cyclone-ui/input",
+        "@cyclone-ui/tooltip"
       ],
       "files": [
         {

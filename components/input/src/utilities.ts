@@ -113,26 +113,8 @@ export const baseInputStyle: BaseInputStyle = [
       },
 
       size: formSizeVariants((size, env) => {
-        const font = getFormFontSize(size, env);
-
         return {
-          fontFamily: font.fontFamily,
-          fontWeight: font.fontWeight,
-          fontStyle: font.fontStyle,
-          letterSpacing: font.letterSpacing,
-          textTransform: font.textTransform,
-          color: font.color,
-          // Native keeps the font's size and leading; web pins them.
-          fontSize: joinFlatValues(
-            toFlatLength(font.fontSize),
-            `web:${16 * getFormFontScale(size)}px`
-          ),
-          lineHeight: joinFlatValues(
-            toFlatLength(font.lineHeight),
-            size === "md"
-              ? "web:normal"
-              : `web:${24 * getFormFontScale(size)}px`
-          ),
+          ...getInputValueTypography(size, env),
           paddingHorizontal: Math.round(
             sizeToSpace(getSized(getFormSizeToken(size))) * 0.4
           )
@@ -165,6 +147,30 @@ const toFlatLength = (value: unknown) => {
   const resolved = getVariableValue(value);
 
   return typeof resolved === "number" ? `${resolved}px` : String(resolved);
+};
+
+/** Shared value typography for editable inputs and selected values. */
+export const getInputValueTypography = (
+  size: FormControlSize,
+  env: Parameters<typeof getFormFontSize>[1]
+) => {
+  const font = getFormFontSize(size, env);
+
+  return {
+    fontFamily: font.fontFamily ?? "body",
+    fontWeight: "400" as const,
+    fontStyle: font.fontStyle,
+    letterSpacing: font.letterSpacing,
+    textTransform: font.textTransform,
+    fontSize: joinFlatValues(
+      toFlatLength(font.fontSize),
+      `web:${16 * getFormFontScale(size)}px`
+    ),
+    lineHeight: joinFlatValues(
+      toFlatLength(font.lineHeight),
+      `web:${24 * getFormFontScale(size)}px`
+    )
+  };
 };
 
 export const getInputSize = (

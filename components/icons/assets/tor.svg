@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 	<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor">
-		<path d="M12 9C12.5 11 18 11.5 18 16C18 19.5 15 21 12 21M12 9C11.5 11 6 11.5 6 16C6 19.5 9 21 12 21" stroke-dasharray="19"><animate attributeName="stroke-dashoffset" dur="0.5s" fill="freeze" values="19;0" /></path>
-		<path d="M12 9C12 6.5 12.5 4.75 13.5 3M12 9C13 6.5 14.5 4.5 17 3" stroke-dasharray="9" stroke-dashoffset="9"><animate attributeName="stroke-dashoffset" begin="0.5s" dur="0.3s" fill="freeze" to="0" /></path>
-		<path d="M12 12.75a3.5 3.25 0 0 0 0 6.5" stroke-dasharray="12" stroke-dashoffset="12"><animate attributeName="stroke-dashoffset" begin="0.8s" dur="0.3s" fill="freeze" to="0" /></path>
+		<path d="M12.1 9.1C13.1 11.9 17 12.43 17 16C17 19.83 13.79 21 11.83 21M12.1 9.1C11 11.6 6 11.96 6 16C6 20.22 9.79 21 11.83 21" stroke-dasharray="19"><animate attributeName="stroke-dashoffset" dur="0.5s" fill="freeze" values="19;0" /></path>
+		<path d="M12.1 9.1C11.8 7.3 11.8 5.7 12.3 4.1M12.1 9.1C12.8 6.7 14.2 4.4 16.4 3" stroke-dasharray="9" stroke-dashoffset="9"><animate attributeName="stroke-dashoffset" begin="0.5s" dur="0.3s" fill="freeze" to="0" /></path>
+		<path d="M11.75 13.38C11 13.38 8.5 14.25 8.5 16.25C8.5 18.25 11 18.5 11.75 18.5" stroke-dasharray="10" stroke-dashoffset="10"><animate attributeName="stroke-dashoffset" begin="0.8s" dur="0.3s" fill="freeze" to="0" /></path>
 		<circle stroke="none" cx="12" cy="16" fill="currentColor" r="0"><animate attributeName="r" begin="1.1s" dur="0.2s" fill="freeze" to="1" /></circle>
 	</g>
 </svg>

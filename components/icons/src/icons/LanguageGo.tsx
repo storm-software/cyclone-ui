@@ -39,22 +39,20 @@ export const LanguageGo = createIcon("LanguageGo", {
       children: [
         {
           type: "path",
-          props: { d: "M2.5 10.5h4M1.5 12h4.5M3 13.5h3", strokeDasharray: 13 },
+          props: {
+            d: "M3 8.85H5.9M1.75 11.35H5M3 13.85H4.4",
+            strokeDasharray: 4
+          },
           animations: [
-            {
-              prop: "strokeDashoffset",
-              dur: 0.2,
-              values: [13, 0],
-              freeze: true
-            }
+            { prop: "strokeDashoffset", dur: 0.2, values: [4, 0], freeze: true }
           ]
         },
         {
           type: "path",
           props: {
-            d: "M12.9 9.8A3.4 3.4 0 1 0 13.7 12h-3.4",
-            strokeDasharray: 24,
-            strokeDashoffset: 24
+            d: "M12.8 9.51C11.87 8.53 10.32 8.49 9.06 9.42C7.81 10.35 7.19 11.99 7.58 13.37C7.96 14.75 9.25 15.5 10.67 15.17C12.1 14.84 13.27 13.52 13.5 12H10.75",
+            strokeDasharray: 21,
+            strokeDashoffset: 21
           },
           animations: [
             {
@@ -69,9 +67,9 @@ export const LanguageGo = createIcon("LanguageGo", {
         {
           type: "path",
           props: {
-            d: "M19.2 8.6c1.88 0 3.4 1.52 3.4 3.4c0 1.88 -1.52 3.4 -3.4 3.4c-1.88 0 -3.4 -1.52 -3.4 -3.4c0 -1.88 1.52 -3.4 3.4 -3.4Z",
-            strokeDasharray: 23,
-            strokeDashoffset: 23
+            d: "M19.59 8.75C17.93 8.75 16.37 10.21 16.1 12C15.83 13.79 16.96 15.25 18.61 15.25C20.27 15.25 21.83 13.79 22.1 12C22.37 10.21 21.24 8.75 19.59 8.75Z",
+            strokeDasharray: 21,
+            strokeDashoffset: 21
           },
           animations: [
             {
@@ -99,22 +97,20 @@ export const LanguageGo = createIcon("LanguageGo", {
       children: [
         {
           type: "path",
-          props: { d: "M2.5 10.5h4M1.5 12h4.5M3 13.5h3", strokeDasharray: 13 },
+          props: {
+            d: "M3 8.85H5.9M1.75 11.35H5M3 13.85H4.4",
+            strokeDasharray: 4
+          },
           animations: [
-            {
-              prop: "strokeDashoffset",
-              dur: 0.2,
-              values: [13, 0],
-              freeze: true
-            }
+            { prop: "strokeDashoffset", dur: 0.2, values: [4, 0], freeze: true }
           ]
         },
         {
           type: "path",
           props: {
-            d: "M12.9 9.8A3.4 3.4 0 1 0 13.7 12h-3.4",
-            strokeDasharray: 24,
-            strokeDashoffset: 24
+            d: "M12.8 9.51C11.87 8.53 10.32 8.49 9.06 9.42C7.81 10.35 7.19 11.99 7.58 13.37C7.96 14.75 9.25 15.5 10.67 15.17C12.1 14.84 13.27 13.52 13.5 12H10.75",
+            strokeDasharray: 21,
+            strokeDashoffset: 21
           },
           animations: [
             {
@@ -129,9 +125,9 @@ export const LanguageGo = createIcon("LanguageGo", {
         {
           type: "path",
           props: {
-            d: "M19.2 8.6c1.88 0 3.4 1.52 3.4 3.4c0 1.88 -1.52 3.4 -3.4 3.4c-1.88 0 -3.4 -1.52 -3.4 -3.4c0 -1.88 1.52 -3.4 3.4 -3.4Z",
-            strokeDasharray: 23,
-            strokeDashoffset: 23
+            d: "M19.59 8.75C17.93 8.75 16.37 10.21 16.1 12C15.83 13.79 16.96 15.25 18.61 15.25C20.27 15.25 21.83 13.79 22.1 12C22.37 10.21 21.24 8.75 19.59 8.75Z",
+            strokeDasharray: 21,
+            strokeDashoffset: 21
           },
           animations: [
             {

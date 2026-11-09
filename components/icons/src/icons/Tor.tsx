@@ -40,7 +40,7 @@ export const Tor = createIcon("Tor", {
         {
           type: "path",
           props: {
-            d: "M12 9C12.5 11 18 11.5 18 16C18 19.5 15 21 12 21M12 9C11.5 11 6 11.5 6 16C6 19.5 9 21 12 21",
+            d: "M12.1 9.1C13.1 11.9 17 12.43 17 16C17 19.83 13.79 21 11.83 21M12.1 9.1C11 11.6 6 11.96 6 16C6 20.22 9.79 21 11.83 21",
             strokeDasharray: 19
           },
           animations: [
@@ -55,7 +55,7 @@ export const Tor = createIcon("Tor", {
         {
           type: "path",
           props: {
-            d: "M12 9C12 6.5 12.5 4.75 13.5 3M12 9C13 6.5 14.5 4.5 17 3",
+            d: "M12.1 9.1C11.8 7.3 11.8 5.7 12.3 4.1M12.1 9.1C12.8 6.7 14.2 4.4 16.4 3",
             strokeDasharray: 9,
             strokeDashoffset: 9
           },
@@ -72,9 +72,9 @@ export const Tor = createIcon("Tor", {
         {
           type: "path",
           props: {
-            d: "M12 12.75a3.5 3.25 0 0 0 0 6.5",
-            strokeDasharray: 12,
-            strokeDashoffset: 12
+            d: "M11.75 13.38C11 13.38 8.5 14.25 8.5 16.25C8.5 18.25 11 18.5 11.75 18.5",
+            strokeDasharray: 10,
+            strokeDashoffset: 10
           },
           animations: [
             {
@@ -110,7 +110,7 @@ export const Tor = createIcon("Tor", {
         {
           type: "path",
           props: {
-            d: "M12 9C12.5 11 18 11.5 18 16C18 19.5 15 21 12 21M12 9C11.5 11 6 11.5 6 16C6 19.5 9 21 12 21",
+            d: "M12.1 9.1C13.1 11.9 17 12.43 17 16C17 19.83 13.79 21 11.83 21M12.1 9.1C11 11.6 6 11.96 6 16C6 20.22 9.79 21 11.83 21",
             strokeDasharray: 19
           },
           animations: [
@@ -125,7 +125,7 @@ export const Tor = createIcon("Tor", {
         {
           type: "path",
           props: {
-            d: "M12 9C12 6.5 12.5 4.75 13.5 3M12 9C13 6.5 14.5 4.5 17 3",
+            d: "M12.1 9.1C11.8 7.3 11.8 5.7 12.3 4.1M12.1 9.1C12.8 6.7 14.2 4.4 16.4 3",
             strokeDasharray: 9,
             strokeDashoffset: 9
           },
@@ -142,9 +142,9 @@ export const Tor = createIcon("Tor", {
         {
           type: "path",
           props: {
-            d: "M12 12.75a3.5 3.25 0 0 0 0 6.5",
-            strokeDasharray: 12,
-            strokeDashoffset: 12
+            d: "M11.75 13.38C11 13.38 8.5 14.25 8.5 16.25C8.5 18.25 11 18.5 11.75 18.5",
+            strokeDasharray: 10,
+            strokeDashoffset: 10
           },
           animations: [
             {
@@ -186,7 +186,7 @@ export const Tor = createIcon("Tor", {
                 {
                   type: "path",
                   props: {
-                    d: "M12 9C12.5 11 18 11.5 18 16C18 19.5 15 21 12 21M12 9C11.5 11 6 11.5 6 16C6 19.5 9 21 12 21",
+                    d: "M12.1 9.1C13.1 11.9 17 12.43 17 16C17 19.83 13.79 21 11.83 21M12.1 9.1C11 11.6 6 11.96 6 16C6 20.22 9.79 21 11.83 21",
                     stroke: "#fff",
                     fill: "#fff",
                     fillOpacity: 0,
@@ -211,7 +211,7 @@ export const Tor = createIcon("Tor", {
                 {
                   type: "path",
                   props: {
-                    d: "M12 9C12 6.5 12.5 4.75 13.5 3M12 9C13 6.5 14.5 4.5 17 3",
+                    d: "M12.1 9.1C11.8 7.3 11.8 5.7 12.3 4.1M12.1 9.1C12.8 6.7 14.2 4.4 16.4 3",
                     stroke: "#fff",
                     strokeDasharray: 9,
                     strokeDashoffset: 9
@@ -229,11 +229,11 @@ export const Tor = createIcon("Tor", {
                 {
                   type: "path",
                   props: {
-                    d: "M11.75 12.25a4.25 3.75 0 0 0 0 7.5",
+                    d: "M11.75 12.13C11 12.13 7.5 13.25 7.5 16.25C7.5 19.25 11 19.5 11.75 19.5",
                     stroke: "#000",
-                    strokeWidth: 1,
-                    strokeDasharray: 14,
-                    strokeDashoffset: 14
+                    strokeWidth: 1.25,
+                    strokeDasharray: 13,
+                    strokeDashoffset: 13
                   },
                   animations: [
                     {
@@ -248,11 +248,11 @@ export const Tor = createIcon("Tor", {
                 {
                   type: "path",
                   props: {
-                    d: "M11.25 14a2 2 0 0 0 0 4",
+                    d: "M11.6 14.5C11 14.5 10 15.1 10 16C10 16.9 11 17.5 11.6 17.5",
                     stroke: "#000",
-                    strokeWidth: 2,
-                    strokeDasharray: 7,
-                    strokeDashoffset: 7
+                    strokeWidth: 1.5,
+                    strokeDasharray: 6,
+                    strokeDashoffset: 6
                   },
                   animations: [
                     {

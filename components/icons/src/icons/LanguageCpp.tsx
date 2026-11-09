@@ -40,8 +40,7 @@ export const LanguageCpp = createIcon("LanguageCpp", {
         {
           type: "path",
           props: {
-            d: "M10.54 8.46A5 5 0 1 0 10.54 15.54",
-            strokeWidth: 2.25,
+            d: "M10.2 6.75C9.45 6.25 8.75 6 7.9 6C4.4 6 2 8.5 2 12C2 15.6 4.35 18 7.85 18C8.75 18 9.6 17.8 10.25 17.4",
             strokeDasharray: 25
           },
           animations: [
@@ -56,9 +55,9 @@ export const LanguageCpp = createIcon("LanguageCpp", {
         {
           type: "path",
           props: {
-            d: "M14 10v4M12 12h4",
-            strokeDasharray: 9,
-            strokeDashoffset: 9
+            d: "M12.25 12H15.75M14 10.25V13.75",
+            strokeDasharray: 4,
+            strokeDashoffset: 4
           },
           animations: [
             {
@@ -73,9 +72,9 @@ export const LanguageCpp = createIcon("LanguageCpp", {
         {
           type: "path",
           props: {
-            d: "M21 10v4M19 12h4",
-            strokeDasharray: 9,
-            strokeDashoffset: 9
+            d: "M18.75 12H22.25M20.5 10.25V13.75",
+            strokeDasharray: 4,
+            strokeDashoffset: 4
           },
           animations: [
             {
@@ -104,8 +103,7 @@ export const LanguageCpp = createIcon("LanguageCpp", {
         {
           type: "path",
           props: {
-            d: "M10.54 8.46A5 5 0 1 0 10.54 15.54",
-            strokeWidth: 3,
+            d: "M10.2 6.75C9.45 6.25 8.75 6 7.9 6C4.4 6 2 8.5 2 12C2 15.6 4.35 18 7.85 18C8.75 18 9.6 17.8 10.25 17.4",
             strokeDasharray: 25
           },
           animations: [
@@ -120,9 +118,9 @@ export const LanguageCpp = createIcon("LanguageCpp", {
         {
           type: "path",
           props: {
-            d: "M14 10v4M12 12h4",
-            strokeDasharray: 9,
-            strokeDashoffset: 9
+            d: "M12.25 12H15.75M14 10.25V13.75",
+            strokeDasharray: 4,
+            strokeDashoffset: 4
           },
           animations: [
             {
@@ -137,9 +135,9 @@ export const LanguageCpp = createIcon("LanguageCpp", {
         {
           type: "path",
           props: {
-            d: "M21 10v4M19 12h4",
-            strokeDasharray: 9,
-            strokeDashoffset: 9
+            d: "M18.75 12H22.25M20.5 10.25V13.75",
+            strokeDasharray: 4,
+            strokeDashoffset: 4
           },
           animations: [
             {

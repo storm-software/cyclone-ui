@@ -24,6 +24,7 @@
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/input": "workspace:*",
+    "@cyclone-ui/tooltip": "workspace:*",
     "@stryke/types": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/group": "catalog:",

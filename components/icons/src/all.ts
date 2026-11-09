@@ -246,6 +246,8 @@ import { Downloading } from "./icons/Downloading";
 import { DownloadOff } from "./icons/DownloadOff";
 import { DownloadOffOutline } from "./icons/DownloadOffOutline";
 import { DownloadOutline } from "./icons/DownloadOutline";
+import { DragHorizontal } from "./icons/DragHorizontal";
+import { DragVertical } from "./icons/DragVertical";
 import { Edit } from "./icons/Edit";
 import { EditFull } from "./icons/EditFull";
 import { Email } from "./icons/Email";
@@ -327,6 +329,8 @@ import { FolderSettings } from "./icons/FolderSettings";
 import { FolderZip } from "./icons/FolderZip";
 import { ForkLeft } from "./icons/ForkLeft";
 import { ForkRight } from "./icons/ForkRight";
+import { FormatQuoteClose } from "./icons/FormatQuoteClose";
+import { FormatQuoteOpen } from "./icons/FormatQuoteOpen";
 import { Gauge } from "./icons/Gauge";
 import { GaugeEmpty } from "./icons/GaugeEmpty";
 import { GaugeFull } from "./icons/GaugeFull";
@@ -833,6 +837,8 @@ export const allIcons: { [component: string]: IconComponent } = {
   DownloadOff,
   DownloadOffOutline,
   DownloadOutline,
+  DragHorizontal,
+  DragVertical,
   Edit,
   EditFull,
   Email,
@@ -914,6 +920,8 @@ export const allIcons: { [component: string]: IconComponent } = {
   FolderZip,
   ForkLeft,
   ForkRight,
+  FormatQuoteClose,
+  FormatQuoteOpen,
   Gauge,
   GaugeEmpty,
   GaugeFull,

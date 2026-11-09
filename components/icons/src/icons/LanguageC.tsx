@@ -40,15 +40,14 @@ export const LanguageC = createIcon("LanguageC", {
         {
           type: "path",
           props: {
-            d: "M15.9 7.25A6.5 6.5 0 1 0 15.9 16.75",
-            strokeWidth: 2.25,
-            strokeDasharray: 32
+            d: "M15.2 6.75C14.45 6.25 13.75 6 12.9 6C9.4 6 7 8.5 7 12C7 15.6 9.35 18 12.85 18C13.75 18 14.6 17.8 15.25 17.4",
+            strokeDasharray: 25
           },
           animations: [
             {
               prop: "strokeDashoffset",
               dur: 0.5,
-              values: [32, 0],
+              values: [25, 0],
               freeze: true
             }
           ]
@@ -70,15 +69,14 @@ export const LanguageC = createIcon("LanguageC", {
         {
           type: "path",
           props: {
-            d: "M15.9 7.25A6.5 6.5 0 1 0 15.9 16.75",
-            strokeWidth: 3,
-            strokeDasharray: 32
+            d: "M15.2 6.75C14.45 6.25 13.75 6 12.9 6C9.4 6 7 8.5 7 12C7 15.6 9.35 18 12.85 18C13.75 18 14.6 17.8 15.25 17.4",
+            strokeDasharray: 25
           },
           animations: [
             {
               prop: "strokeDashoffset",
               dur: 0.5,
-              values: [32, 0],
+              values: [25, 0],
               freeze: true
             }
           ]

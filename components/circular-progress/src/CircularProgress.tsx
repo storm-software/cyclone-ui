@@ -110,6 +110,9 @@ export type CircularProgressProps = Omit<
   variant?: CircularProgressVariant;
   /** The number of dashed segments around the ring. Defaults to 20. */
   segments?: number;
+  /** The color of the track. */
+  trackColor?: ColorTokens | ThemeTokens;
+
 };
 
 const ProgressSegment = ({
@@ -185,7 +188,7 @@ export const CircularProgress = createStyledHOC(
       theme[color as any] ?? color,
       "color"
     );
-    const trackColor = getVariableValue(theme.sunken, "color");
+    const trackColor = getVariableValue(theme[props.trackColor as ThemeTokens ?? "hairline"] ?? "hairline", "color");
     const progressRatio = getProgressRatio(value, max);
     const count = Math.max(1, Math.round(segments));
     const filled = useStaggeredCount(

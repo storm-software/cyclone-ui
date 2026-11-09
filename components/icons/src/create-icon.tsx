@@ -227,7 +227,7 @@ export function createIcon(
     return <>{renderElements(elements, time, idPrefix)}</>;
   };
 
-  const Icon = memo(function Icon(props: ResolvedIconProps) {
+  const Icon = memo((props: ResolvedIconProps) => {
     const {
       color = "black",
       size = 24,

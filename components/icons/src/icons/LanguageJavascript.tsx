@@ -39,12 +39,12 @@ export const LanguageJavascript = createIcon("LanguageJavascript", {
       children: [
         {
           type: "path",
-          props: { d: "M4 4h16v16H4Z", strokeDasharray: 65 },
+          props: { d: "M12 3H21V21H12M12 3H3V21H12", strokeDasharray: 37 },
           animations: [
             {
               prop: "strokeDashoffset",
-              dur: 0.6,
-              values: [65, 0],
+              dur: 0.5,
+              values: [37, 0],
               freeze: true
             }
           ]
@@ -52,14 +52,14 @@ export const LanguageJavascript = createIcon("LanguageJavascript", {
         {
           type: "path",
           props: {
-            d: "M11.5 11.5v6c0 1.2-0.8 1.8-1.8 1.8c-0.9 0-1.5-0.4-2-1.3",
-            strokeDasharray: 13,
-            strokeDashoffset: 13
+            d: "M11.15 11.15V16.15c0 1.2 -0.8 1.85 -1.75 1.85c-0.8 0 -1.3 -0.4 -1.7 -1.1",
+            strokeDasharray: 11,
+            strokeDashoffset: 11
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.6,
+              begin: 0.5,
               dur: 0.2,
               values: [0],
               freeze: true
@@ -69,14 +69,14 @@ export const LanguageJavascript = createIcon("LanguageJavascript", {
         {
           type: "path",
           props: {
-            d: "M18.7 12.8c-0.5-0.9-1.3-1.3-2.3-1.3c-1.4 0-2.2 0.9-2.2 2c0 1.2 0.8 1.7 2.1 2.3c1.2 0.5 2 1 2 2.1c0 1.2-1 1.9-2.4 1.9c-1.3 0-2.1-0.6-2.6-1.5",
-            strokeDasharray: 21,
-            strokeDashoffset: 21
+            d: "M17.65 12.1c-0.45 -0.75 -1 -1.05 -1.75 -1.05c-1 0 -1.65 0.65 -1.65 1.5c0 0.95 0.6 1.4 1.6 1.85c1.2 0.5 2.1 0.95 2.1 2c0 1 -0.85 1.6 -2 1.6c-1.1 0 -1.85 -0.5 -2.35 -1.4",
+            strokeDasharray: 17,
+            strokeDashoffset: 17
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.8,
+              begin: 0.7,
               dur: 0.3,
               values: [0],
               freeze: true
@@ -99,12 +99,12 @@ export const LanguageJavascript = createIcon("LanguageJavascript", {
       children: [
         {
           type: "path",
-          props: { d: "M4 4h16v16H4Z", strokeDasharray: 65 },
+          props: { d: "M12 3H21V21H12M12 3H3V21H12", strokeDasharray: 37 },
           animations: [
             {
               prop: "strokeDashoffset",
-              dur: 0.6,
-              values: [65, 0],
+              dur: 0.5,
+              values: [37, 0],
               freeze: true
             }
           ]
@@ -112,14 +112,14 @@ export const LanguageJavascript = createIcon("LanguageJavascript", {
         {
           type: "path",
           props: {
-            d: "M11.5 11.5v6c0 1.2-0.8 1.8-1.8 1.8c-0.9 0-1.5-0.4-2-1.3",
-            strokeDasharray: 13,
-            strokeDashoffset: 13
+            d: "M11.15 11.15V16.15c0 1.2 -0.8 1.85 -1.75 1.85c-0.8 0 -1.3 -0.4 -1.7 -1.1",
+            strokeDasharray: 11,
+            strokeDashoffset: 11
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.6,
+              begin: 0.5,
               dur: 0.2,
               values: [0],
               freeze: true
@@ -129,14 +129,14 @@ export const LanguageJavascript = createIcon("LanguageJavascript", {
         {
           type: "path",
           props: {
-            d: "M18.7 12.8c-0.5-0.9-1.3-1.3-2.3-1.3c-1.4 0-2.2 0.9-2.2 2c0 1.2 0.8 1.7 2.1 2.3c1.2 0.5 2 1 2 2.1c0 1.2-1 1.9-2.4 1.9c-1.3 0-2.1-0.6-2.6-1.5",
-            strokeDasharray: 21,
-            strokeDashoffset: 21
+            d: "M17.65 12.1c-0.45 -0.75 -1 -1.05 -1.75 -1.05c-1 0 -1.65 0.65 -1.65 1.5c0 0.95 0.6 1.4 1.6 1.85c1.2 0.5 2.1 0.95 2.1 2c0 1 -0.85 1.6 -2 1.6c-1.1 0 -1.85 -0.5 -2.35 -1.4",
+            strokeDasharray: 17,
+            strokeDashoffset: 17
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.8,
+              begin: 0.7,
               dur: 0.3,
               values: [0],
               freeze: true
@@ -166,22 +166,22 @@ export const LanguageJavascript = createIcon("LanguageJavascript", {
                 {
                   type: "path",
                   props: {
-                    d: "M4 4h16v16H4Z",
+                    d: "M12 4H20V20H12M12 4H4V20H12",
                     stroke: "#fff",
                     fill: "#fff",
                     fillOpacity: 0,
-                    strokeDasharray: 65
+                    strokeDasharray: 33
                   },
                   animations: [
                     {
                       prop: "strokeDashoffset",
-                      dur: 0.6,
-                      values: [65, 0],
+                      dur: 0.5,
+                      values: [33, 0],
                       freeze: true
                     },
                     {
                       prop: "fillOpacity",
-                      begin: 0.6,
+                      begin: 0.5,
                       dur: 0.4,
                       values: [1],
                       freeze: true
@@ -191,16 +191,16 @@ export const LanguageJavascript = createIcon("LanguageJavascript", {
                 {
                   type: "path",
                   props: {
-                    d: "M11.5 11.5v6c0 1.2-0.8 1.8-1.8 1.8c-0.9 0-1.5-0.4-2-1.3",
+                    d: "M11.95 12V17c0 1.2 -0.8 1.85 -1.75 1.85c-0.8 0 -1.3 -0.4 -1.7 -1.1",
                     stroke: "#000",
-                    strokeDasharray: 13,
-                    strokeDashoffset: 13,
-                    strokeWidth: 2.5
+                    strokeWidth: 1.65,
+                    strokeDasharray: 11,
+                    strokeDashoffset: 11
                   },
                   animations: [
                     {
                       prop: "strokeDashoffset",
-                      begin: 1,
+                      begin: 0.9,
                       dur: 0.2,
                       values: [0],
                       freeze: true
@@ -210,16 +210,16 @@ export const LanguageJavascript = createIcon("LanguageJavascript", {
                 {
                   type: "path",
                   props: {
-                    d: "M18.7 12.8c-0.5-0.9-1.3-1.3-2.3-1.3c-1.4 0-2.2 0.9-2.2 2c0 1.2 0.8 1.7 2.1 2.3c1.2 0.5 2 1 2 2.1c0 1.2-1 1.9-2.4 1.9c-1.3 0-2.1-0.6-2.6-1.5",
+                    d: "M18.45 12.95c-0.45 -0.75 -1 -1.05 -1.75 -1.05c-1 0 -1.65 0.65 -1.65 1.5c0 0.95 0.6 1.4 1.6 1.85c1.2 0.5 2.1 0.95 2.1 2c0 1 -0.85 1.6 -2 1.6c-1.1 0 -1.85 -0.5 -2.35 -1.4",
                     stroke: "#000",
-                    strokeDasharray: 21,
-                    strokeDashoffset: 21,
-                    strokeWidth: 2.5
+                    strokeWidth: 1.65,
+                    strokeDasharray: 17,
+                    strokeDashoffset: 17
                   },
                   animations: [
                     {
                       prop: "strokeDashoffset",
-                      begin: 1.2,
+                      begin: 1.1,
                       dur: 0.3,
                       values: [0],
                       freeze: true

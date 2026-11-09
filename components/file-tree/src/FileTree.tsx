@@ -68,7 +68,8 @@ const TreeNode = styled(XStack, {
 const TreeLabel = styled(SizableText, {
   displayName: "FileTreeLabel",
   fontFamily: "code",
-  size: "lg"
+  size: "md",
+  fontWeight: 200
 });
 
 const TreeChildren = styled(YStack, {
@@ -83,11 +84,11 @@ const TreeChildren = styled(YStack, {
 
 const FileTreeOpenContext = createContext(false);
 
-const defaultFileIcon = <FileIcon aria-hidden size="2xl" />;
+const defaultFileIcon = <FileIcon aria-hidden size="2xl" variant="regular" animated={false} />;
 
-const defaultFolderIcon = <FolderIcon aria-hidden size="2xl" />;
+const defaultFolderIcon = <FolderIcon aria-hidden size="2xl" variant="filled" animated={false} />;
 
-const defaultFolderOpenIcon = <FolderOpenIcon aria-hidden size="2xl" />;
+const defaultFolderOpenIcon = <FolderOpenIcon aria-hidden size="2xl" variant="filled" animated={false} />;
 
 const getTreeIcon = (icon: ReactNode, color: string): ReactNode =>
   isValidElement<{ color?: string }>(icon)

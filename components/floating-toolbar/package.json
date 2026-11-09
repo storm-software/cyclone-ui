@@ -23,6 +23,7 @@
     "@cyclone-ui/collapsible": "workspace:*",
     "@cyclone-ui/container": "workspace:*",
     "@cyclone-ui/divider": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/table-of-contents": "workspace:*",
     "@tamagui/animate-presence": "catalog:",
     "@tamagui/core": "catalog:",
@@ -30,7 +31,6 @@
   },
   "devDependencies": {
     "@cyclone-ui/button": "workspace:*",
-    "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/toggle-group": "workspace:*",
     "@storybook/react-vite": "catalog:",
     "react": "catalog:",

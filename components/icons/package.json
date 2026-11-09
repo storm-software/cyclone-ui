@@ -975,6 +975,14 @@
       "import": "./dist/icons/DownloadOutline.mjs",
       "require": "./dist/icons/DownloadOutline.cjs"
     },
+    "./icons/DragHorizontal": {
+      "import": "./dist/icons/DragHorizontal.mjs",
+      "require": "./dist/icons/DragHorizontal.cjs"
+    },
+    "./icons/DragVertical": {
+      "import": "./dist/icons/DragVertical.mjs",
+      "require": "./dist/icons/DragVertical.cjs"
+    },
     "./icons/Edit": {
       "import": "./dist/icons/Edit.mjs",
       "require": "./dist/icons/Edit.cjs"
@@ -1298,6 +1306,14 @@
     "./icons/ForkRight": {
       "import": "./dist/icons/ForkRight.mjs",
       "require": "./dist/icons/ForkRight.cjs"
+    },
+    "./icons/FormatQuoteClose": {
+      "import": "./dist/icons/FormatQuoteClose.mjs",
+      "require": "./dist/icons/FormatQuoteClose.cjs"
+    },
+    "./icons/FormatQuoteOpen": {
+      "import": "./dist/icons/FormatQuoteOpen.mjs",
+      "require": "./dist/icons/FormatQuoteOpen.cjs"
     },
     "./icons/Gauge": {
       "import": "./dist/icons/Gauge.mjs",

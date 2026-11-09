@@ -2,16 +2,10 @@
 	<defs>
 		<mask id="language-markdown-mask">
 			<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-				<path d="M3.6 7h16.8c0.33 0 0.6 0.27 0.6 0.6v8.8c0 0.33 -0.27 0.6 -0.6 0.6h-16.8c-0.33 0 -0.6 -0.27 -0.6 -0.6v-8.8c0 -0.33 0.27 -0.6 0.6 -0.6Z" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="56">
-					<animate attributeName="fill-opacity" begin="0.6s" dur="0.4s" fill="freeze" to="1" />
-					<animate attributeName="stroke-dashoffset" dur="0.6s" fill="freeze" values="56;0" />
-				</path>
-				<path d="M5.8 14.5V9.5l2.4 2.9l2.4-2.9v5" stroke="#000" stroke-dasharray="19" stroke-dashoffset="19">
-					<animate attributeName="stroke-dashoffset" begin="1s" dur="0.3s" fill="freeze" to="0" />
-				</path>
-				<path d="M16.5 9.5v5M14 12l2.5 2.5l2.5-2.5" stroke="#000" stroke-dasharray="14" stroke-dashoffset="14">
-					<animate attributeName="stroke-dashoffset" begin="1.3s" dur="0.2s" fill="freeze" to="0" />
-				</path>
+				<path d="M12 7H20.4a0.6 0.6 0 0 1 0.6 0.6V16.4a0.6 0.6 0 0 1 -0.6 0.6H12M12 7H3.6a0.6 0.6 0 0 0 -0.6 0.6V16.4a0.6 0.6 0 0 0 0.6 0.6H12" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="28"><animate attributeName="fill-opacity" begin="0.5s" dur="0.4s" fill="freeze" to="1" /><animate attributeName="stroke-dashoffset" dur="0.5s" fill="freeze" values="28;0" /></path>
+				<path d="M5.85 14.25V9.7L8.73 12.5L11.6 9.7V14.25" stroke="#000" stroke-width="1.4" stroke-dasharray="18" stroke-dashoffset="18"><animate attributeName="stroke-dashoffset" begin="0.9s" dur="0.3s" fill="freeze" to="0" /></path>
+				<path d="M16.8 9.75V14.3" stroke="#000" stroke-width="1.4" stroke-dasharray="6" stroke-dashoffset="6"><animate attributeName="stroke-dashoffset" begin="1.2s" dur="0.2s" fill="freeze" to="0" /></path>
+				<path d="M16.8 14.3l-1.95 -1.95M16.8 14.3l1.95 -1.95" stroke="#000" stroke-width="1.4" stroke-dasharray="4" stroke-dashoffset="4"><animate attributeName="stroke-dashoffset" begin="1.4s" dur="0.2s" fill="freeze" to="0" /></path>
 			</g>
 		</mask>
 	</defs>

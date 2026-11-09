@@ -53,8 +53,7 @@ const TreeNode = styled(
   { displayName: "FileTreeNode" }
 );
 
-// `SizableText size="lg"` takes its weight from the code font's `lg` step.
-const TreeLabel = styled(Text, "font-code text-lg font-black", {
+const TreeLabel = styled(Text, "font-code text-lg font-extralight", {
   displayName: "FileTreeLabel"
 });
 

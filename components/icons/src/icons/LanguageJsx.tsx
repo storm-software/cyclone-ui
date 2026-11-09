@@ -39,12 +39,12 @@ export const LanguageJsx = createIcon("LanguageJsx", {
       children: [
         {
           type: "path",
-          props: { d: "M4 4h16v16H4Z", strokeDasharray: 65 },
+          props: { d: "M12 3H21V21H12M12 3H3V21H12", strokeDasharray: 37 },
           animations: [
             {
               prop: "strokeDashoffset",
-              dur: 0.6,
-              values: [65, 0],
+              dur: 0.5,
+              values: [37, 0],
               freeze: true
             }
           ]
@@ -52,15 +52,14 @@ export const LanguageJsx = createIcon("LanguageJsx", {
         {
           type: "path",
           props: {
-            d: "M7.5 12v5.2c0 1-0.7 1.6-1.6 1.6c-0.8 0-1.3-0.4-1.7-1.1",
-            strokeWidth: 1.125,
-            strokeDasharray: 11,
-            strokeDashoffset: 11
+            d: "M8.43 13.21V16.7c0 0.84 -0.56 1.29 -1.23 1.29c-0.56 0 -0.91 -0.28 -1.19 -0.77",
+            strokeDasharray: 8,
+            strokeDashoffset: 8
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.6,
+              begin: 0.5,
               dur: 0.2,
               values: [0],
               freeze: true
@@ -70,15 +69,14 @@ export const LanguageJsx = createIcon("LanguageJsx", {
         {
           type: "path",
           props: {
-            d: "M14 13c-0.4-0.7-1.1-1-1.9-1c-1.2 0-1.9 0.7-1.9 1.7c0 1 0.7 1.4 1.8 1.9c1 0.4 1.7 0.9 1.7 1.8c0 1-0.8 1.6-2 1.6c-1.1 0-1.7-0.5-2.2-1.2",
-            strokeWidth: 1.125,
-            strokeDasharray: 18,
-            strokeDashoffset: 18
+            d: "M13.46 13.87c-0.32 -0.53 -0.7 -0.73 -1.23 -0.73c-0.7 0 -1.16 0.46 -1.16 1.05c0 0.67 0.42 0.98 1.12 1.29c0.84 0.35 1.47 0.67 1.47 1.4c0 0.7 -0.59 1.12 -1.4 1.12c-0.77 0 -1.29 -0.35 -1.65 -0.98",
+            strokeDasharray: 12,
+            strokeDashoffset: 12
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.8,
+              begin: 0.7,
               dur: 0.3,
               values: [0],
               freeze: true
@@ -88,15 +86,14 @@ export const LanguageJsx = createIcon("LanguageJsx", {
         {
           type: "path",
           props: {
-            d: "M16 12l3.5 7.5M19.5 12L16 19.5",
-            strokeWidth: 1.125,
-            strokeDasharray: 18,
-            strokeDashoffset: 18
+            d: "M15.81 13.17L17.98 18M17.84 13.17L15.67 18",
+            strokeDasharray: 6,
+            strokeDashoffset: 6
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 1.1,
+              begin: 1,
               dur: 0.2,
               values: [0],
               freeze: true
@@ -119,12 +116,12 @@ export const LanguageJsx = createIcon("LanguageJsx", {
       children: [
         {
           type: "path",
-          props: { d: "M4 4h16v16H4Z", strokeDasharray: 65 },
+          props: { d: "M12 3H21V21H12M12 3H3V21H12", strokeDasharray: 37 },
           animations: [
             {
               prop: "strokeDashoffset",
-              dur: 0.6,
-              values: [65, 0],
+              dur: 0.5,
+              values: [37, 0],
               freeze: true
             }
           ]
@@ -132,15 +129,14 @@ export const LanguageJsx = createIcon("LanguageJsx", {
         {
           type: "path",
           props: {
-            d: "M7.5 12v5.2c0 1-0.7 1.6-1.6 1.6c-0.8 0-1.3-0.4-1.7-1.1",
-            strokeWidth: 1.5,
-            strokeDasharray: 11,
-            strokeDashoffset: 11
+            d: "M8.43 13.21V16.7c0 0.84 -0.56 1.29 -1.23 1.29c-0.56 0 -0.91 -0.28 -1.19 -0.77",
+            strokeDasharray: 8,
+            strokeDashoffset: 8
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.6,
+              begin: 0.5,
               dur: 0.2,
               values: [0],
               freeze: true
@@ -150,15 +146,14 @@ export const LanguageJsx = createIcon("LanguageJsx", {
         {
           type: "path",
           props: {
-            d: "M14 13c-0.4-0.7-1.1-1-1.9-1c-1.2 0-1.9 0.7-1.9 1.7c0 1 0.7 1.4 1.8 1.9c1 0.4 1.7 0.9 1.7 1.8c0 1-0.8 1.6-2 1.6c-1.1 0-1.7-0.5-2.2-1.2",
-            strokeWidth: 1.5,
-            strokeDasharray: 18,
-            strokeDashoffset: 18
+            d: "M13.46 13.87c-0.32 -0.53 -0.7 -0.73 -1.23 -0.73c-0.7 0 -1.16 0.46 -1.16 1.05c0 0.67 0.42 0.98 1.12 1.29c0.84 0.35 1.47 0.67 1.47 1.4c0 0.7 -0.59 1.12 -1.4 1.12c-0.77 0 -1.29 -0.35 -1.65 -0.98",
+            strokeDasharray: 12,
+            strokeDashoffset: 12
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.8,
+              begin: 0.7,
               dur: 0.3,
               values: [0],
               freeze: true
@@ -168,15 +163,14 @@ export const LanguageJsx = createIcon("LanguageJsx", {
         {
           type: "path",
           props: {
-            d: "M16 12l3.5 7.5M19.5 12L16 19.5",
-            strokeWidth: 1.5,
-            strokeDasharray: 18,
-            strokeDashoffset: 18
+            d: "M15.81 13.17L17.98 18M17.84 13.17L15.67 18",
+            strokeDasharray: 6,
+            strokeDashoffset: 6
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 1.1,
+              begin: 1,
               dur: 0.2,
               values: [0],
               freeze: true
@@ -206,22 +200,22 @@ export const LanguageJsx = createIcon("LanguageJsx", {
                 {
                   type: "path",
                   props: {
-                    d: "M4 4h16v16H4Z",
+                    d: "M12 4H20V20H12M12 4H4V20H12",
                     stroke: "#fff",
                     fill: "#fff",
                     fillOpacity: 0,
-                    strokeDasharray: 65
+                    strokeDasharray: 33
                   },
                   animations: [
                     {
                       prop: "strokeDashoffset",
-                      dur: 0.6,
-                      values: [65, 0],
+                      dur: 0.5,
+                      values: [33, 0],
                       freeze: true
                     },
                     {
                       prop: "fillOpacity",
-                      begin: 0.6,
+                      begin: 0.5,
                       dur: 0.4,
                       values: [1],
                       freeze: true
@@ -231,16 +225,16 @@ export const LanguageJsx = createIcon("LanguageJsx", {
                 {
                   type: "path",
                   props: {
-                    d: "M7.5 12v5.2c0 1-0.7 1.6-1.6 1.6c-0.8 0-1.3-0.4-1.7-1.1",
+                    d: "M7.94 12.79V17.14c0 1.04 -0.7 1.61 -1.52 1.61c-0.7 0 -1.13 -0.35 -1.48 -0.96",
                     stroke: "#000",
-                    strokeWidth: 2,
-                    strokeDasharray: 11,
-                    strokeDashoffset: 11
+                    strokeWidth: 1.5,
+                    strokeDasharray: 10,
+                    strokeDashoffset: 10
                   },
                   animations: [
                     {
                       prop: "strokeDashoffset",
-                      begin: 1,
+                      begin: 0.9,
                       dur: 0.2,
                       values: [0],
                       freeze: true
@@ -250,16 +244,16 @@ export const LanguageJsx = createIcon("LanguageJsx", {
                 {
                   type: "path",
                   props: {
-                    d: "M14 13c-0.4-0.7-1.1-1-1.9-1c-1.2 0-1.9 0.7-1.9 1.7c0 1 0.7 1.4 1.8 1.9c1 0.4 1.7 0.9 1.7 1.8c0 1-0.8 1.6-2 1.6c-1.1 0-1.7-0.5-2.2-1.2",
+                    d: "M13.55 13.62c-0.39 -0.65 -0.87 -0.91 -1.52 -0.91c-0.87 0 -1.44 0.57 -1.44 1.3c0 0.83 0.52 1.22 1.39 1.61c1.04 0.43 1.83 0.83 1.83 1.74c0 0.87 -0.74 1.39 -1.74 1.39c-0.96 0 -1.61 -0.43 -2.04 -1.22",
                     stroke: "#000",
-                    strokeWidth: 2,
-                    strokeDasharray: 18,
-                    strokeDashoffset: 18
+                    strokeWidth: 1.5,
+                    strokeDasharray: 15,
+                    strokeDashoffset: 15
                   },
                   animations: [
                     {
                       prop: "strokeDashoffset",
-                      begin: 1.2,
+                      begin: 1.1,
                       dur: 0.3,
                       values: [0],
                       freeze: true
@@ -269,16 +263,16 @@ export const LanguageJsx = createIcon("LanguageJsx", {
                 {
                   type: "path",
                   props: {
-                    d: "M16 12l3.5 7.5M19.5 12L16 19.5",
+                    d: "M16.24 12.75L18.94 18.75M18.76 12.75L16.07 18.75",
                     stroke: "#000",
-                    strokeWidth: 2,
-                    strokeDasharray: 18,
-                    strokeDashoffset: 18
+                    strokeWidth: 1.5,
+                    strokeDasharray: 8,
+                    strokeDashoffset: 8
                   },
                   animations: [
                     {
                       prop: "strokeDashoffset",
-                      begin: 1.5,
+                      begin: 1.4,
                       dur: 0.2,
                       values: [0],
                       freeze: true

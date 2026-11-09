@@ -1,13 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 	<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor">
-		<path d="M12 4.5c4.14 0 7.5 3.36 7.5 7.5c0 4.14 -3.36 7.5 -7.5 7.5c-4.14 0 -7.5 -3.36 -7.5 -7.5c0 -4.14 3.36 -7.5 7.5 -7.5Z" stroke-dasharray="49">
-			<animate attributeName="stroke-dashoffset" dur="0.6s" fill="freeze" values="49;0" />
-		</path>
-		<path d="M20.21 14.20L21.66 14.59M18.01 18.01L19.07 19.07M14.20 20.21L14.59 21.66M9.80 20.21L9.41 21.66M5.99 18.01L4.93 19.07M3.79 14.20L2.34 14.59M3.79 9.80L2.34 9.41M5.99 5.99L4.93 4.93M9.80 3.79L9.41 2.34M14.20 3.79L14.59 2.34M18.01 5.99L19.07 4.93M20.21 9.80L21.66 9.41" stroke-dasharray="20" stroke-dashoffset="20">
-			<animate attributeName="stroke-dashoffset" begin="0.6s" dur="0.3s" fill="freeze" to="0" />
-		</path>
-		<path d="M8.5 15.5V8.5h4.5a2 2 0 0 1 0 4H8.5M13 12.5l2.5 3" stroke-dasharray="28" stroke-dashoffset="28">
-			<animate attributeName="stroke-dashoffset" begin="0.9s" dur="0.4s" fill="freeze" to="0" />
-		</path>
+		<path d="M12 2.25A9.75 9.75 0 0 1 12.76 2.28L13.33 3.86A8.25 8.25 0 0 1 14.92 4.28L16.2 3.2A9.75 9.75 0 0 1 16.88 3.56A9.75 9.75 0 0 1 17.52 3.96L17.23 5.62A8.25 8.25 0 0 1 18.38 6.77L20.04 6.48A9.75 9.75 0 0 1 20.44 7.12A9.75 9.75 0 0 1 20.8 7.8L19.72 9.08A8.25 8.25 0 0 1 20.14 10.67L21.72 11.24A9.75 9.75 0 0 1 21.75 12A9.75 9.75 0 0 1 21.72 12.76L20.14 13.33A8.25 8.25 0 0 1 19.72 14.92L20.8 16.2A9.75 9.75 0 0 1 20.44 16.88A9.75 9.75 0 0 1 20.04 17.52L18.38 17.23A8.25 8.25 0 0 1 17.23 18.38L17.52 20.04A9.75 9.75 0 0 1 16.88 20.44A9.75 9.75 0 0 1 16.2 20.8L14.92 19.72A8.25 8.25 0 0 1 13.33 20.14L12.76 21.72A9.75 9.75 0 0 1 12 21.75M12 2.25A9.75 9.75 0 0 0 11.24 2.28L10.67 3.86A8.25 8.25 0 0 0 9.08 4.28L7.8 3.2A9.75 9.75 0 0 0 7.12 3.56A9.75 9.75 0 0 0 6.48 3.96L6.77 5.62A8.25 8.25 0 0 0 5.62 6.77L3.96 6.48A9.75 9.75 0 0 0 3.56 7.12A9.75 9.75 0 0 0 3.2 7.8L4.28 9.08A8.25 8.25 0 0 0 3.86 10.67L2.28 11.24A9.75 9.75 0 0 0 2.25 12A9.75 9.75 0 0 0 2.28 12.76L3.86 13.33A8.25 8.25 0 0 0 4.28 14.92L3.2 16.2A9.75 9.75 0 0 0 3.56 16.88A9.75 9.75 0 0 0 3.96 17.52L5.62 17.23A8.25 8.25 0 0 0 6.77 18.38L6.48 20.04A9.75 9.75 0 0 0 7.12 20.44A9.75 9.75 0 0 0 7.8 20.8L9.08 19.72A8.25 8.25 0 0 0 10.67 20.14L11.24 21.72A9.75 9.75 0 0 0 12 21.75" stroke-dasharray="40"><animate attributeName="stroke-dashoffset" dur="0.6s" fill="freeze" values="40;0" /></path>
+		<path d="M8.75 8.1H13.5a1.8 1.8 0 0 1 0 3.6H8.75M8.75 8.1V15.15M7.75 15.15H11.6" stroke-dasharray="16" stroke-dashoffset="16"><animate attributeName="stroke-dashoffset" begin="0.6s" dur="0.4s" fill="freeze" to="0" /></path>
+		<path d="M13.5 11.7c1.2 0 1.6 1 1.85 2.1c.25 1.05 .55 1.35 1.4 1.35" stroke-dasharray="6" stroke-dashoffset="6"><animate attributeName="stroke-dashoffset" begin="1s" dur="0.2s" fill="freeze" to="0" /></path>
 	</g>
 </svg>

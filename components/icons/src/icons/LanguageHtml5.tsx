@@ -40,14 +40,14 @@ export const LanguageHtml5 = createIcon("LanguageHtml5", {
         {
           type: "path",
           props: {
-            d: "M5.2 4h13.6l-1.3 14.6L12 19.9l-5.5-1.3Z",
-            strokeDasharray: 56
+            d: "M12 3.75H19.11L17.8 18.62L12 20.22M12 3.75H4.89L6.2 18.62L12 20.22",
+            strokeDasharray: 29
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              dur: 0.6,
-              values: [56, 0],
+              dur: 0.5,
+              values: [29, 0],
               freeze: true
             }
           ]
@@ -55,14 +55,14 @@ export const LanguageHtml5 = createIcon("LanguageHtml5", {
         {
           type: "path",
           props: {
-            d: "M15.8 7.3H8l0.4 4h7.2l-0.4 4.3l-3.2 0.9l-3.2-0.9l-0.1-1.5",
-            strokeDasharray: 33,
-            strokeDashoffset: 33
+            d: "M15.71 7.53H8.29L8.65 11.36H15.36L14.99 15.49L12 16.3L9.01 15.49L8.88 14.13",
+            strokeDasharray: 31,
+            strokeDashoffset: 31
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.6,
+              begin: 0.5,
               dur: 0.4,
               values: [0],
               freeze: true
@@ -86,14 +86,14 @@ export const LanguageHtml5 = createIcon("LanguageHtml5", {
         {
           type: "path",
           props: {
-            d: "M5.2 4h13.6l-1.3 14.6L12 19.9l-5.5-1.3Z",
-            strokeDasharray: 56
+            d: "M12 3.75H19.11L17.8 18.62L12 20.22M12 3.75H4.89L6.2 18.62L12 20.22",
+            strokeDasharray: 29
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              dur: 0.6,
-              values: [56, 0],
+              dur: 0.5,
+              values: [29, 0],
               freeze: true
             }
           ]
@@ -101,14 +101,14 @@ export const LanguageHtml5 = createIcon("LanguageHtml5", {
         {
           type: "path",
           props: {
-            d: "M15.8 7.3H8l0.4 4h7.2l-0.4 4.3l-3.2 0.9l-3.2-0.9l-0.1-1.5",
-            strokeDasharray: 33,
-            strokeDashoffset: 33
+            d: "M15.71 7.53H8.29L8.65 11.36H15.36L14.99 15.49L12 16.3L9.01 15.49L8.88 14.13",
+            strokeDasharray: 31,
+            strokeDashoffset: 31
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.6,
+              begin: 0.5,
               dur: 0.4,
               values: [0],
               freeze: true
@@ -138,22 +138,22 @@ export const LanguageHtml5 = createIcon("LanguageHtml5", {
                 {
                   type: "path",
                   props: {
-                    d: "M5.2 4h13.6l-1.3 14.6L12 19.9l-5.5-1.3Z",
+                    d: "M12 4H18.84L17.56 18.42L12 19.96M12 4H5.16L6.44 18.42L12 19.96",
                     stroke: "#fff",
                     fill: "#fff",
                     fillOpacity: 0,
-                    strokeDasharray: 56
+                    strokeDasharray: 28
                   },
                   animations: [
                     {
                       prop: "strokeDashoffset",
-                      dur: 0.6,
-                      values: [56, 0],
+                      dur: 0.5,
+                      values: [28, 0],
                       freeze: true
                     },
                     {
                       prop: "fillOpacity",
-                      begin: 0.6,
+                      begin: 0.5,
                       dur: 0.4,
                       values: [1],
                       freeze: true
@@ -163,16 +163,16 @@ export const LanguageHtml5 = createIcon("LanguageHtml5", {
                 {
                   type: "path",
                   props: {
-                    d: "M15.8 7.3H8l0.4 4h7.2l-0.4 4.3l-3.2 0.9l-3.2-0.9l-0.1-1.5",
+                    d: "M15.9 7.3H8.1L8.47 11.33H15.54L15.15 15.68L12 16.53L8.85 15.68L8.72 14.25",
                     stroke: "#000",
-                    strokeDasharray: 33,
-                    strokeDashoffset: 33,
-                    strokeWidth: 2.5
+                    strokeWidth: 2,
+                    strokeDasharray: 32,
+                    strokeDashoffset: 32
                   },
                   animations: [
                     {
                       prop: "strokeDashoffset",
-                      begin: 1,
+                      begin: 0.9,
                       dur: 0.4,
                       values: [0],
                       freeze: true

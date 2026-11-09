@@ -348,13 +348,18 @@ const FieldValidationTextImpl = createStyledHOC(
 
 const FieldGroupInnerImpl = createStyledHOC(
   FieldGroupFrame,
-  (props, forwardedRef) => {
+  (
+    props: GetProps<typeof FieldGroupFrame> & {
+      showDisabledMessage?: boolean;
+    },
+    forwardedRef
+  ) => {
     const {
       children,
       variant = "outlined",
       showDisabledMessage = false,
       ...rest
-    } = props as typeof props & { showDisabledMessage?: boolean };
+    } = props;
 
     const field = FieldApi.use();
     const name = field.name.get();
@@ -1097,7 +1102,8 @@ const FieldLabelTextImpl = createStyledHOC(
             minWidth: 0,
             overflow: "hidden",
             textOverflow: "ellipsis",
-            whiteSpace: "nowrap"
+            whiteSpace: "nowrap",
+            cursor: disabled ? "not-allowed" : "pointer"
           }
         ] as any)}
         ellipsis={true}
@@ -1141,7 +1147,8 @@ const FieldLabelTextImpl = createStyledHOC(
           ref={forwardedRef}
           id={getFieldLabelId(name)}
           htmlFor={name}
-          marginLeft={`${isFloatingVariant || underlined ? "zero" : "md"}`}>
+          marginLeft={`${isFloatingVariant || underlined ? "zero" : "md"}`}
+          cursor={disabled ? "not-allowed" : "pointer"}>
           <LabelXStack
             disabled={disabled}
             floating={floating}

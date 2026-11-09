@@ -39,12 +39,15 @@ export const Terraform = createIcon("Terraform", {
       children: [
         {
           type: "path",
-          props: { d: "M4 3.6L7.6 5.7V9.8L4 7.7Z", strokeDasharray: 18 },
+          props: {
+            d: "M3.45 3.02L7.25 5.19L7.25 9.87L3.45 7.69Z",
+            strokeDasharray: 19
+          },
           animations: [
             {
               prop: "strokeDashoffset",
               dur: 0.25,
-              values: [18, 0],
+              values: [19, 0],
               freeze: true
             }
           ]
@@ -52,9 +55,9 @@ export const Terraform = createIcon("Terraform", {
         {
           type: "path",
           props: {
-            d: "M10.2 7.2L13.8 9.3V13.3L10.2 11.2Z",
-            strokeDasharray: 17,
-            strokeDashoffset: 17
+            d: "M10.25 6.71L13.75 8.78L13.75 13.02L10.25 11.02Z",
+            strokeDasharray: 18,
+            strokeDashoffset: 18
           },
           animations: [
             {
@@ -69,9 +72,9 @@ export const Terraform = createIcon("Terraform", {
         {
           type: "path",
           props: {
-            d: "M16.4 9.3L20 7.2V11.2L16.4 13.3Z",
-            strokeDasharray: 17,
-            strokeDashoffset: 17
+            d: "M16.75 8.78L20.55 6.54L20.55 11.19L16.75 13.37Z",
+            strokeDasharray: 19,
+            strokeDashoffset: 19
           },
           animations: [
             {
@@ -86,9 +89,9 @@ export const Terraform = createIcon("Terraform", {
         {
           type: "path",
           props: {
-            d: "M10.2 14.2L13.8 16.3V20.3L10.2 18.2Z",
-            strokeDasharray: 17,
-            strokeDashoffset: 17
+            d: "M10.25 14.48L13.75 16.48L13.75 20.81L10.25 18.81Z",
+            strokeDasharray: 18,
+            strokeDashoffset: 18
           },
           animations: [
             {
@@ -116,12 +119,15 @@ export const Terraform = createIcon("Terraform", {
       children: [
         {
           type: "path",
-          props: { d: "M4 3.6L7.6 5.7V9.8L4 7.7Z", strokeDasharray: 18 },
+          props: {
+            d: "M3.45 3.02L7.25 5.19L7.25 9.87L3.45 7.69Z",
+            strokeDasharray: 19
+          },
           animations: [
             {
               prop: "strokeDashoffset",
               dur: 0.25,
-              values: [18, 0],
+              values: [19, 0],
               freeze: true
             }
           ]
@@ -129,9 +135,9 @@ export const Terraform = createIcon("Terraform", {
         {
           type: "path",
           props: {
-            d: "M10.2 7.2L13.8 9.3V13.3L10.2 11.2Z",
-            strokeDasharray: 17,
-            strokeDashoffset: 17
+            d: "M10.25 6.71L13.75 8.78L13.75 13.02L10.25 11.02Z",
+            strokeDasharray: 18,
+            strokeDashoffset: 18
           },
           animations: [
             {
@@ -146,9 +152,9 @@ export const Terraform = createIcon("Terraform", {
         {
           type: "path",
           props: {
-            d: "M16.4 9.3L20 7.2V11.2L16.4 13.3Z",
-            strokeDasharray: 17,
-            strokeDashoffset: 17
+            d: "M16.75 8.78L20.55 6.54L20.55 11.19L16.75 13.37Z",
+            strokeDasharray: 19,
+            strokeDashoffset: 19
           },
           animations: [
             {
@@ -163,9 +169,9 @@ export const Terraform = createIcon("Terraform", {
         {
           type: "path",
           props: {
-            d: "M10.2 14.2L13.8 16.3V20.3L10.2 18.2Z",
-            strokeDasharray: 17,
-            strokeDashoffset: 17
+            d: "M10.25 14.48L13.75 16.48L13.75 20.81L10.25 18.81Z",
+            strokeDasharray: 18,
+            strokeDashoffset: 18
           },
           animations: [
             {
@@ -200,17 +206,17 @@ export const Terraform = createIcon("Terraform", {
                 {
                   type: "path",
                   props: {
-                    d: "M4 3.6L7.6 5.7V9.8L4 7.7Z",
+                    d: "M3.45 3.02L7.25 5.19L7.25 9.87L3.45 7.69Z",
                     stroke: "#fff",
                     fill: "#fff",
                     fillOpacity: 0,
-                    strokeDasharray: 18
+                    strokeDasharray: 19
                   },
                   animations: [
                     {
                       prop: "strokeDashoffset",
                       dur: 0.25,
-                      values: [18, 0],
+                      values: [19, 0],
                       freeze: true
                     },
                     {
@@ -225,12 +231,12 @@ export const Terraform = createIcon("Terraform", {
                 {
                   type: "path",
                   props: {
-                    d: "M10.2 7.2L13.8 9.3V13.3L10.2 11.2Z",
+                    d: "M10.25 6.71L13.75 8.78L13.75 13.02L10.25 11.02Z",
                     stroke: "#fff",
                     fill: "#fff",
                     fillOpacity: 0,
-                    strokeDasharray: 17,
-                    strokeDashoffset: 17
+                    strokeDasharray: 18,
+                    strokeDashoffset: 18
                   },
                   animations: [
                     {
@@ -252,12 +258,12 @@ export const Terraform = createIcon("Terraform", {
                 {
                   type: "path",
                   props: {
-                    d: "M16.4 9.3L20 7.2V11.2L16.4 13.3Z",
+                    d: "M16.75 8.78L20.55 6.54L20.55 11.19L16.75 13.37Z",
                     stroke: "#fff",
                     fill: "#fff",
                     fillOpacity: 0,
-                    strokeDasharray: 17,
-                    strokeDashoffset: 17
+                    strokeDasharray: 19,
+                    strokeDashoffset: 19
                   },
                   animations: [
                     {
@@ -279,12 +285,12 @@ export const Terraform = createIcon("Terraform", {
                 {
                   type: "path",
                   props: {
-                    d: "M10.2 14.2L13.8 16.3V20.3L10.2 18.2Z",
+                    d: "M10.25 14.48L13.75 16.48L13.75 20.81L10.25 18.81Z",
                     stroke: "#fff",
                     fill: "#fff",
                     fillOpacity: 0,
-                    strokeDasharray: 17,
-                    strokeDashoffset: 17
+                    strokeDasharray: 18,
+                    strokeDashoffset: 18
                   },
                   animations: [
                     {

@@ -40,14 +40,14 @@ export const LanguageJava = createIcon("LanguageJava", {
         {
           type: "path",
           props: {
-            d: "M6.5 15.5h10.5v1.5c0 1.93-2.35 3.5-5.25 3.5S6.5 18.93 6.5 17Z",
-            strokeDasharray: 29
+            d: "M6.7 13.75C7.83 14.39 9.18 14.6 11.2 14.6C13.09 14.6 14.35 14.46 15.4 14.05",
+            strokeDasharray: 10
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              dur: 0.4,
-              values: [29, 0],
+              dur: 0.3,
+              values: [10, 0],
               freeze: true
             }
           ]
@@ -55,14 +55,14 @@ export const LanguageJava = createIcon("LanguageJava", {
         {
           type: "path",
           props: {
-            d: "M17 16.5c1.5-0.3 2.5 0.3 2.5 1.2s-1 1.6-2.5 1.8",
+            d: "M17.6 12.7C19.1 12.4 20 13.3 19.6 14.5C19.3 15.4 18.4 15.9 17.2 16.3",
             strokeDasharray: 8,
             strokeDashoffset: 8
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.4,
+              begin: 0.3,
               dur: 0.2,
               values: [0],
               freeze: true
@@ -72,14 +72,48 @@ export const LanguageJava = createIcon("LanguageJava", {
         {
           type: "path",
           props: {
-            d: "M5 21.5c1.5 0.5 4 0.8 7 0.8s5.5-0.3 7-0.8",
+            d: "M8.05 16.85C8.89 17.04 9.89 17.1 11.4 17.1C12.84 17.1 13.8 17.03 14.6 16.8",
+            strokeDasharray: 8,
+            strokeDashoffset: 8
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.5,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M8.75 19.4C9.44 19.55 10.26 19.6 11.5 19.6C12.89 19.6 13.82 19.54 14.6 19.35",
+            strokeDasharray: 7,
+            strokeDashoffset: 7
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.7,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M5.1 20.5C6.82 21.74 8.89 22.15 12 22.15C15.2 22.15 17.33 21.75 19.1 20.55",
             strokeDasharray: 16,
             strokeDashoffset: 16
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.6,
+              begin: 0.9,
               dur: 0.2,
               values: [0],
               freeze: true
@@ -89,14 +123,14 @@ export const LanguageJava = createIcon("LanguageJava", {
         {
           type: "path",
           props: {
-            d: "M14 2.5c0.5 3-2.8 4-4.1 6c-0.9 1.4 0.4 2.8 2.1 4.5",
-            strokeDasharray: 15,
-            strokeDashoffset: 15
+            d: "M14 2.5C15 4.4 12.6 5.8 11 7C9.4 8.3 9.3 9.9 11 11.7",
+            strokeDasharray: 12,
+            strokeDashoffset: 12
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.8,
+              begin: 1.1,
               dur: 0.3,
               values: [0],
               freeze: true
@@ -106,9 +140,9 @@ export const LanguageJava = createIcon("LanguageJava", {
         {
           type: "path",
           props: {
-            d: "M16.5 6.2c-3 1.1-4.8 2.6-3.3 4.8c0.6 0.9 0 1.8-0.4 2.3",
-            strokeDasharray: 11,
-            strokeDashoffset: 11
+            d: "M16.7 6.6C14.1 7.4 12.9 8.7 13.3 10.2C13.5 10.9 13.95 11.3 13.75 11.85",
+            strokeDasharray: 8,
+            strokeDashoffset: 8
           },
           animations: [
             {
@@ -137,14 +171,14 @@ export const LanguageJava = createIcon("LanguageJava", {
         {
           type: "path",
           props: {
-            d: "M6.5 15.5h10.5v1.5c0 1.93-2.35 3.5-5.25 3.5S6.5 18.93 6.5 17Z",
-            strokeDasharray: 29
+            d: "M6.7 13.75C7.83 14.39 9.18 14.6 11.2 14.6C13.09 14.6 14.35 14.46 15.4 14.05",
+            strokeDasharray: 10
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              dur: 0.4,
-              values: [29, 0],
+              dur: 0.3,
+              values: [10, 0],
               freeze: true
             }
           ]
@@ -152,14 +186,14 @@ export const LanguageJava = createIcon("LanguageJava", {
         {
           type: "path",
           props: {
-            d: "M17 16.5c1.5-0.3 2.5 0.3 2.5 1.2s-1 1.6-2.5 1.8",
+            d: "M17.6 12.7C19.1 12.4 20 13.3 19.6 14.5C19.3 15.4 18.4 15.9 17.2 16.3",
             strokeDasharray: 8,
             strokeDashoffset: 8
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.4,
+              begin: 0.3,
               dur: 0.2,
               values: [0],
               freeze: true
@@ -169,14 +203,48 @@ export const LanguageJava = createIcon("LanguageJava", {
         {
           type: "path",
           props: {
-            d: "M5 21.5c1.5 0.5 4 0.8 7 0.8s5.5-0.3 7-0.8",
+            d: "M8.05 16.85C8.89 17.04 9.89 17.1 11.4 17.1C12.84 17.1 13.8 17.03 14.6 16.8",
+            strokeDasharray: 8,
+            strokeDashoffset: 8
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.5,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M8.75 19.4C9.44 19.55 10.26 19.6 11.5 19.6C12.89 19.6 13.82 19.54 14.6 19.35",
+            strokeDasharray: 7,
+            strokeDashoffset: 7
+          },
+          animations: [
+            {
+              prop: "strokeDashoffset",
+              begin: 0.7,
+              dur: 0.2,
+              values: [0],
+              freeze: true
+            }
+          ]
+        },
+        {
+          type: "path",
+          props: {
+            d: "M5.1 20.5C6.82 21.74 8.89 22.15 12 22.15C15.2 22.15 17.33 21.75 19.1 20.55",
             strokeDasharray: 16,
             strokeDashoffset: 16
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.6,
+              begin: 0.9,
               dur: 0.2,
               values: [0],
               freeze: true
@@ -186,14 +254,14 @@ export const LanguageJava = createIcon("LanguageJava", {
         {
           type: "path",
           props: {
-            d: "M14 2.5c0.5 3-2.8 4-4.1 6c-0.9 1.4 0.4 2.8 2.1 4.5",
-            strokeDasharray: 15,
-            strokeDashoffset: 15
+            d: "M14 2.5C15 4.4 12.6 5.8 11 7C9.4 8.3 9.3 9.9 11 11.7",
+            strokeDasharray: 12,
+            strokeDashoffset: 12
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.8,
+              begin: 1.1,
               dur: 0.3,
               values: [0],
               freeze: true
@@ -203,9 +271,9 @@ export const LanguageJava = createIcon("LanguageJava", {
         {
           type: "path",
           props: {
-            d: "M16.5 6.2c-3 1.1-4.8 2.6-3.3 4.8c0.6 0.9 0 1.8-0.4 2.3",
-            strokeDasharray: 11,
-            strokeDashoffset: 11
+            d: "M16.7 6.6C14.1 7.4 12.9 8.7 13.3 10.2C13.5 10.9 13.95 11.3 13.75 11.85",
+            strokeDasharray: 8,
+            strokeDashoffset: 8
           },
           animations: [
             {

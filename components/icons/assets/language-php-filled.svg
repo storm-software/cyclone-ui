@@ -2,19 +2,10 @@
 	<defs>
 		<mask id="language-php-mask">
 			<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-				<path d="M12 7c6.08 0 11 2.24 11 5s-4.92 5-11 5S1 14.76 1 12s4.92-5 11-5Z" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="54">
-					<animate attributeName="fill-opacity" begin="0.6s" dur="0.4s" fill="freeze" to="1" />
-					<animate attributeName="stroke-dashoffset" dur="0.6s" fill="freeze" values="54;0" />
-				</path>
-				<path d="M4.5 15.5v-5.5h1.8c1 0 1.7 0.7 1.7 1.6s-0.7 1.6-1.7 1.6H4.5" stroke="#000" stroke-dasharray="16" stroke-dashoffset="16">
-					<animate attributeName="stroke-dashoffset" begin="1s" dur="0.2s" fill="freeze" to="0" />
-				</path>
-				<path d="M10.5 8v6M10.5 11.5c0.6-0.8 1.3-1.2 2-1.2c1 0 1.5 0.6 1.5 1.6V14" stroke="#000" stroke-dasharray="15" stroke-dashoffset="15">
-					<animate attributeName="stroke-dashoffset" begin="1.2s" dur="0.2s" fill="freeze" to="0" />
-				</path>
-				<path d="M16 15.5v-5.5h1.8c1 0 1.7 0.7 1.7 1.6s-0.7 1.6-1.7 1.6H16" stroke="#000" stroke-dasharray="16" stroke-dashoffset="16">
-					<animate attributeName="stroke-dashoffset" begin="1.4s" dur="0.2s" fill="freeze" to="0" />
-				</path>
+				<path d="M12 6.92a11 5.08 0 0 1 0 10.16M12 6.92a11 5.08 0 0 0 0 10.16" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="27"><animate attributeName="fill-opacity" begin="0.6s" dur="0.4s" fill="freeze" to="1" /><animate attributeName="stroke-dashoffset" dur="0.6s" fill="freeze" values="27;0" /></path>
+				<path d="M4.17 14.98L5.21 9.62L7.25 9.62C8.29 9.62 8.97 10.47 8.77 11.52C8.57 12.56 7.55 13.41 6.51 13.41L4.47 13.41" stroke="#000" stroke-width="0.9" stroke-dasharray="17" stroke-dashoffset="17"><animate attributeName="stroke-dashoffset" begin="1s" dur="0.2s" fill="freeze" to="0" /></path>
+				<path d="M11.13 8.05L10.13 13.23M10.82 9.63L13.25 9.63C13.86 9.63 14.26 10.12 14.14 10.73L13.66 13.23" stroke="#000" stroke-width="0.9" stroke-dasharray="8" stroke-dashoffset="8"><animate attributeName="stroke-dashoffset" begin="1.2s" dur="0.2s" fill="freeze" to="0" /></path>
+				<path d="M15.36 14.98L16.4 9.62L18.43 9.62C19.48 9.62 20.16 10.47 19.96 11.52C19.76 12.56 18.74 13.41 17.69 13.41L15.66 13.41" stroke="#000" stroke-width="0.9" stroke-dasharray="17" stroke-dashoffset="17"><animate attributeName="stroke-dashoffset" begin="1.4s" dur="0.2s" fill="freeze" to="0" /></path>
 			</g>
 		</mask>
 	</defs>

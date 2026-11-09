@@ -19,6 +19,7 @@
 import type { FieldLabelVariant, FieldProps } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
+import { Input } from "@cyclone-ui/input";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 import { Select } from "./Select";
@@ -312,3 +313,76 @@ export const SmallSize: Story = { args: { size: "sm" } };
 export const MediumSize: Story = { args: { size: "md" } };
 
 export const LargeSize: Story = { args: { size: "lg" } };
+
+/** Narrow controls reproduce long address values and compare value typography. */
+export const TruncatedValue: Story = {
+  render: () => (
+    <Form
+      name="truncated-select"
+      initialValues={{
+        sm: "Armed Forces Americas",
+        md: "Armed Forces Americas",
+        lg: "Armed Forces Americas"
+      }}>
+      <div style={{ width: 180, display: "grid", gap: 24 }}>
+        {(["sm", "md", "lg"] as const).map(size => (
+          <div key={size} data-size={size} style={{ minWidth: 0 }}>
+            <Field name={size} size={size}>
+              <Field.Label>State</Field.Label>
+              <Select size={size}>
+                <Select.TextBox>
+                  <Select.TextBox.Value />
+                </Select.TextBox>
+                <Select.Items>
+                  <Select.Items.Item index={0} value="Armed Forces Americas">
+                    Armed Forces Americas
+                  </Select.Items.Item>
+                  <Select.Items.Item index={1} value="California">
+                    California
+                  </Select.Items.Item>
+                </Select.Items>
+              </Select>
+            </Field>
+            <Input size={size}>
+              <Input.TextBox>
+                <Input.TextBox.Value
+                  aria-label={`Input ${size}`}
+                  value="California"
+                />
+              </Input.TextBox>
+            </Input>
+          </div>
+        ))}
+      </div>
+    </Form>
+  ),
+  play: async ({ canvasElement }) => {
+    for (const size of ["sm", "md", "lg"]) {
+      const row = canvasElement.querySelector(`[data-size="${size}"]`)!;
+      const text = row.querySelector("[data-select-trigger] .is_Text")!;
+      const input = row.querySelector("input")!;
+      await waitFor(() => {
+        expect(text.scrollWidth).toBeGreaterThan(text.clientWidth);
+        expect(getComputedStyle(text).whiteSpace).toBe("nowrap");
+        expect(getComputedStyle(text).textOverflow).toBe("ellipsis");
+        for (const property of [
+          "fontSize",
+          "fontWeight",
+          "fontFamily",
+          "lineHeight"
+        ] as const) {
+          expect(getComputedStyle(text)[property]).toBe(
+            getComputedStyle(input)[property]
+          );
+        }
+      });
+    }
+    const trigger = canvasElement.querySelector("[data-select-trigger]")!;
+    await userEvent.click(trigger.querySelector(".is_Text")!.parentElement!);
+    const document = within(canvasElement.ownerDocument.body);
+    await userEvent.click(
+      await document.findByRole("option", { name: "California", exact: true })
+    );
+    await waitFor(() => expect(trigger).toHaveTextContent("California"));
+  }
+};

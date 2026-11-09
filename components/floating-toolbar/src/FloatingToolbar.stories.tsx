@@ -157,6 +157,11 @@ export const Solid: Story = {
   args: { glass: false }
 };
 
+/** Without the tab on the left side, the toolbar stays where it is placed. */
+export const NotDraggable: Story = {
+  args: { draggable: false }
+};
+
 export const TableOfContentsOnly: Story = {
   render: args => (
     <>

@@ -40,14 +40,14 @@ export const LanguagePhp = createIcon("LanguagePhp", {
         {
           type: "path",
           props: {
-            d: "M12 7c6.08 0 11 2.24 11 5s-4.92 5-11 5S1 14.76 1 12s4.92-5 11-5Z",
-            strokeDasharray: 54
+            d: "M12 6.5a11 5.5 0 0 1 0 11M12 6.5a11 5.5 0 0 0 0 11",
+            strokeDasharray: 28
           },
           animations: [
             {
               prop: "strokeDashoffset",
               dur: 0.6,
-              values: [54, 0],
+              values: [28, 0],
               freeze: true
             }
           ]
@@ -55,9 +55,9 @@ export const LanguagePhp = createIcon("LanguagePhp", {
         {
           type: "path",
           props: {
-            d: "M4.5 15.5v-5.5h1.8c1 0 1.7 0.7 1.7 1.6s-0.7 1.6-1.7 1.6H4.5",
-            strokeDasharray: 16,
-            strokeDashoffset: 16
+            d: "M5.87 13.85L6.55 10.3L7.75 10.3C8.47 10.3 8.94 10.88 8.8 11.6C8.66 12.32 7.97 12.9 7.25 12.9L6.05 12.9",
+            strokeDasharray: 11,
+            strokeDashoffset: 11
           },
           animations: [
             {
@@ -72,9 +72,9 @@ export const LanguagePhp = createIcon("LanguagePhp", {
         {
           type: "path",
           props: {
-            d: "M10.5 8v6M10.5 11.5c0.6-0.8 1.3-1.2 2-1.2c1 0 1.5 0.6 1.5 1.6V14",
-            strokeDasharray: 15,
-            strokeDashoffset: 15
+            d: "M11.83 9L11.07 12.9M11.57 10.3L12.92 10.3C13.53 10.3 13.93 10.79 13.81 11.4L13.52 12.9",
+            strokeDasharray: 6,
+            strokeDashoffset: 6
           },
           animations: [
             {
@@ -89,9 +89,9 @@ export const LanguagePhp = createIcon("LanguagePhp", {
         {
           type: "path",
           props: {
-            d: "M16 15.5v-5.5h1.8c1 0 1.7 0.7 1.7 1.6s-0.7 1.6-1.7 1.6H16",
-            strokeDasharray: 16,
-            strokeDashoffset: 16
+            d: "M15.86 13.85L16.54 10.3L17.74 10.3C18.46 10.3 18.93 10.88 18.79 11.6C18.65 12.32 17.96 12.9 17.24 12.9L16.04 12.9",
+            strokeDasharray: 11,
+            strokeDashoffset: 11
           },
           animations: [
             {
@@ -120,14 +120,14 @@ export const LanguagePhp = createIcon("LanguagePhp", {
         {
           type: "path",
           props: {
-            d: "M12 7c6.08 0 11 2.24 11 5s-4.92 5-11 5S1 14.76 1 12s4.92-5 11-5Z",
-            strokeDasharray: 54
+            d: "M12 6.5a11 5.5 0 0 1 0 11M12 6.5a11 5.5 0 0 0 0 11",
+            strokeDasharray: 28
           },
           animations: [
             {
               prop: "strokeDashoffset",
               dur: 0.6,
-              values: [54, 0],
+              values: [28, 0],
               freeze: true
             }
           ]
@@ -135,9 +135,9 @@ export const LanguagePhp = createIcon("LanguagePhp", {
         {
           type: "path",
           props: {
-            d: "M4.5 15.5v-5.5h1.8c1 0 1.7 0.7 1.7 1.6s-0.7 1.6-1.7 1.6H4.5",
-            strokeDasharray: 16,
-            strokeDashoffset: 16
+            d: "M5.87 13.85L6.55 10.3L7.75 10.3C8.47 10.3 8.94 10.88 8.8 11.6C8.66 12.32 7.97 12.9 7.25 12.9L6.05 12.9",
+            strokeDasharray: 11,
+            strokeDashoffset: 11
           },
           animations: [
             {
@@ -152,9 +152,9 @@ export const LanguagePhp = createIcon("LanguagePhp", {
         {
           type: "path",
           props: {
-            d: "M10.5 8v6M10.5 11.5c0.6-0.8 1.3-1.2 2-1.2c1 0 1.5 0.6 1.5 1.6V14",
-            strokeDasharray: 15,
-            strokeDashoffset: 15
+            d: "M11.83 9L11.07 12.9M11.57 10.3L12.92 10.3C13.53 10.3 13.93 10.79 13.81 11.4L13.52 12.9",
+            strokeDasharray: 6,
+            strokeDashoffset: 6
           },
           animations: [
             {
@@ -169,9 +169,9 @@ export const LanguagePhp = createIcon("LanguagePhp", {
         {
           type: "path",
           props: {
-            d: "M16 15.5v-5.5h1.8c1 0 1.7 0.7 1.7 1.6s-0.7 1.6-1.7 1.6H16",
-            strokeDasharray: 16,
-            strokeDashoffset: 16
+            d: "M15.86 13.85L16.54 10.3L17.74 10.3C18.46 10.3 18.93 10.88 18.79 11.6C18.65 12.32 17.96 12.9 17.24 12.9L16.04 12.9",
+            strokeDasharray: 11,
+            strokeDashoffset: 11
           },
           animations: [
             {
@@ -206,17 +206,17 @@ export const LanguagePhp = createIcon("LanguagePhp", {
                 {
                   type: "path",
                   props: {
-                    d: "M12 7c6.08 0 11 2.24 11 5s-4.92 5-11 5S1 14.76 1 12s4.92-5 11-5Z",
+                    d: "M12 6.92a11 5.08 0 0 1 0 10.16M12 6.92a11 5.08 0 0 0 0 10.16",
                     stroke: "#fff",
                     fill: "#fff",
                     fillOpacity: 0,
-                    strokeDasharray: 54
+                    strokeDasharray: 27
                   },
                   animations: [
                     {
                       prop: "strokeDashoffset",
                       dur: 0.6,
-                      values: [54, 0],
+                      values: [27, 0],
                       freeze: true
                     },
                     {
@@ -231,11 +231,11 @@ export const LanguagePhp = createIcon("LanguagePhp", {
                 {
                   type: "path",
                   props: {
-                    d: "M4.5 15.5v-5.5h1.8c1 0 1.7 0.7 1.7 1.6s-0.7 1.6-1.7 1.6H4.5",
+                    d: "M4.17 14.98L5.21 9.62L7.25 9.62C8.29 9.62 8.97 10.47 8.77 11.52C8.57 12.56 7.55 13.41 6.51 13.41L4.47 13.41",
                     stroke: "#000",
-                    strokeDasharray: 16,
-                    strokeDashoffset: 16,
-                    strokeWidth: 2.5
+                    strokeWidth: 1.4,
+                    strokeDasharray: 17,
+                    strokeDashoffset: 17
                   },
                   animations: [
                     {
@@ -250,11 +250,11 @@ export const LanguagePhp = createIcon("LanguagePhp", {
                 {
                   type: "path",
                   props: {
-                    d: "M10.5 8v6M10.5 11.5c0.6-0.8 1.3-1.2 2-1.2c1 0 1.5 0.6 1.5 1.6V14",
+                    d: "M11.13 8.05L10.13 13.23M10.82 9.63L13.25 9.63C13.86 9.63 14.26 10.12 14.14 10.73L13.66 13.23",
                     stroke: "#000",
-                    strokeDasharray: 15,
-                    strokeDashoffset: 15,
-                    strokeWidth: 2.5
+                    strokeWidth: 1.4,
+                    strokeDasharray: 8,
+                    strokeDashoffset: 8
                   },
                   animations: [
                     {
@@ -269,11 +269,11 @@ export const LanguagePhp = createIcon("LanguagePhp", {
                 {
                   type: "path",
                   props: {
-                    d: "M16 15.5v-5.5h1.8c1 0 1.7 0.7 1.7 1.6s-0.7 1.6-1.7 1.6H16",
+                    d: "M15.36 14.98L16.4 9.62L18.43 9.62C19.48 9.62 20.16 10.47 19.96 11.52C19.76 12.56 18.74 13.41 17.69 13.41L15.66 13.41",
                     stroke: "#000",
-                    strokeDasharray: 16,
-                    strokeDashoffset: 16,
-                    strokeWidth: 2.5
+                    strokeWidth: 1.4,
+                    strokeDasharray: 17,
+                    strokeDashoffset: 17
                   },
                   animations: [
                     {

@@ -40,14 +40,14 @@ export const LanguagePython = createIcon("LanguagePython", {
         {
           type: "path",
           props: {
-            d: "M4 16.5V11A2 2 0 0 1 6 9h2V5.5A2 2 0 0 1 10 3.5h4A2 2 0 0 1 16 5.5v3.5A2 2 0 0 1 14 11H9.5A2.5 2.5 0 0 0 7 13.5v3Z",
-            strokeDasharray: 47
+            d: "M5.04 17H4.86A2.36 2.36 0 0 1 2.5 14.64V10.86A2.36 2.36 0 0 1 4.86 8.5H8V5.36A1.86 1.86 0 0 1 9.86 3.5H14.14A1.86 1.86 0 0 1 16 5.36V9.11A1.85 1.85 0 0 1 14.15 10.96H8.89A3.85 3.85 0 0 0 5.04 14.81Z",
+            strokeDasharray: 49
           },
           animations: [
             {
               prop: "strokeDashoffset",
               dur: 0.6,
-              values: [47, 0],
+              values: [49, 0],
               freeze: true
             }
           ]
@@ -55,32 +55,42 @@ export const LanguagePython = createIcon("LanguagePython", {
         {
           type: "path",
           props: {
-            d: "M20 7.5V13A2 2 0 0 1 18 15h-2v3.5A2 2 0 0 1 14 20.5h-4A2 2 0 0 1 8 18.5V15A2 2 0 0 1 10 13h4.5A2.5 2.5 0 0 0 17 10.5v-3Z",
-            strokeDasharray: 47,
-            strokeDashoffset: 47
+            d: "M18.96 8H19.14A2.36 2.36 0 0 1 21.5 10.36V14.14A2.36 2.36 0 0 1 19.14 16.5H16V19.64A1.86 1.86 0 0 1 14.14 21.5H9.86A1.86 1.86 0 0 1 8 19.64V15.89A1.85 1.85 0 0 1 9.85 14.04H15.11A3.85 3.85 0 0 0 18.96 10.19Z",
+            strokeDasharray: 49
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.6,
               dur: 0.6,
-              values: [0],
+              values: [49, 0],
               freeze: true
             }
           ]
         },
         {
           type: "circle",
-          props: { stroke: "none", cx: 10, cy: 6, fill: "currentColor", r: 0 },
+          props: {
+            stroke: "none",
+            cx: 10.4,
+            cy: 5.9,
+            fill: "currentColor",
+            r: 0
+          },
           animations: [
-            { prop: "r", begin: 1.2, dur: 0.1, values: [0.9], freeze: true }
+            { prop: "r", begin: 0.6, dur: 0.2, values: [0.7], freeze: true }
           ]
         },
         {
           type: "circle",
-          props: { stroke: "none", cx: 14, cy: 18, fill: "currentColor", r: 0 },
+          props: {
+            stroke: "none",
+            cx: 13.6,
+            cy: 19.1,
+            fill: "currentColor",
+            r: 0
+          },
           animations: [
-            { prop: "r", begin: 1.2, dur: 0.1, values: [0.9], freeze: true }
+            { prop: "r", begin: 0.6, dur: 0.2, values: [0.7], freeze: true }
           ]
         }
       ]
@@ -100,14 +110,14 @@ export const LanguagePython = createIcon("LanguagePython", {
         {
           type: "path",
           props: {
-            d: "M4 16.5V11A2 2 0 0 1 6 9h2V5.5A2 2 0 0 1 10 3.5h4A2 2 0 0 1 16 5.5v3.5A2 2 0 0 1 14 11H9.5A2.5 2.5 0 0 0 7 13.5v3Z",
-            strokeDasharray: 47
+            d: "M5.04 17H4.86A2.36 2.36 0 0 1 2.5 14.64V10.86A2.36 2.36 0 0 1 4.86 8.5H8V5.36A1.86 1.86 0 0 1 9.86 3.5H14.14A1.86 1.86 0 0 1 16 5.36V9.11A1.85 1.85 0 0 1 14.15 10.96H8.89A3.85 3.85 0 0 0 5.04 14.81Z",
+            strokeDasharray: 49
           },
           animations: [
             {
               prop: "strokeDashoffset",
               dur: 0.6,
-              values: [47, 0],
+              values: [49, 0],
               freeze: true
             }
           ]
@@ -115,32 +125,42 @@ export const LanguagePython = createIcon("LanguagePython", {
         {
           type: "path",
           props: {
-            d: "M20 7.5V13A2 2 0 0 1 18 15h-2v3.5A2 2 0 0 1 14 20.5h-4A2 2 0 0 1 8 18.5V15A2 2 0 0 1 10 13h4.5A2.5 2.5 0 0 0 17 10.5v-3Z",
-            strokeDasharray: 47,
-            strokeDashoffset: 47
+            d: "M18.96 8H19.14A2.36 2.36 0 0 1 21.5 10.36V14.14A2.36 2.36 0 0 1 19.14 16.5H16V19.64A1.86 1.86 0 0 1 14.14 21.5H9.86A1.86 1.86 0 0 1 8 19.64V15.89A1.85 1.85 0 0 1 9.85 14.04H15.11A3.85 3.85 0 0 0 18.96 10.19Z",
+            strokeDasharray: 49
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.6,
               dur: 0.6,
-              values: [0],
+              values: [49, 0],
               freeze: true
             }
           ]
         },
         {
           type: "circle",
-          props: { stroke: "none", cx: 10, cy: 6, fill: "currentColor", r: 0 },
+          props: {
+            stroke: "none",
+            cx: 10.4,
+            cy: 5.9,
+            fill: "currentColor",
+            r: 0
+          },
           animations: [
-            { prop: "r", begin: 1.2, dur: 0.1, values: [0.9], freeze: true }
+            { prop: "r", begin: 0.6, dur: 0.2, values: [0.7], freeze: true }
           ]
         },
         {
           type: "circle",
-          props: { stroke: "none", cx: 14, cy: 18, fill: "currentColor", r: 0 },
+          props: {
+            stroke: "none",
+            cx: 13.6,
+            cy: 19.1,
+            fill: "currentColor",
+            r: 0
+          },
           animations: [
-            { prop: "r", begin: 1.2, dur: 0.1, values: [0.9], freeze: true }
+            { prop: "r", begin: 0.6, dur: 0.2, values: [0.7], freeze: true }
           ]
         }
       ]
@@ -166,7 +186,7 @@ export const LanguagePython = createIcon("LanguagePython", {
                 {
                   type: "path",
                   props: {
-                    d: "M4 16.5V11A2 2 0 0 1 6 9h2V5.5A2 2 0 0 1 10 3.5h4A2 2 0 0 1 16 5.5v3.5A2 2 0 0 1 14 11H9.5A2.5 2.5 0 0 0 7 13.5v3Z",
+                    d: "M5.04 16.5H4.86A1.86 1.86 0 0 1 3 14.64V10.86A1.86 1.86 0 0 1 4.86 9H8V5.36A1.86 1.86 0 0 1 9.86 3.5H14.14A1.86 1.86 0 0 1 16 5.36V9.11A1.85 1.85 0 0 1 14.15 10.96H8.89A3.85 3.85 0 0 0 5.04 14.81Z",
                     stroke: "#fff",
                     fill: "#fff",
                     fillOpacity: 0,
@@ -181,7 +201,7 @@ export const LanguagePython = createIcon("LanguagePython", {
                     },
                     {
                       prop: "fillOpacity",
-                      begin: 1.2,
+                      begin: 0.6,
                       dur: 0.4,
                       values: [1],
                       freeze: true
@@ -191,24 +211,22 @@ export const LanguagePython = createIcon("LanguagePython", {
                 {
                   type: "path",
                   props: {
-                    d: "M20 7.5V13A2 2 0 0 1 18 15h-2v3.5A2 2 0 0 1 14 20.5h-4A2 2 0 0 1 8 18.5V15A2 2 0 0 1 10 13h4.5A2.5 2.5 0 0 0 17 10.5v-3Z",
+                    d: "M18.96 8.5H19.14A1.86 1.86 0 0 1 21 10.36V14.14A1.86 1.86 0 0 1 19.14 16H16V19.64A1.86 1.86 0 0 1 14.14 21.5H9.86A1.86 1.86 0 0 1 8 19.64V15.89A1.85 1.85 0 0 1 9.85 14.04H15.11A3.85 3.85 0 0 0 18.96 10.19Z",
                     stroke: "#fff",
                     fill: "#fff",
                     fillOpacity: 0,
-                    strokeDasharray: 47,
-                    strokeDashoffset: 47
+                    strokeDasharray: 47
                   },
                   animations: [
                     {
                       prop: "strokeDashoffset",
-                      begin: 0.6,
                       dur: 0.6,
-                      values: [0],
+                      values: [47, 0],
                       freeze: true
                     },
                     {
                       prop: "fillOpacity",
-                      begin: 1.2,
+                      begin: 0.6,
                       dur: 0.4,
                       values: [1],
                       freeze: true
@@ -216,27 +234,65 @@ export const LanguagePython = createIcon("LanguagePython", {
                   ]
                 },
                 {
-                  type: "circle",
-                  props: { cx: 10, cy: 6, fill: "#000", r: 0 },
+                  type: "path",
+                  props: {
+                    d: "M5.5 7.52H11.4",
+                    stroke: "#000",
+                    strokeWidth: 1,
+                    strokeDasharray: 7,
+                    strokeDashoffset: 7
+                  },
                   animations: [
                     {
-                      prop: "r",
-                      begin: 1.6,
-                      dur: 0.1,
-                      values: [0.9],
+                      prop: "strokeDashoffset",
+                      begin: 1,
+                      dur: 0.2,
+                      values: [0],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "path",
+                  props: {
+                    d: "M18.5 17.48H12.6",
+                    stroke: "#000",
+                    strokeWidth: 1,
+                    strokeDasharray: 7,
+                    strokeDashoffset: 7
+                  },
+                  animations: [
+                    {
+                      prop: "strokeDashoffset",
+                      begin: 1,
+                      dur: 0.2,
+                      values: [0],
                       freeze: true
                     }
                   ]
                 },
                 {
                   type: "circle",
-                  props: { cx: 14, cy: 18, fill: "#000", r: 0 },
+                  props: { cx: 9.14, cy: 4.91, fill: "#000", r: 0 },
                   animations: [
                     {
                       prop: "r",
-                      begin: 1.6,
-                      dur: 0.1,
-                      values: [0.9],
+                      begin: 1.2,
+                      dur: 0.2,
+                      values: [0.75],
+                      freeze: true
+                    }
+                  ]
+                },
+                {
+                  type: "circle",
+                  props: { cx: 14.86, cy: 20.09, fill: "#000", r: 0 },
+                  animations: [
+                    {
+                      prop: "r",
+                      begin: 1.2,
+                      dur: 0.2,
+                      values: [0.75],
                       freeze: true
                     }
                   ]

@@ -40,14 +40,14 @@ export const Tailwind = createIcon("Tailwind", {
         {
           type: "path",
           props: {
-            d: "M7.47 9.41Q10.98 5.25 14.5 9T21.53 8.59",
-            strokeDasharray: 18
+            d: "M7.59 9C8.37 7.14 9.8 6.25 12 6.25C14.39 6.25 15.43 7.32 16.41 8.33C17.02 8.94 17.61 9.54 18.44 9.74C19.51 10.01 20.53 9.75 21.41 9M7.59 9C8.47 8.25 9.49 7.99 10.56 8.26C11.39 8.46 11.99 9.06 12.59 9.67C13.57 10.68 14.61 11.75 17 11.75C19.2 11.75 20.63 10.86 21.41 9",
+            strokeDasharray: 17
           },
           animations: [
             {
               prop: "strokeDashoffset",
               dur: 0.4,
-              values: [18, 0],
+              values: [17, 0],
               freeze: true
             }
           ]
@@ -55,9 +55,9 @@ export const Tailwind = createIcon("Tailwind", {
         {
           type: "path",
           props: {
-            d: "M2.47 15.41Q5.98 11.25 9.5 15T16.53 14.59",
-            strokeDasharray: 18,
-            strokeDashoffset: 18
+            d: "M2.59 15C3.37 13.14 4.8 12.25 7 12.25C9.39 12.25 10.43 13.32 11.41 14.33C12.02 14.94 12.61 15.54 13.44 15.74C14.51 16.01 15.53 15.75 16.41 15M2.59 15C3.47 14.25 4.49 13.99 5.56 14.26C6.39 14.46 6.99 15.06 7.59 15.67C8.57 16.68 9.61 17.75 12 17.75C14.2 17.75 15.63 16.86 16.41 15",
+            strokeDasharray: 17,
+            strokeDashoffset: 17
           },
           animations: [
             {
@@ -86,14 +86,14 @@ export const Tailwind = createIcon("Tailwind", {
         {
           type: "path",
           props: {
-            d: "M7.47 9.41Q10.98 5.25 14.5 9T21.53 8.59",
-            strokeDasharray: 18
+            d: "M7.59 9C8.37 7.14 9.8 6.25 12 6.25C14.39 6.25 15.43 7.32 16.41 8.33C17.02 8.94 17.61 9.54 18.44 9.74C19.51 10.01 20.53 9.75 21.41 9M7.59 9C8.47 8.25 9.49 7.99 10.56 8.26C11.39 8.46 11.99 9.06 12.59 9.67C13.57 10.68 14.61 11.75 17 11.75C19.2 11.75 20.63 10.86 21.41 9",
+            strokeDasharray: 17
           },
           animations: [
             {
               prop: "strokeDashoffset",
               dur: 0.4,
-              values: [18, 0],
+              values: [17, 0],
               freeze: true
             }
           ]
@@ -101,9 +101,9 @@ export const Tailwind = createIcon("Tailwind", {
         {
           type: "path",
           props: {
-            d: "M2.47 15.41Q5.98 11.25 9.5 15T16.53 14.59",
-            strokeDasharray: 18,
-            strokeDashoffset: 18
+            d: "M2.59 15C3.37 13.14 4.8 12.25 7 12.25C9.39 12.25 10.43 13.32 11.41 14.33C12.02 14.94 12.61 15.54 13.44 15.74C14.51 16.01 15.53 15.75 16.41 15M2.59 15C3.47 14.25 4.49 13.99 5.56 14.26C6.39 14.46 6.99 15.06 7.59 15.67C8.57 16.68 9.61 17.75 12 17.75C14.2 17.75 15.63 16.86 16.41 15",
+            strokeDasharray: 17,
+            strokeDashoffset: 17
           },
           animations: [
             {

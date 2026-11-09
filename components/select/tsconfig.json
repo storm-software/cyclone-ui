@@ -18,6 +18,9 @@
       "path": "../../tools/config"
     },
     {
+      "path": "../tooltip"
+    },
+    {
       "path": "../input"
     },
     {
