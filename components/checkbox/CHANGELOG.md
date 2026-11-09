@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Checkbox
 
+## [0.5.66](https://github.com/storm-software/cyclone-ui/releases/tag/checkbox%400.5.66) (11/09/2026)
+
+### Features
+
+- **monorepo:** Added the `readOnly` state for form fields ([19e3ada19](https://github.com/storm-software/cyclone-ui/commit/19e3ada19))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.66**
+- Updated **form** to **v0.9.64**
+- Updated **helpers** to **v0.3.63**
+- Updated **icons** to **v0.0.61**
+
 ## [0.5.65](https://github.com/storm-software/cyclone-ui/releases/tag/checkbox%400.5.65) (11/09/2026)
 
 ### Updated Dependencies

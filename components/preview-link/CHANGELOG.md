@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Preview Link
 
+## [0.0.46](https://github.com/storm-software/cyclone-ui/releases/tag/preview-link%400.0.46) (11/09/2026)
+
+### Updated Dependencies
+
+- Updated **link** to **v0.5.66**
+- Updated **tooltip** to **v0.5.66**
+
 ## [0.0.45](https://github.com/storm-software/cyclone-ui/releases/tag/preview-link%400.0.45) (11/09/2026)
 
 ### Updated Dependencies

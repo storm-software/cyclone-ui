@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Helpers
 
+## [0.3.63](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.63) (11/09/2026)
+
+### Features
+
+- **monorepo:** Added the `readOnly` state for form fields ([19e3ada19](https://github.com/storm-software/cyclone-ui/commit/19e3ada19))
+
 ## [0.3.60](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.60) (11/08/2026)
 
 ### Bug Fixes

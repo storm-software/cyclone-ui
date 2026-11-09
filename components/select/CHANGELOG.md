@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Select
 
+## [0.6.67](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.67) (11/09/2026)
+
+### Features
+
+- **monorepo:** Added the `readOnly` state for form fields ([19e3ada19](https://github.com/storm-software/cyclone-ui/commit/19e3ada19))
+
+### Updated Dependencies
+
+- Updated **context-menu** to **v0.0.57**
+- Updated **field** to **v0.5.66**
+- Updated **form** to **v0.9.64**
+- Updated **helpers** to **v0.3.63**
+- Updated **icons** to **v0.0.61**
+- Updated **input** to **v0.6.66**
+- Updated **tooltip** to **v0.5.66**
+
 ## [0.6.66](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.66) (11/09/2026)
 
 ### Features

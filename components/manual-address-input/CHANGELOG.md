@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Manual Address Input
 
+## [0.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/manual-address-input%400.0.4) (11/09/2026)
+
+### Features
+
+- **monorepo:** Added the `readOnly` state for form fields ([19e3ada19](https://github.com/storm-software/cyclone-ui/commit/19e3ada19))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.66**
+- Updated **form** to **v0.9.64**
+- Updated **helpers** to **v0.3.63**
+- Updated **input** to **v0.6.66**
+- Updated **select** to **v0.6.67**
+- Updated **state** to **v0.0.65**
+
 ## [0.0.3](https://github.com/storm-software/cyclone-ui/releases/tag/manual-address-input%400.0.3) (11/09/2026)
 
 ### Updated Dependencies

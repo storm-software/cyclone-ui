@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Search Input
 
+## [0.1.67](https://github.com/storm-software/cyclone-ui/releases/tag/search-input%400.1.67) (11/09/2026)
+
+### Features
+
+- **monorepo:** Added the `readOnly` state for form fields ([19e3ada19](https://github.com/storm-software/cyclone-ui/commit/19e3ada19))
+
+### Updated Dependencies
+
+- Updated **context-menu** to **v0.0.57**
+- Updated **field** to **v0.5.66**
+- Updated **form** to **v0.9.64**
+- Updated **helpers** to **v0.3.63**
+- Updated **icons** to **v0.0.61**
+- Updated **input** to **v0.6.66**
+
 ## [0.1.66](https://github.com/storm-software/cyclone-ui/releases/tag/search-input%400.1.66) (11/09/2026)
 
 ### Updated Dependencies

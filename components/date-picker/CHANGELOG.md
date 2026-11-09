@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Date Picker
 
+## [0.5.67](https://github.com/storm-software/cyclone-ui/releases/tag/date-picker%400.5.67) (11/09/2026)
+
+### Features
+
+- **monorepo:** Added the `readOnly` state for form fields ([19e3ada19](https://github.com/storm-software/cyclone-ui/commit/19e3ada19))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.66**
+- Updated **calendar** to **v0.0.52**
+- Updated **field** to **v0.5.66**
+- Updated **form** to **v0.9.64**
+- Updated **helpers** to **v0.3.63**
+- Updated **icons** to **v0.0.61**
+- Updated **input** to **v0.6.66**
+- Updated **popover** to **v0.5.67**
+
 ## [0.5.66](https://github.com/storm-software/cyclone-ui/releases/tag/date-picker%400.5.66) (11/09/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Time Picker
 
+## [0.0.52](https://github.com/storm-software/cyclone-ui/releases/tag/time-picker%400.0.52) (11/09/2026)
+
+### Features
+
+- **monorepo:** Added the `readOnly` state for form fields ([19e3ada19](https://github.com/storm-software/cyclone-ui/commit/19e3ada19))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.66**
+- Updated **field** to **v0.5.66**
+- Updated **form** to **v0.9.64**
+- Updated **helpers** to **v0.3.63**
+- Updated **icons** to **v0.0.61**
+- Updated **input** to **v0.6.66**
+- Updated **popover** to **v0.5.67**
+
 ## [0.0.51](https://github.com/storm-software/cyclone-ui/releases/tag/time-picker%400.0.51) (11/09/2026)
 
 ### Updated Dependencies

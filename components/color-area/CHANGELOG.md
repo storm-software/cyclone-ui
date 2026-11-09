@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Color Area
 
+## [0.0.47](https://github.com/storm-software/cyclone-ui/releases/tag/color-area%400.0.47) (11/09/2026)
+
+### Features
+
+- **monorepo:** Added the `readOnly` state for form fields ([19e3ada19](https://github.com/storm-software/cyclone-ui/commit/19e3ada19))
+
 ## [0.0.30](https://github.com/storm-software/cyclone-ui/releases/tag/color-area%400.0.30) (11/04/2026)
 
 ### Miscellaneous

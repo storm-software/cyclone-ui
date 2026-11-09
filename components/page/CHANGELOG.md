@@ -2,6 +2,14 @@
 
 # Changelog for Cyclone UI - Page
 
+## [0.0.61](https://github.com/storm-software/cyclone-ui/releases/tag/page%400.0.61) (11/09/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.66**
+- Updated **icons** to **v0.0.61**
+- Updated **scroll-view** to **v0.5.65**
+
 ## [0.0.60](https://github.com/storm-software/cyclone-ui/releases/tag/page%400.0.60) (11/09/2026)
 
 ### Updated Dependencies
