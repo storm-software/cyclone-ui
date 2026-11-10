@@ -25,36 +25,13 @@ import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, View } from "@tamagui/core";
 import { Linking } from "react-native";
 
+// Types and static config only (`styled(Link)` keeps the `a` default):
+// `Link` renders `LinkText` itself, see below.
 const LinkFrame = styled(LinkText, {
   displayName: "Link",
   render: "a",
   role: "link",
-
-  cursor: "pointer",
-
-  variants: {
-    size: {
-      sm: {
-        fontSize: "sm",
-        lineHeight: "sm",
-        fontWeight: "medium"
-      },
-      md: {
-        fontSize: "md",
-        lineHeight: "md",
-        fontWeight: "medium"
-      },
-      lg: {
-        fontSize: "lg",
-        lineHeight: "lg",
-        fontWeight: "medium"
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    size: "md"
-  }
+  cursor: "pointer"
 });
 
 // The hover shift lives on a plain `View`: on a `styled(ThemeableIcon)` HOC the
@@ -79,6 +56,7 @@ export const Link = createStyledHOC(
       href,
       external,
       size = "md",
+      render = "a",
       ...props
     }: GetProps<typeof LinkFrame> & {
       href?: string;
@@ -89,12 +67,17 @@ export const Link = createStyledHOC(
     },
     forwardedRef
   ) => {
+    // `LinkText`, not `LinkFrame`: a `render` element (such as Next's `<Link>`)
+    // given to a `styled()` over an HOC replaces the HOC, and with it the
+    // frame that turns the styles into classes, so the link lost them all.
     return (
-      <LinkFrame
+      <LinkText
         group="link"
         ref={forwardedRef}
+        role="link"
         size={size}
         {...props}
+        render={render}
         {...(isWeb
           ? {
               href,
@@ -122,7 +105,7 @@ export const Link = createStyledHOC(
             </ThemeableIcon>
           </ExternalIconFrame>
         )}
-      </LinkFrame>
+      </LinkText>
     );
   },
   { displayName: "Link" }

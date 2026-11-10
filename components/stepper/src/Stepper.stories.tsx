@@ -22,6 +22,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Text } from "@tamagui/core";
 import { XStack } from "@tamagui/stacks";
 import type { ComponentType } from "react";
+import { useState } from "react";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 import type { StepperLineStyle } from "./Stepper";
 import { Stepper } from "./Stepper";
@@ -269,6 +270,33 @@ export const Navigation: Story = {
     await expect(tab("Step One")).toHaveAttribute("aria-selected", "true");
     await userEvent.click(tab("Step Two"));
     await expect(tab("Step Two")).toHaveAttribute("aria-selected", "true");
+  }
+};
+
+// Starts on the third step; the stepper only moves when `value` does.
+const ControlledStepper = (args: any) => {
+  const [value, setValue] = useState("tab3");
+
+  return renderStepper({ descriptions: true })({
+    ...args,
+    value,
+    onValueChange: setValue
+  });
+};
+
+export const Controlled: Story = {
+  render: args => <ControlledStepper {...args} />,
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const tab = (name: string) => canvas.getByRole("tab", { name });
+
+    await expect(tab("Step Three")).toHaveAttribute("aria-selected", "true");
+    // The steps before `value` count as complete, so they can be selected.
+    await userEvent.click(tab("Step One"));
+    await expect(tab("Step One")).toHaveAttribute("aria-selected", "true");
+    await userEvent.click(canvas.getByRole("button", { name: /next/i }));
+    await expect(tab("Step Two")).toHaveAttribute("aria-selected", "true");
+    await expect(tab("Step Four")).toHaveAttribute("aria-disabled", "true");
   }
 };
 

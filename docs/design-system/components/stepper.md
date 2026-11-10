@@ -68,7 +68,9 @@ It accepts the Tamagui `Tabs` props plus the props below.
 | `orientation` | `"horizontal" \| "vertical"` | `"vertical"` | The direction of the header list. Horizontal puts the content below the header. |
 | `showDescription` | `"always" \| "active"` | `"always"` | Shows each step's description always, or only on the current step. |
 | `details` | `"all" \| "current"` | `"all"` | `all` shows each step's title and description next to its marker. `current` shows only the current step's, above the markers; it slides out and the next step's slides in as the stepper moves. With `numbered`, a counter (`2 / 4`) next to the title animates with [NumberText](./number-text.md). |
-| `onValueChange` | `(value: string) => void` | — | Called with the new current step. |
+| `value` | `string` | — | The current step, for a controlled stepper (for example one that follows the URL). Header presses and `Stepper.NextButton` / `Stepper.PreviousButton` then only call `onValueChange`. |
+| `defaultValue` | `string` | First step | The step an uncontrolled stepper shows first. |
+| `onValueChange` | `(value: string) => void` | — | Called with the step the user moves to. |
 | `theme` | theme name | — | Theme. |
 
 The first step is selected at start. The root uses `activationMode="manual"`.

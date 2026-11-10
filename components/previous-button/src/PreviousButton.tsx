@@ -20,7 +20,6 @@
 
 import type { ButtonProps } from "@cyclone-ui/button";
 import { Button } from "@cyclone-ui/button";
-import type { LeftArrowProps } from "@cyclone-ui/icons/vectors";
 import { LeftArrow } from "@cyclone-ui/icons/vectors";
 import { useHover } from "@stryke/hooks";
 import type { TamaguiComponent, TamaguiElement } from "@tamagui/core";
@@ -28,10 +27,14 @@ import { createStyledHOC, useComposedRefs } from "@tamagui/core";
 import { XStack } from "@tamagui/stacks";
 import type { Ref } from "react";
 
-export type PreviousButtonProps = ButtonProps &
-  Pick<LeftArrowProps, "animateShrink"> & {
-    hideText?: boolean;
-  };
+// Declared here rather than picked from the arrow's props: where a consumer's
+// react-native types give those an index signature, `Pick` makes the prop
+// required.
+export type PreviousButtonProps = ButtonProps & {
+  hideText?: boolean;
+  /** Animate the arrow shrinking back when the hover ends, instead of snapping. */
+  animateShrink?: boolean;
+};
 
 export const PreviousButton: TamaguiComponent<
   PreviousButtonProps,

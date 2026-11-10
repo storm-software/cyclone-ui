@@ -19,7 +19,7 @@
 import { isPromise } from "@stryke/type-checks/is-promise";
 import type { MessageDetails } from "@stryke/types/messages";
 import type { Getter, Setter } from "jotai";
-import { useAtomCallback } from "jotai/utils";
+import { RESET, useAtomCallback } from "jotai/utils";
 import { useCallback } from "react";
 import { FormApi } from "../molecules/form-molecule";
 import { ValidationCause } from "../types";
@@ -182,7 +182,22 @@ export const useFormActions = <
     }, [])
   );
 
-  const reset = useCallback(() => {}, []);
+  // Back to `initialValues`, as if nothing had been touched or submitted.
+  // Field registrations (required, disabled, refs, tab order) and focus stay.
+  const reset = useAtomCallback(
+    useCallback(
+      (_get: Getter, set: Setter) => {
+        set(form.values, RESET);
+        set(form.validationResults, RESET);
+        set(form.validationResultsFields, RESET);
+        set(form.touchedFields, RESET);
+        set(form.blurredFields, RESET);
+        set(form.submitted, RESET);
+        set(form.submitAttempts, RESET);
+      },
+      [form]
+    )
+  );
 
   return {
     initializeField,

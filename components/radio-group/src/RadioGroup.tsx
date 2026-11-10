@@ -38,6 +38,7 @@ import {
   createStyledContext,
   createStyledHOC,
   styled,
+  Text,
   View,
   withStaticProperties
 } from "@tamagui/core";
@@ -47,7 +48,7 @@ import {
   RadioGroupContext as TamaguiRadioGroupContext
 } from "@tamagui/radio-group";
 import { XStack, YStack } from "@tamagui/stacks";
-import type { FocusEvent } from "react";
+import type { FocusEvent, ReactNode } from "react";
 import { createContext, use, useCallback, useId } from "react";
 import type { GestureResponderEvent } from "react-native";
 
@@ -259,11 +260,16 @@ export type RadioGroupItemProps = GetProps<
 > &
   Pick<SelectOption, "value" | "description"> & {
     disabled?: boolean;
+    /**
+     * An icon shown on the item's left side, centered vertically. Give it
+     * `color="currentColor"` to follow the item's state colors.
+     */
+    icon?: ReactNode;
   };
 
 /**
- * An option of the radio group: its label (`children`) and optional
- * `description` beside a radio indicator. Pressing anywhere on it selects it,
+ * An option of the radio group: its label (`children`), optional
+ * `description` and optional `icon` beside a radio indicator. Pressing anywhere on it selects it,
  * and a disabled item shows a lock in place of the indicator.
  */
 const RadioGroupItemContainer = createStyledHOC(
@@ -273,6 +279,7 @@ const RadioGroupItemContainer = createStyledHOC(
       children,
       value,
       description,
+      icon,
       disabled: disabledProp,
       onPress,
       ...props
@@ -354,6 +361,19 @@ const RadioGroupItemContainer = createStyledHOC(
         aria-disabled={disabled || undefined}
         onPress={handlePress}
         disabled={disabled}>
+        {icon != null && (
+          // A View can't carry `color` in v3, so a Text passes the state
+          // colors down to `currentColor` icons.
+          <Text
+            display="flex"
+            alignSelf="center"
+            flexShrink={0}
+            transition="200ms"
+            color={textColor("emphasis")}>
+            {icon}
+          </Text>
+        )}
+
         <YStack
           gap="md"
           justifyContent="flex-start"
@@ -544,6 +564,7 @@ const RadioGroupImpl = createStyledHOC(
                     key={i}
                     value={item.value}
                     description={item.description}
+                    icon={item.icon}
                     disabled={item.disabled}>
                     {item.name}
                   </RadioGroupItemContainer>

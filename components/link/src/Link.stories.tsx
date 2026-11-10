@@ -18,6 +18,8 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { ComponentProps } from "react";
+import { expect, within } from "storybook/test";
 import type { LinkProps } from "./Link";
 import { Link } from "./Link";
 
@@ -41,6 +43,38 @@ type Story = StoryObj<LinkStoryArgs>;
 export const Base: Story = {
   args: {
     href: "#"
+  }
+};
+
+// Stands in for a router link such as Next's `<Link>`.
+const RouterLink = ({ children, ...props }: ComponentProps<"a">) => (
+  <a {...props} data-render="element">
+    {children}
+  </a>
+);
+
+// A link component passed as `render` keeps every style.
+export const RenderElement: Story = {
+  render: () => (
+    <BodyText>
+      <Link href="#">Plain</Link>{" "}
+      <Link render={<RouterLink href="#" />}>Rendered</Link>
+    </BodyText>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const plain = getComputedStyle(canvas.getByRole("link", { name: "Plain" }));
+    const rendered = canvas.getByRole("link", { name: "Rendered" });
+
+    await expect(rendered).toHaveAttribute("data-render", "element");
+    for (const property of [
+      "color",
+      "fontSize",
+      "fontWeight",
+      "textDecorationLine"
+    ] as const) {
+      await expect(getComputedStyle(rendered)[property]).toBe(plain[property]);
+    }
   }
 };
 

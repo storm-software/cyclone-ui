@@ -3,6 +3,7 @@
   "compilerOptions": {
     "tsBuildInfoFile": "../../dist/out-tsc/components/link/tsconfig.tsbuildinfo",
     "jsx": "preserve",
+    "lib": ["ESnext", "DOM"],
     "ignoreDeprecations": "6.0",
     "rootDir": ".",
     "types": [

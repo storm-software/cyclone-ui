@@ -214,6 +214,16 @@ const StepperStepContext = createContext<{
   duration: FILL_DURATION
 });
 
+// Makes `step` current, remembering where the fill animates from.
+const moveTo = (state: StepperState, step: string): StepperState => ({
+  ...state,
+  currentStep: step,
+  previousStep: state.currentStep,
+  visitedSteps: state.visitedSteps.includes(step)
+    ? state.visitedSteps
+    : [...state.visitedSteps, step]
+});
+
 export const StepperFrame = createStyledHOC(
   TamaguiTabs,
   (
@@ -225,6 +235,8 @@ export const StepperFrame = createStyledHOC(
       showDescription = "always",
       details = "all",
       themed = false,
+      value,
+      defaultValue,
       onValueChange,
       ...rest
     }: Omit<TamaguiTabsProps, "orientation"> & {
@@ -238,6 +250,14 @@ export const StepperFrame = createStyledHOC(
       details?: StepperDetails;
       /** Draw completed steps' markers and lines with the `success` theme. */
       themed?: boolean;
+      /**
+       * The current step, for a controlled stepper (e.g. one that follows the
+       * URL). Header presses and `Stepper.NextButton` / `PreviousButton` then
+       * only call `onValueChange`.
+       */
+      value?: string;
+      /** The step shown first by an uncontrolled stepper. */
+      defaultValue?: string;
     },
     forwardedRef
   ) => {
@@ -245,18 +265,16 @@ export const StepperFrame = createStyledHOC(
       ...defaultContextValues.state
     });
 
-    const { steps, currentStep } = state;
+    const { steps, currentStep, visitedSteps } = state;
+    // A controlled `value` decides the step: header presses and the buttons
+    // only report the step they want through `onValueChange`.
+    const controlled = value !== undefined;
 
-    const setCurrentStep = (currentStep: string) => {
-      onValueChange?.(currentStep);
-      setState(next => ({
-        ...next,
-        currentStep,
-        previousStep: next.currentStep,
-        visitedSteps: next.visitedSteps.includes(currentStep)
-          ? next.visitedSteps
-          : [...next.visitedSteps, currentStep]
-      }));
+    const setCurrentStep = (step: string) => {
+      onValueChange?.(step);
+      if (!controlled) {
+        setState(next => moveTo(next, step));
+      }
     };
     const setIntentIndicator = (intentAt: TamaguiTabLayout | null) =>
       setState(next => ({ ...next, intentAt }));
@@ -276,15 +294,29 @@ export const StepperFrame = createStyledHOC(
 
     useLayoutEffect(() => {
       if (!currentStep) {
+        // The first step shown fills in place, without animating from another.
         // eslint-disable-next-line react/set-state-in-effect
-        setState(next => ({
-          ...next,
-          currentStep: next.steps[0] as string,
-          previousStep: next.steps[0] as string,
-          visitedSteps: [next.steps[0] as string]
-        }));
+        setState(next => {
+          const step =
+            [value, defaultValue].find(
+              candidate =>
+                candidate !== undefined && next.steps.includes(candidate)
+            ) ?? next.steps[0];
+
+          return step === undefined
+            ? next
+            : {
+                ...next,
+                currentStep: step,
+                previousStep: step,
+                visitedSteps: [step]
+              };
+        });
+      } else if (controlled && value !== currentStep && steps.includes(value)) {
+        // eslint-disable-next-line react/set-state-in-effect
+        setState(next => moveTo(next, value));
       }
-    }, [currentStep, steps]);
+    }, [controlled, currentStep, defaultValue, steps, value]);
 
     return (
       <InternalStateContext.Provider
@@ -309,7 +341,10 @@ export const StepperFrame = createStyledHOC(
           {...rest}
           onValueChange={step => {
             // Steps that haven't been reached yet are locked.
-            if (state.visitedSteps.includes(step)) {
+            if (
+              steps.indexOf(step) < steps.indexOf(currentStep) ||
+              visitedSteps.includes(step)
+            ) {
               setCurrentStep(step);
             }
           }}
@@ -324,7 +359,7 @@ export const StepperFrame = createStyledHOC(
 export const StepperHeaderList = createStyledHOC(
   YStack,
   ({ children, ...rest }: ViewProps, forwardedRef) => {
-    const { details, numbered, size, state } =
+    const { details, numbered, size, state, setState } =
       InternalStateContext.useStyledContext();
     const {
       activeAt,
@@ -353,6 +388,18 @@ export const StepperHeaderList = createStyledHOC(
       items.findIndex(item => item.props.value === state.currentStep)
     );
 
+    // The steps, in order, are the header's items. Read on every render, so
+    // added, removed or reordered items (and remounts) keep them in sync.
+    const values = items.map(item => item.props.value);
+    useLayoutEffect(() => {
+      setState(next =>
+        next.steps.length === values.length &&
+        next.steps.every((step, index) => step === values[index])
+          ? next
+          : { ...next, steps: values }
+      );
+    });
+
     return (
       <YStack ref={forwardedRef} gap="3xl" {...rest}>
         {details === "current" && (
@@ -361,7 +408,13 @@ export const StepperHeaderList = createStyledHOC(
               // One inline run, so the animated numerator shares the
               // denominator's baseline. A flex row top-aligns them, and
               // NumberFlow's mask padding then drops the numerator.
-              <StepperText fontSize="xs" fontWeight="medium" lineHeight="sm">
+              <StepperText
+                fontSize="xs"
+                fontWeight="medium"
+                lineHeight="sm"
+                // Shrinking would wrap the count onto two lines.
+                flexShrink={0}
+                whiteSpace="nowrap">
                 <NumberText
                   display="inline"
                   fontSize="xs"
@@ -619,7 +672,6 @@ export const StepperHeaderItem = createStyledHOC(
       handleOnInteraction,
       numbered,
       orientation,
-      setState,
       showDescription,
       size,
       state,
@@ -660,10 +712,6 @@ export const StepperHeaderItem = createStyledHOC(
     );
     const delayOf = (segment: number) =>
       Math.max(0, to > from ? segment - from - 1 : from - segment) * duration;
-
-    useLayoutEffect(() => {
-      setState(next => ({ ...next, steps: [...next.steps, value] }));
-    }, []);
 
     return (
       <View

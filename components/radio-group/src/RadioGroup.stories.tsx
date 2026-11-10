@@ -19,7 +19,9 @@
 import type { FieldProps } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
+import { Briefcase, Calendar, Clock, Email } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { ReactNode } from "react";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 import type { RadioGroupIndicatorStyle } from "./RadioGroup";
 import { RadioGroup } from "./RadioGroup";
@@ -36,6 +38,7 @@ const options: {
   value: string;
   description: string;
   disabled?: boolean;
+  icon?: ReactNode;
 }[] = [
   {
     name: "Apple",
@@ -81,7 +84,8 @@ const renderGroup =
               key={option.value}
               value={option.value}
               description={option.description}
-              disabled={option.disabled}>
+              disabled={option.disabled}
+              icon={option.icon}>
               {option.name}
             </RadioGroup.Item>
           ))}
@@ -199,6 +203,18 @@ export const DisabledItem: Story = {
     });
     await expect(checked()).toEqual(["Pear"]);
   }
+};
+
+const iconComponents = [Briefcase, Calendar, Clock, Email];
+
+export const WithIcons: Story = {
+  render: renderGroup(
+    options.map((option, i) => {
+      const Icon = iconComponents[i]!;
+
+      return { ...option, icon: <Icon size={24} color="currentColor" /> };
+    })
+  )
 };
 
 export const Discovery: Story = {
