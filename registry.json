@@ -1412,6 +1412,10 @@
           "type": "registry:component"
         },
         {
+          "path": "components/icons/src/FileExtensionIcon.tsx",
+          "type": "registry:component"
+        },
+        {
           "path": "components/icons/src/icons/Account.tsx",
           "type": "registry:component"
         },
@@ -2324,6 +2328,14 @@
           "type": "registry:component"
         },
         {
+          "path": "components/icons/src/icons/DragHorizontal.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/DragVertical.tsx",
+          "type": "registry:component"
+        },
+        {
           "path": "components/icons/src/icons/Edit.tsx",
           "type": "registry:component"
         },
@@ -2645,6 +2657,14 @@
         },
         {
           "path": "components/icons/src/icons/ForkRight.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/FormatQuoteClose.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/icons/src/icons/FormatQuoteOpen.tsx",
           "type": "registry:component"
         },
         {

@@ -31,7 +31,7 @@ import {
 import {
   Close,
   DotsVertical,
-  Filter,
+  FilterAlt,
   SortAscending,
   SortDescending
 } from "@cyclone-ui/icons";
@@ -1356,7 +1356,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
                 padding="lg"
                 tooltip="Filter">
                 <Button.Icon>
-                  <Filter size="2xl" />
+                  <FilterAlt size="2xl" />
                 </Button.Icon>
               </Button>
             </Popover.Trigger>

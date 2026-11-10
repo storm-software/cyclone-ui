@@ -595,7 +595,6 @@ const ButtonTextFrame = styled(Text, {
   borderRadius: 0,
   cursor: "pointer",
   textAlign: "center",
-  textTransform: "capitalize",
   whiteSpace: "nowrap",
   fontFamily: "display",
   // The typography tokens only carry the family and leading.
