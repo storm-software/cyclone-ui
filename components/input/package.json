@@ -30,6 +30,7 @@
     "@cyclone-ui/field": "workspace:*",
     "@cyclone-ui/form": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/submit-button": "workspace:*",
     "@storybook/react-vite": "catalog:",
     "@stryke/types": "catalog:",
     "react": "catalog:",

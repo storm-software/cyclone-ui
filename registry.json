@@ -5029,6 +5029,30 @@
       ]
     },
     {
+      "name": "@cyclone-ui/submit-button",
+      "type": "registry:component",
+      "title": "@cyclone-ui/submit-button",
+      "description": "A Button preset labeled \"Submit\" by default, with a right-arrow icon that animates on hover. When onPress returns a promise, the label and arrow slide away into a spinner and \"Submitting\", then into a success or error state with its own text, icon and theme. The state can also be controlled with status. It accepts all Button props plus hideText to show only the icon and animateShrink for the arrow. Use it for submitting forms.",
+      "dependencies": [
+        "@stryke/hooks@^0.4.134",
+        "@tamagui/core@3.2.0",
+        "@tamagui/stacks@3.2.0"
+      ],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.6",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": ["@cyclone-ui/button", "@cyclone-ui/icons"],
+      "files": [
+        {
+          "path": "components/submit-button/src/SubmitButton.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/switch",
       "type": "registry:component",
       "title": "@cyclone-ui/switch",

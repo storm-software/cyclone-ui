@@ -2736,6 +2736,27 @@ A multi-step wizard built on Tamagui Tabs with a vertical or horizontal header l
 | ------------------------------------ | ----------- | ------ |
 | `components/stepper/src/Stepper.tsx` | `component` | —      |
 
+## @cyclone-ui/submit-button
+
+A Button preset labeled "Submit" by default, with a right-arrow icon that animates on hover. When onPress returns a promise, the label and arrow slide away into a spinner and "Submitting", then into a success or error state with its own text, icon and theme. The state can also be controlled with status. It accepts all Button props plus hideText to show only the icon and animateShrink for the arrow. Use it for submitting forms.
+
+- **Name:** `@cyclone-ui/submit-button`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/button@0.6.68`
+- `@cyclone-ui/icons@0.0.63`
+- `@stryke/hooks@^0.4.134`
+- `@tamagui/core@3.2.0`
+- `@tamagui/stacks@3.2.0`
+
+### Files
+
+| Path                                            | Type        | Target |
+| ----------------------------------------------- | ----------- | ------ |
+| `components/submit-button/src/SubmitButton.tsx` | `component` | —      |
+
 ## @cyclone-ui/switch
 
 A toggle switch with an animated thumb, sm, md and lg sizes, and a disabled state. Its border reflects field validation messages, and Switch.Icon places an icon on the left or right of the track. Use it for on/off settings on its own, or wrap it in a Field to connect it to a form: it then reads its checked state, size and disabled state from the field and reports changes to it.

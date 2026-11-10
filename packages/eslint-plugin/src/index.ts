@@ -4621,6 +4621,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/submit-button",
+      jsx: ["SubmitButton"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/switch",
       jsx: ["Switch"],
       roles: []

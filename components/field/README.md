@@ -72,6 +72,7 @@ A form field wrapper that connects a control to Cyclone UI form state and provid
 
 - Connects a control to the surrounding `Form` state.
 - Parts: `Field.Label`, `Field.Link`, `Field.Details`, `Field.Icon`, `Field.Button`, and `Field.ThemeIcon`.
+- `Field.Button asChild` renders its single child button (for example a `SubmitButton`) with the field's size, shape and inset.
 - Shows validation messages and status icons automatically.
 - `outlined`, `underlined`, and `inlined` variants, with `floating` or `above` labels.
 - `sm`, `md`, and `lg` sizes.

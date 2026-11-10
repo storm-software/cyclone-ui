@@ -68,6 +68,7 @@ import type {
 import {
   createStyledHOC,
   getVariableValue,
+  Slot,
   styled,
   Text,
   Theme,
@@ -1537,8 +1538,18 @@ const FieldButtonImpl = createStyledHOC(
       position = "end",
       controlSize,
       size: sizeProp,
+      asChild = false,
       ...props
     }: GetProps<typeof Button> & {
+      /**
+       * Render the single child button (for example a `SubmitButton`) in
+       * place of the default `Button`. It gets the same field props (size,
+       * variant, shape, height, disabled state and ref), and any prop it sets
+       * itself wins.
+       *
+       * @defaultValue false
+       */
+      asChild?: boolean;
       /**
        * Which end of the control the button sits at (over a multiline
        * control, which bottom corner), so a resting floating label stays
@@ -1563,6 +1574,13 @@ const FieldButtonImpl = createStyledHOC(
     const scale = getFormSizeScale(size);
     const margin = getSpaced("lg") * scale;
     const underlined = formControl?.variant === "underlined";
+    // An underlined control grows by a row for its floating label. Its button
+    // drops under that row instead of filling it, keeping the outlined height.
+    const placement = useFieldLabelPlacement();
+    const underlinedOffset =
+      underlined && placement
+        ? getFieldLabelInset(placement, size) - getFieldLabelInset("border")
+        : 0;
     const [width, setWidth] = useState(0);
     const [focused, setFocused] = useState(false);
 
@@ -1598,8 +1616,10 @@ const FieldButtonImpl = createStyledHOC(
     const inset = 1 + margin;
     const sideInset = underlined ? 0 : inset;
 
+    // `Slot` merges these props onto the child button instead.
+    const ButtonOrSlot = asChild ? (Slot as unknown as typeof Button) : Button;
     const button = (
-      <Button
+      <ButtonOrSlot
         ref={forwardedRef}
         variant="primary"
         disabled={formControl?.disabled}
@@ -1619,12 +1639,13 @@ const FieldButtonImpl = createStyledHOC(
           multiline ? getSized(getFormSizeToken(size)) - 2 * inset : "100%"
         }
         minHeight={0}>
-        {typeof children === "string" || typeof children === "number" ? (
+        {!asChild &&
+        (typeof children === "string" || typeof children === "number") ? (
           <Button.Text>{children}</Button.Text>
         ) : (
           children
         )}
-      </Button>
+      </ButtonOrSlot>
     );
 
     return multiline ? (
@@ -1643,6 +1664,7 @@ const FieldButtonImpl = createStyledHOC(
           position="relative"
           alignSelf="stretch"
           padding={margin}
+          paddingTop={margin + underlinedOffset}
           {...(underlined &&
             (position === "end" ? { paddingRight: 0 } : { paddingLeft: 0 }))}
           onLayout={event =>

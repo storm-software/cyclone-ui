@@ -292,11 +292,11 @@ const FooterRailLink = styled(FooterLinkImpl, {
 
 const FooterFrameImpl = createStyledHOC(
   FooterFrame,
-  ({ children, ...props }, forwardedRef) => {
+  ({ children, variant = "tertiary", ...props }, forwardedRef) => {
     const [hoveredLinkId, setHoveredLinkId] = useState<string | null>(null);
 
     return (
-      <FooterFrame ref={forwardedRef} {...props}>
+      <FooterFrame ref={forwardedRef} variant={variant} {...props}>
         <FooterLinkHoverContext.Provider
           value={{ hoveredLinkId, setHoveredLinkId }}>
           {children}

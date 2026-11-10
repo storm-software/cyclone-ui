@@ -20,6 +20,7 @@ import type { FieldLabelVariant, FieldProps } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import { Lock, Search } from "@cyclone-ui/icons";
+import { SubmitButton } from "@cyclone-ui/submit-button";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 import type { InputProps } from "./Input";
@@ -626,8 +627,10 @@ export const WithButton: Story = {
         getComputedStyle(button).borderTopLeftRadius
       );
 
-      // Fills the text box's height, inset by the 4px margin.
-      await expect(Math.abs(rect.top - box.top - 4)).toBeLessThan(1);
+      // Fills the text box's height, inset by the 4px margin. An underlined
+      // button drops under the floating label's row (13px - 3px at md).
+      const topInset = buttonStyles[index]!.variant === "underlined" ? 14 : 4;
+      await expect(Math.abs(rect.top - box.top - topInset)).toBeLessThan(1);
       await expect(Math.abs(box.bottom - rect.bottom - 4)).toBeLessThan(1);
       if (buttonStyles[index]!.circular) {
         await expect(radius).toBeGreaterThanOrEqual(rect.height / 2);
@@ -658,6 +661,62 @@ export const WithButton: Story = {
     await waitFor(() =>
       expect(Number.parseFloat(getComputedStyle(legend).width)).toBe(0)
     );
+  }
+};
+
+/** Settles the `WithSubmitButton` press once its play has seen it pending. */
+let finishSubmit: () => void = () => undefined;
+
+/**
+ * `Field.Button asChild` renders the given button, here a `SubmitButton`, with
+ * the field's size, shape and inset.
+ */
+export const WithSubmitButton: Story = {
+  args: {
+    labelVariant: "floating"
+  },
+  render: ({ labelVariant, variant, ...props }, { id }) => (
+    <Form name={`formName-${id}`} initialValues={{ inputName: "" }}>
+      <div style={{ width: 360 }}>
+        <Field {...props} name="inputName" variant={variant}>
+          <Field.Label variant={labelVariant}>Email</Field.Label>
+          <Input variant={variant} size={props.size}>
+            <Input.TextBox data-testid="text-box">
+              <Input.TextBox.Value />
+              <Field.Button asChild={true}>
+                <SubmitButton
+                  resetDelay={-1}
+                  onPress={async () =>
+                    new Promise<void>(resolve => {
+                      finishSubmit = resolve;
+                    })
+                  }>
+                  Subscribe
+                </SubmitButton>
+              </Field.Button>
+            </Input.TextBox>
+          </Input>
+        </Field>
+      </div>
+    </Form>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: "Subscribe" });
+    const box = canvas.getByTestId("text-box").getBoundingClientRect();
+    const rect = button.getBoundingClientRect();
+
+    // The same inset as a plain `Field.Button`
+    await expect(Math.abs(rect.top - box.top - 4)).toBeLessThan(1);
+    await expect(Math.abs(box.bottom - rect.bottom - 4)).toBeLessThan(1);
+    await expect(Math.abs(box.right - rect.right - 4)).toBeLessThan(1);
+
+    await userEvent.click(button);
+    await expect(button).toHaveAccessibleName("Submitting");
+    finishSubmit();
+    await waitFor(async () => expect(button).toHaveAccessibleName("Submitted"));
+    // The widest label sets the width, so the field doesn't reflow
+    await expect(button.getBoundingClientRect().width).toBe(rect.width);
   }
 };
 

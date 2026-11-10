@@ -67,6 +67,9 @@
       "path": "./components/next-button"
     },
     {
+      "path": "./components/submit-button"
+    },
+    {
       "path": "./components/number-text"
     },
     {
