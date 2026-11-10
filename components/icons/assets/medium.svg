@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 	<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor">
-		<path d="M5 19V5L12 19L19 5V19" stroke-dasharray="60"><animate attributeName="stroke-dashoffset" dur="0.5s" fill="freeze" values="60;0" /></path>
-		<path d="M3 5H7M17 5H21" stroke-dasharray="5" stroke-dashoffset="5"><animate attributeName="stroke-dashoffset" begin="0.5s" dur="0.15s" fill="freeze" to="0" /></path>
-		<path d="M3 19H7M17 19H21" stroke-dasharray="5" stroke-dashoffset="5"><animate attributeName="stroke-dashoffset" begin="0.65s" dur="0.15s" fill="freeze" to="0" /></path>
+		<path d="M5 19V5H7L11.5 19L16.5 5H18.5V19" stroke-dasharray="62"><animate attributeName="stroke-dashoffset" dur="0.5s" fill="freeze" values="62;0" /></path>
+		<path d="M3 5H7M16.5 5H21" stroke-dasharray="5" stroke-dashoffset="5"><animate attributeName="stroke-dashoffset" begin="0.5s" dur="0.15s" fill="freeze" to="0" /></path>
+		<path d="M3 19H7M15 19H21" stroke-dasharray="7" stroke-dashoffset="7"><animate attributeName="stroke-dashoffset" begin="0.65s" dur="0.15s" fill="freeze" to="0" /></path>
 	</g>
 </svg>

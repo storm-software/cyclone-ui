@@ -145,6 +145,26 @@ const FooterNavigation = styled(View, {
   width: "max-md:100%"
 });
 
+/**
+ * Social icon links. Place between `FooterIntroduction` and `FooterNavigation`:
+ * a single row after the navigation on wide screens, a two-column grid when
+ * space runs short, and a centered row under the introduction on small screens.
+ */
+const FooterSocialLinks = styled(View, {
+  displayName: "FooterSocialLinks",
+  render: "nav",
+  display: "grid",
+  gridAutoFlow: "column max-xl:row max-md:column",
+  gridTemplateColumns: "none max-xl:repeat(2,auto) max-md:none",
+  justifyContent: "flex-end max-md:center",
+  justifyItems: "center",
+  alignItems: "center",
+  gap: "4xl",
+  flexShrink: 0,
+  order: "1 max-md:0",
+  width: "auto max-md:100%"
+});
+
 const FooterSectionFrame = styled(View, {
   displayName: "FooterSection",
   minWidth: "120px max-md:132px",
@@ -242,6 +262,7 @@ export type FooterStatementProps = GetProps<typeof FooterStatement>;
 export type FooterDescriptionProps = GetProps<typeof FooterDescription>;
 export type FooterActionProps = GetProps<typeof FooterAction>;
 export type FooterNavigationProps = GetProps<typeof FooterNavigation>;
+export type FooterSocialLinksProps = GetProps<typeof FooterSocialLinks>;
 export type FooterSectionProps = GetProps<typeof FooterSectionFrame>;
 export type FooterSectionTitleProps = GetProps<typeof FooterSectionTitle>;
 export type FooterSectionLinksProps = GetProps<typeof FooterSectionLinks>;
@@ -316,6 +337,7 @@ export const Footer = withStaticProperties(FooterFrameImpl, {
   Description: FooterDescription,
   Action: FooterAction,
   Navigation: FooterNavigation,
+  SocialLinks: FooterSocialLinks,
   Section: withStaticProperties(FooterSectionFrame, {
     Title: FooterSectionTitle,
     Links: FooterSectionLinks
@@ -350,5 +372,6 @@ export {
   FooterSectionFrame,
   FooterSectionLinks,
   FooterSectionTitle,
+  FooterSocialLinks,
   FooterStatement
 };

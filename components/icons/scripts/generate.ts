@@ -95,6 +95,8 @@ interface IconsSpec {
 
 // Identifiers exported by the hand-written modules
 const RESERVED = new Set([
+  "FileExtensionIcon",
+  "FileExtensionIconProps",
   "ICON_VARIANTS",
   "IconAnimation",
   "IconComponent",
@@ -655,6 +657,7 @@ import * as vectors from "./vectors";
 
 export * from "./all";
 export * from "./create-icon";
+export * from "./FileExtensionIcon";
 ${spec.icons
   .map(icon => `export { ${icon.component} } from "./icons/${icon.component}";`)
   .join("\n")}

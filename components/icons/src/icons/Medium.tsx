@@ -39,12 +39,12 @@ export const Medium = createIcon("Medium", {
       children: [
         {
           type: "path",
-          props: { d: "M5 19V5L12 19L19 5V19", strokeDasharray: 60 },
+          props: { d: "M5 19V5H7L11.5 19L16.5 5H18.5V19", strokeDasharray: 62 },
           animations: [
             {
               prop: "strokeDashoffset",
               dur: 0.5,
-              values: [60, 0],
+              values: [62, 0],
               freeze: true
             }
           ]
@@ -52,7 +52,7 @@ export const Medium = createIcon("Medium", {
         {
           type: "path",
           props: {
-            d: "M3 5H7M17 5H21",
+            d: "M3 5H7M16.5 5H21",
             strokeDasharray: 5,
             strokeDashoffset: 5
           },
@@ -69,9 +69,9 @@ export const Medium = createIcon("Medium", {
         {
           type: "path",
           props: {
-            d: "M3 19H7M17 19H21",
-            strokeDasharray: 5,
-            strokeDashoffset: 5
+            d: "M3 19H7M15 19H21",
+            strokeDasharray: 7,
+            strokeDashoffset: 7
           },
           animations: [
             {
@@ -99,12 +99,12 @@ export const Medium = createIcon("Medium", {
       children: [
         {
           type: "path",
-          props: { d: "M5 19V5L12 19L19 5V19", strokeDasharray: 60 },
+          props: { d: "M5 19V5H7L11.5 19L16.5 5H18.5V19", strokeDasharray: 62 },
           animations: [
             {
               prop: "strokeDashoffset",
               dur: 0.5,
-              values: [60, 0],
+              values: [62, 0],
               freeze: true
             }
           ]
@@ -112,7 +112,7 @@ export const Medium = createIcon("Medium", {
         {
           type: "path",
           props: {
-            d: "M3 5H7M17 5H21",
+            d: "M3 5H7M16.5 5H21",
             strokeDasharray: 5,
             strokeDashoffset: 5
           },
@@ -129,9 +129,9 @@ export const Medium = createIcon("Medium", {
         {
           type: "path",
           props: {
-            d: "M3 19H7M17 19H21",
-            strokeDasharray: 5,
-            strokeDashoffset: 5
+            d: "M3 19H7M15 19H21",
+            strokeDasharray: 7,
+            strokeDashoffset: 7
           },
           animations: [
             {
