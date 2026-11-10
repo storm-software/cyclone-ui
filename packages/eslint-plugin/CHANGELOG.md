@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - ESLint Plugin
 
+## [0.0.55](https://github.com/storm-software/cyclone-ui/releases/tag/eslint-plugin%400.0.55) (11/10/2026)
+
+### Features
+
+- **submit-button:** Initial check-in of the `SubmitButton` component package ([719710dcb](https://github.com/storm-software/cyclone-ui/commit/719710dcb))
+
 ## [0.0.53](https://github.com/storm-software/cyclone-ui/releases/tag/eslint-plugin%400.0.53) (11/09/2026)
 
 ### Features

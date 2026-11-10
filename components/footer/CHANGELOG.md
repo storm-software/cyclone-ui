@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Footer
 
+## [0.0.68](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.68) (11/10/2026)
+
+### Features
+
+- **submit-button:** Initial check-in of the `SubmitButton` component package ([719710dcb](https://github.com/storm-software/cyclone-ui/commit/719710dcb))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.65**
+- Updated **eyebrow-text** to **v0.5.65**
+- Updated **heading-text** to **v0.5.66**
+- Updated **icons** to **v0.0.64**
+- Updated **link** to **v0.5.69**
+
 ## [0.0.67](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.67) (11/10/2026)
 
 ### Updated Dependencies

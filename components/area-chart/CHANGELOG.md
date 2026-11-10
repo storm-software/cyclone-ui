@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Area Chart
 
+## [0.0.37](https://github.com/storm-software/cyclone-ui/releases/tag/area-chart%400.0.37) (11/10/2026)
+
+### Updated Dependencies
+
+- Updated **chart** to **v0.0.37**
+
 ## [0.0.36](https://github.com/storm-software/cyclone-ui/releases/tag/area-chart%400.0.36) (11/10/2026)
 
 ### Updated Dependencies

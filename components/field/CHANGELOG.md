@@ -2,6 +2,25 @@
 
 # Changelog for Cyclone UI - Field
 
+## [0.5.69](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.69) (11/10/2026)
+
+### Features
+
+- **submit-button:** Initial check-in of the `SubmitButton` component package ([719710dcb](https://github.com/storm-software/cyclone-ui/commit/719710dcb))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.65**
+- Updated **button** to **v0.6.69**
+- Updated **form** to **v0.9.67**
+- Updated **helpers** to **v0.3.66**
+- Updated **icons** to **v0.0.64**
+- Updated **link** to **v0.5.69**
+- Updated **spinner** to **v0.5.65**
+- Updated **state** to **v0.0.68**
+- Updated **tooltip** to **v0.5.69**
+- Updated **validation-text** to **v0.5.68**
+
 ## [0.5.68](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.68) (11/10/2026)
 
 ### Updated Dependencies
