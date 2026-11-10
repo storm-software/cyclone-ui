@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Footer
 
+## [0.0.69](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.69) (11/10/2026)
+
+### Bug Fixes
+
+- **footer:** Clean up responsiveness of the footer and the Medium icon ([fb5dc1c29](https://github.com/storm-software/cyclone-ui/commit/fb5dc1c29))
+
+### Updated Dependencies
+
+- Updated **icons** to **v0.0.65**
+- Updated **link** to **v0.5.70**
+
 ## [0.0.68](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.68) (11/10/2026)
 
 ### Features
