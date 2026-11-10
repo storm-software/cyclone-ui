@@ -277,7 +277,7 @@ export const Navigation: Story = {
 const ControlledStepper = (args: any) => {
   const [value, setValue] = useState("tab3");
 
-  return renderStepper({ descriptions: true })({
+  return renderStepper()({
     ...args,
     value,
     onValueChange: setValue
@@ -291,10 +291,14 @@ export const Controlled: Story = {
     const tab = (name: string) => canvas.getByRole("tab", { name });
 
     await expect(tab("Step Three")).toHaveAttribute("aria-selected", "true");
-    // The steps before `value` count as complete, so they can be selected.
+    // The steps before `value` count as reached, so they stay selectable.
     await userEvent.click(tab("Step One"));
     await expect(tab("Step One")).toHaveAttribute("aria-selected", "true");
+    await expect(tab("Step Two")).not.toHaveAttribute("aria-disabled");
     await userEvent.click(canvas.getByRole("button", { name: /next/i }));
+    await expect(tab("Step Two")).toHaveAttribute("aria-selected", "true");
+    // Never reached, so still locked.
+    await userEvent.click(tab("Step Four"));
     await expect(tab("Step Two")).toHaveAttribute("aria-selected", "true");
     await expect(tab("Step Four")).toHaveAttribute("aria-disabled", "true");
   }

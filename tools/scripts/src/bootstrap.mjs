@@ -73,7 +73,9 @@ try {
     );
   }
 
-  proc = $`pnpm nx sync`.timeout(`${2 * 60}s`);
+  // A cold Maven cache requires dependency downloads during graph creation.
+  // Allow Nx's ten-minute CI Maven analysis budget plus graph and sync work.
+  proc = $`pnpm nx sync`.timeout(`${15 * 60}s`);
   proc.stdout.on("data", data => {
     echo`${data}`;
   });

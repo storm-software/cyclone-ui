@@ -214,14 +214,22 @@ const StepperStepContext = createContext<{
   duration: FILL_DURATION
 });
 
+// Every step up to `step` has been reached, even when a controlled `value`
+// jumped past some of them.
+const reached = (state: StepperState, step: string) => [
+  ...new Set([
+    ...state.visitedSteps,
+    ...state.steps.slice(0, state.steps.indexOf(step) + 1),
+    step
+  ])
+];
+
 // Makes `step` current, remembering where the fill animates from.
 const moveTo = (state: StepperState, step: string): StepperState => ({
   ...state,
   currentStep: step,
   previousStep: state.currentStep,
-  visitedSteps: state.visitedSteps.includes(step)
-    ? state.visitedSteps
-    : [...state.visitedSteps, step]
+  visitedSteps: reached(state, step)
 });
 
 export const StepperFrame = createStyledHOC(
@@ -309,7 +317,7 @@ export const StepperFrame = createStyledHOC(
                 ...next,
                 currentStep: step,
                 previousStep: step,
-                visitedSteps: [step]
+                visitedSteps: reached(next, step)
               };
         });
       } else if (controlled && value !== currentStep && steps.includes(value)) {
