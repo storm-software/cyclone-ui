@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Button
 
+## [0.6.68](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.68) (11/10/2026)
+
+### Bug Fixes
+
+- **button:** Remove text transformation from `Button` display ([5439133e9](https://github.com/storm-software/cyclone-ui/commit/5439133e9))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.64**
+- Updated **container** to **v0.6.67**
+- Updated **helpers** to **v0.3.65**
+- Updated **icons** to **v0.0.63**
+- Updated **ripple-animation** to **v0.0.41**
+- Updated **tooltip** to **v0.5.68**
+
 ## [0.6.67](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.67) (11/09/2026)
 
 ### Updated Dependencies
