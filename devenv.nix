@@ -16,9 +16,9 @@
     (callPackage ./font-maker.nix { })
   ];
 
-  # The imported production profile runs pnpm install as a visible task.
-  # Avoid a second install during shell capture, where failures hide pnpm's error.
-  profiles.production.module.languages.javascript.pnpm.install.enable = lib.mkForce false;
+  # The production profile installs dependencies as a visible task.
+  # Disable the implicit install during shell capture for every profile.
+  languages.javascript.pnpm.install.enable = lib.mkForce false;
 
   languages = {
     python = {

@@ -81,7 +81,7 @@ jobs:
           storm-bot-github-token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
 
       - name: Fetch tile test fixtures
-        run: devenv shell -- git lfs pull --include='maps/tiles/src/test/resources/*' --exclude=''
+        run: git lfs pull --include='maps/tiles/src/test/resources/*' --exclude=''
 
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9 # v3.7.0
@@ -92,7 +92,7 @@ jobs:
 
       - name: Version tiles image with Nx
         run: |
-          devenv shell -- pnpm nx release version --groups=tiles --dockerVersionScheme=production --git-commit=false --git-tag=false --stage-changes=false
+          devenv shell --profile production -- pnpm nx release version --groups=tiles --dockerVersionScheme=production --git-commit=false --git-tag=false --stage-changes=false
           test -s tmp/maps/tiles/.docker-version
 
       - name: Release repository updates
