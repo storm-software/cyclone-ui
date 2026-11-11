@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Password Input
 
+## [0.0.71](https://github.com/storm-software/cyclone-ui/releases/tag/password-input%400.0.71) (11/11/2026)
+
+### Bug Fixes
+
+- **field:** Resolve issue clearing hover activation in separator ([03448a726](https://github.com/storm-software/cyclone-ui/commit/03448a726))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.72**
+- Updated **input** to **v0.6.72**
+
 ## [0.0.70](https://github.com/storm-software/cyclone-ui/releases/tag/password-input%400.0.70) (11/11/2026)
 
 ### Bug Fixes

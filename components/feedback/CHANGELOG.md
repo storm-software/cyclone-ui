@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Feedback
 
+## [0.0.63](https://github.com/storm-software/cyclone-ui/releases/tag/feedback%400.0.63) (11/11/2026)
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.72**
+- Updated **text-area** to **v0.1.72**
+
 ## [0.0.62](https://github.com/storm-software/cyclone-ui/releases/tag/feedback%400.0.62) (11/11/2026)
 
 ### Updated Dependencies

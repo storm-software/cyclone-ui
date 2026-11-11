@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Field
 
+## [0.5.72](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.72) (11/11/2026)
+
+### Bug Fixes
+
+- **field:** Resolve issue clearing hover activation in separator ([03448a726](https://github.com/storm-software/cyclone-ui/commit/03448a726))
+
 ## [0.5.71](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.71) (11/11/2026)
 
 ### Bug Fixes
