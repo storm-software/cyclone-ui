@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Tokens
 
+## [0.3.56](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.56) (11/11/2026)
+
+### Features
+
+- **cli:** Update workspace support for using tailwindcss styling for the components library ([527d38a05](https://github.com/storm-software/cyclone-ui/commit/527d38a05))
+
 ## [0.3.50](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.50) (11/08/2026)
 
 ### Features

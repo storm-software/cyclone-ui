@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - CLI
 
+## [0.6.59](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.59) (11/11/2026)
+
+### Features
+
+- **cli:** Update workspace support for using tailwindcss styling for the components library ([527d38a05](https://github.com/storm-software/cyclone-ui/commit/527d38a05))
+
+### Updated Dependencies
+
+- Updated **registry-api** to **v0.3.67**
+- Updated **theme-builder** to **v0.0.57**
+
 ## [0.6.58](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.58) (11/11/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Address Input
 
+## [0.0.58](https://github.com/storm-software/cyclone-ui/releases/tag/address-input%400.0.58) (11/11/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.67**
+- Updated **context-menu** to **v0.0.63**
+- Updated **field** to **v0.5.73**
+- Updated **form** to **v0.9.69**
+- Updated **helpers** to **v0.3.68**
+- Updated **icons** to **v0.0.67**
+- Updated **search-input** to **v0.1.74**
+
 ## [0.0.57](https://github.com/storm-software/cyclone-ui/releases/tag/address-input%400.0.57) (11/11/2026)
 
 ### Updated Dependencies

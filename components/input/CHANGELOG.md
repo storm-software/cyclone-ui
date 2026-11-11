@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Input
 
+## [0.6.73](https://github.com/storm-software/cyclone-ui/releases/tag/input%400.6.73) (11/11/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.72**
+- Updated **field** to **v0.5.73**
+- Updated **form** to **v0.9.69**
+- Updated **helpers** to **v0.3.68**
+- Updated **icons** to **v0.0.67**
+- Updated **submit-button** to **v0.0.5**
+
 ## [0.6.72](https://github.com/storm-software/cyclone-ui/releases/tag/input%400.6.72) (11/11/2026)
 
 ### Updated Dependencies

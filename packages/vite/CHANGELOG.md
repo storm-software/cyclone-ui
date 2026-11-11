@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Vite
 
+## [0.0.38](https://github.com/storm-software/cyclone-ui/releases/tag/vite%400.0.38) (11/11/2026)
+
+### Features
+
+- **cli:** Update workspace support for using tailwindcss styling for the components library ([527d38a05](https://github.com/storm-software/cyclone-ui/commit/527d38a05))
+
+### Updated Dependencies
+
+- Updated **theme-builder** to **v0.0.57**
+- Updated **tokens** to **v0.3.56**
+
 ## [0.0.37](https://github.com/storm-software/cyclone-ui/releases/tag/vite%400.0.37) (11/11/2026)
 
 ### Updated Dependencies

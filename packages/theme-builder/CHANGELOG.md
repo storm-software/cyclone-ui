@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Theme Builder
 
+## [0.0.57](https://github.com/storm-software/cyclone-ui/releases/tag/theme-builder%400.0.57) (11/11/2026)
+
+### Miscellaneous
+
+- **theme-builder:** Added missing `tsconfig.json` update ([76875377f](https://github.com/storm-software/cyclone-ui/commit/76875377f))
+
+### Features
+
+- **cli:** Update workspace support for using tailwindcss styling for the components library ([527d38a05](https://github.com/storm-software/cyclone-ui/commit/527d38a05))
+
+### Updated Dependencies
+
+- Updated **tokens** to **v0.3.56**
+
 ## [0.0.51](https://github.com/storm-software/cyclone-ui/releases/tag/theme-builder%400.0.51) (11/08/2026)
 
 ### Features

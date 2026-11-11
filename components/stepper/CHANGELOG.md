@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Stepper
 
+## [0.3.73](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.73) (11/11/2026)
+
+### Features
+
+- **cli:** Update workspace support for using tailwindcss styling for the components library ([527d38a05](https://github.com/storm-software/cyclone-ui/commit/527d38a05))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.68**
+- Updated **icons** to **v0.0.67**
+- Updated **next-button** to **v0.5.72**
+- Updated **number-text** to **v0.5.67**
+- Updated **previous-button** to **v0.5.72**
+
 ## [0.3.72](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.72) (11/11/2026)
 
 ### Bug Fixes

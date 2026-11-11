@@ -2,6 +2,36 @@
 
 # Changelog for Cyclone UI - Nextjs
 
+## [0.0.42](https://github.com/storm-software/cyclone-ui/releases/tag/nextjs%400.0.42) (11/11/2026)
+
+### Features
+
+- **cli:** Update workspace support for using tailwindcss styling for the components library ([527d38a05](https://github.com/storm-software/cyclone-ui/commit/527d38a05))
+
+### Updated Dependencies
+
+- Updated **bar-chart** to **v0.0.39**
+- Updated **body-text** to **v0.5.67**
+- Updated **calendar** to **v0.0.58**
+- Updated **chart** to **v0.0.39**
+- Updated **checkbox** to **v0.5.73**
+- Updated **composed-chart** to **v0.0.39**
+- Updated **drawer** to **v0.1.73**
+- Updated **field** to **v0.5.73**
+- Updated **footer** to **v0.0.71**
+- Updated **form** to **v0.9.69**
+- Updated **input** to **v0.6.73**
+- Updated **link** to **v0.5.72**
+- Updated **page** to **v0.0.67**
+- Updated **password-input** to **v0.0.72**
+- Updated **radio-group** to **v0.5.74**
+- Updated **select** to **v0.6.74**
+- Updated **state** to **v0.0.70**
+- Updated **switch** to **v0.5.73**
+- Updated **text-area** to **v0.1.73**
+- Updated **theme-builder** to **v0.0.57**
+- Updated **tokens** to **v0.3.56**
+
 ## [0.0.41](https://github.com/storm-software/cyclone-ui/releases/tag/nextjs%400.0.41) (11/11/2026)
 
 ### Updated Dependencies
