@@ -1232,7 +1232,9 @@ const ButtonContainerImpl = createStyledHOC(
       (event: ButtonPressEvent) => {
         // A link render (`"a"` or an element such as Next's `<Link>`) must keep the
         // click's default, which `Link` checks before it navigates client-side.
-        if (render !== "a" && !isValidElement(render)) {
+        // So must a `submit` or `reset` button, whose default submits or resets
+        // its form.
+        if (render !== "a" && !isValidElement(render) && type === "button") {
           event.preventDefault();
         }
         event.stopPropagation();
@@ -1247,7 +1249,7 @@ const ButtonContainerImpl = createStyledHOC(
           }
         }
       },
-      [disabled, onPress, onClick, render]
+      [disabled, onPress, onClick, render, type]
     );
 
     const cascadeState = isCascadeVariant(variant)

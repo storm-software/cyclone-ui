@@ -360,7 +360,10 @@ export const TruncatedValue: Story = {
     for (const size of ["sm", "md", "lg"]) {
       const row = canvasElement.querySelector(`[data-size="${size}"]`)!;
       const text = row.querySelector("[data-select-trigger] .is_Text")!;
-      const input = row.querySelector("input")!;
+      // The text input, not the select's hidden form input.
+      const input = row.querySelector<HTMLInputElement>(
+        'input:not([type="hidden"])'
+      )!;
       await waitFor(() => {
         expect(text.scrollWidth).toBeGreaterThan(text.clientWidth);
         expect(getComputedStyle(text).whiteSpace).toBe("nowrap");

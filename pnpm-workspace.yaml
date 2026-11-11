@@ -30,60 +30,60 @@ catalog:
   "@storybook/react": ^10.6.6
   "@storybook/react-vite": ^10.6.6
   "@stryke/date": ^0.0.29
-  "@tamagui/accordion": 3.2.0
-  "@tamagui/adapt": 3.2.0
-  "@tamagui/animate-presence": 3.2.0
-  "@tamagui/avatar": 3.2.0
-  "@tamagui/checkbox": 3.2.0
-  "@tamagui/checkbox-headless": 3.2.0
-  "@tamagui/cli": 3.2.0
-  "@tamagui/collapsible": 3.2.0
-  "@tamagui/config": 3.2.0
-  "@tamagui/constants": 3.2.0
-  "@tamagui/core": 3.2.0
-  "@tamagui/create-context": 3.2.0
-  "@tamagui/dialog": 3.2.0
-  "@tamagui/dismissable": 3.2.0
-  "@tamagui/focusable": 3.2.0
-  "@tamagui/font-size": 3.2.0
-  "@tamagui/floating": 3.2.0
-  "@tamagui/get-font-sized": 3.2.0
-  "@tamagui/get-token": 3.2.0
-  "@tamagui/group": 3.2.0
-  "@tamagui/helpers": 3.2.0
-  "@tamagui/helpers-icon": 3.2.0
-  "@tamagui/helpers-tamagui": 3.2.0
-  "@tamagui/image": 3.2.0
-  "@tamagui/label": 3.2.0
-  "@tamagui/linear-gradient": 3.2.0
-  "@tamagui/next-plugin": 3.2.0
-  "@tamagui/next-theme": 3.2.0
-  "@tamagui/popover": 3.2.0
-  "@tamagui/popper": 3.2.0
-  "@tamagui/portal": 3.2.0
-  "@tamagui/progress": 3.2.0
-  "@tamagui/proxy-worm": 3.2.0
-  "@tamagui/radio-group": 3.2.0
-  "@tamagui/react-native-types": 3.2.0
-  "@tamagui/react-native-svg": 3.2.0
-  "@tamagui/scroll-view": 3.2.0
-  "@tamagui/shapes": 3.2.0
-  "@tamagui/sheet": 3.2.0
-  "@tamagui/shorthands": 3.2.0
-  "@tamagui/stacks": 3.2.0
-  "@tamagui/static": 3.2.0
-  "@tamagui/slider": 3.2.0
-  "@tamagui/switch": 3.2.0
-  "@tamagui/switch-headless": 3.2.0
-  "@tamagui/tabs": 3.2.0
-  "@tamagui/tailwind": 3.2.0
-  "@tamagui/text": 3.2.0
-  "@tamagui/toast": 3.2.0
-  "@tamagui/tooltip": 3.2.0
-  "@tamagui/use-controllable-state": 3.2.0
-  "@tamagui/use-presence": 3.2.0
-  "@tamagui/vite-plugin": 3.2.0
-  "@tamagui/web": 3.2.0
+  "@tamagui/accordion": 3.3.2
+  "@tamagui/adapt": 3.3.2
+  "@tamagui/animate-presence": 3.3.2
+  "@tamagui/avatar": 3.3.2
+  "@tamagui/checkbox": 3.3.2
+  "@tamagui/checkbox-headless": 3.3.2
+  "@tamagui/cli": 3.3.2
+  "@tamagui/collapsible": 3.3.2
+  "@tamagui/config": 3.3.2
+  "@tamagui/constants": 3.3.2
+  "@tamagui/core": 3.3.2
+  "@tamagui/create-context": 3.3.2
+  "@tamagui/dialog": 3.3.2
+  "@tamagui/dismissable": 3.3.2
+  "@tamagui/focusable": 3.3.2
+  "@tamagui/font-size": 3.3.2
+  "@tamagui/floating": 3.3.2
+  "@tamagui/get-font-sized": 3.3.2
+  "@tamagui/get-token": 3.3.2
+  "@tamagui/group": 3.3.2
+  "@tamagui/helpers": 3.3.2
+  "@tamagui/helpers-icon": 3.3.2
+  "@tamagui/helpers-tamagui": 3.3.2
+  "@tamagui/image": 3.3.2
+  "@tamagui/label": 3.3.2
+  "@tamagui/linear-gradient": 3.3.2
+  "@tamagui/next-plugin": 3.3.2
+  "@tamagui/next-theme": 3.3.2
+  "@tamagui/popover": 3.3.2
+  "@tamagui/popper": 3.3.2
+  "@tamagui/portal": 3.3.2
+  "@tamagui/progress": 3.3.2
+  "@tamagui/proxy-worm": 3.3.2
+  "@tamagui/radio-group": 3.3.2
+  "@tamagui/react-native-types": 3.3.2
+  "@tamagui/react-native-svg": 3.3.2
+  "@tamagui/scroll-view": 3.3.2
+  "@tamagui/shapes": 3.3.2
+  "@tamagui/sheet": 3.3.2
+  "@tamagui/shorthands": 3.3.2
+  "@tamagui/stacks": 3.3.2
+  "@tamagui/static": 3.3.2
+  "@tamagui/slider": 3.3.2
+  "@tamagui/switch": 3.3.2
+  "@tamagui/switch-headless": 3.3.2
+  "@tamagui/tabs": 3.3.2
+  "@tamagui/tailwind": 3.3.2
+  "@tamagui/text": 3.3.2
+  "@tamagui/toast": 3.3.2
+  "@tamagui/tooltip": 3.3.2
+  "@tamagui/use-controllable-state": 3.3.2
+  "@tamagui/use-presence": 3.3.2
+  "@tamagui/vite-plugin": 3.3.2
+  "@tamagui/web": 3.3.2
   "@taplo/cli": ^0.7.0
   "@nx/devkit": 24.0.3
   "@nx/eslint-plugin": 24.0.3
@@ -176,7 +176,7 @@ catalog:
   next: ^16.4.5
   sherif: ^1.13.0
   storybook: ^10.6.6
-  tamagui: 3.2.0
+  tamagui: 3.3.2
   tslib: ^2.9.1
   tsdown: ^0.22.14
   copyfiles: ^2.4.1
@@ -231,7 +231,7 @@ minimumReleaseAgeExclude:
   - powerlines
   - tamagui
   - "@sourcebook/config"
-  - tamagui-loader@3.2.0
+  - tamagui-loader@3.3.2
 nodeVersion: 26.3.0
 allowBuilds:
   "@parcel/watcher": true
