@@ -59,7 +59,8 @@ export const InputValue: ComponentType<InputComponentProps> = createStyledHOC(
       onChange: contextOnChange,
       onInput: contextOnInput,
       onBlur,
-      onFocus
+      onFocus,
+      name: behaviorName
     } = useInputBehavior();
 
     const {
@@ -90,7 +91,7 @@ export const InputValue: ComponentType<InputComponentProps> = createStyledHOC(
     } = inProps;
     const disabled = inProps.disabled ?? contextDisabled;
     const readOnly = inProps.readOnly ?? contextReadOnly;
-    const name = inProps.name ?? contextName;
+    const name = inProps.name ?? behaviorName ?? contextName;
     const onChange = inputOnChange ?? contextOnChange;
     const onInput = inputOnInput ?? contextOnInput;
 

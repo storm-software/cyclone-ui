@@ -62,20 +62,35 @@ import { Form, FormReset, FormSubmit } from "@cyclone-ui/form";
 | `defaultFieldOptions` | Object | None | Default options for all fields. |
 | `onInitialize` | Callback | None | Called when the form starts. |
 | `onChange` | Callback | None | Called when the form changes. |
-| `onSubmit` | Callback | None | Called when the form is submitted. |
+| `onSubmit` | Callback | None | Called after a submit passes validation. |
+| `errors` | `Record<string, string \| string[]>` | None | Error messages for fields, keyed by field name, such as a server action's result. |
 
 `Form` also passes these native form attributes to the element: `acceptCharset`, `action`, `autoComplete`, `encType`, `method`, `noValidate`, and `target`. The source states that `Form` does not forward style props to its frame. Put layout styles on an inner `View`.
 
+### Submitting
+
+Submitting runs every field's validators, including fields the user never focused, and the form's `onSubmit` validators. Every field then shows its errors. If any field is invalid, the submit stops and the first invalid control receives focus. Otherwise `onSubmit` runs.
+
+With an `action`, a valid submit continues to it. A function, such as a Server Function from `useActionState`, runs through React. A URL is posted by the browser. Without an `action`, the form never navigates.
+
+`errors` show on the first render, including the server's. They count as a submit attempt, so every field shows its errors. They don't disable submitting, and each clears from its field once the user edits it.
+
+### Without JavaScript
+
+Every control renders a named native element, and fields put `required` and their constraint props on it. Before the page hydrates, the browser validates and posts the form to its `action`. After hydration, `Form` sets `noValidate` unless you pass it, and the fields show the same checks in their own messages.
+
 ### `Form.Submit` and `Form.Reset`
 
-Both accept view props, such as `asChild`. They render a `button` element.
+Both accept view props, such as `asChild`. They render a `button` element with `type="submit"` or `type="reset"`.
 
 | Part | Press action |
 | --- | --- |
 | `Form.Submit` | Runs your `onPress`, then submits the form. |
-| `Form.Reset` | Runs your `onPress`, then resets the form. |
+| `Form.Reset` | Runs your `onPress`, then resets the form to its `initialValues`. |
 
-Both buttons are disabled when the form cannot be submitted. The form state sets that value (`canSubmit`).
+React calls `form.reset()` after a function `action` finishes. `Form` skips that reset, so the fields keep their values, as React's controlled inputs do. To clear the form after a successful action, call `reset` from `useFormActions` or remount the form with a new `key`.
+
+Both buttons are disabled while the form is disabled or submitting. An invalid form stays submittable, because submitting is what shows its errors.
 
 ## Variants and states
 

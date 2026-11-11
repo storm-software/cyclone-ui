@@ -75,7 +75,9 @@ const SelectItemsGroup = ({
         // At least the text box's width, plus 4px on each side.
         minWidth="calc(var(--tamagui-popper-anchor-width) + 8px)"
         {...props}>
-        <ContextMenu.Content.ScrollView role="listbox">
+        <ContextMenu.Content.ScrollView
+          // A valid ARIA role that Tamagui's React Native `Role` type lacks.
+          {...({ role: "listbox" } as object)}>
           {children ??
             items?.map((item, index) => (
               <SelectItem key={index} {...item} value={String(item.value)}>

@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import NextLink from "next/link";
 import {
   Footer,
   FooterLink,

@@ -19,7 +19,7 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import type { ComponentProps } from "react";
-import { expect, within } from "storybook/test";
+import { expect, fn, userEvent, within } from "storybook/test";
 import type { LinkProps } from "./Link";
 import { Link } from "./Link";
 
@@ -46,35 +46,139 @@ export const Base: Story = {
   }
 };
 
-// Stands in for a router link such as Next's `<Link>`.
-const RouterLink = ({ children, ...props }: ComponentProps<"a">) => (
-  <a {...props} data-render="element">
+// Match Next's click contract: a prevented consumer event cancels navigation.
+const navigate = fn();
+const routerClick = fn();
+const linkClick = fn();
+const linkPress = fn();
+const mouseEnter = fn();
+const touchStart = fn();
+const anchorRef = fn();
+const RouterLink = ({ children, href, onClick, ...props }: ComponentProps<"a">) => (
+  <a
+    {...props}
+    href={href}
+    data-render="element"
+    onClick={event => {
+      onClick?.(event);
+      if (!event.defaultPrevented) {
+        navigate(href);
+        event.preventDefault();
+      }
+    }}>
     {children}
   </a>
 );
 
-// A link component passed as `render` keeps every style.
 export const RenderElement: Story = {
+  beforeEach: () => {
+    for (const handler of [
+      navigate,
+      routerClick,
+      linkClick,
+      linkPress,
+      mouseEnter,
+      touchStart,
+      anchorRef
+    ]) {
+      handler.mockClear();
+    }
+  },
   render: () => (
-    <BodyText>
-      <Link href="#">Plain</Link>{" "}
-      <Link render={<RouterLink href="#" />}>Rendered</Link>
-    </BodyText>
+    <>
+      <BodyText>
+        Have an invitation?{" "}
+        <Link href="/sign-up" size="sm">
+          Plain nested
+        </Link>{" "}
+        <Link
+          external
+          ref={anchorRef}
+          size="sm"
+          onClick={linkClick}
+          onPress={linkPress}
+          render={
+            <RouterLink
+              href="/sign-up"
+              target="_self"
+              onClick={routerClick}
+              onMouseEnter={mouseEnter}
+              onTouchStart={touchStart}
+            />
+          }>
+          Rendered nested
+        </Link>
+      </BodyText>
+      <Link href="/sign-up" size="sm">
+        Plain standalone
+      </Link>{" "}
+      <Link
+        size="sm"
+        onClick={linkClick}
+        onPress={linkPress}
+        render={
+          <RouterLink
+            href="/sign-up"
+            target="_self"
+            onClick={routerClick}
+            onMouseEnter={mouseEnter}
+            onTouchStart={touchStart}
+          />
+        }>
+        Rendered standalone
+      </Link>
+    </>
   ),
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const plain = getComputedStyle(canvas.getByRole("link", { name: "Plain" }));
-    const rendered = canvas.getByRole("link", { name: "Rendered" });
-
-    await expect(rendered).toHaveAttribute("data-render", "element");
-    for (const property of [
-      "color",
-      "fontSize",
-      "fontWeight",
-      "textDecorationLine"
-    ] as const) {
-      await expect(getComputedStyle(rendered)[property]).toBe(plain[property]);
+    for (const placement of ["nested", "standalone"]) {
+      const plain = canvas.getByRole("link", { name: `Plain ${placement}` });
+      const rendered = canvas.getByRole("link", {
+        name: `Rendered ${placement}`
+      });
+      await expect(plain.tagName).toBe("A");
+      await expect(plain).toHaveAttribute("href", "/sign-up");
+      await expect(plain).not.toHaveAttribute("data-render");
+      await expect(rendered.querySelector("svg")).toBeNull();
+      await expect(rendered).toHaveAttribute("data-render", "element");
+      await expect(rendered).toHaveAttribute("href", "/sign-up");
+      await expect(rendered).toHaveAttribute("target", "_self");
+      for (const property of [
+        "color",
+        "fontSize",
+        "fontWeight",
+        "textDecorationLine",
+        "cursor"
+      ] as const) {
+        await expect(getComputedStyle(rendered)[property]).toBe(
+          getComputedStyle(plain)[property]
+        );
+      }
+      await userEvent.hover(rendered);
+      await expect(mouseEnter).toHaveBeenCalled();
+      mouseEnter.mockClear();
+      rendered.dispatchEvent(new Event("touchstart", { bubbles: true }));
+      await expect(touchStart).toHaveBeenCalled();
+      touchStart.mockClear();
+      const click = new MouseEvent("click", {
+        bubbles: true,
+        cancelable: true
+      });
+      rendered.dispatchEvent(click);
+      await expect(navigate).toHaveBeenCalledExactlyOnceWith("/sign-up");
+      await expect(click.defaultPrevented).toBe(true);
+      await expect(routerClick).toHaveBeenCalledTimes(1);
+      await expect(linkClick).toHaveBeenCalledTimes(1);
+      await expect(linkPress).toHaveBeenCalledTimes(1);
+      navigate.mockClear();
+      routerClick.mockClear();
+      linkClick.mockClear();
+      linkPress.mockClear();
+      await userEvent.unhover(rendered);
     }
+    await expect(anchorRef).toHaveBeenCalledWith(
+      canvas.getByRole("link", { name: "Rendered nested" })
+    );
   }
 };
 
@@ -130,8 +234,6 @@ export const SubtleExternal: Story = {
     external: true
   }
 };
-
-
 
 export const CallToAction: Story = {
   args: {

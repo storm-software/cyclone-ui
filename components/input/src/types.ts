@@ -141,14 +141,16 @@ export type InputComponentProps = Omit<ViewProps, "onChange" | "onInput"> &
     numberOfLines?: number;
   };
 
+// `name` rides along here: a key in a styled context's value is treated as a
+// context prop, so it never reached the native element's `name` attribute.
 export type InputBehaviorContextProps = Pick<
   InputContextProps,
-  "onChange" | "onInput" | "onFocus" | "onBlur"
+  "onChange" | "onInput" | "onFocus" | "onBlur" | "name"
 >;
 
 export type InputStyleContextProps = Omit<
   InputContextProps,
-  keyof InputBehaviorContextProps
+  "onChange" | "onInput" | "onFocus" | "onBlur"
 >;
 
 export interface InputContextProps {

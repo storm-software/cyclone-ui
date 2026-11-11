@@ -19,6 +19,7 @@
 "use client";
 
 import { ContextMenu } from "@cyclone-ui/context-menu";
+import { getFormControlAriaProps, useFormControl } from "@cyclone-ui/helpers";
 import type { ViewProps } from "@tamagui/core";
 import {
   createStyledHOC,
@@ -68,11 +69,14 @@ const SelectTextBoxImpl = createStyledHOC(
   BaseSelectTextBox,
   ({ children, ...props }: ViewProps, forwardedRef) => {
     const { disabled, name } = SelectContext.useStyledContext();
+    const formControl = useFormControl();
 
     return (
       <ContextMenu.Trigger asChild={true}>
         <BaseSelectTextBox
           {...({ type: "button" } as object)}
+          aria-required={formControl?.required ? true : undefined}
+          {...getFormControlAriaProps(formControl)}
           id={name}
           data-select-trigger
           disabled={disabled}

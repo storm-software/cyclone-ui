@@ -21,10 +21,13 @@
 import { delay } from "@stryke/async";
 import { isBoolean } from "@stryke/type-checks/is-boolean";
 import { useThemeName } from "@tamagui/core";
-import type { SetStateAction, WritableAtom } from "jotai";
+import type { Getter, SetStateAction, WritableAtom } from "jotai";
 import type { RESET } from "jotai/utils";
+import { useAtomCallback } from "jotai/utils";
 import type { PropsWithChildren } from "react";
+import { use, useCallback, useEffect } from "react";
 import { useAtomEffect } from "../../base/hooks/use-atom-effect";
+import { FormFieldValidationsContext } from "../hooks/form-field-validations";
 import { useFieldActions } from "../hooks/use-field-actions";
 import { FieldApi } from "../molecules/field-molecule";
 import { FormApi } from "../molecules/form-molecule";
@@ -43,6 +46,38 @@ function FieldStateManager<TFieldValue = any>(
 
   const form = FormApi.useMolecule();
   const field = FieldApi.useMolecule();
+
+  // Lets the form validate this field on submit, even if it was never
+  // focused or blurred.
+  const fieldValidations = use(FormFieldValidationsContext);
+  const validateAll = useAtomCallback(
+    useCallback(
+      async (get: Getter) => {
+        if (get(field.disabled)) {
+          return;
+        }
+
+        const value = get(field.value);
+        await Promise.all([
+          validate(value, ValidationCause.CHANGE),
+          validate(value, ValidationCause.BLUR),
+          validate(value, ValidationCause.SUBMIT)
+        ]);
+      },
+      [field, validate]
+    )
+  );
+  useEffect(() => {
+    if (!fieldValidations) {
+      return;
+    }
+
+    fieldValidations.add(validateAll);
+
+    return () => {
+      fieldValidations.delete(validateAll);
+    };
+  }, [fieldValidations, validateAll]);
 
   // Handle initialize events
   // useAtomValue(

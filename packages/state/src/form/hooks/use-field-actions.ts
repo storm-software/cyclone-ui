@@ -24,6 +24,7 @@ import type { Ref } from "react";
 import { useCallback } from "react";
 import { FieldApi } from "../molecules/field-molecule";
 import { ValidationCause } from "../types";
+import { clearServerErrors } from "../utilities/server-errors";
 
 const validationKey = {
   initialize: "onInitialize",
@@ -164,6 +165,8 @@ export const useFieldActions = <TFieldValue = any>() => {
 
           if (!options.isEqual(nextParsed, value)) {
             set(field.value, nextParsed);
+            // A server's verdict on the old value no longer applies.
+            set(field.validationResults, clearServerErrors);
           }
         }
       },

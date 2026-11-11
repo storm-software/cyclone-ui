@@ -49,6 +49,24 @@ export type FieldLabelVariant = "floating" | "above";
 export type FieldLabelPlacement = "border" | "inset";
 
 /**
+ * Native validation constraints a field puts on its control's input element.
+ *
+ * @remarks
+ * Plain values, so a Server Component can pass them to `Field`. The browser
+ * enforces them before JavaScript loads, and the field reports the element's
+ * validity once it has.
+ */
+export interface FieldConstraints {
+  minLength?: number;
+  maxLength?: number;
+  /** A regular expression the whole value must match. */
+  pattern?: string;
+  min?: number | string;
+  max?: number | string;
+  step?: number | string;
+}
+
+/**
  * The state a form control (such as `Field`) shares with the input inside it.
  *
  * @remarks
@@ -83,6 +101,18 @@ export interface FormControlState {
   focused?: boolean;
   clearable?: boolean;
   hasValidationMessage: boolean;
+
+  /** The field shows an error message. */
+  invalid?: boolean;
+
+  /**
+   * Ids of the field's visible description and messages, for the control's
+   * `aria-describedby`.
+   */
+  describedBy?: string;
+
+  /** Native validation constraints for the control's input element. */
+  constraints?: FieldConstraints;
 
   /** Ref the control attaches to its native input (applies masking). */
   inputRef?: Ref<any>;
@@ -131,6 +161,15 @@ export const FormControlContext = createContext<FormControlState | undefined>(
  * Get the enclosing form control's state, or `undefined` outside of one.
  */
 export const useFormControl = () => use(FormControlContext);
+
+/**
+ * The `aria-invalid` and `aria-describedby` props for the element a control
+ * renders as its focusable input.
+ */
+export const getFormControlAriaProps = (formControl?: FormControlState) => ({
+  "aria-invalid": formControl?.invalid ? true : undefined,
+  "aria-describedby": formControl?.describedBy
+});
 
 /**
  * What a text box style control's frame (such as `Input`'s or `TextArea`'s)

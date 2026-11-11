@@ -23,6 +23,7 @@ import { Field } from "@cyclone-ui/field";
 import type { FieldLabelPlacement, FormControlSize } from "@cyclone-ui/helpers";
 import {
   FieldNotchedOutline,
+  getFormControlAriaProps,
   getFormSizeScale,
   getFormSizeToken,
   getSpaced,
@@ -37,16 +38,19 @@ import { ControlUnderline } from "@cyclone-ui/input";
 import type { GetProps } from "@tamagui/core";
 import {
   createStyledHOC,
+  isWeb,
   styled,
+  Text,
   View,
   withStaticProperties
 } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { XStack } from "@tamagui/stacks";
-import { useCallback, useMemo, useState } from "react";
+import { Suspense, useCallback, useMemo, useState } from "react";
 import type { ViewStyle } from "react-native";
 import { SelectItems } from "./SelectItems";
 import { SelectTextBox } from "./SelectTextBox";
+import { SelectNativeValue } from "./SelectValue";
 import type { SelectChangeEventHandler, SelectContextProps } from "./types";
 import {
   getSelectSize,
@@ -392,6 +396,82 @@ const SelectTextBoxImpl = createStyledHOC(
   { displayName: "Select" }
 );
 
+interface SelectFallbackProps {
+  name?: string;
+  value?: string;
+  placeholder?: string;
+  size: FormControlSize;
+  variant: SelectContextProps["variant"];
+  disabled?: boolean;
+  required?: boolean;
+}
+
+/**
+ * The select in a prerendered shell: a native `<select>` drawn like the
+ * closed control, which submits and validates without JavaScript. Its options
+ * are the field's `items` (or just the current value).
+ */
+const SelectFallback = ({
+  name,
+  value,
+  placeholder,
+  size,
+  variant,
+  disabled,
+  required
+}: SelectFallbackProps) => {
+  const formControl = useFormControl();
+  const hasValidationMessage = useFieldHasValidationMessage();
+  const labelPlacement = useFieldLabelPlacement();
+  const options =
+    formControl?.items ??
+    (value ? [{ name: value, value, disabled: false }] : []);
+
+  return (
+    <SelectGroup
+      frameSize={size}
+      variant={variant}
+      labelPlacement={labelPlacement}
+      disabled={disabled}
+      hasValidationMessage={hasValidationMessage}>
+      <SelectNativeValue
+        id={name}
+        // `<select>` attributes, which Tamagui's `Text` doesn't type.
+        {...({
+          name,
+          defaultValue: value ?? "",
+          required: required ? true : undefined
+        } as object)}
+        disabled={disabled}
+        {...getFormControlAriaProps(formControl)}
+        size={size}
+        variant={variant}
+        labelPlacement={labelPlacement}
+        placeholding={!value}
+        style={{ appearance: "none" }}>
+        <option value="">{placeholder ?? ""}</option>
+        {options.map(option => (
+          <option
+            key={String(option.value)}
+            value={String(option.value)}
+            disabled={Boolean(option.disabled)}>
+            {option.name}
+          </option>
+        ))}
+      </SelectNativeValue>
+      {/* A View can't carry `color` in v3, so a Text passes it to the
+          `currentColor` icon. */}
+      <Text
+        display="flex"
+        pointerEvents="none"
+        paddingHorizontal="xl"
+        color={disabled ? "primary-disabled" : "primary"}>
+        <ChevronDown size={24 * getFormSizeScale(size)} color="currentColor" />
+      </Text>
+    </SelectGroup>
+  );
+};
+
 const SelectGroupImpl = createStyledHOC(
   ContextMenu,
   (
@@ -485,44 +565,64 @@ const SelectGroupImpl = createStyledHOC(
     );
 
     return (
-      <SelectContext.Provider
-        // Only context keys: a styled context treats every key in its value
-        // as a context prop, so spreading all props swallowed `aria-*` and
-        // other DOM attributes before they reached the element.
-        circular={Boolean((rest as { circular?: boolean }).circular)}
-        name={name}
-        disabled={disabled}
-        focused={visualFocus}
-        hasValidationMessage={hasValidationMessage}
-        variant={variant}
-        size={size}
-        value={resolvedValue}
-        open={open}
-        onFocus={onFocus}
-        onBlur={onBlur}
-        onChange={onChange}>
-        <ContextMenu
-          ref={forwardedRef}
-          aria-readonly={readOnly || undefined}
-          placement="bottom"
-          {...rest}
+      // Tamagui's popover gives its callbacks random identity keys while
+      // rendering, which a Next.js Cache Components prerender only allows
+      // inside a Suspense boundary. The fallback sits outside the select
+      // context, whose `name` and `value` keys it would otherwise swallow.
+      <Suspense
+        fallback={
+          <SelectFallback
+            name={name}
+            value={resolvedValue}
+            placeholder={placeholder}
+            size={size}
+            variant={variant}
+            disabled={disabled}
+            required={formControl?.required}
+          />
+        }>
+        <SelectContext.Provider
+          // Only context keys: a styled context treats every key in its value
+          // as a context prop, so spreading all props swallowed `aria-*` and
+          // other DOM attributes before they reached the element. Only plain
+          // values too: it gives functions random identity keys.
+          circular={Boolean((rest as { circular?: boolean }).circular)}
+          name={name}
+          disabled={disabled}
+          focused={visualFocus}
+          hasValidationMessage={hasValidationMessage}
+          variant={variant}
           size={size}
           value={resolvedValue}
-          onValueChange={handleChanged}
-          open={open}
-          onOpenChange={handleOpenChanged}>
-          {children ??
-            // Without children, a select in a field renders the field's items.
-            (formControl && (
-              <>
-                <SelectTextBoxImpl>
-                  <SelectTextBox.Value placeholder={placeholder} />
-                </SelectTextBoxImpl>
-                <SelectItems />
-              </>
-            ))}
-        </ContextMenu>
-      </SelectContext.Provider>
+          open={open}>
+          {isWeb && name && (
+            // The trigger is a button, so this carries the value when the
+            // form submits.
+            <input type="hidden" name={name} value={resolvedValue ?? ""} />
+          )}
+          <ContextMenu
+            ref={forwardedRef}
+            aria-readonly={readOnly || undefined}
+            placement="bottom"
+            {...rest}
+            size={size}
+            value={resolvedValue}
+            onValueChange={handleChanged}
+            open={open}
+            onOpenChange={handleOpenChanged}>
+            {children ??
+              // Without children, a select in a field renders the field's items.
+              (formControl && (
+                <>
+                  <SelectTextBoxImpl>
+                    <SelectTextBox.Value placeholder={placeholder} />
+                  </SelectTextBoxImpl>
+                  <SelectItems />
+                </>
+              ))}
+          </ContextMenu>
+        </SelectContext.Provider>
+      </Suspense>
     );
   },
   { displayName: "Select" }

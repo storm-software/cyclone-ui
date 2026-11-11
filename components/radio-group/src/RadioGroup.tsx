@@ -23,6 +23,7 @@ import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import type { FormControlSize } from "@cyclone-ui/helpers";
 import {
   formSizeVariants,
+  getFormControlAriaProps,
   getFormFontScale,
   getFormFontSize,
   getFormSizeScale,
@@ -48,8 +49,8 @@ import {
   RadioGroupContext as TamaguiRadioGroupContext
 } from "@tamagui/radio-group";
 import { XStack, YStack } from "@tamagui/stacks";
-import type { FocusEvent, ReactNode } from "react";
-import { createContext, use, useCallback, useId } from "react";
+import type { ContextType, FocusEvent, ReactNode } from "react";
+import { createContext, Suspense, use, useCallback, useId } from "react";
 import type { GestureResponderEvent } from "react-native";
 
 export interface RadioGroupContextProps {
@@ -86,6 +87,9 @@ export type RadioGroupIndicatorStyle = "check" | "circle" | "none";
 // to its defaults.
 const IndicatorStyleContext = createContext<RadioGroupIndicatorStyle>("check");
 const ReadOnlyContext = createContext(false);
+// Inside the fallback of `RadioGroup`'s Suspense boundary: items render a
+// native radio in place of Tamagui's.
+const NativeRadioContext = createContext(false);
 
 // Out of sight, the radio still gives the item its role, arrow-key navigation
 // and form value.
@@ -290,6 +294,7 @@ const RadioGroupItemContainer = createStyledHOC(
     const group = use(TamaguiRadioGroupContext);
     const indicatorStyle = use(IndicatorStyleContext);
     const readOnly = use(ReadOnlyContext);
+    const nativeRadio = use(NativeRadioContext);
     const hasValidationMessage = useFieldHasValidationMessage();
     const id = useId();
     const itemValue = String(value);
@@ -404,22 +409,44 @@ const RadioGroupItemContainer = createStyledHOC(
         <View
           alignSelf="center"
           onPress={e => e.stopPropagation()}
-          {...(indicatorStyle !== "circle" && hiddenIndicatorStyle)}>
-          <RadioGroupItem
-            id={id}
-            size={size}
-            borderColor={`${borderColor} group-hover/item:${hoverColor}`}
-            value={itemValue}
-            disabled={disabled}>
-            {disabled ? (
-              <Lock
-                size={getSized("5xl") * scale * 0.6}
-                color="primary-disabled"
-              />
-            ) : (
-              <RadioGroupItemIndicator />
-            )}
-          </RadioGroupItem>
+          // A native radio stays visible: without JavaScript nothing else
+          // shows which item is selected.
+          {...(indicatorStyle !== "circle" &&
+            !nativeRadio &&
+            hiddenIndicatorStyle)}>
+          {nativeRadio ? (
+            <input
+              type="radio"
+              id={id}
+              name={group.name}
+              value={itemValue}
+              defaultChecked={selected}
+              disabled={disabled}
+              required={group.required}
+              style={{
+                margin: 0,
+                width: getSized("5xl") * scale * 0.75,
+                height: getSized("5xl") * scale * 0.75,
+                accentColor: "var(--primary-active)"
+              }}
+            />
+          ) : (
+            <RadioGroupItem
+              id={id}
+              size={size}
+              borderColor={`${borderColor} group-hover/item:${hoverColor}`}
+              value={itemValue}
+              disabled={disabled}>
+              {disabled ? (
+                <Lock
+                  size={getSized("5xl") * scale * 0.6}
+                  color="primary-disabled"
+                />
+              ) : (
+                <RadioGroupItemIndicator />
+              )}
+            </RadioGroupItem>
+          )}
         </View>
 
         {indicatorStyle === "check" && selected && (
@@ -474,6 +501,16 @@ const RadioGroupFrame = styled(TamaguiRadioGroup, {
   }
 });
 
+// The fallback's frame: `RadioGroupFrame` renders Tamagui's radio group.
+const RadioGroupFallbackFrame = styled(View, {
+  displayName: "RadioGroup",
+  flexDirection: "column",
+  justifyContent: "flex-start",
+  alignItems: "flex-start",
+  width: "100%",
+  maxWidth: "100%"
+});
+
 const RadioGroupImpl = createStyledHOC(
   RadioGroupFrame,
   (
@@ -507,7 +544,7 @@ const RadioGroupImpl = createStyledHOC(
     const {
       children,
       name = formControl?.name,
-      required,
+      required = formControl?.required,
       disabled = formControl?.disabled,
       readOnly = formControl?.readOnly ?? false,
       value = formControl?.formattedValue,
@@ -520,59 +557,96 @@ const RadioGroupImpl = createStyledHOC(
       ...rest
     } = props;
     const items = formControl?.items;
+    // Stay controlled inside a form control, uncontrolled outside of one.
+    const groupValue =
+      formControl || readOnly || value != null
+        ? String(value ?? defaultValue ?? "")
+        : undefined;
+    const ariaProps = getFormControlAriaProps(formControl);
+    const content = (
+      <ReadOnlyContext value={readOnly}>
+        <IndicatorStyleContext value={indicatorStyle}>
+          <YStack
+            justifyContent="flex-start"
+            gap="2xl"
+            width="100%"
+            paddingHorizontal="max-sm:5xl"
+            paddingVertical="max-sm:6xl">
+            {/* Without children, the form control's items are rendered. */}
+            {children ??
+              items?.map((item, i) => (
+                <RadioGroupItemContainer
+                  // eslint-disable-next-line react/no-array-index-key
+                  key={i}
+                  value={item.value}
+                  description={item.description}
+                  icon={item.icon}
+                  disabled={item.disabled}>
+                  {item.name}
+                </RadioGroupItemContainer>
+              ))}
+          </YStack>
+        </IndicatorStyleContext>
+      </ReadOnlyContext>
+    );
 
     return (
-      <RadioGroupFrame
-        id={name}
-        aria-readonly={readOnly || undefined}
-        ref={forwardedRef}
-        size={size}
-        {...rest}
-        onFocus={onFocus}
-        onBlur={onBlur}
-        // The radios' values are strings, so report the field item's own
-        // value (which may be a number or boolean).
-        onValueChange={next =>
-          !readOnly &&
-          onValueChange?.(
-            (items?.find(item => String(item.value) === next)?.value ??
-              next) as string
-          )
-        }
-        // Stay controlled inside a form control, uncontrolled outside of one.
-        value={
-          formControl || readOnly || value != null
-            ? String(value ?? defaultValue ?? "")
-            : undefined
-        }
-        defaultValue={defaultValue == null ? undefined : String(defaultValue)}
-        required={required}
-        disabled={disabled}>
-        <ReadOnlyContext value={readOnly}>
-          <IndicatorStyleContext value={indicatorStyle}>
-            <YStack
-              justifyContent="flex-start"
-              gap="2xl"
-              width="100%"
-              paddingHorizontal="max-sm:5xl"
-              paddingVertical="max-sm:6xl">
-              {/* Without children, the form control's items are rendered. */}
-              {children ??
-                items?.map((item, i) => (
-                  <RadioGroupItemContainer
-                    // eslint-disable-next-line react/no-array-index-key
-                    key={i}
-                    value={item.value}
-                    description={item.description}
-                    icon={item.icon}
-                    disabled={item.disabled}>
-                    {item.name}
-                  </RadioGroupItemContainer>
-                ))}
-            </YStack>
-          </IndicatorStyleContext>
-        </ReadOnlyContext>
-      </RadioGroupFrame>
+      // Tamagui's roving focus group and collection give their callbacks
+      // random identity keys while rendering, which a Next.js Cache
+      // Components prerender only allows inside a Suspense boundary. The
+      // prerendered shell gets the same items with native radios, which
+      // submit and validate without JavaScript.
+      <Suspense
+        fallback={
+          <RadioGroupFallbackFrame
+            role="radiogroup"
+            id={name}
+            aria-required={required ? true : undefined}
+            aria-disabled={Boolean(disabled) || undefined}
+            aria-readonly={readOnly || undefined}
+            {...ariaProps}>
+            <TamaguiRadioGroupContext
+              value={
+                {
+                  name,
+                  required,
+                  disabled,
+                  value:
+                    groupValue ??
+                    (defaultValue == null ? undefined : String(defaultValue))
+                } as ContextType<typeof TamaguiRadioGroupContext>
+              }>
+              <NativeRadioContext value>{content}</NativeRadioContext>
+            </TamaguiRadioGroupContext>
+          </RadioGroupFallbackFrame>
+        }>
+        <RadioGroupFrame
+          id={name}
+          aria-readonly={readOnly || undefined}
+          {...ariaProps}
+          ref={forwardedRef}
+          size={size}
+          {...rest}
+          // Names the radios' hidden inputs, which submit with the form.
+          name={name}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          // The radios' values are strings, so report the field item's own
+          // value (which may be a number or boolean).
+          onValueChange={next =>
+            !readOnly &&
+            onValueChange?.(
+              (items?.find(item => String(item.value) === next)?.value ??
+                next) as string
+            )
+          }
+          value={groupValue}
+          defaultValue={defaultValue == null ? undefined : String(defaultValue)}
+          required={required}
+          disabled={disabled}>
+          {content}
+        </RadioGroupFrame>
+      </Suspense>
     );
   },
   { displayName: "RadioGroup" }

@@ -21,6 +21,7 @@
 import type { FormControlSize } from "@cyclone-ui/helpers";
 import {
   formSizeVariants,
+  getFormControlAriaProps,
   getFormSizeToken,
   getSized,
   getSpaced,
@@ -312,7 +313,8 @@ const BaseSwitchImpl = createStyledHOC(
 
     return (
       <SwitchContext.Provider
-        name={name}
+        // Not `name`: a key in a styled context's value is treated as a
+        // context prop, so it would never reach the hidden form input.
         size={size}
         checked={checked}
         hasValidationMessage={hasValidationMessage}
@@ -322,7 +324,13 @@ const BaseSwitchImpl = createStyledHOC(
           activeStyle={{
             backgroundColor: disabled ? "primary-disabled" : "primary"
           }}
+          // `aria-required` only: a `required` hidden form input can't take
+          // focus, so the browser would block a submit without saying why.
+          aria-required={formControl?.required ? true : undefined}
+          {...getFormControlAriaProps(formControl)}
           {...props}
+          // Names the hidden input the switch submits with its form.
+          name={name}
           id={name}
           aria-readonly={readOnly || undefined}
           size={size}

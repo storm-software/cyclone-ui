@@ -76,6 +76,10 @@ It accepts the Tamagui radio group props plus the props below. Inside a form con
 
 Pressing anywhere on an item selects it.
 
+## Server rendering and forms
+
+The radios' hidden inputs take the group's `name`, so the selection posts with its form. Inside a `Field`, `required` defaults to the field's. Tamagui's roving focus group calls `Math.random()` while rendering, which a Next.js Cache Components prerender only allows inside a Suspense boundary. `RadioGroup` has its own boundary. If a prerender interrupts it, the static shell holds the same items, each with a visible native radio. Their labels select them, and they submit and validate without JavaScript. The full group replaces them once it renders.
+
 ## Variants and states
 
 The stories show the sizes `sm`, `md`, and `lg`, and the states required, disabled, default value, and disabled item. They also show the validation themes `discovery`, `danger`, `warning`, `info`, and `success`.

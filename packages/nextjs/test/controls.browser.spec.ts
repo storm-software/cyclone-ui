@@ -9,7 +9,16 @@ test("labeled controls are in the static shell without hydration", async ({
     page,
     async () => {
       await page.goto("/controls-probe", { waitUntil: "domcontentloaded" });
-      for (const label of ["Email", "Password", "Name", "Message"]) {
+      // Select and RadioGroup stream behind their own Suspense boundaries;
+      // the shell holds their native fallbacks.
+      for (const label of [
+        "Email",
+        "Password",
+        "Name",
+        "Message",
+        "Plan",
+        "By email"
+      ]) {
         await expect(page.getByLabel(label, { exact: true })).toBeVisible();
       }
     },

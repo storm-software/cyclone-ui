@@ -83,7 +83,7 @@ import { XStack, YStack } from "@tamagui/stacks";
 // this package's declarations.
 import type {} from "@tamagui/get-font-sized";
 import { SizableText } from "@tamagui/text";
-import type { ReactNode } from "react";
+import type { ReactNode, RefObject } from "react";
 import {
   cloneElement,
   createContext,
@@ -121,6 +121,42 @@ export type {
  * inside a `Field`, which provides it.
  */
 const useFieldPresentation = () => useFormControl() as FormControlState;
+
+/**
+ * Whether the field's details render under an "above" label (see
+ * `FieldLabel`) instead of under the control.
+ */
+const useFieldDetailsUnderLabel = () => {
+  const { labelVariant, labelDefaults } = useFieldPresentation();
+
+  return labelVariant === "above" && !labelDefaults?.inline;
+};
+
+/** The ids of a field's description and messages, for `aria-describedby`. */
+const getFieldDetailsId = (name: string) => `${name}-details`;
+const getFieldMessagesId = (name: string) => `${name}-messages`;
+
+/**
+ * Reports the browser's verdict on the control's native constraints (`type`,
+ * `pattern`, `minLength`, ...) with its localized message. A missing value is
+ * left to the `required` option's own validator.
+ */
+const getNativeValidityMessages = (
+  element: HTMLElement | null
+): ValidationDetails[] => {
+  const input = element as HTMLInputElement | null;
+  if (!input?.validity || input.validity.valid || input.validity.valueMissing) {
+    return [];
+  }
+
+  return [
+    {
+      type: "danger",
+      code: "native-validity",
+      message: input.validationMessage
+    }
+  ];
+};
 
 /**
  * Get the id of a field's label element.
@@ -325,6 +361,7 @@ const FieldValidationTextImpl = createStyledHOC(
     };
 
     const field = FieldApi.use();
+    const name = field.name.get();
     const disabled = field.disabled.get();
     const focused = field.focused.get();
     const size = field.size.get();
@@ -333,6 +370,7 @@ const FieldValidationTextImpl = createStyledHOC(
     return (
       <FieldValidationText
         ref={forwardedRef}
+        id={getFieldMessagesId(name)}
         {...rest}
         size={size}
         // Track the control's border so the message reads as part of the field.
@@ -352,6 +390,8 @@ const FieldGroupInnerImpl = createStyledHOC(
   (
     props: GetProps<typeof FieldGroupFrame> & {
       showDisabledMessage?: boolean;
+      /** Receives the control's native input element. */
+      inputElementRef: RefObject<HTMLElement | null>;
     },
     forwardedRef
   ) => {
@@ -359,6 +399,7 @@ const FieldGroupInnerImpl = createStyledHOC(
       children,
       variant = "outlined",
       showDisabledMessage = false,
+      inputElementRef,
       ...rest
     } = props;
 
@@ -377,8 +418,28 @@ const FieldGroupInnerImpl = createStyledHOC(
     const clearable = field.clearable.get();
     const options = field.options.get();
     const messages = field.messages.get();
+    const invalid = field.invalid.get();
     const presentation = useFieldPresentation();
     const [details, setDetails] = useState<ReactNode>(null);
+    const detailsUnderLabel = useFieldDetailsUnderLabel();
+    const hasMessages =
+      messages.length > 0 || (showDisabledMessage && Boolean(disabled));
+    // Only the parts that are showing: details under the control give way to
+    // messages, while details under an "above" label stay.
+    const describedBy =
+      [
+        details != null && (detailsUnderLabel || !hasMessages)
+          ? getFieldDetailsId(name)
+          : undefined,
+        hasMessages ? getFieldMessagesId(name) : undefined
+      ]
+        .filter(Boolean)
+        .join(" ") || undefined;
+    const { minLength, maxLength, pattern, min, max, step } = options;
+    const constraints = useMemo(
+      () => ({ minLength, maxLength, pattern, min, max, step }),
+      [minLength, maxLength, pattern, min, max, step]
+    );
 
     const { change, focus, blur, mount } = useFieldActions();
     const onChange = useCallback(
@@ -418,7 +479,6 @@ const FieldGroupInnerImpl = createStyledHOC(
     // The control attaches this to its native input: it applies the field's
     // mask and registers the input with the form once it mounts.
     const maskedRef = useFieldRef();
-    const inputElementRef = useRef<HTMLElement | null>(null);
     const mountRef = useCallback(
       (node: HTMLElement | null) => {
         if (node) {
@@ -478,6 +538,9 @@ const FieldGroupInnerImpl = createStyledHOC(
         focused,
         clearable,
         hasValidationMessage,
+        invalid,
+        describedBy,
+        constraints,
         inputRef,
         onChange,
         onFocus,
@@ -500,6 +563,9 @@ const FieldGroupInnerImpl = createStyledHOC(
         focused,
         clearable,
         hasValidationMessage,
+        invalid,
+        describedBy,
+        constraints,
         inputRef,
         onChange,
         onFocus,
@@ -581,6 +647,7 @@ const FieldGroup = createStyledHOC(
 
       return () => setStartIconCount(count => Math.max(0, count - 1));
     }, []);
+    const inputElementRef = useRef<HTMLElement | null>(null);
     const [buttonEntries, setButtonEntries] = useState<
       (FieldButtonEntry & { id: string })[]
     >([]);
@@ -651,17 +718,34 @@ const FieldGroup = createStyledHOC(
       ]
     );
 
+    const fieldOptions = {
+      ...(controlOptions?.defaults as Partial<FieldProps>),
+      ...rest,
+      ...(controlOptions?.overrides as Partial<FieldProps>)
+    };
+    // The browser's constraint checks join the field's own change validators;
+    // like them, their messages show once the field is blurred or submitted.
+    const fieldValidate = fieldOptions.validate;
+    const validate = useMemo(
+      () => ({
+        ...fieldValidate,
+        onChange: [
+          ...(fieldValidate?.onChange ?? []),
+          () => getNativeValidityMessages(inputElementRef.current)
+        ]
+      }),
+      [fieldValidate]
+    );
+
     return (
-      <FieldProvider
-        {...(controlOptions?.defaults as Partial<FieldProps>)}
-        {...rest}
-        {...(controlOptions?.overrides as Partial<FieldProps>)}>
+      <FieldProvider {...fieldOptions} validate={validate}>
         <FormControlContext.Provider value={presentation}>
           <FieldButtonsContext.Provider value={buttons}>
             <FieldGroupInnerImpl
               ref={forwardedRef}
               variant={variant}
-              showDisabledMessage={showDisabledMessage}>
+              showDisabledMessage={showDisabledMessage}
+              inputElementRef={inputElementRef}>
               {children}
             </FieldGroupInnerImpl>
           </FieldButtonsContext.Provider>
@@ -703,6 +787,7 @@ const FieldDetailsText = createStyledHOC(
     const { children, ...rest } = props;
 
     const field = FieldApi.use();
+    const name = field.name.get();
     const disabled = field.disabled.get();
     const theme = field.theme.get();
     const size = field.size.get();
@@ -710,6 +795,7 @@ const FieldDetailsText = createStyledHOC(
     return (
       <FieldDetails
         ref={forwardedRef}
+        id={getFieldDetailsId(name)}
         {...rest}
         color={`${
           disabled ? "primary-disabled" : theme !== "base" ? "primary" : "ink"
@@ -723,16 +809,6 @@ const FieldDetailsText = createStyledHOC(
   },
   { displayName: "FieldDetails" }
 );
-
-/**
- * Whether the field's details render under an "above" label (see
- * `FieldLabel`) instead of under the control.
- */
-const useFieldDetailsUnderLabel = () => {
-  const { labelVariant, labelDefaults } = useFieldPresentation();
-
-  return labelVariant === "above" && !labelDefaults?.inline;
-};
 
 const FieldDetailsImpl = createStyledHOC(
   FieldDetails,

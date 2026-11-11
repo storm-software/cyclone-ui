@@ -43,6 +43,7 @@ import type {
   InferFormState,
   ValidationResults
 } from "../types";
+import { stripServerErrors } from "../utilities/server-errors";
 
 export const DEFAULT_FORM_OPTIONS: FormOptionsState = {
   theme: "base",
@@ -326,9 +327,19 @@ export const FormApi = createMoleculeApi(
     });
     const validAtom = atom(get => !get(invalidAtom));
 
+    // Errors seeded from the `errors` option (a server action's response)
+    // don't block a resubmit: without JavaScript nothing clears them first.
+    const blockingFieldErrorMessagesAtom = atomWithFieldsMessageList<
+      TFormValues,
+      "danger"
+    >(
+      atom(get => stripServerErrors(get(validationResultsFieldsAtom))),
+      "danger"
+    );
     const canSubmitAtom = atom(
       get =>
-        get(validAtom) &&
+        get(blockingFieldErrorMessagesAtom).length === 0 &&
+        !get(isFormInvalidAtom) &&
         !get(validatingAtom) &&
         !get(submittingAtom) &&
         !get(disabledAtom)

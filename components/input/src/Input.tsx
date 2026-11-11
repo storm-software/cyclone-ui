@@ -23,6 +23,7 @@ import type { FieldLabelPlacement, FormControlSize } from "@cyclone-ui/helpers";
 import {
   FieldNotchedOutline,
   FormControlFrameContext,
+  getFormControlAriaProps,
   getFormSizeToken,
   getSized,
   useFieldHasValidationMessage,
@@ -325,8 +326,8 @@ const InputGroupImpl = createStyledHOC(
     const borderColor = `${active ? focusColor : idleColor} group-hover/field:${disabled ? "primary-disabled" : active ? focusColor : hoverColor}`;
 
     const behavior = useMemo(
-      () => ({ onChange, onInput, onFocus, onBlur }),
-      [onChange, onInput, onFocus, onBlur]
+      () => ({ onChange, onInput, onFocus, onBlur, name }),
+      [onChange, onInput, onFocus, onBlur, name]
     );
     // The frame clips its content to its rounded corners, except while a part
     // (such as a focused `Field.Button`) needs its focus ring to show in full.
@@ -339,8 +340,8 @@ const InputGroupImpl = createStyledHOC(
         <InputContext.Provider
           // Only context keys: a styled context treats every key in its value
           // as a context prop, so spreading all props swallowed `aria-*` and
-          // other DOM attributes before they reached the element.
-          name={name}
+          // other DOM attributes before they reached the element. `name` is
+          // in the behavior context for the same reason.
           circular={Boolean(rest.circular)}
           size={size}
           variant={variant}
@@ -514,6 +515,11 @@ const InputValueImpl = createStyledHOC(
       <View position="relative" height="100%" flex={1} minWidth={0}>
         <InputValue
           ref={ref}
+          // The field's state as native attributes, so the browser validates
+          // before (and without) JavaScript.
+          required={formControl?.required ? true : undefined}
+          {...formControl?.constraints}
+          {...getFormControlAriaProps(formControl)}
           {...props}
           placeholder={shouldShowPlaceholder ? props.placeholder : undefined}
           placeholderTextColor="primary-disabled"

@@ -135,6 +135,20 @@ const SelectValueFrame = styled(Text, {
     : undefined)
 }));
 
+/**
+ * A native `<select>` drawn like the select's value, for its prerendered
+ * fallback (see `Select`).
+ */
+export const SelectNativeValue = styled(SelectValueFrame, {
+  displayName: "SelectValue",
+  render: "select",
+  height: "100%",
+  margin: 0,
+  borderWidth: 0,
+  outlineStyle: "none",
+  backgroundColor: "transparent"
+});
+
 export const SelectValue = createStyledHOC(
   SelectValueFrame,
   (

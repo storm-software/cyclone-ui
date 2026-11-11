@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import type { FormControlSize } from "@cyclone-ui/helpers";
+import type { FieldConstraints, FormControlSize } from "@cyclone-ui/helpers";
 import type { MaskitoOptions } from "@maskito/core";
 import type { MaybePromise } from "@stryke/types/base";
 import type { SelectOption, SelectOptionValue } from "@stryke/types/form";
@@ -118,6 +118,16 @@ export type FieldChangeEventHandler<TFieldValue = any> = (
   event: CustomEvent<TFieldValue>
 ) => any;
 
+/**
+ * Error messages for a form's fields, keyed by field name: the shape of Zod's
+ * `flattenError(error).fieldErrors`, for example, as returned from a server
+ * action.
+ */
+export type FormErrors = Record<
+  string,
+  string | readonly string[] | null | undefined
+>;
+
 export interface CallbackContext<
   TState extends AtomRecordConstraint<TState> = Record<string, Atom<unknown>>
 > {
@@ -158,6 +168,17 @@ export interface FormOptions<
       Validator<FormValuesState<TFormValues>>[] | undefined
     >
   >;
+
+  /**
+   * Error messages to show on the form's fields, keyed by field name, such as
+   * those a server action returns through `useActionState`.
+   *
+   * @remarks
+   * They render on the first (server) render, count as a submit attempt (so
+   * every field shows its errors), don't disable submitting, and are removed
+   * from a field once the user edits it.
+   */
+  errors?: FormErrors;
 
   /**
    * How long to debounce the `onChange` event and validation calls in milliseconds.
@@ -465,7 +486,7 @@ export interface FormAtoms<
 /**
  * The field options.
  */
-export interface FieldOptions<TFieldValue> {
+export interface FieldOptions<TFieldValue> extends FieldConstraints {
   /**
    * The default theme of the field.
    */

@@ -158,6 +158,7 @@ export const SignUp = ({ children }: { children: React.ReactNode }) => (
 | `debounceMs` | `number` | `250` | Debounce for change events and validation |
 | `isEqual` | function | Deep equality | Compares two sets of values |
 | `defaultFieldOptions` | `FieldOptions` | | Defaults for all fields |
+| `errors` | `Record<string, string \| string[]>` | | Error messages keyed by field name, such as a server action's result. They render on the first render, count as a submit attempt, don't block `canSubmit`, and clear from a field once its value changes. |
 | `onInitialize`, `onChange`, `onSubmit` | callback | | Receive `{ get, set, atoms }` |
 
 ### `FieldProvider` options
@@ -169,6 +170,7 @@ export const SignUp = ({ children }: { children: React.ReactNode }) => (
 | `size` | `"sm" \| "md" \| "lg"` | `"md"` | The control size |
 | `required`, `disabled`, `clearable` | `boolean` | `false` | Field flags |
 | `items` | `{ name, value, ... }[]` | | Options for select-like fields |
+| `minLength`, `maxLength`, `pattern`, `min`, `max`, `step` | Native constraint values | | Constraints a control puts on its native element (`FieldConstraints` from `@cyclone-ui/helpers`) |
 | `validate` | lists of `Validator` | | Validators for each cause |
 | `showErrorsBeforeBlur` | `boolean` | `false` | Show errors while the user types |
 | `debounceMs` | `number` | `250` | Debounce for change events and validation |
@@ -189,12 +191,14 @@ A `Validator` receives `(value, previousValue, cause, get, set)` and returns a l
 | --- | --- |
 | `FormApi`, `FieldApi` | Molecule APIs. Use `FormApi.use()` and `FieldApi.use()` to read atoms. |
 | `DEFAULT_FORM_OPTIONS`, `DEFAULT_FIELD_OPTIONS` | Default option values |
-| `useFormActions()` | Returns `initializeField`, `uninitializeField`, `validate`, `change`, `submit`, and `reset` |
+| `useFormActions()` | Returns `initializeField`, `uninitializeField`, `validate`, `validateFields`, `isSubmittable`, `change`, `submit`, and `reset`. `submit` counts an attempt, runs every mounted field's validators and the form's `onSubmit` validators, and calls `onSubmit` only if the form can then submit. `validateFields` runs every mounted field's validators; synchronous results are stored before it returns. `isSubmittable` reads `canSubmit` synchronously. |
 | `useFieldActions()` | Returns `mount`, `initialize`, `change`, `focus`, `blur`, `setFocused`, `toggleFocused`, `validate`, and `reset` |
 | `useFieldRef(forwardedRef?)` | Returns an input ref that applies the field mask and merges your ref |
 | `atomWithFieldStatus`, `atomWithFieldItems` | Field atoms |
 | `getMessageType`, `atomWithMessages`, `atomWithMessageTypes`, `atomWithFieldsMessageList`, `atomWithFieldsMessageTypes`, `getFieldsMessageList`, `getFieldsMessageTypes`, `atomWithTheme` | Message atoms for forms |
 | `AbortError`, `isValidationResults` | Utilities |
+| `applyServerErrors`, `clearServerErrors`, `stripServerErrors`, `hasServerErrors`, `SERVER_ERROR_CODE` | Apply, remove and detect the messages seeded from a form's `errors` option |
+| `FormFieldValidationsContext` | The mounted fields' validations, which a `FormProvider` provides and `submit` runs |
 
 > [!NOTE]
 > In `useFormActions`, `reset` and the field registration functions are not fully implemented in the source. Check the source before you rely on them.

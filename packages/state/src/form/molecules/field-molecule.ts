@@ -87,14 +87,18 @@ export const FieldApi = createMoleculeApi(
 
         const result = deepMerge(formOptions.defaultFieldOptions, options);
 
-        return deepMerge(
-          {
-            validate: {
-              onBlur: result.required ? [requiredValidator] : []
-            }
-          },
-          result
-        );
+        return {
+          ...result,
+          validate: {
+            ...result.validate,
+            // Alongside the field's own: merging the two option objects
+            // replaced this list whenever the field passed `validate`.
+            onBlur: [
+              ...(result.required ? [requiredValidator] : []),
+              ...(result.validate?.onBlur ?? [])
+            ]
+          }
+        };
       },
       (get, set, update) => {
         let nextValue = {};

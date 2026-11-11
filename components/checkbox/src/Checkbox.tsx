@@ -21,6 +21,7 @@
 import type { FormControlSize } from "@cyclone-ui/helpers";
 import {
   formSizeVariants,
+  getFormControlAriaProps,
   getSized,
   getSpaced,
   useFieldHasValidationMessage,
@@ -231,7 +232,13 @@ export const Checkbox = createStyledHOC(
         boxShadow={`focus:${ring} focus-visible:${ring}`}>
         <BaseCheckbox
           ref={forwardedRef}
+          // `aria-required` only: a `required` hidden form input can't take
+          // focus, so the browser would block a submit without saying why.
+          aria-required={formControl?.required ? true : undefined}
+          {...getFormControlAriaProps(formControl)}
           {...rest}
+          // Names the hidden input the checkbox submits with its form.
+          name={name}
           id={name}
           aria-readonly={readOnly || undefined}
           onFocus={onFocus}

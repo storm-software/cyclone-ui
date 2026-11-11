@@ -23,6 +23,7 @@ import {
   FieldNotchedOutline,
   FormControlFrameContext,
   getFieldLabelInset,
+  getFormControlAriaProps,
   getFormFontScale,
   getFormSizeScale,
   useFieldHasValidationMessage,
@@ -260,6 +261,12 @@ export const TextArea = createStyledHOC(
         render="textarea"
         type="textarea"
         rows={rows}
+        // The field's state as native attributes, so the browser validates
+        // before (and without) JavaScript.
+        required={formControl?.required ? true : undefined}
+        minLength={formControl?.constraints?.minLength}
+        maxLength={formControl?.constraints?.maxLength}
+        {...getFormControlAriaProps(formControl)}
         {...rest}
         // The textarea is its own scroll container, so it takes the
         // `ScrollView` scrollbar styles directly (as `Sheet` does).

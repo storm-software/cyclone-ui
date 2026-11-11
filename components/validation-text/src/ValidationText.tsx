@@ -40,6 +40,7 @@ export const ValidationText = createStyledHOC(
       showDisabledMessage = true,
       theme: themeProp,
       messages = [],
+      id,
       ...props
     }: GetProps<typeof ValidationBodyText> & {
       messages?: ValidationDetails[];
@@ -69,7 +70,7 @@ export const ValidationText = createStyledHOC(
           : messages[0]?.message;
 
       return (
-        <ValidationBodyText ref={forwardedRef} {...props}>
+        <ValidationBodyText ref={forwardedRef} id={id} {...props}>
           {message}
         </ValidationBodyText>
       );
@@ -87,7 +88,8 @@ export const ValidationText = createStyledHOC(
     }
 
     return (
-      <YStack gap="xs">
+      // The whole list is the element an `id` (for `aria-describedby`) names.
+      <YStack gap="xs" id={id}>
         <ValidationBodyText ref={forwardedRef} {...props}>
           {heading}
         </ValidationBodyText>

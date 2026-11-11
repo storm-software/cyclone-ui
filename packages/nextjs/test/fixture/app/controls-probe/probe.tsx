@@ -26,6 +26,8 @@ import { Footer, FooterLink } from "../../../../../../components/footer/src";
 import { Form } from "../../../../../../components/form/src";
 import { Input } from "../../../../../../components/input/src";
 import { PasswordInput } from "../../../../../../components/password-input/src";
+import { RadioGroup } from "../../../../../../components/radio-group/src";
+import { Select } from "../../../../../../components/select/src";
 import { TextArea } from "../../../../../../components/text-area/src";
 
 export function ControlsProbe() {
@@ -36,7 +38,14 @@ export function ControlsProbe() {
       <h1>Prerendered controls</h1>
       <Form
         name="probe"
-        initialValues={{ email: "", password: "", name: "", message: "" }}>
+        initialValues={{
+          email: "",
+          password: "",
+          name: "",
+          message: "",
+          plan: "",
+          contact: ""
+        }}>
         <Field name="email">
           <Field.Label>Email</Field.Label>
           <Input>
@@ -65,6 +74,24 @@ export function ControlsProbe() {
         <Field name="message">
           <Field.Label>Message</Field.Label>
           <TextArea />
+        </Field>
+        <Field
+          name="plan"
+          items={[
+            { name: "Free", value: "free" },
+            { name: "Pro", value: "pro" }
+          ]}>
+          <Field.Label>Plan</Field.Label>
+          <Select />
+        </Field>
+        <Field
+          name="contact"
+          items={[
+            { name: "By email", value: "email" },
+            { name: "By phone", value: "phone" }
+          ]}>
+          <Field.Label>Contact method</Field.Label>
+          <RadioGroup />
         </Field>
       </Form>
       <button onClick={() => setOpen(true)}>Open drawer</button>

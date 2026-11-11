@@ -91,7 +91,8 @@ export const InputValue = createStyledHOC(
       onChange: contextOnChange,
       onInput: contextOnInput,
       onBlur: contextOnBlur,
-      onFocus: contextOnFocus
+      onFocus: contextOnFocus,
+      name: behaviorName
     } = useInputBehavior();
     // An underlined control's text starts flush with its left edge unless a
     // start icon sits before it.
@@ -153,7 +154,7 @@ export const InputValue = createStyledHOC(
     } = inProps;
     const disabled = inProps.disabled ?? contextDisabled;
     const readOnly = inProps.readOnly ?? contextReadOnly;
-    const name = inProps.name ?? contextName;
+    const name = inProps.name ?? behaviorName ?? contextName;
 
     const ref =
       useRef<TamaguiWebElement<HTMLInputElement | HTMLTextAreaElement>>(null);

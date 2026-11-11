@@ -56,6 +56,42 @@ export function AppProviders({ children }: PropsWithChildren) {
 
 Define any `onChangeTheme` callback in that client module too. The server layout can pass `{children}` to `<AppProviders>`: those children retain their Server Component rendering. Do not import server page modules into the client wrapper or mark the entire layout/page `"use client"` to work around a prop error. React Server Function references are a separate supported mechanism, not ordinary event-handler functions.
 
+## Forms and fields
+
+`Form`, `Field` and the form controls render completely on the server; a form does not need its own `<Suspense>` boundary. `Select` and `RadioGroup` wrap their popover and roving-focus parts in an internal boundary. When a Cache Components prerender interrupts that part, the static shell gets a native `<select>` or native radios with the same name, value and `required` state. Those swap for the full control when it renders.
+
+Every control renders a named native element, so the form posts its values without JavaScript. The browser enforces the field's `required` and constraint props (`minLength`, `maxLength`, `pattern`, `min`, `max`, `step`) until the page hydrates. After that, `Form` turns off the browser's validation and the fields report the same checks in their own messages. Submitting validates every field, including ones never focused, and focuses the first invalid control.
+
+Pass a Server Function as `Form`'s `action` and its returned field errors as `errors`. `errors` is keyed by field name, such as Zod's `flattenError(error).fieldErrors`. Use `useActionState` in an application-owned Client Component:
+
+```tsx
+// app/signup/form.tsx
+"use client"
+
+import { useActionState } from "react"
+import { Field, FieldLabel } from "@/components/ui/field"
+import { Form, FormSubmit } from "@/components/ui/form"
+import { signup } from "./actions" // A "use server" module.
+
+export function SignupForm() {
+  const [state, formAction] = useActionState(signup, {})
+
+  return (
+    <Form name="signup" action={formAction} errors={state.errors}>
+      <Field name="email" required>
+        <FieldLabel>Email</FieldLabel>
+        {/* An email input */}
+      </Field>
+      <FormSubmit>Sign up</FormSubmit>
+    </Form>
+  )
+}
+```
+
+The errors render on the first server render, count as a submit attempt, don't disable submitting, and clear from a field when the user edits it. Without JavaScript, the browser posts the form and the page re-renders with the returned errors.
+
+These props are serializable, so a Server Component can pass them: `name`, `required`, `disabled`, `readOnly`, the constraint props, `items`, `initialValues`, `errors` and a Server Function `action`. Keep `validate`, `format`, `parse`, `mask` and the `on*` callbacks in Client Components. Check the installed `Form` and `Field` for flat named exports before rendering their parts from a Server Component.
+
 ## Protect installed components
 
 Do not change installed or added Cyclone UI component files unless the user specifically instructs you to do so. Use `components.json` to identify the configured component path and installed files. Framework setup, hydration fixes, styling requests, and application bug fixes do not authorize edits, refactors, formatting, renames, deletions, or registry updates/overwrites of those files. Keep changes in framework configuration, providers, application code, supported props, composition, application-owned wrappers, or theme configuration outside the installed components. If a component change is necessary, explain why and ask for specific instructions first. Scope any explicitly requested component addition or change narrowly and preserve unrelated installed files and local edits.

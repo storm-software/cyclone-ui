@@ -20,9 +20,10 @@ import { isPromise } from "@stryke/type-checks/is-promise";
 import type { MessageDetails } from "@stryke/types/messages";
 import type { Getter, Setter } from "jotai";
 import { RESET, useAtomCallback } from "jotai/utils";
-import { useCallback } from "react";
+import { use, useCallback } from "react";
 import { FormApi } from "../molecules/form-molecule";
 import { ValidationCause } from "../types";
+import { FormFieldValidationsContext } from "./form-field-validations";
 
 const validationKey = {
   initialize: "onInitialize",
@@ -39,6 +40,7 @@ export const useFormActions = <
   TFormValues extends Record<string, any> = Record<string, any>
 >() => {
   const form = FormApi.useMolecule();
+  const fieldValidations = use(FormFieldValidationsContext);
 
   const initializeField = useAtomCallback(
     useCallback(async (_get: Getter, _set: Setter, _name: string) => {
@@ -146,40 +148,48 @@ export const useFormActions = <
     }, [])
   );
 
+  // Every mounted field's validators, whatever their trigger, so a field the
+  // user never blurred is checked too. Synchronous results are stored before
+  // this returns, so `canSubmit` can be read right after calling it.
+  const validateFields = useCallback(async () => {
+    await Promise.all(
+      Array.from(fieldValidations ?? [], async validation => validation())
+    );
+  }, [fieldValidations]);
+
+  // Read synchronously, such as from a `<form>`'s submit event.
+  const isSubmittable = useAtomCallback(
+    useCallback((get: Getter) => get(form.canSubmit), [])
+  );
+
   const submit = useAtomCallback(
-    useCallback(async (get: Getter, set: Setter) => {
-      if (get(form.canSubmit)) {
-        if (!get(form.submitting)) {
-          set(form.submitting, true);
+    useCallback(
+      async (get: Getter, set: Setter) => {
+        if (get(form.submitting) || get(form.disabled)) {
+          return;
         }
 
+        // Counted before validating: fields show their errors from the first
+        // attempt on, even if they were never blurred.
         set(form.submitAttempts, prev => prev + 1);
+        await Promise.all([
+          validateFields(),
+          validate(get(form.values), ValidationCause.SUBMIT)
+        ]);
+        if (!get(form.canSubmit)) {
+          return;
+        }
 
-        const options = get(form.options);
-
-        // promises.push(validate(value, ValidationCause.SUBMIT));
-        // await Promise.all(promises);
-
+        set(form.submitting, true);
         try {
-          if (get(form.valid)) {
-            await options.onSubmit?.({ get, set, atoms: form });
-            set(form.submitted, true);
-          }
+          await get(form.options).onSubmit?.({ get, set, atoms: form });
+          set(form.submitted, true);
         } finally {
           set(form.submitting, false);
         }
-      } else if (get(form.invalid)) {
-        if (get(form.invalid)) {
-          // set(fieldStore.api.atom.touched, true);
-        }
-
-        // else if (get(form.invalid)) {
-        // const invalidFields = get(form.invalidFields);
-        // const name = Object.keys(invalidFields)[0];
-        // const fieldStoreAtom = get(form.fields);
-        // }
-      }
-    }, [])
+      },
+      [validateFields, validate]
+    )
   );
 
   // Back to `initialValues`, as if nothing had been touched or submitted.
@@ -203,6 +213,8 @@ export const useFormActions = <
     initializeField,
     uninitializeField,
     validate,
+    validateFields,
+    isSubmittable,
     change,
     submit,
     reset

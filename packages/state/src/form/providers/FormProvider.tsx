@@ -19,16 +19,57 @@
 /* eslint-disable ts/no-unsafe-call -- bunshi/jotai molecule APIs and @stryke/async types */
 
 import { delay } from "@stryke/async";
+import { isEqual } from "@stryke/helpers/is-equal";
 import { useThemeName } from "@tamagui/core";
+import type { WritableAtom } from "jotai";
 import { useHydrateAtoms } from "jotai/utils";
 import type { PropsWithChildren } from "react";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAtomEffect } from "../../base/hooks/use-atom-effect";
+import type { FieldValidation } from "../hooks/form-field-validations";
+import { FormFieldValidationsContext } from "../hooks/form-field-validations";
 import { useFormActions } from "../hooks/use-form-actions";
 import { FormApi } from "../molecules/form-molecule";
-import type { FormOptions } from "../types";
+import type { FormErrors, FormOptions } from "../types";
 import { ValidationCause } from "../types";
 import { AbortError } from "../utilities/abort-error";
+import { applyServerErrors, hasServerErrors } from "../utilities/server-errors";
+
+/**
+ * Show the form's `errors` option on its fields: during the first render (so
+ * they are in the server HTML), then whenever it changes.
+ */
+const useServerErrors = (errors: FormErrors | undefined) => {
+  const molecule = FormApi.useMolecule();
+  const setResults = FormApi.use().validationResultsFields.set();
+  const setSubmitAttempts = FormApi.use().submitAttempts.set();
+  const hasErrors = hasServerErrors(errors);
+
+  useHydrateAtoms(
+    hasErrors
+      ? ([
+          [molecule.validationResultsFields, applyServerErrors({}, errors)],
+          // Errors from a submission: show every field's errors, as after a
+          // client-side submit attempt.
+          [molecule.submitAttempts, 1]
+        ] as unknown as [WritableAtom<unknown, [unknown], void>, unknown][])
+      : []
+  );
+
+  // Starts at the hydrated errors, so mounting doesn't apply them again.
+  const appliedRef = useRef(errors);
+  useEffect(() => {
+    if (isEqual(appliedRef.current, errors)) {
+      return;
+    }
+
+    appliedRef.current = errors;
+    setResults(previous => applyServerErrors(previous, errors));
+    if (hasServerErrors(errors)) {
+      setSubmitAttempts(previous => Math.max(previous, 1));
+    }
+  }, [errors, setResults, setSubmitAttempts]);
+};
 
 type FormStateManagerProps<
   TFormValues extends Record<string, any> = Record<string, any>
@@ -49,6 +90,7 @@ function FormStateManager<
   useEffect(() => {
     setOptions({ theme, ...props } as FormOptions<Record<string, any>>);
   }, [setOptions]);
+  useServerErrors(props.errors);
 
   useAtomEffect(
     (get, set) => {
@@ -118,10 +160,14 @@ export const FormProvider = <
   name,
   ...props
 }: FormProviderOptions<TFormValues>) => {
+  const [fieldValidations] = useState(() => new Set<FieldValidation>());
+
   return (
     <FormApi.Provider scope={name}>
-      <FormStateManager {...props} />
-      {children}
+      <FormFieldValidationsContext value={fieldValidations}>
+        <FormStateManager {...props} />
+        {children}
+      </FormFieldValidationsContext>
     </FormApi.Provider>
   );
 };

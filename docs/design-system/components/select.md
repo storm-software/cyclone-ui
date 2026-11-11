@@ -91,6 +91,10 @@ The item also accepts the other `ContextMenu.Item` props.
 
 The package also exports `getSelectContentSize`.
 
+### Server rendering and forms
+
+A hidden input carries the selected value under the select's `name`, so it posts with its form. Tamagui's popover calls `Math.random()` while rendering, which a Next.js Cache Components prerender only allows inside a Suspense boundary. `Select` has its own boundary. If a prerender interrupts it, the static shell holds a native `<select>` drawn like the closed control. That fallback lists the field's `items`, or only the current value when the options come from `Select.Items` children. It submits and validates without JavaScript, and the full select replaces it once it renders.
+
 ## Accessibility
 
 The list has `role="listbox"`. Each item has `role="option"` and `aria-selected`.

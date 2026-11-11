@@ -55,7 +55,8 @@ Add validators with the `validate` prop. A validator returns messages with a `me
 | `variant` | `"outlined" \| "underlined" \| "inlined"` | `"outlined"` | The visual style of the control frame. |
 | `size` | `"sm" \| "md" \| "lg"` | `"md"` | The control size. |
 | `theme` | `string` | Form theme | The field theme. Validation messages change it. |
-| `required` | `boolean` | `false` | Marks the field as required. |
+| `required` | `boolean` | `false` | Marks the field as required, and sets `required` on the control's native element. |
+| `minLength`, `maxLength`, `pattern`, `min`, `max`, `step` | Native constraint values | None | Set on a text control's native element. The browser enforces them before JavaScript loads; after that, the field reports the browser's message for them. |
 | `disabled` | `boolean` | `false` | Disables the control. |
 | `clearable` | `boolean` | `false` | Lets the user clear the value. |
 | `validate` | Object | None | Validators for the `on...` validation causes. |
@@ -101,6 +102,8 @@ Other props go to the label text. The label sets `htmlFor` to the field name. Us
 ## Accessibility
 
 - The label points to the control with `htmlFor`.
+- The control's native element gets `name`, so it submits with a native form post.
+- While the field shows an error, the control has `aria-invalid="true"`. Its `aria-describedby` names the visible `Field.Details` text (`<name>-details`) and messages (`<name>-messages`).
 - The required marker is an asterisk icon, and you can hide it with `hideAsterisk`.
 - The disabled field shows the `not-allowed` cursor.
 

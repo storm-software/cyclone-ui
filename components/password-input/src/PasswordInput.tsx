@@ -348,7 +348,7 @@ const useRevealLastCharacter = (
 
 const PasswordInputTextBoxValue = createStyledHOC(
   Input.TextBox.Value,
-  (props, forwardedRef) => {
+  (props: GetProps<typeof Input.TextBox.Value>, forwardedRef) => {
     const setMessage = useFormControl()?.setMessage;
     const contextOnBlur = useInputBehavior().onBlur;
     const { delay, passwordVisible } = use(PasswordInputContext);
@@ -412,7 +412,10 @@ const PasswordInputTextBoxValue = createStyledHOC(
 
 const PasswordInputTrigger = createStyledHOC(
   Field.Icon,
-  ({ children, onPress, ...props }, forwardedRef) => {
+  (
+    { children, onPress, ...props }: GetProps<typeof Field.Icon>,
+    forwardedRef
+  ) => {
     const { disabled } = InputContext.useStyledContext();
     const { passwordVisible, togglePasswordVisibility } =
       use(PasswordInputContext);

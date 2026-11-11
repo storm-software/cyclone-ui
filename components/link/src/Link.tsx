@@ -23,6 +23,8 @@ import { LinkText } from "@cyclone-ui/link-text";
 import { isWeb } from "@tamagui/constants";
 import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, View } from "@tamagui/core";
+import type { ReactElement } from "react";
+import { cloneElement, isValidElement } from "react";
 import { Linking } from "react-native";
 
 // Types and static config only (`styled(Link)` keeps the `a` default):
@@ -57,6 +59,8 @@ export const Link = createStyledHOC(
       external,
       size = "md",
       render = "a",
+      onClick,
+      onPress,
       ...props
     }: GetProps<typeof LinkFrame> & {
       href?: string;
@@ -67,6 +71,21 @@ export const Link = createStyledHOC(
     },
     forwardedRef
   ) => {
+    const hasRenderElement = isValidElement(render);
+    let renderElement = render;
+    if (isWeb && hasRenderElement && (onClick || onPress)) {
+      // Keep consumer clicks off Tamagui's text press path. The router calls
+      // this handler before deciding whether to perform client navigation.
+      const element = render as ReactElement<{ onClick?: typeof onClick }>;
+      renderElement = cloneElement(element, {
+        onClick: event => {
+          element.props.onClick?.(event);
+          onClick?.(event);
+          onPress?.(event as Parameters<NonNullable<typeof onPress>>[0]);
+        }
+      });
+    }
+
     // `LinkText`, not `LinkFrame`: a `render` element (such as Next's `<Link>`)
     // given to a `styled()` over an HOC replaces the HOC, and with it the
     // frame that turns the styles into classes, so the link lost them all.
@@ -77,17 +96,21 @@ export const Link = createStyledHOC(
         role="link"
         size={size}
         {...props}
-        render={render}
+        render={renderElement}
         {...(isWeb
           ? {
-              href,
-              target: external ? "_blank" : target
+              ...(hasRenderElement
+                ? {
+                    ...(href !== undefined && { href }),
+                    ...(target !== undefined && { target })
+                  }
+                : { href, target: external ? "_blank" : target }),
+              ...(!hasRenderElement && { onClick, onPress })
             }
           : {
-              onPress: (
-                event: Parameters<NonNullable<typeof props.onPress>>[0]
-              ) => {
-                props.onPress?.(event);
+              onClick,
+              onPress: (event: Parameters<NonNullable<typeof onPress>>[0]) => {
+                onPress?.(event);
                 if (href !== undefined) {
                   void Linking.openURL(href);
                 }
@@ -95,7 +118,7 @@ export const Link = createStyledHOC(
             })}>
         {children}
 
-        {external && (
+        {external && !(isWeb && hasRenderElement) && (
           <ExternalIconFrame style={{ verticalAlign: "middle" }}>
             <ThemeableIcon render="span" size="4xl">
               {/* Set `color` on the icon (whose props win in `getIcon`) so the

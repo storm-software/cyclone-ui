@@ -4,6 +4,7 @@
     "tsBuildInfoFile": "../../dist/out-tsc/components/form/tsconfig.tsbuildinfo",
     "jsx": "preserve",
     "ignoreDeprecations": "6.0",
+    "lib": ["ESNext", "DOM"],
     "rootDir": ".",
     "types": [
       "node",

@@ -8,21 +8,72 @@
     "outDir": "../../dist/out-tsc/packages/nextjs"
   },
   "references": [
-    { "path": "../../components/text-area" },
-    { "path": "../../components/password-input" },
-    { "path": "../../components/input" },
-    { "path": "../../components/form" },
-    { "path": "../../components/field" },
-    { "path": "../../components/drawer" },
-    { "path": "../../components/page" },
-    { "path": "../../components/footer" },
-    { "path": "../../components/chart" },
-    { "path": "../../components/composed-chart" },
-    { "path": "../../components/bar-chart" },
-    { "path": "../../components/calendar" },
-    { "path": "../theme-builder" },
-    { "path": "../tokens" },
-    { "path": "../state" }
+    {
+      "path": "../../tools/config"
+    },
+    {
+      "path": "../../components/switch"
+    },
+    {
+      "path": "../../components/checkbox"
+    },
+    {
+      "path": "../../components/link"
+    },
+    {
+      "path": "../../components/body-text"
+    },
+    {
+      "path": "../../components/text-area"
+    },
+    {
+      "path": "../../components/password-input"
+    },
+    {
+      "path": "../../components/drawer"
+    },
+    {
+      "path": "../../components/page"
+    },
+    {
+      "path": "../../components/footer"
+    },
+    {
+      "path": "../../components/chart"
+    },
+    {
+      "path": "../../components/composed-chart"
+    },
+    {
+      "path": "../../components/bar-chart"
+    },
+    {
+      "path": "../../components/calendar"
+    },
+    {
+      "path": "../../components/select"
+    },
+    {
+      "path": "../../components/radio-group"
+    },
+    {
+      "path": "../../components/input"
+    },
+    {
+      "path": "../../components/form"
+    },
+    {
+      "path": "../../components/field"
+    },
+    {
+      "path": "../theme-builder"
+    },
+    {
+      "path": "../tokens"
+    },
+    {
+      "path": "../state"
+    }
   ],
   "files": [],
   "include": [
