@@ -181,6 +181,29 @@ export const Base: Story = {
   }
 };
 
+export const HoverReset: Story = {
+  args: { showStrength: false, validateStrength: false },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const trigger = canvas.getByRole("button", { name: "Show password" });
+    const separator = trigger.parentElement?.firstElementChild as HTMLElement;
+
+    await waitFor(() => expect(getComputedStyle(separator).opacity).toBe("1"));
+    const restingColor = getComputedStyle(separator).borderLeftColor;
+
+    for (let cycle = 0; cycle < 2; cycle++) {
+      await userEvent.hover(trigger);
+      await waitFor(() =>
+        expect(getComputedStyle(separator).borderLeftColor).not.toBe(restingColor)
+      );
+      await userEvent.unhover(trigger);
+      await waitFor(() =>
+        expect(getComputedStyle(separator).borderLeftColor).toBe(restingColor)
+      );
+    }
+  }
+};
+
 export const MissingCriteria: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);

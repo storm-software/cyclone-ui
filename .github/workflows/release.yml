@@ -80,20 +80,9 @@ jobs:
           gpg-passphrase: ${{ secrets.STORM_BOT_GPG_PASSPHRASE }}
           storm-bot-github-token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
 
-      - name: Fetch tile test fixtures
-        run: git lfs pull --include='maps/tiles/src/test/resources/*' --exclude=''
-
-      - name: Log in to GitHub Container Registry
-        uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9 # v3.7.0
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Version tiles image with Nx
-        run: |
-          devenv shell --profile production -- pnpm nx release version --groups=tiles --dockerVersionScheme=production --git-commit=false --git-tag=false --stage-changes=false
-          test -s tmp/maps/tiles/.docker-version
+      # TODO: Restore tile fixture fetching, GHCR login, image versioning, and the
+      # tiles release group / Maven and Docker plugins in nx.json once OSGeo
+      # artifact downloads recover (release run 42982511467).
 
       - name: Release repository updates
         uses: storm-software/action-release@main
