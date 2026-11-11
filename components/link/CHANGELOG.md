@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Link
 
+## [0.5.73](https://github.com/storm-software/cyclone-ui/releases/tag/link%400.5.73) (11/11/2026)
+
+### Bug Fixes
+
+- **link:** Resolve issue with typescript compilation in `Link` component ([760486001](https://github.com/storm-software/cyclone-ui/commit/760486001))
+
 ## [0.5.72](https://github.com/storm-software/cyclone-ui/releases/tag/link%400.5.72) (11/11/2026)
 
 ### Updated Dependencies
