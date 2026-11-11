@@ -54,7 +54,12 @@ const linkPress = fn();
 const mouseEnter = fn();
 const touchStart = fn();
 const anchorRef = fn();
-const RouterLink = ({ children, href, onClick, ...props }: ComponentProps<"a">) => (
+const RouterLink = ({
+  children,
+  href,
+  onClick,
+  ...props
+}: ComponentProps<"a">) => (
   <a
     {...props}
     href={href}
@@ -165,7 +170,8 @@ export const RenderElement: Story = {
         cancelable: true
       });
       rendered.dispatchEvent(click);
-      await expect(navigate).toHaveBeenCalledExactlyOnceWith("/sign-up");
+      await expect(navigate).toHaveBeenCalledTimes(1);
+      await expect(navigate).toHaveBeenCalledWith("/sign-up");
       await expect(click.defaultPrevented).toBe(true);
       await expect(routerClick).toHaveBeenCalledTimes(1);
       await expect(linkClick).toHaveBeenCalledTimes(1);

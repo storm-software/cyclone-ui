@@ -81,7 +81,11 @@ export const Link = createStyledHOC(
         onClick: event => {
           element.props.onClick?.(event);
           onClick?.(event);
-          onPress?.(event as Parameters<NonNullable<typeof onPress>>[0]);
+          // Tamagui forwards DOM clicks to onPress on web, although its public
+          // callback type uses React Native's GestureResponderEvent.
+          onPress?.(
+            event as unknown as Parameters<NonNullable<typeof onPress>>[0]
+          );
         }
       });
     }
