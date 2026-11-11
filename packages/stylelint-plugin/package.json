@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/stylelint-plugin",
-  "version": "0.0.55",
+  "version": "0.0.56",
   "type": "module",
   "description": "Cyclone UI Stylelint plugin package",
   "repository": {

@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Validation Text
 
+## [0.5.70](https://github.com/storm-software/cyclone-ui/releases/tag/validation-text%400.5.70) (11/11/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update form field components to better support progressive enhancement in nextjs ([fafcb85ed](https://github.com/storm-software/cyclone-ui/commit/fafcb85ed))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.66**
+- Updated **icons** to **v0.0.66**
+
 ## [0.5.69](https://github.com/storm-software/cyclone-ui/releases/tag/validation-text%400.5.69) (11/10/2026)
 
 ### Updated Dependencies

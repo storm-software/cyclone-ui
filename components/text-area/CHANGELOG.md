@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Text Area
 
+## [0.1.71](https://github.com/storm-software/cyclone-ui/releases/tag/text-area%400.1.71) (11/11/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update form field components to better support progressive enhancement in nextjs ([fafcb85ed](https://github.com/storm-software/cyclone-ui/commit/fafcb85ed))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.71**
+- Updated **form** to **v0.9.68**
+- Updated **helpers** to **v0.3.67**
+- Updated **input** to **v0.6.71**
+- Updated **scroll-view** to **v0.5.70**
+
 ## [0.1.70](https://github.com/storm-software/cyclone-ui/releases/tag/text-area%400.1.70) (11/10/2026)
 
 ### Updated Dependencies

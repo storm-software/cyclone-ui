@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Select
 
+## [0.6.72](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.72) (11/11/2026)
+
+### Bug Fixes
+
+- **monorepo:** Upgrade workspace to Tamagui v3.2.2 ([fad48238c](https://github.com/storm-software/cyclone-ui/commit/fad48238c))
+- **monorepo:** Update form field components to better support progressive enhancement in nextjs ([fafcb85ed](https://github.com/storm-software/cyclone-ui/commit/fafcb85ed))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.66**
+- Updated **context-menu** to **v0.0.62**
+- Updated **field** to **v0.5.71**
+- Updated **form** to **v0.9.68**
+- Updated **helpers** to **v0.3.67**
+- Updated **icons** to **v0.0.66**
+- Updated **input** to **v0.6.71**
+- Updated **tooltip** to **v0.5.71**
+
 ## [0.6.71](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.71) (11/10/2026)
 
 ### Updated Dependencies

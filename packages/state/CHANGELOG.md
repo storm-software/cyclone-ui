@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - State
 
+## [0.0.69](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.69) (11/11/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update form field components to better support progressive enhancement in nextjs ([fafcb85ed](https://github.com/storm-software/cyclone-ui/commit/fafcb85ed))
+
+### Features
+
+- **radio-group:** Added the `icon` property to `RadioGroup.Item` ([f63577d34](https://github.com/storm-software/cyclone-ui/commit/f63577d34))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.67**
+
 ## [0.0.68](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.68) (11/10/2026)
 
 ### Updated Dependencies

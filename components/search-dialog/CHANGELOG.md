@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Search Dialog
 
+## [0.0.49](https://github.com/storm-software/cyclone-ui/releases/tag/search-dialog%400.0.49) (11/11/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.66**
+- Updated **button** to **v0.6.71**
+- Updated **dialog** to **v0.3.72**
+- Updated **icons** to **v0.0.66**
+- Updated **input** to **v0.6.71**
+- Updated **kbd** to **v0.0.18**
+- Updated **toggle-group** to **v0.0.60**
+- Updated **visually-hidden** to **v0.5.66**
+
 ## [0.0.48](https://github.com/storm-software/cyclone-ui/releases/tag/search-dialog%400.0.48) (11/10/2026)
 
 ### Updated Dependencies

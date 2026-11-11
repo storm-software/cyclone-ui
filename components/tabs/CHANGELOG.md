@@ -2,6 +2,15 @@
 
 # Changelog for Cyclone UI - Tabs
 
+## [0.3.70](https://github.com/storm-software/cyclone-ui/releases/tag/tabs%400.3.70) (11/11/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.66**
+- Updated **container** to **v0.6.70**
+- Updated **heading-text** to **v0.5.67**
+- Updated **helpers** to **v0.3.67**
+
 ## [0.3.69](https://github.com/storm-software/cyclone-ui/releases/tag/tabs%400.3.69) (11/10/2026)
 
 ### Updated Dependencies

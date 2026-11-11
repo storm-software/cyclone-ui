@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Previous Button
 
+## [0.5.71](https://github.com/storm-software/cyclone-ui/releases/tag/previous-button%400.5.71) (11/11/2026)
+
+### Features
+
+- **radio-group:** Added the `icon` property to `RadioGroup.Item` ([f63577d34](https://github.com/storm-software/cyclone-ui/commit/f63577d34))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.71**
+- Updated **icons** to **v0.0.66**
+
 ## [0.5.70](https://github.com/storm-software/cyclone-ui/releases/tag/previous-button%400.5.70) (11/10/2026)
 
 ### Updated Dependencies

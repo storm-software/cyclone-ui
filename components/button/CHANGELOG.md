@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Button
 
+## [0.6.71](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.71) (11/11/2026)
+
+### Bug Fixes
+
+- **monorepo:** Upgrade workspace to Tamagui v3.2.2 ([fad48238c](https://github.com/storm-software/cyclone-ui/commit/fad48238c))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.66**
+- Updated **container** to **v0.6.70**
+- Updated **helpers** to **v0.3.67**
+- Updated **icons** to **v0.0.66**
+- Updated **ripple-animation** to **v0.0.43**
+- Updated **tooltip** to **v0.5.71**
+
 ## [0.6.70](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.70) (11/10/2026)
 
 ### Updated Dependencies

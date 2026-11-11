@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/submit-button",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "description": "A Button preset labeled \"Submit\" by default, with a right-arrow icon that animates on hover. When onPress returns a promise, the label and arrow slide away into a spinner and \"Submitting\", then into a success or error state with its own text, icon and theme. The state can also be controlled with status. It accepts all Button props plus hideText to show only the icon and animateShrink for the arrow. Use it for submitting forms.",
   "repository": {

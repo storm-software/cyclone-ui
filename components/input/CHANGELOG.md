@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Input
 
+## [0.6.71](https://github.com/storm-software/cyclone-ui/releases/tag/input%400.6.71) (11/11/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update form field components to better support progressive enhancement in nextjs ([fafcb85ed](https://github.com/storm-software/cyclone-ui/commit/fafcb85ed))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.71**
+- Updated **field** to **v0.5.71**
+- Updated **form** to **v0.9.68**
+- Updated **helpers** to **v0.3.67**
+- Updated **icons** to **v0.0.66**
+- Updated **submit-button** to **v0.0.4**
+
 ## [0.6.70](https://github.com/storm-software/cyclone-ui/releases/tag/input%400.6.70) (11/10/2026)
 
 ### Updated Dependencies

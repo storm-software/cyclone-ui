@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Link Text
 
+## [0.5.68](https://github.com/storm-software/cyclone-ui/releases/tag/link-text%400.5.68) (11/11/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.66**
+
 ## [0.5.67](https://github.com/storm-software/cyclone-ui/releases/tag/link-text%400.5.67) (11/10/2026)
 
 ### Updated Dependencies

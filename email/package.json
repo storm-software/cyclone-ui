@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/email",
-  "version": "0.0.36",
+  "version": "0.0.37",
   "type": "module",
   "description": "React Email components and templates styled with the Cyclone UI design tokens.",
   "repository": {

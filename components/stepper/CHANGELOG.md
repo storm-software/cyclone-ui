@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Stepper
 
+## [0.3.72](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.72) (11/11/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue preventing the release workflow from completing ([3ef4e119a](https://github.com/storm-software/cyclone-ui/commit/3ef4e119a))
+
+### Features
+
+- **radio-group:** Added the `icon` property to `RadioGroup.Item` ([f63577d34](https://github.com/storm-software/cyclone-ui/commit/f63577d34))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.67**
+- Updated **icons** to **v0.0.66**
+- Updated **next-button** to **v0.5.71**
+- Updated **number-text** to **v0.5.66**
+- Updated **previous-button** to **v0.5.71**
+
 ## [0.3.71](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.71) (11/10/2026)
 
 ### Updated Dependencies

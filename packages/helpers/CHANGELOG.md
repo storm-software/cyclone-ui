@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Helpers
 
+## [0.3.67](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.67) (11/11/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update form field components to better support progressive enhancement in nextjs ([fafcb85ed](https://github.com/storm-software/cyclone-ui/commit/fafcb85ed))
+
 ## [0.3.63](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.63) (11/09/2026)
 
 ### Features
