@@ -1566,16 +1566,21 @@ const FieldIconButtonImpl = createStyledHOC(
             position="absolute"
             top="20%"
             height="60%"
-            {...(position === "end"
-              ? { left: 0, borderLeftWidth: 1 }
-              : { right: 0, borderRightWidth: 1 })}
-            borderColor={`${iconColor} group-hover/field:${hoverIconColor}`}
+            width={1}
+            {...(position === "end" ? { left: 0 } : { right: 0 })}
             // Fades in with the same 200ms entrance as the Input and Select
             // separators; see `InputSeparator` for why `transition` names
             // `enter`.
             opacity="enter:0"
-            transition={{ duration: "200ms", enter: "200ms" }}
-          />
+            transition={{ duration: "200ms", enter: "200ms" }}>
+            <View
+              width="100%"
+              height="100%"
+              // Keep group color updates independent of the entrance fade.
+              backgroundColor={`${iconColor} group-hover/field:${hoverIconColor}`}
+              transition="200ms"
+            />
+          </View>
         )}
         <Button
           ref={forwardedRef}

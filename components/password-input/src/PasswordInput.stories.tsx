@@ -187,19 +187,21 @@ export const HoverReset: Story = {
     const canvas = within(canvasElement);
     const trigger = canvas.getByRole("button", { name: "Show password" });
     const separator = trigger.parentElement?.firstElementChild as HTMLElement;
+    const color = () => {
+      const line = separator.firstElementChild;
+      return line
+        ? getComputedStyle(line).backgroundColor
+        : getComputedStyle(separator).borderLeftColor;
+    };
 
     await waitFor(() => expect(getComputedStyle(separator).opacity).toBe("1"));
-    const restingColor = getComputedStyle(separator).borderLeftColor;
+    const restingColor = color();
 
     for (let cycle = 0; cycle < 2; cycle++) {
       await userEvent.hover(trigger);
-      await waitFor(() =>
-        expect(getComputedStyle(separator).borderLeftColor).not.toBe(restingColor)
-      );
+      await waitFor(() => expect(color()).not.toBe(restingColor));
       await userEvent.unhover(trigger);
-      await waitFor(() =>
-        expect(getComputedStyle(separator).borderLeftColor).toBe(restingColor)
-      );
+      await waitFor(() => expect(color()).toBe(restingColor));
     }
   }
 };

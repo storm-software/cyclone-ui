@@ -26,7 +26,9 @@ describe("field focus colors", () => {
       '(!theme || theme === "base") && !formControl?.hasValidationMessage'
     );
     expect(source).toContain('validated ? "primary" : "hairline"');
-    expect(source).toContain('validated ? "primary-active" : "hairline-active"');
+    expect(source).toContain(
+      'validated ? "primary-active" : "hairline-active"'
+    );
     expect(source).toMatch(/focused\s*\?\s*focusColor\s*:\s*restColor/);
   });
 
@@ -53,7 +55,7 @@ describe("field focus colors", () => {
 
     expect(fieldIcon).toContain("useFieldIconColor()");
     expect(fieldIcon).toContain(
-      "borderColor={`${iconColor} group-hover/field:${hoverIconColor}`}"
+      "backgroundColor={`${iconColor} group-hover/field:${hoverIconColor}`}"
     );
 
     for (const source of [
