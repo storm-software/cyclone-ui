@@ -74,6 +74,9 @@ export type CycloneUIProviderProps = PropsWithChildren<
 
 const ITEMS: ColorThemeMode[] = ["light", "dark"];
 
+// Set by `withCycloneUI(config, { tailwind: true })`.
+const CSS_LAYER = process.env.TAMAGUI_CSS_LAYER;
+
 // Mirrors the Next.js theme into the Cyclone theme state so `useThemeMode`
 // reports the active mode.
 const SyncColorMode = ({
@@ -118,6 +121,10 @@ const SyncColorMode = ({
  * `TamaguiProvider` and the `base` sub-theme of the active mode. It also collects
  * react-native-web styles during server rendering. Read or change the theme
  * with `useThemeSetting`.
+ *
+ * With `withCycloneUI(config, { tailwind: true })`, it also declares the
+ * cascade layer order ahead of Tamagui's stylesheet, so Tailwind utilities
+ * override the Tamagui layer whichever stylesheet the browser sees first.
  *
  * @example
  * ```tsx
@@ -188,6 +195,13 @@ export function CycloneUIProvider({
           onChangeMode={setMode}
           enableColorScheme={props.enableColorScheme ?? true}
         />
+        {CSS_LAYER && (
+          // Hoisted into <head> ahead of Tamagui's `precedence="default"`
+          // stylesheet, which React renders after this one.
+          <style href="cyclone-ui-layer-order" precedence="default">
+            {`@layer theme, base, ${CSS_LAYER}, components, utilities;`}
+          </style>
+        )}
         <TamaguiProvider
           config={config}
           defaultTheme={mode}

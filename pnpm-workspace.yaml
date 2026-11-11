@@ -176,6 +176,7 @@ catalog:
   next: ^16.4.5
   sherif: ^1.13.0
   storybook: ^10.6.6
+  tailwindcss: 4.3.0
   tamagui: 3.3.2
   tslib: ^2.9.1
   tsdown: ^0.22.14

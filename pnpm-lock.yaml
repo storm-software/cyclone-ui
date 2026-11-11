@@ -579,6 +579,9 @@ catalogs:
     style-dictionary:
       specifier: ^5.8.0
       version: 5.8.0
+    tailwindcss:
+      specifier: 4.3.0
+      version: 4.3.0
     tamagui:
       specifier: 3.3.2
       version: 3.3.2
@@ -5367,6 +5370,9 @@ importers:
       react-native-web:
         specifier: 'catalog:'
         version: 0.19.12(encoding@0.1.13)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      tailwindcss:
+        specifier: 'catalog:'
+        version: 4.3.0
 
   packages/registry-api:
     dependencies:
@@ -5490,6 +5496,9 @@ importers:
       powerlines:
         specifier: 'catalog:'
         version: 0.47.219(338e0e6118df7120855edd649971aad9)
+      tailwindcss:
+        specifier: 'catalog:'
+        version: 4.3.0
 
   packages/tokens:
     dependencies:

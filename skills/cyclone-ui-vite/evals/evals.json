@@ -25,6 +25,18 @@
         "Prefers application-owned wrappers, supported props, composition, or configuration outside installed components",
         "Asks for specific instructions before any necessary component source change"
       ]
+    },
+    {
+      "id": 4,
+      "prompt": "Our Vite app uses Tailwind v4 (@tailwindcss/vite, src/index.css imports tailwindcss) and Cyclone UI via cycloneUI(). className=\"px-8\" on a copied Cyclone component does nothing, and bg-primary doesn't work. Fix it.",
+      "expected_output": "Sets cycloneUI({ tailwind: true }) and adds @import \"@cyclone-ui/tokens/tailwind.css\" above @import \"tailwindcss\" in src/index.css, without editing the installed component.",
+      "files": [],
+      "expectations": [
+        "Passes tailwind: true to cycloneUI()",
+        "Imports @cyclone-ui/tokens/tailwind.css before tailwindcss",
+        "Explains that Tamagui's unlayered CSS beat the Tailwind utility",
+        "Does not edit installed component files"
+      ]
     }
   ]
 }

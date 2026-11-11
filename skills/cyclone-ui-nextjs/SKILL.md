@@ -302,6 +302,27 @@ export default withCycloneUI(nextConfig, { tokens: "tokens/**/*.json" })
 
 `withCycloneUI` then builds the Tamagui config into `.cyclone-ui/tamagui.config.ts` (add `.cyclone-ui` to `.gitignore`) and aliases `@cyclone-ui/tokens/tamagui` to it, so the provider and the Webpack compiler need no `config`. With an object config, this returns a promise; with a phase function, token generation happens when Next.js resolves that function. Apply object-only wrappers to the resolved input config before the token build.
 
+## Tailwind CSS
+
+If the app uses Tailwind CSS v4 (`@tailwindcss/postcss`), or the user wants Tailwind classes on Cyclone components, pass `tailwind: true` and import the Cyclone theme before Tailwind in the global stylesheet:
+
+```ts
+export default withCycloneUI(nextConfig, { tailwind: true })
+```
+
+```css
+/* app/globals.css */
+@import "@cyclone-ui/tokens/tailwind.css";
+@import "tailwindcss";
+```
+
+- Without the option, Tamagui's CSS is outside any cascade layer and beats every Tailwind utility, so `className` overrides on Cyclone components do nothing. The option sets `TAMAGUI_CSS_LAYER`, and `CycloneUIProvider` declares the layer order `theme, base, tamagui, components, utilities` ahead of Tamagui's server-rendered CSS.
+- The theme file gives Tailwind the Cyclone names (`bg-primary`, `text-on-primary`, `p-lg`, `h-lg`, `rounded-container`, `xs:`), and a `dark:` variant that follows the Cyclone theme. Tailwind's own class names (`max-w-lg`, `text-lg`, `z-10`) keep their Tailwind values.
+- With `tokens`, import `.cyclone-ui/tailwind.css` (needs Node.js 22.18+) instead. Webpack builds default to `disableExtraction: true`, because extracted CSS is unlayered.
+- With the option on, unlayered global app CSS (e.g. `button { padding: 0 }`) also overrides components. Point that out if the app has such rules.
+
+`cyclone-ui init --style tailwind` makes both edits. See `docs/packages/guides/tailwind.md` in the Cyclone UI repository.
+
 ## Verify
 
 Run the app's `next build`, then load a page with a Cyclone component in `next start` or `next dev`. Check:

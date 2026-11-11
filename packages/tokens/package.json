@@ -53,6 +53,7 @@
       }
     },
     "./css/*.css": "./dist/css/*.css",
+    "./tailwind.css": "./tailwind.css",
     "./tokens/primitive/*.json": "./dist/tokens/primitive/*.json",
     "./tokens/semantic/*.json": "./dist/tokens/semantic/*.json",
     "./package.json": "./package.json"

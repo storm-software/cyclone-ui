@@ -89,7 +89,8 @@
     "powerlines": "catalog:",
     "react": "catalog:",
     "react-native": "catalog:",
-    "react-native-web": "catalog:"
+    "react-native-web": "catalog:",
+    "tailwindcss": "catalog:"
   },
   "publishConfig": {
     "access": "public"

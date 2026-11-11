@@ -55,6 +55,7 @@ A URL that ends in `/registry.json` also works. For a prerelease channel, use th
 | `registry` | `string` | The registry URL |
 | `path` | `string` | The component folder. The default is `components`. |
 | `rsc` | `boolean` (optional) | `true` keeps registry directives. `false` removes module-level `"use client"` directives. If you omit it, the CLI does not change the content. |
+| `style` | `"tamagui"` or `"tailwind"` (optional) | `tailwind` installs the `@tamagui/tailwind` variant (`<Name>.tailwind.tsx`) of components that have one, and adds `@tamagui/tailwind` to `package.json`. |
 | `components` | object | The installed components, each with `version` and `files` |
 
 The CLI only writes inside the configured folder. It rejects registry file paths that leave it.
@@ -67,7 +68,7 @@ All commands accept `--cwd` (the working directory). The default is the current 
 
 | Command | Purpose | Options and arguments |
 | --- | --- | --- |
-| `init [components...]` | Creates `components.json` and the folder. It can install components. Alias: `create`. | `--path`, `--registry`, `--rsc`, `--force`, `--silent` |
+| `init [components...]` | Creates `components.json` and the folder. It can install components. With `--style tailwind`, it also sets the project up for Tailwind CSS. Alias: `create`. | `--path`, `--registry`, `--rsc`, `--style`, `--css`, `--force`, `--silent` |
 | `add [components...]` | Copies components into your project. | `--all`, `--overwrite`, `--path`, `--dry-run`, `--diff`, `--view`, `--silent`, `--registry`, `--rsc` |
 | `search` | Lists components that match a query. Alias: `list`. | `--query`, `--limit` (default 100), `--offset`, `--json`, `--registry` |
 | `view <components...>` | Prints component metadata and files as JSON. | `--registry` |
@@ -134,9 +135,23 @@ pnpm exec cyclone-ui init --rsc
 
 Registry authors must supply `"use client"` directives on client-only components, hooks, and helpers. The CLI does not infer client boundaries.
 
+## Use Tailwind CSS
+
+```bash
+pnpm exec cyclone-ui init --style tailwind
+```
+
+Besides recording `style: "tailwind"`, `init` sets the project up for Tailwind CSS v4 classes next to Cyclone UI components:
+
+- It sets `tailwind: true` in the `cycloneUI()` call in `vite.config.*`, or the `withCycloneUI()` call in `next.config.*`.
+- It adds `@import "@cyclone-ui/tokens/tailwind.css";` above `@import "tailwindcss"` in the app stylesheet. When the config passes `tokens`, it imports `.cyclone-ui/tailwind.css` instead. It looks for the stylesheet in common places (`src/index.css`, `app/globals.css`, …), or uses the path from `--css`.
+- When it can't edit a file (no Tailwind import yet, or options that aren't an object literal), it prints the step to do by hand.
+
+Running it again changes nothing. See [Use Tailwind CSS with Cyclone UI](./guides/tailwind.md).
+
 ## Tests
 
-The tests check component installation, the RSC options, the static public registry, the `build` command, and the `docs` command metadata. They are in `tests/`.
+The tests check component installation, the RSC options, the Tailwind setup, the static public registry, the `build` command, and the `docs` command metadata. They are in `tests/`.
 
 ```bash
 pnpm nx test cli
@@ -147,4 +162,5 @@ pnpm nx test cli
 - [Package map](./index.md)
 - [@cyclone-ui/registry-api](./registry-api.md)
 - [@cyclone-ui/theme-builder](./theme-builder.md)
+- [Use Tailwind CSS with Cyclone UI](./guides/tailwind.md)
 - [Components](../design-system/components/index.md)

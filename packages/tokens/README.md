@@ -70,6 +70,8 @@ A package containing the Cyclone UI default design tokens
 - The generated Tamagui configuration (`light`, `dark`, and nested semantic
   themes)
 - CSS theme files for light, dark, dimmed, and high-contrast themes
+- A Tailwind CSS v4 theme (`@cyclone-ui/tokens/tailwind.css`) that maps
+  Cyclone themes and tokens onto Tailwind classes
 - The primitive and semantic design token JSON sources
 
 ## Installing
@@ -105,6 +107,16 @@ Re-export the generated Tamagui config from your own `tamagui.config.ts`:
 ```ts
 export { config } from "@cyclone-ui/tokens/tamagui";
 ```
+
+In an app that uses Tailwind CSS v4, import the Cyclone theme before Tailwind,
+and turn on the `tailwind` option of `@cyclone-ui/vite` or `@cyclone-ui/nextjs`:
+
+```css
+@import "@cyclone-ui/tokens/tailwind.css";
+@import "tailwindcss";
+```
+
+See [Use Tailwind CSS with Cyclone UI](../../docs/packages/guides/tailwind.md).
 
 Razorwind generates most files in this package. Do not edit them by hand. Change
 the token JSON files in `src/tokens`, then run

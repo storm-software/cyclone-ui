@@ -19,6 +19,7 @@ using `@tamagui/next-plugin` and `@tamagui/next-theme`.
   `react-native-svg` → `@tamagui/react-native-svg`
 - The Tamagui compiler for Webpack builds through `@tamagui/next-plugin`
 - Builds the Tamagui config from your own design tokens (`tokens` option)
+- Layers Tamagui's CSS below Tailwind CSS utilities (`tailwind` option)
 - Defines `process.env.TAMAGUI_TARGET`, which Cyclone components read to render
   web-only styles
 - Stores the light, dark or system setting and applies it before hydration
@@ -220,6 +221,36 @@ everywhere, so `CycloneUIProvider` and the Webpack compiler use it. With
 pnpm, Webpack builds also need `@tamagui/web` and `motion` installed in the
 app, because the Tamagui compiler evaluates the generated config from the
 project root.
+
+### Tailwind CSS
+
+Pass `tailwind: true` to use Tailwind CSS v4 classes on Cyclone components and
+your own markup:
+
+```ts
+// next.config.ts
+import { withCycloneUI } from "@cyclone-ui/nextjs"
+
+export default withCycloneUI({}, { tailwind: true })
+```
+
+Then import the Cyclone theme before Tailwind in `app/globals.css`:
+
+```css
+@import "@cyclone-ui/tokens/tailwind.css";
+@import "tailwindcss";
+```
+
+Tamagui writes its CSS inside `@layer tamagui`, and `CycloneUIProvider`
+declares the layer order `theme, base, tamagui, components, utilities` ahead
+of it. Tailwind utilities passed as `className` then override component styles,
+and Tailwind's preflight doesn't. Classes such as `bg-primary`, `p-lg` and
+`rounded-container` use the Cyclone themes and tokens, and `dark:` follows the
+Cyclone theme. Webpack builds default to `disableExtraction: true`, because
+`@tamagui/next-plugin` writes extracted CSS outside the layer. With `tokens`,
+import the generated `.cyclone-ui/tailwind.css` instead (Node.js 22.18 or
+later). See
+[Use Tailwind CSS with Cyclone UI](../../docs/packages/guides/tailwind.md).
 
 ### Provider props
 

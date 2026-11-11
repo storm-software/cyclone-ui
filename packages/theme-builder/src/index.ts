@@ -20,4 +20,5 @@ import generate from "./generate";
 import preprocessor from "./preprocessor";
 
 export * from "./build";
+export * from "./tailwind";
 export { generate, preprocessor };

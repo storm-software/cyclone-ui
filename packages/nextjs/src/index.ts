@@ -42,6 +42,28 @@ export type WithCycloneUIOptions = Partial<WithTamaguiProps> & {
    * @defaultValue The Cyclone UI config from `@cyclone-ui/tokens/tamagui`
    */
   tokens?: BuildTamaguiConfigOptions["tokens"];
+
+  /**
+   * Set the app up for Tailwind CSS v4 class names next to Cyclone UI
+   * components.
+   *
+   * @remarks
+   * - Puts all Tamagui CSS in `@layer tamagui`, and `CycloneUIProvider`
+   *   declares the layer order `theme, base, tamagui, components, utilities`
+   *   ahead of it. Tailwind utilities passed as `className` then override
+   *   component styles, and Tailwind's preflight doesn't.
+   * - Webpack builds default to `disableExtraction: true`, because
+   *   `@tamagui/next-plugin` writes the extracted CSS outside the layer.
+   * - With `tokens`, also writes `.cyclone-ui/tailwind.css`; import it in
+   *   place of `@cyclone-ui/tokens/tailwind.css`. This needs Node.js 22.18 or
+   *   later.
+   *
+   * Plain CSS outside a layer beats every layer, so global app rules (such as
+   * `button { padding: 0 }`) also override components once this is on.
+   *
+   * @defaultValue false
+   */
+  tailwind?: boolean;
 };
 
 type NextConfigFunction<
@@ -49,14 +71,19 @@ type NextConfigFunction<
     NextConfig | Promise<NextConfig>
 > = (phase: string, context: { defaultConfig: NextConfig }) => Result;
 
+// The layer `CycloneUIProvider` places between preflight and utilities.
+const TAMAGUI_LAYER = "tamagui";
+
 const extend = (
   nextConfig: NextConfig,
-  options: Partial<WithTamaguiProps>,
+  { tailwind, ...options }: Omit<WithCycloneUIOptions, "tokens">,
   configPath?: string
 ): NextConfig => ({
   ...nextConfig,
   env: {
     TAMAGUI_TARGET: "web",
+    // Tamagui wraps the CSS it injects or server-renders in this layer.
+    ...(tailwind && { TAMAGUI_CSS_LAYER: TAMAGUI_LAYER }),
     ...nextConfig.env
   },
   turbopack: {
@@ -81,6 +108,7 @@ const extend = (
       config: configPath ?? "@cyclone-ui/tokens/tamagui",
       components: ["@tamagui/core"],
       appDir: true,
+      ...(tailwind && { disableExtraction: true }),
       ...options
     })(nextConfig).webpack(config, context);
     if (configPath) {
@@ -102,9 +130,16 @@ const resolveConfig = (
   }
 
   return tokens
-    ? import("@cyclone-ui/theme-builder")
-        .then(async ({ buildTamaguiConfig }) => buildTamaguiConfig({ tokens }))
-        .then(configPath => extend(nextConfig, options, configPath))
+    ? import("@cyclone-ui/theme-builder").then(
+        async ({ buildTailwindThemeCSS, buildTamaguiConfig }) => {
+          const configPath = await buildTamaguiConfig({ tokens });
+          if (options.tailwind) {
+            await buildTailwindThemeCSS({ configPath });
+          }
+
+          return extend(nextConfig, options, configPath);
+        }
+      )
     : extend(nextConfig, options);
 };
 
@@ -116,7 +151,8 @@ const resolveConfig = (
  *   `react-native-web` and `react-native-svg` to `@tamagui/react-native-svg`.
  * - Webpack (`next build --webpack`): applies `@tamagui/next-plugin`, which
  *   must be installed, with the Cyclone UI Tamagui config.
- * - Both: defines `process.env.TAMAGUI_TARGET`.
+ * - Both: defines `process.env.TAMAGUI_TARGET`, and with `tailwind`,
+ *   `process.env.TAMAGUI_CSS_LAYER`.
  *
  * With `tokens`, the Tamagui config is built from them first, so this returns
  * a promise, which Next.js accepts as the config export.
@@ -142,9 +178,17 @@ const resolveConfig = (
  * export default withCycloneUI({}, { tokens: "tokens/**\/*.json" });
  * ```
  *
+ * @example
+ * ```ts
+ * // next.config.ts — Tailwind CSS classes next to Cyclone UI components
+ * import { withCycloneUI } from "@cyclone-ui/nextjs";
+ *
+ * export default withCycloneUI({}, { tailwind: true });
+ * ```
+ *
  * @param nextConfig - The Next.js config, promise, or phase function to extend.
- * @param options - The design `tokens`, plus options forwarded to
- * `@tamagui/next-plugin` (Webpack only).
+ * @param options - The design `tokens`, the `tailwind` switch, plus options
+ * forwarded to `@tamagui/next-plugin` (Webpack only).
  * @returns The extended Next.js config.
  */
 export function withCycloneUI(

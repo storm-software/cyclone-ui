@@ -72,6 +72,8 @@ A package containing the theme building utilities and shared code used by the Cy
 - A Razorwind generator that wraps the Tamagui generator with Cyclone UI
   defaults and output fixes
 - Used by the Cyclone CLI `build` and `build-tokens` commands
+- Builds a Tailwind CSS v4 theme from a Tamagui config, so Tailwind classes use
+  Cyclone theme and token names (`@cyclone-ui/theme-builder/tailwind`)
 
 ## Installing
 
@@ -122,6 +124,20 @@ export default defineConfig({
 
 See the [package documentation](../../docs/packages/theme-builder.md) for the
 details of each plugin.
+
+To write a Tailwind theme for a Tamagui config file, as `@cyclone-ui/vite` and
+`@cyclone-ui/nextjs` do for custom `tokens`:
+
+```ts
+import { buildTailwindThemeCSS } from "@cyclone-ui/theme-builder/tailwind";
+
+// Writes .cyclone-ui/tailwind.css; import it before `tailwindcss`.
+await buildTailwindThemeCSS({ configPath: ".cyclone-ui/tamagui.config.ts" });
+```
+
+`@cyclone-ui/tokens/tailwind.css` is generated the same way, by a file
+snapshot in `test/tailwind.spec.ts`. Run `vitest run -u test/tailwind.spec.ts`
+after a token change.
 
 ## Reduced Package Size
 

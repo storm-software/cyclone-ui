@@ -102,7 +102,22 @@ Webpack defaults passed to `withTamagui`:
 | `components` | `["@tamagui/core"]` |
 | `appDir` | `true` |
 
-`options` is `Partial<WithTamaguiProps>` from `@tamagui/next-plugin`, plus `tokens`. It is forwarded after those defaults, so your values win. A `tamagui.build.ts` file in the project root overrides the plugin options.
+`options` is `Partial<WithTamaguiProps>` from `@tamagui/next-plugin`, plus `tokens` and `tailwind`. It is forwarded after those defaults, so your values win. A `tamagui.build.ts` file in the project root overrides the plugin options.
+
+### Tailwind CSS
+
+`tailwind: true` sets the app up for Tailwind CSS v4 classes next to Cyclone UI components:
+
+```ts
+export default withCycloneUI(nextConfig, { tailwind: true });
+```
+
+- It sets `env.TAMAGUI_CSS_LAYER` to `"tamagui"`, so Tamagui writes its CSS inside `@layer tamagui`, both on the server and in the browser.
+- `CycloneUIProvider` then renders `@layer theme, base, tamagui, components, utilities;` in the same `<head>` stylesheet as Tamagui's CSS, ahead of it. Tailwind utilities passed as `className` override component styles, and Tailwind's preflight doesn't.
+- Webpack builds default to `disableExtraction: true`, because `@tamagui/next-plugin` writes extracted CSS outside the layer.
+- With `tokens`, it also writes `.cyclone-ui/tailwind.css` from the generated config. This needs Node.js 22.18 or later.
+
+Import the Cyclone theme before Tailwind in the app stylesheet: `@import "@cyclone-ui/tokens/tailwind.css";` (or `.cyclone-ui/tailwind.css` with `tokens`), then `@import "tailwindcss";`. See [Use Tailwind CSS with Cyclone UI](./guides/tailwind.md).
 
 ### Custom design tokens
 
@@ -142,7 +157,7 @@ Turbopack does not run the Tamagui compiler. To optimize a production build, run
 
 ## Provider
 
-`CycloneUIProvider` renders `NextThemeProvider` around a `TamaguiProvider` and a `<mode>_base` theme. `mode` is `light` or `dark`. It also inserts the react-native-web style sheet during server rendering.
+`CycloneUIProvider` renders `NextThemeProvider` around a `TamaguiProvider` and a `<mode>_base` theme. `mode` is `light` or `dark`. It also inserts the react-native-web style sheet during server rendering. When `withCycloneUI` sets `tailwind: true`, it declares the cascade layer order ahead of Tamagui's stylesheet.
 
 It accepts `NextThemeProvider` props (`defaultTheme`, `forcedTheme`, `storageKey`, `enableSystem`, and the rest) plus:
 
@@ -168,3 +183,4 @@ pnpm nx run nextjs:build
 - [@cyclone-ui/tokens](./tokens.md)
 - [@cyclone-ui/state](./state.md)
 - [@cyclone-ui/vite](./vite.md)
+- [Use Tailwind CSS with Cyclone UI](./guides/tailwind.md)

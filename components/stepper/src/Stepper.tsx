@@ -35,7 +35,6 @@ import type {
 import {
   createStyledContext,
   createStyledHOC,
-  getVariableValue,
   styled,
   Theme,
   useTheme,
@@ -545,20 +544,14 @@ export const StepperMarker = ({ children, ...props }: ViewProps) => {
           cy={center}
           r={radius}
           fill="none"
-          stroke={getVariableValue(
-            hovered ? theme["hairline-hovered"] : theme.hairline,
-            "color"
-          )}
+          stroke={(hovered ? theme["hairline-hovered"] : theme.hairline)?.get()}
           strokeWidth={ring}
           {...fillTransition(duration, delay)}
         />
         <Path
           d={fillPath}
           fill="none"
-          stroke={getVariableValue(
-            hovered ? theme["primary-hovered"] : theme.primary,
-            "color"
-          )}
+          stroke={(hovered ? theme["primary-hovered"] : theme.primary)?.get()}
           strokeWidth={ring}
           strokeDasharray={circumference}
           strokeDashoffset={filled ? 0 : circumference}
@@ -629,12 +622,12 @@ const StepperLine = ({
             <Fragment key={index}>
               <Line
                 {...points}
-                stroke={getVariableValue(theme.hairline, "color")}
+                stroke={theme.hairline?.get()}
                 strokeWidth={thickness}
               />
               <Line
                 {...points}
-                stroke={getVariableValue(theme.primary, "color")}
+                stroke={theme.primary?.get()}
                 strokeWidth={thickness}
                 strokeDasharray={dash}
                 strokeDashoffset={filled ? 0 : dash}
@@ -708,7 +701,12 @@ export const StepperHeaderItem = createStyledHOC(
     const StatusIcon = STATUS_ICONS[status];
     // Always a named theme: switching from none to a name remounts the
     // children, which would cut the fill transitions short.
-    const vectorTheme = themed && status === "complete" ? "success" : themeName;
+    // Relative to the scheme (`dark_brand` -> `brand`), so the server's light
+    // render and a dark client hydrate to the same className.
+    const vectorTheme =
+      themed && status === "complete"
+        ? "success"
+        : themeName.replace(/^(?:light|dark)(?:_|$)/, "") || "base";
 
     // Segment `2i - 1` is step i's line and `2i` its ring. Moving from one
     // step to another fills (or empties) the segments between them in order.

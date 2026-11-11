@@ -1,4 +1,7 @@
 import type { NextConfig } from "next";
+import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
 import { withCycloneUI } from "../src/index";
@@ -92,5 +95,54 @@ describe("withCycloneUI", () => {
       partialPrefetching: true,
       env: { TAMAGUI_TARGET: "web" }
     });
+  });
+
+  it("layers Tamagui CSS for Tailwind only when asked", () => {
+    expect(withCycloneUI({}).env).not.toHaveProperty("TAMAGUI_CSS_LAYER");
+    expect(
+      withCycloneUI({ env: { APP_NAME: "example" } }, { tailwind: true }).env
+    ).toEqual({
+      TAMAGUI_TARGET: "web",
+      TAMAGUI_CSS_LAYER: "tamagui",
+      APP_NAME: "example"
+    });
+  });
+
+  it("keeps Webpack's unlayered extracted CSS out of Tailwind apps", async () => {
+    // A stand-in `@tamagui/next-plugin` that records its options.
+    const dir = await mkdtemp(join(tmpdir(), "cyclone-ui-next-"));
+    const plugin = join(dir, "node_modules/@tamagui/next-plugin");
+    await mkdir(plugin, { recursive: true });
+    await writeFile(join(dir, "package.json"), "{}");
+    await writeFile(
+      join(plugin, "package.json"),
+      JSON.stringify({ name: "@tamagui/next-plugin", main: "index.js" })
+    );
+    await writeFile(
+      join(plugin, "index.js"),
+      `exports.withTamagui = options => () => ({
+        webpack: () => ({ options, resolve: { alias: {} } })
+      });`
+    );
+
+    const webpack = (options: Parameters<typeof withCycloneUI>[1]) =>
+      (
+        withCycloneUI({}, options).webpack!({}, { dir } as never) as {
+          options: Record<string, unknown>;
+        }
+      ).options;
+
+    try {
+      expect(webpack({})).not.toHaveProperty("disableExtraction");
+      expect(webpack({ tailwind: true })).toMatchObject({
+        disableExtraction: true
+      });
+      expect(
+        webpack({ tailwind: true, disableExtraction: false })
+      ).toMatchObject({ disableExtraction: false });
+      expect(webpack({ tailwind: true })).not.toHaveProperty("tailwind");
+    } finally {
+      await rm(dir, { recursive: true, force: true });
+    }
   });
 });

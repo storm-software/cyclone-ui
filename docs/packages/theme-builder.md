@@ -31,9 +31,10 @@ The package depends on `@razorwind/core`, `@razorwind/style-dictionary`, `@razor
 
 | Import path | Contents |
 | --- | --- |
-| `@cyclone-ui/theme-builder` | Named exports `generate` and `preprocessor` |
+| `@cyclone-ui/theme-builder` | Named exports `generate`, `preprocessor`, `buildTamaguiConfig`, and the Tailwind functions below |
 | `@cyclone-ui/theme-builder/generate` | Default export: the generate plugin |
 | `@cyclone-ui/theme-builder/preprocessor` | Default export: the preprocessor plugin |
+| `@cyclone-ui/theme-builder/tailwind` | The Tailwind functions below, without loading Razorwind |
 
 ## Use the plugins
 
@@ -92,9 +93,28 @@ Your options override these defaults. The plugin also does the following:
 
 The source marks the first two fixes as temporary shims for `@razorwind/tamagui` 0.0.101 and earlier.
 
+## Tailwind theme stylesheet
+
+These functions build the Tailwind CSS v4 stylesheet that `@cyclone-ui/tokens/tailwind.css` ships, so Tailwind classes use Cyclone theme and token names. See [Use Tailwind CSS with Cyclone UI](./guides/tailwind.md).
+
+| Export | Purpose |
+| --- | --- |
+| `createTailwindThemeCSS(config, { reserved })` | Returns the stylesheet for a created Tamagui config (evaluated with `TAMAGUI_TARGET=web`). |
+| `readTailwindThemeNames(cwd)` | Reads the theme variable names Tailwind defines by default from `tailwindcss/theme.css` in `cwd`. |
+| `buildTailwindThemeCSS({ configPath, cwd, outputPath })` | Loads a config file with Node.js and writes the stylesheet. `outputPath` defaults to `.cyclone-ui/tailwind.css`. TypeScript configs need Node.js 22.18 or later. |
+| `TAILWIND_LAYER_ORDER` | `@layer theme, base, tamagui, components, utilities;` |
+
+The stylesheet has three parts:
+
+- The layer order statement.
+- An `@theme inline` block. Colors point at Tamagui theme variables (`--color-primary: var(--primary)`), so they resolve where the class is used and follow sub-themes. Space tokens feed the spacing utilities (`--padding-*`, `--margin-*`, `--gap-*`, `--inset-*`, `--translate-*`, …). Size tokens feed the sizing utilities (`--width-*`, `--height-*`, `--size-*`, …). Radius, font size, font weight, blur, and shadow tokens feed their Tailwind namespaces. Font families and min-width breakpoints are literal values.
+- A `dark` variant on Tamagui's `t_dark` class.
+
+Names in `reserved` are skipped, and so are names Tailwind falls back to for the same class. For example, `--width-lg` is skipped because Tailwind's `--container-lg` is reserved. Numeric keys and Tailwind keywords (`full`, `auto`, `screen`, …) are skipped too. Standard Tailwind classes keep their meaning.
+
 ## Tests
 
-The tests check the preprocessor, the Shiki theme mapping, and the Storybook theme mapping.
+The tests check the preprocessor, the Shiki theme mapping, the Storybook theme mapping, and the Tailwind stylesheet. The Tailwind test compiles the stylesheet with `tailwindcss`. It also compares the stylesheet with `packages/tokens/tailwind.css`. After a token change, regenerate that file with `vitest run -u test/tailwind.spec.ts`.
 
 ```bash
 pnpm nx test theme-builder
@@ -105,4 +125,5 @@ pnpm nx test theme-builder
 - [Package map](./index.md)
 - [@cyclone-ui/tokens](./tokens.md)
 - [@cyclone-ui/shiki](./shiki.md)
+- [Use Tailwind CSS with Cyclone UI](./guides/tailwind.md)
 - [Design tokens](../design-system/tokens/index.md)

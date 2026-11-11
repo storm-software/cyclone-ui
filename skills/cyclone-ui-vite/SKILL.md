@@ -89,6 +89,28 @@ createRoot(document.getElementById("root")!).render(
 - `ThemeProvider` starts from the OS `prefers-color-scheme` and falls back to `defaultMode` (default `"dark"`). Change the mode with `useThemeActions().changeMode("light" | "dark")`. The provider doesn't save the choice, so if the user wants it persisted, store it (for example in `localStorage`) and pass it back as `defaultMode`.
 - Keep importing `config` from `@cyclone-ui/tokens/tamagui`, even with the `tokens` option: the plugin points that import at the generated config. Only a hand-written `config` option has to be passed to both.
 
+## Tailwind CSS
+
+If the app uses Tailwind CSS v4 (`@tailwindcss/vite`), or the user wants Tailwind classes on Cyclone components, pass `tailwind: true` and import the Cyclone theme before Tailwind:
+
+```ts
+plugins: [react(), tailwindcss(), cycloneUI({ tailwind: true })]
+```
+
+```css
+/* the stylesheet that imports Tailwind, e.g. src/index.css */
+@import "@cyclone-ui/tokens/tailwind.css";
+@import "tailwindcss";
+```
+
+- Without the option, Tamagui's CSS is outside any cascade layer and beats every Tailwind utility, so `className` overrides on Cyclone components do nothing. The option puts Tamagui's CSS in `@layer tamagui` and adds the layer order `theme, base, tamagui, components, utilities` at the top of `index.html`.
+- The theme file gives Tailwind the Cyclone names (`bg-primary`, `text-on-primary`, `p-lg`, `h-lg`, `rounded-container`, `xs:`), and a `dark:` variant that follows the Cyclone theme. Colors read the theme variables, so they need the `_base` theme wrapper above. Tailwind's own class names (`max-w-lg`, `text-lg`, `z-10`) keep their Tailwind values.
+- With `tokens`, import `.cyclone-ui/tailwind.css` (generated next to the config; needs Node.js 22.18+) instead of `@cyclone-ui/tokens/tailwind.css`.
+- With the option on, unlayered global app CSS (e.g. `button { padding: 0 }`) also overrides components. Point that out if the app has such rules.
+- Properties a component sets inline (animated components) can't be overridden by classes; use the component's props.
+
+`cyclone-ui init --style tailwind` makes both edits. See `docs/packages/guides/tailwind.md` in the Cyclone UI repository.
+
 ## Verify
 
 Run `vite build`, then `vite preview` (or `vite dev`) with a Cyclone component on screen. Check:
@@ -108,4 +130,6 @@ Report which checks ran, and say so if only the build was verified.
 | Components unstyled | `disableInjectCSS` left at its default `true`, or the plugin is missing from `plugins`. |
 | Placeholders or animations missing | `process.env.TAMAGUI_TARGET` undefined. `cycloneUI()` isn't in the final plugin list, or another `define` overrides it. |
 | Can't resolve `react-native` | `react-native-web` not installed. |
+| Tailwind `className` on a Cyclone component has no effect | `tailwind: true` missing, or the property is set in the element's inline `style`. |
+| Components lose padding or borders after adding Tailwind | Tailwind's preflight beats Tamagui: `tailwind: true` missing, or `@import "@cyclone-ui/tokens/tailwind.css"` isn't before `@import "tailwindcss"`. |
 | Wrong theme colors or theme hooks return defaults | Two copies of `@tamagui/core` or `@cyclone-ui/state`. Dedupe the lockfile, and check that nothing else registers `tamaguiPlugin`. |

@@ -73,7 +73,6 @@ import {
   Text,
   Theme,
   useComposedRefs,
-  useThemeName,
   View,
   withStaticProperties
 } from "@tamagui/core";
@@ -996,7 +995,6 @@ const FieldLabelTextImpl = createStyledHOC(
     forwardedRef
   ) => {
     const field = FieldApi.use();
-    const theme = useThemeName();
     const { variant, endIconCount, labelContentRef, labelDefaults } =
       useFieldPresentation();
     // An underlined control's text starts flush with its left edge, and so
@@ -1158,10 +1156,10 @@ const FieldLabelTextImpl = createStyledHOC(
       () => Boolean(fieldDisabled || props.disabled),
       [fieldDisabled, props.disabled]
     );
-    const baseTheme =
-      typeof theme === "string" && theme.startsWith("light")
-        ? "light_base"
-        : "dark_base";
+    // The relative `base` resolves to `<mode>_base` (no `<mode>_<status>_base`
+    // theme exists). An absolute name read from `useThemeName` would follow
+    // the client's mode, mismatching the server's className on a dark start.
+    const baseTheme = "base";
 
     const labelText = (
       <FieldLabelText

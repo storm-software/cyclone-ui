@@ -130,15 +130,24 @@ add `"style": "tailwind"` to your existing `components.json`. Components that
 ship a Tailwind variant (`Skeleton.tailwind.tsx`) install it in place of the
 default file, and `@tamagui/tailwind` is added to `package.json`. Style them
 with `className`, for example `<Skeleton className="h-[32px] w-1/2" />`.
-Cyclone defines no border width tokens and there is no Tailwind preflight, so
-give borders a px width and a style, such as `border-[1px] border-solid`.
+Cyclone defines no border width tokens, and an app that doesn't run Tailwind
+itself has no preflight, so give borders a px width and a style, such as
+`border-[1px] border-solid`.
 Animate class changes with Tamagui's `transition` prop, as the installed
 components do. `@tamagui/tailwind` leaves it out of its prop types, so pass it
 in a spread typed with `TransitionProp` from `@tamagui/core`.
 Components without a variant install their Tamagui source, which renders
-alongside Tailwind components with the same tokens and themes. For build-time
-CSS extraction, add `tamaguiPlugin({ components: ["@tamagui/tailwind"] })`
-from `@tamagui/tailwind/vite` to your Vite config.
+alongside Tailwind components with the same tokens and themes.
+
+The `tailwind` style also sets the project up for Tailwind CSS v4 classes on
+Cyclone components and your own markup. `init` sets `tailwind: true` in the
+`cycloneUI()` call of `vite.config.*` (which also has the Tamagui compiler
+extract `@tamagui/tailwind` components) or the `withCycloneUI()` call of
+`next.config.*`. It also adds `@import "@cyclone-ui/tokens/tailwind.css";` above
+`@import "tailwindcss"` in the app stylesheet. Pass `--css <file>` when the
+stylesheet isn't in a common place such as `src/index.css` or
+`app/globals.css`. Steps the CLI can't do are printed instead. See
+[Use Tailwind CSS with Cyclone UI](../../docs/packages/guides/tailwind.md).
 
 Registry authors add a Tailwind variant by placing `<Name>.tailwind.tsx` next to
 `<Name>.tsx` with the same exports.

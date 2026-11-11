@@ -9,7 +9,7 @@
 import type { CommandMetadata } from "@shell-shock/core";
 import { mkdir } from "node:fs/promises";
 import { resolve } from "node:path";
-import { success } from "shell-shock:console";
+import { success, writeLine } from "shell-shock:console";
 import { COMPONENT_PROTECTION_RULE } from "../../utilities/agent-guidance";
 import {
   applyInstallPlan,
@@ -23,6 +23,7 @@ import {
   writeConfig
 } from "../../utilities/config";
 import { registryClient } from "../../utilities/registry";
+import { setupTailwind } from "../../utilities/tailwind";
 
 export const metadata = {
   title: "Initialize",
@@ -42,6 +43,8 @@ export interface InitOptions {
   rsc?: boolean;
   /** Component styling: Tamagui style props, or `@tamagui/tailwind` class names where a component provides them. */
   style?: "tamagui" | "tailwind";
+  /** The app stylesheet that imports `tailwindcss`, relative to the working directory. With the `tailwind` style, the Cyclone UI Tailwind theme is imported there. Common locations are tried when omitted. */
+  css?: string;
   /** Overwrite an existing Cyclone configuration. */
   force?: boolean;
   /** Mute non-essential output. */
@@ -81,8 +84,21 @@ async function handler(
     await writeConfig(root, config);
   }
 
+  // Tailwind classes need Tamagui's CSS layered below Tailwind utilities and
+  // the Cyclone theme names available to Tailwind.
+  const tailwind =
+    config.style === "tailwind"
+      ? await setupTailwind(root, options.css)
+      : undefined;
+
   if (!options.silent) {
     success(`Initialized Cyclone UI in ${root}.`);
+    for (const file of tailwind?.updated ?? []) {
+      writeLine(`Set up Tailwind CSS in ${file}.`);
+    }
+    for (const step of tailwind?.todo ?? []) {
+      writeLine(`To do: ${step}`);
+    }
   }
 }
 

@@ -74,6 +74,18 @@
         "Does not add partialPrefetching to a Next.js 16.2 configuration",
         "Does not silently upgrade Next.js or broaden the task into a migration"
       ]
+    },
+    {
+      "id": 8,
+      "prompt": "Next.js App Router app with Tailwind v4 in app/globals.css and withCycloneUI(nextConfig). Tailwind preflight or utilities fight with Cyclone components; make Tailwind classes override Cyclone styles and use Cyclone colors.",
+      "expected_output": "Passes { tailwind: true } as the second withCycloneUI argument and imports @cyclone-ui/tokens/tailwind.css above @import \"tailwindcss\" in app/globals.css.",
+      "files": [],
+      "expectations": [
+        "Passes { tailwind: true } to withCycloneUI",
+        "Imports @cyclone-ui/tokens/tailwind.css before tailwindcss in app/globals.css",
+        "Keeps CycloneUIProvider in the root layout",
+        "Mentions that unlayered global CSS now also overrides components"
+      ]
     }
   ]
 }

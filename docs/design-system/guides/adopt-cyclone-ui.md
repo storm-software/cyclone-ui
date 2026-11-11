@@ -162,6 +162,7 @@ The story also shows `theme="brand"`, `animate`, and `rounded`. Run your app. Yo
 ## Where to go next
 
 - Keep copied components current: [Preview and update copied components](../../packages/guides/update-copied-components.md).
+- Style components and your own markup with Tailwind CSS: [Use Tailwind CSS with Cyclone UI](../../packages/guides/tailwind.md).
 - Browse every component: [Components](../components/index.md).
 - Look up colors, spacing, and type: [Tokens](../tokens/index.md) and [Fonts](../fonts/index.md).
 

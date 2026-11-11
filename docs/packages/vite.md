@@ -55,19 +55,38 @@ createRoot(document.getElementById("root")!).render(
 
 `cycloneUI(options)` returns two Vite plugins.
 
-1. `tamaguiPlugin` from `@tamagui/vite-plugin`. It aliases `react-native` to `react-native-web`, resolves `.web.*` files, pre-bundles packages that share React context, and runs the Tamagui compiler.
+1. The plugins from `@tamagui/vite-plugin` (`createTamaguiPlugins`). They alias `react-native` to `react-native-web`, resolve `.web.*` files, pre-bundle packages that share React context, and run the Tamagui compiler.
 2. A plugin named `cyclone-ui` that defines `process.env.TAMAGUI_TARGET` as `"web"`. Cyclone components read that value to render web-only styles. The Tamagui plugin defines it only while it evaluates its own config.
 
-Defaults passed to `tamaguiPlugin`:
+Defaults passed to `@tamagui/vite-plugin`:
 
 | Option | Default |
 | --- | --- |
 | `config` | `"@cyclone-ui/tokens/tamagui"` |
 | `components` | `["@tamagui/core"]` |
 
-`options` is `TamaguiVitePluginOptions` plus `tokens`. It is spread after the defaults, so your values win. Pass `disableExtraction: true` to keep styles at runtime.
+`options` is `TamaguiVitePluginOptions` plus `tokens` and `tailwind`. It is spread after the defaults, so your values win. Pass `disableExtraction: true` to keep styles at runtime.
 
 A `tamagui.build.ts` file in the project root still takes precedence over these options.
+
+## Tailwind CSS
+
+`tailwind: true` sets the app up for Tailwind CSS v4 classes next to Cyclone UI components:
+
+```ts
+import tailwindcss from "@tailwindcss/vite";
+
+export default defineConfig({
+  plugins: [react(), tailwindcss(), cycloneUI({ tailwind: true })]
+});
+```
+
+- It defines `process.env.TAMAGUI_CSS_LAYER` as `"tamagui"` and wraps CSS from the Tamagui compiler and `@tamagui/core/reset.css` in `@layer tamagui`.
+- It adds `<style data-precedence="default">@layer theme, base, tamagui, components, utilities;</style>` at the top of `index.html`. The `data-precedence` attribute keeps React from placing Tamagui's provider stylesheet ahead of it. Tailwind utilities passed as `className` then override component styles, and Tailwind's preflight doesn't.
+- It adds `@tamagui/tailwind` to `components` when the app depends on it, so the compiler extracts those components too.
+- With `tokens`, it also writes `.cyclone-ui/tailwind.css` from the generated config. This needs Node.js 22.18 or later.
+
+Import the Cyclone theme before Tailwind in the app stylesheet: `@import "@cyclone-ui/tokens/tailwind.css";` (or `../.cyclone-ui/tailwind.css` with `tokens`), then `@import "tailwindcss";`. See [Use Tailwind CSS with Cyclone UI](./guides/tailwind.md).
 
 ## Custom design tokens
 
@@ -96,3 +115,4 @@ pnpm nx run vite:build
 - [@cyclone-ui/tokens](./tokens.md)
 - [@cyclone-ui/state](./state.md)
 - [@cyclone-ui/nextjs](./nextjs.md)
+- [Use Tailwind CSS with Cyclone UI](./guides/tailwind.md)

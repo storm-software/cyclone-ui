@@ -270,13 +270,15 @@ export const SubmitButton: TamaguiComponent<SubmitButtonProps, TamaguiElement> =
           ref={ref}
           justifyContent="center"
           // Always a theme name: going from no theme to one remounts the
-          // children, which would cut the state transition short.
+          // children, which would cut the state transition short. Relative to
+          // the scheme (`dark_brand` -> `brand`), so the server's light render
+          // and a dark client hydrate to the same className.
           theme={
             status === "success"
               ? "success"
               : status === "error"
                 ? "danger"
-                : themeName
+                : themeName.replace(/^(?:light|dark)(?:_|$)/, "") || "base"
           }
           aria-busy={status === "pending"}
           // Icon-only: the label moves to the tooltip (and `aria-label`).

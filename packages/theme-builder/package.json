@@ -68,6 +68,20 @@
         "types": "./dist/preprocessor.d.mts",
         "default": "./dist/preprocessor.mjs"
       }
+    },
+    "./tailwind": {
+      "require": {
+        "types": "./dist/tailwind.d.cts",
+        "default": "./dist/tailwind.cjs"
+      },
+      "import": {
+        "types": "./dist/tailwind.d.mts",
+        "default": "./dist/tailwind.mjs"
+      },
+      "default": {
+        "types": "./dist/tailwind.d.mts",
+        "default": "./dist/tailwind.mjs"
+      }
     }
   },
   "main": "./dist/index.cjs",
@@ -81,6 +95,7 @@
   "devDependencies": {
     "@powerlines/plugin-tsdown": "catalog:",
     "@types/node": "catalog:",
-    "powerlines": "catalog:"
+    "powerlines": "catalog:",
+    "tailwindcss": "catalog:"
   }
 }

@@ -24,4 +24,8 @@ export default withCycloneUI({
   experimental: {
     exposeTestingApiInProductionBuild: process.env.EXPOSE_TESTING_API === "1"
   }
+}, {
+  // `CYCLONE_UI_TAILWIND=1` runs the suite with Tamagui's CSS layered for
+  // Tailwind; `tailwind.browser.spec.ts` only runs then.
+  tailwind: process.env.CYCLONE_UI_TAILWIND === "1"
 });
