@@ -1,0 +1,66 @@
+{
+  "name": "@cyclone-ui/avatar",
+  "version": "0.0.1",
+  "private": false,
+  "description": "An Avatar that shows an image at a fixed size, round or with rounded corners, and falls back to the person's initials or an icon while the image loads or when it is missing. A status prop adds a Badge dot on the bottom-right edge, cut out of the avatar by a transparent ring. An editable avatar reveals an upload button on hover, then opens a crop modal (drag to pan, slider to zoom, over a grid with stronger center lines) and passes the cropped square image to onUpload.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/avatar"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Avatar": {
+      "import": "./dist/Avatar.mjs",
+      "require": "./dist/Avatar.cjs"
+    },
+    "./AvatarCropModal": {
+      "import": "./dist/AvatarCropModal.mjs",
+      "require": "./dist/AvatarCropModal.cjs"
+    },
+    "./utilities": {
+      "import": "./dist/utilities.mjs",
+      "require": "./dist/utilities.cjs"
+    },
+    "./*": "./*"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@cyclone-ui/badge": "workspace:*",
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/modal": "workspace:*",
+    "@cyclone-ui/slider": "workspace:*",
+    "@cyclone-ui/spinner": "workspace:*",
+    "@tamagui/avatar": "catalog:",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "module:jsx": "dist/jsx"
+}

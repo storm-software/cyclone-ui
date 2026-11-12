@@ -221,6 +221,40 @@ An ArticlePage layout compound component for blog posts and documentation articl
 | --- | --- | --- |
 | `../../components/article-page/src/ArticlePage.tsx` | `component` |  |
 
+## @cyclone-ui/avatar
+
+An Avatar that shows an image at a fixed size, round or with rounded corners, and falls back to the person's initials or an icon while the image loads or when it is missing. A status prop adds a Badge dot on the bottom-right edge, cut out of the avatar by a transparent ring. An editable avatar reveals an upload button on hover, then opens a crop modal (drag to pan, slider to zoom, over a grid with stronger center lines) and passes the cropped square image to onUpload.
+
+- **Name:** `@cyclone-ui/avatar`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/badge`: `workspace:*`
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/modal`: `workspace:*`
+- `@cyclone-ui/slider`: `workspace:*`
+- `@cyclone-ui/spinner`: `workspace:*`
+- `@tamagui/avatar`: `catalog:`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/avatar/src/Avatar.tsx` | `component` |  |
+| `../../components/avatar/src/AvatarCropModal.tsx` | `component` |  |
+| `../../components/avatar/src/utilities.ts` | `file` |  |
+
 ## @cyclone-ui/badge
 
 A Badge that wraps an element and pins a small count or dot to one of its corners. It follows MUI's API: anchorOrigin, max (shows 99+ by default), showZero, invisible, rectangular or circular overlap, standard or dot variants, and palette or theme colors. Use it for notification counts and status indicators.

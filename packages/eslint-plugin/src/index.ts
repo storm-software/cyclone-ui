@@ -4181,6 +4181,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/avatar",
+      jsx: ["Avatar"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/badge",
       jsx: ["Badge"],
       roles: []

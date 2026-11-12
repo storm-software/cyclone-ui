@@ -5,7 +5,7 @@ description: "Components available in the Cyclone UI (Dark High Contrast)."
 
 # Components
 
-113 `component` items in the component registry.
+114 `component` items in the component registry.
 
 ## @cyclone-ui/accordion
 
@@ -160,6 +160,33 @@ An ArticlePage layout compound component for blog posts and documentation articl
 | Path                                          | Type        | Target |
 | --------------------------------------------- | ----------- | ------ |
 | `components/article-page/src/ArticlePage.tsx` | `component` | —      |
+
+## @cyclone-ui/avatar
+
+An Avatar that shows an image at a fixed size, round or with rounded corners, and falls back to the person's initials or an icon while the image loads or when it is missing. A status prop adds a Badge dot on the bottom-right edge, cut out of the avatar by a transparent ring. An editable avatar reveals an upload button on hover, then opens a crop modal (drag to pan, slider to zoom, over a grid with stronger center lines) and passes the cropped square image to onUpload.
+
+- **Name:** `@cyclone-ui/avatar`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/badge@0.3.73`
+- `@cyclone-ui/body-text@0.5.68`
+- `@cyclone-ui/button@0.6.73`
+- `@cyclone-ui/icons@0.0.68`
+- `@cyclone-ui/modal@0.0.38`
+- `@cyclone-ui/slider@0.0.71`
+- `@cyclone-ui/spinner@0.5.68`
+- `@tamagui/avatar@3.3.2`
+- `@tamagui/core@3.3.2`
+
+### Files
+
+| Path                                        | Type        | Target |
+| ------------------------------------------- | ----------- | ------ |
+| `components/avatar/src/Avatar.tsx`          | `component` | —      |
+| `components/avatar/src/AvatarCropModal.tsx` | `component` | —      |
+| `components/avatar/src/utilities.ts`        | `file`      | —      |
 
 ## @cyclone-ui/badge
 

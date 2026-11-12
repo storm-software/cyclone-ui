@@ -395,6 +395,9 @@
     },
     {
       "path": "./components/navigation-sidebar"
+    },
+    {
+      "path": "./components/avatar"
     }
   ],
   "files": []
