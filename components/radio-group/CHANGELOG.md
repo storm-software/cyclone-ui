@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Radio Group
 
+## [0.5.76](https://github.com/storm-software/cyclone-ui/releases/tag/radio-group%400.5.76) (11/12/2026)
+
+### Bug Fixes
+
+- **radio-group:** Update icon display to be marked as `filled` when the item is selected ([4eab9e9d2](https://github.com/storm-software/cyclone-ui/commit/4eab9e9d2))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.68**
+- Updated **field** to **v0.5.75**
+- Updated **form** to **v0.9.70**
+- Updated **heading-text** to **v0.5.69**
+- Updated **helpers** to **v0.3.69**
+- Updated **icons** to **v0.0.68**
+
 ## [0.5.75](https://github.com/storm-software/cyclone-ui/releases/tag/radio-group%400.5.75) (11/11/2026)
 
 ### Updated Dependencies

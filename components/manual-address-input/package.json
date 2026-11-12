@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/manual-address-input",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "type": "module",
   "description": "Address fields for entering an address by hand inside a Form: country, address lines 1-3, city, state and ZIP code. The country sets each field's label (ZIP Code or Postal Code, State or Province), whether it shows and is required, the postal code format, the state options and the field order. Address lines 2 and 3 stay disabled until the line before them is filled in.",
   "repository": {
