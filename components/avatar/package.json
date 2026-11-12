@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/avatar",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "description": "An Avatar that shows an image at a fixed size, round or with rounded corners, and falls back to the person's initials or an icon while the image loads or when it is missing. A status prop adds a Badge dot on the bottom-right edge, cut out of the avatar by a transparent ring. An editable avatar reveals an upload button on hover, then opens a crop modal (drag to pan, slider to zoom, over a grid with stronger center lines) and passes the cropped square image to onUpload.",
   "repository": {

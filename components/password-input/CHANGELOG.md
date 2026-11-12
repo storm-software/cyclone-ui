@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Password Input
 
+## [0.0.75](https://github.com/storm-software/cyclone-ui/releases/tag/password-input%400.0.75) (11/12/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.69**
+- Updated **field** to **v0.5.76**
+- Updated **form** to **v0.9.71**
+- Updated **helpers** to **v0.3.70**
+- Updated **icons** to **v0.0.69**
+- Updated **input** to **v0.6.76**
+
 ## [0.0.74](https://github.com/storm-software/cyclone-ui/releases/tag/password-input%400.0.74) (11/12/2026)
 
 ### Updated Dependencies

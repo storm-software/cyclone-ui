@@ -1,0 +1,19 @@
+![Cyclone UI's logo banner](https://public.storm-cdn.com/cyclone-ui/media/banner-1280x320-dark.gif)
+
+# Changelog for Cyclone UI - Avatar
+
+## [0.0.2](https://github.com/storm-software/cyclone-ui/releases/tag/avatar%400.0.2) (11/12/2026)
+
+### Features
+
+- **avatar:** Added the `Avatar` component package ([a3a7a49f2](https://github.com/storm-software/cyclone-ui/commit/a3a7a49f2))
+
+### Updated Dependencies
+
+- Updated **badge** to **v0.3.74**
+- Updated **body-text** to **v0.5.69**
+- Updated **button** to **v0.6.74**
+- Updated **icons** to **v0.0.69**
+- Updated **modal** to **v0.0.39**
+- Updated **slider** to **v0.0.72**
+- Updated **spinner** to **v0.5.69**

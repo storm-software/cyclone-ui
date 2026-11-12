@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Select
 
+## [0.6.77](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.77) (11/12/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.69**
+- Updated **context-menu** to **v0.0.65**
+- Updated **field** to **v0.5.76**
+- Updated **form** to **v0.9.71**
+- Updated **helpers** to **v0.3.70**
+- Updated **icons** to **v0.0.69**
+- Updated **input** to **v0.6.76**
+- Updated **tooltip** to **v0.5.74**
+
 ## [0.6.76](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.76) (11/12/2026)
 
 ### Updated Dependencies

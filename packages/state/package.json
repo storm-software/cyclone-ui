@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/state",
-  "version": "0.0.71",
+  "version": "0.0.72",
   "type": "module",
   "description": "A state management package used to handle state in Storm Software applications.",
   "repository": {

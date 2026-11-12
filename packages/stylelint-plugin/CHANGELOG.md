@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.59](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.59) (11/12/2026)
+
+### Features
+
+- **avatar:** Added the `Avatar` component package ([a3a7a49f2](https://github.com/storm-software/cyclone-ui/commit/a3a7a49f2))
+
 ## [0.0.55](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.55) (11/10/2026)
 
 ### Features

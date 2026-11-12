@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Phone Number Input
 
+## [0.0.78](https://github.com/storm-software/cyclone-ui/releases/tag/phone-number-input%400.0.78) (11/12/2026)
+
+### Updated Dependencies
+
+- Updated **context-menu** to **v0.0.65**
+- Updated **field** to **v0.5.76**
+- Updated **form** to **v0.9.71**
+- Updated **helpers** to **v0.3.70**
+- Updated **input** to **v0.6.76**
+- Updated **search-input** to **v0.1.77**
+
 ## [0.0.77](https://github.com/storm-software/cyclone-ui/releases/tag/phone-number-input%400.0.77) (11/12/2026)
 
 ### Updated Dependencies

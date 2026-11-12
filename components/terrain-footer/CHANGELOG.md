@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Terrain Footer
 
+## [0.0.35](https://github.com/storm-software/cyclone-ui/releases/tag/terrain-footer%400.0.35) (11/12/2026)
+
+### Bug Fixes
+
+- **feedback:** Update background on hovered ([e4ee3da0f](https://github.com/storm-software/cyclone-ui/commit/e4ee3da0f))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.69**
+- Updated **footer** to **v0.0.74**
+- Updated **heading-text** to **v0.5.70**
+- Updated **icons** to **v0.0.69**
+- Updated **link** to **v0.5.75**
+
 ## [0.0.34](https://github.com/storm-software/cyclone-ui/releases/tag/terrain-footer%400.0.34) (11/12/2026)
 
 ### Updated Dependencies

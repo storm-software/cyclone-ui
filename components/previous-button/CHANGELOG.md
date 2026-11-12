@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Previous Button
 
+## [0.5.74](https://github.com/storm-software/cyclone-ui/releases/tag/previous-button%400.5.74) (11/12/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.74**
+- Updated **icons** to **v0.0.69**
+
 ## [0.5.73](https://github.com/storm-software/cyclone-ui/releases/tag/previous-button%400.5.73) (11/12/2026)
 
 ### Updated Dependencies
