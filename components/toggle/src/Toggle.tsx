@@ -285,6 +285,11 @@ export interface ToggleProps extends Omit<
    * Defaults to `subtle`.
    */
   pressedBackgroundColor?: string;
+  /**
+   * The indicator color while hovered, unpressed and `borderless` without a
+   * `variant`. Defaults to none.
+   */
+  hoveredBackgroundColor?: string;
 }
 
 /**
@@ -307,6 +312,7 @@ export const Toggle = forwardRef<TamaguiElement, ToggleProps>(
       circular = false,
       rounded = false,
       pressedBackgroundColor = "subtle",
+      hoveredBackgroundColor,
       children,
       ...props
     },
@@ -375,9 +381,14 @@ export const Toggle = forwardRef<TamaguiElement, ToggleProps>(
             ? // The `Container` draws the border.
               { borderWidth: 0 }
             : borderless &&
-              pressed && {
-                backgroundColor: `${pressedBackgroundColor} group-hover/toggle:${pressedBackgroundColor}`
-              })}
+              (pressed
+                ? {
+                    backgroundColor: `${pressedBackgroundColor} group-hover/toggle:${pressedBackgroundColor}`
+                  }
+                : hoveredBackgroundColor &&
+                  !disabled && {
+                    backgroundColor: `transparent group-hover/toggle:${hoveredBackgroundColor}`
+                  }))}
           {...(shadowStyle &&
             (variant || pressed) && {
               boxShadow: containerShadows[shadowStyle]

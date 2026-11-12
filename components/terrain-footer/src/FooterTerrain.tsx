@@ -46,8 +46,10 @@ const points = Array.from({ length: rows + 1 }, (_, row) => {
       155 * Math.exp(-(((x + 600) / 470) ** 2)) +
       190 * Math.exp(-(((x + 100) / 220) ** 2)) +
       105 * Math.exp(-(((x - 420) / 280) ** 2));
+    // Fade the ridges toward the front so the mesh runs flat off the bottom
+    // edge instead of rising into a second ridge.
     const height =
-      ridge * (0.6 + 0.4 * Math.cos(depth * 6)) +
+      ridge * (0.6 + 0.4 * Math.cos(depth * 6)) * (1 - depth ** 2) +
       30 * Math.sin(x / 140 + depth * 8) +
       12 * Math.sin(x / 43 + depth * 13);
 

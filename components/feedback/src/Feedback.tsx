@@ -120,6 +120,7 @@ export const Feedback = forwardRef<TamaguiElement, FeedbackProps>(
         gap="md"
         {...props}>
         <LikeButton
+          hoveredBackgroundColor="elevated-hovered"
           size={size}
           disabled={disabled}
           liked={value === "like"}
@@ -138,6 +139,7 @@ export const Feedback = forwardRef<TamaguiElement, FeedbackProps>(
               borderless={true}
               circular={true}
               pressedBackgroundColor="elevated-active"
+              hoveredBackgroundColor="elevated-hovered"
               size={size}
               disabled={disabled}
               pressed={disliked}
@@ -145,18 +147,25 @@ export const Feedback = forwardRef<TamaguiElement, FeedbackProps>(
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
               onPressedChange={handleDislikePress}>
-              <ThumbsDown
-                aria-hidden={true}
-                size={Math.round(BASE_ICON_SIZE * getFormSizeScale(size))}
-                variant={disliked ? "filled" : "regular"}
-                color={
-                  hovered && !disabled
-                    ? "primary-hovered"
-                    : disliked
-                      ? "primary-active"
-                      : "primary"
-                }
-              />
+              {/* The glyph's mass sits high; drop it to look centred. */}
+              <View
+                position="relative"
+                top={Math.round(
+                  (BASE_ICON_SIZE * getFormSizeScale(size)) / 24
+                )}>
+                <ThumbsDown
+                  aria-hidden={true}
+                  size={Math.round(BASE_ICON_SIZE * getFormSizeScale(size))}
+                  variant={disliked ? "filled" : "regular"}
+                  color={
+                    hovered && !disabled
+                      ? "primary-hovered"
+                      : disliked
+                        ? "primary-active"
+                        : "primary"
+                  }
+                />
+              </View>
             </Toggle>
           </Popover.Anchor>
 

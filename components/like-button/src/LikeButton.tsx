@@ -196,7 +196,13 @@ export const LikeButton = forwardRef<TamaguiElement, LikeButtonProps>(
           onMouseLeave?.(event);
         }}
         onPressedChange={handlePress}>
-        <View ref={thumbRef} aria-hidden={true}>
+        {/* The glyph's mass sits low; lift it to look centred in the circle.
+            `top`, not a transform, so the press animation doesn't override it. */}
+        <View
+          ref={thumbRef}
+          aria-hidden={true}
+          position="relative"
+          top={-Math.round(iconSize / 24)}>
           <ThumbsUp
             size={iconSize}
             variant={liked ? "filled" : "regular"}
