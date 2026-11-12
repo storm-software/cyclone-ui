@@ -1225,6 +1225,10 @@ const FieldLabelTextImpl = createStyledHOC(
           ref={forwardedRef}
           id={getFieldLabelId(name)}
           htmlFor={name}
+          // Keep the control focused until click activates the label. Blurring
+          // on mouse-down moves an empty floating label out from under the
+          // pointer, so mouse-up can miss it (notably inside drawer focus scopes).
+          onMouseDown={event => event.preventDefault()}
           marginLeft={`${isFloatingVariant || underlined ? "zero" : "md"}`}
           cursor={disabled ? "not-allowed" : "pointer"}>
           <LabelXStack

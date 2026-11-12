@@ -203,6 +203,40 @@ export const Floating: Story = {
   }
 };
 
+export const FloatingOptionalLabelFocus: Story = {
+  render: (props, { id }) => (
+    <Form name={`formName-${id}`} initialValues={{ inputName: "" }}>
+      <Field {...props} name="inputName">
+        <Field.Label variant="floating" showOptional={true}>
+          Telephone
+        </Field.Label>
+        <Input>
+          <Input.TextBox>
+            <Input.TextBox.Value />
+          </Input.TextBox>
+        </Input>
+      </Field>
+    </Form>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const input = canvas.getByRole("textbox");
+    const optional = canvas.getByText("(Optional)");
+
+    await userEvent.click(optional);
+    await expect(input).toHaveFocus();
+
+    // A press must not blur the empty control and move its floating label
+    // away before the pointer is released, losing the label's click.
+    await userEvent.pointer({ target: optional, keys: "[MouseLeft>]" });
+    await expect(input).toHaveFocus();
+    await userEvent.pointer({ target: optional, keys: "[/MouseLeft]" });
+    await expect(input).toHaveFocus();
+    await userEvent.keyboard("123");
+    await expect(input).toHaveValue("123");
+  }
+};
+
 export const FloatingWithPlaceholder: Story = {
   args: {
     labelVariant: "floating"

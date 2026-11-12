@@ -39,46 +39,31 @@ export const Medium = createIcon("Medium", {
       children: [
         {
           type: "path",
-          props: { d: "M5 19V5H7L11.5 19L16.5 5H18.5V19", strokeDasharray: 62 },
-          animations: [
-            {
-              prop: "strokeDashoffset",
-              dur: 0.5,
-              values: [62, 0],
-              freeze: true
-            }
-          ]
-        },
-        {
-          type: "path",
           props: {
-            d: "M3 5H7M16.5 5H21",
-            strokeDasharray: 5,
-            strokeDashoffset: 5
+            d: "M4.37 7.3a.75.75 0 0 0-.25-.65L2.25 4.4v-.34h5.8l4.48 9.83l3.94-9.83H22v.34l-1.6 1.53c-.13.1-.2.28-.17.45v11.24c-.03.17.04.35.17.45l1.56 1.53v.34h-7.84v-.34l1.61-1.57c.16-.15.16-.2.16-.44V8.5L11.4 19.9h-.6L5.57 8.5v7.64c-.07.32.06.64.29.86l2.1 2.57v.33H2v-.33L4.1 17a.94.94 0 0 0 .27-.86V7.3z",
+            fill: "currentColor",
+            fillOpacity: 0,
+            strokeDasharray: 132
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.5,
-              dur: 0.15,
-              values: [0],
+              dur: 0.8,
+              values: [132, 0],
               freeze: true
-            }
-          ]
-        },
-        {
-          type: "path",
-          props: {
-            d: "M3 19H7M15 19H21",
-            strokeDasharray: 7,
-            strokeDashoffset: 7
-          },
-          animations: [
+            },
             {
-              prop: "strokeDashoffset",
-              begin: 0.65,
-              dur: 0.15,
-              values: [0],
+              prop: "fillOpacity",
+              begin: 0.8,
+              dur: 0.4,
+              values: [1],
+              freeze: true
+            },
+            {
+              prop: "strokeWidth",
+              begin: 0.8,
+              dur: 0.4,
+              values: [1.5, 0.375],
               freeze: true
             }
           ]
@@ -99,46 +84,31 @@ export const Medium = createIcon("Medium", {
       children: [
         {
           type: "path",
-          props: { d: "M5 19V5H7L11.5 19L16.5 5H18.5V19", strokeDasharray: 62 },
-          animations: [
-            {
-              prop: "strokeDashoffset",
-              dur: 0.5,
-              values: [62, 0],
-              freeze: true
-            }
-          ]
-        },
-        {
-          type: "path",
           props: {
-            d: "M3 5H7M16.5 5H21",
-            strokeDasharray: 5,
-            strokeDashoffset: 5
+            d: "M4.37 7.3a.75.75 0 0 0-.25-.65L2.25 4.4v-.34h5.8l4.48 9.83l3.94-9.83H22v.34l-1.6 1.53c-.13.1-.2.28-.17.45v11.24c-.03.17.04.35.17.45l1.56 1.53v.34h-7.84v-.34l1.61-1.57c.16-.15.16-.2.16-.44V8.5L11.4 19.9h-.6L5.57 8.5v7.64c-.07.32.06.64.29.86l2.1 2.57v.33H2v-.33L4.1 17a.94.94 0 0 0 .27-.86V7.3z",
+            fill: "currentColor",
+            fillOpacity: 0,
+            strokeDasharray: 132
           },
           animations: [
             {
               prop: "strokeDashoffset",
-              begin: 0.5,
-              dur: 0.15,
-              values: [0],
+              dur: 0.8,
+              values: [132, 0],
               freeze: true
-            }
-          ]
-        },
-        {
-          type: "path",
-          props: {
-            d: "M3 19H7M15 19H21",
-            strokeDasharray: 7,
-            strokeDashoffset: 7
-          },
-          animations: [
+            },
             {
-              prop: "strokeDashoffset",
-              begin: 0.65,
-              dur: 0.15,
-              values: [0],
+              prop: "fillOpacity",
+              begin: 0.8,
+              dur: 0.4,
+              values: [1],
+              freeze: true
+            },
+            {
+              prop: "strokeWidth",
+              begin: 0.8,
+              dur: 0.4,
+              values: [2, 0.5],
               freeze: true
             }
           ]

@@ -586,8 +586,8 @@ The catalog has 581 icons. 123 of them (marked *) are drawn for Cyclone UI in th
 | `Puzzle` *                  |     ✓     |        |    ✓     |               |
 | `Qrcode` *                  |     ✓     |        |          |               |
 | `Question`                  |     ✓     |        |          |               |
-| `QuestionCircle`            |     ✓     |        |          |               |
-| `QuestionSquare`            |     ✓     |        |          |               |
+| `QuestionCircle` *          |     ✓     |        |    ✓     |               |
+| `QuestionSquare` *          |     ✓     |        |    ✓     |               |
 | `Reddit`                    |     ✓     |   ✓    |          |               |
 | `RedditCircle`              |     ✓     |   ✓    |          |               |
 | `Remove`                    |     ✓     |        |          |               |
