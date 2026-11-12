@@ -97,7 +97,7 @@ const AlertCloseImpl = createStyledHOC(
     );
   },
   {
-    displayName: "Alert"
+    displayName: "Alert.Close"
   }
 );
 
@@ -130,8 +130,10 @@ const AlertFrameImpl = ({
   );
 };
 
+AlertFrameImpl.displayName = "Alert";
+
 const AlertIconBackground = styled(View, {
-  displayName: "Alert",
+  displayName: "AlertIconBackground",
   theme: "base",
   padding: "xl",
   backgroundColor: "floating",
@@ -185,7 +187,7 @@ const AlertIcon = createStyledHOC(
     );
   },
   {
-    displayName: "Alert"
+    displayName: "Alert.Icon"
   }
 );
 
@@ -204,7 +206,7 @@ const AlertContent = createStyledHOC(
     );
   },
   {
-    displayName: "Alert"
+    displayName: "Alert.Content"
   }
 );
 
@@ -227,12 +229,12 @@ const AlertHeadingImpl = createStyledHOC(
     );
   },
   {
-    displayName: "AlertHeading"
+    displayName: "Alert.Content.Heading"
   }
 );
 
 const AlertBody = styled(BodyText, {
-  displayName: "AlertBody"
+  displayName: "Alert.Content.Body"
 });
 
 const AlertBodyImpl = createStyledHOC(
@@ -247,7 +249,7 @@ const AlertBodyImpl = createStyledHOC(
     );
   },
   {
-    displayName: "AlertBody"
+    displayName: "Alert.Content.Body"
   }
 );
 

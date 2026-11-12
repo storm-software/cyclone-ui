@@ -62,7 +62,11 @@ export const PreviousButton: TamaguiComponent<
         {...props}>
         <XStack gap="2xl" alignItems="center">
           <Button.Icon>
-            <LeftArrow isComplete={hovering} animateShrink={animateShrink} />
+            <LeftArrow
+              fitContent
+              isComplete={hovering}
+              animateShrink={animateShrink}
+            />
           </Button.Icon>
           {!hideText && <Button.Text>{children || "Previous"}</Button.Text>}
         </XStack>

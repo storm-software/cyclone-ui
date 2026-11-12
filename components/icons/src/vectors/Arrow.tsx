@@ -57,11 +57,14 @@ export type ArrowProps = IconProps &
   Pick<ArrowContainerProps, "pointing"> & {
     isComplete?: boolean;
     animateShrink?: boolean;
+    /** Size the horizontal viewport to the visible arrow as it animates. */
+    fitContent?: boolean;
   };
 
 const Icon = ({
   isComplete = true,
   animateShrink = true,
+  fitContent = false,
   size = 24,
   pointing = "right",
   ...props
@@ -88,12 +91,19 @@ const Icon = ({
     return () => controls.stop();
   }, [isComplete, animateShrink, motionPosition]);
 
+  // Include the round stroke caps, keeping the original SVG's pixel scale.
+  // A fixed viewport otherwise reserves empty space beyond a collapsed arrow.
+  const fitHorizontal =
+    fitContent && (pointing === "left" || pointing === "right");
+  const start = Math.min(7, position) - 1.5;
+  const width = position + 7 + 1.5 - start;
+
   return (
     <ArrowContainer pointing={pointing} maxWidth={size} maxHeight={size * 0.6}>
       <Svg
-        width={size}
+        width={fitHorizontal ? (size * width) / 34 : size}
         height={size * 0.6}
-        viewBox="-1 0 34 16"
+        viewBox={fitHorizontal ? `${start} 0 ${width} 16` : "-1 0 34 16"}
         fill="none"
         stroke={color}
         {...props}
