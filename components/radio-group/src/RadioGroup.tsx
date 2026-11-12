@@ -49,8 +49,16 @@ import {
   RadioGroupContext as TamaguiRadioGroupContext
 } from "@tamagui/radio-group";
 import { XStack, YStack } from "@tamagui/stacks";
-import type { ContextType, FocusEvent, ReactNode } from "react";
-import { createContext, Suspense, use, useCallback, useId } from "react";
+import type { ContextType, FocusEvent, ReactElement, ReactNode } from "react";
+import {
+  cloneElement,
+  createContext,
+  isValidElement,
+  Suspense,
+  use,
+  useCallback,
+  useId
+} from "react";
 import type { GestureResponderEvent } from "react-native";
 
 export interface RadioGroupContextProps {
@@ -266,7 +274,9 @@ export type RadioGroupItemProps = GetProps<
     disabled?: boolean;
     /**
      * An icon shown on the item's left side, centered vertically. Give it
-     * `color="currentColor"` to follow the item's state colors.
+     * `color="currentColor"` to follow the item's state colors. A Cyclone
+     * icon without its own `variant` is drawn `regular`, and `filled` while
+     * the item is selected.
      */
     icon?: ReactNode;
   };
@@ -375,7 +385,14 @@ const RadioGroupItemContainer = createStyledHOC(
             flexShrink={0}
             transition="200ms"
             color={textColor("emphasis")}>
-            {icon}
+            {isValidElement<{ variant?: string }>(icon) &&
+            icon.props.variant === undefined &&
+            // Only Cyclone icons (`createIcon`) list their variants.
+            Array.isArray((icon.type as { variants?: unknown }).variants)
+              ? cloneElement(icon as ReactElement<{ variant?: string }>, {
+                  variant: selected ? "filled" : "regular"
+                })
+              : icon}
           </Text>
         )}
 
