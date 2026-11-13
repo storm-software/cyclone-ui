@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Tokens
 
+## [0.3.59](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.59) (11/13/2026)
+
+### Features
+
+- **theme-toggler:** Initial check-in of the theme toggler component package ([394299dcf](https://github.com/storm-software/cyclone-ui/commit/394299dcf))
+
 ## [0.3.56](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.56) (11/11/2026)
 
 ### Features

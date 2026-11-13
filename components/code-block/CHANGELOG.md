@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Code Block
 
+## [0.6.77](https://github.com/storm-software/cyclone-ui/releases/tag/code-block%400.6.77) (11/13/2026)
+
+### Features
+
+- **theme-toggler:** Initial check-in of the theme toggler component package ([394299dcf](https://github.com/storm-software/cyclone-ui/commit/394299dcf))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.76**
+- Updated **icons** to **v0.0.71**
+- Updated **scroll-view** to **v0.5.75**
+
 ## [0.6.76](https://github.com/storm-software/cyclone-ui/releases/tag/code-block%400.6.76) (11/12/2026)
 
 ### Updated Dependencies

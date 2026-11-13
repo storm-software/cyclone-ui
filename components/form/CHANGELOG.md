@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Form
 
+## [0.9.72](https://github.com/storm-software/cyclone-ui/releases/tag/form%400.9.72) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **state** to **v0.0.73**
+
 ## [0.9.71](https://github.com/storm-software/cyclone-ui/releases/tag/form%400.9.71) (11/12/2026)
 
 ### Updated Dependencies

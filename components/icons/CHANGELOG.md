@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Icons
 
+## [0.0.71](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.71) (11/13/2026)
+
+### Features
+
+- **theme-toggler:** Initial check-in of the theme toggler component package ([394299dcf](https://github.com/storm-software/cyclone-ui/commit/394299dcf))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.71**
+
 ## [0.0.70](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.70) (11/12/2026)
 
 ### Bug Fixes

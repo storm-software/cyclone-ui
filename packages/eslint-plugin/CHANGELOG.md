@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - ESLint Plugin
 
+## [0.0.60](https://github.com/storm-software/cyclone-ui/releases/tag/eslint-plugin%400.0.60) (11/13/2026)
+
+### Features
+
+- **theme-toggler:** Initial check-in of the theme toggler component package ([394299dcf](https://github.com/storm-software/cyclone-ui/commit/394299dcf))
+
 ## [0.0.59](https://github.com/storm-software/cyclone-ui/releases/tag/eslint-plugin%400.0.59) (11/12/2026)
 
 ### Features

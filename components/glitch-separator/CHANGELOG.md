@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Glitch Separator
 
+## [0.0.67](https://github.com/storm-software/cyclone-ui/releases/tag/glitch-separator%400.0.67) (11/13/2026)
+
+### Features
+
+- **theme-toggler:** Initial check-in of the theme toggler component package ([394299dcf](https://github.com/storm-software/cyclone-ui/commit/394299dcf))
+
 ## [0.0.43](https://github.com/storm-software/cyclone-ui/releases/tag/glitch-separator%400.0.43) (11/04/2026)
 
 ### Miscellaneous
