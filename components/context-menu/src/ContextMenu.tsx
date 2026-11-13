@@ -31,7 +31,7 @@ import type { ContainerVariant } from "@cyclone-ui/container";
 import { getContainerForeground } from "@cyclone-ui/container";
 import { Popover } from "@cyclone-ui/popover";
 import { Tooltip } from "@cyclone-ui/tooltip";
-import type { GetProps, LayoutEvent, ThemeName } from "@tamagui/core";
+import type { GetProps, ThemeName } from "@tamagui/core";
 import {
   createStyledContext,
   createStyledHOC,
@@ -49,7 +49,8 @@ import { getContextMenuSize } from "./utilities";
 
 // Menus narrower than this center their item text, unless an item shows an
 // indicator (see `CONTEXT_MENU_STYLES`).
-const NARROW_MENU_WIDTH = getSized("20xl");
+// Resolved lazily: tokens are not available until `createTamagui` runs.
+const getNarrowMenuWidth = () => getSized("20xl");
 
 const CONTEXT_MENU_STYLES = `
 [data-context-menu-item]:last-child [data-context-menu-item-divider] {
@@ -206,7 +207,7 @@ const ContextMenuContent = ({
     }
 
     const resizeObserver = new ResizeObserver(([entry]) =>
-      setNarrow(entry!.contentRect.width < NARROW_MENU_WIDTH)
+      setNarrow(entry!.contentRect.width < getNarrowMenuWidth())
     );
     resizeObserver.observe(menu);
 
@@ -214,13 +215,22 @@ const ContextMenuContent = ({
   }, [menu]);
 
   return (
-    <Popover.Content maxWidth="90vw" padding={contentPadding} {...props}>
+    <Popover.Content
+      maxWidth="90vw"
+      // Never past the viewport edge: the popper's available height on the
+      // side it placed (or flipped) the menu, less `stayInFrame`'s 10px. The
+      // scroll view shrinks to fit.
+      maxHeight="calc(var(--tamagui-popper-available-height, 100vh) - 10px)"
+      padding={contentPadding}
+      {...props}>
       {/* Adapted to a sheet, only the children render, so they carry the
           layout, styles and keyboard navigation. */}
       <View
         data-context-menu-narrow={narrow ? "" : undefined}
         gap={contentGap}
         width="100%"
+        flexShrink={1}
+        minHeight={0}
         ref={setMenu as any}
         onKeyDown={(event: any) => {
           const step =
@@ -270,10 +280,12 @@ const ContextMenuScrollView = ({
     <Popover.Content.ScrollView
       size="lg"
       maxHeight="47xl"
+      flexShrink={1}
+      minHeight={0}
       paddingRight={isOverflowing ? "3xl" : 0}
       {...props}
       style={[style, { scrollbarGutter: "auto" }]}
-      onLayout={(event: LayoutEvent) => {
+      onLayout={(event: any) => {
         setViewportHeight(event.nativeEvent.layout.height);
         onLayout?.(event);
       }}

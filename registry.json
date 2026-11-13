@@ -707,6 +707,7 @@
       "registryDependencies": [
         "@cyclone-ui/color-area",
         "@cyclone-ui/input",
+        "@cyclone-ui/icons",
         "@cyclone-ui/popover",
         "@cyclone-ui/toggle-group"
       ],
@@ -5471,6 +5472,50 @@
         {
           "path": "components/tooltip/src/Tooltip.tsx",
           "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "@cyclone-ui/topographic-background",
+      "type": "registry:component",
+      "title": "@cyclone-ui/topographic-background",
+      "description": "A full-bleed topographic map background for the web. The interactive variant follows the light or dark theme, gently warps the contour lines with WebGL and paints the colored map in under the cursor, respecting reduced motion. Static dark, light and color variants show the image alone with no motion or hover effect.",
+      "dependencies": ["@tamagui/core@3.3.2"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "files": [
+        {
+          "path": "components/topographic-background/src/TopographicBackground.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/topographic-background/src/images.ts",
+          "type": "registry:file",
+          "target": "components/topographic-background/src/images.ts"
+        },
+        {
+          "path": "components/topographic-background/src/topography.ts",
+          "type": "registry:file",
+          "target": "components/topographic-background/src/topography.ts"
+        },
+        {
+          "path": "components/topographic-background/src/assets/topography-color.svg",
+          "type": "registry:file",
+          "target": "components/topographic-background/src/assets/topography-color.svg"
+        },
+        {
+          "path": "components/topographic-background/src/assets/topography-dark.svg",
+          "type": "registry:file",
+          "target": "components/topographic-background/src/assets/topography-dark.svg"
+        },
+        {
+          "path": "components/topographic-background/src/assets/topography-light.svg",
+          "type": "registry:file",
+          "target": "components/topographic-background/src/assets/topography-light.svg"
         }
       ]
     },

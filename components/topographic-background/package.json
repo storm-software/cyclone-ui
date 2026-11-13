@@ -1,0 +1,56 @@
+{
+  "name": "@cyclone-ui/topographic-background",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A full-bleed topographic map background for the web. The interactive variant follows the light or dark theme, gently warps the contour lines with WebGL and paints the colored map in under the cursor, respecting reduced motion. Static dark, light and color variants show the image alone with no motion or hover effect.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/topographic-background"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./images": {
+      "import": "./dist/images.mjs",
+      "require": "./dist/images.cjs"
+    },
+    "./TopographicBackground": {
+      "import": "./dist/TopographicBackground.mjs",
+      "require": "./dist/TopographicBackground.cjs"
+    },
+    "./topography": {
+      "import": "./dist/topography.mjs",
+      "require": "./dist/topography.cjs"
+    },
+    "./*": "./*",
+    "./assets/*": "./dist/assets/*"
+  }
+}

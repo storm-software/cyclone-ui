@@ -21,7 +21,7 @@
 import { Button } from "@cyclone-ui/button";
 import { EyebrowText } from "@cyclone-ui/eyebrow-text";
 import { HeadingLargeText } from "@cyclone-ui/heading-text";
-import type { IconComponent } from "@cyclone-ui/icons";
+import type { IconComponent, IconProps } from "@cyclone-ui/icons";
 import { MenuToggle } from "@cyclone-ui/icons/vectors";
 import { Link } from "@cyclone-ui/link";
 import { RedactedAnimation } from "@cyclone-ui/redacted-animation";
@@ -33,6 +33,7 @@ import type { GetProps } from "@tamagui/core";
 import {
   createStyledHOC,
   styled,
+  Text,
   useMedia,
   View,
   withStaticProperties
@@ -712,7 +713,10 @@ export interface NavigationHeaderSocialProps {
 /** Social links shown in the footer of the compact menu. */
 const NavigationHeaderSocialSlot = (_: NavigationHeaderSocialProps) => null;
 
-export interface NavigationHeaderSocialLinkProps {
+export interface NavigationHeaderSocialLinkProps extends Pick<
+  IconProps,
+  "size" | "color" | "variant" | "animated" | "mirrored"
+> {
   href: string;
   /** Accessible name, since the link shows only its icon. */
   label: string;
@@ -1195,7 +1199,8 @@ const NavigationHeaderRoot = createStyledHOC(
                       {menuOpen ? (
                         <RedactedAnimation
                           delay={350 + index * entranceStagger}>
-                          {item.label}
+                          {/* RedactedAnimation is a View; raw text children are invalid. */}
+                          <Text>{item.label}</Text>
                         </RedactedAnimation>
                       ) : (
                         item.label
@@ -1214,24 +1219,36 @@ const NavigationHeaderRoot = createStyledHOC(
               {socialLinks.length > 0 && (
                 <NavigationHeaderMobileSocial
                   aria-label={social?.props.label ?? "Social links"}>
-                  {socialLinks.map(({ props: link }) => (
-                    <NavigationHeaderSocialLink
-                      key={link.href}
-                      group={false}
-                      variant="subtle"
-                      underline="none"
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={link.label}>
-                      {/* `currentColor` follows the link's hover color. */}
-                      <link.icon
-                        aria-hidden={true}
-                        color="currentColor"
-                        size="6xl"
-                      />
-                    </NavigationHeaderSocialLink>
-                  ))}
+                  {socialLinks.map(
+                    ({
+                      props: {
+                        icon: Icon,
+                        size = "6xl",
+                        color = "currentColor",
+                        ...link
+                      }
+                    }) => (
+                      <NavigationHeaderSocialLink
+                        key={link.href}
+                        group={false}
+                        variant="subtle"
+                        underline="none"
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={link.label}>
+                        {/* `currentColor` follows the link's hover color. */}
+                        <Icon
+                          aria-hidden={true}
+                          color={color}
+                          size={size}
+                          variant={link.variant}
+                          animated={link.animated}
+                          mirrored={link.mirrored}
+                        />
+                      </NavigationHeaderSocialLink>
+                    )
+                  )}
                 </NavigationHeaderMobileSocial>
               )}
             </NavigationHeaderMobileContent>

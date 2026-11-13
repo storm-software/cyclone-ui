@@ -4704,6 +4704,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/topographic-background",
+      jsx: ["TopographicBackground"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/type-table",
       jsx: ["TypeTable"],
       roles: []

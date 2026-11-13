@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { existsSync } from "node:fs";
 import type { TsdownInputOption, UserConfig } from "tsdown";
 import { defineConfig } from "tsdown";
 
@@ -43,11 +44,18 @@ export const DEFAULT_OPTIONS: Omit<Partial<UserConfig>, "name"> = {
   nodeProtocol: true,
   unbundle: true,
   exports: {
-    all: true
+    all: true,
+    // Packages with static files expose them as `<package>/assets/<file>`.
+    customExports: exports =>
+      existsSync("src/assets")
+        ? { ...exports, "./assets/*": "./dist/assets/*" }
+        : exports
   },
   deps: {
     neverBundle: true
-  }
+  },
+  // Static files referenced with `new URL("./assets/…", import.meta.url)`.
+  copy: [{ from: "src/assets/**/*", to: "dist/assets" }]
 };
 
 function getNegativeTestPath(path: string) {
