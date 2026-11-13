@@ -32,16 +32,11 @@ import {
  * The following color roles are checked:
  * - base
  * - brand
- * - alternate
- * - accent
- * - link
  * - discovery
  * - info
  * - warning
  * - danger
  * - success
- * - positive
- * - negative
  *
  * @returns The color role scheme for the theme name or undefined
  */
@@ -58,16 +53,11 @@ export const useColorThemeName = (): ColorThemeName | undefined => {
  * The following color roles are checked:
  * - base
  * - brand
- * - alternate
- * - accent
- * - link
  * - discovery
  * - info
  * - warning
  * - danger
  * - success
- * - positive
- * - negative
  *
  * @returns An indication if a theme color scheme is set
  */

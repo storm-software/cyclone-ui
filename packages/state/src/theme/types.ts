@@ -25,9 +25,7 @@ export type ColorThemeName =
   | "info"
   | "warning"
   | "danger"
-  | "success"
-  | "positive"
-  | "negative";
+  | "success";
 
 export interface ThemeOptions {
   /**

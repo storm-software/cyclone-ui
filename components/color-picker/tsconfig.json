@@ -24,6 +24,9 @@
       "path": "../popover"
     },
     {
+      "path": "../icons"
+    },
+    {
       "path": "../input"
     },
     {

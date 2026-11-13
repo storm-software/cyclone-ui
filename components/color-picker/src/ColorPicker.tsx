@@ -29,6 +29,7 @@ import {
   useFieldLabelDefaults,
   useFormControl
 } from "@cyclone-ui/helpers";
+import { PaintDrop } from "@cyclone-ui/icons";
 import type { InputChangeEventHandler } from "@cyclone-ui/input";
 import { Input } from "@cyclone-ui/input";
 import { Popover } from "@cyclone-ui/popover";
@@ -100,17 +101,34 @@ const useColorPicker = (part: string) => {
   return context;
 };
 
-/** The hairline drawn over a color, which keeps light colors visible. */
-const Hairline = ({ borderRadius }: Pick<ViewProps, "borderRadius">) => (
-  <View
-    position="absolute"
-    inset={0}
-    borderRadius={borderRadius}
-    borderWidth={1}
-    borderColor={HAIRLINE}
-    pointerEvents="none"
-  />
-);
+/**
+ * The hairline drawn over a color, which keeps light colors visible.
+ * A `dropSize` traces the paint-drop stroke; otherwise the border follows
+ * `borderRadius` (circle or square).
+ */
+const Hairline = ({
+  borderRadius,
+  dropSize
+}: Pick<ViewProps, "borderRadius"> & { dropSize?: number }) =>
+  dropSize == null ? (
+    <View
+      position="absolute"
+      inset={0}
+      borderRadius={borderRadius}
+      borderWidth={1}
+      borderColor={HAIRLINE}
+      pointerEvents="none"
+    />
+  ) : (
+    <View position="absolute" inset={0} pointerEvents="none">
+      <PaintDrop
+        variant="regular"
+        animated={false}
+        size={dropSize}
+        color={HAIRLINE}
+      />
+    </View>
+  );
 
 export type ColorPickerAreaProps = Omit<
   ColorAreaProps,
@@ -357,7 +375,7 @@ const ColorPickerChannelField = ({
       <Input
         size="sm"
         disabled={disabled}
-        onChange={event => {
+        onChange={(event: CustomEvent<string>) => {
           if (state.validate(event.detail)) {
             state.setInputValue(event.detail);
           }
@@ -519,6 +537,8 @@ const ColorPickerDefaultContent = ({
   );
 };
 
+export type ColorPickerTriggerStyle = "paintdrop" | "circle" | "square";
+
 export interface ColorPickerExtraProps {
   /** The color (controlled), or `null` for none. */
   value?: string | Color | null;
@@ -535,6 +555,12 @@ export interface ColorPickerExtraProps {
   placeholder?: string;
   /** The popover's content, replacing the default. */
   children?: ReactNode;
+  /**
+   * The style of the trigger.
+   *
+   * @defaultValue "paintdrop"
+   */
+  triggerStyle?: ColorPickerTriggerStyle;
 }
 
 export type ColorPickerProps = Omit<
@@ -558,6 +584,7 @@ const ColorPickerImpl = createStyledHOC(
       swatches,
       placeholder,
       "aria-label": ariaLabel,
+      triggerStyle = "paintdrop",
       ...props
     }: ColorPickerProps,
     forwardedRef
@@ -654,7 +681,17 @@ const ColorPickerImpl = createStyledHOC(
       () => ({ color: color ?? EMPTY_COLOR, setColor, disabled }),
       [color, disabled, setColor]
     );
-    const swatchSize = 22 * getFormSizeScale(size);
+    const swatchSize = useMemo(
+      () =>
+        ((triggerStyle === "paintdrop"
+          ? 25.75
+          : triggerStyle === "square"
+            ? 20
+            : 22) as number) * getFormSizeScale(size),
+      [size, triggerStyle]
+    );
+    // Same radius as the swatch, so the hairline follows the trigger shape.
+    const swatchRadius = triggerStyle === "circle" ? 100_000 : 0;
 
     return (
       <ColorPickerContext value={context}>
@@ -678,16 +715,31 @@ const ColorPickerImpl = createStyledHOC(
                 <Input.Trigger
                   disabled={disabled}
                   aria-label={`Select color${color ? `, currently ${formatColor(color)}` : ""}`}>
-                  <View
-                    width={swatchSize}
-                    height={swatchSize}
-                    borderRadius={100_000}
-                    opacity={disabled ? 0.5 : 1}
-                    {...getSwatchBackground(
-                      color ? color.toString("css") : "transparent"
-                    )}>
-                    <Hairline borderRadius={100_000} />
-                  </View>
+                  {triggerStyle === "paintdrop" ? (
+                    <View
+                      position="relative"
+                      width={swatchSize}
+                      height={swatchSize}
+                      opacity={disabled ? 0.5 : 1}>
+                      <PaintDrop
+                        variant="filled"
+                        size={swatchSize}
+                        color={color ? color.toString("css") : "transparent"}
+                      />
+                      <Hairline dropSize={swatchSize} />
+                    </View>
+                  ) : (
+                    <View
+                      width={swatchSize}
+                      height={swatchSize}
+                      borderRadius={swatchRadius}
+                      opacity={disabled ? 0.5 : 1}
+                      {...getSwatchBackground(
+                        color ? color.toString("css") : "transparent"
+                      )}>
+                      <Hairline borderRadius={swatchRadius} />
+                    </View>
+                  )}
                 </Input.Trigger>
               </Popover.Trigger>
               <Input.Separator />

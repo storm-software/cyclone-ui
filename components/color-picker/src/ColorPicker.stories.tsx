@@ -67,6 +67,7 @@ const meta: Meta<ColorPickerStoryArgs> = {
       labelVariant,
       variant,
       swatches,
+      triggerStyle,
       ...props
     }: any,
     { id }: { id: string }
@@ -76,7 +77,7 @@ const meta: Meta<ColorPickerStoryArgs> = {
       initialValues={{ colorPickerName: defaultValue }}>
       <Field name="colorPickerName" {...props} variant={variant}>
         <Field.Label variant={labelVariant}>Label Text</Field.Label>
-        <ColorPicker variant={variant} size={props.size} swatches={swatches} />
+        <ColorPicker variant={variant} size={props.size} swatches={swatches} triggerStyle={triggerStyle} />
         {description && <Field.Details>{description}</Field.Details>}
       </Field>
     </Form>
@@ -127,6 +128,18 @@ export const Base: Story = {
 
 export const Empty: Story = {
   args: { defaultValue: null }
+};
+
+export const PaintdropTrigger: Story = {
+  args: { triggerStyle: "paintdrop" }
+};
+
+export const CircleTrigger: Story = {
+  args: { triggerStyle: "circle" }
+};
+
+export const SquareTrigger: Story = {
+  args: { triggerStyle: "square" }
 };
 
 export const NoSwatches: Story = {

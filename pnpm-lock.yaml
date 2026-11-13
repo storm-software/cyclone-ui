@@ -1921,6 +1921,9 @@ importers:
       '@cyclone-ui/helpers':
         specifier: workspace:*
         version: link:../../packages/helpers
+      '@cyclone-ui/icons':
+        specifier: workspace:*
+        version: link:../icons
       '@cyclone-ui/input':
         specifier: workspace:*
         version: link:../input

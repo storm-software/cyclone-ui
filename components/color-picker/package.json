@@ -21,6 +21,7 @@
     "@cyclone-ui/color-area": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/input": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/popover": "workspace:*",
     "@cyclone-ui/toggle-group": "workspace:*",
     "@react-stately/color": "catalog:",

@@ -30,15 +30,12 @@ import type { ColorThemeName } from "../types";
  * @remarks
  * The following color roles are checked:
  * - base
- * - secondary
  * - brand
  * - discovery
  * - info
  * - warning
  * - danger
  * - success
- * - positive
- * - negative
  *
  * @param theme - The theme name
  * @returns The color role scheme for the theme name or undefined
@@ -61,10 +58,6 @@ export const getThemeColorThemeName = (
       return "danger";
     } else if (theme.includes("success")) {
       return "success";
-    } else if (theme.includes("positive")) {
-      return "positive";
-    } else if (theme.includes("negative")) {
-      return "negative";
     }
   }
 
@@ -83,15 +76,12 @@ export const getThemeColorThemeName = (
  * @remarks
  * The following color roles are checked:
  * - base
- * - secondary
  * - brand
  * - discovery
  * - info
  * - warning
  * - danger
  * - success
- * - positive
- * - negative
  *
  * @param theme - The theme name
  * @returns An indication if a theme color scheme is set
