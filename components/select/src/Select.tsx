@@ -435,7 +435,7 @@ const SelectFallback = ({
       disabled={disabled}
       hasValidationMessage={hasValidationMessage}>
       <SelectNativeValue
-        id={name}
+        id={formControl?.id ?? name}
         // `<select>` attributes, which Tamagui's `Text` doesn't type.
         {...({
           name,

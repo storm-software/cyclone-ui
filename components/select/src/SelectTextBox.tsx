@@ -77,7 +77,7 @@ const SelectTextBoxImpl = createStyledHOC(
           {...({ type: "button" } as object)}
           aria-required={formControl?.required ? true : undefined}
           {...getFormControlAriaProps(formControl)}
-          id={name}
+          id={formControl?.id ?? name}
           data-select-trigger
           disabled={disabled}
           data-disabled={disabled ? "" : undefined}

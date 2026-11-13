@@ -336,7 +336,7 @@ const BaseSwitchImpl = createStyledHOC(
           {...props}
           // Names the hidden input the switch submits with its form.
           name={name}
-          id={name}
+          id={formControl?.id ?? name}
           aria-readonly={readOnly || undefined}
           size={size}
           checked={checked}

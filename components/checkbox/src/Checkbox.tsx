@@ -261,7 +261,7 @@ export const Checkbox = createStyledHOC(
           {...rest}
           // Names the hidden input the checkbox submits with its form.
           name={name}
-          id={name}
+          id={formControl?.id ?? name}
           aria-readonly={readOnly || undefined}
           onFocus={onFocus}
           onBlur={onBlur}

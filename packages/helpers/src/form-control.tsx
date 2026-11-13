@@ -78,8 +78,15 @@ export interface FieldConstraints {
  * state library.
  */
 export interface FormControlState {
-  /** The field name, also used as the control's `id`. */
+  /** The field name. */
   name?: string;
+
+  /**
+   * The control's element `id`, unique to this field instance: two forms on a
+   * page (a drawer over a page, say) can share field names, and a label's
+   * `htmlFor` would otherwise target whichever control comes first.
+   */
+  id?: string;
 
   /** The field's current (parsed) value. */
   value?: any;

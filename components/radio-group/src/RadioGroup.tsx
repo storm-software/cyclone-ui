@@ -617,7 +617,7 @@ const RadioGroupImpl = createStyledHOC(
         fallback={
           <RadioGroupFallbackFrame
             role="radiogroup"
-            id={name}
+            id={formControl?.id ?? name}
             aria-required={required ? true : undefined}
             aria-disabled={Boolean(disabled) || undefined}
             aria-readonly={readOnly || undefined}
@@ -638,7 +638,7 @@ const RadioGroupImpl = createStyledHOC(
           </RadioGroupFallbackFrame>
         }>
         <RadioGroupFrame
-          id={name}
+          id={formControl?.id ?? name}
           aria-readonly={readOnly || undefined}
           {...ariaProps}
           ref={forwardedRef}

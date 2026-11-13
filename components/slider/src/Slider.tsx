@@ -222,7 +222,7 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
       // The thumbs are not labelable elements, so they reference the field
       // label by id rather than through its `htmlFor`.
       "aria-labelledby": ariaLabelledBy = formControl
-        ? `${formControl.name}-label`
+        ? `${formControl.id ?? formControl.name}-label`
         : undefined,
       getAriaLabel,
       getAriaValueText,

@@ -22,7 +22,8 @@ import type { FormControlSize } from "@cyclone-ui/helpers";
 import {
   getFieldLabelInset,
   getFormSizeScale,
-  useFieldHasStartIcon
+  useFieldHasStartIcon,
+  useFormControl
 } from "@cyclone-ui/helpers";
 import type {
   GetProps,
@@ -155,6 +156,8 @@ export const InputValue = createStyledHOC(
     const disabled = inProps.disabled ?? contextDisabled;
     const readOnly = inProps.readOnly ?? contextReadOnly;
     const name = inProps.name ?? behaviorName ?? contextName;
+    // Unique per field, so the field label's `htmlFor` targets this input.
+    const id = useFormControl()?.id ?? name;
 
     const ref =
       useRef<TamaguiWebElement<HTMLInputElement | HTMLTextAreaElement>>(null);
@@ -314,7 +317,7 @@ export const InputValue = createStyledHOC(
           name={name}
           disabled={disabled}
           readOnly={readOnly}
-          id={name}
+          id={id}
           style={{
             ...finalProps.style,
             ...(render === "textarea"

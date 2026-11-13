@@ -358,7 +358,7 @@ const FilePickerGroup = createStyledHOC(
           {/* need an empty input div just have image drop feature in the web */}
           {/* @ts-ignore */}
           <View
-            id={name}
+            id={formControl?.id ?? name}
             render="input"
             width={0}
             height={0}

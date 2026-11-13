@@ -165,10 +165,10 @@ const getNativeValidityMessages = (
  * thumb) cannot use the label's `htmlFor`, so they reference this id with
  * `aria-labelledby` instead.
  *
- * @param name - The field name.
+ * @param id - The control's id (`useFormControl().id`).
  * @returns The label element id.
  */
-export const getFieldLabelId = (name: string) => `${name}-label`;
+export const getFieldLabelId = (id: string) => `${id}-label`;
 
 const FieldDetailsContext = createContext<ReactNode>(null);
 
@@ -365,11 +365,12 @@ const FieldValidationTextImpl = createStyledHOC(
     const focused = field.focused.get();
     const size = field.size.get();
     const messages = field.messages.get();
+    const id = useFieldPresentation().id ?? name;
 
     return (
       <FieldValidationText
         ref={forwardedRef}
-        id={getFieldMessagesId(name)}
+        id={getFieldMessagesId(id)}
         {...rest}
         size={size}
         // Track the control's border so the message reads as part of the field.
@@ -428,9 +429,9 @@ const FieldGroupInnerImpl = createStyledHOC(
     const describedBy =
       [
         details != null && (detailsUnderLabel || !hasMessages)
-          ? getFieldDetailsId(name)
+          ? getFieldDetailsId(presentation.id ?? name)
           : undefined,
-        hasMessages ? getFieldMessagesId(name) : undefined
+        hasMessages ? getFieldMessagesId(presentation.id ?? name) : undefined
       ]
         .filter(Boolean)
         .join(" ") || undefined;
@@ -629,6 +630,9 @@ const FieldGroup = createStyledHOC(
       showDisabledMessage = false,
       ...rest
     } = props;
+    // `name` alone collides across forms: a label's `htmlFor` would focus the
+    // first control with that id, which may sit outside a drawer's focus trap.
+    const id = `${props.name}${useId()}`;
     const [labelVariant, setLabelVariant] = useState<FieldLabelVariant>();
     const [labelDefaults, setLabelDefaults] = useState<FieldLabelDefaults>();
     const [controlOptions, setControlOptions] = useState<FieldControlOptions>();
@@ -688,6 +692,7 @@ const FieldGroup = createStyledHOC(
     }, [buttonEntries, startIconCount, setButton]);
     const presentation = useMemo<FormControlState>(
       () => ({
+        id,
         variant,
         labelVariant,
         labelDefaults,
@@ -705,6 +710,7 @@ const FieldGroup = createStyledHOC(
         registerStartIcon
       }),
       [
+        id,
         variant,
         labelVariant,
         labelDefaults,
@@ -790,11 +796,12 @@ const FieldDetailsText = createStyledHOC(
     const disabled = field.disabled.get();
     const theme = field.theme.get();
     const size = field.size.get();
+    const id = useFieldPresentation().id ?? name;
 
     return (
       <FieldDetails
         ref={forwardedRef}
-        id={getFieldDetailsId(name)}
+        id={getFieldDetailsId(id)}
         {...rest}
         color={`${
           disabled ? "primary-disabled" : theme !== "base" ? "primary" : "ink"
@@ -995,7 +1002,7 @@ const FieldLabelTextImpl = createStyledHOC(
     forwardedRef
   ) => {
     const field = FieldApi.use();
-    const { variant, endIconCount, labelContentRef, labelDefaults } =
+    const { id, variant, endIconCount, labelContentRef, labelDefaults } =
       useFieldPresentation();
     // An underlined control's text starts flush with its left edge, and so
     // does its label (`floatingLabelLeft` moves it past a start icon).
@@ -1231,8 +1238,8 @@ const FieldLabelTextImpl = createStyledHOC(
         cursor={disabled ? "not-allowed" : "pointer"}>
         <TamaguiLabel
           ref={forwardedRef}
-          id={getFieldLabelId(name)}
-          htmlFor={name}
+          id={getFieldLabelId(id ?? name)}
+          htmlFor={id ?? name}
           // Keep the control focused until click activates the label. Blurring
           // on mouse-down moves an empty floating label out from under the
           // pointer, so mouse-up can miss it (notably inside drawer focus scopes).
@@ -1353,6 +1360,7 @@ const FieldLabel = createStyledHOC(
     const disabled = field.disabled.get();
     const required = field.required.get();
     const {
+      id,
       variant: fieldVariant,
       setLabelVariant,
       labelDefaults,
@@ -1379,7 +1387,7 @@ const FieldLabel = createStyledHOC(
       <FieldLabelTextImpl
         ref={forwardedRef}
         {...props}
-        htmlFor={name}
+        htmlFor={id ?? name}
         disabled={disabled}
         required={required}
         labelVariant={variant}
@@ -1400,7 +1408,7 @@ const FieldLabel = createStyledHOC(
             ? { fontSize: labelDefaults.inlineFontSize }
             : {})}
           {...props}
-          htmlFor={name}
+          htmlFor={id ?? name}
           disabled={disabled}
           required={required}
           labelVariant={variant}
