@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Select
 
+## [0.6.85](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.85) (11/13/2026)
+
+### Bug Fixes
+
+- **field:** Resolve focus provider issue with 2 fields with same name ([ed016afd5](https://github.com/storm-software/cyclone-ui/commit/ed016afd5))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.75**
+- Updated **context-menu** to **v0.0.73**
+- Updated **field** to **v0.5.83**
+- Updated **form** to **v0.9.77**
+- Updated **helpers** to **v0.3.76**
+- Updated **icons** to **v0.0.76**
+- Updated **input** to **v0.6.83**
+- Updated **tooltip** to **v0.5.81**
+
 ## [0.6.84](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.84) (11/13/2026)
 
 ### Features

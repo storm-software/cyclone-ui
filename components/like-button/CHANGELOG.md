@@ -2,6 +2,15 @@
 
 # Changelog for Cyclone UI - Like Button
 
+## [0.0.70](https://github.com/storm-software/cyclone-ui/releases/tag/like-button%400.0.70) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.76**
+- Updated **icons** to **v0.0.76**
+- Updated **toggle** to **v0.0.70**
+- Updated **tokens** to **v0.3.64**
+
 ## [0.0.69](https://github.com/storm-software/cyclone-ui/releases/tag/like-button%400.0.69) (11/13/2026)
 
 ### Updated Dependencies

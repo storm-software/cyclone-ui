@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Theme Builder
 
+## [0.0.65](https://github.com/storm-software/cyclone-ui/releases/tag/theme-builder%400.0.65) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **tokens** to **v0.3.64**
+
 ## [0.0.64](https://github.com/storm-software/cyclone-ui/releases/tag/theme-builder%400.0.64) (11/13/2026)
 
 ### Updated Dependencies

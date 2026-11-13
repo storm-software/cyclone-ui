@@ -2,6 +2,25 @@
 
 # Changelog for Cyclone UI - Field
 
+## [0.5.83](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.83) (11/13/2026)
+
+### Bug Fixes
+
+- **field:** Resolve focus provider issue with 2 fields with same name ([ed016afd5](https://github.com/storm-software/cyclone-ui/commit/ed016afd5))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.75**
+- Updated **button** to **v0.6.81**
+- Updated **form** to **v0.9.77**
+- Updated **helpers** to **v0.3.76**
+- Updated **icons** to **v0.0.76**
+- Updated **link** to **v0.5.82**
+- Updated **spinner** to **v0.5.75**
+- Updated **state** to **v0.0.78**
+- Updated **tooltip** to **v0.5.81**
+- Updated **validation-text** to **v0.5.80**
+
 ## [0.5.82](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.82) (11/13/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - File Picker
 
+## [0.5.84](https://github.com/storm-software/cyclone-ui/releases/tag/file-picker%400.5.84) (11/13/2026)
+
+### Bug Fixes
+
+- **field:** Resolve focus provider issue with 2 fields with same name ([ed016afd5](https://github.com/storm-software/cyclone-ui/commit/ed016afd5))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.81**
+- Updated **field** to **v0.5.83**
+- Updated **file** to **v0.0.32**
+- Updated **form** to **v0.9.77**
+- Updated **helpers** to **v0.3.76**
+- Updated **icons** to **v0.0.76**
+- Updated **state** to **v0.0.78**
+
 ## [0.5.83](https://github.com/storm-software/cyclone-ui/releases/tag/file-picker%400.5.83) (11/13/2026)
 
 ### Updated Dependencies

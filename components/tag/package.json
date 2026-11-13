@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/tag",
-  "version": "0.0.75",
+  "version": "0.0.76",
   "private": false,
   "description": "A compact label chip with Tag.Text and Tag.Icon subcomponents. It has the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating), shadow, glass and accented options, rounded, circular and pressable styles, and sizes. A removable tag has a remove button and an animated exit, with onBeforeRemove and onAfterRemove callbacks.",
   "repository": {

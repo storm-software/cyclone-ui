@@ -2,6 +2,15 @@
 
 # Changelog for Cyclone UI - OTP Input
 
+## [0.0.84](https://github.com/storm-software/cyclone-ui/releases/tag/otp-input%400.0.84) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.83**
+- Updated **form** to **v0.9.77**
+- Updated **helpers** to **v0.3.76**
+- Updated **input** to **v0.6.83**
+
 ## [0.0.83](https://github.com/storm-software/cyclone-ui/releases/tag/otp-input%400.0.83) (11/13/2026)
 
 ### Updated Dependencies

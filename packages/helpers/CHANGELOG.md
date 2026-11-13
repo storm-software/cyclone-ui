@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Helpers
 
+## [0.3.76](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.76) (11/13/2026)
+
+### Bug Fixes
+
+- **field:** Resolve focus provider issue with 2 fields with same name ([ed016afd5](https://github.com/storm-software/cyclone-ui/commit/ed016afd5))
+
 ## [0.3.67](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.67) (11/11/2026)
 
 ### Bug Fixes

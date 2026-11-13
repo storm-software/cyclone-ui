@@ -2,6 +2,14 @@
 
 # Changelog for Cyclone UI - Code Block
 
+## [0.6.83](https://github.com/storm-software/cyclone-ui/releases/tag/code-block%400.6.83) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.81**
+- Updated **icons** to **v0.0.76**
+- Updated **scroll-view** to **v0.5.81**
+
 ## [0.6.82](https://github.com/storm-software/cyclone-ui/releases/tag/code-block%400.6.82) (11/13/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Input
 
+## [0.6.83](https://github.com/storm-software/cyclone-ui/releases/tag/input%400.6.83) (11/13/2026)
+
+### Bug Fixes
+
+- **field:** Resolve focus provider issue with 2 fields with same name ([ed016afd5](https://github.com/storm-software/cyclone-ui/commit/ed016afd5))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.81**
+- Updated **field** to **v0.5.83**
+- Updated **form** to **v0.9.77**
+- Updated **helpers** to **v0.3.76**
+- Updated **icons** to **v0.0.76**
+- Updated **submit-button** to **v0.0.14**
+
 ## [0.6.82](https://github.com/storm-software/cyclone-ui/releases/tag/input%400.6.82) (11/13/2026)
 
 ### Updated Dependencies
