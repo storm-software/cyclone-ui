@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Navigation Header
 
+## [0.0.80](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-header%400.0.80) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.79**
+- Updated **eyebrow-text** to **v0.5.73**
+- Updated **heading-text** to **v0.5.74**
+- Updated **icons** to **v0.0.74**
+- Updated **link** to **v0.5.80**
+- Updated **redacted-animation** to **v0.0.71**
+- Updated **search-dialog** to **v0.0.59**
+- Updated **state** to **v0.0.76**
+- Updated **theme-toggler** to **v0.0.5**
+
 ## [0.0.79](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-header%400.0.79) (11/13/2026)
 
 ### Features

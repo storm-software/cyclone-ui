@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Icons
 
+## [0.0.74](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.74) (11/13/2026)
+
+### Features
+
+- **illustrations:** Added the illustrations package and agent skill ([70b9dd2ab](https://github.com/storm-software/cyclone-ui/commit/70b9dd2ab))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.74**
+
 ## [0.0.73](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.73) (11/13/2026)
 
 ### Updated Dependencies

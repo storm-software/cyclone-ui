@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Stepper
 
+## [0.3.80](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.80) (11/13/2026)
+
+### Features
+
+- **illustrations:** Added the illustrations package and agent skill ([70b9dd2ab](https://github.com/storm-software/cyclone-ui/commit/70b9dd2ab))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.74**
+- Updated **icons** to **v0.0.74**
+- Updated **next-button** to **v0.5.79**
+- Updated **number-text** to **v0.5.73**
+- Updated **previous-button** to **v0.5.79**
+
 ## [0.3.79](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.79) (11/13/2026)
 
 ### Updated Dependencies

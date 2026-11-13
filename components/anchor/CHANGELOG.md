@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Anchor
 
+## [0.0.78](https://github.com/storm-software/cyclone-ui/releases/tag/anchor%400.0.78) (11/13/2026)
+
+### Features
+
+- **illustrations:** Added the illustrations package and agent skill ([70b9dd2ab](https://github.com/storm-software/cyclone-ui/commit/70b9dd2ab))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.74**
+- Updated **icons** to **v0.0.74**
+
 ## [0.0.77](https://github.com/storm-software/cyclone-ui/releases/tag/anchor%400.0.77) (11/13/2026)
 
 ### Updated Dependencies

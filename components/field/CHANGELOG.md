@@ -2,6 +2,25 @@
 
 # Changelog for Cyclone UI - Field
 
+## [0.5.81](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.81) (11/13/2026)
+
+### Features
+
+- **illustrations:** Added the illustrations package and agent skill ([70b9dd2ab](https://github.com/storm-software/cyclone-ui/commit/70b9dd2ab))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.73**
+- Updated **button** to **v0.6.79**
+- Updated **form** to **v0.9.75**
+- Updated **helpers** to **v0.3.74**
+- Updated **icons** to **v0.0.74**
+- Updated **link** to **v0.5.80**
+- Updated **spinner** to **v0.5.73**
+- Updated **state** to **v0.0.76**
+- Updated **tooltip** to **v0.5.79**
+- Updated **validation-text** to **v0.5.78**
+
 ## [0.5.80](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.80) (11/13/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - CLI
 
+## [0.6.65](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.65) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **registry-api** to **v0.3.73**
+- Updated **theme-builder** to **v0.0.63**
+
 ## [0.6.64](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.64) (11/13/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Date Picker
 
+## [0.5.83](https://github.com/storm-software/cyclone-ui/releases/tag/date-picker%400.5.83) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.79**
+- Updated **calendar** to **v0.0.65**
+- Updated **field** to **v0.5.81**
+- Updated **form** to **v0.9.75**
+- Updated **helpers** to **v0.3.74**
+- Updated **icons** to **v0.0.74**
+- Updated **input** to **v0.6.81**
+- Updated **popover** to **v0.5.81**
+
 ## [0.5.82](https://github.com/storm-software/cyclone-ui/releases/tag/date-picker%400.5.82) (11/13/2026)
 
 ### Updated Dependencies
