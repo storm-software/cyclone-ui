@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Next Button
 
+## [0.5.75](https://github.com/storm-software/cyclone-ui/releases/tag/next-button%400.5.75) (11/12/2026)
+
+### Bug Fixes
+
+- **button:** Update button display so values are correctly centered ([a73059f36](https://github.com/storm-software/cyclone-ui/commit/a73059f36))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.75**
+- Updated **icons** to **v0.0.70**
+
 ## [0.5.74](https://github.com/storm-software/cyclone-ui/releases/tag/next-button%400.5.74) (11/12/2026)
 
 ### Updated Dependencies

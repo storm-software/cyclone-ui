@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Alert
 
+## [0.4.76](https://github.com/storm-software/cyclone-ui/releases/tag/alert%400.4.76) (11/12/2026)
+
+### Bug Fixes
+
+- **button:** Update button display so values are correctly centered ([a73059f36](https://github.com/storm-software/cyclone-ui/commit/a73059f36))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.75**
+- Updated **container** to **v0.6.74**
+- Updated **icons** to **v0.0.70**
+
 ## [0.4.75](https://github.com/storm-software/cyclone-ui/releases/tag/alert%400.4.75) (11/12/2026)
 
 ### Updated Dependencies

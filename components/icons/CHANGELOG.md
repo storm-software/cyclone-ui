@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Icons
 
+## [0.0.70](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.70) (11/12/2026)
+
+### Bug Fixes
+
+- **button:** Update button display so values are correctly centered ([a73059f36](https://github.com/storm-software/cyclone-ui/commit/a73059f36))
+
 ## [0.0.69](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.69) (11/12/2026)
 
 ### Bug Fixes
