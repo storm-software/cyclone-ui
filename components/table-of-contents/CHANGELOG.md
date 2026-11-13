@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Table of Contents
 
+## [0.0.76](https://github.com/storm-software/cyclone-ui/releases/tag/table-of-contents%400.0.76) (11/13/2026)
+
+### Features
+
+- **article-progress-header:** Initial check-in of the Article Progress Header component package ([3654d3550](https://github.com/storm-software/cyclone-ui/commit/3654d3550))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.74**
+- Updated **icons** to **v0.0.75**
+
 ## [0.0.75](https://github.com/storm-software/cyclone-ui/releases/tag/table-of-contents%400.0.75) (11/13/2026)
 
 ### Updated Dependencies

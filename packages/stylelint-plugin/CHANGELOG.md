@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.64](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.64) (11/13/2026)
+
+### Features
+
+- **article-progress-header:** Initial check-in of the Article Progress Header component package ([3654d3550](https://github.com/storm-software/cyclone-ui/commit/3654d3550))
+
 ## [0.0.62](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.62) (11/13/2026)
 
 ### Features

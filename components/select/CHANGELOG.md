@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Select
 
+## [0.6.84](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.84) (11/13/2026)
+
+### Features
+
+- **article-progress-header:** Initial check-in of the Article Progress Header component package ([3654d3550](https://github.com/storm-software/cyclone-ui/commit/3654d3550))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.74**
+- Updated **context-menu** to **v0.0.72**
+- Updated **field** to **v0.5.82**
+- Updated **form** to **v0.9.76**
+- Updated **helpers** to **v0.3.75**
+- Updated **icons** to **v0.0.75**
+- Updated **input** to **v0.6.82**
+- Updated **tooltip** to **v0.5.80**
+
 ## [0.6.83](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.83) (11/13/2026)
 
 ### Updated Dependencies

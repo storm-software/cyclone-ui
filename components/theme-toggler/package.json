@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/theme-toggler",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "description": "A button that switches between the light and dark color modes. On the web, the new mode is revealed from the button (or the viewport centre) with a View Transition clip-path in a circle, square, triangle, diamond, hexagon, rectangle or star shape. It can be controlled (mode, onModeChange) or follow the Cyclone theme state.",
   "repository": {

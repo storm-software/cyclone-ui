@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/illustrations",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "description": "Isometric line illustrations that answer the pointer, built on the Hairline engine and painted with Cyclone UI theme tokens. Includes the createIllustration factory (react-native-svg, so one illustration runs on web, React Native and the server), the illustration engine (HL), and thirty-three illustrations: Hairline's figures, from Basket to Vault. Each takes intensity, animated, play, label, onRead, strokeWidth and palette props.",
   "repository": {
@@ -111,6 +111,10 @@
     "./KeyboardIllustration": {
       "import": "./dist/KeyboardIllustration.mjs",
       "require": "./dist/KeyboardIllustration.cjs"
+    },
+    "./KeypadIllustration": {
+      "import": "./dist/KeypadIllustration.mjs",
+      "require": "./dist/KeypadIllustration.cjs"
     },
     "./LaptopIllustration": {
       "import": "./dist/LaptopIllustration.mjs",

@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/floating-toolbar",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "type": "module",
   "description": "A pill-shaped toolbar fixed to the bottom of the viewport for page-level controls: a frosted `floating` Container surface holding `Row`s of buttons, brand marks, selects and toggles separated by `Divider`s. Its `TableOfContents` part shows the heading the reader is in with a reading-progress ring and expands the page's TableOfContents upward in a Collapsible.",
   "repository": {

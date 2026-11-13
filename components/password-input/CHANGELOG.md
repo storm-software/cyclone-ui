@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Password Input
 
+## [0.0.81](https://github.com/storm-software/cyclone-ui/releases/tag/password-input%400.0.81) (11/13/2026)
+
+### Features
+
+- **article-progress-header:** Initial check-in of the Article Progress Header component package ([3654d3550](https://github.com/storm-software/cyclone-ui/commit/3654d3550))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.74**
+- Updated **field** to **v0.5.82**
+- Updated **form** to **v0.9.76**
+- Updated **helpers** to **v0.3.75**
+- Updated **icons** to **v0.0.75**
+- Updated **input** to **v0.6.82**
+
 ## [0.0.80](https://github.com/storm-software/cyclone-ui/releases/tag/password-input%400.0.80) (11/13/2026)
 
 ### Updated Dependencies

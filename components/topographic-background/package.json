@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/topographic-background",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "description": "A full-bleed topographic map background for the web. The interactive variant follows the light or dark theme, gently warps the contour lines with WebGL and paints the colored map in under the cursor, respecting reduced motion. Static dark, light and color variants show the image alone with no motion or hover effect.",
   "repository": {

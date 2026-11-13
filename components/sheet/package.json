@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/sheet",
-  "version": "0.0.80",
+  "version": "0.0.81",
   "type": "module",
   "description": "A modal panel that slides in from the top, right, bottom or left edge. It uses a draggable Tamagui Sheet for the bottom direction and a dialog for the other edges, can be dragged to dismiss, and supports sm, md and lg sizes and the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating) with shadow, glass, noise and accented options. Parts include Overlay, Handle, ScrollView, Heading, Body and Footer.",
   "repository": {

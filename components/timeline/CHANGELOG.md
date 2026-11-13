@@ -2,6 +2,14 @@
 
 # Changelog for Cyclone UI - Timeline
 
+## [0.0.70](https://github.com/storm-software/cyclone-ui/releases/tag/timeline%400.0.70) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.74**
+- Updated **heading-text** to **v0.5.75**
+- Updated **icons** to **v0.0.75**
+
 ## [0.0.69](https://github.com/storm-software/cyclone-ui/releases/tag/timeline%400.0.69) (11/13/2026)
 
 ### Updated Dependencies

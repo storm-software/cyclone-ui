@@ -2,6 +2,14 @@
 
 # Changelog for Cyclone UI - Message
 
+## [0.6.81](https://github.com/storm-software/cyclone-ui/releases/tag/message%400.6.81) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **alert** to **v0.4.81**
+- Updated **button** to **v0.6.80**
+- Updated **state** to **v0.0.77**
+
 ## [0.6.80](https://github.com/storm-software/cyclone-ui/releases/tag/message%400.6.80) (11/13/2026)
 
 ### Updated Dependencies
