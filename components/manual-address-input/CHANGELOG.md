@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Manual Address Input
 
+## [0.0.19](https://github.com/storm-software/cyclone-ui/releases/tag/manual-address-input%400.0.19) (11/13/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve typescript compilation issues ([4bdc0b0ae](https://github.com/storm-software/cyclone-ui/commit/4bdc0b0ae))
+
+### Updated Dependencies
+
+- Updated **select** to **v0.6.82**
+
 ## [0.0.18](https://github.com/storm-software/cyclone-ui/releases/tag/manual-address-input%400.0.18) (11/13/2026)
 
 ### Updated Dependencies

@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/navigation-sidebar",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "type": "module",
   "description": "A NavigationSidebar block for app and docs navigation. A Header holds a workspace Switcher and a Search button with a keyboard shortcut, the scrolling Body holds labeled Groups of Items (icons, counts, active and disabled states) and expandable Folders, and the Footer shows the signed-in Account. It fills its container, so it works on its own or inside Page.SideNav and DocsPage.SideNav.",
   "repository": {

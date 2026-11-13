@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Search Input
 
+## [0.1.82](https://github.com/storm-software/cyclone-ui/releases/tag/search-input%400.1.82) (11/13/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve typescript compilation issues ([4bdc0b0ae](https://github.com/storm-software/cyclone-ui/commit/4bdc0b0ae))
+
+### Updated Dependencies
+
+- Updated **context-menu** to **v0.0.70**
+
 ## [0.1.81](https://github.com/storm-software/cyclone-ui/releases/tag/search-input%400.1.81) (11/13/2026)
 
 ### Updated Dependencies

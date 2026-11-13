@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Scroll View
 
+## [0.5.78](https://github.com/storm-software/cyclone-ui/releases/tag/scroll-view%400.5.78) (11/13/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve typescript compilation issues ([4bdc0b0ae](https://github.com/storm-software/cyclone-ui/commit/4bdc0b0ae))
+
 ## [0.5.77](https://github.com/storm-software/cyclone-ui/releases/tag/scroll-view%400.5.77) (11/13/2026)
 
 ### Updated Dependencies

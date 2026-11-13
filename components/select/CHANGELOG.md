@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Select
 
+## [0.6.82](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.82) (11/13/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve typescript compilation issues ([4bdc0b0ae](https://github.com/storm-software/cyclone-ui/commit/4bdc0b0ae))
+
+### Updated Dependencies
+
+- Updated **context-menu** to **v0.0.70**
+
 ## [0.6.81](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.81) (11/13/2026)
 
 ### Updated Dependencies

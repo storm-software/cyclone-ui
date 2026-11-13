@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Popover
 
+## [0.5.80](https://github.com/storm-software/cyclone-ui/releases/tag/popover%400.5.80) (11/13/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve typescript compilation issues ([4bdc0b0ae](https://github.com/storm-software/cyclone-ui/commit/4bdc0b0ae))
+
+### Updated Dependencies
+
+- Updated **scroll-view** to **v0.5.78**
+- Updated **sheet** to **v0.0.79**
+
 ## [0.5.79](https://github.com/storm-software/cyclone-ui/releases/tag/popover%400.5.79) (11/13/2026)
 
 ### Updated Dependencies

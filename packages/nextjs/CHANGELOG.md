@@ -2,6 +2,15 @@
 
 # Changelog for Cyclone UI - Nextjs
 
+## [0.0.50](https://github.com/storm-software/cyclone-ui/releases/tag/nextjs%400.0.50) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **drawer** to **v0.1.80**
+- Updated **page** to **v0.0.74**
+- Updated **select** to **v0.6.82**
+- Updated **text-area** to **v0.1.81**
+
 ## [0.0.49](https://github.com/storm-software/cyclone-ui/releases/tag/nextjs%400.0.49) (11/13/2026)
 
 ### Updated Dependencies
