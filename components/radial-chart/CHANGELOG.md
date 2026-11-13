@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Radial Chart
 
+## [0.0.43](https://github.com/storm-software/cyclone-ui/releases/tag/radial-chart%400.0.43) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **chart** to **v0.0.43**
+
 ## [0.0.42](https://github.com/storm-software/cyclone-ui/releases/tag/radial-chart%400.0.42) (11/13/2026)
 
 ### Updated Dependencies

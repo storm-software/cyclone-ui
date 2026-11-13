@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Icons
 
+## [0.0.72](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.72) (11/13/2026)
+
+### Features
+
+- **color-picker:** Added the `triggerStyle` to the `ColorPicker` component ([a2fb06e45](https://github.com/storm-software/cyclone-ui/commit/a2fb06e45))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.72**
+
 ## [0.0.71](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.71) (11/13/2026)
 
 ### Features

@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - State
 
+## [0.0.74](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.74) (11/13/2026)
+
+### Features
+
+- **color-picker:** Added the `triggerStyle` to the `ColorPicker` component ([a2fb06e45](https://github.com/storm-software/cyclone-ui/commit/a2fb06e45))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.72**
+
 ## [0.0.73](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.73) (11/13/2026)
 
 ### Updated Dependencies
