@@ -166,14 +166,14 @@ const SwitchThumb = styled(View, {
 const SwitchThumbImpl = createStyledHOC(
   SwitchThumb,
   (props, forwardedRef) => {
-    const { disabled } = SwitchContext.useStyledContext();
+    const { disabled, checked } = SwitchContext.useStyledContext();
 
     return (
       <SwitchThumb
         ref={forwardedRef}
         {...props}
         backgroundColor={
-          disabled ? "secondary-disabled" : props.backgroundColor
+          disabled ? "secondary-disabled" : checked ? "surface" : "primary"
         }
       />
     );
@@ -306,10 +306,15 @@ const BaseSwitchImpl = createStyledHOC(
       ...props
     } = allProps;
     const hasValidationMessage = useFieldHasValidationMessage();
-    const idleColor = hasValidationMessage ? "primary" : "hairline";
-    const focusColor = hasValidationMessage
+    // Only reached when not disabled and without a validation message (the
+    // variants color those), so a checked switch marks its border here.
+    const idleColor = checked
       ? "primary-active"
-      : "hairline-active";
+      : hasValidationMessage
+        ? "primary"
+        : "hairline";
+    const focusColor =
+      hasValidationMessage || checked ? "primary-active" : "hairline-active";
 
     return (
       <SwitchContext.Provider

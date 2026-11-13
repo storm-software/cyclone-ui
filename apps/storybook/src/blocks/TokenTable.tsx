@@ -151,7 +151,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.14",
       type: "color",
-      value: "#1f1f21",
+      value: "#212123",
       cssVar: "--cu-color-neutral-14",
       description: "Deep graphite gray.",
       theme: undefined,
@@ -814,7 +814,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated",
       type: "color",
-      value: "#1f1f21",
+      value: "#212123",
       cssVar: "--cu-color-elevated",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant.",
@@ -2251,7 +2251,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.neutral.subtle",
       type: "color",
-      value: "#1f1f21",
+      value: "#212123",
       cssVar: "--cu-color-data-neutral-subtle",
       description:
         "Low-emphasis neutral (gray) data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `neutral.emphasis` series.",
@@ -2641,7 +2641,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-hovered",
       type: "color",
-      value: "#28282a",
+      value: "#2a2a2c",
       cssVar: "--cu-color-elevated-hovered",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% brighter)",
@@ -2651,7 +2651,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-active",
       type: "color",
-      value: "#313133",
+      value: "#333335",
       cssVar: "--cu-color-elevated-active",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% brighter)",
@@ -2661,7 +2661,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-inactive",
       type: "color",
-      value: "#19191b",
+      value: "#1b1b1d",
       cssVar: "--cu-color-elevated-inactive",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% less bright)",
@@ -2671,7 +2671,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-disabled",
       type: "color",
-      value: "#2c2c2e",
+      value: "#2d2d2f",
       cssVar: "--cu-color-elevated-disabled",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))",
@@ -5615,7 +5615,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.14",
       type: "color",
-      value: "#3c3c3e",
+      value: "#3d3d3f",
       cssVar: "--cu-color-neutral-14",
       description: "Deep graphite gray.",
       theme: undefined,
@@ -6278,7 +6278,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated",
       type: "color",
-      value: "#3c3c3e",
+      value: "#3d3d3f",
       cssVar: "--cu-color-elevated",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant.",
@@ -7715,7 +7715,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.neutral.subtle",
       type: "color",
-      value: "#3c3c3e",
+      value: "#3d3d3f",
       cssVar: "--cu-color-data-neutral-subtle",
       description:
         "Low-emphasis neutral (gray) data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `neutral.emphasis` series.",
@@ -8105,7 +8105,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-hovered",
       type: "color",
-      value: "#424244",
+      value: "#434345",
       cssVar: "--cu-color-elevated-hovered",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% brighter)",
@@ -8115,7 +8115,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-active",
       type: "color",
-      value: "#48484a",
+      value: "#4a4a4b",
       cssVar: "--cu-color-elevated-active",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% brighter)",
@@ -8125,7 +8125,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-inactive",
       type: "color",
-      value: "#37373a",
+      value: "#39393b",
       cssVar: "--cu-color-elevated-inactive",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% less bright)",
@@ -8135,7 +8135,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-disabled",
       type: "color",
-      value: "#454547",
+      value: "#464647",
       cssVar: "--cu-color-elevated-disabled",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))",
@@ -13569,7 +13569,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-hovered",
       type: "color",
-      value: "#020202",
+      value: "#050505",
       cssVar: "--cu-color-elevated-hovered",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% brighter)",
@@ -13579,7 +13579,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-active",
       type: "color",
-      value: "#0e0e10",
+      value: "#111113",
       cssVar: "--cu-color-elevated-active",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% brighter)",
@@ -13599,7 +13599,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.elevated-disabled",
       type: "color",
-      value: "#070709",
+      value: "#09090a",
       cssVar: "--cu-color-elevated-disabled",
       description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))",
@@ -16543,7 +16543,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.14",
       type: "color",
-      value: "#1f1f21",
+      value: "#212123",
       cssVar: "--cu-color-neutral-14",
       description: "Deep graphite gray.",
       theme: undefined,
@@ -17137,7 +17137,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis",
       type: "color",
-      value: "#1f1f21",
+      value: "#212123",
       cssVar: "--cu-color-emphasis",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
@@ -18794,7 +18794,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis-hovered",
       type: "color",
-      value: "#4f4f52",
+      value: "#515153",
       cssVar: "--cu-color-emphasis-hovered",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% less bright)",
@@ -18824,7 +18824,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis-disabled",
       type: "color",
-      value: "#38383b",
+      value: "#39393c",
       cssVar: "--cu-color-emphasis-disabled",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
@@ -22008,7 +22008,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.14",
       type: "color",
-      value: "#3c3c3e",
+      value: "#3d3d3f",
       cssVar: "--cu-color-neutral-14",
       description: "Deep graphite gray.",
       theme: undefined,
@@ -22602,7 +22602,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis",
       type: "color",
-      value: "#3c3c3e",
+      value: "#3d3d3f",
       cssVar: "--cu-color-emphasis",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
@@ -24259,7 +24259,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis-hovered",
       type: "color",
-      value: "#5e5e60",
+      value: "#5f5f60",
       cssVar: "--cu-color-emphasis-hovered",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% less bright)",
@@ -24289,7 +24289,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis-disabled",
       type: "color",
-      value: "#4d4d50",
+      value: "#4e4e50",
       cssVar: "--cu-color-emphasis-disabled",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
@@ -29724,7 +29724,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis-hovered",
       type: "color",
-      value: "#373740",
+      value: "#393942",
       cssVar: "--cu-color-emphasis-hovered",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% less bright)",
@@ -29754,7 +29754,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis-disabled",
       type: "color",
-      value: "#18181c",
+      value: "#19191e",
       cssVar: "--cu-color-emphasis-disabled",
       description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",

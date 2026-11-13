@@ -690,9 +690,9 @@
   --color-discovery-secondary-hovered: #291959;
   --color-discovery-secondary-inactive: #0a0219;
   --color-elevated: var(--color-neutral-14);
-  --color-elevated-active: #0e0e10;
-  --color-elevated-disabled: #070709;
-  --color-elevated-hovered: #020202;
+  --color-elevated-active: #111113;
+  --color-elevated-disabled: #09090a;
+  --color-elevated-hovered: var(--color-surface-disabled);
   --color-elevated-inactive: var(--color-neutral-13);
   --color-emphasis: var(--color-neutral-2);
   --color-emphasis-active: var(--color-neutral-1);

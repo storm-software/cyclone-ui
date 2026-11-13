@@ -52,7 +52,7 @@ export const Confirm = createIcon("Confirm", {
         d: "M5 11l6 6l10 -10",
         stroke: "currentColor",
         fill: "none",
-        strokeWidth: 3,
+        strokeWidth: 4,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 26

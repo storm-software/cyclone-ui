@@ -28,7 +28,7 @@ import {
   useFieldLabelDefaults,
   useFormControl
 } from "@cyclone-ui/helpers";
-import { Check } from "@cyclone-ui/icons/vectors";
+import { Confirm, Minus } from "@cyclone-ui/icons";
 import { Checkbox as TamaguiCheckbox } from "@tamagui/checkbox";
 import type { CheckedState } from "@tamagui/checkbox-headless";
 import type { GetProps } from "@tamagui/core";
@@ -160,13 +160,6 @@ const BaseCheckbox = styled(TamaguiCheckbox, {
   }
 });
 
-// A plain bar rather than an icon so its thickness can be tuned to read as
-// heavy as the check's stroke.
-const MinusIcon = styled(View, {
-  displayName: "CheckboxIndicator",
-  borderRadius: 9999
-});
-
 export const Checkbox = createStyledHOC(
   BaseCheckbox,
   (
@@ -208,10 +201,19 @@ export const Checkbox = createStyledHOC(
     );
 
     const hasValidationMessage = useFieldHasValidationMessage();
-    const idleColor = hasValidationMessage ? "primary" : "hairline";
+    // A shown icon inverts the box: an `emphasis` fill with a `surface` icon.
+    const filled = checked !== false;
+    const fillColor = disabled ? "primary-disabled" : "emphasis";
+    const idleColor = hasValidationMessage
+      ? "primary"
+      : filled
+        ? "emphasis"
+        : "hairline";
     const focusColor = hasValidationMessage
       ? "primary-active"
       : "hairline-active";
+
+    const iconSize = getSized(checkboxSizeTokens[size]) * 0.6;
 
     // The full 3px ring overwhelms the small checkbox, so use the 1px ring.
     const ring = size === "sm" ? "ring-subtle" : "ring";
@@ -222,6 +224,8 @@ export const Checkbox = createStyledHOC(
         hasValidationMessage={hasValidationMessage}
         disabled={disabled}
         size={size}
+        // Contains the absolutely positioned fill.
+        position="relative"
         // A call-site base replaces every lower-tier clause for the property
         // in v3, so restate the v2 frame/variant hover and disabled press here.
         borderColor={`${focused ? focusColor : idleColor} hover:${
@@ -230,6 +234,24 @@ export const Checkbox = createStyledHOC(
           focused ? focusColor : "primary-hovered"
         } focus:${focusColor} focus-visible:${focusColor}`}
         boxShadow={`focus:${ring} focus-visible:${ring}`}>
+        {/* The inverted fill: always mounted, so it can both grow in when an
+            icon shows and shrink out after the indicator unmounts. It covers
+            the frame's border (a fill clipped inside it leaves a light fringe
+            at the corners), so it draws the validation border itself. */}
+        <View
+          position="absolute"
+          inset={-1}
+          borderRadius="checkbox"
+          borderWidth={1}
+          borderColor={
+            hasValidationMessage ? (focused ? focusColor : idleColor) : fillColor
+          }
+          pointerEvents="none"
+          transition="200ms"
+          backgroundColor={fillColor}
+          scale={filled ? 1 : 0.4}
+          opacity={filled ? 1 : 0}
+        />
         <BaseCheckbox
           ref={forwardedRef}
           // `aria-required` only: a `required` hidden form input can't take
@@ -251,34 +273,24 @@ export const Checkbox = createStyledHOC(
           <TamaguiCheckbox.Indicator
             justifyContent="center"
             alignItems="center"
-            zIndex={1}
-            y={checked === "indeterminate" ? undefined : -1}>
-            {checked === "indeterminate" ? (
-              <View
-                transition="200ms"
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                scale="enter:0.8 exit:0.8"
-                y="enter:10px exit:-10px"
-                opacity="enter:0.2 exit:0.5">
-                <MinusIcon
-                  width={getSized(checkboxSizeTokens[size]) * 0.5}
-                  height={getSized(checkboxSizeTokens[size]) * 0.13}
-                  backgroundColor="emphasis"
-                />
-              </View>
-            ) : (
-              // Not `styled(Check)`: a styled wrapper turns `color` into a class
-              // instead of passing it to the icon, which then falls back to
-              // `on-primary` (dark in the dark theme).
-              <Check
-                strokeWidth={4}
-                width={getSized(checkboxSizeTokens[size]) * 0.6}
-                height={getSized(checkboxSizeTokens[size]) * 0.75}
-                color="emphasis"
-              />
-            )}
+            zIndex={1}>
+            {/* The indicator mounts when an icon shows, so the icon draws itself
+                in; keyed so switching check ↔ minus redraws too. */}
+            <View
+              key={String(checked)}
+              transition="200ms"
+              scale="enter:0.8"
+              opacity="enter:0.2"
+              // The check's path sits 1/24 right of the icon's center, so nudge
+              // it left; a slight drop sits it optically centered in the box.
+              x={checked === "indeterminate" ? 0 : -iconSize / 28}
+              y={checked === "indeterminate" ? 0 : iconSize / 48}>
+              {checked === "indeterminate" ? (
+                <Minus variant="bold" size={iconSize} color="surface" />
+              ) : (
+                <Confirm variant="bold" size={iconSize} color="surface" />
+              )}
+            </View>
           </TamaguiCheckbox.Indicator>
         </BaseCheckbox>
       </CheckboxGroupFrame>

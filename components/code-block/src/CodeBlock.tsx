@@ -424,7 +424,15 @@ const CodeBlockImpl = createStyledHOC(
         ) : null}
         <CodeBlockViewport
           {...codeBlockViewportDefaults}
-          {...viewportProps}
+          // Without a header the viewport is flush with the frame. Its own
+          // border would stack on the frame border and read as a double outline.
+          {...(header
+            ? {}
+            : {
+                borderWidth: 0,
+                borderRadius: 0
+              })}
+          {...(viewportProps as ComponentProps<typeof CodeBlockViewport>)}
           ref={areaRef as any}
           role="region"
           aria-label={typeof title === "string" ? title : "Code"}

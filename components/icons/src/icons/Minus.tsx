@@ -52,7 +52,7 @@ export const Minus = createIcon("Minus", {
         d: "M5 12h14",
         stroke: "currentColor",
         fill: "none",
-        strokeWidth: 2,
+        strokeWidth: 4,
         strokeLinecap: "round",
         strokeLinejoin: "round",
         strokeDasharray: 16

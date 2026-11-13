@@ -35,6 +35,12 @@
       "path": "../search-dialog"
     },
     {
+      "path": "../theme-toggler"
+    },
+    {
+      "path": "../../packages/state"
+    },
+    {
       "path": "../button"
     }
   ],

@@ -62,7 +62,7 @@ export interface GlitchSeparatorProps extends Omit<
   GetProps<typeof View>,
   "children"
 > {
-  /** Upper section color. Use transparent to overlay an image or video. */
+  /** Upper section color. Defaults to transparent, so the parent background shows through. */
   topColor?: GlitchSeparatorColor;
   /** Lower section color, used to fill the square grid. */
   bottomColor?: GlitchSeparatorColor;
@@ -84,7 +84,7 @@ export const GlitchSeparator = createStyledHOC(
   View,
   (
     {
-      topColor = "canvas",
+      topColor = "transparent",
       bottomColor = "secondary",
       animate,
       animated,

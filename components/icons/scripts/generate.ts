@@ -49,7 +49,8 @@ const STROKE_SCALE = 0.75;
  * Per-icon stroke factors for the `bold` variant, for icons whose original line-md strokes read too thin.
  */
 const BOLD_STROKE_SCALE: Record<string, number> = {
-  confirm: 1.5
+  confirm: 2,
+  minus: 2
 };
 
 /**

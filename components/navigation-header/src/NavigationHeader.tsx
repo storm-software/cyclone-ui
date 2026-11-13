@@ -22,11 +22,13 @@ import { Button } from "@cyclone-ui/button";
 import { EyebrowText } from "@cyclone-ui/eyebrow-text";
 import { HeadingLargeText } from "@cyclone-ui/heading-text";
 import type { IconComponent } from "@cyclone-ui/icons";
+import { MenuToggle } from "@cyclone-ui/icons/vectors";
 import { Link } from "@cyclone-ui/link";
 import { RedactedAnimation } from "@cyclone-ui/redacted-animation";
 import type { SearchDialogProps } from "@cyclone-ui/search-dialog";
 import { SearchDialog } from "@cyclone-ui/search-dialog";
-import { MenuToggle } from "@cyclone-ui/icons/vectors";
+import type { ThemeTogglerProps } from "@cyclone-ui/theme-toggler";
+import { ThemeToggler } from "@cyclone-ui/theme-toggler";
 import type { GetProps } from "@tamagui/core";
 import {
   createStyledHOC,
@@ -650,6 +652,16 @@ export type NavigationHeaderSearchProps = SearchDialogProps;
  */
 const NavigationHeaderSearchSlot = (_: NavigationHeaderSearchProps) => null;
 
+export type NavigationHeaderThemeTogglerProps = ThemeTogglerProps;
+
+/**
+ * A light/dark mode toggle, shown after the search on wide screens and before
+ * the menu button on compact ones.
+ */
+const NavigationHeaderThemeTogglerSlot = (
+  _: NavigationHeaderThemeTogglerProps
+) => null;
+
 export interface NavigationHeaderMenuButtonProps {
   /** Accessible name for the compact navigation trigger. */
   label?: string;
@@ -822,6 +834,10 @@ const NavigationHeaderRoot = createStyledHOC(
       children,
       NavigationHeaderSearchSlot
     );
+    const themeToggler = getSlot<NavigationHeaderThemeTogglerProps>(
+      children,
+      NavigationHeaderThemeTogglerSlot
+    );
     const menuButton = getSlot<NavigationHeaderMenuButtonProps>(
       children,
       NavigationHeaderMenuButtonSlotComponent
@@ -953,6 +969,15 @@ const NavigationHeaderRoot = createStyledHOC(
                 cap-height center; without them it centers with the menu. */}
         {search && (
           <SearchDialog {...search.props} y="2px max-xl:0" tight={true} />
+        )}
+        {themeToggler && (
+          <ThemeToggler
+            size="9xl"
+            flexGrow={0}
+            y="2px max-xl:0"
+            tight={true}
+            {...themeToggler.props}
+          />
         )}
       </NavigationHeaderCenter>
     );
@@ -1227,6 +1252,7 @@ export const NavigationHeader = withStaticProperties(NavigationHeaderRoot, {
     })
   }),
   Search: NavigationHeaderSearchSlot,
+  ThemeToggler: NavigationHeaderThemeTogglerSlot,
   Actions: NavigationHeaderActionsSlot,
   Social: withStaticProperties(NavigationHeaderSocialSlot, {
     Link: NavigationHeaderSocialLinkSlot
@@ -1248,5 +1274,6 @@ export {
   NavigationHeaderNavigationSlot,
   NavigationHeaderSearchSlot,
   NavigationHeaderSocialLinkSlot,
-  NavigationHeaderSocialSlot
+  NavigationHeaderSocialSlot,
+  NavigationHeaderThemeTogglerSlot
 };

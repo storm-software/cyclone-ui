@@ -696,8 +696,8 @@
   --color-elevated-inactive: var(--color-neutral-1);
   --color-emphasis: var(--color-neutral-14);
   --color-emphasis-active: var(--color-neutral-13);
-  --color-emphasis-disabled: #18181c;
-  --color-emphasis-hovered: #373740;
+  --color-emphasis-disabled: #19191e;
+  --color-emphasis-hovered: #393942;
   --color-emphasis-inactive: var(--color-base-primary-inactive);
   --color-floating: var(--color-white);
   --color-floating-active: #acacac;

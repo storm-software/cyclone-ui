@@ -19,8 +19,9 @@
 import { Button } from "@cyclone-ui/button";
 import { Account, Discord, Github } from "@cyclone-ui/icons";
 import { StormLogoIcon, StormLogoText } from "@cyclone-ui/icons/vectors";
+import { useThemeMode } from "@cyclone-ui/state/theme";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { styled, View } from "@tamagui/core";
+import { styled, Theme, View } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
 import type { ReactNode } from "react";
 import { NavigationHeader } from "./NavigationHeader";
@@ -57,48 +58,52 @@ const StorySection = styled(View, {
   }
 });
 
+// Storybook pins stories to the toolbar mode. Follow the Cyclone theme state,
+// which `NavigationHeader.ThemeToggler` changes, like an app's root provider.
 const StoryPage = ({ children }: { children: ReactNode }) => (
-  <StoryCanvas>
-    {children}
-    <StoryContent>
-      <StorySection id="hero">
-        <SizableText color="primary" fontSize="4xl" fontWeight="bold">
-          Build what matters
-        </SizableText>
-        <SizableText color="ink" fontSize="lg" maxWidth={640}>
-          Explore ideas, tools, and practical guidance for creating useful
-          products with a thoughtful approach.
-        </SizableText>
-      </StorySection>
-      <StorySection id="research" light={true}>
-        <SizableText color="primary" fontSize="4xl" fontWeight="bold">
-          Research and discovery
-        </SizableText>
-        <SizableText color="ink" fontSize="md" maxWidth={640}>
-          Learn from new perspectives and turn early questions into clear
-          directions through careful research and experimentation.
-        </SizableText>
-      </StorySection>
-      <StorySection id="products">
-        <SizableText color="primary" fontSize="4xl" fontWeight="bold">
-          Products for every team
-        </SizableText>
-        <SizableText color="ink" fontSize="md" maxWidth={640}>
-          Flexible tools help teams move from a first sketch to a finished
-          experience while keeping the important details in view.
-        </SizableText>
-      </StorySection>
-      <StorySection id="company">
-        <SizableText color="primary" fontSize="4xl" fontWeight="bold">
-          A long-term perspective
-        </SizableText>
-        <SizableText color="ink" fontSize="md" maxWidth={640}>
-          We share what we learn, listen to the people who use our work, and
-          keep improving the systems that support them.
-        </SizableText>
-      </StorySection>
-    </StoryContent>
-  </StoryCanvas>
+  <Theme name={`${useThemeMode() === "light" ? "light" : "dark"}_base`}>
+    <StoryCanvas>
+      {children}
+      <StoryContent>
+        <StorySection id="hero">
+          <SizableText color="primary" fontSize="4xl" fontWeight="bold">
+            Build what matters
+          </SizableText>
+          <SizableText color="ink" fontSize="lg" maxWidth={640}>
+            Explore ideas, tools, and practical guidance for creating useful
+            products with a thoughtful approach.
+          </SizableText>
+        </StorySection>
+        <StorySection id="research" light={true}>
+          <SizableText color="primary" fontSize="4xl" fontWeight="bold">
+            Research and discovery
+          </SizableText>
+          <SizableText color="ink" fontSize="md" maxWidth={640}>
+            Learn from new perspectives and turn early questions into clear
+            directions through careful research and experimentation.
+          </SizableText>
+        </StorySection>
+        <StorySection id="products">
+          <SizableText color="primary" fontSize="4xl" fontWeight="bold">
+            Products for every team
+          </SizableText>
+          <SizableText color="ink" fontSize="md" maxWidth={640}>
+            Flexible tools help teams move from a first sketch to a finished
+            experience while keeping the important details in view.
+          </SizableText>
+        </StorySection>
+        <StorySection id="company">
+          <SizableText color="primary" fontSize="4xl" fontWeight="bold">
+            A long-term perspective
+          </SizableText>
+          <SizableText color="ink" fontSize="md" maxWidth={640}>
+            We share what we learn, listen to the people who use our work, and
+            keep improving the systems that support them.
+          </SizableText>
+        </StorySection>
+      </StoryContent>
+    </StoryCanvas>
+  </Theme>
 );
 
 const StoryLogo = () => (
@@ -267,6 +272,7 @@ const meta = {
         </NavigationHeader.Logo>
         {storyNavigation}
         {storySearch}
+        <NavigationHeader.ThemeToggler />
         <NavigationHeader.Actions>{storyActions}</NavigationHeader.Actions>
         {storySocial}
       </NavigationHeader>
@@ -319,7 +325,6 @@ export const Dotted: Story = {
 
 export const TransparentAtTop: Story = {
   args: {
-
     transparentAtTop: true
   }
 };

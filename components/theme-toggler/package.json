@@ -1,0 +1,50 @@
+{
+  "name": "@cyclone-ui/theme-toggler",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A button that switches between the light and dark color modes. On the web, the new mode is revealed from the button (or the viewport centre) with a View Transition clip-path in a circle, square, triangle, diamond, hexagon, rectangle or star shape. It can be controlled (mode, onModeChange) or follow the Cyclone theme state.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/theme-toggler"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/state": "workspace:*",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./ThemeToggler": {
+      "import": "./dist/ThemeToggler.mjs",
+      "require": "./dist/ThemeToggler.cjs"
+    },
+    "./*": "./*"
+  }
+}

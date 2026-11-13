@@ -25,9 +25,11 @@
     "@cyclone-ui/link": "workspace:*",
     "@cyclone-ui/redacted-animation": "workspace:*",
     "@cyclone-ui/search-dialog": "workspace:*",
+    "@cyclone-ui/theme-toggler": "workspace:*",
     "@tamagui/core": "catalog:"
   },
   "devDependencies": {
+    "@cyclone-ui/state": "workspace:*",
     "@storybook/react-vite": "catalog:",
     "@tamagui/text": "catalog:",
     "react": "catalog:",

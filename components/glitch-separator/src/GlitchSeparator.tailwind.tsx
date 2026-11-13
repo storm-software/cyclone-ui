@@ -55,12 +55,13 @@ const createRandom = (seed: number) => {
 
 type GlitchSeparatorColor = ColorTokens | ThemeTokens | (string & {});
 
-// The upper section color is the frame background: set it with `className`,
-// e.g. `bg-transparent` to overlay an image or video. A height class such as
+// The upper section color is the frame background. It is transparent by
+// default, so the parent background shows through; set it with `className`,
+// e.g. `bg-canvas`. A height class such as
 // `h-[240px]` replaces the default aspect ratio.
 const GlitchSeparatorFrame = styled(
   View,
-  "pointer-events-none relative aspect-[5] w-full overflow-hidden bg-canvas",
+  "pointer-events-none relative aspect-[5] w-full overflow-hidden",
   { displayName: "GlitchSeparator" }
 );
 

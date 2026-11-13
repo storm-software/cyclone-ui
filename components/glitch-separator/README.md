@@ -55,7 +55,7 @@ A decorative, seeded square-grid transition between sections. The default layout
 - `animate="always"`: continuously reveals and removes blocks.
 - `animate="scroll"` (default): reveals blocks as the separator crosses the viewport; scrolling back reverses the reveal. Supports page and nested-container scrolling.
 - `seed`: reproducible pattern, default `27`.
-- `topColor="transparent"`: lets underlying artwork show through when positioned over a hero.
+- `topColor` defaults to `"transparent"`: the parent background (or artwork behind a hero) shows through above the squares.
 
 Web animations respect live changes to `prefers-reduced-motion`. Native platforms render a still border. The deprecated `animated` boolean maps to `always`/`never`; an explicit `animate` takes precedence.
 

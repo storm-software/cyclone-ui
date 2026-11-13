@@ -65,6 +65,7 @@
       "title": "@cyclone-ui/alert",
       "description": "An inline alert banner with compound parts (Alert.Icon, Alert.Content.Heading, Alert.Content.Body, Alert.Close). Its type prop (base, brand, danger, warning, info, success, discovery, positive, negative) sets the color theme and default icon. Use it to show status or feedback messages in the page.",
       "dependencies": [
+        "@tamagui/animate-presence@3.3.2",
         "@tamagui/core@3.3.2",
         "@tamagui/stacks@3.3.2",
         "@tamagui/web@3.3.2"
@@ -4157,7 +4158,8 @@
         "@cyclone-ui/icons",
         "@cyclone-ui/link",
         "@cyclone-ui/redacted-animation",
-        "@cyclone-ui/search-dialog"
+        "@cyclone-ui/search-dialog",
+        "@cyclone-ui/theme-toggler"
       ],
       "files": [
         {
@@ -5303,6 +5305,26 @@
       "files": [
         {
           "path": "components/text-area/src/TextArea.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "@cyclone-ui/theme-toggler",
+      "type": "registry:component",
+      "title": "@cyclone-ui/theme-toggler",
+      "description": "A button that switches between the light and dark color modes. On the web, the new mode is revealed from the button (or the viewport centre) with a View Transition clip-path in a circle, square, triangle, diamond, hexagon, rectangle or star shape. It can be controlled (mode, onModeChange) or follow the Cyclone theme state.",
+      "dependencies": ["@tamagui/core@3.3.2"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": ["@cyclone-ui/button", "@cyclone-ui/icons"],
+      "files": [
+        {
+          "path": "components/theme-toggler/src/ThemeToggler.tsx",
           "type": "registry:component"
         }
       ]

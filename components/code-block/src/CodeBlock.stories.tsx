@@ -81,6 +81,19 @@ export const Base: Story = {
     await expect(
       canvas.getByRole("button", { name: "Copied text" })
     ).toBeInTheDocument();
+
+    const frame = canvasElement.querySelector<HTMLElement>(
+      ".cyclone-code-block"
+    );
+    const viewport = canvasElement.querySelector<HTMLElement>(
+      ".cyclone-code-block-viewport"
+    );
+    await expect(
+      Number.parseFloat(getComputedStyle(frame!).borderTopWidth)
+    ).toBeGreaterThan(0);
+    await expect(
+      Number.parseFloat(getComputedStyle(viewport!).borderTopWidth)
+    ).toBeGreaterThan(0);
   }
 };
 
@@ -89,7 +102,29 @@ export const WithoutTitle: Story = {
     <CodeBlock {...args}>
       <TypeScriptCode />
     </CodeBlock>
-  )
+  ),
+  play: async ({ canvasElement }) => {
+    const frame = canvasElement.querySelector<HTMLElement>(
+      ".cyclone-code-block"
+    );
+    const viewport = canvasElement.querySelector<HTMLElement>(
+      ".cyclone-code-block-viewport"
+    );
+
+    await expect(frame).not.toBeNull();
+    await expect(viewport).not.toBeNull();
+
+    const frameBorder = Number.parseFloat(
+      getComputedStyle(frame!).borderTopWidth
+    );
+    const viewportBorder = Number.parseFloat(
+      getComputedStyle(viewport!).borderTopWidth
+    );
+
+    await expect(viewportBorder).toBe(0);
+    await expect(frameBorder).toBeGreaterThan(0);
+    await expect(frameBorder).toBeLessThan(2);
+  }
 };
 
 export const WithoutCopy: Story = {

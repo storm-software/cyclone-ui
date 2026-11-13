@@ -594,7 +594,7 @@
   --storm-color-neutral-11: #46464a; /** Charcoal gray. */
   --storm-color-neutral-12: #2d2e33; /** Charcoal gray. */
   --storm-color-neutral-13: #242528; /** Dark charcoal gray. */
-  --storm-color-neutral-14: #1f1f21; /** Deep graphite gray. */
+  --storm-color-neutral-14: #212123; /** Deep graphite gray. */
   --storm-color-neutral-15: #1c1c1e; /** Near-black graphite. */
   --storm-color-neutral-16: #151518; /** Almost black gray. */
   --storm-color-red-1: #e2819a; /** Pale coral red. */
@@ -778,6 +778,7 @@
   --storm-color-sunken-hovered: #111112; /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 15% brighter) */
   --storm-color-sunken-active: #161617; /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 30% brighter) */
   --storm-color-sunken-inactive: #09090a; /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 10% less bright) */
+  --storm-color-sunken-disabled: #1f1f21; /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-canvas-hovered: #1c1c1f; /** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 15% brighter) */
   --storm-color-canvas-active: #232326; /** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 30% brighter) */
   --storm-color-canvas-inactive: #111114; /** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 10% less bright) */
@@ -786,10 +787,9 @@
   --storm-color-surface-active: #2c2c2f; /** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 30% brighter) */
   --storm-color-surface-inactive: #171719; /** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 10% less bright) */
   --storm-color-surface-disabled: #2a2a2c; /** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26)) */
-  --storm-color-elevated-hovered: #28282a; /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% brighter) */
-  --storm-color-elevated-active: #313133; /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% brighter) */
-  --storm-color-elevated-inactive: #19191b; /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% less bright) */
-  --storm-color-elevated-disabled: #2c2c2e; /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-elevated-active: #333335; /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% brighter) */
+  --storm-color-elevated-inactive: #1b1b1d; /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% less bright) */
+  --storm-color-elevated-disabled: #2d2d2f; /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-floating-hovered: #2e2f32; /** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 15% brighter) */
   --storm-color-floating-active: #38393c; /** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 30% brighter) */
   --storm-color-floating-inactive: #1e1f22; /** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 10% less bright) */
@@ -1361,9 +1361,9 @@
   --storm-color-subtle-inactive: var(
     --storm-color-base-primary-inactive
   ); /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% of the dark contrast primitive's brightness) */
-  --storm-color-sunken-disabled: var(
-    --storm-color-neutral-14
-  ); /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-elevated-hovered: var(
+    --storm-color-surface-disabled
+  ); /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% brighter) */
   --storm-color-hairline-active: var(
     --storm-color-white
   ); /** Low-contrast color for borders, dividers and separators. (active, dark contrast primitive) */

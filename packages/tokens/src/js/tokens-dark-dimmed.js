@@ -461,7 +461,7 @@ module.exports = {
         key: "{color.neutral.14}",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#3c3c3e",
+        $value: "#3d3d3f",
         $description: "Deep graphite gray.",
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/primitives/tokens.json",
@@ -472,9 +472,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.23529411764705882, 0.23529411764705882, 0.24313725490196078
+              0.23921568627450981, 0.23921568627450981, 0.24705882352941178
             ],
-            hex: "#3c3c3e"
+            hex: "#3d3d3f"
           },
           $description: "Deep graphite gray.",
           key: "{color.neutral.14}"
@@ -2640,7 +2640,7 @@ module.exports = {
       key: "{color.elevated}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#3c3c3e",
+      $value: "#3d3d3f",
       $description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant.",
       group: "background",
@@ -7951,7 +7951,7 @@ module.exports = {
           key: "{color.data.neutral.subtle}",
           $type: "color",
           colorSpace: "display-p3",
-          $value: "#3c3c3e",
+          $value: "#3d3d3f",
           $description:
             "Low-emphasis neutral (gray) data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `neutral.emphasis` series.",
           filePath:
@@ -8837,7 +8837,13 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.14}",
+        $value: {
+          colorSpace: "srgb",
+          components: [
+            0.23529411764705882, 0.23529411764705882, 0.24313725490196078
+          ],
+          hex: "#3c3c3e"
+        },
         $description:
           "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))",
         group: "background",
@@ -9118,7 +9124,7 @@ module.exports = {
       key: "{color.elevated-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#424244",
+      $value: "#434345",
       $description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% brighter)",
       group: "background",
@@ -9128,13 +9134,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.25882352941176473, 0.25882352941176473, 0.26666666666666666
-          ],
-          hex: "#424244"
-        },
+        $value: "{color.surface-disabled}",
         $description:
           "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% brighter)",
         group: "background",
@@ -9151,7 +9151,7 @@ module.exports = {
       key: "{color.elevated-active}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#48484a",
+      $value: "#4a4a4b",
       $description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% brighter)",
       group: "background",
@@ -9164,9 +9164,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.2823529411764706, 0.2823529411764706, 0.2901960784313726
+            0.2901960784313726, 0.2901960784313726, 0.29411764705882354
           ],
-          hex: "#48484a"
+          hex: "#4a4a4b"
         },
         $description:
           "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% brighter)",
@@ -9184,7 +9184,7 @@ module.exports = {
       key: "{color.elevated-inactive}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#37373a",
+      $value: "#39393b",
       $description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% less bright)",
       group: "background",
@@ -9197,9 +9197,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.21568627450980393, 0.21568627450980393, 0.22745098039215686
+            0.2235294117647059, 0.2235294117647059, 0.23137254901960785
           ],
-          hex: "#37373a"
+          hex: "#39393b"
         },
         $description:
           "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% less bright)",
@@ -9217,7 +9217,7 @@ module.exports = {
       key: "{color.elevated-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#454547",
+      $value: "#464647",
       $description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))",
       group: "background",
@@ -9227,7 +9227,13 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.surface-active}",
+        $value: {
+          colorSpace: "srgb",
+          components: [
+            0.27450980392156865, 0.27450980392156865, 0.2784313725490196
+          ],
+          hex: "#464647"
+        },
         $description:
           "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))",
         group: "background",
@@ -17273,7 +17279,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3c3c3e",
+          color: "#3d3d3f",
           offsetX: {
             value: 0,
             unit: "px"
@@ -17371,7 +17377,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3c3c3e",
+          color: "#3d3d3f",
           offsetX: {
             value: 0,
             unit: "px"
@@ -17589,7 +17595,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3c3c3e",
+          color: "#3d3d3f",
           offsetX: {
             value: 0,
             unit: "px"
@@ -17687,7 +17693,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3c3c3e",
+          color: "#3d3d3f",
           offsetX: {
             value: 0,
             unit: "px"
@@ -17905,7 +17911,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3c3c3e",
+          color: "#3d3d3f",
           offsetX: {
             value: 0,
             unit: "px"
@@ -18003,7 +18009,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3c3c3e",
+          color: "#3d3d3f",
           offsetX: {
             value: 0,
             unit: "px"
@@ -18221,7 +18227,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3c3c3e",
+          color: "#3d3d3f",
           offsetX: {
             value: 0,
             unit: "px"
@@ -18319,7 +18325,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3c3c3e",
+          color: "#3d3d3f",
           offsetX: {
             value: 0,
             unit: "px"
@@ -18537,7 +18543,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3c3c3e",
+          color: "#3d3d3f",
           offsetX: {
             value: 0,
             unit: "px"
@@ -18635,7 +18641,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3c3c3e",
+          color: "#3d3d3f",
           offsetX: {
             value: 0,
             unit: "px"
@@ -18853,7 +18859,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3c3c3e",
+          color: "#3d3d3f",
           offsetX: {
             value: 0,
             unit: "px"
@@ -18951,7 +18957,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3c3c3e",
+          color: "#3d3d3f",
           offsetX: {
             value: 0,
             unit: "px"
@@ -19169,7 +19175,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3c3c3e",
+          color: "#3d3d3f",
           offsetX: {
             value: 0,
             unit: "px"
@@ -19267,7 +19273,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#3c3c3e",
+          color: "#3d3d3f",
           offsetX: {
             value: 0,
             unit: "px"

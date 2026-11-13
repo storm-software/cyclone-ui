@@ -59,7 +59,7 @@ const COLOR_VARIANTS = {
               "11": "#46464a",
               "12": "#2d2e33",
               "13": "#242528",
-              "14": "#1f1f21",
+              "14": "#212123",
               "15": "#1c1c1e",
               "16": "#151518"
             }}
@@ -195,7 +195,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant."
             }
             colors={{
-              elevated: "#1f1f21"
+              elevated: "#212123"
             }}
           />
           <ColorItem
@@ -204,7 +204,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% brighter)"
             }
             colors={{
-              "elevated-active": "#313133"
+              "elevated-active": "#333335"
             }}
           />
           <ColorItem
@@ -213,7 +213,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#2c2c2e"
+              "elevated-disabled": "#2d2d2f"
             }}
           />
           <ColorItem
@@ -222,7 +222,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% brighter)"
             }
             colors={{
-              "elevated-hovered": "#28282a"
+              "elevated-hovered": "#2a2a2c"
             }}
           />
           <ColorItem
@@ -231,7 +231,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% less bright)"
             }
             colors={{
-              "elevated-inactive": "#19191b"
+              "elevated-inactive": "#1b1b1d"
             }}
           />
           <ColorItem
@@ -590,7 +590,7 @@ const COLOR_VARIANTS = {
             }
             colors={{
               "neutral.emphasis": "#fafafa",
-              "neutral.subtle": "#1f1f21",
+              "neutral.subtle": "#212123",
               "red.emphasis": "#8e223e",
               "red.subtle": "#501524",
               "orange.emphasis": "#df6520",
@@ -887,7 +887,7 @@ const COLOR_VARIANTS = {
               "11": "#57575a",
               "12": "#45464a",
               "13": "#3f4043",
-              "14": "#3c3c3e",
+              "14": "#3d3d3f",
               "15": "#39393c",
               "16": "#343438"
             }}
@@ -1023,7 +1023,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant."
             }
             colors={{
-              elevated: "#3c3c3e"
+              elevated: "#3d3d3f"
             }}
           />
           <ColorItem
@@ -1032,7 +1032,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% brighter)"
             }
             colors={{
-              "elevated-active": "#48484a"
+              "elevated-active": "#4a4a4b"
             }}
           />
           <ColorItem
@@ -1041,7 +1041,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#454547"
+              "elevated-disabled": "#464647"
             }}
           />
           <ColorItem
@@ -1050,7 +1050,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% brighter)"
             }
             colors={{
-              "elevated-hovered": "#424244"
+              "elevated-hovered": "#434345"
             }}
           />
           <ColorItem
@@ -1059,7 +1059,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% less bright)"
             }
             colors={{
-              "elevated-inactive": "#37373a"
+              "elevated-inactive": "#39393b"
             }}
           />
           <ColorItem
@@ -1418,7 +1418,7 @@ const COLOR_VARIANTS = {
             }
             colors={{
               "neutral.emphasis": "#d5d5d5",
-              "neutral.subtle": "#3c3c3e",
+              "neutral.subtle": "#3d3d3f",
               "red.emphasis": "#864254",
               "red.subtle": "#61323e",
               "orange.emphasis": "#b4714b",
@@ -1860,7 +1860,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% brighter)"
             }
             colors={{
-              "elevated-active": "#0e0e10"
+              "elevated-active": "#111113"
             }}
           />
           <ColorItem
@@ -1869,7 +1869,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "elevated-disabled": "#070709"
+              "elevated-disabled": "#09090a"
             }}
           />
           <ColorItem
@@ -1878,7 +1878,7 @@ const COLOR_VARIANTS = {
               "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% brighter)"
             }
             colors={{
-              "elevated-hovered": "#020202"
+              "elevated-hovered": "#050505"
             }}
           />
           <ColorItem
@@ -2543,7 +2543,7 @@ const COLOR_VARIANTS = {
               "11": "#46464a",
               "12": "#2d2e33",
               "13": "#242528",
-              "14": "#1f1f21",
+              "14": "#212123",
               "15": "#1c1c1e",
               "16": "#151518"
             }}
@@ -2864,7 +2864,7 @@ const COLOR_VARIANTS = {
               "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."
             }
             colors={{
-              emphasis: "#1f1f21"
+              emphasis: "#212123"
             }}
           />
           <ColorItem
@@ -2882,7 +2882,7 @@ const COLOR_VARIANTS = {
               "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "emphasis-disabled": "#38383b"
+              "emphasis-disabled": "#39393c"
             }}
           />
           <ColorItem
@@ -2891,7 +2891,7 @@ const COLOR_VARIANTS = {
               "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% less bright)"
             }
             colors={{
-              "emphasis-hovered": "#4f4f52"
+              "emphasis-hovered": "#515153"
             }}
           />
           <ColorItem
@@ -3371,7 +3371,7 @@ const COLOR_VARIANTS = {
               "11": "#57575a",
               "12": "#45464a",
               "13": "#3f4043",
-              "14": "#3c3c3e",
+              "14": "#3d3d3f",
               "15": "#39393c",
               "16": "#343438"
             }}
@@ -3692,7 +3692,7 @@ const COLOR_VARIANTS = {
               "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."
             }
             colors={{
-              emphasis: "#3c3c3e"
+              emphasis: "#3d3d3f"
             }}
           />
           <ColorItem
@@ -3710,7 +3710,7 @@ const COLOR_VARIANTS = {
               "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "emphasis-disabled": "#4d4d50"
+              "emphasis-disabled": "#4e4e50"
             }}
           />
           <ColorItem
@@ -3719,7 +3719,7 @@ const COLOR_VARIANTS = {
               "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% less bright)"
             }
             colors={{
-              "emphasis-hovered": "#5e5e60"
+              "emphasis-hovered": "#5f5f60"
             }}
           />
           <ColorItem
@@ -4538,7 +4538,7 @@ const COLOR_VARIANTS = {
               "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))"
             }
             colors={{
-              "emphasis-disabled": "#18181c"
+              "emphasis-disabled": "#19191e"
             }}
           />
           <ColorItem
@@ -4547,7 +4547,7 @@ const COLOR_VARIANTS = {
               "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% less bright)"
             }
             colors={{
-              "emphasis-hovered": "#373740"
+              "emphasis-hovered": "#393942"
             }}
           />
           <ColorItem

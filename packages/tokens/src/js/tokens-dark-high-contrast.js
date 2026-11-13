@@ -8849,7 +8849,7 @@ module.exports = {
       key: "{color.elevated-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#020202",
+      $value: "#050505",
       $description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% brighter)",
       group: "background",
@@ -8859,13 +8859,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.00784313725490196, 0.00784313725490196, 0.00784313725490196
-          ],
-          hex: "#020202"
-        },
+        $value: "{color.surface-disabled}",
         $description:
           "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% brighter)",
         group: "background",
@@ -8882,7 +8876,7 @@ module.exports = {
       key: "{color.elevated-active}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#0e0e10",
+      $value: "#111113",
       $description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% brighter)",
       group: "background",
@@ -8895,9 +8889,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.054901960784313725, 0.054901960784313725, 0.06274509803921569
+            0.06666666666666667, 0.06666666666666667, 0.07450980392156863
           ],
-          hex: "#0e0e10"
+          hex: "#111113"
         },
         $description:
           "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% brighter)",
@@ -8942,7 +8936,7 @@ module.exports = {
       key: "{color.elevated-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#070709",
+      $value: "#09090a",
       $description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))",
       group: "background",
@@ -8955,9 +8949,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.027450980392156862, 0.027450980392156862, 0.03529411764705882
+            0.03529411764705882, 0.03529411764705882, 0.0392156862745098
           ],
-          hex: "#070709"
+          hex: "#09090a"
         },
         $description:
           "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26))",

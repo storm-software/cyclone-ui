@@ -155,16 +155,16 @@ export default defineConfig({
             tokenGroup(color.discovery).primary,
             info
           );
-          const page = tokenValue(
-            color.canvas,
+          const surface = tokenValue(
+            color.surface,
             theme === "dark" ? "#222222" : "#fafafa"
           );
-          const surface = tokenValue(color.surface, page);
+          const elevated = tokenValue(color.elevated, surface);
           const selection = tokenValue(
             color.emphasis,
             color.elevated as string
           );
-          const onSelection = page;
+          const onSelection = surface;
           const border = tokenValue(color.hairline, subtleInk);
 
           return {
@@ -173,15 +173,15 @@ export default defineConfig({
               .toLowerCase()}`,
             displayName: `Cyclone ${theme === "dark" ? "Dark" : "Light"}`,
             type: theme,
-            bg: page,
+            bg: surface,
             fg: base,
             colors: {
-              "editor.background": page,
+              "editor.background": surface,
               "editor.foreground": base,
               "editorCursor.foreground": info,
               "editor.selectionBackground": selection,
               "editor.selectionForeground": onSelection,
-              "editor.inactiveSelectionBackground": surface,
+              "editor.inactiveSelectionBackground": elevated,
               "editorLineNumber.foreground": subtleInk,
               "editorLineNumber.activeForeground": body,
               "editorIndentGuide.background1": border,

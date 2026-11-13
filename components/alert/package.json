@@ -23,6 +23,7 @@
     "@cyclone-ui/container": "workspace:*",
     "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
+    "@tamagui/animate-presence": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/web": "catalog:"

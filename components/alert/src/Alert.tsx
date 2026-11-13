@@ -29,6 +29,7 @@ import {
   getIconByTheme,
   ThemeableIcon
 } from "@cyclone-ui/icons";
+import { AnimatePresence } from "@tamagui/animate-presence";
 import {
   createStyledContext,
   createStyledHOC,
@@ -40,6 +41,7 @@ import {
 } from "@tamagui/core";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { GetProps } from "@tamagui/web";
+import { useState } from "react";
 
 export type AlertType =
   "base" | "brand" | "danger" | "warning" | "info" | "success" | "discovery";
@@ -47,12 +49,15 @@ export type AlertType =
 export interface AlertContextProps {
   type?: AlertType;
   hovered?: boolean;
+  /** Starts the frame's exit animation; called by `Alert.Close`. */
+  dismiss?: () => void;
 }
 
 export const AlertContext = createStyledContext<AlertContextProps, "type">(
   {
     type: undefined,
-    hovered: false
+    hovered: false,
+    dismiss: undefined
   } as AlertContextProps,
   {
     keys: ["type"]
@@ -69,7 +74,9 @@ const AlertClose = styled(Button, {
 
 const AlertCloseImpl = createStyledHOC(
   AlertClose,
-  ({ children, ...props }, forwardedRef) => {
+  ({ children, onPress, ...props }, forwardedRef) => {
+    const { dismiss } = AlertContext.useStyledContext();
+
     return (
       <XStack
         minHeight="100%"
@@ -84,6 +91,10 @@ const AlertCloseImpl = createStyledHOC(
           tight={true}
           tooltip="Dismiss"
           {...props}
+          onPress={event => {
+            onPress?.(event);
+            dismiss?.();
+          }}
           padding="md"
           size="10xl"
           flexGrow={0}>
@@ -101,31 +112,59 @@ const AlertCloseImpl = createStyledHOC(
   }
 );
 
-export type AlertFrameProps = ContainerProps & AlertContextProps;
+export type AlertFrameProps = ContainerProps &
+  Omit<AlertContextProps, "dismiss"> & {
+    /**
+     * Called once `Alert.Close` was pressed and the exit animation has
+     * finished. The alert stays hidden until it is remounted, so clear the
+     * state that rendered it here.
+     */
+    onDismiss?: () => void;
+  };
 
 const AlertFrameImpl = ({
   children,
   theme,
   type,
   hovered = false,
+  onDismiss,
   ...props
 }: AlertFrameProps) => {
+  const [dismissed, setDismissed] = useState(false);
+
   return (
-    <AlertContext.Provider type={type} hovered={hovered}>
-      <Container
-        {...props}
-        hovered={hovered}
-        variant="floating"
-        themeShallow={true}
-        borderWidth={0}
-        tight={true}
-        overflow="hidden">
-        <Theme name={type ?? theme}>
-          <XStack gap="3xl" paddingRight="md">
-            {children}
-          </XStack>
-        </Theme>
-      </Container>
+    <AlertContext.Provider
+      type={type}
+      hovered={hovered}
+      dismiss={() => setDismissed(true)}>
+      <AnimatePresence onExitComplete={onDismiss}>
+        {!dismissed && (
+          <YStack
+            key="alert"
+            width="100%"
+            // Fades and grows in on mount, and back out when dismissed. Naming
+            // `exit` keeps `createComponent` off its `avoidReRenders` path, so
+            // the exit timing is used.
+            transition={{ duration: "400ms", exit: "200ms ease-out" }}
+            opacity="enter:0 exit:0"
+            scale="enter:0.95 exit:0.95">
+            <Container
+              {...props}
+              hovered={hovered}
+              variant="floating"
+              themeShallow={true}
+              borderWidth={0}
+              tight={true}
+              overflow="hidden">
+              <Theme name={type ?? theme}>
+                <XStack gap="3xl" paddingRight="md">
+                  {children}
+                </XStack>
+              </Theme>
+            </Container>
+          </YStack>
+        )}
+      </AnimatePresence>
     </AlertContext.Provider>
   );
 };

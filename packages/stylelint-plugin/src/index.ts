@@ -1061,7 +1061,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-emphasis",
       type: "color",
       category: "color",
-      value: "#1f1f21",
+      value: "#212123",
       alias: true
     },
     {
@@ -1076,14 +1076,14 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-emphasis-disabled",
       type: "color",
       category: "color",
-      value: "#38383b"
+      value: "#39393c"
     },
     {
       path: "color.emphasis-hovered",
       cssVar: "--storm-color-emphasis-hovered",
       type: "color",
       category: "color",
-      value: "#4f4f52"
+      value: "#515153"
     },
     {
       path: "color.emphasis-inactive",
@@ -1495,7 +1495,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-color-neutral-14",
       type: "color",
       category: "color",
-      value: "#1f1f21"
+      value: "#212123"
     },
     {
       path: "color.neutral.15",
@@ -4667,6 +4667,11 @@ export const manifest: DesignSystemManifest = {
       name: "@cyclone-ui/text-area",
       jsx: ["TextArea"],
       roles: ["textarea"]
+    },
+    {
+      name: "@cyclone-ui/theme-toggler",
+      jsx: ["ThemeToggler"],
+      roles: []
     },
     {
       name: "@cyclone-ui/themeable-gradient",

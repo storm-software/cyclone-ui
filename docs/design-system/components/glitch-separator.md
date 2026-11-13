@@ -25,7 +25,7 @@ import { GlitchSeparator } from "@cyclone-ui/glitch-separator";
 <GlitchSeparator topColor="canvas" bottomColor="secondary" animate="scroll" seed={27} />
 ```
 
-Use a transparent `topColor` to lay the edge over an image or video.
+`topColor` defaults to `transparent`, so the parent background (or an image or video behind it) shows through above the squares.
 
 ## Props
 
@@ -33,7 +33,7 @@ Use a transparent `topColor` to lay the edge over an image or video.
 
 | Prop | Default | Purpose |
 | --- | --- | --- |
-| `topColor` | `"canvas"` | The upper section color. A theme key, a color token, or a CSS color. |
+| `topColor` | `"transparent"` | The upper section color; transparent shows the parent background. A theme key, a color token, or a CSS color. |
 | `bottomColor` | `"secondary"` | The lower section color. It fills the squares. |
 | `animate` | `"scroll"` | `"never"`, `"always"`, or `"scroll"`. Native stays still. |
 | `animated` | - | Deprecated. `true` means `"always"` and `false` means `"never"`. Ignored when `animate` is set. |

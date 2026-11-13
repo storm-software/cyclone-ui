@@ -461,7 +461,7 @@ module.exports = {
         key: "{color.neutral.14}",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#3c3c3e",
+        $value: "#3d3d3f",
         $description: "Deep graphite gray.",
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/primitives/tokens.json",
@@ -472,9 +472,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.23529411764705882, 0.23529411764705882, 0.24313725490196078
+              0.23921568627450981, 0.23921568627450981, 0.24705882352941178
             ],
-            hex: "#3c3c3e"
+            hex: "#3d3d3f"
           },
           $description: "Deep graphite gray.",
           key: "{color.neutral.14}"
@@ -2452,7 +2452,7 @@ module.exports = {
       key: "{color.emphasis}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#3c3c3e",
+      $value: "#3d3d3f",
       $description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
       group: "foreground",
@@ -8408,7 +8408,7 @@ module.exports = {
       key: "{color.emphasis-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#5e5e60",
+      $value: "#5f5f60",
       $description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% less bright)",
       group: "foreground",
@@ -8421,9 +8421,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.3686274509803922, 0.3686274509803922, 0.3764705882352941
+            0.37254901960784315, 0.37254901960784315, 0.3764705882352941
           ],
-          hex: "#5e5e60"
+          hex: "#5f5f60"
         },
         $description:
           "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% less bright)",
@@ -8495,7 +8495,7 @@ module.exports = {
       key: "{color.emphasis-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#4d4d50",
+      $value: "#4e4e50",
       $description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
       group: "foreground",
@@ -8508,9 +8508,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.30196078431372547, 0.30196078431372547, 0.3137254901960784
+            0.3058823529411765, 0.3058823529411765, 0.3137254901960784
           ],
-          hex: "#4d4d50"
+          hex: "#4e4e50"
         },
         $description:
           "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26))",
@@ -8538,7 +8538,13 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.emphasis-disabled}",
+        $value: {
+          colorSpace: "srgb",
+          components: [
+            0.30196078431372547, 0.30196078431372547, 0.3137254901960784
+          ],
+          hex: "#4d4d50"
+        },
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 25% brighter)",
         group: "foreground",
