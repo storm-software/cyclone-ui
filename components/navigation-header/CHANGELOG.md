@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Navigation Header
 
+## [0.0.79](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-header%400.0.79) (11/13/2026)
+
+### Features
+
+- **topographic-background:** Initial check-in of the `TopographicBackground` component package ([90294fe2c](https://github.com/storm-software/cyclone-ui/commit/90294fe2c))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.78**
+- Updated **eyebrow-text** to **v0.5.72**
+- Updated **heading-text** to **v0.5.73**
+- Updated **icons** to **v0.0.73**
+- Updated **link** to **v0.5.79**
+- Updated **redacted-animation** to **v0.0.70**
+- Updated **search-dialog** to **v0.0.58**
+- Updated **state** to **v0.0.75**
+- Updated **theme-toggler** to **v0.0.4**
+
 ## [0.0.78](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-header%400.0.78) (11/13/2026)
 
 ### Updated Dependencies

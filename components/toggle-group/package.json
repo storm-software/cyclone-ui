@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/toggle-group",
-  "version": "0.0.66",
+  "version": "0.0.67",
   "private": false,
   "description": "A clickable group of toggle components that exists in either an \"on\" or \"off\" state, with the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating) drawn on its indicators, shadow styles and various styles and sizes.",
   "repository": {

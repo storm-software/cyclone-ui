@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Context Menu
 
+## [0.0.69](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.69) (11/13/2026)
+
+### Features
+
+- **topographic-background:** Initial check-in of the `TopographicBackground` component package ([90294fe2c](https://github.com/storm-software/cyclone-ui/commit/90294fe2c))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.72**
+- Updated **button** to **v0.6.78**
+- Updated **container** to **v0.6.77**
+- Updated **helpers** to **v0.3.73**
+- Updated **icons** to **v0.0.73**
+- Updated **popover** to **v0.5.79**
+- Updated **tooltip** to **v0.5.78**
+
 ## [0.0.68](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.68) (11/13/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Avatar
 
+## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/avatar%400.0.6) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **badge** to **v0.3.78**
+- Updated **body-text** to **v0.5.72**
+- Updated **button** to **v0.6.78**
+- Updated **icons** to **v0.0.73**
+- Updated **modal** to **v0.0.43**
+- Updated **slider** to **v0.0.76**
+- Updated **spinner** to **v0.5.72**
+
 ## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/avatar%400.0.5) (11/13/2026)
 
 ### Updated Dependencies

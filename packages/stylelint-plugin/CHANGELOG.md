@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.62](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.62) (11/13/2026)
+
+### Features
+
+- **topographic-background:** Initial check-in of the `TopographicBackground` component package ([90294fe2c](https://github.com/storm-software/cyclone-ui/commit/90294fe2c))
+
 ## [0.0.60](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.60) (11/13/2026)
 
 ### Features
