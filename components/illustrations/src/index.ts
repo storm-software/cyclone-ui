@@ -27,6 +27,7 @@ export * from "./ExplodedIllustration";
 export * from "./FormatIllustration";
 export * from "./HubIllustration";
 export * from "./KeyboardIllustration";
+export * from "./KeypadIllustration";
 export * from "./LaptopIllustration";
 export * from "./LockersIllustration";
 export * from "./LoupeIllustration";

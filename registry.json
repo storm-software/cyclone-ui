@@ -187,6 +187,29 @@
       ]
     },
     {
+      "name": "@cyclone-ui/article-progress-header",
+      "type": "registry:component",
+      "title": "@cyclone-ui/article-progress-header",
+      "description": "A sticky, horizontally scrolling strip of an article's section links, like a docs page's mobile section bar. A dot slides to the section the reader is in as they scroll, the strip keeps that link in view and fades its edges while there is more to scroll to, and its motion respects reduced motion. Built on the TableOfContents scroll tracking, with a blurred translucent canvas background.",
+      "dependencies": ["@tamagui/core@3.3.2"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/table-of-contents"
+      ],
+      "files": [
+        {
+          "path": "components/article-progress-header/src/ArticleProgressHeader.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/avatar",
       "type": "registry:component",
       "title": "@cyclone-ui/avatar",
@@ -3902,7 +3925,31 @@
       ],
       "files": [
         {
+          "path": "components/illustrations/src/BasketIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/BranchesIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/CabinetIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
           "path": "components/illustrations/src/create-illustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/DishIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/DrawerIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/ElevatorIllustration.tsx",
           "type": "registry:component"
         },
         {
@@ -3936,35 +3983,6 @@
           "target": "components/illustrations/src/engine/stage.ts"
         },
         {
-          "path": "components/illustrations/src/index.ts",
-          "type": "registry:file",
-          "target": "components/illustrations/src/index.ts"
-        },
-        {
-          "path": "components/illustrations/src/BasketIllustration.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/illustrations/src/BranchesIllustration.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/illustrations/src/CabinetIllustration.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/illustrations/src/DishIllustration.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/illustrations/src/DrawerIllustration.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/illustrations/src/ElevatorIllustration.tsx",
-          "type": "registry:component"
-        },
-        {
           "path": "components/illustrations/src/ExplodedIllustration.tsx",
           "type": "registry:component"
         },
@@ -3978,6 +3996,10 @@
         },
         {
           "path": "components/illustrations/src/KeyboardIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/KeypadIllustration.tsx",
           "type": "registry:component"
         },
         {
@@ -5676,33 +5698,18 @@
       ],
       "files": [
         {
-          "path": "components/topographic-background/src/TopographicBackground.tsx",
-          "type": "registry:component"
-        },
-        {
           "path": "components/topographic-background/src/images.ts",
           "type": "registry:file",
           "target": "components/topographic-background/src/images.ts"
         },
         {
+          "path": "components/topographic-background/src/TopographicBackground.tsx",
+          "type": "registry:component"
+        },
+        {
           "path": "components/topographic-background/src/topography.ts",
           "type": "registry:file",
           "target": "components/topographic-background/src/topography.ts"
-        },
-        {
-          "path": "components/topographic-background/src/assets/topography-color.svg",
-          "type": "registry:file",
-          "target": "components/topographic-background/src/assets/topography-color.svg"
-        },
-        {
-          "path": "components/topographic-background/src/assets/topography-dark.svg",
-          "type": "registry:file",
-          "target": "components/topographic-background/src/assets/topography-dark.svg"
-        },
-        {
-          "path": "components/topographic-background/src/assets/topography-light.svg",
-          "type": "registry:file",
-          "target": "components/topographic-background/src/assets/topography-light.svg"
         }
       ]
     },

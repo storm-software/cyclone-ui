@@ -70,6 +70,8 @@ const SelectValueFrame = styled(Text, {
   overflow: "hidden",
   textOverflow: "ellipsis",
   whiteSpace: "nowrap",
+  // The trigger renders a `<button>`, whose UA style centres its text.
+  textAlign: "left",
   flexGrow: 1,
   alignItems: "center",
   backgroundColor: "hover:transparent focus:transparent",

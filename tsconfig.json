@@ -292,6 +292,9 @@
       "path": "./components/article-page"
     },
     {
+      "path": "./components/article-progress-header"
+    },
+    {
       "path": "./components/docs-page"
     },
     {

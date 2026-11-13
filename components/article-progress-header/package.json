@@ -1,0 +1,47 @@
+{
+  "name": "@cyclone-ui/article-progress-header",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A sticky, horizontally scrolling strip of an article's section links, like a docs page's mobile section bar. A dot slides to the section the reader is in as they scroll, the strip keeps that link in view and fades its edges while there is more to scroll to, and its motion respects reduced motion. Built on the TableOfContents scroll tracking, with a blurred translucent canvas background.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/article-progress-header"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/table-of-contents": "workspace:*",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": ["*.css"],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./ArticleProgressHeader": {
+      "import": "./dist/ArticleProgressHeader.mjs",
+      "require": "./dist/ArticleProgressHeader.cjs"
+    },
+    "./*": "./*"
+  }
+}

@@ -4179,6 +4179,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/article-progress-header",
+      jsx: ["ArticleProgressHeader"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/avatar",
       jsx: ["Avatar"],
       roles: []
@@ -4391,6 +4396,11 @@ export const manifest: DesignSystemManifest = {
     {
       name: "@cyclone-ui/icons",
       jsx: ["Icons"],
+      roles: []
+    },
+    {
+      name: "@cyclone-ui/illustrations",
+      jsx: ["Illustrations"],
       roles: []
     },
     {

@@ -30,6 +30,7 @@ import { ExplodedIllustration } from "./ExplodedIllustration";
 import { FormatIllustration } from "./FormatIllustration";
 import { HubIllustration } from "./HubIllustration";
 import { KeyboardIllustration } from "./KeyboardIllustration";
+import { KeypadIllustration } from "./KeypadIllustration";
 import { LaptopIllustration } from "./LaptopIllustration";
 import { LockersIllustration } from "./LockersIllustration";
 import { LoupeIllustration } from "./LoupeIllustration";
@@ -65,6 +66,7 @@ const ILLUSTRATIONS = {
   format: FormatIllustration,
   hub: HubIllustration,
   keyboard: KeyboardIllustration,
+  keypad: KeypadIllustration,
   laptop: LaptopIllustration,
   lockers: LockersIllustration,
   loupe: LoupeIllustration,
@@ -136,6 +138,10 @@ export const Riffle: Story = {
   args: { illustration: "riffle", intensity: 0.5 }
 };
 
+export const Keypad: Story = {
+  args: { illustration: "keypad", intensity: 0.5 }
+};
+
 /** The unseen pointer walks the tour until a real one arrives. */
 export const Playing: Story = {
   args: { illustration: "riffle", play: true }
@@ -187,7 +193,7 @@ function GalleryItem({ illustration, ...args }: Args) {
   );
 }
 
-/** Every illustration in the package, the thirty-three figures of Hairline. */
+/** Every illustration in the package, the thirty-three figures of Hairline and the ones drawn here since. */
 export const Gallery: Story = {
   args: { intensity: 0.5 },
   render: ({ illustration: _, ...args }: Args) => (

@@ -189,6 +189,7 @@ export const HoverReset: Story = {
     const separator = trigger.parentElement?.firstElementChild as HTMLElement;
     const color = () => {
       const line = separator.firstElementChild;
+
       return line
         ? getComputedStyle(line).backgroundColor
         : getComputedStyle(separator).borderLeftColor;

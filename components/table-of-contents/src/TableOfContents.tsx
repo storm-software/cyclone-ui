@@ -362,7 +362,8 @@ function getHashId(url: string) {
   }
 }
 
-function usePrefersReducedMotion() {
+/** Whether the reader asked the system for reduced motion (web only). */
+export function usePrefersReducedMotion() {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   useEffect(() => {
