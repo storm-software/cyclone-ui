@@ -262,6 +262,9 @@
       "path": "./components/icons"
     },
     {
+      "path": "./components/illustrations"
+    },
+    {
       "path": "./components/rating"
     },
     {

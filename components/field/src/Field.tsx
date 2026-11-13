@@ -1011,11 +1011,19 @@ const FieldLabelTextImpl = createStyledHOC(
     // The label's variant and position settle over the mount's layout effects
     // (the control registers its label defaults, then the label its variant),
     // which the animation driver would otherwise animate: jump until then.
+    // A hidden `<Activity>` (e.g. a Next.js route kept alive after navigating
+    // away) runs those effects' cleanups too, re-rendering the label without
+    // its variant or icons: animated, the driver would commit the computed
+    // styles of the `display: none` subtree (`top: 0`, `left: 0`) inline, and
+    // the label would stay there once shown again. Jump while hidden as well.
     const [mounted, setMounted] = useState(false);
     useEffect(() => {
       const frame = requestAnimationFrame(() => setMounted(true));
 
-      return () => cancelAnimationFrame(frame);
+      return () => {
+        cancelAnimationFrame(frame);
+        setMounted(false);
+      };
     }, []);
     const transition = (duration: string) => (mounted ? duration : null);
     const fieldDisabled = field.disabled.get();

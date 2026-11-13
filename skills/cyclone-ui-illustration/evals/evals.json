@@ -1,0 +1,47 @@
+{
+  "skill_name": "cyclone-ui-illustration",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Make an illustration for our deploy pipeline page in our Cyclone UI app (components live in src/components/ui). Something that reacts when you hover it.",
+      "expected_output": "Offers two or three one-line concepts (object, gesture, read-out, tour) that are objects rather than diagrams, builds the chosen one as <name>.js on the kernel, runs look.mjs until it exits 0 and reads the sheet, then builds the component and static SVGs into the app and shows real usage.",
+      "files": [],
+      "expectations": [
+        "Offers concepts in the 'Name. Object. Gesture. Read-out. Tour.' form before building, or says which it took when nobody can answer",
+        "Writes only <name>.js and never edits kernel.js, bench.html or the generated component",
+        "Ends the file with illustration({ name, means, rules, range, tour, mount }) and uses only HL, with no window, document, colours or timers",
+        "Runs look.mjs with --answer (and --edge) world points and fixes failures before handing over",
+        "Builds with --out into the app's components folder and explains the @cyclone-ui/illustrations dependency or uses --import for a copied illustrations package",
+        "Shows usage with the real <Name>Illustration component name and mentions the light/dark static SVGs",
+        "Calls the output an illustration, not a figure"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Here's our rocket logo (rocket.svg). Can you turn it into one of those isometric illustrations where the rocket lifts off when you point at it?",
+      "expected_output": "Runs read.mjs on the SVG, answers source.md's questions, says in one line what it read the drawing as and which parts it kept, keeps the given gesture and varies form and read-out across concepts, rebuilds the rocket as solids without tracing the path, looks with --source, and notes the mark belongs to the owner at hand-over.",
+      "files": [],
+      "expectations": [
+        "Runs read.mjs <file.svg> before writing concepts",
+        "States what it read the drawing as and which two or three parts it kept",
+        "Keeps the lift-off gesture fixed across concepts",
+        "Builds the parts with rings/prism rather than copying path coordinates from the SVG",
+        "Runs look.mjs with --source rocket.svg",
+        "Mentions at hand-over whose mark it is if it belongs to someone else"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "We need an empty-state illustration for 'no search results' that works in our React Native app and as a plain image in emails.",
+      "expected_output": "Draws absence with a tool that holds or finds things, judges the rest pose first, keeps the read-out counting to zero, and hands over both the react-native-svg component (which runs on native) and the pinned light/dark static SVGs for the email.",
+      "files": [],
+      "expectations": [
+        "Draws an object holding nothing rather than a sad face, per concepts.md's empty state section",
+        "Read-out names the part and zero, and says rest at rest",
+        "Explains the component runs on React Native through react-native-svg with the same code",
+        "Recommends the .light.svg or .dark.svg file for the email rather than the prefers-color-scheme one",
+        "Checks the static images row of the look sheet"
+      ]
+    }
+  ]
+}

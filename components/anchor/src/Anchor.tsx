@@ -40,9 +40,9 @@ const Permalink = styled(View, {
   render: "a",
   alignItems: "center",
   marginLeft: "lg",
-  opacity: "0 focus:1 group-hover/anchor:1",
+  opacity: "0 focus:1 group-hover/anchor:1 touchable:1",
   transition: "opacity 250ms ease-out, transform 250ms ease-out",
-  x: "0 focus:10px group-hover/anchor:10px"
+  x: "0 focus:10px group-hover/anchor:10px touchable:10px"
 });
 
 export interface AnchorExtraProps {

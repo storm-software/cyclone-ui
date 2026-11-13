@@ -1,0 +1,209 @@
+{
+  "name": "@cyclone-ui/illustrations",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Isometric line illustrations that answer the pointer, built on the Hairline engine and painted with Cyclone UI theme tokens. Includes the createIllustration factory (react-native-svg, so one illustration runs on web, React Native and the server), the illustration engine (HL), and thirty-three illustrations: Hairline's figures, from Basket to Vault. Each takes intensity, animated, play, label, onRead, strokeWidth and palette props.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/illustrations"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "kernel": "node ./scripts/kernel.ts",
+    "illustrations": "node ./scripts/illustrations.ts"
+  },
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@tamagui/core": "catalog:",
+    "react-native-svg": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "@types/node": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./BasketIllustration": {
+      "import": "./dist/BasketIllustration.mjs",
+      "require": "./dist/BasketIllustration.cjs"
+    },
+    "./BranchesIllustration": {
+      "import": "./dist/BranchesIllustration.mjs",
+      "require": "./dist/BranchesIllustration.cjs"
+    },
+    "./CabinetIllustration": {
+      "import": "./dist/CabinetIllustration.mjs",
+      "require": "./dist/CabinetIllustration.cjs"
+    },
+    "./create-illustration": {
+      "import": "./dist/create-illustration.mjs",
+      "require": "./dist/create-illustration.cjs"
+    },
+    "./DishIllustration": {
+      "import": "./dist/DishIllustration.mjs",
+      "require": "./dist/DishIllustration.cjs"
+    },
+    "./DrawerIllustration": {
+      "import": "./dist/DrawerIllustration.mjs",
+      "require": "./dist/DrawerIllustration.cjs"
+    },
+    "./ElevatorIllustration": {
+      "import": "./dist/ElevatorIllustration.mjs",
+      "require": "./dist/ElevatorIllustration.cjs"
+    },
+    "./engine": {
+      "import": "./dist/engine/index.mjs",
+      "require": "./dist/engine/index.cjs"
+    },
+    "./engine/dom": {
+      "import": "./dist/engine/dom.mjs",
+      "require": "./dist/engine/dom.cjs"
+    },
+    "./engine/iso": {
+      "import": "./dist/engine/iso.mjs",
+      "require": "./dist/engine/iso.cjs"
+    },
+    "./engine/motion": {
+      "import": "./dist/engine/motion.mjs",
+      "require": "./dist/engine/motion.cjs"
+    },
+    "./engine/palette": {
+      "import": "./dist/engine/palette.mjs",
+      "require": "./dist/engine/palette.cjs"
+    },
+    "./engine/stage": {
+      "import": "./dist/engine/stage.mjs",
+      "require": "./dist/engine/stage.cjs"
+    },
+    "./ExplodedIllustration": {
+      "import": "./dist/ExplodedIllustration.mjs",
+      "require": "./dist/ExplodedIllustration.cjs"
+    },
+    "./FormatIllustration": {
+      "import": "./dist/FormatIllustration.mjs",
+      "require": "./dist/FormatIllustration.cjs"
+    },
+    "./HubIllustration": {
+      "import": "./dist/HubIllustration.mjs",
+      "require": "./dist/HubIllustration.cjs"
+    },
+    "./KeyboardIllustration": {
+      "import": "./dist/KeyboardIllustration.mjs",
+      "require": "./dist/KeyboardIllustration.cjs"
+    },
+    "./LaptopIllustration": {
+      "import": "./dist/LaptopIllustration.mjs",
+      "require": "./dist/LaptopIllustration.cjs"
+    },
+    "./LockersIllustration": {
+      "import": "./dist/LockersIllustration.mjs",
+      "require": "./dist/LockersIllustration.cjs"
+    },
+    "./LoupeIllustration": {
+      "import": "./dist/LoupeIllustration.mjs",
+      "require": "./dist/LoupeIllustration.cjs"
+    },
+    "./PadlockIllustration": {
+      "import": "./dist/PadlockIllustration.mjs",
+      "require": "./dist/PadlockIllustration.cjs"
+    },
+    "./PatchIllustration": {
+      "import": "./dist/PatchIllustration.mjs",
+      "require": "./dist/PatchIllustration.cjs"
+    },
+    "./PhoneIllustration": {
+      "import": "./dist/PhoneIllustration.mjs",
+      "require": "./dist/PhoneIllustration.cjs"
+    },
+    "./PhosphorIllustration": {
+      "import": "./dist/PhosphorIllustration.mjs",
+      "require": "./dist/PhosphorIllustration.cjs"
+    },
+    "./PlotIllustration": {
+      "import": "./dist/PlotIllustration.mjs",
+      "require": "./dist/PlotIllustration.cjs"
+    },
+    "./PlugIllustration": {
+      "import": "./dist/PlugIllustration.mjs",
+      "require": "./dist/PlugIllustration.cjs"
+    },
+    "./QueryIllustration": {
+      "import": "./dist/QueryIllustration.mjs",
+      "require": "./dist/QueryIllustration.cjs"
+    },
+    "./RailIllustration": {
+      "import": "./dist/RailIllustration.mjs",
+      "require": "./dist/RailIllustration.cjs"
+    },
+    "./RebuildIllustration": {
+      "import": "./dist/RebuildIllustration.mjs",
+      "require": "./dist/RebuildIllustration.cjs"
+    },
+    "./RelayIllustration": {
+      "import": "./dist/RelayIllustration.mjs",
+      "require": "./dist/RelayIllustration.cjs"
+    },
+    "./RiffleIllustration": {
+      "import": "./dist/RiffleIllustration.mjs",
+      "require": "./dist/RiffleIllustration.cjs"
+    },
+    "./RouterIllustration": {
+      "import": "./dist/RouterIllustration.mjs",
+      "require": "./dist/RouterIllustration.cjs"
+    },
+    "./SettleIllustration": {
+      "import": "./dist/SettleIllustration.mjs",
+      "require": "./dist/SettleIllustration.cjs"
+    },
+    "./SieveIllustration": {
+      "import": "./dist/SieveIllustration.mjs",
+      "require": "./dist/SieveIllustration.cjs"
+    },
+    "./SlowIllustration": {
+      "import": "./dist/SlowIllustration.mjs",
+      "require": "./dist/SlowIllustration.cjs"
+    },
+    "./StackIllustration": {
+      "import": "./dist/StackIllustration.mjs",
+      "require": "./dist/StackIllustration.cjs"
+    },
+    "./TerminalIllustration": {
+      "import": "./dist/TerminalIllustration.mjs",
+      "require": "./dist/TerminalIllustration.cjs"
+    },
+    "./TerrainIllustration": {
+      "import": "./dist/TerrainIllustration.mjs",
+      "require": "./dist/TerrainIllustration.cjs"
+    },
+    "./TurntableIllustration": {
+      "import": "./dist/TurntableIllustration.mjs",
+      "require": "./dist/TurntableIllustration.cjs"
+    },
+    "./VaultIllustration": {
+      "import": "./dist/VaultIllustration.mjs",
+      "require": "./dist/VaultIllustration.cjs"
+    },
+    "./*": "./*"
+  }
+}

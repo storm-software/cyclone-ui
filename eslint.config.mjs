@@ -92,6 +92,7 @@ export default defineConfig(
       ".design-sync",
       ".ds-sync",
       "docs/**",
+      "skills/**",
       "apps/storybook/src/blocks/**/*.tsx",
       "packages/eslint-plugin/src/*.ts",
       "packages/eslint-plugin/src/INSTALL.md",

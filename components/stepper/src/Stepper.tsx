@@ -268,8 +268,17 @@ export const StepperFrame = createStyledHOC(
     },
     forwardedRef
   ) => {
-    const [state, setState] = useState<StepperState>({
-      ...defaultContextValues.state
+    // Seeded from the props, so the server (and hydration) render the current
+    // step's content before the header has reported the steps.
+    const [state, setState] = useState<StepperState>(() => {
+      const step = value ?? defaultValue ?? "";
+
+      return {
+        ...defaultContextValues.state,
+        currentStep: step,
+        previousStep: step,
+        visitedSteps: step ? [step] : []
+      };
     });
 
     const { steps, currentStep, visitedSteps } = state;
@@ -300,8 +309,9 @@ export const StepperFrame = createStyledHOC(
     };
 
     useLayoutEffect(() => {
-      if (!currentStep) {
-        // The first step shown fills in place, without animating from another.
+      if (steps.length > 0 && !steps.includes(currentStep)) {
+        // No step (or an unknown one) yet. The first step shown fills in
+        // place, without animating from another.
         // eslint-disable-next-line react/set-state-in-effect
         setState(next => {
           const step =
@@ -395,17 +405,28 @@ export const StepperHeaderList = createStyledHOC(
       items.findIndex(item => item.props.value === state.currentStep)
     );
 
-    // The steps, in order, are the header's items. Read on every render, so
-    // added, removed or reordered items (and remounts) keep them in sync.
+    // The steps, in order, are the header's items, so added, removed or
+    // reordered items (and remounts) keep them in sync. Keyed on their values:
+    // a `setState` on every commit loops ("Maximum update depth exceeded")
+    // once a parent re-renders from a layout effect, e.g. a form registering
+    // its fields during hydration.
     const values = items.map(item => item.props.value);
+    const stepsKey = values.join("\n");
     useLayoutEffect(() => {
       setState(next =>
-        next.steps.length === values.length &&
-        next.steps.every((step, index) => step === values[index])
+        next.steps.join("\n") === stepsKey
           ? next
-          : { ...next, steps: values }
+          : {
+              ...next,
+              steps: values,
+              // A step seeded from `value` reaches every step before it.
+              visitedSteps: next.currentStep
+                ? reached({ ...next, steps: values }, next.currentStep)
+                : next.visitedSteps
+            }
       );
-    });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [stepsKey]);
 
     return (
       <YStack ref={forwardedRef} gap="3xl" {...rest}>

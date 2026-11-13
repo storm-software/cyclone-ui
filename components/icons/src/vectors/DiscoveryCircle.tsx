@@ -130,7 +130,7 @@ const Icon = ({
             transform={`translate(12 12) scale(${lightBulbScale}) translate(-12 -12)`}>
             <Lightbulb
               size={isSmall ? diameter : lightBulbSize}
-              variant="filled"
+              variant={isSmall ? "filled" : "bold"}
               x={isSmall ? 0 : lightBulbOffset}
               y={isSmall ? 0 : lightBulbOffset}
               color={color}

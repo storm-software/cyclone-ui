@@ -37,7 +37,7 @@ const AnchorFrame = styled(View, "flex flex-row items-center", {
 
 const Permalink = styled(
   View,
-  "ml-lg translate-x-[0px] items-center opacity-0 focus:translate-x-[10px] focus:opacity-100 group-hover/anchor:translate-x-[10px] group-hover/anchor:opacity-100",
+  "ml-lg translate-x-[0px] items-center opacity-0 focus:translate-x-[10px] focus:opacity-100 group-hover/anchor:translate-x-[10px] group-hover/anchor:opacity-100 touchable:translate-x-[10px] touchable:opacity-100",
   { displayName: "AnchorPermalink" }
 );
 

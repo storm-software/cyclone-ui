@@ -3888,6 +3888,193 @@
       ]
     },
     {
+      "name": "@cyclone-ui/illustrations",
+      "type": "registry:component",
+      "title": "@cyclone-ui/illustrations",
+      "description": "Isometric line illustrations that answer the pointer, built on the Hairline engine and painted with Cyclone UI theme tokens. Includes the createIllustration factory (react-native-svg, so one illustration runs on web, React Native and the server), the illustration engine (HL), and thirty-three illustrations: Hairline's figures, from Basket to Vault. Each takes intensity, animated, play, label, onRead, strokeWidth and palette props.",
+      "dependencies": ["@tamagui/core@3.3.2", "react-native-svg@^15.16.1"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "@types/node@^25.9.9",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "files": [
+        {
+          "path": "components/illustrations/src/create-illustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/engine/dom.ts",
+          "type": "registry:file",
+          "target": "components/illustrations/src/engine/dom.ts"
+        },
+        {
+          "path": "components/illustrations/src/engine/index.ts",
+          "type": "registry:file",
+          "target": "components/illustrations/src/engine/index.ts"
+        },
+        {
+          "path": "components/illustrations/src/engine/iso.ts",
+          "type": "registry:file",
+          "target": "components/illustrations/src/engine/iso.ts"
+        },
+        {
+          "path": "components/illustrations/src/engine/motion.ts",
+          "type": "registry:file",
+          "target": "components/illustrations/src/engine/motion.ts"
+        },
+        {
+          "path": "components/illustrations/src/engine/palette.ts",
+          "type": "registry:file",
+          "target": "components/illustrations/src/engine/palette.ts"
+        },
+        {
+          "path": "components/illustrations/src/engine/stage.ts",
+          "type": "registry:file",
+          "target": "components/illustrations/src/engine/stage.ts"
+        },
+        {
+          "path": "components/illustrations/src/index.ts",
+          "type": "registry:file",
+          "target": "components/illustrations/src/index.ts"
+        },
+        {
+          "path": "components/illustrations/src/BasketIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/BranchesIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/CabinetIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/DishIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/DrawerIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/ElevatorIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/ExplodedIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/FormatIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/HubIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/KeyboardIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/LaptopIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/LockersIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/LoupeIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/PadlockIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/PatchIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/PhoneIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/PhosphorIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/PlotIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/PlugIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/QueryIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/RailIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/RebuildIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/RelayIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/RiffleIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/RouterIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/SettleIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/SieveIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/SlowIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/StackIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/TerminalIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/TerrainIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/TurntableIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/illustrations/src/VaultIllustration.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/inline-code-text",
       "type": "registry:component",
       "title": "@cyclone-ui/inline-code-text",

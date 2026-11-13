@@ -96,10 +96,23 @@ const AlertDialogContainer = createStyledHOC(
           key="content"
           // Leaves room for the dialog's margin; `Content` scrolls past this.
           maxHeight="85vh"
-          borderColor="hairline"
+          position="relative"
+          // The hairline is drawn by the overlay below instead, so the
+          // icon's primary band can paint over its top part.
+          borderWidth={0}
           {...props}
           tight={true}>
           {children}
+          <View
+            position="absolute"
+            inset={0}
+            borderWidth={1}
+            borderColor="hairline"
+            borderRadius="dialog"
+            pointerEvents="none"
+            // Under the band (10), over the content.
+            zIndex="5"
+          />
         </Dialog.Container>
       </Dialog.Portal>
     );
