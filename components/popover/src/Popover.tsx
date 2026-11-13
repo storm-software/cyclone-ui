@@ -156,7 +156,7 @@ const PopoverContent = styled(TamaguiPopover.Content, {
   }
 });
 
-interface PopoverContentExtraProps extends ContainerSurfaceProps {
+export interface PopoverContentExtraProps extends ContainerSurfaceProps {
   hasArrow?: boolean;
 }
 

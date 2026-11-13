@@ -475,7 +475,7 @@ const SelectFallback = ({
 const SelectGroupImpl = createStyledHOC(
   ContextMenu,
   (
-    props: Omit<GetProps<typeof ContextMenu>, "value" | "onValueChange"> &
+    props: Omit<GetProps<typeof ContextMenu>, "value" | "onValueChange" | "variant"> &
       Partial<SelectContextProps> & {
         /**
          * The current value of the select. This should be used when the select is controlled.

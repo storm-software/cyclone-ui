@@ -354,7 +354,9 @@ const SearchInputTextBox = createStyledHOC(
             disableFocusScope={true}
             // At least the text box's width, plus 4px on each side.
             minWidth="calc(var(--tamagui-popper-anchor-width) + 8px)">
-            <ContextMenu.Content.ScrollView id={listBoxId} role="listbox">
+            <ContextMenu.Content.ScrollView
+              id={listBoxId}
+              {...({ role: "listbox" } as object)}>
               {filteredSuggestions.map((suggestion, index) => (
                 <ContextMenu.Item
                   key={suggestion}

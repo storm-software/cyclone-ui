@@ -93,7 +93,7 @@ const ScrollViewFrame = styled(
   // unresolved.
 );
 
-interface ScrollViewVariants {
+export interface ScrollViewVariants {
   size?: "sm" | "lg";
   fullscreen?: boolean;
 }

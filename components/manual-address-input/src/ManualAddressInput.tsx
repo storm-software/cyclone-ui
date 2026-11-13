@@ -347,8 +347,13 @@ export const ManualAddressInput = createStyledHOC(
             <Input.TextBox.Value
               placeholder={options.placeholder}
               // A section keeps autofill from mixing two addresses' values.
+              // The `section-*` prefix is valid HTML but not in RN's union.
               autoComplete={
-                name ? `section-${name} ${autoComplete}` : autoComplete
+                (name
+                  ? `section-${name} ${autoComplete}`
+                  : autoComplete) as GetProps<
+                  typeof Input.TextBox.Value
+                >["autoComplete"]
               }
             />
           </Input.TextBox>
