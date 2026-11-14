@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Context Menu
 
+## [0.0.76](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.76) (11/14/2026)
+
+### Features
+
+- **table:** Added various reusable `Table` and `DataTable` cell components ([aa76ecfec](https://github.com/storm-software/cyclone-ui/commit/aa76ecfec))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.78**
+- Updated **button** to **v0.6.84**
+- Updated **container** to **v0.6.83**
+- Updated **helpers** to **v0.3.79**
+- Updated **icons** to **v0.0.79**
+- Updated **popover** to **v0.5.86**
+- Updated **tooltip** to **v0.5.84**
+
 ## [0.0.75](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.75) (11/14/2026)
 
 ### Features

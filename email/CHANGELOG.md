@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Email
 
+## [0.0.49](https://github.com/storm-software/cyclone-ui/releases/tag/email%400.0.49) (11/14/2026)
+
+### Updated Dependencies
+
+- Updated **tokens** to **v0.3.67**
+
 ## [0.0.48](https://github.com/storm-software/cyclone-ui/releases/tag/email%400.0.48) (11/14/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Table
 
+## [0.4.80](https://github.com/storm-software/cyclone-ui/releases/tag/table%400.4.80) (11/14/2026)
+
+### Features
+
+- **table:** Added various reusable `Table` and `DataTable` cell components ([aa76ecfec](https://github.com/storm-software/cyclone-ui/commit/aa76ecfec))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.78**
+- Updated **heading-text** to **v0.5.79**
+- Updated **icons** to **v0.0.79**
+- Updated **progress** to **v0.5.78**
+
 ## [0.4.79](https://github.com/storm-software/cyclone-ui/releases/tag/table%400.4.79) (11/14/2026)
 
 ### Features
