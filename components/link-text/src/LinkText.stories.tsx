@@ -39,6 +39,12 @@ export const Base: Story = {
   args: {}
 };
 
+export const Faded: Story = {
+  args: {
+    faded: true
+  }
+};
+
 export const Brand: Story = {
   args: {
     theme: "brand"
@@ -92,7 +98,6 @@ export const SubtleVariant: Story = {
     variant: "subtle"
   }
 };
-
 
 export const Mixed: Story = {
   args: {

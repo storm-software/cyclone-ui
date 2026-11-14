@@ -52,6 +52,10 @@
       "import": "./dist/BranchesIllustration.mjs",
       "require": "./dist/BranchesIllustration.cjs"
     },
+    "./BreakersIllustration": {
+      "import": "./dist/BreakersIllustration.mjs",
+      "require": "./dist/BreakersIllustration.cjs"
+    },
     "./CabinetIllustration": {
       "import": "./dist/CabinetIllustration.mjs",
       "require": "./dist/CabinetIllustration.cjs"

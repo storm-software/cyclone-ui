@@ -78,12 +78,18 @@ export const Subtle: Story = {
   }
 };
 
-
 export const Mixed: Story = {
   args: {
     currentName: "Current Page",
     variant: "emphasis",
     mixed: true
+  }
+};
+
+export const Faded: Story = {
+  args: {
+    currentName: "Current Page",
+    faded: true
   }
 };
 

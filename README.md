@@ -71,7 +71,7 @@
 
 # Quick Features
 
-- **118 component packages** for [Tamagui](https://tamagui.dev), for web and React Native: forms, overlays, layout, navigation, data display, charts, text, and motion. Each has a [catalog page](./docs/design-system/components/index.md) with installation, usage, anatomy, examples, and props.
+- **119 component packages** for [Tamagui](https://tamagui.dev), for web and React Native: forms, overlays, layout, navigation, data display, charts, text, and motion. Each has a [catalog page](./docs/design-system/components/index.md) with installation, usage, anatomy, examples, and props.
 - **Copy-and-own installs.** Like shadcn/ui, the [`cyclone-ui` CLI](./docs/packages/cli.md) copies component source into your project and adds the packages it needs.
 - **Design tokens and themes.** The token JSON in `packages/tokens/src/tokens` generates the Tamagui config, CSS variables, and six themes (light, dark, and their dimmed and high-contrast forms) with [Razorwind](https://github.com/storm-software/razorwind). See [Tokens](./docs/design-system/tokens/index.md).
 - **Fonts, icons, and illustrations.** The [Storm Sans and Storm Serif](./docs/design-system/fonts/index.md) font families, 585 animated [icons](./docs/design-system/icons/index.md), and 34 themed [illustrations](./docs/design-system/illustrations/index.md).

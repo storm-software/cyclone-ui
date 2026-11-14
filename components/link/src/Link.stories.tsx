@@ -217,6 +217,13 @@ export const Mixed: Story = {
   }
 };
 
+export const Faded: Story = {
+  args: {
+    href: "#",
+    faded: true
+  }
+};
+
 export const MixedInverse: Story = {
   args: {
     href: "#",

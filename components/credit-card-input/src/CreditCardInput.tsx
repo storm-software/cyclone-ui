@@ -996,7 +996,7 @@ const CreditCardInputCard = createStyledHOC(
             height="100%"
             color={getVariableValue(theme.emphasis, "color")}
             fill="currentColor"
-            opacity={0.08}
+            opacity={0.045}
           />
           {/* Fixed height with the logo out of flow, so an oversized brand
               logo can't push the rest of the card around. */}

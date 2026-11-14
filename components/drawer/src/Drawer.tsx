@@ -74,6 +74,8 @@ const DrawerContext = createContext<{
   showGaps: boolean;
   direction: DrawerDirection;
   size?: DrawerSize;
+  /** Whether `Drawer.Frame` renders a `Drawer.Handle`. */
+  hasHandle?: boolean;
 }>({ setOpen: () => {}, showGaps: false, direction: "right" });
 
 // Mirrors Sheet's own size styles, which a media clause on the same prop would
@@ -116,15 +118,28 @@ const drawerInnerBorderSide: Record<DrawerDirection, string> = {
   left: "borderRightWidth"
 };
 
+// The frame side Sheet pads for its handle.
+const drawerHandleSidePadding: Record<DrawerDirection, string> = {
+  top: "paddingBottom",
+  right: "paddingLeft",
+  bottom: "paddingTop",
+  left: "paddingRight"
+};
+
 // The outer shell. `Drawer.Footer` sits on it, below `Drawer.Content`.
 // Without gaps, Sheet's own edge-side radii apply (an explicit `undefined`
 // would replace them).
 const DrawerFrameImpl: FC<DrawerFrameProps> = ({
   backgroundColor = "surface",
   borderColor = "hairline",
+  children,
   ...props
 }) => {
-  const { showGaps, direction, size } = use(DrawerContext);
+  const context = use(DrawerContext);
+  const { showGaps, direction, size } = context;
+  const hasHandle = Children.toArray(children).some(
+    child => isValidElement(child) && child.type === DrawerHandle
+  );
 
   return (
     <Sheet.Frame
@@ -142,11 +157,15 @@ const DrawerFrameImpl: FC<DrawerFrameProps> = ({
       borderBottomWidth={showGaps ? 1 : 0}
       borderLeftWidth={showGaps ? 1 : 0}
       {...{ [drawerInnerBorderSide[direction]]: 1 }}
+      {...(!hasHandle && { [drawerHandleSidePadding[direction]]: 0 })}
       // Portaled content inherits the text color (black by default), which
       // `currentColor` icons pick up.
       style={{ color: "var(--primary)" }}
-      {...props}
-    />
+      {...props}>
+      <DrawerContext.Provider value={{ ...context, hasHandle }}>
+        {children}
+      </DrawerContext.Provider>
+    </Sheet.Frame>
   );
 };
 
@@ -207,7 +226,8 @@ const DrawerHeaderImpl: FC<DrawerHeaderProps> = ({
 };
 
 // `right` is the reference: `lg` on the handle and above the footer, `2xl` on
-// the other edges. The handle edge follows `direction`.
+// the other edges. The handle edge follows `direction`; without a handle it
+// takes `2xl` too (see `drawerContentHandlelessMargins`).
 const drawerContentMargins: Record<
   DrawerDirection,
   {
@@ -243,6 +263,17 @@ const drawerContentMargins: Record<
   }
 };
 
+// `top`'s handle edge is also the footer edge, which keeps `lg`.
+const drawerContentHandlelessMargins: Record<
+  DrawerDirection,
+  Record<string, "2xl">
+> = {
+  right: { marginLeft: "2xl" },
+  left: { marginRight: "2xl" },
+  top: {},
+  bottom: { marginTop: "2xl" }
+};
+
 const DrawerContentFrame = styled(YStack, {
   displayName: "DrawerContent",
   flexGrow: 1,
@@ -263,12 +294,15 @@ const isDrawerHeader = (child: ReactNode) =>
 // `Drawer.Header` children stay pinned, and the rest scrolls once it
 // outgrows the panel.
 const DrawerContent: FC<DrawerContentProps> = ({ children, ...props }) => {
-  const { direction } = use(DrawerContext);
+  const { direction, hasHandle = true } = use(DrawerContext);
   const items = Children.toArray(children);
   const header = items.filter(isDrawerHeader);
 
   return (
-    <DrawerContentFrame {...drawerContentMargins[direction]} {...props}>
+    <DrawerContentFrame
+      {...drawerContentMargins[direction]}
+      {...(!hasHandle && drawerContentHandlelessMargins[direction])}
+      {...props}>
       {header.length > 0 && (
         <YStack flexShrink={0} paddingHorizontal="6xl">
           {header}

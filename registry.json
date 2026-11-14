@@ -1107,6 +1107,32 @@
       ]
     },
     {
+      "name": "@cyclone-ui/error-page",
+      "type": "registry:component",
+      "title": "@cyclone-ui/error-page",
+      "description": "A full-width error page block for an HTTP status code. The code is set in giant display type, half hidden behind a band that holds an illustration for the kind of error (a loupe over a blank sheet for not found, a tripped breaker panel for server errors, a door keypad for authentication, a padlock for authorization, and more), with a large title under it. The code also picks the default title, message, description and color tone, and each can be overridden. Compose the details below with Introduction, Message, Description, Actions and Action parts. Use it for 404, 500 and other error routes.",
+      "dependencies": ["@tamagui/core@3.3.2"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/eyebrow-text",
+        "@cyclone-ui/heading-text",
+        "@cyclone-ui/icons",
+        "@cyclone-ui/illustrations"
+      ],
+      "files": [
+        {
+          "path": "components/error-page/src/ErrorPage.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/eyebrow-text",
       "type": "registry:component",
       "title": "@cyclone-ui/eyebrow-text",

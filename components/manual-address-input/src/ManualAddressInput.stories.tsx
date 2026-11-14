@@ -75,7 +75,8 @@ export const Base: Story = {
     const line2 = getTextBox(canvasElement, "addressLine2");
     const line3 = getTextBox(canvasElement, "addressLine3");
 
-    // US by default: ZIP Code and a State picked from a list.
+    // US layout by default: ZIP Code and a State picked from a list. Not
+    // required, so no country is chosen for the user.
     await waitFor(async () =>
       expect(getLabels(canvasElement)).toEqual([
         "Country",
@@ -89,7 +90,7 @@ export const Base: Story = {
     );
     await expect(
       canvasElement.querySelector("[data-select-trigger]")
-    ).toHaveTextContent("United States");
+    ).not.toHaveTextContent("United States");
 
     // Each line opens once the one before it is filled in.
     await expect(line2).toBeDisabled();

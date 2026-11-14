@@ -5,7 +5,7 @@ description: "Components available in the Cyclone UI (Dark)."
 
 # Components
 
-118 `component` items in the component registry.
+119 `component` items in the component registry.
 
 ## @cyclone-ui/accordion
 
@@ -896,6 +896,28 @@ A split Button: a main action joined to a chevron Button that opens a ContextMen
 | Path                                                | Type        | Target |
 | --------------------------------------------------- | ----------- | ------ |
 | `components/dropdown-button/src/DropdownButton.tsx` | `component` | —      |
+
+## @cyclone-ui/error-page
+
+A full-width error page block for an HTTP status code. The code is set in giant display type, half hidden behind a band that holds an illustration for the kind of error (a loupe over a blank sheet for not found, a tripped breaker panel for server errors, a door keypad for authentication, a padlock for authorization, and more), with a large title under it. The code also picks the default title, message, description and color tone, and each can be overridden. Compose the details below with Introduction, Message, Description, Actions and Action parts. Use it for 404, 500 and other error routes.
+
+- **Name:** `@cyclone-ui/error-page`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/body-text@0.5.75`
+- `@cyclone-ui/eyebrow-text@0.5.75`
+- `@cyclone-ui/heading-text@0.5.76`
+- `@cyclone-ui/icons@0.0.76`
+- `@cyclone-ui/illustrations@0.0.4`
+- `@tamagui/core@3.3.2`
+
+### Files
+
+| Path                                      | Type        | Target |
+| ----------------------------------------- | ----------- | ------ |
+| `components/error-page/src/ErrorPage.tsx` | `component` | —      |
 
 ## @cyclone-ui/eyebrow-text
 

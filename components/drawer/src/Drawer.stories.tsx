@@ -136,6 +136,35 @@ export const ShowGaps: Story = {
   }
 };
 
+export const WithoutHandle: Story = {
+  render: ({ children, ...props }: DrawerProps) => {
+    const [open, setOpen] = useState(false);
+
+    return (
+      <>
+        <Button onPress={() => setOpen(true)}>
+          <Button.Text>Open Drawer</Button.Text>
+        </Button>
+        <Drawer {...props} open={open} onOpenChange={setOpen}>
+          <Drawer.Overlay />
+          <Drawer.Frame>
+            <Drawer.Content>
+              <Drawer.Header closable={true}>
+                <Drawer.Title>Drawer without a handle</Drawer.Title>
+              </Drawer.Header>
+              <Drawer.Body>{children}</Drawer.Body>
+            </Drawer.Content>
+          </Drawer.Frame>
+        </Drawer>
+      </>
+    );
+  },
+  args: {
+    ...Base.args,
+    disableDrag: true
+  }
+};
+
 export const Uncontrolled: Story = {
   render: ({ children, ...props }: DrawerProps) => (
     <Drawer {...props} defaultOpen={true}>

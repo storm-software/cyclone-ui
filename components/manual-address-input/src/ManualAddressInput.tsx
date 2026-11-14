@@ -156,7 +156,9 @@ export interface ManualAddressInputExtraProps {
   name?: string;
 
   /**
-   * The ISO 3166-1 alpha-2 country used while the form has no country value.
+   * The ISO 3166-1 alpha-2 country whose address format is shown while the
+   * form has no country value. When `required`, the form's country value is
+   * also set to it; otherwise the country is left empty until one is chosen.
    *
    * @defaultValue "US"
    */
@@ -239,11 +241,11 @@ export const ManualAddressInput = createStyledHOC(
     const country = (text("country") || defaultCountry).toUpperCase();
     const format = getAddressFormat(country);
 
-    // Without a country (at the start, or after a reset) the form takes
-    // `defaultCountry`, without being made dirty.
+    // Without a country (at the start, or after a reset) a required form takes
+    // `defaultCountry`, without being made dirty. An optional one stays empty.
     const hasCountry = Boolean(values[names.country]);
     useEffect(() => {
-      if (!hasCountry) {
+      if (required && !hasCountry) {
         const update = (previous: Record<string, unknown>) => ({
           ...previous,
           [names.country]: defaultCountry.toUpperCase()
@@ -255,6 +257,7 @@ export const ManualAddressInput = createStyledHOC(
       defaultCountry,
       hasCountry,
       names.country,
+      required,
       setInitialValues,
       setValues
     ]);
@@ -419,14 +422,17 @@ export const ManualAddressInput = createStyledHOC(
           required,
           placeholder: "Street address or P.O. box"
         })}
+
         {/* Each further line opens once the one before it is filled in. */}
         {textField("addressLine2", "Address Line 2", "address-line2", {
           disabled: !hasLine1,
           placeholder: "Apartment, suite, unit, building or floor"
         })}
+
         {textField("addressLine3", "Address Line 3", "address-line3", {
           disabled: !hasLine1 || !hasLine2
         })}
+
         <Field
           name={names.country}
           size={size}

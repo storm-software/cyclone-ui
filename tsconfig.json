@@ -229,6 +229,9 @@
       "path": "./components/footer"
     },
     {
+      "path": "./components/error-page"
+    },
+    {
       "path": "./components/terrain-footer"
     },
     {

@@ -4339,6 +4339,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/error-page",
+      jsx: ["ErrorPage"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/eyebrow-text",
       jsx: ["EyebrowText"],
       roles: []

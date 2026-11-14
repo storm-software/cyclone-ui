@@ -52,11 +52,14 @@ export type BreadcrumbContextProps = TextContextStyles & {
 } & {
   size: FontSizeTokens;
   separator: BreadcrumbVariant;
-} & Pick<LinkTextExtraProps, "variant" | "mixed" | "inverse" | "themed">;
+} & Pick<
+    LinkTextExtraProps,
+    "variant" | "mixed" | "inverse" | "faded" | "themed"
+  >;
 
 export const BreadcrumbContext = createStyledContext<
   BreadcrumbContextProps,
-  "size" | "separator" | "variant" | "mixed" | "inverse" | "themed"
+  "size" | "separator" | "variant" | "mixed" | "inverse" | "faded" | "themed"
 >(
   {
     size: true,
@@ -64,6 +67,7 @@ export const BreadcrumbContext = createStyledContext<
     variant: "base",
     mixed: false,
     inverse: false,
+    faded: false,
     themed: false
   } as BreadcrumbContextProps,
   {
@@ -348,7 +352,7 @@ const BreadcrumbMenuLink = styled(Link, {
 const BreadcrumbItemImpl = createStyledHOC(
   BreadcrumbLink,
   ({ children, size: sizeProp, ...props }, forwardRef) => {
-    const { size, variant, mixed, inverse, themed } =
+    const { size, variant, mixed, inverse, faded, themed } =
       BreadcrumbContext.useStyledContext();
     const closeMenu = use(BreadcrumbMenuContext);
 
@@ -367,6 +371,7 @@ const BreadcrumbItemImpl = createStyledHOC(
           variant={variant}
           mixed={mixed}
           inverse={inverse}
+          faded={faded}
           themed={themed}
           underline="none"
           {...props}
@@ -388,6 +393,7 @@ const BreadcrumbItemImpl = createStyledHOC(
             variant={variant}
             mixed={mixed}
             inverse={inverse}
+            faded={faded}
             themed={themed}
             {...props}>
             {children}

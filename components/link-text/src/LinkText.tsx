@@ -22,8 +22,7 @@ import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, useThemeName } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
 
-export type LinkTextVariant =
-  "base" | "emphasis" | "ink" | "subtle";
+export type LinkTextVariant = "base" | "emphasis" | "ink" | "subtle";
 
 export interface LinkTextExtraProps {
   disabled?: boolean;
@@ -40,6 +39,10 @@ export interface LinkTextExtraProps {
    * Swap the text and underline colors (only visible with `mixed`).
    */
   inverse?: boolean;
+  /**
+   * Draw the underline in its color at 60% opacity, so it reads lighter than the text.
+   */
+  faded?: boolean;
   /**
    * Use `primary` everywhere `link` would be used.
    */
@@ -156,6 +159,7 @@ export const LinkText = createStyledHOC(
       variant = "base",
       mixed = false,
       inverse = false,
+      faded = false,
       themed = false,
       color,
       textDecorationColor,
@@ -178,6 +182,9 @@ export const LinkText = createStyledHOC(
     let decorationColor = mixed ? getStateColors(link) : textColor;
     if (mixed && inverse) {
       [textColor, decorationColor] = [decorationColor, textColor];
+    }
+    if (faded) {
+      decorationColor = decorationColor.replaceAll(/\S+/g, "$&/60");
     }
     if (disabled) {
       textColor = `${link}-disabled hover:${link}-disabled`;
