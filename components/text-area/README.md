@@ -11,6 +11,17 @@ A `TextArea` component that renders a multiline text input. It uses the same tok
 
 ## Installing
 
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add text-area
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/text-area.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/text-area` package is not published to npm yet. After it is published, you can also install it with a package manager:
+
 Using [pnpm](http://pnpm.io):
 
 ```bash

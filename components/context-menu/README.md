@@ -63,7 +63,29 @@ A `ContextMenu` component used to render a context menu. It is a simple componen
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- A list of actions in a popover on large screens, and in a bottom sheet on small screens.
+- Compound API: `ContextMenu.Trigger`, `ContextMenu.Anchor`, `ContextMenu.Content`, `ContextMenu.Content.ScrollView`, `ContextMenu.Item`, and `ContextMenu.Item.Label`, `.Text` and `.Icon`.
+- Item indicators: a check mark on the item whose `value` matches the menu `value`, a lock on a `disabled` item, and a chevron on an item with child `items`.
+- Submenus open beside the item on hover, press or `ArrowRight`. On small screens, they expand inline.
+- `ArrowDown` and `ArrowUp` move focus between items, skip disabled items, and wrap at the ends.
+- Sizes `sm`, `md` (default) and `lg`. Surface `variant` from Container, plus `shadowStyle`, `glass`, `noise` and `accented`.
+- `highlighted` items for combobox-style active options, and a per-item `theme`, such as `danger`.
+- Long labels end in an ellipsis and show the full text in a tooltip.
+
 ## Installing
+
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add context-menu
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/context-menu.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/context-menu` package is not published to npm yet. After it is published, you can also install it with a package manager:
 
 Using [pnpm](http://pnpm.io):
 
@@ -88,6 +110,48 @@ yarn add -D @cyclone-ui/context-menu
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Button } from "@cyclone-ui/button"
+import { ContextMenu } from "@cyclone-ui/context-menu"
+import { useState } from "react"
+
+export const Example = () => {
+  const [open, setOpen] = useState(false)
+  const [action, setAction] = useState<string>()
+
+  return (
+    <ContextMenu
+      open={open}
+      onOpenChange={setOpen}
+      value={action}
+      onValueChange={value => {
+        setAction(value)
+        setOpen(false)
+      }}>
+      <ContextMenu.Trigger asChild={true}>
+        <Button>
+          <Button.Text>Actions</Button.Text>
+        </Button>
+      </ContextMenu.Trigger>
+      <ContextMenu.Content width={320}>
+        <ContextMenu.Content.ScrollView>
+          <ContextMenu.Item value="rename" aria-label="Rename">
+            <ContextMenu.Item.Label>Rename</ContextMenu.Item.Label>
+          </ContextMenu.Item>
+          <ContextMenu.Item value="duplicate" aria-label="Duplicate">
+            <ContextMenu.Item.Label>Duplicate</ContextMenu.Item.Label>
+          </ContextMenu.Item>
+        </ContextMenu.Content.ScrollView>
+      </ContextMenu.Content>
+    </ContextMenu>
+  )
+}
+```
+
+See the [component reference](../../docs/design-system/components/context-menu.md) for all props and variants.
 
 ## Reduced Package Size
 

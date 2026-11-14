@@ -65,7 +65,28 @@ A package containing the File Picker component used by Storm Software
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- Picks files and images: a drop zone on the web, and the document or image picker on native.
+- Variants: `dropzone` (a dashed drop area, default) and `simple` (a single-line control styled like `Input`).
+- Lists the picked files as `File` cards with image, text and PDF previews and a remove button.
+- `max` sets the number of files (1 by default). `mediaTypes` limits the accepted types (`All`, `Images`, `Videos` or `Audios`).
+- Sizes `sm`, `md` and `lg`, and `disabled` and `readOnly` states.
+- Inside a `Field`, the picked files are the field value, and the picker renders its default parts when you pass no children.
+- Compound API: `FilePicker.Trigger`, `FilePicker.Trigger.Button`, `FilePicker.Files` and `FilePicker.Files.File`.
+
 ## Installing
+
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add file-picker
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/file-picker.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/file-picker` package is not published to npm yet. After it is published, you can also install it with a package manager:
 
 Using [pnpm](http://pnpm.io):
 
@@ -90,6 +111,25 @@ yarn add -D @cyclone-ui/file-picker
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Field } from "@cyclone-ui/field"
+import { FilePicker } from "@cyclone-ui/file-picker"
+import { Form } from "@cyclone-ui/form"
+
+export const Example = () => (
+  <Form name="upload" initialValues={{ attachments: [] }}>
+    <Field name="attachments">
+      <Field.Label>Attachments</Field.Label>
+      <FilePicker max={3} mediaTypes={["Images"]} />
+    </Field>
+  </Form>
+)
+```
+
+See the [component reference](../../docs/design-system/components/file-picker.md) for all props and variants.
 
 ## Reduced Package Size
 

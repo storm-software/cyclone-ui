@@ -3,6 +3,12 @@ title: Breadcrumb
 description: Reference for the Breadcrumb component, a trail of links that shows where the current page is in a site hierarchy.
 documentType: reference
 tags: [component, triggers, navigation, breadcrumb]
+component:
+  name: breadcrumb
+  package: "@cyclone-ui/breadcrumb"
+  stories:
+    - title: Triggers/Breadcrumb
+      file: components/breadcrumb/src/Breadcrumb.stories.tsx
 ---
 
 # Breadcrumb
@@ -10,6 +16,19 @@ tags: [component, triggers, navigation, breadcrumb]
 `Breadcrumb` shows the path to the current page. Each ancestor is a link. The current page is plain text at the end.
 
 When the trail is long, the middle links collapse into a menu behind a `...` button.
+
+## Installation
+
+Copy the component into your project with the [Cyclone UI CLI](../../packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add breadcrumb
+pnpm install
+```
+
+- **Files:** `Breadcrumb.tsx` and `utilities.ts`. The CLI writes them to `<path>/breadcrumb/`. `path` comes from `components.json` and defaults to `components`.
+- **Also copies:** [Body Text](./body-text.md), [Button](./button.md), [Container](./container.md), [Heading Text](./heading-text.md), [Icons](../icons/index.md), [Link](./link.md), [Link Text](./link-text.md), [Popover](./popover.md), [Ripple Animation](./ripple-animation.md), [Scroll View](./scroll-view.md), [Sheet](./sheet.md), and [Tooltip](./tooltip.md). Imports between copied components become relative paths.
+- **Adds to `package.json`:** `@tamagui/core`, `@tamagui/group`, `@tamagui/helpers`, `@tamagui/stacks`, and `@tamagui/text`.
 
 ## Import
 
@@ -28,11 +47,38 @@ import { Breadcrumb } from "@cyclone-ui/breadcrumb";
 
 ## Anatomy
 
-| Part                | Purpose                                                                                      |
-| ------------------- | -------------------------------------------------------------------------------------------- |
-| `Breadcrumb`        | The root. It sets the separator and the link style for all items.                            |
-| `Breadcrumb.Item`   | One ancestor link, followed by a separator. It is a [Link](./link.md). In the collapsed menu, it is a menu row. |
-| Current page        | The `currentName` text. It has the `primary` color and no link.                              |
+```tsx
+<Breadcrumb currentName="Headings">
+  <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+  <Breadcrumb.Item href="/docs">Docs</Breadcrumb.Item>
+</Breadcrumb>
+```
+
+| Part              | Renders                                                                                                                         | Purpose                                                                                      |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `Breadcrumb`      | A Tamagui `XStack` in a `Theme`. An `XGroup` with `display: contents` holds the trail.                                           | The root. It sets the size, the separator, and the link style for all items.                 |
+| `Breadcrumb.Item` | An `XGroup.Item` with a [Link](./link.md) (`<a role="link">`) and a separator. In the collapsed menu, a block `Link` with no separator. | One ancestor link. In the collapsed menu, it is a menu row.                          |
+| Separator         | A bold `ChevronRight` or `ChevronDoubleRight` icon, or a `/` in a `SizableText`.                                                | The mark after each link and after the menu button.                                          |
+| Menu button       | A ghost, circular [Button](./button.md) with a `DotsHorizontal` icon. It is the trigger of a [Popover](./popover.md).           | Stands in for the collapsed links. It shows only when links collapse.                        |
+| Current page      | A Tamagui `Text` in the `base` theme.                                                                                           | The `currentName` text. It has the `primary` color, the `display` font, and no link.         |
+
+`BreadcrumbItem` is also exported by name. Use it in React Server Components, which cannot read `Breadcrumb.Item` from a client module.
+
+## Examples
+
+The examples are the stories in [`Breadcrumb.stories.tsx`](../../../components/breadcrumb/src/Breadcrumb.stories.tsx). Each story renders three links and the current page `Current Page`.
+
+| Stories                                                                     | What they show                                                                   |
+| --------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `Base`                                                                      | The default `md` size, `base` link variant, and `slash` separator.               |
+| `Small`, `Large`                                                            | The `sm` and `lg` sizes.                                                         |
+| `Emphasis`, `Ink`, `Subtle`                                                 | The `emphasis`, `ink`, and `subtle` link variants.                               |
+| `Mixed`, `MixedInverse`                                                     | `mixed` on the `emphasis` variant, then `mixed` with `inverse`.                  |
+| `Themed`                                                                    | `themed`, which colors the links with the theme's `primary` token.               |
+| `Slash`, `Chevron`, `DoubleChevron`                                         | The `slash`, `chevron`, and `double` separators.                                 |
+| `DiscoveryTheme`, `ErrorTheme`, `WarningTheme`, `InfoTheme`, `SuccessTheme` | The `discovery`, `danger`, `warning`, `info`, and `success` themes.              |
+
+No story has enough links to collapse the trail into the menu.
 
 ## Props
 
@@ -46,7 +92,7 @@ import { Breadcrumb } from "@cyclone-ui/breadcrumb";
 | `mixed`               | `boolean`                           | `false`       | Passed to each link. See [Link Text](./link-text.md).                       |
 | `inverse`             | `boolean`                           | `false`       | Passed to each link.                                                        |
 | `themed`              | `boolean`                           | `false`       | Colors links with the `primary` token of the theme.                         |
-| `size`                | `"sm" \| "md"`                      | link `sm`     | The link size. Any other value renders as `sm`.                             |
+| `size`                | `"sm" \| "md" \| "lg"`              | `"md"`        | The size of the links, the current page, the separators, and the gaps. For any other font size token, the links render at `sm`. |
 | `theme`               | theme name                          | -             | The color theme. The stories use `discovery`, `danger`, `warning`, `info`, and `success`. |
 | `maxItems`            | `number`                            | `8`           | The most items to show, counting the current page.                          |
 | `itemsBeforeCollapse` | `number`                            | `1`           | The links to show before the menu.                                          |
@@ -63,7 +109,7 @@ import { Breadcrumb } from "@cyclone-ui/breadcrumb";
 | `chevron` | A bold right caret                    |
 | `double`  | A double right caret                  |
 
-Separators use the `outline` color token. See [Design tokens](../tokens/index.md).
+Separators use the `border` color token. See [Design tokens](../tokens/index.md).
 
 ## Collapse rules
 
@@ -84,7 +130,8 @@ Example: with the defaults and 8 links, links 2 to 8 move into the menu. The fir
 
 ## Accessibility
 
-- The menu button has an `aria-label` from `expandText`.
+- The menu button has an `aria-label` and a tooltip from `expandText`.
+- The source sets no landmark element, landmark role, or `aria-current` on the trail.
 
 ## Related
 

@@ -65,7 +65,28 @@ A package containing the Date Picker component used by Storm Software
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- A masked text field with a calendar popover (a bottom sheet below the `sm` breakpoint).
+- The calendar has day, month and year views.
+- Modes: `single` (default) and `range`.
+- Separators: `/` (`MM/DD/YYYY`, default) and `.`.
+- Inside a `Field`, it formats, parses and masks the field value. Arrow Up and Arrow Down step the month, day or year under the caret.
+- Sizes `sm`, `md` and `lg`. Variants `outlined` (default), `underlined` and `inlined`.
+- Date helpers: `format`, `parse`, `formatRange`, `parseRange`, `getDateFormat` and `getDateRangeFormat`.
+
 ## Installing
+
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add date-picker
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/date-picker.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/date-picker` package is not published to npm yet. After it is published, you can also install it with a package manager:
 
 Using [pnpm](http://pnpm.io):
 
@@ -90,6 +111,25 @@ yarn add -D @cyclone-ui/date-picker
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { DatePicker } from "@cyclone-ui/date-picker"
+import { Field } from "@cyclone-ui/field"
+import { Form } from "@cyclone-ui/form"
+
+export const Example = () => (
+  <Form name="booking" initialValues={{ checkIn: null }}>
+    <Field name="checkIn">
+      <Field.Label>Check-in date</Field.Label>
+      <DatePicker separator="/" />
+    </Field>
+  </Form>
+)
+```
+
+See the [component reference](../../docs/design-system/components/date-picker.md) for all props and variants.
 
 ## Reduced Package Size
 

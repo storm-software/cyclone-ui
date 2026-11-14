@@ -41,9 +41,7 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 # Storm Container Component
 
-A package containing various utilities to support custom workspace configurations
-
-Below is a list of the available configuration values that can be set through environment variables:
+A themed surface `Container` that wraps content in a padded, rounded box. Other Cyclone UI components, such as `Button` and `Card`, use it to draw their backgrounds.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -67,7 +65,29 @@ Below is a list of the available configuration values that can be set through en
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- Wraps content in a padded, rounded box. `variant` sets the background and the border from the theme surface tokens.
+- Variants: `primary`, `secondary`, `tertiary`, `outlined`, `sunken`, `canvas`, `surface`, `elevated` (default) and `floating`.
+- `size` sets the padding from a size token, such as `xs` to `6xl`.
+- `shadowStyle`: `none` (default), `raised`, `elevated` or `flat`.
+- Surface effects: `glass` (frosted blur, web only), `noise` (film grain) and `accented` (`primary` border).
+- Shape options: `circular` and `tight` (no padding).
+- `hovered` and `hoverGroup` show the hovered background while a parent is hovered.
+- `ContainerBackground`, `containerVariants`, `containerShadows` and `useContainerForeground` let other components draw a Container surface. Button, Card, Dialog and Popover use them.
+
 ## Installing
+
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add container
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/container.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/container` package is not published to npm yet. After it is published, you can also install it with a package manager:
 
 Using [pnpm](http://pnpm.io):
 
@@ -92,6 +112,20 @@ yarn add -D @cyclone-ui/container
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Container } from "@cyclone-ui/container"
+
+export const Example = () => (
+  <Container variant="surface" size="4xl" shadowStyle="raised">
+    Panel content
+  </Container>
+)
+```
+
+See the [component reference](../../docs/design-system/components/container.md) for all props and variants.
 
 ## Reduced Package Size
 

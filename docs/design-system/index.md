@@ -17,8 +17,9 @@ This section describes the parts of the design system that you use to build an i
 | ----------------------------------- | ------------------------------------------------------------------------------------------------ |
 | [Tokens](./tokens/index.md)         | Named values for color, type, spacing, size, radius, shadow, and motion.                         |
 | [Fonts](./fonts/index.md)           | The font families [Storm Sans](./fonts/storm-sans.md) and [Storm Serif](./fonts/storm-serif.md). |
-| [Icons](./icons/index.md)           | 478 animated icon components from the Material Line Icons collection.                            |
-| [Components](./components/index.md) | One page for each component in the `components` folder.                                          |
+| [Icons](./icons/index.md)           | 585 animated icon components in the Material Line Icons style, plus [`ThemeableIcon`](./icons/themeable-icon.md) and the [vectors](./icons/vectors.md). |
+| [Illustrations](./illustrations/index.md) | 34 isometric line illustrations that answer the pointer and take their colors from the theme. |
+| [Components](./components/index.md) | One catalog page for each component in the `components` folder: installation, usage, anatomy, examples, and props. |
 
 ### Tokens
 
@@ -39,11 +40,13 @@ This section describes the parts of the design system that you use to build an i
 2. **Fonts** supply the typefaces. A typography token chooses a family for each text role.
 3. **Components** use token names and theme keys. Example: the Button uses `fontFamily: "display"` and `color: "primary"`.
 4. **Icons** are components. They take their color from the theme and their size from the size tokens.
+5. **Illustrations** are components too. They paint with five theme tokens, so a theme such as `success` changes their highlight.
 
 ## Guides
 
 - [Adopt Cyclone UI in your app](./guides/adopt-cyclone-ui.md): copy the Button component, set up the Tamagui theme, and render the component.
 - [How themes and tokens are generated](./guides/how-themes-and-tokens-are-generated.md): follow a token from the JSON source to the generated files.
+- [Render the component catalog](./guides/render-the-component-catalog.md): build a catalog site from the component pages with Fumadocs, with a live preview and controls for each component.
 
 ## Rules that apply to all sections
 

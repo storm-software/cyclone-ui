@@ -65,7 +65,27 @@ A package containing the File component used by Storm Software
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- A card for one file: the name, size, modified date and MIME type over a preview.
+- Previews images, the first lines of text and source files, and the top of the first page of a PDF. PDF previews are web only.
+- A download button when there is a `uri`, and a remove button when you pass `onRemove`. They show on hover, and always on touch screens.
+- Upload states: a progress bar while `progress` is below 100, a short "Upload complete" state, and a failure state when `status` is `"failed"`.
+- `onCancel` replaces the remove action during an upload.
+- Sizes `sm`, `md` (default) and `lg` (`controlSize`), and a `disabled` state.
+
 ## Installing
+
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add file
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/file.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/file` package is not published to npm yet. After it is published, you can also install it with a package manager:
 
 Using [pnpm](http://pnpm.io):
 
@@ -90,6 +110,27 @@ yarn add -D @cyclone-ui/file
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { File } from "@cyclone-ui/file"
+
+export const Example = () => (
+  <File
+    id={1}
+    name="report.pdf"
+    status="uploaded"
+    uri="https://example.com/report.pdf"
+    size={204800}
+    mimeType="application/pdf"
+    lastModified={Date.now()}
+    onRemove={() => console.log("removed")}
+  />
+)
+```
+
+See the [component reference](../../docs/design-system/components/file.md) for all props and variants.
 
 ## Reduced Package Size
 

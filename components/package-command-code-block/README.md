@@ -74,6 +74,17 @@ A package containing the PackageCommandCodeBlock component used by Storm Softwar
 
 ## Installing
 
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add package-command-code-block
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/package-command-code-block.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/package-command-code-block` package is not published to npm yet. After it is published, you can also install it with a package manager:
+
 Using [pnpm](http://pnpm.io):
 
 ```bash

@@ -3,11 +3,30 @@ title: Tag
 description: A compact label chip with text and icon parts. It takes the Container variants, circular, pressable, removable, and editable modes.
 documentType: reference
 tags: [component, tag, chip, label]
+component:
+  name: tag
+  package: "@cyclone-ui/tag"
+  stories:
+    - title: Triggers/Tag
+      file: components/tag/src/Tag.stories.tsx
 ---
 
 # Tag
 
 `Tag` is a compact label chip. Use it to show a short keyword, status, or category. Make it pressable, removable, or editable when the user must act on it.
+
+## Installation
+
+Copy the component into your project with the [Cyclone UI CLI](../../packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add tag
+pnpm install
+```
+
+- **File:** `Tag.tsx`. The CLI writes it to `<path>/tag/`. `path` comes from `components.json` and defaults to `components`.
+- **Also copies:** [Container](./container.md), [Icons](../icons/index.md), and [Ripple Animation](./ripple-animation.md). Imports between copied components become relative paths.
+- **Adds to `package.json`:** `@tamagui/animate-presence`, `@tamagui/core`, `@tamagui/font-size`, `@tamagui/get-font-sized`, `@tamagui/helpers`, `@tamagui/helpers-tamagui`, and `@tamagui/text`.
 
 ## Import
 
@@ -34,14 +53,44 @@ export function Example() {
 }
 ```
 
-## Parts
+## Anatomy
 
-| Part | Role |
+```tsx
+<Tag>
+  <Tag.Icon>{icon}</Tag.Icon>
+  <Tag.Text>Label</Tag.Text>
+  <Tag.Button>{icon}</Tag.Button>
+</Tag>
+```
+
+| Part | Renders | Purpose |
+| --- | --- | --- |
+| `Tag` | A Tamagui `View` with a `ContainerBackground` layer for the surface. A pressable or editable tag has `role="button"` and `tabIndex={0}`, and adds a ripple layer. With `removable`, a native `<button>` with a bold `Close` icon follows the children. | The frame. It sets the variant, size, and mode for its children. |
+| `Tag.Text` | A Tamagui `SizableText` as `<span>`. In edit mode, a native `<input>` in the same font. | The label. It reads the tag variant and size. |
+| `Tag.Icon` | A Tamagui `View` that sizes and colors its child icon. | An icon sized to the tag. Pass the icon as its child. |
+| `Tag.Button` | A round Tamagui `View` with `role="button"`, `tabIndex={0}`, and a press ripple. | A round button inside the tag. It has `alignLeft` and `alignRight` props that move it out of the tag edge. |
+
+`TagText`, `TagIcon`, and `TagButton` are also exported by name. Use them in React Server Components, which cannot read `Tag.Text` from a client module.
+
+## Examples
+
+The examples are the stories in [`Tag.stories.tsx`](../../../components/tag/src/Tag.stories.tsx). Most stories render one tag with the label `Tag Text`.
+
+| Stories | What they show |
 | --- | --- |
-| `Tag` | The frame. It sets the variant, size, and mode for its children. |
-| `Tag.Text` | The label. It reads the tag variant and size. |
-| `Tag.Icon` | An icon sized to the tag. Pass the icon as its child. |
-| `Tag.Button` | A round button inside the tag, with a press ripple. It has `alignLeft` and `alignRight` props that move it out of the tag edge. |
+| `Base`, `Brand`, `Rounded` | The default `primary` tag, the `brand` theme, and `circular`. |
+| `Secondary`, `Tertiary`, `Surface`, `Floating` | The `secondary`, `tertiary`, `surface`, and `floating` variants. |
+| `Outlined`, `SecondaryOutlined` | `variant="outlined"`, and the deprecated `outlined` flag on `secondary`. The play functions check that the text color matches the 2 px border. |
+| `Pressable`, `PressableSecondary`, `PressableTertiary`, `PressableOutlined`, `PressableSurface` | `pressable` on several variants. |
+| `Removable` | `removable` with a custom `removeButtonLabel`. The play function presses the remove button and checks that the tag goes away. |
+| `RemovableOutlined`, `RemovableSecondary`, `RemovableRounded` | `removable` on other variants and on a circular tag. |
+| `RemovablePrevented` | An `onBeforeRemove` that returns `false`. The play function checks that the tag stays. |
+| `RemovableGroup` | Three removable tags. `onAfterRemove` takes each tag out of the list. |
+| `Editable` | `editable` with `onEdit`. The play function edits the text with Enter, then cancels an edit with Escape. |
+| `Discovery` through `DiscoverySecondaryOutlined`, and the same set for `Error`, `Warning`, `Info`, and `Success` | Each status theme (`discovery`, `danger`, `warning`, `info`, `success`) on the default, rounded, outlined, secondary, secondary rounded, and secondary outlined tags. |
+| `Accented`, `Raised`, `Glass`, `Flat` | `accented` and `shadowStyle="raised"` on `elevated`, `glass`, and `shadowStyle="flat"` on `surface`. |
+
+No story shows `Tag.Icon` or `Tag.Button`.
 
 ## Props
 

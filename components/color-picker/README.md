@@ -63,7 +63,29 @@ A `ColorPicker` component used to select colors within the Cyclone UI design sys
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- A text field for a color, with a swatch trigger that opens a popover (a bottom sheet on small screens).
+- Reads hex, `rgb()`, `hsl()` and `hsb()` strings, or `Color` objects. Typed colors apply while they parse. Blur or Enter formats the text as `#RRGGBB`, or `#RRGGBBAA` for a translucent color.
+- The default popover holds a color area, a hue slider, an `RGB`/`HSL`/`HSB` toggle with channel fields, and preset swatches.
+- Compose your own popover with `ColorPicker.Area`, `ColorPicker.Slider`, `ColorPicker.ChannelField` and `ColorPicker.Swatches`.
+- Trigger shapes: `paintdrop` (default), `circle` and `square`. `swatches` sets the presets, and `false` hides them.
+- Sizes `sm`, `md` and `lg`, and `disabled` and `readOnly` states.
+- Controlled (`value`, `onChange`) or uncontrolled (`defaultValue`). Inside a `Field`, the field stores a hex string.
+- Color helpers: `parseColor`, `toColor`, `formatColor`, `getSwatchBackground` and `getColorSliderBackground`.
+
 ## Installing
+
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add color-picker
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/color-picker.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/color-picker` package is not published to npm yet. After it is published, you can also install it with a package manager:
 
 Using [pnpm](http://pnpm.io):
 
@@ -88,6 +110,23 @@ yarn add -D @cyclone-ui/color-picker
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { ColorPicker } from "@cyclone-ui/color-picker"
+
+export const Example = () => (
+  <ColorPicker
+    aria-label="Brand color"
+    defaultValue="#3366cc"
+    swatches={["#112233", "#3366cc", "#cc6633"]}
+    onChange={color => console.log(color?.toString("hex"))}
+  />
+)
+```
+
+See the [component reference](../../docs/design-system/components/color-picker.md) for all props and variants.
 
 ## Reduced Package Size
 

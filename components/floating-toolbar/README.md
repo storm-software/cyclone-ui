@@ -73,6 +73,17 @@ A `FloatingToolbar` component: a pill-shaped toolbar fixed to the bottom of the 
 
 ## Installing
 
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add floating-toolbar
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/floating-toolbar.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/floating-toolbar` package is not published to npm yet. After it is published, you can also install it with a package manager:
+
 Using [pnpm](http://pnpm.io):
 
 ```bash

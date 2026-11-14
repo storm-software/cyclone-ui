@@ -33,7 +33,7 @@ Peer dependencies:
 
 The package depends on `@tamagui/next-theme`.
 
-The root README does not publish an npm release status for this package. Confirm the registry before you install a published version. In this repository the package version is `0.0.1`.
+The package is published to npm. The project is in its initial development phase, so expect breaking changes between versions.
 
 ## Quick start
 

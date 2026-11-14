@@ -24,7 +24,7 @@ Peer dependencies are `@cyclone-ui/tokens`, `react-native-web`, and `vite`. The 
 
 Use `"type": "module"` in the app `package.json`, or name the config `vite.config.mts`.
 
-The package version in this repository is `0.0.1`. Confirm the registry before you install a published version.
+The package is published to npm. The project is in its initial development phase, so expect breaking changes between versions.
 
 ## Quick start
 

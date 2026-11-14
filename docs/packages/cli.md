@@ -73,6 +73,7 @@ All commands accept `--cwd` (the working directory). The default is the current 
 | `search` | Lists components that match a query. Alias: `list`. | `--query`, `--limit` (default 100), `--offset`, `--json`, `--registry` |
 | `view <components...>` | Prints component metadata and files as JSON. | `--registry` |
 | `diff [components...]` | Compares installed components with the registry. Without names, it compares all installed components. | `--registry` |
+| `update-components [components...]` | Updates installed components to the newest registry version. It overwrites local edits and removes files that the new version dropped. Without names, it updates all installed components. | `--dry-run`, `--diff`, `--silent`, `--registry` |
 | `docs <components...>` | Prints a documentation link for each component. | `--json`, `--registry` |
 | `info` | Shows the project configuration and installed components. | `--json` |
 | `registry validate [registry]` | Checks a local shadcn-format registry manifest and its source files. The default is `registry.json`. | None |

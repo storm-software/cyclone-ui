@@ -1,17 +1,34 @@
 ---
-title: Radial chart
+title: Radial Chart
 description: Reference for the RadialChart component, a composable radial bar chart that draws each category as a ring.
 documentType: reference
 tags: [component, chart]
+component:
+  name: radial-chart
+  package: "@cyclone-ui/radial-chart"
+  stories:
+    - title: Charts/RadialChart
+      file: components/radial-chart/src/RadialChart.stories.tsx
 ---
 
-# Radial chart
+# Radial Chart
 
 `RadialChart` compares a few values as progress around a circle. Each category is a ring. The arc can be a full circle or a semicircle. Colors come from the theme.
 
 The chart also supports legend selection and a loading skeleton.
 
-Source: [`components/radial-chart`](https://github.com/storm-software/cyclone-ui/tree/main/components/radial-chart)
+## Installation
+
+Copy the component into your project with the [Cyclone UI CLI](../../packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add radial-chart
+pnpm install
+```
+
+- **File:** `RadialChart.tsx`. The CLI writes it to `<path>/radial-chart/`. `path` comes from `components.json` and defaults to `components`.
+- **Also copies:** [Body Text](./body-text.md), [Chart](./chart.md), [Number Text](./number-text.md), and [Spinner](./spinner.md). Imports between copied components become relative paths.
+- **Adds to `package.json`:** `recharts`.
 
 ## Import
 
@@ -49,48 +66,92 @@ const data = [
 
 ## Anatomy
 
-| Part | Purpose |
-| --- | --- |
-| `RadialChart` | Owns the data, the arc shape, selection, and the loading skeleton. |
-| `RadialChart.RadialBar` | The rings. |
-| `RadialChart.Tooltip`, `RadialChart.Legend` | Hover details and bar labels. |
+```tsx
+<RadialChart>
+  <RadialChart.RadialBar />
+  <RadialChart.Tooltip />
+  <RadialChart.Legend />
+</RadialChart>
+```
 
-## Root props
+| Part | Renders | Purpose |
+| --- | --- | --- |
+| `RadialChart` | A [`ChartContainer`](./chart.md#props) (a Tamagui `YStack` around a Recharts `ResponsiveContainer`) that holds a Recharts `RadialBarChart` and SVG `<defs>` with one diagonal gradient per `config` key. With `max`, it adds a Recharts `PolarAngleAxis` with no ticks and no axis line. With `backgroundVariant`, a `ChartBackground` pattern sits behind the rings. | Owns the data, the arc shape, selection, and the loading skeleton. |
+| `RadialChart.RadialBar` | A Recharts `RadialBar` that paints each bar as a Recharts `Sector` with a small drop shadow | The rings. |
+| `RadialChart.Tooltip`, `RadialChart.Legend` | A Recharts `Tooltip` with `ChartTooltipContent`, and a Recharts `Legend` with `ChartLegendContent` | Hover details and bar labels. A clickable legend entry renders as `<button>` with `aria-pressed`. Both hide while the chart loads. |
+
+While the chart loads, the root also draws five skeleton rings that change length every 1.5 seconds, and a `LoadingIndicator`.
+
+`RadialChartRadialBar`, `RadialChartTooltip`, and `RadialChartLegend` are also exported by name. Use them in React Server Components, which cannot read `RadialChart.RadialBar` from a client module.
+
+## Examples
+
+The examples are the stories in [`RadialChart.stories.tsx`](../../../components/radial-chart/src/RadialChart.stories.tsx). Each story shows five browser rings with a legend and a tooltip. The rings use the default data palette unless noted.
+
+| Stories | What they show |
+| --- | --- |
+| `Base` | `variant="full"` with clickable rings and a clickable legend. |
+| `SemiVariant` | `variant="semi"`: a half circle. |
+| `GradientColors` | A three-color gradient on each ring. |
+| `Loading` | The loading skeleton (`isLoading` with empty data). |
+
+## Props
+
+### RadialChart
 
 `RadialChart` also accepts `ChartContainer` props except `config`, `children`, and `footer`.
 
-| Prop | Purpose |
-| --- | --- |
-| `data` | One bar per row. Required. |
-| `nameKey` | Key that holds each bar's name. Required. |
-| `config` | Bar colors and labels, keyed by name. Required. |
-| `children` | The composed parts. Required. |
-| `variant` | `full` or `semi`. |
-| `max` | The value a full sweep represents. Without it, the largest bar fills the arc. Set it (for example `100`) for a gauge. |
-| `innerRadius`, `outerRadius` | Ring size. A number or a string. |
-| `defaultSelectedDataKey` | The bar selected on first render. Default `null`. |
-| `onSelectionChange` | Called with `{ dataKey, value }`, or `null`. |
-| `isLoading` | Shows the loading skeleton. Default `false`. |
-| `backgroundVariant` | A [background pattern](./chart.md#background-patterns). |
-| `chartProps` | Extra props for the Recharts radial bar chart. |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `data` | `TData[]` | - | One bar per row. Required. |
+| `nameKey` | `keyof TData & string` | - | Key that holds each bar's name. Required. |
+| `config` | `ChartConfig` | - | Bar colors and labels, keyed by name. Required. |
+| `children` | `ReactNode` | - | The composed parts. Required. |
+| `variant` | `RadialVariant` | `"full"` | `full` or `semi`. |
+| `max` | `number` | - | The value a full sweep represents. Without it, the largest bar fills the arc. Set it (for example `100`) for a gauge. |
+| `innerRadius` | `number \| string` | `"30%"` | Inner ring size. |
+| `outerRadius` | `number \| string` | `"100%"` | Outer ring size. |
+| `defaultSelectedDataKey` | `string \| null` | `null` | The bar selected on first render. |
+| `onSelectionChange` | `(selection: { dataKey: string; value: number } \| null) => void` | - | Called with `{ dataKey, value }`, or `null`. `dataKey` is the bar name. When the legend makes the selection, `value` is `0`. |
+| `isLoading` | `boolean` | `false` | Shows the loading skeleton. |
+| `backgroundVariant` | `BackgroundVariant` | - | A [background pattern](./chart.md#background-patterns). |
+| `chartProps` | Recharts `RadialBarChart` props | - | Extra props for the Recharts radial bar chart. |
 
-## Radial bar props
+### RadialChart.RadialBar
 
-| Prop | Purpose |
-| --- | --- |
-| `dataKey` | Value key. It sets each bar's size. |
-| `cornerRadius` | Corner radius of the bars. |
-| `barSize` | Thickness of each radial bar. |
-| `showBackground` | Draws the unfilled track behind each bar. |
-| `isClickable` | A click selects a bar. |
-| `radialBarProps` | Extra Recharts radial bar props. `dataKey` is omitted. |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `dataKey` | `string` | - | Value key. It sets each bar's size. Required. |
+| `cornerRadius` | `number` | `5` | Corner radius of the bars. |
+| `barSize` | `number` | `14` | Thickness of each radial bar. |
+| `showBackground` | `boolean` | `true` | Draws the unfilled track behind each bar. |
+| `isClickable` | `boolean` | `false` | A click selects a bar. Only clickable bars dim when another bar is selected. |
+| `radialBarProps` | Recharts `RadialBar` props | - | Extra Recharts radial bar props. `dataKey` is omitted. |
 
-## Tooltip and legend
+### RadialChart.Tooltip
 
-`Tooltip` takes `variant`, `roundness`, and `defaultIndex`. `Legend` takes `variant`, `align`, `verticalAlign`, and `isClickable`. The shared values are on the [chart](./chart.md) page.
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `variant` | `TooltipVariant` | `"default"` | `default` or `frosted-glass`. |
+| `roundness` | `TooltipRoundness` | `tooltip` radius token | `sm`, `md`, `lg`, or `xl`. |
+| `defaultIndex` | `number` | - | The data index shown with no hover. |
 
-## Related pages
+### RadialChart.Legend
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `variant` | `ChartLegendVariant` | `"rounded-square"` | The marker shape. See [legend shapes](./chart.md#tooltip-legend-and-dots). |
+| `align` | `"left" \| "center" \| "right"` | `"center"` | Horizontal position. |
+| `verticalAlign` | `"top" \| "middle" \| "bottom"` | `"bottom"` | Vertical position. |
+| `isClickable` | `boolean` | `false` | A clickable legend toggles bar selection. |
+
+## Related
 
 - [Chart](./chart.md)
 - [Pie chart](./pie-chart.md)
 - [Progress](./progress.md)
+
+## Source
+
+- [`components/radial-chart/src/RadialChart.tsx`](../../../components/radial-chart/src/RadialChart.tsx)
+- [`components/radial-chart/src/RadialChart.stories.tsx`](../../../components/radial-chart/src/RadialChart.stories.tsx) (title: `Charts/RadialChart`)

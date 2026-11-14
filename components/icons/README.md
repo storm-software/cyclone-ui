@@ -66,7 +66,28 @@ Animated [Tamagui](https://tamagui.dev) icon components (React Native and web) f
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- One animated component for each [line-md](https://github.com/cyberalien/line-md) icon, plus icons drawn for Cyclone UI in the same style, such as `Lock`, `Clock` and Material Design Icons shapes.
+- Works on web and React Native. Each icon is a `react-native-svg` component that resolves theme colors and size tokens.
+- Variants: `regular` (default), `bold`, `loop`, `filled` and `filled-loop`. A missing variant falls back to the closest one.
+- Draws itself in on mount and when the variant changes. `animated={false}`, or a reduced-motion preference, shows the final frame.
+- `size` takes pixels, a size token or a font size token. `color` takes a theme key, a color token or a CSS color. `mirrored` flips the icon for right-to-left layouts.
+- One import path per icon (`@cyclone-ui/icons/icons/<Name>`) keeps imports small.
+- Also exports `ThemeableIcon`, `ThemedIcon`, `FileExtensionIcon`, `createIcon`, `allIcons` and the custom `vectors`.
+
 ## Installing
+
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add icons
+pnpm install
+```
+
+The [component reference](../../docs/design-system/icons/index.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/icons` package is not published to npm yet. After it is published, you can also install it with a package manager:
 
 Using [pnpm](http://pnpm.io):
 

@@ -65,7 +65,28 @@ An animated background pattern component styled like a painted topographic map o
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- Fills its nearest positioned ancestor with a topographic map image, behind the content of a page or a section. Web only. On native, it renders an empty frame.
+- Variants: `interactive` (default), `dark`, `light` and `color`.
+- `interactive` follows the light or dark theme. With a mouse or another fine pointer, it warps the contour lines with WebGL2 and paints the color map in under the pointer.
+- The static image is in the server markup, so it paints before hydration. It stays when WebGL2 is not available.
+- Pauses while the page is hidden. Draws one still frame when the user prefers reduced motion.
+- `darkSrc`, `lightSrc` and `colorSrc` replace the default SVG images.
+- Decorative: hidden from screen readers, and ignores pointer events.
+
 ## Installing
+
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add topographic-background
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/topographic-background.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/topographic-background` package is not published to npm yet. After it is published, you can also install it with a package manager:
 
 Using [pnpm](http://pnpm.io):
 
@@ -90,6 +111,23 @@ yarn add -D @cyclone-ui/topographic-background
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { TopographicBackground } from "@cyclone-ui/topographic-background"
+import { View } from "@tamagui/core"
+import type { ReactNode } from "react"
+
+export const Example = ({ children }: { children: ReactNode }) => (
+  <View position="relative" minHeight="100vh">
+    <TopographicBackground />
+    {children}
+  </View>
+)
+```
+
+See the [component reference](../../docs/design-system/components/topographic-background.md) for all props and variants.
 
 ## Reduced Package Size
 

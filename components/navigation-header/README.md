@@ -39,9 +39,9 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# Body Text
+# Navigation Header
 
-A `BodyText` component used to render the body text of a page. It is a simple component that renders the text in a way that is easy to read and understand.
+A `NavigationHeader` component: a fixed site header for a marketing or documentation site. Compose a logo, the primary navigation, a search button, a theme toggle, actions, and social links. The header lays them out for the screen size.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -63,7 +63,28 @@ A `BodyText` component used to render the body text of a page. It is a simple co
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- A fixed `<header>` for marketing and documentation sites, composed from slots: `NavigationHeader.Logo`, `.Navigation` (with `.Navigation.Item`, `.Navigation.Item.Group` and `.Navigation.Item.Link`), `.Search`, `.ThemeToggler`, `.Actions`, `.Social` and `.MenuButton`.
+- From the `xl` breakpoint up, an item with groups opens a mega menu under the bar on hover, focus or press.
+- Below `xl`, a menu button opens a full-height menu with the navigation, the actions and the social links.
+- Backgrounds: `filled` (default), `transparent` (blurred) and `dotted`. `transparentAtTop` hides the background until the page scrolls.
+- On wide screens, the logo and the navigation are larger while the page is at the top.
+- Built-in search (`SearchDialog`) and light and dark mode toggle (`ThemeToggler`) slots.
+- `active` marks the current page with `aria-current="page"`. Animations respect reduced motion.
+
 ## Installing
+
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add navigation-header
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/navigation-header.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/navigation-header` package is not published to npm yet. After it is published, you can also install it with a package manager:
 
 Using [pnpm](http://pnpm.io):
 
@@ -88,6 +109,37 @@ yarn add -D @cyclone-ui/navigation-header
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Button } from "@cyclone-ui/button"
+import { NavigationHeader } from "@cyclone-ui/navigation-header"
+
+export const Example = () => (
+  <NavigationHeader variant="transparent">
+    <NavigationHeader.Logo>
+      <a href="/">Cyclone</a>
+    </NavigationHeader.Logo>
+    <NavigationHeader.Navigation label="Primary">
+      <NavigationHeader.Navigation.Item href="/docs" active={true}>
+        Docs
+      </NavigationHeader.Navigation.Item>
+      <NavigationHeader.Navigation.Item href="/pricing">
+        Pricing
+      </NavigationHeader.Navigation.Item>
+    </NavigationHeader.Navigation>
+    <NavigationHeader.ThemeToggler />
+    <NavigationHeader.Actions>
+      <Button variant="primary">
+        <Button.Text>Sign in</Button.Text>
+      </Button>
+    </NavigationHeader.Actions>
+  </NavigationHeader>
+)
+```
+
+See the [component reference](../../docs/design-system/components/navigation-header.md) for all props and variants.
 
 ## Reduced Package Size
 

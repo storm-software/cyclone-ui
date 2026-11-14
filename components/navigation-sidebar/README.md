@@ -63,7 +63,28 @@ A `NavigationSidebar` block for app and docs navigation: a workspace switcher, a
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- A vertical `<nav>` block for app and docs sites, composed from parts: `NavigationSidebar.Header`, `.Switcher`, `.Search`, `.Body`, `.Group`, `.Item`, `.Folder`, `.Footer` and `.Account`.
+- `Switcher` shows the current workspace with a logo, a title and a description.
+- `Search` is a search button that shows its shortcut keys as `Kbd` keys and sets `aria-keyshortcuts`. Bind the shortcut in your app.
+- `Item` is a link with `href`, or a button without it. It takes an optional `icon`, `end` content such as a count, and `active` and `disabled` states.
+- `Folder` expands to show nested items. `defaultOpen` opens it on mount.
+- `Account` shows the signed-in user, with initials or an `avatar`.
+- Fills its container. `bordered` makes it a rounded card. For collapse, resize or a mobile overlay, put it in `Page.SideNav` or `DocsPage.SideNav`.
+
 ## Installing
+
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add navigation-sidebar
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/navigation-sidebar.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/navigation-sidebar` package is not published to npm yet. After it is published, you can also install it with a package manager:
 
 Using [pnpm](http://pnpm.io):
 
@@ -88,6 +109,46 @@ yarn add -D @cyclone-ui/navigation-sidebar
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Grid3, Mailbox } from "@cyclone-ui/icons"
+import { NavigationSidebar } from "@cyclone-ui/navigation-sidebar"
+
+export const Example = () => (
+  <NavigationSidebar bordered={true} aria-label="Sidebar">
+    <NavigationSidebar.Header>
+      <NavigationSidebar.Switcher title="Northwind Logistics" description="Enterprise" />
+      <NavigationSidebar.Search
+        shortcut={["Ctrl", "K"]}
+        onPress={() => console.log("open search")}
+      />
+    </NavigationSidebar.Header>
+    <NavigationSidebar.Body>
+      <NavigationSidebar.Group label="Workspace">
+        <NavigationSidebar.Item
+          href="/boards"
+          icon={<Grid3 aria-hidden={true} size={16} color="currentColor" />}
+          active={true}>
+          Boards
+        </NavigationSidebar.Item>
+        <NavigationSidebar.Item
+          href="/inbox"
+          icon={<Mailbox aria-hidden={true} size={16} color="currentColor" />}
+          end={7}>
+          Inbox
+        </NavigationSidebar.Item>
+      </NavigationSidebar.Group>
+    </NavigationSidebar.Body>
+    <NavigationSidebar.Footer>
+      <NavigationSidebar.Account name="Dana Mireles" description="Admin" />
+    </NavigationSidebar.Footer>
+  </NavigationSidebar>
+)
+```
+
+See the [component reference](../../docs/design-system/components/navigation-sidebar.md) for all props and variants.
 
 ## Reduced Package Size
 

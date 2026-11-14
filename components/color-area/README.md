@@ -63,7 +63,28 @@ A `ColorArea` component that provides a 2D color picker, allowing users to selec
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- Selects two channels of a color, such as saturation and brightness, from a gradient square.
+- Pointer drag, and keyboard control with the arrow keys, Page Up, Page Down, Home and End. Shift uses the page step.
+- Color model from React Stately: `xChannel`, `yChannel` and `colorSpace` (`rgb`, `hsl` or `hsb`).
+- Controlled (`value`, `onChange`, `onChangeEnd`) or uncontrolled (`defaultValue`).
+- `disabled` and `readOnly` states, and a `showDots` grid (web only).
+- `ColorArea.Thumb` replaces the default thumb. `getColorAreaLayers` returns the gradient layers of an area.
+- Re-exports `parseColor` and the `Color`, `ColorChannel`, `ColorFormat` and `ColorSpace` types.
+
 ## Installing
+
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add color-area
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/color-area.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/color-area` package is not published to npm yet. After it is published, you can also install it with a package manager:
 
 Using [pnpm](http://pnpm.io):
 
@@ -88,6 +109,23 @@ yarn add -D @cyclone-ui/color-area
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { ColorArea, parseColor } from "@cyclone-ui/color-area"
+
+export const Example = () => (
+  <ColorArea
+    defaultValue={parseColor("hsb(200, 80%, 90%)")}
+    xChannel="saturation"
+    yChannel="brightness"
+    onChange={color => console.log(color.toString("hex"))}
+  />
+)
+```
+
+See the [component reference](../../docs/design-system/components/color-area.md) for all props and variants.
 
 ## Reduced Package Size
 

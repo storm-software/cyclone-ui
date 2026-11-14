@@ -25,9 +25,9 @@ For the design system itself (components, tokens, fonts, and icons), see the [de
 | [`@cyclone-ui/shiki`](./shiki.md) | Yes | Six Shiki themes for syntax highlighting. |
 | [`@cyclone-ui/eslint-plugin`](./eslint-plugin.md) | Yes | ESLint rules for design tokens and components. |
 | [`@cyclone-ui/stylelint-plugin`](./stylelint-plugin.md) | Yes | Stylelint rules for design tokens. |
-| [`@cyclone-ui/registry-api`](./registry-api.md) | No (private) | The tRPC router and client for the component registry. |
+| [`@cyclone-ui/registry-api`](./registry-api.md) | Yes (internal) | The tRPC router and client for the component registry. It can change without warning. |
 
-"Published" means that `package.json` does not set `"private": true`. The root README states that the packages are not yet released to npm. Check the registry before you install.
+"Published" means that the package is on npm. All eleven packages in `packages` have npm releases. The component packages in `components` do not: copy components with the [CLI](./cli.md) instead. The root README states that the project is in its initial development phase, so expect breaking changes.
 
 ## How the packages fit together
 

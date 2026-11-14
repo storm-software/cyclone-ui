@@ -3,11 +3,30 @@ title: Page
 description: A page layout with Banner, TopNav, SideNav, Main, and Panel areas, with a collapsible and resizable side nav and skip links.
 documentType: reference
 tags: [component, layout, page, navigation]
+component:
+  name: page
+  package: "@cyclone-ui/page"
+  stories:
+    - title: Layouts/Page
+      file: components/page/src/Page.stories.tsx
 ---
 
 # Page
 
 `Page` is the shell of an application page. It is a compound component with these areas: `Banner`, `TopNav`, `SideNav`, `Main`, and `Panel`. The side nav and the panel can be resized. The side nav can collapse. The page adds skip links and an optional `Ctrl+[` shortcut.
+
+## Installation
+
+Copy the component into your project with the [Cyclone UI CLI](../../packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add page
+pnpm install
+```
+
+- **Files:** `Page.tsx` and `utilities.ts`. The CLI writes them to `<path>/page/`. `path` comes from `components.json` and defaults to `components`.
+- **Also copies:** [Body Text](./body-text.md), [Icons](../icons/index.md), and [Scroll View](./scroll-view.md). Imports between copied components become relative paths.
+- **Adds to `package.json`:** `@tamagui/animate-presence`, `@tamagui/constants`, and `@tamagui/core`.
 
 ## Import
 
@@ -61,18 +80,74 @@ import { Page } from "@cyclone-ui/page";
 
 Render each area as a direct child of `Page`, in any order. Every area is optional.
 
-## Areas
+## Anatomy
 
-| Area | Parts | Description |
+```tsx
+<Page>
+  <Page.Banner />
+  <Page.TopNav>
+    <Page.TopNav.Start>
+      <Page.SideNavToggle />
+    </Page.TopNav.Start>
+    <Page.TopNav.Middle />
+    <Page.TopNav.End />
+  </Page.TopNav>
+  <Page.SideNav>
+    <Page.SideNav.Header />
+    <Page.SideNav.Body />
+    <Page.SideNav.Footer />
+    <Page.SideNav.Splitter />
+  </Page.SideNav>
+  <Page.Main>
+    <Page.Main.Header />
+    <Page.Main.Content />
+  </Page.Main>
+  <Page.Panel>
+    <Page.Panel.Header />
+    <Page.Panel.Body />
+    <Page.Panel.Footer />
+    <Page.Panel.Splitter />
+  </Page.Panel>
+</Page>
+```
+
+"Desktop" is the `lg` media query. The stories use 1024 px as the breakpoint.
+
+| Part | Renders | Purpose |
 | --- | --- | --- |
-| `Page.Banner` | — | Fixed at the top of the screen. Height `48` by default. Takes a `theme` for its color. |
-| `Page.TopNav` | `Start`, `Middle`, `End` | Fixed below the banner. Height `56` by default. |
-| `Page.SideNav` | `Header`, `Body`, `Footer`, `Splitter` | Inline on desktop. An overlay on mobile. `Body` is the scroll container. |
-| `Page.SideNavToggle` | — | Button that expands and collapses the side nav. |
-| `Page.Main` | `Header`, `Content` | The page content. `Header` stays at the top while the page scrolls. `Content` adds the standard padding. |
-| `Page.Panel` | `Header`, `Body`, `Footer`, `Splitter` | Beside main on desktop and over it on smaller screens. |
+| `Page` | A Tamagui `View` as a CSS grid with the columns `auto minmax(0, 1fr) auto`, at least `100dvh` tall | The root. It holds the side nav, panel, and skip link state. Its top padding equals the banner and top nav heights. It renders the skip links first. While the side nav is open on mobile, it adds a backdrop with `aria-hidden`. |
+| `Page.Banner` | A `View` with `role="region"` and `aria-label`, `position: fixed` at the top | A strip for announcements on the `primary` background. Height `48` by default. Takes a `theme` for its color. |
+| `Page.TopNav` | A `View` as `<header>` with `aria-label`, `position: fixed` below the banner | The top bar. Height `56` by default. |
+| `Page.TopNav.Start` | A row `View` | The start slot. While the side nav is expanded on desktop, it takes the side nav width and lines up with it. |
+| `Page.TopNav.Middle` | A row `View` that grows | The centered middle slot. |
+| `Page.TopNav.End` | A row `View` with `marginLeft: auto` | The end slot. It stays on the end edge when there is no `Middle`. |
+| `Page.SideNavToggle` | A `View` as `<button>` with `aria-controls`, `aria-expanded`, and `aria-label` | Expands and collapses the side nav. It shows a `MenuFoldLeft` icon. It renders nothing when the page has no `Page.SideNav`. |
+| `Page.SideNav` | A `View` as `<nav>` with `aria-label`, in grid column 1. `position: sticky` on desktop, `fixed` below it | The navigation column. Inline on desktop. An overlay on mobile. It has `display: none` while collapsed. |
+| `Page.SideNav.Header`, `Page.Panel.Header` | A column `View` | The top section of the area. |
+| `Page.SideNav.Body`, `Page.Panel.Body` | A `ScrollView` (size `lg`) with a padded column inside | The scroll container between the header and the footer. |
+| `Page.SideNav.Footer`, `Page.Panel.Footer` | A column `View` with a top border | The bottom section of the area. |
+| `Page.SideNav.Splitter`, `Page.Panel.Splitter` | A `View` with `role="separator"`, `tabIndex={0}`, `aria-orientation="vertical"`, `aria-valuenow`, `aria-valuemin`, `aria-valuemax`, and `aria-controls`. Hidden below desktop | The resize handle on the edge of the area. |
+| `Page.Main` | A `View` as `<main>`, in grid column 2 | The page content. With `fixed`, it is `sticky` on desktop and scrolls on its own. |
+| `Page.Main.Header` | A `View` as `<header>`, `position: sticky` below the top nav | Stays at the top of main while its content scrolls. |
+| `Page.Main.Content` | A column `View`, centered, at most `1440` px wide | Adds the standard padding. |
+| `Page.Panel` | A `View` as `<aside>` with `aria-label`, in grid column 3. `position: sticky` on desktop, `fixed` below it | Beside main on desktop and over it on smaller screens. It fades and slides in when it opens. |
 
-While the side nav is expanded on desktop, `Page.TopNav.Start` lines up with it.
+Each part is also exported by name: `PageBanner`, `PageTopNav`, `PageTopNavStart`, `PageTopNavMiddle`, `PageTopNavEnd`, `PageSideNav`, `PageSideNavHeader`, `PageSideNavBody`, `PageSideNavFooter`, `PageSideNavSplitter`, `PageSideNavToggle`, `PageMain`, `PageMainHeader`, `PageMainContent`, `PagePanel`, `PagePanelHeader`, `PagePanelBody`, `PagePanelFooter`, and `PagePanelSplitter`. Use them in React Server Components, which cannot read `Page.Banner` from a client module.
+
+## Examples
+
+The examples are the stories in [`Page.stories.tsx`](../../../components/page/src/Page.stories.tsx). Each one renders a top nav, a side nav, and main.
+
+| Stories | What they show |
+| --- | --- |
+| `Default` | The side nav expanded on desktop and collapsed on mobile. The play function toggles it twice with `Page.SideNavToggle` and checks `aria-expanded` and the toggle label. |
+| `WithBanner` | A `Page.Banner` above the top nav. |
+| `WithPanel`, `ExpandSideNavFromHook` | A `Page.Panel` opened and closed from a top nav button with `usePagePanel()`, and a button in main that expands a collapsed side nav with `usePageSideNav()`. |
+| `CollapsedSideNav` | `defaultSideNavCollapsed`. Hover the toggle to open the side nav as a flyout. |
+| `KeyboardShortcut` | `sideNavShortcutEnabled`. The play function presses `Ctrl` + `[` to collapse and expand the side nav. |
+| `FixedMain` | `Page.Main` with `fixed`, so main scrolls on its own on desktop. |
+| `CustomSkipLink` | A section that registers its own skip link with `usePageSkipLink`. The play function presses `Tab` and checks that the skip links show. |
+| `Mobile` | The `mobile2` viewport, with the panel closed by `defaultPanelOpen={false}`. The side nav and panel open over main. |
 
 ## Props
 
@@ -149,8 +224,8 @@ While the side nav is expanded on desktop, `Page.TopNav.Start` lines up with it.
 
 ### Side nav
 
-- The side nav has separate states for desktop and mobile. On mobile, the backdrop click and the `Escape` key close it.
-- Hovering the toggle while the side nav is collapsed on desktop opens a flyout.
+- The side nav has separate states for desktop and mobile. On mobile, the backdrop click and the `Escape` key close it. When the screen crosses the breakpoint, an open mobile side nav closes.
+- Hovering the toggle while the side nav is collapsed on desktop opens a flyout after 200 ms. `Escape` closes the flyout.
 - The splitter resizes the side nav by drag, or with the arrow, `Home`, and `End` keys. An arrow key moves it `16` pixels. A double click collapses the side nav.
 - Resized widths survive a collapse.
 
@@ -160,7 +235,7 @@ The panel is open by default. Open and close it with `usePagePanel()` or with th
 
 ### Skip links
 
-The first `Tab` shows skip links to the areas of the page. Register more links with `usePageSkipLink(id, label, index?)`.
+The first `Tab` shows skip links to the areas of the page. The built-in links come in this order: main, side nav, panel, top nav, banner. A link to the side nav also expands it. Register more links with `usePageSkipLink(id, label, index?)`. They come after the built-in links.
 
 ## Hooks and utilities
 
@@ -168,21 +243,21 @@ The first `Tab` shows skip links to the areas of the page. Register more links w
 | --- | --- |
 | `usePageSideNav()` | Returns `{ expanded, peeking, expand, collapse, toggle }`. |
 | `usePagePanel()` | Returns `{ open, setOpen, toggle }`. |
-| `usePageSkipLink(id, label, index?)` | Registers a skip link. |
+| `usePageSkipLink(id, label, index?)` | Registers a skip link to the element with `id`. Pass `undefined` as `id` to remove it. `index` defaults to `PAGE_CUSTOM_SKIP_LINK_INDEX`. |
 | `PAGE_BANNER_HEIGHT`, `PAGE_TOP_NAV_HEIGHT`, `PAGE_SIDE_NAV_DEFAULT_WIDTH`, `PAGE_SIDE_NAV_MIN_WIDTH`, `PAGE_PANEL_DEFAULT_WIDTH`, `PAGE_PANEL_MAX_MIN_WIDTH`, `PAGE_RESIZE_STEP` | Layout constants (`48`, `56`, `320`, `240`, `365`, `400`, `16`). |
+| `PAGE_CUSTOM_SKIP_LINK_INDEX` | `5`. The first skip link position after the built-in links. |
 | `resolvePageWidth`, `clampPageWidth`, `getSideNavWidthBounds`, `getPanelWidthBounds`, `getDraggedWidth`, `getKeyboardResizedWidth`, `isSideNavShortcut`, `sortSkipLinks` | Width and shortcut helpers. |
-
-## Stories
-
-`Default`, `WithBanner`, `WithPanel`, `CollapsedSideNav`, `KeyboardShortcut`, `FixedMain`, `CustomSkipLink`, `ExpandSideNavFromHook`, and `Mobile`.
 
 ## Related
 
+- [Docs page](./docs-page.md), a documentation layout built on `Page`
+- [Navigation sidebar](./navigation-sidebar.md), for the contents of `Page.SideNav`
+- [ScrollView](./scroll-view.md)
 - [Design tokens](../tokens/index.md)
 
 ## Source
 
 - [`components/page/src/Page.tsx`](../../../components/page/src/Page.tsx)
 - [`components/page/src/utilities.ts`](../../../components/page/src/utilities.ts)
-- [`components/page/src/Page.stories.tsx`](../../../components/page/src/Page.stories.tsx)
+- [`components/page/src/Page.stories.tsx`](../../../components/page/src/Page.stories.tsx) (title: `Layouts/Page`)
 - [`components/page/src/utilities.spec.ts`](../../../components/page/src/utilities.spec.ts)

@@ -32,7 +32,7 @@ pnpm exec cyclone-ui help
 
 `help` is one of the built command modules. A successful run prints usage.
 
-The package version in this repository is `0.6.20`. Confirm that the version you install publishes the `cyclone-ui` binary before you rely on `npx cyclone-ui`.
+`@cyclone-ui/cli` is published to npm with the `cyclone-ui` binary, so `npx cyclone-ui` also works without a local install.
 
 ## Related pages
 

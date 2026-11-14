@@ -69,6 +69,15 @@
 
 <br />
 
+# Quick Features
+
+- **118 component packages** for [Tamagui](https://tamagui.dev), for web and React Native: forms, overlays, layout, navigation, data display, charts, text, and motion. Each has a [catalog page](./docs/design-system/components/index.md) with installation, usage, anatomy, examples, and props.
+- **Copy-and-own installs.** Like shadcn/ui, the [`cyclone-ui` CLI](./docs/packages/cli.md) copies component source into your project and adds the packages it needs.
+- **Design tokens and themes.** The token JSON in `packages/tokens/src/tokens` generates the Tamagui config, CSS variables, and six themes (light, dark, and their dimmed and high-contrast forms) with [Razorwind](https://github.com/storm-software/razorwind). See [Tokens](./docs/design-system/tokens/index.md).
+- **Fonts, icons, and illustrations.** The [Storm Sans and Storm Serif](./docs/design-system/fonts/index.md) font families, 585 animated [icons](./docs/design-system/icons/index.md), and 34 themed [illustrations](./docs/design-system/illustrations/index.md).
+- **Framework integrations** for [Next.js](./docs/packages/nextjs.md) and [Vite](./docs/packages/vite.md), with [Tailwind CSS](./docs/packages/guides/tailwind.md) interop.
+- **A Storybook** with the stories of every component ([`apps/storybook`](./apps/storybook/README.md)).
+
 # Getting Started
 
 Once the code is pulled locally, open a command prompt and run `pnpm install` in
@@ -96,8 +105,46 @@ Run `pnpm build` to build the project. The build artifacts will be stored in the
 
 ## Development Server
 
-Run `pnpm serve` for a dev server. Navigate to <http://localhost:4200/>. The app
-will automatically reload if you change any of the source files.
+Run `pnpm nx run storybook:serve` to start Storybook. Navigate to
+<http://localhost:4400/>. Storybook reloads when you change a component or a
+story.
+
+<div align="right">[ <a href="#table-of-contents">Back to top ▲</a> ]</div>
+<br />
+
+# Usage
+
+Copy a component into your app with the CLI, then install the packages it adds:
+
+```bash
+pnpm add -D @cyclone-ui/cli
+pnpm exec cyclone-ui init
+pnpm exec cyclone-ui add button
+pnpm install
+```
+
+Install the theme config and state provider (`pnpm add @cyclone-ui/tokens @cyclone-ui/state`), then render the copied component inside the Cyclone UI theme provider. `ThemeProvider` wraps Tamagui's provider:
+
+```tsx
+import { ThemeProvider } from "@cyclone-ui/state/theme";
+import { config } from "@cyclone-ui/tokens/tamagui";
+import { Theme } from "@tamagui/core";
+import { Button } from "./components/button/Button";
+
+export function App() {
+  return (
+    <ThemeProvider config={config} defaultMode="dark">
+      <Theme name="dark_base">
+        <Button variant="primary" theme="brand">
+          <Button.Text>Save</Button.Text>
+        </Button>
+      </Theme>
+    </ThemeProvider>
+  );
+}
+```
+
+The [quick start](./docs/quick-start.md) and the [adoption guide](./docs/design-system/guides/adopt-cyclone-ui.md) explain each step. For Next.js or Vite, use [`@cyclone-ui/nextjs`](./docs/packages/nextjs.md) or [`@cyclone-ui/vite`](./docs/packages/vite.md) instead of wiring the providers by hand.
 
 <div align="right">[ <a href="#table-of-contents">Back to top ▲</a> ]</div>
 <br />

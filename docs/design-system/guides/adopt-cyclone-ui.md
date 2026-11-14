@@ -86,10 +86,13 @@ The output below is illustrative, and file names can differ. The registry was no
 ```text
 create    src/components/ui/button/Button.tsx
 create    src/components/ui/body-text/BodyText.tsx
+create    src/components/ui/container/Container.tsx
+create    src/components/ui/icons/...
 create    src/components/ui/ripple-animation/RippleAnimation.tsx
+create    src/components/ui/tooltip/Tooltip.tsx
 ```
 
-The CLI also copies the components that `button` depends on. In [registry.json](../../../registry.json), the `button` item lists `body-text`, `ripple-animation`, and `themeable-icon` as registry dependencies. Other packages, such as `@cyclone-ui/helpers`, are added to `package.json` instead of copied. Imports between copied components become relative paths, so the copied folders work without the `@cyclone-ui/*` component packages. See the [Button page](../components/button.md) for its props.
+The CLI also copies the components that `button` depends on. In [registry.json](../../../registry.json), the `button` item lists `body-text`, `container`, `icons`, `ripple-animation`, and `tooltip` as registry dependencies. The CLI also copies the dependencies of those components. Other packages, such as `@cyclone-ui/helpers`, are added to `package.json` instead of copied. Imports between copied components become relative paths, so the copied folders work without the `@cyclone-ui/*` component packages. See the [Button page](../components/button.md) for its props.
 
 ## Step 4 — Install the new dependencies
 

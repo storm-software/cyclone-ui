@@ -65,7 +65,27 @@ A package containing the Avatar component used by Storm Software
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- Shows an image at a fixed size. While it loads, or when it is missing or fails, the initials of `name` or a person icon show instead. `fallback` replaces both.
+- Six sizes: `xs`, `sm`, `md` (default), `lg`, `xl` and `2xl`.
+- Round by default. `circular={false}` gives rounded corners.
+- `status` adds a presence dot in any `Badge` color. `statusLabel` describes it to screen readers.
+- Hides a broken image, so the browser's broken-image icon does not show over the fallback.
+- `editable` adds an upload button and a crop modal (drag or arrow keys to move, 1× to 3× zoom). `onUpload` gets the cropped square image, at most 512 × 512 px. Web only.
+
 ## Installing
+
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add avatar
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/avatar.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/avatar` package is not published to npm yet. After it is published, you can also install it with a package manager:
 
 Using [pnpm](http://pnpm.io):
 
@@ -90,6 +110,24 @@ yarn add -D @cyclone-ui/avatar
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Avatar } from "@cyclone-ui/avatar"
+
+export const Example = () => (
+  <Avatar
+    src="https://example.com/ada.jpg"
+    name="Ada Lovelace"
+    size="lg"
+    status="success"
+    statusLabel="Online"
+  />
+)
+```
+
+See the [component reference](../../docs/design-system/components/avatar.md) for all props and variants.
 
 ## Reduced Package Size
 

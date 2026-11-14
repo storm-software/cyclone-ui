@@ -73,7 +73,28 @@ same way.
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- A `Footer` with a wireframe terrain drawn behind the content in the theme `primary` color.
+- The terrain ripples slowly (`animate`, on by default) and stays still when the user prefers reduced motion.
+- A low-opacity noise texture covers the surface (`noise`, on by default).
+- The same compound parts as `Footer`, such as `TerrainFooter.Container`, `.Main`, `.Navigation` and `.Rail`, except `SocialLinks`.
+- Takes the `Footer` props, such as `variant`.
+- Drawn with `react-native-svg`: no WebGL or image downloads. The server and the client render the same terrain.
+- The terrain and noise layers are hidden from screen readers and ignore pointer events.
+
 ## Installing
+
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add terrain-footer
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/terrain-footer.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/terrain-footer` package is not published to npm yet. After it is published, you can also install it with a package manager:
 
 Using [pnpm](http://pnpm.io):
 
@@ -98,6 +119,40 @@ yarn add -D @cyclone-ui/terrain-footer
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { TerrainFooter } from "@cyclone-ui/terrain-footer"
+
+export const Example = () => (
+  <TerrainFooter variant="secondary">
+    <TerrainFooter.Container>
+      <TerrainFooter.Main>
+        <TerrainFooter.Introduction>
+          <TerrainFooter.Statement>Build with Cyclone</TerrainFooter.Statement>
+          <TerrainFooter.Description>Tokens, components, and icons.</TerrainFooter.Description>
+        </TerrainFooter.Introduction>
+        <TerrainFooter.Navigation aria-label="Footer navigation">
+          <TerrainFooter.Section>
+            <TerrainFooter.Section.Title>Explore</TerrainFooter.Section.Title>
+            <TerrainFooter.Section.Links>
+              <TerrainFooter.Link href="/components">Components</TerrainFooter.Link>
+            </TerrainFooter.Section.Links>
+          </TerrainFooter.Section>
+        </TerrainFooter.Navigation>
+      </TerrainFooter.Main>
+      <TerrainFooter.Rail>
+        <TerrainFooter.Brand>
+          <TerrainFooter.Copyright>© Storm Software</TerrainFooter.Copyright>
+        </TerrainFooter.Brand>
+      </TerrainFooter.Rail>
+    </TerrainFooter.Container>
+  </TerrainFooter>
+)
+```
+
+See the [component reference](../../docs/design-system/components/terrain-footer.md) for all props and variants.
 
 ## Reduced Package Size
 

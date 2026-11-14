@@ -92,6 +92,17 @@ While the user types, the endpoint is sent `GET <endpoint>?q=<text>` and answers
 
 ## Installation
 
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add address-input
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/address-input.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/address-input` package is not published to npm yet. After it is published, you can also install it with a package manager:
+
 Using [pnpm](http://pnpm.io):
 
 ```bash

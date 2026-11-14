@@ -3,6 +3,12 @@ title: Button
 description: Reference for the Button component, a pressable control with variants, sizes, cascade hover effects, and a ripple.
 documentType: reference
 tags: [component, triggers, button, action]
+component:
+  name: button
+  package: "@cyclone-ui/button"
+  stories:
+    - title: Triggers/Button
+      file: components/button/src/Button.stories.tsx
 ---
 
 # Button
@@ -10,6 +16,19 @@ tags: [component, triggers, button, action]
 `Button` is the main pressable control of the design system. It has text and icon parts, many visual variants, three named sizes, and a ripple on press.
 
 Use it for actions. To style a button as a link, set `variant="link"`. To render a real anchor, set `render="a"` and `href`.
+
+## Installation
+
+Copy the component into your project with the [Cyclone UI CLI](../../packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add button
+pnpm install
+```
+
+- **File:** `Button.tsx`. The CLI writes it to `<path>/button/`. `path` comes from `components.json` and defaults to `components`.
+- **Also copies:** [Body Text](./body-text.md), [Container](./container.md), [Icons](../icons/index.md), [Ripple Animation](./ripple-animation.md), and [Tooltip](./tooltip.md). Imports between copied components become relative paths.
+- **Adds to `package.json`:** `@tamagui/core`, `@tamagui/helpers`, `@tamagui/stacks`, and `@tamagui/text`.
 
 ## Import
 
@@ -33,11 +52,38 @@ import { Button } from "@cyclone-ui/button"
 
 ## Anatomy
 
-| Part          | Purpose                                        |
-| ------------- | ---------------------------------------------- |
-| `Button`      | The frame. It holds the state and the variant. |
-| `Button.Text` | The label.                                     |
-| `Button.Icon` | An icon.                                       |
+```tsx
+<Button>
+  <Button.Icon>{icon}</Button.Icon>
+  <Button.Text>Label</Button.Text>
+</Button>
+```
+
+| Part          | Renders                                         | Purpose                                                                                                                         |
+| ------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `Button`      | A Tamagui `View` as `<button role="button">`     | The frame. It holds the variant, size, and disabled state and shares them with its parts. Container variants draw a `Container` layer under the parts. A ripple layer is added for every variant except `link`. |
+| `Button.Text` | A Tamagui `Text` as `<span>`                     | The label. Its color follows the variant and the hover state.                                                                   |
+| `Button.Icon` | A Tamagui `View`                                | Holds an icon. It sizes the icon from the button size and colors it from the variant.                                         |
+
+With `tooltip`, the frame is the trigger of a `Tooltip`. With `render="a"`, the frame renders an anchor.
+
+`ButtonText` and `ButtonIcon` are also exported by name. Use them in React Server Components, which cannot read `Button.Text` from a client module.
+
+## Examples
+
+The examples are the stories in [`Button.stories.tsx`](../../../components/button/src/Button.stories.tsx).
+
+| Stories                                                                                                  | What they show                                                                 |
+| -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| `Default`, `Brand`, `Animated`                                                                          | A text button, the `brand` theme, and the press animation.                     |
+| `Icon`, `WithTooltip`                                                                                   | An icon-only button, and a circular ghost button with a `tooltip`.             |
+| `Rounded`, `Circular`, `NoPadding`                                                                      | The `rounded`, `circular`, and `tight` shapes.                                 |
+| `Sizes`, `Sized`, `SizedIcon`                                                                           | The `sm`, `md`, and `lg` sizes, and the raw size token `13xl`.                 |
+| `Primary`, `Secondary`, `Tertiary`, `Outlined`, `Sunken`, `Canvas`, `Surface`, `Elevated`, `Floating`  | Each container variant.                                                        |
+| `Raised`, `Flat`, `Accented`, `Glass`, `Noise`                                                          | `shadowStyle`, `accented`, `glass`, and `noise`.                               |
+| `Cascade`, `DoubleCascade`, `DiagonalCascade`, `DoubleDiagonalCascade`, `ReverseCascade`, `ReverseDoubleCascade` | The cascade hover variants.                                                    |
+| `Ghost`, `Link`, `Disabled`                                                                             | The `ghost` and `link` variants, and a disabled primary button.                |
+| `Danger` through `DangerDisabled`, and the same set for `Warning`, `Success`, `Info`, and `Discovery`  | Each status theme on the default, primary, secondary, tertiary, outlined, cascade, ghost, link, and disabled buttons. |
 
 ## Props
 

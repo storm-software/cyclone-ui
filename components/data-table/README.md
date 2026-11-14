@@ -65,7 +65,29 @@ A package containing the `DataTable` component used by Storm Software
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- Built on TanStack Table and the Cyclone `Table`. Pass TanStack `options` with `columns` and `data`.
+- `DataTableHeader` adds a sort control (multi-column, with the sort position) and a filter popover with a searchable, virtualized list of values and row counts.
+- `DataTableCell` renders a cell value as body text.
+- Client-side pagination with a "Per page" select (`pageSize`, 100 by default).
+- Row selection checkboxes (`options.enableRowSelection`), with a selection bar for `DataTable.SelectionAction` buttons.
+- A row actions menu for each row (`rowActions`, `onRowAction`).
+- `resizable` and `reorderable` columns.
+- Variants: `standard` (hairline rows, default) and `card` (rounded cards).
+
 ## Installing
+
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add data-table
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/data-table.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/data-table` package is not published to npm yet. After it is published, you can also install it with a package manager:
 
 Using [pnpm](http://pnpm.io):
 
@@ -90,6 +112,31 @@ yarn add -D @cyclone-ui/data-table
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { DataTable, DataTableCell, DataTableHeader } from "@cyclone-ui/data-table"
+import { createColumnHelper } from "@tanstack/react-table"
+
+type Person = { name: string; role: string }
+
+const columnHelper = createColumnHelper<Person>()
+
+const columns = [
+  columnHelper.accessor("name", { header: DataTableHeader, cell: DataTableCell }),
+  columnHelper.accessor("role", { header: DataTableHeader, cell: DataTableCell })
+]
+
+const data: Person[] = [
+  { name: "Ada Lovelace", role: "Admin" },
+  { name: "Grace Hopper", role: "Editor" }
+]
+
+export const Example = () => <DataTable pageSize={25} options={{ data, columns }} />
+```
+
+See the [component reference](../../docs/design-system/components/data-table.md) for all props and variants.
 
 ## Reduced Package Size
 

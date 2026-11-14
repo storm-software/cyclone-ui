@@ -63,7 +63,28 @@ An animated display component reproducing Ellsworth Kelly's large wall color com
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- Draws a grid of colored panels after Ellsworth Kelly's "Colors for a Large Wall".
+- Fits as many panels as the box allows (`panelSize`, 80 px by default), then stretches them to fill it.
+- Swaps two panels every `interval` milliseconds (1000 by default) with a 500 ms color fade. `0` holds the grid still.
+- Palettes: `original` (default) and `vibrant`. The colors do not follow the theme.
+- Keeps the painting's 8:7 aspect ratio unless you set `height`.
+- Stays still when the user prefers reduced motion. The server and the client render the same first grid.
+- A Tailwind CSS version is also available.
+
 ## Installing
+
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add color-compositions
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/color-compositions.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/color-compositions` package is not published to npm yet. After it is published, you can also install it with a package manager:
 
 Using [pnpm](http://pnpm.io):
 
@@ -88,6 +109,18 @@ yarn add -D @cyclone-ui/color-compositions
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { ColorCompositions } from "@cyclone-ui/color-compositions"
+
+export const Example = () => (
+  <ColorCompositions height={480} interval={1000} panelSize={80} palette="vibrant" />
+)
+```
+
+See the [component reference](../../docs/design-system/components/color-compositions.md) for all props and variants.
 
 ## Reduced Package Size
 

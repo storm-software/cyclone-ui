@@ -45,8 +45,8 @@ A decorative, seeded square-grid transition between sections. The default layout
 
 ```tsx
 <GlitchSeparator
-  topColor="$canvas"
-  bottomColor="$access"
+  topColor="canvas"
+  bottomColor="surface"
   animate="scroll"
 />
 ```
@@ -79,7 +79,29 @@ Web animations respect live changes to `prefers-reduced-motion`. Native platform
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- Draws a ragged edge of squares between two section colors, `topColor` and `bottomColor`.
+- Colors take a theme key, a color token or a CSS color. `topColor` defaults to `transparent`, so the parent background shows through.
+- Web animation modes: `scroll` (default), `always` and `never`. Native renders a still edge.
+- Stays still when the user prefers reduced motion.
+- `seed` makes the pattern reproducible, so the server and the client render the same edge.
+- A 30-column grid. The row count follows `height`. Without `height`, the separator keeps a 5:1 aspect ratio.
+- Decorative: hidden from screen readers, and ignores pointer events.
+- A Tailwind CSS version is also available.
+
 ## Installing
+
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add glitch-separator
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/glitch-separator.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/glitch-separator` package is not published to npm yet. After it is published, you can also install it with a package manager:
 
 Using [pnpm](http://pnpm.io):
 
@@ -104,6 +126,18 @@ yarn add -D @cyclone-ui/glitch-separator
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { GlitchSeparator } from "@cyclone-ui/glitch-separator"
+
+export const Example = () => (
+  <GlitchSeparator topColor="canvas" bottomColor="secondary" animate="scroll" seed={27} />
+)
+```
+
+See the [component reference](../../docs/design-system/components/glitch-separator.md) for all props and variants.
 
 ## Reduced Package Size
 

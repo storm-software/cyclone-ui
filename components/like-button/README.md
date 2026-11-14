@@ -77,6 +77,17 @@ A `LikeButton` toggle for liking content. It renders a thumbs-up icon that fills
 
 ## Installation
 
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add like-button
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/like-button.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/like-button` package is not published to npm yet. After it is published, you can also install it with a package manager:
+
 Using [pnpm](http://pnpm.io):
 
 ```bash

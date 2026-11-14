@@ -69,7 +69,27 @@ component.
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- A `<footer>` for marketing and documentation sites, composed from parts: `Footer.Container`, `Footer.Main`, `Footer.Introduction` (with `Footer.Statement` and `Footer.Description`), `Footer.Action`, `Footer.SocialLinks`, `Footer.Navigation` (with `Footer.Section`), and `Footer.Rail` (with `Footer.Brand`, `Footer.Copyright` and `Footer.LegalNavigation`).
+- Variants: `primary`, `secondary` and `tertiary` (default).
+- The parts sit side by side on wide screens and stack into one column below the `md` breakpoint.
+- Hovering one `Footer.Link` moves it 3 px to the right and dims the other links.
+- `Footer.BackgroundLogo` draws an oversized wordmark that fades off the bottom edge.
+- Flat named exports, such as `FooterLink` and `FooterRail`, for React Server Components.
+
 ## Installing
+
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add footer
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/footer.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/footer` package is not published to npm yet. After it is published, you can also install it with a package manager:
 
 Using [pnpm](http://pnpm.io):
 
@@ -94,6 +114,43 @@ yarn add -D @cyclone-ui/footer
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Footer } from "@cyclone-ui/footer"
+
+export const Example = () => (
+  <Footer variant="secondary">
+    <Footer.Container>
+      <Footer.Main>
+        <Footer.Introduction>
+          <Footer.Statement>Build with Cyclone</Footer.Statement>
+          <Footer.Description>Tokens, components, and icons.</Footer.Description>
+        </Footer.Introduction>
+        <Footer.Navigation aria-label="Footer navigation">
+          <Footer.Section>
+            <Footer.Section.Title>Product</Footer.Section.Title>
+            <Footer.Section.Links>
+              <Footer.Link href="/tokens">Tokens</Footer.Link>
+            </Footer.Section.Links>
+          </Footer.Section>
+        </Footer.Navigation>
+      </Footer.Main>
+      <Footer.Rail>
+        <Footer.Brand>
+          <Footer.Copyright>© Storm Software</Footer.Copyright>
+        </Footer.Brand>
+        <Footer.LegalNavigation aria-label="Legal">
+          <Footer.Rail.Link href="/license">License</Footer.Rail.Link>
+        </Footer.LegalNavigation>
+      </Footer.Rail>
+    </Footer.Container>
+  </Footer>
+)
+```
+
+See the [component reference](../../docs/design-system/components/footer.md) for all props and variants.
 
 ## Reduced Package Size
 

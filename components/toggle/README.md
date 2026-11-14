@@ -75,6 +75,17 @@ A package containing the Toggle component used by Storm Software
 
 ## Installing
 
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add toggle
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/toggle.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/toggle` package is not published to npm yet. After it is published, you can also install it with a package manager:
+
 Using [pnpm](http://pnpm.io):
 
 ```bash

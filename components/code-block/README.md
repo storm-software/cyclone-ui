@@ -63,7 +63,28 @@ A package containing the CodeBlock component used by Storm Software
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- Frames code that is already highlighted, for example by Shiki, in a `<figure>` with a scrollable, focusable viewport (600 px high at most by default).
+- Optional `title` and `icon` caption.
+- Copy button, on by default (`allowCopy`). It leaves out elements with the `nd-copy-ignore` class, such as a `$ ` prompt.
+- Line numbers with `data-line-numbers` and `data-line-numbers-start`.
+- `keepBackground` keeps Shiki's light and dark background colors.
+- `CodeBlock.Tabs` switches between several samples, such as install commands.
+- Compound parts: `CodeBlock.Header`, `CodeBlock.Pre` (or `CodeBlock.Body`) and `CodeBlock.CopyButton`, with flat named exports for React Server Components.
+
 ## Installing
+
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add code-block
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/code-block.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/code-block` package is not published to npm yet. After it is published, you can also install it with a package manager:
 
 Using [pnpm](http://pnpm.io):
 
@@ -88,6 +109,20 @@ yarn add -D @cyclone-ui/code-block
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { CodeBlock } from "@cyclone-ui/code-block"
+
+export const Example = () => (
+  <CodeBlock title="Install">
+    <CodeBlock.Pre>pnpm add @cyclone-ui/button</CodeBlock.Pre>
+  </CodeBlock>
+)
+```
+
+See the [component reference](../../docs/design-system/components/code-block.md) for all props and variants.
 
 ## Reduced Package Size
 

@@ -63,7 +63,27 @@ A package containing the Collapsible component used by Storm Software
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- Shows and hides one section of content. It is a single-item `Accordion` with a chevron icon.
+- Compound API: `Collapsible.Header`, `Collapsible.Header.Heading` and `Collapsible.Content`.
+- Boolean open state: controlled with `value`, or uncontrolled with `defaultValue`.
+- `icon` selects the `chevron` (default) or `toggle` header icon.
+- Accordion styling: the `Container` variants and `ghost`, `direction` (`down` or `up`), `separated`, `bordered`, `shadowStyle`, `glass`, `noise` and `accented`.
+- Animates the content height when it opens and closes.
+
 ## Installing
+
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add collapsible
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/collapsible.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/collapsible` package is not published to npm yet. After it is published, you can also install it with a package manager:
 
 Using [pnpm](http://pnpm.io):
 
@@ -88,6 +108,23 @@ yarn add -D @cyclone-ui/collapsible
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Collapsible } from "@cyclone-ui/collapsible"
+
+export const Example = () => (
+  <Collapsible defaultValue={false}>
+    <Collapsible.Header>
+      <Collapsible.Header.Heading>Details</Collapsible.Header.Heading>
+    </Collapsible.Header>
+    <Collapsible.Content>The panel content.</Collapsible.Content>
+  </Collapsible>
+)
+```
+
+See the [component reference](../../docs/design-system/components/collapsible.md) for all props and variants.
 
 ## Reduced Package Size
 

@@ -7,7 +7,7 @@ tags: [design-system, components]
 
 # Components
 
-Each folder in `components` is one package. You copy a component into your app with the [CLI](../../packages/cli.md). Icons live in the [icon gallery](../icons/index.md), not in this list.
+Each folder in `components` is one package. You copy a component into your app with the [CLI](../../packages/cli.md). Icons, [`ThemeableIcon`](../icons/themeable-icon.md), and the [vectors](../icons/vectors.md) live in the [icon gallery](../icons/index.md). Illustrations have their own [gallery](../illustrations/index.md).
 
 The pages below describe the public parts and props. Choose a semantic token for color, space, and type. The token catalogs are in [Tokens](../tokens/index.md).
 
@@ -26,6 +26,10 @@ The pages below describe the public parts and props. Choose a semantic token for
 | [Divider](./divider.md) | A simple horizontal or vertical line used to separate content. |
 | [Glitch Separator](./glitch-separator.md) | A decorative section divider that draws a ragged grid of seeded pseudo-random squares in SVG between a top and bottom color. |
 | [Overlay](./overlay.md) | A full-bleed backdrop that partially obscures background content with a blurred, theme-tinted gradient that fades in and out on enter/exit. |
+| [Terrain Footer](./terrain-footer.md) | A Footer block with a wireframe terrain backdrop and a noise overlay. |
+| [Navigation Sidebar](./navigation-sidebar.md) | A vertical navigation block with a workspace switcher, a search button, grouped links, expandable folders, and the signed-in account. It fills `Page.SideNav` or `DocsPage.SideNav`, or stands alone as a bordered card. |
+| [Article Progress Header](./article-progress-header.md) | A sticky strip of an article's section links in one row that marks the section the reader is in. Use it where a side table of contents has no room. |
+| [Floating Toolbar](./floating-toolbar.md) | A draggable, pill-shaped toolbar fixed to the bottom of the viewport for page-level controls, with an optional table of contents that shows reading progress. |
 
 ## Actions
 
@@ -37,6 +41,10 @@ The pages below describe the public parts and props. Choose a semantic token for
 | [Like Button](./like-button.md) | A toggle button with a thumbs-up icon that can be controlled (liked, onLikedChange) or uncontrolled (defaultLiked), and has sm, md and lg sizes. |
 | [Toggle](./toggle.md) | A clickable toggle that is either on or off, with several styles and sizes. |
 | [Toggle Group](./toggle-group.md) | A clickable group of toggle components that exists in either an "on" or "off" state with various styles and sizes. |
+| [Submit Button](./submit-button.md) | A Button preset that shows pending, success, and error states while an async submit runs. |
+| [Dropdown Button](./dropdown-button.md) | A split button: a main action joined to a chevron that opens a menu of related actions. |
+| [Copy Page Dropdown Button](./copy-page-dropdown-button.md) | A docs "Copy page" split button that copies the page's Markdown and opens it in Claude, ChatGPT, T3 Chat, or Cursor. |
+| [Theme Toggler](./theme-toggler.md) | A button that switches between light and dark mode, with a shape reveal on the web. |
 
 ## Forms
 
@@ -54,7 +62,7 @@ The pages below describe the public parts and props. Choose a semantic token for
 | [Number Input](./number-input.md) | A NumberInput built on Input that renders a type=number text box with decrease (minus) and increase (plus) buttons. |
 | [Password Input](./password-input.md) | A password input with a show/hide toggle and a caps-lock warning. |
 | [Search Input](./search-input.md) | A headless search text input with a magnifying-glass icon. |
-| [Otp Input](./otp-input.md) | A one-time passcode input that renders one numeric input per digit (4 by default). |
+| [OTP Input](./otp-input.md) | A one-time passcode input that renders one numeric input per digit (4 by default). |
 | [Phone Number Input](./phone-number-input.md) | A headless phone number input built on Input that adds a searchable country-code picker with flags in a menu. |
 | [Address Input](./address-input.md) | An address search field: a SearchInput whose suggestions come from an address search API endpoint (GET <endpoint>?q=<text> returning label/latitude/longitude options), with a map of the chosen address. |
 | [Credit Card Input](./credit-card-input.md) | Credit card fields (card number, expiry date, security code and name on card) built on Input, with a card preview that follows what is entered. |
@@ -66,6 +74,7 @@ The pages below describe the public parts and props. Choose a semantic token for
 | [File Picker](./file-picker.md) | A file and image picker with a dashed drop zone that supports drag and drop on the web and the native document picker on mobile. |
 | [Tag Picker](./tag-picker.md) | A TagPicker input that turns typed text into removable tags. |
 | [Rating](./rating.md) | A row of icons, stars by default, for displaying or selecting a rating. |
+| [Manual Address Input](./manual-address-input.md) | A set of form fields for entering a postal address by hand that adapts to the selected country. |
 
 ## Feedback
 
@@ -93,6 +102,8 @@ The pages below describe the public parts and props. Choose a semantic token for
 | [Tooltip](./tooltip.md) | A tooltip built on the Tamagui Tooltip with Trigger and Content parts. |
 | [Context Menu](./context-menu.md) | A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small screens. |
 | [Search Dialog](./search-dialog.md) | A search icon Button that opens a Dialog for searching the application, like the fumadocs search dialog. |
+| [Modal](./modal.md) | A centered dialog with a fixed layout: a pinned header with back and close buttons, a scrolling content panel, and a footer for actions. |
+| [Privacy Choices](./privacy-choices.md) | A "Privacy Choices" link-style button that opens a dialog where users review their privacy rights and turn cookie or data-sharing categories on or off. |
 
 ## Data display
 
@@ -101,6 +112,8 @@ The pages below describe the public parts and props. Choose a semantic token for
 | [Table](./table.md) | A Table compound component with Header, Body, Row, Cell, HeaderCell and Footer parts that render semantic table elements. |
 | [Data Table](./data-table.md) | A data grid built on TanStack Table and the Cyclone UI Table that takes table options (columns and data) and adds sorting, faceted column filtering, client-side pagination with a configurable page size, optional row selection checkboxes and resizable columns. |
 | [Badge](./badge.md) | A Badge that wraps an element and pins a small count or dot to one of its corners. |
+| [Avatar](./avatar.md) | Shows a person's image at a fixed size, with an initials or icon fallback, an optional status dot, and an optional crop-and-upload flow. |
+| [File](./file.md) | A card for one file that shows its name, size, date, and type over a preview, with download and remove buttons and an upload status. |
 | [Tag](./tag.md) | A compact label chip with Tag.Text and Tag.Icon subcomponents. |
 | [Timeline](./timeline.md) | A Timeline that renders a list of events joined by a line, vertically or horizontally. |
 | [Type Table](./type-table.md) | A documentation table that lists properties with their types. |
@@ -140,6 +153,7 @@ The pages below describe the public parts and props. Choose a semantic token for
 | [Bytes Text](./bytes-text.md) | A BodyText-based text component that renders a numeric byte count as a human-readable size (such as 1.5 kB) using pretty-bytes. |
 | [Number Text](./number-text.md) | A label-styled text component that renders its numeric children with NumberFlow, so changes in value are animated. |
 | [Preview Link](./preview-link.md) | A Link with a dotted underline that shows a Tooltip with more details when hovered or focused. |
+| [Kbd](./kbd.md) | A keyboard key (`<kbd>`) in three sizes, with `KbdGroup` for key combinations such as Ctrl + K. |
 
 ## Media and motion
 
@@ -147,23 +161,33 @@ The pages below describe the public parts and props. Choose a semantic token for
 | --- | --- |
 | [Code Block](./code-block.md) | A figure that displays Shiki-highlighted code, with an optional title and icon, a copy-to-clipboard button, line numbers and a scrollable viewport. |
 | [Package Command Code Block](./package-command-code-block.md) | A tabbed code block that shows the equivalent npm, pnpm, yarn and bun command for an ni-style command (install, run, exec, uninstall and others), each with a copy button. |
-| [Pdf Document Display](./pdf-document-display.md) | Renders one page of a PDF from a URL or FileResult using react-pdf, with a spinner and PDF icon placeholder while loading or after an error. |
-| [Themeable Icon](./themeable-icon.md) | An icon wrapper that applies size and color tokens to its child icon and animates when it enters or exits. |
+| [PDF Document Display](./pdf-document-display.md) | Renders one page of a PDF from a URL or FileResult using react-pdf, with a spinner and PDF icon placeholder while loading or after an error. |
 | [Themeable Gradient](./themeable-gradient.md) | A ThemeableGradient component that renders a diagonal LinearGradient. |
-| [Vectors](./vectors.md) | A set of custom themed SVG graphics for Tamagui, including status circles (alert, check, error, info, discovery), arrows in four directions, check, accordion toggle and binary on/off indicators, background patterns (noise, checkerboard, diagonal), a PDF icon and Storm logos. |
 | [Confetti Burst](./confetti-burst.md) | An invisible anchor that bursts a ring of accent-colored confetti squares out of its position when its burst() handle is called. |
 | [Redacted Animation](./redacted-animation.md) | A RedactedAnimation wrapper that briefly covers its children with an accent-colored mask, then slides the mask away to the left or right to reveal the content. |
 | [Ripple Animation](./ripple-animation.md) | A RippleAnimation layer that fills its positioned parent and, when its ripple() handle is called with a press event, grows a fading circle out of the press point (or the center, for a keyboard press). |
 | [Color Compositions](./color-compositions.md) | An animated display component reproducing Ellsworth Kelly's "Colors for a Large Wall" as a grid of colored panels. |
+| [Scramble Animation](./scramble-animation.md) | Decodes its text from random characters on mount and scrambles the characters near the pointer. |
+| [Topographic Background](./topographic-background.md) | A full-bleed topographic map background. The interactive variant warps the contours with WebGL and paints color in under the pointer. |
 
 ## Utilities
 
 | Component | Purpose |
 | --- | --- |
 | [Visually Hidden](./visually-hidden.md) | A wrapper that hides its content visually but keeps it available to screen readers. |
-| [Table Of Contents](./table-of-contents.md) | A page navigation list built from an array of heading items, each with a title, a hash URL and a depth. |
+| [Table of Contents](./table-of-contents.md) | A page navigation list built from an array of heading items, each with a title, a hash URL and a depth. |
 
-## Related pages
+## Page format
+
+Every component page has the same parts, in this order: an introduction, Installation, Import, Usage, Anatomy, Examples, Props, then the variant, state, behavior, and accessibility sections the component needs, then Related and Source.
+
+- **Installation** gives the `cyclone-ui add` command, the files it copies, the components it copies with them, and the packages it adds.
+- **Anatomy** shows how the parts nest and what each part renders: the primitive it is built on, and the web element or role.
+- **Examples** lists the Storybook stories of the component by export name.
+
+The `component` block in the front matter of each page names the CLI install name, the package, and the stories files. A docs site can use it to render each component live, with controls. See [Render the component catalog](../guides/render-the-component-catalog.md).
+
+## Related
 
 - [Design system overview](../index.md)
 - [Icons](../icons/index.md)

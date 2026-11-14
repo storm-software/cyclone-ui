@@ -1,6 +1,6 @@
 ---
 title: "@cyclone-ui/registry-api"
-description: Reference for the private tRPC package that serves the Cyclone UI component registry from R2 storage.
+description: Reference for the internal tRPC package that serves the Cyclone UI component registry from R2 storage.
 documentType: reference
 tags: [registry, trpc, cloudflare]
 ---
@@ -9,7 +9,7 @@ tags: [registry, trpc, cloudflare]
 
 `@cyclone-ui/registry-api` is the shared [tRPC](https://trpc.io) router and typed client for the Cyclone UI component registry. The [registry worker](../../apps/registry-worker/README.md) hosts it. The [CLI](./cli.md) uses the client for legacy registry URLs.
 
-This package is private (`"private": true`). It is not published to npm. Use it inside this repository only.
+The package is published to npm (`"private": false`), but it is internal: it can change without warning. Use it only to talk to the Cyclone UI registry.
 
 Source: [`packages/registry-api`](https://github.com/storm-software/cyclone-ui/tree/main/packages/registry-api)
 

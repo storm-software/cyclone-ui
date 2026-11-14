@@ -3,24 +3,36 @@ title: Vectors
 description: A set of themed SVG graphics for status, direction, state indicators, background patterns, and the Storm logo.
 documentType: reference
 tags: [component, vectors, svg, icon, graphics]
+component:
+  name: icons
+  package: "@cyclone-ui/icons"
 ---
 
 # Vectors
 
-`@cyclone-ui/vectors` is a set of custom SVG graphics. They use the same props as other Cyclone UI icons, and they pick up the current theme color. Several graphics animate when a state prop changes. For the general icon set, see the [icon catalog](../icons/index.md).
+The vectors are a set of custom SVG graphics in the [`@cyclone-ui/icons`](./index.md) package. They were in a separate `@cyclone-ui/vectors` package before. They use the same props as other Cyclone UI icons, and they pick up the current theme color. Several graphics animate when a state prop changes. For the general icon set, see the [icon catalog](./index.md).
+
+## Installation
+
+The vectors are part of the icons package. Copy the package into your project with the [Cyclone UI CLI](../../packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add icons
+pnpm install
+```
 
 ## Import
 
 ```tsx
-import { AlertCircle, Arrow, Binary } from "@cyclone-ui/vectors";
+import { AlertCircle, Arrow, Binary } from "@cyclone-ui/icons/vectors";
 ```
 
-The package exports every vector from its index, with the matching `*Props` types.
+The `@cyclone-ui/icons/vectors` subpath exports every vector, with the matching `*Props` types. Each vector also has its own subpath, such as `@cyclone-ui/icons/vectors/Arrow`. The package root exports them as one namespace, `vectors`, because some names (such as `AlertCircle` and `Check`) are also line-md icon names.
 
 ## Usage
 
 ```tsx
-import { CheckCircle } from "@cyclone-ui/vectors";
+import { CheckCircle } from "@cyclone-ui/icons/vectors";
 
 export function Example() {
   return <CheckCircle size={32} color="primary" isComplete />;
@@ -39,9 +51,9 @@ These five share one prop: `isComplete` (`boolean`, default `true`). Setting it 
 
 | Export | Default color | Notes |
 | --- | --- | --- |
-| `AlertCircle` | `primary` | `getIconByTheme` uses it for `warning` themes. |
+| `AlertCircle` | `primary` | `getIconByTheme` uses it for `danger` and `warning` themes. |
 | `CheckCircle` | `on-primary` | `getIconByTheme` uses it for `success` themes. |
-| `ErrorCircle` | `primary` | `getIconByTheme` uses it for `danger` themes. |
+| `ErrorCircle` | `primary` | `getIconByTheme` uses it for `error` themes. |
 | `DiscoveryCircle` | `primary` | `getIconByTheme` uses it for `discovery` themes. |
 | `InfoCircle` | `primary` | `AlertCircle`, flipped on the X axis. `getIconByTheme` uses it for `info` themes. |
 
@@ -76,6 +88,17 @@ These five share one prop: `isComplete` (`boolean`, default `true`). Setting it 
 
 The `theme` prop wraps the logo in that theme.
 
+## Examples
+
+Each vector has a stories file next to it in [`components/icons/src/vectors`](../../../components/icons/src/vectors), with the Storybook title `Vectors/<Name>`. Most have one `Base` story. The others add:
+
+| Stories file | Stories |
+| --- | --- |
+| `Arrow.stories.tsx` | `Base`, `Up`, `Right`, `Down`, `Left` |
+| `DiscoveryCircle.stories.tsx` | `Base`, `Small` |
+| `StormLogoIcon.stories.tsx` | `Base`, `Brand`, `Danger`, `Warning`, `Info`, `Discovery`, `Success` |
+| `StormLogoText.stories.tsx` | The `StormLogoIcon` set, plus `Thick`, `Outlined`, and `ThickOutlined` |
+
 ## Accessibility
 
 The logos set `role="img"` on the SVG. The source sets no label on them or on the other vectors. Pair a status vector with visible text, or add a label.
@@ -83,11 +106,11 @@ The logos set `role="img"` on the SVG. The source sets no label on them or on th
 ## Related
 
 - [Design tokens](../tokens/index.md)
-- [Icon catalog](../icons/index.md)
+- [Icon catalog](./index.md)
 - [Themeable icon](./themeable-icon.md)
 
 ## Source
 
-- [`components/vectors/src/index.ts`](../../../components/vectors/src/index.ts)
-- [`components/vectors/src/themed-icon.tsx`](../../../components/vectors/src/themed-icon.tsx)
-- Stories: `components/vectors/src/*.stories.tsx`
+- [`components/icons/src/vectors.ts`](../../../components/icons/src/vectors.ts)
+- [`components/icons/src/vectors/themed-icon.tsx`](../../../components/icons/src/vectors/themed-icon.tsx)
+- Stories: `components/icons/src/vectors/*.stories.tsx`

@@ -61,6 +61,16 @@ cyclone-ui diff [components...] [--registry <url>]
 
 Compares installed components with the registry. With no names, it compares every component recorded in `components.json`. With none installed, it throws `No installed components to compare.`
 
+### update-components
+
+```bash
+cyclone-ui update-components [components...] [--dry-run] [--diff] [--silent] [--registry <url>]
+```
+
+Updates installed components to the newest registry version. With no names, it updates every component recorded in `components.json`. It overwrites local edits in the updated files and deletes the files that the new version no longer has. `--dry-run` and `--diff` write nothing. `--diff` prints a diff.
+
+A name that is not installed throws `Not installed: <names>. Use "cyclone-ui add" instead.` With none installed, it throws `No installed components to update.`
+
 ### docs
 
 ```bash

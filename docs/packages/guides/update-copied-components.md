@@ -39,7 +39,7 @@ pnpm exec cyclone-ui info
 Project: /path/to/app
 Configuration: /path/to/app/components.json
 Registry: https://public.storm-cdn.com/cyclone-ui/registry
-Components: button, body-text, ripple-animation, themeable-icon
+Components: button, body-text, container, icons, ripple-animation, tooltip
 ```
 
 The values above are illustrative. Add `--json` for machine-readable output. Before you run `init`, the command prints `Configuration: not initialized`.
@@ -102,6 +102,15 @@ pnpm exec cyclone-ui add button --overwrite
 Local edits in the files that the plan marks `overwrite` are lost. To keep an edit, copy it out first, or recover it from version control after the update.
 
 After a successful write, the CLI updates `components.json` with the component version and file list. Files with the `unchanged` status are not rewritten.
+
+To update components that are already installed, you can also use `update-components`. It always overwrites, so preview it first:
+
+```bash
+pnpm exec cyclone-ui update-components button --diff
+pnpm exec cyclone-ui update-components button
+```
+
+With no names, it updates every installed component. Unlike `add --overwrite`, it also deletes the files that the new version of a component no longer has. See the [command reference](../../api-reference.md#update-components).
 
 To refresh several components, name them all in one command. Do not use `--all` for an update: it adds every registry component, including ones you never installed.
 

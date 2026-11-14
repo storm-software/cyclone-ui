@@ -75,6 +75,17 @@ A package containing the Switch component used by Storm Software
 
 ## Installing
 
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add switch
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/switch.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/switch` package is not published to npm yet. After it is published, you can also install it with a package manager:
+
 Using [pnpm](http://pnpm.io):
 
 ```bash

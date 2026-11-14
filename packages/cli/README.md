@@ -22,6 +22,15 @@ The Cyclone UI command-line interface application.
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- Copies component source from the Cyclone UI registry into your project (`init`, `add`), with the copy-and-own workflow of shadcn/ui. `add` also copies the components a component depends on and adds their packages to `package.json`.
+- Finds and inspects components before you copy them (`search`, `view`, `docs`).
+- Compares copied components with the registry and updates them (`diff`, `update-components`), and reports the project configuration (`info`).
+- Builds a Tamagui config, and its CSS, from design tokens (`build`, `build-tokens`).
+- Validates a shadcn-format registry (`registry validate`).
+- Starts an MCP server on stdio that exposes the design-system commands as tools (`mcp`).
+
 ## Installing
 
 Using [pnpm](http://pnpm.io):
@@ -50,6 +59,8 @@ yarn add @cyclone-ui/cli
 
 <!-- shell-shock:commands -->
 <!-- /shell-shock -->
+
+## Usage
 
 The Cyclone CLI downloads component source from the public R2 registry at
 `https://public.storm-cdn.com/cyclone-ui/registry`, following the copy-and-own

@@ -63,7 +63,29 @@ A `CreditCardInput` component used to render input fields for credit card inform
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- Field parts for the card number, the expiry date, the security code and the name on the card: `CreditCardInput.Number`, `.Expiry`, `.SecurityCode` and `.Name`.
+- `CreditCardInput.Card` shows a card preview that follows what the user types, with the brand logo and an optional `bankName`.
+- Detects the brand (Visa, Mastercard, Amex, Discover, Diners Club, JCB and UnionPay), then groups and limits the digits to match it.
+- Checks the number with the Luhn algorithm, the expiry date against today, and the security code length for the brand.
+- Each part connects to its enclosing `Field` and supplies the mask, the parsing and the validation.
+- Sets the `autocomplete` values `cc-number`, `cc-exp`, `cc-csc` and `cc-name`, so browsers can fill in a saved card.
+- The security code is a password input that shows each typed digit for 500 ms (`delay`).
+- Sizes `sm`, `md` and `lg`, and a `disabled` state.
+
 ## Installing
+
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add credit-card-input
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/credit-card-input.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/credit-card-input` package is not published to npm yet. After it is published, you can also install it with a package manager:
 
 Using [pnpm](http://pnpm.io):
 
@@ -88,6 +110,42 @@ yarn add -D @cyclone-ui/credit-card-input
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { CreditCardInput } from "@cyclone-ui/credit-card-input"
+import { Field } from "@cyclone-ui/field"
+import { Form } from "@cyclone-ui/form"
+
+export const Example = () => (
+  <Form
+    name="payment"
+    initialValues={{ cardNumber: "", expiry: "", securityCode: "", nameOnCard: "" }}>
+    <CreditCardInput>
+      <CreditCardInput.Card bankName="Storm Bank" />
+      <Field name="cardNumber" required={true}>
+        <Field.Label>Card number</Field.Label>
+        <CreditCardInput.Number />
+      </Field>
+      <Field name="expiry" required={true}>
+        <Field.Label>Expiry date</Field.Label>
+        <CreditCardInput.Expiry placeholder="MM/YY" />
+      </Field>
+      <Field name="securityCode" required={true}>
+        <Field.Label>Security code</Field.Label>
+        <CreditCardInput.SecurityCode />
+      </Field>
+      <Field name="nameOnCard" required={true}>
+        <Field.Label>Name on card</Field.Label>
+        <CreditCardInput.Name />
+      </Field>
+    </CreditCardInput>
+  </Form>
+)
+```
+
+See the [component reference](../../docs/design-system/components/credit-card-input.md) for all props and variants.
 
 ## Reduced Package Size
 

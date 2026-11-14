@@ -74,6 +74,17 @@ A composable pie and donut chart built on [Recharts](https://recharts.org) and t
 
 ## Installation
 
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add pie-chart
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/pie-chart.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/pie-chart` package is not published to npm yet. After it is published, you can also install it with a package manager:
+
 Using [pnpm](http://pnpm.io):
 
 ```bash

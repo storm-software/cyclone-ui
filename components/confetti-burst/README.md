@@ -67,7 +67,27 @@ A `ConfettiBurst` that celebrates an action by bursting a ring of accent-colored
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- An invisible, zero-size anchor that centers itself on its positioned parent.
+- `burst()` on its ref fires a ring of squares in the theme `primary` color.
+- `spread` sets the distance (24 px by default) and `count` sets the number of squares (16 by default).
+- Uses the Web Animations API. Each square removes itself after 900 ms. The squares are added outside React, so a burst causes no re-render.
+- Does nothing on native, or when the user prefers reduced motion.
+- Hidden from screen readers, and ignores pointer events.
+
 ## Installing
+
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add confetti-burst
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/confetti-burst.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/confetti-burst` package is not published to npm yet. After it is published, you can also install it with a package manager:
 
 Using [pnpm](http://pnpm.io):
 
