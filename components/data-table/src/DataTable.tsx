@@ -41,7 +41,7 @@ import { SearchInput } from "@cyclone-ui/search-input";
 import { Select } from "@cyclone-ui/select";
 import type { CallbackContext, FieldAtoms } from "@cyclone-ui/state/form";
 import type { TableProps } from "@cyclone-ui/table";
-import { Table } from "@cyclone-ui/table";
+import { Table, useTableContext } from "@cyclone-ui/table";
 import { matchSorter } from "@stryke/helpers/match-sorter";
 import { titleCase } from "@stryke/string-format/title-case";
 import { isNumber } from "@stryke/type-checks/is-number";
@@ -50,7 +50,6 @@ import {
   createStyledContext,
   getTokens,
   getVariableValue,
-  styled,
   View
 } from "@tamagui/core";
 import { withStaticProperties } from "@tamagui/helpers";
@@ -183,11 +182,6 @@ export interface DataTableProps<TData extends RowData> extends TableProps {
 const SELECTION_COLUMN_ID = "__selection";
 const ACTIONS_COLUMN_ID = "__actions";
 
-const DataTableColumnHeading = styled(HeadingExtraSmallText, {
-  displayName: "DataTableColumnHeading",
-  fontWeight: "600"
-});
-
 // Cards are drawn on the cells: a `tr` can't be rounded.
 const getCardCellProps = (index: number, count: number) => ({
   backgroundColor: "surface",
@@ -259,7 +253,7 @@ const DataTableRowActions = <TData extends RowData>({
         open={open}
         onOpenChange={setOpen}
         placement="bottom-end"
-        onValueChange={value => {
+        onValueChange={(value: any) => {
           setOpen(false);
           onAction?.(value, row);
         }}>
@@ -1192,6 +1186,10 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
   const [currentSearch, setCurrentSearch] = useState("");
 
   const { sorting } = DataTableContext.useStyledContext();
+  const { uppercase } = useTableContext();
+  const headingColor = uppercase
+    ? "subtle group-hover/header:emphasis"
+    : "emphasis group-hover/header:emphasis-hovered";
   const {
     toggleSorting,
     clearSorting,
@@ -1301,37 +1299,37 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
       // Reserves room for the absolutely positioned filter button.
       paddingRight={column.getCanFilter() ? "8xl" : "3xl"}>
       <XStack gap="xl" flexShrink={0} cursor="pointer" onPress={handleSorting}>
-        <DataTableColumnHeading
+        <Table.HeaderText
           transition="200ms"
-          color="emphasis group-hover/header:emphasis-hovered">
+          color={headingColor}>
           {titleCase(id)}
-        </DataTableColumnHeading>
+        </Table.HeaderText>
         {isSorted && !desc && (
           <XStack gap="xxs" alignItems="center">
             <SortAscending
               size="4xl"
-              color="emphasis group-hover/header:emphasis-hovered"
+              color={headingColor}
             />
-            <DataTableColumnHeading
+            <Table.HeaderText
               transition="200ms"
               fontWeight={600}
-              color="emphasis group-hover/header:emphasis-hovered">
+              color={headingColor}>
               {sortIndex + 1}
-            </DataTableColumnHeading>
+            </Table.HeaderText>
           </XStack>
         )}
         {isSorted && desc && (
           <XStack gap="xxs" alignItems="center">
             <SortDescending
               size="4xl"
-              color="emphasis group-hover/header:emphasis-hovered"
+              color={headingColor}
             />
-            <DataTableColumnHeading
+            <Table.HeaderText
               transition="200ms"
               fontWeight={600}
-              color="emphasis group-hover/header:emphasis-hovered">
+              color={headingColor}>
               {sortIndex + 1}
-            </DataTableColumnHeading>
+            </Table.HeaderText>
           </XStack>
         )}
       </XStack>
@@ -1340,8 +1338,9 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
         <View
           transition="200ms"
           position="absolute"
-          top={0}
-          bottom={0}
+          // Lifts the icon, whose lines read low beside cap text.
+          top={-3}
+          bottom={3}
           right="4xl"
           justifyContent="center"
           opacity={`${filterValues.length > 0 ? 1 : 0} group-hover/header:1`}>

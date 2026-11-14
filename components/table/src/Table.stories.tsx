@@ -46,85 +46,90 @@ const meta: Meta<typeof Table> = {
     const tableRows = table.getRowModel().rows;
 
     return (
-      <Table
-        alignCells={{ x: "start", y: "center" }}
-        alignHeaderCells={{ x: "start", y: "center" }}
-        cellWidth="20xl"
-        cellHeight="9xl"
-        sizing="content"
-        {...rest}>
-        <Table.Header>
-          {headerGroups.map(headerGroup => {
-            return (
-              <Table.Row key={headerGroup.id} header={true}>
-                {headerGroup.headers.map(header => (
-                  <Table.HeaderCell
-                    key={header.id}
-                    {...(header.column.id === "user_base"
-                      ? {
-                          flexShrink: 1
-                        }
-                      : {
-                          flexShrink: 3
-                        })}>
-                    <HeadingSmallText color="primary">
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
-                    </HeadingSmallText>
-                  </Table.HeaderCell>
-                ))}
-              </Table.Row>
-            );
-          })}
-        </Table.Header>
-        <Table.Body>
-          {tableRows.map(row => {
-            return (
-              <Table.Row key={row.id}>
-                {row.getVisibleCells().map(cell => (
-                  <Table.Cell
-                    key={cell.id}
-                    {...(cell.column.id === "user_base"
-                      ? {
-                          flexShrink: 1
-                        }
-                      : {
-                          flexShrink: 3
-                        })}>
-                    {cell.column.id === "user_base" ? (
-                      flexRender(cell.column.columnDef.cell, cell.getContext())
-                    ) : (
-                      <Text>
-                        {flexRender(
+      <View padding="xl">
+        <Table
+          alignCells={{ x: "start", y: "center" }}
+          alignHeaderCells={{ x: "start", y: "center" }}
+          cellWidth="20xl"
+          cellHeight="9xl"
+          sizing="content"
+          {...rest}>
+          <Table.Header>
+            {headerGroups.map(headerGroup => {
+              return (
+                <Table.Row key={headerGroup.id} header={true}>
+                  {headerGroup.headers.map(header => (
+                    <Table.HeaderCell
+                      key={header.id}
+                      {...(header.column.id === "user_base"
+                        ? {
+                            flexShrink: 1
+                          }
+                        : {
+                            flexShrink: 3
+                          })}>
+                      <Table.HeaderText>
+                        {header.isPlaceholder
+                          ? null
+                          : flexRender(
+                              header.column.columnDef.header,
+                              header.getContext()
+                            )}
+                      </Table.HeaderText>
+                    </Table.HeaderCell>
+                  ))}
+                </Table.Row>
+              );
+            })}
+          </Table.Header>
+          <Table.Body>
+            {tableRows.map(row => {
+              return (
+                <Table.Row key={row.id}>
+                  {row.getVisibleCells().map(cell => (
+                    <Table.Cell
+                      key={cell.id}
+                      {...(cell.column.id === "user_base"
+                        ? {
+                            flexShrink: 1
+                          }
+                        : {
+                            flexShrink: 3
+                          })}>
+                      {cell.column.id === "user_base" ? (
+                        flexRender(
                           cell.column.columnDef.cell,
                           cell.getContext()
-                        )}
-                      </Text>
-                    )}
-                  </Table.Cell>
-                ))}
-              </Table.Row>
-            );
-          })}
-        </Table.Body>
-        <Table.Footer>
-          <Table.Row header={true}>
-            {columns.map((_, index) => (
-              <Table.Cell key={index}>
-                {index === 0 && (
-                  <HeadingSmallText color="primary">
-                    Table footer information is populated here
-                  </HeadingSmallText>
-                )}
-              </Table.Cell>
-            ))}
-          </Table.Row>
-        </Table.Footer>
-      </Table>
+                        )
+                      ) : (
+                        <Text>
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext()
+                          )}
+                        </Text>
+                      )}
+                    </Table.Cell>
+                  ))}
+                </Table.Row>
+              );
+            })}
+          </Table.Body>
+          <Table.Footer>
+            <Table.Row header={true}>
+              {columns.map((_, index) => (
+                <Table.Cell key={index}>
+                  {index === 0 && (
+                    <HeadingSmallText color="primary">
+                      Table footer information is populated here
+                    </HeadingSmallText>
+                  )}
+                </Table.Cell>
+              ))}
+            </Table.Row>
+          </Table.Footer>
+        </Table>
+      </View>
     );
   }
 } satisfies Meta<typeof Table>;
@@ -335,6 +340,12 @@ export const Base: Story = {
   args: {
     children:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  }
+};
+
+export const Uppercase: Story = {
+  args: {
+    uppercase: true
   }
 };
 

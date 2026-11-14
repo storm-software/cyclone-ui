@@ -195,7 +195,7 @@ const ContextMenuContent = ({
   ...props
 }: ContextMenuContentProps): JSX.Element => {
   const { size } = ContextMenuContext.useStyledContext();
-  const { contentPadding, contentGap } = getContextMenuSize(size);
+  const { contentHorizontalPadding, contentVerticalPadding, contentGap } = getContextMenuSize(size);
   const [menu, setMenu] = useState<HTMLElement | null>(null);
   const [narrow, setNarrow] = useState(false);
 
@@ -221,7 +221,8 @@ const ContextMenuContent = ({
       // side it placed (or flipped) the menu, less `stayInFrame`'s 10px. The
       // scroll view shrinks to fit.
       maxHeight="calc(var(--tamagui-popper-available-height, 100vh) - 10px)"
-      padding={contentPadding}
+      paddingHorizontal={contentHorizontalPadding}
+      paddingVertical={contentVerticalPadding}
       {...props}>
       {/* Adapted to a sheet, only the children render, so they carry the
           layout, styles and keyboard navigation. */}

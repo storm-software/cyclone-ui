@@ -27,7 +27,8 @@ const DEFAULT_CONTROL_SIZE = 42;
 
 // Space tokens for the menu's chrome; small menus tighten them, larger ones
 // keep the medium spacing. The padding is about half the gap.
-const contentPadding = { sm: "lg", md: "xl", lg: "xl" } as const;
+const contentHorizontalPadding = { sm: "lg", md: "xl", lg: "xl" } as const;
+const contentVerticalPadding = { sm: "md", md: "lg", lg: "lg" } as const;
 const contentGap = { sm: "xl", md: "3xl", lg: "3xl" } as const;
 const itemTextPaddingVertical = { sm: "md", md: "lg", lg: "lg" } as const;
 
@@ -51,7 +52,8 @@ export const getContextMenuSize = (val: FormControlSize = "md") => {
     valuePaddingRight: scaleMetric(1, scale),
     itemPaddingVertical: scaleMetric(4, scale, 2),
     itemFramePaddingHorizontal: 18.4 * scale,
-    contentPadding: contentPadding[val],
+    contentHorizontalPadding: contentHorizontalPadding[val],
+    contentVerticalPadding: contentVerticalPadding[val],
     contentGap: contentGap[val],
     itemTextPaddingVertical: itemTextPaddingVertical[val],
     itemTextPaddingHorizontal: 0.8 * scale,

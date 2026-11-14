@@ -281,6 +281,15 @@ export const Brand: Story = {
   }
 };
 
+export const Uppercase: Story = {
+  args: {
+    options: {
+      data: defaultData
+    },
+    uppercase: true
+  }
+};
+
 export const Resizable: Story = {
   args: {
     options: {

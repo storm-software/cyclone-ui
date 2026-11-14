@@ -18,10 +18,12 @@
 
 "use client";
 
+import { HeadingExtraSmallText } from "@cyclone-ui/heading-text";
 import type { GetProps, SizeTokens } from "@tamagui/core";
 import {
   createStyledContext,
   createStyledHOC,
+  isWeb,
   styled,
   View,
   withStaticProperties
@@ -51,6 +53,11 @@ export interface TableContextProps {
     x: "center" | "start" | "end";
   };
   borderColor: string;
+
+  /**
+   * Renders header text as small, letter-spaced, uppercase labels.
+   */
+  uppercase: boolean;
 }
 
 const TableContext = createStyledContext<
@@ -61,6 +68,7 @@ const TableContext = createStyledContext<
   | "alignHeaderCells"
   | "alignCells"
   | "borderColor"
+  | "uppercase"
 >(
   {
     cellWidth: "10xl",
@@ -68,7 +76,8 @@ const TableContext = createStyledContext<
     sizing: "fixed",
     alignHeaderCells: { x: "start", y: "center" },
     alignCells: { x: "center", y: "center" },
-    borderColor: "hairline"
+    borderColor: "hairline",
+    uppercase: false
   } as TableContextProps,
   {
     keys: [
@@ -77,7 +86,8 @@ const TableContext = createStyledContext<
       "sizing",
       "alignHeaderCells",
       "alignCells",
-      "borderColor"
+      "borderColor",
+      "uppercase"
     ]
   }
 );
@@ -110,6 +120,7 @@ const TableRow = styled(YStack, {
       }
     }
   },
+
   defaultVariants: {
     header: false
   }
@@ -123,7 +134,7 @@ const TableRowImpl = createStyledHOC(
       ? Children.toArray(children).map((child, index, childrenArray) => {
           if (
             !isValidElement<GetProps<typeof TableHeaderCell>>(child) ||
-            child.type !== TableHeaderCell
+            child.type !== TableHeaderCellImpl
           ) {
             return child;
           }
@@ -227,6 +238,7 @@ const TableCell = styled(YStack, {
 const TableHeaderCell = styled(YStack, {
   displayName: TABLE_HEADER_NAME,
   context: TableContext,
+
   render: "th",
   zIndex: "10",
   flexDirection: "row",
@@ -238,6 +250,7 @@ const TableHeaderCell = styled(YStack, {
   justifyContent: "flex-start",
   paddingVertical: "xl",
   paddingHorizontal: "sm",
+
   variants: {
     cellWidth: styled.dynamic<SizeTokens | number>((name, { tokens }) => {
       return {
@@ -276,6 +289,49 @@ const TableHeaderCell = styled(YStack, {
   } as const
 });
 
+const TableHeaderText = styled(HeadingExtraSmallText, {
+  displayName: TABLE_HEADER_NAME,
+  context: TableContext,
+  render: "span",
+  // Trims the line box to the cap height so the text centers in the cell like
+  // the icons beside it (e.g. the data table's filter button).
+  style: {
+    textBox: "trim-both cap alphabetic"
+  } as any,
+
+  variants: {
+    uppercase: {
+      true: {
+        fontFamily: "eyebrow",
+        fontWeight: "medium",
+        fontSize: "xs",
+        letterSpacing: isWeb ? "0.08em" : 1,
+        textTransform: "uppercase",
+        color: "subtle"
+      }
+    }
+  } as const
+});
+
+// The cell is a view, so plain text children get the header text styles here.
+const TableHeaderCellImpl = createStyledHOC(
+  TableHeaderCell,
+  ({ children, ...props }, forwardRef) => (
+    <TableHeaderCell ref={forwardRef} {...props}>
+      {Children.map(children, child =>
+        typeof child === "string" || typeof child === "number" ? (
+          <TableHeaderText>{child}</TableHeaderText>
+        ) : (
+          child
+        )
+      )}
+    </TableHeaderCell>
+  ),
+  {
+    displayName: TABLE_HEADER_NAME
+  }
+);
+
 const TableBody = styled(YStack, {
   displayName: TABLE_NAME,
   context: TableContext,
@@ -301,6 +357,7 @@ const TableHeader = styled(YStack, {
   flexDirection: "column",
   flexShrink: 1,
   borderWidth: 0,
+
   variants: {
     sizing: {
       content: {
@@ -383,6 +440,9 @@ const TableFrame = styled(YStack, {
     cellHeight: styled.dynamic<SizeTokens | number>(),
     alignHeaderCells: styled.dynamic<AlignHeaderCells>(),
     alignCells: styled.dynamic<AlignCells>(),
+    uppercase: {
+      true: {}
+    },
 
     sizing: {
       fixed: {},
@@ -401,7 +461,8 @@ export const Table = withStaticProperties(TableFrame, {
   Body: TableBody,
   Row: TableRowImpl,
   Cell: TableCell,
-  HeaderCell: TableHeaderCell,
+  HeaderCell: TableHeaderCellImpl,
+  HeaderText: TableHeaderText,
   Footer: TableFooterImpl
 });
 
@@ -414,6 +475,13 @@ export {
   TableCell,
   TableFooterImpl as TableFooter,
   TableHeaderImpl as TableHeader,
-  TableHeaderCell,
+  TableHeaderCellImpl as TableHeaderCell,
+  TableHeaderText,
   TableRowImpl as TableRow
 };
+
+/**
+ * Reads the nearest table's settings, e.g. `uppercase` for custom header
+ * content.
+ */
+export const useTableContext = TableContext.useStyledContext;
