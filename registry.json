@@ -3933,6 +3933,10 @@
           "type": "registry:component"
         },
         {
+          "path": "components/illustrations/src/BreakersIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
           "path": "components/illustrations/src/CabinetIllustration.tsx",
           "type": "registry:component"
         },

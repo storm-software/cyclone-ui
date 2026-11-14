@@ -18,6 +18,7 @@
 
 export * from "./BasketIllustration";
 export * from "./BranchesIllustration";
+export * from "./BreakersIllustration";
 export * from "./CabinetIllustration";
 export * from "./create-illustration";
 export * from "./DishIllustration";

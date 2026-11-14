@@ -21,6 +21,7 @@ import { Text, Theme, View } from "@tamagui/core";
 import { useState } from "react";
 import { BasketIllustration } from "./BasketIllustration";
 import { BranchesIllustration } from "./BranchesIllustration";
+import { BreakersIllustration } from "./BreakersIllustration";
 import { CabinetIllustration } from "./CabinetIllustration";
 import type { IllustrationProps } from "./create-illustration";
 import { DishIllustration } from "./DishIllustration";
@@ -58,6 +59,7 @@ import { VaultIllustration } from "./VaultIllustration";
 const ILLUSTRATIONS = {
   basket: BasketIllustration,
   branches: BranchesIllustration,
+  breakers: BreakersIllustration,
   cabinet: CabinetIllustration,
   dish: DishIllustration,
   drawer: DrawerIllustration,
@@ -140,6 +142,22 @@ export const Riffle: Story = {
 
 export const Keypad: Story = {
   args: { illustration: "keypad", intensity: 0.5 }
+};
+
+/** An error state: one breaker tripped, its outline the theme's `primary`, here `danger`. */
+export const Breakers: Story = {
+  args: { illustration: "breakers", intensity: 0.5 },
+  render: ({ illustration, ...args }: Args) => {
+    const Illustration = ILLUSTRATIONS[illustration];
+
+    return (
+      <Theme name="danger">
+        <View width="100%" maxWidth={560} padding={16} backgroundColor="canvas">
+          <Illustration {...args} />
+        </View>
+      </Theme>
+    );
+  }
 };
 
 /** The unseen pointer walks the tour until a real one arrives. */
