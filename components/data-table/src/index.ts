@@ -17,3 +17,4 @@
  ------------------------------------------------------------------- */
 
 export * from "./DataTable";
+export * from "./DataTableCells";

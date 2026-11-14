@@ -977,7 +977,7 @@ Credit card fields (card number, expiry date, security code and name on card) bu
 
 ## @cyclone-ui/data-table
 
-A data grid built on TanStack Table and the Cyclone UI Table that takes table options (columns and data) and adds sorting, faceted column filtering, client-side pagination with a configurable page size, optional row selection checkboxes and resizable columns. Use it to display large, interactive datasets.
+A data grid built on TanStack Table and the Cyclone UI Table that takes table options (columns and data) and adds sorting, faceted column filtering, client-side pagination with a configurable page size, optional row selection checkboxes and resizable columns. Use it to display large, interactive datasets. Helper cells add an avatar with a name, a copyable value, and a View button (or a whole View column) that opens a row's detail view through a callback or a link.
 
 - **Name:** `@cyclone-ui/data-table`
 - **Type:** `component`
@@ -985,6 +985,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 
 ### Dependencies
 
+- `@cyclone-ui/avatar`: `workspace:*`
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/button`: `workspace:*`
 - `@cyclone-ui/checkbox`: `workspace:*`
@@ -1022,6 +1023,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 | Path | Type | Target |
 | --- | --- | --- |
 | `../../components/data-table/src/DataTable.tsx` | `component` |  |
+| `../../components/data-table/src/DataTableCells.tsx` | `component` |  |
 
 ## @cyclone-ui/date-picker
 
@@ -3722,7 +3724,7 @@ A toggle switch with an animated thumb, sm, md and lg sizes, and a disabled stat
 
 ## @cyclone-ui/table
 
-A Table compound component with Header, Body, Row, Cell, HeaderCell and Footer parts that render semantic table elements. Table-level props set cell width and height, fixed or content-based sizing, separate alignment for header cells and body cells, and the border color. Use it to show tabular data in rows and columns.
+A Table compound component with Header, Body, Row, Cell, HeaderCell and Footer parts that render semantic table elements. Table-level props set cell width and height, fixed or content-based sizing, separate alignment for header cells and body cells, and the border color. Use it to show tabular data in rows and columns. Cell helpers format common values: status pills, yes/no marks, numbers and dates (absolute or relative), progress bars, tag lists and an empty-value dash.
 
 - **Name:** `@cyclone-ui/table`
 - **Type:** `component`
@@ -3730,7 +3732,10 @@ A Table compound component with Header, Body, Row, Cell, HeaderCell and Footer p
 
 ### Dependencies
 
+- `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/heading-text`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/progress`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/stacks`: `catalog:`
 - `react-native-svg`: `catalog:`
@@ -3748,6 +3753,8 @@ A Table compound component with Header, Body, Row, Cell, HeaderCell and Footer p
 | Path | Type | Target |
 | --- | --- | --- |
 | `../../components/table/src/Table.tsx` | `component` |  |
+| `../../components/table/src/TableCells.tsx` | `component` |  |
+| `../../components/table/src/utilities.ts` | `file` |  |
 
 ## @cyclone-ui/table-of-contents
 

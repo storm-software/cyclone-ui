@@ -9,11 +9,15 @@ component:
   stories:
     - title: Tables/Table
       file: components/table/src/Table.stories.tsx
+    - title: Tables/Table Cells
+      file: components/table/src/TableCells.stories.tsx
 ---
 
 # Table
 
 `Table` is a compound component for tabular data. Each part renders a semantic HTML table element. Table-level props set cell size, alignment, and border color for all parts.
+
+The package also exports [cell helpers](#cells) that format common values inside a cell: statuses, yes/no values, numbers, dates, progress, and tags.
 
 ## Installation
 
@@ -24,14 +28,24 @@ pnpm exec cyclone-ui add table
 pnpm install
 ```
 
-- **File:** `Table.tsx`. The CLI writes it to `<path>/table/`. `path` comes from `components.json` and defaults to `components`.
-- **Also copies:** [Heading Text](./heading-text.md). Imports between copied components become relative paths.
+- **Files:** `Table.tsx`, `TableCells.tsx`, and `utilities.ts`. The CLI writes them to `<path>/table/`. `path` comes from `components.json` and defaults to `components`.
+- **Also copies:** [Body Text](./body-text.md), [Heading Text](./heading-text.md), [Icons](../icons/index.md), and [Progress](./progress.md). Imports between copied components become relative paths.
 - **Adds to `package.json`:** `@tamagui/core`, `@tamagui/stacks`, and `react-native-svg`.
 
 ## Import
 
 ```tsx
-import { Table } from "@cyclone-ui/table";
+import {
+  Table,
+  TableBooleanCell,
+  TableCellText,
+  TableDateCell,
+  TableEmptyCell,
+  TableNumberCell,
+  TableProgressCell,
+  TableStatusCell,
+  TableTagsCell
+} from "@cyclone-ui/table";
 ```
 
 ## Usage
@@ -100,6 +114,40 @@ The story builds rows from a `@tanstack/react-table` instance. The table itself 
 
 `TableHeader`, `TableBody`, `TableRow`, `TableHeaderCell`, `TableCell`, and `TableFooter` are also exported by name. Use them in React Server Components, which cannot read `Table.Header` from a client module.
 
+## Cells
+
+The cell helpers render the content of a `Table.Cell` (or a `DataTable` column's `cell`), not the cell itself. A missing value (`null`, `undefined`, `NaN`, an invalid date, or no tags) shows `TableEmptyCell`.
+
+```tsx
+<Table.Row>
+  <Table.Cell>
+    <TableStatusCell status={order.status} />
+  </Table.Cell>
+  <Table.Cell>
+    <TableNumberCell
+      value={order.total}
+      format={{ style: "currency", currency: "USD" }}
+    />
+  </Table.Cell>
+  <Table.Cell>
+    <TableDateCell value={order.createdAt} relative />
+  </Table.Cell>
+</Table.Row>
+```
+
+| Component | Props | What it shows |
+| --- | --- | --- |
+| `TableStatusCell` | `status`, `children`, `themes`, `theme`, and `XStack` props | A pill with a dot and the status (or `children`), tinted with a color theme. Common statuses pick one, ignoring case: `active`, `approved`, `complete(d)`, `online`, `paid`, and `success` are `success`. `info`, `new`, and `processing` are `info`. `paused`, `pending`, and `warning` are `warning`. `cancel(l)ed`, `declined`, `error`, `failed`, `overdue`, and `rejected` are `danger`. `themes` (a status-to-theme map) is checked first, and `theme` wins over both. Other statuses keep the surrounding theme. |
+| `TableBooleanCell` | `value`, `variant` (`"icon"` or `"text"`, default `"icon"`), `trueLabel` (default `"Yes"`), `falseLabel` (default `"No"`), `colored` (default `false`) | A green check or a muted cross. Screen readers hear the label. The `text` variant writes the label instead. `colored` draws `true` in the `success` theme and `false` in the `danger` theme, as icons or text. |
+| `TableNumberCell` | `value` (`number` or `bigint`), `format` (`Intl.NumberFormatOptions`), `locale`, and text props | The number formatted with `Intl.NumberFormat`, in tabular figures. Use `format` for currency, percent, or compact notation. |
+| `TableDateCell` | `value` (`Date`, string, or timestamp), `format` (`Intl.DateTimeFormatOptions`, default `{ dateStyle: "medium" }`), `relative` (default `false`), `locale`, and text props | The formatted date, or with `relative`, the time from now in its largest unit ("3 days ago", "in 2 hours", "yesterday"). |
+| `TableProgressCell` | `value`, `max` (default `100`), `showValue` (default `true`), and [Progress](./progress.md) props | A small progress bar and its percentage. The value is clamped to `0`–`max`. |
+| `TableTagsCell` | `tags`, `max` (default `3`), `themes` | A row of tag pills. Tags past `max` collapse into a `+N` pill. `themes` maps a tag to a color theme. |
+| `TableEmptyCell` | Text props; `children` defaults to `—` | A muted placeholder for a missing value. |
+| `TableCellText` | Text props | The cell text style the helpers use (body font, one line, darker on row hover). Use it for your own cell content. |
+
+Set `locale` on `TableNumberCell` and `TableDateCell` when you render on a server, so the client renders the same text. A relative date also depends on the current time.
+
 ## Examples
 
 The examples are the stories in [`Table.stories.tsx`](../../../components/table/src/Table.stories.tsx). Every story renders the same table from a `@tanstack/react-table` instance: 13 people with avatar, age, status, and role columns, and a footer row. The table uses `sizing="content"`, `cellWidth="20xl"`, `cellHeight="9xl"`, and start alignment for header and body cells.
@@ -108,6 +156,18 @@ The examples are the stories in [`Table.stories.tsx`](../../../components/table/
 | --- | --- |
 | `Base` | The table with the inherited theme. |
 | `Brand`, `Discovery`, `Error`, `Warning`, `Info`, `Success` | The `brand`, `discovery`, `danger`, `warning`, `info`, and `success` themes. |
+
+The cell helpers have their own stories in [`TableCells.stories.tsx`](../../../components/table/src/TableCells.stories.tsx). Each story lists a helper's examples in a two-column table: the props, then the rendered cell. The play functions check the rendered text.
+
+| Stories | What they show |
+| --- | --- |
+| `StatusCell` | Default status themes, an unlisted status, a `theme` and `children` override, a `themes` map, and a missing status. |
+| `BooleanCell` | Icon and text variants, custom labels, `colored` icons and text, and a missing value. The play function checks that `colored` turns the cross and the false text red and keeps true green. |
+| `NumberCell` | Plain, USD and EUR currency, percent, compact notation, and `NaN`. |
+| `DateCell` | A medium date, a date and time in UTC, a relative date, and an invalid date. |
+| `ProgressCell` | 0%, 42%, 100%, a custom `max`, a `success` theme, no percentage, and a missing value. |
+| `TagsCell` | Two tags, five tags collapsed to three and `+2`, themed tags, and no tags. |
+| `EmptyCell` | The default dash and custom text. |
 
 ## Props
 
@@ -148,3 +208,7 @@ The parts render `table`, `thead`, `tbody`, `tfoot`, `tr`, `th`, and `td`. Nativ
 - [`components/table/src/Table.tsx`](../../../components/table/src/Table.tsx)
 - [`components/table/src/Table.stories.tsx`](../../../components/table/src/Table.stories.tsx) (title: `Tables/Table`)
 - [`components/table/src/Table.spec.ts`](../../../components/table/src/Table.spec.ts)
+- [`components/table/src/TableCells.tsx`](../../../components/table/src/TableCells.tsx)
+- [`components/table/src/TableCells.stories.tsx`](../../../components/table/src/TableCells.stories.tsx) (title: `Tables/Table Cells`)
+- [`components/table/src/utilities.ts`](../../../components/table/src/utilities.ts)
+- [`components/table/src/utilities.spec.ts`](../../../components/table/src/utilities.spec.ts)

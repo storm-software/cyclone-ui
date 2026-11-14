@@ -578,14 +578,14 @@ const ContextMenuItem = ({
               {disabled ? (
                 <Lock
                   size={indicatorIconSize}
-                  variant="bold"
+                  variant="filled"
                   color={foreground ?? "primary-disabled"}
                 />
               ) : selected ? (
                 <View paddingLeft="lg">
                   <Confirm
                     size={confirmIconSize}
-                    variant="bold"
+                    variant="regular"
                     color={foreground ?? "primary-active"}
                   />
                 </View>

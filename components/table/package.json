@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/table",
   "version": "0.4.79",
   "type": "module",
-  "description": "A Table compound component with Header, Body, Row, Cell, HeaderCell and Footer parts that render semantic table elements. Table-level props set cell width and height, fixed or content-based sizing, separate alignment for header cells and body cells, and the border color. Use it to show tabular data in rows and columns.",
+  "description": "A Table compound component with Header, Body, Row, Cell, HeaderCell and Footer parts that render semantic table elements. Table-level props set cell width and height, fixed or content-based sizing, separate alignment for header cells and body cells, and the border color. Use it to show tabular data in rows and columns. Cell helpers format common values: status pills, yes/no marks, numbers and dates (absolute or relative), progress bars, tag lists and an empty-value dash.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
@@ -18,7 +18,10 @@
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/progress": "workspace:*",
     "@tamagui/core": "catalog:",
     "@tamagui/stacks": "catalog:",
     "react-native-svg": "catalog:"
@@ -49,6 +52,14 @@
     "./Table": {
       "import": "./dist/Table.mjs",
       "require": "./dist/Table.cjs"
+    },
+    "./TableCells": {
+      "import": "./dist/TableCells.mjs",
+      "require": "./dist/TableCells.cjs"
+    },
+    "./utilities": {
+      "import": "./dist/utilities.mjs",
+      "require": "./dist/utilities.cjs"
     },
     "./*": "./*"
   }

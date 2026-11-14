@@ -57,6 +57,9 @@
     },
     {
       "path": "../body-text"
+    },
+    {
+      "path": "../avatar"
     }
   ],
   "files": [],

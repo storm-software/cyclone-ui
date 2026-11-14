@@ -75,6 +75,7 @@ A package containing the `DataTable` component used by Storm Software
 - A row actions menu for each row (`rowActions`, `onRowAction`).
 - `resizable` and `reorderable` columns.
 - Variants: `standard` (hairline rows, default) and `card` (rounded cards).
+- Helper cells: `DataTableAvatarCell`, `DataTableCopyCell`, and `DataTableViewButton` (or a whole column from `createDataTableViewColumn`) to open a row's detail view through `onView` or `href`.
 
 ## Installing
 

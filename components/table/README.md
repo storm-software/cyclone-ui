@@ -71,6 +71,7 @@ A package containing the Table component used by Storm Software
 - Renders semantic `table`, `thead`, `tbody`, `tfoot`, `tr`, `th`, and `td` elements
 - Table-level cell width, cell height, alignment, and border color
 - `fixed` or `content` sizing
+- Cell helpers for common values: `TableStatusCell`, `TableBooleanCell`, `TableNumberCell`, `TableDateCell` (absolute or relative), `TableProgressCell`, `TableTagsCell`, and `TableEmptyCell`
 
 ## Installing
 

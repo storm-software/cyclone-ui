@@ -317,6 +317,7 @@ const getActionsColumn = <TData extends RowData>(
 
 interface ContentSizedCell {
   dataset: { columnId?: string };
+  getBoundingClientRect: () => { width: number };
   scrollWidth: number;
   style: { width: string };
 }
@@ -374,7 +375,12 @@ const useContentSizedColumns = (enabled: boolean) => {
       if (columnId) {
         result.set(
           columnId,
-          Math.max(result.get(columnId) ?? 0, Math.ceil(cell.scrollWidth))
+          // Not `scrollWidth`, which rounds: a cell 149.4px wide would get
+          // 149px and wrap its text.
+          Math.max(
+            result.get(columnId) ?? 0,
+            Math.ceil(cell.getBoundingClientRect().width)
+          )
         );
       }
 
@@ -410,8 +416,10 @@ const useContentSizedColumns = (enabled: boolean) => {
     }
 
     const tableElement = tableRef.current;
+    // `unknown` first: intersecting with `typeof globalThis` would keep the
+    // DOM `ResizeObserver`, whose `observe` only takes a DOM `Element`.
     const ResizeObserverImpl = (
-      globalThis as typeof globalThis & {
+      globalThis as unknown as {
         ResizeObserver?: ContentResizeObserverConstructor;
       }
     ).ResizeObserver;
@@ -686,9 +694,10 @@ function DataTableImpl<TData extends RowData>({
             {selectedRows.length > 0 && (
               <Table.Row header={true}>
                 <Table.Cell
-                  borderBottomWidth={0}
                   paddingVertical="lg"
                   {...(card ? getCardCellProps(0, 1) : {})}
+                  // After the spread, which also sets it (TS2783 otherwise).
+                  borderBottomWidth={0}
                   backgroundColor="floating"
                   {...({ colSpan: columnCount } as any)}>
                   <XStack
@@ -930,11 +939,11 @@ function DataTableImpl<TData extends RowData>({
             <Table.Footer>
               <Table.Row header={true}>
                 <Table.Cell
-                  borderBottomWidth={0}
                   paddingTop="3xl"
                   {...(card
                     ? { ...getCardCellProps(0, 1), paddingVertical: "xl" }
                     : {})}
+                  borderBottomWidth={0}
                   {...({ colSpan: columnCount } as any)}>
                   <DataTablePagination
                     setPageIndex={table.setPageIndex}

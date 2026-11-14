@@ -2187,6 +2187,9 @@ importers:
 
   components/data-table:
     dependencies:
+      '@cyclone-ui/avatar':
+        specifier: workspace:*
+        version: link:../avatar
       '@cyclone-ui/body-text':
         specifier: workspace:*
         version: link:../body-text
@@ -4761,9 +4764,18 @@ importers:
 
   components/table:
     dependencies:
+      '@cyclone-ui/body-text':
+        specifier: workspace:*
+        version: link:../body-text
       '@cyclone-ui/heading-text':
         specifier: workspace:*
         version: link:../heading-text
+      '@cyclone-ui/icons':
+        specifier: workspace:*
+        version: link:../icons
+      '@cyclone-ui/progress':
+        specifier: workspace:*
+        version: link:../progress
       '@tamagui/core':
         specifier: 'catalog:'
         version: 3.3.2(react-dom@19.3.1(react@19.3.1))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.1.2)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.1)(supports-color@7.2.0))(react@19.3.1))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.1.2)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.1)(supports-color@7.2.0))(react@19.3.1))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-native@0.87.1(@babel/core@8.1.2)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.1))(react@19.3.1)

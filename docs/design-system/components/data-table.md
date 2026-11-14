@@ -9,6 +9,8 @@ component:
   stories:
     - title: Tables/DataTable
       file: components/data-table/src/DataTable.stories.tsx
+    - title: Tables/DataTable Cells
+      file: components/data-table/src/DataTableCells.stories.tsx
 ---
 
 # Data Table
@@ -26,17 +28,21 @@ pnpm exec cyclone-ui add data-table
 pnpm install
 ```
 
-- **File:** `DataTable.tsx`. The CLI writes it to `<path>/data-table/`. `path` comes from `components.json` and defaults to `components`.
-- **Also copies:** [Body Text](./body-text.md), [Button](./button.md), [Checkbox](./checkbox.md), [Container](./container.md), [Context Menu](./context-menu.md), [Field](./field.md), [Form](./form.md), [Heading Text](./heading-text.md), [Icons](../icons/index.md), [Input](./input.md), [Link](./link.md), [Link Text](./link-text.md), [Next Button](./next-button.md), [Pagination](./pagination.md), [Popover](./popover.md), [Previous Button](./previous-button.md), [Ripple Animation](./ripple-animation.md), [Scroll View](./scroll-view.md), [Search Input](./search-input.md), [Select](./select.md), [Sheet](./sheet.md), [Spinner](./spinner.md), [Table](./table.md), [Tooltip](./tooltip.md), and [Validation Text](./validation-text.md). Imports between copied components become relative paths.
+- **Files:** `DataTable.tsx` and `DataTableCells.tsx`. The CLI writes them to `<path>/data-table/`. `path` comes from `components.json` and defaults to `components`.
+- **Also copies:** [Avatar](./avatar.md), [Badge](./badge.md), [Body Text](./body-text.md), [Button](./button.md), [Checkbox](./checkbox.md), [Container](./container.md), [Context Menu](./context-menu.md), [Dialog](./dialog.md), [Field](./field.md), [Form](./form.md), [Heading Text](./heading-text.md), [Icons](../icons/index.md), [Input](./input.md), [Link](./link.md), [Link Text](./link-text.md), [Modal](./modal.md), [Next Button](./next-button.md), [Overlay](./overlay.md), [Pagination](./pagination.md), [Popover](./popover.md), [Previous Button](./previous-button.md), [Progress](./progress.md), [Ripple Animation](./ripple-animation.md), [Scroll View](./scroll-view.md), [Search Input](./search-input.md), [Select](./select.md), [Sheet](./sheet.md), [Slider](./slider.md), [Spinner](./spinner.md), [Table](./table.md), [Tooltip](./tooltip.md), and [Validation Text](./validation-text.md). Imports between copied components become relative paths.
 - **Adds to `package.json`:** `@stryke/helpers`, `@stryke/string-format`, `@stryke/type-checks`, `@stryke/types`, `@tamagui/core`, `@tamagui/helpers`, `@tamagui/stacks`, `@tanstack/react-table`, `@tanstack/react-virtual`, and `@tanstack/table-core`.
 
 ## Import
 
 ```tsx
 import {
+  createDataTableViewColumn,
   DataTable,
+  DataTableAvatarCell,
   DataTableCell,
-  DataTableHeader
+  DataTableCopyCell,
+  DataTableHeader,
+  DataTableViewButton
 } from "@cyclone-ui/data-table";
 ```
 
@@ -116,6 +122,15 @@ The examples are the stories in [`DataTable.stories.tsx`](../../../components/da
 | `RowActions` | A `rowActions` function with Approve, Decline, and Send Message. Approve is disabled for active rows. The play function picks Decline on row 2 and checks `onRowAction`. |
 | `ManyFilterValues` | 3,000 rows with unique user names. The filter list mounts only the rows in view. |
 
+The helper cells have their own stories in [`DataTableCells.stories.tsx`](../../../components/data-table/src/DataTableCells.stories.tsx), with five customers.
+
+| Stories | What they show |
+| --- | --- |
+| `AllCells` | Every helper cell, including the [Table cells](./table.md#cells), and a View column. The play function presses View on row 2 and checks the details panel under the grid. |
+| `ViewButtons` | View columns with the default button, an icon-only button, a link (`href`), and an Edit label and icon. The play function checks the link's `href` and the icon-only button's `onView` call. |
+| `CopyCell` | Copyable IDs and emails (the email cell shows only the name). The play function stubs the clipboard, copies an ID, and waits for the button to reset. |
+| `AvatarCell` | Avatar cells with and without a description, a status dot, the initials fallback, and a square `md` avatar. |
+
 ## Props
 
 ### DataTable
@@ -154,6 +169,39 @@ A column's `meta.facetFn` maps a cell value to the key that the filter uses. Row
 
 `DataTableCell` takes the TanStack cell context and an optional `value` string. It shows `value` when set, and the cell's `renderValue()` when not.
 
+### Helper cells
+
+These render the content of a cell. Use them in a column's `cell`. For statuses, yes/no values, numbers, dates, progress, and tags, use the [Table cells](./table.md#cells).
+
+```tsx
+const columns = [
+  columnHelper.accessor("name", {
+    header: DataTableHeader,
+    cell: ({ row }) => (
+      <DataTableAvatarCell
+        name={row.original.name}
+        description={row.original.email}
+        src={row.original.avatar}
+      />
+    )
+  }),
+  columnHelper.accessor("id", {
+    header: DataTableHeader,
+    cell: info => <DataTableCopyCell value={info.getValue()} />
+  }),
+  createDataTableViewColumn<Customer>({
+    onView: customer => setSelected(customer)
+  })
+];
+```
+
+| Component | Props | What it shows |
+| --- | --- | --- |
+| `DataTableAvatarCell` | `name` (required), `description`, and [Avatar](./avatar.md) props (`src`, `size` default `"sm"`, `status`, and so on) | An avatar beside the name and an optional muted second line. The avatar is hidden from screen readers, which read the name beside it. |
+| `DataTableCopyCell` | `value`, `children` | The value (or `children`) and a button that copies `value` to the clipboard. The button shows a check for 2 seconds after a copy. It uses the web clipboard, so it does nothing on native. |
+| `DataTableViewButton` | `row` (required), `onView`, `href`, `label` (default `"View"`), `icon` (default an eye), `iconOnly` (default `false`), and [Button](./button.md) props | A ghost button that opens a row's detail view. It calls `onView(row.original, row)`. `href` (a string, or a function of the row's data and the row) renders it as a link. Screen readers hear the label with the row number, such as "View row 2". With `iconOnly`, it is a round icon button with the label as its tooltip. |
+| `createDataTableViewColumn` | The `DataTableViewButton` props except `row`, plus `id` (default `"view"`) | A column definition with a `DataTableViewButton` in each row and no header, sorting, filtering, or resizing. Change `label` and `icon` for other row buttons, such as Edit. |
+
 ### DataTablePagination
 
 | Prop | Type | Description |
@@ -176,3 +224,5 @@ Sorting, column filters, pagination state, and the selected rows are also availa
 
 - [`components/data-table/src/DataTable.tsx`](../../../components/data-table/src/DataTable.tsx)
 - [`components/data-table/src/DataTable.stories.tsx`](../../../components/data-table/src/DataTable.stories.tsx) (title: `Tables/DataTable`)
+- [`components/data-table/src/DataTableCells.tsx`](../../../components/data-table/src/DataTableCells.tsx)
+- [`components/data-table/src/DataTableCells.stories.tsx`](../../../components/data-table/src/DataTableCells.stories.tsx) (title: `Tables/DataTable Cells`)
