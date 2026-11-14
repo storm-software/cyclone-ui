@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/terrain-footer",
-  "version": "0.0.43",
+  "version": "0.0.44",
   "type": "module",
   "description": "A site footer block built on the Cyclone UI Footer that draws a wireframe terrain backdrop behind the footer content, with an optional subtle ripple animation that respects reduced motion and an optional noise texture overlay. It has the same compound parts as the Footer. Use it at the bottom of marketing pages.",
   "repository": {

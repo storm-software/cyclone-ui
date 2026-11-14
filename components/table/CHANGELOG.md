@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Table
 
+## [0.4.79](https://github.com/storm-software/cyclone-ui/releases/tag/table%400.4.79) (11/14/2026)
+
+### Features
+
+- **table:** Added the `uppercase` property to headers ([0c8c45ab1](https://github.com/storm-software/cyclone-ui/commit/0c8c45ab1))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.78**
+
 ## [0.4.78](https://github.com/storm-software/cyclone-ui/releases/tag/table%400.4.78) (11/14/2026)
 
 ### Documentation

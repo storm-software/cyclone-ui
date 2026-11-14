@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/icons",
-  "version": "0.0.77",
+  "version": "0.0.78",
   "type": "module",
   "description": "Animated Tamagui icon components for web and React Native covering the Material Line Icons (line-md) collection, plus the createIcon factory used to build them. Each icon is themed, draws itself in on mount, and accepts color, size (pixels or tokens), mirrored, animated, and a variant of regular, bold, loop, filled or filled-loop. Includes custom SVG graphics under the vectors entry point.",
   "repository": {

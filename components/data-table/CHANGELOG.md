@@ -2,6 +2,29 @@
 
 # Changelog for Cyclone UI - Data Table
 
+## [0.6.87](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.87) (11/14/2026)
+
+### Features
+
+- **table:** Added the `uppercase` property to headers ([0c8c45ab1](https://github.com/storm-software/cyclone-ui/commit/0c8c45ab1))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.77**
+- Updated **button** to **v0.6.83**
+- Updated **checkbox** to **v0.5.85**
+- Updated **context-menu** to **v0.0.75**
+- Updated **field** to **v0.5.85**
+- Updated **form** to **v0.9.79**
+- Updated **heading-text** to **v0.5.78**
+- Updated **icons** to **v0.0.78**
+- Updated **pagination** to **v0.8.83**
+- Updated **popover** to **v0.5.85**
+- Updated **search-input** to **v0.1.87**
+- Updated **select** to **v0.6.87**
+- Updated **state** to **v0.0.80**
+- Updated **table** to **v0.4.79**
+
 ## [0.6.86](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.86) (11/14/2026)
 
 ### Documentation

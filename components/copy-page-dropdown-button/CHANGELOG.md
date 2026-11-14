@@ -2,6 +2,15 @@
 
 # Changelog for Cyclone UI - Copy Page Dropdown Button
 
+## [0.0.25](https://github.com/storm-software/cyclone-ui/releases/tag/copy-page-dropdown-button%400.0.25) (11/14/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.83**
+- Updated **context-menu** to **v0.0.75**
+- Updated **dropdown-button** to **v0.0.26**
+- Updated **icons** to **v0.0.78**
+
 ## [0.0.24](https://github.com/storm-software/cyclone-ui/releases/tag/copy-page-dropdown-button%400.0.24) (11/14/2026)
 
 ### Documentation

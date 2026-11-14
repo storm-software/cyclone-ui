@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Context Menu
 
+## [0.0.75](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.75) (11/14/2026)
+
+### Features
+
+- **table:** Added the `uppercase` property to headers ([0c8c45ab1](https://github.com/storm-software/cyclone-ui/commit/0c8c45ab1))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.77**
+- Updated **button** to **v0.6.83**
+- Updated **container** to **v0.6.82**
+- Updated **helpers** to **v0.3.78**
+- Updated **icons** to **v0.0.78**
+- Updated **popover** to **v0.5.85**
+- Updated **tooltip** to **v0.5.83**
+
 ## [0.0.74](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.74) (11/14/2026)
 
 ### Documentation

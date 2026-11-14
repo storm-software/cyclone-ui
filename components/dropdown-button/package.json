@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/dropdown-button",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "type": "module",
   "description": "A split Button: a main action joined to a chevron Button that opens a ContextMenu of related actions, like a \"Copy page\" button with a menu of other copy options. It takes all Button props (variant, size, disabled, theme and the surface options are shared by both halves), the menu's `items`, a `menuLabel` for the chevron's label and tooltip, and `value` / `onValueChange` for the menu; pressing an item with a `value` closes the menu.",
   "repository": {
