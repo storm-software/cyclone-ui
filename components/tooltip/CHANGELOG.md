@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Tooltip
 
+## [0.5.82](https://github.com/storm-software/cyclone-ui/releases/tag/tooltip%400.5.82) (11/14/2026)
+
+### Documentation
+
+- **monorepo:** Added/updated documentation for components library ([1eb18466d](https://github.com/storm-software/cyclone-ui/commit/1eb18466d))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.76**
+- Updated **container** to **v0.6.81**
+
 ## [0.5.81](https://github.com/storm-software/cyclone-ui/releases/tag/tooltip%400.5.81) (11/13/2026)
 
 ### Updated Dependencies

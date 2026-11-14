@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/article-progress-header",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "description": "A sticky, horizontally scrolling strip of an article's section links, like a docs page's mobile section bar. A dot slides to the section the reader is in as they scroll, the strip keeps that link in view and fades its edges while there is more to scroll to, and its motion respects reduced motion. Built on the TableOfContents scroll tracking, with a blurred translucent canvas background.",
   "repository": {

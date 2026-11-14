@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Callout
 
+## [0.4.83](https://github.com/storm-software/cyclone-ui/releases/tag/callout%400.4.83) (11/14/2026)
+
+### Documentation
+
+- **monorepo:** Added/updated documentation for components library ([1eb18466d](https://github.com/storm-software/cyclone-ui/commit/1eb18466d))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.76**
+- Updated **container** to **v0.6.81**
+- Updated **eyebrow-text** to **v0.5.76**
+- Updated **heading-text** to **v0.5.77**
+- Updated **icons** to **v0.0.77**
+- Updated **state** to **v0.0.79**
+
 ## [0.4.82](https://github.com/storm-software/cyclone-ui/releases/tag/callout%400.4.82) (11/13/2026)
 
 ### Updated Dependencies

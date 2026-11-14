@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Heading Text
 
+## [0.5.77](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.77) (11/14/2026)
+
+### Documentation
+
+- **monorepo:** Added/updated documentation for components library ([1eb18466d](https://github.com/storm-software/cyclone-ui/commit/1eb18466d))
+
 ## [0.5.47](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.47) (11/04/2026)
 
 ### Miscellaneous

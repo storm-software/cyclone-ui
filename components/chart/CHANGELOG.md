@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Chart
 
+## [0.0.48](https://github.com/storm-software/cyclone-ui/releases/tag/chart%400.0.48) (11/14/2026)
+
+### Documentation
+
+- **monorepo:** Added/updated documentation for components library ([1eb18466d](https://github.com/storm-software/cyclone-ui/commit/1eb18466d))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.76**
+- Updated **number-text** to **v0.5.76**
+- Updated **spinner** to **v0.5.76**
+
 ## [0.0.47](https://github.com/storm-software/cyclone-ui/releases/tag/chart%400.0.47) (11/13/2026)
 
 ### Updated Dependencies

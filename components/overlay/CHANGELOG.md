@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Overlay
 
+## [0.0.63](https://github.com/storm-software/cyclone-ui/releases/tag/overlay%400.0.63) (11/14/2026)
+
+### Documentation
+
+- **monorepo:** Added/updated documentation for components library ([1eb18466d](https://github.com/storm-software/cyclone-ui/commit/1eb18466d))
+
 ## [0.0.39](https://github.com/storm-software/cyclone-ui/releases/tag/overlay%400.0.39) (11/06/2026)
 
 ### Features

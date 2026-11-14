@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Illustrations
 
+## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/illustrations%400.0.5) (11/14/2026)
+
+### Features
+
+- **error-page:** Initial check-in of the `ErrorPage` block component package ([2e3e858f2](https://github.com/storm-software/cyclone-ui/commit/2e3e858f2))
+- **illustrations:** Added the breakers panel illustration ([f413ede5a](https://github.com/storm-software/cyclone-ui/commit/f413ede5a))
+
+### Documentation
+
+- **monorepo:** Added/updated documentation for components library ([1eb18466d](https://github.com/storm-software/cyclone-ui/commit/1eb18466d))
+
 ## [0.0.3](https://github.com/storm-software/cyclone-ui/releases/tag/illustrations%400.0.3) (11/13/2026)
 
 ### Features

@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Message
 
+## [0.6.83](https://github.com/storm-software/cyclone-ui/releases/tag/message%400.6.83) (11/14/2026)
+
+### Documentation
+
+- **monorepo:** Added/updated documentation for components library ([1eb18466d](https://github.com/storm-software/cyclone-ui/commit/1eb18466d))
+
+### Updated Dependencies
+
+- Updated **alert** to **v0.4.83**
+- Updated **button** to **v0.6.82**
+- Updated **state** to **v0.0.79**
+
 ## [0.6.82](https://github.com/storm-software/cyclone-ui/releases/tag/message%400.6.82) (11/13/2026)
 
 ### Updated Dependencies

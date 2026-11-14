@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - ESLint Plugin
 
+## [0.0.66](https://github.com/storm-software/cyclone-ui/releases/tag/eslint-plugin%400.0.66) (11/14/2026)
+
+### Features
+
+- **error-page:** Initial check-in of the `ErrorPage` block component package ([2e3e858f2](https://github.com/storm-software/cyclone-ui/commit/2e3e858f2))
+
 ## [0.0.64](https://github.com/storm-software/cyclone-ui/releases/tag/eslint-plugin%400.0.64) (11/13/2026)
 
 ### Features

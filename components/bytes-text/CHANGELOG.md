@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Bytes Text
 
+## [0.5.76](https://github.com/storm-software/cyclone-ui/releases/tag/bytes-text%400.5.76) (11/14/2026)
+
+### Documentation
+
+- **monorepo:** Added/updated documentation for components library ([1eb18466d](https://github.com/storm-software/cyclone-ui/commit/1eb18466d))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.76**
+
 ## [0.5.75](https://github.com/storm-software/cyclone-ui/releases/tag/bytes-text%400.5.75) (11/13/2026)
 
 ### Updated Dependencies

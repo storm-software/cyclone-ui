@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Breadcrumb
 
+## [0.4.86](https://github.com/storm-software/cyclone-ui/releases/tag/breadcrumb%400.4.86) (11/14/2026)
+
+### Features
+
+- **error-page:** Initial check-in of the `ErrorPage` block component package ([2e3e858f2](https://github.com/storm-software/cyclone-ui/commit/2e3e858f2))
+
+### Documentation
+
+- **monorepo:** Added/updated documentation for components library ([1eb18466d](https://github.com/storm-software/cyclone-ui/commit/1eb18466d))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.82**
+- Updated **icons** to **v0.0.77**
+- Updated **link** to **v0.5.83**
+- Updated **link-text** to **v0.5.78**
+- Updated **popover** to **v0.5.84**
+
 ## [0.4.85](https://github.com/storm-software/cyclone-ui/releases/tag/breadcrumb%400.4.85) (11/13/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Container
 
+## [0.6.81](https://github.com/storm-software/cyclone-ui/releases/tag/container%400.6.81) (11/14/2026)
+
+### Documentation
+
+- **monorepo:** Added/updated documentation for components library ([1eb18466d](https://github.com/storm-software/cyclone-ui/commit/1eb18466d))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.77**
+- Updated **icons** to **v0.0.77**
+
 ## [0.6.80](https://github.com/storm-software/cyclone-ui/releases/tag/container%400.6.80) (11/13/2026)
 
 ### Updated Dependencies

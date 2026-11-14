@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Body Text
 
+## [0.5.76](https://github.com/storm-software/cyclone-ui/releases/tag/body-text%400.5.76) (11/14/2026)
+
+### Documentation
+
+- **monorepo:** Added/updated documentation for components library ([1eb18466d](https://github.com/storm-software/cyclone-ui/commit/1eb18466d))
+
 ## [0.5.46](https://github.com/storm-software/cyclone-ui/releases/tag/body-text%400.5.46) (11/04/2026)
 
 ### Miscellaneous

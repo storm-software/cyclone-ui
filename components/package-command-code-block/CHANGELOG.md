@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Package Command Code Block
 
+## [0.0.83](https://github.com/storm-software/cyclone-ui/releases/tag/package-command-code-block%400.0.83) (11/14/2026)
+
+### Documentation
+
+- **monorepo:** Added/updated documentation for components library ([1eb18466d](https://github.com/storm-software/cyclone-ui/commit/1eb18466d))
+
+### Updated Dependencies
+
+- Updated **code-block** to **v0.6.84**
+
 ## [0.0.82](https://github.com/storm-software/cyclone-ui/releases/tag/package-command-code-block%400.0.82) (11/13/2026)
 
 ### Updated Dependencies

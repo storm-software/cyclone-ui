@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Toggle
 
+## [0.0.71](https://github.com/storm-software/cyclone-ui/releases/tag/toggle%400.0.71) (11/14/2026)
+
+### Documentation
+
+- **monorepo:** Added/updated documentation for components library ([1eb18466d](https://github.com/storm-software/cyclone-ui/commit/1eb18466d))
+
+### Updated Dependencies
+
+- Updated **container** to **v0.6.81**
+- Updated **helpers** to **v0.3.77**
+- Updated **icons** to **v0.0.77**
+- Updated **tokens** to **v0.3.65**
+
 ## [0.0.70](https://github.com/storm-software/cyclone-ui/releases/tag/toggle%400.0.70) (11/13/2026)
 
 ### Updated Dependencies

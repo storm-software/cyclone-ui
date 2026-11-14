@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Table of Contents
 
+## [0.0.78](https://github.com/storm-software/cyclone-ui/releases/tag/table-of-contents%400.0.78) (11/14/2026)
+
+### Documentation
+
+- **monorepo:** Added/updated documentation for components library ([1eb18466d](https://github.com/storm-software/cyclone-ui/commit/1eb18466d))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.76**
+- Updated **icons** to **v0.0.77**
+
 ## [0.0.77](https://github.com/storm-software/cyclone-ui/releases/tag/table-of-contents%400.0.77) (11/13/2026)
 
 ### Updated Dependencies

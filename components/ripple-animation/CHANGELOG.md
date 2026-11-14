@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Ripple Animation
 
+## [0.0.53](https://github.com/storm-software/cyclone-ui/releases/tag/ripple-animation%400.0.53) (11/14/2026)
+
+### Documentation
+
+- **monorepo:** Added/updated documentation for components library ([1eb18466d](https://github.com/storm-software/cyclone-ui/commit/1eb18466d))
+
 ## [0.0.23](https://github.com/storm-software/cyclone-ui/releases/tag/ripple-animation%400.0.23) (11/04/2026)
 
 ### Bug Fixes

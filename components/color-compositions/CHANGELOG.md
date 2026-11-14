@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Color Compositions
 
+## [0.0.60](https://github.com/storm-software/cyclone-ui/releases/tag/color-compositions%400.0.60) (11/14/2026)
+
+### Documentation
+
+- **monorepo:** Added/updated documentation for components library ([1eb18466d](https://github.com/storm-software/cyclone-ui/commit/1eb18466d))
+
 ## [0.0.30](https://github.com/storm-software/cyclone-ui/releases/tag/color-compositions%400.0.30) (11/04/2026)
 
 ### Miscellaneous

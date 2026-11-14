@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/error-page",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "A full-width error page block for an HTTP status code. The code is set in giant display type, half hidden behind a band that holds an illustration for the kind of error (a loupe over a blank sheet for not found, a tripped breaker panel for server errors, a door keypad for authentication, a padlock for authorization, and more), with a large title under it. The code also picks the default title, message, description and color tone, and each can be overridden. Compose the details below with Introduction, Message, Description, Actions and Action parts. Use it for 404, 500 and other error routes.",
   "repository": {

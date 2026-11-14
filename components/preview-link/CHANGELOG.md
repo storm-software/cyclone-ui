@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Preview Link
 
+## [0.0.63](https://github.com/storm-software/cyclone-ui/releases/tag/preview-link%400.0.63) (11/14/2026)
+
+### Documentation
+
+- **monorepo:** Added/updated documentation for components library ([1eb18466d](https://github.com/storm-software/cyclone-ui/commit/1eb18466d))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.76**
+- Updated **link** to **v0.5.83**
+- Updated **tooltip** to **v0.5.82**
+
 ## [0.0.62](https://github.com/storm-software/cyclone-ui/releases/tag/preview-link%400.0.62) (11/13/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Tag
 
+## [0.0.77](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.77) (11/14/2026)
+
+### Documentation
+
+- **monorepo:** Added/updated documentation for components library ([1eb18466d](https://github.com/storm-software/cyclone-ui/commit/1eb18466d))
+
+### Updated Dependencies
+
+- Updated **container** to **v0.6.81**
+- Updated **icons** to **v0.0.77**
+- Updated **ripple-animation** to **v0.0.53**
+
 ## [0.0.76](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.76) (11/13/2026)
 
 ### Updated Dependencies
