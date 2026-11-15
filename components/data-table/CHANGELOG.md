@@ -2,6 +2,31 @@
 
 # Changelog for Cyclone UI - Data Table
 
+## [0.6.89](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.89) (11/14/2026)
+
+### Bug Fixes
+
+- **data-table:** Ensure tables include scrollbar instead of overflowing ([0796dca6f](https://github.com/storm-software/cyclone-ui/commit/0796dca6f))
+
+### Updated Dependencies
+
+- Updated **avatar** to **v0.0.14**
+- Updated **body-text** to **v0.5.79**
+- Updated **button** to **v0.6.85**
+- Updated **checkbox** to **v0.5.87**
+- Updated **context-menu** to **v0.0.77**
+- Updated **field** to **v0.5.87**
+- Updated **form** to **v0.9.81**
+- Updated **heading-text** to **v0.5.80**
+- Updated **icons** to **v0.0.80**
+- Updated **pagination** to **v0.8.85**
+- Updated **popover** to **v0.5.87**
+- Updated **scroll-view** to **v0.5.85**
+- Updated **search-input** to **v0.1.89**
+- Updated **select** to **v0.6.89**
+- Updated **state** to **v0.0.82**
+- Updated **table** to **v0.4.81**
+
 ## [0.6.88](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.88) (11/14/2026)
 
 ### Features

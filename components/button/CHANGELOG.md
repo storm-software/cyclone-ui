@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Button
 
+## [0.6.85](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.85) (11/14/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.79**
+- Updated **container** to **v0.6.84**
+- Updated **helpers** to **v0.3.80**
+- Updated **icons** to **v0.0.80**
+- Updated **ripple-animation** to **v0.0.56**
+- Updated **tooltip** to **v0.5.85**
+
 ## [0.6.84](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.84) (11/14/2026)
 
 ### Updated Dependencies

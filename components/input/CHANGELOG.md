@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Input
 
+## [0.6.87](https://github.com/storm-software/cyclone-ui/releases/tag/input%400.6.87) (11/14/2026)
+
+### Bug Fixes
+
+- **data-table:** Ensure tables include scrollbar instead of overflowing ([0796dca6f](https://github.com/storm-software/cyclone-ui/commit/0796dca6f))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.85**
+- Updated **field** to **v0.5.87**
+- Updated **form** to **v0.9.81**
+- Updated **helpers** to **v0.3.80**
+- Updated **icons** to **v0.0.80**
+- Updated **submit-button** to **v0.0.18**
+
 ## [0.6.86](https://github.com/storm-software/cyclone-ui/releases/tag/input%400.6.86) (11/14/2026)
 
 ### Updated Dependencies

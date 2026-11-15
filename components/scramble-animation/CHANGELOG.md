@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Scramble Animation
 
+## [0.0.43](https://github.com/storm-software/cyclone-ui/releases/tag/scramble-animation%400.0.43) (11/14/2026)
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.80**
+
 ## [0.0.42](https://github.com/storm-software/cyclone-ui/releases/tag/scramble-animation%400.0.42) (11/14/2026)
 
 ### Updated Dependencies

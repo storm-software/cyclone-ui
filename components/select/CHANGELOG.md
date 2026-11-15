@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Select
 
+## [0.6.89](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.89) (11/14/2026)
+
+### Bug Fixes
+
+- **data-table:** Ensure tables include scrollbar instead of overflowing ([0796dca6f](https://github.com/storm-software/cyclone-ui/commit/0796dca6f))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.79**
+- Updated **context-menu** to **v0.0.77**
+- Updated **field** to **v0.5.87**
+- Updated **form** to **v0.9.81**
+- Updated **helpers** to **v0.3.80**
+- Updated **icons** to **v0.0.80**
+- Updated **input** to **v0.6.87**
+- Updated **tooltip** to **v0.5.85**
+
 ## [0.6.88](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.88) (11/14/2026)
 
 ### Updated Dependencies

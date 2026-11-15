@@ -2,6 +2,15 @@
 
 # Changelog for Cyclone UI - Accordion
 
+## [0.3.85](https://github.com/storm-software/cyclone-ui/releases/tag/accordion%400.3.85) (11/14/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.79**
+- Updated **container** to **v0.6.84**
+- Updated **heading-text** to **v0.5.80**
+- Updated **icons** to **v0.0.80**
+
 ## [0.3.84](https://github.com/storm-software/cyclone-ui/releases/tag/accordion%400.3.84) (11/14/2026)
 
 ### Updated Dependencies
