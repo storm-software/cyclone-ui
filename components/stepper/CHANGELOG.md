@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Stepper
 
+## [0.3.88](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.88) (11/15/2026)
+
+### Bug Fixes
+
+- **select:** Improve usablility of component selection ([148120495](https://github.com/storm-software/cyclone-ui/commit/148120495))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.81**
+- Updated **icons** to **v0.0.82**
+- Updated **next-button** to **v0.5.87**
+- Updated **number-text** to **v0.5.80**
+- Updated **previous-button** to **v0.5.87**
+
 ## [0.3.87](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.87) (11/15/2026)
 
 ### Updated Dependencies

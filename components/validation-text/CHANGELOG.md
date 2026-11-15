@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Validation Text
 
+## [0.5.86](https://github.com/storm-software/cyclone-ui/releases/tag/validation-text%400.5.86) (11/15/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.80**
+- Updated **icons** to **v0.0.82**
+
 ## [0.5.85](https://github.com/storm-software/cyclone-ui/releases/tag/validation-text%400.5.85) (11/15/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,15 @@
 
 # Changelog for Cyclone UI - Navigation Sidebar
 
+## [0.0.23](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-sidebar%400.0.23) (11/15/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.80**
+- Updated **icons** to **v0.0.82**
+- Updated **kbd** to **v0.0.34**
+- Updated **scroll-view** to **v0.5.87**
+
 ## [0.0.22](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-sidebar%400.0.22) (11/15/2026)
 
 ### Updated Dependencies

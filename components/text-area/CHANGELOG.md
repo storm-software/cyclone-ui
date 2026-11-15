@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Text Area
 
+## [0.1.90](https://github.com/storm-software/cyclone-ui/releases/tag/text-area%400.1.90) (11/15/2026)
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.89**
+- Updated **form** to **v0.9.83**
+- Updated **helpers** to **v0.3.82**
+- Updated **input** to **v0.6.89**
+- Updated **scroll-view** to **v0.5.87**
+
 ## [0.1.89](https://github.com/storm-software/cyclone-ui/releases/tag/text-area%400.1.89) (11/15/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Floating Toolbar
 
+## [0.0.27](https://github.com/storm-software/cyclone-ui/releases/tag/floating-toolbar%400.0.27) (11/15/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.80**
+- Updated **button** to **v0.6.87**
+- Updated **circular-progress** to **v0.0.78**
+- Updated **collapsible** to **v0.3.83**
+- Updated **container** to **v0.6.86**
+- Updated **divider** to **v0.0.76**
+- Updated **icons** to **v0.0.82**
+- Updated **table-of-contents** to **v0.0.83**
+- Updated **toggle-group** to **v0.0.76**
+
 ## [0.0.26](https://github.com/storm-software/cyclone-ui/releases/tag/floating-toolbar%400.0.26) (11/15/2026)
 
 ### Updated Dependencies
