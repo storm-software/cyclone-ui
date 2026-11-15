@@ -931,6 +931,7 @@
         "@cyclone-ui/icons",
         "@cyclone-ui/pagination",
         "@cyclone-ui/popover",
+        "@cyclone-ui/scroll-view",
         "@cyclone-ui/search-input",
         "@cyclone-ui/select",
         "@cyclone-ui/table"
@@ -5105,6 +5106,10 @@
         {
           "path": "components/search-dialog/src/SearchDialog.tsx",
           "type": "registry:component"
+        },
+        {
+          "path": "components/search-dialog/src/SearchDialogButton.tsx",
+          "type": "registry:component"
         }
       ]
     },
@@ -5157,9 +5162,15 @@
         "@cyclone-ui/field",
         "@cyclone-ui/icons",
         "@cyclone-ui/input",
+        "@cyclone-ui/search-input",
         "@cyclone-ui/tooltip"
       ],
       "files": [
+        {
+          "path": "components/select/src/options.ts",
+          "type": "registry:file",
+          "target": "components/select/src/options.ts"
+        },
         {
           "path": "components/select/src/Select.tsx",
           "type": "registry:component"

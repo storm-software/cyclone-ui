@@ -623,7 +623,9 @@ const StepperLine = ({
         ? { width: line, height: length, marginLeft: (marker - line) / 2 }
         : {
             flex: 1,
-            minWidth: marker,
+            // A short stub, not a marker's width: with `marker` the header of
+            // four steps needed ~267px and spilled out of 320px-wide screens.
+            minWidth: line * 4,
             height: line,
             onLayout: event => setMeasured(event.nativeEvent.layout.width)
           })}>

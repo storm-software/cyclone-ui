@@ -21,14 +21,16 @@ import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import { Input } from "@cyclone-ui/input";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { getMedia } from "@tamagui/core";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 import { Select } from "./Select";
 
 // Story args configure the wrapping `Field`, not the `Select` itself, apart from
-// `description` (rendered as its `Field.Details`).
+// `description` (rendered as its `Field.Details`) and `searchable`.
 type SelectStoryArgs = Omit<FieldProps<string>, "children" | "name"> & {
   labelVariant?: FieldLabelVariant;
   description?: string;
+  searchable?: boolean;
 };
 
 const meta: Meta<SelectStoryArgs> = {
@@ -36,13 +38,20 @@ const meta: Meta<SelectStoryArgs> = {
   component: Select,
   tags: ["autodocs"],
   render: (
-    { defaultValue, description, labelVariant, variant, ...props }: any,
+    {
+      defaultValue,
+      description,
+      labelVariant,
+      variant,
+      searchable,
+      ...props
+    }: any,
     { id }: { id: string }
   ) => (
     <Form name={`formName-${id}`} initialValues={{ selectName: defaultValue }}>
       <Field name="selectName" {...props} variant={variant}>
         <Field.Label variant={labelVariant}>Label Text</Field.Label>
-        <Select variant={variant} size={props.size}>
+        <Select variant={variant} size={props.size} searchable={searchable}>
           <Select.TextBox>
             <Select.TextBox.Value placeholder="email@example.com" />
           </Select.TextBox>
@@ -137,7 +146,10 @@ export const Base: Story = {
         expect(document.queryByRole("listbox")).not.toBeInTheDocument(),
       { timeout: 3000 }
     );
-    await expect(trigger).toHaveTextContent("Pear");
+    // With this many options the text box is a text input showing it.
+    await expect(within(canvasElement).getByRole("combobox")).toHaveValue(
+      "Pear"
+    );
 
     // Reopened, the selected option is marked and disabled ones can't be
     // chosen.
@@ -147,6 +159,127 @@ export const Base: Story = {
     ).toHaveAttribute("aria-selected", "true");
     await userEvent.click(document.getByRole("option", { name: "Melon" }));
     await expect(document.getByRole("listbox")).toBeInTheDocument();
+  }
+};
+
+/**
+ * Without `searchable`, typing on the closed select picks the option those
+ * characters start, as in a native `<select>`, without opening the menu.
+ */
+export const Typeahead: Story = {
+  args: {
+    searchable: false
+  },
+  play: async ({ canvasElement }) => {
+    const document = within(canvasElement.ownerDocument.body);
+    const trigger = canvasElement.querySelector<HTMLElement>(
+      "[data-select-trigger]"
+    )!;
+
+    trigger.focus();
+    await userEvent.keyboard("b");
+    await waitFor(() => expect(trigger).toHaveTextContent("Blackberry"));
+    // The same key again moves on to the next option it starts.
+    await userEvent.keyboard("b");
+    await waitFor(() => expect(trigger).toHaveTextContent("Blueberry"));
+    await expect(trigger).not.toHaveAttribute("aria-invalid");
+    await expect(document.queryByRole("listbox")).not.toBeInTheDocument();
+
+    // No option starts "bbz": an error, and the value stays.
+    await userEvent.keyboard("z");
+    await waitFor(() =>
+      expect(trigger).toHaveAttribute("aria-invalid", "true")
+    );
+    await expect(trigger).toHaveTextContent("Blueberry");
+    await expect(trigger).toHaveFocus();
+
+    // After a pause, typing starts a new search, which clears the error.
+    await new Promise(resolve => {
+      setTimeout(resolve, 1100);
+    });
+    await userEvent.keyboard("pea");
+    await waitFor(() => expect(trigger).toHaveTextContent("Pear"));
+    await expect(trigger).not.toHaveAttribute("aria-invalid");
+  }
+};
+
+/**
+ * With more than 10 options, the text box is a text input: a click places
+ * the caret and opens the menu, and editing the text filters the options and
+ * picks the best match. On small screens, where the menu is a bottom sheet
+ * over the text box, the sheet has its own search input.
+ */
+export const Searchable: Story = {
+  play: async ({ canvasElement }) => {
+    const document = within(canvasElement.ownerDocument.body);
+    const input = within(canvasElement).getByRole("combobox");
+    const optionNames = () =>
+      document.queryAllByRole("option").map(option => option.textContent);
+    const berries = ["Blackberry", "Blueberry", "Raspberry", "Strawberry"];
+    // Where `Popover` adapts the menu to a bottom sheet.
+    const inSheet = Boolean((getMedia() as Record<string, boolean>)["max-sm"]);
+
+    await userEvent.click(input);
+    await document.findByRole("listbox");
+    if (inSheet) {
+      const sheetSearch = await document.findByLabelText("Search options");
+      await waitFor(() => expect(sheetSearch).toHaveFocus());
+      await userEvent.keyboard("berry");
+      await waitFor(() => expect(optionNames()).toEqual(berries));
+
+      return;
+    }
+    await expect(input).toHaveFocus();
+    await expect(
+      document.queryByLabelText("Search options")
+    ).not.toBeInTheDocument();
+
+    // Typing filters the options and picks the best match.
+    await userEvent.keyboard("berry");
+    await waitFor(() => expect(optionNames()).toEqual(berries));
+    await expect(input).toHaveValue("berry");
+    await expect(
+      document.getByRole("option", { name: "Blackberry" })
+    ).toHaveAttribute("aria-selected", "true");
+
+    // A click in the text moves the caret; the menu stays open.
+    await userEvent.click(input);
+    await expect(document.getByRole("listbox")).toBeInTheDocument();
+    await expect(input).toHaveFocus();
+
+    // Nothing contains the text with "zz" added: an error, and no options.
+    await userEvent.keyboard("{End}zz");
+    await expect(
+      await document.findByText("No matching options")
+    ).toBeInTheDocument();
+    await expect(input).toHaveAttribute("aria-invalid", "true");
+
+    await userEvent.keyboard("{Backspace}{Backspace}");
+    await waitFor(() => expect(optionNames()).toEqual(berries));
+    await expect(input).not.toHaveAttribute("aria-invalid");
+
+    // ArrowDown moves focus to the options; choosing one closes the menu and
+    // returns focus to the text input, which shows the option.
+    await userEvent.keyboard("{ArrowDown}");
+    await waitFor(() =>
+      expect(document.getByRole("option", { name: "Blackberry" })).toHaveFocus()
+    );
+    await userEvent.keyboard("{ArrowDown}{Enter}");
+    await waitFor(() =>
+      expect(document.queryByRole("listbox")).not.toBeInTheDocument()
+    );
+    await expect(input).toHaveValue("Blueberry");
+    await waitFor(() => expect(input).toHaveFocus());
+
+    // Replacing the text filters afresh; Enter closes the menu (rather than
+    // submitting a form) and the text input shows the picked option.
+    await userEvent.keyboard("{Control>}a{/Control}pea");
+    await waitFor(() => expect(optionNames()).toEqual(["Pear", "Peach"]));
+    await userEvent.keyboard("{Enter}");
+    await waitFor(() =>
+      expect(document.queryByRole("listbox")).not.toBeInTheDocument()
+    );
+    await expect(input).toHaveValue("Pear");
   }
 };
 

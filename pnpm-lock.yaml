@@ -4474,6 +4474,9 @@ importers:
       '@cyclone-ui/input':
         specifier: workspace:*
         version: link:../input
+      '@cyclone-ui/search-input':
+        specifier: workspace:*
+        version: link:../search-input
       '@cyclone-ui/tooltip':
         specifier: workspace:*
         version: link:../tooltip

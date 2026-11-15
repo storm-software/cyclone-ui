@@ -21,6 +21,9 @@
       "path": "../tooltip"
     },
     {
+      "path": "../search-input"
+    },
+    {
       "path": "../input"
     },
     {

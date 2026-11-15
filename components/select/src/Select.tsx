@@ -35,31 +35,105 @@ import {
 } from "@cyclone-ui/helpers";
 import { ChevronDown } from "@cyclone-ui/icons";
 import { ControlUnderline } from "@cyclone-ui/input";
+import type { SelectOption } from "@stryke/types/form";
 import type { GetProps } from "@tamagui/core";
 import {
   createStyledHOC,
   isWeb,
   styled,
   Text,
+  useThemeName,
   View,
   withStaticProperties
 } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { XStack } from "@tamagui/stacks";
-import { Suspense, useCallback, useMemo, useState } from "react";
+import type { ReactNode } from "react";
+import {
+  Children,
+  isValidElement,
+  Suspense,
+  use,
+  useCallback,
+  useMemo,
+  useRef,
+  useState
+} from "react";
 import type { ViewStyle } from "react-native";
-import { SelectItems } from "./SelectItems";
+import type { SelectOptionEntry } from "./options";
+import {
+  getItemLabel,
+  getSearchMatch,
+  getTypeaheadMatch,
+  SEARCHABLE_OPTION_COUNT
+} from "./options";
+import { SelectItem, SelectItems } from "./SelectItems";
 import { SelectTextBox } from "./SelectTextBox";
 import { SelectNativeValue } from "./SelectValue";
 import type { SelectChangeEventHandler, SelectContextProps } from "./types";
 import {
   getSelectSize,
   getSelectVisualFocus,
+  SelectBehaviorContext,
   SelectContext
 } from "./utilities";
 
 // Selects float their field label by default.
 const FLOATING_LABEL = { variant: "floating" } as const;
+
+// Raised on the field while typed characters match no option.
+const NO_MATCH_MESSAGE = {
+  code: "select.no-match",
+  message: "No option matches what you typed",
+  type: "danger"
+} as const;
+
+// Characters typed within this many milliseconds build one search.
+const TYPEAHEAD_TIMEOUT = 1000;
+
+/**
+ * The `Select.Items.Item`s among `children`, else the field's `items`: what
+ * typing on the select matches, and what the search filter counts.
+ */
+// ponytail: only sees items written inside the select's JSX, not ones a
+// custom component renders; give the field `items` in that case.
+const getSelectOptions = (
+  children: ReactNode,
+  items?: SelectOption[]
+): SelectOptionEntry[] => {
+  const options: SelectOptionEntry[] = [];
+  const visit = (node: ReactNode) =>
+    Children.toArray(node).forEach(child => {
+      if (
+        !isValidElement<{
+          children?: ReactNode;
+          value?: unknown;
+          disabled?: boolean;
+        }>(child)
+      ) {
+        return;
+      }
+
+      if (child.type === SelectItem) {
+        options.push({
+          value: String(child.props.value),
+          label: getItemLabel(child.props.children, child.props.value),
+          disabled: Boolean(child.props.disabled)
+        });
+      } else {
+        visit(child.props.children);
+      }
+    });
+  visit(children);
+
+  return options.length > 0 || !items
+    ? options
+    : items.map(item => ({
+        value: String(item.value),
+        label: item.name,
+        disabled: Boolean(item.disabled)
+      }));
+};
 
 // A plain stack rather than `styled(XGroup)` so `transition` reaches the
 // rendered frame and the border and focus ring animate; see `InputGroup`.
@@ -255,8 +329,12 @@ const SelectTextBoxImpl = createStyledHOC(
   ) => {
     const { focused, disabled, size, variant, circular } =
       SelectContext.useStyledContext();
+    const { invalid, searchable } = use(SelectBehaviorContext);
+    const themeName = useThemeName();
     const formControl = useFormControl();
-    const hasValidationMessage = useFieldHasValidationMessage();
+    // Unmatched typing shows as an error at once, before the field shows its
+    // message (which waits for blur).
+    const hasValidationMessage = useFieldHasValidationMessage() || invalid;
     const labelPlacement = useFieldLabelPlacement();
     const [locallyActive, setLocallyActive] = useState(false);
     const frameSize = size;
@@ -278,6 +356,11 @@ const SelectTextBoxImpl = createStyledHOC(
       <SelectGroup
         // No own `group`: `group-hover/field` here and on the separator must
         // resolve to the enclosing Field, which also covers its label overlay.
+        // Always a theme: going from none to `danger` would re-parent (and
+        // remount) the children, blurring the focused text box.
+        theme={invalid ? "danger" : themeName}
+        // Tab goes straight to a searchable select's text input.
+        {...(searchable && { tabIndex: -1 })}
         focused={focused}
         hasValidationMessage={hasValidationMessage}
         variant={variant}
@@ -446,7 +529,10 @@ const SelectFallback = ({
 const SelectGroupImpl = createStyledHOC(
   ContextMenu,
   (
-    props: Omit<GetProps<typeof ContextMenu>, "value" | "onValueChange" | "variant"> &
+    props: Omit<
+      GetProps<typeof ContextMenu>,
+      "value" | "onValueChange" | "variant"
+    > &
       Partial<SelectContextProps> & {
         /**
          * The current value of the select. This should be used when the select is controlled.
@@ -463,6 +549,17 @@ const SelectGroupImpl = createStyledHOC(
          */
         placeholder?: string;
         readOnly?: boolean;
+
+        /**
+         * Makes the text box a text input, showing the selected option,
+         * whose edited text filters the options and picks the best match.
+         * It keeps the focus while the menu is open (`ArrowDown` moves it to
+         * the options). Where the menu opens as a bottom sheet on small
+         * screens, the sheet shows its own search input.
+         *
+         * @defaultValue `true` with more than 10 options
+         */
+        searchable?: boolean;
       },
     forwardedRef
   ) => {
@@ -489,6 +586,7 @@ const SelectGroupImpl = createStyledHOC(
         : undefined,
       defaultValue = formControl ? String(formDefaultValue ?? "") : undefined,
       placeholder,
+      searchable: searchableProp,
       ...rest
     } = props;
     const formOnChange = formControl?.onChange;
@@ -500,9 +598,45 @@ const SelectGroupImpl = createStyledHOC(
     );
     const [open, setOpen] = useState(false);
     const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
+    const [search, setSearch] = useState<string>();
+    const inputRef = useRef<HTMLInputElement>(null);
+    const [invalid, setInvalid] = useState(false);
+    const [listFocused, setListFocused] = useState(false);
+    const typeaheadRef = useRef({ search: "", time: 0 });
     const hasValidationMessage = useFieldHasValidationMessage();
     const visualFocus = getSelectVisualFocus(focused, open);
     const resolvedValue = value ?? uncontrolledValue;
+    const fieldItems = formControl?.items;
+    const options = useMemo(
+      () => getSelectOptions(children, fieldItems),
+      [children, fieldItems]
+    );
+    const searchable =
+      searchableProp ?? options.length > SEARCHABLE_OPTION_COUNT;
+    const setMessage = formControl?.setMessage;
+
+    const setNoMatch = useCallback(
+      (noMatch: boolean) => {
+        setInvalid(noMatch);
+        setMessage?.(
+          NO_MATCH_MESSAGE.code,
+          noMatch ? NO_MATCH_MESSAGE : undefined
+        );
+      },
+      [setMessage]
+    );
+
+    const applyValue = useCallback(
+      (nextValue: string) => {
+        setUncontrolledValue(nextValue);
+        onChange?.(
+          new CustomEvent("change", {
+            detail: nextValue
+          })
+        );
+      },
+      [onChange]
+    );
 
     const handleOpenChanged = useCallback(
       (nextOpen: boolean) => {
@@ -511,11 +645,18 @@ const SelectGroupImpl = createStyledHOC(
         }
 
         setOpen(nextOpen);
+        setListFocused(false);
 
         if (nextOpen) {
           onFocus?.();
         } else {
-          onBlur?.();
+          setSearch(undefined);
+          // A searchable select's field stays focused while its text input
+          // keeps the focus (see `handleTextBoxFocusChange`).
+          const input = inputRef.current;
+          if (input !== input?.ownerDocument.activeElement) {
+            onBlur?.();
+          }
         }
       },
       [disabled, readOnly, onFocus, onBlur]
@@ -524,15 +665,143 @@ const SelectGroupImpl = createStyledHOC(
     const handleChanged = useCallback(
       (nextValue: string) => {
         if (readOnly) return;
-        setUncontrolledValue(nextValue);
-        onChange?.(
-          new CustomEvent("change", {
-            detail: nextValue
-          })
-        );
+        applyValue(nextValue);
+        setNoMatch(false);
         handleOpenChanged(false);
       },
-      [onChange, handleOpenChanged, readOnly]
+      [applyValue, setNoMatch, handleOpenChanged, readOnly]
+    );
+
+    const handleTextBoxKey = useCallback(
+      (key: string): boolean => {
+        if (disabled || readOnly) return false;
+
+        if (!searchable) {
+          // Space still opens the menu, as on any button.
+          if (key.length !== 1 || key === " ") return false;
+
+          const now = Date.now();
+          const state = typeaheadRef.current;
+          state.search =
+            now - state.time > TYPEAHEAD_TIMEOUT ? key : state.search + key;
+          state.time = now;
+
+          const match = getTypeaheadMatch(options, state.search, resolvedValue);
+          if (match && match.value !== resolvedValue) {
+            applyValue(match.value);
+          }
+          setNoMatch(!match);
+
+          return true;
+        }
+
+        // The text input edits its own text (see `handleTextBoxInput`).
+        // `ArrowDown` opens the menu, then moves focus to the options;
+        // `Enter` opens or closes it, rather than submitting the form.
+        if (key === "ArrowDown") {
+          if (!open) {
+            handleOpenChanged(true);
+          } else if (listFocused) {
+            return false;
+          } else {
+            setListFocused(true);
+          }
+
+          return true;
+        }
+        if (key === "Enter") {
+          handleOpenChanged(!open);
+
+          return true;
+        }
+
+        return false;
+      },
+      [
+        applyValue,
+        disabled,
+        handleOpenChanged,
+        listFocused,
+        open,
+        options,
+        readOnly,
+        resolvedValue,
+        searchable,
+        setNoMatch
+      ]
+    );
+
+    // Editing a searchable select's text filters the options, opening the
+    // menu, and picks the best match.
+    const handleTextBoxInput = useCallback(
+      (text: string) => {
+        if (disabled || readOnly) return;
+
+        setSearch(text);
+        if (!open) {
+          handleOpenChanged(true);
+        }
+
+        const match = text.trim() ? getSearchMatch(options, text) : undefined;
+        if (match && match.value !== resolvedValue) {
+          applyValue(match.value);
+        }
+        setNoMatch(Boolean(text.trim()) && !match);
+      },
+      [
+        applyValue,
+        disabled,
+        handleOpenChanged,
+        open,
+        options,
+        readOnly,
+        resolvedValue,
+        setNoMatch
+      ]
+    );
+
+    // The field is focused while the text input is, or the menu is open (the
+    // menu's options and search take the focus from the input). Focus moving
+    // on to another control closes the menu; a press elsewhere dismisses it.
+    const handleTextBoxFocusChange = useCallback(
+      (nextFocused: boolean, next?: Element | null) => {
+        if (nextFocused) {
+          onFocus?.();
+        } else if (!open) {
+          onBlur?.();
+        } else if (
+          next &&
+          !next.closest?.("[data-context-menu-item], [data-select-search]")
+        ) {
+          handleOpenChanged(false);
+        }
+      },
+      [handleOpenChanged, onBlur, onFocus, open]
+    );
+
+    const behavior = useMemo(
+      () => ({
+        options,
+        searchable,
+        search,
+        setSearch,
+        inputRef,
+        listFocused,
+        invalid,
+        onTextBoxKey: handleTextBoxKey,
+        onTextBoxInput: handleTextBoxInput,
+        onTextBoxFocusChange: handleTextBoxFocusChange
+      }),
+      [
+        options,
+        searchable,
+        search,
+        listFocused,
+        invalid,
+        handleTextBoxKey,
+        handleTextBoxInput,
+        handleTextBoxFocusChange
+      ]
     );
 
     return (
@@ -566,32 +835,34 @@ const SelectGroupImpl = createStyledHOC(
           size={size}
           value={resolvedValue}
           open={open}>
-          {isWeb && name && (
-            // The trigger is a button, so this carries the value when the
-            // form submits.
-            <input type="hidden" name={name} value={resolvedValue ?? ""} />
-          )}
-          <ContextMenu
-            ref={forwardedRef}
-            aria-readonly={readOnly || undefined}
-            placement="bottom"
-            {...rest}
-            size={size}
-            value={resolvedValue}
-            onValueChange={handleChanged}
-            open={open}
-            onOpenChange={handleOpenChanged}>
-            {children ??
-              // Without children, a select in a field renders the field's items.
-              (formControl && (
-                <>
-                  <SelectTextBoxImpl>
-                    <SelectTextBox.Value placeholder={placeholder} />
-                  </SelectTextBoxImpl>
-                  <SelectItems />
-                </>
-              ))}
-          </ContextMenu>
+          <SelectBehaviorContext value={behavior}>
+            {isWeb && name && (
+              // The trigger is a button, so this carries the value when the
+              // form submits.
+              <input type="hidden" name={name} value={resolvedValue ?? ""} />
+            )}
+            <ContextMenu
+              ref={forwardedRef}
+              aria-readonly={readOnly || undefined}
+              placement="bottom"
+              {...rest}
+              size={size}
+              value={resolvedValue}
+              onValueChange={handleChanged}
+              open={open}
+              onOpenChange={handleOpenChanged}>
+              {children ??
+                // Without children, a select in a field renders the field's items.
+                (formControl && (
+                  <>
+                    <SelectTextBoxImpl>
+                      <SelectTextBox.Value placeholder={placeholder} />
+                    </SelectTextBoxImpl>
+                    <SelectItems />
+                  </>
+                ))}
+            </ContextMenu>
+          </SelectBehaviorContext>
         </SelectContext.Provider>
       </Suspense>
     );

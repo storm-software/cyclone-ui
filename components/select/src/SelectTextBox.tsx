@@ -27,8 +27,9 @@ import {
   View,
   withStaticProperties
 } from "@tamagui/core";
+import { use } from "react";
 import { SelectValue } from "./SelectValue";
-import { SelectContext } from "./utilities";
+import { SelectBehaviorContext, SelectContext } from "./utilities";
 
 const BaseSelectTextBox = styled(View, {
   displayName: "SelectTrigger",
@@ -67,21 +68,66 @@ const BaseSelectTextBox = styled(View, {
 
 const SelectTextBoxImpl = createStyledHOC(
   BaseSelectTextBox,
-  ({ children, ...props }: ViewProps, forwardedRef) => {
-    const { disabled, name } = SelectContext.useStyledContext();
+  ({ children, onKeyDown, ...props }: ViewProps, forwardedRef) => {
+    const { disabled, name, open } = SelectContext.useStyledContext();
+    const { searchable, invalid, inputRef, onTextBoxKey } = use(
+      SelectBehaviorContext
+    );
     const formControl = useFormControl();
 
     return (
-      <ContextMenu.Trigger asChild={true}>
+      <ContextMenu.Trigger
+        asChild={true}
+        // Runs before the trigger's toggle, which a handled press skips: a
+        // click in the open select's text input places the caret rather
+        // than closing the menu.
+        onPress={(event: any) => {
+          if (searchable && open && event?.target === inputRef?.current) {
+            event.preventDefault();
+          }
+        }}>
         <BaseSelectTextBox
-          {...({ type: "button" } as object)}
-          aria-required={formControl?.required ? true : undefined}
-          {...getFormControlAriaProps(formControl)}
-          id={formControl?.id ?? name}
+          // A searchable select's text box holds a text input, which takes
+          // the focus, `id` and ARIA state (see `SelectValue`), and which a
+          // button can't contain.
+          {...(searchable
+            ? {
+                render: "div",
+                // A press beside the input focuses it, as in other fields.
+                onMouseDown: (event: any) => {
+                  const input = inputRef?.current;
+                  if (input && event.target !== input) {
+                    event.preventDefault();
+                    input.focus();
+                  }
+                }
+              }
+            : {
+                type: "button",
+                "aria-required": formControl?.required ? true : undefined,
+                ...getFormControlAriaProps(formControl),
+                ...(invalid && { "aria-invalid": true }),
+                id: formControl?.id ?? name
+              })}
           data-select-trigger
           disabled={disabled}
           data-disabled={disabled ? "" : undefined}
           {...props}
+          onKeyDown={(event: any) => {
+            onKeyDown?.(event);
+            // Typed characters pick (and in a searchable select, filter) the
+            // options; see `Select`.
+            if (
+              !event.defaultPrevented &&
+              !event.isComposing &&
+              !event.ctrlKey &&
+              !event.metaKey &&
+              !event.altKey &&
+              onTextBoxKey?.(event.key)
+            ) {
+              event.preventDefault();
+            }
+          }}
           ref={forwardedRef}>
           {children}
         </BaseSelectTextBox>
