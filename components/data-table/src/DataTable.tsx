@@ -37,6 +37,10 @@ import {
 } from "@cyclone-ui/icons";
 import { Pagination } from "@cyclone-ui/pagination";
 import { Popover } from "@cyclone-ui/popover";
+import {
+  SCROLL_VIEW_CLASS_NAME,
+  SCROLL_VIEW_STYLES
+} from "@cyclone-ui/scroll-view";
 import { SearchInput } from "@cyclone-ui/search-input";
 import { Select } from "@cyclone-ui/select";
 import type { CallbackContext, FieldAtoms } from "@cyclone-ui/state/form";
@@ -50,6 +54,7 @@ import {
   createStyledContext,
   getTokens,
   getVariableValue,
+  isWeb,
   View
 } from "@tamagui/core";
 import { withStaticProperties } from "@tamagui/helpers";
@@ -654,314 +659,324 @@ function DataTableImpl<TData extends RowData>({
       setPagination={setPagination}
       selectedRows={selectedRows}>
       <YStack gap="3xl">
-        <Table
-          ref={tableRef as any}
-          width={resizable ? table.getTotalSize() : "100%"}
-          maxWidth="none"
-          alignCells={{ x: "start", y: "center" }}
-          alignHeaderCells={{ x: "start", y: "center" }}
-          {...{ sizing: "content" }}
-          {...rest}
-          style={
-            [
-              rest.style,
-              {
-                borderCollapse: "separate",
-                borderSpacing: card
-                  ? `0 ${getVariableValue(getTokens().space["2xl"])}px`
-                  : 0
-              },
-              resizable
-                ? {
-                    tableLayout: "fixed",
-                    width: table.getTotalSize()
-                  }
-                : undefined
-            ] as any
-          }>
-          {/* Fixed layout sizes columns from the first row, which is the
+        {/* Columns never shrink below their content; a table wider than its
+            container scrolls sideways instead of overflowing it. The scrollbar
+            is the themed one from `ScrollView`. */}
+        <View
+          maxWidth="100%"
+          overflowX="auto"
+          className={SCROLL_VIEW_CLASS_NAME}>
+          {isWeb ? <style>{SCROLL_VIEW_STYLES}</style> : null}
+          <Table
+            ref={tableRef as any}
+            width={resizable ? table.getTotalSize() : "100%"}
+            maxWidth="none"
+            alignCells={{ x: "start", y: "center" }}
+            alignHeaderCells={{ x: "start", y: "center" }}
+            {...{ sizing: "content" }}
+            {...rest}
+            style={
+              [
+                rest.style,
+                {
+                  borderCollapse: "separate",
+                  borderSpacing: card
+                    ? `0 ${getVariableValue(getTokens().space["2xl"])}px`
+                    : 0
+                },
+                resizable
+                  ? {
+                      tableLayout: "fixed",
+                      width: table.getTotalSize()
+                    }
+                  : undefined
+              ] as any
+            }>
+            {/* Fixed layout sizes columns from the first row, which is the
               full-width selection bar while rows are selected. */}
-          <colgroup>
-            {table.getVisibleLeafColumns().map(column => (
-              <col
-                key={column.id}
-                data-column-id={column.id}
-                style={resizable ? { width: column.getSize() } : undefined}
-              />
-            ))}
-          </colgroup>
-          <Table.Header>
-            {selectedRows.length > 0 && (
-              <Table.Row header={true}>
-                <Table.Cell
-                  paddingVertical="lg"
-                  {...(card ? getCardCellProps(0, 1) : {})}
-                  // After the spread, which also sets it (TS2783 otherwise).
-                  borderBottomWidth={0}
-                  backgroundColor="floating"
-                  {...({ colSpan: columnCount } as any)}>
-                  <XStack
-                    flexGrow={1}
-                    // Zero intrinsic width so the spanning bar doesn't widen
-                    // the columns under it (it still fills the cell).
-                    width={0}
-                    minWidth="100%"
-                    alignItems="center"
-                    justifyContent="space-between"
-                    gap="xl"
-                    paddingHorizontal="xl">
-                    <HeadingExtraSmallText
-                      fontWeight="medium"
-                      aria-live="polite">{`${selectedRows.length} selected`}</HeadingExtraSmallText>
-                    <XStack alignItems="center" gap="xl max-md:md">
-                      {children}
-                      <Button
-                        theme="base"
-                        variant="ghost"
-                        circular={true}
-                        tight={true}
-                        size="6xl"
-                        padding="lg"
-                        marginLeft="4xl max-md:lg"
-                        aria-label="Clear selection"
-                        tooltip="Clear selection"
-                        onPress={() => table.resetRowSelection(true)}>
-                        <Button.Icon>
-                          <Close variant="bold" size="2xl" />
-                        </Button.Icon>
-                      </Button>
+            <colgroup>
+              {table.getVisibleLeafColumns().map(column => (
+                <col
+                  key={column.id}
+                  data-column-id={column.id}
+                  style={resizable ? { width: column.getSize() } : undefined}
+                />
+              ))}
+            </colgroup>
+            <Table.Header>
+              {selectedRows.length > 0 && (
+                <Table.Row header={true}>
+                  <Table.Cell
+                    paddingVertical="lg"
+                    {...(card ? getCardCellProps(0, 1) : {})}
+                    // After the spread, which also sets it (TS2783 otherwise).
+                    borderBottomWidth={0}
+                    backgroundColor="floating"
+                    {...({ colSpan: columnCount } as any)}>
+                    <XStack
+                      flexGrow={1}
+                      // Zero intrinsic width so the spanning bar doesn't widen
+                      // the columns under it (it still fills the cell).
+                      width={0}
+                      minWidth="100%"
+                      alignItems="center"
+                      justifyContent="space-between"
+                      gap="xl"
+                      paddingHorizontal="xl">
+                      <HeadingExtraSmallText
+                        fontWeight="medium"
+                        aria-live="polite">{`${selectedRows.length} selected`}</HeadingExtraSmallText>
+                      <XStack alignItems="center" gap="xl max-md:md">
+                        {children}
+                        <Button
+                          theme="base"
+                          variant="ghost"
+                          circular={true}
+                          tight={true}
+                          size="6xl"
+                          padding="lg"
+                          marginLeft="4xl max-md:lg"
+                          aria-label="Clear selection"
+                          tooltip="Clear selection"
+                          onPress={() => table.resetRowSelection(true)}>
+                          <Button.Icon>
+                            <Close variant="bold" size="2xl" />
+                          </Button.Icon>
+                        </Button>
+                      </XStack>
                     </XStack>
-                  </XStack>
-                </Table.Cell>
-              </Table.Row>
-            )}
-            {headerGroups.map(headerGroup => {
-              return (
-                <Table.Row key={headerGroup.id} header={true}>
-                  {headerGroup.headers.map((header, index) => (
-                    <Table.HeaderCell
-                      key={header.id}
-                      position="relative"
-                      edgePadding={
-                        index === 0 && index === headerGroup.headers.length - 1
-                          ? "both"
-                          : index === 0
-                            ? "start"
-                            : index === headerGroup.headers.length - 1
-                              ? "end"
-                              : undefined
-                      }
-                      {...(card
-                        ? getCardCellProps(index, headerGroup.headers.length)
-                        : {})}
-                      // Match the body cells so the checkboxes line up.
-                      {...(header.column.id === SELECTION_COLUMN_ID
-                        ? { paddingLeft: "xl", paddingRight: "xl" }
-                        : {})}
-                      {...(isReorderable(header.column)
-                        ? ({
-                            cursor: "grab",
-                            ...(draggedColumn === header.column.id
-                              ? { opacity: 0.5 }
-                              : {}),
-                            draggable: true,
-                            onDragStart: (event: any) => {
-                              event.dataTransfer.effectAllowed = "move";
-                              // Firefox won't start a drag without data.
-                              event.dataTransfer.setData(
-                                "text/plain",
-                                header.column.id
-                              );
-                              setDraggedColumn(header.column.id);
-                            },
-                            onDragOver: (event: any) => {
-                              // Ignore drags that didn't start on a header.
-                              if (draggedColumn) {
+                  </Table.Cell>
+                </Table.Row>
+              )}
+              {headerGroups.map(headerGroup => {
+                return (
+                  <Table.Row key={headerGroup.id} header={true}>
+                    {headerGroup.headers.map((header, index) => (
+                      <Table.HeaderCell
+                        key={header.id}
+                        position="relative"
+                        edgePadding={
+                          index === 0 &&
+                          index === headerGroup.headers.length - 1
+                            ? "both"
+                            : index === 0
+                              ? "start"
+                              : index === headerGroup.headers.length - 1
+                                ? "end"
+                                : undefined
+                        }
+                        {...(card
+                          ? getCardCellProps(index, headerGroup.headers.length)
+                          : {})}
+                        // Match the body cells so the checkboxes line up.
+                        {...(header.column.id === SELECTION_COLUMN_ID
+                          ? { paddingLeft: "xl", paddingRight: "xl" }
+                          : {})}
+                        {...(isReorderable(header.column)
+                          ? ({
+                              cursor: "grab",
+                              ...(draggedColumn === header.column.id
+                                ? { opacity: 0.5 }
+                                : {}),
+                              draggable: true,
+                              onDragStart: (event: any) => {
+                                event.dataTransfer.effectAllowed = "move";
+                                // Firefox won't start a drag without data.
+                                event.dataTransfer.setData(
+                                  "text/plain",
+                                  header.column.id
+                                );
+                                setDraggedColumn(header.column.id);
+                              },
+                              onDragOver: (event: any) => {
+                                // Ignore drags that didn't start on a header.
+                                if (draggedColumn) {
+                                  event.preventDefault();
+                                  setDropColumn(header.column.id);
+                                }
+                              },
+                              onDrop: (event: any) => {
                                 event.preventDefault();
-                                setDropColumn(header.column.id);
-                              }
-                            },
-                            onDrop: (event: any) => {
+                                handleColumnDrop(header.column.id);
+                              },
+                              onDragEnd: handleColumnDragEnd
+                            } as any)
+                          : {})}
+                        style={
+                          resizable
+                            ? ({ width: header.getSize() } as any)
+                            : undefined
+                        }
+                        {...({
+                          colSpan: header.colSpan,
+                          ...(header.colSpan === 1
+                            ? { "data-column-id": header.column.id }
+                            : {})
+                        } as any)}
+                        group="header">
+                        {header.isPlaceholder
+                          ? null
+                          : flexRender(
+                              header.column.columnDef.header,
+                              header.getContext()
+                            )}
+                        {resizable && header.column.getCanResize() && (
+                          <View
+                            role="separator"
+                            aria-label={`Resize ${header.column.id} column`}
+                            aria-orientation="vertical"
+                            position="absolute"
+                            top={0}
+                            right={0}
+                            bottom={0}
+                            width="2xl"
+                            zIndex="20"
+                            cursor="col-resize"
+                            userSelect="none"
+                            // Web-only CSS property that is not a Tamagui style prop.
+                            style={{ touchAction: "none" } as any}
+                            data-column-resizer={header.column.id}
+                            onDoubleClick={() => header.column.resetSize()}
+                            onMouseEnter={() => setHoveredResizer(header.id)}
+                            onMouseLeave={() => setHoveredResizer(null)}
+                            onMouseDown={(event: any) => {
+                              // Keeps a draggable header from starting a drag.
                               event.preventDefault();
-                              handleColumnDrop(header.column.id);
-                            },
-                            onDragEnd: handleColumnDragEnd
-                          } as any)
-                        : {})}
-                      style={
-                        resizable
-                          ? ({ width: header.getSize() } as any)
-                          : undefined
-                      }
-                      {...({
-                        colSpan: header.colSpan,
-                        ...(header.colSpan === 1
-                          ? { "data-column-id": header.column.id }
-                          : {})
-                      } as any)}
-                      group="header">
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
-                      {resizable && header.column.getCanResize() && (
-                        <View
-                          role="separator"
-                          aria-label={`Resize ${header.column.id} column`}
-                          aria-orientation="vertical"
-                          position="absolute"
-                          top={0}
-                          right={0}
-                          bottom={0}
-                          width="2xl"
-                          zIndex="20"
-                          cursor="col-resize"
-                          userSelect="none"
-                          // Web-only CSS property that is not a Tamagui style prop.
-                          style={{ touchAction: "none" } as any}
-                          data-column-resizer={header.column.id}
-                          onDoubleClick={() => header.column.resetSize()}
-                          onMouseEnter={() => setHoveredResizer(header.id)}
-                          onMouseLeave={() => setHoveredResizer(null)}
-                          onMouseDown={(event: any) => {
-                            // Keeps a draggable header from starting a drag.
-                            event.preventDefault();
-                            header.getResizeHandler()(event);
-                          }}
-                          onTouchStart={header.getResizeHandler()}>
-                          <View
-                            position="absolute"
-                            top="xl"
-                            left="50%"
-                            marginLeft={-1}
-                            bottom="xl"
-                            borderWidth={0}
-                            borderRightWidth={1}
-                            borderStyle="dashed"
-                            borderRightColor={
-                              header.column.getIsResizing()
-                                ? "subtle"
-                                : hoveredResizer === header.id
+                              header.getResizeHandler()(event);
+                            }}
+                            onTouchStart={header.getResizeHandler()}>
+                            <View
+                              position="absolute"
+                              top="xl"
+                              left="50%"
+                              marginLeft={-1}
+                              bottom="xl"
+                              borderWidth={0}
+                              borderRightWidth={1}
+                              borderStyle="dashed"
+                              borderRightColor={
+                                header.column.getIsResizing()
                                   ? "subtle"
-                                  : "transparent"
-                            }
-                          />
-                        </View>
-                      )}
-                      {draggedColumn &&
-                        dropColumn === header.column.id &&
-                        dropColumn !== draggedColumn && (
-                          <View
-                            position="absolute"
-                            top="xl"
-                            bottom="xl"
-                            {...(leafColumnIds.indexOf(draggedColumn) <
-                            leafColumnIds.indexOf(dropColumn)
-                              ? { right: 0 }
-                              : { left: 0 })}
-                            borderWidth={0}
-                            borderLeftWidth={1}
-                            borderStyle="dashed"
-                            borderLeftColor="subtle"
-                            pointerEvents="none"
-                          />
+                                  : hoveredResizer === header.id
+                                    ? "subtle"
+                                    : "transparent"
+                              }
+                            />
+                          </View>
                         )}
-                    </Table.HeaderCell>
-                  ))}
-                </Table.Row>
-              );
-            })}
-          </Table.Header>
-          <Table.Body>
-            {tableRows.map(row => {
-              const cells = row.getVisibleCells();
+                        {draggedColumn &&
+                          dropColumn === header.column.id &&
+                          dropColumn !== draggedColumn && (
+                            <View
+                              position="absolute"
+                              top="xl"
+                              bottom="xl"
+                              {...(leafColumnIds.indexOf(draggedColumn) <
+                              leafColumnIds.indexOf(dropColumn)
+                                ? { right: 0 }
+                                : { left: 0 })}
+                              borderWidth={0}
+                              borderLeftWidth={1}
+                              borderStyle="dashed"
+                              borderLeftColor="subtle"
+                              pointerEvents="none"
+                            />
+                          )}
+                      </Table.HeaderCell>
+                    ))}
+                  </Table.Row>
+                );
+              })}
+            </Table.Header>
+            <Table.Body>
+              {tableRows.map(row => {
+                const cells = row.getVisibleCells();
 
-              return (
-                <Table.Row
-                  key={row.id}
-                  aria-selected={row.getIsSelected()}
-                  // An explicit `undefined` would wipe the row's hover background.
-                  // Cards paint the cells instead; a row background would show
-                  // square behind their rounded corners.
-                  {...(card
-                    ? { backgroundColor: "transparent" }
-                    : row.getIsSelected()
-                      ? { backgroundColor: "surface-active" }
-                      : {})}>
-                  {cells.map((cell, index) => (
-                    <Table.Cell
-                      key={cell.id}
-                      {...(card
-                        ? {
-                            ...getCardCellProps(index, cells.length),
-                            transition: "200ms",
-                            backgroundColor: row.getIsSelected()
-                              ? "surface-active"
-                              : "surface group-hover/row:surface-hovered"
-                          }
-                        : {})}
-                      style={
-                        resizable
-                          ? ({ width: cell.column.getSize() } as any)
-                          : undefined
-                      }
-                      {...({ "data-column-id": cell.column.id } as any)}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
-                    </Table.Cell>
-                  ))}
+                return (
+                  <Table.Row
+                    key={row.id}
+                    aria-selected={row.getIsSelected()}
+                    // An explicit `undefined` would wipe the row's hover background.
+                    // Cards paint the cells instead; a row background would show
+                    // square behind their rounded corners.
+                    {...(card
+                      ? { backgroundColor: "transparent" }
+                      : row.getIsSelected()
+                        ? { backgroundColor: "surface-active" }
+                        : {})}>
+                    {cells.map((cell, index) => (
+                      <Table.Cell
+                        key={cell.id}
+                        {...(card
+                          ? {
+                              ...getCardCellProps(index, cells.length),
+                              transition: "200ms",
+                              backgroundColor: row.getIsSelected()
+                                ? "surface-active"
+                                : "surface group-hover/row:surface-hovered"
+                            }
+                          : {})}
+                        style={
+                          resizable
+                            ? ({ width: cell.column.getSize() } as any)
+                            : undefined
+                        }
+                        {...({ "data-column-id": cell.column.id } as any)}>
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext()
+                        )}
+                      </Table.Cell>
+                    ))}
+                  </Table.Row>
+                );
+              })}
+              {tableRows.length === 0 && (
+                <Table.Row>
+                  <Table.Cell
+                    {...(card ? getCardCellProps(0, 1) : {})}
+                    {...({ colSpan: columnCount } as any)}>
+                    <View
+                      flex={1}
+                      justifyContent="center"
+                      alignItems="center"
+                      padding="7xl">
+                      <HeadingSmallText size={4}>
+                        No data to display
+                      </HeadingSmallText>
+                    </View>
+                  </Table.Cell>
                 </Table.Row>
-              );
-            })}
-            {tableRows.length === 0 && (
-              <Table.Row>
-                <Table.Cell
-                  {...(card ? getCardCellProps(0, 1) : {})}
-                  {...({ colSpan: columnCount } as any)}>
-                  <View
-                    flex={1}
-                    justifyContent="center"
-                    alignItems="center"
-                    padding="7xl">
-                    <HeadingSmallText size={4}>
-                      No data to display
-                    </HeadingSmallText>
-                  </View>
-                </Table.Cell>
-              </Table.Row>
+              )}
+            </Table.Body>
+            {pageSize && (
+              <Table.Footer>
+                <Table.Row header={true}>
+                  <Table.Cell
+                    paddingTop="3xl"
+                    {...(card
+                      ? { ...getCardCellProps(0, 1), paddingVertical: "xl" }
+                      : {})}
+                    borderBottomWidth={0}
+                    {...({ colSpan: columnCount } as any)}>
+                    <DataTablePagination
+                      setPageIndex={table.setPageIndex}
+                      nextPage={table.nextPage}
+                      previousPage={table.previousPage}
+                      firstPage={table.firstPage}
+                      lastPage={table.lastPage}
+                      totalCount={data.length}
+                      unfilteredCount={table.getFilteredRowModel().rows.length}
+                      pageIndex={pagination.pageIndex}
+                      pageSize={pagination.pageSize}
+                      pageCount={pageCount}
+                    />
+                  </Table.Cell>
+                </Table.Row>
+              </Table.Footer>
             )}
-          </Table.Body>
-          {pageSize && (
-            <Table.Footer>
-              <Table.Row header={true}>
-                <Table.Cell
-                  paddingTop="3xl"
-                  {...(card
-                    ? { ...getCardCellProps(0, 1), paddingVertical: "xl" }
-                    : {})}
-                  borderBottomWidth={0}
-                  {...({ colSpan: columnCount } as any)}>
-                  <DataTablePagination
-                    setPageIndex={table.setPageIndex}
-                    nextPage={table.nextPage}
-                    previousPage={table.previousPage}
-                    firstPage={table.firstPage}
-                    lastPage={table.lastPage}
-                    totalCount={data.length}
-                    unfilteredCount={table.getFilteredRowModel().rows.length}
-                    pageIndex={pagination.pageIndex}
-                    pageSize={pagination.pageSize}
-                    pageCount={pageCount}
-                  />
-                </Table.Cell>
-              </Table.Row>
-            </Table.Footer>
-          )}
-        </Table>
+          </Table>
+        </View>
       </YStack>
     </DataTableContext.Provider>
   );
@@ -1130,7 +1145,13 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
           ref={scrollRef as any}
           size="lg"
           maxHeight="30xl">
-          <YStack gap="xl" width="100%" minWidth="28xl" paddingHorizontal="xl" paddingTop="0" paddingBottom="2xl">
+          <YStack
+            gap="xl"
+            width="100%"
+            minWidth="28xl"
+            paddingHorizontal="xl"
+            paddingTop="0"
+            paddingBottom="2xl">
             <Field name={SELECT_ALL_FIELD_NAME}>
               <XStack gap="xl" alignItems="center" justifyContent="flex-start">
                 <Checkbox
@@ -1308,17 +1329,12 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
       // Reserves room for the absolutely positioned filter button.
       paddingRight={column.getCanFilter() ? "8xl" : "3xl"}>
       <XStack gap="xl" flexShrink={0} cursor="pointer" onPress={handleSorting}>
-        <Table.HeaderText
-          transition="200ms"
-          color={headingColor}>
+        <Table.HeaderText transition="200ms" color={headingColor}>
           {titleCase(id)}
         </Table.HeaderText>
         {isSorted && !desc && (
           <XStack gap="xxs" alignItems="center">
-            <SortAscending
-              size="4xl"
-              color={headingColor}
-            />
+            <SortAscending size="4xl" color={headingColor} />
             <Table.HeaderText
               transition="200ms"
               fontWeight={600}
@@ -1329,10 +1345,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
         )}
         {isSorted && desc && (
           <XStack gap="xxs" alignItems="center">
-            <SortDescending
-              size="4xl"
-              color={headingColor}
-            />
+            <SortDescending size="4xl" color={headingColor} />
             <Table.HeaderText
               transition="200ms"
               fontWeight={600}
@@ -1348,7 +1361,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
           transition="200ms"
           position="absolute"
           // Lifts the icon, whose lines read low beside cap text.
-          top={-3}
+          top={0}
           bottom={3}
           right="4xl"
           justifyContent="center"

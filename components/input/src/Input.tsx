@@ -399,46 +399,26 @@ const InputSeparator = styled(View, {
   // `enter` key keeps a hover/focus restyle during the fade from snapping it
   // to full opacity: Tamagui only re-renders (instead of emitting styles with
   // the mount-time "no animation" flag) when `transition` names `enter`.
+  // The color lives on a child: a `group-hover/field` color on this element
+  // stuck at the hovered value after the pointer left.
   transition: { duration: "200ms", enter: "200ms" },
   opacity: "enter:0",
-  // Drawn as a underlined 1px bar rather than a left border: `XGroup.Item` zeroes
+  // Drawn as a 1px bar rather than a left border: `XGroup.Item` zeroes
   // `borderLeftWidth` on every non-first item, which hid the line.
-  backgroundColor: "hairline hover:hairline-hovered",
   width: 1,
   flexShrink: 0,
   height: "60%",
   marginVertical: "zero",
   variants: {
-    focused: {
-      true: {
-        backgroundColor: "hairline-active"
-      }
-    },
-
-    hasValidationMessage: {
-      true: {
-        backgroundColor: "primary"
-      }
-    },
-
     variant: {
       outlined: {},
       underlined: {
         width: 0
       },
       inlined: {}
-    },
-
-    disabled: {
-      true: {
-        backgroundColor:
-          "hairline-inactive hover:hairline-inactive press:hairline-inactive focus:hairline-inactive"
-      }
     }
   } as const,
   defaultVariants: {
-    disabled: false,
-    focused: false,
     variant: "outlined"
   }
 });
@@ -458,12 +438,15 @@ const InputSeparatorImpl = createStyledHOC(
 
     return (
       <XGroup.Item>
-        <InputSeparator
-          ref={forwardedRef}
-          backgroundColor={`${focused ? focusColor : idleColor} group-hover/field:${disabled ? "hairline-inactive" : focused ? focusColor : hoverColor}`}
-          hasValidationMessage={hasValidationMessage}
-          {...props}
-        />
+        <InputSeparator ref={forwardedRef} {...props}>
+          <View
+            width="100%"
+            height="100%"
+            // Keep group color updates independent of the entrance fade.
+            backgroundColor={`${focused ? focusColor : idleColor} group-hover/field:${disabled ? "hairline-inactive" : focused ? focusColor : hoverColor}`}
+            transition="200ms"
+          />
+        </InputSeparator>
       </XGroup.Item>
     );
   },

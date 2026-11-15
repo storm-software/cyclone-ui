@@ -29,6 +29,9 @@
       "path": "../search-input"
     },
     {
+      "path": "../scroll-view"
+    },
+    {
       "path": "../popover"
     },
     {

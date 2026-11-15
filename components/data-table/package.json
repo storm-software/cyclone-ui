@@ -45,6 +45,7 @@
     "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/pagination": "workspace:*",
     "@cyclone-ui/popover": "workspace:*",
+    "@cyclone-ui/scroll-view": "workspace:*",
     "@cyclone-ui/search-input": "workspace:*",
     "@cyclone-ui/select": "workspace:*",
     "@cyclone-ui/state": "workspace:*",

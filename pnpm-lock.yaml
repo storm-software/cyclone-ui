@@ -2220,6 +2220,9 @@ importers:
       '@cyclone-ui/popover':
         specifier: workspace:*
         version: link:../popover
+      '@cyclone-ui/scroll-view':
+        specifier: workspace:*
+        version: link:../scroll-view
       '@cyclone-ui/search-input':
         specifier: workspace:*
         version: link:../search-input

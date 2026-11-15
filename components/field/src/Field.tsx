@@ -68,6 +68,7 @@ import type {
 import {
   createStyledHOC,
   getVariableValue,
+  isWeb,
   Slot,
   styled,
   Text,
@@ -76,7 +77,7 @@ import {
   View,
   withStaticProperties
 } from "@tamagui/core";
-import { Label as TamaguiLabel } from "@tamagui/label";
+import { LabelFrame, Label as TamaguiLabel } from "@tamagui/label";
 import { XStack, YStack } from "@tamagui/stacks";
 // Lets TypeScript name `GetFontSizedInput` (SizableText's `size` type) in
 // this package's declarations.
@@ -169,6 +170,12 @@ const getNativeValidityMessages = (
  * @returns The label element id.
  */
 export const getFieldLabelId = (id: string) => `${id}-label`;
+
+// On web the native `<label for>` already names and focuses the control, and
+// Tamagui `Label`'s layout effect writes `aria-labelledby` onto it. A control
+// that hydrates later (the Select trigger sits in a Suspense boundary) then
+// mismatches. Native still needs `Label`'s press-to-focus.
+const FieldLabelElement = (isWeb ? LabelFrame : TamaguiLabel) as typeof TamaguiLabel;
 
 const FieldDetailsContext = createContext<ReactNode>(null);
 
@@ -1236,7 +1243,7 @@ const FieldLabelTextImpl = createStyledHOC(
             : undefined
         }
         cursor={disabled ? "not-allowed" : "pointer"}>
-        <TamaguiLabel
+        <FieldLabelElement
           ref={forwardedRef}
           id={getFieldLabelId(id ?? name)}
           htmlFor={id ?? name}
@@ -1323,7 +1330,7 @@ const FieldLabelTextImpl = createStyledHOC(
               )}
             </FieldLabelContent>
           </LabelXStack>
-        </TamaguiLabel>
+        </FieldLabelElement>
       </FieldLabelPositioner>
     );
   },

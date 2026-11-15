@@ -179,55 +179,24 @@ const SelectSeparator = styled(View, {
   // `enter` key keeps a hover/focus restyle during the fade from snapping it
   // to full opacity: Tamagui only re-renders (instead of emitting styles with
   // the mount-time "no animation" flag) when `transition` names `enter`.
+  // The color lives on a child: a `group-hover/field` color on this element
+  // stuck at the hovered value after the pointer left.
   transition: { duration: "200ms", enter: "200ms" },
   opacity: "enter:0",
-  // Tamagui's vertical Separator emits rules on both sides. Use the same
-  // one-pixel left rule as Input so the Select and field-icon dividers match.
-  borderWidth: 0,
-  borderLeftWidth: 1,
-  borderRightWidth: 0,
-  borderTopWidth: 0,
-  borderBottomWidth: 0,
-  borderColor: "hairline hover:hairline-hovered",
-  width: 0,
+  width: 1,
   flexShrink: 0,
   height: "60%",
   marginVertical: "zero",
   variants: {
-    focused: {
-      true: {
-        borderColor: "hairline-active"
-      }
-    },
-
-    hasValidationMessage: {
-      true: {
-        borderColor: "primary"
-      }
-    },
-
     variant: {
       outlined: {},
       underlined: {
-        borderWidth: 0,
-        borderLeftWidth: 0,
-        borderRightWidth: 0,
-        borderTopWidth: 0,
-        borderBottomWidth: 0
+        width: 0
       },
       inlined: {}
-    },
-
-    disabled: {
-      true: {
-        borderColor:
-          "hairline-inactive hover:hairline-inactive press:hairline-inactive focus:hairline-inactive"
-      }
     }
   } as const,
   defaultVariants: {
-    disabled: false,
-    focused: false,
     variant: "outlined"
   }
 });
@@ -360,13 +329,15 @@ const SelectTextBoxImpl = createStyledHOC(
             {!disabled && (
               <>
                 <XGroup.Item>
-                  <SelectSeparator
-                    ref={forwardedRef}
-                    focused={focused}
-                    hasValidationMessage={hasValidationMessage}
-                    disabled={disabled}
-                    borderColor={`${focused ? focusColor : idleColor} group-hover/field:${focused ? focusColor : hoverColor}`}
-                  />
+                  <SelectSeparator ref={forwardedRef}>
+                    <View
+                      width="100%"
+                      height="100%"
+                      // Keep group color updates independent of the entrance fade.
+                      backgroundColor={`${focused ? focusColor : idleColor} group-hover/field:${focused ? focusColor : hoverColor}`}
+                      transition="200ms"
+                    />
+                  </SelectSeparator>
                 </XGroup.Item>
 
                 <XGroup.Item>

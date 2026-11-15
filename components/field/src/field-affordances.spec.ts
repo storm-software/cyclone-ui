@@ -20,13 +20,14 @@ const getDeclaration = (source: string, name: string) => {
 
 describe("field affordance color states", () => {
   it("uses the border token family for shared icons and separators", () => {
+    // Separator colors live on a child of the fading element, set in render.
     const inputSeparator = getDeclaration(
       readComponent("../../input/src/Input.tsx"),
-      "InputSeparator"
+      "InputSeparatorImpl"
     );
     const selectSeparator = getDeclaration(
       readComponent("../../select/src/Select.tsx"),
-      "SelectSeparator"
+      "SelectTextBoxImpl"
     );
     const fieldIcon = getDeclaration(formControlSource(), "useFieldIconColor");
 
@@ -34,9 +35,8 @@ describe("field affordance color states", () => {
       expect(affordance).toContain("hairline");
       expect(affordance).toContain("hairline-active");
     }
-    for (const separator of [inputSeparator, selectSeparator]) {
-      expect(separator).toContain("hairline-inactive");
-    }
+    // A disabled Select renders no separator.
+    expect(inputSeparator).toContain("hairline-inactive");
 
     expect(fieldIcon).toContain("hairline-disabled");
   });

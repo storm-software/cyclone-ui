@@ -150,6 +150,32 @@ export const Base: Story = {
   }
 };
 
+export const HoverReset: Story = {
+  play: async ({ canvasElement }) => {
+    const trigger = canvasElement.querySelector<HTMLElement>(
+      "[data-select-trigger]"
+    )!;
+    // The divider is a 1px fade wrapper whose only child carries the color.
+    const separator = [...canvasElement.querySelectorAll("div")].find(
+      element =>
+        getComputedStyle(element).width === "1px" &&
+        element.childElementCount === 1
+    )!;
+    const color = () =>
+      getComputedStyle(separator.firstElementChild!).backgroundColor;
+
+    await waitFor(() => expect(getComputedStyle(separator).opacity).toBe("1"));
+    const restingColor = color();
+
+    for (let cycle = 0; cycle < 2; cycle++) {
+      await userEvent.hover(trigger);
+      await waitFor(() => expect(color()).not.toBe(restingColor));
+      await userEvent.unhover(trigger);
+      await waitFor(() => expect(color()).toBe(restingColor));
+    }
+  }
+};
+
 export const Floating: Story = {
   args: {
     labelVariant: "floating"
