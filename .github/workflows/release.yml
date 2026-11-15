@@ -38,6 +38,7 @@ jobs:
     steps:
       - name: Send notification - Deployment started
         uses: storm-software/action-notify@main
+        continue-on-error: true
         with:
           title: "Deployment for ${{ github.repository }} has started (In Progress)"
           subtitle: "Deployment for ${{ github.repository }} has started - #${{
@@ -112,6 +113,7 @@ jobs:
     steps:
       - name: Send notification - Deployment successful
         uses: storm-software/action-notify@main
+        continue-on-error: true
         with:
           title: "Deployment for ${{ github.repository }} has finished (Success)"
           subtitle:
@@ -138,6 +140,7 @@ jobs:
     steps:
       - name: Send notification - Deployment successful
         uses: storm-software/action-notify@main
+        continue-on-error: true
         with:
           title: "Deployment for ${{ github.repository }} has finished (Failure)"
           subtitle:
@@ -164,6 +167,7 @@ jobs:
     steps:
       - name: Send notification - Deployment cancelled
         uses: storm-software/action-notify@main
+        continue-on-error: true
         with:
           title: "Deployment for ${{ github.repository }} has finished (Cancelled)"
           subtitle:
