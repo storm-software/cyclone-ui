@@ -17,3 +17,4 @@
  ------------------------------------------------------------------- */
 
 export * from "./SearchDialog";
+export * from "./SearchDialogButton";

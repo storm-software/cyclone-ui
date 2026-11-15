@@ -53,6 +53,10 @@
       "import": "./dist/SearchDialog.mjs",
       "require": "./dist/SearchDialog.cjs"
     },
+    "./SearchDialogButton": {
+      "import": "./dist/SearchDialogButton.mjs",
+      "require": "./dist/SearchDialogButton.cjs"
+    },
     "./*": "./*"
   }
 }

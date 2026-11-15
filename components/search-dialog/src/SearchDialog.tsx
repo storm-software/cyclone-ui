@@ -29,6 +29,7 @@ import { SearchTrigger } from "@cyclone-ui/icons/vectors";
 import { VisuallyHidden } from "@cyclone-ui/visually-hidden";
 import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, Text, View } from "@tamagui/core";
+import { SearchDialogButton } from "./SearchDialogButton";
 import {
   useEffect,
   useEffectEvent,
@@ -597,21 +598,12 @@ export const SearchDialog = createStyledHOC(
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <Dialog.Trigger asChild={true}>
-          <Button
+          <SearchDialogButton
             ref={forwardedRef}
-            aria-label={label}
-            tooltip={label}
-            aria-keyshortcuts="Meta+K Control+K"
-            variant="ghost"
-            circular={true}
-            flexGrow={0}
+            label={label}
             size={size}
-            {...props}>
-            {/* Sized like the button, or the glyph shrinks to a few px. */}
-            <Button.Icon size={size}>
-              <SearchTrigger />
-            </Button.Icon>
-          </Button>
+            {...props}
+          />
         </Dialog.Trigger>
 
         {/* Pinned near the top, so the dialog doesn't jump as results change. */}

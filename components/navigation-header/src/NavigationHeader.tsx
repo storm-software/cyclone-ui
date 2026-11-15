@@ -26,7 +26,7 @@ import { MenuToggle } from "@cyclone-ui/icons/vectors";
 import { Link } from "@cyclone-ui/link";
 import { RedactedAnimation } from "@cyclone-ui/redacted-animation";
 import type { SearchDialogProps } from "@cyclone-ui/search-dialog";
-import { SearchDialog } from "@cyclone-ui/search-dialog";
+import { SearchDialogPlaceholder } from "@cyclone-ui/search-dialog/SearchDialogButton";
 import type { ThemeTogglerProps } from "@cyclone-ui/theme-toggler";
 import { ThemeToggler } from "@cyclone-ui/theme-toggler";
 import type { GetProps } from "@tamagui/core";
@@ -44,11 +44,23 @@ import {
   cloneElement,
   Fragment,
   isValidElement,
+  lazy,
+  Suspense,
   useEffect,
   useId,
   useState,
   useSyncExternalStore
 } from "react";
+
+// Loaded only when a `NavigationHeader.Search` slot is rendered, so headers
+// without search don't ship the dialog (Dialog, Input, ToggleGroup: ~26 KB
+// gzipped). Its button renders as the fallback, so the header's layout and
+// server HTML don't wait for the dialog.
+const SearchDialog = lazy(async () =>
+  import("@cyclone-ui/search-dialog").then(module => ({
+    default: module.SearchDialog
+  }))
+);
 
 const reducedMotionMediaQuery = "(prefers-reduced-motion: reduce)";
 type NavigationHeaderPressEvent = Parameters<
@@ -972,7 +984,16 @@ const NavigationHeaderRoot = createStyledHOC(
         {/* Nudged onto the labels' x-height center, which sits below their
                 cap-height center; without them it centers with the menu. */}
         {search && (
-          <SearchDialog {...search.props} y="2px max-xl:0" tight={true} />
+          <Suspense
+            fallback={
+              <SearchDialogPlaceholder
+                {...search.props}
+                y="2px max-xl:0"
+                tight={true}
+              />
+            }>
+            <SearchDialog {...search.props} y="2px max-xl:0" tight={true} />
+          </Suspense>
         )}
         {themeToggler && (
           <ThemeToggler

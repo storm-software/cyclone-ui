@@ -9,6 +9,7 @@
     "directory": "packages/helpers"
   },
   "type": "module",
+  "sideEffects": false,
   "exports": {
     ".": {
       "require": {
