@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Helpers
 
+## [0.3.81](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.81) (11/15/2026)
+
+### Bug Fixes
+
+- **monorepo:** Improve time to first content paint for components when server-side rendered ([288209293](https://github.com/storm-software/cyclone-ui/commit/288209293))
+
 ## [0.3.76](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.76) (11/13/2026)
 
 ### Bug Fixes

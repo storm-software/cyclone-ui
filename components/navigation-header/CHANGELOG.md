@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Navigation Header
 
+## [0.0.87](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-header%400.0.87) (11/15/2026)
+
+### Bug Fixes
+
+- **monorepo:** Improve time to first content paint for components when server-side rendered ([288209293](https://github.com/storm-software/cyclone-ui/commit/288209293))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.86**
+- Updated **icons** to **v0.0.81**
+- Updated **link** to **v0.5.87**
+- Updated **search-dialog** to **v0.0.66**
+- Updated **state** to **v0.0.83**
+- Updated **theme-toggler** to **v0.0.12**
+
 ## [0.0.86](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-header%400.0.86) (11/14/2026)
 
 ### Updated Dependencies

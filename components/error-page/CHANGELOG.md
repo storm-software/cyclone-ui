@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Error Page
 
+## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/error-page%400.0.6) (11/15/2026)
+
+### Updated Dependencies
+
+- Updated **icons** to **v0.0.81**
+- Updated **link** to **v0.5.87**
+
 ## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/error-page%400.0.5) (11/14/2026)
 
 ### Updated Dependencies

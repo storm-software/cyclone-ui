@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Search Dialog
 
+## [0.0.66](https://github.com/storm-software/cyclone-ui/releases/tag/search-dialog%400.0.66) (11/15/2026)
+
+### Bug Fixes
+
+- **monorepo:** Improve time to first content paint for components when server-side rendered ([288209293](https://github.com/storm-software/cyclone-ui/commit/288209293))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.86**
+- Updated **dialog** to **v0.3.87**
+- Updated **icons** to **v0.0.81**
+- Updated **input** to **v0.6.88**
+- Updated **kbd** to **v0.0.33**
+- Updated **toggle-group** to **v0.0.75**
+
 ## [0.0.65](https://github.com/storm-software/cyclone-ui/releases/tag/search-dialog%400.0.65) (11/14/2026)
 
 ### Updated Dependencies
