@@ -71,7 +71,7 @@ const SelectValueFrame = styled(Text, {
   context: SelectContext,
   transition: "200ms",
   cursor: "pointer",
-  color: "primary hover:primary-hovered",
+  color: "emphasis",
   display: "block",
   minWidth: 0,
   overflow: "hidden",

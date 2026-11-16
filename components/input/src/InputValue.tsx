@@ -322,7 +322,6 @@ export const InputValue = createStyledHOC(
             ...finalProps.style,
             ...(render === "textarea"
               ? {
-                  color: "var(--color)",
                   flex: 1,
                   minWidth: 0,
                   margin: 0,

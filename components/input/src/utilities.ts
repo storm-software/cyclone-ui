@@ -86,7 +86,7 @@ export const baseInputStyle: BaseInputStyle = [
     cursor: "pointer",
     height: "100%",
     flex: 1,
-    color: "primary hover:primary-hovered",
+    color: "emphasis",
     placeholderTextColor: "primary-disabled",
     selectionColor: "color6",
     fontFamily: "body",

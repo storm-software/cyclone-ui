@@ -72,7 +72,7 @@ const TextAreaFrame = styled(InputValue, {
   minHeight: "20xl",
   paddingVertical: "xl",
   backgroundColor: "surface",
-  color: "primary",
+  color: "emphasis",
   borderWidth: 1,
   borderColor: "hairline hover:hairline-hovered focus-visible:primary-active",
   borderRadius: "control",
