@@ -78,7 +78,11 @@ export const Base: Story = {
 
     await userEvent.click(document.getByRole("button", { name: "Copy page" }));
     await expect(args.onPress).toHaveBeenCalled();
-    await document.findByRole("button", { name: "Copied" }, { timeout: 5000 });
+    await document.findByRole(
+      "button",
+      { name: "Copied text" },
+      { timeout: 5000 }
+    );
     await expect(copied[0]).toContain("Cyclone UI");
 
     await userEvent.click(

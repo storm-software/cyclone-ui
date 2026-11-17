@@ -1,0 +1,54 @@
+{
+  "name": "@cyclone-ui/copy-button",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A reusable clipboard button with a temporary check icon, a success tooltip on non-touch screens and a success toast on touch screens.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/copy-button"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/toast": "workspace:*",
+    "@cyclone-ui/tooltip": "workspace:*",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": ["*.css"],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./clipboard": {
+      "import": "./dist/clipboard.mjs",
+      "require": "./dist/clipboard.cjs"
+    },
+    "./CopyButton": {
+      "import": "./dist/CopyButton.mjs",
+      "require": "./dist/CopyButton.cjs"
+    },
+    "./*": "./*"
+  }
+}

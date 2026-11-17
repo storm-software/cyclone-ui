@@ -4294,6 +4294,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/copy-button",
+      jsx: ["CopyButton"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/copy-page-dropdown-button",
       jsx: ["CopyPageDropdownButton"],
       roles: []

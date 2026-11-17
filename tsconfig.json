@@ -416,6 +416,9 @@
     },
     {
       "path": "./components/theme-toggler"
+    },
+    {
+      "path": "./components/copy-button"
     }
   ],
   "files": []

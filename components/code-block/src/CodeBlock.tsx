@@ -18,9 +18,9 @@
 
 "use client";
 
-import { Button } from "@cyclone-ui/button";
-import { ClipboardText, ThemeableIcon } from "@cyclone-ui/icons";
-import { Check } from "@cyclone-ui/icons/vectors";
+import type { CopyButtonProps } from "@cyclone-ui/copy-button";
+import { CopyButton } from "@cyclone-ui/copy-button";
+import { ThemeableIcon } from "@cyclone-ui/icons";
 import { ScrollView } from "@cyclone-ui/scroll-view";
 import type { TamaguiElement } from "@tamagui/core";
 import {
@@ -44,10 +44,7 @@ import {
   cloneElement,
   forwardRef,
   isValidElement,
-  useCallback,
-  useEffect,
-  useRef,
-  useState
+  useRef
 } from "react";
 
 const CODE_BLOCK_STYLES = `
@@ -201,11 +198,10 @@ export const Pre = createStyledHOC(CodeBlockPre, (props, forwardedRef) => (
 ));
 
 export interface CodeBlockCopyButtonProps extends Omit<
-  ComponentProps<typeof Button>,
-  "children" | "onPress"
+  CopyButtonProps,
+  "value" | "children" | "onPress"
 > {
   containerRef: RefObject<HTMLElement | null>;
-  copiedDuration?: number;
 }
 
 const getCopyText = (container: HTMLElement | null) => {
@@ -222,92 +218,12 @@ const getCopyText = (container: HTMLElement | null) => {
   return clone.textContent ?? "";
 };
 
-const writeClipboard = async (text: string) => {
-  if (typeof navigator !== "undefined" && navigator.clipboard) {
-    await navigator.clipboard.writeText(text);
-    return;
-  }
-
-  if (typeof document === "undefined") {
-    throw new TypeError(
-      "Clipboard access is not available in this environment."
-    );
-  }
-
-  const textarea = document.createElement("textarea");
-  textarea.value = text;
-  textarea.style.position = "fixed";
-  textarea.style.opacity = "0";
-  document.body.append(textarea);
-  textarea.select();
-
-  const copied = document.execCommand("copy");
-  textarea.remove();
-  if (!copied) {
-    throw new Error("The browser rejected the clipboard operation.");
-  }
-};
-
 export const CodeBlockCopyButton = ({
   containerRef,
-  copiedDuration = 2000,
-  theme,
   ...props
-}: CodeBlockCopyButtonProps) => {
-  const [copied, setCopied] = useState(false);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(
-    () => () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    },
-    []
-  );
-
-  const handleCopy = useCallback(async () => {
-    const text = getCopyText(containerRef.current);
-    if (text === null) {
-      return;
-    }
-
-    try {
-      await writeClipboard(text);
-      setCopied(true);
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-      timeoutRef.current = setTimeout(() => setCopied(false), copiedDuration);
-    } catch {
-      setCopied(false);
-    }
-  }, [containerRef, copiedDuration]);
-
-  const onPress = useCallback(() => {
-    void handleCopy();
-  }, [handleCopy]);
-
-  return (
-    <Button
-      {...props}
-      theme={theme}
-      aria-label={copied ? "Copied text" : "Copy text"}
-      tooltip={copied ? "Copied to clipboard" : "Copy to clipboard"}
-      data-checked={copied || undefined}
-      variant="ghost"
-      ghostOpacity={0.5}
-      size="8xl"
-      color={copied ? "primary" : "ink"}
-      circular={true}
-      flexGrow={0}
-      onPress={onPress}>
-      <Button.Icon size="8xl">
-        {copied ? <Check strokeWidth={3} /> : <ClipboardText />}
-      </Button.Icon>
-    </Button>
-  );
-};
+}: CodeBlockCopyButtonProps) => (
+  <CopyButton {...props} value={() => getCopyText(containerRef.current)} />
+);
 
 const DefaultActions = ({ children, className }: CodeBlockActionsProps) =>
   children ? (

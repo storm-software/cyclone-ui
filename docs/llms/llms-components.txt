@@ -666,6 +666,7 @@ A figure that displays Shiki-highlighted code, with an optional title and icon, 
 ### Dependencies
 
 - `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/copy-button`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/scroll-view`: `workspace:*`
 - `@tamagui/core`: `catalog:`
@@ -910,6 +911,36 @@ A ContextMenu that shows a list of actions in a popover on large screens and a b
 | `../../components/context-menu/src/ContextMenu.tsx` | `component` |  |
 | `../../components/context-menu/src/utilities.ts` | `file` |  |
 
+## @cyclone-ui/copy-button
+
+A reusable clipboard button with a temporary check icon, a success tooltip on non-touch screens and a success toast on touch screens.
+
+- **Name:** `@cyclone-ui/copy-button`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/toast`: `workspace:*`
+- `@cyclone-ui/tooltip`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/copy-button/src/clipboard.ts` | `file` |  |
+| `../../components/copy-button/src/CopyButton.tsx` | `component` |  |
+
 ## @cyclone-ui/copy-page-dropdown-button
 
 A docs "Copy page" DropdownButton: the main button copies the page's Markdown source (fetched from `markdownUrl`) to the clipboard, and its menu opens that Markdown or asks Claude, ChatGPT, T3 Chat or Cursor about the page. It takes all DropdownButton props except `items`, `value` and `onValueChange`.
@@ -922,6 +953,7 @@ A docs "Copy page" DropdownButton: the main button copies the page's Markdown so
 
 - `@cyclone-ui/button`: `workspace:*`
 - `@cyclone-ui/context-menu`: `workspace:*`
+- `@cyclone-ui/copy-button`: `workspace:*`
 - `@cyclone-ui/dropdown-button`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@tamagui/core`: `catalog:`
@@ -990,6 +1022,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 - `@cyclone-ui/button`: `workspace:*`
 - `@cyclone-ui/checkbox`: `workspace:*`
 - `@cyclone-ui/context-menu`: `workspace:*`
+- `@cyclone-ui/copy-button`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
 - `@cyclone-ui/form`: `workspace:*`
 - `@cyclone-ui/heading-text`: `workspace:*`

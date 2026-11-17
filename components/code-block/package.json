@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/copy-button": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/scroll-view": "workspace:*",
     "@tamagui/core": "catalog:",

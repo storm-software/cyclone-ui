@@ -20,17 +20,17 @@
 
 import { Button } from "@cyclone-ui/button";
 import { ContextMenu } from "@cyclone-ui/context-menu";
+import { CopyButton } from "@cyclone-ui/copy-button";
 import type { DropdownButtonProps } from "@cyclone-ui/dropdown-button";
 import { DropdownButton } from "@cyclone-ui/dropdown-button";
 import { Clipboard, ClipboardCheck } from "@cyclone-ui/icons";
 import { View } from "@tamagui/core";
 import type { JSX, ReactNode } from "react";
-import { useEffect, useState } from "react";
 import { Path, Svg } from "react-native-svg";
 
 export type CopyPageDropdownButtonProps = Omit<
   DropdownButtonProps,
-  "items" | "value" | "onValueChange" | "children"
+  "items" | "value" | "onValueChange" | "children" | "renderButton"
 > & {
   /**
    * The URL of the page's Markdown source: the main button copies it, "View
@@ -113,49 +113,33 @@ export const CopyPageDropdownButton = ({
   onPress,
   ...props
 }: CopyPageDropdownButtonProps): JSX.Element => {
-  const [copied, setCopied] = useState(false);
-
-  useEffect(() => {
-    if (!copied) {
-      return;
-    }
-
-    const timeout = setTimeout(() => setCopied(false), 2000);
-
-    return () => clearTimeout(timeout);
-  }, [copied]);
-
   return (
     <DropdownButton
       {...props}
       menuLabel={menuLabel}
-      onPress={event => {
-        onPress?.(event);
-        const text = fetch(markdownUrl).then(async response => {
-          if (!response.ok) {
-            throw new Error(`${response.status} ${markdownUrl}`);
-          }
-
-          return response.text();
-        });
-
-        // A promised item keeps Safari's user activation through the fetch;
-        // `ClipboardItem` is missing in older Firefox.
-        (typeof ClipboardItem === "undefined"
-          ? text.then(async value => navigator.clipboard.writeText(value))
-          : navigator.clipboard.write([
-              new ClipboardItem({
-                "text/plain": text.then(
-                  value => new Blob([value], { type: "text/plain" })
-                )
-              })
-            ])
-        ).then(
-          () => setCopied(true),
-          // Like CodeBlock's copy button: a failed copy keeps "Copy page".
-          () => setCopied(false)
-        );
-      }}
+      renderButton={buttonProps => (
+        <CopyButton
+          {...buttonProps}
+          circular={false}
+          aria-label="Copy page"
+          onPress={onPress}
+          value={() =>
+            fetch(markdownUrl).then(async response => {
+              if (!response.ok)
+                throw new Error(`${response.status} ${markdownUrl}`);
+              return response.text();
+            })
+          }>
+          {copied => (
+            <>
+              <Button.Icon>
+                {copied ? <ClipboardCheck /> : <Clipboard />}
+              </Button.Icon>
+              <Button.Text>{copied ? "Copied" : "Copy page"}</Button.Text>
+            </>
+          )}
+        </CopyButton>
+      )}
       onValueChange={value => {
         const target = TARGETS.find(item => item.value === value);
         if (target) {
@@ -194,9 +178,7 @@ export const CopyPageDropdownButton = ({
             </ContextMenu.Item.Text>
           </View>
         </ContextMenu.Item>
-      ))}>
-      <Button.Icon>{copied ? <ClipboardCheck /> : <Clipboard />}</Button.Icon>
-      <Button.Text>{copied ? "Copied" : "Copy page"}</Button.Text>
-    </DropdownButton>
+      ))}
+    />
   );
 };

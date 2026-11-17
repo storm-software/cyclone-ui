@@ -28,6 +28,9 @@
     },
     {
       "path": "../icons"
+    },
+    {
+      "path": "../copy-button"
     }
   ],
   "files": [],

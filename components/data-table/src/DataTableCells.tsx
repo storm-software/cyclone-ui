@@ -22,12 +22,12 @@ import type { AvatarProps } from "@cyclone-ui/avatar";
 import { Avatar } from "@cyclone-ui/avatar";
 import type { ButtonProps } from "@cyclone-ui/button";
 import { Button } from "@cyclone-ui/button";
-import { ClipboardText, Confirm, Watch } from "@cyclone-ui/icons";
+import { CopyButton } from "@cyclone-ui/copy-button";
+import { Watch } from "@cyclone-ui/icons";
 import { TableCellText, TableEmptyCell } from "@cyclone-ui/table";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { ColumnDef, Row, RowData } from "@tanstack/react-table";
 import type { ReactNode } from "react";
-import { useEffect, useState } from "react";
 
 export interface DataTableAvatarCellProps extends AvatarProps {
   /**
@@ -77,8 +77,6 @@ export interface DataTableCopyCellProps {
   children?: ReactNode;
 }
 
-const COPIED_DURATION = 2000;
-
 /**
  * A value with a button that copies it, such as an ID or an email address.
  */
@@ -86,18 +84,6 @@ export const DataTableCopyCell = ({
   value,
   children
 }: DataTableCopyCellProps) => {
-  const [copied, setCopied] = useState(false);
-
-  useEffect(() => {
-    if (!copied) {
-      return;
-    }
-
-    const timeout = setTimeout(() => setCopied(false), COPIED_DURATION);
-
-    return () => clearTimeout(timeout);
-  }, [copied]);
-
   if (value == null || value === "") {
     return <TableEmptyCell />;
   }
@@ -105,36 +91,16 @@ export const DataTableCopyCell = ({
   return (
     <XStack alignItems="center" gap="md">
       <TableCellText>{children ?? value}</TableCellText>
-      <Button
+      <CopyButton
+        value={String(value)}
         theme="base"
-        variant="ghost"
         ghostOpacity={0.4}
-        circular={true}
         tight={true}
-        flexGrow={0}
         size="6xl"
         padding="lg"
-        color={copied ? "primary" : "subtle"}
-        aria-label={copied ? "Copied" : `Copy ${value}`}
-        tooltip={copied ? "Copied" : "Copy"}
-        onPress={() => {
-          // ponytail: the web clipboard only; native would need a clipboard module.
-          // Story tsconfigs have no DOM lib.
-          (globalThis as any).navigator?.clipboard
-            ?.writeText(String(value))
-            .then(
-              () => setCopied(true),
-              () => {}
-            );
-        }}>
-        <Button.Icon>
-          {copied ? (
-            <Confirm size="2xl" animated={false} />
-          ) : (
-            <ClipboardText size="2xl" animated={false} />
-          )}
-        </Button.Icon>
-      </Button>
+        color="subtle"
+        aria-label={`Copy ${value}`}
+      />
     </XStack>
   );
 };

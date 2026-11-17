@@ -636,6 +636,7 @@
       ],
       "registryDependencies": [
         "@cyclone-ui/button",
+        "@cyclone-ui/copy-button",
         "@cyclone-ui/icons",
         "@cyclone-ui/scroll-view"
       ],
@@ -838,6 +839,37 @@
       ]
     },
     {
+      "name": "@cyclone-ui/copy-button",
+      "type": "registry:component",
+      "title": "@cyclone-ui/copy-button",
+      "description": "A reusable clipboard button with a temporary check icon, a success tooltip on non-touch screens and a success toast on touch screens.",
+      "dependencies": ["@tamagui/core@3.3.2"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/button",
+        "@cyclone-ui/icons",
+        "@cyclone-ui/toast",
+        "@cyclone-ui/tooltip"
+      ],
+      "files": [
+        {
+          "path": "components/copy-button/src/clipboard.ts",
+          "type": "registry:file",
+          "target": "components/copy-button/src/clipboard.ts"
+        },
+        {
+          "path": "components/copy-button/src/CopyButton.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/copy-page-dropdown-button",
       "type": "registry:component",
       "title": "@cyclone-ui/copy-page-dropdown-button",
@@ -853,6 +885,7 @@
       "registryDependencies": [
         "@cyclone-ui/button",
         "@cyclone-ui/context-menu",
+        "@cyclone-ui/copy-button",
         "@cyclone-ui/dropdown-button",
         "@cyclone-ui/icons"
       ],
@@ -925,6 +958,7 @@
         "@cyclone-ui/button",
         "@cyclone-ui/checkbox",
         "@cyclone-ui/context-menu",
+        "@cyclone-ui/copy-button",
         "@cyclone-ui/field",
         "@cyclone-ui/form",
         "@cyclone-ui/heading-text",

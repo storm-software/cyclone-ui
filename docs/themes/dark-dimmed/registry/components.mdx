@@ -5,7 +5,7 @@ description: "Components available in the Cyclone UI (Dark Dimmed)."
 
 # Components
 
-120 `component` items in the component registry.
+121 `component` items in the component registry.
 
 ## @cyclone-ui/accordion
 
@@ -903,6 +903,7 @@ A figure that displays Shiki-highlighted code, with an optional title and icon, 
 ### Dependencies
 
 - `@cyclone-ui/button@0.6.89`
+- `@cyclone-ui/copy-button@0.0.1`
 - `@cyclone-ui/icons@0.0.84`
 - `@cyclone-ui/scroll-view@0.5.89`
 - `@tamagui/core@3.3.2`
@@ -942,10 +943,9 @@ A figure that displays Shiki-highlighted code, with an optional title and icon, 
 
 #### `CodeBlockCopyButtonProps`
 
-| Prop             | Type                             | Default | Required | Description |
-| ---------------- | -------------------------------- | ------- | -------- | ----------- |
-| `containerRef`   | `RefObject<HTMLElement \| null>` | —       | Yes      | —           |
-| `copiedDuration` | `number`                         | —       | No       | —           |
+| Prop           | Type                             | Default | Required | Description |
+| -------------- | -------------------------------- | ------- | -------- | ----------- |
+| `containerRef` | `RefObject<HTMLElement \| null>` | —       | Yes      | —           |
 
 ## @cyclone-ui/collapsible
 
@@ -1275,6 +1275,37 @@ A ContextMenu that shows a list of actions in a popover on large screens and a b
 | `theme`       | `ThemeName \| null` | —       | No       | Colors the item's text and icons with this theme's `primary` tokens (`primary-inactive`, `primary`, `primary-active`, ...), for example `danger` on a destructive action. |
 | `items`       | `ReactNode`         | —       | No       | Child items, shown in a submenu that opens beside this item (on hover, press or `ArrowRight`). The item shows a right chevron.                                            |
 
+## @cyclone-ui/copy-button
+
+A reusable clipboard button with a temporary check icon, a success tooltip on non-touch screens and a success toast on touch screens.
+
+- **Name:** `@cyclone-ui/copy-button`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/body-text@0.5.82`
+- `@cyclone-ui/button@0.6.89`
+- `@cyclone-ui/icons@0.0.84`
+- `@cyclone-ui/toast@0.0.1`
+- `@cyclone-ui/tooltip@0.5.89`
+- `@tamagui/core@3.3.2`
+
+### Files
+
+| Path                                        | Type        | Target |
+| ------------------------------------------- | ----------- | ------ |
+| `components/copy-button/src/clipboard.ts`   | `file`      | —      |
+| `components/copy-button/src/CopyButton.tsx` | `component` | —      |
+
+### Props
+
+| Prop             | Type                                                  | Default | Required | Description                                                                  |
+| ---------------- | ----------------------------------------------------- | ------- | -------- | ---------------------------------------------------------------------------- |
+| `value`          | `string \| (() => string \| null \| Promise<string>)` | —       | Yes      | Text to copy, or a supplier evaluated on press. Return null to skip copying. |
+| `copiedDuration` | `number`                                              | —       | No       | How long to show the check icon and success tooltip. @defaultValue 2000      |
+| `children`       | `ReactNode \| ((copied: boolean) => ReactNode)`       | —       | No       | Optional label/content, with access to the successful copy state.            |
+
 ## @cyclone-ui/copy-page-dropdown-button
 
 A docs "Copy page" DropdownButton: the main button copies the page's Markdown source (fetched from `markdownUrl`) to the clipboard, and its menu opens that Markdown or asks Claude, ChatGPT, T3 Chat or Cursor about the page. It takes all DropdownButton props except `items`, `value` and `onValueChange`.
@@ -1286,6 +1317,7 @@ A docs "Copy page" DropdownButton: the main button copies the page's Markdown so
 
 - `@cyclone-ui/button@0.6.89`
 - `@cyclone-ui/context-menu@0.0.81`
+- `@cyclone-ui/copy-button@0.0.1`
 - `@cyclone-ui/dropdown-button@0.0.32`
 - `@cyclone-ui/icons@0.0.84`
 - `@tamagui/core@3.3.2`
@@ -1358,6 +1390,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 - `@cyclone-ui/button@0.6.89`
 - `@cyclone-ui/checkbox@0.5.91`
 - `@cyclone-ui/context-menu@0.0.81`
+- `@cyclone-ui/copy-button@0.0.1`
 - `@cyclone-ui/field@0.5.91`
 - `@cyclone-ui/form@0.9.85`
 - `@cyclone-ui/heading-text@0.5.83`
@@ -1658,13 +1691,14 @@ A split Button: a main action joined to a chevron Button that opens a ContextMen
 
 ### Props
 
-| Prop            | Type                      | Default          | Required | Description                                                                                                    |
-| --------------- | ------------------------- | ---------------- | -------- | -------------------------------------------------------------------------------------------------------------- |
-| `ref`           | `Ref<TamaguiElement>`     | —                | No       | The main action's button                                                                                       |
-| `items`         | `ReactNode`               | —                | Yes      | The menu's `ContextMenu.Item`s, opened by the chevron                                                          |
-| `menuLabel`     | `string`                  | `"More options"` | No       | The accessible label and tooltip of the chevron that opens the menu                                            |
-| `value`         | `string`                  | —                | No       | The `value` of the menu's selected item, which displays a check mark                                           |
-| `onValueChange` | `(value: string) => void` | —                | No       | Called with an item's `value` when that item is pressed. Pressing an item with a `value` also closes the menu. |
+| Prop            | Type                                                                  | Default          | Required | Description                                                                                                    |
+| --------------- | --------------------------------------------------------------------- | ---------------- | -------- | -------------------------------------------------------------------------------------------------------------- |
+| `ref`           | `Ref<TamaguiElement>`                                                 | —                | No       | The main action's button                                                                                       |
+| `items`         | `ReactNode`                                                           | —                | Yes      | The menu's `ContextMenu.Item`s, opened by the chevron                                                          |
+| `menuLabel`     | `string`                                                              | `"More options"` | No       | The accessible label and tooltip of the chevron that opens the menu                                            |
+| `value`         | `string`                                                              | —                | No       | The `value` of the menu's selected item, which displays a check mark                                           |
+| `onValueChange` | `(value: string) => void`                                             | —                | No       | Called with an item's `value` when that item is pressed. Pressing an item with a `value` also closes the menu. |
+| `renderButton`  | `( props: ButtonProps & { ref?: Ref<TamaguiElement> } ) => ReactNode` | —                | No       | Render the main action using a specialized Button, preserving the joined surface.                              |
 
 ## @cyclone-ui/error-page
 

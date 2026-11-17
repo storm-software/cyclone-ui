@@ -55,7 +55,16 @@ export type DropdownButtonProps = ButtonProps & {
    * with a `value` also closes the menu.
    */
   onValueChange?: (value: string) => void;
+
+  /** Render the main action using a specialized Button, preserving the joined surface. */
+  renderButton?: (
+    props: ButtonProps & { ref?: Ref<TamaguiElement> }
+  ) => ReactNode;
 };
+
+const renderDefaultButton: NonNullable<
+  DropdownButtonProps["renderButton"]
+> = props => <Button {...props} />;
 
 /**
  * A split button: the main action (the children) joined to a chevron that
@@ -79,6 +88,7 @@ export const DropdownButton = ({
   ringed,
   rounded,
   borderRadius = rounded ? 100_000 : "button",
+  renderButton = renderDefaultButton,
   ...props
 }: DropdownButtonProps): JSX.Element => {
   const [open, setOpen] = useState(false);
@@ -101,18 +111,15 @@ export const DropdownButton = ({
   return (
     // `fit-content`: a Button grows along its parent's main axis.
     <View flexDirection="row" width="fit-content">
-      <Button
-        ref={ref}
-        {...shared}
-        {...props}
-        // Corner props need a call-site `borderRadius`: Button's resolved one
-        // replaces them.
-        borderRadius={borderRadius}
-        borderTopRightRadius={0}
-        borderBottomRightRadius={0}
-        // Raised while focused so the chevron doesn't cover its ring.
-        zIndex="0 focus-visible:1"
-      />
+      {renderButton({
+        ref,
+        ...shared,
+        ...props,
+        borderRadius,
+        borderTopRightRadius: 0,
+        borderBottomRightRadius: 0,
+        zIndex: "0 focus-visible:1"
+      })}
       <ContextMenu
         open={open}
         onOpenChange={setOpen}

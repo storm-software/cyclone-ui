@@ -350,13 +350,13 @@ export const CopyCell: Story = {
       );
       await expect(writeText).toHaveBeenCalledWith("cus_44a0f3");
       await expect(
-        await canvas.findByRole("button", { name: "Copied" })
+        await canvas.findByRole("button", { name: "Copied text" })
       ).toBeVisible();
 
       await waitFor(
         async () =>
           expect(
-            canvas.queryByRole("button", { name: "Copied" })
+            canvas.queryByRole("button", { name: "Copied text" })
           ).not.toBeInTheDocument(),
         { timeout: 3000 }
       );
