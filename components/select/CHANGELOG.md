@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Select
 
+## [0.6.92](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.92) (11/16/2026)
+
+### Bug Fixes
+
+- **field:** Resolve issue with color of field values in validation states ([51a072b84](https://github.com/storm-software/cyclone-ui/commit/51a072b84))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.81**
+- Updated **context-menu** to **v0.0.80**
+- Updated **field** to **v0.5.90**
+- Updated **form** to **v0.9.84**
+- Updated **helpers** to **v0.3.83**
+- Updated **icons** to **v0.0.83**
+- Updated **input** to **v0.6.90**
+- Updated **search-input** to **v0.1.92**
+- Updated **tooltip** to **v0.5.88**
+
 ## [0.6.91](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.91) (11/15/2026)
 
 ### Bug Fixes

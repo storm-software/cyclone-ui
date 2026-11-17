@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Footer
 
+## [0.0.88](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.88) (11/16/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.81**
+- Updated **eyebrow-text** to **v0.5.81**
+- Updated **heading-text** to **v0.5.82**
+- Updated **icons** to **v0.0.83**
+- Updated **link** to **v0.5.89**
+
 ## [0.0.87](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.87) (11/15/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Text Area
 
+## [0.1.91](https://github.com/storm-software/cyclone-ui/releases/tag/text-area%400.1.91) (11/16/2026)
+
+### Bug Fixes
+
+- **field:** Resolve issue with color of field values in validation states ([51a072b84](https://github.com/storm-software/cyclone-ui/commit/51a072b84))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.90**
+- Updated **form** to **v0.9.84**
+- Updated **helpers** to **v0.3.83**
+- Updated **input** to **v0.6.90**
+- Updated **scroll-view** to **v0.5.88**
+
 ## [0.1.90](https://github.com/storm-software/cyclone-ui/releases/tag/text-area%400.1.90) (11/15/2026)
 
 ### Updated Dependencies

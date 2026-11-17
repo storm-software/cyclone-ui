@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Time Picker
 
+## [0.0.77](https://github.com/storm-software/cyclone-ui/releases/tag/time-picker%400.0.77) (11/16/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.81**
+- Updated **button** to **v0.6.88**
+- Updated **field** to **v0.5.90**
+- Updated **form** to **v0.9.84**
+- Updated **helpers** to **v0.3.83**
+- Updated **icons** to **v0.0.83**
+- Updated **input** to **v0.6.90**
+- Updated **popover** to **v0.5.90**
+
 ## [0.0.76](https://github.com/storm-software/cyclone-ui/releases/tag/time-picker%400.0.76) (11/15/2026)
 
 ### Updated Dependencies
