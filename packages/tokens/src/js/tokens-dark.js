@@ -14484,18 +14484,18 @@ module.exports = {
     lg: {
       key: "{border-radius.lg}",
       $type: "dimension",
-      $value: "0.5rem",
-      $description: "Large radius (0.5rem)",
+      $value: "0.5625rem",
+      $description: "Large radius (0.5625rem)",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/primitives/tokens.json",
       isSource: true,
       original: {
         $type: "dimension",
         $value: {
-          value: 0.5,
+          value: 0.5625,
           unit: "rem"
         },
-        $description: "Large radius (0.5rem)",
+        $description: "Large radius (0.5625rem)",
         key: "{border-radius.lg}"
       },
       name: "BorderRadiusLg",
@@ -14508,18 +14508,20 @@ module.exports = {
     xl: {
       key: "{border-radius.xl}",
       $type: "dimension",
-      $value: "0.75rem",
-      $description: "Extra large radius (0.75rem)",
+      $value: "0.71875rem",
+      $description:
+        "Extra large radius (0.71875rem); `lg` + 2.5px so `tab` nests concentrically in `tabs`",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/primitives/tokens.json",
       isSource: true,
       original: {
         $type: "dimension",
         $value: {
-          value: 0.75,
+          value: 0.71875,
           unit: "rem"
         },
-        $description: "Extra large radius (0.75rem)",
+        $description:
+          "Extra large radius (0.71875rem); `lg` + 2.5px so `tab` nests concentrically in `tabs`",
         key: "{border-radius.xl}"
       },
       name: "BorderRadiusXl",
@@ -14628,7 +14630,7 @@ module.exports = {
     container: {
       key: "{border-radius.container}",
       $description:
-        "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
+        "Corner radius for large framed regions that group other content (8px, `border-radius.xl`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       $type: "dimension",
       $value: "1rem",
       filePath:
@@ -14636,7 +14638,7 @@ module.exports = {
       isSource: true,
       original: {
         $description:
-          "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
+          "Corner radius for large framed regions that group other content (8px, `border-radius.xl`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
         $type: "dimension",
         $value: "{border-radius.2xl}",
         key: "{border-radius.container}"
@@ -14676,7 +14678,7 @@ module.exports = {
       $description:
         "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
       $type: "dimension",
-      $value: "0.5rem",
+      $value: "0.71875rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -14684,7 +14686,7 @@ module.exports = {
         $description:
           "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
         $type: "dimension",
-        $value: "{border-radius.lg}",
+        $value: "{border-radius.xl}",
         key: "{border-radius.card}"
       },
       name: "BorderRadiusCard",
@@ -14699,7 +14701,7 @@ module.exports = {
       $description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
       $type: "dimension",
-      $value: "0.375rem",
+      $value: "0.5625rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -14707,7 +14709,7 @@ module.exports = {
         $description:
           "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
         $type: "dimension",
-        $value: "{border-radius.md}",
+        $value: "{border-radius.lg}",
         key: "{border-radius.button}"
       },
       name: "BorderRadiusButton",
@@ -14791,7 +14793,7 @@ module.exports = {
       $description:
         "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
       $type: "dimension",
-      $value: "0.375rem",
+      $value: "0.5625rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -14799,7 +14801,7 @@ module.exports = {
         $description:
           "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
         $type: "dimension",
-        $value: "{border-radius.md}",
+        $value: "{border-radius.lg}",
         key: "{border-radius.tab}"
       },
       name: "BorderRadiusTab",
@@ -14814,7 +14816,7 @@ module.exports = {
       $description:
         "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
       $type: "dimension",
-      $value: "0.5rem",
+      $value: "0.71875rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -14822,7 +14824,7 @@ module.exports = {
         $description:
           "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
         $type: "dimension",
-        $value: "{border-radius.lg}",
+        $value: "{border-radius.xl}",
         key: "{border-radius.tabs}"
       },
       name: "BorderRadiusTabs",
@@ -14837,7 +14839,7 @@ module.exports = {
       $description:
         "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
       $type: "dimension",
-      $value: "0.5rem",
+      $value: "0.5625rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -14883,7 +14885,7 @@ module.exports = {
       $description:
         "Corner radius for drawers (32px, `border-radius.4xl`). The large rounding marks a panel that slides over the page from an edge. Used as the default `borderRadius` of Drawer.",
       $type: "dimension",
-      $value: "0.5rem",
+      $value: "0.5625rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,

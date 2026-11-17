@@ -35,6 +35,8 @@ export interface InstallOptions {
   overwrite?: boolean;
   dryRun?: boolean;
   rsc?: boolean;
+  /** Plan a fresh installation without reading files that will be discarded. */
+  readExisting?: boolean;
 }
 
 export interface FileChange {
@@ -132,9 +134,10 @@ export async function createInstallPlan(
         targetRoot,
         componentNames
       );
-      const previousContent = (await pathExists(filePath))
-        ? await readFile(filePath, "utf8")
-        : null;
+      const previousContent =
+        options.readExisting !== false && (await pathExists(filePath))
+          ? await readFile(filePath, "utf8")
+          : null;
       const status =
         previousContent === null
           ? "create"

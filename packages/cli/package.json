@@ -65,7 +65,8 @@
     "@shell-shock/eslint-plugin": "catalog:",
     "@shell-shock/plugin-mcp": "catalog:",
     "@shell-shock/plugin-skills": "catalog:",
-    "@types/node": "catalog:"
+    "@types/node": "catalog:",
+    "eslint-flat-config-utils": "catalog:"
   },
   "publishConfig": {
     "access": "public"
@@ -91,6 +92,7 @@
     "./completions-zsh-script": "./dist/completions-zsh-script.mjs",
     "./diff": "./dist/diff.mjs",
     "./docs": "./dist/docs.mjs",
+    "./gc": "./dist/gc.mjs",
     "./guidelines": "./dist/guidelines.mjs",
     "./help": "./dist/help.mjs",
     "./info": "./dist/info.mjs",

@@ -4651,18 +4651,19 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.lg",
       type: "dimension",
-      value: "0.5rem",
+      value: "0.5625rem",
       cssVar: "--cu-border-radius-lg",
-      description: "Large radius (0.5rem)",
+      description: "Large radius (0.5625rem)",
       theme: undefined,
       typography: false
     },
     {
       path: "border-radius.xl",
       type: "dimension",
-      value: "0.75rem",
+      value: "0.71875rem",
       cssVar: "--cu-border-radius-xl",
-      description: "Extra large radius (0.75rem)",
+      description:
+        "Extra large radius (0.71875rem); `lg` + 2.5px so `tab` nests concentrically in `tabs`",
       theme: undefined,
       typography: false
     },
@@ -4708,7 +4709,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-container",
       description:
-        "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
+        "Corner radius for large framed regions that group other content (8px, `border-radius.xl`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
       typography: false
     },
@@ -4725,7 +4726,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-card",
       description:
         "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
@@ -4735,7 +4736,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
@@ -4775,7 +4776,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tab",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-tab",
       description:
         "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
@@ -4785,7 +4786,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tabs",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-tabs",
       description:
         "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
@@ -10115,18 +10116,19 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.lg",
       type: "dimension",
-      value: "0.5rem",
+      value: "0.5625rem",
       cssVar: "--cu-border-radius-lg",
-      description: "Large radius (0.5rem)",
+      description: "Large radius (0.5625rem)",
       theme: undefined,
       typography: false
     },
     {
       path: "border-radius.xl",
       type: "dimension",
-      value: "0.75rem",
+      value: "0.71875rem",
       cssVar: "--cu-border-radius-xl",
-      description: "Extra large radius (0.75rem)",
+      description:
+        "Extra large radius (0.71875rem); `lg` + 2.5px so `tab` nests concentrically in `tabs`",
       theme: undefined,
       typography: false
     },
@@ -10172,7 +10174,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-container",
       description:
-        "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
+        "Corner radius for large framed regions that group other content (8px, `border-radius.xl`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
       typography: false
     },
@@ -10189,7 +10191,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-card",
       description:
         "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
@@ -10199,7 +10201,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
@@ -10239,7 +10241,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tab",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-tab",
       description:
         "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
@@ -10249,7 +10251,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tabs",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-tabs",
       description:
         "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
@@ -15579,18 +15581,19 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.lg",
       type: "dimension",
-      value: "0.5rem",
+      value: "0.5625rem",
       cssVar: "--cu-border-radius-lg",
-      description: "Large radius (0.5rem)",
+      description: "Large radius (0.5625rem)",
       theme: undefined,
       typography: false
     },
     {
       path: "border-radius.xl",
       type: "dimension",
-      value: "0.75rem",
+      value: "0.71875rem",
       cssVar: "--cu-border-radius-xl",
-      description: "Extra large radius (0.75rem)",
+      description:
+        "Extra large radius (0.71875rem); `lg` + 2.5px so `tab` nests concentrically in `tabs`",
       theme: undefined,
       typography: false
     },
@@ -15636,7 +15639,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-container",
       description:
-        "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
+        "Corner radius for large framed regions that group other content (8px, `border-radius.xl`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
       typography: false
     },
@@ -15653,7 +15656,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-card",
       description:
         "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
@@ -15663,7 +15666,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
@@ -15703,7 +15706,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tab",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-tab",
       description:
         "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
@@ -15713,7 +15716,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tabs",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-tabs",
       description:
         "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
@@ -21044,18 +21047,19 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.lg",
       type: "dimension",
-      value: "0.5rem",
+      value: "0.5625rem",
       cssVar: "--cu-border-radius-lg",
-      description: "Large radius (0.5rem)",
+      description: "Large radius (0.5625rem)",
       theme: undefined,
       typography: false
     },
     {
       path: "border-radius.xl",
       type: "dimension",
-      value: "0.75rem",
+      value: "0.71875rem",
       cssVar: "--cu-border-radius-xl",
-      description: "Extra large radius (0.75rem)",
+      description:
+        "Extra large radius (0.71875rem); `lg` + 2.5px so `tab` nests concentrically in `tabs`",
       theme: undefined,
       typography: false
     },
@@ -21101,7 +21105,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-container",
       description:
-        "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
+        "Corner radius for large framed regions that group other content (8px, `border-radius.xl`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
       typography: false
     },
@@ -21118,7 +21122,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-card",
       description:
         "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
@@ -21128,7 +21132,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
@@ -21168,7 +21172,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tab",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-tab",
       description:
         "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
@@ -21178,7 +21182,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tabs",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-tabs",
       description:
         "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
@@ -26509,18 +26513,19 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.lg",
       type: "dimension",
-      value: "0.5rem",
+      value: "0.5625rem",
       cssVar: "--cu-border-radius-lg",
-      description: "Large radius (0.5rem)",
+      description: "Large radius (0.5625rem)",
       theme: undefined,
       typography: false
     },
     {
       path: "border-radius.xl",
       type: "dimension",
-      value: "0.75rem",
+      value: "0.71875rem",
       cssVar: "--cu-border-radius-xl",
-      description: "Extra large radius (0.75rem)",
+      description:
+        "Extra large radius (0.71875rem); `lg` + 2.5px so `tab` nests concentrically in `tabs`",
       theme: undefined,
       typography: false
     },
@@ -26566,7 +26571,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-container",
       description:
-        "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
+        "Corner radius for large framed regions that group other content (8px, `border-radius.xl`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
       typography: false
     },
@@ -26583,7 +26588,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-card",
       description:
         "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
@@ -26593,7 +26598,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
@@ -26633,7 +26638,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tab",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-tab",
       description:
         "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
@@ -26643,7 +26648,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tabs",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-tabs",
       description:
         "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
@@ -31974,18 +31979,19 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.lg",
       type: "dimension",
-      value: "0.5rem",
+      value: "0.5625rem",
       cssVar: "--cu-border-radius-lg",
-      description: "Large radius (0.5rem)",
+      description: "Large radius (0.5625rem)",
       theme: undefined,
       typography: false
     },
     {
       path: "border-radius.xl",
       type: "dimension",
-      value: "0.75rem",
+      value: "0.71875rem",
       cssVar: "--cu-border-radius-xl",
-      description: "Extra large radius (0.75rem)",
+      description:
+        "Extra large radius (0.71875rem); `lg` + 2.5px so `tab` nests concentrically in `tabs`",
       theme: undefined,
       typography: false
     },
@@ -32031,7 +32037,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-container",
       description:
-        "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
+        "Corner radius for large framed regions that group other content (8px, `border-radius.xl`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
       typography: false
     },
@@ -32048,7 +32054,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-card",
       description:
         "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
@@ -32058,7 +32064,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
@@ -32098,7 +32104,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tab",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-tab",
       description:
         "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
@@ -32108,7 +32114,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tabs",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-tabs",
       description:
         "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",

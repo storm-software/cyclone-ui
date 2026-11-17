@@ -92,7 +92,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-border-radius-button",
       type: "dimension",
       category: "radius",
-      value: "0.375rem",
+      value: "0.5625rem",
       alias: true
     },
     {
@@ -100,7 +100,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-border-radius-card",
       type: "dimension",
       category: "radius",
-      value: "0.5rem",
+      value: "0.71875rem",
       alias: true
     },
     {
@@ -132,7 +132,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-border-radius-dialog",
       type: "dimension",
       category: "radius",
-      value: "0.5rem",
+      value: "0.5625rem",
       alias: true
     },
     {
@@ -140,7 +140,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-border-radius-drawer",
       type: "dimension",
       category: "radius",
-      value: "0.5rem",
+      value: "0.5625rem",
       alias: true
     },
     {
@@ -155,7 +155,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-border-radius-lg",
       type: "dimension",
       category: "radius",
-      value: "0.5rem"
+      value: "0.5625rem"
     },
     {
       path: "border-radius.md",
@@ -192,7 +192,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-border-radius-tab",
       type: "dimension",
       category: "radius",
-      value: "0.375rem",
+      value: "0.5625rem",
       alias: true
     },
     {
@@ -200,7 +200,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-border-radius-tabs",
       type: "dimension",
       category: "radius",
-      value: "0.5rem",
+      value: "0.71875rem",
       alias: true
     },
     {
@@ -232,7 +232,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-border-radius-xl",
       type: "dimension",
       category: "radius",
-      value: "0.75rem"
+      value: "0.71875rem"
     },
     {
       path: "border-radius.xs",

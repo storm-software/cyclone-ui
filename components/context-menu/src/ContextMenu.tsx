@@ -94,14 +94,17 @@ const useItemForeground = (variant: ContainerVariant | undefined) =>
   getContainerForeground(variant, useThemeName());
 
 // The text, chevron and (when themed) icon color of an item in each state.
-// Themed items rest at their theme's `primary`, not `primary-inactive`.
+// Like `RadioGroup`: only once another item is selected do the rest dim to
+// `primary-inactive`. Themed items rest at their theme's `primary`.
 const getItemColor = ({
   selected,
+  inactive,
   disabled,
   highlighted,
   themed
 }: {
   selected: boolean;
+  inactive: boolean;
   disabled: boolean;
   highlighted: boolean;
   themed: boolean;
@@ -110,7 +113,7 @@ const getItemColor = ({
     ? "primary-disabled"
     : selected
       ? "primary-active"
-      : highlighted || themed
+      : highlighted || themed || !inactive
         ? "primary"
         : "primary-inactive group-hover/item:primary group-focus-visible/item:primary";
 
@@ -124,6 +127,7 @@ const ContextMenuContext = createStyledContext<ContextMenuContextValue, "size">(
 // The enclosing item's state, for `ContextMenu.Item.Text`.
 const ContextMenuItemStateContext = createContext({
   selected: false,
+  inactive: false,
   disabled: false,
   highlighted: false,
   themed: false
@@ -497,6 +501,8 @@ const ContextMenuItem = ({
   // A themed item keeps its theme's `primary` colors on every menu surface.
   const foreground = useItemForeground(themed ? undefined : variant);
   const selected = value !== undefined && value === selectedValue;
+  // Another item of the menu is selected.
+  const inactive = !selected && Boolean(selectedValue);
   const hasItems = Boolean(items) && !disabled;
   const { indicatorWidth, indicatorIconSize, confirmIconSize } =
     getContextMenuSize(size);
@@ -507,8 +513,8 @@ const ContextMenuItem = ({
   const inline = Boolean((useMedia() as Record<string, boolean>)["max-sm"]);
 
   const itemState = useMemo(
-    () => ({ selected, disabled, highlighted, themed }),
-    [selected, disabled, highlighted, themed]
+    () => ({ selected, inactive, disabled, highlighted, themed }),
+    [selected, inactive, disabled, highlighted, themed]
   );
 
   const frame = (
