@@ -52,7 +52,7 @@ export const PreviewLink = ({
       <Link
         theme={theme}
         textDecorationStyle="dotted"
-        style={[{ textDecorationThickness: 3 }, style]}
+        style={{ textDecorationThickness: 3, ...(style as object) }}
         {...props}
       />
     </Tooltip.Trigger>

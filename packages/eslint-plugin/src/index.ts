@@ -116,7 +116,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-border-radius-container",
       type: "dimension",
       category: "radius",
-      value: "0.5rem",
+      value: "1rem",
       alias: true
     },
     {

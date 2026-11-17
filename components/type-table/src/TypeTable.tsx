@@ -52,6 +52,8 @@ export interface TypeTableProps extends ViewProps {
 
 const TypeTableFrame = styled(Container, {
   displayName: "TypeTable",
+  // matches the details background so rounded row tops show against it
+  variant: "surface",
   width: "100%",
   overflow: "hidden"
 });
@@ -72,7 +74,11 @@ const PropertyColumn = styled(InlineCodeText, {
   paddingVertical: 0,
   paddingLeft: 0,
   backgroundColor: "transparent",
+  borderWidth: 0,
+  display: "flex",
+  flexShrink: 0,
   color: "primary",
+
   variants: {
     deprecated: {
       true: {
@@ -85,7 +91,7 @@ const PropertyColumn = styled(InlineCodeText, {
 
 const TypeColumn = styled(BodyText, {
   displayName: "TypeTableTypeColumn",
-  color: "subtle",
+  color: "emphasis",
   fontFamily: "display",
   fontSize: "sm",
   lineHeight: "sm",
@@ -102,7 +108,7 @@ const TypeLink = styled(Link, {
 
 const ColumnLabel = styled(BodyText, {
   displayName: "TypeTableColumnLabel",
-  color: "subtle",
+  color: "emphasis",
   fontFamily: "display",
   fontSize: "sm",
   lineHeight: "sm",
@@ -184,7 +190,12 @@ const TypeTableItem = ({
         <Collapsible.Header
           paddingHorizontal="3xl"
           paddingVertical="2xl"
-          backgroundColor="elevated hover:elevated-hovered">
+          borderColor="hairline"
+          borderTopWidth={rounded ? 1 : 0}
+          borderBottomWidth={open ? 1 : 0}
+          borderTopLeftRadius={rounded ? "container" : 0}
+          borderTopRightRadius={rounded ? "container" : 0}
+          backgroundColor="floating hover:floating-hovered">
           <TypeTableRow padding={0} flex={1}>
             <PropertyColumn deprecated={item.deprecated}>
               {`${name}${item.required ? "" : "?"}`}
@@ -222,8 +233,14 @@ export const TypeTable = ({ id, type, ...props }: TypeTableProps) => {
   return (
     <TypeTableFrame id={id} tight {...props}>
       <TypeTableRow>
-        <ColumnLabel width="25%">Prop</ColumnLabel>
-        <TypeColumn>Type</TypeColumn>
+        <TypeTableRow padding={0} flex={1}>
+          <ColumnLabel width="25%" flexShrink={0}>
+            Prop
+          </ColumnLabel>
+          <TypeColumn>Type</TypeColumn>
+        </TypeTableRow>
+        {/* ponytail: matches the 24px Collapsible chevron so columns align */}
+        <View width={24} />
       </TypeTableRow>
       {names.map((name, index) => (
         <TypeTableItem

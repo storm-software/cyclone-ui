@@ -930,7 +930,7 @@
   --radius-button: var(--radius-md);
   --radius-card: var(--radius-lg);
   --radius-checkbox: var(--radius-sm);
-  --radius-container: var(--radius-lg);
+  --radius-container: var(--radius-2xl);
   --radius-control: var(--radius-sm);
   --radius-dialog: var(--radius-lg);
   --radius-drawer: var(--radius-lg);

@@ -253,7 +253,7 @@ const tokens = createTokens({
     button: 6,
     card: 8,
     checkbox: 4,
-    container: 8,
+    container: 16,
     control: 4,
     dialog: 8,
     drawer: 8,

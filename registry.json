@@ -5809,7 +5809,10 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": ["@cyclone-ui/container"],
+      "registryDependencies": [
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/container"
+      ],
       "files": [
         {
           "path": "components/tooltip/src/Tooltip.tsx",

@@ -1393,7 +1393,7 @@
     --storm-color-base-primary-inactive
   ); /** Low-contrast color for borders, dividers and separators. (inactive, 50% of the dark contrast primitive's brightness) */
   --storm-border-radius-container: var(
-    --storm-border-radius-lg
+    --storm-border-radius-2xl
   ); /** Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText. */
   --storm-border-radius-trigger: var(
     --storm-border-radius-md

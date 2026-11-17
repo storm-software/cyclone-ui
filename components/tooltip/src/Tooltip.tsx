@@ -18,6 +18,7 @@
 
 "use client";
 
+import { BodyText } from "@cyclone-ui/body-text";
 import type {
   ContainerSurfaceProps,
   ContainerVariant
@@ -230,7 +231,11 @@ const TooltipContentImpl = createStyledHOC(
             {...(arrowBorderColor && { borderColor: arrowBorderColor })}
           />
         )}
-        {children}
+        {typeof children === "string" ? (
+          <BodyText color="emphasis">{children}</BodyText>
+        ) : (
+          children
+        )}
       </TooltipContent>
     );
   },

@@ -14692,7 +14692,7 @@ module.exports = {
       $description:
         "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       $type: "dimension",
-      $value: "0.5rem",
+      $value: "1rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -14700,7 +14700,7 @@ module.exports = {
         $description:
           "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
         $type: "dimension",
-        $value: "{border-radius.lg}",
+        $value: "{border-radius.2xl}",
         key: "{border-radius.container}"
       },
       name: "BorderRadiusContainer",
