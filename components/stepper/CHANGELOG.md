@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Stepper
 
+## [0.3.93](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.93) (11/17/2026)
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.86**
+- Updated **icons** to **v0.0.87**
+- Updated **next-button** to **v0.5.92**
+- Updated **number-text** to **v0.5.85**
+- Updated **previous-button** to **v0.5.92**
+
 ## [0.3.92](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.92) (11/17/2026)
 
 ### Updated Dependencies

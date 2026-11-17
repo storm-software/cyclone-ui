@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.75](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.75) (11/17/2026)
+
+### Features
+
+- **cli:** Added the `gc` command for garbage collecting old component files ([d09ba7717](https://github.com/storm-software/cyclone-ui/commit/d09ba7717))
+
 ## [0.0.74](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.74) (11/17/2026)
 
 ### Bug Fixes

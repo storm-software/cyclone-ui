@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - CLI
 
+## [0.6.77](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.77) (11/17/2026)
+
+### Features
+
+- **cli:** Added the `gc` command for garbage collecting old component files ([d09ba7717](https://github.com/storm-software/cyclone-ui/commit/d09ba7717))
+
+### Updated Dependencies
+
+- Updated **registry-api** to **v0.3.85**
+- Updated **theme-builder** to **v0.0.75**
+
 ## [0.6.76](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.76) (11/17/2026)
 
 ### Updated Dependencies

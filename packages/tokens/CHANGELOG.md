@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Tokens
 
+## [0.3.74](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.74) (11/17/2026)
+
+### Features
+
+- **cli:** Added the `gc` command for garbage collecting old component files ([d09ba7717](https://github.com/storm-software/cyclone-ui/commit/d09ba7717))
+
 ## [0.3.73](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.73) (11/17/2026)
 
 ### Bug Fixes

@@ -2,6 +2,32 @@
 
 # Changelog for Cyclone UI - Nextjs
 
+## [0.0.64](https://github.com/storm-software/cyclone-ui/releases/tag/nextjs%400.0.64) (11/17/2026)
+
+### Updated Dependencies
+
+- Updated **bar-chart** to **v0.0.57**
+- Updated **body-text** to **v0.5.85**
+- Updated **calendar** to **v0.0.78**
+- Updated **chart** to **v0.0.57**
+- Updated **checkbox** to **v0.5.94**
+- Updated **composed-chart** to **v0.0.57**
+- Updated **drawer** to **v0.1.94**
+- Updated **field** to **v0.5.94**
+- Updated **footer** to **v0.0.92**
+- Updated **form** to **v0.9.88**
+- Updated **input** to **v0.6.94**
+- Updated **link** to **v0.5.93**
+- Updated **page** to **v0.0.88**
+- Updated **password-input** to **v0.0.93**
+- Updated **radio-group** to **v0.5.95**
+- Updated **select** to **v0.6.96**
+- Updated **state** to **v0.0.89**
+- Updated **switch** to **v0.5.94**
+- Updated **text-area** to **v0.1.95**
+- Updated **theme-builder** to **v0.0.75**
+- Updated **tokens** to **v0.3.74**
+
 ## [0.0.63](https://github.com/storm-software/cyclone-ui/releases/tag/nextjs%400.0.63) (11/17/2026)
 
 ### Updated Dependencies

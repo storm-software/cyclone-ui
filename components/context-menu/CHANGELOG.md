@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Context Menu
 
+## [0.0.84](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.84) (11/17/2026)
+
+### Features
+
+- **cli:** Added the `gc` command for garbage collecting old component files ([d09ba7717](https://github.com/storm-software/cyclone-ui/commit/d09ba7717))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.85**
+- Updated **button** to **v0.6.92**
+- Updated **container** to **v0.6.91**
+- Updated **helpers** to **v0.3.87**
+- Updated **icons** to **v0.0.87**
+- Updated **popover** to **v0.5.94**
+- Updated **tooltip** to **v0.5.92**
+
 ## [0.0.83](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.83) (11/17/2026)
 
 ### Updated Dependencies
