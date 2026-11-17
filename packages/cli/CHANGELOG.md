@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - CLI
 
+## [0.6.78](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.78) (11/17/2026)
+
+### Bug Fixes
+
+- **monorepo:** Use `disableReferencedProjectLoad` to reduce typescript compiler memory consumption ([59bec52cb](https://github.com/storm-software/cyclone-ui/commit/59bec52cb))
+
+### Updated Dependencies
+
+- Updated **registry-api** to **v0.3.86**
+- Updated **theme-builder** to **v0.0.76**
+
 ## [0.6.77](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.77) (11/17/2026)
 
 ### Features
