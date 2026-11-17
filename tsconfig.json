@@ -169,6 +169,9 @@
       "path": "./components/tag"
     },
     {
+      "path": "./components/toast"
+    },
+    {
       "path": "./components/toggle"
     },
     {

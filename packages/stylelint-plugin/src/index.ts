@@ -4704,6 +4704,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/toast",
+      jsx: ["Toast"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/toggle",
       jsx: ["Toggle"],
       roles: []

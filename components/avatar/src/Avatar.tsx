@@ -224,9 +224,9 @@ export const Avatar = ({
     setUploading(true);
     try {
       await onUpload?.(cropped);
-    } catch (error) {
+    } catch {
+      // The caller handled its own rejection; nothing awaits this one.
       setPreview(undefined);
-      throw error;
     } finally {
       setUploading(false);
     }

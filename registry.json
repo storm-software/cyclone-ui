@@ -5684,6 +5684,41 @@
       ]
     },
     {
+      "name": "@cyclone-ui/toast",
+      "type": "registry:component",
+      "title": "@cyclone-ui/toast",
+      "description": "A small floating pill for short status messages, shown with `toast.success()`, `error`, `warning`, `info`, `loading` or `promise` and rendered by one mounted `Toaster`. A new toast morphs the one on screen in place: spring physics size the pill, roll the text over, draw and animate the status icon, and close a loading arc into its result. Toasts can carry a description, avatar, trailing meta text, progress bar and action buttons, stack while one is held, swipe away, pause on hover or focus, chime per status, and announce through live regions. Ported from Ding.",
+      "dependencies": ["@tamagui/core@3.3.2"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/button",
+        "@cyclone-ui/icons",
+        "@cyclone-ui/visually-hidden"
+      ],
+      "files": [
+        {
+          "path": "components/toast/src/motion.ts",
+          "type": "registry:file",
+          "target": "components/toast/src/motion.ts"
+        },
+        {
+          "path": "components/toast/src/store.ts",
+          "type": "registry:file",
+          "target": "components/toast/src/store.ts"
+        },
+        {
+          "path": "components/toast/src/Toast.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/toggle",
       "type": "registry:component",
       "title": "@cyclone-ui/toggle",
