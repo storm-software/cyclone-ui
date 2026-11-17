@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Illustrations
 
+## [0.0.11](https://github.com/storm-software/cyclone-ui/releases/tag/illustrations%400.0.11) (11/16/2026)
+
+### Features
+
+- **illustrations:** Added the missing illustration component ([0ef9ee38a](https://github.com/storm-software/cyclone-ui/commit/0ef9ee38a))
+
 ## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/illustrations%400.0.5) (11/14/2026)
 
 ### Features

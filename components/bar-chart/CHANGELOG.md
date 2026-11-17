@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Bar Chart
 
+## [0.0.54](https://github.com/storm-software/cyclone-ui/releases/tag/bar-chart%400.0.54) (11/16/2026)
+
+### Updated Dependencies
+
+- Updated **chart** to **v0.0.54**
+
 ## [0.0.53](https://github.com/storm-software/cyclone-ui/releases/tag/bar-chart%400.0.53) (11/16/2026)
 
 ### Updated Dependencies

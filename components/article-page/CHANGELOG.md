@@ -2,6 +2,27 @@
 
 # Changelog for Cyclone UI - Article Page
 
+## [0.0.80](https://github.com/storm-software/cyclone-ui/releases/tag/article-page%400.0.80) (11/16/2026)
+
+### Features
+
+- **illustrations:** Added the missing illustration component ([0ef9ee38a](https://github.com/storm-software/cyclone-ui/commit/0ef9ee38a))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.82**
+- Updated **breadcrumb** to **v0.4.93**
+- Updated **button** to **v0.6.89**
+- Updated **card** to **v0.6.91**
+- Updated **feedback** to **v0.0.83**
+- Updated **heading-text** to **v0.5.83**
+- Updated **icons** to **v0.0.84**
+- Updated **inline-code-text** to **v0.5.81**
+- Updated **link** to **v0.5.90**
+- Updated **table-of-contents** to **v0.0.85**
+- Updated **tag** to **v0.0.84**
+- Updated **terrain-footer** to **v0.0.50**
+
 ## [0.0.79](https://github.com/storm-software/cyclone-ui/releases/tag/article-page%400.0.79) (11/16/2026)
 
 ### Updated Dependencies

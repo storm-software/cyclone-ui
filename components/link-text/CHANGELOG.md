@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Link Text
 
+## [0.5.84](https://github.com/storm-software/cyclone-ui/releases/tag/link-text%400.5.84) (11/16/2026)
+
+### Features
+
+- **illustrations:** Added the missing illustration component ([0ef9ee38a](https://github.com/storm-software/cyclone-ui/commit/0ef9ee38a))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.82**
+
 ## [0.5.83](https://github.com/storm-software/cyclone-ui/releases/tag/link-text%400.5.83) (11/16/2026)
 
 ### Updated Dependencies

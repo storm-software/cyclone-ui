@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Error Page
 
+## [0.0.9](https://github.com/storm-software/cyclone-ui/releases/tag/error-page%400.0.9) (11/16/2026)
+
+### Features
+
+- **illustrations:** Added the missing illustration component ([0ef9ee38a](https://github.com/storm-software/cyclone-ui/commit/0ef9ee38a))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.82**
+- Updated **eyebrow-text** to **v0.5.82**
+- Updated **heading-text** to **v0.5.83**
+- Updated **icons** to **v0.0.84**
+- Updated **illustrations** to **v0.0.11**
+- Updated **link** to **v0.5.90**
+
 ## [0.0.8](https://github.com/storm-software/cyclone-ui/releases/tag/error-page%400.0.8) (11/16/2026)
 
 ### Updated Dependencies

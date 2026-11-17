@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - State
 
+## [0.0.86](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.86) (11/16/2026)
+
+### Features
+
+- **illustrations:** Added the missing illustration component ([0ef9ee38a](https://github.com/storm-software/cyclone-ui/commit/0ef9ee38a))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.84**
+
 ## [0.0.85](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.85) (11/16/2026)
 
 ### Updated Dependencies

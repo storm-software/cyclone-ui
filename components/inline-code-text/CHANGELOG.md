@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Inline Code Text
 
+## [0.5.81](https://github.com/storm-software/cyclone-ui/releases/tag/inline-code-text%400.5.81) (11/16/2026)
+
+### Features
+
+- **illustrations:** Added the missing illustration component ([0ef9ee38a](https://github.com/storm-software/cyclone-ui/commit/0ef9ee38a))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.82**
+
 ## [0.5.80](https://github.com/storm-software/cyclone-ui/releases/tag/inline-code-text%400.5.80) (11/16/2026)
 
 ### Updated Dependencies

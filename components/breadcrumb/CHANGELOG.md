@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Breadcrumb
 
+## [0.4.93](https://github.com/storm-software/cyclone-ui/releases/tag/breadcrumb%400.4.93) (11/16/2026)
+
+### Features
+
+- **illustrations:** Added the missing illustration component ([0ef9ee38a](https://github.com/storm-software/cyclone-ui/commit/0ef9ee38a))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.89**
+- Updated **icons** to **v0.0.84**
+- Updated **link** to **v0.5.90**
+- Updated **link-text** to **v0.5.84**
+- Updated **popover** to **v0.5.91**
+
 ## [0.4.92](https://github.com/storm-software/cyclone-ui/releases/tag/breadcrumb%400.4.92) (11/16/2026)
 
 ### Updated Dependencies
