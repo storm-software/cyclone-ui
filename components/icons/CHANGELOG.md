@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Icons
 
+## [0.0.89](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.89) (11/17/2026)
+
+### Bug Fixes
+
+- **icons:** Add the `stretch` property with `normal`, `medium` and `tall` variants ([e2860b067](https://github.com/storm-software/cyclone-ui/commit/e2860b067))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.89**
+
 ## [0.0.88](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.88) (11/17/2026)
 
 ### Updated Dependencies
