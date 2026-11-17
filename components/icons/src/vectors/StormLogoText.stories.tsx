@@ -88,3 +88,36 @@ export const ThickOutlined: Story = {
     outlined: true
   }
 };
+
+export const Medium: Story = {
+  args: {
+    stretch: "medium"
+  }
+};
+
+export const ThickMedium: Story = {
+  args: {
+    weight: "thick",
+    stretch: "medium"
+  }
+};
+
+export const Tall: Story = {
+  args: {
+    stretch: "tall"
+  }
+};
+
+export const ThickTall: Story = {
+  args: {
+    weight: "thick",
+    stretch: "tall"
+  }
+};
+
+export const TallOutlined: Story = {
+  args: {
+    stretch: "tall",
+    outlined: true
+  }
+};

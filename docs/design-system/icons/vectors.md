@@ -84,7 +84,7 @@ These five share one prop: `isComplete` (`boolean`, default `true`). Setting it 
 | --- | --- | --- |
 | `PdfIcon` | Common props | A PDF file icon. |
 | `StormLogoIcon` | Common props and `theme` | The Storm logo mark. With no `color`, it uses the `primary` color of the theme. |
-| `StormLogoText` | Common props and `theme` | The Storm logo text. It uses the same color rule. |
+| `StormLogoText` | Common props, `theme`, `weight` (`"thin"` or `"thick"`), `outlined`, and `stretch` (`"normal"`, `"medium"`, or `"tall"`) | The Storm logo text. It uses the same color rule. `stretch` draws the lettering 20% (`medium`) or 50% (`tall`) taller at the same width and stroke weight. |
 
 The `theme` prop wraps the logo in that theme.
 
@@ -97,7 +97,7 @@ Each vector has a stories file next to it in [`components/icons/src/vectors`](..
 | `Arrow.stories.tsx` | `Base`, `Up`, `Right`, `Down`, `Left` |
 | `DiscoveryCircle.stories.tsx` | `Base`, `Small` |
 | `StormLogoIcon.stories.tsx` | `Base`, `Brand`, `Danger`, `Warning`, `Info`, `Discovery`, `Success` |
-| `StormLogoText.stories.tsx` | The `StormLogoIcon` set, plus `Thick`, `Outlined`, and `ThickOutlined` |
+| `StormLogoText.stories.tsx` | The `StormLogoIcon` set, plus `Thick`, `Outlined`, `ThickOutlined`, `Medium`, `ThickMedium`, `Tall`, `ThickTall`, and `TallOutlined` |
 
 ## Accessibility
 
