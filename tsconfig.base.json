@@ -5,6 +5,8 @@
   "compilerOptions": {
     "incremental": true,
     "composite": true,
+    // Load referenced projects as files are opened instead of expanding the workspace graph.
+    "disableReferencedProjectLoad": true,
     "sourceMap": true,
     "isolatedModules": true,
     "verbatimModuleSyntax": true,

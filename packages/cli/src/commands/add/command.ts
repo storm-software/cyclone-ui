@@ -74,7 +74,7 @@ async function handler(
     throw new Error("Provide at least one component or use --all.");
   }
 
-  const dryRun = options.dryRun || options.diff || options.view;
+  const dryRun = (options.dryRun ?? options.diff) ?? options.view;
   const plan = await createInstallPlan(client, config, requested, {
     root,
     path: options.path,

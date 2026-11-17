@@ -2,6 +2,16 @@
 
                    🗲 Storm Software - Cyclone UI
 
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
  SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
@@ -56,7 +66,7 @@ export async function readRegistryManifest(
       throw new Error(`Duplicate registry item: ${item.name}`);
     names.add(item.name);
     if (typeof item.type !== "string" || !Array.isArray(item.files)) {
-      throw new Error(
+      throw new TypeError(
         `Registry item \"${item.name}\" must have a type and files array.`
       );
     }
@@ -81,10 +91,11 @@ export async function buildRegistry(
   output: string
 ): Promise<Array<{ path: string; content: string }>> {
   const outputRoot = resolveInside(root, output);
+
   return Promise.all(
     manifest.items.map(async item => {
       const name = item.name.replace(/^@cyclone-ui\//, "");
-      if (!/^[a-z0-9][a-z0-9._-]*$/i.test(name)) {
+      if (!/^[a-z0-9][\w.-]*$/i.test(name)) {
         throw new Error(`Invalid registry item name: ${item.name}`);
       }
       const files = await Promise.all(
@@ -99,6 +110,7 @@ export async function buildRegistry(
             ))
         }))
       );
+
       return {
         path: resolveInside(outputRoot, `${name}.json`),
         content: `${JSON.stringify({ ...item, files }, null, 2)}\n`

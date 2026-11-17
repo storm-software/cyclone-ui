@@ -18,7 +18,7 @@
 
 import { configs } from "@shell-shock/eslint-plugin";
 import { composer } from "eslint-flat-config-utils";
-import baseConfig from "../../../eslint.config.mjs";
+import baseConfig from "../../eslint.config.mjs";
 
 export default composer(baseConfig).append({
   ...configs.base

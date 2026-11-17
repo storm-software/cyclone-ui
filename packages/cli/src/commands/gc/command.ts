@@ -1,4 +1,20 @@
+/* -------------------------------------------------------------------
 
+                   🗲 Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import type { CommandMetadata } from "@shell-shock/core";
 import { resolve } from "node:path";
@@ -10,7 +26,9 @@ import { collectComponents } from "../../utilities/gc";
 export const metadata = {
   title: "Garbage Collection",
   description: `Remove files and empty folders not tracked in components.json from the configured components directory. If file tracking is incomplete, clear the directory and reinstall all installed components from the registry, overwriting local edits. Use --dry-run to preview. ${COMPONENT_PROTECTION_RULE}`,
-  icon: "♲"
+  icon: "♲",
+  tags: ["Utility"],
+  alias: ["garbage-collection"]
 } satisfies CommandMetadata;
 
 export interface GcOptions {
