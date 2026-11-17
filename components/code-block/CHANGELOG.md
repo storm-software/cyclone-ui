@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Code Block
 
+## [0.6.92](https://github.com/storm-software/cyclone-ui/releases/tag/code-block%400.6.92) (11/17/2026)
+
+### Features
+
+- **copy-button:** Initial check-in of the CopyButton component package ([94b147217](https://github.com/storm-software/cyclone-ui/commit/94b147217))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.90**
+- Updated **copy-button** to **v0.0.2**
+- Updated **icons** to **v0.0.85**
+- Updated **scroll-view** to **v0.5.90**
+
 ## [0.6.91](https://github.com/storm-software/cyclone-ui/releases/tag/code-block%400.6.91) (11/16/2026)
 
 ### Updated Dependencies

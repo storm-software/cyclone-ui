@@ -11,7 +11,7 @@
 
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "storm-sans";
-  version = "1.0.63";
+  version = "1.0.64";
 
   src = fetchFromGitHub {
     owner = "storm-software";

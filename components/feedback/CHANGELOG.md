@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Feedback
 
+## [0.0.84](https://github.com/storm-software/cyclone-ui/releases/tag/feedback%400.0.84) (11/17/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.90**
+- Updated **divider** to **v0.0.79**
+- Updated **field** to **v0.5.92**
+- Updated **form** to **v0.9.86**
+- Updated **helpers** to **v0.3.85**
+- Updated **icons** to **v0.0.85**
+- Updated **like-button** to **v0.0.79**
+- Updated **popover** to **v0.5.92**
+- Updated **text-area** to **v0.1.93**
+- Updated **toggle** to **v0.0.79**
+
 ## [0.0.83](https://github.com/storm-software/cyclone-ui/releases/tag/feedback%400.0.83) (11/16/2026)
 
 ### Updated Dependencies
