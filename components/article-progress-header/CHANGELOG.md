@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Article Progress Header
 
+## [0.0.13](https://github.com/storm-software/cyclone-ui/releases/tag/article-progress-header%400.0.13) (11/17/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.84**
+- Updated **table-of-contents** to **v0.0.87**
+
 ## [0.0.12](https://github.com/storm-software/cyclone-ui/releases/tag/article-progress-header%400.0.12) (11/17/2026)
 
 ### Updated Dependencies

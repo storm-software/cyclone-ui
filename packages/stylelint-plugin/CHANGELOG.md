@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.74](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.74) (11/17/2026)
+
+### Bug Fixes
+
+- **type-table:** Clean up display of various components ([fe1ee81a6](https://github.com/storm-software/cyclone-ui/commit/fe1ee81a6))
+
 ## [0.0.73](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.73) (11/17/2026)
 
 ### Bug Fixes

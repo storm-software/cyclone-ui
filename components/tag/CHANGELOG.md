@@ -2,6 +2,14 @@
 
 # Changelog for Cyclone UI - Tag
 
+## [0.0.86](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.86) (11/17/2026)
+
+### Updated Dependencies
+
+- Updated **container** to **v0.6.90**
+- Updated **icons** to **v0.0.86**
+- Updated **ripple-animation** to **v0.0.61**
+
 ## [0.0.85](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.85) (11/17/2026)
 
 ### Updated Dependencies

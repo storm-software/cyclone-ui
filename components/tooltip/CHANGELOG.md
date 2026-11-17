@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Tooltip
 
+## [0.5.91](https://github.com/storm-software/cyclone-ui/releases/tag/tooltip%400.5.91) (11/17/2026)
+
+### Bug Fixes
+
+- **type-table:** Clean up display of various components ([fe1ee81a6](https://github.com/storm-software/cyclone-ui/commit/fe1ee81a6))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.84**
+- Updated **container** to **v0.6.90**
+
 ## [0.5.90](https://github.com/storm-software/cyclone-ui/releases/tag/tooltip%400.5.90) (11/17/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Sankey Chart
 
+## [0.0.56](https://github.com/storm-software/cyclone-ui/releases/tag/sankey-chart%400.0.56) (11/17/2026)
+
+### Updated Dependencies
+
+- Updated **chart** to **v0.0.56**
+
 ## [0.0.55](https://github.com/storm-software/cyclone-ui/releases/tag/sankey-chart%400.0.55) (11/17/2026)
 
 ### Updated Dependencies

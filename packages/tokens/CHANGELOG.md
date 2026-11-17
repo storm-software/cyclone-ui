@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Tokens
 
+## [0.3.73](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.73) (11/17/2026)
+
+### Bug Fixes
+
+- **type-table:** Clean up display of various components ([fe1ee81a6](https://github.com/storm-software/cyclone-ui/commit/fe1ee81a6))
+
 ## [0.3.59](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.59) (11/13/2026)
 
 ### Features

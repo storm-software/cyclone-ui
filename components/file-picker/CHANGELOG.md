@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - File Picker
 
+## [0.5.94](https://github.com/storm-software/cyclone-ui/releases/tag/file-picker%400.5.94) (11/17/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.91**
+- Updated **field** to **v0.5.93**
+- Updated **file** to **v0.0.42**
+- Updated **form** to **v0.9.87**
+- Updated **helpers** to **v0.3.86**
+- Updated **icons** to **v0.0.86**
+- Updated **state** to **v0.0.88**
+
 ## [0.5.93](https://github.com/storm-software/cyclone-ui/releases/tag/file-picker%400.5.93) (11/17/2026)
 
 ### Updated Dependencies
