@@ -130,8 +130,8 @@ catalog:
   "@swc-node/register": 1.11.1
   "@swc/core": 1.15.41
   "@swc/helpers": 0.5.23
-  "@trpc/client": ^11.28.0
-  "@trpc/server": ^11.28.0
+  "@trpc/client": ^11.28.3
+  "@trpc/server": ^11.28.3
   "@types/chroma-js": ^2.4.5
   "@types/react": ^19.3.0
   "@types/react-dom": ^19.3.0
@@ -145,7 +145,7 @@ catalog:
   bunshi: ^2.2.0
   chroma-js: ^2.6.0
   esbuild: ^0.24.2
-  eslint: ^10.14.0
+  eslint: ^10.15.0
   eslint-flat-config-utils: ^2.1.4
   expo: 54.0.35
   expo-document-picker: ^11.10.1
@@ -169,8 +169,8 @@ catalog:
   react-native-web: 0.19.12
   react-refresh: ^0.10.0
   recharts: 3.8.0
-  react-email: ^6.11.12
-  "@react-email/ui": ^6.11.12
+  react-email: ^6.11.13
+  "@react-email/ui": ^6.11.13
   "@opentelemetry/api": ^1.10.0
   motion: ^11.18.2
   next: ^16.4.6
@@ -191,7 +191,7 @@ catalog:
   zod: ^3.25.76
   zx: ^8.8.5
   "@storm-software/tsdoc": ^0.13.309
-  playwright: ^1.65.0
+  playwright: ^1.65.1
   style-dictionary: ^5.8.0
   "@maskito/phone": 3.11.1
   libphonenumber-js: 1.12.31
@@ -206,7 +206,7 @@ catalog:
   "@shell-shock/plugin-skills": ^0.0.27
   "@razorwind/eslint": ^0.0.40
   "@razorwind/stylelint": ^0.0.40
-  "@sourcebook/config": ^0.0.13
+  "@sourcebook/config": ^0.0.15
   "@tanstack/react-virtual": ^3.14.26
   "@nx/maven": 24.0.3
   tsx: ^4.23.15

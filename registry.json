@@ -4051,6 +4051,10 @@
           "type": "registry:component"
         },
         {
+          "path": "components/illustrations/src/MissingIllustration.tsx",
+          "type": "registry:component"
+        },
+        {
           "path": "components/illustrations/src/PadlockIllustration.tsx",
           "type": "registry:component"
         },
