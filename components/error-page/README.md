@@ -74,19 +74,34 @@ the `Introduction`, `Message`, `Description`, `Actions` and `Action` parts.
 
 - One `code` prop picks the title, the copy, the illustration and the tone:
 
-  | Code | Title        | Illustration | Tone      |
-  | ---- | ------------ | ------------ | --------- |
-  | 400  | Bad request  | Query        | —         |
-  | 401  | Unauthorized | Keypad       | `warning` |
-  | 403  | Forbidden    | Padlock      | `warning` |
-  | 404  | Not found    | Loupe        | —         |
-  | 408  | Timed out    | Slow         | `warning` |
-  | 410  | Gone         | Rail         | —         |
-  | 429  | Slow down    | Sieve        | `warning` |
-  | 500  | Server error | Breakers     | `danger`  |
-  | 502  | Bad gateway  | Router       | `danger`  |
-  | 503  | Unavailable  | Plug         | `danger`  |
-  | 504  | Timed out    | Slow         | `danger`  |
+  | Code | Title                      | Illustration | Tone      |
+  | ---- | -------------------------- | ------------ | --------- |
+  | 400  | Bad request                | Query        | —         |
+  | 401  | Unauthorized               | Keypad       | `warning` |
+  | 402  | Payment required           | Basket       | `warning` |
+  | 403  | Forbidden                  | Padlock      | `warning` |
+  | 404  | Not found                  | Missing      | —         |
+  | 405  | Not allowed                | Keyboard     | —         |
+  | 406  | Not acceptable             | Loupe        | —         |
+  | 408  | Timed out                  | Slow         | `warning` |
+  | 409  | Conflict                   | Branches     | `warning` |
+  | 410  | Gone                       | Rail         | —         |
+  | 413  | Too large                  | Stack        | `warning` |
+  | 415  | Wrong format               | Format       | —         |
+  | 421  | Misdirected                | Dish         | —         |
+  | 422  | Can’t process              | Exploded     | `warning` |
+  | 423  | Locked                     | Vault        | `warning` |
+  | 426  | Upgrade required           | Elevator     | `warning` |
+  | 429  | Slow down                  | Sieve        | `warning` |
+  | 451  | Restricted                 | Lockers      | —         |
+  | 500  | Server error               | Breakers     | `danger`  |
+  | 501  | Not implemented            | Terminal     | `danger`  |
+  | 502  | Bad gateway                | Router       | `danger`  |
+  | 503  | Unavailable                | Plug         | `danger`  |
+  | 504  | Timed out                  | Slow         | `danger`  |
+  | 505  | HTTP version not supported | Plug         | `danger`  |
+  | 507  | Out of space               | Cabinet      | `danger`  |
+  | 511  | Network sign-in            | Hub          | `warning` |
 
   Other 4xx codes fall back to 400 and everything else to 500. `getErrorPageCopy(code)` returns the entry.
 

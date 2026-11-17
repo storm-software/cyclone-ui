@@ -19,7 +19,11 @@
 "use client";
 
 import type { ColorThemeMode } from "@cyclone-ui/state/theme";
-import { ThemeApi, useThemeActions } from "@cyclone-ui/state/theme";
+import {
+  SelectionStyle,
+  ThemeApi,
+  useThemeActions
+} from "@cyclone-ui/state/theme";
 import { config as cycloneConfig } from "@cyclone-ui/tokens/tamagui";
 import type { TamaguiProviderProps } from "@tamagui/core";
 import { TamaguiProvider, Theme } from "@tamagui/core";
@@ -206,6 +210,7 @@ export function CycloneUIProvider({
           config={config}
           defaultTheme={mode}
           disableInjectCSS={disableInjectCSS}>
+          <SelectionStyle />
           {/* A relative name keeps the className (`t_base`) the same for every
               mode, so hydration matches when the client starts dark; CSS picks
               the scheme from `<html>`'s `t_<mode>` class. */}

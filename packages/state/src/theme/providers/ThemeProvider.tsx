@@ -38,6 +38,28 @@ export type ThemeProviderProps = PropsWithChildren<
   Partial<ThemeOptions> & ThemeStateManagerProps
 >;
 
+// Tamagui scopes its `selectionStyles` rules to full theme class names
+// (`.t_light_base ::selection`), which miss short sub-theme classes such as
+// `t_base`. Custom properties inherit into `::selection`, so one global rule
+// picks up the active theme's colors; the system colors cover elements outside
+// any theme that defines them.
+const SELECTION_CSS =
+  "::selection{background:var(--selection-background,var(--primary,Highlight));color:var(--selection-foreground,var(--on-primary,HighlightText))}";
+
+/**
+ * Applies the active theme's `primary` / `on-primary` colors (or
+ * `selection-background` / `selection-foreground`) to selected text.
+ */
+export const SelectionStyle = () => {
+  const layer = process.env.TAMAGUI_CSS_LAYER;
+
+  return (
+    <style href="cyclone-ui-selection" precedence="default">
+      {layer ? `@layer ${layer}{${SELECTION_CSS}}` : SELECTION_CSS}
+    </style>
+  );
+};
+
 const ThemeStateManager = ({
   children,
   disableInjectCSS = true,
@@ -51,6 +73,7 @@ const ThemeStateManager = ({
       {...props}
       defaultTheme={mode}
       disableInjectCSS={disableInjectCSS}>
+      <SelectionStyle />
       {children}
     </TamaguiProvider>
   );

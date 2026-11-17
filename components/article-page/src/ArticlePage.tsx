@@ -20,7 +20,7 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
-import { Facebook, Linkedin, Share, TwitterX } from "@cyclone-ui/icons";
+import { Email, Facebook, Linkedin, Share, TwitterX } from "@cyclone-ui/icons";
 import type { TableOfContentsItem } from "@cyclone-ui/table-of-contents";
 import { TableOfContents } from "@cyclone-ui/table-of-contents";
 import type { GetProps, TamaguiElement } from "@tamagui/core";
@@ -191,6 +191,11 @@ const getShareLinks = (url: string, title: string) => {
       network: "Facebook",
       icon: Facebook,
       href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`
+    },
+    {
+      network: "Email",
+      icon: Email,
+      href: `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(url)}`
     }
   ];
 };

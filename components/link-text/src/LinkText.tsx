@@ -25,31 +25,59 @@ import { SizableText } from "@tamagui/text";
 export type LinkTextVariant = "base" | "emphasis" | "ink" | "subtle";
 
 export interface LinkTextExtraProps {
+  /**
+   * Whether the link is disabled.
+   *
+   * @defaultValue false
+   */
   disabled?: boolean;
+
+  /**
+   * The underline style.
+   *
+   * @defaultValue "static"
+   */
   underline?: "hover" | "initial" | "static" | "none";
+
   /**
    * The text color: `base` uses `link`, the rest use their own color tokens.
+   *
+   * @defaultValue "base"
    */
   variant?: LinkTextVariant;
+
   /**
    * Underline in `link` while the text keeps the `variant` color.
+   *
+   * @defaultValue false
    */
   mixed?: boolean;
+
   /**
    * Swap the text and underline colors (only visible with `mixed`).
+   *
+   * @defaultValue false
    */
   inverse?: boolean;
+
   /**
    * Draw the underline in its color at 60% opacity, so it reads lighter than the text.
+   *
+   * @defaultValue true
    */
   faded?: boolean;
+
   /**
    * Use `primary` everywhere `link` would be used.
+   *
+   * @defaultValue false
    */
   themed?: boolean;
 
   /**
    * The size of the link text, corresponding to the body text sizes.
+   *
+   * @defaultValue "md"
    */
   size?: "sm" | "md" | "lg";
 }
@@ -159,7 +187,7 @@ export const LinkText = createStyledHOC(
       variant = "base",
       mixed = false,
       inverse = false,
-      faded = false,
+      faded = true,
       themed = false,
       color,
       textDecorationColor,

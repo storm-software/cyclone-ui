@@ -67,7 +67,7 @@ export const BreadcrumbContext = createStyledContext<
     variant: "base",
     mixed: false,
     inverse: false,
-    faded: false,
+    faded: true,
     themed: false
   } as BreadcrumbContextProps,
   {

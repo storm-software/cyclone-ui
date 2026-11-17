@@ -24,16 +24,29 @@ import { HeadingLargeText } from "@cyclone-ui/heading-text";
 import { ArrowRight } from "@cyclone-ui/icons";
 import type { IllustrationComponent } from "@cyclone-ui/illustrations";
 import {
+  BasketIllustration,
+  BranchesIllustration,
   BreakersIllustration,
+  CabinetIllustration,
+  DishIllustration,
+  ElevatorIllustration,
+  ExplodedIllustration,
+  FormatIllustration,
+  HubIllustration,
+  KeyboardIllustration,
   KeypadIllustration,
   LoupeIllustration,
+  MissingIllustration,
   PadlockIllustration,
   PlugIllustration,
   QueryIllustration,
   RailIllustration,
   RouterIllustration,
   SieveIllustration,
-  SlowIllustration
+  SlowIllustration,
+  StackIllustration,
+  TerminalIllustration,
+  VaultIllustration
 } from "@cyclone-ui/illustrations";
 import type { GetProps } from "@tamagui/core";
 import {
@@ -76,6 +89,14 @@ const ERRORS: Record<number, ErrorPageCopy> = {
     Illustration: KeypadIllustration,
     theme: "warning"
   },
+  402: {
+    title: "Payment required",
+    message: "You’ll need to pay before this opens.",
+    description:
+      "The server won’t finish the request until the account is paid up. Complete the payment, then try again.",
+    Illustration: BasketIllustration,
+    theme: "warning"
+  },
   403: {
     title: "Forbidden",
     message: "This one’s off limits.",
@@ -88,6 +109,20 @@ const ERRORS: Record<number, ErrorPageCopy> = {
     title: "Not found",
     message: "Looks like you’ve taken a wrong turn.",
     description: "The page you’re looking for doesn’t exist or has been moved.",
+    Illustration: MissingIllustration
+  },
+  405: {
+    title: "Not allowed",
+    message: "That action isn’t available here.",
+    description:
+      "The address is right, but this kind of request isn’t accepted. Try a different action.",
+    Illustration: KeyboardIllustration
+  },
+  406: {
+    title: "Not acceptable",
+    message: "We can’t send this in a form you’ll take.",
+    description:
+      "The page exists, but not in a format your client asked for. Open it in a browser and try again.",
     Illustration: LoupeIllustration
   },
   408: {
@@ -98,12 +133,66 @@ const ERRORS: Record<number, ErrorPageCopy> = {
     Illustration: SlowIllustration,
     theme: "warning"
   },
+  409: {
+    title: "Conflict",
+    message: "Someone else changed this first.",
+    description:
+      "Your request clashes with the current version. Refresh to see the latest, then try again.",
+    Illustration: BranchesIllustration,
+    theme: "warning"
+  },
   410: {
     title: "Gone",
     message: "This page has been taken down.",
     description:
       "The page you’re looking for was removed on purpose and won’t be coming back.",
     Illustration: RailIllustration
+  },
+  413: {
+    title: "Too large",
+    message: "That was more than we can take.",
+    description:
+      "The request is larger than the server allows. Send something smaller, then try again.",
+    Illustration: StackIllustration,
+    theme: "warning"
+  },
+  415: {
+    title: "Wrong format",
+    message: "We can’t read that kind of file.",
+    description:
+      "The server doesn’t accept the format you sent. Convert it, then try again.",
+    Illustration: FormatIllustration
+  },
+  421: {
+    title: "Misdirected",
+    message: "That request reached the wrong server.",
+    description:
+      "This server isn’t set up to answer for that address. Check it, then try again.",
+    Illustration: DishIllustration
+  },
+  422: {
+    title: "Can’t process",
+    message: "The request made sense. The details didn’t.",
+    description:
+      "The syntax was fine, but the contents failed validation. Check them, then try again.",
+    Illustration: ExplodedIllustration,
+    theme: "warning"
+  },
+  423: {
+    title: "Locked",
+    message: "Someone else has this resource locked.",
+    description:
+      "The resource is locked, so it can’t be changed right now. Wait for the lock to clear, then try again.",
+    Illustration: VaultIllustration,
+    theme: "warning"
+  },
+  426: {
+    title: "Upgrade required",
+    message: "This connection needs a newer protocol.",
+    description:
+      "The server refused the current protocol. Update the client, then try again.",
+    Illustration: ElevatorIllustration,
+    theme: "warning"
   },
   429: {
     title: "Slow down",
@@ -113,12 +202,27 @@ const ERRORS: Record<number, ErrorPageCopy> = {
     Illustration: SieveIllustration,
     theme: "warning"
   },
+  451: {
+    title: "Restricted",
+    message: "This page is blocked for legal reasons.",
+    description:
+      "A legal demand keeps this content from being shown. It isn’t available from here.",
+    Illustration: VaultIllustration
+  },
   500: {
     title: "Server error",
     message: "Something broke on our end.",
     description:
       "An unexpected error stopped the server from finishing your request. Try again in a moment.",
     Illustration: BreakersIllustration,
+    theme: "danger"
+  },
+  501: {
+    title: "Not implemented",
+    message: "The server doesn’t know how to do that.",
+    description:
+      "The request is valid, but this server hasn’t built that capability. There’s nothing to retry.",
+    Illustration: TerminalIllustration,
     theme: "danger"
   },
   502: {
@@ -144,6 +248,30 @@ const ERRORS: Record<number, ErrorPageCopy> = {
       "A server along the way waited too long for a response from the one behind it. Try again in a moment.",
     Illustration: SlowIllustration,
     theme: "danger"
+  },
+  505: {
+    title: "HTTP version not supported",
+    message: "This server doesn’t support your web browser’s version.",
+    description:
+      "The server doesn’t support the HTTP version your web browser is using. Try using a different browser or updating to the latest version.",
+    Illustration: PlugIllustration,
+    theme: "danger"
+  },
+  507: {
+    title: "Out of space",
+    message: "The server ran out of room.",
+    description:
+      "There isn’t enough storage left to finish the request. Try again later.",
+    Illustration: CabinetIllustration,
+    theme: "danger"
+  },
+  511: {
+    title: "Network sign-in",
+    message: "This network wants you to sign in.",
+    description:
+      "A network between you and the server is asking for authentication. Sign in there, then try again.",
+    Illustration: HubIllustration,
+    theme: "warning"
   }
 };
 

@@ -152,6 +152,7 @@ The package ships Hairline's thirty-three figures as illustrations. Each answers
 | `LaptopIllustration`    | A thin laptop: the pointer's height sets how far the lid stands open, and the lid follows it on a spring.                                   |
 | `LockersIllustration`   | A bank of twelve lockers, one ajar at rest: the locker under the pointer opens, and the one open before it swings shut.                     |
 | `LoupeIllustration`     | A stand loupe over a blank ruled sheet: the pointer drags it across, and the rules pass enlarged under the glass with nothing between them. |
+| `MissingIllustration`   | A stand loupe over a ruled sheet holding only a question mark: the pointer drags it across, and finds nothing else there. |
 | `PadlockIllustration`   | A padlock: as the pointer nears, the shackle springs up out of the body and swings open about its long leg.                                 |
 | `PatchIllustration`     | A patch panel of twenty-four ports: the cable under the pointer lifts, and its neighbours lean away, less the further away.                 |
 | `PhoneIllustration`     | A phone in layers: glass, board, battery, shell. Moving across opens the gap; moving down picks a layer.                                    |

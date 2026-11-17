@@ -22,7 +22,10 @@ import { expect, fn, userEvent, within } from "storybook/test";
 import type { ErrorPageProps } from "./ErrorPage";
 import { ErrorPage, getErrorPageCopy } from "./ErrorPage";
 
-const CODES = [400, 401, 403, 404, 408, 410, 429, 500, 502, 503, 504];
+const CODES = [
+  400, 401, 402, 403, 404, 405, 406, 408, 409, 410, 413, 415, 421, 422, 423, 426,
+  429, 451, 500, 501, 502, 503, 504, 505, 507, 511
+];
 
 const ErrorPageExample = (args: ErrorPageProps) => (
   <ErrorPage {...args}>

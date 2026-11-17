@@ -32,6 +32,7 @@ export * from "./KeypadIllustration";
 export * from "./LaptopIllustration";
 export * from "./LockersIllustration";
 export * from "./LoupeIllustration";
+export * from "./MissingIllustration";
 export * from "./PadlockIllustration";
 export * from "./PatchIllustration";
 export * from "./PhoneIllustration";

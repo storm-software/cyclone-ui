@@ -35,6 +35,7 @@ import { KeypadIllustration } from "./KeypadIllustration";
 import { LaptopIllustration } from "./LaptopIllustration";
 import { LockersIllustration } from "./LockersIllustration";
 import { LoupeIllustration } from "./LoupeIllustration";
+import { MissingIllustration } from "./MissingIllustration";
 import { PadlockIllustration } from "./PadlockIllustration";
 import { PatchIllustration } from "./PatchIllustration";
 import { PhoneIllustration } from "./PhoneIllustration";
@@ -72,6 +73,7 @@ const ILLUSTRATIONS = {
   laptop: LaptopIllustration,
   lockers: LockersIllustration,
   loupe: LoupeIllustration,
+  missing: MissingIllustration,
   padlock: PadlockIllustration,
   patch: PatchIllustration,
   phone: PhoneIllustration,
