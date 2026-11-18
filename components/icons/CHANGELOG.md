@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Icons
 
+## [0.0.93](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.93) (11/18/2026)
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.92**
+
 ## [0.0.92](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.92) (11/18/2026)
 
 ### Updated Dependencies

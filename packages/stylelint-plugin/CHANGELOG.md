@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.80](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.80) (11/18/2026)
+
+### Bug Fixes
+
+- **color-token:** Resolve issues with tooltip display and hover event handler ([59e21d4e1](https://github.com/storm-software/cyclone-ui/commit/59e21d4e1))
+
 ## [0.0.79](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.79) (11/18/2026)
 
 ### Features

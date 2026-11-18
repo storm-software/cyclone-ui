@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Button
 
+## [0.6.98](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.98) (11/18/2026)
+
+### Bug Fixes
+
+- **button:** Update `link` variant of `Button` to match the underline of `LinkText` ([cf306301f](https://github.com/storm-software/cyclone-ui/commit/cf306301f))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.90**
+- Updated **container** to **v0.6.97**
+- Updated **helpers** to **v0.3.92**
+- Updated **icons** to **v0.0.93**
+- Updated **ripple-animation** to **v0.0.67**
+- Updated **tooltip** to **v0.5.98**
+
 ## [0.6.97](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.97) (11/18/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Fonts Storm Sans
 
+## [1.0.70](https://github.com/storm-software/cyclone-ui/releases/tag/fonts-storm-sans%401.0.70) (11/18/2026)
+
+### Bug Fixes
+
+- **fonts-storm-sans:** Extend the length of the tail on the lowercase "j" character ([cedbb9adc](https://github.com/storm-software/cyclone-ui/commit/cedbb9adc))
+
 ## [1.0.34](https://github.com/storm-software/cyclone-ui/releases/tag/fonts-storm-sans%401.0.34) (11/04/2026)
 
 ### Bug Fixes

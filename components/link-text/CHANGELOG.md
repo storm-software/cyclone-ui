@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Link Text
 
+## [0.5.92](https://github.com/storm-software/cyclone-ui/releases/tag/link-text%400.5.92) (11/18/2026)
+
+### Bug Fixes
+
+- **button:** Update `link` variant of `Button` to match the underline of `LinkText` ([cf306301f](https://github.com/storm-software/cyclone-ui/commit/cf306301f))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.90**
+
 ## [0.5.91](https://github.com/storm-software/cyclone-ui/releases/tag/link-text%400.5.91) (11/18/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Submit Button
 
+## [0.0.31](https://github.com/storm-software/cyclone-ui/releases/tag/submit-button%400.0.31) (11/18/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.98**
+- Updated **icons** to **v0.0.93**
+
 ## [0.0.30](https://github.com/storm-software/cyclone-ui/releases/tag/submit-button%400.0.30) (11/18/2026)
 
 ### Updated Dependencies

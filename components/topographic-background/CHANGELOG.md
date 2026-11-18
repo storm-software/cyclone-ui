@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Topographic Background
 
+## [0.0.20](https://github.com/storm-software/cyclone-ui/releases/tag/topographic-background%400.0.20) (11/18/2026)
+
+### Bug Fixes
+
+- **color-token:** Resolve issues with tooltip display and hover event handler ([59e21d4e1](https://github.com/storm-software/cyclone-ui/commit/59e21d4e1))
+
 ## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/topographic-background%400.0.6) (11/14/2026)
 
 ### Documentation
