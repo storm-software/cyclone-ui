@@ -14,6 +14,19 @@ min_version: "2.0.0"
 templates:
   devenv: .lefthook/devenv-run.sh
 
+# Git caches an automatic merge's tree before this hook. If generation changes
+# it, stop before committing; a subsequent git commit uses the regenerated index.
+pre-merge-commit:
+  commands:
+    razorwind-merge:
+      run: "{devenv} node tools/scripts/src/razorwind-merge.mjs --merge"
+
+# This guard also runs with --no-verify, which skips the generation hooks.
+prepare-commit-msg:
+  commands:
+    razorwind-merge:
+      run: "{devenv} node tools/scripts/src/razorwind-merge.mjs --guard {2}"
+
 # remotes:
 #   - git_url: https://github.com/storm-software/storm-ops
 #     ref: main
@@ -21,7 +34,11 @@ templates:
 #       - packages/git-tools/src/lefthook/pnpm/recommended.yml
 
 pre-commit:
+  piped: true
   commands:
+    razorwind-merge:
+      priority: 1
+      run: "{devenv} node tools/scripts/src/razorwind-merge.mjs --hook"
     nx-sync:
       glob: "**/*"
       run: "{devenv} pnpm nx sync"

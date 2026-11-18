@@ -23,6 +23,9 @@ import { $, chalk, echo } from "zx";
 try {
   echo`${chalk.whiteBright(" ⚙️  Bootstrapping the monorepo...")}`;
 
+  // Attributes select drivers, but Git only loads their definitions from config.
+  await $`node tools/scripts/src/razorwind-merge.mjs --install`;
+
   await Promise.all([
     build({
       entryPoints: [
