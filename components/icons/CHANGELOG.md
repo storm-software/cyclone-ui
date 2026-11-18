@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Icons
 
+## [0.0.90](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.90) (11/18/2026)
+
+### Bug Fixes
+
+- **monorepo:** Clean up and implementation fixes for various components ([9f87620ab](https://github.com/storm-software/cyclone-ui/commit/9f87620ab))
+
 ## [0.0.89](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.89) (11/17/2026)
 
 ### Bug Fixes

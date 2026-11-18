@@ -2,6 +2,15 @@
 
 # Changelog for Cyclone UI - Breadcrumb
 
+## [0.4.99](https://github.com/storm-software/cyclone-ui/releases/tag/breadcrumb%400.4.99) (11/18/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.95**
+- Updated **icons** to **v0.0.90**
+- Updated **link** to **v0.5.96**
+- Updated **popover** to **v0.5.97**
+
 ## [0.4.98](https://github.com/storm-software/cyclone-ui/releases/tag/breadcrumb%400.4.98) (11/17/2026)
 
 ### Updated Dependencies

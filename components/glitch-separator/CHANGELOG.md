@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Glitch Separator
 
+## [0.0.85](https://github.com/storm-software/cyclone-ui/releases/tag/glitch-separator%400.0.85) (11/18/2026)
+
+### Bug Fixes
+
+- **monorepo:** Clean up and implementation fixes for various components ([9f87620ab](https://github.com/storm-software/cyclone-ui/commit/9f87620ab))
+
 ## [0.0.73](https://github.com/storm-software/cyclone-ui/releases/tag/glitch-separator%400.0.73) (11/14/2026)
 
 ### Documentation

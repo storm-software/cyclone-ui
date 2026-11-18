@@ -2,6 +2,14 @@
 
 # Changelog for Cyclone UI - Tag Picker
 
+## [0.0.93](https://github.com/storm-software/cyclone-ui/releases/tag/tag-picker%400.0.93) (11/18/2026)
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.97**
+- Updated **input** to **v0.6.97**
+- Updated **tag** to **v0.0.90**
+
 ## [0.0.92](https://github.com/storm-software/cyclone-ui/releases/tag/tag-picker%400.0.92) (11/17/2026)
 
 ### Updated Dependencies
