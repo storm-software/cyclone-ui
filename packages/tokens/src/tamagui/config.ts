@@ -254,7 +254,7 @@ const tokens = createTokens({
     card: 11.5,
     checkbox: 4,
     container: 16,
-    control: 4,
+    control: 6,
     dialog: 9,
     drawer: 9,
     full: "100%",

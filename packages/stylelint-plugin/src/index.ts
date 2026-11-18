@@ -122,7 +122,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-border-radius-control",
       type: "dimension",
       category: "radius",
-      value: "0.25rem",
+      value: "0.375rem",
       alias: true
     },
     {
@@ -4697,6 +4697,11 @@ export const manifest: DesignSystemManifest = {
       name: "@cyclone-ui/text-area",
       jsx: ["TextArea"],
       roles: ["textarea"]
+    },
+    {
+      name: "@cyclone-ui/theme-select",
+      jsx: ["ThemeSelect"],
+      roles: []
     },
     {
       name: "@cyclone-ui/theme-toggler",

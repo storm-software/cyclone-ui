@@ -4756,7 +4756,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-control",
       description:
         "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating.",
@@ -10221,7 +10221,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-control",
       description:
         "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating.",
@@ -15686,7 +15686,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-control",
       description:
         "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating.",
@@ -21152,7 +21152,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-control",
       description:
         "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating.",
@@ -26618,7 +26618,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-control",
       description:
         "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating.",
@@ -32084,7 +32084,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-control",
       description:
         "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating.",

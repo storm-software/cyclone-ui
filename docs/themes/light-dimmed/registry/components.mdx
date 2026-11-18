@@ -5,7 +5,7 @@ description: "Components available in the Cyclone UI (Light Dimmed)."
 
 # Components
 
-123 `component` items in the component registry.
+124 `component` items in the component registry.
 
 ## @cyclone-ui/accordion
 
@@ -4774,6 +4774,7 @@ A documentation block that displays a component with controls to change its prop
 - `@cyclone-ui/select@0.6.100`
 - `@cyclone-ui/skeleton@0.0.72`
 - `@cyclone-ui/switch@0.5.98`
+- `@cyclone-ui/theme-select@0.0.1`
 - `@tamagui/core@3.3.2`
 - `@tamagui/stacks@3.3.2`
 
@@ -4797,6 +4798,7 @@ A documentation block that displays a component with controls to change its prop
 | `variants`    | `readonly StoryVariant<TProps>[]` | —       | No       | Presets of args, chosen with a select over the display.                                                                           |
 | `loading`     | `boolean`                         | —       | No       | Shows the skeleton in place of the display. It also shows while the display suspends, such as a `lazy` component loading.         |
 | `skeleton`    | `ReactNode`                       | —       | No       | The placeholder shown while the display loads, shaped like the component. Defaults to a rounded block.                            |
+| `themeSelect` | `boolean`                         | —       | No       | Shows a theme select over the display, which renders the preview in the selected color theme (`base` at first).                   |
 
 ## @cyclone-ui/submit-button
 
@@ -5180,6 +5182,24 @@ A multiline text input that renders a textarea with 3 rows by default and uses t
 | Path                                    | Type        | Target |
 | --------------------------------------- | ----------- | ------ |
 | `components/text-area/src/TextArea.tsx` | `component` | —      |
+
+## @cyclone-ui/theme-select
+
+A Select preloaded with an option for each color theme in the Tamagui config (base, brand, discovery, info, warning, danger, success), each option written in its theme's primary color. Wrapped in a Field, it connects to the form like Select.
+
+- **Name:** `@cyclone-ui/theme-select`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/select@0.6.100`
+- `@tamagui/core@3.3.2`
+
+### Files
+
+| Path                                          | Type        | Target |
+| --------------------------------------------- | ----------- | ------ |
+| `components/theme-select/src/ThemeSelect.tsx` | `component` | —      |
 
 ## @cyclone-ui/theme-toggler
 

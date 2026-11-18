@@ -30,8 +30,9 @@ import { NumberInput } from "@cyclone-ui/number-input";
 import { Select } from "@cyclone-ui/select";
 import { Skeleton } from "@cyclone-ui/skeleton";
 import { Switch } from "@cyclone-ui/switch";
+import { ThemeSelect } from "@cyclone-ui/theme-select";
 import type { ViewProps } from "@tamagui/core";
-import { styled, View } from "@tamagui/core";
+import { styled, Theme, View } from "@tamagui/core";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { ComponentType, ReactNode } from "react";
 import { Component, Suspense, useId, useState } from "react";
@@ -115,6 +116,11 @@ export type StoryProps<TProps extends object> = Omit<
    * component. Defaults to a rounded block.
    */
   skeleton?: ReactNode;
+  /**
+   * Shows a theme select over the display, which renders the preview in the
+   * selected color theme (`base` at first).
+   */
+  themeSelect?: boolean;
 };
 
 type Args = Record<string, unknown>;
@@ -345,6 +351,7 @@ export function Story<TProps extends object>({
   variants,
   loading = false,
   skeleton = defaultSkeleton,
+  themeSelect = false,
   ...props
 }: StoryProps<TProps>) {
   const id = useId();
@@ -374,6 +381,7 @@ export function Story<TProps extends object>({
   const [values, setValues] = useState<Args>({});
   const current = { ...initial, ...values, ...locked } as TProps;
   const hasVariants = (variants?.length ?? 0) > 1;
+  const [previewTheme, setPreviewTheme] = useState("base");
 
   const reset = (name = snapshot.name) => {
     setSnapshot(resolve(name, revision + 1));
@@ -395,7 +403,7 @@ export function Story<TProps extends object>({
 
   return (
     <StoryFrame {...props}>
-      {title || description || hasVariants ? (
+      {title || description || hasVariants || themeSelect ? (
         <StoryHeader>
           <YStack gap="sm" flex={1} minWidth={0}>
             {title && <HeadingSmallText>{title}</HeadingSmallText>}
@@ -412,6 +420,23 @@ export function Story<TProps extends object>({
               </BodyText>
             )}
           </YStack>
+          {themeSelect && (
+            <View width="20xl" flexShrink={0}>
+              <Form name={`${id}-theme`} initialValues={{ theme: previewTheme }}>
+                <Field
+                  name="theme"
+                  size="sm"
+                  // Idempotent: React skips a state update to the same value.
+                  onChange={({ get, atoms }: FieldChangeContext) => {
+                    const value = get(atoms.value);
+                    if (value) setPreviewTheme(String(value));
+                  }}>
+                  <Field.Label variant="above">Theme</Field.Label>
+                  <ThemeSelect size="sm" searchable={false} />
+                </Field>
+              </Form>
+            </View>
+          )}
           {variants && hasVariants && (
             <View width="20xl" flexShrink={0}>
               <Form
@@ -437,21 +462,24 @@ export function Story<TProps extends object>({
         </StoryHeader>
       ) : null}
 
-      <StoryPreview>
-        <StoryErrorBoundary resetKey={current}>
-          <StoryCanvas aria-busy={loading || undefined}>
-            {loading ? (
-              skeleton
-            ) : (
-              <Suspense fallback={skeleton}>
-                {render
-                  ? render(current)
-                  : StoryComponent && <StoryComponent {...current} />}
-              </Suspense>
-            )}
-          </StoryCanvas>
-        </StoryErrorBoundary>
-      </StoryPreview>
+      {/* The theme applies to the whole preview, its canvas included. */}
+      <Theme name={themeSelect ? previewTheme : null}>
+        <StoryPreview>
+          <StoryErrorBoundary resetKey={current}>
+            <StoryCanvas aria-busy={loading || undefined}>
+              {loading ? (
+                skeleton
+              ) : (
+                <Suspense fallback={skeleton}>
+                  {render
+                    ? render(current)
+                    : StoryComponent && <StoryComponent {...current} />}
+                </Suspense>
+              )}
+            </StoryCanvas>
+          </StoryErrorBoundary>
+        </StoryPreview>
+      </Theme>
 
       {entries.length > 0 && (
         <StoryControlsPanel>

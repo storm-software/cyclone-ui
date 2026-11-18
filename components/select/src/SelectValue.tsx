@@ -226,8 +226,12 @@ export const SelectValue = createStyledHOC(
       !formControl || (!value && shouldShowPlaceholder)
         ? placeholderProp
         : undefined;
-    // Without children, the selected value itself, then the placeholder.
-    const content = children ?? (value || placeholder);
+    // The selected option's text, or the value when no option has it.
+    const selectedLabel = value
+      ? (options.find(option => option.value === value)?.label ?? value)
+      : undefined;
+    // Without children, the selected option's text, then the placeholder.
+    const content = children ?? (selectedLabel || placeholder);
     const placeholding = !!placeholder && content === placeholder && !disabled;
 
     useLayoutEffect(() => {
@@ -245,11 +249,7 @@ export const SelectValue = createStyledHOC(
     if (searchable) {
       // While not edited, the selected option's text (or the children's).
       const label =
-        typeof children === "string"
-          ? children
-          : (options.find(option => option.value === value)?.label ??
-            value ??
-            "");
+        typeof children === "string" ? children : (selectedLabel ?? "");
 
       return (
         <Theme name="base">

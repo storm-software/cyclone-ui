@@ -12,7 +12,13 @@ describe("Select in a Field", () => {
       /const placeholder =\s+!formControl \|\| \(!value && shouldShowPlaceholder\)\s+\? placeholderProp\s+: undefined;/
     );
     expect(source).toMatch(
-      /const content = children \?\? \(value \|\| placeholder\);/
+      /const content = children \?\? \(selectedLabel \|\| placeholder\);/
+    );
+  });
+
+  it("shows the selected option's text rather than its value", () => {
+    expect(source).toMatch(
+      /const selectedLabel = value\s+\? \(options\.find\(option => option\.value === value\)\?\.label \?\? value\)\s+: undefined;/
     );
   });
 });

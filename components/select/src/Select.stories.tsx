@@ -539,17 +539,17 @@ export const TruncatedValue: Story = {
       const input = row.querySelector<HTMLInputElement>(
         'input:not([type="hidden"])'
       )!;
-      await waitFor(() => {
-        expect(text.scrollWidth).toBeGreaterThan(text.clientWidth);
-        expect(getComputedStyle(text).whiteSpace).toBe("nowrap");
-        expect(getComputedStyle(text).textOverflow).toBe("ellipsis");
+      await waitFor(async () => {
+        await expect(text.scrollWidth).toBeGreaterThan(text.clientWidth);
+        await expect(getComputedStyle(text).whiteSpace).toBe("nowrap");
+        await expect(getComputedStyle(text).textOverflow).toBe("ellipsis");
         for (const property of [
           "fontSize",
           "fontWeight",
           "fontFamily",
           "lineHeight"
         ] as const) {
-          expect(getComputedStyle(text)[property]).toBe(
+          await expect(getComputedStyle(text)[property]).toBe(
             getComputedStyle(input)[property]
           );
         }
@@ -559,7 +559,7 @@ export const TruncatedValue: Story = {
     await userEvent.click(trigger.querySelector(".is_Text")!.parentElement!);
     const document = within(canvasElement.ownerDocument.body);
     await userEvent.click(
-      await document.findByRole("option", { name: "California", exact: true })
+      await document.findByRole("option", { name: "California" })
     );
     await waitFor(() => expect(trigger).toHaveTextContent("California"));
   }

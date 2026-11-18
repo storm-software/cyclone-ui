@@ -79,7 +79,7 @@ import { Select } from "@cyclone-ui/select";
 | --- | --- | --- |
 | `Select` | A [`ContextMenu`](./context-menu.md) inside a React `Suspense` boundary. On web, with a `name`, it also renders `<input type="hidden">`. | The root. It holds the value, size, variant, and disabled state and shares them with its parts. The hidden input carries the value when the form submits. |
 | `Select.TextBox` | A Tamagui `XStack` frame around a Tamagui `View` as `<button type="button">`, the `ContextMenu.Trigger` | The trigger that looks like a text box. The frame draws the border and focus ring. After the value, it shows a separator and a chevron that turns up while the menu is open. Inside a `Field`, it also shows the field status icon. The button has `data-select-trigger`, `aria-required`, `aria-invalid`, and `aria-describedby` from the field. |
-| `Select.TextBox.Value` | A Tamagui `Text` | Shows the children, else the selected value, else the `placeholder`. A long value ends with an ellipsis and shows the full text in a [`Tooltip`](./tooltip.md). |
+| `Select.TextBox.Value` | A Tamagui `Text` | Shows the children, else the selected option's text (the value when no option has it), else the `placeholder`. A long value ends with an ellipsis and shows the full text in a [`Tooltip`](./tooltip.md). |
 | `Select.Items` | `ContextMenu.Content` with a scroll view that has `role="listbox"` | The list of options. It is a popover on large screens and a bottom [Sheet](./sheet.md) on small screens. Without children, it renders the `items` of the field. |
 | `Select.Items.Item` | `ContextMenu.Item` (a `<button>`) with `role="option"` and `aria-selected` | One option. The selected option shows a check mark. A disabled option shows a lock. |
 

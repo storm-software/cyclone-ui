@@ -418,6 +418,9 @@
       "path": "./components/avatar"
     },
     {
+      "path": "./components/theme-select"
+    },
+    {
       "path": "./components/theme-toggler"
     },
     {

@@ -58,6 +58,7 @@ The pages below describe the public parts and props. Choose a semantic token for
 | [Radio Group](./radio-group.md) | A RadioGroup compound component (RadioGroup.Item) built on Tamagui's radio group. |
 | [Switch](./switch.md) | A toggle switch with an animated thumb, sm, md and lg sizes, and a disabled state. |
 | [Select](./select.md) | A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. |
+| [Theme Select](./theme-select.md) | A Select preloaded with each color theme, each option in its theme's `primary` color. |
 | [Slider](./slider.md) | A Material-style slider, built on the Tamagui Slider, for choosing a single value or, when given an array, a range. |
 | [Number Input](./number-input.md) | A NumberInput built on Input that renders a type=number text box with decrease (minus) and increase (plus) buttons. |
 | [Password Input](./password-input.md) | A password input with a show/hide toggle and a caps-lock warning. |

@@ -3750,6 +3750,7 @@ A documentation block that displays a component with controls to change its prop
 - `@cyclone-ui/select`: `workspace:*`
 - `@cyclone-ui/skeleton`: `workspace:*`
 - `@cyclone-ui/switch`: `workspace:*`
+- `@cyclone-ui/theme-select`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/stacks`: `catalog:`
 
@@ -4049,6 +4050,33 @@ A multiline text input that renders a textarea with 3 rows by default and uses t
 | Path | Type | Target |
 | --- | --- | --- |
 | `../../components/text-area/src/TextArea.tsx` | `component` |  |
+
+## @cyclone-ui/theme-select
+
+A Select preloaded with an option for each color theme in the Tamagui config (base, brand, discovery, info, warning, danger, success), each option written in its theme's primary color. Wrapped in a Field, it connects to the form like Select.
+
+- **Name:** `@cyclone-ui/theme-select`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/select`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/field`: `workspace:*`
+- `@cyclone-ui/form`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/theme-select/src/ThemeSelect.tsx` | `component` |  |
 
 ## @cyclone-ui/theme-toggler
 

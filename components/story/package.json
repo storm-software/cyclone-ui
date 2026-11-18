@@ -27,6 +27,7 @@
     "@cyclone-ui/select": "workspace:*",
     "@cyclone-ui/skeleton": "workspace:*",
     "@cyclone-ui/switch": "workspace:*",
+    "@cyclone-ui/theme-select": "workspace:*",
     "@tamagui/core": "catalog:",
     "@tamagui/stacks": "catalog:"
   },

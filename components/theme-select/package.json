@@ -1,0 +1,50 @@
+{
+  "name": "@cyclone-ui/theme-select",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A Select preloaded with an option for each color theme in the Tamagui config (base, brand, discovery, info, warning, danger, success), each option written in its theme's primary color. Wrapped in a Field, it connects to the form like Select.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/theme-select"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/select": "workspace:*",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/form": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./ThemeSelect": {
+      "import": "./dist/ThemeSelect.mjs",
+      "require": "./dist/ThemeSelect.cjs"
+    },
+    "./*": "./*"
+  }
+}

@@ -52,6 +52,9 @@
     },
     {
       "path": "../switch"
+    },
+    {
+      "path": "../theme-select"
     }
   ],
   "files": [],

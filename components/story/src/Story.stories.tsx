@@ -190,6 +190,48 @@ export const Variants: StoryType = {
   }
 };
 
+/**
+ * `themeSelect` adds a theme select over the display, which renders the
+ * preview in the selected color theme.
+ */
+export const Themes: StoryType = {
+  render: () => (
+    <Story<DemoButtonProps>
+      title="Button"
+      description="Pick a theme to see the button in it."
+      themeSelect
+      render={({ label, ...props }) => (
+        <Button {...props}>
+          <Button.Text>{label}</Button.Text>
+        </Button>
+      )}
+      args={{ label: "Save changes", variant: "primary" }}
+      controls={{
+        variant: { type: "select", options: ["primary", "outlined", "ghost"] }
+      }}
+    />
+  ),
+  play: async ({ canvasElement }) => {
+    const document = within(canvasElement.ownerDocument.body);
+    const button = () =>
+      within(canvasElement).getByRole("button", { name: "Save changes" });
+    const themeOf = () =>
+      button().closest<HTMLElement>('[class*="t_light_"], [class*="t_dark_"]')
+        ?.className;
+
+    await expect(themeOf()).toMatch(/_base\b/);
+
+    // The header's theme select is the first select of the story.
+    await userEvent.click(
+      canvasElement.querySelector<HTMLElement>("[data-select-trigger]")!
+    );
+    await userEvent.click(
+      await document.findByRole("option", { name: "Danger" })
+    );
+    await waitFor(async () => expect(themeOf()).toMatch(/_danger\b/));
+  }
+};
+
 interface MeterProps {
   value: number;
   max: number;

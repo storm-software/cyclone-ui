@@ -29,7 +29,7 @@ pnpm install
 ```
 
 - **File:** `Story.tsx`. The CLI writes it to `<path>/story/`. `path` comes from `components.json` and defaults to `components`.
-- **Also copies:** [Body Text](./body-text.md), [Button](./button.md), [Field](./field.md), [Form](./form.md), [Heading Text](./heading-text.md), [Input](./input.md), [Number Input](./number-input.md), [Select](./select.md), [Switch](./switch.md), and the components that they need.
+- **Also copies:** [Body Text](./body-text.md), [Button](./button.md), [Field](./field.md), [Form](./form.md), [Heading Text](./heading-text.md), [Input](./input.md), [Number Input](./number-input.md), [Select](./select.md), [Switch](./switch.md), [Theme Select](./theme-select.md), and the components that they need.
 - **Adds to `package.json`:** `@tamagui/core`, `@tamagui/stacks`.
 
 ## Import
@@ -102,8 +102,8 @@ In an MDX page, render the story like any other component.
 | Part            | Renders                                                                                 | Purpose                                                                                                                                                                                                                        |
 | --------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `Story`         | A `YStack` with a 1 px `hairline` border, the `card` radius, and a `surface` background | The block. It accepts the props of a Tamagui `View`, except `children` and `render`.                                                                                                                                           |
-| `StoryHeader`   | An `XStack` with a `hairline` bottom border                                             | The `title` as `HeadingSmallText`, the `description` and the selected variant's description as subtle `sm` `BodyText`, and the variant select. It renders only when there is a title, a description, or more than one variant. |
-| `StoryPreview`  | A `View` with a `canvas` background, `3xl` padding, and a minimum height of 160 px      | Centers the display. An error boundary inside it catches a render that throws, and a `Suspense` boundary shows the skeleton while it loads.                                                                                    |
+| `StoryHeader`   | An `XStack` with a `hairline` bottom border                                             | The `title` as `HeadingSmallText`, the `description` and the selected variant's description as subtle `sm` `BodyText`, the theme select (with `themeSelect`), and the variant select. It renders only when there is a title, a description, `themeSelect`, or more than one variant. |
+| `StoryPreview`  | A `View` with a `canvas` background, `3xl` padding, and a minimum height of 160 px      | Centers the display. With `themeSelect`, it renders in a Tamagui `Theme` of the selected theme, its canvas included. An error boundary inside it catches a render that throws, and a `Suspense` boundary shows the skeleton while it loads.                                                                                    |
 | `StoryCanvas`   | A `View` with `maxWidth: "100%"`                                                        | Sizes the display to its content, so that a child with `flexGrow: 1` (such as a `Button`) does not fill the preview.                                                                                                           |
 | `StoryControls` | A `YStack` with a `hairline` top border                                                 | A "Props" heading, a ghost `sm` Reset `Button`, and a `Form` with one `Field` for each control. It renders only when there is at least one control.                                                                            |
 
@@ -118,6 +118,7 @@ The examples are the stories in [`Story.stories.tsx`](../../../components/story/
 | `Numbers`     | A meter with a number control, a fixed `max`, and a `caption` whose control is hidden with `false`.                                                           |
 | `Loading`     | The meter with `loading` and a `skeleton` shaped like it: a bar and a caption line. The controls still show.                                                  |
 | `Lazy`        | The meter as a `lazy` component that loads after 1.5 s. The default skeleton shows until it is ready.                                                         |
+| `Themes`      | A `Button` with `themeSelect`. The play function picks Danger and checks that the preview renders in the `danger` theme.                                          |
 | `RenderError` | A component that throws while a switch is on. The error shows in the preview with an error icon, and the component renders again when the switch is off.      |
 
 ## Props
@@ -136,6 +137,7 @@ The examples are the stories in [`Story.stories.tsx`](../../../components/story/
 | `variants`    | `readonly StoryVariant<TProps>[]` | -       | Presets of args. With more than one, a select over the preview picks the variant.                                                    |
 | `loading`     | `boolean`                         | `false` | Shows the skeleton in place of the display, such as while data it needs loads.                                                       |
 | `skeleton`    | `ReactNode`                       | -       | The placeholder shown while the display loads or suspends. Shape it like the component. Defaults to a 240 × 40 px `Skeleton`.        |
+| `themeSelect` | `boolean`                         | `false` | Shows a [Theme Select](./theme-select.md) in the header. The preview renders in the selected color theme, `base` at first. Reset does not change it. |
 
 ### `StoryControl`
 

@@ -14747,7 +14747,7 @@ module.exports = {
       $description:
         "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating.",
       $type: "dimension",
-      $value: "0.25rem",
+      $value: "0.375rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -14755,7 +14755,7 @@ module.exports = {
         $description:
           "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating.",
         $type: "dimension",
-        $value: "{border-radius.sm}",
+        $value: "{border-radius.md}",
         key: "{border-radius.control}"
       },
       name: "BorderRadiusControl",
