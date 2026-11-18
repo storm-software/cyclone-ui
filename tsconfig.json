@@ -428,6 +428,9 @@
     },
     {
       "path": "./components/color-token"
+    },
+    {
+      "path": "./components/font-preview"
     }
   ],
   "files": []

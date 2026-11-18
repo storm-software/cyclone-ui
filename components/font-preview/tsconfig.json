@@ -1,0 +1,51 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/font-preview/tsconfig.tsbuildinfo",
+    "jsx": "preserve",
+    "lib": ["DOM", "ES2022"],
+    "ignoreDeprecations": "6.0",
+    "rootDir": ".",
+    "types": [
+      "node",
+      "@nx/react/typings/cssmodule.d.ts",
+      "@nx/react/typings/image.d.ts"
+    ],
+    "outDir": "../../dist/out-tsc/components/font-preview"
+  },
+  "references": [
+    {
+      "path": "../../tools/config"
+    },
+    {
+      "path": "../body-text"
+    },
+    {
+      "path": "../field"
+    },
+    {
+      "path": "../form"
+    },
+    {
+      "path": "../input"
+    },
+    {
+      "path": "../select"
+    },
+    {
+      "path": "../slider"
+    },
+    {
+      "path": "../../packages/state"
+    }
+  ],
+  "files": [],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": [
+    "vitest.config.mts",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts",
+    "src/**/*.spec.tsx",
+    "src/**/*.test.tsx"
+  ]
+}
