@@ -19,7 +19,13 @@
 "use client";
 
 import type { TamaguiElement } from "@tamagui/core";
-import { getVariableValue, styled, useTheme, View } from "@tamagui/core";
+import {
+  getVariableValue,
+  styled,
+  useMedia,
+  useTheme,
+  View
+} from "@tamagui/core";
 import { useEffect, useRef, useState } from "react";
 import { AccessibilityInfo } from "react-native";
 import { Path, Svg } from "react-native-svg";
@@ -29,6 +35,9 @@ const TerrainFrame = styled(View, {
   position: "absolute",
   inset: 0,
   overflow: "hidden",
+  // Below the SVG's 800px minimum width, center it so the ridges stay in view
+  // instead of the left half of the mesh.
+  alignItems: "center",
   pointerEvents: "none",
   zIndex: "20"
 });
@@ -98,6 +107,10 @@ const terrainPath = () => (stillPath ??= createTerrainPath());
 export const FooterTerrain = ({ animate = true }: { animate?: boolean }) => {
   const theme = useTheme();
   const frameRef = useRef<TamaguiElement>(null);
+  // Small screens get the still mesh: rebuilding ~220 KB of path data 30 times
+  // per second costs phones CPU and battery for a barely visible ripple.
+  const small = useMedia()["max-md"] ?? false;
+  const moving = animate && !small;
   // Drawn after mount and animated only while on screen: the mesh is ~220 KB
   // of path data, too much for every page's HTML or to rebuild off screen.
   const [path, setPath] = useState<string>();
@@ -127,7 +140,7 @@ export const FooterTerrain = ({ animate = true }: { animate?: boolean }) => {
       if (disposed || !visible) {
         return;
       }
-      if (animate && !reduceMotion) {
+      if (moving && !reduceMotion) {
         frame = requestAnimationFrame(tick);
       } else {
         setPath(terrainPath());
@@ -168,7 +181,7 @@ export const FooterTerrain = ({ animate = true }: { animate?: boolean }) => {
       observer?.disconnect();
       subscription.remove();
     };
-  }, [animate]);
+  }, [moving]);
 
   return (
     <TerrainFrame

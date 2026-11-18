@@ -5392,6 +5392,38 @@
       ]
     },
     {
+      "name": "@cyclone-ui/story",
+      "type": "registry:component",
+      "title": "@cyclone-ui/story",
+      "description": "A documentation block that displays a component with controls to change its props. The preview renders the component, or a render function for compound components, from the story args; a skeleton stands in while the display loads or suspends, and an error boundary keeps a failing render inside the preview with an error icon. Under it, a Props panel builds a Form of Field controls (a text input, number input, switch or select per prop) from the initial args or declared controls, each with its documentation, and a Reset button. Variants are presets of args chosen with a select, fixed props have no control, and a title and description head the block. Use it in documentation pages, like Fumadocs Story.",
+      "dependencies": ["@tamagui/core@3.3.2", "@tamagui/stacks@3.3.2"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/button",
+        "@cyclone-ui/field",
+        "@cyclone-ui/form",
+        "@cyclone-ui/heading-text",
+        "@cyclone-ui/icons",
+        "@cyclone-ui/input",
+        "@cyclone-ui/number-input",
+        "@cyclone-ui/select",
+        "@cyclone-ui/skeleton",
+        "@cyclone-ui/switch"
+      ],
+      "files": [
+        {
+          "path": "components/story/src/Story.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/submit-button",
       "type": "registry:component",
       "title": "@cyclone-ui/submit-button",

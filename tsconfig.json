@@ -157,6 +157,9 @@
       "path": "./components/select"
     },
     {
+      "path": "./components/story"
+    },
+    {
       "path": "./components/switch"
     },
     {

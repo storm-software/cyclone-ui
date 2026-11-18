@@ -4651,6 +4651,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/story",
+      jsx: ["Story"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/submit-button",
       jsx: ["SubmitButton"],
       roles: []
@@ -4757,7 +4762,14 @@ export const manifest: DesignSystemManifest = {
     }
   ],
   icons: [],
-  fonts: [],
+  fonts: [
+    {
+      family: "Storm Sans"
+    },
+    {
+      family: "Storm Serif"
+    }
+  ],
   tailwind: {
     name: "cyclone-ui",
     version: "0.0.0",

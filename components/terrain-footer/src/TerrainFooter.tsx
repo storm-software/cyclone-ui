@@ -48,7 +48,7 @@ const TerrainFooterNoise = styled(View, {
 });
 
 export type TerrainFooterProps = FooterProps & {
-  /** Enable the subtle terrain ripple. Respects reduced motion. Defaults to true. */
+  /** Enable the subtle terrain ripple. Respects reduced motion and stays still below `md`. Defaults to true. */
   animate?: boolean;
   /** Overlay a low-opacity noise texture over the footer. Defaults to true. */
   noise?: boolean;

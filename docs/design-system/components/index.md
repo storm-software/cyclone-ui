@@ -117,6 +117,7 @@ The pages below describe the public parts and props. Choose a semantic token for
 | [Tag](./tag.md) | A compact label chip with Tag.Text and Tag.Icon subcomponents. |
 | [Timeline](./timeline.md) | A Timeline that renders a list of events joined by a line, vertically or horizontally. |
 | [Type Table](./type-table.md) | A documentation table that lists properties with their types. |
+| [Story](./story.md) | A documentation block that displays a component with a Props panel of controls that update it, plus variants, fixed props, and a title and description. |
 | [File Tree](./file-tree.md) | A FileTree component that renders a hierarchical file structure using File leaves and expandable Folder branches. |
 | [Breadcrumb](./breadcrumb.md) | A breadcrumb trail of Breadcrumb.Item links followed by the current page name. |
 | [Pagination](./pagination.md) | A page navigation bar with previous and next buttons, first and last page buttons, and a sliding window of page numbers with ellipses. |

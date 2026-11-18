@@ -1,0 +1,58 @@
+{
+  "name": "@cyclone-ui/story",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "A documentation block that displays a component with controls to change its props. The preview renders the component, or a render function for compound components, from the story args; a skeleton stands in while the display loads or suspends, and an error boundary keeps a failing render inside the preview with an error icon. Under it, a Props panel builds a Form of Field controls (a text input, number input, switch or select per prop) from the initial args or declared controls, each with its documentation, and a Reset button. Variants are presets of args chosen with a select, fixed props have no control, and a title and description head the block. Use it in documentation pages, like Fumadocs Story.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/story"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/form": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/input": "workspace:*",
+    "@cyclone-ui/number-input": "workspace:*",
+    "@cyclone-ui/select": "workspace:*",
+    "@cyclone-ui/skeleton": "workspace:*",
+    "@cyclone-ui/switch": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/stacks": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/kbd": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Story": {
+      "import": "./dist/Story.mjs",
+      "require": "./dist/Story.cjs"
+    },
+    "./*": "./*"
+  }
+}

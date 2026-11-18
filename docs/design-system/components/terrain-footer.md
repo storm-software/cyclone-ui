@@ -15,7 +15,7 @@ component:
 
 `TerrainFooter` is a footer block for a marketing page. It is a [Footer](./footer.md) with a wireframe terrain drawn behind the content and a low-opacity noise texture over it.
 
-The terrain ripples slowly. The ripple stops when the device asks for reduced motion. The container leaves extra space above the content, so the terrain ridges show.
+The terrain ripples slowly. The ripple stops when the device asks for reduced motion and on screens below the `md` breakpoint, where the terrain is centered. The container leaves extra space above the content, so the terrain ridges show.
 
 Use `TerrainFooter` for a decorative footer on a landing page. For a plain footer, use `Footer`.
 
@@ -128,13 +128,14 @@ The examples are the stories in [`TerrainFooter.stories.tsx`](../../../component
 
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
-| `animate` | `boolean` | `true` | Plays the terrain ripple. Reduced motion keeps the terrain still. |
+| `animate` | `boolean` | `true` | Plays the terrain ripple. Reduced motion and screens below `md` keep the terrain still. |
 | `noise` | `boolean` | `true` | Overlays a low-opacity noise texture. |
 
 ## Behavior
 
 - The ripple runs on `requestAnimationFrame` and updates the terrain path approximately 30 times per second.
 - The footer reads the reduced-motion setting with `AccessibilityInfo` and follows changes to it. With reduced motion, the ripple stops and the terrain goes back to its rest shape.
+- Below the `md` breakpoint the terrain never animates, which saves phones from rebuilding the mesh path 30 times per second. The terrain is centered there, because the SVG keeps an 800 px minimum width and overflows the viewport.
 - The terrain is the same on the server and on the client, so it does not change at hydration.
 
 ## Responsive behavior

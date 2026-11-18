@@ -46,7 +46,8 @@ decorative wireframe terrain behind the footer content. The SVG uses the
 current theme, requires no WebGL or image downloads, and stays behind the
 content without intercepting pointer or keyboard input. The terrain ripples
 subtly by default; pass `animate={false}` to keep it still. The animation
-respects the system reduced-motion preference. A low-opacity repeating noise
+respects the system reduced-motion preference and is skipped below the `md`
+breakpoint, where the terrain is centered and drawn still. A low-opacity repeating noise
 texture overlays the surface by default; pass `noise={false}` to remove it.
 
 `<TerrainFooter>` has the same compound parts as `<Footer>`, so
@@ -76,7 +77,7 @@ same way.
 ## Quick Features
 
 - A `Footer` with a wireframe terrain drawn behind the content in the theme `primary` color.
-- The terrain ripples slowly (`animate`, on by default) and stays still when the user prefers reduced motion.
+- The terrain ripples slowly (`animate`, on by default) and stays still when the user prefers reduced motion or the screen is below the `md` breakpoint.
 - A low-opacity noise texture covers the surface (`noise`, on by default).
 - The same compound parts as `Footer`, such as `TerrainFooter.Container`, `.Main`, `.Navigation` and `.Rail`, except `SocialLinks`.
 - Takes the `Footer` props, such as `variant`.
