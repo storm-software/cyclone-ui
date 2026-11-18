@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/color-token",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "description": "A color token swatch that shows the token's color, its name and description in a Tooltip on hover, and its hex value inline on hover or focus. Pressing it copies the hex value; Shift with a press copies the OKLCH value.",
   "repository": {

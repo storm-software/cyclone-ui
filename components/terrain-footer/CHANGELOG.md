@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Terrain Footer
 
+## [0.0.58](https://github.com/storm-software/cyclone-ui/releases/tag/terrain-footer%400.0.58) (11/18/2026)
+
+### Features
+
+- **story:** Added the Story component package ([186608daf](https://github.com/storm-software/cyclone-ui/commit/186608daf))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.89**
+- Updated **footer** to **v0.0.97**
+- Updated **heading-text** to **v0.5.90**
+- Updated **icons** to **v0.0.92**
+- Updated **link** to **v0.5.98**
+
 ## [0.0.57](https://github.com/storm-software/cyclone-ui/releases/tag/terrain-footer%400.0.57) (11/18/2026)
 
 ### Updated Dependencies

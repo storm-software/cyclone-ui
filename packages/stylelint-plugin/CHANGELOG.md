@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.79](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.79) (11/18/2026)
+
+### Features
+
+- **theme-select:** Initial check-in of the `ThemeSelect` component package ([254f1b59c](https://github.com/storm-software/cyclone-ui/commit/254f1b59c))
+- **story:** Added the Story component package ([186608daf](https://github.com/storm-software/cyclone-ui/commit/186608daf))
+
 ## [0.0.78](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.78) (11/18/2026)
 
 ### Features

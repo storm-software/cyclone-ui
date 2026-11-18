@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Container
 
+## [0.6.96](https://github.com/storm-software/cyclone-ui/releases/tag/container%400.6.96) (11/18/2026)
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.91**
+- Updated **icons** to **v0.0.92**
+
 ## [0.6.95](https://github.com/storm-software/cyclone-ui/releases/tag/container%400.6.95) (11/18/2026)
 
 ### Updated Dependencies

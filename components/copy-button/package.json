@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/copy-button",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "type": "module",
   "description": "A reusable clipboard button with a temporary check icon, a success tooltip on non-touch screens and a success toast on touch screens.",
   "repository": {

@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/toast",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "type": "module",
   "description": "A small floating pill for short status messages, shown with `toast.success()`, `error`, `warning`, `info`, `loading` or `promise` and rendered by one mounted `Toaster`. A new toast morphs the one on screen in place: spring physics size the pill, roll the text over, draw and animate the status icon, and close a loading arc into its result. Toasts can carry a description, avatar, trailing meta text, progress bar and action buttons, stack while one is held, swipe away, pause on hover or focus, chime per status, and announce through live regions. Ported from Ding.",
   "repository": {
