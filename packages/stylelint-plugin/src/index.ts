@@ -4389,6 +4389,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/font-preview",
+      jsx: ["FontPreview"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/footer",
       jsx: ["Footer"],
       roles: []

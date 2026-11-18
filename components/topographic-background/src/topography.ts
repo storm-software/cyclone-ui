@@ -23,6 +23,11 @@ const TOPOGRAPHY_ASPECT = 3840 / 2160;
 const BRUSH_RADIUS = 0.06;
 /** Seconds for a full coat of paint to dry back to grey. */
 const PAINT_FADE = 3;
+/**
+ * Milliseconds per frame (30 fps). Frames fall on ticks of the frame
+ * timestamp, so another renderer that does the same draws the same frames.
+ */
+const FRAME = 1000 / 30;
 
 // One triangle that covers the whole clip space.
 const VERTEX = /* glsl */ `
@@ -89,9 +94,16 @@ const PAINT = /* glsl */ `
   }
 `;
 
+/** No paint without a pointer: the GLSL compiler drops the call. */
+const NO_PAINT = /* glsl */ `
+  float paint(vec2 px, vec2 viewport, float time, bool light) {
+    return 0.0;
+  }
+`;
+
 // Slow value noise warps the texture lookup, so the contour lines bend and
 // drift a few pixels rather than the whole map panning.
-const FRAGMENT = /* glsl */ `
+const FRAGMENT = (paint = NO_PAINT) => /* glsl */ `
   ${NOISE}
   uniform sampler2D uMap;
   uniform sampler2D uColor;
@@ -100,7 +112,15 @@ const FRAGMENT = /* glsl */ `
   uniform float uAspect;
   uniform float uInvert;
   uniform float uTime;
+  // The canvas's client rect, the viewport size (CSS pixels) and the frame
+  // clock, for \`paint\`, which reduced motion (uStill) turns off.
+  uniform vec4 uRect;
+  uniform vec2 uViewport;
+  uniform float uClock;
+  uniform float uStill;
   varying vec2 vUv;
+
+  ${paint}
 
   vec3 toLinear(vec3 c) {
     return pow(c, vec3(2.2));
@@ -123,6 +143,11 @@ const FRAGMENT = /* glsl */ `
     vec2 g = vUv * vec2(uAspect, 1.0);
     float dry = 0.1 + 0.75 * (0.6 * noise(g * 12.0) + 0.4 * noise(g * 40.0));
     float wet = smoothstep(dry - 0.05, dry + 0.05, texture2D(uPaint, vUv).r);
+    if (uStill < 0.5) {
+      vec2 px = uRect.xy + vec2(vUv.x, 1.0 - vUv.y) * uRect.zw;
+      float extra = paint(px, uViewport, uClock, uInvert > 0.5);
+      wet = 1.0 - (1.0 - wet) * (1.0 - clamp(extra, 0.0, 1.0));
+    }
 
     // The light theme inverts the grey map (in sRGB, like the CSS image
     // underneath); the paint keeps its true colours.
@@ -149,13 +174,16 @@ export interface Topography {
  * @param src - The grey topography image.
  * @param colorSrc - The same contours in colour, painted in under the cursor.
  * @param isLight - Whether the light theme (an inverted grey map) is active.
+ * @param paintShader - GLSL that also paints colour in, without a pointer
+ *   (see `TopographicBackgroundProps.paintShader`).
  * @returns Controls for the running renderer.
  */
 export const startTopography = (
   canvas: HTMLCanvasElement,
   src: string,
   colorSrc: string,
-  isLight: () => boolean
+  isLight: () => boolean,
+  paintShader?: string
 ): Topography => {
   const gl = canvas.getContext("webgl2", { antialias: false });
   // The static CSS topography remains if WebGL is unavailable.
@@ -170,9 +198,13 @@ export const startTopography = (
   let images: HTMLImageElement[] = [];
   let idle = PAINT_FADE;
   let time = 0;
+  // The frame timestamp in seconds, kept short for float precision.
+  let clock = 0;
   let frame = 0;
   let previous = 0;
+  let tickIndex = -1;
   let stopped = false;
+  let onScreen = true;
 
   const program = (fragment: string) => {
     const result = gl.createProgram();
@@ -241,7 +273,7 @@ export const startTopography = (
   };
   const setup = () => {
     if (images.length < 2 || gl.isContextLost()) return;
-    const main = program(FRAGMENT);
+    const main = program(FRAGMENT(paintShader));
     const paint = program(PAINT);
     const buffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
@@ -299,6 +331,13 @@ export const startTopography = (
     // Checked per render, so a theme toggle applies without a restart.
     gl.uniform1f(uniform("uInvert"), isLight() ? 1 : 0);
     gl.uniform1f(uniform("uTime"), time);
+    if (paintShader) {
+      const { left, top, width, height } = canvas.getBoundingClientRect();
+      gl.uniform4f(uniform("uRect"), left, top, width, height);
+      gl.uniform2f(uniform("uViewport"), innerWidth, innerHeight);
+      gl.uniform1f(uniform("uClock"), clock);
+      gl.uniform1f(uniform("uStill"), motion.matches ? 1 : 0);
+    }
     gl.drawArrays(gl.TRIANGLES, 0, 3);
   };
   const paint = (dt: number) => {
@@ -339,10 +378,12 @@ export const startTopography = (
     targets.reverse();
   };
   const tick = (now: number) => {
-    if (now - previous >= 1000 / 30) {
+    if (Math.floor(now / FRAME) !== tickIndex) {
+      tickIndex = Math.floor(now / FRAME);
       const dt = previous ? Math.min(now - previous, 100) / 1000 : 0;
       previous = now;
       time += dt;
+      clock = (now / 1000) % 3600;
       paint(dt);
       draw();
     }
@@ -352,7 +393,13 @@ export const startTopography = (
     cancelAnimationFrame(frame);
     previous = 0;
     draw();
-    if (scene && !gl.isContextLost() && !motion.matches && !document.hidden) {
+    if (
+      scene &&
+      !gl.isContextLost() &&
+      !motion.matches &&
+      !document.hidden &&
+      onScreen
+    ) {
       frame = requestAnimationFrame(tick);
     }
   };
@@ -386,6 +433,13 @@ export const startTopography = (
     draw();
   });
   resize.observe(canvas);
+
+  // Scrolled out of view (an `absolute` background, say), it stops drawing.
+  const visible = new IntersectionObserver(([entry]) => {
+    onScreen = entry?.isIntersecting ?? true;
+    syncMotion();
+  });
+  visible.observe(canvas);
 
   // The canvas sits behind the page, so follow the pointer on the window.
   const point = (event: PointerEvent) => {
@@ -427,6 +481,7 @@ export const startTopography = (
       stopped = true;
       cancelAnimationFrame(frame);
       resize.disconnect();
+      visible.disconnect();
       document.removeEventListener("visibilitychange", syncMotion);
       motion.removeEventListener("change", syncMotion);
       window.removeEventListener("pointermove", point);

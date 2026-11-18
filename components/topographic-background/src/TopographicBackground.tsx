@@ -83,6 +83,22 @@ export type TopographicBackgroundProps = GetProps<
    * @defaultValue topographyColorSrc
    */
   colorSrc?: string;
+  /**
+   * GLSL that also paints the colour map in, with no pointer (rain, for
+   * example). It must define
+   * `float paint(vec2 px, vec2 viewport, float time, bool light)`, which
+   * returns 0 (grey) to 1 (full colour) for the pixel at `px`, in CSS pixels
+   * from the viewport's top left. `viewport` is the viewport's size in CSS
+   * pixels, `time` is the frame's `requestAnimationFrame` timestamp in
+   * seconds, modulo 3600, and `light` is true in a light theme. Frames are
+   * drawn when `floor(timestamp / (1000 / 30))` changes, so a renderer
+   * elsewhere on the page that follows the same rules can draw the same
+   * effect in step. Name any helpers so that they don't clash with the
+   * renderer's own (`hash`, `noise`, `toLinear`). Only the `interactive`
+   * renderer draws it, so touch-first devices don't, and reduced motion
+   * turns it off.
+   */
+  paintShader?: string;
 };
 
 /**
@@ -95,6 +111,7 @@ export const TopographicBackground = ({
   darkSrc = topographyDarkSrc,
   lightSrc = topographyLightSrc,
   colorSrc = topographyColorSrc,
+  paintShader,
   ...props
 }: TopographicBackgroundProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -117,7 +134,8 @@ export const TopographicBackground = ({
       canvasRef.current,
       darkSrc,
       colorSrc,
-      () => lightRef.current
+      () => lightRef.current,
+      paintShader
     );
     topographyRef.current = instance;
 
@@ -125,7 +143,7 @@ export const TopographicBackground = ({
       instance.stop();
       topographyRef.current = null;
     };
-  }, [interactive, darkSrc, colorSrc]);
+  }, [interactive, darkSrc, colorSrc, paintShader]);
 
   useEffect(() => {
     lightRef.current = light;

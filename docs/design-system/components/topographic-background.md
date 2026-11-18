@@ -60,7 +60,7 @@ The package also exports the image URLs `topographyDarkSrc`, `topographyLightSrc
 | --- | --- | --- |
 | `TopographicBackground` | A Tamagui `View` with `aria-hidden`, `accessibilityElementsHidden`, `importantForAccessibility="no-hide-descendants"`, `position: absolute`, `inset: 0`, `overflow: hidden`, and `pointerEvents: none` | The frame. It fills the nearest positioned ancestor. On native, it has no children. |
 | Image | An `<img alt="">` (web only) with `draggable={false}` and `objectFit: cover` that fills the frame | The static map. It shows `colorSrc` for `color`, `lightSrc` for `light` or for `interactive` in a light theme, and `darkSrc` in the other cases. It is always in the server markup, so it paints before hydration. |
-| Canvas | A `<canvas>` (web only, `interactive` only) over the image | After hydration, when `(hover: hover) and (pointer: fine)` matches, a WebGL2 renderer draws into it. A fragment shader warps the map with slow value noise. A second pass, at half resolution, keeps the paint under the pointer. A `requestAnimationFrame` loop renders at most 30 frames per second. |
+| Canvas | A `<canvas>` (web only, `interactive` only) over the image | After hydration, when `(hover: hover) and (pointer: fine)` matches, a WebGL2 renderer draws into it. A fragment shader warps the map with slow value noise. A second pass, at half resolution, keeps the paint under the pointer. A `requestAnimationFrame` loop renders 30 frames per second, when `floor(timestamp / (1000 / 30))` changes. |
 
 The image and the canvas are internal. They are not exported. The renderer follows the pointer on `window` (`pointermove`, `pointerdown`, and `pointerout`), because the canvas sits behind the page.
 
@@ -83,6 +83,7 @@ The examples are the stories in [`TopographicBackground.stories.tsx`](../../../c
 | `darkSrc` | `string` | `topographyDarkSrc` | URL of the dark (grey) topography image. The interactive renderer uses it as the map. |
 | `lightSrc` | `string` | `topographyLightSrc` | URL of the light topography image. |
 | `colorSrc` | `string` | `topographyColorSrc` | URL of the same contours in color. The interactive renderer paints it in under the pointer. |
+| `paintShader` | `string` | none | GLSL that also paints the color map in, with no pointer. See [Paint shader](#paint-shader). |
 
 The default URLs point to the SVG files in the package `assets` folder (`topography-dark.svg`, `topography-light.svg`, and `topography-color.svg`).
 
@@ -102,15 +103,48 @@ The theme is light when the current theme name starts with `light`.
 - **Warp.** The contour lines bend and move a few pixels. The warp eases in over the first 4 seconds.
 - **Paint.** Moving the pointer paints the color map in with a brush. Its radius is approximately 6% of the canvas height. A fast movement makes a thinner line. When the pointer stops, the paint dries back to grey in approximately 3 seconds. A press, or a return into the window, starts a new stroke.
 - **Theme.** In a light theme, the shader inverts the grey map. A theme change redraws the canvas without a restart.
-- **Pause.** The loop stops when the page is hidden and starts again when it is visible.
+- **Pause.** The loop stops when the page is hidden or the canvas is scrolled out of view, and starts again when it is visible.
 - **Fallback.** When WebGL2 is not available or an image does not load, the static image stays. The renderer also handles a lost and restored WebGL context.
 - **Resolution.** The canvas uses the device pixel ratio, up to `1.5`.
+
+## Paint shader
+
+`paintShader` paints color in without a pointer, for an effect such as rain. It is GLSL that defines this function:
+
+```glsl
+float paint(vec2 px, vec2 viewport, float time, bool light);
+```
+
+| Argument | Value |
+| --- | --- |
+| `px` | The pixel, in CSS pixels from the top-left corner of the viewport. |
+| `viewport` | The size of the viewport, in CSS pixels. |
+| `time` | The `requestAnimationFrame` timestamp of the frame, in seconds, modulo 3600. |
+| `light` | `true` in a light theme. |
+
+It returns how much of the color map shows, from 0 (grey) to 1 (full color). The shader combines it with the pointer's paint. Name any helper functions so that they don't clash with the renderer's own `hash`, `noise`, and `toLinear`.
+
+The arguments don't depend on the canvas. Another renderer on the page can evaluate the same GLSL with the same arguments. If it also draws when `floor(timestamp / (1000 / 30))` changes, its effect stays in step with the background. A drop can then fall from the background into another canvas without a break.
+
+```tsx
+const rain = `
+  float paint(vec2 px, vec2 viewport, float time, bool light) {
+    float column = floor(px.x / 24.0);
+    float y = fract(px.y / viewport.y - time * (0.5 + fract(column * 0.37)));
+    return step(abs(fract(px.x / 24.0) - 0.5), 0.02) * step(y, 0.05);
+  }
+`;
+
+<TopographicBackground paintShader={rain} />
+```
+
+Only the `interactive` renderer draws it. Touch-first devices and reduced motion don't show it.
 
 ## Accessibility
 
 - **Decorative.** The frame has `aria-hidden`, `accessibilityElementsHidden`, and `importantForAccessibility="no-hide-descendants"`. The image has an empty `alt`. Screen readers skip the background. It adds no text.
 - **Pointer.** The frame has `pointerEvents: none`, and the renderer listens on `window` with passive listeners. The background does not block presses on the content.
-- **Reduced motion.** When `prefers-reduced-motion: reduce` matches, the renderer draws one still frame and does not start its loop. The map stays still and the pointer does not paint. The renderer follows changes to this setting.
+- **Reduced motion.** When `prefers-reduced-motion: reduce` matches, the renderer draws one still frame and does not start its loop. The map stays still, and neither the pointer nor `paintShader` paints. The renderer follows changes to this setting.
 
 ## Related
 

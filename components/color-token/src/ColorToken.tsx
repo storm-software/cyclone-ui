@@ -93,7 +93,8 @@ export const ColorToken = forwardRef<TamaguiElement, ColorTokenProps>(
     ref
   ) => {
     const formats = useMemo(
-      () => getColorFormats(value) ?? { hex: value, oklch: value, light: false },
+      () =>
+        getColorFormats(value) ?? { hex: value, oklch: value, light: false },
       [value]
     );
     const [copied, setCopied] = useState<CopiedFormat | null>(null);
@@ -155,20 +156,36 @@ export const ColorToken = forwardRef<TamaguiElement, ColorTokenProps>(
           </ColorTokenFrame>
         </Tooltip.Trigger>
         <Tooltip.Content>
-          <View gap="sm" maxWidth="28xl">
-            <BodyText fontFamily="code" fontWeight="medium" size="xs">
-              {name}
-            </BodyText>
-            {description ? (
-              <BodyText size="xs" color="subtle">
-                {description}
+          <View
+            gap="2xl"
+            maxWidth="28xl"
+            paddingVertical="xl"
+            paddingHorizontal="2xl"
+            alignItems="center">
+            <View gap="sm" alignItems="center">
+              <BodyText
+                fontFamily="code"
+                fontWeight="medium"
+                size="xs"
+                textAlign="center">
+                {name}
               </BodyText>
-            ) : null}
-            <BodyText size="xxs" color="subtle">
-              {copied
-                ? `Copied ${copied} value`
-                : "Click to copy hex · Shift-click for OKLCH"}
-            </BodyText>
+              {description ? (
+                <BodyText size="xs" color="subtle" textAlign="center">
+                  {description}
+                </BodyText>
+              ) : null}
+            </View>
+            <View gap="lg">
+              <BodyText size="xxs" color="subtle" textAlign="center">
+                {copied ? `Copied ${copied} value` : "Click to copy hex"}
+              </BodyText>
+              {!copied && (
+                <BodyText size="xxs" color="subtle" textAlign="center">
+                  Shift-click for OKLCH
+                </BodyText>
+              )}
+            </View>
           </View>
         </Tooltip.Content>
       </Tooltip>

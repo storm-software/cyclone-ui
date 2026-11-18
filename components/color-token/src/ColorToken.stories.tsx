@@ -36,7 +36,7 @@ const RED_PALETTE = [
 ] as const;
 
 const meta: Meta<typeof ColorToken> = {
-  title: "Display/ColorToken",
+  title: "Docs/ColorToken",
   component: ColorToken,
   tags: ["autodocs"],
   parameters: { layout: "centered" },

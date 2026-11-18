@@ -28,17 +28,17 @@ import {
   containerShadows,
   containerVariants
 } from "@cyclone-ui/container";
-import type { GetProps, SizeTokens } from "@tamagui/core";
+import type { GetProps, SizeTokens, TamaguiElement } from "@tamagui/core";
 import {
   createStyledContext,
   createStyledHOC,
   styled,
   withStaticProperties
 } from "@tamagui/core";
-import { usePopperContext } from "@tamagui/popper";
+import { usePopperContext, usePopperContextSlow } from "@tamagui/popper";
 import type { TooltipProps as TamaguiTooltipProps } from "@tamagui/tooltip";
 import { Tooltip as TamaguiTooltip } from "@tamagui/tooltip";
-import { Suspense } from "react";
+import { forwardRef, Suspense } from "react";
 
 export type TooltipVariant = ContainerVariant;
 
@@ -156,10 +156,17 @@ const TooltipContent = styled(
     outlineOffset: "focus-visible:lg",
     outlineStyle: "focus-visible:solid"
   },
-  // Tamagui's `Tooltip.Content` HOC passes `backgroundColor="background"` to its
-  // inner content, and `styled()` turns ours into a class that loses to it, so
-  // forward it as a prop instead or the content shows Tamagui's background.
-  { inlineProps: new Set(["backgroundColor"]) }
+  // Tamagui's `Tooltip.Content` HOC passes `backgroundColor="background"`,
+  // `borderRadius="2"` and its own padding to its inner content, and `styled()`
+  // turns ours into classes that lose to them, so forward them as props.
+  {
+    inlineProps: new Set([
+      "backgroundColor",
+      "borderRadius",
+      "paddingVertical",
+      "paddingHorizontal"
+    ])
+  }
 );
 
 interface TooltipContentExtraProps extends Omit<
@@ -213,8 +220,14 @@ const TooltipContentImpl = createStyledHOC(
         ref={forwardedRef}
         boxShadow={containerShadows[shadowStyle]}
         backgroundColor={backgroundColor}
+        borderRadius="tooltip"
+        paddingVertical="3xl"
+        paddingHorizontal="2xl"
         {...props}>
+        {/* Tamagui wraps the children in a `display: contents` theme node, so
+            the layer's `borderRadius="inherit"` reads 0; set it directly. */}
         <ContainerBackground
+          borderRadius={props.borderRadius ?? "tooltip"}
           variant={variant}
           shadowStyle={shadowStyle}
           glass={glass}
@@ -242,9 +255,40 @@ const TooltipContentImpl = createStyledHOC(
   { displayName: "Tooltip" }
 );
 
+type TooltipTriggerProps = GetProps<typeof TamaguiTooltip.Trigger>;
+
+// Tamagui's `PopperAnchor` only wires `onHoverReference`/`onLeaveReference`
+// for a scoped anchor on web, and the tooltip's scope is `""`. Without them a
+// tooltip opens only if the pointer moves again after entering the trigger, so
+// entering and resting on it sometimes never opens it. Wire them here.
+const TooltipTriggerImpl = forwardRef<TamaguiElement, TooltipTriggerProps>(
+  ({ onMouseEnter, onMouseLeave, ...props }, ref) => {
+    const popper = usePopperContextSlow(
+      (props as { scope?: string }).scope ?? ""
+    );
+
+    return (
+      <TamaguiTooltip.Trigger
+        ref={ref}
+        {...props}
+        onMouseEnter={event => {
+          onMouseEnter?.(event);
+          popper.onHoverReference?.(event.nativeEvent);
+        }}
+        onMouseLeave={event => {
+          onMouseLeave?.(event);
+          popper.onLeaveReference?.();
+        }}
+      />
+    );
+  }
+);
+
+TooltipTriggerImpl.displayName = "TooltipTrigger";
+
 export const Tooltip = withStaticProperties(TooltipFrameImpl, {
   Content: TooltipContentImpl,
-  Trigger: TamaguiTooltip.Trigger
+  Trigger: TooltipTriggerImpl
 });
 
 /**
@@ -252,4 +296,4 @@ export const Tooltip = withStaticProperties(TooltipFrameImpl, {
  * client module (`Tooltip.Content` is undefined on the server).
  */
 export { TooltipContentImpl as TooltipContent };
-export const TooltipTrigger = TamaguiTooltip.Trigger;
+export const TooltipTrigger = TooltipTriggerImpl;

@@ -21,7 +21,7 @@ import { expect, userEvent, waitFor, within } from "storybook/test";
 import { FontPreview } from "./FontPreview";
 
 const meta = {
-  title: "Text/FontPreview",
+  title: "Docs/FontPreview",
   component: FontPreview,
   tags: ["autodocs"],
   args: {

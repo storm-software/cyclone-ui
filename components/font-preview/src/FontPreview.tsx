@@ -210,7 +210,7 @@ const FontPreviewRow = ({
 const FontPreviewTextField = ({ sampleText }: { sampleText: string }) => (
   <Field name="text">
     <Field.Label>Type here to preview text</Field.Label>
-    <Input circular>
+    <Input>
       <Input.TextBox>
         <Input.TextBox.Value placeholder={sampleText} />
       </Input.TextBox>
