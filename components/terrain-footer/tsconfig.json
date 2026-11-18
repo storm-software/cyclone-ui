@@ -4,6 +4,7 @@
     "tsBuildInfoFile": "../../dist/out-tsc/components/terrain-footer/tsconfig.tsbuildinfo",
     "jsx": "preserve",
     "ignoreDeprecations": "6.0",
+    "lib": ["ESnext", "DOM"],
     "rootDir": ".",
     "types": [
       "node",

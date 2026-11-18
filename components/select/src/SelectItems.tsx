@@ -52,6 +52,15 @@ export const SelectItem = ({
 }: SelectItemProps): JSX.Element | null => {
   const { value: selectedValue } = SelectContext.useStyledContext();
   const { search } = use(SelectBehaviorContext);
+  const selected = selectedValue === String(value);
+  const ref = useRef<HTMLElement>(null);
+
+  // Keeps the option the arrow keys step to in view.
+  useEffect(() => {
+    if (selected) {
+      ref.current?.scrollIntoView?.({ block: "nearest" });
+    }
+  }, [selected]);
 
   // Hidden while the menu's search filter doesn't match it.
   if (search && !matchesSearch(getItemLabel(children, value), search)) {
@@ -61,8 +70,10 @@ export const SelectItem = ({
   return (
     <ContextMenu.Item
       {...props}
+      // Not typed on the item, which passes it on to its frame.
+      {...({ ref } as object)}
       role="option"
-      aria-selected={selectedValue === String(value)}
+      aria-selected={selected}
       value={String(value)}>
       <ContextMenu.Item.Text whiteSpace="nowrap">
         {children}
@@ -114,9 +125,7 @@ const SelectItemsGroup = ({
   ...props
 }: ContextMenuContentProps): JSX.Element => {
   const items = useFormControl()?.items;
-  const { options, searchable, search, listFocused, inputRef } = use(
-    SelectBehaviorContext
-  );
+  const { options, searchable, search, inputRef } = use(SelectBehaviorContext);
   // Where the menu is a bottom sheet (`Popover`'s `max-sm`), it shows its own
   // search input.
   const inSheet = Boolean((useMedia() as Record<string, boolean>)["max-sm"]);
@@ -131,10 +140,9 @@ const SelectItemsGroup = ({
       <ContextMenu.Content
         // At least the text box's width, plus 4px on each side.
         minWidth="calc(var(--tamagui-popper-anchor-width) + 8px)"
-        // Focus stays in a searchable select's text input, for typing, until
-        // `ArrowDown` turns the focus scope on, which focuses the first
-        // option (and on close, the text box again).
-        disableFocusScope={searchable && !listFocused}
+        // Focus stays in a searchable select's text input, for typing; the
+        // arrow keys step through the options from there.
+        disableFocusScope={searchable}
         // The popover returns focus to its trigger, which in a searchable
         // select isn't focusable: return it to the text input instead.
         onCloseAutoFocus={

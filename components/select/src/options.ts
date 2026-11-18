@@ -25,12 +25,6 @@ export interface SelectOptionEntry {
   disabled?: boolean;
 }
 
-/**
- * Selects with more options than this show a search filter in their menu,
- * unless `searchable` says otherwise.
- */
-export const SEARCHABLE_OPTION_COUNT = 10;
-
 /** An item's text, or its value when its children aren't plain text. */
 export const getItemLabel = (children: ReactNode, value: unknown): string =>
   typeof children === "string" || typeof children === "number"

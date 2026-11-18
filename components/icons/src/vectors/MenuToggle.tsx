@@ -49,7 +49,7 @@ const bar = (
   const side = index * 2 - 1;
 
   const cy = lerp(12 + side * (closedGap / 2 + hover), 12, open);
-  const length = lerp(9 * closedLength, 8.5 - 1.5 * hover, open);
+  const length = lerp(9 * closedLength, 10 - 1.5 * hover, open);
   const angle = (open * (side * -45 + 90 * hover) * Math.PI) / 180;
 
   const dx = length * Math.cos(angle);

@@ -18,8 +18,9 @@
 
 "use client";
 
+import type { TamaguiElement } from "@tamagui/core";
 import { getVariableValue, styled, useTheme, View } from "@tamagui/core";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AccessibilityInfo } from "react-native";
 import { Path, Svg } from "react-native-svg";
 
@@ -91,21 +92,23 @@ const createTerrainPath = (time = 0) => {
     .join("");
 };
 
-const terrainPath = createTerrainPath();
+let stillPath: string | undefined;
+const terrainPath = () => (stillPath ??= createTerrainPath());
 
 export const FooterTerrain = ({ animate = true }: { animate?: boolean }) => {
   const theme = useTheme();
-  const [path, setPath] = useState(terrainPath);
+  const frameRef = useRef<TamaguiElement>(null);
+  // Drawn after mount and animated only while on screen: the mesh is ~220 KB
+  // of path data, too much for every page's HTML or to rebuild off screen.
+  const [path, setPath] = useState<string>();
 
   useEffect(() => {
-    if (!animate) {
-      return;
-    }
-
     let disposed = false;
     let frame = 0;
     let start: number | undefined;
     let lastFrame = 0;
+    let visible = false;
+    let reduceMotion = true;
 
     const tick = (now: number) => {
       start ??= now;
@@ -117,35 +120,59 @@ export const FooterTerrain = ({ animate = true }: { animate?: boolean }) => {
       frame = requestAnimationFrame(tick);
     };
 
-    const updateMotion = (reduceMotion: boolean) => {
-      if (disposed) {
-        return;
-      }
+    const update = () => {
       cancelAnimationFrame(frame);
       start = undefined;
       lastFrame = 0;
-      setPath(terrainPath);
-      if (!reduceMotion) {
-        frame = requestAnimationFrame(tick);
+      if (disposed || !visible) {
+        return;
       }
+      if (animate && !reduceMotion) {
+        frame = requestAnimationFrame(tick);
+      } else {
+        setPath(terrainPath());
+      }
+    };
+
+    const updateMotion = (reduce: boolean) => {
+      reduceMotion = reduce;
+      update();
     };
 
     const subscription = AccessibilityInfo.addEventListener(
       "reduceMotionChanged",
       updateMotion
     );
-
     void AccessibilityInfo.isReduceMotionEnabled().then(updateMotion, () => {});
+
+    // Native has no IntersectionObserver: always treat the mesh as visible.
+    const element = frameRef.current;
+    let observer: IntersectionObserver | undefined;
+    if (
+      typeof IntersectionObserver !== "undefined" &&
+      element instanceof Element
+    ) {
+      observer = new IntersectionObserver(([entry]) => {
+        visible = !!entry?.isIntersecting;
+        update();
+      });
+      observer.observe(element);
+    } else {
+      visible = true;
+      update();
+    }
 
     return () => {
       disposed = true;
       cancelAnimationFrame(frame);
+      observer?.disconnect();
       subscription.remove();
     };
   }, [animate]);
 
   return (
     <TerrainFrame
+      ref={frameRef}
       aria-hidden={true}
       accessibilityElementsHidden={true}
       importantForAccessibility="no-hide-descendants">
@@ -155,13 +182,15 @@ export const FooterTerrain = ({ animate = true }: { animate?: boolean }) => {
         height="100%"
         viewBox="0 0 1600 780"
         preserveAspectRatio="none">
-        <Path
-          d={animate ? path : terrainPath}
-          fill="none"
-          stroke={getVariableValue(theme.primary, "color")}
-          strokeWidth={0.7}
-          strokeOpacity={0.1}
-        />
+        {path && (
+          <Path
+            d={path}
+            fill="none"
+            stroke={getVariableValue(theme.primary, "color")}
+            strokeWidth={0.7}
+            strokeOpacity={0.1}
+          />
+        )}
       </Svg>
     </TerrainFrame>
   );

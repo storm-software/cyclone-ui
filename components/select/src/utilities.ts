@@ -57,12 +57,6 @@ export interface SelectBehavior {
    */
   onTextBoxFocusChange?: (focused: boolean, next?: Element | null) => void;
 
-  /**
-   * Whether the open menu takes focus. A searchable select keeps it in the
-   * text box, for typing, until `ArrowDown` moves it to the options.
-   */
-  listFocused: boolean;
-
   /** Whether the last characters typed on the select matched no option. */
   invalid: boolean;
 
@@ -78,7 +72,6 @@ export interface SelectBehavior {
 export const SelectBehaviorContext = createContext<SelectBehavior>({
   options: [],
   searchable: false,
-  listFocused: false,
   invalid: false
 });
 

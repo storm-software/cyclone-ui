@@ -204,7 +204,7 @@ export const Typeahead: Story = {
 };
 
 /**
- * With more than 10 options, the text box is a text input: a click places
+ * By default, the text box is a text input: a click places
  * the caret and opens the menu, and editing the text filters the options and
  * picks the best match. On small screens, where the menu is a bottom sheet
  * over the text box, the sheet has its own search input.
@@ -258,18 +258,32 @@ export const Searchable: Story = {
     await waitFor(() => expect(optionNames()).toEqual(berries));
     await expect(input).not.toHaveAttribute("aria-invalid");
 
-    // ArrowDown moves focus to the options; choosing one closes the menu and
-    // returns focus to the text input, which shows the option.
+    // ArrowDown and ArrowUp step through the shown options, keeping the
+    // focus in the text input; Enter closes the menu, which shows the option.
     await userEvent.keyboard("{ArrowDown}");
-    await waitFor(() =>
-      expect(document.getByRole("option", { name: "Blackberry" })).toHaveFocus()
-    );
-    await userEvent.keyboard("{ArrowDown}{Enter}");
+    await expect(
+      document.getByRole("option", { name: "Blueberry" })
+    ).toHaveAttribute("aria-selected", "true");
+    await userEvent.keyboard("{ArrowUp}");
+    await expect(
+      document.getByRole("option", { name: "Blackberry" })
+    ).toHaveAttribute("aria-selected", "true");
+    await userEvent.keyboard("{ArrowDown}");
+    await expect(input).toHaveFocus();
+    await userEvent.keyboard("{Enter}");
     await waitFor(() =>
       expect(document.queryByRole("listbox")).not.toBeInTheDocument()
     );
     await expect(input).toHaveValue("Blueberry");
-    await waitFor(() => expect(input).toHaveFocus());
+    await expect(input).toHaveFocus();
+
+    // On the closed menu, ArrowDown opens it.
+    await userEvent.keyboard("{ArrowDown}");
+    await expect(await document.findByRole("listbox")).toBeInTheDocument();
+    await userEvent.keyboard("{Enter}");
+    await waitFor(() =>
+      expect(document.queryByRole("listbox")).not.toBeInTheDocument()
+    );
 
     // Replacing the text filters afresh; Enter closes the menu (rather than
     // submitting a form) and the text input shows the picked option.
@@ -488,7 +502,9 @@ export const TruncatedValue: Story = {
           <div key={size} data-size={size} style={{ minWidth: 0 }}>
             <Field name={size} size={size}>
               <Field.Label>State</Field.Label>
-              <Select size={size}>
+              {/* The button's value truncates with an ellipsis; a text
+                  input scrolls its text instead. */}
+              <Select size={size} searchable={false}>
                 <Select.TextBox>
                   <Select.TextBox.Value />
                 </Select.TextBox>

@@ -65,7 +65,7 @@ import {
   getItemLabel,
   getSearchMatch,
   getTypeaheadMatch,
-  SEARCHABLE_OPTION_COUNT
+  matchesSearch
 } from "./options";
 import { SelectItem, SelectItems } from "./SelectItems";
 import { SelectTextBox } from "./SelectTextBox";
@@ -553,11 +553,11 @@ const SelectGroupImpl = createStyledHOC(
         /**
          * Makes the text box a text input, showing the selected option,
          * whose edited text filters the options and picks the best match.
-         * It keeps the focus while the menu is open (`ArrowDown` moves it to
-         * the options). Where the menu opens as a bottom sheet on small
+         * It keeps the focus while the menu is open; `ArrowDown` and `ArrowUp`
+         * step through the options. Where the menu opens as a bottom sheet on small
          * screens, the sheet shows its own search input.
          *
-         * @defaultValue `true` with more than 10 options
+         * @defaultValue `true`
          */
         searchable?: boolean;
       },
@@ -601,7 +601,6 @@ const SelectGroupImpl = createStyledHOC(
     const [search, setSearch] = useState<string>();
     const inputRef = useRef<HTMLInputElement>(null);
     const [invalid, setInvalid] = useState(false);
-    const [listFocused, setListFocused] = useState(false);
     const typeaheadRef = useRef({ search: "", time: 0 });
     const hasValidationMessage = useFieldHasValidationMessage();
     const visualFocus = getSelectVisualFocus(focused, open);
@@ -611,8 +610,7 @@ const SelectGroupImpl = createStyledHOC(
       () => getSelectOptions(children, fieldItems),
       [children, fieldItems]
     );
-    const searchable =
-      searchableProp ?? options.length > SEARCHABLE_OPTION_COUNT;
+    const searchable = searchableProp ?? true;
     const setMessage = formControl?.setMessage;
 
     const setNoMatch = useCallback(
@@ -645,7 +643,6 @@ const SelectGroupImpl = createStyledHOC(
         }
 
         setOpen(nextOpen);
-        setListFocused(false);
 
         if (nextOpen) {
           onFocus?.();
@@ -696,15 +693,31 @@ const SelectGroupImpl = createStyledHOC(
         }
 
         // The text input edits its own text (see `handleTextBoxInput`).
-        // `ArrowDown` opens the menu, then moves focus to the options;
-        // `Enter` opens or closes it, rather than submitting the form.
-        if (key === "ArrowDown") {
+        // `ArrowDown` and `ArrowUp` open the menu, then step through the
+        // options it shows; `Enter` opens or closes it, rather than
+        // submitting the form.
+        if (key === "ArrowDown" || key === "ArrowUp") {
           if (!open) {
             handleOpenChanged(true);
-          } else if (listFocused) {
-            return false;
-          } else {
-            setListFocused(true);
+
+            return true;
+          }
+
+          const shown = options.filter(
+            option =>
+              !option.disabled &&
+              (!search || matchesSearch(option.label, search))
+          );
+          const index = shown.findIndex(
+            option => option.value === resolvedValue
+          );
+          const next =
+            key === "ArrowDown"
+              ? shown[Math.min(index + 1, shown.length - 1)]
+              : shown[Math.max(index - 1, 0)];
+          if (next && next.value !== resolvedValue) {
+            applyValue(next.value);
+            setNoMatch(false);
           }
 
           return true;
@@ -721,11 +734,11 @@ const SelectGroupImpl = createStyledHOC(
         applyValue,
         disabled,
         handleOpenChanged,
-        listFocused,
         open,
         options,
         readOnly,
         resolvedValue,
+        search,
         searchable,
         setNoMatch
       ]
@@ -786,7 +799,6 @@ const SelectGroupImpl = createStyledHOC(
         search,
         setSearch,
         inputRef,
-        listFocused,
         invalid,
         onTextBoxKey: handleTextBoxKey,
         onTextBoxInput: handleTextBoxInput,
@@ -796,7 +808,6 @@ const SelectGroupImpl = createStyledHOC(
         options,
         searchable,
         search,
-        listFocused,
         invalid,
         handleTextBoxKey,
         handleTextBoxInput,
