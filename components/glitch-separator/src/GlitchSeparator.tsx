@@ -42,6 +42,8 @@ import { Rect, Svg } from "react-native-svg";
 
 const COLUMNS = 30;
 const ROWS = 6;
+// Narrow frames drop columns rather than shrink squares below this size.
+const MIN_CELL_SIZE = 20;
 const DEFAULT_SEED = 27;
 
 const createRandom = (seed: number) => {
@@ -104,16 +106,20 @@ export const GlitchSeparator = createStyledHOC(
       (animated === undefined ? "scroll" : animated ? "always" : "never");
     const [layout, setLayout] = useState({ width: 1200, height: 240 });
     const [progress, setProgress] = useState(0.5);
-    const cellSize = layout.width / COLUMNS;
+    const columns = Math.max(
+      1,
+      Math.min(COLUMNS, Math.floor(layout.width / MIN_CELL_SIZE))
+    );
+    const cellSize = layout.width / columns;
     const rows = Math.max(1, Math.ceil(layout.height / cellSize));
     const cells = useMemo(() => {
       const random = createRandom(
         Number.isFinite(seed) ? Math.trunc(seed) : DEFAULT_SEED
       );
 
-      return Array.from({ length: rows * COLUMNS }, (_, index) => {
-        const row = Math.floor(index / COLUMNS);
-        const column = index % COLUMNS;
+      return Array.from({ length: rows * columns }, (_, index) => {
+        const row = Math.floor(index / columns);
+        const column = index % columns;
 
         return {
           x: column,
@@ -124,7 +130,7 @@ export const GlitchSeparator = createStyledHOC(
             (rows + ROWS - 1)
         };
       });
-    }, [rows, seed]);
+    }, [columns, rows, seed]);
 
     useEffect(() => {
       setProgress(0.5);
@@ -197,6 +203,8 @@ export const GlitchSeparator = createStyledHOC(
         importantForAccessibility="no-hide-descendants"
         height={height}
         aspectRatio={height === undefined ? COLUMNS / ROWS : undefined}
+        // Below COLUMNS * MIN_CELL_SIZE wide, keeps ROWS of the larger squares.
+        minHeight={height === undefined ? ROWS * MIN_CELL_SIZE : undefined}
         onLayout={event => {
           const { width, height: measuredHeight } = event.nativeEvent.layout;
           if (width > 0 && measuredHeight > 0) {
