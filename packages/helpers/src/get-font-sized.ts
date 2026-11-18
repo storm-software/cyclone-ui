@@ -1,66 +1,148 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-/* eslint-disable no-console */
+ ------------------------------------------------------------------- */
 
-import { isNumber } from "@storm-stack/types/type-checks/is-number";
-import { isClient } from "@tamagui/constants";
+import { isSetString } from "@stryke/type-checks";
+import { isNumber } from "@stryke/type-checks/is-number";
+import type { Mutable } from "@stryke/types/base";
 import type {
+  FlatStyleValue,
   FontSizeTokens,
   GenericFont,
-  SizeTokens,
-  TextProps,
-  TextStyle,
-  VariantSpreadFunction
+  GetThemeValueForKey,
+  TextStyle
 } from "@tamagui/core";
-import { getTokens } from "@tamagui/core";
+import { getTokens, getVariableValue } from "@tamagui/core";
 import { getNearestToken } from "./get-nearest-token";
+import type { TokenInput } from "./token-value";
+import { normalizeTokenValue } from "./token-value";
+import type { StyleEnv } from "./types";
+
+export interface GetFontWeightFromSizeOptions extends StyleEnv {
+  /**
+   * The scale factor to apply when calculating the font weight from the pixel size.
+   *
+   * @defaultValue 1
+   */
+  scale?: number;
+}
+
+export type GetFontWeightFromSizeReturn = FlatStyleValue<
+  | "unset"
+  | GetThemeValueForKey<"fontWeight">
+  | 100
+  | 200
+  | 300
+  | 400
+  | 500
+  | 600
+  | 700
+  | 800
+  | 900
+  | undefined
+>;
+
+export const getFontWeightFromSize = (
+  sizeTokenIn: FontSizeTokens | TokenInput = "true",
+  { font, scale }: GetFontWeightFromSizeOptions = {}
+): GetFontWeightFromSizeReturn => {
+  const tokenValue = isSetString(sizeTokenIn)
+    ? normalizeTokenValue(sizeTokenIn)
+    : sizeTokenIn;
+  if (isNumber(tokenValue)) {
+    return getFontWeightFromPixels(tokenValue) as GetFontWeightFromSizeReturn;
+  }
+
+  if (!font) {
+    return undefined;
+  }
+
+  const sizeToken = String(
+    (tokenValue === "true" ? getDefaultSizeToken(font) : tokenValue) ?? "true"
+  );
+
+  const weight = font.weight?.[sizeToken];
+  if (weight !== undefined && Number.isFinite(Number.parseInt(weight))) {
+    return Number(weight) as GetFontWeightFromSizeReturn;
+  }
+
+  const pixels = Number(getVariableValue(font.size?.[sizeToken]));
+
+  return Number.isFinite(pixels)
+    ? (getFontWeightFromPixels(pixels, scale) as GetFontWeightFromSizeReturn)
+    : undefined;
+};
+
+/**
+ * Scale a font weight from a pixel font size: body text (16px) sits at 400,
+ * gaining 100 per 8px, clamped to 300-700 and snapped to the nearest 100.
+ */
+const getFontWeightFromPixels = (pixels: number, scale = 1): number =>
+  Math.min(
+    700,
+    Math.max(300, Math.round((400 + (pixels - 16) * 12.5 * scale) / 100) * 100)
+  );
 
 /**
  * Get the font size related styles
  *
+ * @remarks
+ * Call-site `color` and `fontStyle` props take precedence over the values
+ * returned here because Tamagui v3 applies call-site props above variants.
+ *
  * @param sizeTokenIn - The size token to use
- * @param extras - The extra props
+ * @param env - The `styled.dynamic` environment
  * @returns The font size related styles
  */
-export const getFontSized: VariantSpreadFunction<TextProps, FontSizeTokens> = (
-  sizeTokenIn = "$true",
-  { font, fontFamily, props }
-) => {
+export const getFontSized = (
+  sizeTokenIn: FontSizeTokens | TokenInput = "true",
+  env: GetFontWeightFromSizeOptions = {}
+): Mutable<TextStyle> => {
+  const { font, fontFamily } = env;
+  const tokenValue = normalizeTokenValue(sizeTokenIn);
+
   if (!font) {
     return {
-      fontSize: sizeTokenIn
+      fontSize: tokenValue
     };
   }
 
-  const sizeToken =
-    (sizeTokenIn === "$true" ? getDefaultSizeToken(font) : sizeTokenIn) ??
-    "$true";
+  if (isNumber(tokenValue)) {
+    return {
+      fontFamily,
+      fontSize: tokenValue
+    };
+  }
 
-  const style: TextStyle = {};
+  const sizeToken = String(
+    (tokenValue === "true" ? getDefaultSizeToken(font) : tokenValue) ?? "true"
+  );
+
+  const style: Mutable<TextStyle> = {};
+  const fontValue = (group: Partial<Record<string, any>> | undefined): any =>
+    group?.[sizeToken];
 
   // size related, treat them as overrides
-  const fontSize = font.size[sizeToken];
-  const lineHeight = font.lineHeight?.[sizeToken];
-  const fontWeight = font.weight?.[sizeToken];
-  const letterSpacing = font.letterSpacing?.[sizeToken];
-  const textTransform = font.transform?.[sizeToken];
-  const fontStyle = props.fontStyle ?? font.style?.[sizeToken];
-  const color = props.color ?? font.color?.[sizeToken];
+  const fontSize = fontValue(font.size);
+  const lineHeight = fontValue(font.lineHeight);
+  const letterSpacing = fontValue(font.letterSpacing);
+  const textTransform = fontValue(font.transform);
+  const fontStyle = fontValue(font.style);
+  const color = fontValue(font.color);
 
   if (fontStyle) {
     style.fontStyle = fontStyle;
@@ -71,13 +153,12 @@ export const getFontSized: VariantSpreadFunction<TextProps, FontSizeTokens> = (
   if (fontFamily) {
     style.fontFamily = fontFamily;
   }
-  if (fontWeight) {
-    style.fontWeight = fontWeight;
-  }
+
   if (letterSpacing) {
     style.letterSpacing = letterSpacing;
   }
   if (fontSize) {
+    style.fontWeight = getFontWeightFromSize(fontSize, env);
     style.fontSize = fontSize;
   }
   if (lineHeight) {
@@ -87,15 +168,7 @@ export const getFontSized: VariantSpreadFunction<TextProps, FontSizeTokens> = (
     style.color = color;
   }
 
-  if (process.env.NODE_ENV === "development") {
-    if (props["debug"] && props["debug"] === "verbose") {
-      console.groupCollapsed("  🔹 getFontSized", sizeTokenIn, sizeToken);
-      if (isClient) {
-        console.info({ style, props, font });
-      }
-      console.groupEnd();
-    }
-  }
+  style.fontWeight ??= 500;
 
   return style;
 };
@@ -104,33 +177,26 @@ export const getFontSized: VariantSpreadFunction<TextProps, FontSizeTokens> = (
  * Get the font size related styles from a size token
  *
  * @param sizeTokenIn - The size token to use
- * @param extras - The extra props
+ * @param env - The `styled.dynamic` environment
  * @returns The font size related styles
  */
-export const getFontSizedFromSize: VariantSpreadFunction<
-  TextProps,
-  SizeTokens
-> = (sizeTokenIn = "$true", extras) => {
-  const font = extras.font;
+export const getFontSizedFromSize = (
+  sizeTokenIn: TokenInput = "true",
+  env: StyleEnv = {}
+): Mutable<TextStyle> => {
+  const font = env.font;
+  const tokenValue = normalizeTokenValue(sizeTokenIn);
   if (!font) {
     return {
-      fontSize: sizeTokenIn
+      fontSize: tokenValue
     };
   }
 
-  const sizeToken = (
-    isNumber(sizeTokenIn)
-      ? getNearestToken<SizeTokens>(sizeTokenIn, "size")
-      : sizeTokenIn
-  ) as `$${string}`;
+  const sizeToken = isNumber(tokenValue)
+    ? getNearestToken<string>(tokenValue, "size")
+    : tokenValue;
 
-  const value = getFontSized(sizeToken, extras);
-
-  // console.log(
-  //   `font: ${extras.fontFamily}, token: ${sizeTokenIn}, size: ${getSized(sizeTokenIn)}, value: ${JSON.stringify(value)}`
-  // );
-
-  return value;
+  return getFontSized(sizeToken, env);
 };
 
 const cache = new WeakMap<any, FontSizeTokens>();
@@ -141,26 +207,22 @@ function getDefaultSizeToken(font: GenericFont): FontSizeTokens {
   }
 
   // use either font.size if it has true set, or fallback to tokens.size mapping to the same
-  const sizeTokens = "$true" in font.size ? font.size : getTokens().size;
-  const sizeDefault = sizeTokens["$true"];
+  const sizeTokens: Record<string, any> =
+    "true" in font.size ? font.size : getTokens().size;
+  const sizeDefault = sizeTokens.true;
   const sizeDefaultSpecific = sizeDefault
     ? Object.keys(sizeTokens).find(
-        x =>
-          x !== "$true" &&
-          (sizeTokens[x] as any)["val"] === (sizeDefault as any)["val"]
+        x => x !== "true" && sizeTokens[x].val === sizeDefault.val
       )
     : null;
 
   if (!sizeDefault || !sizeDefaultSpecific) {
-    if (process.env.NODE_ENV === "development") {
-      console.warn(`No default size is set in your tokens for the "true" key, fonts will be inconsistent.
-
-      Fix this by having consistent tokens across fonts and sizes and setting a true key for your size tokens, or
-      set true keys for all your font tokens: "size", "lineHeight", "fontStyle", etc.`);
-    }
-    return Object.keys(font.size)[3] as FontSizeTokens;
+    // Same fallback as Tamagui's own `size: true`.
+    return (
+      "sm" in font.size ? "sm" : Object.keys(font.size)[3]
+    ) as FontSizeTokens;
   }
 
-  cache.set(font, sizeDefaultSpecific as FontSizeTokens);
-  return sizeDefaultSpecific as FontSizeTokens;
+  cache.set(font, sizeDefaultSpecific);
+  return sizeDefaultSpecific;
 }

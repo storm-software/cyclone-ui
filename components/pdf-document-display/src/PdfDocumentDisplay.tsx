@@ -1,52 +1,52 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 "use client";
 
-import { ColorThemeName } from "@cyclone-ui/colors";
 import { Spinner } from "@cyclone-ui/spinner";
-import { PdfIcon } from "@cyclone-ui/vectors";
+import { PdfIcon } from "@cyclone-ui/icons/vectors";
 import { VisuallyHidden } from "@cyclone-ui/visually-hidden";
-import { isString } from "@storm-stack/types/type-checks/is-string";
-import { FileResult } from "@storm-stack/types/utility-types/file";
-import { styled, View, ViewProps } from "@tamagui/core";
+import { isString } from "@stryke/type-checks/is-string";
+import type { FileResult } from "@stryke/types/file";
+import type { ViewProps } from "@tamagui/core";
+import { createStyledHOC, styled, View } from "@tamagui/core";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import type { PageProps } from "react-pdf";
 import { Document, Page, pdfjs } from "react-pdf";
-import {
+import type {
   DocumentCallback,
   OnDocumentLoadError,
   OnDocumentLoadProgress,
   OnDocumentLoadSuccess
 } from "react-pdf/dist/esm/shared/types.js";
-
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.mjs",
   import.meta.url
 ).toString();
 
 const StyledPdfIcon = styled(PdfIcon, {
-  animation: "200ms",
+  transition: "200ms",
   height: "100%",
   width: "100%",
   position: "absolute",
   top: 0,
   left: 0,
-  zIndex: "$2",
-
+  zIndex: "20",
   variants: {
     visible: {
       true: {
@@ -57,24 +57,26 @@ const StyledPdfIcon = styled(PdfIcon, {
       }
     }
   },
-
   defaultVariants: {
     visible: true
   }
 });
 
-type PdfDocumentDisplayExtraProps = {
+interface PdfDocumentDisplayExtraProps {
   src: FileResult | string;
   onLoadProgress?: OnDocumentLoadProgress;
   onLoadSuccess?: OnDocumentLoadSuccess;
   onLoadError?: OnDocumentLoadError;
   pageNumber?: number;
+  /** Extra props forwarded to the rendered react-pdf `Page`. */
+  pageProps?: Omit<PageProps, "pageNumber">;
   hideContextMenu?: boolean;
-};
+}
 
 export type PdfDocumentDisplayProps = PdfDocumentDisplayExtraProps & ViewProps;
 
-export const PdfDocumentDisplay = View.styleable<PdfDocumentDisplayExtraProps>(
+export const PdfDocumentDisplay = createStyledHOC(
+  View,
   (
     {
       src,
@@ -82,6 +84,7 @@ export const PdfDocumentDisplay = View.styleable<PdfDocumentDisplayExtraProps>(
       onLoadSuccess,
       onLoadError,
       pageNumber = 1,
+      pageProps,
       hideContextMenu = false,
       ...props
     }: PdfDocumentDisplayProps,
@@ -134,12 +137,12 @@ export const PdfDocumentDisplay = View.styleable<PdfDocumentDisplayExtraProps>(
       <View ref={forwardedRef} {...props}>
         <VisuallyHidden visible={loading || error !== null} animate={true}>
           <Spinner
-            theme={ColorThemeName.ACCENT}
+            theme="accent"
             size="large"
             position="absolute"
             top="35%"
             margin="auto"
-            zIndex="$3"
+            zIndex="30"
           />
 
           <StyledPdfIcon visible={loading || error !== null} />
@@ -151,7 +154,7 @@ export const PdfDocumentDisplay = View.styleable<PdfDocumentDisplayExtraProps>(
             onLoadProgress={onLoadProgress}
             onLoadSuccess={handleLoadSuccess}
             onLoadError={handleLoadError}>
-            <Page pageNumber={pageNumber} />
+            <Page {...pageProps} pageNumber={pageNumber} />
           </Document>
         </VisuallyHidden>
       </View>

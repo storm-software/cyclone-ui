@@ -1,56 +1,109 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
+"use client";
 
 import { Button } from "@cyclone-ui/button";
-import { ColorThemeName } from "@cyclone-ui/colors";
-import { Input, InputContextProps } from "@cyclone-ui/input";
-import { LabelText } from "@cyclone-ui/label-text";
-import { Popover } from "@cyclone-ui/popover";
-import type { DPDay, DPPropGetter } from "@rehookify/datepicker";
+import { Calendar } from "@cyclone-ui/calendar";
+import { Field } from "@cyclone-ui/field";
 import {
-  DatePickerProvider as RehookifyDatePickerProvider,
-  useDatePickerContext
-} from "@rehookify/datepicker";
-import { StormDate } from "@storm-stack/date-time/storm-date";
-import { StormDateTime } from "@storm-stack/date-time/storm-date-time";
-import { AnimatePresence } from "@tamagui/animate-presence";
+  getFormSizeScale,
+  getSpaced,
+  useFieldLabelDefaults,
+  useFieldOptions,
+  useFieldVariant,
+  useFormControl
+} from "@cyclone-ui/helpers";
+import { Calendar as CalendarIcon } from "@cyclone-ui/icons";
+import type { InputContextProps } from "@cyclone-ui/input";
+import { Input } from "@cyclone-ui/input";
+import { Popover } from "@cyclone-ui/popover";
+import type { MaskitoOptions, MaskitoPostprocessor } from "@maskito/core";
+import { maskitoDateOptionsGenerator } from "@maskito/kit";
+import type { GetProps } from "@tamagui/core";
 import {
   createStyledContext,
+  createStyledHOC,
   styled,
-  Theme,
-  View,
+  useComposedRefs,
   withStaticProperties
 } from "@tamagui/core";
-import { ChevronLeft, ChevronRight } from "@tamagui/lucide-icons";
-import { XStack, YStack } from "@tamagui/stacks";
+import type { RefObject } from "react";
 import {
-  PropsWithChildren,
+  createContext,
+  use,
   useCallback,
   useEffect,
+  useLayoutEffect,
   useMemo,
+  useRef,
   useState
 } from "react";
-import { DimensionValue } from "react-native";
+
+import type { DateSeparator } from "./utilities";
+import {
+  DATE_RANGE_SEPARATOR,
+  DEFAULT_DATE_FORMAT,
+  format,
+  formatRange,
+  getDateFormat,
+  getDatePart,
+  getDateRangeFormat,
+  parse,
+  parseInputDate,
+  parseInputDateRange,
+  parseRange,
+  stepDate
+} from "./utilities";
+
+export type DatePickerMode = "single" | "range";
 
 export type DatePickerChangeEventHandler = (
   event: CustomEvent<Date | null>
 ) => any;
 
-export type DatePickerExtraProps = {
+export type DatePickerDatesChangeEventHandler = (
+  event: CustomEvent<Date[]>
+) => any;
+
+export type DatePickerInputEventHandler = (event: CustomEvent<string>) => any;
+
+export interface DatePickerExtraProps {
+  /**
+   * Determines whether one date or a start and end date can be selected.
+   */
+  mode?: DatePickerMode;
+
+  /**
+   * Separator used by the text input's date format.
+   */
+  separator?: DateSeparator;
+
+  /**
+   * Date shown and selected in the calendar popover.
+   */
+  selectedDate?: Date | null;
+
+  /**
+   * Dates shown and selected when `mode` is `range`.
+   */
+  selectedDates?: Date[];
+
   /**
    * Callback that is called when the text input's text changes.
    *
@@ -60,18 +113,26 @@ export type DatePickerExtraProps = {
   onChange?: DatePickerChangeEventHandler;
 
   /**
+   * Callback that is called when the selected range changes.
+   */
+  onDatesChange?: DatePickerDatesChangeEventHandler;
+
+  /**
    * Callback that is called when the user provides input to the text field.
    *
    * @remarks
    * This is called before `onChange` and is useful for cases where you want to prevent certain characters from being inputted.
    */
-  onInput?: DatePickerChangeEventHandler;
-};
+  onInput?: DatePickerInputEventHandler;
+}
 
 export type DatePickerContextProps = Omit<
   InputContextProps,
   "onChange" | "onInput"
 > & {
+  mode: DatePickerMode;
+  separator: DateSeparator;
+
   /**
    * Callback that is called when the text input's text changes.
    *
@@ -86,732 +147,524 @@ export type DatePickerContextProps = Omit<
    * @remarks
    * This is called before `onChange` and is useful for cases where you want to prevent certain characters from being inputted.
    */
-  onInput?: DatePickerChangeEventHandler;
+  onInput?: DatePickerInputEventHandler;
 };
 
-export const DatePickerContext = createStyledContext<DatePickerContextProps>({
-  size: "$true",
-  circular: false,
-  disabled: false,
-  focused: false
-});
-
-export const DEFAULT_DATE_FORMAT = "MM.DD.YYYY";
-
-// Rehookify internally return `onClick` and that's incompatible with native
-const swapOnClick = <D extends any = any>(d: D) => {
-  (d as any).onPress = (d as any).onClick;
-
-  return d;
-};
-
-function useDateAnimation({
-  listenTo
-}: {
-  listenTo: "years" | "year" | "month";
-}) {
-  const {
-    data: { years, calendars }
-  } = useDatePickerContext();
-
-  const calendar = calendars && calendars.length > 0 ? calendars[0] : undefined;
-  const calendarListenTo =
-    calendar && listenTo !== "years" ? calendar[listenTo] : undefined;
-
-  const [currentMonth, setCurrentMonth] = useState<string | null>(null);
-  const [currentYear, setCurrentYear] = useState<string | null>(null);
-  const [currentYearsSum, setCurrentYearsSum] = useState<number | null>(null);
-
-  const sumYears = useCallback(() => {
-    return years.reduce((ret, date) => ret + date.year, 0);
-  }, [years]);
-
-  useEffect(() => {
-    if (listenTo === "years") {
-      if (currentYearsSum !== sumYears()) {
-        setCurrentYearsSum(sumYears());
-      }
-    }
-  }, [years, sumYears, listenTo, currentYearsSum]);
-
-  useEffect(() => {
-    if (listenTo === "month") {
-      if (calendar && currentMonth !== calendar.month) {
-        setCurrentMonth(calendar.month);
-      }
-    }
-  }, [listenTo, currentMonth]);
-
-  useEffect(() => {
-    if (listenTo === "year") {
-      if (calendar?.year && currentYear !== calendar?.year) {
-        setCurrentYear(calendar?.year);
-      }
-    }
-  }, [listenTo, currentYear]);
-
-  const prevNextAnimation = useCallback(() => {
-    if (listenTo === "years") {
-      if (currentYearsSum === null) {
-        return { enterStyle: { opacity: 0 } };
-      }
-
-      return {
-        enterStyle: { opacity: 0, x: sumYears() < currentYearsSum ? -15 : 15 },
-        exitStyle: { opacity: 0, x: sumYears() < currentYearsSum ? -15 : 15 }
-      };
-    }
-
-    if (listenTo === "month") {
-      if (currentMonth === null) {
-        return { enterStyle: { opacity: 0 } };
-      }
-
-      const isPreviousDate =
-        StormDate.create(
-          new Date(
-            Number(calendar?.year ?? 0),
-            StormDateTime.getMonthIndex(calendarListenTo) + 1,
-            1
-          )
-        ).epochMilliseconds <
-        StormDate.create(
-          new Date(
-            Number(calendar?.year ?? 0),
-            StormDateTime.getMonthIndex(currentMonth) + 1,
-            1
-          )
-        ).epochMilliseconds;
-
-      if (currentMonth === "December" && calendar?.month === "January") {
-        return {
-          enterStyle: { opacity: 0, x: 15 },
-          exitStyle: { opacity: 0, x: 15 }
-        };
-      }
-      if (currentMonth === "January" && calendar?.month === "December") {
-        return {
-          enterStyle: { opacity: 0, x: -15 },
-          exitStyle: { opacity: 0, x: -15 }
-        };
-      }
-      return {
-        enterStyle: { opacity: 0, x: isPreviousDate ? -15 : 15 },
-        exitStyle: { opacity: 0, x: isPreviousDate ? -15 : 15 }
-      };
-    }
-
-    if (listenTo === "year") {
-      if (currentYear === null) {
-        return { enterStyle: { opacity: 0 } };
-      }
-
-      const isPreviousDate =
-        StormDate.create(
-          new Date(
-            Number(calendar?.year ?? 0),
-            StormDateTime.getMonthIndex(calendar?.month) + 1,
-            1
-          )
-        ).epochMilliseconds <
-        StormDate.create(
-          new Date(
-            Number(currentYear),
-            StormDateTime.getMonthIndex(calendar?.month) + 1,
-            1
-          )
-        ).epochMilliseconds;
-
-      return {
-        enterStyle: { opacity: 0, x: isPreviousDate ? -15 : 15 },
-        exitStyle: { opacity: 0, x: isPreviousDate ? -15 : 15 }
-      };
-    }
-
-    return {
-      enterStyle: {},
-      exitStyle: {}
-    };
-  }, [
-    listenTo,
-    currentYearsSum,
-    sumYears,
-    currentMonth,
-    calendarListenTo,
-    calendar?.year,
-    calendar?.month,
-    currentYear
-  ]);
-
-  return {
-    prevNextAnimation,
-    prevNextAnimationKey: listenTo === "years" ? sumYears() : calendarListenTo
-  };
-}
-
-const DayPicker = () => {
-  const {
-    data: { calendars, weekDays },
-    propGetters: { dayButton }
-  } = useDatePickerContext();
-
-  const days = calendars[0]?.days ?? [];
-  const { prevNextAnimation, prevNextAnimationKey } = useDateAnimation({
-    listenTo: "month"
-  });
-
-  // divide days array into sub arrays that each has 7 days, for better stylings
-  const subDays = useMemo(
-    () =>
-      days.reduce((ret, day, i) => {
-        if (i % 7 === 0) {
-          ret.push([]);
-        }
-
-        if (ret.length > 0) {
-          ret[ret.length - 1] ??= [];
-          ret[ret.length - 1]?.push(day);
-        }
-
-        return ret;
-      }, [] as DPDay[][]),
-    [days]
-  );
-
-  return (
-    <AnimatePresence key={prevNextAnimationKey}>
-      <YStack
-        animation="normal"
-        justifyContent="center"
-        gap="$2"
-        {...prevNextAnimation()}>
-        <XStack gap="$1">
-          {weekDays.map(day => (
-            <View key={day} justifyContent="center" width="$4">
-              <LabelText textAlign="center" size="$4" color="$secondary">
-                {day}
-              </LabelText>
-            </View>
-          ))}
-        </XStack>
-        <YStack gap="$1" flexWrap="wrap">
-          {subDays.map((days, i) => {
-            return (
-              <XStack
-                key={days[0]?.$date.toString() ?? i}
-                gap="$0.5"
-                rowGap="$0.5"
-                alignItems="center">
-                {days.map(day => (
-                  <Button
-                    key={day.$date.toString()}
-                    {...swapOnClick(dayButton(day))}
-                    theme={ColorThemeName.BASE}
-                    variant={
-                      day.now
-                        ? "secondary"
-                        : !day.inCurrentMonth
-                          ? "ghost"
-                          : day.selected
-                            ? "primary"
-                            : "outlined"
-                    }
-                    borderColor={day.now ? "$primary" : undefined}
-                    padding="$1"
-                    flexBasis="14%"
-                    borderRadius={0}
-                    disabled={!day.inCurrentMonth}
-                    hoverStyle={
-                      day.inCurrentMonth
-                        ? {
-                            backgroundColor: "$fg"
-                          }
-                        : {}
-                    }>
-                    <Button.Text>{day.day}</Button.Text>
-                  </Button>
-                ))}
-              </XStack>
-            );
-          })}
-        </YStack>
-      </YStack>
-    </AnimatePresence>
-  );
-};
-
-function YearRangeSlider() {
-  const {
-    data: { years },
-    propGetters: { previousYearsButton, nextYearsButton }
-  } = useDatePickerContext();
-
-  return (
-    <View
-      flexDirection="row"
-      gap="$3"
-      width="100%"
-      height={40}
-      alignItems="center"
-      justifyContent="space-between">
-      <Button
-        variant="ghost"
-        size="$4"
-        width="$5"
-        flexShrink={1}
-        {...swapOnClick(previousYearsButton())}>
-        <Button.Icon>
-          <ChevronLeft />
-        </Button.Icon>
-      </Button>
-      <View y={2} flexDirection="column" alignItems="center" flexBasis="50%">
-        <LabelText
-          color="$color"
-          textAlign="center"
-          userSelect="auto"
-          tabIndex={0}>
-          {`${years[0]?.year} - ${years[years.length - 1]?.year}`}
-        </LabelText>
-      </View>
-      <Button
-        variant="ghost"
-        size="$4"
-        width="$5"
-        flexShrink={1}
-        {...swapOnClick(nextYearsButton())}>
-        <Button.Icon>
-          <ChevronRight />
-        </Button.Icon>
-      </Button>
-    </View>
-  );
-}
-
-function YearSlider() {
-  const {
-    data: { calendars },
-    propGetters: { subtractOffset }
-  } = useDatePickerContext();
-  const { setHeader } = useHeaderType();
-  const year = calendars[0]?.year;
-
-  return (
-    <View
-      flexDirection="row"
-      gap="$3"
-      width="100%"
-      height={40}
-      alignItems="center"
-      justifyContent="space-between">
-      <Button
-        variant="ghost"
-        size="$4"
-        width="$5"
-        flexShrink={1}
-        {...swapOnClick(subtractOffset({ months: 12 }))}>
-        <Button.Icon>
-          <ChevronLeft />
-        </Button.Icon>
-      </Button>
-      <View flexBasis="50%">
-        <LabelText
-          onPress={() => setHeader("year")}
-          selectable={true}
-          tabIndex={0}
-          size="$6"
-          cursor="pointer"
-          color="$color"
-          hoverStyle={{
-            color: "$accent10"
-          }}>
-          {year}
-        </LabelText>
-      </View>
-      <Button
-        variant="ghost"
-        size="$4"
-        width="$5"
-        flexShrink={1}
-        {...swapOnClick(subtractOffset({ months: -12 }))}>
-        <Button.Icon>
-          <ChevronRight />
-        </Button.Icon>
-      </Button>
-    </View>
-  );
-}
-
-const CalendarHeader = () => {
-  const {
-    data: { calendars },
-    propGetters: { subtractOffset }
-  } = useDatePickerContext();
-  const { type: header, setHeader } = useHeaderType();
-
-  const month = calendars[0]?.month;
-  const year = calendars[0]?.year;
-
-  if (header === "year") {
-    return <YearRangeSlider />;
+export const DatePickerContext = createStyledContext<
+  DatePickerContextProps,
+  | "mode"
+  | "separator"
+  | "size"
+  | "circular"
+  | "disabled"
+  | "focused"
+  | "variant"
+  | "hasValidationMessage"
+>(
+  {
+    mode: "single",
+    separator: "/",
+    size: "md",
+    circular: false,
+    disabled: false,
+    focused: false,
+    variant: "outlined",
+    hasValidationMessage: false
+  } as DatePickerContextProps,
+  {
+    // Only the keys that styled consumers declare as variants; v3 forwards every
+    // injected context key that is not a variant to the DOM element.
+    keys: []
   }
-
-  if (header === "month") {
-    return (
-      <XStack
-        width="100%"
-        alignItems="center"
-        justifyContent="center"
-        height={40}>
-        <LabelText
-          textAlign="center"
-          userSelect="auto"
-          tabIndex={0}
-          color="$color">
-          Select a month
-        </LabelText>
-      </XStack>
-    );
-  }
-
-  return (
-    <XStack
-      width="100%"
-      alignItems="center"
-      gap="$3"
-      justifyContent="space-between">
-      <Button
-        variant="ghost"
-        size="$4"
-        width="$5"
-        flexShrink={1}
-        {...swapOnClick(subtractOffset({ months: 1 }))}>
-        <Button.Icon>
-          <ChevronLeft />
-        </Button.Icon>
-      </Button>
-      <YStack gap="$1" alignItems="center" flexBasis="50%">
-        <LabelText
-          animation="normal"
-          onPress={() => setHeader("year")}
-          userSelect="auto"
-          tabIndex={0}
-          size="$5"
-          cursor="pointer"
-          color="$color"
-          hoverStyle={{
-            color: "$accent10"
-          }}>
-          {year}
-        </LabelText>
-        <LabelText
-          animation="normal"
-          onPress={() => setHeader("month")}
-          userSelect="auto"
-          cursor="pointer"
-          tabIndex={0}
-          size="$8"
-          color="$color"
-          fontWeight="600"
-          lineHeight="$1"
-          hoverStyle={{
-            color: "$accent10"
-          }}>
-          {month}
-        </LabelText>
-      </YStack>
-      <Button
-        variant="ghost"
-        size="$4"
-        width="$5"
-        flexShrink={1}
-        {...swapOnClick(subtractOffset({ months: -1 }))}>
-        <Button.Icon>
-          <ChevronRight />
-        </Button.Icon>
-      </Button>
-    </XStack>
-  );
-};
-
-type ItemPickerProps = PropsWithChildren<
-  DPPropGetter & {
-    active: boolean;
-    key: string;
-    flexBasis?: "unset" | DimensionValue | undefined;
-  }
->;
-
-const ItemPicker = ({
-  active,
-  flexBasis,
-  key,
-  children,
-  ...rest
-}: ItemPickerProps) => {
-  return (
-    <Button
-      key={key}
-      variant={active ? "primary" : "secondary"}
-      flexGrow={1}
-      flexBasis={flexBasis}
-      {...rest}>
-      <Button.Text>{children}</Button.Text>
-    </Button>
-  );
-};
-
-const MonthPicker = ({
-  onChange = (e, date) => {}
-}: {
-  onChange?: (e: MouseEvent, date: Date) => void;
-}) => {
-  const {
-    data: { months },
-    propGetters: { monthButton }
-  } = useDatePickerContext();
-
-  const { prevNextAnimation, prevNextAnimationKey } = useDateAnimation({
-    listenTo: "year"
-  });
-
-  return (
-    <AnimatePresence key={prevNextAnimationKey}>
-      <View
-        {...prevNextAnimation()}
-        display="flex"
-        flexDirection="row"
-        flexWrap="wrap"
-        gap="$2"
-        animation="100ms"
-        $platform-native={{
-          justifyContent: "space-between",
-          width: "100%"
-        }}>
-        {months.map(month => (
-          <ItemPicker
-            active={month.active}
-            key={month.$date.toString()}
-            flexBasis="30%"
-            minWidth={150}
-            {...swapOnClick(
-              monthButton(month, {
-                onClick: onChange as any
-              })
-            )}>
-            {month.month}
-          </ItemPicker>
-        ))}
-      </View>
-    </AnimatePresence>
-  );
-};
-
-function YearPicker({
-  onChange = () => {}
-}: {
-  onChange?: (e: MouseEvent, date: Date) => void;
-}) {
-  const {
-    data: { years, calendars },
-    propGetters: { yearButton }
-  } = useDatePickerContext();
-  const selectedYear = calendars[0]?.year;
-
-  const { prevNextAnimation, prevNextAnimationKey } = useDateAnimation({
-    listenTo: "years"
-  });
-
-  return (
-    <AnimatePresence key={prevNextAnimationKey}>
-      <View
-        {...prevNextAnimation()}
-        animation="100ms"
-        flexDirection="row"
-        flexWrap="wrap"
-        gap="$2"
-        width="100%"
-        justifyContent="space-between">
-        {years.map(year => (
-          <ItemPicker
-            active={year.year === Number(selectedYear)}
-            key={year.$date.toString()}
-            flexBasis="20%"
-            {...swapOnClick(
-              yearButton(year, {
-                onClick: onChange as any
-              })
-            )}>
-            {year.year}
-          </ItemPicker>
-        ))}
-      </View>
-    </AnimatePresence>
-  );
-}
-
-const DatePickerPopoverBody = () => {
-  const [header, setHeader] = useState<"day" | "month" | "year">("day");
-
-  return (
-    <Theme name={ColorThemeName.BASE}>
-      <HeaderTypeProvider type={header} setHeader={setHeader}>
-        <XStack justifyContent="center">
-          <YStack alignItems="center" gap="$2.5" maxWidth={425}>
-            <CalendarHeader />
-            {header === "month" && (
-              <MonthPicker onChange={() => setHeader("day")} />
-            )}
-            {header === "year" && (
-              <YearPicker onChange={() => setHeader("day")} />
-            )}
-            {header === "day" && <DayPicker />}
-          </YStack>
-        </XStack>
-      </HeaderTypeProvider>
-    </Theme>
-  );
-};
-
-const DatePickerTextBox = Input.TextBox.styleable(
-  ({ children, ...props }, forwardedRef) => {
-    return (
-      <Popover.Trigger asChild={true}>
-        <Input.TextBox ref={forwardedRef} {...props}>
-          {children}
-        </Input.TextBox>
-      </Popover.Trigger>
-    );
-  },
-  { staticConfig: { componentName: "DatePickerValue" } }
 );
 
-const DatePickerTextBoxValue = Input.TextBox.Value.styleable(
+const rejectInvalidDate =
+  (separator: DateSeparator): MaskitoPostprocessor =>
+  (elementState, initialElementState) =>
+    elementState.value.length === DEFAULT_DATE_FORMAT.length &&
+    !parseInputDate(elementState.value, separator)
+      ? initialElementState
+      : elementState;
+
+const rejectInvalidDateRange =
+  (separator: DateSeparator): MaskitoPostprocessor =>
+  (elementState, initialElementState) =>
+    elementState.value.length === getDateRangeFormat(separator).length &&
+    !parseInputDateRange(elementState.value, separator)
+      ? initialElementState
+      : elementState;
+
+const DATE_MASK_OPTIONS_DOT = maskitoDateOptionsGenerator({
+  mode: "mm/dd/yyyy",
+  separator: "."
+});
+
+const DATE_MASK_OPTIONS_SLASH = maskitoDateOptionsGenerator({
+  mode: "mm/dd/yyyy",
+  separator: "/"
+});
+
+export const DATE_MASK_DOT = {
+  ...DATE_MASK_OPTIONS_DOT,
+  // Maskito's final date postprocessor normalizes impossible dates (for
+  // example, 04.31 to 05.01). This field must reject them instead.
+  postprocessors: [
+    ...DATE_MASK_OPTIONS_DOT.postprocessors.slice(0, 1),
+    rejectInvalidDate(".")
+  ]
+};
+
+export const DATE_MASK_SLASH = {
+  ...DATE_MASK_OPTIONS_SLASH,
+  // Maskito's final date postprocessor normalizes impossible dates (for
+  // example, 04.31 to 05.01). This field must reject them instead.
+  postprocessors: [
+    ...DATE_MASK_OPTIONS_SLASH.postprocessors.slice(0, 1),
+    rejectInvalidDate("/")
+  ]
+};
+
+export const DATE_MASK = DATE_MASK_DOT;
+
+const createRangeMask = (separator: DateSeparator): MaskitoOptions => {
+  const digit = /\d/;
+  const dateMask = [
+    digit,
+    digit,
+    separator,
+    digit,
+    digit,
+    separator,
+    digit,
+    digit,
+    digit,
+    digit
+  ];
+
+  return {
+    mask: [...dateMask, ...DATE_RANGE_SEPARATOR, ...dateMask],
+    postprocessors: [rejectInvalidDateRange(separator)]
+  };
+};
+
+export const DATE_RANGE_MASK_DOT = createRangeMask(".");
+export const DATE_RANGE_MASK_SLASH = createRangeMask("/");
+
+const DatePickerTextBox = createStyledHOC(
+  Input.TextBox,
   ({ children, ...props }, forwardedRef) => {
     return (
+      <Input.TextBox ref={forwardedRef} {...props}>
+        {children}
+      </Input.TextBox>
+    );
+  },
+  { displayName: "DatePickerValue" }
+);
+
+/**
+ * The text box state a `DatePicker` connected to a form control (such as
+ * `Field`) shares with its `TextBox.Value`.
+ */
+interface DatePickerFieldState {
+  value: string;
+  inputRef: RefObject<HTMLInputElement | null>;
+  onKeyDown: (event: any) => void;
+}
+
+const DatePickerFieldContext = createContext<DatePickerFieldState | undefined>(
+  undefined
+);
+
+const DatePickerTextBoxValue = createStyledHOC(
+  Input.TextBox.Value,
+  (
+    { children, placeholder, value: valueProp, onKeyDown, ...props },
+    forwardedRef
+  ) => {
+    const { mode, separator, size } = DatePickerContext.useStyledContext();
+    const fieldState = use(DatePickerFieldContext);
+    const ref = useComposedRefs(forwardedRef, fieldState?.inputRef);
+    const fieldOnKeyDown = fieldState?.onKeyDown;
+    const handleKeyDown = useMemo(
+      () =>
+        fieldOnKeyDown
+          ? (event: any) => {
+              onKeyDown?.(event);
+              fieldOnKeyDown(event);
+            }
+          : onKeyDown,
+      [fieldOnKeyDown, onKeyDown]
+    );
+
+    return (
       <Input.TextBox.Value
-        ref={forwardedRef}
-        placeholder={DEFAULT_DATE_FORMAT}
+        ref={ref}
+        value={valueProp ?? fieldState?.value}
+        onKeyDown={handleKeyDown}
+        placeholder={
+          placeholder === undefined
+            ? undefined
+            : placeholder === DEFAULT_DATE_FORMAT
+              ? mode === "range"
+                ? getDateRangeFormat(separator)
+                : getDateFormat(separator)
+              : placeholder
+        }
+        nativePaddingInline={16 * getFormSizeScale(size)}
         {...props}>
         {children}
       </Input.TextBox.Value>
     );
   },
-  { staticConfig: { componentName: "DatePickerValue" } }
+  { displayName: "DatePickerValue" }
 );
 
-const DatePickerProvider = ({
-  children,
-  onChange,
-  onFocus,
-  focused,
-  ...props
-}: PropsWithChildren<Partial<DatePickerContextProps>>) => {
-  const [date, setDate] = useState<Date | null>(null);
-  const selectedDates = useMemo(() => {
-    if (!date) {
-      return [];
-    }
+type DatePickerTriggerProps = GetProps<typeof Field.Icon>;
 
-    return [date];
-  }, [date]);
+const DatePickerTrigger = createStyledHOC(
+  Field.Icon,
+  (props: DatePickerTriggerProps, forwardedRef) => {
+    const { size } = DatePickerContext.useStyledContext();
 
-  const handleChange = useCallback(
-    (dates: Date[] | null) => {
-      const value =
-        Array.isArray(dates) && dates.length > 0 && dates[0] ? dates[0] : null;
-
-      setDate(value);
-      onChange?.(
-        new CustomEvent("change", {
-          detail: value
-        })
-      );
-    },
-    [onChange]
-  );
-
-  return (
-    <RehookifyDatePickerProvider
-      config={{
-        selectedDates,
-        onDatesChange: handleChange,
-        calendar: {
-          startDay: 0
-        },
-        locale: {
-          locale: "en-US",
-          day: "numeric",
-          year: "numeric",
-          weekday: "short",
-          monthName: "long",
-          hour: "2-digit",
-          minute: "2-digit",
-          hour12: undefined,
-          second: undefined
-        }
-      }}>
-      <DatePickerContext.Provider
+    return (
+      <Field.Icon
+        ref={forwardedRef}
         {...props}
-        onChange={onChange}
-        onFocus={onFocus}
-        focused={focused}>
-        {children}
-      </DatePickerContext.Provider>
-    </RehookifyDatePickerProvider>
-  );
-};
-
-const { Provider: HeaderTypeProvider, useStyledContext: useHeaderType } =
-  createStyledContext({
-    type: "day",
-    setHeader: (_: "day" | "month" | "year") => {}
-  });
+        controlSize={size}
+        pointerEvents="none"
+      />
+    );
+  },
+  { displayName: "DatePickerTrigger" }
+);
 
 const DatePickerPopoverContent = styled(Popover.Content, {
-  name: "DatePickerPopover",
-  context: DatePickerContext
+  displayName: "DatePickerPopover",
+  context: DatePickerContext,
+
+  flexBasis: "auto",
+  flexGrow: 0,
+  flexShrink: 0
 });
 
-const DatePickerControlImpl = Input.styleable<DatePickerExtraProps>(
+// Date pickers float their field label by default.
+const FLOATING_LABEL = { variant: "floating" } as const;
+
+// Passed to the inner `Input` so it does not fall back to the form control's
+// handlers: the picker drives the field's value and focus itself.
+const noop = () => {};
+
+const getDateMask = (mode: DatePickerMode, separator: DateSeparator) =>
+  mode === "range"
+    ? separator === "."
+      ? DATE_RANGE_MASK_DOT
+      : DATE_RANGE_MASK_SLASH
+    : separator === "."
+      ? DATE_MASK_DOT
+      : DATE_MASK_SLASH;
+
+const DatePickerControlImpl = createStyledHOC(
+  Input,
   (
-    { children, onChange, onInput, onFocus, onBlur, focused, ...props },
+    props: Omit<GetProps<typeof Input>, keyof DatePickerExtraProps> &
+      DatePickerExtraProps,
     forwardedRef
   ) => {
+    // Inside a form control (such as `Field`), any prop left unset falls back
+    // to the control's state, which connects the picker to the form.
+    const formControl = useFormControl();
+    const fieldVariant = useFieldVariant();
+    useFieldLabelDefaults(FLOATING_LABEL);
+    const {
+      children,
+      onChange: onChangeProp,
+      onDatesChange: onDatesChangeProp,
+      onInput: onInputProp,
+      onFocus: onFocusProp,
+      onBlur: onBlurProp,
+      name = formControl?.name,
+      size = formControl?.size,
+      disabled = formControl?.disabled,
+      readOnly = formControl?.readOnly ?? false,
+      focused = formControl?.focused,
+      mode = "single",
+      separator = "/",
+      variant = formControl ? fieldVariant : "outlined",
+      selectedDate: selectedDateProp,
+      selectedDates: selectedDatesProp,
+      ...rest
+    } = props;
+
+    // The field formats, parses and masks its value for the picker's mode.
+    const fieldOptions = useMemo(
+      () => ({
+        overrides: {
+          format: (value: any) =>
+            mode === "range"
+              ? formatRange(value, separator)
+              : format(value, separator),
+          parse: (value: any) =>
+            mode === "range"
+              ? parseRange(value, separator)
+              : parse(value, separator),
+          mask: getDateMask(mode, separator),
+          // The picker has no clear button.
+          clearable: false
+        }
+      }),
+      [mode, separator]
+    );
+    useFieldOptions(fieldOptions);
+
+    const formattedValue = formControl?.formattedValue ?? "";
+    const formOnChange = formControl?.onChange;
+    const formOnBlur = formControl?.onBlur;
+    const inputRef = useRef<HTMLInputElement>(null);
+    const [inputValue, setInputValue] = useState(formattedValue);
+    const selectionRef = useRef<{ end: number; start: number } | null>(null);
+    const inputDates = useMemo(
+      () =>
+        mode === "range"
+          ? (parseInputDateRange(inputValue, separator) ?? [])
+          : [],
+      [inputValue, mode, separator]
+    );
+    const inputDate = useMemo(
+      () => (mode === "single" ? parseInputDate(inputValue, separator) : null),
+      [inputValue, mode, separator]
+    );
+
+    useEffect(() => {
+      // eslint-disable-next-line react/set-state-in-effect
+      setInputValue(formattedValue);
+    }, [formattedValue]);
+
+    useLayoutEffect(() => {
+      const selection = selectionRef.current;
+      if (!selection) {
+        return;
+      }
+
+      inputRef.current?.setSelectionRange(selection.start, selection.end);
+      selectionRef.current = null;
+    }, [inputValue]);
+
+    const handleChange = useCallback(
+      (event: CustomEvent<Date | null>) => {
+        if (readOnly) return;
+        setInputValue(format(event.detail, separator));
+        formOnChange?.(event.detail);
+        formOnBlur?.();
+      },
+      [formOnBlur, formOnChange, separator, readOnly]
+    );
+
+    const handleDatesChange = useCallback(
+      (event: CustomEvent<Date[]>) => {
+        if (readOnly) return;
+        setInputValue(formatRange(event.detail, separator));
+        formOnChange?.(event.detail);
+
+        if (event.detail.length >= 2) {
+          formOnBlur?.();
+        }
+      },
+      [formOnBlur, formOnChange, separator, readOnly]
+    );
+
+    const handleInput = useCallback(
+      (event: CustomEvent<string>) => {
+        if (readOnly) return;
+        const value = event.detail;
+        setInputValue(value);
+
+        const parsedValue =
+          mode === "range"
+            ? parseInputDateRange(value, separator)
+            : parseInputDate(value, separator);
+        if (value === "" || parsedValue) {
+          formOnChange?.(value);
+        }
+      },
+      [formOnChange, mode, separator, readOnly]
+    );
+
+    const handleBlur = useCallback(() => {
+      setInputValue(formattedValue);
+      formOnBlur?.();
+    }, [formOnBlur, formattedValue]);
+
+    const handleKeyDown = useCallback(
+      (event: any) => {
+        if (readOnly) return;
+        if (
+          event.defaultPrevented ||
+          (event.key !== "ArrowUp" && event.key !== "ArrowDown")
+        ) {
+          return;
+        }
+
+        const input = event.currentTarget as HTMLInputElement;
+        const dates =
+          mode === "range"
+            ? parseInputDateRange(input.value, separator)
+            : [parseInputDate(input.value, separator)];
+        const selectionStart = input.selectionStart ?? 0;
+        const dateIndex =
+          mode === "range" && selectionStart >= DEFAULT_DATE_FORMAT.length
+            ? 1
+            : 0;
+        const date = dates?.[dateIndex];
+        if (!date) {
+          return;
+        }
+
+        event.preventDefault();
+        selectionRef.current = {
+          start: input.selectionStart ?? 0,
+          end: input.selectionEnd ?? 0
+        };
+
+        const nextDate = stepDate(
+          date,
+          getDatePart(
+            selectionStart -
+              (dateIndex === 1
+                ? DEFAULT_DATE_FORMAT.length + DATE_RANGE_SEPARATOR.length
+                : 0)
+          ),
+          event.key === "ArrowUp" ? 1 : -1
+        );
+        if (mode === "range") {
+          const nextDates = [...(dates ?? [])];
+          nextDates[dateIndex] = nextDate;
+          if (
+            nextDates.length === 2 &&
+            nextDates[0] &&
+            nextDates[1] &&
+            nextDates[1] < nextDates[0]
+          ) {
+            return;
+          }
+
+          setInputValue(formatRange(nextDates, separator));
+          formOnChange?.(nextDates);
+        } else {
+          setInputValue(format(nextDate, separator));
+          formOnChange?.(nextDate);
+        }
+      },
+      [formOnChange, mode, separator, readOnly]
+    );
+
+    const fieldState = useMemo(
+      () =>
+        formControl
+          ? { value: inputValue, inputRef, onKeyDown: handleKeyDown }
+          : undefined,
+      [formControl, handleKeyDown, inputValue]
+    );
+
+    const onChange = readOnly
+      ? undefined
+      : (onChangeProp ??
+        (formControl && mode === "single" ? handleChange : undefined));
+    const onDatesChange = readOnly
+      ? undefined
+      : (onDatesChangeProp ??
+        (formControl && mode === "range" ? handleDatesChange : undefined));
+    const onInput = onInputProp ?? (formControl ? handleInput : undefined);
+    const onFocus = onFocusProp ?? formControl?.onFocus;
+    const onBlur = onBlurProp ?? (formControl ? handleBlur : undefined);
+    const selectedDate =
+      selectedDateProp === undefined && formControl
+        ? inputDate
+        : selectedDateProp;
+    const selectedDates =
+      selectedDatesProp === undefined && formControl
+        ? inputDates
+        : selectedDatesProp;
+
     const handleOpenChanged = useCallback(
-      (open: boolean, via?: "hover" | "press") => {
+      (open: boolean, _via?: "hover" | "press") => {
+        if (open && readOnly) return;
         if (open) {
           onFocus?.();
         } else {
           onBlur?.();
         }
       },
-      [onFocus, onBlur]
+      [onFocus, onBlur, readOnly]
     );
 
     return (
-      <DatePickerProvider
-        {...props}
-        onChange={onChange}
-        onInput={onInput}
-        onFocus={onFocus}
-        onBlur={onBlur}
-        focused={focused}>
-        <Popover
-          keepChildrenMounted={true}
-          open={!!focused}
-          onOpenChange={handleOpenChanged}>
-          <Input ref={forwardedRef} {...props} focused={focused}>
-            {children}
-          </Input>
+      <DatePickerFieldContext value={fieldState}>
+        <DatePickerContext.Provider
+          {...rest}
+          name={name}
+          size={size}
+          disabled={disabled}
+          onChange={onChange}
+          onInput={onInput}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          focused={focused}
+          mode={mode}
+          separator={separator}
+          variant={variant}>
+          <Popover
+            keepChildrenMounted={true}
+            open={!!focused && !readOnly}
+            onOpenChange={handleOpenChanged}
+            placement="bottom"
+            // Floating UI applies the offset on whichever side the popover flips to.
+            offset={getSpaced("2xl")}>
+            <Popover.Trigger asChild={true}>
+              <Input
+                ref={forwardedRef}
+                {...rest}
+                name={name}
+                size={size}
+                disabled={disabled}
+                readOnly={readOnly}
+                focused={focused}
+                variant={variant}
+                onChange={noop}
+                onFocus={noop}
+                onBlur={noop}
+                onInput={onInput}>
+                {children ??
+                  (formControl && (
+                    <>
+                      <DatePickerTextBox>
+                        <DatePickerTextBoxValue />
+                      </DatePickerTextBox>
+                      <Input.Separator />
+                      <DatePickerTrigger>
+                        <CalendarIcon />
+                      </DatePickerTrigger>
+                    </>
+                  ))}
+              </Input>
+            </Popover.Trigger>
 
-          <DatePickerPopoverContent>
-            <DatePickerPopoverBody />
-          </DatePickerPopoverContent>
-        </Popover>
-      </DatePickerProvider>
+            <DatePickerPopoverContent disableFocusScope={true}>
+              <Calendar
+                mode={mode}
+                size={size}
+                selectedDate={selectedDate}
+                selectedDates={selectedDates}
+                onChange={onChange}
+                onDatesChange={onDatesChange}
+              />
+            </DatePickerPopoverContent>
+          </Popover>
+        </DatePickerContext.Provider>
+      </DatePickerFieldContext>
     );
   },
-  { staticConfig: { componentName: "DatePicker" } }
+  { displayName: "DatePicker" }
 );
 
 export const DatePicker = withStaticProperties(DatePickerControlImpl, {
@@ -819,5 +672,29 @@ export const DatePicker = withStaticProperties(DatePickerControlImpl, {
     Value: DatePickerTextBoxValue
   }),
   Separator: Input.Separator,
-  Trigger: Input.Trigger
+  Trigger: withStaticProperties(DatePickerTrigger, {
+    Icon: Button.Icon,
+    Text: Button.Text
+  })
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`DatePicker.TextBoxValue` is undefined on the server).
+ */
+export { DatePickerTextBox, DatePickerTextBoxValue, DatePickerTrigger };
+export const DatePickerSeparator = Input.Separator;
+export const DatePickerTriggerIcon = Button.Icon;
+export const DatePickerTriggerText = Button.Text;
+
+export {
+  DATE_RANGE_SEPARATOR,
+  DEFAULT_DATE_FORMAT,
+  format,
+  formatRange,
+  getDateFormat,
+  getDateRangeFormat,
+  parse,
+  parseRange
+} from "./utilities";
+export type { DateSeparator } from "./utilities";

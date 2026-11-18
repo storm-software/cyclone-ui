@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="aring.alt01" format="2">
+  <advance width="608"/>
+  <anchor x="291.0" y="0.0" name="bottom"/>
+  <anchor x="539.0" y="0.0" name="bottomright"/>
+  <outline>
+    <component base="a.alt01"/>
+    <component base="ring" xOffset="15"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

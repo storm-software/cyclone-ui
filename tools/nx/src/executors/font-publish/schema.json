@@ -1,0 +1,41 @@
+{
+  "id": "#",
+  "title": "Font Publish Executor",
+  "description": "Options for publishing generated font files to the Storm CDN",
+  "requires": [],
+  "properties": {
+    "registry": {
+      "title": "Registry",
+      "type": "string",
+      "description": "An optional S3-compatible registry URL",
+      "id": "#registry"
+    },
+    "tag": {
+      "title": "Tag",
+      "type": "string",
+      "description": "The release tag associated with the upload",
+      "id": "#tag",
+      "default": "latest"
+    },
+    "verbose": {
+      "title": "Verbose",
+      "type": "boolean",
+      "description": "Enable verbose logging",
+      "id": "#verbose",
+      "default": false
+    },
+    "dryRun": {
+      "title": "Dry Run",
+      "type": "boolean",
+      "description": "Report the upload without changing the bucket",
+      "id": "#dryRun",
+      "default": false
+    }
+  },
+  "type": "object",
+  "default": {
+    "tag": "latest",
+    "verbose": false,
+    "dryRun": false
+  }
+}

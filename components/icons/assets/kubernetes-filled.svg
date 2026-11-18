@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<defs>
+		<mask id="kubernetes-mask">
+			<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+				<path d="M12 3.1L19.35 6.64L21.16 14.59L16.08 20.97H12M12 3.1L4.65 6.64L2.84 14.59L7.92 20.97H12" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="30"><animate attributeName="fill-opacity" begin="0.6s" dur="0.4s" fill="freeze" to="1" /><animate attributeName="stroke-dashoffset" dur="0.6s" fill="freeze" values="30;0" /></path>
+				<path d="M12 8a4.5 4.5 0 1 1 0 9a4.5 4.5 0 1 1 0 -9Z" stroke="#000" stroke-width="1" stroke-dasharray="29" stroke-dashoffset="29"><animate attributeName="stroke-dashoffset" begin="1s" dur="0.4s" fill="freeze" to="0" /></path>
+				<path d="M12 10.75L12 6M13.37 11.41L17.08 8.45M13.71 12.89L18.34 13.95M12.76 14.08L14.82 18.36M11.24 14.08L9.18 18.36M10.29 12.89L5.66 13.95M10.63 11.41L6.92 8.45" stroke="#000" stroke-width="1" stroke-dasharray="6" stroke-dashoffset="6"><animate attributeName="stroke-dashoffset" begin="1.4s" dur="0.2s" fill="freeze" to="0" /></path>
+			</g>
+		</mask>
+	</defs>
+	<path d="M0 0h24v24H0z" fill="currentColor" mask="url(#kubernetes-mask)" />
+</svg>

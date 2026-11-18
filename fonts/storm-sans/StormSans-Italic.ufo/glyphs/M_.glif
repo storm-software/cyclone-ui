@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="M" format="2">
+  <advance width="784"/>
+  <unicode hex="004D"/>
+  <anchor x="341.0" y="0.0" name="bottom"/>
+  <anchor x="476.0" y="698.0" name="top"/>
+  <outline>
+    <contour>
+      <point x="39" y="0" type="line"/>
+      <point x="118" y="0" type="line"/>
+      <point x="242" y="619" type="line"/>
+      <point x="247" y="619" type="line"/>
+      <point x="329" y="208" type="line"/>
+      <point x="434" y="208" type="line"/>
+      <point x="681" y="619" type="line"/>
+      <point x="686" y="619" type="line"/>
+      <point x="562" y="0" type="line"/>
+      <point x="641" y="0" type="line"/>
+      <point x="781" y="698" type="line"/>
+      <point x="648" y="698" type="line"/>
+      <point x="399" y="284" type="line"/>
+      <point x="395" y="284" type="line"/>
+      <point x="312" y="698" type="line"/>
+      <point x="179" y="698" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.talk</key>
+      <string>
+
+/* Y direction */
+ResYAnchor(11,8)
+YShift(11,20)
+ResYAnchor(12,2)
+YShift(12,7)
+YIPAnchor(11,5,12)
+YShift(5,16)
+YShift(12,19)
+YShift(19,2)
+/* X direction */
+Smooth()
+</string>
+    </dict>
+  </lib>
+</glyph>

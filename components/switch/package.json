@@ -1,49 +1,53 @@
 {
   "name": "@cyclone-ui/switch",
-  "version": "0.5.0",
+  "version": "0.5.100",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A toggle switch with an animated thumb, sm, md and lg sizes, and a disabled state. Its border reflects field validation messages, and Switch.Icon places an icon on the left or right of the track. Use it for on/off settings on its own, or wrap it in a Field to connect it to a form: it then reads its checked state, size and disabled state from the field and reports changes to it.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/switch"
   },
   "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@tamagui/constants": "^1.116.15",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/create-context": "^1.116.15",
-    "@tamagui/get-token": "^1.116.15",
-    "@tamagui/group": "^1.116.15",
-    "@tamagui/lucide-icons": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15",
-    "@tamagui/switch": "^1.116.15",
-    "@tamagui/switch-headless": "^1.116.15"
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/get-token": "catalog:",
+    "@tamagui/react-native-types": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@tamagui/switch": "catalog:",
+    "@tamagui/switch-headless": "catalog:"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/form": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"
   },
-  "source": "src/index.ts"
+  "source": "src/index.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Switch": {
+      "import": "./dist/Switch.mjs",
+      "require": "./dist/Switch.cjs"
+    },
+    "./*": "./*"
+  }
 }

@@ -1,147 +1,422 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { getSpaced } from "@cyclone-ui/helpers";
-import { LabelText } from "@cyclone-ui/label-text";
+ ------------------------------------------------------------------- */
+
+"use client";
+
+import { Button } from "@cyclone-ui/button";
+import {
+  ChevronDoubleRight,
+  ChevronRight,
+  DotsHorizontal
+} from "@cyclone-ui/icons";
 import { Link } from "@cyclone-ui/link";
+import type { LinkTextExtraProps } from "@cyclone-ui/link-text";
+import { Popover } from "@cyclone-ui/popover";
+import type { FontSizeTokens, GetProps, ThemeName } from "@tamagui/core";
 import {
   createStyledContext,
-  FontSizeTokens,
+  createStyledHOC,
   styled,
+  Text,
   Theme,
-  ThemeableProps,
   View
 } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { withStaticProperties } from "@tamagui/helpers";
-import { ChevronRight, ChevronsRight, Slash } from "@tamagui/lucide-icons";
-import { type TextContextStyles } from "@tamagui/text";
+import { XStack, YStack } from "@tamagui/stacks";
+import type { TextContextStyles } from "@tamagui/text";
+import { SizableText } from "@tamagui/text";
+import type { ReactNode } from "react";
+import { Children, createContext, use, useCallback, useState } from "react";
+import { getBreadcrumbCollapse } from "./utilities";
 
 export type BreadcrumbVariant = "chevron" | "double" | "slash";
-export const BreadcrumbVariant = {
-  CHEVRON: "chevron" as BreadcrumbVariant,
-  DOUBLE: "double" as BreadcrumbVariant,
-  SLASH: "slash" as BreadcrumbVariant
-};
 
-export type BreadcrumbContextProps = TextContextStyles &
-  ThemeableProps & {
-    size: FontSizeTokens;
-    variant: BreadcrumbVariant;
-  };
+export type BreadcrumbContextProps = TextContextStyles & {
+  theme?: ThemeName | null;
+} & {
+  size: FontSizeTokens;
+  separator: BreadcrumbVariant;
+} & Pick<
+    LinkTextExtraProps,
+    "variant" | "mixed" | "inverse" | "faded" | "themed"
+  >;
 
-export const BreadcrumbContext = createStyledContext<BreadcrumbContextProps>({
-  size: "$true",
-  variant: BreadcrumbVariant.SLASH
-});
+export const BreadcrumbContext = createStyledContext<
+  BreadcrumbContextProps,
+  "size" | "separator" | "variant" | "mixed" | "inverse" | "faded" | "themed"
+>(
+  {
+    size: true,
+    separator: "slash",
+    variant: "base",
+    mixed: false,
+    inverse: false,
+    faded: true,
+    themed: false
+  } as BreadcrumbContextProps,
+  {
+    // Only the keys that styled consumers declare as variants; v3 forwards every
+    // injected context key that is not a variant to the DOM element.
+    keys: ["size"]
+  }
+);
 
-const BreadcrumbFrame = styled(XGroup, {
-  name: "Breadcrumb",
+// Set inside the collapsed breadcrumbs menu, where `Breadcrumb.Item` renders a
+// menu row instead of a link and separator. Pressing a row closes the menu.
+const BreadcrumbMenuContext = createContext<(() => void) | null>(null);
+
+const BREADCRUMB_MENU_VIEWPORT_PADDING = 10;
+
+export interface BreadcrumbExtraProps {
+  /**
+   * The name of the current page, displayed after the links
+   */
+  currentName: string;
+
+  /**
+   * The maximum number of breadcrumbs to display, including the current page.
+   * When there are more, the middle links collapse into a menu behind a
+   * `DotsThree` button.
+   *
+   * @defaultValue 8
+   */
+  maxItems?: number;
+
+  /**
+   * The number of breadcrumbs to display before the collapsed menu
+   *
+   * @defaultValue 1
+   */
+  itemsBeforeCollapse?: number;
+
+  /**
+   * The number of breadcrumbs to display after the collapsed menu, including
+   * the current page
+   *
+   * @defaultValue 1
+   */
+  itemsAfterCollapse?: number;
+
+  /**
+   * The accessible label of the button that opens the collapsed menu
+   *
+   * @defaultValue "Show path"
+   */
+  expandText?: string;
+}
+
+// A plain stack rather than `styled(XGroup)`, which never hands `transition`
+// to the rendered frame; the group lives in a `display: contents` `XGroup`.
+const BreadcrumbFrame = styled(XStack, {
+  displayName: "Breadcrumb",
   context: BreadcrumbContext,
-
-  animation: "normal",
+  transition: "200ms",
   alignItems: "center",
   flexWrap: "nowrap",
   flexShrink: 1,
+  gap: "4xl",
 
   variants: {
     size: {
-      "...size": (val = "$true") => {
-        return {
-          gap: getSpaced(val) / 2
-        };
+      sm: { gap: "3xl" },
+      md: { gap: "4xl" },
+      lg: { gap: "7xl" }
+    }
+  } as const
+});
+
+const BreadcrumbCurrent = styled(Text, {
+  displayName: "BreadcrumbCurrent",
+  context: BreadcrumbContext,
+
+  theme: "base",
+  transition: "200ms",
+  cursor: "default",
+  color: "primary",
+  verticalAlign: "middle",
+  fontFamily: "display",
+
+  variants: {
+    size: {
+      sm: {
+        fontSize: "sm",
+        lineHeight: "sm",
+        fontWeight: "medium"
+      },
+      md: {
+        fontSize: "md",
+        lineHeight: "md",
+        fontWeight: "medium"
+      },
+      lg: {
+        fontSize: "lg",
+        lineHeight: "md",
+        fontWeight: "semibold"
       }
     }
+  } as const,
+
+  defaultVariants: {
+    size: "sm"
   }
 });
 
-const BreadcrumbCurrent = styled(LabelText, {
-  name: "BreadcrumbCurrent",
-  context: BreadcrumbContext,
+/**
+ * The resting text color of `LinkText` for the breadcrumb's variant, so the menu
+ * button reads as one of the links. Icons take a single SVG color, so there are
+ * no hover or press clauses.
+ */
+const getBreadcrumbEllipsisColor = ({
+  variant = "base",
+  mixed,
+  inverse,
+  themed
+}: Pick<
+  BreadcrumbContextProps,
+  "variant" | "mixed" | "inverse" | "themed"
+>) => {
+  const link = themed ? "primary" : "link";
 
-  animation: "normal",
-  cursor: "default",
-  color: "$color",
-  fontFamily: "$link",
-  fontWeight: "$lg",
-  verticalAlign: "middle"
-});
+  return variant === "base" || (mixed && inverse) ? link : variant;
+};
 
-const BreadcrumbImpl = BreadcrumbFrame.styleable<{
-  currentName: string;
-}>(
-  ({ children, currentName, ...props }, forwardRef) => {
+const BreadcrumbSeparator = () => {
+  const { separator, size } = BreadcrumbContext.useStyledContext();
+
+  if (separator === "chevron") {
+    return <ChevronRight color="border" size="2xl" variant="bold" />;
+  } else if (separator === "double") {
+    return <ChevronDoubleRight color="border" size="2xl" variant="bold" />;
+  } else if (separator === "slash") {
+    return (
+      <SizableText
+        color="border"
+        fontFamily="body"
+        fontSize={size === "lg" ? "md" : "sm"}
+        lineHeight="sm"
+        fontWeight={
+          size === "sm" ? "medium" : size === "lg" ? "black" : "bold"
+        }>
+        /
+      </SizableText>
+    );
+  }
+
+  return null;
+};
+
+interface BreadcrumbEllipsisProps {
+  children: ReactNode;
+  expandText: string;
+}
+
+/**
+ * The `DotsHorizontal` button that stands in for the collapsed links and lists them
+ * in a popover menu.
+ */
+const BreadcrumbEllipsis = ({
+  children,
+  expandText
+}: BreadcrumbEllipsisProps) => {
+  const context = BreadcrumbContext.useStyledContext();
+  const [open, setOpen] = useState(false);
+  const close = useCallback(() => setOpen(false), []);
+
+  return (
+    <>
+      <Popover open={open} onOpenChange={setOpen} placement="bottom-start">
+        <Popover.Trigger asChild={true}>
+          <Button
+            variant="ghost"
+            circular={true}
+            tight={true}
+            size="6xl"
+            aria-label={expandText}
+            tooltip={expandText}>
+            <Button.Icon>
+              <DotsHorizontal
+                color={getBreadcrumbEllipsisColor(context)}
+                size="4xl"
+              />
+            </Button.Icon>
+          </Button>
+        </Popover.Trigger>
+
+        <Popover.Content
+          padding="lg"
+          borderWidth={1}
+          borderColor="hairline"
+          maxWidth="90vw"
+          maxHeight={`calc(var(--tamagui-popper-available-height) - ${BREADCRUMB_MENU_VIEWPORT_PADDING}px)`}
+          overflow="hidden">
+          <BreadcrumbMenuContext value={close}>
+            <YStack flexShrink={1} minHeight={0} overflowY="auto">
+              {children}
+            </YStack>
+          </BreadcrumbMenuContext>
+        </Popover.Content>
+      </Popover>
+
+      <BreadcrumbSeparator />
+    </>
+  );
+};
+
+const BreadcrumbImpl = createStyledHOC(
+  BreadcrumbFrame,
+  (
+    {
+      children,
+      currentName,
+      maxItems = 8,
+      itemsBeforeCollapse = 1,
+      itemsAfterCollapse = 1,
+      expandText = "Show path",
+      size = "md",
+      ...props
+    }: GetProps<typeof BreadcrumbFrame> &
+      Partial<BreadcrumbContextProps> &
+      BreadcrumbExtraProps,
+    forwardRef
+  ) => {
     const { theme } = BreadcrumbContext.useStyledContext();
+
+    const items = Children.toArray(children);
+    const collapse = getBreadcrumbCollapse(items.length, {
+      maxItems,
+      itemsBeforeCollapse,
+      itemsAfterCollapse
+    });
+    const trail = collapse
+      ? [
+          ...items.slice(0, collapse.start),
+          <BreadcrumbEllipsis key="breadcrumb-ellipsis" expandText={expandText}>
+            {items.slice(collapse.start, collapse.end)}
+          </BreadcrumbEllipsis>,
+          ...items.slice(collapse.end)
+        ]
+      : items;
 
     return (
       <Theme name={theme}>
-        <BreadcrumbFrame ref={forwardRef} theme={theme} {...props}>
-          {children}
-          <BreadcrumbCurrent>{currentName || "Current"}</BreadcrumbCurrent>
+        <BreadcrumbFrame ref={forwardRef} theme={theme} size={size} {...props}>
+          <XGroup display="contents">
+            {trail}
+            <BreadcrumbCurrent size={size}>
+              {currentName || "Current"}
+            </BreadcrumbCurrent>
+          </XGroup>
         </BreadcrumbFrame>
       </Theme>
     );
   },
   {
-    staticConfig: { componentName: "Breadcrumb" }
+    displayName: "Breadcrumb"
   }
 );
 
 const BreadcrumbLink = styled(Link, {
-  name: "BreadcrumbItem",
+  displayName: "BreadcrumbItem",
   context: BreadcrumbContext,
 
-  animation: "normal",
-  underline: "initial"
+  transition: "200ms"
 });
 
-const BreadcrumbItemImpl = BreadcrumbLink.styleable(
-  ({ children, ...props }, forwardRef) => {
-    const { size, variant } = BreadcrumbContext.useStyledContext();
+// A block, so the row fills the menu width and long names end in an ellipsis.
+const BreadcrumbMenuLink = styled(Link, {
+  displayName: "BreadcrumbMenuItem",
+  display: "block",
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  borderRadius: "button",
+  paddingHorizontal: "3xl",
+  paddingVertical: "xl"
+});
+
+const BreadcrumbItemImpl = createStyledHOC(
+  BreadcrumbLink,
+  ({ children, size: sizeProp, ...props }, forwardRef) => {
+    const { size, variant, mixed, inverse, faded, themed } =
+      BreadcrumbContext.useStyledContext();
+    const closeMenu = use(BreadcrumbMenuContext);
+
+    // LinkText only sets its font family for `sm` / `md`; any other size (the
+    // context default is `true`) leaves SizableText's `body` family, which is
+    // not a configured font, so the browser falls back to its default serif.
+    const resolvedSize = sizeProp ?? size;
+    const linkSize =
+      resolvedSize === "lg" || resolvedSize === "md" ? resolvedSize : "sm";
+
+    if (closeMenu) {
+      return (
+        <BreadcrumbMenuLink
+          ref={forwardRef}
+          size={linkSize}
+          variant={variant}
+          mixed={mixed}
+          inverse={inverse}
+          faded={faded}
+          themed={themed}
+          underline="none"
+          {...props}
+          onPress={(event: any) => {
+            (props as { onPress?: (event: any) => void }).onPress?.(event);
+            closeMenu();
+          }}>
+          {children}
+        </BreadcrumbMenuLink>
+      );
+    }
 
     return (
       <XGroup.Item>
         <View display="block">
           <BreadcrumbLink
             ref={forwardRef}
-            size={size}
-            {...props}
-            variant="mixed">
+            size={linkSize}
+            variant={variant}
+            mixed={mixed}
+            inverse={inverse}
+            faded={faded}
+            themed={themed}
+            {...props}>
             {children}
           </BreadcrumbLink>
         </View>
 
-        {variant === BreadcrumbVariant.CHEVRON && (
-          <ChevronRight color="$borderColor" size="$2" />
-        )}
-        {variant === BreadcrumbVariant.DOUBLE && (
-          <ChevronsRight color="$borderColor" size="$2" />
-        )}
-        {variant === BreadcrumbVariant.SLASH && (
-          <Slash color="$borderColor" size="$0.75" />
-        )}
+        <BreadcrumbSeparator />
       </XGroup.Item>
     );
   },
   {
-    staticConfig: { componentName: "BreadcrumbItem" }
+    displayName: "BreadcrumbItem"
   }
 );
 
 export const Breadcrumb = withStaticProperties(BreadcrumbImpl, {
   Item: BreadcrumbItemImpl
 });
+
+export type BreadcrumbProps = GetProps<typeof Breadcrumb>;
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Breadcrumb.Item` is undefined on the server).
+ */
+export { BreadcrumbItemImpl as BreadcrumbItem };

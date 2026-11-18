@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="quotedblbase" format="2">
+  <advance width="470"/>
+  <unicode hex="201E"/>
+  <outline>
+    <component base="quotesinglbase"/>
+    <component base="quotesinglbase" xOffset="197"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.assembly</key>
+      <string>
+
+OFFSET[R], $quotesinglbase$, 0, 0
+OFFSET[R], $quotesinglbase$, 188, 0
+CALL[], 27, 28, 88
+</string>
+      <key>com.type-invaders.vtt.talk</key>
+      <string></string>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

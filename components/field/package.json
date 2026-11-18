@@ -1,54 +1,65 @@
 {
   "name": "@cyclone-ui/field",
-  "version": "0.5.0",
-  "type": "module",
-  "description": "A Next Button component meant to be shared in many other components",
+  "version": "0.5.100",
+  "private": false,
+  "description": "A form field wrapper that connects a control to Cyclone UI form state and provides Field.Label, Field.Link, Field.Details, Field.Icon and Field.ThemeIcon parts. It shows validation messages automatically and supports normal, floating and underline label variants. Use it as the base for building labeled form inputs.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/field"
   },
-  "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
-  "files": [
-    "dist",
-    "src",
-    "types"
+  "sideEffects": [
+    "*.css"
   ],
-  "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Field": {
+      "import": "./dist/Field.mjs",
+      "require": "./dist/Field.cjs"
+    },
+    "./*": "./*"
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
-    "@storm-stack/types": "latest",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/get-token": "^1.116.15",
-    "@tamagui/label": "^1.116.15",
-    "@tamagui/lucide-icons": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15"
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/link": "workspace:*",
+    "@cyclone-ui/spinner": "workspace:*",
+    "@cyclone-ui/state": "workspace:*",
+    "@cyclone-ui/tooltip": "workspace:*",
+    "@cyclone-ui/validation-text": "workspace:*",
+    "@stryke/types": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/get-font-sized": "catalog:",
+    "@tamagui/label": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@tamagui/text": "catalog:"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "@cyclone-ui/form": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
   "module:jsx": "dist/jsx"
 }

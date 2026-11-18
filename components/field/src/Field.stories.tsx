@@ -1,37 +1,37 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Form } from "@cyclone-ui/form";
-import type { Meta, StoryObj } from "@storybook/react";
-import { Field } from "./Field";
+import { useFieldActions } from "@cyclone-ui/state/form";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { expect, userEvent, waitFor, within } from "storybook/test";
+import { Field, useFieldHasValidationMessage } from "./Field";
 
 const meta: Meta<typeof Field> = {
   title: "Form/Field",
   component: Field,
   tags: ["autodocs"],
-  render: (props: any) => (
-    <Form name="formName" defaultValues={{ fieldName: "" }}>
+  render: (props: any, { id }: { id: string }) => (
+    <Form name={`formName-${id}`} initialValues={{ fieldName: "" }}>
       <Field name="fieldName" {...props}>
         <Field.Label>Label Text</Field.Label>
         <BodyText>The form field can be added here</BodyText>
-        <Field.Details>
-          This is an example detailed message for an input
-        </Field.Details>
       </Field>
     </Form>
   )
@@ -41,8 +41,99 @@ export default meta;
 
 type Story = StoryObj<typeof Field>;
 
+const validation = (
+  type:
+    | "danger"
+    | "warning"
+    | "info"
+    | "discovery"
+    | "success"
+    | "positive"
+    | "negative"
+) => ({
+  onChange: [
+    () => [
+      {
+        message: "This is an example validation message",
+        type
+      }
+    ]
+  ]
+});
+
+const MessageStateProbe = () => {
+  const hasValidationMessage = useFieldHasValidationMessage();
+  const { change } = useFieldActions<string>();
+
+  return (
+    <>
+      <button type="button" onClick={() => void change("value")}>
+        Validate field
+      </button>
+      <output data-testid="field-message-state">
+        {String(hasValidationMessage)}
+      </output>
+    </>
+  );
+};
+
 export const Base: Story = {
   args: {}
+};
+
+export const OutlinedFloating: Story = {
+  args: {
+    variant: "outlined",
+    labelVariant: "floating"
+  }
+};
+
+export const UnderlinedFloating: Story = {
+  args: {
+    variant: "underlined",
+    labelVariant: "floating"
+  }
+};
+
+export const InlinedFloating: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "floating"
+  }
+};
+
+export const OutlinedAbove: Story = {
+  args: {
+    variant: "outlined",
+    labelVariant: "above"
+  }
+};
+
+export const UnderlinedAbove: Story = {
+  args: {
+    variant: "underlined",
+    labelVariant: "above"
+  }
+};
+
+export const InlinedAbove: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "above"
+  }
+};
+
+export const WithLink: Story = {
+  args: {},
+  render: (props, { id }) => (
+    <Form name={`formName-${id}`} initialValues={{ fieldName: "" }}>
+      <Field {...props} name="fieldName">
+        <Field.Label>Label Text</Field.Label>
+        <Field.Link href="#field-link">Learn more</Field.Link>
+        <BodyText>The form field can be added here</BodyText>
+      </Field>
+    </Form>
+  )
 };
 
 export const Required: Story = {
@@ -63,32 +154,140 @@ export const DefaultValue: Story = {
   }
 };
 
-export const Help: Story = {
+export const Discovery: Story = {
   args: {
-    theme: "help"
+    validate: validation("discovery")
   }
 };
 
 export const Error: Story = {
   args: {
-    theme: "danger"
+    showErrorsBeforeBlur: true,
+    validate: validation("danger")
   }
 };
 
 export const Warning: Story = {
   args: {
-    theme: "warning"
+    validate: validation("warning")
+  }
+};
+
+export const WarningMessageState: Story = {
+  args: {
+    validate: validation("warning")
+  },
+  render: (props, { id }) => (
+    <Form name={`formName-${id}`} initialValues={{ fieldName: "" }}>
+      <Field {...props} name="fieldName">
+        <MessageStateProbe />
+      </Field>
+    </Form>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await expect(canvas.getByTestId("field-message-state")).toHaveTextContent(
+      "false"
+    );
+    await userEvent.click(
+      canvas.getByRole("button", { name: "Validate field" })
+    );
+    // `onChange` validation is debounced (100ms by default).
+    await waitFor(async () =>
+      expect(canvas.getByTestId("field-message-state")).toHaveTextContent(
+        "true"
+      )
+    );
   }
 };
 
 export const Info: Story = {
   args: {
-    theme: "info"
+    validate: validation("info")
   }
 };
 
 export const Success: Story = {
   args: {
-    theme: "success"
+    validate: validation("success")
+  }
+};
+
+export const SmallSize: Story = { args: { size: "sm" } };
+
+export const MediumSize: Story = { args: { size: "md" } };
+
+export const LargeSize: Story = { args: { size: "lg" } };
+
+const renderWithDetails =
+  (labelVariant: "above" | "floating") =>
+  (props: any, { id }: { id: string }) => (
+    <Form name={`formName-${id}`} initialValues={{ fieldName: "" }}>
+      <Field
+        showErrorsBeforeBlur={true}
+        validate={validation("danger")}
+        {...props}
+        name="fieldName">
+        <Field.Label variant={labelVariant}>Label Text</Field.Label>
+        <MessageStateProbe />
+        <Field.Details>Supporting details text</Field.Details>
+      </Field>
+    </Form>
+  );
+
+export const AboveWithDetails: Story = {
+  render: renderWithDetails("above"),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const label = canvas.getByText("Label Text");
+    const details = canvas.getByText("Supporting details text");
+
+    // Renders under the label text, before the control.
+    await expect(
+      label.compareDocumentPosition(details) &
+        Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
+    await expect(
+      details.compareDocumentPosition(
+        canvas.getByRole("button", { name: "Validate field" })
+      ) & Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
+
+    await userEvent.click(
+      canvas.getByRole("button", { name: "Validate field" })
+    );
+    await waitFor(async () =>
+      expect(canvas.getByTestId("field-message-state")).toHaveTextContent(
+        "true"
+      )
+    );
+    // Stays visible alongside the validation message (after both fade in).
+    await waitFor(async () => {
+      await expect(
+        canvas.getByText("This is an example validation message")
+      ).toBeVisible();
+      await expect(canvas.getByText("Supporting details text")).toBeVisible();
+    });
+  }
+};
+
+export const FloatingWithDetails: Story = {
+  render: renderWithDetails("floating"),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await waitFor(async () =>
+      expect(canvas.getByText("Supporting details text")).toBeVisible()
+    );
+    await userEvent.click(
+      canvas.getByRole("button", { name: "Validate field" })
+    );
+    // Hidden while a validation message shows.
+    await waitFor(async () =>
+      expect(
+        canvas.queryByText("Supporting details text")
+      ).not.toBeInTheDocument()
+    );
   }
 };

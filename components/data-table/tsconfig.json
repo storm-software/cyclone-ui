@@ -1,15 +1,74 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc",
+    "tsBuildInfoFile": "../../dist/out-tsc/components/data-table/tsconfig.tsbuildinfo",
     "jsx": "preserve",
+    "ignoreDeprecations": "6.0",
+    "rootDir": ".",
     "types": [
       "node",
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
-    ]
+    ],
+    "outDir": "../../dist/out-tsc/components/data-table"
   },
+  "references": [
+    {
+      "path": "../../tools/config"
+    },
+    {
+      "path": "../table"
+    },
+    {
+      "path": "../../packages/state"
+    },
+    {
+      "path": "../select"
+    },
+    {
+      "path": "../search-input"
+    },
+    {
+      "path": "../scroll-view"
+    },
+    {
+      "path": "../popover"
+    },
+    {
+      "path": "../pagination"
+    },
+    {
+      "path": "../icons"
+    },
+    {
+      "path": "../heading-text"
+    },
+    {
+      "path": "../form"
+    },
+    {
+      "path": "../field"
+    },
+    {
+      "path": "../context-menu"
+    },
+    {
+      "path": "../checkbox"
+    },
+    {
+      "path": "../button"
+    },
+    {
+      "path": "../body-text"
+    },
+    {
+      "path": "../avatar"
+    },
+    {
+      "path": "../copy-button"
+    }
+  ],
   "files": [],
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

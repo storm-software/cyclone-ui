@@ -1,0 +1,105 @@
+/* -------------------------------------------------------------------
+
+                   🗲 Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
+import { StormJSON as StormParser } from "@stryke/json/storm-json";
+import { isPromiseLike } from "@stryke/type-checks/is-promise";
+import type {
+  AsyncStorage,
+  AsyncStringStorage,
+  SyncStorage,
+  SyncStringStorage
+} from "jotai/vanilla/utils/atomWithStorage";
+
+export function createWebStorage<TValue>(
+  getStringStorage: () => AsyncStringStorage | SyncStringStorage | undefined
+): AsyncStorage<TValue> | SyncStorage<TValue> {
+  let lastStrValue: string | undefined;
+  let lastValue: TValue;
+
+  const storage: {
+    getItem: (
+      key: string,
+      initialValue: TValue
+    ) => TValue | PromiseLike<TValue>;
+    removeItem: (key: string) => void | PromiseLike<void> | undefined;
+    setItem: (
+      key: string,
+      newValue: TValue
+    ) => void | PromiseLike<void> | undefined;
+    subscribe?: (
+      key: string,
+      callback: (value: TValue) => void,
+      initialValue: TValue
+    ) => () => void;
+  } = {
+    getItem: (key: string, initialValue: TValue) => {
+      const parse = (strValue = ""): TValue => {
+        if (lastStrValue !== strValue) {
+          try {
+            lastValue = StormParser.parse<TValue>(strValue);
+          } catch {
+            return initialValue;
+          }
+          lastStrValue = strValue;
+        }
+
+        return lastValue;
+      };
+      const strValue = getStringStorage()?.getItem(key) ?? undefined;
+      if (strValue && isPromiseLike(strValue)) {
+        return strValue.then(value => parse(value as string));
+      }
+
+      return parse(strValue);
+    },
+    removeItem: (key: string) => getStringStorage()?.removeItem(key),
+    setItem: (key: string, newValue: TValue) =>
+      getStringStorage()?.setItem(key, StormParser.stringify(newValue))
+  };
+
+  if (
+    typeof window !== "undefined" &&
+    typeof window.addEventListener === "function" &&
+    window.Storage
+  ) {
+    storage.subscribe = (key, callback, initialValue) => {
+      if (!(getStringStorage() instanceof window.Storage)) {
+        return () => {};
+      }
+
+      const storageEventCallback = (e: StorageEvent) => {
+        if (e.storageArea === getStringStorage() && e.key === key) {
+          let newValue: TValue;
+          try {
+            newValue = JSON.parse(e.newValue || "");
+          } catch {
+            newValue = initialValue;
+          }
+          callback(newValue);
+        }
+      };
+
+      window.addEventListener("storage", storageEventCallback);
+      return () => {
+        window.removeEventListener("storage", storageEventCallback);
+      };
+    };
+  }
+
+  return storage as unknown as AsyncStorage<TValue> | SyncStorage<TValue>;
+}

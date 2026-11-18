@@ -1,119 +1,167 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
+"use client";
 
 import { Button } from "@cyclone-ui/button";
-import { ColorThemeName } from "@cyclone-ui/colors";
-import { getRadius, getSized, getSpaced } from "@cyclone-ui/helpers";
-import { isWeb } from "@tamagui/constants";
-import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
+import type { FieldLabelPlacement, FormControlSize } from "@cyclone-ui/helpers";
 import {
+  FieldNotchedOutline,
+  FormControlFrameContext,
+  getFormControlAriaProps,
+  getFormSizeToken,
+  getSized,
+  useFieldHasValidationMessage,
+  useFieldLabelDefaults,
+  useFieldLabelPlacement,
+  useFieldShouldShowPlaceholder,
+  useFieldVariant,
+  useFormControl
+} from "@cyclone-ui/helpers";
+import type { GetProps } from "@tamagui/core";
+import {
+  createStyledHOC,
   styled,
-  useThemeName,
+  Theme,
+  useComposedRefs,
   View,
   withStaticProperties
 } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
-import { X } from "@tamagui/lucide-icons";
-import { Separator } from "@tamagui/separator";
 import { XStack } from "@tamagui/stacks";
-import { useMemo } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { InputValue } from "./InputValue";
-import { InputContextProps } from "./types";
-import { getInputSize, InputContext } from "./utilities";
+import type {
+  InputChangeEventHandler,
+  InputContextProps,
+  InputVariant
+} from "./types";
+import {
+  getInputSize,
+  InputBehaviorContext,
+  InputContext,
+  useInputBehavior
+} from "./utilities";
 
-const InputGroup = styled(XGroup, {
-  name: "Input",
-  context: InputContext,
+// Text inputs float their field label by default.
+const FLOATING_LABEL = { variant: "floating" } as const;
 
-  animation: "normal",
-  justifyContent: "space-between",
-  alignItems: "center",
-  backgroundColor: "transparent",
-  borderWidth: 1,
-  borderColor: "$borderColor",
-  outlineWidth: 0,
-  outlineColor: "transparent",
-  gap: "$0.6",
+const isFormControlSize = (value: unknown): value is FormControlSize =>
+  value === "sm" || value === "md" || value === "lg";
 
-  ...(isWeb
-    ? {
-        tabIndex: 0
-      }
-    : {
-        focusable: true
-      }),
-
-  // this fixes a flex bug where it overflows container
-  minWidth: 0,
-
-  hoverStyle: {
-    borderColor: "$accent10"
-  },
-
-  focusVisibleStyle: {
-    outlineColor: "$accent10",
-    outlineWidth: 3,
-    outlineOffset: "$1.25",
-    outlineStyle: "solid",
-    borderColor: "$borderColorFocus"
-  },
-
+export const ControlUnderline = styled(View, {
+  displayName: "ControlUnderline",
+  transition: "200ms",
+  position: "absolute",
+  // Grows outward from the center (MUI-style): `left` and `width` animate
+  // together. Not `scaleX`, which misanimates when it starts from 0.
+  left: "50%",
+  bottom: 0,
+  width: 0,
+  height: "xxs",
+  backgroundColor: "primary-active",
+  pointerEvents: "none",
   variants: {
     focused: {
       true: {
-        outlineColor: "$accent10",
-        outlineWidth: 3,
-        outlineOffset: "$1.25",
-        outlineStyle: "solid",
-        borderColor: "$borderColorFocus"
-      }
-    },
-
-    size: {
-      "...size": (
-        val: SizeTokens | number,
-        extras: VariantSpreadExtras<any>
-      ) => {
-        const result = getInputSize(val, extras);
-
-        return {
-          ...result,
-          paddingHorizontal: 0
-        };
+        left: 0,
+        width: "100%"
       }
     },
 
     disabled: {
       true: {
+        left: "50%",
+        width: 0,
+        backgroundColor: "primary-disabled"
+      }
+    }
+  } as const,
+  defaultVariants: {
+    focused: false,
+    disabled: false
+  }
+});
+
+// The frame is a plain stack rather than `styled(XGroup)`: a styled layer over
+// the `XGroup` HOC compiles its styles to classes and never hands `transition`
+// to the inner frame, so the border and focus ring snapped instead of
+// animating. The group behavior lives in a `display: contents` `XGroup` inside.
+const InputGroup = styled(XStack, {
+  displayName: "Input",
+  context: InputContext,
+  transition: "200ms",
+  position: "relative",
+  justifyContent: "space-between",
+  alignItems: "center",
+  backgroundColor: "surface",
+  borderWidth: 1,
+  borderColor: "hairline",
+  outlineWidth: 0,
+  outlineColor: "transparent",
+  boxShadow: "none",
+  gap: "zero",
+  borderRadius: "control",
+  overflow: "hidden",
+  // this fixes a flex bug where it overflows container
+  minWidth: 0,
+  variants: {
+    // The focus ring is styled by the `.resolve` below because it depends on
+    // `variant`.
+    focused: {
+      true: {
+        borderColor: "primary-active"
+      }
+    },
+
+    hasValidationMessage: {
+      true: {
+        borderColor: "primary hover:primary-hovered"
+      }
+    },
+
+    // The radius and focus ring are styled by the `.resolve` below, as they
+    // depend on the size.
+    variant: {
+      outlined: {},
+      underlined: {
+        backgroundColor: "transparent",
+        borderWidth: 0,
+        borderBottomWidth: 1
+      },
+      inlined: {}
+    },
+
+    // Keep frame dimensions separate from Tamagui's special `size` prop. A
+    // `$true` size is consumed before spread variants run, leaving no height.
+    // Styled by the `.resolve` below because the geometry depends on
+    // `variant`, `labelPlacement` and `circular`.
+    frameSize: styled.dynamic<FormControlSize>(),
+
+    labelPlacement: styled.dynamic<FieldLabelPlacement>(),
+
+    disabled: {
+      true: {
         userSelect: "none",
         cursor: "not-allowed",
-        borderColor: "$borderColorDisabled",
-
-        hoverStyle: {
-          borderColor: "$borderColorDisabled"
-        },
-
-        focusStyle: {
-          borderColor: "$borderColorDisabled"
-        },
-
-        pressStyle: {
-          borderColor: "$borderColorDisabled"
-        }
+        backgroundColor: "surface-disabled",
+        borderColor:
+          "primary-disabled hover:primary-disabled press:primary-disabled focus:primary-disabled"
       }
     },
 
@@ -123,234 +171,405 @@ const InputGroup = styled(XGroup, {
       }
     }
   } as const,
-
   defaultVariants: {
-    size: "$true",
+    frameSize: "md",
     disabled: false,
     focused: false,
-    circular: false
+    circular: false,
+    variant: "outlined"
   }
+}).resolve(props => {
+  const variant = (props.variant ?? "outlined") as InputVariant;
+  const frameSize = props.frameSize ?? "md";
+  const sized = isFormControlSize(frameSize)
+    ? getInputSize(frameSize, {
+        labelPlacement: props.labelPlacement as FieldLabelPlacement | undefined,
+        circular: Boolean(props.circular)
+      })
+    : undefined;
+  // `FieldNotchedOutline` draws a notched field's border instead; the
+  // padding keeps the content where the border left it.
+  const notched = props.labelPlacement === "border";
+
+  return {
+    // Focus ring: underlined and inlined inputs show their underline instead.
+    boxShadow:
+      props.focused && (variant === "outlined" || variant === "inlined")
+        ? frameSize === "sm"
+          ? "ring-subtle-offset"
+          : "ring-offset"
+        : undefined,
+    paddingHorizontal: sized ? (notched ? 1 : 0) : undefined,
+    paddingVertical: notched ? 1 : undefined,
+    borderWidth: notched ? 0 : undefined,
+    height: sized?.height,
+    minHeight: sized?.minHeight,
+    // underlined inputs round only their top corners; inlined ones own theirs.
+    ...(variant === "outlined" || variant === "inlined"
+      ? { borderRadius: sized?.borderRadius }
+      : variant === "underlined"
+        ? {
+            borderTopLeftRadius: sized?.borderRadius,
+            borderTopRightRadius: sized?.borderRadius,
+            borderBottomLeftRadius: 0,
+            borderBottomRightRadius: 0
+          }
+        : {})
+  };
 });
 
-const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
-  (props, forwardedRef) => {
-    const { children } = props;
-
-    return (
-      <InputContext.Provider {...props}>
-        <InputGroup ref={forwardedRef} group={"input" as any} {...props}>
-          {children}
-        </InputGroup>
-      </InputContext.Provider>
+const InputGroupImpl = createStyledHOC(
+  InputGroup,
+  (
+    props: Omit<GetProps<typeof InputGroup>, "onChange" | "onInput"> &
+      Partial<InputContextProps>,
+    forwardedRef
+  ) => {
+    // Inside a form control (such as `Field`), any prop left unset falls back
+    // to the control's state, which connects the input to the form.
+    const formControl = useFormControl();
+    const fieldVariant = useFieldVariant();
+    useFieldLabelDefaults(FLOATING_LABEL);
+    const {
+      children,
+      name = formControl?.name,
+      size = formControl?.size ?? "md",
+      variant = formControl ? fieldVariant : "outlined",
+      onChange: onChangeProp,
+      onInput,
+      onFocus: onFocusProp,
+      onBlur: onBlurProp,
+      onMouseDown,
+      focused = formControl?.focused ?? false,
+      disabled = formControl?.disabled ?? false,
+      readOnly = formControl?.readOnly ?? false,
+      ...rest
+    } = props;
+    const formOnChange = formControl?.onChange;
+    const onChange = useMemo<InputChangeEventHandler | undefined>(
+      () =>
+        onChangeProp ??
+        (formOnChange ? event => formOnChange(event.detail) : undefined),
+      [formOnChange, onChangeProp]
     );
-  },
-  { staticConfig: { componentName: "Input" } }
-);
-
-const InputSeparator = styled(Separator, {
-  name: "Input",
-  context: InputContext,
-
-  animation: "normal",
-  borderWidth: 1,
-  borderColor: "$borderColor",
-  vertical: true,
-  height: "50%",
-  marginVertical: "$0.25",
-
-  variants: {
-    focused: {
-      true: {
-        borderColor: "$borderColorFocus"
-      }
-    },
-
-    disabled: {
-      true: {
-        borderColor: "$borderColorDisabled",
-
-        hoverStyle: {
-          borderColor: "$borderColorDisabled"
-        },
-
-        focusStyle: {
-          borderColor: "$borderColorDisabled"
-        },
-
-        pressStyle: {
-          borderColor: "$borderColorDisabled"
+    const onFocus = onFocusProp ?? formControl?.onFocus;
+    const formOnBlur = formControl?.onBlur;
+    const onBlur = useMemo(
+      () =>
+        onBlurProp ??
+        (formOnBlur
+          ? // Focus moving within the input (to a trigger) is not a blur.
+            (event?: any) => {
+              if (!event?.currentTarget?.contains?.(event.relatedTarget)) {
+                formOnBlur();
+              }
+            }
+          : undefined),
+      [formOnBlur, onBlurProp]
+    );
+    const [locallyActive, setLocallyActive] = useState(false);
+    const frameSize = size;
+    const handleFocus = useCallback(
+      (event: any) => {
+        setLocallyActive(true);
+        // Some react-native type setups type the prop `() => any`, but user
+        // handlers still receive the event.
+        (onFocus as ((event: any) => void) | undefined)?.(event);
+      },
+      [onFocus]
+    );
+    const handleBlur = useCallback(
+      (event: any) => {
+        if (!event.currentTarget?.contains?.(event.relatedTarget)) {
+          setLocallyActive(false);
         }
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    disabled: false,
-    focused: false
-  }
-});
-
-const InputSeparatorImpl = InputSeparator.styleable(
-  (props, forwardedRef) => {
-    const { disabled } = InputContext.useStyledContext();
-
-    return (
-      <XGroup.Item>
-        <InputSeparator
-          ref={forwardedRef}
-          $group-input-hover={{
-            borderColor: disabled ? "$borderColorDisabled" : "$accent10"
-          }}
-          {...props}
-        />
-      </XGroup.Item>
+        onBlur?.(event);
+      },
+      [onBlur]
     );
-  },
-  { staticConfig: { componentName: "Input" } }
-);
-
-const InputTextBox = styled(XStack, {
-  name: "Input",
-  context: InputContext,
-
-  height: "100%",
-  flex: 1,
-
-  variants: {
-    size: {
-      "...size": (val: SizeTokens | number) => {
-        if (!val) {
+    // Clicking the frame's padding, separators, or icons focuses the text
+    // input, as the frame is not itself focusable.
+    const handleMouseDown = useCallback(
+      (event: any) => {
+        onMouseDown?.(event);
+        if (event.defaultPrevented || disabled) {
           return;
         }
 
-        if (typeof val === "number") {
-          return {
-            paddingHorizontal: val * 0.25,
-            gap: val * 0.25
-          };
+        const target = event.target as HTMLElement | null;
+        if (target?.closest?.("input, textarea, button, a, [tabindex]")) {
+          return;
         }
 
-        const space = getSpaced(val);
-        return {
-          paddingHorizontal: space * 0.25,
-          gap: space * 0.25
-        };
-      }
+        const control = (
+          event.currentTarget as HTMLElement | null
+        )?.querySelector?.<HTMLElement>("input, textarea");
+        if (control) {
+          event.preventDefault();
+          control.focus();
+        }
+      },
+      [disabled, onMouseDown]
+    );
+    // The frame is not itself focusable, so it tracks focus of the inner
+    // input (via bubbling focus events) alongside the controlled `focused`.
+    const active = focused || locallyActive;
+    const hasValidationMessage = useFieldHasValidationMessage();
+    const labelPlacement = useFieldLabelPlacement();
+    const idleColor = hasValidationMessage ? "primary" : "hairline";
+    const focusColor = hasValidationMessage
+      ? "primary-active"
+      : "hairline-active";
+    const hoverColor = hasValidationMessage
+      ? "primary-hovered"
+      : "hairline-hovered";
+    const borderColor = `${active ? focusColor : idleColor} group-hover/field:${disabled ? "primary-disabled" : active ? focusColor : hoverColor}`;
+
+    const behavior = useMemo(
+      () => ({ onChange, onInput, onFocus, onBlur, name }),
+      [onChange, onInput, onFocus, onBlur, name]
+    );
+    // The frame clips its content to its rounded corners, except while a part
+    // (such as a focused `Field.Button`) needs its focus ring to show in full.
+    const [overflowVisible, setOverflowVisible] = useState(false);
+    const circular = Boolean(rest.circular);
+    const frame = useMemo(() => ({ circular, setOverflowVisible }), [circular]);
+
+    return (
+      <InputBehaviorContext.Provider value={behavior}>
+        <InputContext.Provider
+          // Only context keys: a styled context treats every key in its value
+          // as a context prop, so spreading all props swallowed `aria-*` and
+          // other DOM attributes before they reached the element. `name` is
+          // in the behavior context for the same reason.
+          circular={Boolean(rest.circular)}
+          size={size}
+          variant={variant}
+          labelPlacement={labelPlacement}
+          focused={active}
+          hasValidationMessage={hasValidationMessage}
+          disabled={disabled}
+          readOnly={readOnly}>
+          <FormControlFrameContext.Provider value={frame}>
+            <InputGroup
+              ref={forwardedRef}
+              {...rest}
+              frameSize={frameSize}
+              variant={variant}
+              labelPlacement={labelPlacement}
+              focused={active}
+              hasValidationMessage={hasValidationMessage}
+              disabled={disabled}
+              borderColor={borderColor}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              onMouseDown={handleMouseDown}
+              {...(overflowVisible && { overflow: "visible" })}
+              transition="200ms">
+              <XGroup display="contents" disabled={disabled}>
+                {children}
+                {variant === "underlined" && (
+                  <ControlUnderline
+                    bottom={-1}
+                    focused={active}
+                    disabled={disabled}
+                    backgroundColor={disabled ? "primary-disabled" : focusColor}
+                  />
+                )}
+                {labelPlacement === "border" && (
+                  <FieldNotchedOutline
+                    borderColor={borderColor}
+                    borderRadius={rest.circular ? 100_000 : "control"}
+                  />
+                )}
+              </XGroup>
+            </InputGroup>
+          </FormControlFrameContext.Provider>
+        </InputContext.Provider>
+      </InputBehaviorContext.Provider>
+    );
+  },
+  { displayName: "Input" }
+);
+
+const InputSeparator = styled(View, {
+  displayName: "Input",
+  context: InputContext,
+  // Fades in over 200ms when the separator mounts. The object form with an
+  // `enter` key keeps a hover/focus restyle during the fade from snapping it
+  // to full opacity: Tamagui only re-renders (instead of emitting styles with
+  // the mount-time "no animation" flag) when `transition` names `enter`.
+  // The color lives on a child: a `group-hover/field` color on this element
+  // stuck at the hovered value after the pointer left.
+  transition: { duration: "200ms", enter: "200ms" },
+  opacity: "enter:0",
+  // Drawn as a 1px bar rather than a left border: `XGroup.Item` zeroes
+  // `borderLeftWidth` on every non-first item, which hid the line.
+  width: 1,
+  flexShrink: 0,
+  height: "60%",
+  marginVertical: "zero",
+  variants: {
+    variant: {
+      outlined: {},
+      underlined: {
+        width: 0
+      },
+      inlined: {}
     }
   } as const,
-
   defaultVariants: {
-    size: "$true"
+    variant: "outlined"
   }
 });
 
-const InputTextBoxImpl = InputTextBox.styleable(
-  ({ children, ...props }, forwardedRef) => {
+const InputSeparatorImpl = createStyledHOC(
+  InputSeparator,
+  (props, forwardedRef) => {
+    const { disabled, focused, hasValidationMessage } =
+      InputContext.useStyledContext();
+    const idleColor = hasValidationMessage ? "primary" : "hairline";
+    const focusColor = hasValidationMessage
+      ? "primary-active"
+      : "hairline-active";
+    const hoverColor = hasValidationMessage
+      ? "primary-hovered"
+      : "hairline-hovered";
+
     return (
       <XGroup.Item>
+        <InputSeparator ref={forwardedRef} {...props}>
+          <View
+            width="100%"
+            height="100%"
+            // Keep group color updates independent of the entrance fade.
+            backgroundColor={`${focused ? focusColor : idleColor} group-hover/field:${disabled ? "hairline-inactive" : focused ? focusColor : hoverColor}`}
+            transition="200ms"
+          />
+        </InputSeparator>
+      </XGroup.Item>
+    );
+  },
+  { displayName: "Input" }
+);
+
+const InputTextBox = styled(XStack, {
+  displayName: "Input",
+  context: InputContext,
+  height: "100%",
+  flex: 1,
+  minWidth: 0,
+  alignItems: "center",
+  gap: "zero"
+});
+
+const InputTextBoxImpl = createStyledHOC(
+  InputTextBox,
+  ({ children, ...props }, forwardedRef) => {
+    const formControl = useFormControl();
+
+    return (
+      <XGroup.Item flex={1} minWidth={0}>
         <InputTextBox ref={forwardedRef} {...props}>
           {children}
+          {formControl?.endAdornment}
         </InputTextBox>
       </XGroup.Item>
     );
   },
-  { staticConfig: { componentName: "Input" } }
+  { displayName: "Input" }
 );
 
-type InputValueExtraProps = {
-  clearable?: boolean;
-  onClear?: () => void;
-};
+const InputValueImpl = createStyledHOC(
+  InputValue,
+  (
+    { children, enterKeyHint = "done", value: valueProp, ...props },
+    forwardedRef
+  ) => {
+    const { onChange: contextOnChange, onInput: contextOnInput } =
+      useInputBehavior();
+    const formControl = useFormControl();
+    const value = valueProp ?? formControl?.formattedValue;
+    useFieldVariant(props.placeholder);
+    const shouldShowPlaceholder = useFieldShouldShowPlaceholder(value);
+    const ref = useComposedRefs(forwardedRef, formControl?.inputRef);
 
-const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
+    const content = (
+      <View position="relative" height="100%" flex={1} minWidth={0}>
+        <InputValue
+          ref={ref}
+          // The field's state as native attributes, so the browser validates
+          // before (and without) JavaScript.
+          required={formControl?.required ? true : undefined}
+          {...formControl?.constraints}
+          {...getFormControlAriaProps(formControl)}
+          {...props}
+          placeholder={shouldShowPlaceholder ? props.placeholder : undefined}
+          placeholderTextColor="primary-disabled"
+          onChange={props.onChange ?? contextOnChange}
+          onInput={props.onInput ?? contextOnInput}
+          value={value}
+          enterKeyHint={enterKeyHint}>
+          {children}
+        </InputValue>
+      </View>
+    );
+
+    return formControl?.theme ? (
+      <Theme name={formControl.theme}>{content}</Theme>
+    ) : (
+      content
+    );
+  },
+  { displayName: "InputValue" }
+);
+
+const InputTrigger = createStyledHOC(
+  Button,
   (
     {
       children,
-      enterKeyHint = "done",
-      clearable = false,
-      onClear,
-      value,
+      size: sizeProp,
+      flexBasis: _flexBasis,
       ...props
+    }: GetProps<typeof Button> & {
+      forcePlacement?: GetProps<typeof XGroup.Item>["forcePlacement"];
+      size?: FormControlSize;
     },
     forwardedRef
   ) => {
-    const { size } = InputContext.useStyledContext();
-    const theme = useThemeName();
-
-    const adjustedTrigger = useMemo(
-      () => getSized(size, { shift: -3 }),
-      [size]
-    );
-
-    return (
-      <View position="relative" flex={1}>
-        <InputValue
-          ref={forwardedRef}
-          {...props}
-          value={value}
-          enterKeyHint={enterKeyHint}
-          placeholderTextColor="$placeholderColor">
-          {children}
-        </InputValue>
-        {clearable && onClear && value && (
-          <View
-            position="absolute"
-            top={0}
-            right={0}
-            height="100%"
-            display="flex"
-            alignItems="center"
-            minWidth="$4">
-            <Button
-              ref={forwardedRef}
-              variant="ghost"
-              circular={true}
-              color={
-                theme?.includes(ColorThemeName.BASE) ? "$borderColor" : "$color"
-              }
-              onClick={onClear}
-              size={adjustedTrigger}>
-              <Button.Icon>
-                <X size="$1" />
-              </Button.Icon>
-            </Button>
-          </View>
-        )}
-      </View>
-    );
-  },
-  { staticConfig: { componentName: "InputValue" } }
-);
-
-const InputTrigger = Button.styleable<{
-  forcePlacement?: GetProps<typeof XGroup.Item>["forcePlacement"];
-}>(
-  ({ children, flexBasis = "6%", ...props }, forwardedRef) => {
     const { circular, size } = InputContext.useStyledContext();
-    const radius = getRadius("$true", { circular, scale: 0.75 });
-    const theme = useThemeName();
+    const disabled = useFormControl()?.disabled;
+    const controlSize = getFormSizeToken(sizeProp ?? size);
+    const frameSize = useMemo(() => getSized(controlSize), [controlSize]);
 
     const adjustedTrigger = useMemo(
-      () => getSized(size, { shift: -3 }),
-      [size]
+      // Button.Icon applies its inlined six-step glyph reduction. A frame
+      // two steps below the control therefore matches Field.Icon glyphs.
+      () => getSized(controlSize, { shift: -2 }),
+      [controlSize]
     );
 
     return (
-      <XGroup.Item>
+      <XGroup.Item flexShrink={0}>
         <View
-          paddingRight="$0.6"
+          width={frameSize}
+          minWidth={frameSize}
+          paddingHorizontal="xl"
           display="flex"
-          flexBasis={flexBasis}
-          flexShrink={1}
-          minWidth="$4">
+          flexShrink={0}
+          alignItems="center"
+          justifyContent="center">
           <Button
             ref={forwardedRef}
-            variant="ghost"
-            borderRadius={radius}
-            color={
-              theme?.includes(ColorThemeName.BASE) ? "$borderColor" : "$color"
-            }
+            variant="link"
+            borderRadius={circular ? 100_000 : "button"}
+            tight={true}
+            color="on-primary"
+            disabled={disabled}
             {...props}
+            width={props.width ?? adjustedTrigger}
+            minWidth={props.minWidth ?? props.width ?? adjustedTrigger}
             size={adjustedTrigger}>
             {children}
           </Button>
@@ -358,7 +577,7 @@ const InputTrigger = Button.styleable<{
       </XGroup.Item>
     );
   },
-  { staticConfig: { componentName: "Input" } }
+  { displayName: "Input" }
 );
 
 export type InputValueProps = GetProps<typeof InputValue>;
@@ -375,3 +594,16 @@ export const Input = withStaticProperties(InputGroupImpl, {
 });
 
 export type InputProps = GetProps<typeof Input>;
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Input.Value` is undefined on the server).
+ */
+export {
+  InputSeparatorImpl as InputSeparator,
+  InputTextBoxImpl as InputTextBox,
+  InputTrigger,
+  InputValueImpl as InputValue
+};
+export const InputTriggerIcon = Button.Icon;
+export const InputTriggerText = Button.Text;

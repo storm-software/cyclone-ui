@@ -1,0 +1,87 @@
+{
+  "generator": {
+    "name": "maplibre/font-maker",
+    "revision": "714ccaea67d384717890a3c2c27143dfdd4189b7",
+    "emSize": 24,
+    "buffer": 3,
+    "cutoff": 0.25,
+    "rangeSize": 256,
+    "maxCodepoint": 65535
+  },
+  "faces": [
+    {
+      "name": "ExtraLight",
+      "file": "ExtraLight.ttf",
+      "weight": 200,
+      "style": "normal"
+    },
+    {
+      "name": "ExtraLightItalic",
+      "file": "ExtraLightItalic.ttf",
+      "weight": 200,
+      "style": "italic"
+    },
+    { "name": "Light", "file": "Light.ttf", "weight": 300, "style": "normal" },
+    {
+      "name": "LightItalic",
+      "file": "LightItalic.ttf",
+      "weight": 300,
+      "style": "italic"
+    },
+    {
+      "name": "Regular",
+      "file": "Regular.ttf",
+      "weight": 400,
+      "style": "normal"
+    },
+    {
+      "name": "Italic",
+      "file": "Italic.ttf",
+      "weight": 400,
+      "style": "italic"
+    },
+    {
+      "name": "Medium",
+      "file": "Medium.ttf",
+      "weight": 500,
+      "style": "normal"
+    },
+    {
+      "name": "MediumItalic",
+      "file": "MediumItalic.ttf",
+      "weight": 500,
+      "style": "italic"
+    },
+    {
+      "name": "SemiBold",
+      "file": "SemiBold.ttf",
+      "weight": 600,
+      "style": "normal"
+    },
+    {
+      "name": "SemiBoldItalic",
+      "file": "SemiBoldItalic.ttf",
+      "weight": 600,
+      "style": "italic"
+    },
+    { "name": "Bold", "file": "Bold.ttf", "weight": 700, "style": "normal" },
+    {
+      "name": "BoldItalic",
+      "file": "BoldItalic.ttf",
+      "weight": 700,
+      "style": "italic"
+    },
+    {
+      "name": "ExtraBold",
+      "file": "ExtraBold.ttf",
+      "weight": 800,
+      "style": "normal"
+    },
+    {
+      "name": "ExtraBoldItalic",
+      "file": "ExtraBoldItalic.ttf",
+      "weight": 800,
+      "style": "italic"
+    }
+  ]
+}

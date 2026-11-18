@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni0304.case" format="2">
+  <anchor x="217" y="1414" name="_UCtop"/>
+  <anchor x="326" y="1870" name="UCtop"/>
+  <outline>
+    <contour>
+      <point x="16" y="1674" type="line"/>
+      <point x="542" y="1674" type="line"/>
+      <point x="558" y="1741" type="line"/>
+      <point x="32" y="1741" type="line"/>
+    </contour>
+  </outline>
+</glyph>

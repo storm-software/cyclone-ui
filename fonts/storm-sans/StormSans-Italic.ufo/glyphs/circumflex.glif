@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="circumflex" format="2">
+  <advance width="593"/>
+  <unicode hex="02C6"/>
+  <anchor x="290.0" y="540.0" name="_top"/>
+  <outline>
+    <contour>
+      <point x="284" y="765" type="line"/>
+      <point x="146" y="622" type="line"/>
+      <point x="185" y="590" type="line"/>
+      <point x="324" y="706" type="line"/>
+      <point x="417" y="591" type="line"/>
+      <point x="460" y="622" type="line"/>
+      <point x="378" y="765" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.talk</key>
+      <string>
+
+/* Y direction */
+ResYAnchor(5)
+YShift(5,3)
+ResYDist(5,4)
+ResYDist(4,0)
+/* X direction */
+Smooth()
+</string>
+    </dict>
+  </lib>
+</glyph>

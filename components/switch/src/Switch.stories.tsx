@@ -1,53 +1,104 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
+ ------------------------------------------------------------------- */
+
+import type { FieldProps } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { XStack } from "@tamagui/stacks";
+import { expect, userEvent, within } from "storybook/test";
 import { Switch } from "./Switch";
 
-const meta: Meta<typeof Switch> = {
-  title: "Base/Switch",
+// Story args configure the wrapping `Field`, not the `Switch` itself.
+type SwitchStoryArgs = Omit<FieldProps<boolean>, "children" | "name">;
+
+const meta: Meta<SwitchStoryArgs> = {
+  title: "Form/Switch",
   component: Switch,
   tags: ["autodocs"],
-  render: (props: any) => (
-    <Form name="formName" initialValues={{ switchName: false }}>
+  render: (props: any, { id }: { id: string }) => (
+    <Form name={`formName-${id}`} initialValues={{ switchName: false }}>
       <Field name="switchName" {...props}>
-        <XStack gap="$3" alignContent="center" alignItems="center">
-          <Switch />
+        <XStack gap="3xl" alignContent="center" alignItems="center">
+          <Switch size={props.size} />
           <Field.Label paddingBottom={0}>
             This is an example label message for a switch
           </Field.Label>
         </XStack>
-        <Field.Details>
-          This is an example detailed message for a switch
-        </Field.Details>
       </Field>
     </Form>
   )
-} satisfies Meta<typeof Switch>;
+} satisfies Meta<SwitchStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof Switch>;
+type Story = StoryObj<SwitchStoryArgs>;
+
+const validation = (
+  type:
+    | "danger"
+    | "warning"
+    | "info"
+    | "discovery"
+    | "success"
+    | "positive"
+    | "negative"
+) => ({
+  onChange: [
+    () => [
+      {
+        message: "This is an example validation message",
+        type
+      }
+    ]
+  ]
+});
 
 export const Base: Story = {
-  args: {}
+  args: {},
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const switchControl = canvas.getByRole("switch");
+    const label = canvas.getByText(
+      "This is an example label message for a switch"
+    );
+    const getStyles = (
+      globalThis as unknown as {
+        getComputedStyle: (element: unknown) => {
+          borderColor: string;
+          color: string;
+        };
+      }
+    ).getComputedStyle;
+    const restingBorderColor = getStyles(switchControl).borderColor;
+
+    await userEvent.hover(label);
+    await new Promise(resolve => {
+      setTimeout(resolve, 250);
+    });
+
+    await expect(getStyles(switchControl).borderColor).not.toBe(
+      restingBorderColor
+    );
+    await expect(getStyles(switchControl).borderColor).toBe(
+      getStyles(label).color
+    );
+  }
 };
 
 export const Required: Story = {
@@ -68,32 +119,39 @@ export const DefaultValue: Story = {
   }
 };
 
-export const Help: Story = {
+export const Discovery: Story = {
   args: {
-    theme: "help"
+    validate: validation("discovery")
   }
 };
 
 export const Error: Story = {
   args: {
-    theme: "danger"
+    showErrorsBeforeBlur: true,
+    validate: validation("danger")
   }
 };
 
 export const Warning: Story = {
   args: {
-    theme: "warning"
+    validate: validation("warning")
   }
 };
 
 export const Info: Story = {
   args: {
-    theme: "info"
+    validate: validation("info")
   }
 };
 
 export const Success: Story = {
   args: {
-    theme: "success"
+    validate: validation("success")
   }
 };
+
+export const SmallSize: Story = { args: { size: "sm" } };
+
+export const MediumSize: Story = { args: { size: "md" } };
+
+export const LargeSize: Story = { args: { size: "lg" } };

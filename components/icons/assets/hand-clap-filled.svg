@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<defs>
+		<mask id="hand-clap-mask">
+			<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+				<path d="M9.2 9.3L7.21 15.15A5.12 5.12 0 0 0 15.88 20.26L17.3 18.65L15.86 16.21L13.85 14.43L11.1 13.5L9.9 11.5Z" stroke="#fff" fill="#fff" fill-opacity="0" stroke-width="2.5" stroke-dasharray="37"><animate attributeName="fill-opacity" begin="1.3s" dur="0.4s" fill="freeze" to="1" /><animate attributeName="stroke-dashoffset" dur="0.5s" fill="freeze" values="37;0" /></path>
+				<path d="M15.88 20.26L21.02 14.42" stroke="#fff" stroke-width="2.5" stroke-dasharray="9"><animate attributeName="stroke-dashoffset" dur="0.2s" fill="freeze" values="9;0" /></path>
+				<path d="M11.1 13.5L16.25 7.66M13.85 14.43L19.27 8.28M15.86 16.21L20.52 10.92" stroke="#fff" stroke-width="2.5" stroke-dasharray="9" stroke-dashoffset="9"><animate attributeName="stroke-dashoffset" begin="0.5s" dur="0.3s" fill="freeze" to="0" /></path>
+				<path d="M3.4 6.2C3.1 8 3 10 3 12c0 1.4 0.6 2.75 1.6 3.6" stroke="#fff" stroke-width="2.5" stroke-dasharray="11" stroke-dashoffset="11"><animate attributeName="stroke-dashoffset" begin="0.8s" dur="0.2s" fill="freeze" to="0" /></path>
+				<path d="M6.09 9.82L9.82 2.2M10.48 6.91L12.88 1.99M13.51 6.84L14.79 4.2" stroke="#fff" stroke-width="2.5" stroke-dasharray="9" stroke-dashoffset="9"><animate attributeName="stroke-dashoffset" begin="1s" dur="0.3s" fill="freeze" to="0" /></path>
+			</g>
+		</mask>
+	</defs>
+	<path d="M0 0h24v24H0z" fill="currentColor" mask="url(#hand-clap-mask)" />
+</svg>

@@ -1,15 +1,26 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc",
+    "tsBuildInfoFile": "../../dist/out-tsc/components/bytes-text/tsconfig.tsbuildinfo",
     "jsx": "preserve",
+    "ignoreDeprecations": "6.0",
+    "rootDir": ".",
     "types": [
       "node",
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
-    ]
+    ],
+    "outDir": "../../dist/out-tsc/components/bytes-text"
   },
+  "references": [
+    {
+      "path": "../../tools/config"
+    },
+    {
+      "path": "../body-text"
+    }
+  ],
   "files": [],
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

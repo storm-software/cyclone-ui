@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Storm Sans glyph preview</title>
+    <link rel="icon" href="data:," />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/maplibre-gl@5.19.0/dist/maplibre-gl.css" />
+    <style>
+      body {
+        margin: 24px;
+        font:
+          16px system-ui,
+          sans-serif;
+        background: #eee;
+        color: #222;
+      }
+      h1 {
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+      p {
+        max-width: 80ch;
+      }
+      main {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+      .map {
+        height: 900px;
+        border: 1px solid #aaa;
+      }
+      @media (max-width: 900px) {
+        main {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Storm Sans glyph preview</h1>
+    <p>
+      Regular, Medium, Bold, and Italic at 12 and 28 pixels, with halos and
+      multiline labels. Both maps use the generated Storm Sans glyphs.
+    </p>
+    <p id="status" role="status">Loading labels…</p>
+    <main>
+      <section>
+        <h2>Light</h2>
+        <div id="light" class="map"></div>
+      </section>
+      <section>
+        <h2>Dark</h2>
+        <div id="dark" class="map"></div>
+      </section>
+    </main>
+    <script src="https://unpkg.com/maplibre-gl@5.19.0/dist/maplibre-gl.js"></script>
+    <script>
+      const faces = ["Regular", "Medium", "Bold", "Italic"];
+      const preview = (window.glyphPreview = {
+        maps: [],
+        errors: [],
+        ready: 0
+      });
+      for (const theme of ["light", "dark"]) {
+        const dark = theme === "dark";
+        const map = new maplibregl.Map({
+          container: theme,
+          center: [0, 0],
+          zoom: 0,
+          interactive: false,
+          attributionControl: false,
+          localIdeographFontFamily: false,
+          style: {
+            version: 8,
+            glyphs: `${location.origin}/fonts/storm-sans/dist/pbf/{fontstack}/{range}.pbf`,
+            sources: {},
+            layers: [
+              {
+                id: "background",
+                type: "background",
+                paint: { "background-color": dark ? "#191d24" : "#faf9f6" }
+              }
+            ]
+          }
+        });
+        preview.maps.push(map);
+        map.on("error", event => {
+          preview.errors.push(String(event.error));
+          document.querySelector("#status").textContent =
+            `Label loading failed: ${event.error.message}`;
+        });
+        map.on("load", () => {
+          let row = 0;
+          for (const face of faces) {
+            for (const size of [12, 28]) {
+              const id = `face-${row}`;
+              const point = map.unproject([
+                map.getCanvas().clientWidth / 2,
+                56 + row * 110
+              ]);
+              map.addSource(id, {
+                type: "geojson",
+                data: {
+                  type: "Feature",
+                  geometry: { type: "Point", coordinates: point.toArray() },
+                  properties: {
+                    label: `${face} · ${size}px\nK V W i l a g c e S\nZürich São Paulo Ω Ж 0123`
+                  }
+                }
+              });
+              map.addLayer({
+                id,
+                type: "symbol",
+                source: id,
+                layout: {
+                  "text-field": ["get", "label"],
+                  "text-font": [face],
+                  "text-size": size,
+                  "text-max-width": 35,
+                  "text-allow-overlap": true
+                },
+                paint: {
+                  "text-color": dark ? "#e8edf5" : "#202633",
+                  "text-halo-color": dark ? "#101319" : "#fff",
+                  "text-halo-width": 1
+                }
+              });
+              row++;
+            }
+          }
+          map.once("idle", () => {
+            preview.ready++;
+            if (preview.ready === 2 && !preview.errors.length)
+              document.querySelector("#status").textContent =
+                "All four faces loaded in light and dark previews.";
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

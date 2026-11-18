@@ -1,0 +1,52 @@
+{
+  "name": "@cyclone-ui/slider",
+  "version": "0.0.96",
+  "type": "module",
+  "description": "A Material-style slider, built on the Tamagui Slider, for choosing a single value or, when given an array, a range. It can be controlled or uncontrolled and supports step marks with labels, normal or inverted track fill, value labels, sm, md and lg sizes, and accessible label callbacks. Wrapped in a Field, it connects to the form: it reads its value, size and disabled state from the field, labels its thumbs with the field label, and reports changes to it.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/slider"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/helpers": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/slider": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/form": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Slider": {
+      "import": "./dist/Slider.mjs",
+      "require": "./dist/Slider.cjs"
+    },
+    "./*": "./*"
+  }
+}

@@ -1,0 +1,33 @@
+name: GitGuardian Scan
+
+on:
+  push:
+    branches:
+      - main
+      - next
+      - experimental
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  scanning:
+    name: GitGuardian scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26 # v3.7.0
+        with:
+          fetch-depth: 0 # fetch all history so multiple commits can be scanned
+          persist-credentials: false
+
+      - name: GitGuardian scan
+        uses: GitGuardian/ggshield/actions/secret@4cccd600fd3890a7aba07fd0a45e483f3099fe70 # v1.56.1
+        with:
+          args: --exclude pnpm-lock.yaml --exclude tools/config/verdaccio.yml --exclude nx.json
+        env:
+          GITHUB_PUSH_BEFORE_SHA: ${{ github.event.before }}
+          GITHUB_PUSH_BASE_SHA: ${{ github.event.base }}
+          GITHUB_PULL_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          GITHUB_DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          GITGUARDIAN_API_KEY: ${{ secrets.GIT_GUARDIAN_API_KEY }}

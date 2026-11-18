@@ -1,0 +1,193 @@
+{
+  "version": 1,
+  "skills": {
+    "3d-web-experience": {
+      "source": "sickn33/agentic-awesome-skills",
+      "sourceType": "github",
+      "skillPath": "skills/3d-web-experience/SKILL.md",
+      "computedHash": "e9ab44e2dd01d6dc161eb7433d0459d2100814d01d844c57b9e2f9226cf36a90"
+    },
+    "algorithmic-art": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/algorithmic-art/SKILL.md",
+      "computedHash": "b2ca295de7f9c86c444f1fa21239e22e0eb7013ced1c652169b9402cc96ff744"
+    },
+    "canvas-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/canvas-design/SKILL.md",
+      "computedHash": "3fa7ea60170023ad8268bf9fd734ea75dd404279a2ef8ddf5abaa1102ad8e5f4"
+    },
+    "caveman": {
+      "source": "juliusbrussee/caveman",
+      "sourceType": "github",
+      "skillPath": "skills/caveman/SKILL.md",
+      "computedHash": "d18cdf73a5f5c496d681a43a6846336b110223bdffa6817b8992529c57f1a815"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/frontend-design/SKILL.md",
+      "computedHash": "89496d5dd00f4810205f351759594fc2742bf8eea85a2f2b2d1de59f4bd91576"
+    },
+    "minimalist-ui": {
+      "source": "leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/minimalist-skill/SKILL.md",
+      "computedHash": "08873a3131d3be27bef9bf3304b310b16b44ca6e3561aebe532797be3443f6bd"
+    },
+    "next-bundle-optimizer": {
+      "source": "vercel/next.js",
+      "sourceType": "github",
+      "skillPath": "skills/next-bundle-optimizer/SKILL.md",
+      "computedHash": "7c37f80887cf574e146b88d42cf7d8e847a96ac4cbd1a499672213a30a5ba8f5"
+    },
+    "next-cache-components-adoption": {
+      "source": "vercel/next.js",
+      "sourceType": "github",
+      "skillPath": "skills/next-cache-components-adoption/SKILL.md",
+      "computedHash": "38eb3cb9e625b46b54493459a106ac410bc0fe59b124903d55f5090c959d292f"
+    },
+    "next-cache-components-optimizer": {
+      "source": "vercel/next.js",
+      "sourceType": "github",
+      "skillPath": "skills/next-cache-components-optimizer/SKILL.md",
+      "computedHash": "45a4f4ad46ce791d42f310c4734795c9ff4e26fbf27ed0285a43a903ef469000"
+    },
+    "next-dev-loop": {
+      "source": "vercel/next.js",
+      "sourceType": "github",
+      "skillPath": "skills/next-dev-loop/SKILL.md",
+      "computedHash": "c305c83b726212e0284930c65cded2c4a4ab85f9bfccfa83b62274247fe3580e"
+    },
+    "next-partial-prefetching-adoption": {
+      "source": "vercel/next.js",
+      "sourceType": "github",
+      "skillPath": "skills/next-partial-prefetching-adoption/SKILL.md",
+      "computedHash": "e523f1aec1789b3a1f4ca881898d99416427f9d853b3b1841f0e13657bc38f77"
+    },
+    "next-partial-prefetching-optimizer": {
+      "source": "vercel/next.js",
+      "sourceType": "github",
+      "skillPath": "skills/next-partial-prefetching-optimizer/SKILL.md",
+      "computedHash": "97b935496e9f821417229fd4afe153dc57732911991b48144371b15b11716fbe"
+    },
+    "oklch-skill": {
+      "source": "jakubkrehel/oklch-skill",
+      "sourceType": "github",
+      "skillPath": "skills/oklch-skill/SKILL.md",
+      "computedHash": "3825dcd7ea094655e9f07280185ba9da1d10d08f44cf06a8c316eb42334d7cd3"
+    },
+    "react-components": {
+      "source": "langchain-ai/skills-benchmarks",
+      "sourceType": "github",
+      "skillPath": "skills/noise/react_components/SKILL.md",
+      "computedHash": "650b6077d364f595990c81ad780355ed85bc5dfd5efe9ec0eab961677c840364"
+    },
+    "react-email": {
+      "source": "resend/react-email",
+      "sourceType": "github",
+      "skillPath": "skills/react-email/SKILL.md",
+      "computedHash": "da0feefc6ddf4aaeff930ab203d269774da464429e35b178d2403d69d2dc2fb3"
+    },
+    "shell-shock-add-command": {
+      "source": "storm-software/shell-shock",
+      "sourceType": "github",
+      "skillPath": "skills/shell-shock-add-command/SKILL.md",
+      "computedHash": "a0b4f57398d2308c4d7a14d528a9830db064b7836fe0702069187bd9908da860"
+    },
+    "shell-shock-best-practices": {
+      "source": "storm-software/shell-shock",
+      "sourceType": "github",
+      "skillPath": "skills/shell-shock-best-practices/SKILL.md",
+      "computedHash": "6147e59888c6c11ffc83c096e20c307bab941d3adc617604463652d8438d25a2"
+    },
+    "skill-creator": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/skill-creator/SKILL.md",
+      "computedHash": "5ea13a6d9f0d4bb694405d79acd00cadec0d21bb138c4dd10fcf3c500cb835c2"
+    },
+    "sourcebook": {
+      "source": "storm-software/sourcebook",
+      "sourceType": "github",
+      "skillPath": "skills/sourcebook/SKILL.md",
+      "computedHash": "22da568392e6eac6f13698c728f1a2d8b9d4a459882cd6192b50102ef51a2535"
+    },
+    "sourcebook-adr": {
+      "source": "storm-software/sourcebook",
+      "sourceType": "github",
+      "skillPath": "skills/sourcebook-adr/SKILL.md",
+      "computedHash": "d8a819a1b49726cbd1d801cc5e21eef33b59938713994679fd1739f12b57d133"
+    },
+    "sourcebook-blog": {
+      "source": "storm-software/sourcebook",
+      "sourceType": "github",
+      "skillPath": "skills/sourcebook-blog/SKILL.md",
+      "computedHash": "18d08a6856a7292357ce02c32515ff867796c3fa83e01c188009354c3b5de65d"
+    },
+    "sourcebook-docs": {
+      "source": "storm-software/sourcebook",
+      "sourceType": "github",
+      "skillPath": "skills/sourcebook-docs/SKILL.md",
+      "computedHash": "fd92e56bc6cfb837cc4a5cdb5b2afaa5e2f0e433ad79edd127ca0d7c2d646e9a"
+    },
+    "sourcebook-editor": {
+      "source": "storm-software/sourcebook",
+      "sourceType": "github",
+      "skillPath": "skills/sourcebook-editor/SKILL.md",
+      "computedHash": "4a97d4e839d761b98b02fdd9860c1e85f1b82b5d9f2329fab536c0441e0cb346"
+    },
+    "sourcebook-guide": {
+      "source": "storm-software/sourcebook",
+      "sourceType": "github",
+      "skillPath": "skills/sourcebook-guide/SKILL.md",
+      "computedHash": "2bb5a16a5cf0a8e4ccb2ccae23e3116c25674f619012e507ab359a1b29e7c7c2"
+    },
+    "sourcebook-openapi": {
+      "source": "storm-software/sourcebook",
+      "sourceType": "github",
+      "skillPath": "skills/sourcebook-openapi/SKILL.md",
+      "computedHash": "b78c6952529b22b15ab7606b8cbf964b673afa0f3d59777d92917c06e4791be5"
+    },
+    "sourcebook-readme": {
+      "source": "storm-software/sourcebook",
+      "sourceType": "github",
+      "skillPath": "skills/sourcebook-readme/SKILL.md",
+      "computedHash": "354b0c33dc35efb92f89bfc16975ca238be16ee89362efa66f921df05158dece"
+    },
+    "storybook": {
+      "source": "dalestudy/skills",
+      "sourceType": "github",
+      "skillPath": "skills/storybook/SKILL.md",
+      "computedHash": "cd915223b409a385fd9a41965b2835c2244d256801fe3d401764fd21f75c8e31"
+    },
+    "tamagui": {
+      "source": "tamagui/tamagui",
+      "ref": "v3-beta",
+      "sourceType": "github",
+      "skillPath": "skills/tamagui/SKILL.md",
+      "computedHash": "96f9fa3b85671b74ab56861e659352eb7bfe35de9e6f3e309761d04664d2326e"
+    },
+    "tamagui-upgrade-v3": {
+      "source": "tamagui/tamagui",
+      "ref": "v3-beta",
+      "sourceType": "github",
+      "skillPath": "skills/tamagui-upgrade-v3/SKILL.md",
+      "computedHash": "8dc176e1fbedd2b0199908cfb7a52d19c27fe31cd0870e16edfdd6236cb670e4"
+    },
+    "vercel-react-best-practices": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/react-best-practices/SKILL.md",
+      "computedHash": "3219a1944e404ffc14d1d9d6aef6dd2e3855b81387ee0a044ccbfe14d34c2357"
+    },
+    "vercel-react-view-transitions": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/react-view-transitions/SKILL.md",
+      "computedHash": "73fddafed488c308ee0799178432801fe10aa338451948ea05f4200541053040"
+    }
+  }
+}

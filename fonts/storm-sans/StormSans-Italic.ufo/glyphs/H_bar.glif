@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Hbar" format="2">
+  <advance width="690"/>
+  <unicode hex="0126"/>
+  <anchor x="293.0" y="0.0" name="bottom"/>
+  <anchor x="433.0" y="698.0" name="top"/>
+  <outline>
+    <contour>
+      <point x="463" y="0" type="line"/>
+      <point x="544" y="0" type="line"/>
+      <point x="648" y="520" type="line"/>
+      <point x="714" y="520" type="line"/>
+      <point x="727" y="582" type="line"/>
+      <point x="661" y="582" type="line"/>
+      <point x="684" y="698" type="line"/>
+      <point x="603" y="698" type="line"/>
+      <point x="580" y="582" type="line"/>
+      <point x="240" y="582" type="line"/>
+      <point x="263" y="698" type="line"/>
+      <point x="182" y="698" type="line"/>
+      <point x="159" y="582" type="line"/>
+      <point x="93" y="582" type="line"/>
+      <point x="80" y="520" type="line"/>
+      <point x="146" y="520" type="line"/>
+      <point x="42" y="0" type="line"/>
+      <point x="123" y="0" type="line"/>
+      <point x="187" y="318" type="line"/>
+      <point x="526" y="318" type="line"/>
+    </contour>
+    <contour>
+      <point x="201" y="390" type="line"/>
+      <point x="227" y="520" type="line"/>
+      <point x="567" y="520" type="line"/>
+      <point x="541" y="390" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.talk</key>
+      <string>
+
+/* Y direction */
+ResYAnchor(4,8)
+YShift(4,19)
+ResYAnchor(9,2)
+YShift(9,14)
+ResYDist(9,11)
+YShift(11,7)
+YShift(11,15)
+ResYDist(11,23)
+YShift(23,6)
+YShift(23,18)
+ResYDist(23,20)
+ResYDist(20,2)
+/* X direction */
+Smooth()
+</string>
+    </dict>
+  </lib>
+</glyph>

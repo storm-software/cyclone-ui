@@ -1,54 +1,106 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
+"use client";
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
-import { ColorThemeName } from "@cyclone-ui/colors";
-import { Container, type ContainerProps } from "@cyclone-ui/container";
-import { Heading5Text } from "@cyclone-ui/heading-text";
-import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
+import type { ContainerProps } from "@cyclone-ui/container";
+import { Container } from "@cyclone-ui/container";
+import { HeadingMediumText } from "@cyclone-ui/heading-text";
 import {
+  AlertCircle,
+  Close,
+  getIconByTheme,
+  ThemeableIcon
+} from "@cyclone-ui/icons";
+import { AnimatePresence } from "@tamagui/animate-presence";
+import {
+  createStyledContext,
+  createStyledHOC,
   styled,
   Theme,
   useThemeName,
   View,
   withStaticProperties
 } from "@tamagui/core";
-import { AlertCircle, X } from "@tamagui/lucide-icons";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { GetProps } from "@tamagui/web";
+import { useState } from "react";
 
+export type AlertType =
+  "base" | "brand" | "danger" | "warning" | "info" | "success" | "discovery";
+
+export interface AlertContextProps {
+  type?: AlertType;
+  hovered?: boolean;
+  /** Starts the frame's exit animation; called by `Alert.Close`. */
+  dismiss?: () => void;
+}
+
+export const AlertContext = createStyledContext<AlertContextProps, "type">(
+  {
+    type: undefined,
+    hovered: false,
+    dismiss: undefined
+  } as AlertContextProps,
+  {
+    keys: ["type"]
+  }
+);
+
+// `Button` is a styled HOC; v3 `styled()` only keeps style defaults for it, so
+// the behavioral props (`variant`, `circular`, `tight`, …) are passed at the
+// call site below.
 const AlertClose = styled(Button, {
-  name: "AlertTrigger",
-
-  theme: ColorThemeName.BASE,
-  variant: "ghost",
-  circular: true,
-  noPadding: true
+  displayName: "AlertTrigger",
+  position: "relative"
 });
 
-const AlertCloseImpl = AlertClose.styleable(
-  ({ children, ...props }, forwardedRef) => {
+const AlertCloseImpl = createStyledHOC(
+  AlertClose,
+  ({ children, onPress, ...props }, forwardedRef) => {
+    const { dismiss } = AlertContext.useStyledContext();
+
     return (
-      <XStack minHeight="100%" alignItems="center" flexBasis={50}>
-        <AlertClose ref={forwardedRef} {...props} padding="$2.5" size="$6">
+      <XStack
+        minHeight="100%"
+        alignItems="center"
+        flexBasis={50}
+        marginRight="md">
+        <AlertClose
+          ref={forwardedRef}
+          theme="base"
+          variant="ghost"
+          circular={true}
+          tight={true}
+          tooltip="Dismiss"
+          {...props}
+          onPress={event => {
+            onPress?.(event);
+            dismiss?.();
+          }}
+          padding="md"
+          size="10xl"
+          flexGrow={0}>
           {children || (
-            <Button.Icon>
-              <X />
+            <Button.Icon position="absolute" inset={0} justifyContent="center">
+              <Close variant="bold" />
             </Button.Icon>
           )}
         </AlertClose>
@@ -56,101 +108,159 @@ const AlertCloseImpl = AlertClose.styleable(
     );
   },
   {
-    staticConfig: { componentName: "Alert" }
+    displayName: "Alert.Close"
   }
 );
 
-const AlertFrameImpl = ({ children, theme, ...props }: ContainerProps) => {
+export type AlertFrameProps = ContainerProps &
+  Omit<AlertContextProps, "dismiss"> & {
+    /**
+     * Called once `Alert.Close` was pressed and the exit animation has
+     * finished. The alert stays hidden until it is remounted, so clear the
+     * state that rendered it here.
+     */
+    onDismiss?: () => void;
+  };
+
+const AlertFrameImpl = ({
+  children,
+  theme,
+  type,
+  hovered = false,
+  onDismiss,
+  ...props
+}: AlertFrameProps) => {
+  const [dismissed, setDismissed] = useState(false);
+
   return (
-    <Container
-      {...props}
-      variant="tertiary"
-      theme={ColorThemeName.BASE}
-      themeShallow={true}
-      bordered={false}
-      noPadding={true}
-      overflow="hidden">
-      <Theme name={theme}>
-        <XStack gap="$3" paddingRight="$1">
-          {children}
-        </XStack>
-      </Theme>
-    </Container>
+    <AlertContext.Provider
+      type={type}
+      hovered={hovered}
+      dismiss={() => setDismissed(true)}>
+      <AnimatePresence onExitComplete={onDismiss}>
+        {!dismissed && (
+          <YStack
+            key="alert"
+            width="100%"
+            // Fades and grows in on mount, and back out when dismissed. Naming
+            // `exit` keeps `createComponent` off its `avoidReRenders` path, so
+            // the exit timing is used.
+            transition={{ duration: "400ms", exit: "200ms ease-out" }}
+            opacity="enter:0 exit:0"
+            scale="enter:0.95 exit:0.95">
+            <Container
+              {...props}
+              hovered={hovered}
+              variant="floating"
+              themeShallow={true}
+              borderWidth={0}
+              tight={true}
+              overflow="hidden">
+              <Theme name={type ?? theme}>
+                <XStack gap="3xl" paddingRight="md">
+                  {children}
+                </XStack>
+              </Theme>
+            </Container>
+          </YStack>
+        )}
+      </AnimatePresence>
+    </AlertContext.Provider>
   );
 };
 
-const AlertIcon = ThemeableIcon.styleable(
+AlertFrameImpl.displayName = "Alert";
+
+const AlertIconBackground = styled(View, {
+  displayName: "AlertIconBackground",
+  theme: "base",
+  padding: "xl",
+  backgroundColor: "floating",
+  borderRadius: 1000_000_000
+});
+
+const AlertIcon = createStyledHOC(
+  ThemeableIcon,
   ({ children, ...props }, forwardedRef) => {
     const theme = useThemeName();
+    const { type, hovered } = AlertContext.useStyledContext();
+    const colorTheme = type || theme;
 
     return (
       <XStack position="relative" minHeight="100%" alignItems="center">
         <View
-          theme={theme}
-          animation="normal"
-          enterStyle={{
-            x: -200,
-            opacity: 0.6
-          }}
+          theme={colorTheme}
+          // Offset by its own width (not a fixed distance) so the stripe is
+          // visible from the first frame and lands with the Message toast's
+          // 400ms entrance, instead of popping in after the card settles.
+          transition="400ms"
+          x="enter:-100%"
+          opacity="enter:0.6"
           position="absolute"
           display="block"
           height="100%"
           width="62%"
-          backgroundColor="$primary"
-          zIndex="$1"
+          backgroundColor="primary"
+          zIndex="10"
         />
 
-        <YStack zIndex="$2" justifyContent="center" paddingLeft="$3">
-          <View
-            theme={ColorThemeName.BASE}
-            padding="$1.75"
-            backgroundColor="$surfacePrimary"
-            borderRadius={1000_000_000}>
-            <ThemeableIcon
-              ref={forwardedRef}
-              {...props}
-              theme={theme}
-              size="$4">
-              {children || getIconByTheme({ theme }) || <AlertCircle />}
-            </ThemeableIcon>
-          </View>
+        <YStack zIndex="20" justifyContent="center" paddingLeft="3xl">
+          <Theme name={type ?? "base"}>
+            {/* Matches the frame's `floating` surface, including its hovered shade. */}
+            <AlertIconBackground
+              backgroundColor={hovered ? "floating-hovered" : "floating"}>
+              <ThemeableIcon
+                ref={forwardedRef}
+                {...props}
+                theme={colorTheme}
+                {...(type ? { color: "primary" } : {})}
+                size="10xl">
+                {children || getIconByTheme({ theme: colorTheme }) || (
+                  <AlertCircle />
+                )}
+              </ThemeableIcon>
+            </AlertIconBackground>
+          </Theme>
         </YStack>
       </XStack>
     );
   },
   {
-    staticConfig: { componentName: "Alert" }
+    displayName: "Alert.Icon"
   }
 );
 
-const AlertContent = YStack.styleable(
+const AlertContent = createStyledHOC(
+  YStack,
   ({ children, ...props }, forwardedRef) => {
     return (
       <YStack
         ref={forwardedRef}
         flex={1}
-        gap="$0.1"
+        gap="xxs"
         {...props}
-        paddingVertical="$3">
+        paddingVertical="3xl">
         {children}
       </YStack>
     );
   },
   {
-    staticConfig: { componentName: "Alert" }
+    displayName: "Alert.Content"
   }
 );
 
-const AlertHeading = styled(Heading5Text, {
-  name: "AlertHeading",
-
-  color: "$primary"
+const AlertHeading = styled(HeadingMediumText, {
+  displayName: "AlertHeading",
+  color: "primary"
 });
 
-const AlertHeadingImpl = AlertHeading.styleable(
+const AlertHeadingImpl = createStyledHOC(
+  AlertHeading,
   ({ children, ...props }, forwardedRef) => {
+    const { type } = AlertContext.useStyledContext();
+
     return (
-      <Theme name={ColorThemeName.BASE}>
+      <Theme name={type ?? "base"}>
         <AlertHeading ref={forwardedRef} {...props}>
           {children}
         </AlertHeading>
@@ -158,21 +268,19 @@ const AlertHeadingImpl = AlertHeading.styleable(
     );
   },
   {
-    staticConfig: { componentName: "AlertHeading" }
+    displayName: "Alert.Content.Heading"
   }
 );
 
 const AlertBody = styled(BodyText, {
-  name: "AlertBody",
-
-  color: "$secondary",
-  fontSize: "$6"
+  displayName: "Alert.Content.Body"
 });
 
-const AlertBodyImpl = AlertBody.styleable(
+const AlertBodyImpl = createStyledHOC(
+  AlertBody,
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Theme name={ColorThemeName.BASE}>
+      <Theme name="base">
         <AlertBody ref={forwardedRef} {...props}>
           {children}
         </AlertBody>
@@ -180,7 +288,7 @@ const AlertBodyImpl = AlertBody.styleable(
     );
   },
   {
-    staticConfig: { componentName: "AlertBody" }
+    displayName: "Alert.Content.Body"
   }
 );
 
@@ -189,7 +297,7 @@ export type AlertHeadingProps = GetProps<typeof AlertHeadingImpl>;
 export type AlertBodyProps = GetProps<typeof AlertBodyImpl>;
 export type AlertIconProps = GetProps<typeof AlertIcon>;
 
-export type AlertProps = GetProps<typeof AlertFrameImpl>;
+export type AlertProps = AlertFrameProps;
 
 export const Alert = withStaticProperties(AlertFrameImpl, {
   Icon: AlertIcon,
@@ -202,3 +310,17 @@ export const Alert = withStaticProperties(AlertFrameImpl, {
     Icon: Button.Icon
   })
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Alert.Icon` is undefined on the server).
+ */
+export {
+  AlertBodyImpl as AlertBody,
+  AlertCloseImpl as AlertClose,
+  AlertContent,
+  AlertHeadingImpl as AlertHeading,
+  AlertIcon
+};
+export const AlertCloseText = Button.Text;
+export const AlertCloseIcon = Button.Icon;

@@ -1,23 +1,24 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { BodyText } from "@cyclone-ui/body-text";
-import { Button } from "@cyclone-ui/button";
-import type { Meta, StoryObj } from "@storybook/react";
+import { getContainerForeground } from "@cyclone-ui/container";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Tooltip } from "./Tooltip";
 
 const meta: Meta<typeof Tooltip> = {
@@ -25,16 +26,21 @@ const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
   tags: ["autodocs"],
   render: (props: any) => {
+    // Content keeps its own colors; on a filled tooltip it uses the variant's
+    // foreground, like the components with built-in text do.
+    const color = getContainerForeground(props.variant, props.theme);
+
     return (
       <Tooltip {...props}>
+        {/* Not a `Button`: it depends on this package for its `tooltip`. */}
         <Tooltip.Trigger asChild={true}>
-          <Button>
-            <Button.Text>Open Tooltip</Button.Text>
-          </Button>
+          <BodyText tabIndex={0} alignSelf="flex-start">
+            Hover for a tooltip
+          </BodyText>
         </Tooltip.Trigger>
 
         <Tooltip.Content>
-          <BodyText>Lorem ipsum dolor</BodyText>
+          <BodyText {...(color && { color })}>Lorem ipsum dolor</BodyText>
         </Tooltip.Content>
       </Tooltip>
     );
@@ -55,15 +61,9 @@ export const Brand: Story = {
   }
 };
 
-export const Alternate: Story = {
+export const Discovery: Story = {
   args: {
-    theme: "alternate"
-  }
-};
-
-export const Help: Story = {
-  args: {
-    theme: "help"
+    theme: "discovery"
   }
 };
 
@@ -91,14 +91,57 @@ export const Success: Story = {
   }
 };
 
-export const Positive: Story = {
+export const Primary: Story = {
   args: {
-    theme: "positive"
+    variant: "primary"
   }
 };
 
-export const Negative: Story = {
+export const Secondary: Story = {
   args: {
-    theme: "negative"
+    variant: "secondary"
+  }
+};
+
+export const Tertiary: Story = {
+  args: {
+    variant: "tertiary"
+  }
+};
+
+export const Outlined: Story = {
+  args: {
+    variant: "outlined"
+  }
+};
+
+export const Floating: Story = {
+  args: {
+    variant: "floating"
+  }
+};
+
+export const Elevated: Story = {
+  args: {
+    shadowStyle: "elevated"
+  }
+};
+
+export const Accented: Story = {
+  args: {
+    accented: true
+  }
+};
+
+export const Glass: Story = {
+  args: {
+    variant: "primary",
+    glass: true
+  }
+};
+
+export const Flat: Story = {
+  args: {
+    shadowStyle: "flat"
   }
 };

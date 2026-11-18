@@ -1,0 +1,45 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/avatar/tsconfig.tsbuildinfo",
+    "jsx": "preserve",
+    "lib": ["DOM", "ES2022"],
+    "ignoreDeprecations": "6.0",
+    "rootDir": ".",
+    "types": [
+      "node",
+      "@nx/react/typings/cssmodule.d.ts",
+      "@nx/react/typings/image.d.ts"
+    ],
+    "outDir": "../../dist/out-tsc/components/avatar"
+  },
+  "references": [
+    {
+      "path": "../../tools/config"
+    },
+    {
+      "path": "../badge"
+    },
+    {
+      "path": "../body-text"
+    },
+    {
+      "path": "../button"
+    },
+    {
+      "path": "../icons"
+    },
+    {
+      "path": "../modal"
+    },
+    {
+      "path": "../slider"
+    },
+    {
+      "path": "../spinner"
+    }
+  ],
+  "files": [],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+}

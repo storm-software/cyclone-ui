@@ -1,0 +1,76 @@
+/* -------------------------------------------------------------------
+
+                   🗲 Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
+
+import type { CommandMetadata } from "@shell-shock/core";
+import { resolve } from "node:path";
+import { write } from "shell-shock:console";
+import { COMPONENT_PROTECTION_RULE } from "../../utilities/agent-guidance";
+import { readConfig } from "../../utilities/config";
+import {
+  DEFAULT_REGISTRY_URL,
+  normalizeComponentName,
+  registryClient
+} from "../../utilities/registry";
+
+export const metadata = {
+  title: "Component Documentation",
+  description: `Get documentation links for registry components. ${COMPONENT_PROTECTION_RULE}`,
+  icon: "🕮"
+} satisfies CommandMetadata;
+
+export interface DocsOptions {
+  /** The working directory. */
+  cwd?: string;
+  /** Registry URL. */
+  registry?: string;
+  /** Output machine-readable JSON. */
+  json?: boolean;
+}
+
+async function handler(
+  options: DocsOptions,
+  /** Component names to document. */
+  components: string[]
+) {
+  const root = resolve(options.cwd ?? process.cwd());
+  const config = await readConfig(root);
+  const client = registryClient(
+    options.registry ?? config?.registry ?? DEFAULT_REGISTRY_URL
+  );
+  const result = await Promise.all(
+    components.map(async name => {
+      const component = await client.components.get.query(name);
+      const normalizedName = normalizeComponentName(component.name);
+
+      return {
+        name: component.name,
+        description: component.description,
+        url: `https://docs.stormsoftware.com/projects/cyclone-ui/components/${normalizedName}`
+      };
+    })
+  );
+
+  write(
+    options.json
+      ? JSON.stringify(result, null, 2)
+      : result.map(item => `${item.name}: ${item.url}`).join("\n")
+  );
+}
+
+export default handler;

@@ -1,57 +1,79 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { Button, type ButtonProps } from "@cyclone-ui/button";
-import { RightArrow, type RightArrowProps } from "@cyclone-ui/vectors";
-import { useHover } from "@storm-stack/hooks";
-import { useComposedRefs, View } from "@tamagui/core";
+ ------------------------------------------------------------------- */
+
+"use client";
+
+import type { ButtonProps } from "@cyclone-ui/button";
+import { Button } from "@cyclone-ui/button";
+import { RightArrow } from "@cyclone-ui/icons/vectors";
+import { useHover } from "@stryke/hooks";
+import type { TamaguiComponent, TamaguiElement } from "@tamagui/core";
+import { createStyledHOC, useComposedRefs, View } from "@tamagui/core";
 import { XStack } from "@tamagui/stacks";
+import type { Ref } from "react";
 
-export type NextButtonProps = ButtonProps &
-  Pick<RightArrowProps, "animateShrink"> & {
-    hideText?: boolean;
-  };
-
-export const NextButton = Button.styleable<{
+// Declared here rather than picked from the arrow's props: where a consumer's
+// react-native types give those an index signature, `Pick` makes the prop
+// required.
+export type NextButtonProps = ButtonProps & {
   hideText?: boolean;
-}>(
-  (
-    {
-      children,
-      hideText = false,
-      animateShrink = false,
-      ...props
-    }: NextButtonProps,
-    forwardedRef
-  ) => {
-    const [hoverRef, hovering] = useHover();
-    const ref = useComposedRefs(forwardedRef, hoverRef);
+  /** Animate the arrow shrinking back when the hover ends, instead of snapping. */
+  animateShrink?: boolean;
+};
 
-    return (
-      <Button ref={ref} aria-label="Next" justifyContent="center" {...props}>
-        <View display="unset">
-          <XStack gap="$0.75" alignItems="center">
-            {!hideText && <Button.Text>{children || "Next"}</Button.Text>}
-            <Button.Icon>
-              <RightArrow isComplete={hovering} animateShrink={animateShrink} />
-            </Button.Icon>
-          </XStack>
-        </View>
-      </Button>
-    );
-  }
-);
+export const NextButton: TamaguiComponent<NextButtonProps, TamaguiElement> =
+  createStyledHOC(
+    Button,
+    (
+      {
+        children,
+        hideText = false,
+        animateShrink = false,
+        ...props
+      }: NextButtonProps,
+      forwardedRef
+    ) => {
+      const [hoverRef, hovering] = useHover();
+      const ref = useComposedRefs(
+        forwardedRef,
+        hoverRef as Ref<TamaguiElement>
+      );
+
+      return (
+        <Button
+          ref={ref}
+          aria-label="Next"
+          tooltip="Next"
+          justifyContent="center"
+          {...props}>
+          <View display="unset">
+            <XStack gap="2xl" alignItems="center">
+              {!hideText && <Button.Text>{children || "Next"}</Button.Text>}
+              <Button.Icon>
+                <RightArrow
+                  fitContent
+                  isComplete={hovering}
+                  animateShrink={animateShrink}
+                />
+              </Button.Icon>
+            </XStack>
+          </View>
+        </Button>
+      );
+    }
+  );

@@ -1,27 +1,40 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { ColorThemeName } from "@cyclone-ui/colors";
-import { getSized, getSpaced } from "@cyclone-ui/helpers";
-import { ThemeableIcon, ThemeableIconProps } from "@cyclone-ui/themeable-icon";
-import { isWeb } from "@tamagui/constants";
-import type { ColorTokens, SizeTokens } from "@tamagui/core";
+ ------------------------------------------------------------------- */
+
+"use client";
+
+import type { FormControlSize } from "@cyclone-ui/helpers";
+import {
+  formSizeVariants,
+  getFormControlAriaProps,
+  getFormSizeToken,
+  getSized,
+  getSpaced,
+  useFieldHasValidationMessage,
+  useFieldLabelDefaults,
+  useFormControl
+} from "@cyclone-ui/helpers";
+import type { ThemeableIconProps } from "@cyclone-ui/icons";
+import { ThemeableIcon } from "@cyclone-ui/icons";
+import type { ColorTokens, GetProps } from "@tamagui/core";
 import {
   createStyledContext,
+  createStyledHOC,
   getVariableValue,
   styled,
   View,
@@ -31,78 +44,59 @@ import { getSize } from "@tamagui/get-token";
 import { createSwitch } from "@tamagui/switch";
 import { useMemo } from "react";
 
-export type SwitchContextProps = {
-  size: SizeTokens;
+// A switch's field label sits compactly beside it.
+const INLINE_LABEL = { inline: { alignContent: "center" } } as const;
+
+export interface SwitchContextProps {
+  size: FormControlSize;
   name: string;
   checked: boolean;
   required: boolean;
   disabled: boolean;
-  theme: string;
-};
+  hasValidationMessage: boolean;
+}
 
-export const SwitchContext = createStyledContext<SwitchContextProps>({
-  size: "$true",
-  name: "",
-  checked: false,
-  required: false,
-  disabled: false,
-  theme: `${ColorThemeName.BASE}_Switch`
-});
+export const SwitchContext = createStyledContext<
+  SwitchContextProps,
+  "size" | "name" | "checked" | "required" | "disabled" | "hasValidationMessage"
+>(
+  {
+    size: "md",
+    name: "",
+    checked: false,
+    required: false,
+    disabled: false,
+    hasValidationMessage: false
+  } as SwitchContextProps,
+  {
+    // Only the keys that styled consumers declare as variants; v3 forwards every
+    // injected context key that is not a variant to the DOM element.
+    keys: ["size", "disabled", "hasValidationMessage"]
+  }
+);
 
-const getSwitchHeight = (val: SizeTokens) =>
-  Math.round(getVariableValue(getSize(val)) * 0.65);
+const getSwitchHeight = (val: FormControlSize) =>
+  Math.round(getVariableValue(getSize(getFormSizeToken(val, "compact"))));
 
-const getSwitchWidth = (val: SizeTokens) => getSwitchHeight(val) * 2;
+const getSwitchWidth = (val: FormControlSize) => getSwitchHeight(val) * 2;
 
 const SwitchFrame = styled(View, {
-  name: "Switch",
-  tag: "button",
+  displayName: "Switch",
+  render: "button",
   context: SwitchContext,
-
-  animation: "normal",
+  transition: "200ms",
   borderRadius: 100_000,
-  backgroundColor: "transparent",
-  borderWidth: 2,
-  borderColor: "$borderColor",
-  outlineStyle: "none",
-
-  ...(isWeb
-    ? {
-        tabIndex: 0
-      }
-    : {
-        focusable: true
-      }),
-
-  hoverStyle: {
-    borderColor: "$accent10"
-  },
-
-  focusStyle: {
-    outlineColor: "$accent10",
-    outlineWidth: 3,
-    outlineOffset: "$1.25",
-    outlineStyle: "solid",
-    borderColor: "$borderColorFocus"
-  },
-
-  focusVisibleStyle: {
-    outlineColor: "$accent10",
-    outlineWidth: 3,
-    outlineOffset: "$1.25",
-    outlineStyle: "solid",
-    borderColor: "$borderColorFocus"
-  },
-
+  backgroundColor: "surface",
+  borderWidth: 1,
+  borderColor:
+    "hairline hover:hairline-hovered focus:primary-active focus-visible:primary-active",
+  boxShadow: "none focus:ring-offset focus-visible:ring-offset",
+  tabIndex: 0,
   variants: {
-    checked: {
-      true: {
-        backgroundColor: "$accent2"
-      }
-    },
-
-    size: {
-      "...size": val => {
+    // `styled.dynamic` re-brands the helper's carrier with this package's
+    // `@tamagui/web` symbol type (runtime no-op; helpers resolves another copy).
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants(val => {
         const height = getSwitchHeight(val);
         const width = getSwitchWidth(val);
 
@@ -111,77 +105,81 @@ const SwitchFrame = styled(View, {
           minHeight: height,
           width
         };
+      })
+    ),
+
+    hasValidationMessage: {
+      true: {
+        borderColor: "primary hover:primary-hovered"
       }
     },
 
     disabled: {
       true: {
+        backgroundColor: "surface-disabled",
         userSelect: "none",
         cursor: "not-allowed",
-        borderColor: "$borderColorDisabled",
-
-        hoverStyle: {
-          borderColor: "$borderColorDisabled"
-        },
-
-        focusStyle: {
-          borderColor: "$borderColorDisabled"
-        },
-
-        pressStyle: {
-          borderColor: "$borderColorDisabled"
-        }
+        borderColor:
+          "primary-disabled hover:primary-disabled press:primary-disabled focus:primary-disabled"
       }
     }
   } as const,
-
   defaultVariants: {
+    size: "md",
     disabled: false
   }
 });
 
 const SwitchThumb = styled(View, {
-  name: "SwitchThumb",
-
-  animation: "normal",
-  backgroundColor: "$color",
+  displayName: "SwitchThumb",
+  theme: "base",
+  transition: "200ms",
+  backgroundColor: "secondary",
   borderRadius: 100_000,
-  borderWidth: 1,
-  borderColor: "$background",
+  borderWidth: 0,
   justifyContent: "center",
   alignItems: "center",
-  height: "100%",
-
   variants: {
     checked: {
-      true: {}
+      true: {
+        backgroundColor: "secondary"
+      }
     },
 
-    size: {
-      "...size": val => {
-        const width = getSwitchHeight(val);
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants(val => {
+        const height = getSwitchHeight(val);
 
         return {
-          width
+          height: height - 2,
+          width: height - 2
         };
-      }
-    }
+      })
+    )
   } as const,
-
   defaultVariants: {
-    checked: false,
-    size: "$true"
+    size: "md",
+    checked: false
   }
 });
 
-const SwitchThumbImpl = SwitchThumb.styleable(
+const SwitchThumbImpl = createStyledHOC(
+  SwitchThumb,
   (props, forwardedRef) => {
-    const { checked } = SwitchContext.useStyledContext();
+    const { disabled, checked } = SwitchContext.useStyledContext();
 
-    return <SwitchThumb ref={forwardedRef} {...props} checked={checked} />;
+    return (
+      <SwitchThumb
+        ref={forwardedRef}
+        {...props}
+        backgroundColor={
+          disabled ? "secondary-disabled" : checked ? "surface" : "primary"
+        }
+      />
+    );
   },
   {
-    staticConfig: { componentName: "SwitchThumb" }
+    displayName: "SwitchThumb"
   }
 );
 
@@ -194,80 +192,81 @@ const SwitchIconFrame = styled(View, {
 
   variants: {
     size: {
-      "...size": {} as any
+      sm: {},
+      md: {},
+      lg: {}
     },
 
-    placement: {
-      right: (_, { props }) => {
-        const space = getSpaced((props as any).size, {
-          scale: 0.35
-        });
-
-        return {
-          right: space
-        };
-      },
-      left: (_, { props }) => {
-        const space = getSpaced((props as any).size, {
-          scale: 0.35
-        });
-
-        return {
-          left: space
-        };
-      }
-    }
+    // Styled by the `.resolve` below because the offset depends on `size`.
+    placement: styled.dynamic<"right" | "left">()
   } as const,
 
   defaultVariants: {
     placement: "right"
   }
+}).resolve(props => {
+  const space = getSpaced(
+    getFormSizeToken(props.size as FormControlSize | undefined, "compact"),
+    {
+      scale: 0.35
+    }
+  );
+
+  return (props.placement ?? "right") === "left"
+    ? { left: space }
+    : { right: space };
 });
 
-const SwitchIcon = SwitchIconFrame.styleable<{
-  size?: SizeTokens;
-  color?: ColorTokens;
-}>(
-  ({ children, size, color, ...props }, forwardedRef) => {
-    const {
-      theme,
-      disabled,
-      size: contextSize
-    } = SwitchContext.useStyledContext();
+const SwitchIcon = createStyledHOC(
+  SwitchIconFrame,
+  (
+    {
+      children,
+      size,
+      color,
+      ...props
+    }: GetProps<typeof SwitchIconFrame> & {
+      size?: FormControlSize;
+      color?: ColorTokens;
+    },
+    forwardedRef
+  ) => {
+    const { disabled, size: contextSize } = SwitchContext.useStyledContext();
     const adjusted = useMemo(
-      () => getSized(size ?? contextSize, { shift: -6 }),
+      () =>
+        getSized(getFormSizeToken(size ?? contextSize, "compact"), {
+          shift: -6
+        }),
       [size, contextSize]
     );
 
     return (
       <SwitchIconFrame
+        theme="base"
         ref={forwardedRef}
-        zIndex="$md"
+        zIndex="20"
         alignItems="center"
-        // flexGrow 1 leads to inconsistent native style where text pushes to start of view
         flexGrow={0}
-        flexShrink={1}>
+        flexShrink={1}
+        borderColor="group-hover/field:hairlineActive">
         <ThemeableIcon
           {...props}
-          theme={theme}
+          theme="base"
           disabled={false}
           size={adjusted}
           color={
             (color ||
               (disabled
-                ? "$colorDisabled"
-                : "$color")) as ThemeableIconProps["color"]
-          }
-          $group-switch-hover={{
-            color: disabled ? "$colorDisabled" : "$colorHover"
-          }}>
+                ? "primary-disabled"
+                : "on-primary")) as ThemeableIconProps["color"]
+          }>
           {children}
         </ThemeableIcon>
       </SwitchIconFrame>
     );
   },
   {
-    staticConfig: { componentName: "SwitchIcon" }
+    displayName: "SwitchIcon"
   }
 );
 
@@ -276,48 +275,120 @@ const BaseSwitch = createSwitch({
   Thumb: SwitchThumbImpl
 });
 
-const BaseSwitchImpl = BaseSwitch.styleable<{ focused?: boolean }>(
+const BaseSwitchImpl = createStyledHOC(
+  BaseSwitch,
   (
-    {
-      name,
-      size = "$true",
-      disabled = false,
-      checked = false,
-      children,
-      ...props
+    allProps: GetProps<typeof BaseSwitch> & {
+      focused?: boolean;
+      size?: FormControlSize;
+      readOnly?: boolean;
     },
     forwardedRef
   ) => {
+    // Inside a form control (such as `Field`), any prop left unset falls back
+    // to the control's state, which connects the switch to the form.
+    const formControl = useFormControl();
+    useFieldLabelDefaults(INLINE_LABEL);
+    const {
+      name = formControl?.name,
+      size = formControl?.size ?? "md",
+      disabled = formControl?.disabled ?? false,
+      readOnly = formControl?.readOnly ?? false,
+      checked = formControl?.value || false,
+      defaultChecked = formControl
+        ? formControl.defaultValue || false
+        : undefined,
+      focused = formControl?.focused ?? false,
+      onCheckedChange = formControl?.onChange,
+      onFocus = formControl?.onFocus,
+      onBlur = formControl?.onBlur,
+      children,
+      ...props
+    } = allProps;
+    const hasValidationMessage = useFieldHasValidationMessage();
+    // Only reached when not disabled and without a validation message (the
+    // variants color those), so a checked switch marks its border here.
+    const idleColor = checked
+      ? "primary-active"
+      : hasValidationMessage
+        ? "primary"
+        : "hairline";
+    const focusColor =
+      hasValidationMessage || checked ? "primary-active" : "hairline-active";
+
     return (
       <SwitchContext.Provider
-        name={name}
+        // Not `name`: a key in a styled context's value is treated as a
+        // context prop, so it would never reach the hidden form input.
         size={size}
         checked={checked}
+        hasValidationMessage={hasValidationMessage}
         disabled={disabled}>
         <BaseSwitch
           ref={forwardedRef}
+          activeStyle={{
+            backgroundColor: disabled ? "primary-disabled" : "primary"
+          }}
+          // `aria-required` only: a `required` hidden form input can't take
+          // focus, so the browser would block a submit without saying why.
+          aria-required={formControl?.required ? true : undefined}
+          {...getFormControlAriaProps(formControl)}
           {...props}
-          id={name}
+          // Names the hidden input the switch submits with its form.
+          name={name}
+          id={formControl?.id ?? name}
+          aria-readonly={readOnly || undefined}
           size={size}
           checked={checked}
+          defaultChecked={defaultChecked}
+          onCheckedChange={readOnly ? undefined : onCheckedChange}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          // In v2 the `hasValidationMessage` / `disabled` variants came after
+          // these props and replaced their base (and, for `disabled`, focus)
+          // color. v3 call-site values outrank variants, so leave those
+          // clauses out here and let the variants supply them.
+          borderColor={[
+            disabled || hasValidationMessage
+              ? undefined
+              : focused
+                ? focusColor
+                : idleColor,
+            // A call-site base replaces every lower-tier clause in v3, so the
+            // v2 frame/variant hover color is restated.
+            `hover:${disabled ? "primary-disabled" : "primary-hovered"}`,
+            `group-hover/field:${disabled ? "primary-disabled" : focused ? focusColor : "primary-hovered"}`,
+            disabled ? undefined : `focus:${focusColor}`,
+            `focus-visible:${focusColor}`
+          ]
+            .filter(Boolean)
+            .join(" ")}
+          boxShadow={
+            size === "sm"
+              ? "focus:ring-subtle-offset focus-visible:ring-subtle-offset"
+              : "focus:ring-offset focus-visible:ring-offset"
+          }
+          // `createSwitch` types its result with the default frame's props, but
+          // this `SwitchFrame` variant still reaches the frame at runtime.
+          {...({ hasValidationMessage } as object)}
           disabled={disabled}>
           {children}
-          <View
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            height="100%">
-            <BaseSwitch.Thumb checked={checked} />
-          </View>
+          <BaseSwitch.Thumb />
         </BaseSwitch>
       </SwitchContext.Provider>
     );
   },
   {
-    staticConfig: { componentName: "Switch" }
+    displayName: "Switch"
   }
 );
 
 export const Switch = withStaticProperties(BaseSwitchImpl, {
   Icon: SwitchIcon
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Switch.Icon` is undefined on the server).
+ */
+export { SwitchIcon };

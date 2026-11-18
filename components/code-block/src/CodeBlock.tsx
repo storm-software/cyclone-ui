@@ -1,0 +1,525 @@
+/* -------------------------------------------------------------------
+
+                   🗲 Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
+"use client";
+
+import type { CopyButtonProps } from "@cyclone-ui/copy-button";
+import { CopyButton } from "@cyclone-ui/copy-button";
+import { ThemeableIcon } from "@cyclone-ui/icons";
+import { ScrollView } from "@cyclone-ui/scroll-view";
+import type { TamaguiElement } from "@tamagui/core";
+import {
+  createStyledHOC,
+  styled,
+  Text,
+  View,
+  withStaticProperties
+} from "@tamagui/core";
+import { XStack } from "@tamagui/stacks";
+import { Tabs as TamaguiTabs, useTabsContext } from "@tamagui/tabs";
+import type { GetProps, ViewProps } from "@tamagui/web";
+import type {
+  ComponentProps,
+  HTMLAttributes,
+  ReactNode,
+  RefObject
+} from "react";
+import {
+  Children,
+  cloneElement,
+  forwardRef,
+  isValidElement,
+  useRef
+} from "react";
+
+const CODE_BLOCK_STYLES = `
+.cyclone-code-block-tabs .cyclone-code-block.cyclone-code-block { width: 100%; height: 100%; margin: 0; border-width: 0; border-radius: 0; }
+.cyclone-code-block-tabs-content .cyclone-code-block-viewport { border-width: 0 !important; border-radius: 0; padding-top: 1.25rem !important; }
+.cyclone-code-block-tabs-content .cyclone-code-block-floating-actions { margin-top: .4375rem; }
+.cyclone-code-block[data-keep-background] .cyclone-code-block-viewport { background-color: var(--shiki-light-bg); }
+.t_dark .cyclone-code-block[data-keep-background] .cyclone-code-block-viewport { background-color: var(--shiki-dark-bg); }
+@media (prefers-color-scheme: dark) { .cyclone-code-block[data-keep-background] .cyclone-code-block-viewport { background-color: var(--shiki-dark-bg); } }
+.cyclone-code-block-icon, .cyclone-code-block-icon svg { display: block; width: 1rem; height: 1rem; }
+.cyclone-code-block-viewport:focus-visible { outline: 2px solid currentColor; outline-offset: -2px; }
+.cyclone-code-block-viewport, .cyclone-code-block-viewport pre { font-size: .875rem; line-height: 1.5rem; }
+.cyclone-code-block-viewport pre { tab-size: 2; }
+.cyclone-code-block-viewport pre > code { display: grid; min-width: 100%; }
+.cyclone-code-block pre code { font-family: inherit; }
+.cyclone-code-block-viewport pre > code:not(:has(> [data-line])) { padding-inline: 1rem 4rem; }
+.cyclone-code-block-viewport [data-line] { position: relative; display: inline-block; min-width: 100%; padding-inline: 1rem 4rem; }
+.cyclone-code-block[data-line-numbers] .cyclone-code-block-viewport [data-line] { padding-inline-start: 3.5rem; }
+.cyclone-code-block[data-line-numbers] .cyclone-code-block-viewport [data-line]::before { position: absolute; left: 0; width: 2.75rem; padding-right: .75rem; color: currentColor; text-align: right; opacity: .45; content: counter(line); counter-increment: line; user-select: none; }
+.cyclone-code-block-viewport [data-highlighted-line] { background: color-mix(in srgb, currentColor 8%, transparent); box-shadow: inset 2px 0 currentColor; }
+.cyclone-code-block-viewport [data-highlighted-chars] { padding: .125rem .25rem; border-radius: .25rem; background: color-mix(in srgb, currentColor 12%, transparent); }
+.cyclone-code-block-viewport .diff.add { background: color-mix(in srgb, #22c55e 14%, transparent); }
+.cyclone-code-block-viewport .diff.remove { background: color-mix(in srgb, #ef4444 14%, transparent); opacity: .7; }
+.cyclone-code-block-viewport .highlighted.error { background: color-mix(in srgb, #ef4444 14%, transparent); }
+.cyclone-code-block-viewport .highlighted.warning { background: color-mix(in srgb, #eab308 14%, transparent); }
+.cyclone-code-block-tabs-trigger[data-state="active"]::after { position: absolute; right: 1px; bottom: -1px; left: 1px; height: 2px; background-color: var(--elevated); content: ""; }
+.cyclone-code-block-tabs-trigger > * { text-box: trim-both cap alphabetic; }
+`;
+
+export interface CodeBlockActionsProps {
+  className?: string;
+  children?: ReactNode;
+}
+
+export interface CodeBlockProps extends Omit<ViewProps, "title"> {
+  /** Optional caption displayed above the code. */
+  title?: ReactNode;
+
+  /**
+   * Optional title icon. A string is treated as trusted SVG/HTML so that
+   * icons injected by Shiki transformers can be passed through unchanged.
+   */
+  icon?: ReactNode;
+
+  /** Show the copy action. @defaultValue true */
+  allowCopy?: boolean | "true" | "false";
+
+  /** Preserve Shiki's `--shiki-light-bg` and `--shiki-dark-bg` colors. */
+  keepBackground?: boolean;
+
+  /** Props applied to the focusable, scrolling code viewport. */
+  viewportProps?: HTMLAttributes<HTMLElement>;
+
+  /** Show line numbers for Shiki `[data-line]` elements. */
+  "data-line-numbers"?: boolean;
+
+  /** First displayed line number. @defaultValue 1 */
+  "data-line-numbers-start"?: number;
+
+  /** Customize the action container while preserving built-in actions. */
+  Actions?: (props: CodeBlockActionsProps) => ReactNode;
+}
+
+const CodeBlockFrame = styled(View, {
+  displayName: "CodeBlock",
+  render: "figure",
+  direction: "ltr",
+  position: "relative",
+  width: "100%",
+  maxWidth: "100%",
+  marginVertical: "4xl",
+  overflow: "hidden",
+  borderWidth: 1,
+  borderColor: "hairline",
+  borderRadius: "container",
+  backgroundColor: "surface"
+});
+
+const CodeBlockHeader = styled(XStack, {
+  displayName: "CodeBlockHeader",
+  render: "figcaption",
+  minHeight: "10xl",
+  paddingRight: "xl",
+  paddingLeft: "3xl",
+  alignItems: "center",
+  gap: "xl",
+  overflow: "hidden",
+  backgroundColor: "transparent"
+});
+
+const CodeBlockHeaderIcon = styled(View, {
+  displayName: "CodeBlockHeaderIcon",
+  flexGrow: 0,
+  flexShrink: 0,
+  alignItems: "center",
+  justifyContent: "center"
+});
+
+const CodeBlockHeaderHeading = styled(Text, {
+  displayName: "CodeBlockHeaderHeading",
+  render: "span",
+  flex: 1,
+  minWidth: 0,
+  paddingVertical: 0,
+  color: "emphasis",
+  whiteSpace: "nowrap",
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  fontFamily: "display",
+  fontSize: "sm",
+  lineHeight: "sm",
+  fontWeight: "medium"
+});
+
+// `ScrollView` is a styled HOC; v3 `styled()` over it swallows `className` and
+// drops the non-style `size` default, so the viewport is rendered directly with
+// these defaults instead of through a `styled()` wrapper.
+const CodeBlockViewport = ScrollView;
+
+const codeBlockViewportDefaults = {
+  size: "lg",
+  position: "relative",
+  paddingVertical: "3xl",
+  borderRadius: "container",
+  backgroundColor: "elevated",
+  borderColor: "hairline",
+  borderWidth: 1,
+  borderStyle: "solid"
+} as const;
+
+const CodeBlockPre = styled(Text, {
+  displayName: "CodeBlockPre",
+  render: "pre",
+  minWidth: "100%",
+  width: "max-content",
+  margin: 0,
+  padding: 0,
+  backgroundColor: "elevated",
+  fontFamily: "code",
+  fontSize: "inherit",
+  lineHeight: "inherit",
+  textAlign: "left",
+  whiteSpace: "pre"
+});
+
+export type PreProps = GetProps<typeof CodeBlockPre>;
+
+/** The semantic `<pre>` used inside a CodeBlock. */
+export const Pre = createStyledHOC(CodeBlockPre, (props, forwardedRef) => (
+  <CodeBlockPre ref={forwardedRef} {...props} />
+));
+
+export interface CodeBlockCopyButtonProps extends Omit<
+  CopyButtonProps,
+  "value" | "children" | "onPress"
+> {
+  containerRef: RefObject<HTMLElement | null>;
+}
+
+const getCopyText = (container: HTMLElement | null) => {
+  const pre = container?.getElementsByTagName("pre").item(0);
+  if (!pre) {
+    return null;
+  }
+
+  const clone = pre.cloneNode(true) as HTMLElement;
+  clone.querySelectorAll(".nd-copy-ignore").forEach(node => {
+    node.replaceWith("\n");
+  });
+
+  return clone.textContent ?? "";
+};
+
+export const CodeBlockCopyButton = ({
+  containerRef,
+  ...props
+}: CodeBlockCopyButtonProps) => (
+  <CopyButton {...props} value={() => getCopyText(containerRef.current)} />
+);
+
+const DefaultActions = ({ children, className }: CodeBlockActionsProps) =>
+  children ? (
+    <XStack className={className} alignItems="center">
+      {children}
+    </XStack>
+  ) : null;
+
+const CodeBlockImpl = createStyledHOC(
+  CodeBlockFrame,
+  (
+    {
+      title,
+      icon,
+      allowCopy = true,
+      keepBackground = false,
+      viewportProps = {},
+      Actions = DefaultActions,
+      children,
+      "data-line-numbers": lineNumbers,
+      "data-line-numbers-start": lineNumbersStart = 1,
+      className,
+      style,
+      ...props
+    }: GetProps<typeof CodeBlockFrame> & CodeBlockProps,
+    forwardedRef
+  ) => {
+    const areaRef = useRef<HTMLElement | null>(null);
+    const copyEnabled = allowCopy === true || allowCopy === "true";
+    const actions = Actions({
+      className: "cyclone-code-block-actions",
+      children: copyEnabled ? (
+        <CodeBlockCopyButton containerRef={areaRef} />
+      ) : undefined
+    });
+
+    // The web ScrollView sets an inline `overflowX: hidden` when not
+    // `horizontal`, which only an inline style can override.
+    const viewportStyle = {
+      overflowX: "auto",
+      overflowY: "auto",
+      counterSet: lineNumbers
+        ? `line ${Number(lineNumbersStart) - 1}`
+        : undefined,
+      ...viewportProps.style
+    } as HTMLAttributes<HTMLElement>["style"];
+
+    const childArray = Children.toArray(children);
+    const compoundHeader = childArray.find(
+      child => isValidElement(child) && child.type === CodeBlockHeader
+    );
+
+    const contentChildren = compoundHeader
+      ? childArray.filter(child => child !== compoundHeader)
+      : children;
+
+    const header = title ? (
+      <CodeBlockHeader>
+        {icon ? (
+          <CodeBlockHeaderIcon>
+            {typeof icon === "string" ? (
+              <View
+                render="span"
+                className="cyclone-code-block-icon"
+                // Shiki transformer icon output is trusted application code.
+                dangerouslySetInnerHTML={{ __html: icon }}
+              />
+            ) : (
+              <ThemeableIcon size="xl" color="emphasis">
+                {icon}
+              </ThemeableIcon>
+            )}
+          </CodeBlockHeaderIcon>
+        ) : null}
+        <CodeBlockHeaderHeading>{title}</CodeBlockHeaderHeading>
+        {actions}
+      </CodeBlockHeader>
+    ) : isValidElement<{ children?: ReactNode }>(compoundHeader) ? (
+      cloneElement(
+        compoundHeader,
+        undefined,
+        compoundHeader.props.children,
+        actions
+      )
+    ) : null;
+
+    return (
+      <CodeBlockFrame
+        ref={forwardedRef}
+        {...props}
+        direction="ltr"
+        data-code-block=""
+        data-keep-background={keepBackground ? "" : undefined}
+        data-line-numbers={lineNumbers ? "" : undefined}
+        data-line-numbers-start={lineNumbers ? lineNumbersStart : undefined}
+        tabIndex={-1}
+        paddingHorizontal={header ? "xl" : 0}
+        paddingBottom={header ? "xl" : 0}
+        className={`cyclone-code-block${className ? ` ${className}` : ""}`}
+        style={style}>
+        <style>{CODE_BLOCK_STYLES}</style>
+        {header}
+        {!header ? (
+          <XStack
+            className="cyclone-code-block-floating-actions"
+            position="absolute"
+            top="xl"
+            right="xl"
+            zIndex="20"
+            padding="xs"
+            borderRadius="button">
+            {actions}
+          </XStack>
+        ) : null}
+        <CodeBlockViewport
+          {...codeBlockViewportDefaults}
+          // Without a header the viewport is flush with the frame. Its own
+          // border would stack on the frame border and read as a double outline.
+          {...(header
+            ? {}
+            : {
+                borderWidth: 0,
+                borderRadius: 0
+              })}
+          {...(viewportProps as ComponentProps<typeof CodeBlockViewport>)}
+          ref={areaRef as any}
+          role="region"
+          aria-label={typeof title === "string" ? title : "Code"}
+          tabIndex={0}
+          className={`cyclone-code-block-viewport${
+            viewportProps.className ? ` ${viewportProps.className}` : ""
+          }`}
+          maxHeight={viewportProps.style?.maxHeight ?? 600}
+          style={viewportStyle}>
+          {contentChildren}
+        </CodeBlockViewport>
+      </CodeBlockFrame>
+    );
+  },
+  {
+    displayName: "CodeBlock"
+  }
+);
+
+export type CodeBlockTabsProps = ComponentProps<typeof TamaguiTabs>;
+
+export const CodeBlockTabs = forwardRef<TamaguiElement, CodeBlockTabsProps>(
+  ({ children, className, ...props }, forwardedRef) => (
+    <TamaguiTabs
+      ref={forwardedRef}
+      flexDirection="column"
+      width="100%"
+      marginVertical="4xl"
+      overflow="hidden"
+      borderWidth={1}
+      borderColor="hairline"
+      borderRadius="container"
+      backgroundColor="surface"
+      padding="xl"
+      {...props}
+      className={`cyclone-code-block-tabs${className ? ` ${className}` : ""}`}>
+      {children}
+    </TamaguiTabs>
+  )
+);
+
+export type CodeBlockTabsListProps = ComponentProps<typeof TamaguiTabs.List>;
+export const CodeBlockTabsList = forwardRef<
+  TamaguiElement,
+  CodeBlockTabsListProps
+>(({ "aria-label": ariaLabel, ...props }, forwardedRef) => (
+  <TamaguiTabs.List
+    ref={forwardedRef}
+    {...props}
+    flexDirection="row"
+    width="100%"
+    gap="md"
+    overflowX="auto"
+    overflowY="hidden"
+    backgroundColor="transparent"
+    aria-label={ariaLabel ?? "Code samples"}
+  />
+));
+
+export type CodeBlockTabsTriggerProps = ComponentProps<typeof TamaguiTabs.Tab>;
+export const CodeBlockTabsTrigger = forwardRef<
+  TamaguiElement,
+  CodeBlockTabsTriggerProps
+>(({ children, value, ...props }, forwardedRef) => {
+  const active = useTabsContext().value === value;
+
+  return (
+    <TamaguiTabs.Tab
+      ref={forwardedRef}
+      {...props}
+      value={value}
+      transition="200ms"
+      group="cyclone-code-block-tabs-trigger"
+      flexGrow={0}
+      flexShrink={0}
+      paddingHorizontal="2xl"
+      position="relative"
+      zIndex={2}
+      borderWidth={1}
+      borderTopColor="hairline"
+      borderRightColor="hairline"
+      borderLeftColor="hairline"
+      borderBottomColor={active ? "elevated" : "hairline"}
+      borderTopLeftRadius="container"
+      borderTopRightRadius="container"
+      borderBottomLeftRadius={0}
+      borderBottomRightRadius={0}
+      backgroundColor={
+        active
+          ? "elevated hover:elevated press:elevated focus:elevated"
+          : "canvas hover:canvas-hovered"
+      }
+      cursor="pointer"
+      className="cyclone-code-block-tabs-trigger">
+      <Text
+        transition="200ms"
+        color={
+          active
+            ? "emphasis-active group-hover/cyclone-code-block-tabs-trigger:emphasis-hovered"
+            : "emphasis-inactive group-hover/cyclone-code-block-tabs-trigger:emphasis-hovered"
+        }
+        fontFamily="display"
+        fontSize="sm"
+        lineHeight="xs"
+        fontWeight={active ? "medium" : "normal"}
+        textAlign="center"
+        whiteSpace="nowrap"
+        marginVertical="xl">
+        {children}
+      </Text>
+    </TamaguiTabs.Tab>
+  );
+});
+
+export type CodeBlockTabProps = ComponentProps<typeof TamaguiTabs.Content>;
+export const CodeBlockTab = forwardRef<TamaguiElement, CodeBlockTabProps>(
+  ({ className, ...props }, forwardedRef) => (
+    <TamaguiTabs.Content
+      ref={forwardedRef}
+      {...props}
+      flexGrow={1}
+      minHeight={0}
+      width="100%"
+      marginTop={-1}
+      borderWidth={1}
+      borderTopWidth={1}
+      borderColor="hairline"
+      borderBottomLeftRadius="container"
+      borderBottomRightRadius="container"
+      overflow="hidden"
+      backgroundColor="elevated"
+      outlineStyle="none"
+      className={`cyclone-code-block-tabs-content${
+        className ? ` ${className}` : ""
+      }`}
+    />
+  )
+);
+
+export type CodeBlockHeaderProps = GetProps<typeof CodeBlockHeader>;
+export type CodeBlockHeaderIconProps = GetProps<typeof CodeBlockHeaderIcon>;
+export type CodeBlockHeaderHeadingProps = GetProps<
+  typeof CodeBlockHeaderHeading
+>;
+
+/**
+ * A Shiki/rehype-code presentation component. Syntax highlighting is expected
+ * to be performed before render; CodeBlock owns framing and interaction.
+ */
+export const CodeBlock = withStaticProperties(CodeBlockImpl, {
+  Header: withStaticProperties(CodeBlockHeader, {
+    Icon: CodeBlockHeaderIcon,
+    Heading: CodeBlockHeaderHeading
+  }),
+  Body: Pre,
+  Pre,
+  CopyButton: CodeBlockCopyButton,
+  Tabs: withStaticProperties(CodeBlockTabs, {
+    List: CodeBlockTabsList,
+    Trigger: CodeBlockTabsTrigger,
+    Content: CodeBlockTab
+  })
+});
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`CodeBlock.HeaderIcon` is undefined on the server).
+ */
+export {
+  Pre as CodeBlockBody,
+  CodeBlockHeader,
+  CodeBlockHeaderHeading,
+  CodeBlockHeaderIcon
+};

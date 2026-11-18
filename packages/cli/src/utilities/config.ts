@@ -1,0 +1,121 @@
+/* -------------------------------------------------------------------
+
+                   🗲 Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
+import { access, mkdir, readFile, writeFile } from "node:fs/promises";
+import { dirname, isAbsolute, relative, resolve } from "node:path";
+import { DEFAULT_REGISTRY_URL } from "./registry";
+
+export const CONFIG_FILE = "components.json";
+
+export interface InstalledComponent {
+  version?: string;
+  files: string[];
+}
+
+export interface CycloneConfig {
+  registry: string;
+  path: string;
+  /** Preserve registry directives when true; remove client directives when false. */
+  rsc?: boolean;
+  /** Install `@tamagui/tailwind` variants (`*.tailwind.tsx`) when set to `tailwind`. */
+  style?: "tamagui" | "tailwind";
+  components: Record<string, InstalledComponent>;
+}
+
+export function createConfig(
+  overrides: Partial<
+    Pick<CycloneConfig, "registry" | "path" | "rsc" | "style">
+  > = {}
+): CycloneConfig {
+  return {
+    registry: overrides.registry ?? DEFAULT_REGISTRY_URL,
+    path: overrides.path ?? "components",
+    ...(overrides.rsc === undefined ? {} : { rsc: overrides.rsc }),
+    ...(overrides.style === undefined ? {} : { style: overrides.style }),
+    components: {}
+  };
+}
+
+export async function pathExists(path: string): Promise<boolean> {
+  try {
+    await access(path);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export async function readConfig(root: string): Promise<CycloneConfig | null> {
+  const configPath = resolve(root, CONFIG_FILE);
+  if (!(await pathExists(configPath))) {
+    return null;
+  }
+
+  const value: unknown = JSON.parse(await readFile(configPath, "utf8"));
+  if (
+    !value ||
+    typeof value !== "object" ||
+    !("registry" in value) ||
+    typeof value.registry !== "string" ||
+    !("path" in value) ||
+    typeof value.path !== "string" ||
+    ("rsc" in value && typeof value.rsc !== "boolean") ||
+    ("style" in value &&
+      value.style !== "tamagui" &&
+      value.style !== "tailwind") ||
+    !("components" in value) ||
+    !value.components ||
+    typeof value.components !== "object" ||
+    Array.isArray(value.components)
+  ) {
+    throw new Error(
+      `${CONFIG_FILE} exists but is not a Cyclone UI configuration file`
+    );
+  }
+
+  return value as CycloneConfig;
+}
+
+export async function requireConfig(root: string): Promise<CycloneConfig> {
+  const config = await readConfig(root);
+  if (!config) {
+    throw new Error(`No ${CONFIG_FILE} found. Run \"cyclone init\" first.`);
+  }
+
+  return config;
+}
+
+export async function writeConfig(
+  root: string,
+  config: CycloneConfig
+): Promise<void> {
+  const configPath = resolve(root, CONFIG_FILE);
+  await mkdir(dirname(configPath), { recursive: true });
+  await writeFile(configPath, `${JSON.stringify(config, null, 2)}\n`, "utf8");
+}
+
+export function resolveInside(root: string, path: string): string {
+  const resolvedRoot = resolve(root);
+  const resolvedPath = resolve(resolvedRoot, path);
+  const relativePath = relative(resolvedRoot, resolvedPath);
+  if (relativePath.startsWith("..") || isAbsolute(relativePath)) {
+    throw new Error(`Refusing to write outside the project: ${path}`);
+  }
+
+  return resolvedPath;
+}

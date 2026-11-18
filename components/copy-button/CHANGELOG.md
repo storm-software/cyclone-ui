@@ -1,0 +1,96 @@
+![Cyclone UI's logo banner](https://public.storm-cdn.com/cyclone-ui/media/banner-1280x320-dark.gif)
+
+# Changelog for Cyclone UI - Copy Button
+
+## [0.0.10](https://github.com/storm-software/cyclone-ui/releases/tag/copy-button%400.0.10) (11/18/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.90**
+- Updated **button** to **v0.6.98**
+- Updated **icons** to **v0.0.93**
+- Updated **toast** to **v0.0.10**
+- Updated **tooltip** to **v0.5.98**
+
+## [0.0.9](https://github.com/storm-software/cyclone-ui/releases/tag/copy-button%400.0.9) (11/18/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.89**
+- Updated **button** to **v0.6.97**
+- Updated **icons** to **v0.0.92**
+- Updated **toast** to **v0.0.9**
+- Updated **tooltip** to **v0.5.97**
+
+## [0.0.8](https://github.com/storm-software/cyclone-ui/releases/tag/copy-button%400.0.8) (11/18/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.88**
+- Updated **button** to **v0.6.96**
+- Updated **icons** to **v0.0.91**
+- Updated **toast** to **v0.0.8**
+- Updated **tooltip** to **v0.5.96**
+
+## [0.0.7](https://github.com/storm-software/cyclone-ui/releases/tag/copy-button%400.0.7) (11/18/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.95**
+- Updated **icons** to **v0.0.90**
+- Updated **toast** to **v0.0.7**
+- Updated **tooltip** to **v0.5.95**
+
+## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/copy-button%400.0.6) (11/17/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.87**
+- Updated **button** to **v0.6.94**
+- Updated **icons** to **v0.0.89**
+- Updated **toast** to **v0.0.6**
+- Updated **tooltip** to **v0.5.94**
+
+## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/copy-button%400.0.5) (11/17/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.86**
+- Updated **button** to **v0.6.93**
+- Updated **icons** to **v0.0.88**
+- Updated **toast** to **v0.0.5**
+- Updated **tooltip** to **v0.5.93**
+
+## [0.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/copy-button%400.0.4) (11/17/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.85**
+- Updated **button** to **v0.6.92**
+- Updated **icons** to **v0.0.87**
+- Updated **toast** to **v0.0.4**
+- Updated **tooltip** to **v0.5.92**
+
+## [0.0.3](https://github.com/storm-software/cyclone-ui/releases/tag/copy-button%400.0.3) (11/17/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.84**
+- Updated **button** to **v0.6.91**
+- Updated **icons** to **v0.0.86**
+- Updated **toast** to **v0.0.3**
+- Updated **tooltip** to **v0.5.91**
+
+## [0.0.2](https://github.com/storm-software/cyclone-ui/releases/tag/copy-button%400.0.2) (11/17/2026)
+
+### Features
+
+- **copy-button:** Initial check-in of the CopyButton component package ([94b147217](https://github.com/storm-software/cyclone-ui/commit/94b147217))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.83**
+- Updated **button** to **v0.6.90**
+- Updated **icons** to **v0.0.85**
+- Updated **toast** to **v0.0.2**
+- Updated **tooltip** to **v0.5.90**

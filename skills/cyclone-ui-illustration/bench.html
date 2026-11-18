@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cyclone UI illustration</title>
+<link rel="icon" href="data:,">
+<style>
+  /* Cyclone UI's light_base and dark_base theme tokens: the illustration's palette reads these, as it does in an app. */
+  :root {
+    color-scheme: light;
+    --canvas: oklch(0.937 0 0); --primary: oklch(0.2273 0.0038 286.09); --ink: oklch(0.4533 0.005 271.3);
+    --subtle: oklch(0.6729 0.0031 264.54); --hairline: oklch(0.8579 0.0014 286.37);
+    --neutral7: oklch(0.7575 0.0014 286.37); --neutral10: oklch(0.4533 0.005 271.3); --neutral12: oklch(0.3022 0.0091 276.83);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --canvas: oklch(0.1971 0.006 285.84); --primary: oklch(1 0 0); --ink: oklch(0.7575 0.0014 286.37);
+      --subtle: oklch(0.6729 0.0031 264.54); --hairline: oklch(0.3956 0.0067 286.09);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --canvas: oklch(0.1971 0.006 285.84); --primary: oklch(1 0 0); --ink: oklch(0.7575 0.0014 286.37);
+    --subtle: oklch(0.6729 0.0031 264.54); --hairline: oklch(0.3956 0.0067 286.09);
+  }
+  :root[data-theme="light"] { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px 16px;
+    background: var(--canvas); color: var(--ink);
+    font: 13px/1.5 "Storm Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased;
+  }
+  main { width: 100%; max-width: 640px; }
+  .plate { position: relative; border: 1px solid var(--hairline); border-radius: 14px; overflow: hidden; }
+  .tag, .label, output, button { font: 11px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: 0.02em; }
+  .tag { position: absolute; top: 12px; z-index: 1; color: var(--subtle); pointer-events: none; }
+  #name { left: 14px; }
+  #read { right: 14px; color: var(--primary); font-variant-numeric: tabular-nums; }
+  .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin-top: 14px; }
+  .label { color: var(--subtle); }
+  input[type="range"] {
+    flex: 1 1 96px; min-width: 0; height: 32px; margin: 0; background: transparent; cursor: pointer;
+    -webkit-appearance: none; appearance: none;
+  }
+  input[type="range"]::-webkit-slider-runnable-track { height: 1px; background: var(--subtle); }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 13px; height: 13px; margin-top: -6px; border-radius: 50%;
+    border: 1px solid var(--primary); background: var(--canvas);
+  }
+  input[type="range"]::-moz-range-track { height: 1px; background: var(--subtle); }
+  input[type="range"]::-moz-range-thumb { width: 11px; height: 11px; border-radius: 50%; border: 1px solid var(--primary); background: var(--canvas); }
+  input[type="range"]:focus-visible, button:focus-visible { outline: 1.5px solid var(--primary); outline-offset: 2px; }
+  output { min-width: 4ch; text-align: right; font-variant-numeric: tabular-nums; }
+  button {
+    height: 32px; padding: 0 12px; border: 1px solid var(--hairline); border-radius: 8px;
+    background: transparent; color: var(--primary); cursor: pointer;
+  }
+  #play[aria-pressed="true"] { background: var(--primary); color: var(--canvas); border-color: var(--primary); }
+  #means { margin: 14px 0 0; text-wrap: pretty; color: var(--primary); }
+  #rules { margin: 6px 0 0; line-height: 1.6; }
+  #error { margin: 12px 0 0; padding-left: 10px; border-left: 1px solid var(--primary); }
+</style>
+</head>
+<body>
+<main>
+  <div class="plate">
+    <span class="tag" id="name"></span>
+    <span class="tag" id="read"></span>
+    <div id="stage"></div>
+  </div>
+  <div class="controls">
+    <label class="label" for="intensity">intensity</label>
+    <input id="intensity" type="range" min="0" max="1" step="0.01" value="0.5">
+    <output id="value" for="intensity"></output>
+    <span class="label">theme</span>
+    <button id="theme" type="button" aria-label="Switch between the light and the dark theme"></button>
+    <span class="label">play</span>
+    <button id="play" type="button" aria-pressed="false">play</button>
+  </div>
+  <p id="means"></p>
+  <p id="rules" class="label"></p>
+  <p id="error" role="alert" hidden></p>
+</main>
+<script id="il-kernel">/*KERNEL*/</script>
+<script id="il-bench">
+/*
+ * The bench: the page an illustration is shown on. It puts a live stage on
+ * #stage the way the package's DOM host does, mounts the illustration on it,
+ * and owns everything around it: the read-out, the slider, the theme, the
+ * line under the stage. Adapted from Hairline's bench
+ * (https://github.com/lucasmarkes/hairline, © 2026 Lucas Marques, MIT License).
+ */
+(() => {
+  const RULES = ["hit", "order", "reach", "accent", "rest", "honesty", "cost", "clock", "radius", "quiet"];
+  const $ = (id) => document.getElementById(id);
+  const root = document.documentElement, params = new URLSearchParams(location.search);
+
+  /* the theme: the system's until the switch is pressed, then the switch's */
+  const dark = () => (root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches);
+  const label = () => { $("theme").textContent = dark() ? "dark" : "light"; };
+  $("theme").addEventListener("click", () => { root.dataset.theme = dark() ? "light" : "dark"; label(); });
+  /* ?theme=light or ?theme=dark wins over the system's, as pressing the switch does */
+  if (["light", "dark"].includes(params.get("theme"))) root.dataset.theme = params.get("theme");
+  label();
+
+  /* ?intensity=0 sets the slider before the illustration mounts, for a look at either end */
+  const i = (params.get("intensity") || "").trim();
+  if (i && Number.isFinite(Number(i))) $("intensity").value = String(Math.min(1, Math.max(0, Number(i))));
+
+  /* ?w=240 narrows the page, for a look at the size of a thumbnail */
+  const w = Number(params.get("w"));
+  if (w > 0) document.querySelector("main").style.maxWidth = w + "px";
+
+  /* an illustration that fails says so under the stage, instead of leaving an empty plate */
+  addEventListener("error", (e) => {
+    $("error").hidden = false;
+    $("error").textContent = String((e.error && e.error.message) || e.message);
+  });
+
+  let mounted = false;
+  window.illustration = (def) => {
+    if (mounted) throw new Error("illustration: one illustration per page.");
+    mounted = true;
+    const stage = $("stage"), slider = $("intensity");
+    const at = (v) => HL.level(def.range, v);
+
+    const style = document.createElement("style");
+    style.textContent = HL.css("auto");
+    document.head.appendChild(style);
+    stage.setAttribute("data-illustration", def.name);
+    stage.setAttribute("role", "img");
+    stage.setAttribute("aria-label", def.means);
+
+    document.title = "Illustration · " + def.name;
+    $("name").textContent = def.name;
+    $("means").textContent = def.means;
+    $("rules").textContent = def.rules.map((n) => String(n).padStart(2, "0") + " " + RULES[n - 1]).join(" · ");
+    const show = () => { $("value").textContent = String(at(Number(slider.value))); };
+    show();
+
+    const host = HL.attach(stage);
+    const run = HL.mountIllustration(def, at(Number(slider.value)), {
+      stage: host.stage, svg: host.svg, onRead: (text) => { $("read").textContent = text; },
+    });
+    slider.addEventListener("input", () => { show(); run.set(at(Number(slider.value))); });
+    window.illustration.mounted = run;
+
+    /* play: an unseen pointer walks the illustration's tour (or HL.LAP) until a hand arrives; ?play=1 starts it on load */
+    const play = $("play");
+    window.illustration.playing = null;
+    play.addEventListener("click", () => {
+      const was = play.getAttribute("aria-pressed") === "true";
+      if (was) { window.illustration.playing.stop(); window.illustration.playing = null; }
+      else window.illustration.playing = HL.tour(host.stage, def.tour || HL.LAP, (i) => { if (window.illustration.onStop) window.illustration.onStop(i); });
+      play.setAttribute("aria-pressed", String(!was));
+    });
+    if (params.get("play") === "1") play.click();
+
+    /* ?at=200,160 holds the pointer at a viewBox point, for a picture of the answer without a mouse */
+    const p = (params.get("at") || "").split(",").map(Number);
+    if (p.length === 2 && p.every(Number.isFinite)) {
+      const r = stage.getBoundingClientRect();
+      stage.dispatchEvent(new PointerEvent("pointermove", {
+        pointerType: "mouse", pointerId: 1, bubbles: true,
+        clientX: r.left + (p[0] / 400) * r.width, clientY: r.top + (p[1] / 320) * r.height,
+      }));
+    }
+  };
+})();
+</script>
+<script type="module" id="il-illustration">/*ILLUSTRATION*/</script>
+</body>
+</html>

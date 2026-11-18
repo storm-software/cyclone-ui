@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Y" format="2">
+  <advance width="577"/>
+  <unicode hex="0059"/>
+  <anchor x="236.0" y="0.0" name="bottom"/>
+  <anchor x="361.0" y="698.0" name="top"/>
+  <outline>
+    <contour>
+      <point x="277" y="0" type="line"/>
+      <point x="332" y="273" type="line"/>
+      <point x="651" y="698" type="line"/>
+      <point x="558" y="698" type="line"/>
+      <point x="308" y="357" type="line"/>
+      <point x="303" y="357" type="line"/>
+      <point x="187" y="698" type="line"/>
+      <point x="105" y="698" type="line"/>
+      <point x="251" y="273" type="line"/>
+      <point x="196" y="0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.talk</key>
+      <string>
+
+/* Y direction */
+ResYAnchor(0,8)
+ResYAnchor(3,2)
+YShift(3,8)
+YInterpolate(0,2,3)
+YShift(2,5)
+YShift(2,9)
+/* X direction */
+Smooth()
+</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,15 +1,44 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc",
+    "tsBuildInfoFile": "../../dist/out-tsc/components/file-picker/tsconfig.tsbuildinfo",
     "jsx": "preserve",
+    "ignoreDeprecations": "6.0",
+    "rootDir": ".",
     "types": [
       "node",
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
-    ]
+    ],
+    "outDir": "../../dist/out-tsc/components/file-picker"
   },
+  "references": [
+    {
+      "path": "../../tools/config"
+    },
+    {
+      "path": "../../packages/state"
+    },
+    {
+      "path": "../icons"
+    },
+    {
+      "path": "../../packages/helpers"
+    },
+    {
+      "path": "../file"
+    },
+    {
+      "path": "../button"
+    },
+    {
+      "path": "../form"
+    },
+    {
+      "path": "../field"
+    }
+  ],
   "files": [],
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

@@ -1,0 +1,58 @@
+{
+  "name": "@cyclone-ui/code-block",
+  "version": "0.6.100",
+  "type": "module",
+  "description": "A figure that displays Shiki-highlighted code, with an optional title and icon, a copy-to-clipboard button, line numbers and a scrollable viewport. CodeBlock.Tabs, with List, Trigger and Content parts, switches between several code samples. Use it in documentation and technical content.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/code-block"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/copy-button": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/scroll-view": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/create-context": "catalog:",
+    "@tamagui/group": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@tamagui/tabs": "catalog:",
+    "@tamagui/web": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:",
+    "react-native-svg": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./CodeBlock": {
+      "import": "./dist/CodeBlock.mjs",
+      "require": "./dist/CodeBlock.cjs"
+    },
+    "./*": "./*"
+  }
+}

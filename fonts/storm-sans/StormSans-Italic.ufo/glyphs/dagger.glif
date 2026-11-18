@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="dagger" format="2">
+  <advance width="534"/>
+  <unicode hex="2020"/>
+  <outline>
+    <contour>
+      <point x="208" y="-200" type="line"/>
+      <point x="338" y="453" type="line"/>
+      <point x="523" y="453" type="line"/>
+      <point x="535" y="516" type="line"/>
+      <point x="351" y="516" type="line"/>
+      <point x="396" y="740" type="line"/>
+      <point x="330" y="740" type="line"/>
+      <point x="285" y="516" type="line"/>
+      <point x="102" y="516" type="line"/>
+      <point x="90" y="453" type="line"/>
+      <point x="272" y="453" type="line"/>
+      <point x="142" y="-200" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.talk</key>
+      <string>
+
+/* Y direction */
+ResYAnchor(0,14)
+ResYAnchor(6,0)
+YIPAnchor(6,8,0)
+YShift(8,4)
+ResYDist(8,11)
+YShift(11,3)
+/* X direction */
+Smooth()
+</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,43 +1,31 @@
 {
   "name": "@cyclone-ui/visually-hidden",
-  "version": "0.5.0",
+  "version": "0.5.90",
   "type": "module",
-  "description": "A visually hidden component meant to be shared in many other components",
+  "description": "A wrapper that hides its content visually but keeps it available to screen readers. The visible, preserveDimensions and animate variants can reveal the content or keep its size. Use it for accessible labels and text that only assistive technology should announce.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/visually-hidden"
   },
   "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
   "files": [
-    "dist",
-    "src",
-    "types"
+    "dist"
   ],
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@tamagui/core": "^1.116.15"
+    "@tamagui/core": "catalog:"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "@storybook/react-vite": "catalog:",
+    "@tamagui/tailwind": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"
@@ -45,5 +33,19 @@
   "sideEffects": [
     "*.css"
   ],
-  "module:jsx": "dist/jsx"
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./VisuallyHidden": {
+      "import": "./dist/VisuallyHidden.mjs",
+      "require": "./dist/VisuallyHidden.cjs"
+    },
+    "./*": "./*"
+  }
 }

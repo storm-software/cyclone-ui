@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<defs>
+		<mask id="dns-mask">
+			<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+				<path d="M12 4H19a1 1 0 0 1 1 1V9a1 1 0 0 1 -1 1H5a1 1 0 0 1 -1 -1V5a1 1 0 0 1 1 -1ZM12 14H19a1 1 0 0 1 1 1V19a1 1 0 0 1 -1 1H5a1 1 0 0 1 -1 -1V15a1 1 0 0 1 1 -1Z" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="43"><animate attributeName="fill-opacity" begin="0.5s" dur="0.4s" fill="freeze" to="1" /><animate attributeName="stroke-dashoffset" dur="0.5s" fill="freeze" values="43;0" /></path>
+				<circle cx="7" cy="7" fill="#000" r="0"><animate attributeName="r" begin="0.9s" dur="0.2s" fill="freeze" to="2" /></circle>
+				<circle cx="7" cy="17" fill="#000" r="0"><animate attributeName="r" begin="0.9s" dur="0.2s" fill="freeze" to="2" /></circle>
+			</g>
+		</mask>
+	</defs>
+	<path d="M0 0h24v24H0z" fill="currentColor" mask="url(#dns-mask)" />
+</svg>

@@ -1,0 +1,389 @@
+package com.stormsoftware.basemap;
+
+import blue.strategic.parquet.ParquetReader;
+import com.onthegomap.planetiler.ForwardingProfile;
+import com.onthegomap.planetiler.Planetiler;
+import com.onthegomap.planetiler.config.Arguments;
+import com.onthegomap.planetiler.reader.parquet.GeoParquetMetadata;
+import com.onthegomap.planetiler.util.Downloader;
+import com.onthegomap.planetiler.util.Glob;
+import com.stormsoftware.basemap.feature.CountryCoder;
+import com.stormsoftware.basemap.feature.QrankDb;
+import com.stormsoftware.basemap.layers.Boundaries;
+import com.stormsoftware.basemap.layers.Buildings;
+import com.stormsoftware.basemap.layers.Earth;
+import com.stormsoftware.basemap.layers.Landcover;
+import com.stormsoftware.basemap.layers.Landuse;
+import com.stormsoftware.basemap.layers.Places;
+import com.stormsoftware.basemap.layers.Pois;
+import com.stormsoftware.basemap.layers.Roads;
+import com.stormsoftware.basemap.layers.Transit;
+import com.stormsoftware.basemap.layers.Water;
+import com.stormsoftware.basemap.postprocess.Clip;
+import com.stormsoftware.basemap.text.FontRegistry;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import org.apache.parquet.ParquetReadOptions;
+import org.apache.parquet.hadoop.ParquetFileReader;
+import org.locationtech.jts.geom.Envelope;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
+public class Basemap extends ForwardingProfile {
+
+  private static final Logger LOGGER = LoggerFactory.getLogger(Basemap.class);
+
+  public Basemap(QrankDb qrankDb, CountryCoder countryCoder, Clip clip,
+    String layer) {
+
+    if (layer.isEmpty() || layer.equals(Boundaries.LAYER_NAME)) {
+      var admin = new Boundaries();
+      registerHandler(admin);
+      registerSourceHandler("osm", admin::processOsm);
+      registerSourceHandler("ne", admin::processNe);
+    }
+
+    if (layer.isEmpty() || layer.equals(Buildings.LAYER_NAME)) {
+      var buildings = new Buildings();
+      registerHandler(buildings);
+      registerSourceHandler("osm", buildings::processOsm);
+      registerSourceHandler("pm:overture", buildings::processOverture);
+    }
+
+    if (layer.isEmpty() || layer.equals(Landuse.LAYER_NAME)) {
+      var landuse = new Landuse();
+      registerHandler(landuse);
+      registerSourceHandler("osm", landuse::processOsm);
+      registerSourceHandler("pm:overture", landuse::processOverture);
+    }
+
+    if (layer.isEmpty() || layer.equals(Landcover.LAYER_NAME)) {
+      var landcover = new Landcover();
+      registerHandler(landcover);
+      registerSourceHandler("landcover", landcover::processLandcover);
+      registerSourceHandler("ne", landcover::processNe);
+      registerSourceHandler("pm:overture", landcover::processOverture);
+    }
+
+    if (layer.isEmpty() || layer.equals(Places.LAYER_NAME)) {
+      var place = new Places(countryCoder);
+      registerHandler(place);
+      registerSourceHandler("osm", place::processOsm);
+      registerSourceHandler("pm:overture", place::processOverture);
+    }
+
+    if (layer.isEmpty() || layer.equals(Pois.LAYER_NAME)) {
+      var poi = new Pois(qrankDb);
+      registerHandler(poi);
+      registerSourceHandler("osm", poi::processOsm);
+      registerSourceHandler("pm:overture", poi::processOverture);
+    }
+
+    if (layer.isEmpty() || layer.equals(Roads.LAYER_NAME)) {
+      var roads = new Roads(countryCoder);
+      registerHandler(roads);
+      registerSourceHandler("osm", roads::processOsm);
+      registerSourceHandler("pm:overture", roads::processOverture);
+    }
+
+    if (layer.isEmpty() || layer.equals(Transit.LAYER_NAME)) {
+      var transit = new Transit();
+      registerHandler(transit);
+      registerSourceHandler("osm", transit::processOsm);
+    }
+
+    if (layer.isEmpty() || layer.equals(Water.LAYER_NAME)) {
+      var water = new Water();
+      registerHandler(water);
+      registerSourceHandler("osm", water::processOsm);
+      registerSourceHandler("osm_water", water::processPreparedOsm);
+      registerSourceHandler("ne", water::processNe);
+      registerSourceHandler("pm:overture", water::processOverture);
+    }
+
+    if (layer.isEmpty() || layer.equals(Earth.LAYER_NAME)) {
+      var earth = new Earth();
+      registerHandler(earth);
+
+      registerSourceHandler("osm", earth::processOsm);
+      registerSourceHandler("osm_land", earth::processPreparedOsm);
+      registerSourceHandler("ne", earth::processNe);
+      registerSourceHandler("pm:overture", earth::processOverture);
+    }
+
+    if (clip != null) {
+      registerHandler(clip);
+    }
+  }
+
+  @Override
+  public String name() {
+    return "Storm Software - Basemap";
+  }
+
+  @Override
+  public String description() {
+    return "Basemap layers derived from OpenStreetMap and Natural Earth";
+  }
+
+  @Override
+  public String version() {
+    return "4.15.2";
+  }
+
+  @Override
+  public boolean isOverlay() {
+    return false;
+  }
+
+//   @Override
+//   public String attribution() {
+//     return null;
+//   }
+
+  @Override
+  public Map<String, String> extraArchiveMetadata() {
+    Map<String, String> result = new HashMap<>();
+
+    FontRegistry fontRegistry = FontRegistry.getInstance();
+    List<String> scripts = fontRegistry.getScripts();
+
+    for (String script : scripts) {
+      result.put("pgf:" + script.toLowerCase() + ":name", fontRegistry.getName(script));
+      result.put("pgf:" + script.toLowerCase() + ":version", fontRegistry.getVersion(script));
+    }
+
+    return result;
+  }
+
+  /**
+   * Extracts bounds from GeoParquet metadata and returns them as a formatted string.
+   *
+   * @param parquetPath Path to the GeoParquet file
+   * @return Bounds string in format "minX,minY,maxX,maxY" if successful, empty otherwise
+   */
+  static java.util.Optional<String> extractBoundsFromGeoParquet(Path parquetPath) {
+    try {
+      var inputFile = ParquetReader.makeInputFile(parquetPath.toFile());
+      try (var reader = ParquetFileReader.open(inputFile, ParquetReadOptions.builder().build())) {
+        var fileMetadata = reader.getFooter().getFileMetaData();
+        var geoparquet = GeoParquetMetadata.parse(fileMetadata);
+        Envelope bounds = geoparquet.primaryColumnMetadata().envelope();
+
+        if (bounds != null && !bounds.isNull() && bounds.getArea() > 0) {
+          String boundsStr = String.format(Locale.ROOT, "%f,%f,%f,%f",
+            bounds.getMinX(), bounds.getMinY(), bounds.getMaxX(), bounds.getMaxY());
+          return java.util.Optional.of(boundsStr);
+        }
+      }
+    } catch (Exception e) {
+      LOGGER.warn("Failed to read bounds from GeoParquet file: {}", e.getMessage());
+    }
+    return java.util.Optional.empty();
+  }
+
+  public static void main(String[] args) throws IOException {
+    // Check for help flag
+    for (String arg : args) {
+      if ("--version".equals(arg) || "-v".equals(arg)) {
+        printVersion();
+        System.exit(0);
+      }
+
+      if ("--help".equals(arg) || "-h".equals(arg)) {
+        printHelp();
+        System.exit(0);
+      }
+    }
+    run(Arguments.fromArgsOrConfigFile(args));
+  }
+
+  private static void printVersion() {
+    Basemap basemap = new Basemap(null, null, null, "");
+    System.out.println(basemap.version());
+  }
+
+  private static void printHelp() {
+    Basemap basemap = new Basemap(null, null, null, "");
+    System.out.println(String.format("""
+      %s v%s
+      %s
+
+      Usage:
+        java -jar stormsoftware-basemap-HEAD-with-deps.jar [options]
+
+      Storm Software - Basemap Options:
+        --help, -h              Show this help message and exit
+        --area=<name>           Geofabrik area name to download, or filename in data/sources/
+                                (default: monaco, e.g., us/california, washington)
+        --overture=<path>       Path to Overture Maps Parquet file (mutually exclusive with --area)
+        --maxzoom=<n>           Maximum zoom level (default: 15)
+        --layer=<name>          Process only a single layer (optional)
+                                Valid values: boundaries, buildings, landuse, landcover,
+                                              places, pois, roads, transit, water, earth
+        --clip=<path>           GeoJSON file path to clip tileset (optional)
+        --clip-buffer=<n>       Relative buffer around clip polygon (default: 4.0/256.0)
+              Use 0 for exact boundary, e.g. --clip-buffer=0
+
+      Common Planetiler Options:
+        --output=<path>         Output file path and format (e.g., output.pmtiles)
+        --force                 Overwrite existing output file
+        --download              Automatically download input sources
+        --only-download         Exit after downloading sources
+        --osm-path=<path>       Path to existing OSM extract file
+
+      Examples:
+        java -jar stormsoftware-basemap-HEAD-with-deps.jar --area=monaco
+        java -jar stormsoftware-basemap-HEAD-with-deps.jar --area=boston --maxzoom=14 --force
+        java -jar stormsoftware-basemap-HEAD-with-deps.jar --layer=roads --area=seattle
+
+      For a complete list of Planetiler options, see:
+        https://github.com/onthegomap/planetiler#usage
+
+      For more information: https://github.com/storm-software/cyclone-ui/tree/main/maps
+      """, basemap.name(), basemap.version(), basemap.description()));
+  }
+
+  @java.lang.SuppressWarnings("java:S5738")
+  static void run(Arguments args) throws IOException {
+    args = args.orElse(Arguments.of("maxzoom", 15));
+
+    Path dataDir = Path.of("data");
+    Path sourcesDir = dataDir.resolve("sources");
+
+    var countryCoder = CountryCoder.fromJarResource();
+
+    String area = args.getString("area", "Geofabrik area name to download, or filename in data/sources/", "");
+    String overtureFile = args.getString("overture", "Path to Overture Maps directory or .parquet file", "");
+
+    if (!area.isEmpty() && !overtureFile.isEmpty()) {
+      LOGGER.error("Error: Cannot specify both --area and --overture");
+      System.exit(1);
+    }
+    if (area.isEmpty() && overtureFile.isEmpty()) {
+      area = "monaco"; // default
+    }
+
+    // Extract bounds from GeoParquet metadata if using Overture source
+    if (!overtureFile.isEmpty() && args.getString("bounds", "", "").isEmpty()) {
+      Path parquetPath = Path.of(overtureFile);
+      var boundsOpt = extractBoundsFromGeoParquet(parquetPath);
+      if (boundsOpt.isPresent()) {
+        String boundsStr = boundsOpt.get();
+        LOGGER.info("Setting bounds from GeoParquet metadata: {}", boundsStr);
+        args = args.orElse(Arguments.of("bounds", boundsStr));
+      }
+    }
+
+    var planetiler = Planetiler.create(args)
+      .addGeoPackageSource("ne", sourcesDir.resolve("natural_earth_vector.gpkg.zip"),
+        "https://naciscdn.org/naturalearth/packages/natural_earth_vector.gpkg.zip");
+
+    if (!overtureFile.isEmpty()) {
+      Path base = args.inputFile("overture", "overture base directory", Path.of("data", "overture"));
+      var hivePartitoning = false;
+      var inputPaths = List.of(Path.of(overtureFile));
+      if (!overtureFile.endsWith(".parquet")) {
+        inputPaths = Glob.of(base).resolve("**", "*.parquet").find();
+        hivePartitoning = true;
+      }
+      // Add Overture Parquet source
+      planetiler.addParquetSource("pm:overture",
+        inputPaths,
+        hivePartitoning,
+        fields -> fields.get("id"),
+        fields -> fields.get("type") // source layer
+      );
+    } else {
+      // Add OSM and GeoPackage sources
+      planetiler
+        .addOsmSource("osm", Path.of("data", "sources", area + ".osm.pbf"), "geofabrik:" + area)
+        .addShapefileSource("osm_water", sourcesDir.resolve("water-polygons-split-3857.zip"),
+          "https://osmdata.openstreetmap.de/download/water-polygons-split-3857.zip")
+        .addShapefileSource("osm_land", sourcesDir.resolve("land-polygons-split-3857.zip"),
+          "https://osmdata.openstreetmap.de/download/land-polygons-split-3857.zip")
+        .addGeoPackageSource("landcover", sourcesDir.resolve("daylight-landcover.gpkg"),
+          "https://r2-public.protomaps.com/datasets/daylight-landcover.gpkg");
+    }
+
+    Path pgfEncodingZip = sourcesDir.resolve("pgf-encoding.zip");
+    Path qrankCsv = sourcesDir.resolve("qrank.csv.gz");
+
+    if (!Files.exists(qrankCsv)) {
+      Downloader.create(planetiler.config())
+        .add("qrank", "https://qrank.toolforge.org/download/qrank.csv.gz", qrankCsv)
+        .run();
+    }
+
+    var qrankDb = QrankDb.fromCsv(qrankCsv);
+
+    if (!Files.exists(pgfEncodingZip)) {
+      Downloader.create(planetiler.config())
+        .add("pgf-encoding", "https://wipfli.github.io/pgf-encoding/pgf-encoding.zip", pgfEncodingZip)
+        .run();
+    }
+
+    FontRegistry fontRegistry = FontRegistry.getInstance();
+    fontRegistry.setZipFilePath(pgfEncodingZip.toString());
+
+    Clip clip = null;
+    double clipBuffer = args.getDouble("clip_buffer",
+      "Relative buffer around clip polygon. 0 for exact boundary.", Clip.DEFAULT_BUFFER);
+    if (clipBuffer < 0) {
+      LOGGER.error("Error: --clip-buffer must be >= 0, but was {}", clipBuffer);
+      System.exit(1);
+    }
+    var clipArg = args.getString("clip", "File path to GeoJSON Polygon or MultiPolygon geometry to clip tileset.", "");
+    if (!clipArg.isEmpty()) {
+      clip =
+        Clip.fromGeoJSONFile(args.getStats(), planetiler.config().minzoom(), planetiler.config().maxzoom(), true,
+          clipBuffer, Paths.get(clipArg));
+    }
+
+    List<String> availableLayers = List.of(
+      Boundaries.LAYER_NAME,
+      Buildings.LAYER_NAME,
+      Landuse.LAYER_NAME,
+      Landcover.LAYER_NAME,
+      Places.LAYER_NAME,
+      Pois.LAYER_NAME,
+      Roads.LAYER_NAME,
+      Transit.LAYER_NAME,
+      Water.LAYER_NAME,
+      Earth.LAYER_NAME
+    );
+
+    String layer = args.getString("layer",
+      "Process only a single layer. Possible values are: " + String.join(", ", availableLayers), "");
+    if (!(layer.isEmpty() || availableLayers.contains(layer))) {
+      LOGGER.error("Error: --layer={} is not a valid option. Possible values are: {}", layer,
+        String.join(", ", availableLayers));
+      System.exit(1);
+    }
+
+    fontRegistry.loadFontBundle("NotoSansDevanagari-Regular", "1", "Devanagari");
+
+    String outputName;
+    if (!overtureFile.isEmpty()) {
+      String filename = Path.of(overtureFile).getFileName().toString();
+      if (filename.endsWith(".parquet")) {
+        outputName = filename.substring(0, filename.length() - ".parquet".length());
+      } else {
+        outputName = filename;
+      }
+    } else {
+      outputName = area;
+    }
+
+    planetiler.setProfile(new Basemap(qrankDb, countryCoder, clip, layer))
+      .setOutput(Path.of(outputName + ".pmtiles"))
+      .run();
+  }
+}

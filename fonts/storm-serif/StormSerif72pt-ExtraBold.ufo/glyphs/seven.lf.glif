@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="seven.lf" format="2">
+  <advance width="1162"/>
+  <outline>
+    <contour>
+      <point x="88" y="1043" type="line"/>
+      <point x="1023" y="1043" type="line"/>
+      <point x="1093" y="1269" type="line"/>
+      <point x="290" y="0" type="line"/>
+      <point x="691" y="0" type="line"/>
+      <point x="1170" y="1355" type="line"/>
+      <point x="1170" y="1394" type="line"/>
+      <point x="335" y="1394" type="line"/>
+      <point x="171" y="1483" type="line"/>
+      <point x="142" y="1483" type="line"/>
+      <point x="23" y="781" type="line"/>
+      <point x="74" y="781" type="line"/>
+      <point x="450" y="1211" type="line"/>
+    </contour>
+  </outline>
+</glyph>

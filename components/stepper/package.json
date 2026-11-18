@@ -1,0 +1,61 @@
+{
+  "name": "@cyclone-ui/stepper",
+  "version": "0.3.99",
+  "type": "module",
+  "description": "A multi-step wizard built on Tamagui Tabs with a vertical or horizontal header list whose ring markers and connecting lines fill in as steps are reached, in sm or lg sizes, with optional step numbers, descriptions and custom markers. Compound parts are Stepper.Header.Item, Stepper.Marker, Stepper.Content.Item, Stepper.NextButton and Stepper.PreviousButton, and only visited steps can be selected again. Use it for guided, ordered flows.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/stepper"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/next-button": "workspace:*",
+    "@cyclone-ui/number-text": "workspace:*",
+    "@cyclone-ui/previous-button": "workspace:*",
+    "@tamagui/animate-presence": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/shapes": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@tamagui/tabs": "catalog:",
+    "@tamagui/text": "catalog:",
+    "react-native-svg": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Stepper": {
+      "import": "./dist/Stepper.mjs",
+      "require": "./dist/Stepper.cjs"
+    },
+    "./*": "./*"
+  }
+}

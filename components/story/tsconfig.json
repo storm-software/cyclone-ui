@@ -1,0 +1,63 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/story/tsconfig.tsbuildinfo",
+    "jsx": "preserve",
+    "lib": ["ESnext", "DOM"],
+    "ignoreDeprecations": "6.0",
+    "rootDir": ".",
+    "types": [
+      "node",
+      "@nx/react/typings/cssmodule.d.ts",
+      "@nx/react/typings/image.d.ts"
+    ],
+    "outDir": "../../dist/out-tsc/components/story"
+  },
+  "references": [
+    {
+      "path": "../../tools/config"
+    },
+    {
+      "path": "../body-text"
+    },
+    {
+      "path": "../button"
+    },
+    {
+      "path": "../field"
+    },
+    {
+      "path": "../form"
+    },
+    {
+      "path": "../heading-text"
+    },
+    {
+      "path": "../icons"
+    },
+    {
+      "path": "../input"
+    },
+    {
+      "path": "../kbd"
+    },
+    {
+      "path": "../number-input"
+    },
+    {
+      "path": "../select"
+    },
+    {
+      "path": "../skeleton"
+    },
+    {
+      "path": "../switch"
+    },
+    {
+      "path": "../theme-select"
+    }
+  ],
+  "files": [],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+}

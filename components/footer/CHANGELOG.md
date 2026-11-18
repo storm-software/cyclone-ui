@@ -1,0 +1,1018 @@
+![Cyclone UI's logo banner](https://public.storm-cdn.com/cyclone-ui/media/banner-1280x320-dark.gif)
+
+# Changelog for Cyclone UI - Footer
+
+## [0.0.98](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.98) (11/18/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.90**
+- Updated **eyebrow-text** to **v0.5.90**
+- Updated **heading-text** to **v0.5.91**
+- Updated **icons** to **v0.0.93**
+- Updated **link** to **v0.5.99**
+
+## [0.0.97](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.97) (11/18/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.89**
+- Updated **eyebrow-text** to **v0.5.89**
+- Updated **heading-text** to **v0.5.90**
+- Updated **icons** to **v0.0.92**
+- Updated **link** to **v0.5.98**
+
+## [0.0.96](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.96) (11/18/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.88**
+- Updated **eyebrow-text** to **v0.5.88**
+- Updated **heading-text** to **v0.5.89**
+- Updated **icons** to **v0.0.91**
+- Updated **link** to **v0.5.97**
+
+## [0.0.95](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.95) (11/18/2026)
+
+### Updated Dependencies
+
+- Updated **icons** to **v0.0.90**
+- Updated **link** to **v0.5.96**
+
+## [0.0.94](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.94) (11/17/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.87**
+- Updated **eyebrow-text** to **v0.5.87**
+- Updated **heading-text** to **v0.5.88**
+- Updated **icons** to **v0.0.89**
+- Updated **link** to **v0.5.95**
+
+## [0.0.93](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.93) (11/17/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.86**
+- Updated **eyebrow-text** to **v0.5.86**
+- Updated **heading-text** to **v0.5.87**
+- Updated **icons** to **v0.0.88**
+- Updated **link** to **v0.5.94**
+
+## [0.0.92](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.92) (11/17/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.85**
+- Updated **eyebrow-text** to **v0.5.85**
+- Updated **heading-text** to **v0.5.86**
+- Updated **icons** to **v0.0.87**
+- Updated **link** to **v0.5.93**
+
+## [0.0.91](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.91) (11/17/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.84**
+- Updated **eyebrow-text** to **v0.5.84**
+- Updated **heading-text** to **v0.5.85**
+- Updated **icons** to **v0.0.86**
+- Updated **link** to **v0.5.92**
+
+## [0.0.90](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.90) (11/17/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.83**
+- Updated **eyebrow-text** to **v0.5.83**
+- Updated **heading-text** to **v0.5.84**
+- Updated **icons** to **v0.0.85**
+- Updated **link** to **v0.5.91**
+
+## [0.0.89](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.89) (11/16/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.82**
+- Updated **eyebrow-text** to **v0.5.82**
+- Updated **heading-text** to **v0.5.83**
+- Updated **icons** to **v0.0.84**
+- Updated **link** to **v0.5.90**
+
+## [0.0.88](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.88) (11/16/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.81**
+- Updated **eyebrow-text** to **v0.5.81**
+- Updated **heading-text** to **v0.5.82**
+- Updated **icons** to **v0.0.83**
+- Updated **link** to **v0.5.89**
+
+## [0.0.87](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.87) (11/15/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.80**
+- Updated **eyebrow-text** to **v0.5.80**
+- Updated **heading-text** to **v0.5.81**
+- Updated **icons** to **v0.0.82**
+- Updated **link** to **v0.5.88**
+
+## [0.0.86](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.86) (11/15/2026)
+
+### Updated Dependencies
+
+- Updated **icons** to **v0.0.81**
+- Updated **link** to **v0.5.87**
+
+## [0.0.85](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.85) (11/14/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.79**
+- Updated **eyebrow-text** to **v0.5.79**
+- Updated **heading-text** to **v0.5.80**
+- Updated **icons** to **v0.0.80**
+- Updated **link** to **v0.5.86**
+
+## [0.0.84](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.84) (11/14/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.78**
+- Updated **eyebrow-text** to **v0.5.78**
+- Updated **heading-text** to **v0.5.79**
+- Updated **icons** to **v0.0.79**
+- Updated **link** to **v0.5.85**
+
+## [0.0.83](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.83) (11/14/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.77**
+- Updated **eyebrow-text** to **v0.5.77**
+- Updated **heading-text** to **v0.5.78**
+- Updated **icons** to **v0.0.78**
+- Updated **link** to **v0.5.84**
+
+## [0.0.82](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.82) (11/14/2026)
+
+### Documentation
+
+- **monorepo:** Added/updated documentation for components library ([1eb18466d](https://github.com/storm-software/cyclone-ui/commit/1eb18466d))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.76**
+- Updated **eyebrow-text** to **v0.5.76**
+- Updated **heading-text** to **v0.5.77**
+- Updated **icons** to **v0.0.77**
+- Updated **link** to **v0.5.83**
+
+## [0.0.81](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.81) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.75**
+- Updated **eyebrow-text** to **v0.5.75**
+- Updated **heading-text** to **v0.5.76**
+- Updated **icons** to **v0.0.76**
+- Updated **link** to **v0.5.82**
+
+## [0.0.80](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.80) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.74**
+- Updated **eyebrow-text** to **v0.5.74**
+- Updated **heading-text** to **v0.5.75**
+- Updated **icons** to **v0.0.75**
+- Updated **link** to **v0.5.81**
+
+## [0.0.79](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.79) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.73**
+- Updated **eyebrow-text** to **v0.5.73**
+- Updated **heading-text** to **v0.5.74**
+- Updated **icons** to **v0.0.74**
+- Updated **link** to **v0.5.80**
+
+## [0.0.78](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.78) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.72**
+- Updated **eyebrow-text** to **v0.5.72**
+- Updated **heading-text** to **v0.5.73**
+- Updated **icons** to **v0.0.73**
+- Updated **link** to **v0.5.79**
+
+## [0.0.77](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.77) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.71**
+- Updated **eyebrow-text** to **v0.5.71**
+- Updated **heading-text** to **v0.5.72**
+- Updated **icons** to **v0.0.72**
+- Updated **link** to **v0.5.78**
+
+## [0.0.76](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.76) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.70**
+- Updated **eyebrow-text** to **v0.5.70**
+- Updated **heading-text** to **v0.5.71**
+- Updated **icons** to **v0.0.71**
+- Updated **link** to **v0.5.77**
+
+## [0.0.75](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.75) (11/12/2026)
+
+### Updated Dependencies
+
+- Updated **icons** to **v0.0.70**
+- Updated **link** to **v0.5.76**
+
+## [0.0.74](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.74) (11/12/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.69**
+- Updated **eyebrow-text** to **v0.5.69**
+- Updated **heading-text** to **v0.5.70**
+- Updated **icons** to **v0.0.69**
+- Updated **link** to **v0.5.75**
+
+## [0.0.73](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.73) (11/12/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.68**
+- Updated **eyebrow-text** to **v0.5.68**
+- Updated **heading-text** to **v0.5.69**
+- Updated **icons** to **v0.0.68**
+- Updated **link** to **v0.5.74**
+
+## [0.0.72](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.72) (11/11/2026)
+
+### Updated Dependencies
+
+- Updated **link** to **v0.5.73**
+
+## [0.0.71](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.71) (11/11/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.67**
+- Updated **eyebrow-text** to **v0.5.67**
+- Updated **heading-text** to **v0.5.68**
+- Updated **icons** to **v0.0.67**
+- Updated **link** to **v0.5.72**
+
+## [0.0.70](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.70) (11/11/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.66**
+- Updated **eyebrow-text** to **v0.5.66**
+- Updated **heading-text** to **v0.5.67**
+- Updated **icons** to **v0.0.66**
+- Updated **link** to **v0.5.71**
+
+## [0.0.69](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.69) (11/10/2026)
+
+### Bug Fixes
+
+- **footer:** Clean up responsiveness of the footer and the Medium icon ([fb5dc1c29](https://github.com/storm-software/cyclone-ui/commit/fb5dc1c29))
+
+### Updated Dependencies
+
+- Updated **icons** to **v0.0.65**
+- Updated **link** to **v0.5.70**
+
+## [0.0.68](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.68) (11/10/2026)
+
+### Features
+
+- **submit-button:** Initial check-in of the `SubmitButton` component package ([719710dcb](https://github.com/storm-software/cyclone-ui/commit/719710dcb))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.65**
+- Updated **eyebrow-text** to **v0.5.65**
+- Updated **heading-text** to **v0.5.66**
+- Updated **icons** to **v0.0.64**
+- Updated **link** to **v0.5.69**
+
+## [0.0.67](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.67) (11/10/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.64**
+- Updated **eyebrow-text** to **v0.5.64**
+- Updated **heading-text** to **v0.5.65**
+- Updated **icons** to **v0.0.63**
+- Updated **link** to **v0.5.68**
+
+## [0.0.66](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.66) (11/09/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.63**
+- Updated **eyebrow-text** to **v0.5.63**
+- Updated **heading-text** to **v0.5.64**
+- Updated **icons** to **v0.0.62**
+- Updated **link** to **v0.5.67**
+
+## [0.0.65](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.65) (11/09/2026)
+
+### Updated Dependencies
+
+- Updated **icons** to **v0.0.61**
+- Updated **link** to **v0.5.66**
+
+## [0.0.64](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.64) (11/09/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.62**
+- Updated **eyebrow-text** to **v0.5.62**
+- Updated **heading-text** to **v0.5.63**
+- Updated **icons** to **v0.0.60**
+- Updated **link** to **v0.5.65**
+
+## [0.0.63](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.63) (11/08/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.61**
+- Updated **eyebrow-text** to **v0.5.61**
+- Updated **heading-text** to **v0.5.62**
+- Updated **icons** to **v0.0.59**
+- Updated **link** to **v0.5.64**
+
+## [0.0.62](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.62) (11/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Clean up component packages to reduce excess count ([81f64b0c8](https://github.com/storm-software/cyclone-ui/commit/81f64b0c8))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.60**
+- Updated **eyebrow-text** to **v0.5.60**
+- Updated **heading-text** to **v0.5.61**
+- Updated **icons** to **v0.0.58**
+- Updated **link** to **v0.5.63**
+
+## [0.0.61](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.61) (11/08/2026)
+
+### Features
+
+- **floating-toolbar:** Initial check-in of the `FloatingToolbar` component package ([6b2dbcaf3](https://github.com/storm-software/cyclone-ui/commit/6b2dbcaf3))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.59**
+- Updated **eyebrow-text** to **v0.5.59**
+- Updated **heading-text** to **v0.5.60**
+- Updated **icons** to **v0.0.57**
+- Updated **link** to **v0.5.62**
+
+## [0.0.60](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.60) (11/08/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.58**
+- Updated **heading-text** to **v0.5.59**
+- Updated **icons** to **v0.0.56**
+- Updated **link** to **v0.5.61**
+
+## [0.0.59](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.59) (11/07/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.57**
+- Updated **heading-text** to **v0.5.58**
+- Updated **icons** to **v0.0.55**
+- Updated **link** to **v0.5.60**
+
+## [0.0.58](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.58) (11/07/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.56**
+- Updated **heading-text** to **v0.5.57**
+- Updated **icons** to **v0.0.54**
+- Updated **link** to **v0.5.59**
+
+## [0.0.57](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.57) (11/07/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.55**
+- Updated **heading-text** to **v0.5.56**
+- Updated **icons** to **v0.0.53**
+- Updated **link** to **v0.5.58**
+
+## [0.0.56](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.56) (11/07/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.54**
+- Updated **heading-text** to **v0.5.55**
+- Updated **icons** to **v0.0.52**
+- Updated **link** to **v0.5.57**
+
+## [0.0.55](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.55) (11/06/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.53**
+- Updated **heading-text** to **v0.5.54**
+- Updated **icons** to **v0.0.51**
+- Updated **link** to **v0.5.56**
+
+## [0.0.54](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.54) (11/06/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.52**
+- Updated **heading-text** to **v0.5.53**
+- Updated **icons** to **v0.0.50**
+- Updated **link** to **v0.5.55**
+
+## [0.0.53](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.53) (11/05/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.51**
+- Updated **heading-text** to **v0.5.52**
+- Updated **icons** to **v0.0.49**
+- Updated **link** to **v0.5.54**
+
+## [0.0.52](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.52) (11/05/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.50**
+- Updated **heading-text** to **v0.5.51**
+- Updated **icons** to **v0.0.48**
+- Updated **link** to **v0.5.53**
+
+## [0.0.51](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.51) (11/05/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.49**
+- Updated **heading-text** to **v0.5.50**
+- Updated **icons** to **v0.0.47**
+- Updated **link** to **v0.5.52**
+
+## [0.0.50](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.50) (11/05/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.48**
+- Updated **heading-text** to **v0.5.49**
+- Updated **icons** to **v0.0.46**
+- Updated **link** to **v0.5.51**
+
+## [0.0.49](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.49) (11/05/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.47**
+- Updated **heading-text** to **v0.5.48**
+- Updated **icons** to **v0.0.45**
+- Updated **link** to **v0.5.50**
+
+## [0.0.48](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.48) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.46**
+- Updated **heading-text** to **v0.5.47**
+- Updated **icons** to **v0.0.44**
+- Updated **link** to **v0.5.49**
+
+## [0.0.47](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.47) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.45**
+- Updated **heading-text** to **v0.5.46**
+- Updated **icons** to **v0.0.43**
+- Updated **link** to **v0.5.48**
+
+## [0.0.46](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.46) (11/03/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.44**
+- Updated **heading-text** to **v0.5.45**
+- Updated **icons** to **v0.0.42**
+- Updated **link** to **v0.5.47**
+
+## [0.0.45](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.45) (11/03/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.43**
+- Updated **heading-text** to **v0.5.44**
+- Updated **icons** to **v0.0.41**
+- Updated **link** to **v0.5.46**
+
+## [0.0.44](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.44) (11/03/2026)
+
+### Updated Dependencies
+
+- Updated **icons** to **v0.0.40**
+- Updated **link** to **v0.5.45**
+
+## [0.0.43](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.43) (11/03/2026)
+
+### Updated Dependencies
+
+- Updated **link** to **v0.5.44**
+
+## [0.0.42](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.42) (11/03/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.42**
+- Updated **heading-text** to **v0.5.43**
+- Updated **icons** to **v0.0.39**
+- Updated **link** to **v0.5.43**
+
+## [0.0.41](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.41) (11/03/2026)
+
+### Features
+
+- **footer:** Split footer out into a layout and block type components ([3976202de](https://github.com/storm-software/cyclone-ui/commit/3976202de))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.41**
+- Updated **heading-text** to **v0.5.42**
+- Updated **icons** to **v0.0.38**
+- Updated **link** to **v0.5.42**
+
+## [0.0.40](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.40) (11/02/2026)
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.41**
+
+## [0.0.39](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.39) (11/02/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update the components to better support server-side rendering ([9169cc5d7](https://github.com/storm-software/cyclone-ui/commit/9169cc5d7))
+
+### Updated Dependencies
+
+- Updated **icons** to **v0.0.37**
+- Updated **link** to **v0.5.41**
+- Updated **vectors** to **v0.5.41**
+
+## [0.0.38](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.38) (11/01/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.40**
+- Updated **heading-text** to **v0.5.40**
+- Updated **icons** to **v0.0.36**
+- Updated **link** to **v0.5.40**
+- Updated **vectors** to **v0.5.40**
+
+## [0.0.37](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.37) (11/01/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.39**
+- Updated **heading-text** to **v0.5.39**
+- Updated **icons** to **v0.0.35**
+- Updated **link** to **v0.5.39**
+- Updated **vectors** to **v0.5.39**
+
+## [0.0.36](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.36) (10/31/2026)
+
+### Features
+
+- **icons:** Update icons to match material design icons with animations ([84720d7e0](https://github.com/storm-software/cyclone-ui/commit/84720d7e0))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.38**
+- Updated **heading-text** to **v0.5.38**
+- Updated **icons** to **v0.0.34**
+- Updated **link** to **v0.5.38**
+- Updated **vectors** to **v0.5.38**
+
+## [0.0.35](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.35) (10/31/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.37**
+- Updated **heading-text** to **v0.5.37**
+- Updated **icons** to **v0.0.33**
+- Updated **link** to **v0.5.37**
+- Updated **vectors** to **v0.5.37**
+
+## [0.0.34](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.34) (10/30/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.36**
+- Updated **heading-text** to **v0.5.36**
+- Updated **icons** to **v0.0.32**
+- Updated **link** to **v0.5.36**
+- Updated **vectors** to **v0.5.36**
+
+## [0.0.33](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.33) (10/29/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.35**
+- Updated **heading-text** to **v0.5.35**
+- Updated **icons** to **v0.0.31**
+- Updated **link** to **v0.5.35**
+- Updated **vectors** to **v0.5.35**
+
+## [0.0.32](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.32) (10/29/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.34**
+- Updated **heading-text** to **v0.5.34**
+- Updated **icons** to **v0.0.30**
+- Updated **link** to **v0.5.34**
+- Updated **vectors** to **v0.5.34**
+
+## [0.0.31](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.31) (10/29/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.33**
+- Updated **heading-text** to **v0.5.33**
+- Updated **icons** to **v0.0.29**
+- Updated **link** to **v0.5.33**
+- Updated **vectors** to **v0.5.33**
+
+## [0.0.30](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.30) (10/25/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.32**
+- Updated **heading-text** to **v0.5.32**
+- Updated **icons** to **v0.0.28**
+- Updated **link** to **v0.5.32**
+- Updated **vectors** to **v0.5.32**
+
+## [0.0.29](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.29) (10/24/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.31**
+- Updated **heading-text** to **v0.5.31**
+- Updated **icons** to **v0.0.27**
+- Updated **link** to **v0.5.31**
+- Updated **vectors** to **v0.5.31**
+
+## [0.0.28](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.28) (10/24/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.30**
+- Updated **heading-text** to **v0.5.30**
+- Updated **icons** to **v0.0.26**
+- Updated **link** to **v0.5.30**
+- Updated **vectors** to **v0.5.30**
+
+## [0.0.27](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.27) (10/23/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.29**
+- Updated **heading-text** to **v0.5.29**
+- Updated **icons** to **v0.0.25**
+- Updated **link** to **v0.5.29**
+- Updated **vectors** to **v0.5.29**
+
+## [0.0.26](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.26) (10/23/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.28**
+- Updated **heading-text** to **v0.5.28**
+- Updated **icons** to **v0.0.24**
+- Updated **link** to **v0.5.28**
+- Updated **vectors** to **v0.5.28**
+
+## [0.0.25](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.25) (10/23/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.27**
+- Updated **heading-text** to **v0.5.27**
+- Updated **icons** to **v0.0.23**
+- Updated **link** to **v0.5.27**
+- Updated **vectors** to **v0.5.27**
+
+## [0.0.24](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.24) (10/23/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.26**
+- Updated **heading-text** to **v0.5.26**
+- Updated **icons** to **v0.0.22**
+- Updated **link** to **v0.5.26**
+- Updated **vectors** to **v0.5.26**
+
+## [0.0.23](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.23) (10/22/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update components to use `use client` directives as needed ([5bc81ef8](https://github.com/storm-software/cyclone-ui/commit/5bc81ef8))
+- **tokens:** Update token structure to better allow customizations ([7f23eb61](https://github.com/storm-software/cyclone-ui/commit/7f23eb61))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.25**
+- Updated **heading-text** to **v0.5.25**
+- Updated **icons** to **v0.0.21**
+- Updated **link** to **v0.5.25**
+- Updated **vectors** to **v0.5.25**
+
+## [0.0.22](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.22) (10/19/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.24**
+- Updated **heading-text** to **v0.5.24**
+- Updated **icons** to **v0.0.20**
+- Updated **link** to **v0.5.24**
+- Updated **vectors** to **v0.5.24**
+
+## [0.0.21](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.21) (10/19/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.23**
+- Updated **heading-text** to **v0.5.23**
+- Updated **icons** to **v0.0.19**
+- Updated **link** to **v0.5.23**
+- Updated **vectors** to **v0.5.23**
+
+## [0.0.20](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.20) (10/18/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.22**
+- Updated **heading-text** to **v0.5.22**
+- Updated **icons** to **v0.0.18**
+- Updated **link** to **v0.5.22**
+- Updated **vectors** to **v0.5.22**
+
+## [0.0.19](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.19) (10/16/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.21**
+- Updated **heading-text** to **v0.5.21**
+- Updated **icons** to **v0.0.17**
+- Updated **link** to **v0.5.21**
+- Updated **vectors** to **v0.5.21**
+
+## [0.0.18](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.18) (10/16/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.20**
+- Updated **heading-text** to **v0.5.20**
+- Updated **icons** to **v0.0.16**
+- Updated **link** to **v0.5.20**
+- Updated **vectors** to **v0.5.20**
+
+## [0.0.17](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.17) (10/16/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.19**
+- Updated **heading-text** to **v0.5.19**
+- Updated **icons** to **v0.0.15**
+- Updated **link** to **v0.5.19**
+- Updated **vectors** to **v0.5.19**
+
+## [0.0.16](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.16) (10/16/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.18**
+- Updated **heading-text** to **v0.5.18**
+- Updated **icons** to **v0.0.14**
+- Updated **link** to **v0.5.18**
+- Updated **vectors** to **v0.5.18**
+
+## [0.0.15](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.15) (10/14/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.17**
+- Updated **heading-text** to **v0.5.17**
+- Updated **icons** to **v0.0.13**
+- Updated **link** to **v0.5.17**
+- Updated **vectors** to **v0.5.17**
+
+## [0.0.14](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.14) (10/13/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.16**
+- Updated **heading-text** to **v0.5.16**
+- Updated **icons** to **v0.0.12**
+- Updated **link** to **v0.5.16**
+- Updated **vectors** to **v0.5.16**
+
+## [0.0.13](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.13) (10/12/2026)
+
+### Bug Fixes
+
+- **tokens:** Updates to background token structure ([913fc3c9](https://github.com/storm-software/cyclone-ui/commit/913fc3c9))
+- **tokens:** Added back the hovered variants ([552ee0e4](https://github.com/storm-software/cyclone-ui/commit/552ee0e4))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.15**
+- Updated **heading-text** to **v0.5.15**
+- Updated **icons** to **v0.0.11**
+- Updated **link** to **v0.5.15**
+- Updated **vectors** to **v0.5.15**
+
+## [0.0.12](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.12) (10/12/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.14**
+- Updated **heading-text** to **v0.5.14**
+- Updated **icons** to **v0.0.10**
+- Updated **link** to **v0.5.14**
+- Updated **vectors** to **v0.5.14**
+
+## [0.0.11](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.11) (10/11/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.13**
+- Updated **heading-text** to **v0.5.13**
+- Updated **icons** to **v0.0.9**
+- Updated **link** to **v0.5.13**
+- Updated **vectors** to **v0.5.13**
+
+## [0.0.10](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.10) (10/11/2026)
+
+### Bug Fixes
+
+- **themes:** Update the token structure in the design system ([a226f474](https://github.com/storm-software/cyclone-ui/commit/a226f474))
+- **monorepo:** Update component descriptions and added design sync with Claude Design ([35ece709](https://github.com/storm-software/cyclone-ui/commit/35ece709))
+
+### Features
+
+- **confetti-burst:** Added the Confetti Burst reusable animation ([b395a334](https://github.com/storm-software/cyclone-ui/commit/b395a334))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.12**
+- Updated **heading-text** to **v0.5.12**
+- Updated **icons** to **v0.0.8**
+- Updated **link** to **v0.5.12**
+- Updated **vectors** to **v0.5.12**
+
+## [0.0.9](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.9) (10/07/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.11**
+- Updated **heading-text** to **v0.5.11**
+- Updated **icons** to **v0.0.7**
+- Updated **link** to **v0.5.11**
+- Updated **vectors** to **v0.5.11**
+
+## [0.0.8](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.8) (10/06/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.10**
+- Updated **heading-text** to **v0.5.10**
+- Updated **icons** to **v0.0.6**
+- Updated **link** to **v0.5.10**
+- Updated **vectors** to **v0.5.10**
+
+## [0.0.7](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.7) (10/05/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.9**
+- Updated **heading-text** to **v0.5.9**
+- Updated **icons** to **v0.0.5**
+- Updated **link** to **v0.5.9**
+- Updated **vectors** to **v0.5.9**
+
+## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.6) (10/05/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve release workflow warnings ([e0f2b332](https://github.com/storm-software/cyclone-ui/commit/e0f2b332))
+
+### Features
+
+- **page:** Added Page component for base layout ([0bc9835e](https://github.com/storm-software/cyclone-ui/commit/0bc9835e))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.8**
+- Updated **heading-text** to **v0.5.8**
+- Updated **icons** to **v0.0.4**
+- Updated **link** to **v0.5.8**
+- Updated **vectors** to **v0.5.8**
+
+## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.5) (10/04/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.7**
+- Updated **heading-text** to **v0.5.7**
+- Updated **icons** to **v0.0.3**
+- Updated **link** to **v0.5.7**
+- Updated **vectors** to **v0.5.7**
+
+## [0.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.4) (10/03/2026)
+
+### Features
+
+- **icons:** Added icons library and removed lucid references ([45024ce8](https://github.com/storm-software/cyclone-ui/commit/45024ce8))
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.6**
+- Updated **heading-text** to **v0.5.6**
+- Updated **icons** to **v0.0.2**
+- Updated **link** to **v0.5.6**
+- Updated **vectors** to **v0.5.6**
+
+## [0.0.3](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.3) (09/21/2026)
+
+### Bug Fixes
+
+- **monorepo:** Stlying clean up and improved component props ([4eba5c0f](https://github.com/storm-software/cyclone-ui/commit/4eba5c0f))
+- **body-text:** Updates to workspace to use `BodyText` component ([af8e53c5](https://github.com/storm-software/cyclone-ui/commit/af8e53c5))
+
+### Features
+
+- **themes:** Update theme colors and apply them to components ([83c95718](https://github.com/storm-software/cyclone-ui/commit/83c95718))
+- **display-text:** Added display text component and Razorwind plugins ([eb288dfa](https://github.com/storm-software/cyclone-ui/commit/eb288dfa))
+- **collapsible:** Added the `Collapsible` component package ([f903127c](https://github.com/storm-software/cyclone-ui/commit/f903127c))
+- **redacted-animation:** Added Redacted animation component ([9516a9b9](https://github.com/storm-software/cyclone-ui/commit/9516a9b9))
+- **table-of-contents:** Initial check-in of Table of Contents component ([88fee2a9](https://github.com/storm-software/cyclone-ui/commit/88fee2a9))
+- **vectors:** Added the StormLogoText and StormLogoIcon svg components ([51c800eb](https://github.com/storm-software/cyclone-ui/commit/51c800eb))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.5**
+- Updated **heading-text** to **v0.5.5**
+- Updated **link** to **v0.5.5**
+- Updated **vectors** to **v0.5.5**
+
+## [0.0.2](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.2) (09/13/2026)
+
+### Features
+
+- **footer:** Initial check-in of the Footer component ([847296b](https://github.com/storm-software/cyclone-ui/commit/847296b))
+
+### Updated Dependencies
+
+- Updated **link** to **v0.5.4**

@@ -1,21 +1,22 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import type { Meta, StoryObj } from "@storybook/react";
+ ------------------------------------------------------------------- */
+
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { HeadingText } from "./HeadingText";
 
@@ -31,7 +32,7 @@ const meta: Meta<typeof HeadingText> = {
       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
       velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
+      est laborum. 0123456789!
     </HeadingText>
   )
 } satisfies Meta<typeof HeadingText>;
@@ -44,61 +45,96 @@ export const Base: Story = {
   args: {}
 };
 
-export const Heading1: Story = {
-  args: {
-    level: 1
-  }
-};
-
-export const Heading2: Story = {
-  args: {
-    level: 2
-  }
-};
-
-export const Heading3: Story = {
-  args: {
-    level: 3
-  }
-};
-
-export const Heading4: Story = {
-  args: {
-    level: 4
-  }
-};
-
-export const Heading5: Story = {
-  args: {
-    level: 5
-  }
-};
-
-export const Heading6: Story = {
-  args: {
-    level: 6
-  }
-};
-
 export const Brand: Story = {
   args: {
     theme: "brand"
   }
 };
 
-export const Alternate: Story = {
+export const HeadingHero: Story = {
   args: {
-    theme: "alternate"
+    level: "hero"
   }
 };
 
-export const Help: Story = {
+export const HeadingTitle: Story = {
   args: {
-    theme: "help"
+    level: "title"
   }
 };
 
-export const Error: Story = {
+export const HeadingLarge: Story = {
+  args: {
+    level: "lg"
+  }
+};
+
+export const HeadingMedium: Story = {
+  args: {
+    level: "md"
+  }
+};
+
+export const HeadingSmall: Story = {
+  args: {
+    level: "sm"
+  }
+};
+
+export const HeadingExtraSmall: Story = {
+  args: {
+    level: "xs"
+  }
+};
+
+export const EditorialHero: Story = {
+  args: {
+    level: "hero",
+    variant: "editorial"
+  }
+};
+
+export const EditorialTitle: Story = {
+  args: {
+    level: "title",
+    variant: "editorial"
+  }
+};
+
+export const EditorialLarge: Story = {
+  args: {
+    level: "lg",
+    variant: "editorial"
+  }
+};
+
+export const EditorialMedium: Story = {
+  args: {
+    level: "md",
+    variant: "editorial"
+  }
+};
+
+export const EditorialSmall: Story = {
+  args: {
+    level: "sm",
+    variant: "editorial"
+  }
+};
+export const EditorialExtraSmall: Story = {
+  args: {
+    level: "xs",
+    variant: "editorial"
+  }
+};
+
+export const Discovery: Story = {
+  args: {
+    theme: "discovery"
+  }
+};
+
+export const Danger: Story = {
   args: {
     theme: "danger"
   }

@@ -1,0 +1,11 @@
+{
+  "name": "number-input",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "components/number-input/src",
+  "targets": {
+    "nx-release-publish": {
+      "executor": "@cyclone-ui/tools-nx:component-publish"
+    }
+  }
+}

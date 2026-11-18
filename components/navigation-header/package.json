@@ -1,0 +1,59 @@
+{
+  "name": "@cyclone-ui/navigation-header",
+  "version": "0.0.99",
+  "type": "module",
+  "description": "A responsive site header made of Logo, Navigation, Actions and MenuButton slots. Navigation.Item supports Group and Link children, which render as a desktop mega menu and a collapsible mobile panel. Items can be featured, active or external, and the header tracks page scroll.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/navigation-header"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/eyebrow-text": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/link": "workspace:*",
+    "@cyclone-ui/redacted-animation": "workspace:*",
+    "@cyclone-ui/search-dialog": "workspace:*",
+    "@cyclone-ui/theme-toggler": "workspace:*",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/state": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "@tamagui/text": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./NavigationHeader": {
+      "import": "./dist/NavigationHeader.mjs",
+      "require": "./dist/NavigationHeader.cjs"
+    },
+    "./*": "./*"
+  }
+}

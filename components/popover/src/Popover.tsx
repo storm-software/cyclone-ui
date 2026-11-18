@@ -1,155 +1,234 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
+ ------------------------------------------------------------------- */
+
+"use client";
+
+import type {
+  ContainerSurfaceProps,
+  ContainerVariant
+} from "@cyclone-ui/container";
+import {
+  ContainerBackground,
+  containerShadows,
+  containerVariants
+} from "@cyclone-ui/container";
 import { ScrollView } from "@cyclone-ui/scroll-view";
+import { Sheet } from "@cyclone-ui/sheet";
+import type { AdaptWhen } from "@tamagui/adapt";
 import { Adapt } from "@tamagui/adapt";
+import type { GetProps, SizeTokens } from "@tamagui/core";
 import {
   createStyledContext,
-  SizeTokens,
+  createStyledHOC,
   styled,
   withStaticProperties
 } from "@tamagui/core";
 import { Popover as TamaguiPopover } from "@tamagui/popover";
 
-export type PopoverContextProps = {
-  size: SizeTokens;
-  shouldAdapt: true;
-};
+export type PopoverVariant = ContainerVariant;
 
-export const PopoverContext = createStyledContext<PopoverContextProps>({
-  size: "$true",
-  shouldAdapt: true
-});
+/**
+ * The surface of the popover's content, arrow and small-screen sheet, drawn by
+ * a `Container`. `Popover.Content` can also set its own. `variant` defaults to
+ * `elevated` and `shadowStyle` to `elevated`; an `outlined` popover keeps an
+ * opaque `elevated` backing so its content stays readable over the page.
+ */
+export interface PopoverContextProps extends ContainerSurfaceProps {
+  size: SizeTokens;
+}
+
+export const PopoverContext = createStyledContext<PopoverContextProps, "size">(
+  {
+    size: true
+  } as PopoverContextProps,
+  {
+    // Not the surface props: `PopoverContentImpl` passes them on, so a
+    // surface set on `Popover.Content` reaches the arrow too.
+    keys: ["size"]
+  }
+);
 
 const PopoverFrame = styled(TamaguiPopover, {
-  name: "Popover",
+  displayName: "Popover",
   context: PopoverContext
 });
 
-const PopoverFrameImpl = PopoverFrame.styleable<Partial<PopoverContextProps>>(
+export interface PopoverFrameExtraProps extends Partial<PopoverContextProps> {
+  shouldAdapt?: boolean;
+}
+
+const PopoverFrameImpl = createStyledHOC(
+  PopoverFrame,
   (
-    { children, size = "$true", shouldAdapt = true, ...props },
+    {
+      children,
+      size = true,
+      shouldAdapt = true,
+      variant,
+      shadowStyle,
+      glass,
+      noise,
+      accented,
+      ...props
+    }: GetProps<typeof PopoverFrame> & PopoverFrameExtraProps,
     forwardedRef
   ) => {
+    const surface = { variant, shadowStyle, glass, noise, accented };
+
     return (
-      <PopoverContext.Provider size={size} shouldAdapt={shouldAdapt}>
+      <PopoverContext.Provider size={size} {...surface}>
+        {/* Not `PopoverFrame`: a styled frame consumes `offset` as the CSS
+            `offset` style, so it never reaches the popper. */}
         <TamaguiPopover
           ref={forwardedRef}
-          size={size}
           allowFlip={true}
+          stayInFrame={true}
           {...props}>
           {children}
 
           {shouldAdapt && (
-            <Adapt when={"sm" as any} platform="touch">
-              <TamaguiPopover.Sheet
-                modal={true}
-                dismissOnSnapToBottom={true}
-                snapPointsMode="fit">
-                <TamaguiPopover.Sheet.Frame padding="$4">
+            // Viewport-only (no `platform`), so every small screen gets the
+            // bottom sheet, not just touch devices. The app's media keys are
+            // declared by the app config, which this package's typecheck
+            // doesn't load.
+            <Adapt when={"max-sm" as unknown as AdaptWhen}>
+              <Sheet snapPoints={["fit"]} snapPointsMode="fit" {...surface}>
+                <Sheet.Overlay />
+                <Sheet.Container padding="5xl">
+                  <Sheet.Background />
+                  <Sheet.Handle />
                   <Adapt.Contents />
-                </TamaguiPopover.Sheet.Frame>
-                <TamaguiPopover.Sheet.Overlay
-                  animation="lazy"
-                  enterStyle={{ opacity: 0 }}
-                  exitStyle={{ opacity: 0 }}
-                />
-              </TamaguiPopover.Sheet>
+                </Sheet.Container>
+              </Sheet>
             </Adapt>
           )}
         </TamaguiPopover>
       </PopoverContext.Provider>
     );
   },
-  { staticConfig: { componentName: "Popover" } }
+  { displayName: "Popover" }
 );
 
 const PopoverArrow = styled(TamaguiPopover.Arrow, {
-  name: "Popover",
-  context: PopoverContext,
-
-  backgroundColor: "$base3",
-  borderWidth: 2,
-  borderColor: "$primary",
-  top: -11
+  displayName: "Popover",
+  context: PopoverContext
 });
 
+// The `ContainerBackground` draws the surface. Positioned for it (Popper
+// positions a wrapper, not this frame), and `isolation` makes the stacking
+// context: Tamagui hands a content `zIndex` to the portal instead.
 const PopoverContent = styled(TamaguiPopover.Content, {
-  name: "Popover",
+  displayName: "Popover",
   context: PopoverContext,
-
-  flex: 1,
-  backgroundColor: "$base3",
-  padding: "$3",
-  borderWidth: 2,
-  borderColor: "$primary",
-  borderRadius: "$true",
+  position: "relative",
+  isolation: "isolate",
+  backgroundColor: "transparent",
+  padding: "3xl",
+  borderWidth: 0,
+  borderRadius: "popover",
   marginHorizontal: "auto",
+  // Never wider than the viewport; `stayInFrame`'s 10px padding on each side.
+  maxWidth: "calc(100vw - 20px)",
+  outlineStyle: "focus-visible:solid",
+  outlineWidth: "focus-visible:2px",
+  outlineColor: "focus-visible:primary-active",
+  y: "enter:-10px exit:-10px",
+  opacity: "enter:0 exit:0",
 
-  enterStyle: { y: -10, opacity: 0 },
-  exitStyle: { y: -10, opacity: 0 },
-
-  animation: [
-    "100ms",
-    {
-      opacity: {
-        overshootClamping: true
-      }
-    }
-  ],
-
-  focusVisibleStyle: {
-    outlineColor: "$accent10",
-    outlineWidth: 3,
-    outlineOffset: "$1.25",
-    outlineStyle: "solid",
-    borderColor: "$borderColorFocus"
-  },
-
-  variants: {
-    elevated: {
-      true: {
-        shadowColor: "$shadowColor",
-        shadowOffset: { width: 0, height: 4 },
-        shadowRadius: 30,
-        elevate: true
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    elevated: true
+  transition: {
+    duration: "100ms",
+    opacity: { duration: "100ms", spring: { overshootClamping: true } }
   }
 });
 
-type PopoverContentExtraProps = {
+export interface PopoverContentExtraProps extends ContainerSurfaceProps {
   hasArrow?: boolean;
-};
+}
 
-const PopoverContentImpl = PopoverContent.styleable<PopoverContentExtraProps>(
-  ({ children, hasArrow = true, ...props }, forwardedRef) => {
+const PopoverContentImpl = createStyledHOC(
+  PopoverContent,
+  (
+    {
+      children,
+      hasArrow = false,
+      variant: variantProp,
+      shadowStyle: shadowStyleProp,
+      glass: glassProp,
+      noise: noiseProp,
+      accented: accentedProp,
+      backgroundColor,
+      borderColor,
+      borderWidth,
+      borderRadius = "popover",
+      ...props
+    }: Omit<GetProps<typeof PopoverContent>, "variant"> &
+      PopoverContentExtraProps,
+    forwardedRef
+  ) => {
+    const context = PopoverContext.useStyledContext();
+    const variant = variantProp ?? context.variant ?? "elevated";
+    const shadowStyle = shadowStyleProp ?? context.shadowStyle ?? "elevated";
+    const glass = glassProp ?? context.glass;
+    const accented = accentedProp ?? context.accented;
+    // Unlike `Button`'s `outlined`, an outlined popover keeps an opaque
+    // backing so its content stays readable over the page.
+    const backing =
+      variant === "outlined" && !glass ? { backgroundColor: "elevated" } : null;
+    // Explicit colors and widths win over the variant's, on the surface the
+    // `ContainerBackground` draws and on the arrow.
+    const overrides = {
+      ...(backgroundColor !== undefined && { backgroundColor }),
+      ...(borderColor !== undefined && { borderColor }),
+      ...(borderWidth !== undefined && { borderWidth })
+    };
+
     return (
-      <PopoverContent ref={forwardedRef} {...props}>
-        {hasArrow && <PopoverArrow />}
+      <PopoverContent
+        ref={forwardedRef}
+        boxShadow={containerShadows[shadowStyle]}
+        borderRadius={borderRadius}
+        {...backing}
+        {...props}>
+        {/* Explicit, not `inherit`: Tamagui wraps the children in unstyled
+            focus-scope and theme nodes, which would pass on a 0 radius. */}
+        <ContainerBackground
+          borderRadius={borderRadius}
+          variant={variant}
+          shadowStyle={shadowStyle}
+          glass={glass}
+          noise={noiseProp ?? context.noise}
+          accented={accented}
+          {...overrides}
+        />
+        {hasArrow && (
+          <PopoverArrow
+            {...containerVariants[variant]}
+            {...backing}
+            {...(accented && { borderColor: "primary" })}
+            {...(shadowStyle === "flat" && { borderWidth: 0 })}
+            {...overrides}
+          />
+        )}
         {children}
       </PopoverContent>
     );
   },
-  { staticConfig: { componentName: "Popover" } }
+  { displayName: "Popover" }
 );
 
 export const Popover = withStaticProperties(PopoverFrameImpl, {
@@ -160,3 +239,15 @@ export const Popover = withStaticProperties(PopoverFrameImpl, {
   Anchor: TamaguiPopover.Anchor,
   Trigger: TamaguiPopover.Trigger
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Popover.ContentClose` is undefined on the server).
+ */
+export {
+  PopoverContentImpl as PopoverContent,
+  ScrollView as PopoverContentScrollView
+};
+export const PopoverContentClose = TamaguiPopover.Close;
+export const PopoverAnchor = TamaguiPopover.Anchor;
+export const PopoverTrigger = TamaguiPopover.Trigger;

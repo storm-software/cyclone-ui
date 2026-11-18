@@ -1,0 +1,227 @@
+/* -------------------------------------------------------------------
+
+                   🗲 Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
+import { Button } from "@cyclone-ui/button";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { YStack } from "@tamagui/stacks";
+import { useState } from "react";
+import type { SheetProps } from "./Sheet";
+import { Sheet } from "./Sheet";
+
+const meta: Meta<typeof Sheet> = {
+  title: "Containers/Sheet",
+  component: Sheet,
+  tags: ["autodocs"],
+  render: ({ children, ...props }: SheetProps) => {
+    const [open, setOpen] = useState(false);
+
+    return (
+      <>
+        <Button onPress={() => setOpen(true)}>
+          <Button.Text>Open Sheet</Button.Text>
+        </Button>
+        <Sheet {...props} open={open} onOpenChange={setOpen}>
+          <Sheet.Overlay />
+          <Sheet.Container padding="5xl" gap="3xl">
+            <Sheet.Background />
+            <Sheet.Handle />
+            <Sheet.Heading>Sheet heading</Sheet.Heading>
+            <Sheet.Body>{children}</Sheet.Body>
+            <Sheet.Footer>
+              <Button
+                onPress={() => setOpen(false)}
+                // An outlined button would vanish into a `primary` sheet.
+                variant={props.variant === "primary" ? "tertiary" : "outlined"}>
+                <Button.Text>Close</Button.Text>
+              </Button>
+            </Sheet.Footer>
+          </Sheet.Container>
+        </Sheet>
+      </>
+    );
+  }
+};
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Base: Story = {
+  args: {
+    children:
+      "A modal sheet keeps focus within its contents and can be dismissed using the overlay, close button, or drag handle."
+  }
+};
+
+export const Top: Story = {
+  args: {
+    ...Base.args,
+    direction: "top"
+  }
+};
+
+export const Right: Story = {
+  args: {
+    ...Base.args,
+    direction: "right"
+  }
+};
+
+export const Bottom: Story = {
+  args: {
+    ...Base.args,
+    direction: "bottom"
+  }
+};
+
+export const Left: Story = {
+  args: {
+    ...Base.args,
+    direction: "left"
+  }
+};
+
+export const Primary: Story = {
+  args: {
+    ...Base.args,
+    variant: "primary"
+  }
+};
+
+export const Secondary: Story = {
+  args: {
+    ...Base.args,
+    variant: "secondary"
+  }
+};
+
+export const Tertiary: Story = {
+  args: {
+    ...Base.args,
+    variant: "tertiary"
+  }
+};
+
+export const Outlined: Story = {
+  args: {
+    ...Base.args,
+    variant: "outlined"
+  }
+};
+
+export const RightPrimary: Story = {
+  args: {
+    ...Base.args,
+    direction: "right",
+    variant: "primary"
+  }
+};
+
+export const RightOutlined: Story = {
+  args: {
+    ...Base.args,
+    direction: "right",
+    variant: "outlined"
+  }
+};
+
+export const Scrollable: Story = {
+  render: ({ children, ...props }: SheetProps) => {
+    const [open, setOpen] = useState(false);
+
+    return (
+      <>
+        <Button onPress={() => setOpen(true)}>
+          <Button.Text>Open Sheet</Button.Text>
+        </Button>
+        <Sheet {...props} open={open} onOpenChange={setOpen} snapPoints={[90]}>
+          <Sheet.Overlay />
+          <Sheet.Container>
+            <Sheet.Background />
+            <Sheet.Handle />
+            <Sheet.ScrollView padding="5xl">
+              <YStack gap="3xl">
+                <Sheet.Heading>Scrollable sheet</Sheet.Heading>
+                {Array.from({ length: 64 }, (_, index) => (
+                  <Sheet.Body key={index}>{children}</Sheet.Body>
+                ))}
+              </YStack>
+            </Sheet.ScrollView>
+          </Sheet.Container>
+        </Sheet>
+      </>
+    );
+  },
+  args: {
+    children:
+      "Sheet.ScrollView keeps long content reachable without changing the sheet's modal behavior."
+  }
+};
+
+export const Floating: Story = {
+  args: {
+    ...Base.args,
+    variant: "floating"
+  }
+};
+
+export const Raised: Story = {
+  args: {
+    ...Base.args,
+    variant: "surface",
+    shadowStyle: "elevated"
+  }
+};
+
+export const Accented: Story = {
+  args: {
+    ...Base.args,
+    variant: "elevated",
+    accented: true
+  }
+};
+
+export const Glass: Story = {
+  args: {
+    ...Base.args,
+    glass: true
+  }
+};
+
+export const Noise: Story = {
+  args: {
+    ...Base.args,
+    variant: "primary",
+    noise: true
+  }
+};
+
+export const RightGlass: Story = {
+  args: {
+    ...RightPrimary.args,
+    glass: true
+  }
+};
+
+export const Flat: Story = {
+  args: {
+    ...Base.args,
+    variant: "secondary",
+    shadowStyle: "flat"
+  }
+};

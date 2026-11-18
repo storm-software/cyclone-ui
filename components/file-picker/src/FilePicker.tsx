@@ -1,51 +1,62 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { BodyText } from "@cyclone-ui/body-text";
+ ------------------------------------------------------------------- */
+
+"use client";
+
 import { Button } from "@cyclone-ui/button";
-import { BytesText } from "@cyclone-ui/bytes-text";
-import { ColorThemeName } from "@cyclone-ui/colors";
-import { LabelText } from "@cyclone-ui/label-text";
-import { Link } from "@cyclone-ui/link";
-import { ClientFileResult } from "@cyclone-ui/state";
-import { formatDateTime } from "@storm-stack/date-time/utilities/format-date-time";
-import { useComposedRefs } from "@storm-stack/hooks";
-import { FileStatus } from "@storm-stack/types/utility-types/file";
+import type { FileProps } from "@cyclone-ui/file";
+import { File as FileCard, FileMetadataText } from "@cyclone-ui/file";
+import type { FormControlSize } from "@cyclone-ui/helpers";
+import {
+  getFormFontScale,
+  getFormSizeScale,
+  getFormSizeToken,
+  getSized,
+  getSpaced,
+  useFieldHasValidationMessage,
+  useFieldIconColor,
+  useFormControl
+} from "@cyclone-ui/helpers";
+import { Close, Lock, Upload } from "@cyclone-ui/icons";
+import type { ClientFileResult } from "@cyclone-ui/state";
+import { useComposedRefs } from "@stryke/hooks";
+import type { FileStatus } from "@stryke/types/file";
 import { AnimatePresence } from "@tamagui/animate-presence";
+import type { ColorTokens, GetProps } from "@tamagui/core";
 import {
   createStyledContext,
-  FontSizeTokens,
-  isWeb,
+  createStyledHOC,
   styled,
+  Text,
   View,
-  withStaticProperties,
-  type ColorTokens
+  withStaticProperties
 } from "@tamagui/core";
-import { Image } from "@tamagui/image";
-import { LinearGradient } from "@tamagui/linear-gradient";
-import { Dot, Download, Trash2, Upload } from "@tamagui/lucide-icons";
 import { XStack, YStack } from "@tamagui/stacks";
-import { DocumentPickerResult } from "expo-document-picker";
-import { PropsWithChildren, useCallback } from "react";
+import type { DocumentPickerResult } from "expo-document-picker";
+import { useCallback } from "react";
 import { MediaTypeOptions } from "./file-picker-types";
 import { useFilePicker } from "./useFilePicker";
 
-export type FilePickerContextProps = {
-  size: FontSizeTokens;
+export type FilePickerVariant = "dropzone" | "simple";
+
+export interface FilePickerContextProps {
+  size: FormControlSize;
+  variant: FilePickerVariant;
   typeOfPicker: "image" | "file";
   max: number;
   mediaTypes: MediaTypeOptions[];
@@ -58,124 +69,181 @@ export type FilePickerContextProps = {
   color?: ColorTokens | string;
   required: boolean;
   disabled: boolean;
-  theme: string;
-};
+  readOnly: boolean;
+  active: boolean;
+  hasValidationMessage: boolean;
+}
 
-export const FilePickerContext = createStyledContext<FilePickerContextProps>({
-  size: "$4",
-  typeOfPicker: "file",
-  mediaTypes: [MediaTypeOptions.All] as MediaTypeOptions[],
-  max: 1,
-  onPick: (props: PickFileProps) => {},
-  onOpen: () => {},
-  onChange: (files: ClientFileResult[]) => {},
-  files: [] as ClientFileResult[],
-  name: "",
-  scaleIcon: 1.3,
-  color: undefined,
-  required: false,
-  disabled: false,
-  theme: `${ColorThemeName.BASE}_FilePicker`
-});
-
-const MAX_DISPLAYABLE_FILE_NAME_LENGTH = 150;
+export const FilePickerContext = createStyledContext<
+  FilePickerContextProps,
+  | "size"
+  | "variant"
+  | "typeOfPicker"
+  | "mediaTypes"
+  | "max"
+  | "onPick"
+  | "onOpen"
+  | "onChange"
+  | "files"
+  | "name"
+  | "scaleIcon"
+  | "color"
+  | "required"
+  | "disabled"
+  | "readOnly"
+  | "active"
+  | "hasValidationMessage"
+>(
+  {
+    size: "md",
+    variant: "dropzone",
+    typeOfPicker: "file",
+    mediaTypes: [MediaTypeOptions.All] as MediaTypeOptions[],
+    max: 1,
+    onPick: (_props: PickFileProps) => {},
+    onOpen: () => {},
+    onChange: (_files: ClientFileResult[]) => {},
+    files: [] as ClientFileResult[],
+    name: "",
+    scaleIcon: 1.3,
+    color: undefined,
+    required: false,
+    disabled: false,
+    readOnly: false,
+    active: false,
+    hasValidationMessage: false
+  } as FilePickerContextProps,
+  {
+    // Only the keys that styled consumers declare as variants; v3 forwards every
+    // injected context key that is not a variant to the DOM element.
+    keys: ["size", "active", "disabled", "hasValidationMessage"]
+  }
+);
 
 export const FILE_PICKER_NAME = "FilePicker";
 
 const FilePickerGroupFrame = styled(View, {
-  name: FILE_PICKER_NAME,
+  displayName: FILE_PICKER_NAME,
   context: FilePickerContext,
-
-  animation: "slow",
+  transition: "200ms",
   flexDirection: "column",
   width: "100%",
-  minHeight: "$15",
+  minHeight: "17xl",
   justifyContent: "center",
   alignItems: "center",
-  gap: "$1",
-  paddingVertical: "$4",
+  gap: "md",
+  paddingVertical: "5xl",
   borderStyle: "dashed",
   borderWidth: 2,
-  borderRadius: "$4",
-  borderColor: "$borderColor",
-  backgroundColor: "transparent",
-  outlineWidth: 0,
-  outlineColor: "transparent",
-  outlineStyle: "none",
-
-  ...(isWeb
-    ? {
-        tabIndex: 0
-      }
-    : {
-        focusable: true
-      }),
-
-  hoverStyle: {
-    borderColor: "$accent10"
-  },
-
+  borderRadius: "container",
+  borderColor: "hairline hover:hairline-hovered",
+  backgroundColor: "surface hover:surface-hovered",
+  tabIndex: 0,
   variants: {
+    // Styled by the `.resolve` below because the geometry depends on
+    // `variant`.
+    size: styled.dynamic<FormControlSize>(),
+
+    variant: {
+      dropzone: {},
+      // A single-line control styled like `Input`.
+      simple: {
+        flexDirection: "row",
+        justifyContent: "flex-start",
+        alignItems: "stretch",
+        gap: "zero",
+        paddingVertical: 0,
+        borderWidth: 1,
+        borderRadius: "control",
+        overflow: "hidden"
+      }
+    },
+
     active: {
       true: {
-        outlineColor: "$accent10",
-        outlineWidth: 2,
-        outlineOffset: "$1.25",
-        outlineStyle: "solid",
-        borderColor: "$borderColorPress",
+        borderColor: "hairline-active hover:hairline-active",
+        backgroundColor: "surface-active hover:surface-active"
+      }
+    },
 
-        hoverStyle: {
-          borderColor: "$borderColorFocus"
-        }
+    hasValidationMessage: {
+      true: {
+        borderColor: "primary hover:primary-hovered"
       }
     },
 
     disabled: {
       true: {
-        opacity: 0.8,
-        cursor: "not-allowed",
-        borderColor: "$disabled",
-
-        hoverStyle: {
-          borderColor: "$disabled"
-        }
+        borderColor: "primary-disabled hover:primary-disabled",
+        backgroundColor: "surface-disabled hover:surface-disabled",
+        cursor: "not-allowed"
       },
       false: {
         opacity: 1
       }
     }
   },
-
   defaultVariants: {
+    variant: "dropzone",
     active: false,
     disabled: false
   }
+}).resolve(props => {
+  const size: FormControlSize =
+    props.size === "sm" ? "sm" : props.size === "lg" ? "lg" : "md";
+
+  if (props.variant === "simple") {
+    const height = getSized(getFormSizeToken(size));
+
+    return { height, minHeight: height, paddingVertical: 0 };
+  }
+
+  return {
+    minHeight: getSized("17xl") * getFormSizeScale(size),
+    paddingVertical: getSpaced("5xl") * getFormSizeScale(size)
+  };
 });
 
-type PickFileProps = {
+export interface PickFileProps {
   webFiles?: File[] | null;
   nativeFiles?: DocumentPickerResult[] | null;
-};
+}
 
-const FilePickerGroup = FilePickerGroupFrame.styleable<
-  Partial<FilePickerContextProps>
->(
+const FilePickerGroup = createStyledHOC(
+  FilePickerGroupFrame,
   (
-    {
+    props: GetProps<typeof FilePickerGroupFrame> &
+      Partial<FilePickerContextProps>,
+    forwardedRef
+  ) => {
+    // Inside a form control (such as `Field`), any prop left unset falls back
+    // to the control's state, which connects the picker to the form.
+    const formControl = useFormControl();
+    const {
       children,
-      files = [],
-      onChange,
-      disabled = false,
+      size = formControl?.size ?? "md",
+      variant = "dropzone",
+      files = formControl?.value ?? [],
+      onChange = formControl?.onChange,
+      disabled = formControl?.disabled ?? false,
+      readOnly = formControl?.readOnly ?? false,
       typeOfPicker = "file",
       mediaTypes = [MediaTypeOptions.All],
       max = 1,
       name,
-      ...props
-    },
-    forwardedRef
-  ) => {
+      ...rest
+    } = props;
+    const hasValidationMessage = useFieldHasValidationMessage();
     const handlePick = useCallback(
       async ({ webFiles, nativeFiles }: PickFileProps) => {
+        if (readOnly) return;
+        // Ids continue past the highest one in use: `files.length` repeats an
+        // id still in the list once a file has been removed.
+        const nextId = files.reduce(
+          (id: number, file: ClientFileResult) => Math.max(id, file.id + 1),
+          0
+        );
+
         if (onChange) {
           if (webFiles && webFiles.length > 0) {
             await onChange(
@@ -184,8 +252,8 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
                   (ret, file, index) => {
                     ret.push({
                       ...file,
-                      id: files.length + index,
-                      status: FileStatus.INITIALIZED,
+                      id: nextId + index,
+                      status: "initialized" satisfies FileStatus,
                       mimeType: file.type,
                       name: file.name,
                       size: file.size > 0 ? file.size : 0,
@@ -210,8 +278,8 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
                       ret.push(
                         ...file.assets.map((asset, i) => ({
                           ...asset,
-                          id: files.length + index + i,
-                          status: FileStatus.INITIALIZED
+                          id: nextId + index + i,
+                          status: "initialized" as const satisfies FileStatus
                         }))
                       );
                     }
@@ -225,7 +293,7 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
           }
         }
       },
-      [onChange, files, max]
+      [onChange, files, max, readOnly]
     );
 
     const { onOpen, getInputProps, getRootProps, dragStatus } = useFilePicker({
@@ -237,49 +305,139 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
 
     const { ref, ...rootProps } = getRootProps();
     const composedRef = useComposedRefs(forwardedRef, ref);
+    const handleOpen = useCallback(() => {
+      // Once `max` files are attached, picking again replaces the oldest
+      // (`handlePick` keeps the last `max`).
+      if (!disabled && !readOnly) {
+        onOpen();
+      }
+    }, [disabled, onOpen, readOnly]);
+    const handleChange = useCallback(
+      (nextFiles: ClientFileResult[]) => {
+        if (!readOnly) return onChange?.(nextFiles);
+      },
+      [onChange, readOnly]
+    );
 
     return (
       // @ts-ignore reason: getRootProps() which is web specific return some react-native incompatible props, but it's fine
       <FilePickerGroupFrame
-        {...props}
+        {...rest}
         {...rootProps}
+        size={size}
+        variant={variant}
         ref={composedRef}
-        group={true}
-        active={Boolean(dragStatus?.isDragActive)}>
+        group="file-picker"
+        disabled={disabled}
+        active={Boolean(dragStatus?.isDragActive)}
+        hasValidationMessage={hasValidationMessage}
+        // The animated frame writes Tamagui's implicit `solid` border default
+        // inline, which beats the `dashed` class from the styled config.
+        style={[
+          rest.style,
+          { borderStyle: variant === "simple" ? "solid" : "dashed" }
+        ]}
+        // `onPress` handles web clicks too; adding `onClick` opened the
+        // dialog twice per click.
+        onPress={handleOpen}>
         <FilePickerContext.Provider
+          size={size}
+          variant={variant}
           name={name}
           files={files}
-          onOpen={onOpen}
+          onOpen={handleOpen}
           onPick={handlePick}
-          onChange={onChange}
+          onChange={handleChange}
           disabled={disabled}
+          readOnly={readOnly}
+          active={Boolean(dragStatus?.isDragActive)}
+          hasValidationMessage={hasValidationMessage}
           typeOfPicker={typeOfPicker}
           mediaTypes={mediaTypes}
           max={max}>
           {/* need an empty input div just have image drop feature in the web */}
           {/* @ts-ignore */}
           <View
-            id={name}
-            tag="input"
+            id={formControl?.id ?? name}
+            render="input"
             width={0}
             height={0}
             {...getInputProps()}
           />
 
-          {children}
+          {children ??
+            (formControl && (
+              <>
+                <FilePickerFiles />
+                <FilePickerTrigger>
+                  <FilePickerTriggerButton />
+                </FilePickerTrigger>
+              </>
+            ))}
         </FilePickerContext.Provider>
       </FilePickerGroupFrame>
     );
   }
 );
 
-const FilePickerTrigger = YStack.styleable(
+const FilePickerTrigger = createStyledHOC(
+  YStack,
   ({ children, ...props }, forwardedRef) => {
-    const { disabled, onOpen, files, max } =
+    const { disabled, readOnly, files, max, size, variant, onChange } =
       FilePickerContext.useStyledContext();
+    const { iconColor, hoverIconColor } = useFieldIconColor();
 
-    if (files.length >= max) {
-      return null;
+    if (variant === "simple") {
+      const clearSize = getSized(getFormSizeToken(size), { shift: -2 });
+
+      return (
+        <XStack
+          ref={forwardedRef}
+          flex={1}
+          minWidth={0}
+          alignItems="stretch"
+          cursor={disabled ? "not-allowed" : "pointer"}
+          {...props}>
+          {children}
+          <FileMetadataText
+            controlSize={size}
+            flex={1}
+            alignSelf="center"
+            paddingHorizontal={getSpaced(getFormSizeToken(size))}
+            numberOfLines={1}
+            color={disabled ? "ink-disabled" : "ink"}>
+            {files.length === 0
+              ? max > 1
+                ? "No files chosen"
+                : "No file chosen"
+              : files.length === 1
+                ? files[0]?.name || "Unnamed File"
+                : `${files.length} files`}
+          </FileMetadataText>
+          {!disabled && !readOnly && files.length > 0 && (
+            // Keep the press from bubbling to the frame, which opens the picker.
+            <View
+              flexShrink={0}
+              justifyContent="center"
+              paddingRight="md"
+              onClick={event => event.stopPropagation()}
+              onPress={event => event.stopPropagation()}>
+              <Button
+                variant="ghost"
+                circular={true}
+                tight={true}
+                size={clearSize}
+                aria-label={max > 1 ? "Remove files" : "Remove file"}
+                tooltip={max > 1 ? "Remove all files" : "Remove file"}
+                onPress={() => onChange([])}>
+                <Button.Icon>
+                  <Close variant="bold" />
+                </Button.Icon>
+              </Button>
+            </View>
+          )}
+        </XStack>
+      );
     }
 
     return (
@@ -287,23 +445,32 @@ const FilePickerTrigger = YStack.styleable(
         ref={forwardedRef}
         justifyContent="center"
         alignItems="center"
-        gap="$1"
-        onPress={onOpen}
+        gap="md"
         width="100%"
         cursor={disabled ? "not-allowed" : "pointer"}
         {...props}>
         {files.length === 0 && (
-          <Upload
-            size="$5"
-            color={disabled ? "$disabled" : "$color"}
-            animation="100ms"
-            opacity={1}
-            scale={1}
-            exitStyle={{
-              opacity: 0,
-              scale: 0.5
-            }}
-          />
+          // Icons only resolve a plain theme key, so the hover color is set
+          // on a wrapper whose CSS color the icon inherits.
+          <Text
+            display="flex"
+            transition="200ms"
+            color={`${iconColor} group-hover/file-picker:${hoverIconColor}`}
+            opacity="1 exit:0"
+            scale="1 exit:0.5">
+            {disabled ? (
+              <Lock
+                size={getSized("9xl") * getFormSizeScale(size) * 0.75}
+                color="currentColor"
+                variant="filled"
+              />
+            ) : (
+              <Upload
+                size={getSized("9xl") * getFormSizeScale(size)}
+                color="currentColor"
+              />
+            )}
+          </Text>
         )}
         {children}
       </YStack>
@@ -311,9 +478,49 @@ const FilePickerTrigger = YStack.styleable(
   }
 );
 
-const FilePickerTriggerButton = Button.styleable(
+const FilePickerTriggerButton = createStyledHOC(
+  Button,
   ({ children, ...props }, forwardedRef) => {
-    const { disabled, files, max } = FilePickerContext.useStyledContext();
+    const {
+      disabled,
+      files,
+      max,
+      onOpen,
+      size,
+      variant,
+      hasValidationMessage
+    } = FilePickerContext.useStyledContext();
+
+    if (variant === "simple") {
+      // The frame opens the picker on press, so this segment is presentational.
+      return (
+        <View
+          flexShrink={0}
+          justifyContent="center"
+          paddingHorizontal={getSpaced(getFormSizeToken(size))}
+          borderRightWidth={1}
+          borderColor={
+            disabled
+              ? "hairline-disabled"
+              : hasValidationMessage
+                ? "primary group-hover/file-picker:primary-hovered"
+                : "hairline group-hover/file-picker:hairline-hovered"
+          }
+          backgroundColor={
+            disabled
+              ? "elevated-disabled"
+              : "elevated group-hover/file-picker:elevated-hovered"
+          }
+          transition="200ms">
+          <FileMetadataText
+            controlSize={size}
+            fontWeight="500"
+            color={disabled ? "emphasis-disabled" : "emphasis"}>
+            {children || (max > 1 ? "Choose Files" : "Choose File")}
+          </FileMetadataText>
+        </View>
+      );
+    }
 
     if (disabled) {
       return null;
@@ -322,40 +529,65 @@ const FilePickerTriggerButton = Button.styleable(
     return (
       <Button
         ref={forwardedRef}
+        size={getFormSizeToken(size)}
+        group="link"
+        width="100%"
         variant="link"
         disabled={disabled}
-        noPadding={true}
-        $platform-native={{
-          display: "none"
-        }}
+        onPress={onOpen}
+        display="native:none"
+        marginHorizontal="5xl"
         {...props}>
-        <Button.Text>
+        <Button.Text fontSize={16 * getFormFontScale(size)}>
           {children ||
-            (max > 1
-              ? files.length === 0
-                ? "Click or drop files to upload"
-                : "Click or drop files to add more uploads"
-              : "Click or drop a file to upload")}
+            (files.length === 0 ? (
+              max > 1 ? (
+                "Click or drop files to upload"
+              ) : (
+                "Click or drop a file to upload"
+              )
+            ) : files.length < max ? (
+              // The short label fits on one line on small screens. Plain
+              // `Text` spans: the animated `Button.Text` resolves media in JS
+              // and drops the `max-md:` clause.
+              <>
+                <Text display="inline max-md:none">
+                  Click or drop files to add more uploads
+                </Text>
+                <Text display="none max-md:inline">Click to add uploads</Text>
+              </>
+            ) : max > 1 ? (
+              "Click or drop files to replace the oldest"
+            ) : (
+              "Click or drop a file to replace it"
+            ))}
         </Button.Text>
       </Button>
     );
   }
 );
 
-const FilePickerFiles = YStack.styleable(
+const FilePickerFiles = createStyledHOC(
+  YStack,
   ({ children, ...props }, forwardedRef) => {
-    const { files } = FilePickerContext.useStyledContext();
+    const { files, variant } = FilePickerContext.useStyledContext();
+
+    if (variant === "simple") {
+      return null;
+    }
 
     return (
       <AnimatePresence>
-        {files?.length && (
+        {files && files.length > 0 && (
           <YStack
             ref={forwardedRef}
-            gap="$4"
-            paddingHorizontal="$4"
+            gap="5xl"
+            paddingHorizontal="5xl"
             width="100%"
             {...props}>
-            {children}
+            {/* Without children, the picker's own files are listed. */}
+            {children ??
+              files.map(file => <FilePickerFile key={file.id} {...file} />)}
           </YStack>
         )}
       </AnimatePresence>
@@ -363,44 +595,13 @@ const FilePickerFiles = YStack.styleable(
   }
 );
 
-const FilePickerViewLink = ({
-  uri,
-  children,
-  ...props
-}: PropsWithChildren<{ uri?: string }>) => {
-  if (uri) {
-    return (
-      <Link
-        fontFamily="$label"
-        fontSize="$7"
-        fontWeight="$true"
-        color="$fg"
-        {...props}
-        href={uri}
-        target="_blank">
-        {children}
-      </Link>
-    );
-  }
+export type FilePickerFileProps = FileProps;
 
-  return (
-    <LabelText fontFamily="$label" fontSize="$7" color="$fg" {...props}>
-      {children}
-    </LabelText>
-  );
-};
-
-export type FilePickerFileProps = PropsWithChildren<ClientFileResult>;
-
-const FilePickerFile = ({
-  id,
-  uri,
-  name,
-  size,
-  lastModified,
-  mimeType
-}: FilePickerFileProps) => {
-  const { disabled, onChange, files } = FilePickerContext.useStyledContext();
+/** A `File` card wired to the picker: removing it updates the picked files. */
+const FilePickerFile = (props: FilePickerFileProps) => {
+  const { disabled, readOnly, onChange, files, size } =
+    FilePickerContext.useStyledContext();
+  const { id } = props;
 
   const handleRemove = useCallback(
     () => onChange(files.filter(file => file.id !== id)),
@@ -408,177 +609,12 @@ const FilePickerFile = ({
   );
 
   return (
-    <View
-      group={"file" as any}
-      flexDirection="column"
-      animation="100ms"
-      opacity={1}
-      scale={1}
-      height={100}
-      width="100%"
-      overflow="hidden"
-      position="relative"
-      borderColor="$base4"
-      borderWidth={1}
-      enterStyle={{
-        opacity: 0,
-        scale: 0.3
-      }}
-      exitStyle={{
-        opacity: 0,
-        scale: 0.5
-      }}
-      hoverStyle={{
-        outlineColor: "$accent10",
-        outlineWidth: 2,
-        outlineStyle: "solid",
-        outlineOffset: 3
-      }}>
-      <View
-        animation="100ms"
-        position="absolute"
-        top={0}
-        bottom={0}
-        left={0}
-        right={0}
-        zIndex={10}
-        backgroundColor="$base2"
-        opacity={0.6}
-        $group-file-hover={{
-          opacity: 0.8,
-          style: {
-            filter: "blur(1px)"
-          }
-        }}
-      />
-      <View
-        animation="100ms"
-        position="absolute"
-        zIndex={20}
-        left={16}
-        top="30%"
-        opacity={0}
-        $group-file-hover={{
-          opacity: 1
-        }}>
-        {uri && (
-          <Link underline="none" href={uri} download={name}>
-            <Button
-              variant="ghost"
-              theme="base"
-              color="$primary"
-              size="$6"
-              padding="$2"
-              circular={true}>
-              <Button.Icon>
-                <Download />
-              </Button.Icon>
-            </Button>
-          </Link>
-        )}
-      </View>
-
-      {!disabled && (
-        <View
-          animation="100ms"
-          position="absolute"
-          zIndex={20}
-          right={16}
-          top="30%"
-          opacity={0}
-          $group-file-hover={{
-            opacity: 1
-          }}>
-          <Button
-            variant="ghost"
-            theme="base"
-            color="$primary"
-            onPress={handleRemove}
-            size="$6"
-            padding="$2"
-            circular={true}>
-            <Button.Icon>
-              <Trash2 />
-            </Button.Icon>
-          </Button>
-        </View>
-      )}
-
-      <View
-        animation="100ms"
-        position="absolute"
-        zIndex={15}
-        top={0}
-        bottom={0}
-        left={0}
-        right={0}
-        alignItems="center"
-        justifyContent="center">
-        <YStack width="75%" gap="$1.75">
-          <View zIndex={25} justifyContent="center" alignItems="center">
-            <FilePickerViewLink uri={uri}>
-              {name
-                ? name.length > MAX_DISPLAYABLE_FILE_NAME_LENGTH
-                  ? `${name?.slice(0, MAX_DISPLAYABLE_FILE_NAME_LENGTH)}...`
-                  : name
-                : "Unnamed File"}
-            </FilePickerViewLink>
-          </View>
-          <XStack gap="$1.5" justifyContent="center" alignItems="center">
-            <BytesText zIndex={25} color="$base9" fontWeight="$5">
-              {size}
-            </BytesText>
-
-            {lastModified && <Dot size="$1.25" color="$base9" />}
-
-            {lastModified && (
-              <BodyText zIndex={25} color="$base9" fontWeight="$5">
-                {formatDateTime(new Date(lastModified), {
-                  returnEmptyIfNotSet: true,
-                  returnEmptyIfInvalid: true
-                })}
-              </BodyText>
-            )}
-
-            {mimeType && <Dot size="$1.25" color="$base9" />}
-
-            {mimeType && (
-              <BodyText zIndex={25} color="$base9" fontWeight="$5">
-                {mimeType}
-              </BodyText>
-            )}
-          </XStack>
-        </YStack>
-      </View>
-
-      <LinearGradient
-        animation="slow"
-        fullscreen={true}
-        zIndex={10}
-        colors={["transparent", "$accent4"]}
-        locations={[0, 1.1]}
-        start={[0, 0]}
-        end={[1, 1]}
-        opacity={0}
-        $group-file-hover={{
-          opacity: 1
-        }}
-      />
-
-      <View
-        animation="slow"
-        position="absolute"
-        top={-240}
-        left={0}
-        right={0}
-        zIndex={5}
-        scale={1}
-        $group-file-hover={{
-          scale: 1.2
-        }}>
-        <Image key={id} height={500} source={{ height: 500, uri: uri }} />
-      </View>
-    </View>
+    <FileCard
+      {...props}
+      controlSize={size}
+      disabled={disabled}
+      onRemove={readOnly ? undefined : handleRemove}
+    />
   );
 };
 
@@ -590,3 +626,14 @@ export const FilePicker = withStaticProperties(FilePickerGroup, {
     File: FilePickerFile
   })
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`FilePicker.TriggerButton` is undefined on the server).
+ */
+export {
+  FilePickerFile,
+  FilePickerFiles,
+  FilePickerTrigger,
+  FilePickerTriggerButton
+};

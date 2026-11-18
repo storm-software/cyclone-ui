@@ -1,12 +1,30 @@
-import type { Meta, StoryObj } from "@storybook/react";
+/* -------------------------------------------------------------------
+
+                   🗲 Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { ThemeableGradient } from "./ThemeableGradient";
 
 const meta: Meta<typeof ThemeableGradient> = {
-  title: "General/ThemeableGradient",
+  title: "Display/ThemeableGradient",
   component: ThemeableGradient,
   tags: ["autodocs"],
   render: ({ ...rest }: any) => (
-    <ThemeableGradient {...rest} height="$12" width="100%" />
+    <ThemeableGradient {...rest} height="14xl" width="100%" />
   )
 } satisfies Meta<typeof ThemeableGradient>;
 
@@ -24,15 +42,9 @@ export const Brand: Story = {
   }
 };
 
-export const Alternate: Story = {
+export const Discovery: Story = {
   args: {
-    theme: "alternate"
-  }
-};
-
-export const Help: Story = {
-  args: {
-    theme: "help"
+    theme: "discovery"
   }
 };
 
@@ -60,35 +72,16 @@ export const Success: Story = {
   }
 };
 
-export const Positive: Story = {
-  args: {
-    theme: "positive"
-  }
-};
-
-export const Negative: Story = {
-  args: {
-    theme: "negative"
-  }
-};
-
-export const AnalogousBrand: Story = {
-  args: {
-    theme: "brand",
-    variant: "analogous"
-  }
-};
-
-export const AnalogousAlternate: Story = {
+export const AnalogousSecondary: Story = {
   args: {
     theme: "alternate",
     variant: "analogous"
   }
 };
 
-export const AnalogousHelp: Story = {
+export const AnalogousDiscovery: Story = {
   args: {
-    theme: "help",
+    theme: "discovery",
     variant: "analogous"
   }
 };
@@ -121,39 +114,18 @@ export const AnalogousSuccess: Story = {
   }
 };
 
-export const AnalogousPositive: Story = {
-  args: {
-    theme: "positive",
-    variant: "analogous"
-  }
-};
-
-export const AnalogousNegative: Story = {
-  args: {
-    theme: "negative",
-    variant: "analogous"
-  }
-};
-
 // Triadic variant
 
-export const TriadicBrand: Story = {
-  args: {
-    theme: "brand",
-    variant: "triadic"
-  }
-};
-
-export const TriadicAlternate: Story = {
+export const TriadicSecondary: Story = {
   args: {
     theme: "alternate",
     variant: "triadic"
   }
 };
 
-export const TriadicHelp: Story = {
+export const TriadicDiscovery: Story = {
   args: {
-    theme: "help",
+    theme: "discovery",
     variant: "triadic"
   }
 };
@@ -186,39 +158,18 @@ export const TriadicSuccess: Story = {
   }
 };
 
-export const TriadicPositive: Story = {
-  args: {
-    theme: "positive",
-    variant: "triadic"
-  }
-};
-
-export const TriadicNegative: Story = {
-  args: {
-    theme: "negative",
-    variant: "triadic"
-  }
-};
-
 // Tetradic variant
 
-export const TetradicBrand: Story = {
-  args: {
-    theme: "brand",
-    variant: "tetradic"
-  }
-};
-
-export const TetradicAlternate: Story = {
+export const TetradicSecondary: Story = {
   args: {
     theme: "alternate",
     variant: "tetradic"
   }
 };
 
-export const TetradicHelp: Story = {
+export const TetradicDiscovery: Story = {
   args: {
-    theme: "help",
+    theme: "discovery",
     variant: "tetradic"
   }
 };
@@ -251,39 +202,18 @@ export const TetradicSuccess: Story = {
   }
 };
 
-export const TetradicPositive: Story = {
-  args: {
-    theme: "positive",
-    variant: "tetradic"
-  }
-};
-
-export const TetradicNegative: Story = {
-  args: {
-    theme: "negative",
-    variant: "tetradic"
-  }
-};
-
 // Complementary variant
 
-export const ComplementaryBrand: Story = {
-  args: {
-    theme: "brand",
-    variant: "complementary"
-  }
-};
-
-export const ComplementaryAlternate: Story = {
+export const ComplementarySecondary: Story = {
   args: {
     theme: "alternate",
     variant: "complementary"
   }
 };
 
-export const ComplementaryHelp: Story = {
+export const ComplementaryDiscovery: Story = {
   args: {
-    theme: "help",
+    theme: "discovery",
     variant: "complementary"
   }
 };
@@ -316,39 +246,18 @@ export const ComplementarySuccess: Story = {
   }
 };
 
-export const ComplementaryPositive: Story = {
-  args: {
-    theme: "positive",
-    variant: "complementary"
-  }
-};
-
-export const ComplementaryNegative: Story = {
-  args: {
-    theme: "negative",
-    variant: "complementary"
-  }
-};
-
 // SplitComplementary variant
 
-export const SplitComplementaryBrand: Story = {
-  args: {
-    theme: "brand",
-    variant: "splitComplementary"
-  }
-};
-
-export const SplitComplementaryAlternate: Story = {
+export const SplitComplementarySecondary: Story = {
   args: {
     theme: "alternate",
     variant: "splitComplementary"
   }
 };
 
-export const SplitComplementaryHelp: Story = {
+export const SplitComplementaryDiscovery: Story = {
   args: {
-    theme: "help",
+    theme: "discovery",
     variant: "splitComplementary"
   }
 };
@@ -377,20 +286,6 @@ export const SplitComplementaryInfo: Story = {
 export const SplitComplementarySuccess: Story = {
   args: {
     theme: "success",
-    variant: "splitComplementary"
-  }
-};
-
-export const SplitComplementaryPositive: Story = {
-  args: {
-    theme: "positive",
-    variant: "splitComplementary"
-  }
-};
-
-export const SplitComplementaryNegative: Story = {
-  args: {
-    theme: "negative",
     variant: "splitComplementary"
   }
 };

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Ecircumflexacute" format="2">
+  <advance width="565"/>
+  <unicode hex="1EBE"/>
+  <anchor x="252.0" y="0.0" name="bottom"/>
+  <anchor x="467.0" y="0.0" name="bottomright"/>
+  <outline>
+    <component base="E"/>
+    <component base="circumflexacute.case" xOffset="376"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.assembly</key>
+      <string>
+
+USEMYMETRICS[]
+OFFSET[R], $E$, 0, 0
+OFFSET[R], $circumflexacute.case$, 376, 0
+CALL[], 21, 22, 88
+SVTCA[Y]
+CALL[], 19, 2, 1, 1, 52, 86
+SHC[2], 1
+SHC[2], 2
+CALL[], 9
+CALL[], 22, 18, 1, 30, 11, 87
+SVTCA[X]
+SHC[2], 1
+SHC[2], 2
+</string>
+      <key>com.type-invaders.vtt.talk</key>
+      <string></string>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

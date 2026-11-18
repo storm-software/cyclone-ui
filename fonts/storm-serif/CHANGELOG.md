@@ -1,0 +1,31 @@
+![Cyclone UI's logo banner](https://public.storm-cdn.com/cyclone-ui/media/banner-1280x320-dark.gif)
+
+# Changelog for Cyclone UI - Fonts Storm Serif
+
+## [1.0.34](https://github.com/storm-software/cyclone-ui/releases/tag/fonts-storm-serif%401.0.34) (11/04/2026)
+
+### Bug Fixes
+
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+
+## [1.0.12](https://github.com/storm-software/cyclone-ui/releases/tag/fonts-storm-serif%401.0.12) (10/16/2026)
+
+### Bug Fixes
+
+- **maps-styles:** Ensure the style JSON files are included in package ([d05de48b](https://github.com/storm-software/cyclone-ui/commit/d05de48b))
+
+## [1.0.11](https://github.com/storm-software/cyclone-ui/releases/tag/fonts-storm-serif%401.0.11) (10/16/2026)
+
+### Features
+
+- **maps-styles:** Initial check-in of the maps projects ([229ec4ad](https://github.com/storm-software/cyclone-ui/commit/229ec4ad))
+
+## [1.0.1](https://github.com/storm-software/cyclone-ui/releases/tag/fonts-storm-serif%401.0.1) (10/05/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update `fonts` Nx plugin version release processing ([ee53ffac](https://github.com/storm-software/cyclone-ui/commit/ee53ffac))
+
+### Features
+
+- **page:** Added Page component for base layout ([0bc9835e](https://github.com/storm-software/cyclone-ui/commit/0bc9835e))

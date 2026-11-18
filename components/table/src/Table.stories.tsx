@@ -1,24 +1,25 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import type { Meta, StoryObj } from "@storybook/react";
+ ------------------------------------------------------------------- */
+
+import { HeadingSmallText } from "@cyclone-ui/heading-text";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Avatar } from "@tamagui/avatar";
 import { Text, View } from "@tamagui/core";
-import { SizableText } from "@tamagui/text";
 import {
   createColumnHelper,
   flexRender,
@@ -29,11 +30,11 @@ import { useState } from "react";
 import { Table } from "./Table";
 
 const meta: Meta<typeof Table> = {
-  title: "Base/Table",
+  title: "Tables/Table",
   component: Table,
   tags: ["autodocs"],
   render: ({ children, ...rest }: any) => {
-    const [data, setData] = useState(() => [...defaultData]);
+    const [data] = useState(() => [...defaultData]);
 
     const table = useReactTable({
       data,
@@ -45,78 +46,90 @@ const meta: Meta<typeof Table> = {
     const tableRows = table.getRowModel().rows;
 
     return (
-      <Table
-        alignCells={{ x: "start", y: "center" }}
-        alignHeaderCells={{ x: "start", y: "center" }}
-        cellWidth="$18"
-        cellHeight="$7"
-        {...rest}>
-        <Table.Header>
-          {headerGroups.map(headerGroup => {
-            return (
-              <Table.Row key={headerGroup.id} header={true}>
-                {headerGroup.headers.map(header => (
-                  <Table.HeaderCell
-                    key={header.id}
-                    {...(header.column.id === "user_base"
-                      ? {
-                          flexShrink: 1
-                        }
-                      : {
-                          flexShrink: 3
-                        })}>
-                    <SizableText fontFamily="$label" color="$primary" size="$6">
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
-                    </SizableText>
-                  </Table.HeaderCell>
-                ))}
-              </Table.Row>
-            );
-          })}
-        </Table.Header>
-        <Table.Body>
-          {tableRows.map(row => {
-            return (
-              <Table.Row key={row.id}>
-                {row.getVisibleCells().map(cell => (
-                  <Table.Cell
-                    key={cell.id}
-                    {...(cell.column.id === "user_base"
-                      ? {
-                          flexShrink: 1
-                        }
-                      : {
-                          flexShrink: 3
-                        })}>
-                    {cell.column.id === "user_base" ? (
-                      flexRender(cell.column.columnDef.cell, cell.getContext())
-                    ) : (
-                      <Text>
-                        {flexRender(
+      <View padding="xl">
+        <Table
+          alignCells={{ x: "start", y: "center" }}
+          alignHeaderCells={{ x: "start", y: "center" }}
+          cellWidth="20xl"
+          cellHeight="9xl"
+          sizing="content"
+          {...rest}>
+          <Table.Header>
+            {headerGroups.map(headerGroup => {
+              return (
+                <Table.Row key={headerGroup.id} header={true}>
+                  {headerGroup.headers.map(header => (
+                    <Table.HeaderCell
+                      key={header.id}
+                      {...(header.column.id === "user_base"
+                        ? {
+                            flexShrink: 1
+                          }
+                        : {
+                            flexShrink: 3
+                          })}>
+                      <Table.HeaderText>
+                        {header.isPlaceholder
+                          ? null
+                          : flexRender(
+                              header.column.columnDef.header,
+                              header.getContext()
+                            )}
+                      </Table.HeaderText>
+                    </Table.HeaderCell>
+                  ))}
+                </Table.Row>
+              );
+            })}
+          </Table.Header>
+          <Table.Body>
+            {tableRows.map(row => {
+              return (
+                <Table.Row key={row.id}>
+                  {row.getVisibleCells().map(cell => (
+                    <Table.Cell
+                      key={cell.id}
+                      {...(cell.column.id === "user_base"
+                        ? {
+                            flexShrink: 1
+                          }
+                        : {
+                            flexShrink: 3
+                          })}>
+                      {cell.column.id === "user_base" ? (
+                        flexRender(
                           cell.column.columnDef.cell,
                           cell.getContext()
-                        )}
-                      </Text>
-                    )}
-                  </Table.Cell>
-                ))}
-              </Table.Row>
-            );
-          })}
-        </Table.Body>
-        <Table.Footer>
-          <Table.Row header={true}>
-            <SizableText fontFamily="$label" color="$primary" size="$6">
-              Table footer information is populated here
-            </SizableText>
-          </Table.Row>
-        </Table.Footer>
-      </Table>
+                        )
+                      ) : (
+                        <Text>
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext()
+                          )}
+                        </Text>
+                      )}
+                    </Table.Cell>
+                  ))}
+                </Table.Row>
+              );
+            })}
+          </Table.Body>
+          <Table.Footer>
+            <Table.Row header={true}>
+              {columns.map((_, index) => (
+                <Table.Cell key={index}>
+                  {index === 0 && (
+                    <HeadingSmallText color="primary">
+                      Table footer information is populated here
+                    </HeadingSmallText>
+                  )}
+                </Table.Cell>
+              ))}
+            </Table.Row>
+          </Table.Footer>
+        </Table>
+      </View>
     );
   }
 } satisfies Meta<typeof Table>;
@@ -125,7 +138,7 @@ export default meta;
 
 type Story = StoryObj<typeof Table>;
 
-type Person = {
+interface Person {
   fullName: string;
   username: string;
   age: number;
@@ -133,7 +146,7 @@ type Person = {
   status: string;
   role: string;
   avatar?: string;
-};
+}
 
 const defaultData: Person[] = [
   {
@@ -240,13 +253,10 @@ const defaultData: Person[] = [
     status: "Offline",
     role: "Admin"
   }
-].map(
-  (row, index) =>
-    ({
-      ...row,
-      avatar: `https://i.pravatar.cc/150?img=${index + 1}`
-    }) as Person
-);
+].map((row, index) => ({
+  ...row,
+  avatar: `https://i.pravatar.cc/150?img=${index + 1}`
+}));
 
 const columnHelper = createColumnHelper<Person>();
 
@@ -254,21 +264,14 @@ const StatusButton = ({ status }: { status: string }) => {
   return (
     <View
       borderRadius={1000_000_000}
-      backgroundColor={
-        status?.toLocaleLowerCase() === "active" ? "$brand10" : "$base10"
-      }
-      paddingHorizontal="$2">
+      backgroundColor={`${status?.toLocaleLowerCase() === "active" ? "secondary" : "base9"}`}
+      paddingHorizontal="xl">
       <Text
-        color="$bg"
-        $gtXs={{
-          fontSize: "$2",
-          lineHeight: "$1",
-          fontWeight: "$2"
-        }}
-        fontSize="$1"
-        fontWeight="$2"
-        lineHeight="$1"
-        paddingVertical="$1">
+        color="primary"
+        fontSize="xs"
+        fontWeight="extralight"
+        lineHeight="xs"
+        paddingVertical="md">
         {status}
       </Text>
     </View>
@@ -285,19 +288,24 @@ const columns = [
     {
       cell: info => {
         const { fullName, userName, image } = info.getValue();
+
         return (
           <View
             flexDirection="row"
             alignItems="center"
-            gap="$3"
-            marginLeft="$2">
-            <Avatar circular size="$5">
-              <Avatar.Image accessibilityLabel="Profile image" src={image} />
-              <Avatar.Fallback backgroundColor="$gray6" />
+            gap="3xl"
+            marginLeft="xl">
+            <Avatar circular size="12xl">
+              <Avatar.Image aria-label="Profile image" src={image} />
+              <Avatar.Fallback backgroundColor="gray6" />
             </Avatar>
             <View flexDirection="column">
               <Text>{fullName}</Text>
-              <Text fontSize="$2" lineHeight="$2" fontWeight="$2" theme="alt2">
+              <Text
+                fontSize="xs"
+                lineHeight="sm"
+                fontWeight="extralight"
+                theme="alt2">
                 {userName}
               </Text>
             </View>
@@ -318,6 +326,7 @@ const columns = [
     footer: info => info.column.id,
     cell: info => {
       const val = info.renderValue();
+
       return <StatusButton status={val?.toLocaleLowerCase() ?? ""} />;
     }
   }),
@@ -334,6 +343,12 @@ export const Base: Story = {
   }
 };
 
+export const Uppercase: Story = {
+  args: {
+    uppercase: true
+  }
+};
+
 export const Brand: Story = {
   args: {
     children:
@@ -342,11 +357,11 @@ export const Brand: Story = {
   }
 };
 
-export const Help: Story = {
+export const Discovery: Story = {
   args: {
     children:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    theme: "help"
+    theme: "discovery"
   }
 };
 

@@ -1,0 +1,93 @@
+{
+  "name": "cyclone-light-dimmed",
+  "settings": [
+    {
+      "scope": ["comment", "punctuation.definition.comment"],
+      "settings": {
+        "foreground": "#8f8f90",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": ["string", "constant.other.symbol"],
+      "settings": {
+        "foreground": "#3e7160"
+      }
+    },
+    {
+      "scope": ["constant", "constant.numeric", "constant.language"],
+      "settings": {
+        "foreground": "#786137"
+      }
+    },
+    {
+      "scope": ["keyword", "storage", "storage.type"],
+      "settings": {
+        "foreground": "#45649b"
+      }
+    },
+    {
+      "scope": ["entity.name.function", "support.function"],
+      "settings": {
+        "foreground": "#45649b"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.type",
+        "entity.other.inherited-class",
+        "support.type"
+      ],
+      "settings": {
+        "foreground": "#675a8a"
+      }
+    },
+    {
+      "scope": ["entity.name.tag", "meta.tag"],
+      "settings": {
+        "foreground": "#45649b"
+      }
+    },
+    {
+      "scope": ["entity.other.attribute-name", "support.constant"],
+      "settings": {
+        "foreground": "#45649b"
+      }
+    },
+    {
+      "scope": ["variable", "identifier"],
+      "settings": {
+        "foreground": "#626364"
+      }
+    },
+    {
+      "scope": ["punctuation", "meta.brace"],
+      "settings": {
+        "foreground": "#8f8f90"
+      }
+    },
+    {
+      "scope": ["invalid", "invalid.illegal"],
+      "settings": {
+        "foreground": "#864254"
+      }
+    }
+  ],
+  "displayName": "Cyclone Light",
+  "type": "lightDimmed",
+  "fg": "#3d3d3f",
+  "bg": "#cfcfcf",
+  "colors": {
+    "editor.background": "#cfcfcf",
+    "editor.foreground": "#3d3d3f",
+    "editorCursor.foreground": "#45649b",
+    "editor.selectionBackground": "#3d3d3f",
+    "editor.selectionForeground": "#cfcfcf",
+    "editor.inactiveSelectionBackground": "#d5d5d5",
+    "editorLineNumber.foreground": "#8f8f90",
+    "editorLineNumber.activeForeground": "#626364",
+    "editorIndentGuide.background1": "#b8b8b9",
+    "editorIndentGuide.activeBackground1": "#8f8f90",
+    "editorWhitespace.foreground": "#8f8f90"
+  }
+}

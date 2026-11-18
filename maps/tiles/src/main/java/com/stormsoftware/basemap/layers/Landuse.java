@@ -1,0 +1,329 @@
+package com.stormsoftware.basemap.layers;
+
+import static com.stormsoftware.basemap.feature.Matcher.fromTag;
+import static com.stormsoftware.basemap.feature.Matcher.getString;
+import static com.stormsoftware.basemap.feature.Matcher.rule;
+import static com.stormsoftware.basemap.feature.Matcher.use;
+import static com.stormsoftware.basemap.feature.Matcher.with;
+import static com.stormsoftware.basemap.feature.Matcher.without;
+
+import com.onthegomap.planetiler.FeatureCollector;
+import com.onthegomap.planetiler.FeatureMerge;
+import com.onthegomap.planetiler.ForwardingProfile;
+import com.onthegomap.planetiler.VectorTile;
+import com.onthegomap.planetiler.expression.MultiExpression;
+import com.onthegomap.planetiler.geo.GeometryException;
+import com.onthegomap.planetiler.reader.SourceFeature;
+import com.stormsoftware.basemap.feature.FeatureId;
+import com.stormsoftware.basemap.postprocess.Area;
+import java.util.List;
+import java.util.Map;
+
+
+@SuppressWarnings("java:S1192")
+public class Landuse implements ForwardingProfile.LayerPostProcessor {
+
+  private static final String US_FOREST_OPERATORS = """
+      operator
+      United States Forest Service
+      US Forest Service
+      U.S. Forest Service
+      USDA Forest Service
+      United States Department of Agriculture
+      US National Forest Service
+      United State Forest Service
+      U.S. National Forest Service
+    """;
+
+  private static final String PROTECTION_TITLES = """
+      protection_title
+      Conservation Area
+      Conservation Park
+      Environmental use
+      Forest Reserve
+      National Forest
+      National Wildlife Refuge
+      Nature Refuge
+      Nature Reserve
+      Protected Site
+      Provincial Park
+      Public Access Land
+      Regional Reserve
+      Resources Reserve
+      State Forest
+      State Game Land
+      State Park
+      Watershed Recreation Unit
+      Wild Forest
+      Wilderness Area
+      Wilderness Study Area
+      Wildlife Management
+      Wildlife Management Area
+      Wildlife Sanctuary
+    """;
+
+  private static final MultiExpression.Index<Map<String, Object>> index = MultiExpression.ofOrdered(List.of(
+    rule(
+      with("""
+          amenity
+          hospital
+          school
+          kindergarten
+          university
+          college
+        """),
+      use("kind", fromTag("amenity"))
+    ),
+    rule(
+      with("""
+          landuse
+          recreation_ground
+          industrial
+          railway
+          cemetery
+          commercial
+          grass
+          farmland
+          residential
+          military
+          village_green
+          allotments
+          forest
+          meadow
+          grass
+        """),
+      use("kind", fromTag("landuse"))
+    ),
+    rule(
+      with("""
+          aeroway
+          aerodrome
+          runway
+        """),
+      use("kind", fromTag("aeroway"))
+    ),
+    rule(
+      with("""
+          leisure
+          park
+          garden
+          golf_course
+          dog_park
+          playground
+          pitch
+          nature_reserve
+        """),
+      use("kind", fromTag("leisure"))
+    ),
+    rule(
+      with("man_made", "pier"),
+      use("kind", "pier")
+    ),
+    rule(
+      with("""
+          natural
+          beach
+          wood
+          glacier
+          grassland
+          scrub
+          sand
+          wetland
+          bare_rock
+        """),
+      use("kind", fromTag("natural"))
+    ),
+    rule(
+      with("""
+          highway
+          pedestrian
+          footway
+        """),
+      with("area", "yes"),
+      use("kind", "pedestrian")
+    ),
+    rule(
+      with("waterway", "dam"),
+      use("kind", "dam")
+    ),
+    rule(
+      with("railway", "platform"),
+      use("kind", "platform")
+    ),
+    rule(
+      with("tourism", "zoo"),
+      use("kind", "zoo")
+    ),
+    rule(
+      with("landuse", "military"),
+      with("military", "airfield", "naval_base"),
+      use("kind", fromTag("military"))
+    ),
+    rule(
+      with("landuse", "brownfield"),
+      use("kind", "industrial")
+    ),
+    rule(
+      with("landuse", "farmyard", "orchard"),
+      use("kind", "farmland")
+    ),
+    rule(
+      with("man_made", "bridge"),
+      use("kind", "pedestrian")
+    ),
+    rule(
+      with("area:aeroway", "taxiway", "runway"),
+      use("kind", fromTag("area:aeroway"))
+    ),
+    rule(
+      with("place", "neighbourhood"),
+      use("kind", "other")
+    ),
+    rule(
+      with("boundary", "protected_area"),
+      with("protect_class", "6"),
+      with(US_FOREST_OPERATORS),
+      use("kind", "forest")
+    ),
+    rule(
+      with("boundary", "national_park"),
+      use("kind", "park")
+    ),
+    rule(
+      with("boundary", "national_park"),
+      without(US_FOREST_OPERATORS),
+      without(PROTECTION_TITLES),
+      with("protect_class", "2", "3"),
+      use("kind", "national_park")
+    ),
+    rule(
+      with("boundary", "national_park"),
+      without(US_FOREST_OPERATORS),
+      without(PROTECTION_TITLES),
+      with("""
+          operator
+          United States National Park Service
+          National Park Service
+          US National Park Service
+          U.S. National Park Service
+          US National Park service
+        """),
+      use("kind", "national_park")
+    ),
+    rule(
+      with("boundary", "national_park"),
+      without(US_FOREST_OPERATORS),
+      without(PROTECTION_TITLES),
+      with("operator:en", "Parks Canada"),
+      use("kind", "national_park")
+    ),
+    rule(
+      with("boundary", "national_park"),
+      without(US_FOREST_OPERATORS),
+      without(PROTECTION_TITLES),
+      with("designation", "national_park"),
+      use("kind", "national_park")
+    ),
+    rule(
+      with("boundary", "national_park"),
+      without(US_FOREST_OPERATORS),
+      without(PROTECTION_TITLES),
+      with("protection_title", "National Park"),
+      use("kind", "national_park")
+    )
+  )).index();
+
+  public void processOsm(SourceFeature sf, FeatureCollector features) {
+    if (sf.canBePolygon()) {
+
+      var matches = index.getMatches(sf);
+      if (matches.isEmpty()) {
+        return;
+      }
+
+      String kind = getString(sf, matches, "kind", "other");
+
+      features.polygon(this.name())
+        .setId(FeatureId.create(sf))
+        // Core Tilezen schema properties
+        .setAttr("kind", kind)
+        .setAttr("sort_rank", 189)
+        .setZoomRange(2, 15)
+        .setMinPixelSize(2.0);
+
+    }
+  }
+
+  public void processOverture(SourceFeature sf, FeatureCollector features) {
+    // Filter by type field - Overture theme
+    if (!"base".equals(sf.getString("theme"))) {
+      return;
+    }
+
+    if ("land".equals(sf.getString("type"))) {
+      String landClass = sf.getString("class");
+      String kind = switch (landClass) {
+        case "wood", "forest" -> "wood";
+        case "grassland", "grass", "meadow", "fell" -> "grassland";
+        case "scrub", "heath", "shrub", "shrubbery" -> "scrub";
+        case "wetland" -> "wetland";
+        case "bare_rock", "scree", "stone", "rock", "shingle" -> "bare_rock";
+        case "beach" -> "beach";
+        case "sand" -> "sand";
+        default -> null;
+      };
+      if (kind != null && sf.canBePolygon()) {
+        features.polygon(LAYER_NAME)
+          .setAttr("kind", kind)
+          .setAttr("sort_rank", 189)
+          .setZoomRange(7, 15)
+          .setMinPixelSize(2.0);
+      }
+      return;
+    }
+
+    if (/* !"land_cover".equals(sf.getString("type")) && */ !"land_use".equals(sf.getString("type"))) {
+      return;
+    }
+
+    // Overture land_cover examples: barren, crop, forest, grass, shrub, urban, wetland
+    // Overture land_use examples: agriculture, aquaculture, campground, cemetery, construction
+    String kind = sf.getString("subtype");
+
+    if (sf.canBePolygon()) {
+      features.polygon(LAYER_NAME)
+        //.setId(1L + sortKey)
+        .setAttr("kind", kind)
+        .setAttr("sort_rank", 189)
+        // Below z8 this data shows up as Landcover.java
+        .setZoomRange(8, 15)
+        .setMinPixelSize(2.0);
+    }
+  }
+
+  public static final String LAYER_NAME = "landuse";
+
+  @Override
+  public String name() {
+    return LAYER_NAME;
+  }
+
+  @Override
+  public List<VectorTile.Feature> postProcess(int zoom, List<VectorTile.Feature> items) throws GeometryException {
+    if (zoom == 15)
+      return items;
+    double minArea = 400d / (4096 * 4096) * (256 * 256);
+    if (zoom == 6)
+      minArea = 600d / (4096 * 4096) * (256 * 256);
+    else if (zoom <= 5)
+      minArea = 800d / (4096 * 4096) * (256 * 256);
+    items = Area.filterArea(items, minArea);
+
+    // We only care about park boundaries inside groups of adjacent parks at higher zooms when they are labeled
+    // so at lower zooms we merge them to reduce file size
+    if (zoom <= 6) {
+      return FeatureMerge.mergeNearbyPolygons(items, 3.125, 3.125, 0.5, 0.5);
+    }
+    return items;
+  }
+}

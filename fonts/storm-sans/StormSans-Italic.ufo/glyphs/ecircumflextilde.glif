@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ecircumflextilde" format="2">
+  <advance width="511"/>
+  <unicode hex="1EC5"/>
+  <anchor x="243.0" y="0.0" name="bottom"/>
+  <anchor x="322.0" y="0.0" name="bottomright"/>
+  <outline>
+    <component base="e"/>
+    <component base="circumflextilde" xOffset="321"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.assembly</key>
+      <string>
+
+USEMYMETRICS[]
+OFFSET[R], $e$, 0, 0
+OFFSET[R], $circumflextilde$, 321, 0
+CALL[], 23, 24, 88
+SVTCA[Y]
+CALL[], 76, 10, 1, 1, 53, 86
+SHC[2], 2
+SHC[2], 3
+CALL[], 9
+CALL[], 79, 75, 3, 33, 15, 87
+SVTCA[X]
+SHC[2], 2
+SHC[2], 3
+</string>
+      <key>com.type-invaders.vtt.talk</key>
+      <string></string>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

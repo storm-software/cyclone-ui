@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<defs>
+		<mask id="github-mask">
+			<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+				<path d="M12 7.5c1.336 0 2.088 0.32 2.4 0.4c0.424 -0.344 1.552 -1.2 2.8 -1.2c0.272 0.8 0.232 1.776 0 2.4c0.6 0.8 0.8 1.6 0.8 2.8c0 1.752 -0.384 2.864 -1.2 3.6c-0.816 0.736 -1.688 1.096 -2.8 1.2c0.52 0.432 0.4 1.496 0.4 2V20.67A9 9 0 0 0 12 3M12 7.5c-1.336 0 -2.088 0.32 -2.4 0.4c-0.424 -0.344 -1.552 -1.2 -2.8 -1.2c-0.272 0.8 -0.232 1.776 0 2.4c-0.6 0.8 -0.8 1.6 -0.8 2.8c0 1.752 0.384 2.864 1.2 3.6c0.816 0.736 1.688 1.096 2.8 1.2c-0.52 0.432 -0.4 1.496 -0.4 2V20.67A9 9 0 0 1 12 3" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="49"><animate attributeName="fill-opacity" begin="0.6s" dur="0.4s" fill="freeze" to="1" /><animate attributeName="stroke-dashoffset" dur="0.6s" fill="freeze" values="49;0" /></path>
+				<path d="M9.6 18.8c-0.705 0 -1.42 -0.28 -1.845 -0.595c-0.42 -0.31 -0.545 -0.83 -1.155 -1.155" stroke="#000" stroke-width="1.2" stroke-dasharray="5" stroke-dashoffset="5"><animate attributeName="stroke-dashoffset" begin="1s" dur="0.2s" fill="freeze" to="0" /></path>
+			</g>
+		</mask>
+	</defs>
+	<path d="M0 0h24v24H0z" fill="currentColor" mask="url(#github-mask)" />
+</svg>

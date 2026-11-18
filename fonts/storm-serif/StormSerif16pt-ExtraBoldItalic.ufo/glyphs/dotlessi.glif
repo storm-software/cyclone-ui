@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="dotlessi" format="2">
+  <advance width="673"/>
+  <unicode hex="0131"/>
+  <anchor x="452" y="942" name="top"/>
+  <anchor x="264" y="0" name="bottom"/>
+  <anchor x="540" y="0" name="right"/>
+  <outline>
+    <contour>
+      <point x="83" y="122" type="line" smooth="yes"/>
+      <point x="51" y="16"/>
+      <point x="94" y="-30"/>
+      <point x="219" y="-30" type="curve" smooth="yes"/>
+      <point x="375" y="-30"/>
+      <point x="524" y="66"/>
+      <point x="669" y="282" type="curve"/>
+      <point x="624" y="328" type="line"/>
+      <point x="520" y="214"/>
+      <point x="451" y="166"/>
+      <point x="338" y="170" type="curve"/>
+      <point x="405" y="79" type="line"/>
+      <point x="623" y="820" type="line" smooth="yes"/>
+      <point x="655" y="926"/>
+      <point x="613" y="972"/>
+      <point x="488" y="972" type="curve" smooth="yes"/>
+      <point x="330" y="972"/>
+      <point x="170" y="877"/>
+      <point x="36" y="644" type="curve"/>
+      <point x="83" y="601" type="line"/>
+      <point x="185" y="727"/>
+      <point x="256" y="776"/>
+      <point x="370" y="772" type="curve"/>
+      <point x="302" y="842" type="line"/>
+    </contour>
+  </outline>
+</glyph>

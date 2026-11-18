@@ -1,32 +1,37 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { ColorThemeName } from "@cyclone-ui/colors";
-import { GetProps, styled } from "@tamagui/core";
+ ------------------------------------------------------------------- */
+
+"use client";
+
+import type { GetProps } from "@tamagui/core";
+import { styled } from "@tamagui/core";
+// Lets TypeScript name `GetFontSizedInput` (SizableText's `size` type) in
+// this package's declarations.
+import type {} from "@tamagui/get-font-sized";
 import { SizableText } from "@tamagui/text";
 
 export const EyebrowText = styled(SizableText, {
-  name: "EyebrowText",
-  tag: "h5",
-
-  theme: ColorThemeName.BASE,
-  color: "$tertiary",
-  fontFamily: "$eyebrow",
-  size: "$true",
+  displayName: "EyebrowText",
+  render: "h5",
+  color: "subtle",
+  fontFamily: "eyebrow",
+  size: "xs",
+  fontWeight: "medium",
   textTransform: "uppercase"
 });
 

@@ -1,0 +1,1728 @@
+/* -------------------------------------------------------------------
+
+                   🗲 Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
+import { definePlugin } from "@razorwind/core/plugin";
+import type { PreprocessedTokens } from "style-dictionary/types";
+
+const HEX_RE = /^#(?:[0-9a-f]{3,4}|[0-9a-f]{6}|[0-9a-f]{8})$/i;
+const OKLCH_RE =
+  /^oklch\(\s*([0-9.]+%?|none)\s+([0-9.]+|none)\s+([0-9.]+|none)(?:\s*\/\s*([0-9.%]+))?\s*\)$/i;
+
+const RESERVED_KEYS = new Set([
+  "$schema",
+  "$type",
+  "$description",
+  "$extensions",
+  "$extends",
+  "$deprecated",
+  "$root",
+  "$value",
+  "$ref",
+  "theme",
+  "group",
+  "semantic",
+  "palette",
+  "primitive"
+]);
+
+function isPlainObject(value: unknown): value is Record<string, unknown> {
+  return value !== null && typeof value === "object" && !Array.isArray(value);
+}
+
+function isTokenNode(value: unknown): value is Record<string, unknown> {
+  return isPlainObject(value) && ("$value" in value || "$ref" in value);
+}
+
+function isAlias(value: string): boolean {
+  const trimmed = value.trim();
+
+  return trimmed.startsWith("{") || trimmed.startsWith("var(");
+}
+
+function clamp01(value: number): number {
+  return Math.min(1, Math.max(0, value));
+}
+
+function toSrgb(channel: number): number {
+  const clipped = clamp01(channel);
+
+  return clipped <= 0.003_130_8
+    ? 12.92 * clipped
+    : 1.055 * clipped ** (1 / 2.4) - 0.055;
+}
+
+function fromSrgb(channel: number): number {
+  const clipped = clamp01(channel);
+
+  return clipped <= 0.040_45
+    ? clipped / 12.92
+    : ((clipped + 0.055) / 1.055) ** 2.4;
+}
+
+function hexChannel(channel: number): string {
+  return Math.round(toSrgb(channel) * 255)
+    .toString(16)
+    .padStart(2, "0");
+}
+
+function srgbHexChannel(channel: number): string {
+  return Math.round(clamp01(channel) * 255)
+    .toString(16)
+    .padStart(2, "0");
+}
+
+function alphaHex(alpha: number): string {
+  return Math.round(clamp01(alpha) * 255)
+    .toString(16)
+    .padStart(2, "0");
+}
+
+function expandHex(value: string): string {
+  const hex = value.startsWith("#") ? value.slice(1) : value;
+  if (hex.length === 3 || hex.length === 4) {
+    return `#${[...hex].map(digit => digit + digit).join("")}`;
+  }
+
+  return `#${hex}`;
+}
+
+/**
+ * Normalize a hex string or sRGB DTCG color object to `#rrggbb` / `#rrggbbaa`.
+ */
+function colorValueToHex(value: unknown): string | undefined {
+  if (typeof value === "string") {
+    const trimmed = value.trim();
+    if (!HEX_RE.test(trimmed)) {
+      return undefined;
+    }
+
+    const expanded = expandHex(trimmed).toLowerCase();
+    if (expanded.length === 9 && expanded.endsWith("ff")) {
+      return expanded.slice(0, 7);
+    }
+
+    return expanded;
+  }
+
+  if (!isPlainObject(value)) {
+    return undefined;
+  }
+
+  if (typeof value.hex === "string" && HEX_RE.test(value.hex)) {
+    const hex = expandHex(value.hex).toLowerCase().slice(0, 7);
+    const alpha = parseAlpha(value.alpha);
+    if (alpha !== undefined && alpha < 1) {
+      return `${hex}${alphaHex(alpha)}`;
+    }
+
+    return hex;
+  }
+
+  if (
+    value.colorSpace === "srgb" &&
+    Array.isArray(value.components) &&
+    value.components.length >= 3
+  ) {
+    const red = parseComponent(value.components[0]);
+    const green = parseComponent(value.components[1]);
+    const blue = parseComponent(value.components[2]);
+    if (red === undefined || green === undefined || blue === undefined) {
+      return undefined;
+    }
+
+    const hex = `#${srgbHexChannel(red)}${srgbHexChannel(green)}${srgbHexChannel(blue)}`;
+    const alpha = parseAlpha(value.alpha);
+    if (alpha !== undefined && alpha < 1) {
+      return `${hex}${alphaHex(alpha)}`;
+    }
+
+    return hex;
+  }
+
+  return undefined;
+}
+
+/** Convert OKLCH (L C H) to unclipped linear sRGB channels. */
+function oklchToLinearSrgb(
+  lightness: number,
+  chroma: number,
+  hue: number
+): { red: number; green: number; blue: number } {
+  const hueRad = (hue * Math.PI) / 180;
+  const a = chroma * Math.cos(hueRad);
+  const b = chroma * Math.sin(hueRad);
+
+  const l_ = lightness + 0.396_337_777_4 * a + 0.215_803_757_3 * b;
+  const m_ = lightness - 0.105_561_345_8 * a - 0.063_854_172_8 * b;
+  const s_ = lightness - 0.089_484_177_5 * a - 1.291_485_548 * b;
+
+  const l3 = l_ ** 3;
+  const m3 = m_ ** 3;
+  const s3 = s_ ** 3;
+
+  return {
+    red: 4.076_741_662_1 * l3 - 3.307_711_591_3 * m3 + 0.230_969_929_2 * s3,
+    green: -1.268_438_004_6 * l3 + 2.609_757_401_1 * m3 - 0.341_319_396_5 * s3,
+    blue: -0.004_196_086_3 * l3 - 0.703_418_614_7 * m3 + 1.707_614_701 * s3
+  };
+}
+
+function oklchToHex(
+  lightness: number,
+  chroma: number,
+  hue: number,
+  alpha?: number
+): string {
+  const { red, green, blue } = oklchToLinearSrgb(lightness, chroma, hue);
+
+  const hex = `#${hexChannel(red)}${hexChannel(green)}${hexChannel(blue)}`;
+  if (alpha === undefined || alpha >= 1) {
+    return hex;
+  }
+
+  return `${hex}${alphaHex(alpha)}`;
+}
+
+function parseComponent(value: unknown): number | undefined {
+  if (typeof value === "number" && Number.isFinite(value)) {
+    return value;
+  }
+
+  if (typeof value !== "string" || value === "none") {
+    return undefined;
+  }
+
+  const parsed = Number.parseFloat(value);
+
+  return Number.isFinite(parsed) ? parsed : undefined;
+}
+
+function parseAlpha(value: unknown): number | undefined {
+  if (typeof value === "number" && Number.isFinite(value)) {
+    return value > 1 ? value / 100 : value;
+  }
+
+  if (typeof value !== "string") {
+    return undefined;
+  }
+
+  const parsed = Number.parseFloat(value);
+  if (!Number.isFinite(parsed)) {
+    return undefined;
+  }
+
+  return value.includes("%")
+    ? parsed / 100
+    : parsed > 1
+      ? parsed / 100
+      : parsed;
+}
+
+function oklchStringToHex(value: string): string | undefined {
+  const match = OKLCH_RE.exec(value.trim());
+  if (!match) {
+    return undefined;
+  }
+
+  let lightness = parseComponent(match[1]);
+  const chroma = parseComponent(match[2]);
+  const hue = parseComponent(match[3]);
+  if (lightness === undefined || chroma === undefined || hue === undefined) {
+    return undefined;
+  }
+
+  if (match[1]?.includes("%")) {
+    lightness /= 100;
+  }
+
+  return oklchToHex(lightness, chroma, hue, parseAlpha(match[4]));
+}
+
+function oklchObjectToHex(value: Record<string, unknown>): string | undefined {
+  if (!Array.isArray(value.components) || value.components.length < 3) {
+    return undefined;
+  }
+
+  let lightness = parseComponent(value.components[0]);
+  const chroma = parseComponent(value.components[1]);
+  const hue = parseComponent(value.components[2]);
+  if (lightness === undefined || chroma === undefined || hue === undefined) {
+    return undefined;
+  }
+
+  if (lightness > 1) {
+    lightness /= 100;
+  }
+
+  return oklchToHex(lightness, chroma, hue, parseAlpha(value.alpha));
+}
+
+function convertColor(value: unknown): string | undefined {
+  if (typeof value === "string") {
+    if (isAlias(value)) {
+      return undefined;
+    }
+
+    return oklchStringToHex(value) ?? colorValueToHex(value) ?? undefined;
+  }
+
+  if (!isPlainObject(value)) {
+    return undefined;
+  }
+
+  if (
+    typeof value.colorSpace === "string" &&
+    value.colorSpace.toLowerCase() === "oklch"
+  ) {
+    return oklchObjectToHex(value);
+  }
+
+  return colorValueToHex(value) ?? undefined;
+}
+
+function convertShadow(value: unknown): unknown {
+  if (Array.isArray(value)) {
+    return value.map(layer => convertShadow(layer));
+  }
+
+  if (!isPlainObject(value) || !("color" in value)) {
+    return value;
+  }
+
+  const color = convertColor(value.color);
+  if (!color) {
+    return value;
+  }
+
+  return { ...value, color };
+}
+
+function convertValue(value: unknown, type?: string): unknown {
+  if (type === "shadow") {
+    return convertShadow(value);
+  }
+
+  if (type === "border" && isPlainObject(value) && "color" in value) {
+    const color = convertColor(value.color);
+
+    return color ? { ...value, color } : value;
+  }
+
+  if (type === "color" || type === undefined) {
+    return convertColor(value) ?? value;
+  }
+
+  return value;
+}
+
+function resolveType(
+  token: Record<string, unknown>,
+  inheritedType?: string
+): string | undefined {
+  if (typeof token.$type === "string") {
+    return token.$type;
+  }
+
+  if (typeof token.type === "string") {
+    return token.type;
+  }
+
+  return inheritedType;
+}
+
+function mapTokenNode(
+  token: Record<string, unknown>,
+  inheritedType?: string
+): Record<string, unknown> {
+  if ("$ref" in token && !("$value" in token)) {
+    return { ...token };
+  }
+
+  const type = resolveType(token, inheritedType);
+  if (!("$value" in token)) {
+    return { ...token };
+  }
+
+  return {
+    ...token,
+    $value: convertValue(token.$value, type)
+  };
+}
+
+function walk(node: any, inheritedType?: string): unknown {
+  if (Array.isArray(node)) {
+    return node.map(item => walk(item, inheritedType));
+  }
+
+  if (!isPlainObject(node)) {
+    return node;
+  }
+
+  if (isTokenNode(node)) {
+    return mapTokenNode(node, inheritedType);
+  }
+
+  const groupType =
+    typeof (node as any).$type === "string"
+      ? (node as any).$type
+      : inheritedType;
+
+  const result: Record<string, unknown> = {};
+  for (const [key, value] of Object.entries(node)) {
+    if (RESERVED_KEYS.has(key) || key.startsWith("$")) {
+      result[key] = value;
+      continue;
+    }
+
+    result[key] = walk(value, groupType);
+  }
+
+  return result;
+}
+
+interface ColorStateVariant {
+  name: string;
+  opacity?: number;
+  /** Multiplier applied to OKLCH chroma for non-greyscale colors. */
+  saturation?: number;
+  /**
+   * Multiplier applied to OKLCH lightness (e.g. 1.1 = 10%). Values above 1 are
+   * brighter: lighter in dark themes, darker in light themes. Active states
+   * are never less bright than the color's normal, hovered, or inactive states;
+   * hovered states reverse for colors already near the contrast primitive.
+   */
+  brightness?: number;
+  /** Resolve state colors from the parent theme's contrast primitive. */
+  useContrastPrimitive?: boolean;
+  /** Composite the color at `opacity` over this opaque color. */
+  fadeOver?: string;
+}
+
+type ParentTheme = "dark" | "light";
+
+const CONTRAST_PRIMITIVES: Record<ParentTheme, string> = {
+  dark: "#ffffff",
+  light: "#0c0c0d"
+};
+
+/** Active colors already near the contrast primitive jump to these instead. */
+const PURE_CONTRAST_COLORS: Record<ParentTheme, string> = {
+  dark: "#ffffff",
+  light: "#000000"
+};
+
+function parentThemeFromDescription(
+  description: unknown
+): ParentTheme | undefined {
+  if (typeof description !== "string") {
+    return undefined;
+  }
+
+  const theme = /\b(dark|light)[\s-]+theme\b/i.exec(description)?.[1];
+
+  return theme?.toLowerCase() === "dark"
+    ? "dark"
+    : theme?.toLowerCase() === "light"
+      ? "light"
+      : undefined;
+}
+
+function parentThemeFromDictionary(
+  dictionary: unknown
+): ParentTheme | undefined {
+  if (!isPlainObject(dictionary) || !isPlainObject(dictionary.color)) {
+    return undefined;
+  }
+
+  return parentThemeFromDescription(dictionary.color.$description);
+}
+
+const LOW_SATURATION_COLOR_STATE_ACTIVE: ColorStateVariant = {
+  name: "active",
+  brightness: 1.45,
+  useContrastPrimitive: true
+};
+
+const COLOR_STATE_ACTIVE: ColorStateVariant = {
+  name: "active",
+  brightness: 1.25
+};
+
+const SUBTLE_LOW_SATURATION_COLOR_STATE_ACTIVE: ColorStateVariant = {
+  name: "active",
+  brightness: 1.175
+};
+
+const INCREASED_LOW_SATURATION_COLOR_STATE_ACTIVE: ColorStateVariant = {
+  name: "active",
+  brightness: 1.8,
+  useContrastPrimitive: true
+};
+
+const COLOR_STATE_INACTIVE: ColorStateVariant = {
+  name: "inactive",
+  brightness: 0.8
+};
+
+const LOW_SATURATION_COLOR_STATE_INACTIVE: ColorStateVariant = {
+  name: "inactive",
+  brightness: 0.5,
+  useContrastPrimitive: true
+};
+
+const COLOR_STATE_DISABLED: ColorStateVariant = {
+  name: "disabled",
+  opacity: 0.3,
+  saturation: 0.85,
+  fadeOver: "oklch(0.3839 0.0045 286.26)"
+};
+
+/** State variants for low-saturation (neutral) and saturated colors. */
+interface ColorStateVariants {
+  lowSaturation: readonly ColorStateVariant[];
+  saturated: readonly ColorStateVariant[];
+}
+
+const DEFAULT_COLOR_STATE_VARIANTS: ColorStateVariants = {
+  lowSaturation: [
+    LOW_SATURATION_COLOR_STATE_ACTIVE,
+    LOW_SATURATION_COLOR_STATE_INACTIVE,
+    COLOR_STATE_DISABLED
+  ],
+  saturated: [COLOR_STATE_ACTIVE, COLOR_STATE_INACTIVE, COLOR_STATE_DISABLED]
+};
+
+/**
+ * Subtle (secondary) colors dim their own lightness when inactive; the
+ * contrast primitive's mid-grey would be brighter than these backgrounds.
+ */
+const SUBTLE_COLOR_STATE_VARIANTS: ColorStateVariants = {
+  lowSaturation: [
+    SUBTLE_LOW_SATURATION_COLOR_STATE_ACTIVE,
+    COLOR_STATE_INACTIVE,
+    COLOR_STATE_DISABLED
+  ],
+  saturated: DEFAULT_COLOR_STATE_VARIANTS.saturated
+};
+
+/**
+ * Backgrounds shift their own lightness instead of jumping to the contrast
+ * primitive, at about half the change of other colors' states.
+ */
+const BACKGROUND_COLOR_STATE_INACTIVE: ColorStateVariant = {
+  name: "inactive",
+  brightness: 0.9
+};
+
+const BACKGROUND_COLOR_STATE_DISABLED: ColorStateVariant = {
+  ...COLOR_STATE_DISABLED,
+  opacity: 0.65,
+  saturation: 0.925
+};
+
+const BACKGROUND_COLOR_STATE_VARIANTS: ColorStateVariants = {
+  lowSaturation: [
+    { name: "active", brightness: 1.3 },
+    BACKGROUND_COLOR_STATE_INACTIVE,
+    BACKGROUND_COLOR_STATE_DISABLED
+  ],
+  saturated: [
+    { name: "active", brightness: 1.25 },
+    BACKGROUND_COLOR_STATE_INACTIVE,
+    BACKGROUND_COLOR_STATE_DISABLED
+  ]
+};
+
+const NONE_THEME_COLOR_KEYS = ["shadows"] as const;
+
+/** Color groups with a primary token become child themes unless excluded. */
+function themeColorGroups(
+  color: Record<string, unknown>
+): [string, Record<string, unknown>][] {
+  return Object.entries(color).filter(
+    (entry): entry is [string, Record<string, unknown>] =>
+      !NONE_THEME_COLOR_KEYS.includes(
+        entry[0] as (typeof NONE_THEME_COLOR_KEYS)[number]
+      ) &&
+      isPlainObject(entry[1]) &&
+      !isTokenNode(entry[1]) &&
+      isTokenNode((entry[1] as { primary?: unknown }).primary)
+  );
+}
+
+const HAIRLINE_COLOR_STATE_VARIANTS: ColorStateVariants = {
+  lowSaturation: [
+    { name: "hovered", brightness: 1.4 },
+    INCREASED_LOW_SATURATION_COLOR_STATE_ACTIVE,
+    LOW_SATURATION_COLOR_STATE_INACTIVE,
+    COLOR_STATE_DISABLED
+  ],
+  saturated: [
+    { name: "hovered", brightness: 1.2 },
+    {
+      name: "active",
+      brightness: 1.4
+    },
+    COLOR_STATE_INACTIVE,
+    COLOR_STATE_DISABLED
+  ]
+};
+
+/**
+ * Theme color group hovered states take about half the step of active, and
+ * never jump to the contrast primitive (so they stay distinct from active).
+ */
+const THEME_COLOR_STATE_HOVERED_VARIANTS: ColorStateVariants = {
+  lowSaturation: [
+    { name: "hovered", brightness: 1.25 },
+    ...DEFAULT_COLOR_STATE_VARIANTS.lowSaturation
+  ],
+  saturated: [
+    { name: "hovered", brightness: 1.125 },
+    ...DEFAULT_COLOR_STATE_VARIANTS.saturated
+  ]
+};
+
+const SUBTLE_COLOR_STATE_HOVERED_VARIANTS: ColorStateVariants = {
+  lowSaturation: [
+    { name: "hovered", brightness: 1.08 },
+    ...SUBTLE_COLOR_STATE_VARIANTS.lowSaturation
+  ],
+  saturated: THEME_COLOR_STATE_HOVERED_VARIANTS.saturated
+};
+
+/** State variants for the tokens inside each theme color group. */
+const THEME_COLOR_STATE_VARIANTS: Record<string, ColorStateVariants> = {
+  primary: THEME_COLOR_STATE_HOVERED_VARIANTS,
+  secondary: SUBTLE_COLOR_STATE_HOVERED_VARIANTS,
+  link: THEME_COLOR_STATE_HOVERED_VARIANTS
+};
+
+/**
+ * Foreground and background hovered states are a smaller step than active
+ * (e.g. in dark themes, active is lighter than hovered).
+ */
+const FOREGROUND_COLOR_STATE_VARIANTS: ColorStateVariants = {
+  lowSaturation: [
+    { name: "hovered", brightness: 1.25 },
+    ...DEFAULT_COLOR_STATE_VARIANTS.lowSaturation
+  ],
+  saturated: [
+    { name: "hovered", brightness: 1.15 },
+    ...DEFAULT_COLOR_STATE_VARIANTS.saturated
+  ]
+};
+
+const BACKGROUND_COLOR_STATE_HOVERED_VARIANTS: ColorStateVariants = {
+  lowSaturation: [
+    { name: "hovered", brightness: 1.15 },
+    ...BACKGROUND_COLOR_STATE_VARIANTS.lowSaturation
+  ],
+  saturated: [
+    { name: "hovered", brightness: 1.15 },
+    ...BACKGROUND_COLOR_STATE_VARIANTS.saturated
+  ]
+};
+
+/** Color tokens with these `group`s receive state variants. */
+const COLOR_STATE_TOKEN_GROUPS: Record<string, ColorStateVariants> = {
+  foreground: FOREGROUND_COLOR_STATE_VARIANTS,
+  background: BACKGROUND_COLOR_STATE_HOVERED_VARIANTS
+};
+
+/** Standalone color tokens that receive state variants. */
+const COLOR_STATE_VARIANTS: Record<string, ColorStateVariants> = {
+  hairline: HAIRLINE_COLOR_STATE_VARIANTS
+};
+
+/** OKLCH chroma below which a color uses the low-saturation state variants. */
+const LOW_SATURATION_CHROMA = 0.02;
+
+const LOW_SATURATION_RING_OPACITY = 0.1;
+const SATURATED_RING_OPACITY = 0.15;
+const MINIMUM_SUBTLE_CONTRAST_RATIO = 7.5;
+const MINIMUM_INVERSE_CONTRAST_RATIO = 2;
+const SUBTLE_COLOR_LIGHTNESS_STEP = 0.01;
+const MAX_SUBTLE_COLOR_ADJUSTMENTS = 100;
+const SUBTLE_COLOR_GAMUT_SEARCH_ITERATIONS = 32;
+const BACKDROP_BRIGHTNESS = 0.375;
+const BACKDROP_OPACITY = 0.15;
+/** OKLCH lightness step for the rim around `secondary` backgrounds (brighter in dark, darker in light themes). */
+const BORDER_LIGHTNESS_STEP = 0.25;
+/** OKLCH lightness shift for hovered colors already near the contrast primitive. */
+const CONTRAST_SIDE_ACTIVE_LIGHTNESS_SHIFT = 0.25;
+
+function isStateVariantKey(key: string): boolean {
+  return (
+    key.toLowerCase().endsWith("-hovered") ||
+    key.toLowerCase().endsWith("-active") ||
+    key.toLowerCase().endsWith("-inactive") ||
+    key.toLowerCase().endsWith("-disabled")
+  );
+}
+
+function getTokenAtPath(
+  tree: unknown,
+  path: string
+): Record<string, unknown> | undefined {
+  let node: unknown = tree;
+
+  for (const part of path.split(".").filter(Boolean)) {
+    if (!isPlainObject(node) || !(part in node)) {
+      return undefined;
+    }
+
+    node = node[part];
+  }
+
+  return isTokenNode(node) ? node : undefined;
+}
+
+function resolveColorHex(
+  value: unknown,
+  tree: unknown,
+  seen: Set<string> = new Set()
+): string | undefined {
+  const direct = convertColor(value);
+  if (direct) {
+    return direct;
+  }
+
+  if (typeof value !== "string") {
+    return undefined;
+  }
+
+  const ref = /^\{([^{}]+)\}$/.exec(value.trim());
+  if (!ref?.[1] || seen.has(ref[1])) {
+    return undefined;
+  }
+
+  seen.add(ref[1]);
+  const token = getTokenAtPath(tree, ref[1]);
+  if (!token || !("$value" in token)) {
+    return undefined;
+  }
+
+  return resolveColorHex(token.$value, tree, seen);
+}
+
+function applyOpacity(hex: string, opacity: number): string {
+  const expanded = expandHex(hex).toLowerCase();
+  const rgb = expanded.slice(0, 7);
+  const existingAlpha =
+    expanded.length === 9 ? Number.parseInt(expanded.slice(7, 9), 16) / 255 : 1;
+  const alpha = clamp01(existingAlpha * opacity);
+
+  if (alpha >= 1) {
+    return rgb;
+  }
+
+  return `${rgb}${alphaHex(alpha)}`;
+}
+
+/** Alpha-composite `hex` at `opacity` over an opaque `background` (sRGB). */
+function applyFadeOver(
+  hex: string,
+  background: string,
+  opacity: number
+): string {
+  const foreground = expandHex(hex).toLowerCase();
+  const base = expandHex(convertColor(background) ?? background).toLowerCase();
+  const existingAlpha =
+    foreground.length === 9
+      ? Number.parseInt(foreground.slice(7, 9), 16) / 255
+      : 1;
+  const alpha = clamp01(existingAlpha * opacity);
+  const channel = (offset: number) =>
+    srgbHexChannel(
+      (Number.parseInt(foreground.slice(offset, offset + 2), 16) * alpha +
+        Number.parseInt(base.slice(offset, offset + 2), 16) * (1 - alpha)) /
+        255
+    );
+
+  return `#${channel(1)}${channel(3)}${channel(5)}`;
+}
+
+function applyRingOpacity(
+  node: unknown,
+  tree: unknown,
+  inRingGroup = false
+): unknown {
+  if (Array.isArray(node)) {
+    return node.map(item => applyRingOpacity(item, tree, inRingGroup));
+  }
+
+  if (!isPlainObject(node)) {
+    return node;
+  }
+
+  if (inRingGroup && isTokenNode(node) && resolveType(node) === "shadow") {
+    const value = node.$value;
+    const applyToLayer = (layer: unknown): unknown => {
+      if (!isPlainObject(layer) || !("color" in layer)) {
+        return layer;
+      }
+
+      const color = resolveColorHex(layer.color, tree);
+
+      return color
+        ? {
+            ...layer,
+            color: applyOpacity(
+              color,
+              isLowSaturation(color)
+                ? LOW_SATURATION_RING_OPACITY
+                : SATURATED_RING_OPACITY
+            )
+          }
+        : layer;
+    };
+
+    return {
+      ...node,
+      // CSS paints the first shadow layer on top. Ring tokens may use those
+      // leading layers as opaque offset masks, so only tint the final,
+      // visible ring layer.
+      $value: Array.isArray(value)
+        ? value.map((layer, index) =>
+            index === value.length - 1 ? applyToLayer(layer) : layer
+          )
+        : applyToLayer(value)
+    };
+  }
+
+  const result: Record<string, unknown> = {};
+  for (const [key, value] of Object.entries(node)) {
+    result[key] = applyRingOpacity(
+      value,
+      tree,
+      inRingGroup || key.toLowerCase() === "ring"
+    );
+  }
+
+  return result;
+}
+
+const ZERO = { value: 0, unit: "px" };
+
+function ringLayer(color: string, spread: number): Record<string, unknown> {
+  return {
+    color,
+    offsetX: ZERO,
+    offsetY: ZERO,
+    blur: ZERO,
+    spread: { value: spread, unit: "px" }
+  };
+}
+
+/**
+ * Add the default, subtle, offset, and subtle-offset ring tokens for each
+ * ring color (e.g. `ring.danger`, `ring.danger-subtle`, `ring.danger-offset`,
+ * `ring.danger-subtle-offset`) unless they are already defined.
+ */
+function addMissingRingTokens(dictionary: unknown): unknown {
+  if (!isPlainObject(dictionary) || !isPlainObject(dictionary.color)) {
+    return dictionary;
+  }
+
+  const color = dictionary.color;
+  const ring = isPlainObject(dictionary.ring) ? { ...dictionary.ring } : {};
+  let changed = false;
+
+  for (const [name] of themeColorGroups(color)) {
+    const ringColor = `{color.${name}.primary}`;
+    const gap = (spread: number) => ringLayer("{color.elevated}", spread);
+    const variants: Record<string, [string, unknown[]]> = {
+      [name]: [`${name} 3px focus ring with no gap`, [ringLayer(ringColor, 3)]],
+      [`${name}-subtle`]: [
+        `${name} 1px outline focus ring with no gap`,
+        [ringLayer(ringColor, 1)]
+      ],
+      [`${name}-offset`]: [
+        `${name} 3px focus ring with a 3px gap`,
+        [gap(3), ringLayer(ringColor, 7)]
+      ],
+      [`${name}-subtle-offset`]: [
+        `${name} 1px focus ring with a 2px gap`,
+        [gap(2), ringLayer(ringColor, 3)]
+      ]
+    };
+
+    for (const [key, [description, value]] of Object.entries(variants)) {
+      if (key in ring) {
+        continue;
+      }
+
+      ring[key] = {
+        $description: `Generated ${description}`,
+        $type: "shadow",
+        $value: value,
+        theme: name
+      };
+      changed = true;
+    }
+  }
+
+  return changed ? { ...dictionary, ring } : dictionary;
+}
+
+function isLowSaturation(hex: string): boolean {
+  return hexToOklch(hex).chroma < LOW_SATURATION_CHROMA;
+}
+
+function isGreyscale(hex: string): boolean {
+  const expanded = expandHex(hex).toLowerCase();
+
+  return (
+    expanded.slice(1, 3) === expanded.slice(3, 5) &&
+    expanded.slice(3, 5) === expanded.slice(5, 7)
+  );
+}
+
+/**
+ * Convert `#rrggbb` / `#rrggbbaa` to OKLCH so lightness can be scaled.
+ *
+ * @see https://bottosson.github.io/posts/oklab/
+ */
+function hexToOklch(hex: string): {
+  lightness: number;
+  chroma: number;
+  hue: number;
+  alpha?: number;
+} {
+  const expanded = expandHex(hex).toLowerCase();
+  const red = fromSrgb(Number.parseInt(expanded.slice(1, 3), 16) / 255);
+  const green = fromSrgb(Number.parseInt(expanded.slice(3, 5), 16) / 255);
+  const blue = fromSrgb(Number.parseInt(expanded.slice(5, 7), 16) / 255);
+  const alpha =
+    expanded.length === 9
+      ? Number.parseInt(expanded.slice(7, 9), 16) / 255
+      : undefined;
+
+  const l_ =
+    0.412_221_470_8 * red + 0.536_332_536_3 * green + 0.051_445_992_9 * blue;
+  const m_ =
+    0.211_903_498_2 * red + 0.680_699_545_1 * green + 0.107_396_956_6 * blue;
+  const s_ =
+    0.088_302_461_9 * red + 0.281_718_837_6 * green + 0.629_978_700_5 * blue;
+
+  const l = Math.cbrt(l_);
+  const m = Math.cbrt(m_);
+  const s = Math.cbrt(s_);
+
+  const lightness =
+    0.210_454_255_3 * l + 0.793_617_785 * m - 0.004_072_046_8 * s;
+  const a = 1.977_998_495_1 * l - 2.428_592_205 * m + 0.450_593_709_9 * s;
+  const b = 0.025_904_037_1 * l + 0.782_771_766_2 * m - 0.808_675_766 * s;
+
+  const chroma = Math.hypot(a, b);
+  let hue = (Math.atan2(b, a) * 180) / Math.PI;
+  if (hue < 0) {
+    hue += 360;
+  }
+
+  return { lightness, chroma, hue, alpha };
+}
+
+function isInSrgbGamut({
+  red,
+  green,
+  blue
+}: {
+  red: number;
+  green: number;
+  blue: number;
+}): boolean {
+  return (
+    red >= 0 && red <= 1 && green >= 0 && green <= 1 && blue >= 0 && blue <= 1
+  );
+}
+
+function oklchToGamutMappedHex(
+  lightness: number,
+  chroma: number,
+  hue: number,
+  alpha?: number
+): string {
+  if (isInSrgbGamut(oklchToLinearSrgb(lightness, chroma, hue))) {
+    return oklchToHex(lightness, chroma, hue, alpha);
+  }
+
+  let minimumChroma = 0;
+  let maximumChroma = chroma;
+
+  // Find the highest in-gamut chroma while holding lightness and hue fixed.
+  for (
+    let index = 0;
+    index < SUBTLE_COLOR_GAMUT_SEARCH_ITERATIONS;
+    index += 1
+  ) {
+    const candidateChroma = (minimumChroma + maximumChroma) / 2;
+    if (isInSrgbGamut(oklchToLinearSrgb(lightness, candidateChroma, hue))) {
+      minimumChroma = candidateChroma;
+    } else {
+      maximumChroma = candidateChroma;
+    }
+  }
+
+  return oklchToHex(lightness, minimumChroma, hue, alpha);
+}
+
+function applyBrightness(hex: string, factor: number): string {
+  const { lightness, chroma, hue, alpha } = hexToOklch(hex);
+
+  return oklchToHex(clamp01(lightness * factor), chroma, hue, alpha);
+}
+
+function applyLightnessShift(hex: string, shift: number): string {
+  const { lightness, chroma, hue, alpha } = hexToOklch(hex);
+
+  return oklchToHex(clamp01(lightness + shift), chroma, hue, alpha);
+}
+
+function applySaturation(hex: string, factor: number): string {
+  const { lightness, chroma, hue, alpha } = hexToOklch(hex);
+
+  return oklchToHex(lightness, chroma * clamp01(factor), hue, alpha);
+}
+
+function relativeLuminance(hex: string): number {
+  const expanded = expandHex(hex).toLowerCase();
+  const channel = (offset: number) => {
+    const value = Number.parseInt(expanded.slice(offset, offset + 2), 16) / 255;
+
+    return value <= 0.040_45 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4;
+  };
+
+  return 0.2126 * channel(1) + 0.7152 * channel(3) + 0.0722 * channel(5);
+}
+
+function contrastRatio(first: string, second: string): number {
+  const firstLuminance = relativeLuminance(first);
+  const secondLuminance = relativeLuminance(second);
+  const lighter = Math.max(firstLuminance, secondLuminance);
+  const darker = Math.min(firstLuminance, secondLuminance);
+
+  return (lighter + 0.05) / (darker + 0.05);
+}
+
+function createOnColor(hex: string): "#FAFAFA" | "#151518" {
+  const whiteContrast = contrastRatio(hex, "#FAFAFA");
+  if (whiteContrast >= MINIMUM_INVERSE_CONTRAST_RATIO) {
+    return "#FAFAFA";
+  }
+
+  const blackContrast = contrastRatio(hex, "#151518");
+  if (blackContrast * 0.5 > whiteContrast) {
+    return "#151518";
+  }
+
+  return "#FAFAFA";
+}
+
+function createMutedColor(
+  hex: string,
+  parentTheme: ParentTheme
+): { secondary: string; onMuted?: string } {
+  const { lightness, chroma, hue, alpha } = hexToOklch(hex);
+  const secondaryDirection = parentTheme === "light" ? 1 : -1;
+  const onMutedDirection = -secondaryDirection;
+  let secondaryLightness = lightness;
+  let onMutedLightness = lightness;
+  let secondary = hex;
+  let onMuted = hex;
+
+  for (let index = 0; index < MAX_SUBTLE_COLOR_ADJUSTMENTS; index += 1) {
+    secondaryLightness = clamp01(
+      secondaryLightness + secondaryDirection * SUBTLE_COLOR_LIGHTNESS_STEP
+    );
+    secondary = oklchToGamutMappedHex(secondaryLightness, chroma, hue, alpha);
+    if (contrastRatio(secondary, onMuted) >= MINIMUM_SUBTLE_CONTRAST_RATIO) {
+      return onMuted === hex ? { secondary } : { secondary, onMuted };
+    }
+
+    onMutedLightness = clamp01(
+      onMutedLightness + onMutedDirection * SUBTLE_COLOR_LIGHTNESS_STEP
+    );
+    onMuted = oklchToGamutMappedHex(onMutedLightness, chroma, hue, alpha);
+    if (contrastRatio(secondary, onMuted) >= MINIMUM_SUBTLE_CONTRAST_RATIO) {
+      return { secondary, onMuted };
+    }
+
+    if (
+      (secondaryLightness === 0 || secondaryLightness === 1) &&
+      (onMutedLightness === 0 || onMutedLightness === 1)
+    ) {
+      break;
+    }
+  }
+
+  throw new Error(`Unable to generate an accessible secondary pair for ${hex}`);
+}
+
+/** Low-saturation colors only count as white / black past ≈ #dddddd / #262626. */
+const LOW_SATURATION_WHITE_LIGHTNESS = hexToOklch("#dddddd").lightness;
+const LOW_SATURATION_BLACK_LIGHTNESS = hexToOklch("#262626").lightness;
+
+function isWhiteColor(hex: string): boolean {
+  return (
+    hexToOklch(hex).lightness >=
+    (isLowSaturation(hex) ? LOW_SATURATION_WHITE_LIGHTNESS : 0.75)
+  );
+}
+
+function isBlackColor(hex: string): boolean {
+  return (
+    hexToOklch(hex).lightness <=
+    (isLowSaturation(hex) ? LOW_SATURATION_BLACK_LIGHTNESS : 0.25)
+  );
+}
+
+/** Hovered and active states share the contrast primitive behavior. */
+function isInteractionState(variant: ColorStateVariant): boolean {
+  return variant.name === "hovered" || variant.name === "active";
+}
+
+function isNearContrastPrimitive(
+  hex: string,
+  parentTheme?: ParentTheme
+): boolean {
+  return parentTheme === "dark"
+    ? isWhiteColor(hex)
+    : parentTheme === "light" && isBlackColor(hex);
+}
+
+/** Without a parent theme, dark colors brighten like a dark theme (and vice versa). */
+function stateTheme(hex: string, parentTheme?: ParentTheme): ParentTheme {
+  return parentTheme ?? (hexToOklch(hex).lightness >= 0.5 ? "light" : "dark");
+}
+
+/** Brightness is OKLCH lightness in dark themes and its inverse in light themes. */
+function themeBrightness(hex: string, parentTheme: ParentTheme): number {
+  const { lightness } = hexToOklch(hex);
+
+  return parentTheme === "light" ? 1 - lightness : lightness;
+}
+
+function withThemeBrightness(
+  hex: string,
+  brightness: number,
+  parentTheme: ParentTheme
+): string {
+  const { chroma, hue, alpha } = hexToOklch(hex);
+
+  return oklchToGamutMappedHex(
+    clamp01(parentTheme === "light" ? 1 - brightness : brightness),
+    chroma,
+    hue,
+    alpha
+  );
+}
+
+/**
+ * Only hovered states reverse, for colors already near the contrast primitive
+ * (which can't get meaningfully brighter); active states never become less
+ * bright.
+ */
+function isReversedState(
+  hex: string,
+  variant: ColorStateVariant,
+  parentTheme: ParentTheme
+): boolean {
+  return (
+    variant.name === "hovered" && isNearContrastPrimitive(hex, parentTheme)
+  );
+}
+
+function isBrighterState(
+  hex: string,
+  variant: ColorStateVariant,
+  parentTheme: ParentTheme
+): boolean {
+  return (
+    (variant.brightness ?? 1) >= 1 !==
+    isReversedState(hex, variant, parentTheme)
+  );
+}
+
+/**
+ * Step `hex` by the state's `brightness` (a multiple of its OKLCH lightness).
+ * Brighter steps stop halfway to pure white / black so bright colors keep
+ * their hue instead of blowing out. Reversed steps scale with brightness so
+ * pure black still moves in light themes.
+ */
+function applyStateBrightness(
+  hex: string,
+  variant: ColorStateVariant,
+  parentTheme: ParentTheme
+): string {
+  const brightness = themeBrightness(hex, parentTheme);
+  const step =
+    (isReversedState(hex, variant, parentTheme)
+      ? brightness
+      : hexToOklch(hex).lightness) * Math.abs((variant.brightness ?? 1) - 1);
+
+  return withThemeBrightness(
+    hex,
+    isBrighterState(hex, variant, parentTheme)
+      ? brightness + Math.min(step, (1 - brightness) / 2)
+      : brightness - step,
+    parentTheme
+  );
+}
+
+function contrastPrimitive(
+  variant: ColorStateVariant,
+  parentTheme?: ParentTheme
+): string | undefined {
+  return variant.useContrastPrimitive && parentTheme
+    ? CONTRAST_PRIMITIVES[parentTheme]
+    : undefined;
+}
+
+/**
+ * Hovered colors that already sit near the parent theme's contrast primitive
+ * (near-white in dark themes, near-black in light themes) would barely change
+ * by jumping to it, so their lightness shifts toward the middle instead.
+ */
+function contrastSideLightnessShift(
+  hex: string,
+  variant: ColorStateVariant,
+  parentTheme?: ParentTheme
+): number | undefined {
+  if (
+    variant.name !== "hovered" ||
+    !contrastPrimitive(variant, parentTheme) ||
+    !isNearContrastPrimitive(hex, parentTheme)
+  ) {
+    return undefined;
+  }
+
+  return parentTheme === "dark"
+    ? -CONTRAST_SIDE_ACTIVE_LIGHTNESS_SHIFT
+    : CONTRAST_SIDE_ACTIVE_LIGHTNESS_SHIFT;
+}
+
+/**
+ * The color an interaction state jumps to. Active colors already near the
+ * contrast primitive go to pure white (dark) or pure black (light) so they
+ * never lose contrast.
+ */
+function stateContrastColor(
+  hex: string,
+  variant: ColorStateVariant,
+  parentTheme?: ParentTheme
+): string | undefined {
+  const primitive = contrastPrimitive(variant, parentTheme);
+
+  return primitive &&
+    parentTheme &&
+    variant.name === "active" &&
+    isNearContrastPrimitive(hex, parentTheme)
+    ? PURE_CONTRAST_COLORS[parentTheme]
+    : primitive;
+}
+
+function applyStateTransform(
+  hex: string,
+  variant: ColorStateVariant,
+  parentTheme?: ParentTheme
+): string {
+  const shift = contrastSideLightnessShift(hex, variant, parentTheme);
+  const primitive =
+    shift === undefined
+      ? stateContrastColor(hex, variant, parentTheme)
+      : undefined;
+  const theme = stateTheme(hex, parentTheme);
+  let transformed = primitive ?? hex;
+
+  if (shift !== undefined) {
+    transformed = applyLightnessShift(hex, shift);
+  } else if (
+    variant.brightness !== undefined &&
+    !(primitive && isInteractionState(variant))
+  ) {
+    // Non-interaction states scale the primitive's brightness directly
+    // (e.g. inactive at 50% is mid-grey in both dark and light themes).
+    transformed = primitive
+      ? withThemeBrightness(
+          primitive,
+          themeBrightness(primitive, theme) * variant.brightness,
+          theme
+        )
+      : applyStateBrightness(hex, variant, theme);
+  }
+
+  if (variant.saturation !== undefined && !isGreyscale(hex)) {
+    transformed = applySaturation(transformed, variant.saturation);
+    if (variant.fadeOver === undefined) {
+      return transformed;
+    }
+  }
+
+  if (variant.fadeOver !== undefined) {
+    return applyFadeOver(transformed, variant.fadeOver, variant.opacity ?? 1);
+  }
+
+  if (variant.opacity !== undefined) {
+    return applyOpacity(transformed, variant.opacity);
+  }
+
+  return transformed;
+}
+
+function variantDetail(
+  variant: ColorStateVariant,
+  hex: string,
+  parentTheme?: ParentTheme
+): string {
+  const details: string[] = [];
+  const shift = contrastSideLightnessShift(hex, variant, parentTheme);
+  const primitive = stateContrastColor(hex, variant, parentTheme);
+
+  if (shift !== undefined) {
+    details.push(
+      `${Math.round(Math.abs(shift) * 100)}% ${shift < 0 ? "darker" : "lighter"}`
+    );
+  } else if (primitive && isInteractionState(variant)) {
+    details.push(
+      parentTheme && primitive !== CONTRAST_PRIMITIVES[parentTheme]
+        ? `pure ${parentTheme === "dark" ? "white" : "black"}`
+        : `${parentTheme} contrast primitive`
+    );
+  } else if (variant.brightness !== undefined) {
+    const theme = stateTheme(hex, parentTheme);
+
+    details.push(
+      primitive
+        ? `${Math.round(variant.brightness * 100)}% of the ${theme} contrast primitive's brightness`
+        : `${Math.round(Math.abs(variant.brightness - 1) * 100)}% ${isBrighterState(hex, variant, theme) ? "brighter" : "less bright"}`
+    );
+  }
+
+  if (variant.saturation !== undefined && !isGreyscale(hex)) {
+    details.push(`${Math.round(variant.saturation * 100)}% saturation`);
+  }
+
+  if (variant.fadeOver !== undefined) {
+    details.push(
+      `${Math.round((variant.opacity ?? 1) * 100)}% over ${variant.fadeOver}`
+    );
+  } else if (
+    variant.opacity !== undefined &&
+    (variant.saturation === undefined || isGreyscale(hex))
+  ) {
+    details.push(`${Math.round(variant.opacity * 100)}% opacity`);
+  }
+
+  return details.join(", ") || variant.name;
+}
+
+function createStateToken(
+  source: Record<string, unknown>,
+  hex: string,
+  variant: ColorStateVariant,
+  parentTheme?: ParentTheme
+): Record<string, unknown> {
+  const detail = variantDetail(variant, hex, parentTheme);
+  const transformed = applyStateTransform(hex, variant, parentTheme);
+
+  return {
+    ...source,
+    $type: "color",
+    $value: transformed,
+    $description:
+      typeof source.$description === "string"
+        ? `${source.$description} (${variant.name}, ${detail})`
+        : `${variant.name} state at ${detail}`
+  };
+}
+
+function addColorStateTokens(
+  group: Record<string, unknown>,
+  tree: unknown,
+  variants: ColorStateVariants,
+  onlyKey?: string,
+  parentTheme?: ParentTheme
+): Record<string, unknown> {
+  const result = { ...group } as Record<string, any>;
+  const names = onlyKey ? [onlyKey] : Object.keys(group);
+
+  for (const name of names) {
+    if (name.startsWith("$") || isStateVariantKey(name)) {
+      continue;
+    }
+
+    const token = group[name];
+    if (!isTokenNode(token)) {
+      continue;
+    }
+
+    const type = resolveType(token);
+    if (type && type !== "color") {
+      continue;
+    }
+
+    const hex = resolveColorHex(token.$value, tree);
+    if (!hex) {
+      continue;
+    }
+
+    // Hovered states default to the matching active variant.
+    const baseVariants = isLowSaturation(hex)
+      ? variants.lowSaturation
+      : variants.saturated;
+    const hasHovered = baseVariants.some(variant => variant.name === "hovered");
+    const tokenVariants = baseVariants.flatMap(variant =>
+      variant.name === "active" && !hasHovered
+        ? [{ ...variant, name: "hovered" }, variant]
+        : [variant]
+    );
+    const tokenParentTheme =
+      parentThemeFromDescription(token.$description) ?? parentTheme;
+
+    for (const variant of tokenVariants) {
+      const variantKey = `${name}-${variant.name}`;
+      if (variantKey in result) {
+        continue;
+      }
+
+      result[variantKey] = createStateToken(
+        token,
+        hex,
+        variant,
+        tokenParentTheme
+      );
+    }
+
+    // Generated active states are never less bright than the color or its
+    // hovered / inactive states.
+    const activeKey = `${name}-active`;
+    const active = result[activeKey];
+    if (
+      !(activeKey in group) &&
+      isTokenNode(active) &&
+      typeof active.$value === "string"
+    ) {
+      const theme = stateTheme(hex, tokenParentTheme);
+      const floor = Math.max(
+        ...[
+          hex,
+          result[`${name}-hovered`]?.$value,
+          result[`${name}-inactive`]?.$value
+        ]
+          .map(value => resolveColorHex(value, tree))
+          .filter((value): value is string => value !== undefined)
+          .map(value => themeBrightness(value, theme))
+      );
+      if (themeBrightness(active.$value, theme) < floor) {
+        result[activeKey] = {
+          ...active,
+          $value: withThemeBrightness(active.$value, floor, theme)
+        };
+      }
+    }
+  }
+
+  return result;
+}
+
+/**
+ * Fill in a theme color group (`color.danger`, …): generate a missing
+ * `secondary` low-emphasis background from `primary` and the parent theme,
+ * a missing `link` color (aliasing `primary`), `on-primary` /
+ * `on-secondary` text colors, a `backdrop` overlay color (`primary` 30% darker
+ * at 75% opacity, no state variants), a `border` color (`secondary` 15% brighter, or
+ * 15% darker in light themes, no state variants), and state variants for `primary`, `secondary`,
+ * and `link`. Every token in the group gets the group name as
+ * its `theme` and `group`, so Tamagui places it in that child theme (e.g.
+ * `danger.on-primary` → `onPrimary` in the `danger` theme).
+ */
+function addThemeColorGroupTokens(
+  name: string,
+  group: Record<string, unknown>,
+  tree: unknown,
+  parentTheme?: ParentTheme
+): Record<string, unknown> {
+  const token = group.primary;
+  const hex = isTokenNode(token) && resolveColorHex(token.$value, tree);
+  const type = isTokenNode(token) && resolveType(token);
+  if (!isTokenNode(token) || !hex || (type && type !== "color")) {
+    return group;
+  }
+
+  let result: Record<string, unknown> = { ...group };
+  result.link ??= {
+    ...token,
+    $type: "color",
+    $value: `{color.${name}.primary}`,
+    $description: `Generated ${name} hyperlink text color (matches primary)`
+  };
+
+  result["on-primary"] ??= {
+    ...token,
+    $type: "color",
+    $value: createOnColor(hex),
+    $description: `Generated text and icon color on ${name} primary backgrounds`
+  };
+  // Darkened in both light and dark themes so overlays always dim content.
+  result.backdrop ??= {
+    ...token,
+    $type: "color",
+    $value: applyOpacity(
+      applyBrightness(hex, BACKDROP_BRIGHTNESS),
+      BACKDROP_OPACITY
+    ),
+    $description: `Generated ${name} overlay backdrop color (primary, 30% darker at 75% opacity)`
+  };
+
+  let onSecondary: string | undefined;
+  if (parentTheme && !("secondary" in group)) {
+    const pair = createMutedColor(hex, parentTheme);
+    result.secondary = {
+      ...token,
+      $type: "color",
+      $value: pair.secondary,
+      $description: `Generated low-emphasis ${name} background for the ${parentTheme} theme`
+    };
+    onSecondary = pair.onMuted ?? hex;
+  } else if (isTokenNode(group.secondary)) {
+    const secondaryHex = resolveColorHex(group.secondary.$value, tree);
+    onSecondary = secondaryHex && createOnColor(secondaryHex);
+  }
+
+  if (onSecondary && !("on-secondary" in group)) {
+    result["on-secondary"] = {
+      ...token,
+      $type: "color",
+      $value: onSecondary,
+      $description: `Generated text and icon color on ${name} secondary backgrounds`
+    };
+  }
+
+  const secondaryHex =
+    !("border" in group) &&
+    isTokenNode(result.secondary) &&
+    resolveColorHex(result.secondary.$value, tree);
+  if (secondaryHex) {
+    const { lightness, chroma, hue, alpha } = hexToOklch(secondaryHex);
+    const direction = parentTheme === "light" ? -1 : 1;
+    result.border = {
+      ...token,
+      $type: "color",
+      $value: oklchToGamutMappedHex(
+        clamp01(lightness * (1 + direction * BORDER_LIGHTNESS_STEP)),
+        chroma,
+        hue,
+        alpha
+      ),
+      $description: `Generated ${name} border color for secondary backgrounds (secondary, ${Math.round(BORDER_LIGHTNESS_STEP * 100)}% ${direction > 0 ? "brighter" : "darker"})`
+    };
+  }
+
+  for (const [key, variants] of Object.entries(THEME_COLOR_STATE_VARIANTS)) {
+    result = addColorStateTokens(result, tree, variants, key, parentTheme);
+  }
+
+  for (const [key, value] of Object.entries(result)) {
+    if (isTokenNode(value)) {
+      result[key] = { theme: name, group: name, ...value };
+    }
+  }
+
+  return result;
+}
+
+/**
+ * Add a `group` (the main token name) to each state and `on-*` color token
+ * that does not define one, e.g. `hairline-active` → `hairline`.
+ */
+function addColorTokenGroups(
+  group: Record<string, unknown>
+): Record<string, unknown> {
+  const result = { ...group };
+  for (const [name, token] of Object.entries(group)) {
+    const root = name
+      .replace(/^on-/, "")
+      .replace(/-(?:hovered|active|inactive|disabled)$/i, "");
+    if (root !== name && isTokenNode(token) && !("group" in token)) {
+      result[name] = { ...token, group: root };
+    }
+  }
+
+  return result;
+}
+
+/**
+ * Brand themes without their own color tokens inherit the base theme colors.
+ * Keep brand metadata (such as its description) so it remains the owning
+ * theme once its copied tokens are processed below.
+ */
+function populateEmptyBrandTheme(
+  color: Record<string, unknown>
+): Record<string, unknown> {
+  const base = color.base;
+  const brand = color.brand;
+  if (
+    !isPlainObject(base) ||
+    isTokenNode(base) ||
+    !isPlainObject(brand) ||
+    isTokenNode(brand) ||
+    Object.entries(brand).some(
+      ([key, value]) =>
+        !RESERVED_KEYS.has(key) && !key.startsWith("$") && isTokenNode(value)
+    )
+  ) {
+    return color;
+  }
+
+  return {
+    ...color,
+    brand: {
+      ...(base as Record<string, unknown>),
+      ...(brand as Record<string, unknown>)
+    }
+  };
+}
+
+function injectColorStateVariants(
+  node: unknown,
+  tree: unknown,
+  key?: string,
+  parentTheme?: ParentTheme
+): unknown {
+  if (Array.isArray(node)) {
+    return node.map(item =>
+      injectColorStateVariants(item, tree, undefined, parentTheme)
+    );
+  }
+
+  if (!isPlainObject(node) || isTokenNode(node)) {
+    return node;
+  }
+
+  const result: Record<string, unknown> = {};
+  for (const [childKey, value] of Object.entries(node)) {
+    if (RESERVED_KEYS.has(childKey) || childKey.startsWith("$")) {
+      result[childKey] = value;
+      continue;
+    }
+
+    const childTheme =
+      childKey === "dark" || childKey === "light" ? childKey : parentTheme;
+    result[childKey] = injectColorStateVariants(
+      value,
+      tree,
+      childKey,
+      childTheme
+    );
+  }
+
+  let withStates = result;
+  if (key === "color") {
+    withStates = populateEmptyBrandTheme(withStates);
+
+    for (const [name, group] of themeColorGroups(withStates)) {
+      withStates[name] = addThemeColorGroupTokens(
+        name,
+        group,
+        tree,
+        parentTheme
+      );
+    }
+
+    for (const [tokenKey, token] of Object.entries(withStates)) {
+      const variants =
+        isTokenNode(token) && typeof token.group === "string"
+          ? COLOR_STATE_TOKEN_GROUPS[token.group]
+          : undefined;
+      if (variants) {
+        withStates = addColorStateTokens(
+          withStates,
+          tree,
+          variants,
+          tokenKey,
+          parentTheme
+        );
+      }
+    }
+  }
+
+  for (const [tokenKey, variants] of Object.entries(COLOR_STATE_VARIANTS)) {
+    if (isTokenNode(withStates[tokenKey])) {
+      withStates = addColorStateTokens(
+        withStates,
+        tree,
+        variants,
+        tokenKey,
+        parentTheme
+      );
+    }
+  }
+
+  return key === "color" ? addColorTokenGroups(withStates) : withStates;
+}
+
+/**
+ * Style Dictionary preprocessor: rewrite color `$value`s (and nested shadow
+ * colors) to hex so generators emit `#rrggbb` / `#rrggbbaa` instead of
+ * `oklch()`. Root colors (emphasis, ink, subtle, hairline, backgrounds)
+ * stay in the root light and dark themes without rings. For each color group
+ * with a `primary` token (except excluded groups), a missing `secondary` background and `on-primary` /
+ * `on-secondary` text colors are generated, a missing `border` is derived from
+ * `secondary` (15% brighter, or darker in light themes), then hovered, active, inactive,
+ * and disabled variants are added to the `hairline`, `foreground` and
+ * `background` group colors, and each theme color group's `primary`, `secondary`
+ * and `link` (`link` defaults to `primary` when missing).
+ * Low-saturation colors derive their states from the parent theme's contrast
+ * primitive (backgrounds use a half-strength shift of their own lightness; hovered
+ * colors already near that primitive shift toward the middle, while active
+ * ones become pure white or black); saturated
+ * colors scale their own lightness. "Brighter" means lighter in dark themes and
+ * darker in light themes: active states are never less bright than the normal,
+ * hovered, or inactive states, and hovered states take a smaller step than
+ * active (reversing only for colors near the contrast primitive). Tokens in a theme color group get the
+ * group name as `theme` and `group`, unless already set; root state and `on-*`
+ * tokens get their main token name as `group` (e.g. `hairline-active` →
+ * `hairline`).
+ * Finally, focus rings are generated for each theme color group.
+ */
+export function tamaguiPreprocessor(
+  dictionary: PreprocessedTokens
+): PreprocessedTokens {
+  const converted = walk(dictionary) as PreprocessedTokens;
+  const withStateVariants = injectColorStateVariants(
+    converted,
+    converted,
+    undefined,
+    parentThemeFromDictionary(converted)
+  ) as PreprocessedTokens;
+  const withRings = addMissingRingTokens(withStateVariants);
+
+  return applyRingOpacity(withRings, withRings) as PreprocessedTokens;
+}
+
+export default definePlugin(() => ({
+  name: "cyclone-ui:tamagui-preprocessor",
+  preprocessors: [
+    {
+      name: "tamagui-preprocessor",
+      preprocessor: tamaguiPreprocessor
+    }
+  ]
+}));

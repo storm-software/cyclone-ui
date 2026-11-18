@@ -1,0 +1,517 @@
+package com.stormsoftware.basemap.layers;
+
+import static com.onthegomap.planetiler.TestUtils.newPoint;
+
+import com.onthegomap.planetiler.reader.SimpleFeature;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import org.junit.jupiter.api.Test;
+
+class PlacesTest extends LayerTest {
+  @Test
+  void simple() {
+    assertFeatures(12,
+      List.of(Map.of("kind", "neighbourhood")),
+      process(SimpleFeature.create(
+        newPoint(1, 1),
+        new HashMap<>(Map.of("place", "suburb", "name", "Whoville")),
+        "osm",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testMinMaxLabelCountry() {
+    assertFeatures(12,
+      List.of(Map.of("_minzoom", 1, "_maxzoom", 5, "kind", "country")),
+      process(SimpleFeature.create(
+        newPoint(1, 1),
+        new HashMap<>(Map.of("place", "country", "wikidata", "Q30", "name", "US")),
+        "osm",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testMinMaxLabelCountryNotFound() {
+    assertFeatures(12,
+      List.of(Map.of("_minzoom", 5, "_maxzoom", 8, "kind", "country")),
+      process(SimpleFeature.create(
+        newPoint(1, 1),
+        new HashMap<>(Map.of("place", "country", "wikidata", "Q-some-wikidata", "name", "some-name")),
+        "osm",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testMinMaxLabelCountryNoMatch() {
+    assertFeatures(12,
+      List.of(Map.of("_minzoom", 5, "_maxzoom", 8, "kind", "country")),
+      process(SimpleFeature.create(
+        newPoint(1, 1),
+        new HashMap<>(Map.of("place", "country", "wikidata", "Q999", "name", "XX")),
+        "osm",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testMinMaxLabelRegion() {
+    assertFeatures(12,
+      List.of(Map.of("_minzoom", 3, "_maxzoom", 7, "kind", "region")),
+      process(SimpleFeature.create(
+        newPoint(-119.9583, 37.2221),
+        new HashMap<>(Map.of("place", "state", "wikidata", "Q99", "name", "CA")),
+        "osm",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testMinMaxLabelRegionNoMatch() {
+    assertFeatures(12,
+      List.of(Map.of("_minzoom", 8, "_maxzoom", 11, "kind", "region")),
+      process(SimpleFeature.create(
+        newPoint(-119.9583, 37.2221),
+        new HashMap<>(Map.of("place", "state", "wikidata", "Q999", "name", "XX")),
+        "osm",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testMinMaxLabelPopulatedPlace() {
+    assertFeatures(12,
+      List.of(Map.of("_minzoom", 4, "kind", "locality", "population_rank", 12)),
+      process(SimpleFeature.create(
+        newPoint(1, 1),
+        new HashMap<>(Map.of("place", "city", "wikidata", "Q72", "name", "Zürich")),
+        "osm",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testMinMaxLabelPopulatedPlaceNoMatch() {
+    assertFeatures(12,
+      List.of(Map.of("_minzoom", 8, "kind", "locality")),
+      process(SimpleFeature.create(
+        newPoint(1, 1),
+        new HashMap<>(Map.of("place", "city", "wikidata", "Q999", "name", "XX")),
+        "osm",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testLocalityPopulationOsm() {
+    assertFeatures(13,
+      List.of(Map.of("kind", "locality",
+        "kind_detail", "locality",
+        "population", 1111)),
+      process(SimpleFeature.create(
+        newPoint(1, 1),
+        new HashMap<>(Map.of("place", "locality", "name", "Localityville", "population", "1111")),
+        "osm",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testLocalityNoPopulationOsm() {
+    assertFeatures(14,
+      List.of(Map.of("kind", "locality",
+        "kind_detail", "locality",
+        "population", 1000)),
+      process(SimpleFeature.create(
+        newPoint(1, 1),
+        new HashMap<>(Map.of("place", "locality", "name", "Localityville")),
+        "osm",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testHamletOsm() {
+    assertFeatures(14,
+      List.of(Map.of("kind", "locality",
+        "kind_detail", "hamlet",
+        "population", 200)),
+      process(SimpleFeature.create(
+        newPoint(1, 1),
+        new HashMap<>(Map.of("place", "hamlet", "name", "Hamletville")),
+        "osm",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testIsolatedDwellingOsm() {
+    assertFeatures(14,
+      List.of(Map.of("kind", "locality",
+        "kind_detail", "isolated_dwelling",
+        "population", 100)),
+      process(SimpleFeature.create(
+        newPoint(1, 1),
+        new HashMap<>(Map.of("place", "isolated_dwelling", "name", "Isolatedville")),
+        "osm",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testFarmOsm() {
+    assertFeatures(14,
+      List.of(Map.of("kind", "locality",
+        "kind_detail", "farm",
+        "population", 50)),
+      process(SimpleFeature.create(
+        newPoint(1, 1),
+        new HashMap<>(Map.of("place", "farm", "name", "Farmville")),
+        "osm",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testAllotmentsOsm() {
+    assertFeatures(14,
+      List.of(Map.of("kind", "locality",
+        "kind_detail", "allotments",
+        "population", 1000)),
+      process(SimpleFeature.create(
+        newPoint(1, 1),
+        new HashMap<>(Map.of("place", "allotments", "name", "Allotmentville")),
+        "osm",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testLocalityNoPopulationHasCorrectMinZoom() {
+    // Place Mahiouindo - OSM node/4535788658
+    // place=locality without population should have _minzoom=12 (not 7)
+    assertFeatures(7,
+      List.of(Map.of("_minzoom", 12, "_maxzoom", 14, "kind", "locality", "kind_detail", "locality")),
+      process(SimpleFeature.create(
+        newPoint(2.5892, 7.3321),
+        new HashMap<>(Map.of("place", "locality", "name", "Place Mahiouindo")),
+        "osm",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testLocalityNoPopulationMinZoom() {
+    // Place Mahiouindo - should have min_zoom=13 (minzoom=12 + 1)
+    assertFeatures(12,
+      List.of(Map.of("kind", "locality",
+        "kind_detail", "locality",
+        "min_zoom", 13,
+        "population", 1000)),
+      process(SimpleFeature.create(
+        newPoint(2.5892, 7.3321),
+        new HashMap<>(Map.of("place", "locality", "name", "Place Mahiouindo")),
+        "osm",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testCityWithPopulationVisibleAtZoom7() {
+    // Kétou - OSM node/2313302870
+    // place=city with population=160000 should be visible at zoom 7 (minzoom=7, min_zoom=8)
+    assertFeatures(7,
+      List.of(Map.of("kind", "locality",
+        "kind_detail", "city",
+        "min_zoom", 8,
+        "population", 160000)),
+      process(SimpleFeature.create(
+        newPoint(2.5892, 7.3632),
+        new HashMap<>(Map.of("place", "city", "name", "Kétou", "population", "160000")),
+        "osm",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testCityWithoutPopulationHasCorrectMinZoom() {
+    // Cities without population tags get populationFallback=5000 and should have _minZoom=8
+    assertFeatures(8,
+      List.of(Map.of("_minzoom", 8, "kind", "locality", "kind_detail", "city", "population", 5000)),
+      process(SimpleFeature.create(
+        newPoint(2.5892, 7.3632),
+        new HashMap<>(Map.of("place", "city", "name", "Some City")),
+        "osm",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testOuidahWithWikidataVisibleAtZoom6() {
+    // Ouidah - OSM node/313015821, wikidata Q850031
+    // Has wikidata entry in places.csv: Q850031,6,-1,8
+    // Should be visible at zoom 6 (wikidata override)
+    assertFeatures(6,
+      List.of(Map.of("kind", "locality",
+        "kind_detail", "city",
+        "population", 160000)),
+      process(SimpleFeature.create(
+        newPoint(2.0854, 6.3616),
+        new HashMap<>(Map.of("place", "city", "name", "Ouidah", "population", "160000", "wikidata", "Q850031")),
+        "osm",
+        null,
+        0
+      )));
+  }
+
+}
+
+
+class PlacesOvertureTest extends LayerTest {
+
+  @Test
+  void testSanFranciscoOvertureCity() {
+    assertFeatures(12,
+      List.of(Map.of(
+        "kind", "locality",
+        "kind_detail", "city",
+        "name", "San Francisco",
+        "_minzoom", 2,
+        "min_zoom", 3,
+        "population", 873965,
+        "population_rank", 12
+      )),
+      process(SimpleFeature.create(
+        newPoint(-122.4194, 37.7749),
+        new HashMap<>(Map.of(
+          "id", "dd84743c-4b27-476c-8da9-6e9730216bbd",
+          "theme", "divisions",
+          "type", "division",
+          "subtype", "locality",
+          "class", "city",
+          "names.primary", "San Francisco",
+          "wikidata", "Q62",
+          "population", 873965
+        )),
+        "pm:overture",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testSanJoseOvertureCity() {
+    assertFeatures(12,
+      List.of(Map.of(
+        "kind", "locality",
+        "kind_detail", "city",
+        "name", "San Jose",
+        "_minzoom", 4,
+        "min_zoom", 5,
+        "population", 1035317,
+        "population_rank", 12
+      )),
+      process(SimpleFeature.create(
+        newPoint(-121.8863, 37.3382),
+        new HashMap<>(Map.of(
+          "id", "f5b6f0d6-6d89-4d16-b31d-fc7ab1bf8e44",
+          "theme", "divisions",
+          "type", "division",
+          "subtype", "locality",
+          "class", "city",
+          "names.primary", "San Jose",
+          "wikidata", "Q16553",
+          "population", 1035317
+        )),
+        "pm:overture",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testSanMateoOvertureCity() {
+    assertFeatures(12,
+      List.of(Map.of(
+        "kind", "locality",
+        "kind_detail", "city",
+        "name", "San Mateo",
+        "_minzoom", 6,
+        "min_zoom", 7,
+        "population", 103536,
+        "population_rank", 11
+      )),
+      process(SimpleFeature.create(
+        newPoint(-122.3255, 37.5630),
+        new HashMap<>(Map.of(
+          "id", "2910cbac-cb82-4093-9f08-aeebd96a1c14",
+          "theme", "divisions",
+          "type", "division",
+          "subtype", "locality",
+          "class", "city",
+          "names.primary", "San Mateo",
+          "wikidata", "Q169943",
+          "population", 103536
+        )),
+        "pm:overture",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testSaratogaOvertureTown() {
+    assertFeatures(12,
+      List.of(Map.of(
+        "kind", "locality",
+        "kind_detail", "town",
+        "name", "Saratoga",
+        "_minzoom", 7,
+        "min_zoom", 8,
+        "population", 30153
+      )),
+      process(SimpleFeature.create(
+        newPoint(-122.0233, 37.2638),
+        new HashMap<>(Map.of(
+          "id", "3a6c1a95-cf1b-4429-a0fd-eb966a2fea72",
+          "theme", "divisions",
+          "type", "division",
+          "subtype", "locality",
+          "class", "town",
+          "names.primary", "Saratoga",
+          "wikidata", "Q927163",
+          "population", 30153
+        )),
+        "pm:overture",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testOaklandCity() {
+    assertFeatures(12,
+      List.of(Map.of(
+        "kind", "locality",
+        "kind_detail", "city",
+        "name", "Oakland",
+        "min_zoom", 8,
+        "population", 433031,
+        "population_rank", 10
+      )),
+      process(SimpleFeature.create(
+        newPoint(-122.2708, 37.8044),
+        new HashMap<>(Map.of(
+          "id", "9d45ba84-c664-42bd-81e4-3f75b1d179c9",
+          "theme", "divisions",
+          "type", "division",
+          "subtype", "locality",
+          "class", "city",
+          "names.primary", "Oakland",
+          "population", 433031
+        )),
+        "pm:overture",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testPiedmontTown() {
+    assertFeatures(12,
+      List.of(Map.of(
+        "kind", "locality",
+        "kind_detail", "town",
+        "name", "Piedmont",
+        "min_zoom", 10,
+        "population", 0,
+        "population_rank", 1
+      )),
+      process(SimpleFeature.create(
+        newPoint(-122.2312, 37.8244),
+        new HashMap<>(Map.of(
+          "id", "bf3e15f5-1287-48a2-b8c4-2b9061950f74",
+          "theme", "divisions",
+          "type", "division",
+          "subtype", "locality",
+          "class", "town",
+          "names.primary", "Piedmont"
+        )),
+        "pm:overture",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testDowntownOaklandMacrohood() {
+    assertFeatures(12,
+      List.of(Map.of(
+        "kind", "macrohood",
+        "name", "Downtown Oakland",
+        "min_zoom", 11,
+        "population", 0,
+        "population_rank", 1
+      )),
+      process(SimpleFeature.create(
+        newPoint(-122.2708, 37.8044),
+        new HashMap<>(Map.of(
+          "id", "81e4b45f-1210-4e79-9ea1-becc6e223778",
+          "theme", "divisions",
+          "type", "division",
+          "subtype", "macrohood",
+          "names.primary", "Downtown Oakland"
+        )),
+        "pm:overture",
+        null,
+        0
+      )));
+  }
+
+  @Test
+  void testLakesideNeighborhood() {
+    assertFeatures(14,
+      List.of(Map.of(
+        "kind", "neighbourhood",
+        "kind_detail", "neighbourhood",
+        "name", "Lakeside",
+        "min_zoom", 13,
+        "population", 0,
+        "population_rank", 1
+      )),
+      process(SimpleFeature.create(
+        newPoint(-122.2476, 37.8074),
+        new HashMap<>(Map.of(
+          "id", "d95da2a7-5c9d-44ce-9d9b-8b1fa7aa93a1",
+          "theme", "divisions",
+          "type", "division",
+          "subtype", "neighborhood",
+          "names.primary", "Lakeside"
+        )),
+        "pm:overture",
+        null,
+        0
+      )));
+  }
+}

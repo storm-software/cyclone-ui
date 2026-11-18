@@ -1,21 +1,150 @@
 {
   "name": "@cyclone-ui/registry-api",
-  "version": "0.3.0",
+  "version": "0.3.90",
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "packages/registry-api"
   },
-  "private": true,
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
-    "@storm-stack/errors": "latest",
-    "@storm-stack/serialization": "latest",
-    "@trpc/client": "npm:@trpc/client@next",
-    "@trpc/server": "npm:@trpc/server@next",
-    "zod": "^3.23.8"
+    "@trpc/client": "catalog:",
+    "@trpc/server": "catalog:",
+    "zod": "catalog:"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240909.0"
+    "@cloudflare/workers-types": "catalog:",
+    "@powerlines/plugin-tsdown": "catalog:",
+    "powerlines": "catalog:"
+  },
+  "peerDependencies": {
+    "@cloudflare/workers-types": "catalog:"
+  },
+  "peerDependenciesMeta": {
+    "@cloudflare/workers-types": {
+      "optional": true
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "default": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
+    },
+    "./client": {
+      "require": {
+        "types": "./dist/client.d.cts",
+        "default": "./dist/client.cjs"
+      },
+      "import": {
+        "types": "./dist/client.d.mts",
+        "default": "./dist/client.mjs"
+      },
+      "default": {
+        "types": "./dist/client.d.mts",
+        "default": "./dist/client.mjs"
+      }
+    },
+    "./context": {
+      "require": {
+        "types": "./dist/context.d.cts",
+        "default": "./dist/context.cjs"
+      },
+      "import": {
+        "types": "./dist/context.d.mts",
+        "default": "./dist/context.mjs"
+      },
+      "default": {
+        "types": "./dist/context.d.mts",
+        "default": "./dist/context.mjs"
+      }
+    },
+    "./errors": {
+      "require": {
+        "types": "./dist/errors.d.cts",
+        "default": "./dist/errors.cjs"
+      },
+      "import": {
+        "types": "./dist/errors.d.mts",
+        "default": "./dist/errors.mjs"
+      },
+      "default": {
+        "types": "./dist/errors.d.mts",
+        "default": "./dist/errors.mjs"
+      }
+    },
+    "./package.json": "./package.json",
+    "./router": {
+      "require": {
+        "types": "./dist/router.d.cts",
+        "default": "./dist/router.cjs"
+      },
+      "import": {
+        "types": "./dist/router.d.mts",
+        "default": "./dist/router.mjs"
+      },
+      "default": {
+        "types": "./dist/router.d.mts",
+        "default": "./dist/router.mjs"
+      }
+    },
+    "./routes/components": {
+      "require": {
+        "types": "./dist/routes/components.d.cts",
+        "default": "./dist/routes/components.cjs"
+      },
+      "import": {
+        "types": "./dist/routes/components.d.mts",
+        "default": "./dist/routes/components.mjs"
+      },
+      "default": {
+        "types": "./dist/routes/components.d.mts",
+        "default": "./dist/routes/components.mjs"
+      }
+    },
+    "./trpc": {
+      "require": {
+        "types": "./dist/trpc.d.cts",
+        "default": "./dist/trpc.cjs"
+      },
+      "import": {
+        "types": "./dist/trpc.d.mts",
+        "default": "./dist/trpc.mjs"
+      },
+      "default": {
+        "types": "./dist/trpc.d.mts",
+        "default": "./dist/trpc.mjs"
+      }
+    },
+    "./types": {
+      "require": {
+        "types": "./dist/types.d.cts",
+        "default": "./dist/types.cjs"
+      },
+      "import": {
+        "types": "./dist/types.d.mts",
+        "default": "./dist/types.mjs"
+      },
+      "default": {
+        "types": "./dist/types.d.mts",
+        "default": "./dist/types.mjs"
+      }
+    }
   }
 }

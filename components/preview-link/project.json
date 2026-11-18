@@ -1,0 +1,11 @@
+{
+  "name": "preview-link",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "components/preview-link/src",
+  "targets": {
+    "nx-release-publish": {
+      "executor": "@cyclone-ui/tools-nx:component-publish"
+    }
+  }
+}

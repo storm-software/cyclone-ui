@@ -1,0 +1,69 @@
+{
+  "skill_name": "cyclone-ui-setup",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Set up Cyclone UI in my pnpm React/Tamagui app and add the Button component under src/components/ui. Show me how to render it with the dark theme.",
+      "expected_output": "Installs the CLI in the app, initializes the selected path, previews and adds button, installs dependencies and Cyclone tokens/state, wires the theme provider and renders Button using its real API.",
+      "files": [],
+      "expectations": [
+        "Installs @cyclone-ui/cli and initializes src/components/ui",
+        "Previews button before adding it and runs pnpm install afterward",
+        "Uses @cyclone-ui/tokens/tamagui and @cyclone-ui/state/client with dark_base",
+        "Shows Button.Text inside the copied Button component",
+        "Does not claim to have installed into an unspecified app"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Our Next.js app already has components.json and a locally edited button. Add the current registry button without losing our edits, and keep its client directives.",
+      "expected_output": "Inspects the existing config and local changes, previews or diffs the registry version, preserves or merges edits instead of forcing init or overwrite, and explains the RSC directive setting.",
+      "files": [],
+      "expectations": [
+        "Inspects the existing components.json instead of rerunning init with force",
+        "Uses the registry already configured in the app unless the user supplies an override",
+        "Uses a read-only preview or diff before any write",
+        "Explains how to merge or preserve local edits without blind overwrite",
+        "Correctly describes rsc true or omitted as preserving registry client directives",
+        "Does not claim to have changed the unspecified app"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Add the Cyclone UI dialog to a workspace that uses a custom registry URL and npm. Tell me what files and packages the command changed.",
+      "expected_output": "Adapts commands to npm, respects the specified registry, discovers and previews dialog and its dependencies, then reports copied files, package changes, and checks performed.",
+      "files": [],
+      "expectations": [
+        "Uses npm commands or explicitly adapts to the npm package manager",
+        "Uses the workspace custom registry rather than silently replacing it with the public default",
+        "Previews dialog before installation and accounts for internal component dependencies",
+        "Does not invent specific changed files or packages without seeing the target workspace or registry",
+        "Explains how to inspect components.json and package.json changes after installation"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Build a checkout form using the Cyclone UI components already installed under our custom components.json path. The button needs a different appearance and the input has a validation issue. Ship quickly and clean up formatting, but I have not requested changes to the installed component source.",
+      "expected_output": "Identifies installed files from components.json and leaves them unchanged. Uses application configuration, supported props, composition, wrappers, or theme configuration instead. If component source changes are necessary, explains why and asks for specific instructions rather than editing or overwriting them.",
+      "files": [],
+      "expectations": [
+        "Does not treat copied source or a general application fix as permission to change installed components",
+        "Identifies the protected component path and installed files from components.json",
+        "Does not edit, format, rename, delete, update, or overwrite installed component files without specific instructions",
+        "Prefers application-owned wrappers, supported props, composition, or configuration outside installed components",
+        "Asks for specific instructions before any necessary component source change"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Specifically change the installed Cyclone UI Button component so its default size is small. Leave all other installed components and existing local edits alone.",
+      "expected_output": "Treats this as explicit authorization to change only the installed Button default size, inspects the actual source and makes a narrow edit without updating the registry or touching unrelated components.",
+      "files": [],
+      "expectations": [
+        "Allows the specifically requested installed Button change instead of imposing an absolute ban",
+        "Limits changes to the requested default size and preserves unrelated components and local edits",
+        "Does not use a registry update or overwrite to implement the targeted edit"
+      ]
+    }
+  ]
+}

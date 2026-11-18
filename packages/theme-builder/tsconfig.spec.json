@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "types": [
+      "vitest/globals",
+      "vitest/importMeta",
+      "node",
+      "vitest",
+      "@cloudflare/workers-types"
+    ],
+    "outDir": "../../dist/out-tsc"
+  },
+  "include": ["vitest.config.mts", "src/**/*.ts", "src/**/*.d.ts"],
+  "exclude": []
+}

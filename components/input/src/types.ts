@@ -1,26 +1,27 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
+ ------------------------------------------------------------------- */
+
+import type { FieldLabelPlacement, FormControlSize } from "@cyclone-ui/helpers";
 import type {
   ColorTokens,
-  SizeTokens,
-  StackProps,
-  TamaguiComponentPropsBase,
-  TextProps
+  TamaguiComponentPropsBaseBase,
+  TextProps,
+  ViewProps
 } from "@tamagui/web";
 import type { InputModeOptions, TextInputProps } from "react-native";
 
@@ -31,16 +32,20 @@ type DetailedInputProps = React.DetailedHTMLProps<
 
 export type InputChangeEventHandler = (event: CustomEvent<string>) => any;
 
-export type InputProps = StackProps &
+export type InputVariant = "outlined" | "underlined" | "inlined";
+
+export type InputComponentProps = Omit<ViewProps, "onChange" | "onInput"> &
   Omit<
     DetailedInputProps,
     | "className"
     | "children"
+    | "ref"
+    | "type"
     | "value"
     | "size"
     | "onChange"
     | "onInput"
-    | keyof StackProps
+    | keyof ViewProps
   > &
   Pick<TextProps, "color"> &
   Omit<DetailedInputProps["style"], "color"> &
@@ -59,6 +64,14 @@ export type InputProps = StackProps &
     | "numberOfLines"
   > & {
     /**
+     * The native input type, or `textarea` for a multiline text control.
+     */
+    type?: DetailedInputProps["type"] | "textarea";
+
+    /** @internal Native text inset for composed controls. */
+    nativePaddingInline?: number | string;
+
+    /**
      * use `type` instead of inputMode for most cases, use `inputMode="none"` to disable the soft keyboard
      */
     inputMode?: InputModeOptions;
@@ -74,9 +87,19 @@ export type InputProps = StackProps &
     selectionColor?: ColorTokens;
 
     /**
-     * The HTML tag to render when on web
+     * The HTML element to render when on web
      */
-    tag?: TamaguiComponentPropsBase["tag"];
+    render?: TamaguiComponentPropsBaseBase["render"];
+
+    /**
+     * Callback that is called when the text input's text changes.
+     */
+    onChange?: InputChangeEventHandler;
+
+    /**
+     * Callback that is called when the user provides input to the text field.
+     */
+    onInput?: InputChangeEventHandler;
 
     /**
      * The enter key to display in the mobile keyboard
@@ -84,13 +107,7 @@ export type InputProps = StackProps &
      * @defaultValue "done"
      */
     enterKeyHint?:
-      | "done"
-      | "go"
-      | "next"
-      | "search"
-      | "send"
-      | "enter"
-      | "previous";
+      "done" | "go" | "next" | "search" | "send" | "enter" | "previous";
 
     /**
      * @deprecated - use `type` instead
@@ -110,29 +127,54 @@ export type InputProps = StackProps &
     /**
      * @deprecated - use `onChange` instead
      */
-    onChangeText?: TextInputProps["onChange"];
+    onChangeText?: TextInputProps["onChangeText"];
 
     /**
-     * @deprecated - use `tag='textarea'` instead
+     * @deprecated - use `render='textarea'` instead
      */
     multiline?: boolean;
 
     /**
      * @deprecated - use `rows` instead
      */
+    size?: FormControlSize;
     numberOfLines?: number;
   };
 
-export type InputContextProps = {
+// `name` rides along here: a key in a styled context's value is treated as a
+// context prop, so it never reached the native element's `name` attribute.
+export type InputBehaviorContextProps = Pick<
+  InputContextProps,
+  "onChange" | "onInput" | "onFocus" | "onBlur" | "name"
+>;
+
+export type InputStyleContextProps = Omit<
+  InputContextProps,
+  "onChange" | "onInput" | "onFocus" | "onBlur"
+>;
+
+export interface InputContextProps {
   /**
    * The input's name.
    */
   name?: string;
 
   /**
+   * The input's display style.
+   *
+   * @defaultValue "outlined"
+   */
+  variant: InputVariant;
+
+  /**
+   * How the input makes room for its field's floating label, if any.
+   */
+  labelPlacement?: FieldLabelPlacement;
+
+  /**
    * The input's current size.
    */
-  size: SizeTokens;
+  size: FormControlSize;
 
   /**
    * The input's current circular status value.
@@ -144,10 +186,16 @@ export type InputContextProps = {
    */
   disabled: boolean;
 
+  /** Prevent editing without applying disabled colors. */
+  readOnly: boolean;
+
   /**
    * The input's current focused status value.
    */
   focused: boolean;
+
+  /** @internal Whether the surrounding Field displays validation text. */
+  hasValidationMessage: boolean;
 
   /**
    * Callback that is called when the text input's text changes.
@@ -174,4 +222,4 @@ export type InputContextProps = {
    * Callback that is called when the text input is blurred.
    */
   onBlur?: () => any;
-};
+}

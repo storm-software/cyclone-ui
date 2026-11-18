@@ -1,0 +1,476 @@
+/* -------------------------------------------------------------------
+
+                   🗲 Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
+"use client";
+
+import { BodyText } from "@cyclone-ui/body-text";
+import { Field } from "@cyclone-ui/field";
+import {
+  getSpaced,
+  useFieldOptions,
+  useFormControl
+} from "@cyclone-ui/helpers";
+import { Watch, WatchOff } from "@cyclone-ui/icons";
+import type { InputChangeEventHandler } from "@cyclone-ui/input";
+import { Input, InputContext, useInputBehavior } from "@cyclone-ui/input";
+import type { GetProps } from "@tamagui/core";
+import {
+  createStyledHOC,
+  styled,
+  Theme,
+  useComposedRefs,
+  View,
+  withStaticProperties
+} from "@tamagui/core";
+import { YStack } from "@tamagui/stacks";
+import type { KeyboardEvent, RefObject } from "react";
+import {
+  createContext,
+  use,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState
+} from "react";
+import {
+  getMissingPasswordCriteria,
+  getPasswordStrength,
+  isStrongPassword
+} from "./password-strength";
+
+interface PasswordInputContextValue {
+  delay?: number;
+  passwordVisible: boolean;
+  togglePasswordVisibility: () => void;
+}
+
+const PasswordInputContext = createContext<PasswordInputContextValue>({
+  passwordVisible: false,
+  togglePasswordVisibility: () => undefined
+});
+
+const CAPS_LOCK_MESSAGE = {
+  code: "password-input.caps-lock",
+  message: "Caps lock on",
+  type: "info"
+} as const;
+
+/**
+ * Validates that a password meets every strength criterion, returning a
+ * message for each one it misses.
+ */
+export const passwordStrengthValidator = (value: string) =>
+  !value || isStrongPassword(value)
+    ? []
+    : getMissingPasswordCriteria(value).map(({ code, message }) => ({
+        code: `password-input.${code}`,
+        message,
+        type: "danger" as const
+      }));
+
+// ponytail: only used when the `Field` sets no `validate` of its own; a
+// field's own `validate` replaces it (the old field appended it to
+// `validate.onChange`). Merging needs `Field` to combine control-supplied
+// validators with its own.
+const PASSWORD_FIELD_OPTIONS = {
+  defaults: { validate: { onChange: [passwordStrengthValidator] } }
+};
+
+const NO_FIELD_OPTIONS = {};
+
+export interface PasswordInputExtraProps {
+  /**
+   * Milliseconds to show the last typed character before masking it, as
+   * mobile keyboards do. Masks every character immediately when unset.
+   */
+  delay?: number;
+
+  /**
+   * Show the password strength meter below the input.
+   *
+   * @defaultValue false
+   */
+  showStrength?: boolean;
+
+  /**
+   * Inside a `Field`, validate the password's strength (listing each missing criterion) when the field sets no `validate` of its own.
+   *
+   * @defaultValue false
+   */
+  validateStrength?: boolean;
+}
+
+export type PasswordInputProps = GetProps<typeof Input> &
+  PasswordInputExtraProps;
+
+const strengthLabels = [
+  "Password strength",
+  "Very weak",
+  "Weak",
+  "Good",
+  "Strong"
+] as const;
+
+const PasswordStrengthFrame = styled(View, {
+  displayName: "PasswordInputStrength",
+  gap: "xl"
+});
+
+const PasswordStrengthSegments = styled(View, {
+  flexDirection: "row",
+  gap: "xl"
+});
+
+const PasswordStrengthSegment = styled(View, {
+  height: "sm",
+  flex: 1,
+  borderRadius: 100_000,
+  backgroundColor: "surface"
+});
+
+const PasswordStrengthLabel = styled(BodyText, {
+  color: "ink",
+  textAlign: "right",
+  marginRight: "md"
+});
+
+const PasswordInputStrength = ({ value }: { value: string }) => {
+  const strength = getPasswordStrength(value);
+  const activeTheme =
+    strength === 1 ? "danger" : strength === 2 ? "warning" : "success";
+
+  return (
+    <PasswordStrengthFrame
+      role="meter"
+      aria-label="Password strength"
+      aria-valuemin={0}
+      aria-valuemax={4}
+      aria-valuenow={strength}
+      aria-valuetext={strengthLabels[strength]}>
+      <PasswordStrengthSegments aria-hidden={true}>
+        {Array.from({ length: 4 }, (_, index) => {
+          const active = index < strength;
+
+          return (
+            <Theme key={index} name={active ? activeTheme : "base"}>
+              <PasswordStrengthSegment
+                backgroundColor={`${active ? "primary" : "surface"}`}
+              />
+            </Theme>
+          );
+        })}
+      </PasswordStrengthSegments>
+      <PasswordStrengthLabel>{strengthLabels[strength]}</PasswordStrengthLabel>
+    </PasswordStrengthFrame>
+  );
+};
+
+const PasswordInputImpl = createStyledHOC(
+  Input,
+  (
+    {
+      children,
+      delay,
+      onInput,
+      showStrength = false,
+      validateStrength = false,
+      ...props
+    }: PasswordInputProps,
+    forwardedRef
+  ) => {
+    const formControl = useFormControl();
+    const readOnly = props.readOnly ?? formControl?.readOnly ?? false;
+    useFieldOptions(
+      validateStrength ? PASSWORD_FIELD_OPTIONS : NO_FIELD_OPTIONS
+    );
+    const [passwordVisible, setPasswordVisible] = useState(false);
+    // Outside a `Field`, the strength meter follows what the user types.
+    const [typedValue, setTypedValue] = useState("");
+
+    const togglePasswordVisibility = useCallback(() => {
+      setPasswordVisible(visible => !visible);
+    }, []);
+    const context = useMemo(
+      () => ({
+        delay,
+        passwordVisible,
+        togglePasswordVisibility
+      }),
+      [delay, passwordVisible, togglePasswordVisibility]
+    );
+    const handleInput = useCallback<InputChangeEventHandler>(
+      event => {
+        if (readOnly) return;
+        setTypedValue(event.detail);
+        onInput?.(event);
+      },
+      [onInput, readOnly]
+    );
+
+    return (
+      <PasswordInputContext value={context}>
+        <YStack
+          gap="3xl"
+          // `Field` spaces its children by `xl`; keep the `lg` gap between an
+          // above label and the control that `PasswordInputField` had.
+          marginTop={
+            formControl?.labelVariant === "above"
+              ? getSpaced("lg") - getSpaced("xl")
+              : undefined
+          }>
+          <Input
+            ref={forwardedRef}
+            {...props}
+            readOnly={readOnly}
+            onInput={handleInput}>
+            {children}
+          </Input>
+          {showStrength && (
+            <PasswordInputStrength
+              value={
+                formControl ? (formControl.formattedValue ?? "") : typedValue
+              }
+            />
+          )}
+        </YStack>
+      </PasswordInputContext>
+    );
+  },
+  { displayName: "PasswordInput" }
+);
+
+const masked = (length: number) => {
+  const span = document.createElement("span");
+  // Literal bullets, drawn like the native mask where supported, so the
+  // overlay never contains the password itself.
+  span.textContent = "\u2022".repeat(length);
+  span.style.setProperty("-webkit-text-security", "disc");
+
+  return span;
+};
+
+/**
+ * On web, briefly overlays the masked text with the character just typed in
+ * plain text. The input stays `type="password"` (password managers and screen
+ * readers are unaffected); only its glyphs and caret hide during the reveal.
+ */
+const useRevealLastCharacter = (
+  inputRef: RefObject<HTMLInputElement | null>,
+  delay?: number
+) => {
+  useEffect(() => {
+    const input = inputRef.current;
+    const parent = input?.parentElement;
+    if (!delay || !input || !parent) {
+      return;
+    }
+
+    const overlay = document.createElement("span");
+    overlay.setAttribute("aria-hidden", "true");
+    let timeout: ReturnType<typeof setTimeout> | undefined;
+
+    const hide = () => {
+      clearTimeout(timeout);
+      overlay.remove();
+      input.style.removeProperty("-webkit-text-fill-color");
+      input.style.removeProperty("caret-color");
+    };
+    const handleInput = (event: Event) => {
+      const { data, inputType } = event as InputEvent;
+      // Pastes, deletions and IME compositions mask straight away.
+      if (inputType !== "insertText" || data?.length !== 1) {
+        hide();
+
+        return;
+      }
+
+      clearTimeout(timeout);
+      const style = getComputedStyle(input);
+      Object.assign(overlay.style, {
+        position: "absolute",
+        inset: "0",
+        display: "flex",
+        alignItems: "center",
+        overflow: "hidden",
+        pointerEvents: "none",
+        whiteSpace: "pre",
+        boxSizing: style.boxSizing,
+        paddingTop: style.paddingTop,
+        paddingRight: style.paddingRight,
+        paddingBottom: style.paddingBottom,
+        paddingLeft: style.paddingLeft,
+        color: style.color,
+        fontFamily: style.fontFamily,
+        fontSize: style.fontSize,
+        fontStyle: style.fontStyle,
+        fontWeight: style.fontWeight,
+        letterSpacing: style.letterSpacing
+      });
+
+      const end = input.selectionEnd ?? input.value.length;
+      const text = document.createElement("span");
+      // Follow the input's horizontal scroll once the text overflows it.
+      text.style.transform = `translateX(${-input.scrollLeft}px)`;
+      text.append(masked(end - 1), data, masked(input.value.length - end));
+      overlay.replaceChildren(text);
+      parent.append(overlay);
+      input.style.setProperty("-webkit-text-fill-color", "transparent");
+      input.style.setProperty("caret-color", "transparent");
+      timeout = setTimeout(hide, delay);
+    };
+
+    input.addEventListener("input", handleInput);
+    input.addEventListener("blur", hide);
+
+    return () => {
+      input.removeEventListener("input", handleInput);
+      input.removeEventListener("blur", hide);
+      hide();
+    };
+  }, [delay, inputRef]);
+};
+
+const PasswordInputTextBoxValue = createStyledHOC(
+  Input.TextBox.Value,
+  (props: GetProps<typeof Input.TextBox.Value>, forwardedRef) => {
+    const setMessage = useFormControl()?.setMessage;
+    const contextOnBlur = useInputBehavior().onBlur;
+    const { delay, passwordVisible } = use(PasswordInputContext);
+    const inputRef = useRef<HTMLInputElement>(null);
+    const ref = useComposedRefs(forwardedRef, inputRef);
+
+    useRevealLastCharacter(inputRef, passwordVisible ? undefined : delay);
+    const setCapsLock = useCallback(
+      (capsLock: boolean) => {
+        setMessage?.(
+          CAPS_LOCK_MESSAGE.code,
+          capsLock ? CAPS_LOCK_MESSAGE : undefined
+        );
+      },
+      [setMessage]
+    );
+    const handleKeyEvent = useCallback(
+      (event: KeyboardEvent<HTMLInputElement>) => {
+        setCapsLock(event.getModifierState?.("CapsLock") ?? false);
+      },
+      [setCapsLock]
+    );
+    // Tamagui v3 types `onKeyDown`/`onKeyUp` as an intersection of the web
+    // and native handlers; these handlers read the web keyboard event.
+    const handleKeyDown = useCallback(
+      (event: any) => {
+        handleKeyEvent(event);
+        props.onKeyDown?.(event);
+      },
+      [handleKeyEvent, props]
+    );
+    const handleKeyUp = useCallback(
+      (event: any) => {
+        handleKeyEvent(event);
+        props.onKeyUp?.(event);
+      },
+      [handleKeyEvent, props]
+    );
+    const handleBlur = useCallback(
+      (event: any) => {
+        setCapsLock(false);
+        // Overriding `onBlur` would otherwise drop the field's blur handler.
+        (props.onBlur ?? contextOnBlur)?.(event);
+      },
+      [contextOnBlur, props, setCapsLock]
+    );
+
+    return (
+      <Input.TextBox.Value
+        ref={ref}
+        {...props}
+        onBlur={handleBlur}
+        onKeyDown={handleKeyDown}
+        onKeyUp={handleKeyUp}
+        type={passwordVisible ? "text" : "password"}
+      />
+    );
+  },
+  { displayName: "PasswordInputTextBoxValue" }
+);
+
+const PasswordInputTrigger = createStyledHOC(
+  Field.Icon,
+  (
+    { children, onPress, ...props }: GetProps<typeof Field.Icon>,
+    forwardedRef
+  ) => {
+    const { disabled } = InputContext.useStyledContext();
+    const { passwordVisible, togglePasswordVisibility } =
+      use(PasswordInputContext);
+    const label = passwordVisible ? "Hide" : "Show";
+    const handlePress = useCallback(
+      (event: any) => {
+        onPress?.(event);
+        if (!disabled) {
+          togglePasswordVisibility();
+        }
+      },
+      [disabled, onPress, togglePasswordVisibility]
+    );
+
+    return (
+      <Field.Icon
+        ref={forwardedRef}
+        {...props}
+        position="end"
+        aria-label={`${label} password`}
+        disabled={disabled}
+        onPress={handlePress}>
+        {children ??
+          (passwordVisible ? (
+            <WatchOff aria-hidden={true} />
+          ) : (
+            <Watch aria-hidden={true} />
+          ))}
+      </Field.Icon>
+    );
+  },
+  { displayName: "PasswordInputTrigger" }
+);
+
+/**
+ * A password text input with a show/hide toggle, a strength meter, and a caps
+ * lock warning. Wrap it in a `Field` to connect it to a form, which also
+ * validates the password's strength. Turn the meter and the validation off
+ * with `showStrength={false}` and `validateStrength={false}`.
+ */
+export const PasswordInput = withStaticProperties(PasswordInputImpl, {
+  TextBox: withStaticProperties(Input.TextBox, {
+    Value: PasswordInputTextBoxValue
+  }),
+  Trigger: withStaticProperties(PasswordInputTrigger, {
+    Icon: Field.Icon,
+    Text: Input.Trigger.Text
+  })
+});
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`PasswordInput.TextBoxValue` is undefined on the server).
+ */
+export { PasswordInputTextBoxValue, PasswordInputTrigger };
+export const PasswordInputTextBox = Input.TextBox;
+export const PasswordInputTriggerIcon = Field.Icon;
+export const PasswordInputTriggerText = Input.Trigger.Text;

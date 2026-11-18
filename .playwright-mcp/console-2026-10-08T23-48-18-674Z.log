@@ -1,0 +1,6 @@
+[     525ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:6107/assets/icons/favicon.ico:0
+[     569ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:6107/assets/icons/favicon-32x32.png:0
+[     580ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:6107/assets/icons/favicon-16x16.png:0
+[     613ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:6107/assets/react-18-CuztVqNW.js:216
+[    1404ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:6107/assets/react-18-CuztVqNW.js:216
+[    1921ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:6107/assets/react-18-CuztVqNW.js:216

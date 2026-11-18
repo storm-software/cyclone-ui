@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="circumflexhook.case" format="2">
+  <anchor x="0.0" y="698.0" name="_top"/>
+  <outline>
+    <contour>
+      <point x="84" y="994" type="line"/>
+      <point x="200" y="994" type="line"/>
+      <point x="132" y="885" type="line"/>
+      <point x="173" y="862" type="line"/>
+      <point x="200" y="892" type="line" smooth="yes"/>
+      <point x="236" y="933"/>
+      <point x="261" y="967"/>
+      <point x="261" y="1001" type="curve" smooth="yes"/>
+      <point x="261" y="1024"/>
+      <point x="249" y="1050"/>
+      <point x="200" y="1050" type="curve" smooth="yes"/>
+      <point x="94" y="1050" type="line"/>
+    </contour>
+    <contour>
+      <point x="-8" y="915" type="line"/>
+      <point x="-136" y="782" type="line"/>
+      <point x="-96" y="750" type="line"/>
+      <point x="35" y="863" type="line"/>
+      <point x="130" y="750" type="line"/>
+      <point x="171" y="782" type="line"/>
+      <point x="86" y="915" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.talk</key>
+      <string>
+
+/* Y direction */
+ResYAnchor(15)
+YShift(15,17)
+ResYDist(15,16)
+ResYDist(16,13)
+YInterpolate(15,9,13)
+ResYDist(9,0)
+ResYDist(0,1)
+/* X direction */
+Smooth()
+</string>
+    </dict>
+  </lib>
+</glyph>

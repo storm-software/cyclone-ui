@@ -1,24 +1,37 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { hash } from "@storm-stack/hashing";
-import { isSet } from "@storm-stack/types/type-checks/is-set";
+ ------------------------------------------------------------------- */
+
+import { isSet } from "@stryke/type-checks/is-set";
 import type { UnionableString, Variable } from "@tamagui/core";
 import { getTokens } from "@tamagui/core";
+
+/**
+ * Stable cache key for a token map. Avoids `@stryke/hash`, whose barrel
+ * imports Node `fs`/`glob` and cannot be bundled for the browser.
+ */
+function tokensMapCacheKey(
+  tokensMap: Record<string, Variable<number>>
+): string {
+  return Object.entries(tokensMap)
+    .map(([key, token]) => `${key}:${token.val}`)
+    .toSorted()
+    .join("|");
+}
 
 const binarySearch = (
   tokens: Variable<number>[],
@@ -30,7 +43,7 @@ const binarySearch = (
     return start;
   }
 
-  let mid = Math.floor((start + end) / 2);
+  const mid = Math.floor((start + end) / 2);
   if (tokens.length <= mid || !isSet(tokens[mid])) {
     return start;
   } else if (tokens[mid].val === value) {
@@ -42,34 +55,22 @@ const binarySearch = (
   return binarySearch(tokens, value, mid + 1, end);
 };
 
-type CacheKey = {
+interface CacheKey {
   type: string;
   value: number;
-};
+}
 const cache: Map<CacheKey, string> = new Map();
 
-type SortedTokensCacheKey = {
+interface SortedTokensCacheKey {
   type: string;
-};
+}
 const cacheSortedTokens: Map<
   SortedTokensCacheKey,
   [string, Variable<number>][]
 > = new Map();
 
 export const getNearestToken = <
-  TToken extends
-    | number
-    | `$${string}`
-    | `$${number}`
-    | UnionableString
-    | `$${string}.${string}`
-    | `$${string}.${number}` =
-    | number
-    | `$${string}`
-    | `$${number}`
-    | UnionableString
-    | `$${string}.${string}`
-    | `$${string}.${number}`
+  TToken extends number | UnionableString = number | UnionableString
 >(
   value: number,
   type?: "size" | "space" | "zIndex" | "radius" | string,
@@ -79,12 +80,16 @@ export const getNearestToken = <
     // eslint-disable-next-line no-console
     console.warn("getNearestToken: type or tokensMap is required");
 
-    return "$true" as TToken;
+    return "true" as TToken;
   }
 
   let _type = type;
   if (!_type) {
-    _type = hash(tokensMap);
+    if (!tokensMap) {
+      return "true" as TToken;
+    }
+
+    _type = tokensMapCacheKey(tokensMap);
   }
 
   const cacheSortedTokensKey = { type: _type };
@@ -97,12 +102,12 @@ export const getNearestToken = <
   if (!cacheSortedTokens.has(cacheSortedTokensKey)) {
     const tokens =
       tokensMap ??
-      (getTokens({ prefixed: true })[_type] as Record<
+      (getTokens()[_type as keyof ReturnType<typeof getTokens>] as Record<
         string,
         Variable<number>
       >);
     if (!tokens || Object.values(tokens).length === 0) {
-      return "$true" as TToken;
+      return "true" as TToken;
     }
 
     const deduplicated = Object.entries(tokens).reduce(
@@ -126,7 +131,7 @@ export const getNearestToken = <
 
   const sortedTokens = cacheSortedTokens.get(cacheSortedTokensKey);
   if (!sortedTokens) {
-    return "$true" as TToken;
+    return "true" as TToken;
   }
 
   const values = sortedTokens.map(token => token[1]);
@@ -137,7 +142,7 @@ export const getNearestToken = <
     sortedTokens.length <= index ||
     !sortedTokens[index]?.[0]
   ) {
-    return "$true" as TToken;
+    return "true" as TToken;
   }
 
   const result = sortedTokens[index][0];

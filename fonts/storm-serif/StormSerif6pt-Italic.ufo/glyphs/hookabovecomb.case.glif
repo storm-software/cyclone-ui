@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="hookabovecomb.case" format="2">
+  <anchor x="215" y="1414" name="_UCtop"/>
+  <anchor x="324" y="1870" name="UCtop"/>
+  <outline>
+    <contour>
+      <point x="99" y="1781" type="line"/>
+      <point x="303" y="1781"/>
+      <point x="345" y="1757"/>
+      <point x="348" y="1712" type="curve" smooth="yes"/>
+      <point x="352" y="1669"/>
+      <point x="331" y="1632"/>
+      <point x="160" y="1598" type="curve"/>
+      <point x="164" y="1532" type="line"/>
+      <point x="443" y="1579"/>
+      <point x="500" y="1650"/>
+      <point x="492" y="1762" type="curve" smooth="yes"/>
+      <point x="486" y="1844"/>
+      <point x="419" y="1906"/>
+      <point x="127" y="1910" type="curve"/>
+    </contour>
+  </outline>
+</glyph>

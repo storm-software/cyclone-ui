@@ -1,0 +1,9 @@
+{
+  "name": "fonts-storm-sans",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "fonts/storm-sans",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project fonts-storm-sans --web",
+  "targets": {}
+}

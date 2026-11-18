@@ -1,0 +1,59 @@
+{
+  "name": "@cyclone-ui/tag",
+  "version": "0.0.93",
+  "private": false,
+  "description": "A compact label chip with Tag.Text and Tag.Icon subcomponents. It has the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating), shadow, glass and accented options, rounded, circular and pressable styles, and sizes. A removable tag has a remove button and an animated exit, with onBeforeRemove and onAfterRemove callbacks.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/tag"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Tag": {
+      "import": "./dist/Tag.mjs",
+      "require": "./dist/Tag.cjs"
+    },
+    "./*": "./*"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@cyclone-ui/container": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/ripple-animation": "workspace:*",
+    "@tamagui/animate-presence": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/font-size": "catalog:",
+    "@tamagui/get-font-sized": "catalog:",
+    "@tamagui/helpers": "catalog:",
+    "@tamagui/helpers-tamagui": "catalog:",
+    "@tamagui/text": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "module:jsx": "dist/jsx"
+}

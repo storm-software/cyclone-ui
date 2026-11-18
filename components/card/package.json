@@ -1,53 +1,43 @@
 {
   "name": "@cyclone-ui/card",
-  "version": "0.6.0",
+  "version": "0.6.100",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A themed card container with a gradient background and an optional accent color. Compound parts include Header (Eyebrow, Heading, Icon), Body and Footer.Link, and the footer link's arrow animates when the card is hovered. Its variant sets the surface (primary, secondary, tertiary, outlined or another Container surface), and cardStyle puts the accent bar on any edge or swaps it for a pixel hover effect. Use it to present a summary or feature with a call-to-action link.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/card"
   },
   "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
   "files": [
-    "dist",
-    "src",
-    "types"
+    "dist"
   ],
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/font-size": "^1.116.15",
-    "@tamagui/get-font-sized": "^1.116.15",
-    "@tamagui/helpers": "^1.116.15",
-    "@tamagui/helpers-tamagui": "^1.116.15",
-    "@tamagui/linear-gradient": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15",
-    "@tamagui/text": "^1.116.15",
-    "@tamagui/web": "^1.116.15"
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/container": "workspace:*",
+    "@cyclone-ui/eyebrow-text": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/link": "workspace:*",
+    "@cyclone-ui/tag": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/get-font-sized": "catalog:",
+    "@tamagui/helpers": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@tamagui/web": "catalog:"
   },
   "devDependencies": {
-    "@tamagui/lucide-icons": "^1.116.15",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1",
-    "react-native-svg": "^15.8.0"
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:",
+    "react-native-svg": "catalog:"
   },
   "publishConfig": {
     "access": "public"
@@ -55,5 +45,19 @@
   "sideEffects": [
     "*.css"
   ],
-  "module:jsx": "dist/jsx"
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Card": {
+      "import": "./dist/Card.mjs",
+      "require": "./dist/Card.cjs"
+    },
+    "./*": "./*"
+  }
 }

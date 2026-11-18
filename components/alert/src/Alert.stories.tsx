@@ -1,30 +1,35 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import type { Meta, StoryObj } from "@storybook/react";
-import { HelpCircle } from "@tamagui/lucide-icons";
+ ------------------------------------------------------------------- */
+
+import { QuestionCircle } from "@cyclone-ui/icons";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { ComponentProps, ReactNode } from "react";
 import { Alert } from "./Alert";
 
-const meta: Meta<typeof Alert> = {
+// `icon` is a story-only arg consumed by the custom `render` below.
+type AlertStoryArgs = ComponentProps<typeof Alert> & { icon?: ReactNode };
+
+const meta: Meta<AlertStoryArgs> = {
   title: "Containers/Alert",
   component: Alert,
   tags: ["autodocs"],
-  render: ({ children, icon, theme, ...rest }: any) => (
-    <Alert {...rest} theme={theme}>
+  render: ({ children, icon, theme, type, ...rest }: any) => (
+    <Alert {...rest} theme={theme} type={type}>
       <Alert.Icon>{icon}</Alert.Icon>
       <Alert.Content>
         <Alert.Content.Heading>Alert Heading</Alert.Content.Heading>
@@ -34,11 +39,11 @@ const meta: Meta<typeof Alert> = {
       <Alert.Close />
     </Alert>
   )
-} satisfies Meta<typeof Alert>;
+} satisfies Meta<AlertStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof Alert>;
+type Story = StoryObj<AlertStoryArgs>;
 
 const bodyText =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.";
@@ -49,72 +54,51 @@ export const Base: Story = {
   }
 };
 
-export const CustomIcon: Story = {
-  args: {
-    children: bodyText,
-    icon: <HelpCircle />
-  }
-};
-
 export const Brand: Story = {
   args: {
     children: bodyText,
-    theme: "brand"
+    type: "brand"
   }
 };
 
-export const Alternate: Story = {
+export const CustomIcon: Story = {
   args: {
     children: bodyText,
-    theme: "alternate"
+    icon: <QuestionCircle />
   }
 };
 
-export const Help: Story = {
+export const Danger: Story = {
   args: {
     children: bodyText,
-    theme: "help"
-  }
-};
-
-export const Error: Story = {
-  args: {
-    children: bodyText,
-    theme: "danger"
+    type: "danger"
   }
 };
 
 export const Warning: Story = {
   args: {
     children: bodyText,
-    theme: "warning"
+    type: "warning"
   }
 };
 
 export const Info: Story = {
   args: {
     children: bodyText,
-    theme: "info"
+    type: "info"
   }
 };
 
 export const Success: Story = {
   args: {
     children: bodyText,
-    theme: "success"
+    type: "success"
   }
 };
 
-export const Positive: Story = {
+export const Discovery: Story = {
   args: {
     children: bodyText,
-    theme: "positive"
-  }
-};
-
-export const Negative: Story = {
-  args: {
-    children: bodyText,
-    theme: "negative"
+    type: "discovery"
   }
 };

@@ -1,0 +1,61 @@
+{
+  "name": "@cyclone-ui/context-menu",
+  "version": "0.0.90",
+  "type": "module",
+  "description": "A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, a sm, md or lg size, and the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating) with the popover's shadow, glass, noise and accented options. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option), take a `theme` that colors its text and icons with that theme's primary tokens, and list child `items` in a submenu behind a right chevron (expanded inline in the small-screen sheet). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/context-menu"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/container": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/popover": "workspace:*",
+    "@cyclone-ui/tooltip": "workspace:*",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/button": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./ContextMenu": {
+      "import": "./dist/ContextMenu.mjs",
+      "require": "./dist/ContextMenu.cjs"
+    },
+    "./utilities": {
+      "import": "./dist/utilities.mjs",
+      "require": "./dist/utilities.cjs"
+    },
+    "./*": "./*"
+  },
+  "module:jsx": "dist/jsx"
+}

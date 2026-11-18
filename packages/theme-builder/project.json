@@ -1,0 +1,8 @@
+{
+  "name": "theme-builder",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/theme-builder/src",
+  "// targets": "to see all targets run: nx show project theme-builder --web",
+  "targets": {}
+}

@@ -1,5 +1,5 @@
 project:
   name: cyclone-ui
   tz: America/New_York
-  adrFolder: ./docs/decisions
+  adrFolder: ./docs/adr
   packages: []

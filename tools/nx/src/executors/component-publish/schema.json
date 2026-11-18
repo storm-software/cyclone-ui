@@ -1,32 +1,59 @@
 {
-  "$schema": "https://json-schema.org/schema",
-  "version": 2,
-  "title": "Component Publish executor",
-  "description": "Publish a Cyclone UI component to the Storm CDN remote registry - DO NOT INVOKE DIRECTLY WITH `nx run`. Use `nx release publish` instead.",
-  "type": "object",
+  "id": "#",
+  "title": "Component Publish Executor",
+  "description": "A type definition for the Component Publish executor schema",
+  "requires": [],
   "properties": {
-    "packageRoot": {
+    "tag": {
+      "title": "Tag",
       "type": "string",
-      "description": "The root directory of the directory (containing a manifest file at its root) to publish. Defaults to the project root."
+      "description": "The tag to publish with",
+      "id": "#tag",
+      "default": "latest"
     },
-    "tsConfig": {
-      "type": "string",
-      "description": "The path to the `tsconfig.json` file.",
-      "x-completion-type": "file",
-      "x-completion-glob": "tsconfig*.json",
-      "x-priority": "important",
-      "default": "{projectRoot}/tsconfig.json"
-    },
-    "dryRun": {
+    "all": {
+      "title": "All Components",
       "type": "boolean",
-      "description": "Whether to run the command without actually publishing the package to the registry.",
+      "description": "Bootstrap the public registry or tag channel by publishing every component before its catalog",
+      "id": "#all",
+      "default": false
+    },
+    "writeMetaJson": {
+      "title": "Write Meta JSON",
+      "type": "boolean",
+      "description": "Deprecated and ignored; registry items contain embedded metadata",
+      "id": "#writeMetaJson",
+      "default": false
+    },
+    "clean": {
+      "title": "Clean",
+      "type": "boolean",
+      "description": "Deprecated and ignored; component publishing always preserves shared bucket objects",
+      "id": "#clean",
       "default": false
     },
     "verbose": {
+      "title": "Verbose",
       "type": "boolean",
-      "description": "Should write extra log outputs with details from the executor.",
+      "description": "Enable verbose logging",
+      "id": "#verbose",
+      "default": false
+    },
+    "dryRun": {
+      "title": "Dry Run",
+      "type": "boolean",
+      "description": "Perform a dry run",
+      "id": "#dryRun",
       "default": false
     }
   },
-  "required": ["tsConfig"]
+  "type": "object",
+  "default": {
+    "tag": "latest",
+    "all": false,
+    "writeMetaJson": false,
+    "clean": false,
+    "verbose": false,
+    "dryRun": false
+  }
 }

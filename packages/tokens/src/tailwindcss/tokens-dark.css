@@ -1,0 +1,1202 @@
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Bold.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/BoldItalic.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/ExtraLight.otf")
+    format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/ExtraLightItalic.otf")
+    format("opentype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Italic.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Light.otf")
+    format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/LightItalic.otf")
+    format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Medium.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/MediumItalic.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/SemiBold.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/SemiBoldItalic.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Text.otf")
+    format("opentype");
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/TextItalic.otf")
+    format("opentype");
+  font-weight: 450;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Thin.otf")
+    format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/ThinItalic.otf")
+    format("opentype");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Bold.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/BoldItalic.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/ExtraLight.ttf")
+    format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/ExtraLightItalic.ttf")
+    format("truetype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Italic-Variable.ttf")
+    format("truetype");
+  font-weight: 100 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Italic.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Light.ttf")
+    format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/LightItalic.ttf")
+    format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Medium.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/MediumItalic.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/SemiBold.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/SemiBoldItalic.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Text.ttf")
+    format("truetype");
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/TextItalic.ttf")
+    format("truetype");
+  font-weight: 450;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Thin.ttf")
+    format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/ThinItalic.ttf")
+    format("truetype");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Variable.ttf")
+    format("truetype");
+  font-weight: 100 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Bold.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/BoldItalic.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraBold.otf")
+    format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraBoldItalic.otf")
+    format("opentype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraLight.otf")
+    format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraLightItalic.otf")
+    format("opentype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Italic.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Light.otf")
+    format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/LightItalic.otf")
+    format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Medium.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/MediumItalic.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/SemiBold.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/SemiBoldItalic.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Bold.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/BoldItalic.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraBold.ttf")
+    format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraBoldItalic.ttf")
+    format("truetype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraLight.ttf")
+    format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraLightItalic.ttf")
+    format("truetype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Italic-Variable.ttf")
+    format("truetype");
+  font-weight: 200 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Italic.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Light.ttf")
+    format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/LightItalic.ttf")
+    format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Medium.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/MediumItalic.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/SemiBold.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/SemiBoldItalic.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Variable.ttf")
+    format("truetype");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --blur-2xl: 40px;
+  --blur-3xl: 64px;
+  --blur-lg: 16px;
+  --blur-md: 12px;
+  --blur-sm: 8px;
+  --blur-xl: 24px;
+  --blur-xs: 4px;
+  --color-base-backdrop: #41414126;
+  --color-base-border: #404147;
+  --color-base-link: #00bcff;
+  --color-base-link-active: #a5dfff;
+  --color-base-link-disabled: #43677a;
+  --color-base-link-hovered: #8bd6ff;
+  --color-base-link-inactive: #008bbe;
+  --color-base-on-primary: var(--color-neutral-16);
+  --color-base-on-secondary: var(--color-neutral-1);
+  --color-base-primary: var(--color-white);
+  --color-base-primary-active: var(--color-white);
+  --color-base-primary-disabled: var(--color-neutral-9);
+  --color-base-primary-hovered: #aeaeae;
+  --color-base-primary-inactive: #636363;
+  --color-base-secondary: var(--color-neutral-12);
+  --color-base-secondary-active: #3a3b41;
+  --color-base-secondary-disabled: #3c3d40;
+  --color-base-secondary-hovered: #333439;
+  --color-base-secondary-inactive: #1e1f24;
+  --color-black: #0c0c0d;
+  --color-blue-1: #abcaff;
+  --color-blue-2: #8cb6ff;
+  --color-blue-3: #6da2ff;
+  --color-blue-4: #4d8eff;
+  --color-blue-5: #2e7aff;
+  --color-blue-6: #2768d9;
+  --color-blue-7: #2055b3;
+  --color-blue-8: #19438c;
+  --color-blue-9: #123166;
+  --color-brand-backdrop: #00442a26;
+  --color-brand-border: #31806b;
+  --color-brand-link: var(--color-brand-primary);
+  --color-brand-link-active: var(--color-brand-primary-active);
+  --color-brand-link-disabled: var(--color-brand-primary-disabled);
+  --color-brand-link-hovered: var(--color-brand-primary-hovered);
+  --color-brand-link-inactive: var(--color-brand-primary-inactive);
+  --color-brand-on-primary: var(--color-neutral-16);
+  --color-brand-on-secondary: var(--color-white);
+  --color-brand-primary: #3be4be;
+  --color-brand-primary-active: #74ffdb;
+  --color-brand-primary-disabled: #4c726a;
+  --color-brand-primary-hovered: #00c19e;
+  --color-brand-primary-inactive: #00ab8c;
+  --color-brand-secondary: #00604d;
+  --color-brand-secondary-active: var(--color-brand-border);
+  --color-brand-secondary-disabled: #374b48;
+  --color-brand-secondary-hovered: #1d705c;
+  --color-brand-secondary-inactive: #004537;
+  --color-canvas: var(--color-neutral-16);
+  --color-canvas-active: #232326;
+  --color-canvas-disabled: #252528;
+  --color-canvas-hovered: #1c1c1f;
+  --color-canvas-inactive: #111114;
+  --color-danger-backdrop: #53000726;
+  --color-danger-border: #86233c;
+  --color-danger-link: var(--color-danger-primary);
+  --color-danger-link-active: var(--color-danger-primary-active);
+  --color-danger-link-disabled: var(--color-danger-primary-disabled);
+  --color-danger-link-hovered: var(--color-danger-primary-hovered);
+  --color-danger-link-inactive: var(--color-danger-primary-inactive);
+  --color-danger-on-primary: var(--color-neutral-1);
+  --color-danger-on-secondary: #ffb6c0;
+  --color-danger-primary: var(--color-red-4);
+  --color-danger-primary-active: #ff7e97;
+  --color-danger-primary-disabled: #6b4751;
+  --color-danger-primary-hovered: #ef5b7d;
+  --color-danger-primary-inactive: #aa1046;
+  --color-danger-secondary: #6b0027;
+  --color-danger-secondary-active: var(--color-danger-border);
+  --color-danger-secondary-disabled: #4d353e;
+  --color-danger-secondary-hovered: #791332;
+  --color-danger-secondary-inactive: #4e001a;
+  --color-data-blue-emphasis: var(--color-blue-7);
+  --color-data-blue-subtle: var(--color-blue-9);
+  --color-data-green-emphasis: var(--color-green-6);
+  --color-data-green-subtle: var(--color-green-7);
+  --color-data-neutral-emphasis: var(--color-neutral-1);
+  --color-data-neutral-subtle: var(--color-neutral-14);
+  --color-data-orange-emphasis: var(--color-orange-6);
+  --color-data-orange-subtle: var(--color-orange-9);
+  --color-data-pink-emphasis: var(--color-pink-6);
+  --color-data-pink-subtle: var(--color-pink-9);
+  --color-data-purple-emphasis: var(--color-purple-6);
+  --color-data-purple-subtle: var(--color-purple-9);
+  --color-data-red-emphasis: var(--color-red-7);
+  --color-data-red-subtle: var(--color-red-9);
+  --color-data-yellow-emphasis: var(--color-yellow-5);
+  --color-data-yellow-subtle: var(--color-yellow-9);
+  --color-discovery-backdrop: #28005b26;
+  --color-discovery-border: #4b3c79;
+  --color-discovery-link: var(--color-discovery-primary);
+  --color-discovery-link-active: var(--color-discovery-primary-active);
+  --color-discovery-link-disabled: var(--color-discovery-primary-disabled);
+  --color-discovery-link-hovered: var(--color-discovery-primary-hovered);
+  --color-discovery-link-inactive: var(--color-discovery-primary-inactive);
+  --color-discovery-on-primary: var(--color-neutral-1);
+  --color-discovery-on-secondary: var(--color-neutral-1);
+  --color-discovery-primary: var(--color-purple-4);
+  --color-discovery-primary-active: #c1aeff;
+  --color-discovery-primary-disabled: #5a546f;
+  --color-discovery-primary-hovered: #aa90f5;
+  --color-discovery-primary-inactive: #6d51b0;
+  --color-discovery-secondary: var(--color-purple-9);
+  --color-discovery-secondary-active: var(--color-discovery-border);
+  --color-discovery-secondary-disabled: #3f3b4c;
+  --color-discovery-secondary-hovered: #40316d;
+  --color-discovery-secondary-inactive: #27144e;
+  --color-elevated: var(--color-neutral-14);
+  --color-elevated-active: #333335;
+  --color-elevated-disabled: #2d2d2f;
+  --color-elevated-hovered: var(--color-surface-disabled);
+  --color-elevated-inactive: #1b1b1d;
+  --color-emphasis: var(--color-neutral-2);
+  --color-emphasis-active: var(--color-white);
+  --color-emphasis-disabled: #777779;
+  --color-emphasis-hovered: #a4a4a4;
+  --color-emphasis-inactive: var(--color-base-primary-inactive);
+  --color-floating: var(--color-neutral-13);
+  --color-floating-active: #38393c;
+  --color-floating-disabled: #2f3033;
+  --color-floating-hovered: #2e2f32;
+  --color-floating-inactive: #1e1f22;
+  --color-green-1: #d1f1d6;
+  --color-green-2: #a2e3b6;
+  --color-green-3: #74d59f;
+  --color-green-4: #45c791;
+  --color-green-5: #38a97e;
+  --color-green-6: #2c8a69;
+  --color-green-7: #216b53;
+  --color-green-8: #164a3c;
+  --color-green-9: #0c2a22;
+  --color-hairline: var(--color-neutral-11);
+  --color-hairline-active: var(--color-white);
+  --color-hairline-disabled: #444447;
+  --color-hairline-hovered: #727276;
+  --color-hairline-inactive: var(--color-base-primary-inactive);
+  --color-info-backdrop: #00007526;
+  --color-info-border: #3560ac;
+  --color-info-link: var(--color-info-primary);
+  --color-info-link-active: var(--color-info-primary-active);
+  --color-info-link-disabled: var(--color-info-primary-disabled);
+  --color-info-link-hovered: var(--color-info-primary-hovered);
+  --color-info-link-inactive: var(--color-info-primary-inactive);
+  --color-info-on-primary: var(--color-neutral-1);
+  --color-info-on-secondary: var(--color-neutral-1);
+  --color-info-primary: var(--color-blue-4);
+  --color-info-primary-active: #a6c7ff;
+  --color-info-primary-disabled: #4a5a79;
+  --color-info-primary-hovered: #7aabff;
+  --color-info-primary-inactive: #2564d1;
+  --color-info-secondary: var(--color-blue-8);
+  --color-info-secondary-active: var(--color-info-border);
+  --color-info-secondary-disabled: #394458;
+  --color-info-secondary-hovered: #27519c;
+  --color-info-secondary-inactive: #022c73;
+  --color-ink: var(--color-neutral-7);
+  --color-ink-active: var(--color-white);
+  --color-ink-disabled: #646466;
+  --color-ink-hovered: #d7d7d8;
+  --color-ink-inactive: var(--color-base-primary-inactive);
+  --color-neutral-1: #fafafa;
+  --color-neutral-10: #555659;
+  --color-neutral-11: #46464a;
+  --color-neutral-12: #2d2e33;
+  --color-neutral-13: #242528;
+  --color-neutral-14: #212123;
+  --color-neutral-15: #1c1c1e;
+  --color-neutral-16: #151518;
+  --color-neutral-2: #f1f1f1;
+  --color-neutral-3: #eaeaea;
+  --color-neutral-4: #e1e1e1;
+  --color-neutral-5: #d0d0d1;
+  --color-neutral-6: #c0c0c1;
+  --color-neutral-7: #b0b0b1;
+  --color-neutral-8: #959698;
+  --color-neutral-9: #7b7b7e;
+  --color-orange-1: #f6c3a7;
+  --color-orange-2: #f4b18c;
+  --color-orange-3: #f19f71;
+  --color-orange-4: #ef8c56;
+  --color-orange-5: #ec7a3b;
+  --color-orange-6: #df6520;
+  --color-orange-7: #bf520b;
+  --color-orange-8: #9f4000;
+  --color-orange-9: #803000;
+  --color-pink-1: #f5c7e4;
+  --color-pink-2: #f49ed1;
+  --color-pink-3: #eb89c5;
+  --color-pink-4: #e774bb;
+  --color-pink-5: #e171b7;
+  --color-pink-6: #df6db3;
+  --color-pink-7: #c25c9b;
+  --color-pink-8: #904272;
+  --color-pink-9: #482039;
+  --color-purple-1: #cec2ee;
+  --color-purple-2: #baa9e8;
+  --color-purple-3: #a690e1;
+  --color-purple-4: #9277da;
+  --color-purple-5: #7f64c4;
+  --color-purple-6: #6c53ad;
+  --color-purple-7: #594395;
+  --color-purple-8: #47347c;
+  --color-purple-9: #362661;
+  --color-red-1: #e2819a;
+  --color-red-2: #dd6c89;
+  --color-red-3: #d95778;
+  --color-red-4: #d44267;
+  --color-red-5: #cf2d56;
+  --color-red-6: #ae284a;
+  --color-red-7: #8e223e;
+  --color-red-8: #6f1c31;
+  --color-red-9: #501524;
+  --color-shadow-floating-large: var(--shadow-xl);
+  --color-shadow-floating-medium: var(--shadow-lg);
+  --color-shadow-floating-small: var(--shadow-md);
+  --color-shadow-floating-xlarge: var(--shadow-2xl);
+  --color-shadow-inset: var(--inset-shadow-xs);
+  --color-shadow-resting-medium: var(--shadow-sm);
+  --color-shadow-resting-raised:
+    0px 1px 2px 0px #0000004d, 0px 2px 8px 0px #00000040;
+  --color-shadow-resting-small: var(--shadow-xs);
+  --color-shadow-resting-xsmall: var(--shadow-2xs);
+  --color-subtle: var(--color-neutral-8);
+  --color-subtle-active: var(--color-white);
+  --color-subtle-disabled: #5c5c5f;
+  --color-subtle-hovered: #c8c9cb;
+  --color-subtle-inactive: var(--color-base-primary-inactive);
+  --color-success-backdrop: #003a1026;
+  --color-success-border: #31815e;
+  --color-success-link: var(--color-success-primary);
+  --color-success-link-active: var(--color-success-primary-active);
+  --color-success-link-disabled: var(--color-success-primary-disabled);
+  --color-success-link-hovered: var(--color-success-primary-hovered);
+  --color-success-link-inactive: var(--color-success-primary-inactive);
+  --color-success-on-primary: var(--color-neutral-1);
+  --color-success-on-secondary: var(--color-white);
+  --color-success-primary: var(--color-green-4);
+  --color-success-primary-active: #74f1b9;
+  --color-success-primary-disabled: #4b695e;
+  --color-success-primary-hovered: #68e6ae;
+  --color-success-primary-inactive: #009666;
+  --color-success-secondary: #006140;
+  --color-success-secondary-active: var(--color-success-border);
+  --color-success-secondary-disabled: #374b45;
+  --color-success-secondary-hovered: #1d714f;
+  --color-success-secondary-inactive: #00462d;
+  --color-sunken: var(--color-black);
+  --color-sunken-active: #161617;
+  --color-sunken-disabled: #1f1f21;
+  --color-sunken-hovered: #111112;
+  --color-sunken-inactive: #09090a;
+  --color-surface: var(--color-neutral-15);
+  --color-surface-active: #2c2c2f;
+  --color-surface-disabled: #2a2a2c;
+  --color-surface-hovered: #242426;
+  --color-surface-inactive: #171719;
+  --color-warning-backdrop: #53240026;
+  --color-warning-border: #d1a052;
+  --color-warning-link: var(--color-warning-primary);
+  --color-warning-link-active: var(--color-warning-primary-active);
+  --color-warning-link-disabled: var(--color-warning-primary-disabled);
+  --color-warning-link-hovered: var(--color-warning-primary-hovered);
+  --color-warning-link-inactive: var(--color-warning-primary-inactive);
+  --color-warning-on-primary: var(--color-neutral-16);
+  --color-warning-on-secondary: var(--color-neutral-1);
+  --color-warning-primary: var(--color-yellow-2);
+  --color-warning-primary-active: #ffe1af;
+  --color-warning-primary-disabled: #786a54;
+  --color-warning-primary-hovered: #d6a038;
+  --color-warning-primary-inactive: #c18c1c;
+  --color-warning-secondary: var(--color-yellow-8);
+  --color-warning-secondary-active: var(--color-warning-border);
+  --color-warning-secondary-disabled: #5e5241;
+  --color-warning-secondary-hovered: #b98939;
+  --color-warning-secondary-inactive: #7a5300;
+  --color-white: #ffffff;
+  --color-yellow-1: #facd7b;
+  --color-yellow-2: #f9c25e;
+  --color-yellow-3: #f8b740;
+  --color-yellow-4: #f7ac23;
+  --color-yellow-5: #f0a824;
+  --color-yellow-6: #df9d24;
+  --color-yellow-7: #c58c22;
+  --color-yellow-8: #a2731e;
+  --color-yellow-9: #765417;
+  --drop-shadow-2xl: 0px 25px 25px 0px #00000026;
+  --drop-shadow-lg: 0px 4px 4px 0px #00000026;
+  --drop-shadow-md: 0px 3px 3px 0px #0000001f;
+  --drop-shadow-sm: 0px 1px 2px 0px #00000026;
+  --drop-shadow-xl: 0px 9px 7px 0px #0000001a;
+  --drop-shadow-xs: 0px 1px 1px 0px #0000000d;
+  --durations-instant: 0ms;
+  --durations-long: 600ms;
+  --durations-medium: 300ms;
+  --durations-short: 100ms;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --font-body: Storm Sans;
+  --font-caption: Storm Sans;
+  --font-code: Google Sans Code;
+  --font-display: Storm Sans;
+  --font-editorial: Storm Serif;
+  --font-eyebrow: Google Sans Code;
+  --font-weight-black: 900;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-extralight: 200;
+  --font-weight-light: 300;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-weight-thin: 100;
+  --inset-shadow-2xs: inset 0px 1px 0px 0px #0000000d;
+  --inset-shadow-sm: inset 0px 2px 4px 0px #0000000d;
+  --inset-shadow-xs: inset 0px 1px 1px 0px #0000000d;
+  --leading-10xl: 0.9;
+  --leading-2xl: 1.2;
+  --leading-3xl: 1.08;
+  --leading-4xl: 1;
+  --leading-5xl: 0.9;
+  --leading-6xl: 0.9;
+  --leading-7xl: 0.9;
+  --leading-8xl: 0.9;
+  --leading-9xl: 0.9;
+  --leading-body: var(--leading-snug);
+  --leading-caption: var(--leading-snug);
+  --leading-code: var(--leading-none);
+  --leading-display: var(--leading-normal);
+  --leading-editorial: var(--leading-normal);
+  --leading-eyebrow: var(--leading-none);
+  --leading-lg: 1.4;
+  --leading-loose: 1.665;
+  --leading-md: 1.35;
+  --leading-none: 0.765;
+  --leading-normal: 1.2375;
+  --leading-relaxed: 1.35;
+  --leading-sm: 1.285714;
+  --leading-snug: 1.125;
+  --leading-tight: 1.0575;
+  --leading-xl: 1.26;
+  --leading-xs: 1.2;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2rem;
+  --radius-button: var(--radius-lg);
+  --radius-card: var(--radius-xl);
+  --radius-checkbox: var(--radius-sm);
+  --radius-container: var(--radius-2xl);
+  --radius-control: var(--radius-md);
+  --radius-dialog: var(--radius-lg);
+  --radius-drawer: var(--radius-lg);
+  --radius-full: 100%;
+  --radius-lg: 0.5625rem;
+  --radius-md: 0.375rem;
+  --radius-popover: var(--radius-md);
+  --radius-sheet: var(--radius-zero);
+  --radius-sm: 0.25rem;
+  --radius-tab: var(--radius-lg);
+  --radius-tabs: var(--radius-xl);
+  --radius-tag: var(--radius-sm);
+  --radius-tooltip: var(--radius-md);
+  --radius-trigger: var(--radius-md);
+  --radius-xl: 0.71875rem;
+  --radius-xs: 0.125rem;
+  --radius-zero: 0rem;
+  --ring-base: 0px 0px 0px 3px #ffffff1a;
+  --ring-base-offset:
+    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #ffffff1a;
+  --ring-base-subtle: 0px 0px 0px 1px #ffffff1a;
+  --ring-base-subtle-offset:
+    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #ffffff1a;
+  --ring-brand: 0px 0px 0px 3px #3be4be26;
+  --ring-brand-offset:
+    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #3be4be26;
+  --ring-brand-subtle: 0px 0px 0px 1px #3be4be26;
+  --ring-brand-subtle-offset:
+    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #3be4be26;
+  --ring-danger: 0px 0px 0px 3px #d4426726;
+  --ring-danger-offset:
+    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #d4426726;
+  --ring-danger-subtle: 0px 0px 0px 1px #d4426726;
+  --ring-danger-subtle-offset:
+    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #d4426726;
+  --ring-discovery: 0px 0px 0px 3px #9277da26;
+  --ring-discovery-offset:
+    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #9277da26;
+  --ring-discovery-subtle: 0px 0px 0px 1px #9277da26;
+  --ring-discovery-subtle-offset:
+    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #9277da26;
+  --ring-info: 0px 0px 0px 3px #4d8eff26;
+  --ring-info-offset:
+    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #4d8eff26;
+  --ring-info-subtle: 0px 0px 0px 1px #4d8eff26;
+  --ring-info-subtle-offset:
+    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #4d8eff26;
+  --ring-success: 0px 0px 0px 3px #45c79126;
+  --ring-success-offset:
+    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #45c79126;
+  --ring-success-subtle: 0px 0px 0px 1px #45c79126;
+  --ring-success-subtle-offset:
+    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #45c79126;
+  --ring-warning: 0px 0px 0px 3px #f9c25e26;
+  --ring-warning-offset:
+    0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 7px #f9c25e26;
+  --ring-warning-subtle: 0px 0px 0px 1px #f9c25e26;
+  --ring-warning-subtle-offset:
+    0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f9c25e26;
+  --shadow-2xl: 0px 25px 50px -12px #00000040;
+  --shadow-2xs: 0px 1px 0px 0px #0000000d;
+  --shadow-lg: 0px 10px 15px -3px #0000001a, 0px 4px 6px -4px #0000001a;
+  --shadow-md: 0px 4px 6px -1px #0000001a, 0px 2px 4px -2px #0000001a;
+  --shadow-sm: 0px 1px 3px 0px #0000001a, 0px 1px 2px -1px #0000001a;
+  --shadow-xl: 0px 20px 25px -5px #0000001a, 0px 8px 10px -6px #0000001a;
+  --shadow-xs: 0px 1px 2px 0px #0000000d;
+  --size-10xl: 42px;
+  --size-11xl: 47px;
+  --size-12xl: 52px;
+  --size-13xl: 62px;
+  --size-14xl: 72px;
+  --size-15xl: 82px;
+  --size-16xl: 92px;
+  --size-17xl: 102px;
+  --size-18xl: 112px;
+  --size-19xl: 122px;
+  --size-20xl: 132px;
+  --size-21xl: 142px;
+  --size-22xl: 152px;
+  --size-23xl: 162px;
+  --size-24xl: 172px;
+  --size-25xl: 182px;
+  --size-26xl: 192px;
+  --size-27xl: 202px;
+  --size-28xl: 212px;
+  --size-29xl: 222px;
+  --size-2xl: 16px;
+  --size-30xl: 232px;
+  --size-31xl: 242px;
+  --size-32xl: 252px;
+  --size-33xl: 262px;
+  --size-34xl: 272px;
+  --size-35xl: 282px;
+  --size-36xl: 292px;
+  --size-37xl: 302px;
+  --size-38xl: 312px;
+  --size-39xl: 322px;
+  --size-3xl: 18px;
+  --size-40xl: 332px;
+  --size-41xl: 342px;
+  --size-42xl: 352px;
+  --size-43xl: 362px;
+  --size-44xl: 372px;
+  --size-45xl: 382px;
+  --size-46xl: 392px;
+  --size-47xl: 402px;
+  --size-48xl: 412px;
+  --size-49xl: 422px;
+  --size-4xl: 20px;
+  --size-50xl: 432px;
+  --size-51xl: 442px;
+  --size-52xl: 452px;
+  --size-53xl: 462px;
+  --size-54xl: 472px;
+  --size-55xl: 482px;
+  --size-56xl: 492px;
+  --size-57xl: 502px;
+  --size-58xl: 512px;
+  --size-59xl: 522px;
+  --size-5xl: 22px;
+  --size-60xl: 532px;
+  --size-61xl: 542px;
+  --size-62xl: 552px;
+  --size-63xl: 562px;
+  --size-64xl: 572px;
+  --size-6xl: 24px;
+  --size-7xl: 26px;
+  --size-8xl: 32px;
+  --size-9xl: 37px;
+  --size-lg: 12px;
+  --size-md: 10px;
+  --size-sm: 8px;
+  --size-xl: 14px;
+  --size-xs: 4px;
+  --size-xxs: 2px;
+  --size-zero: 0px;
+  --spacing-10xl: 46px;
+  --spacing-11xl: 53px;
+  --spacing-12xl: 60px;
+  --spacing-13xl: 74px;
+  --spacing-14xl: 88px;
+  --spacing-15xl: 102px;
+  --spacing-16xl: 116px;
+  --spacing-17xl: 130px;
+  --spacing-18xl: 144px;
+  --spacing-19xl: 158px;
+  --spacing-20xl: 172px;
+  --spacing-21xl: 186px;
+  --spacing-22xl: 200px;
+  --spacing-23xl: 214px;
+  --spacing-24xl: 228px;
+  --spacing-25xl: 242px;
+  --spacing-26xl: 256px;
+  --spacing-27xl: 270px;
+  --spacing-28xl: 284px;
+  --spacing-29xl: 298px;
+  --spacing-2xl: 10px;
+  --spacing-30xl: 312px;
+  --spacing-31xl: 326px;
+  --spacing-32xl: 340px;
+  --spacing-33xl: 354px;
+  --spacing-34xl: 368px;
+  --spacing-35xl: 382px;
+  --spacing-36xl: 396px;
+  --spacing-37xl: 410px;
+  --spacing-38xl: 424px;
+  --spacing-39xl: 438px;
+  --spacing-3xl: 13px;
+  --spacing-40xl: 452px;
+  --spacing-41xl: 466px;
+  --spacing-42xl: 480px;
+  --spacing-43xl: 494px;
+  --spacing-44xl: 508px;
+  --spacing-45xl: 522px;
+  --spacing-46xl: 536px;
+  --spacing-47xl: 550px;
+  --spacing-48xl: 564px;
+  --spacing-49xl: 578px;
+  --spacing-4xl: 16px;
+  --spacing-50xl: 592px;
+  --spacing-51xl: 606px;
+  --spacing-52xl: 620px;
+  --spacing-53xl: 634px;
+  --spacing-54xl: 648px;
+  --spacing-55xl: 662px;
+  --spacing-56xl: 676px;
+  --spacing-57xl: 690px;
+  --spacing-58xl: 704px;
+  --spacing-59xl: 718px;
+  --spacing-5xl: 18px;
+  --spacing-60xl: 732px;
+  --spacing-61xl: 746px;
+  --spacing-62xl: 760px;
+  --spacing-63xl: 774px;
+  --spacing-64xl: 788px;
+  --spacing-6xl: 21px;
+  --spacing-7xl: 24px;
+  --spacing-8xl: 32px;
+  --spacing-9xl: 39px;
+  --spacing-lg: 4px;
+  --spacing-md: 2px;
+  --spacing-sm: 1.5px;
+  --spacing-xl: 7px;
+  --spacing-xs: 1px;
+  --spacing-xxs: 0.5px;
+  --spacing-zero: 0px;
+  --text-10xl: 12rem;
+  --text-10xl--line-height: var(--leading-10xl);
+  --text-11xl: 14rem;
+  --text-12xl: 16rem;
+  --text-13xl: 18rem;
+  --text-14xl: 20rem;
+  --text-15xl: 24rem;
+  --text-2xl: 1.875rem;
+  --text-2xl--line-height: var(--leading-2xl);
+  --text-3xl: 2.25rem;
+  --text-3xl--line-height: var(--leading-3xl);
+  --text-4xl: 3rem;
+  --text-4xl--line-height: var(--leading-4xl);
+  --text-5xl: 3.75rem;
+  --text-5xl--line-height: var(--leading-5xl);
+  --text-6xl: 4.5rem;
+  --text-6xl--line-height: var(--leading-6xl);
+  --text-7xl: 6rem;
+  --text-7xl--line-height: var(--leading-7xl);
+  --text-8xl: 8rem;
+  --text-8xl--line-height: var(--leading-8xl);
+  --text-9xl: 10rem;
+  --text-9xl--line-height: var(--leading-9xl);
+  --text-lg: 1.25rem;
+  --text-lg--line-height: var(--leading-lg);
+  --text-md: 1.125rem;
+  --text-md--line-height: var(--leading-md);
+  --text-shadow-2xs: 0px 1px 0px 0px #00000026;
+  --text-shadow-lg:
+    0px 1px 2px 0px #0000001a, 0px 3px 2px 0px #0000001a,
+    0px 4px 8px 0px #0000001a;
+  --text-shadow-md:
+    0px 1px 1px 0px #0000001a, 0px 1px 2px 0px #0000001a,
+    0px 2px 4px 0px #0000001a;
+  --text-shadow-sm:
+    0px 1px 0px 0px #00000013, 0px 1px 1px 0px #00000013,
+    0px 2px 2px 0px #00000013;
+  --text-shadow-xs: 0px 1px 1px 0px #00000033;
+  --text-sm: 1rem;
+  --text-sm--line-height: var(--leading-sm);
+  --text-xl: 1.5rem;
+  --text-xl--line-height: var(--leading-xl);
+  --text-xs: 0.875rem;
+  --text-xs--line-height: var(--leading-xs);
+  --text-xxs: 0.75rem;
+  --text-xxxs: 0.625rem;
+  --tracking-normal: 0rem;
+  --tracking-tight: -0.025rem;
+  --tracking-tighter: -0.05rem;
+  --tracking-wide: 0.025rem;
+  --tracking-wider: 0.05rem;
+  --tracking-widest: 0.1rem;
+  --z-index-0: 0;
+  --z-index-10: 100;
+  --z-index-20: 200;
+  --z-index-30: 300;
+  --z-index-40: 400;
+  --z-index-50: 500;
+  --z-index-60: 600;
+  --z-index-70: 700;
+  --z-index-80: 800;
+  --z-index-90: 900;
+}

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni031B" format="2">
+  <unicode hex="031B"/>
+  <anchor x="0" y="1046" name="_horn"/>
+  <outline>
+    <contour>
+      <point x="265" y="1217" type="curve" smooth="yes"/>
+      <point x="265" y="1291"/>
+      <point x="238" y="1319"/>
+      <point x="197" y="1319" type="curve" smooth="yes"/>
+      <point x="158" y="1319"/>
+      <point x="132" y="1296"/>
+      <point x="132" y="1268" type="curve" smooth="yes"/>
+      <point x="132" y="1260"/>
+      <point x="173" y="1215"/>
+      <point x="173" y="1159" type="curve" smooth="yes"/>
+      <point x="173" y="1086"/>
+      <point x="120" y="1046"/>
+      <point x="7" y="1046" type="curve" smooth="yes"/>
+      <point x="-66" y="1046" type="line"/>
+      <point x="-66" y="997" type="line"/>
+      <point x="6" y="997" type="line" smooth="yes"/>
+      <point x="165" y="997"/>
+      <point x="265" y="1075"/>
+    </contour>
+  </outline>
+</glyph>

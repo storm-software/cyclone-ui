@@ -1,0 +1,5 @@
+# Cyclone UI (Light High Contrast) Guidelines
+
+Follow these style guidelines when designing or implementing with this design system.
+
+No documented guidelines were found.

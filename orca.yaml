@@ -1,0 +1,2 @@
+scripts:
+  setup: ./tools/scripts/src/orca-workspace-setup.sh

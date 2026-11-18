@@ -1,0 +1,123 @@
+/* -------------------------------------------------------------------
+
+                   🗲 Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { StormLogoText } from "./StormLogoText";
+
+const meta: Meta<typeof StormLogoText> = {
+  title: "Vectors/StormLogoText",
+  component: StormLogoText,
+  tags: ["autodocs"],
+  render: (args: any) => <StormLogoText {...args} />
+} satisfies Meta<typeof StormLogoText>;
+
+export default meta;
+
+type Story = StoryObj<typeof StormLogoText>;
+
+export const Base: Story = {
+  args: {}
+};
+
+export const Brand: Story = {
+  args: {
+    theme: "brand"
+  }
+};
+
+export const Danger: Story = {
+  args: {
+    theme: "danger"
+  }
+};
+
+export const Warning: Story = {
+  args: {
+    theme: "warning"
+  }
+};
+
+export const Info: Story = {
+  args: {
+    theme: "info"
+  }
+};
+
+export const Discovery: Story = {
+  args: {
+    theme: "discovery"
+  }
+};
+
+export const Success: Story = {
+  args: {
+    theme: "success"
+  }
+};
+
+export const Thick: Story = {
+  args: {
+    weight: "thick"
+  }
+};
+
+export const Outlined: Story = {
+  args: {
+    outlined: true
+  }
+};
+
+export const ThickOutlined: Story = {
+  args: {
+    weight: "thick",
+    outlined: true
+  }
+};
+
+export const Medium: Story = {
+  args: {
+    stretch: "medium"
+  }
+};
+
+export const ThickMedium: Story = {
+  args: {
+    weight: "thick",
+    stretch: "medium"
+  }
+};
+
+export const Tall: Story = {
+  args: {
+    stretch: "tall"
+  }
+};
+
+export const ThickTall: Story = {
+  args: {
+    weight: "thick",
+    stretch: "tall"
+  }
+};
+
+export const TallOutlined: Story = {
+  args: {
+    stretch: "tall",
+    outlined: true
+  }
+};

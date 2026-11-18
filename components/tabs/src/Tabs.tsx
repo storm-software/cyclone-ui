@@ -1,32 +1,52 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { Heading4Text } from "@cyclone-ui/heading-text";
-import { getFontSizedFromSize, getSized, getSpaced } from "@cyclone-ui/helpers";
+ ------------------------------------------------------------------- */
+
+"use client";
+
+import type {
+  ContainerSurfaceProps,
+  ContainerVariant
+} from "@cyclone-ui/container";
+import {
+  ContainerBackground,
+  containerShadows,
+  containerVariants,
+  getContainerForeground
+} from "@cyclone-ui/container";
+import { HeadingSmallText } from "@cyclone-ui/heading-text";
+import { getSized, getSpaced } from "@cyclone-ui/helpers";
 import { AnimatePresence } from "@tamagui/animate-presence";
+import { isWeb } from "@tamagui/constants";
+import type {
+  FontSizeTokens,
+  GetProps,
+  SizeTokens,
+  ViewProps
+} from "@tamagui/core";
 import {
   createStyledContext,
-  SizeTokens,
-  StackProps,
+  createStyledHOC,
   styled,
-  VariantSpreadExtras,
+  useThemeName,
   View,
   withStaticProperties
 } from "@tamagui/core";
+import { getFontSized } from "@tamagui/get-font-sized";
 import { YStack } from "@tamagui/stacks";
 import type {
   TabLayout as TamaguiTabLayout,
@@ -34,27 +54,17 @@ import type {
   TabsTabProps as TamaguiTabsTabProps
 } from "@tamagui/tabs";
 import { Tabs as TamaguiTabs } from "@tamagui/tabs";
-import {
-  Dispatch,
-  PropsWithChildren,
-  SetStateAction,
-  useCallback,
-  useLayoutEffect,
-  useMemo,
-  useState
-} from "react";
+import type { Dispatch, SetStateAction } from "react";
+import { useCallback, useLayoutEffect, useMemo, useState } from "react";
+import { TabsFluidIndicator } from "./fluid";
 
 export type TabOrientation = "horizontal" | "vertical";
-export const TabOrientation = {
-  HORIZONTAL: "horizontal" as TabOrientation,
-  VERTICAL: "vertical" as TabOrientation
-} as const;
+export type TabStyle = "underline" | "floating" | "tabbed" | "fluid";
+export type TabVariant = ContainerVariant;
 
-export type TabVariant = "underline" | "background";
-export const TabVariant = {
-  UNDERLINE: "underline" as TabVariant,
-  BACKGROUND: "background" as TabVariant
-} as const;
+// The variant of the fluid pill: a filled variant, or `primary`.
+const getFluidVariant = (variant: TabVariant | undefined) =>
+  !variant || variant === "outlined" ? "primary" : variant;
 
 export interface TabsState {
   /**
@@ -86,17 +96,20 @@ export interface TabsState {
 const initialState: TabsState = {
   currentTab: "",
   activeAt: null,
-  intentAt: {
-    x: 0,
-    y: 0,
-    width: 100,
-    height: 10
-  },
+  intentAt: null,
   prevActiveAt: null,
   steps: [] as string[]
 };
 
-export type TabsContextProps = {
+/**
+ * The `ContainerSurfaceProps` style the selected tab's indicator. The
+ * `floating` style draws its pill as a `Container` (`variant` defaults to
+ * `tertiary` and `shadowStyle` to `raised`), with the selected label in the
+ * variant's `on-primary` / `on-secondary` color. The `fluid` style only takes
+ * the `variant`, whose background fills its pill (`primary` by default, and
+ * for `outlined`). The `underline` and `tabbed` styles ignore them.
+ */
+export interface TabsContextProps extends ContainerSurfaceProps {
   /**
    * The internal state of the tabs
    */
@@ -125,88 +138,135 @@ export type TabsContextProps = {
   theme?: string | null;
 
   /**
-   * The variant of the tabs
+   * The layout style of the tabs
    *
-   * @default "underline"
+   * @default "floating"
    */
-  variant: TabVariant;
+  tabStyle: TabStyle;
+
+  /**
+   * Whether the tabs display their style-owned borders, and the floating
+   * pill its border
+   *
+   * @default true
+   */
+  bordered: boolean;
 
   /**
    * The size of the tabs
    *
-   * @default "$true"
+   * @default true
    */
   size: SizeTokens;
-};
+}
 
-export const TabsContext = createStyledContext<TabsContextProps>({
-  state: {
-    ...initialState
-  },
-  setState: ((next: TabsState) => {}) as Dispatch<SetStateAction<TabsState>>,
-  onInteraction: (type: any, layout: any) => {},
-  orientation: TabOrientation.HORIZONTAL,
-  variant: TabVariant.UNDERLINE,
-  size: "$true"
-});
+export const TabsContext = createStyledContext<
+  TabsContextProps,
+  | "state"
+  | "setState"
+  | "onInteraction"
+  | "orientation"
+  | "tabStyle"
+  | "variant"
+  | "shadowStyle"
+  | "glass"
+  | "noise"
+  | "accented"
+  | "bordered"
+  | "size"
+>(
+  {
+    state: {
+      ...initialState
+    },
+    setState: ((_next: TabsState) => {}) as Dispatch<SetStateAction<TabsState>>,
+    onInteraction: (_type: any, _layout: any) => {},
+    orientation: "horizontal",
+    tabStyle: "floating",
+    bordered: true,
+    size: true
+  } as TabsContextProps,
+  {
+    // Only the keys that styled consumers declare as variants; v3 forwards every
+    // injected context key that is not a variant to the DOM element.
+    keys: ["orientation", "tabStyle", "bordered", "size"]
+  }
+);
 
 const TabsFrame = styled(TamaguiTabs, {
-  name: "Tabs",
+  displayName: "Tabs",
   context: TabsContext,
-
   activationMode: "manual",
-  borderRadius: "$true",
+  borderRadius: "tabs",
   position: "relative",
   height: "100%",
   width: "100%",
 
   variants: {
-    size: {
-      "...size": (val: SizeTokens, config: VariantSpreadExtras<any>) => {
-        const size = getSized(val);
+    // Only size tokens restyle the frame. `getSized(true)` clamps to the
+    // smallest token (0), which `TabsContext` would then hand to every header
+    // item as its size, so the `true` default is left alone.
+    size: styled.dynamic<SizeTokens>((val: SizeTokens, { tokens }) =>
+      typeof val === "string" && val in tokens.size
+        ? { size: getSized(val) }
+        : undefined
+    ),
 
-        return {
-          size,
-          borderRadius: config.tokens.radius[size]
-        };
-      }
-    },
-
-    orientation: {
-      horizontal: {
-        flexDirection: "column"
-      },
-      vertical: {
-        flexDirection: "row"
-      }
-    },
-
-    variant: {
+    tabStyle: {
       underline: {},
-      background: {}
+      floating: {},
+      tabbed: {},
+      fluid: {}
+    },
+
+    bordered: {
+      false: {}
     }
   } as const,
-
   defaultVariants: {
-    size: "$true",
-    orientation: TabOrientation.HORIZONTAL,
-    variant: TabVariant.UNDERLINE
+    size: true,
+    tabStyle: "floating",
+    bordered: true
   }
 });
 
-const TabsFrameImpl = TabsFrame.styleable(
+type TabsContextOwnedProps =
+  | "orientation"
+  | "tabStyle"
+  | keyof ContainerSurfaceProps
+  | "bordered"
+  | "size";
+
+/** Props the root shares through `TabsContext` take concrete values, not flat clauses. */
+export type TabsProps = Omit<
+  GetProps<typeof TabsFrame>,
+  TabsContextOwnedProps
+> &
+  Partial<Pick<TabsContextProps, TabsContextOwnedProps>>;
+
+const TabsFrameImpl = createStyledHOC(
+  TabsFrame,
   (
     {
       children,
-      orientation = TabOrientation.HORIZONTAL,
-      variant = TabVariant.UNDERLINE,
-      size = "$true",
+      orientation = "horizontal",
+      tabStyle: tabStyleProp = "floating",
+      variant,
+      shadowStyle,
+      glass,
+      noise,
+      accented,
+      bordered = true,
+      size = true,
       onValueChange,
       theme,
       ...rest
-    },
+    }: TabsProps,
     forwardedRef
   ) => {
+    // The fluid indicator is WebGL; native falls back to the floating pill.
+    const tabStyle =
+      tabStyleProp === "fluid" && !isWeb ? "floating" : tabStyleProp;
     const [state, setState] = useState<TabsState>({
       ...initialState
     });
@@ -244,6 +304,7 @@ const TabsFrameImpl = TabsFrame.styleable(
 
     useLayoutEffect(() => {
       if (!currentTab) {
+        // eslint-disable-next-line react/set-state-in-effect
         setState(prev => ({ ...prev, currentTab: prev.steps[0] as string }));
       }
     }, [currentTab, steps]);
@@ -255,17 +316,24 @@ const TabsFrameImpl = TabsFrame.styleable(
         onInteraction={handleInteraction}
         theme={theme}
         size={size}
+        tabStyle={tabStyle}
         variant={variant}
+        shadowStyle={shadowStyle}
+        glass={glass}
+        noise={noise}
+        accented={accented}
+        bordered={bordered}
         orientation={orientation}>
         <TabsFrame
-          group={"tabs" as any}
           ref={forwardedRef}
           value={currentTab}
           size={size}
-          gap="$2"
+          // Before `rest` so callers can stack vertical tabs on small screens.
+          flexDirection={orientation === "horizontal" ? "column" : "row"}
           {...rest}
+          bordered={bordered}
           onValueChange={handleSetCurrentTab}
-          variant={variant}
+          tabStyle={tabStyle}
           orientation={orientation}>
           {children}
         </TabsFrame>
@@ -275,107 +343,139 @@ const TabsFrameImpl = TabsFrame.styleable(
 );
 
 const TabsRovingIndicator = styled(YStack, {
-  name: "TabsIndicator",
+  displayName: "TabsIndicator",
   context: TabsContext,
-
-  animation: "200ms",
+  transition: "100ms",
   position: "absolute",
-
-  enterStyle: {
-    opacity: 0
-  },
-
-  exitStyle: {
-    opacity: 0
-  },
+  pointerEvents: "none",
+  opacity: "enter:0 exit:0",
 
   variants: {
-    active: {
-      ":boolean": (val: boolean, config: VariantSpreadExtras<any>) => {
-        if (!val) {
-          return {};
-        }
+    // Styled by the `.resolve` below because the color depends on `tabStyle`.
+    active: styled.dynamic<boolean>(),
 
-        return {
-          backgroundColor: "$primary"
-        };
-      }
-    },
-
-    intent: {
-      ":boolean": (val: boolean, config: VariantSpreadExtras<any>) => {
-        if (!val) {
-          return {};
-        }
-
-        return {
-          backgroundColor: "$accent10"
-        };
-      }
-    },
+    // Receives `"true"` from the `group-hover/tabs:true` clause.
+    intent: styled.dynamic<boolean | "true">(val => ({
+      backgroundColor:
+        val === true || val === "true" ? "transparent" : undefined,
+      borderColor: val === true || val === "true" ? "transparent" : undefined
+    })),
 
     orientation: {
-      horizontal: {
-        bottom: -2
-      },
-      vertical: {
-        right: -2
-      }
+      horizontal: {},
+      vertical: {}
     },
 
-    size: {
-      "...size": (val: SizeTokens, config: VariantSpreadExtras<any>) => {
-        const size = getSized(val);
+    // Styled by the `.resolve` below because the axis depends on `orientation`.
+    size: styled.dynamic<SizeTokens>(),
 
-        return config.props.orientation === TabOrientation.HORIZONTAL
-          ? {
-              height: size * 0.1
-            }
-          : {
-              width: size * 0.1
-            };
-      }
-    },
-
-    variant: {
+    tabStyle: {
       underline: {
-        borderRadius: 0
+        borderRadius: 0,
+        borderColor: "transparent"
       },
-      background: {
-        borderRadius: "$true"
+      // A `ContainerBackground` draws the pill. A stacking context, so its
+      // negative `zIndex` paints above this frame.
+      floating: {
+        borderRadius: "tab",
+        zIndex: 0,
+        alignItems: "center",
+        justifyContent: "center"
+      },
+      tabbed: {},
+      // Drawn by `TabsFluidIndicator` instead.
+      fluid: {}
+    },
+
+    bordered: {
+      false: {
+        borderWidth: 0
       }
     }
   } as const,
-
   defaultVariants: {
-    size: "$true",
-    orientation: TabOrientation.HORIZONTAL,
-    variant: TabVariant.UNDERLINE,
+    size: true,
+    orientation: "horizontal",
+    tabStyle: "underline",
     active: false,
     intent: false
   }
+}).resolve(props => {
+  // A size token sets the indicator thickness; the default `true` leaves it to
+  // the explicit width/height props.
+  const thickness =
+    typeof props.size === "string" || typeof props.size === "number"
+      ? getSized(props.size) * 0.1
+      : undefined;
+  const horizontal = props.orientation !== "vertical";
+
+  return {
+    // The floating pill is drawn by `TabsRovingIndicatorImpl`.
+    backgroundColor:
+      props.active && (props.tabStyle ?? "underline") === "underline"
+        ? "primary"
+        : undefined,
+    height: horizontal ? thickness : undefined,
+    width: horizontal ? undefined : thickness
+  };
 });
 
-const TabsRovingIndicatorImpl = TabsRovingIndicator.styleable(
-  ({ children, height, width, ...rest }, forwardedRef) => {
-    const { orientation, variant } = TabsContext.useStyledContext();
+const TabsRovingIndicatorImpl = createStyledHOC(
+  TabsRovingIndicator,
+  ({ children, height, width, active, ...rest }, forwardedRef) => {
+    const {
+      orientation,
+      tabStyle,
+      bordered,
+      variant = "tertiary",
+      shadowStyle = "raised",
+      glass,
+      noise,
+      accented
+    } = TabsContext.useStyledContext();
+    const isActiveUnderline =
+      active && tabStyle === "underline" && orientation === "horizontal";
+    const isPill = active && tabStyle === "floating";
 
     return (
       <TabsRovingIndicator
         ref={forwardedRef}
         {...rest}
+        active={active}
+        // The pill's shadow; its `ContainerBackground` draws none.
+        {...(isPill && { boxShadow: containerShadows[shadowStyle] })}
         width={
-          orientation === TabOrientation.HORIZONTAL ||
-          variant === TabVariant.BACKGROUND
+          orientation === "horizontal" || tabStyle === "floating"
             ? width
             : undefined
         }
         height={
-          orientation === TabOrientation.VERTICAL ||
-          variant === TabVariant.BACKGROUND
-            ? height
+          isActiveUnderline
+            ? "xs"
+            : orientation === "vertical" || tabStyle === "floating"
+              ? height
+              : undefined
+        }
+        bottom={
+          tabStyle === "underline" && orientation === "horizontal"
+            ? -2
+            : undefined
+        }
+        right={
+          tabStyle === "underline" && orientation === "vertical"
+            ? -2
             : undefined
         }>
+        {isPill && (
+          <ContainerBackground
+            variant={variant}
+            shadowStyle={shadowStyle}
+            glass={glass}
+            noise={noise}
+            accented={accented}
+            {...(bordered === false && { borderWidth: 0 })}
+          />
+        )}
         {children}
       </TabsRovingIndicator>
     );
@@ -383,69 +483,93 @@ const TabsRovingIndicatorImpl = TabsRovingIndicator.styleable(
 );
 
 const AnimatedView = styled(View, {
-  name: "TabsIndicator",
+  displayName: "TabsIndicator",
   context: TabsContext,
 
-  animation: "200ms",
+  transition: "100ms",
   flex: 1,
   x: 0,
   opacity: 1,
   position: "absolute",
+  height: "100%",
+  width: "100%",
 
   variants: {
     // 1 = right, 0 = nowhere, -1 = left
-    direction: {
-      ":number": direction => ({
-        enterStyle: {
-          x: direction > 0 ? -50 : 50,
-          opacity: 0
-        },
-        exitStyle: {
-          zIndex: 0,
-          x: direction < 0 ? -50 : 50,
-          opacity: 0
-        }
-      })
-    }
+    direction: styled.dynamic<number>(direction => ({
+      x: `enter:${direction > 0 ? -50 : 50}px exit:${direction < 0 ? -50 : 50}px`,
+      opacity: "enter:0 exit:0",
+      zIndex: "exit:0"
+    }))
   } as const
 });
 
 const TabsHeaderList = styled(YStack, {
-  name: "Tabs",
+  displayName: "Tabs",
   context: TabsContext,
-
-  animation: "200ms",
+  transition: "100ms",
   borderStyle: "solid",
-  borderColor: "transparent",
+  position: "relative",
+  padding: "sm",
 
   variants: {
     orientation: {
       horizontal: {},
-      vertical: {}
+      vertical: {
+        minWidth: "20xl"
+      }
     },
 
-    variant: {
+    tabStyle: {
       underline: {
-        borderBottomColor: "$borderColor",
-        borderBottomWidth: "$0.2"
+        borderColor: "transparent",
+        borderBottomColor: "sunken",
+        borderBottomWidth: "lg",
+        borderRadius: 0
       },
-      background: {}
+      floating: {
+        backgroundColor: "sunken",
+        borderRadius: "tabs",
+        borderColor: "hairline",
+        borderWidth: 1
+      },
+      tabbed: {
+        backgroundColor: "transparent",
+        borderWidth: 0,
+        padding: 0
+      },
+      fluid: {
+        backgroundColor: "sunken",
+        borderRadius: 999,
+        borderColor: "hairline",
+        borderWidth: 1
+      }
+    },
+
+    bordered: {
+      false: {
+        borderWidth: 0,
+        borderBottomWidth: 0
+      }
     }
   } as const,
-
   defaultVariants: {
-    orientation: TabOrientation.HORIZONTAL,
-    variant: TabVariant.UNDERLINE
+    orientation: "horizontal",
+    tabStyle: "floating"
   }
 });
 
-const TabsHeaderListImpl = TabsHeaderList.styleable(
-  ({ children, ...rest }: StackProps, forwardedRef) => {
+const TabsHeaderListImpl = createStyledHOC(
+  TabsHeaderList,
+  ({ children, ...rest }: ViewProps, forwardedRef) => {
     const {
-      state: { activeAt, intentAt, prevActiveAt },
+      state: { activeAt, intentAt, prevActiveAt, currentTab, steps },
       orientation,
-      variant
+      tabStyle,
+      variant,
+      bordered
     } = TabsContext.useStyledContext();
+    const fluidVariant = getFluidVariant(variant);
 
     // 1 = right, 0 = nowhere, -1 = left
     const direction = useMemo(
@@ -460,50 +584,60 @@ const TabsHeaderListImpl = TabsHeaderList.styleable(
 
     return (
       <TabsHeaderList
+        group="tabs"
         ref={forwardedRef}
         orientation={orientation}
-        variant={variant}
+        tabStyle={tabStyle}
+        bordered={bordered}
         {...rest}>
-        <AnimatePresence>
-          {intentAt && (
-            <TabsRovingIndicatorImpl
-              width={intentAt.width}
-              height={intentAt.height}
-              x={intentAt.x}
-              y={intentAt.y}
-              orientation={orientation}
-              variant={variant}
-              $group-tabs-hover={{
-                intent: true
-              }}
-            />
-          )}
-        </AnimatePresence>
-        <AnimatePresence>
-          {activeAt && (
-            <TabsRovingIndicatorImpl
-              width={activeAt.width}
-              height={activeAt.height}
-              x={activeAt.x}
-              y={activeAt.y}
-              active={true}
-              orientation={orientation}
-              variant={variant}
-            />
-          )}
-        </AnimatePresence>
+        {tabStyle === "fluid" ? (
+          <TabsFluidIndicator
+            selected={currentTab}
+            count={steps.length}
+            color={containerVariants[fluidVariant].backgroundColor}
+          />
+        ) : (
+          tabStyle !== "tabbed" && (
+            <>
+              {tabStyle === "underline" && (
+                <TabsRovingIndicatorImpl
+                  width={intentAt?.width ?? 0}
+                  height={intentAt?.height ?? 0}
+                  x={intentAt?.x ?? 0}
+                  y={intentAt?.y ?? 0}
+                  opacity={`0 group-hover/tabs:${intentAt ? 1 : 0}`}
+                  orientation={orientation}
+                  tabStyle={tabStyle}
+                  bordered={bordered}
+                  intent={intentAt ? "group-hover/tabs:true" : undefined}
+                />
+              )}
+              <AnimatePresence>
+                {activeAt && (
+                  <TabsRovingIndicatorImpl
+                    width={activeAt.width}
+                    height={activeAt.height}
+                    x={activeAt.x}
+                    y={activeAt.y}
+                    active={true}
+                    orientation={orientation}
+                    tabStyle={tabStyle}
+                    bordered={bordered}
+                  />
+                )}
+              </AnimatePresence>
+            </>
+          )
+        )}
 
         <TamaguiTabs.List
-          disablePassBorderRadius={
-            orientation === TabOrientation.HORIZONTAL ? "bottom" : "end"
-          }
           loop={false}
           aria-label="Tabs"
+          gap="md"
+          position="relative"
+          zIndex={1}
           backgroundColor="transparent">
-          <AnimatePresence
-            exitBeforeEnter={true}
-            custom={{ direction }}
-            initial={false}>
+          <AnimatePresence mode="wait" custom={{ direction }} initial={false}>
             {children}
           </AnimatePresence>
         </TamaguiTabs.List>
@@ -512,102 +646,284 @@ const TabsHeaderListImpl = TabsHeaderList.styleable(
   }
 );
 
-const TabsHeaderItemHeading = styled(Heading4Text, {
-  name: "TabsHeading",
-  context: TabsContext,
-
-  animation: "200ms",
+// No `context: TabsContext` here: its `variant` (primary / secondary / ...)
+// would override `HeadingSmallText`'s own `variant` (base / editorial) and
+// drop the `display` font. `TabsHeaderItemImpl` passes `size`, `selected` and
+// `color` explicitly instead.
+const TabsHeaderItemHeading = styled(HeadingSmallText, {
+  displayName: "TabsHeading",
+  transition: "200ms",
+  textAlign: "center",
+  paddingVertical: "xl",
 
   variants: {
-    size: {
-      "...size": (val: SizeTokens, config: VariantSpreadExtras<any>) => {
-        return getFontSizedFromSize(val, config);
+    // One step below `HeadingSmallText` (lg), and one more for inactive tabs.
+    // Declared before `size` so an explicit font size key still wins.
+    selected: {
+      true: {
+        color: "primary",
+        fontSize: "md max-sm:sm",
+        fontWeight: "semibold"
+      },
+      false: {
+        color: "primary-inactive",
+        fontSize: "sm max-sm:xs",
+        fontWeight: "normal"
       }
-    }
-  } as const,
+    },
 
+    // Only font size keys restyle the text; `true` keeps the heading's size.
+    size: styled.dynamic<FontSizeTokens | SizeTokens | number>((val, env) =>
+      typeof val === "string" && !!env.font && val in env.font.size
+        ? getFontSized(val, env)
+        : undefined
+    )
+  } as const,
   defaultVariants: {
-    size: "$true"
+    size: true,
+    selected: false
   }
 });
 
 const TabsHeaderItem = styled(TamaguiTabs.Tab, {
-  name: "TabsHeading",
+  displayName: "TabsHeading",
   context: TabsContext,
 
-  animation: "200ms",
-  unstyled: true,
-  flex: 1,
+  transition: "100ms",
 
   variants: {
-    size: {
-      "...size": (val: SizeTokens, config: VariantSpreadExtras<any>) => {
-        const space = getSpaced(val);
+    orientation: {
+      horizontal: {
+        flex: 1
+      },
+      vertical: {}
+    },
 
-        return {
-          paddingVertical: space * 0.5,
-          paddingHorizontal: space
-        };
+    size: styled.dynamic<SizeTokens>(val => {
+      const space = getSpaced(val, { scale: 5 });
+
+      return {
+        paddingVertical: space,
+        paddingHorizontal: space
+      };
+    }),
+
+    tabStyle: {
+      underline: {},
+      floating: {},
+      // Styled by the `.resolve` below because it depends on `orientation`.
+      tabbed: {},
+      fluid: {}
+    },
+
+    // Styled by the `.resolve` below; it only applies to the tabbed style.
+    selected: styled.dynamic<boolean>(),
+
+    bordered: {
+      false: {
+        borderWidth: 0
       }
     }
   } as const,
 
   defaultVariants: {
-    size: "$true"
+    orientation: "horizontal",
+    size: true,
+    tabStyle: "floating",
+    selected: false
   }
+}).resolve(props => {
+  if (props.tabStyle !== "tabbed") {
+    return undefined;
+  }
+
+  const horizontal = props.orientation !== "vertical";
+  const borderWidth = props.bordered === false ? 0 : 1;
+
+  return {
+    backgroundColor: props.selected ? "surface" : "canvas hover:canvas-hovered",
+    borderColor: "hairline",
+    borderWidth,
+    // Tamagui v3's Tabs.List is a Group that drops the connecting border on
+    // every tab but the first; tabbed tabs are spaced apart and keep it.
+    borderLeftWidth: horizontal ? borderWidth : undefined,
+    borderTopWidth: horizontal ? undefined : borderWidth,
+    borderTopLeftRadius: "tab",
+    borderTopRightRadius: horizontal ? "tab" : 0,
+    borderBottomLeftRadius: horizontal ? 0 : "tab",
+    borderBottomRightRadius: 0,
+    borderBottomColor: props.selected && horizontal ? "surface" : undefined,
+    borderRightColor: props.selected && !horizontal ? "surface" : undefined,
+    // Overlaps the content's border; without one, the tabs would jut past the
+    // gaps between them.
+    marginBottom: horizontal ? -borderWidth : undefined,
+    marginRight: horizontal ? undefined : -borderWidth,
+    zIndex: 2
+  };
 });
 
-const TabsHeaderItemImpl = TabsHeaderItem.styleable(
+const TabsHeaderItemImpl = createStyledHOC(
+  TabsHeaderItem,
   ({ children, value, ...rest }, forwardedRef) => {
     const {
       onInteraction,
       setState,
       state: { currentTab },
-      size
+      size,
+      orientation,
+      tabStyle,
+      variant,
+      bordered
     } = TabsContext.useStyledContext();
+    const themeName = useThemeName();
+    const selected = currentTab === value;
 
     useLayoutEffect(() => {
       setState(next => ({ ...next, steps: [...next.steps, value] }));
-    }, []);
+    }, [setState, value]);
+
+    // The selected label sits on the floating pill's `Container`.
+    const foreground =
+      tabStyle === "floating" && selected
+        ? getContainerForeground(variant ?? "tertiary", themeName)
+        : undefined;
+
+    const heading = (
+      <TabsHeaderItemHeading
+        size={size}
+        color={foreground ?? "group-hover:primary-active"}
+        selected={selected}>
+        {children}
+      </TabsHeaderItemHeading>
+    );
 
     return (
       <TabsHeaderItem
         ref={forwardedRef}
         group={true}
         size={size}
+        orientation={orientation}
+        tabStyle={tabStyle}
+        bordered={bordered}
+        selected={selected}
         {...rest}
         value={value}
         onInteraction={onInteraction}>
-        <TabsHeaderItemHeading
-          size={size}
-          color={currentTab === value ? "$primary" : "$muted"}
-          $group-hover={{
-            color: currentTab === value ? "$primary" : "$accent10"
-          }}>
-          {children}
-        </TabsHeaderItemHeading>
+        {tabStyle === "fluid" ? (
+          <View position="relative">
+            {heading}
+            {/* Clipped to the pill by `TabsFluidIndicator`. */}
+            <TabsHeaderItemHeading
+              data-fluid-overlay=""
+              aria-hidden
+              size={size}
+              selected={selected}
+              // On the pill, in its variant's foreground.
+              color={
+                getContainerForeground(getFluidVariant(variant), themeName) ??
+                "primary"
+              }
+              position="absolute"
+              top={0}
+              right={0}
+              bottom={0}
+              left={0}
+              pointerEvents="none"
+              style={{ clipPath: "inset(100%)" }}>
+              {children}
+            </TabsHeaderItemHeading>
+          </View>
+        ) : (
+          heading
+        )}
       </TabsHeaderItem>
     );
   }
 );
 
-const TabsContentList = ({ children }: PropsWithChildren) => {
-  return <View position="relative">{children}</View>;
-};
+const TabsContentList = styled(View, {
+  displayName: "TabsContent",
+  context: TabsContext,
 
-const TabsContentItem = TamaguiTabs.Content.styleable(
+  position: "relative",
+
+  variants: {
+    orientation: {
+      horizontal: {
+        width: "100%"
+      },
+      vertical: {
+        flex: 1,
+        minWidth: 0
+      }
+    },
+
+    tabStyle: {
+      underline: {},
+      floating: {},
+      // Styled by the `.resolve` below because it depends on `orientation`.
+      tabbed: {},
+      fluid: {}
+    },
+
+    bordered: {
+      false: {
+        borderWidth: 0
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    orientation: "horizontal",
+    tabStyle: "floating"
+  }
+}).resolve(props => {
+  if (props.tabStyle !== "tabbed") {
+    return undefined;
+  }
+
+  const horizontal = props.orientation !== "vertical";
+
+  return {
+    backgroundColor: "surface",
+    borderColor: "hairline",
+    borderWidth: props.bordered === false ? 0 : 1,
+    borderTopRightRadius: horizontal ? undefined : "tab",
+    borderBottomLeftRadius: horizontal ? "tab" : undefined,
+    borderBottomRightRadius: "tab"
+  };
+});
+
+const TabsContentItem = createStyledHOC(
+  TamaguiTabs.Content,
   ({ children, value, ...rest }: TamaguiTabsContentProps, forwardedRef) => {
+    const {
+      state: { currentTab }
+    } = TabsContext.useStyledContext();
+    const isActive = currentTab === value;
+
     return (
-      <AnimatedView key={value}>
+      <AnimatedView
+        key={value}
+        flexBasis={isActive ? "auto" : undefined}
+        flexGrow={isActive ? 0 : undefined}
+        flexShrink={isActive ? 0 : undefined}
+        position={isActive ? "relative" : "absolute"}
+        height={isActive ? "auto" : "100%"}>
         <TamaguiTabs.Content
           ref={forwardedRef}
           {...rest}
           value={value}
-          flex={1}>
+          flexBasis={isActive ? "auto" : undefined}
+          flexGrow={isActive ? 0 : 1}
+          flexShrink={isActive ? 0 : undefined}>
           {children}
         </TamaguiTabs.Content>
       </AnimatedView>
     );
+  },
+  {
+    displayName: "TabsContentItem"
   }
 );
 
@@ -619,3 +935,14 @@ export const Tabs = withStaticProperties(TabsFrameImpl, {
     Item: TabsContentItem
   })
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Tabs.HeaderItem` is undefined on the server).
+ */
+export {
+  TabsContentItem,
+  TabsContentList,
+  TabsHeaderItemImpl as TabsHeaderItem,
+  TabsHeaderListImpl as TabsHeaderList
+};

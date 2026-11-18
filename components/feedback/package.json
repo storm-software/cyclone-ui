@@ -1,0 +1,57 @@
+{
+  "name": "@cyclone-ui/feedback",
+  "version": "0.0.92",
+  "type": "module",
+  "description": "A Feedback control that pairs a like toggle with a dislike toggle. Pressing dislike opens a popover form asking for an optional comment. It can be controlled or uncontrolled (value, defaultValue, onValueChange), and it also has onCommentSubmit, a custom comment label and placeholder, disabled and size props. Use it to collect quick thumbs-up/down feedback on content.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/feedback"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/divider": "workspace:*",
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/form": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/like-button": "workspace:*",
+    "@cyclone-ui/popover": "workspace:*",
+    "@cyclone-ui/text-area": "workspace:*",
+    "@cyclone-ui/toggle": "workspace:*",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Feedback": {
+      "import": "./dist/Feedback.mjs",
+      "require": "./dist/Feedback.cjs"
+    },
+    "./*": "./*"
+  }
+}

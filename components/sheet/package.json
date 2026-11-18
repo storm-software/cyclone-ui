@@ -1,0 +1,60 @@
+{
+  "name": "@cyclone-ui/sheet",
+  "version": "0.0.99",
+  "type": "module",
+  "description": "A modal panel that slides in from the top, right, bottom or left edge. It uses a draggable Tamagui Sheet for the bottom direction and a dialog for the other edges, can be dragged to dismiss, and supports sm, md and lg sizes and the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating) with shadow, glass, noise and accented options. Parts include Overlay, Handle, ScrollView, Heading, Body and Footer.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/sheet"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/container": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/scroll-view": "workspace:*",
+    "@tamagui/constants": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/dialog": "catalog:",
+    "@tamagui/helpers": "catalog:",
+    "@tamagui/sheet": "catalog:",
+    "@tamagui/stacks": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/button": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Sheet": {
+      "import": "./dist/Sheet.mjs",
+      "require": "./dist/Sheet.cjs"
+    },
+    "./*": "./*"
+  }
+}

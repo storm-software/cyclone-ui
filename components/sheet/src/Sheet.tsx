@@ -1,0 +1,977 @@
+/* -------------------------------------------------------------------
+
+                   🗲 Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
+"use client";
+
+import { BodyText } from "@cyclone-ui/body-text";
+import type {
+  ContainerSurfaceProps,
+  ContainerVariant
+} from "@cyclone-ui/container";
+import {
+  ContainerBackground,
+  containerShadows,
+  getContainerForeground
+} from "@cyclone-ui/container";
+import { HeadingLargeText } from "@cyclone-ui/heading-text";
+import {
+  SCROLL_VIEW_CLASS_NAME,
+  SCROLL_VIEW_STYLES,
+  ScrollView
+} from "@cyclone-ui/scroll-view";
+import { isWeb } from "@tamagui/constants";
+import type { GetProps } from "@tamagui/core";
+import { createStyledHOC, styled, Theme, useThemeName } from "@tamagui/core";
+import {
+  Dialog as TamaguiDialog,
+  DialogContent as TamaguiDialogContent,
+  DialogOverlay as TamaguiDialogOverlay
+} from "@tamagui/dialog";
+import { withStaticProperties } from "@tamagui/helpers";
+import { Sheet as TamaguiSheet } from "@tamagui/sheet";
+import { XStack, YStack } from "@tamagui/stacks";
+import type { FC, ReactNode, PointerEvent as ReactPointerEvent } from "react";
+import {
+  createContext,
+  use,
+  useCallback,
+  useMemo,
+  useRef,
+  useState,
+  useSyncExternalStore
+} from "react";
+import { PanResponder, Platform } from "react-native";
+
+export type SheetDirection = "top" | "right" | "bottom" | "left";
+export type SheetSize = "sm" | "md" | "lg";
+export type SheetVariant = ContainerVariant;
+
+const sheetSizeStyles: Record<
+  SheetDirection,
+  Record<SheetSize, Record<string, string>>
+> = {
+  top: {
+    sm: { height: "30vw" },
+    md: { height: "60vw" },
+    lg: { height: "90vw" }
+  },
+  right: {
+    sm: { width: "30vw" },
+    md: { width: "60vw" },
+    lg: { width: "90vw" }
+  },
+  bottom: {
+    sm: { height: "30vw" },
+    md: { height: "60vw" },
+    lg: { height: "90vw" }
+  },
+  left: {
+    sm: { width: "30vw" },
+    md: { width: "60vw" },
+    lg: { width: "90vw" }
+  }
+};
+
+interface SheetContextValue {
+  direction: SheetDirection;
+  size?: SheetSize;
+  disableDrag: boolean;
+  dragOffset: number;
+  dragging: boolean;
+  panHandlers: Partial<ReturnType<typeof PanResponder.create>["panHandlers"]>;
+  pointerHandlers: Record<string, unknown>;
+  setFrameSize: (size: number) => void;
+  transition: SheetProps["transition"];
+  surface: ContainerSurfaceProps;
+}
+
+const SheetContext = createContext<SheetContextValue | null>(null);
+
+const useSheetContext = () => {
+  const context = use(SheetContext);
+
+  if (!context) {
+    throw new Error("Sheet compound components must be rendered within Sheet");
+  }
+
+  return context;
+};
+
+const sheetSurfaceStyles = {
+  backgroundColor: "elevated",
+  borderWidth: 0,
+  borderColor: "transparent"
+};
+
+// Without a `variant`, `glass`, `noise` or `accented`, the sheet keeps its
+// borderless `elevated` surface and needs no `Container`.
+const hasContainerSurface = ({
+  variant,
+  glass,
+  noise,
+  accented
+}: ContainerSurfaceProps) =>
+  variant !== undefined ||
+  glass === true ||
+  noise === true ||
+  accented === true;
+
+/**
+ * The `Container` layer that draws a sheet's surface, and the frame styles
+ * around it: the frame's own surface gives way to the layer (an outlined
+ * sheet keeps an opaque `elevated` backing so its content stays readable over
+ * the page), and the frame draws the shadow, which its overflow would clip.
+ */
+const getSheetSurface = (surface: ContainerSurfaceProps) => {
+  const { shadowStyle } = surface;
+
+  return hasContainerSurface(surface)
+    ? {
+        layer: (
+          <ContainerBackground
+            {...surface}
+            variant={surface.variant ?? "elevated"}
+            {...(surface.variant === undefined && { borderWidth: 0 })}
+          />
+        ),
+        frame: {
+          backgroundColor:
+            surface.variant === "outlined" && !surface.glass
+              ? "elevated"
+              : "transparent",
+          ...(shadowStyle && { boxShadow: containerShadows[shadowStyle] })
+        }
+      }
+    : {
+        layer: null,
+        frame: shadowStyle ? { boxShadow: containerShadows[shadowStyle] } : {}
+      };
+};
+
+const sheetLayoutStyles = {
+  flexDirection: "column" as const,
+  overflow: "hidden" as const
+};
+
+const sheetFrameStyles = {
+  ...sheetSurfaceStyles,
+  ...sheetLayoutStyles
+};
+
+// Tamagui v3 splits the old `Sheet.Frame` into `Sheet.Container` (layout) and
+// `Sheet.Background` (visual surface). These props move to the background.
+// Radius props stay on the container too, so it keeps clipping its content to
+// the same rounded shape as v2's single frame.
+const sheetSurfacePropKeys = new Set([
+  "backgroundColor",
+  "bg",
+  "borderColor",
+  "borderTopColor",
+  "borderRightColor",
+  "borderBottomColor",
+  "borderLeftColor",
+  "borderStartColor",
+  "borderEndColor",
+  "borderWidth",
+  "borderTopWidth",
+  "borderRightWidth",
+  "borderBottomWidth",
+  "borderLeftWidth",
+  "borderStartWidth",
+  "borderEndWidth",
+  "borderStyle",
+  "boxShadow",
+  "elevation",
+  "shadowColor",
+  "shadowOffset",
+  "shadowOpacity",
+  "shadowRadius"
+]);
+
+const isSheetRadiusProp = (key: string) =>
+  key === "rounded" || /^border.*Radius$/.test(key);
+
+const splitSheetFrameProps = (props: Record<string, unknown>) => {
+  const container: Record<string, unknown> = {};
+  const background: Record<string, unknown> = {};
+
+  for (const key of Object.keys(props)) {
+    if (sheetSurfacePropKeys.has(key)) {
+      background[key] = props[key];
+    } else if (isSheetRadiusProp(key)) {
+      background[key] = props[key];
+      container[key] = props[key];
+    } else {
+      container[key] = props[key];
+    }
+  }
+
+  return { container, background };
+};
+
+const sheetFrameDirectionStyles: Record<
+  Exclude<SheetDirection, "bottom">,
+  Record<string, unknown>
+> = {
+  top: {
+    top: 0,
+    left: 0,
+    right: 0,
+    height: "80vh",
+    maxHeight: "80vh",
+    borderBottomLeftRadius: "sheet",
+    borderBottomRightRadius: "sheet"
+  },
+  right: {
+    top: 0,
+    right: 0,
+    bottom: 0,
+    width: "80vw",
+    maxWidth: "80vw",
+    borderTopLeftRadius: "sheet",
+    borderBottomLeftRadius: "sheet"
+  },
+  left: {
+    top: 0,
+    left: 0,
+    bottom: 0,
+    width: "80vw",
+    maxWidth: "80vw",
+    borderTopRightRadius: "sheet",
+    borderBottomRightRadius: "sheet"
+  }
+};
+
+const SheetSheetContainer = styled(TamaguiSheet.Container, {
+  displayName: "SheetFrame",
+
+  ...sheetLayoutStyles
+});
+
+const SheetSheetBackground = styled(TamaguiSheet.Background, {
+  displayName: "SheetBackground",
+  // A stacking context for a `Container` layer's negative `zIndex`.
+  isolation: "isolate",
+
+  ...sheetSurfaceStyles
+});
+
+const SheetDialogFrame = styled(TamaguiDialogContent, {
+  displayName: "SheetDialogFrame",
+
+  ...sheetFrameStyles,
+  position: "absolute"
+});
+
+// Mirrors `Sheet.Background` for the dialog-based directions. The dialog
+// content frame sets a z-index, so `zIndex: -1` paints above the frame's own
+// background and below its in-flow children.
+const SheetDialogBackground = styled(YStack, {
+  displayName: "SheetBackground",
+  position: "absolute",
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0,
+  zIndex: -1,
+  pointerEvents: "none",
+
+  ...sheetSurfaceStyles
+});
+
+const SheetSheetOverlay = styled(TamaguiSheet.Overlay, {
+  displayName: "SheetOverlay",
+  backgroundColor: "backdrop",
+  opacity: "0.6 enter:0 exit:0",
+  transition: "200ms"
+});
+
+// v3's `Sheet.Handle` ships unstyled (no size), so both handles share this skin.
+const sheetHandleStyles = {
+  position: "absolute" as const,
+  backgroundColor: "subtle",
+  borderRadius: 100,
+  cursor: "grab press:grabbing",
+  opacity: "0.5 hover:0.7",
+  zIndex: 10
+};
+
+const SheetSheetHandle = styled(TamaguiSheet.Handle, {
+  displayName: "SheetHandle",
+
+  ...sheetHandleStyles,
+  top: 5,
+  right: "35%",
+  left: "35%",
+  height: 8,
+  marginBottom: 10
+});
+
+const SheetSheetScrollView = styled(TamaguiSheet.ScrollView, {
+  displayName: "SheetScrollView",
+  scrollEnabled: true,
+  marginRight: "xl",
+  // Pass this web-only CSS property through React Native Web rather than
+  // treating it as a Tamagui style prop.
+  style: { scrollbarGutter: "stable" } as any
+});
+
+const SheetDialogHandle = styled(XStack, {
+  displayName: "SheetDialogHandle",
+
+  ...sheetHandleStyles,
+  // Web-only CSS property that is not a Tamagui style prop.
+  style: { touchAction: "none" } as any
+});
+
+const sheetHandleDirectionStyles: Record<
+  Exclude<SheetDirection, "bottom">,
+  Record<string, unknown>
+> = {
+  top: {
+    right: "35%",
+    bottom: 5,
+    left: "35%",
+    height: 8,
+    marginTop: 10
+  },
+  right: {
+    top: "35%",
+    bottom: "35%",
+    left: 5,
+    width: 8,
+    marginLeft: 10
+  },
+  left: {
+    top: "35%",
+    right: 5,
+    bottom: "35%",
+    width: 8,
+    marginRight: 10
+  }
+};
+
+const sheetFrameHandleInsetStyles: Record<
+  SheetDirection,
+  Record<string, unknown>
+> = {
+  top: { paddingBottom: "3xl" },
+  right: { paddingLeft: "3xl" },
+  bottom: { paddingTop: "3xl" },
+  left: { paddingRight: "3xl" }
+};
+
+export type SheetContainerProps = GetProps<typeof TamaguiSheet.Container>;
+export type SheetBackgroundProps = GetProps<typeof TamaguiSheet.Background>;
+export type SheetFrameProps = SheetContainerProps;
+export type SheetOverlayProps = GetProps<typeof TamaguiSheet.Overlay>;
+export type SheetHandleProps = GetProps<typeof TamaguiSheet.Handle>;
+export type SheetScrollViewProps = GetProps<typeof TamaguiSheet.ScrollView>;
+
+const SheetDialogContainer: FC<SheetContainerProps> = ({
+  children,
+  ...props
+}) => {
+  const {
+    direction,
+    size,
+    dragOffset,
+    dragging,
+    setFrameSize,
+    transition: sheetTransition,
+    surface
+  } = useSheetContext();
+  const {
+    onLayout,
+    transition = sheetTransition ?? "400ms",
+    ...frameProps
+  } = props;
+  // Drawn by the frame, not `Sheet.Background`: `Sheet.Frame` callers render
+  // no background in these directions.
+  const { layer, frame } = getSheetSurface(surface);
+  const isVertical = direction === "top";
+  // v2 passed the presence offset as runtime `enterStyle`/`exitStyle` objects;
+  // in v3 it is an `enter:`/`exit:` clause on the dragged axis.
+  const presenceOffset =
+    direction === "top" || direction === "left" ? "-100%" : "100%";
+  const draggedOffset = `${dragOffset}px enter:${presenceOffset} exit:${presenceOffset}`;
+
+  return (
+    <SheetDialogFrame
+      {...sheetFrameDirectionStyles[
+        direction as Exclude<SheetDirection, "bottom">
+      ]}
+      {...(size ? sheetSizeStyles[direction][size] : {})}
+      {...sheetFrameHandleInsetStyles[direction]}
+      {...frame}
+      {...frameProps}
+      x={isVertical ? 0 : draggedOffset}
+      y={isVertical ? draggedOffset : 0}
+      transition={dragging ? "0ms" : transition}
+      onLayout={event => {
+        const { height, width } = event.nativeEvent.layout;
+        setFrameSize(isVertical ? height : width);
+        onLayout?.(event);
+      }}>
+      {layer}
+      {children}
+    </SheetDialogFrame>
+  );
+};
+
+const SheetContainer: FC<SheetContainerProps> = ({ children, ...props }) => {
+  const { direction, size } = useSheetContext();
+
+  if (direction !== "bottom") {
+    return <SheetDialogContainer {...props}>{children}</SheetDialogContainer>;
+  }
+
+  return (
+    <SheetSheetContainer
+      {...sheetFrameHandleInsetStyles.bottom}
+      {...(size ? sheetSizeStyles.bottom[size] : {})}
+      {...props}>
+      {children}
+    </SheetSheetContainer>
+  );
+};
+
+const SheetBackground: FC<SheetBackgroundProps> = props => {
+  const { direction, surface } = useSheetContext();
+
+  if (direction !== "bottom") {
+    // The dialog frame draws a `Container` surface itself.
+    return hasContainerSurface(surface) ? null : (
+      <SheetDialogBackground {...props} />
+    );
+  }
+
+  const { layer, frame } = getSheetSurface(surface);
+
+  return (
+    <SheetSheetBackground {...frame} {...props}>
+      {layer}
+    </SheetSheetBackground>
+  );
+};
+
+/**
+ * v2-style single frame, kept for existing callers (e.g. `Drawer.Frame`).
+ * The bottom sheet splits it into `Sheet.Container` + `Sheet.Background`;
+ * the dialog-based directions keep every prop on the one dialog frame.
+ */
+const SheetFrame: FC<SheetFrameProps> = ({ children, ...props }) => {
+  const { direction } = useSheetContext();
+
+  if (direction !== "bottom") {
+    return <SheetDialogContainer {...props}>{children}</SheetDialogContainer>;
+  }
+
+  const { container, background } = splitSheetFrameProps(props);
+
+  return (
+    <SheetContainer {...container}>
+      <SheetBackground {...background} />
+      {children}
+    </SheetContainer>
+  );
+};
+
+const SheetOverlay: FC<SheetOverlayProps> = props => {
+  const { direction } = useSheetContext();
+
+  if (direction === "bottom") {
+    return <SheetSheetOverlay {...props} />;
+  }
+
+  return (
+    <TamaguiDialogOverlay
+      backgroundColor="backdrop"
+      opacity="0.6 enter:0 exit:0"
+      transition="200ms"
+      {...props}
+    />
+  );
+};
+
+// Tamagui's bottom sheet only renders children whose `staticConfig` chain
+// carries its (private) overlay marker in the overlay layer, and renders any
+// other `Sheet.Overlay` as null, so this wrapper inherits the styled overlay's.
+Object.assign(SheetOverlay, {
+  staticConfig: { parentStaticConfig: SheetSheetOverlay.staticConfig }
+});
+
+const SheetHandle: FC<SheetHandleProps> = props => {
+  const { direction, disableDrag, panHandlers, pointerHandlers } =
+    useSheetContext();
+
+  if (direction === "bottom") {
+    return <SheetSheetHandle {...props} />;
+  }
+
+  return (
+    <SheetDialogHandle
+      {...sheetHandleDirectionStyles[direction]}
+      pointerEvents={disableDrag ? "none" : "auto"}
+      {...(!disableDrag &&
+        (Platform.OS === "web" ? pointerHandlers : panHandlers))}
+      {...props}
+    />
+  );
+};
+
+const SheetScrollView: FC<SheetScrollViewProps> = ({
+  children,
+  className,
+  ...props
+}) => {
+  const { direction } = useSheetContext();
+
+  return direction === "bottom" ? (
+    <SheetSheetScrollView
+      {...props}
+      className={`${SCROLL_VIEW_CLASS_NAME}${className ? ` ${className}` : ""}`}>
+      {isWeb ? <style>{SCROLL_VIEW_STYLES}</style> : null}
+      {children}
+    </SheetSheetScrollView>
+  ) : (
+    <ScrollView flex={1} size="lg" className={className} {...props}>
+      {children}
+    </ScrollView>
+  );
+};
+
+const SheetHeadingText = styled(HeadingLargeText, {
+  displayName: "SheetHeading",
+  color: "primary"
+});
+
+const SheetBodyText = styled(BodyText, {
+  displayName: "SheetBody",
+  color: "ink",
+  flexGrow: 1
+});
+
+/** The `on-primary` / `on-secondary` text color on a filled sheet. */
+const useSheetForeground = () => {
+  const foreground = getContainerForeground(
+    useSheetContext().surface.variant,
+    useThemeName()
+  );
+
+  return foreground ? { color: foreground } : undefined;
+};
+
+const SheetBody = createStyledHOC(SheetBodyText, (props, forwardedRef) => (
+  <SheetBodyText ref={forwardedRef} {...useSheetForeground()} {...props} />
+));
+
+const SheetHeading = createStyledHOC(
+  SheetHeadingText,
+  (props, forwardedRef) => {
+    const { direction } = useSheetContext();
+    const foreground = useSheetForeground();
+
+    return direction === "bottom" ? (
+      <SheetHeadingText ref={forwardedRef} {...foreground} {...props} />
+    ) : (
+      <TamaguiDialog.Title asChild>
+        <SheetHeadingText ref={forwardedRef} {...foreground} {...props} />
+      </TamaguiDialog.Title>
+    );
+  }
+);
+
+const SheetDescription = createStyledHOC(BodyText, (props, forwardedRef) => {
+  const { direction } = useSheetContext();
+  const foreground = useSheetForeground();
+
+  return direction === "bottom" ? (
+    <BodyText ref={forwardedRef} {...foreground} {...props} />
+  ) : (
+    <TamaguiDialog.Description asChild>
+      <BodyText ref={forwardedRef} {...foreground} {...props} />
+    </TamaguiDialog.Description>
+  );
+});
+
+const sheetFooterDirectionStyles: Record<
+  SheetDirection,
+  Record<string, unknown>
+> = {
+  top: { paddingBottom: "2xl" },
+  right: { paddingLeft: "2xl" },
+  bottom: { paddingTop: "2xl" },
+  left: { paddingRight: "2xl" }
+};
+
+const sheetFooterStyles = {
+  alignItems: "center",
+  justifyContent: "flex-end",
+  gap: "3xl",
+  width: "100%"
+};
+
+export type SheetFooterProps = GetProps<typeof XStack>;
+
+const SheetFooter: FC<SheetFooterProps> = props => {
+  const { direction } = useSheetContext();
+
+  return (
+    <XStack
+      {...sheetFooterStyles}
+      {...sheetFooterDirectionStyles[direction]}
+      {...props}
+    />
+  );
+};
+
+/**
+ * The `ContainerSurfaceProps` draw the sheet's surface with a `Container`: in
+ * `Sheet.Background` for a bottom sheet, and in the frame for the other
+ * directions. `primary` and `secondary` also draw `Sheet.Heading`, `Sheet.Body`
+ * and `Sheet.Description` in `on-primary` / `on-secondary`. Without a
+ * `variant` (or `glass`, `noise` or `accented`), the sheet keeps its borderless
+ * `elevated` surface.
+ */
+export type SheetProps = Omit<GetProps<typeof TamaguiSheet>, "size"> & {
+  children: ReactNode;
+  theme?: string;
+  direction?: SheetDirection;
+  size?: SheetSize;
+} & ContainerSurfaceProps;
+
+const SNAP_POINTS = [80];
+const EMPTY_PAN_HANDLERS = {};
+const subscribeToHydration = () => () => undefined;
+const getHydratedSnapshot = () => true;
+const getServerHydratedSnapshot = () => !isWeb;
+
+// The animation drivers' default spring (stiffness 100, damping 10) overshoots
+// a bottom sheet by about 16% of its travel. The same stiffness with more
+// damping keeps the pace and only settles with a slight spring.
+const SHEET_SPRING = {
+  type: "spring",
+  stiffness: 100,
+  damping: 16,
+  mass: 1
+} as const;
+
+const SheetFrameImpl: FC<SheetProps> = ({
+  children,
+  theme = "base",
+  direction = "bottom",
+  size,
+  modal = true,
+  dismissOnSnapToBottom = true,
+  disableDrag = false,
+  snapPoints,
+  snapPointsMode,
+  transition,
+  variant,
+  shadowStyle,
+  glass,
+  noise,
+  accented,
+  onOpenChange,
+  open,
+  ...props
+}: SheetProps) => {
+  const surface = useMemo(
+    () => ({ variant, shadowStyle, glass, noise, accented }),
+    [variant, shadowStyle, glass, noise, accented]
+  );
+  // Upstream portal implementations initialize non-deterministic browser
+  // contexts. Defer portals while preserving inline nonmodal bottom sheets.
+  const mounted = useSyncExternalStore(
+    subscribeToHydration,
+    getHydratedSnapshot,
+    getServerHydratedSnapshot
+  );
+  const [dragOffset, setDragOffset] = useState(0);
+  const [dragging, setDragging] = useState(false);
+  const [frameSize, setFrameSize] = useState(0);
+  const [uncontrolledOpen, setUncontrolledOpen] = useState(
+    props.defaultOpen ?? false
+  );
+  const usesSizedBottomFrame =
+    direction === "bottom" &&
+    size !== undefined &&
+    snapPoints === undefined &&
+    snapPointsMode === undefined;
+
+  const dialogOpen = open ?? uncontrolledOpen;
+  const setDialogOpen = useCallback(
+    (value: boolean) => {
+      if (open === undefined) {
+        setUncontrolledOpen(value);
+      }
+      onOpenChange?.(value);
+    },
+    [open, onOpenChange]
+  );
+
+  const isVertical = direction === "top";
+  const directionSign = direction === "top" || direction === "left" ? -1 : 1;
+
+  const updateDrag = useCallback(
+    (distance: number) => {
+      setDragOffset(directionSign * Math.max(0, directionSign * distance));
+    },
+    [directionSign]
+  );
+
+  const finishDrag = useCallback(
+    (distance: number, velocity: number, dragSize = frameSize) => {
+      const outwardDistance = directionSign * distance;
+      const outwardVelocity = directionSign * velocity;
+      const shouldDismiss =
+        dismissOnSnapToBottom &&
+        (outwardDistance > dragSize * 0.25 || outwardVelocity > 0.5);
+
+      setDragging(false);
+
+      if (shouldDismiss) {
+        setDragOffset(0);
+        setDialogOpen(false);
+      } else {
+        setTimeout(() => setDragOffset(0), 0);
+      }
+    },
+    [directionSign, dismissOnSnapToBottom, frameSize, setDialogOpen]
+  );
+
+  const cancelDrag = useCallback(() => {
+    setDragging(false);
+    setDragOffset(0);
+  }, []);
+
+  const panResponder = useMemo(
+    () =>
+      // Web handles dragging through pointer events; native keeps its responder.
+      isWeb
+        ? undefined
+        : PanResponder.create({
+            onStartShouldSetPanResponder: () => !disableDrag,
+            onMoveShouldSetPanResponder: (_, gestureState) =>
+              !disableDrag &&
+              Math.abs(isVertical ? gestureState.dy : gestureState.dx) > 3,
+            onPanResponderGrant: () => setDragging(true),
+            onPanResponderMove: (_, gestureState) => {
+              const distance = isVertical ? gestureState.dy : gestureState.dx;
+              updateDrag(distance);
+            },
+            onPanResponderRelease: (_, gestureState) => {
+              const velocity = isVertical ? gestureState.vy : gestureState.vx;
+              const distance = isVertical ? gestureState.dy : gestureState.dx;
+              finishDrag(distance, velocity);
+            },
+            onPanResponderTerminate: cancelDrag,
+            onPanResponderTerminationRequest: () => false
+          }),
+    [cancelDrag, disableDrag, finishDrag, isVertical, updateDrag]
+  );
+
+  const panHandlers = panResponder?.panHandlers ?? EMPTY_PAN_HANDLERS;
+  const pointerGesture = useRef({
+    pointerId: -1,
+    start: 0,
+    last: 0,
+    lastTime: 0,
+    velocity: 0,
+    frameSize: 0
+  });
+  const pointerHandlers = useMemo(() => {
+    return {
+      onPointerDown: (event: ReactPointerEvent<HTMLElement>) => {
+        const target = event.currentTarget;
+        const position = isVertical ? event.clientY : event.clientX;
+        const frame = target.closest('[role="dialog"]');
+        const frameRect = frame?.getBoundingClientRect();
+        pointerGesture.current = {
+          pointerId: event.pointerId,
+          start: position,
+          last: position,
+          lastTime: event.timeStamp,
+          velocity: 0,
+          frameSize: frameRect
+            ? isVertical
+              ? frameRect.height
+              : frameRect.width
+            : frameSize
+        };
+        target.setPointerCapture(event.pointerId);
+        setDragging(true);
+
+        const cleanup = () => {
+          window.removeEventListener("pointermove", handlePointerMove);
+          window.removeEventListener("pointerup", handlePointerEnd, true);
+          window.removeEventListener(
+            "pointercancel",
+            handlePointerCancel,
+            true
+          );
+        };
+
+        const handlePointerMove = (pointerEvent: PointerEvent) => {
+          const gesture = pointerGesture.current;
+          if (gesture.pointerId !== pointerEvent.pointerId) return;
+          const nextPosition = isVertical
+            ? pointerEvent.clientY
+            : pointerEvent.clientX;
+          const elapsed = pointerEvent.timeStamp - gesture.lastTime;
+
+          if (elapsed > 0) {
+            gesture.velocity = (nextPosition - gesture.last) / elapsed;
+          }
+          gesture.last = nextPosition;
+          gesture.lastTime = pointerEvent.timeStamp;
+          updateDrag(nextPosition - gesture.start);
+        };
+
+        const handlePointerEnd = (pointerEvent: PointerEvent) => {
+          const gesture = pointerGesture.current;
+          if (gesture.pointerId !== pointerEvent.pointerId) return;
+          const nextPosition = isVertical
+            ? pointerEvent.clientY
+            : pointerEvent.clientX;
+          const elapsed = pointerEvent.timeStamp - gesture.lastTime;
+          const velocity =
+            elapsed > 0
+              ? (nextPosition - gesture.last) / elapsed
+              : gesture.velocity;
+
+          cleanup();
+          if (target.hasPointerCapture(pointerEvent.pointerId)) {
+            target.releasePointerCapture(pointerEvent.pointerId);
+          }
+          pointerGesture.current.pointerId = -1;
+          finishDrag(nextPosition - gesture.start, velocity, gesture.frameSize);
+        };
+
+        const handlePointerCancel = (pointerEvent: PointerEvent) => {
+          if (pointerGesture.current.pointerId !== pointerEvent.pointerId)
+            return;
+          cleanup();
+          pointerGesture.current.pointerId = -1;
+          cancelDrag();
+        };
+
+        window.addEventListener("pointermove", handlePointerMove);
+        window.addEventListener("pointerup", handlePointerEnd, true);
+        window.addEventListener("pointercancel", handlePointerCancel, true);
+      }
+    };
+  }, [cancelDrag, finishDrag, frameSize, isVertical, updateDrag]);
+  const context = useMemo<SheetContextValue>(
+    () => ({
+      direction,
+      size,
+      disableDrag,
+      dragOffset,
+      dragging,
+      panHandlers,
+      pointerHandlers,
+      setFrameSize,
+      transition,
+      surface
+    }),
+    [
+      direction,
+      size,
+      disableDrag,
+      dragOffset,
+      dragging,
+      panHandlers,
+      pointerHandlers,
+      transition,
+      surface
+    ]
+  );
+  const deferPortal = !mounted && (modal || direction !== "bottom");
+  const content = deferPortal ? null : direction === "bottom" ? (
+    <TamaguiSheet
+      modal={modal}
+      dismissOnSnapToBottom={dismissOnSnapToBottom}
+      disableDrag={disableDrag}
+      snapPoints={usesSizedBottomFrame ? ["fit"] : (snapPoints ?? SNAP_POINTS)}
+      snapPointsMode={usesSizedBottomFrame ? "fit" : snapPointsMode}
+      transition={transition}
+      transitionConfig={transition === undefined ? SHEET_SPRING : undefined}
+      open={open}
+      onOpenChange={onOpenChange}
+      {...props}>
+      {children}
+    </TamaguiSheet>
+  ) : (
+    <TamaguiDialog modal={modal} open={dialogOpen} onOpenChange={setDialogOpen}>
+      <TamaguiDialog.Portal role="presentation" aria-modal={undefined}>
+        {children}
+      </TamaguiDialog.Portal>
+    </TamaguiDialog>
+  );
+
+  return (
+    <Theme name={theme}>
+      <SheetContext.Provider value={context}>{content}</SheetContext.Provider>
+    </Theme>
+  );
+};
+
+export interface SheetComponent extends FC<SheetProps> {
+  Frame: FC<SheetFrameProps>;
+  Container: FC<SheetContainerProps>;
+  Background: FC<SheetBackgroundProps>;
+  Handle: FC<SheetHandleProps>;
+  Overlay: FC<SheetOverlayProps>;
+  ScrollView: FC<SheetScrollViewProps>;
+  Heading: typeof HeadingLargeText;
+  Body: typeof BodyText;
+  Description: typeof BodyText;
+  Footer: FC<SheetFooterProps>;
+}
+
+export const Sheet: SheetComponent = withStaticProperties(SheetFrameImpl, {
+  Frame: SheetFrame,
+  Container: SheetContainer,
+  Background: SheetBackground,
+  Handle: SheetHandle,
+  Overlay: SheetOverlay,
+  ScrollView: SheetScrollView,
+  Heading: SheetHeading,
+  Body: SheetBody,
+  Description: SheetDescription,
+  Footer: SheetFooter
+});
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Sheet.Frame` is undefined on the server).
+ */
+export {
+  SheetBackground,
+  SheetBody,
+  SheetContainer,
+  SheetDescription,
+  SheetFooter,
+  SheetFrame,
+  SheetHandle,
+  SheetHeading,
+  SheetOverlay,
+  SheetScrollView
+};

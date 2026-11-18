@@ -1,44 +1,33 @@
 {
   "name": "@cyclone-ui/scroll-view",
-  "version": "0.5.0",
+  "version": "0.5.98",
   "type": "module",
-  "description": "A visually hidden component meant to be shared in many other components",
+  "description": "A scroll container built on Tamagui's ScrollView, with a thin themed scrollbar on web that is highlighted on hover. It has sm and lg width sizes and a fullscreen variant that fills its parent. Use it for any scrollable area that should match the theme.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/scroll-view"
   },
   "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
   "files": [
-    "dist",
-    "src",
-    "types"
+    "dist"
   ],
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15"
+    "@tamagui/constants": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/scroll-view": "catalog:"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "@cyclone-ui/icons": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"
@@ -46,5 +35,19 @@
   "sideEffects": [
     "*.css"
   ],
-  "module:jsx": "dist/jsx"
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./ScrollView": {
+      "import": "./dist/ScrollView.mjs",
+      "require": "./dist/ScrollView.cjs"
+    },
+    "./*": "./*"
+  }
 }

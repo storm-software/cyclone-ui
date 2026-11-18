@@ -1,15 +1,25 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc",
+    "tsBuildInfoFile": "../../dist/out-tsc/packages/helpers/tsconfig.tsbuildinfo",
     "jsx": "react-jsx",
+    "lib": ["dom", "esnext"],
     "types": [
       "node",
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
-    ]
+    ],
+    "outDir": "../../dist/out-tsc/packages/helpers",
+    "ignoreDeprecations": "6.0"
   },
+  "references": [],
   "files": [],
-  "include": ["src/**/*.ts", "src/**/*.js", "bin/**/*"],
-  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.js",
+    "powerlines.config.ts",
+    "powerlines.d.ts"
+  ],
+  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

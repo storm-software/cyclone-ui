@@ -1,0 +1,1510 @@
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Bold.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/BoldItalic.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/ExtraLight.otf")
+    format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/ExtraLightItalic.otf")
+    format("opentype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Italic.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Light.otf")
+    format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/LightItalic.otf")
+    format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Medium.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/MediumItalic.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/SemiBold.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/SemiBoldItalic.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Text.otf")
+    format("opentype");
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/TextItalic.otf")
+    format("opentype");
+  font-weight: 450;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Thin.otf")
+    format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/ThinItalic.otf")
+    format("opentype");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Bold.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/BoldItalic.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/ExtraLight.ttf")
+    format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/ExtraLightItalic.ttf")
+    format("truetype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Italic-Variable.ttf")
+    format("truetype");
+  font-weight: 100 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Italic.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Light.ttf")
+    format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/LightItalic.ttf")
+    format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Medium.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/MediumItalic.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/SemiBold.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/SemiBoldItalic.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Text.ttf")
+    format("truetype");
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/TextItalic.ttf")
+    format("truetype");
+  font-weight: 450;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Thin.ttf")
+    format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/ThinItalic.ttf")
+    format("truetype");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/storm-sans/Variable.ttf")
+    format("truetype");
+  font-weight: 100 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Bold.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/BoldItalic.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraBold.otf")
+    format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraBoldItalic.otf")
+    format("opentype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraLight.otf")
+    format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraLightItalic.otf")
+    format("opentype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Italic.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Light.otf")
+    format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/LightItalic.otf")
+    format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Medium.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/MediumItalic.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/SemiBold.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/SemiBoldItalic.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Bold.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/BoldItalic.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraBold.ttf")
+    format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraBoldItalic.ttf")
+    format("truetype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraLight.ttf")
+    format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/ExtraLightItalic.ttf")
+    format("truetype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Italic-Variable.ttf")
+    format("truetype");
+  font-weight: 200 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Italic.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Light.ttf")
+    format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/LightItalic.ttf")
+    format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Medium.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/MediumItalic.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/SemiBold.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/SemiBoldItalic.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/storm-serif/Variable.ttf")
+    format("truetype");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --storm-color-neutral-1: #ffffff; /** Bright off-white gray. */
+  --storm-color-neutral-5: #f4f4f6; /** Pale gray. */
+  --storm-color-neutral-6: #dcdce0; /** Pale gray. */
+  --storm-color-neutral-7: #c3c3ca; /** Light-medium gray. */
+  --storm-color-neutral-8: #9a9fa7; /** Medium gray. */
+  --storm-color-neutral-9: #737383; /** Dark medium gray. */
+  --storm-color-neutral-10: #3f424a; /** Deep gray. */
+  --storm-color-neutral-11: #2b2b33; /** Charcoal gray. */
+  --storm-color-neutral-12: #0b0b0e; /** Charcoal gray. */
+  --storm-color-neutral-13: #000000; /** Dark charcoal gray. */
+  --storm-color-red-1: #f997b0; /** Pale coral red. */
+  --storm-color-red-2: #f77395; /** Light coral red. */
+  --storm-color-red-3: #f6507a; /** Soft coral red. */
+  --storm-color-red-4: #f42c5f; /** Warm salmon red. */
+  --storm-color-red-5: #f00a45; /** Muted raspberry red. */
+  --storm-color-red-6: #b90a37; /** Deep raspberry red. */
+  --storm-color-red-7: #840929; /** Rich raspberry red. */
+  --storm-color-red-8: #510619; /** Dark burgundy red. */
+  --storm-color-red-9: #1d0309; /** Deep wine red. */
+  --storm-color-orange-1: #ffeee5; /** Pale peach orange. */
+  --storm-color-orange-2: #ffd3bb; /** Light apricot orange. */
+  --storm-color-orange-3: #ffb890; /** Soft sandy orange. */
+  --storm-color-orange-4: #ff9c65; /** Light peach orange. */
+  --storm-color-orange-5: #ff803a; /** Muted warm orange. */
+  --storm-color-orange-6: #ff5c00; /** Medium tangerine orange. */
+  --storm-color-orange-7: #b24600; /** Bright amber orange. */
+  --storm-color-orange-8: #742f00; /** Rich burnt orange. */
+  --storm-color-orange-9: #471b00; /** Deep burnt orange. */
+  --storm-color-yellow-1: #ffe1ab; /** Pale wheat yellow. */
+  --storm-color-yellow-2: #ffd280; /** Light sandy yellow. */
+  --storm-color-yellow-3: #ffc253; /** Soft golden yellow. */
+  --storm-color-yellow-4: #ffb327; /** Muted amber yellow. */
+  --storm-color-yellow-5: #ffb01e; /** Medium honey yellow. */
+  --storm-color-yellow-6: #ffa706; /** Warm wheat yellow. */
+  --storm-color-yellow-7: #dc8f00; /** Rich golden yellow. */
+  --storm-color-yellow-8: #a26902; /** Deep honey yellow. */
+  --storm-color-yellow-9: #583902; /** Dark ochre yellow. */
+  --storm-color-green-2: #c9f8d8; /** Light spring green. */
+  --storm-color-green-3: #7ceeaf; /** Soft leaf green. */
+  --storm-color-green-4: #2de498; /** Muted leaf green. */
+  --storm-color-green-5: #1db77c; /** Cool mint green. */
+  --storm-color-green-6: #13825b; /** Medium jade green. */
+  --storm-color-green-7: #0a4e38; /** Rich jade green. */
+  --storm-color-green-8: #031611; /** Deep forest green. */
+  --storm-color-blue-1: #f8fbff; /** Pale periwinkle blue. */
+  --storm-color-blue-2: #cbdeff; /** Light periwinkle blue. */
+  --storm-color-blue-3: #9ec1ff; /** Light sky blue. */
+  --storm-color-blue-4: #70a4ff; /** Soft cornflower blue. */
+  --storm-color-blue-5: #4387ff; /** Bright cobalt blue. */
+  --storm-color-blue-6: #025eff; /** Medium azure blue. */
+  --storm-color-blue-7: #0145be; /** Deep azure blue. */
+  --storm-color-blue-8: #012e7c; /** Vivid cerulean blue. */
+  --storm-color-blue-9: #00163b; /** Rich cerulean blue. */
+  --storm-color-purple-2: #e1d7fb; /** Light periwinkle purple. */
+  --storm-color-purple-3: #c1adf7; /** Soft lavender purple. */
+  --storm-color-purple-4: #a283f3; /** Soft violet purple. */
+  --storm-color-purple-5: #815ddd; /** Muted indigo purple. */
+  --storm-color-purple-6: #623dc3; /** Medium periwinkle purple. */
+  --storm-color-purple-7: #492b9b; /** Deep periwinkle purple. */
+  --storm-color-purple-8: #321c71; /** Vivid indigo purple. */
+  --storm-color-purple-9: #1d0f42; /** Rich slate indigo. */
+  --storm-color-pink-2: #ffd5ee; /** Light blush pink. */
+  --storm-color-pink-3: #ffaade; /** Soft rose pink. */
+  --storm-color-pink-4: #ff85d0; /** Bright fuchsia pink. */
+  --storm-color-pink-5: #fa7dcb; /** Vivid fuchsia pink. */
+  --storm-color-pink-6: #f976c6; /** Rich magenta pink. */
+  --storm-color-pink-7: #dc50a6; /** Deep fuchsia pink. */
+  --storm-color-pink-8: #932b6b; /** Deep berry pink. */
+  --storm-color-pink-9: #1c0815; /** Dark plum pink. */
+  --storm-color-base-link: #00bcff; /** The color used for hyperlink text. */
+  --storm-color-base-backdrop: rgba(
+    37,
+    37,
+    37,
+    0.14901960784313725
+  ); /** Generated base overlay backdrop color (primary, 30% darker at 75% opacity) */
+  --storm-color-base-border: #24252d; /** Generated base border color for secondary backgrounds (secondary, 25% brighter) */
+  --storm-color-base-primary-hovered: #c3c3c3; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% less bright) */
+  --storm-color-base-primary-inactive: #565656; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% of the dark contrast primitive's brightness) */
+  --storm-color-base-secondary-hovered: #121318; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 8% brighter) */
+  --storm-color-base-secondary-active: #1c1d24; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 18% brighter) */
+  --storm-color-base-secondary-disabled: #1d1f24; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-base-link-hovered: #caecff; /** The color used for hyperlink text. (hovered, 13% brighter) */
+  --storm-color-base-link-active: #eff9ff; /** The color used for hyperlink text. (active, 25% brighter) */
+  --storm-color-base-link-inactive: #0076a1; /** The color used for hyperlink text. (inactive, 20% less bright) */
+  --storm-color-base-link-disabled: #2c5b73; /** The color used for hyperlink text. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-brand-primary: #2effd0; /** The Storm Teal color is used as the primary brand color for Storm Software. */
+  --storm-color-brand-backdrop: rgba(
+    0,
+    0,
+    0,
+    0.14901960784313725
+  ); /** Generated brand overlay backdrop color (primary, 30% darker at 75% opacity) */
+  --storm-color-brand-secondary: #001814; /** Generated low-emphasis brand background for the dark theme */
+  --storm-color-brand-border: #19755d; /** Generated brand border color for secondary backgrounds (secondary, 25% brighter) */
+  --storm-color-brand-primary-hovered: #00a587; /** The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 13% less bright) */
+  --storm-color-brand-primary-active: #a8ffe9; /** The Storm Teal color is used as the primary brand color for Storm Software. (active, 25% brighter) */
+  --storm-color-brand-primary-inactive: #00856d; /** The Storm Teal color is used as the primary brand color for Storm Software. (inactive, 20% less bright) */
+  --storm-color-brand-primary-disabled: #376a5f; /** The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-brand-secondary-hovered: #075340; /** Generated low-emphasis brand background for the dark theme (hovered, 13% brighter) */
+  --storm-color-brand-secondary-disabled: #1b2e2c; /** Generated low-emphasis brand background for the dark theme (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-danger-backdrop: rgba(
+    6,
+    0,
+    0,
+    0.14901960784313725
+  ); /** Generated danger overlay backdrop color (primary, 30% darker at 75% opacity) */
+  --storm-color-danger-secondary: #28000f; /** Generated low-emphasis danger background for the dark theme */
+  --storm-color-danger-border: #780a26; /** Generated danger border color for secondary backgrounds (secondary, 25% brighter) */
+  --storm-color-danger-primary-hovered: #ff6d8e; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 13% brighter) */
+  --storm-color-danger-primary-active: #ffb7c5; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% brighter) */
+  --storm-color-danger-primary-inactive: #9b0036; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% less bright) */
+  --storm-color-danger-primary-disabled: #5f313d; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-danger-secondary-hovered: #58001b; /** Generated low-emphasis danger background for the dark theme (hovered, 13% brighter) */
+  --storm-color-danger-secondary-disabled: #301a22; /** Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-warning-backdrop: rgba(
+    6,
+    2,
+    0,
+    0.14901960784313725
+  ); /** Generated warning overlay backdrop color (primary, 30% darker at 75% opacity) */
+  --storm-color-warning-border: #eead45; /** Generated warning border color for secondary backgrounds (secondary, 25% brighter) */
+  --storm-color-warning-primary-hovered: #f8ad1d; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 13% less bright) */
+  --storm-color-warning-primary-active: #fffffe; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% brighter) */
+  --storm-color-warning-primary-inactive: #ce8c00; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% less bright) */
+  --storm-color-warning-primary-disabled: #756040; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-warning-secondary-hovered: #d08d1c; /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 13% brighter) */
+  --storm-color-warning-secondary-inactive: #3e2a00; /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (inactive, 20% less bright) */
+  --storm-color-warning-secondary-disabled: #4b3d29; /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-info-backdrop: rgba(
+    0,
+    0,
+    55,
+    0.14901960784313725
+  ); /** Generated info overlay backdrop color (primary, 30% darker at 75% opacity) */
+  --storm-color-info-border: #1953bb; /** Generated info border color for secondary backgrounds (secondary, 25% brighter) */
+  --storm-color-info-primary-hovered: #b1ceff; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 13% brighter) */
+  --storm-color-info-primary-active: #f1f6ff; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% brighter) */
+  --storm-color-info-primary-inactive: #0159f1; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% less bright) */
+  --storm-color-info-primary-disabled: #344a74; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-info-secondary-hovered: #0c409c; /** Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 13% brighter) */
+  --storm-color-info-secondary-inactive: #001437; /** Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% less bright) */
+  --storm-color-info-secondary-disabled: #202b40; /** Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-discovery-backdrop: rgba(
+    8,
+    0,
+    17,
+    0.14901960784313725
+  ); /** Generated discovery overlay backdrop color (primary, 30% darker at 75% opacity) */
+  --storm-color-discovery-border: #37256f; /** Generated discovery border color for secondary backgrounds (secondary, 25% brighter) */
+  --storm-color-discovery-primary-hovered: #d2c2ff; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 13% brighter) */
+  --storm-color-discovery-primary-active: #fdfcff; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 25% brighter) */
+  --storm-color-discovery-primary-inactive: #643bc7; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% less bright) */
+  --storm-color-discovery-primary-disabled: #494068; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-discovery-secondary-hovered: #291959; /** Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 13% brighter) */
+  --storm-color-discovery-secondary-inactive: #0a0219; /** Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% less bright) */
+  --storm-color-discovery-secondary-disabled: #242031; /** Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-success-secondary: #001a11; /** Generated low-emphasis success background for the dark theme */
+  --storm-color-success-border: #19774e; /** Generated success border color for secondary backgrounds (secondary, 25% brighter) */
+  --storm-color-success-primary-hovered: #73ffc1; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 13% brighter) */
+  --storm-color-success-primary-active: #94ffcf; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 25% brighter) */
+  --storm-color-success-primary-inactive: #006746; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% less bright) */
+  --storm-color-success-primary-disabled: #355d4e; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-success-secondary-hovered: #075435; /** Generated low-emphasis success background for the dark theme (hovered, 13% brighter) */
+  --storm-color-success-secondary-disabled: #1b2e29; /** Generated low-emphasis success background for the dark theme (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-shadow-resting-raised:
+    0px 1px 2px 0px #0000004d, 0px 2px 8px 0px #00000040; /** Raised resting shadow: a tight contact shadow plus a soft 8px falloff. Use it for selected segments, notification cards and secondary buttons that should read as lifted off their surface. Used by Button (`secondary` variant). */
+  --storm-color-emphasis-hovered: #b4b4b4; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% less bright) */
+  --storm-color-emphasis-disabled: #6d6d7c; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-ink-disabled: #53535f; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-subtle-hovered: #e9eaed; /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% brighter) */
+  --storm-color-subtle-disabled: #494954; /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-surface-active: #080809; /** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 30% brighter) */
+  --storm-color-surface-disabled: #050505; /** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-elevated-active: #111113; /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 30% brighter) */
+  --storm-color-elevated-disabled: #09090a; /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-floating-hovered: #0b0c0e; /** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 15% brighter) */
+  --storm-color-floating-active: #18191d; /** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 30% brighter) */
+  --storm-color-floating-disabled: #0c0d0f; /** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-hairline-hovered: #676777; /** Low-contrast color for borders, dividers and separators. (hovered, 40% brighter) */
+  --storm-color-hairline-disabled: #28282f; /** Low-contrast color for borders, dividers and separators. (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-size-zero: 0px; /** No size */
+  --storm-size-xxs: 2px; /** A 2px xxs size step */
+  --storm-size-xs: 4px; /** A 4px xs size step */
+  --storm-size-sm: 8px; /** A 8px sm size step */
+  --storm-size-md: 10px; /** A 10px md size step */
+  --storm-size-lg: 12px; /** A 12px lg size step */
+  --storm-size-xl: 14px; /** A 14px xl size step */
+  --storm-size-2xl: 16px; /** A 16px 2xl size step */
+  --storm-size-3xl: 18px; /** A 18px 3xl size step */
+  --storm-size-4xl: 20px; /** A 20px 4xl size step */
+  --storm-size-5xl: 22px; /** A 22px 5xl size step */
+  --storm-size-6xl: 24px; /** A 24px 6xl size step */
+  --storm-size-7xl: 26px; /** A 26px 7xl size step */
+  --storm-size-8xl: 32px; /** A 32px 8xl size step */
+  --storm-size-9xl: 37px; /** A 37px 9xl size step */
+  --storm-size-10xl: 42px; /** A 42px 10xl size step */
+  --storm-size-11xl: 47px; /** A 47px 11xl size step */
+  --storm-size-12xl: 52px; /** A 52px 12xl size step */
+  --storm-size-13xl: 62px; /** A 62px 13xl size step */
+  --storm-size-14xl: 72px; /** A 72px 14xl size step */
+  --storm-size-15xl: 82px; /** A 82px 15xl size step */
+  --storm-size-16xl: 92px; /** A 92px 16xl size step */
+  --storm-size-17xl: 102px; /** A 102px 17xl size step */
+  --storm-size-18xl: 112px; /** A 112px 18xl size step */
+  --storm-size-19xl: 122px; /** A 122px 19xl size step */
+  --storm-size-20xl: 132px; /** A 132px 20xl size step */
+  --storm-size-21xl: 142px; /** A 142px 21xl size step */
+  --storm-size-22xl: 152px; /** A 152px 22xl size step */
+  --storm-size-23xl: 162px; /** A 162px 23xl size step */
+  --storm-size-24xl: 172px; /** A 172px 24xl size step */
+  --storm-size-25xl: 182px; /** A 182px 25xl size step */
+  --storm-size-26xl: 192px; /** A 192px 26xl size step */
+  --storm-size-27xl: 202px; /** A 202px 27xl size step */
+  --storm-size-28xl: 212px; /** A 212px 28xl size step */
+  --storm-size-29xl: 222px; /** A 222px 29xl size step */
+  --storm-size-30xl: 232px; /** A 232px 30xl size step */
+  --storm-size-31xl: 242px; /** A 242px 31xl size step */
+  --storm-size-32xl: 252px; /** A 252px 32xl size step */
+  --storm-size-33xl: 262px; /** A 262px 33xl size step */
+  --storm-size-34xl: 272px; /** A 272px 34xl size step */
+  --storm-size-35xl: 282px; /** A 282px 35xl size step */
+  --storm-size-36xl: 292px; /** A 292px 36xl size step */
+  --storm-size-37xl: 302px; /** A 302px 37xl size step */
+  --storm-size-38xl: 312px; /** A 312px 38xl size step */
+  --storm-size-39xl: 322px; /** A 322px 39xl size step */
+  --storm-size-40xl: 332px; /** A 332px 40xl size step */
+  --storm-size-41xl: 342px; /** A 342px 41xl size step */
+  --storm-size-42xl: 352px; /** A 352px 42xl size step */
+  --storm-size-43xl: 362px; /** A 362px 43xl size step */
+  --storm-size-44xl: 372px; /** A 372px 44xl size step */
+  --storm-size-45xl: 382px; /** A 382px 45xl size step */
+  --storm-size-46xl: 392px; /** A 392px 46xl size step */
+  --storm-size-47xl: 402px; /** A 402px 47xl size step */
+  --storm-size-48xl: 412px; /** A 412px 48xl size step */
+  --storm-size-49xl: 422px; /** A 422px 49xl size step */
+  --storm-size-50xl: 432px; /** A 432px 50xl size step */
+  --storm-size-51xl: 442px; /** A 442px 51xl size step */
+  --storm-size-52xl: 452px; /** A 452px 52xl size step */
+  --storm-size-53xl: 462px; /** A 462px 53xl size step */
+  --storm-size-54xl: 472px; /** A 472px 54xl size step */
+  --storm-size-55xl: 482px; /** A 482px 55xl size step */
+  --storm-size-56xl: 492px; /** A 492px 56xl size step */
+  --storm-size-57xl: 502px; /** A 502px 57xl size step */
+  --storm-size-58xl: 512px; /** A 512px 58xl size step */
+  --storm-size-59xl: 522px; /** A 522px 59xl size step */
+  --storm-size-60xl: 532px; /** A 532px 60xl size step */
+  --storm-size-61xl: 542px; /** A 542px 61xl size step */
+  --storm-size-62xl: 552px; /** A 552px 62xl size step */
+  --storm-size-63xl: 562px; /** A 562px 63xl size step */
+  --storm-size-64xl: 572px; /** A 572px 64xl size step */
+  --storm-z-index-0: 0; /** Base stacking level */
+  --storm-z-index-10: 100; /** Low stacking level */
+  --storm-z-index-20: 200; /** Raised stacking level */
+  --storm-z-index-30: 300; /** Elevated stacking level */
+  --storm-z-index-40: 400; /** High stacking level */
+  --storm-z-index-50: 500; /** Overlay stacking level */
+  --storm-z-index-60: 600; /** Modal stacking level */
+  --storm-z-index-70: 700; /** Popover stacking level */
+  --storm-z-index-80: 800; /** Toast stacking level */
+  --storm-z-index-90: 900; /** Topmost stacking level */
+  --storm-spacing-zero: 0px; /** No spacing */
+  --storm-spacing-xxs: 0.5px; /** A 0.5px xxs spacing step (from size.xxs via sizeToSpace) */
+  --storm-spacing-xs: 1px; /** A 1px xs spacing step (from size.xs via sizeToSpace) */
+  --storm-spacing-sm: 1.5px; /** A 1.5px sm spacing step (from size.sm via sizeToSpace) */
+  --storm-spacing-md: 2px; /** A 2px md spacing step (from size.md via sizeToSpace) */
+  --storm-spacing-lg: 4px; /** A 4px lg spacing step (from size.lg via sizeToSpace) */
+  --storm-spacing-xl: 7px; /** A 7px xl spacing step (from size.xl via sizeToSpace) */
+  --storm-spacing-2xl: 10px; /** A 10px 2xl spacing step (from size.2xl via sizeToSpace) */
+  --storm-spacing-3xl: 13px; /** A 13px 3xl spacing step (from size.3xl via sizeToSpace) */
+  --storm-spacing-4xl: 16px; /** A 16px 4xl spacing step (from size.4xl via sizeToSpace) */
+  --storm-spacing-5xl: 18px; /** A 18px 5xl spacing step (from size.5xl via sizeToSpace) */
+  --storm-spacing-6xl: 21px; /** A 21px 6xl spacing step (from size.6xl via sizeToSpace) */
+  --storm-spacing-7xl: 24px; /** A 24px 7xl spacing step (from size.7xl via sizeToSpace) */
+  --storm-spacing-8xl: 32px; /** A 32px 8xl spacing step (from size.8xl via sizeToSpace) */
+  --storm-spacing-9xl: 39px; /** A 39px 9xl spacing step (from size.9xl via sizeToSpace) */
+  --storm-spacing-10xl: 46px; /** A 46px 10xl spacing step (from size.10xl via sizeToSpace) */
+  --storm-spacing-11xl: 53px; /** A 53px 11xl spacing step (from size.11xl via sizeToSpace) */
+  --storm-spacing-12xl: 60px; /** A 60px 12xl spacing step (from size.12xl via sizeToSpace) */
+  --storm-spacing-13xl: 74px; /** A 74px 13xl spacing step (from size.13xl via sizeToSpace) */
+  --storm-spacing-14xl: 88px; /** A 88px 14xl spacing step (from size.14xl via sizeToSpace) */
+  --storm-spacing-15xl: 102px; /** A 102px 15xl spacing step (from size.15xl via sizeToSpace) */
+  --storm-spacing-16xl: 116px; /** A 116px 16xl spacing step (from size.16xl via sizeToSpace) */
+  --storm-spacing-17xl: 130px; /** A 130px 17xl spacing step (from size.17xl via sizeToSpace) */
+  --storm-spacing-18xl: 144px; /** A 144px 18xl spacing step (from size.18xl via sizeToSpace) */
+  --storm-spacing-19xl: 158px; /** A 158px 19xl spacing step (from size.19xl via sizeToSpace) */
+  --storm-spacing-20xl: 172px; /** A 172px 20xl spacing step (from size.20xl via sizeToSpace) */
+  --storm-spacing-21xl: 186px; /** A 186px 21xl spacing step (from size.21xl via sizeToSpace) */
+  --storm-spacing-22xl: 200px; /** A 200px 22xl spacing step (from size.22xl via sizeToSpace) */
+  --storm-spacing-23xl: 214px; /** A 214px 23xl spacing step (from size.23xl via sizeToSpace) */
+  --storm-spacing-24xl: 228px; /** A 228px 24xl spacing step (from size.24xl via sizeToSpace) */
+  --storm-spacing-25xl: 242px; /** A 242px 25xl spacing step (from size.25xl via sizeToSpace) */
+  --storm-spacing-26xl: 256px; /** A 256px 26xl spacing step (from size.26xl via sizeToSpace) */
+  --storm-spacing-27xl: 270px; /** A 270px 27xl spacing step (from size.27xl via sizeToSpace) */
+  --storm-spacing-28xl: 284px; /** A 284px 28xl spacing step (from size.28xl via sizeToSpace) */
+  --storm-spacing-29xl: 298px; /** A 298px 29xl spacing step (from size.29xl via sizeToSpace) */
+  --storm-spacing-30xl: 312px; /** A 312px 30xl spacing step (from size.30xl via sizeToSpace) */
+  --storm-spacing-31xl: 326px; /** A 326px 31xl spacing step (from size.31xl via sizeToSpace) */
+  --storm-spacing-32xl: 340px; /** A 340px 32xl spacing step (from size.32xl via sizeToSpace) */
+  --storm-spacing-33xl: 354px; /** A 354px 33xl spacing step (from size.33xl via sizeToSpace) */
+  --storm-spacing-34xl: 368px; /** A 368px 34xl spacing step (from size.34xl via sizeToSpace) */
+  --storm-spacing-35xl: 382px; /** A 382px 35xl spacing step (from size.35xl via sizeToSpace) */
+  --storm-spacing-36xl: 396px; /** A 396px 36xl spacing step (from size.36xl via sizeToSpace) */
+  --storm-spacing-37xl: 410px; /** A 410px 37xl spacing step (from size.37xl via sizeToSpace) */
+  --storm-spacing-38xl: 424px; /** A 424px 38xl spacing step (from size.38xl via sizeToSpace) */
+  --storm-spacing-39xl: 438px; /** A 438px 39xl spacing step (from size.39xl via sizeToSpace) */
+  --storm-spacing-40xl: 452px; /** A 452px 40xl spacing step (from size.40xl via sizeToSpace) */
+  --storm-spacing-41xl: 466px; /** A 466px 41xl spacing step (from size.41xl via sizeToSpace) */
+  --storm-spacing-42xl: 480px; /** A 480px 42xl spacing step (from size.42xl via sizeToSpace) */
+  --storm-spacing-43xl: 494px; /** A 494px 43xl spacing step (from size.43xl via sizeToSpace) */
+  --storm-spacing-44xl: 508px; /** A 508px 44xl spacing step (from size.44xl via sizeToSpace) */
+  --storm-spacing-45xl: 522px; /** A 522px 45xl spacing step (from size.45xl via sizeToSpace) */
+  --storm-spacing-46xl: 536px; /** A 536px 46xl spacing step (from size.46xl via sizeToSpace) */
+  --storm-spacing-47xl: 550px; /** A 550px 47xl spacing step (from size.47xl via sizeToSpace) */
+  --storm-spacing-48xl: 564px; /** A 564px 48xl spacing step (from size.48xl via sizeToSpace) */
+  --storm-spacing-49xl: 578px; /** A 578px 49xl spacing step (from size.49xl via sizeToSpace) */
+  --storm-spacing-50xl: 592px; /** A 592px 50xl spacing step (from size.50xl via sizeToSpace) */
+  --storm-spacing-51xl: 606px; /** A 606px 51xl spacing step (from size.51xl via sizeToSpace) */
+  --storm-spacing-52xl: 620px; /** A 620px 52xl spacing step (from size.52xl via sizeToSpace) */
+  --storm-spacing-53xl: 634px; /** A 634px 53xl spacing step (from size.53xl via sizeToSpace) */
+  --storm-spacing-54xl: 648px; /** A 648px 54xl spacing step (from size.54xl via sizeToSpace) */
+  --storm-spacing-55xl: 662px; /** A 662px 55xl spacing step (from size.55xl via sizeToSpace) */
+  --storm-spacing-56xl: 676px; /** A 676px 56xl spacing step (from size.56xl via sizeToSpace) */
+  --storm-spacing-57xl: 690px; /** A 690px 57xl spacing step (from size.57xl via sizeToSpace) */
+  --storm-spacing-58xl: 704px; /** A 704px 58xl spacing step (from size.58xl via sizeToSpace) */
+  --storm-spacing-59xl: 718px; /** A 718px 59xl spacing step (from size.59xl via sizeToSpace) */
+  --storm-spacing-60xl: 732px; /** A 732px 60xl spacing step (from size.60xl via sizeToSpace) */
+  --storm-spacing-61xl: 746px; /** A 746px 61xl spacing step (from size.61xl via sizeToSpace) */
+  --storm-spacing-62xl: 760px; /** A 760px 62xl spacing step (from size.62xl via sizeToSpace) */
+  --storm-spacing-63xl: 774px; /** A 774px 63xl spacing step (from size.63xl via sizeToSpace) */
+  --storm-spacing-64xl: 788px; /** A 788px 64xl spacing step (from size.64xl via sizeToSpace) */
+  --storm-font-size-xxxs: 0.625rem; /** Extra extra small font size (0.625rem) */
+  --storm-font-size-xxs: 0.75rem; /** Extra small font size (0.75rem) */
+  --storm-font-size-xs: 0.875rem; /** Extra small font size (0.875rem) */
+  --storm-font-size-sm: 1rem; /** Small font size (1rem) */
+  --storm-font-size-md: 1.125rem; /** Medium font size (1.125rem) */
+  --storm-font-size-lg: 1.25rem; /** Large font size (1.25rem) */
+  --storm-font-size-xl: 1.5rem; /** Extra large font size (1.5rem) */
+  --storm-font-size-2xl: 1.875rem; /** 2X large font size (1.875rem) */
+  --storm-font-size-3xl: 2.25rem; /** 3X large font size (2.25rem) */
+  --storm-font-size-4xl: 3rem; /** 4X large font size (3rem) */
+  --storm-font-size-5xl: 3.75rem; /** 5X large font size (3.75rem) */
+  --storm-font-size-6xl: 4.5rem; /** 6X large font size (4.5rem) */
+  --storm-font-size-7xl: 6rem; /** 7X large font size (6rem) */
+  --storm-font-size-8xl: 8rem; /** 8X large font size (8rem) */
+  --storm-font-size-9xl: 10rem; /** 9X large font size (10rem) */
+  --storm-font-size-10xl: 12rem; /** 10X large font size (12rem) */
+  --storm-font-size-11xl: 14rem; /** 11X large font size (14rem) */
+  --storm-font-size-12xl: 16rem; /** 12X large font size (16rem) */
+  --storm-font-size-13xl: 18rem; /** 13X large font size (18rem) */
+  --storm-font-size-14xl: 20rem; /** 14X large font size (20rem) */
+  --storm-font-size-15xl: 24rem; /** 15X large font size (24rem) */
+  --storm-font-weight-thin: 100; /** Thin font weight (100) */
+  --storm-font-weight-extralight: 200; /** Extra light font weight (200) */
+  --storm-font-weight-light: 300; /** Light font weight (300) */
+  --storm-font-weight-normal: 400; /** Normal font weight (400) */
+  --storm-font-weight-medium: 500; /** Medium font weight (500) */
+  --storm-font-weight-semibold: 600; /** Semibold font weight (600) */
+  --storm-font-weight-bold: 700; /** Bold font weight (700) */
+  --storm-font-weight-extrabold: 800; /** Extra bold font weight (800) */
+  --storm-font-weight-black: 900; /** Black font weight (900) */
+  --storm-letter-spacing-tighter: -0.05rem; /** Tighter letter spacing (-0.05em) */
+  --storm-letter-spacing-tight: -0.025rem; /** Tight letter spacing (-0.025em) */
+  --storm-letter-spacing-normal: 0rem; /** Normal letter spacing (0em) */
+  --storm-letter-spacing-wide: 0.025rem; /** Wide letter spacing (0.025em) */
+  --storm-letter-spacing-wider: 0.05rem; /** Wider letter spacing (0.05em) */
+  --storm-letter-spacing-widest: 0.1rem; /** Widest letter spacing (0.1em) */
+  --storm-line-height-none: 0.765; /** No extra line height (0.765) */
+  --storm-line-height-tight: 1.0575; /** Tight line height (1.0575) */
+  --storm-line-height-snug: 1.125; /** Snug line height (1.125) */
+  --storm-line-height-normal: 1.2375; /** Normal line height (1.2375) */
+  --storm-line-height-relaxed: 1.35; /** Relaxed line height (1.35) */
+  --storm-line-height-loose: 1.665; /** Loose line height (1.665) */
+  --storm-line-height-xs: 1.2; /** Line height for text-xs (1.2) */
+  --storm-line-height-sm: 1.285714; /** Line height for text-sm (1.285714) */
+  --storm-line-height-md: 1.35; /** Line height for text-md (1.35) */
+  --storm-line-height-lg: 1.4; /** Line height for text-lg (1.4) */
+  --storm-line-height-xl: 1.26; /** Line height for text-xl (1.26) */
+  --storm-line-height-2xl: 1.2; /** Line height for text-2xl (1.2) */
+  --storm-line-height-3xl: 1.08; /** Line height for text-3xl (1.08) */
+  --storm-line-height-4xl: 1; /** Line height for text-4xl (1) */
+  --storm-line-height-5xl: 0.9; /** Line height for text-5xl (0.9) */
+  --storm-line-height-6xl: 0.9; /** Line height for text-6xl (0.9) */
+  --storm-line-height-7xl: 0.9; /** Line height for text-7xl (0.9) */
+  --storm-line-height-8xl: 0.9; /** Line height for text-8xl (0.9) */
+  --storm-line-height-9xl: 0.9; /** Line height for text-9xl (0.9) */
+  --storm-line-height-10xl: 0.9; /** Line height for text-10xl (0.9) */
+  --storm-border-radius-zero: 0rem; /** No radius */
+  --storm-border-radius-xs: 0.125rem; /** Extra small radius (0.125rem) */
+  --storm-border-radius-sm: 0.25rem; /** Small radius (0.25rem) */
+  --storm-border-radius-md: 0.375rem; /** Medium radius (0.375rem) */
+  --storm-border-radius-lg: 0.5625rem; /** Large radius (0.5625rem) */
+  --storm-border-radius-xl: 0.71875rem; /** Extra large radius (0.71875rem); `lg` + 2.5px so `tab` nests concentrically in `tabs` */
+  --storm-border-radius-2xl: 1rem; /** 2X large radius (1rem) */
+  --storm-border-radius-3xl: 1.5rem; /** 3X large radius (1.5rem) */
+  --storm-border-radius-4xl: 2rem; /** 4X large radius (2rem) */
+  --storm-border-radius-full: 100%; /** Full radius (100%) */
+  --storm-shadow-2xs: 0px 1px 0px 0px #0000000d; /** 2X small shadow */
+  --storm-shadow-xs: 0px 1px 2px 0px #0000000d; /** Extra small shadow */
+  --storm-shadow-sm:
+    0px 1px 3px 0px #0000001a, 0px 1px 2px -1px #0000001a; /** Small shadow */
+  --storm-shadow-md:
+    0px 4px 6px -1px #0000001a, 0px 2px 4px -2px #0000001a; /** Medium shadow */
+  --storm-shadow-lg:
+    0px 10px 15px -3px #0000001a, 0px 4px 6px -4px #0000001a; /** Large shadow */
+  --storm-shadow-xl:
+    0px 20px 25px -5px #0000001a, 0px 8px 10px -6px #0000001a; /** Extra large shadow */
+  --storm-shadow-2xl: 0px 25px 50px -12px #00000040; /** 2X large shadow */
+  --storm-inset-shadow-2xs: inset 0px 1px 0px 0px #0000000d; /** 2X small inset shadow */
+  --storm-inset-shadow-xs: inset 0px 1px 1px 0px #0000000d; /** Extra small inset shadow */
+  --storm-inset-shadow-sm: inset 0px 2px 4px 0px #0000000d; /** Small inset shadow */
+  --storm-drop-shadow-xs: 0px 1px 1px 0px #0000000d; /** Extra small drop shadow */
+  --storm-drop-shadow-sm: 0px 1px 2px 0px #00000026; /** Small drop shadow */
+  --storm-drop-shadow-md: 0px 3px 3px 0px #0000001f; /** Medium drop shadow */
+  --storm-drop-shadow-lg: 0px 4px 4px 0px #00000026; /** Large drop shadow */
+  --storm-drop-shadow-xl: 0px 9px 7px 0px #0000001a; /** Extra large drop shadow */
+  --storm-drop-shadow-2xl: 0px 25px 25px 0px #00000026; /** 2X large drop shadow */
+  --storm-text-shadow-2xs: 0px 1px 0px 0px #00000026; /** 2X small text shadow */
+  --storm-text-shadow-xs: 0px 1px 1px 0px #00000033; /** Extra small text shadow */
+  --storm-text-shadow-sm:
+    0px 1px 0px 0px #00000013, 0px 1px 1px 0px #00000013,
+    0px 2px 2px 0px #00000013; /** Small text shadow */
+  --storm-text-shadow-md:
+    0px 1px 1px 0px #0000001a, 0px 1px 2px 0px #0000001a,
+    0px 2px 4px 0px #0000001a; /** Medium text shadow */
+  --storm-text-shadow-lg:
+    0px 1px 2px 0px #0000001a, 0px 3px 2px 0px #0000001a,
+    0px 4px 8px 0px #0000001a; /** Large text shadow */
+  --storm-ease-in: cubic-bezier(0.4, 0, 1, 1); /** Ease-in cubic bezier */
+  --storm-ease-out: cubic-bezier(0, 0, 0.2, 1); /** Ease-out cubic bezier */
+  --storm-ease-in-out: cubic-bezier(
+    0.4,
+    0,
+    0.2,
+    1
+  ); /** Ease-in-out cubic bezier */
+  --storm-durations-instant: 0s; /** Instant duration */
+  --storm-durations-short: 0.1s; /** Short duration */
+  --storm-durations-medium: 0.3s; /** Medium duration */
+  --storm-durations-long: 0.6s; /** Long duration */
+  --storm-blur-xs: 4px; /** Extra small blur (4px) */
+  --storm-blur-sm: 8px; /** Small blur (8px) */
+  --storm-blur-md: 12px; /** Medium blur (12px) */
+  --storm-blur-lg: 16px; /** Large blur (16px) */
+  --storm-blur-xl: 24px; /** Extra large blur (24px) */
+  --storm-blur-2xl: 40px; /** 2X large blur (40px) */
+  --storm-blur-3xl: 64px; /** 3X large blur (64px) */
+  --storm-ring-base: 0px 0px 0px 3px #ffffff1a; /** Generated base 3px focus ring with no gap */
+  --storm-ring-base-subtle: 0px 0px 0px 1px #ffffff1a; /** Generated base 1px outline focus ring with no gap */
+  --storm-ring-brand: 0px 0px 0px 3px #3be4be26; /** Generated brand 3px focus ring with no gap */
+  --storm-ring-brand-subtle: 0px 0px 0px 1px #3be4be26; /** Generated brand 1px outline focus ring with no gap */
+  --storm-ring-danger: 0px 0px 0px 3px #d4426726; /** Generated danger 3px focus ring with no gap */
+  --storm-ring-danger-subtle: 0px 0px 0px 1px #d4426726; /** Generated danger 1px outline focus ring with no gap */
+  --storm-ring-warning: 0px 0px 0px 3px #f9c25e26; /** Generated warning 3px focus ring with no gap */
+  --storm-ring-warning-subtle: 0px 0px 0px 1px #f9c25e26; /** Generated warning 1px outline focus ring with no gap */
+  --storm-ring-info: 0px 0px 0px 3px #4d8eff26; /** Generated info 3px focus ring with no gap */
+  --storm-ring-info-subtle: 0px 0px 0px 1px #4d8eff26; /** Generated info 1px outline focus ring with no gap */
+  --storm-ring-discovery: 0px 0px 0px 3px #9277da26; /** Generated discovery 3px focus ring with no gap */
+  --storm-ring-discovery-subtle: 0px 0px 0px 1px #9277da26; /** Generated discovery 1px outline focus ring with no gap */
+  --storm-ring-success: 0px 0px 0px 3px #45c79126; /** Generated success 3px focus ring with no gap */
+  --storm-ring-success-subtle: 0px 0px 0px 1px #45c79126; /** Generated success 1px outline focus ring with no gap */
+  --storm-color-black: var(--storm-color-neutral-13); /** Near-black neutral. */
+  --storm-color-white: var(--storm-color-neutral-1); /** Pure white. */
+  --storm-color-neutral-2: var(--storm-color-neutral-1); /** Very light gray. */
+  --storm-color-neutral-3: var(--storm-color-neutral-1); /** Light gray. */
+  --storm-color-neutral-4: var(--storm-color-neutral-1); /** Soft light gray. */
+  --storm-color-neutral-14: var(
+    --storm-color-neutral-13
+  ); /** Deep graphite gray. */
+  --storm-color-neutral-15: var(
+    --storm-color-neutral-13
+  ); /** Near-black graphite. */
+  --storm-color-neutral-16: var(
+    --storm-color-neutral-13
+  ); /** Almost black gray. */
+  --storm-color-green-1: var(--storm-color-neutral-1); /** Pale mint green. */
+  --storm-color-green-9: var(
+    --storm-color-neutral-13
+  ); /** Dark emerald green. */
+  --storm-color-purple-1: var(
+    --storm-color-neutral-1
+  ); /** Pale lavender purple. */
+  --storm-color-pink-1: var(--storm-color-neutral-1); /** Pale blush pink. */
+  --storm-color-ink: var(
+    --storm-color-neutral-7
+  ); /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. */
+  --storm-color-subtle: var(
+    --storm-color-neutral-8
+  ); /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. */
+  --storm-color-hairline: var(
+    --storm-color-neutral-11
+  ); /** Low-contrast color for borders, dividers and separators. */
+  --storm-color-floating: var(
+    --storm-color-neutral-13
+  ); /** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. */
+  --storm-color-base-secondary: var(
+    --storm-color-neutral-12
+  ); /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. */
+  --storm-color-base-on-primary: var(
+    --storm-color-neutral-13
+  ); /** Generated text and icon color on base primary backgrounds */
+  --storm-color-base-on-secondary: var(
+    --storm-color-neutral-1
+  ); /** Generated text and icon color on base secondary backgrounds */
+  --storm-color-base-primary-active: var(
+    --storm-color-neutral-1
+  ); /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, dark contrast primitive) */
+  --storm-color-base-primary-disabled: var(
+    --storm-color-neutral-9
+  ); /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-base-secondary-inactive: var(
+    --storm-color-neutral-13
+  ); /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 20% less bright) */
+  --storm-color-brand-link: var(
+    --storm-color-brand-primary
+  ); /** Generated brand hyperlink text color (matches primary) */
+  --storm-color-brand-on-primary: var(
+    --storm-color-neutral-13
+  ); /** Generated text and icon color on brand primary backgrounds */
+  --storm-color-brand-on-secondary: var(
+    --storm-color-neutral-1
+  ); /** Generated text and icon color on brand secondary backgrounds */
+  --storm-color-brand-secondary-active: var(
+    --storm-color-brand-border
+  ); /** Generated low-emphasis brand background for the dark theme (active, 25% brighter) */
+  --storm-color-brand-secondary-inactive: var(
+    --storm-color-neutral-13
+  ); /** Generated low-emphasis brand background for the dark theme (inactive, 20% less bright) */
+  --storm-color-brand-link-hovered: var(
+    --storm-color-brand-primary-hovered
+  ); /** Generated brand hyperlink text color (matches primary) (hovered, 13% less bright) */
+  --storm-color-brand-link-active: var(
+    --storm-color-brand-primary-active
+  ); /** Generated brand hyperlink text color (matches primary) (active, 25% brighter) */
+  --storm-color-brand-link-inactive: var(
+    --storm-color-brand-primary-inactive
+  ); /** Generated brand hyperlink text color (matches primary) (inactive, 20% less bright) */
+  --storm-color-brand-link-disabled: var(
+    --storm-color-brand-primary-disabled
+  ); /** Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-danger-primary: var(
+    --storm-color-red-4
+  ); /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. */
+  --storm-color-danger-on-primary: var(
+    --storm-color-neutral-1
+  ); /** Generated text and icon color on danger primary backgrounds */
+  --storm-color-danger-on-secondary: var(
+    --storm-color-neutral-1
+  ); /** Generated text and icon color on danger secondary backgrounds */
+  --storm-color-danger-secondary-active: var(
+    --storm-color-danger-border
+  ); /** Generated low-emphasis danger background for the dark theme (active, 25% brighter) */
+  --storm-color-danger-secondary-inactive: var(
+    --storm-color-neutral-13
+  ); /** Generated low-emphasis danger background for the dark theme (inactive, 20% less bright) */
+  --storm-color-danger-link-hovered: var(
+    --storm-color-danger-primary-hovered
+  ); /** Generated danger hyperlink text color (matches primary) (hovered, 13% brighter) */
+  --storm-color-danger-link-active: var(
+    --storm-color-danger-primary-active
+  ); /** Generated danger hyperlink text color (matches primary) (active, 25% brighter) */
+  --storm-color-danger-link-inactive: var(
+    --storm-color-danger-primary-inactive
+  ); /** Generated danger hyperlink text color (matches primary) (inactive, 20% less bright) */
+  --storm-color-danger-link-disabled: var(
+    --storm-color-danger-primary-disabled
+  ); /** Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-warning-primary: var(
+    --storm-color-yellow-2
+  ); /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. */
+  --storm-color-warning-secondary: var(
+    --storm-color-yellow-8
+  ); /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. */
+  --storm-color-warning-on-primary: var(
+    --storm-color-neutral-13
+  ); /** Generated text and icon color on warning primary backgrounds */
+  --storm-color-warning-on-secondary: var(
+    --storm-color-neutral-1
+  ); /** Generated text and icon color on warning secondary backgrounds */
+  --storm-color-warning-secondary-active: var(
+    --storm-color-warning-border
+  ); /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (active, 25% brighter) */
+  --storm-color-warning-link-hovered: var(
+    --storm-color-warning-primary-hovered
+  ); /** Generated warning hyperlink text color (matches primary) (hovered, 13% less bright) */
+  --storm-color-warning-link-active: var(
+    --storm-color-warning-primary-active
+  ); /** Generated warning hyperlink text color (matches primary) (active, 25% brighter) */
+  --storm-color-warning-link-inactive: var(
+    --storm-color-warning-primary-inactive
+  ); /** Generated warning hyperlink text color (matches primary) (inactive, 20% less bright) */
+  --storm-color-warning-link-disabled: var(
+    --storm-color-warning-primary-disabled
+  ); /** Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-info-primary: var(
+    --storm-color-blue-4
+  ); /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. */
+  --storm-color-info-secondary: var(
+    --storm-color-blue-8
+  ); /** Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. */
+  --storm-color-info-on-primary: var(
+    --storm-color-neutral-1
+  ); /** Generated text and icon color on info primary backgrounds */
+  --storm-color-info-on-secondary: var(
+    --storm-color-neutral-1
+  ); /** Generated text and icon color on info secondary backgrounds */
+  --storm-color-info-secondary-active: var(
+    --storm-color-info-border
+  ); /** Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% brighter) */
+  --storm-color-info-link-hovered: var(
+    --storm-color-info-primary-hovered
+  ); /** Generated info hyperlink text color (matches primary) (hovered, 13% brighter) */
+  --storm-color-info-link-active: var(
+    --storm-color-info-primary-active
+  ); /** Generated info hyperlink text color (matches primary) (active, 25% brighter) */
+  --storm-color-info-link-inactive: var(
+    --storm-color-info-primary-inactive
+  ); /** Generated info hyperlink text color (matches primary) (inactive, 20% less bright) */
+  --storm-color-info-link-disabled: var(
+    --storm-color-info-primary-disabled
+  ); /** Generated info hyperlink text color (matches primary) (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-discovery-primary: var(
+    --storm-color-purple-4
+  ); /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. */
+  --storm-color-discovery-secondary: var(
+    --storm-color-purple-9
+  ); /** Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. */
+  --storm-color-discovery-on-primary: var(
+    --storm-color-neutral-1
+  ); /** Generated text and icon color on discovery primary backgrounds */
+  --storm-color-discovery-on-secondary: var(
+    --storm-color-neutral-1
+  ); /** Generated text and icon color on discovery secondary backgrounds */
+  --storm-color-discovery-secondary-active: var(
+    --storm-color-discovery-border
+  ); /** Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 25% brighter) */
+  --storm-color-discovery-link-hovered: var(
+    --storm-color-discovery-primary-hovered
+  ); /** Generated discovery hyperlink text color (matches primary) (hovered, 13% brighter) */
+  --storm-color-discovery-link-active: var(
+    --storm-color-discovery-primary-active
+  ); /** Generated discovery hyperlink text color (matches primary) (active, 25% brighter) */
+  --storm-color-discovery-link-inactive: var(
+    --storm-color-discovery-primary-inactive
+  ); /** Generated discovery hyperlink text color (matches primary) (inactive, 20% less bright) */
+  --storm-color-discovery-link-disabled: var(
+    --storm-color-discovery-primary-disabled
+  ); /** Generated discovery hyperlink text color (matches primary) (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-success-primary: var(
+    --storm-color-green-4
+  ); /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. */
+  --storm-color-success-on-primary: var(
+    --storm-color-neutral-1
+  ); /** Generated text and icon color on success primary backgrounds */
+  --storm-color-success-backdrop: var(
+    --storm-color-brand-backdrop
+  ); /** Generated success overlay backdrop color (primary, 30% darker at 75% opacity) */
+  --storm-color-success-on-secondary: var(
+    --storm-color-neutral-1
+  ); /** Generated text and icon color on success secondary backgrounds */
+  --storm-color-success-secondary-active: var(
+    --storm-color-success-border
+  ); /** Generated low-emphasis success background for the dark theme (active, 25% brighter) */
+  --storm-color-success-secondary-inactive: var(
+    --storm-color-neutral-13
+  ); /** Generated low-emphasis success background for the dark theme (inactive, 20% less bright) */
+  --storm-color-success-link-hovered: var(
+    --storm-color-success-primary-hovered
+  ); /** Generated success hyperlink text color (matches primary) (hovered, 13% brighter) */
+  --storm-color-success-link-active: var(
+    --storm-color-success-primary-active
+  ); /** Generated success hyperlink text color (matches primary) (active, 25% brighter) */
+  --storm-color-success-link-inactive: var(
+    --storm-color-success-primary-inactive
+  ); /** Generated success hyperlink text color (matches primary) (inactive, 20% less bright) */
+  --storm-color-success-link-disabled: var(
+    --storm-color-success-primary-disabled
+  ); /** Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 30% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-shadow-resting-xsmall: var(
+    --storm-shadow-2xs
+  ); /** Smallest resting shadow (`shadow.2xs`): a single 1px edge under the element. Use it to give flat controls, such as inputs and segmented buttons, a hint of depth. */
+  --storm-color-shadow-resting-small: var(
+    --storm-shadow-xs
+  ); /** Small resting shadow (`shadow.xs`). Use it for cards, tiles and buttons sitting directly on the canvas. */
+  --storm-color-shadow-resting-medium: var(
+    --storm-shadow-sm
+  ); /** Medium resting shadow (`shadow.sm`). Use it for raised cards and panels that need more separation from the canvas than `resting.small`. */
+  --storm-color-shadow-floating-small: var(
+    --storm-shadow-md
+  ); /** Small floating shadow (`shadow.md`). Use it for compact floating content, such as tooltips and dropdown menus. */
+  --storm-color-shadow-floating-medium: var(
+    --storm-shadow-lg
+  ); /** Medium floating shadow (`shadow.lg`). Use it for popovers, menus and other anchored panels. */
+  --storm-color-shadow-floating-large: var(
+    --storm-shadow-xl
+  ); /** Large floating shadow (`shadow.xl`). Use it for dialogs, drawers and sheets that sit above the whole page. */
+  --storm-color-shadow-floating-xlarge: var(
+    --storm-shadow-2xl
+  ); /** Largest floating shadow (`shadow.2xl`). Use it for the highest-elevation content, such as full-screen modals or command palettes. */
+  --storm-color-shadow-inset: var(
+    --storm-inset-shadow-xs
+  ); /** Inset shadow (`inset-shadow.xs`) for recessed elements. Use it for wells and pressed states that should read as sunken into their surface. */
+  --storm-color-data-neutral-emphasis: var(
+    --storm-color-neutral-1
+  ); /** High-emphasis neutral (gray) data color. Use it for the primary mark of a neutral series, such as lines, bars, points and legend swatches. Suits baselines, totals and comparison series that should not compete with colored data. */
+  --storm-color-data-red-emphasis: var(
+    --storm-color-red-7
+  ); /** High-emphasis red data color. Use it for the primary mark of a red series, such as lines, bars, points and legend swatches. */
+  --storm-color-data-red-subtle: var(
+    --storm-color-red-9
+  ); /** Low-emphasis red data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `red.emphasis` series. */
+  --storm-color-data-orange-emphasis: var(
+    --storm-color-orange-6
+  ); /** High-emphasis orange data color. Use it for the primary mark of a orange series, such as lines, bars, points and legend swatches. */
+  --storm-color-data-orange-subtle: var(
+    --storm-color-orange-9
+  ); /** Low-emphasis orange data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `orange.emphasis` series. */
+  --storm-color-data-yellow-emphasis: var(
+    --storm-color-yellow-5
+  ); /** High-emphasis yellow data color. Use it for the primary mark of a yellow series, such as lines, bars, points and legend swatches. */
+  --storm-color-data-yellow-subtle: var(
+    --storm-color-yellow-9
+  ); /** Low-emphasis yellow data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `yellow.emphasis` series. */
+  --storm-color-data-green-emphasis: var(
+    --storm-color-green-6
+  ); /** High-emphasis green data color. Use it for the primary mark of a green series, such as lines, bars, points and legend swatches. */
+  --storm-color-data-green-subtle: var(
+    --storm-color-green-7
+  ); /** Low-emphasis green data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `green.emphasis` series. */
+  --storm-color-data-blue-emphasis: var(
+    --storm-color-blue-7
+  ); /** High-emphasis blue data color. Use it for the primary mark of a blue series, such as lines, bars, points and legend swatches. */
+  --storm-color-data-blue-subtle: var(
+    --storm-color-blue-9
+  ); /** Low-emphasis blue data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `blue.emphasis` series. */
+  --storm-color-data-purple-emphasis: var(
+    --storm-color-purple-6
+  ); /** High-emphasis purple data color. Use it for the primary mark of a purple series, such as lines, bars, points and legend swatches. */
+  --storm-color-data-purple-subtle: var(
+    --storm-color-purple-9
+  ); /** Low-emphasis purple data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `purple.emphasis` series. */
+  --storm-color-data-pink-emphasis: var(
+    --storm-color-pink-6
+  ); /** High-emphasis pink data color. Use it for the primary mark of a pink series, such as lines, bars, points and legend swatches. */
+  --storm-color-data-pink-subtle: var(
+    --storm-color-pink-9
+  ); /** Low-emphasis pink data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `pink.emphasis` series. */
+  --storm-color-emphasis-active: var(
+    --storm-color-neutral-1
+  ); /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, dark contrast primitive) */
+  --storm-color-emphasis-inactive: var(
+    --storm-color-base-primary-inactive
+  ); /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% of the dark contrast primitive's brightness) */
+  --storm-color-ink-hovered: var(
+    --storm-color-neutral-1
+  ); /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 25% brighter) */
+  --storm-color-ink-active: var(
+    --storm-color-neutral-1
+  ); /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, dark contrast primitive) */
+  --storm-color-ink-inactive: var(
+    --storm-color-base-primary-inactive
+  ); /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 50% of the dark contrast primitive's brightness) */
+  --storm-color-subtle-active: var(
+    --storm-color-neutral-1
+  ); /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, dark contrast primitive) */
+  --storm-color-subtle-inactive: var(
+    --storm-color-base-primary-inactive
+  ); /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% of the dark contrast primitive's brightness) */
+  --storm-color-sunken-hovered: var(
+    --storm-color-neutral-13
+  ); /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 15% brighter) */
+  --storm-color-sunken-active: var(
+    --storm-color-neutral-13
+  ); /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 30% brighter) */
+  --storm-color-sunken-inactive: var(
+    --storm-color-neutral-13
+  ); /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 10% less bright) */
+  --storm-color-sunken-disabled: var(
+    --storm-color-neutral-13
+  ); /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-canvas-hovered: var(
+    --storm-color-neutral-13
+  ); /** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 15% brighter) */
+  --storm-color-canvas-active: var(
+    --storm-color-neutral-13
+  ); /** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 30% brighter) */
+  --storm-color-canvas-inactive: var(
+    --storm-color-neutral-13
+  ); /** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 10% less bright) */
+  --storm-color-canvas-disabled: var(
+    --storm-color-neutral-13
+  ); /** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 65% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-surface-hovered: var(
+    --storm-color-neutral-13
+  ); /** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 15% brighter) */
+  --storm-color-surface-inactive: var(
+    --storm-color-neutral-13
+  ); /** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 10% less bright) */
+  --storm-color-elevated-hovered: var(
+    --storm-color-surface-disabled
+  ); /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 15% brighter) */
+  --storm-color-elevated-inactive: var(
+    --storm-color-neutral-13
+  ); /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% less bright) */
+  --storm-color-floating-inactive: var(
+    --storm-color-neutral-13
+  ); /** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 10% less bright) */
+  --storm-color-hairline-active: var(
+    --storm-color-neutral-1
+  ); /** Low-contrast color for borders, dividers and separators. (active, dark contrast primitive) */
+  --storm-color-hairline-inactive: var(
+    --storm-color-base-primary-inactive
+  ); /** Low-contrast color for borders, dividers and separators. (inactive, 50% of the dark contrast primitive's brightness) */
+  --storm-border-radius-container: var(
+    --storm-border-radius-2xl
+  ); /** Corner radius for large framed regions that group other content (8px, `border-radius.xl`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText. */
+  --storm-border-radius-trigger: var(
+    --storm-border-radius-md
+  ); /** Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators). */
+  --storm-border-radius-card: var(
+    --storm-border-radius-xl
+  ); /** Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker. */
+  --storm-border-radius-button: var(
+    --storm-border-radius-lg
+  ); /** Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it. */
+  --storm-border-radius-tag: var(
+    --storm-border-radius-sm
+  ); /** Corner radius for tags (6px, `border-radius.md`). Used by Tag. */
+  --storm-border-radius-control: var(
+    --storm-border-radius-md
+  ); /** Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating. */
+  --storm-border-radius-checkbox: var(
+    --storm-border-radius-sm
+  ); /** Corner radius for the checkbox box (6px, `border-radius.md`). Kept smaller than `control` so the small box still reads as a square rather than a pill. Used by Checkbox. */
+  --storm-border-radius-tab: var(
+    --storm-border-radius-lg
+  ); /** Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items. */
+  --storm-border-radius-tabs: var(
+    --storm-border-radius-xl
+  ); /** Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup. */
+  --storm-border-radius-dialog: var(
+    --storm-border-radius-lg
+  ); /** Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog. */
+  --storm-border-radius-sheet: var(
+    --storm-border-radius-zero
+  ); /** Corner radius for sheets (0px, `border-radius.zero`). Sheets slide in flush against a viewport edge, so their corners stay square. Applied by Sheet to its exposed corners. */
+  --storm-border-radius-drawer: var(
+    --storm-border-radius-lg
+  ); /** Corner radius for drawers (32px, `border-radius.4xl`). The large rounding marks a panel that slides over the page from an edge. Used as the default `borderRadius` of Drawer. */
+  --storm-border-radius-popover: var(
+    --storm-border-radius-md
+  ); /** Corner radius for popovers and dropdown menus (6px, `border-radius.md`). Used by Popover and the Select dropdown list. */
+  --storm-border-radius-tooltip: var(
+    --storm-border-radius-md
+  ); /** Corner radius for tooltips (6px, `border-radius.md`). Used by Tooltip. */
+  --storm-typography-display: 16px/var(--storm-line-height-normal) "Storm Sans"; /** Default UI display face: Storm Sans with normal leading. Size and weight come from the component. Use it for headings, labels and other short, prominent UI text such as titles, buttons, tags and toggles. Used by HeadingText (`base` variant, all levels), LabelText, Button, LinkText, Tag, Toggle, Breadcrumb, TypeTable and CodeBlock/CreditCardInput chrome. */
+  --storm-typography-editorial: 16px/var(--storm-line-height-normal)
+    "Storm Serif"; /** Editorial display face: Storm Serif with normal leading. Size and weight come from the component. Use it for long-form, content-led headings such as article, blog and marketing page titles, where a warmer, bookish tone fits better than `display`. Used by HeadingText's `editorial` variant for the larger levels; the smallest levels fall back to `display` for legibility. */
+  --storm-typography-body: 16px/var(--storm-line-height-snug) "Storm Sans"; /** Running-text face: Storm Sans with snug leading. Size and weight come from the component. Use it for paragraphs, descriptions and other multi-line reading copy, from dense table rows and sidebars to article body text. Used by BodyText, LinkText and Breadcrumb. */
+  --storm-typography-caption: italic 16px/var(--storm-line-height-snug)
+    "Storm Sans"; /** Supporting-text face: Storm Sans italic with snug leading. Size and weight come from the component. Use it for secondary, low-emphasis text that annotates something else, such as helper and validation messages, small labels, value readouts and metadata. Used by Field helper and validation text, ValidationText, Badge, Slider value labels, ColorPicker and EyebrowText. */
+  --storm-typography-eyebrow: 16px/var(--storm-line-height-none)
+    "Google Sans Code"; /** Kicker face: Google Sans Code with no extra leading, so it sits tight against the content below. Size and weight come from the component. Use it for the short, usually uppercase category or section label placed directly above a heading. Used by EyebrowText. */
+  --storm-typography-code: 16px/var(--storm-line-height-none) "Google Sans Code"; /** Monospace face: Google Sans Code with snug leading. Size and weight come from the component. Use it for anything that must keep fixed-width alignment or reads as a literal value, such as source code, file paths, identifiers, keyboard input, card numbers and step counters. Used by CodeBlock, InlineCodeText, FileTree, FilePicker, Stepper, CreditCardInput and code content inside Accordion. */
+  --storm-color-emphasis: var(
+    --storm-color-neutral-2
+  ); /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. */
+  --storm-color-sunken: var(
+    --storm-color-black
+  ); /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. */
+  --storm-color-canvas: var(
+    --storm-color-neutral-16
+  ); /** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. */
+  --storm-color-surface: var(
+    --storm-color-neutral-15
+  ); /** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. */
+  --storm-color-elevated: var(
+    --storm-color-neutral-14
+  ); /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. */
+  --storm-color-base-primary: var(
+    --storm-color-white
+  ); /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. */
+  --storm-color-danger-link: var(
+    --storm-color-danger-primary
+  ); /** Generated danger hyperlink text color (matches primary) */
+  --storm-color-warning-link: var(
+    --storm-color-warning-primary
+  ); /** Generated warning hyperlink text color (matches primary) */
+  --storm-color-info-link: var(
+    --storm-color-info-primary
+  ); /** Generated info hyperlink text color (matches primary) */
+  --storm-color-discovery-link: var(
+    --storm-color-discovery-primary
+  ); /** Generated discovery hyperlink text color (matches primary) */
+  --storm-color-success-link: var(
+    --storm-color-success-primary
+  ); /** Generated success hyperlink text color (matches primary) */
+  --storm-color-data-neutral-subtle: var(
+    --storm-color-neutral-14
+  ); /** Low-emphasis neutral (gray) data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `neutral.emphasis` series. */
+  --storm-ring-base-offset:
+    0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 7px #ffffff1a; /** Generated base 3px focus ring with a 3px gap */
+  --storm-ring-base-subtle-offset:
+    0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #ffffff1a; /** Generated base 1px focus ring with a 2px gap */
+  --storm-ring-brand-offset:
+    0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 7px #3be4be26; /** Generated brand 3px focus ring with a 3px gap */
+  --storm-ring-brand-subtle-offset:
+    0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #3be4be26; /** Generated brand 1px focus ring with a 2px gap */
+  --storm-ring-danger-offset:
+    0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 7px #d4426726; /** Generated danger 3px focus ring with a 3px gap */
+  --storm-ring-danger-subtle-offset:
+    0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #d4426726; /** Generated danger 1px focus ring with a 2px gap */
+  --storm-ring-warning-offset:
+    0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 7px #f9c25e26; /** Generated warning 3px focus ring with a 3px gap */
+  --storm-ring-warning-subtle-offset:
+    0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #f9c25e26; /** Generated warning 1px focus ring with a 2px gap */
+  --storm-ring-info-offset:
+    0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 7px #4d8eff26; /** Generated info 3px focus ring with a 3px gap */
+  --storm-ring-info-subtle-offset:
+    0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #4d8eff26; /** Generated info 1px focus ring with a 2px gap */
+  --storm-ring-discovery-offset:
+    0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 7px #9277da26; /** Generated discovery 3px focus ring with a 3px gap */
+  --storm-ring-discovery-subtle-offset:
+    0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #9277da26; /** Generated discovery 1px focus ring with a 2px gap */
+  --storm-ring-success-offset:
+    0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 7px #45c79126; /** Generated success 3px focus ring with a 3px gap */
+  --storm-ring-success-subtle-offset:
+    0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #45c79126; /** Generated success 1px focus ring with a 2px gap */
+}

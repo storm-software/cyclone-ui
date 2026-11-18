@@ -1,21 +1,22 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import type { Meta, StoryObj } from "@storybook/react";
+ ------------------------------------------------------------------- */
+
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useEffect, useState } from "react";
 import { NumberText } from "./NumberText";
 
@@ -49,21 +50,9 @@ export const Brand: Story = {
   }
 };
 
-export const Alternate: Story = {
+export const Discovery: Story = {
   args: {
-    theme: "alternate"
-  }
-};
-
-export const Accent: Story = {
-  args: {
-    theme: "accent"
-  }
-};
-
-export const Help: Story = {
-  args: {
-    theme: "help"
+    theme: "discovery"
   }
 };
 
@@ -88,17 +77,5 @@ export const Warning: Story = {
 export const Danger: Story = {
   args: {
     theme: "danger"
-  }
-};
-
-export const Positive: Story = {
-  args: {
-    theme: "positive"
-  }
-};
-
-export const Negative: Story = {
-  args: {
-    theme: "negative"
   }
 };

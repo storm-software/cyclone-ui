@@ -1,0 +1,39 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/terrain-footer/tsconfig.tsbuildinfo",
+    "jsx": "preserve",
+    "ignoreDeprecations": "6.0",
+    "lib": ["ESnext", "DOM"],
+    "rootDir": ".",
+    "types": [
+      "node",
+      "@nx/react/typings/cssmodule.d.ts",
+      "@nx/react/typings/image.d.ts"
+    ],
+    "outDir": "../../dist/out-tsc/components/terrain-footer"
+  },
+  "references": [
+    {
+      "path": "../../tools/config"
+    },
+    {
+      "path": "../footer"
+    },
+    {
+      "path": "../icons"
+    },
+    {
+      "path": "../link"
+    },
+    {
+      "path": "../heading-text"
+    },
+    {
+      "path": "../body-text"
+    }
+  ],
+  "files": [],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+}

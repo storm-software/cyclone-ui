@@ -1,0 +1,30 @@
+{
+  "name": "@cyclone-ui/maps",
+  "version": "0.0.1",
+  "type": "module",
+  "private": false,
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "maps/styles"
+  },
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./*": "./*",
+    "./styles/*": "./styles/*",
+    "./bin/cli": "./dist/bin/cli.mjs"
+  },
+  "bin": {
+    "maps": "./dist/bin/cli.mjs"
+  },
+  "dependencies": {
+    "@maplibre/maplibre-gl-style-spec": "catalog:",
+    "@stryke/string-format": "catalog:"
+  },
+  "devDependencies": {
+    "@powerlines/plugin-tsdown": "catalog:",
+    "@types/node": "^22.20.5",
+    "tsdown": "catalog:",
+    "tsx": "catalog:"
+  }
+}

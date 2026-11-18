@@ -25,6 +25,9 @@
 *.tar filter=lfs diff=lfs merge=lfs -text
 *.zip filter=lfs diff=lfs merge=lfs -text
 
+# Keep the tiny qrank test fixture available in checkouts that skip LFS.
+maps/tiles/src/test/resources/qrank_fixture.csv.gz -filter -diff -merge -text
+
 # Documents
 *.pdf filter=lfs diff=lfs merge=lfs -text
 
@@ -51,3 +54,48 @@ components/** -text linguist-vendored
 
 # Make dist folder indexable for github search
 dist/** linguist-generated=false
+
+pnpm-lock.yaml linguist-generated=true
+
+###############################
+# Razorwind generated outputs  #
+###############################
+
+# Installed by pnpm bootstrap. The driver defers generation to the merge/commit
+# hooks so build-tokens reads the merged sources and runs once for all outputs.
+# Keep this list in sync with razorwind.config.ts; never include token inputs
+# or handwritten helpers. See tools/scripts/MERGING.md for setup and recovery.
+/DESIGN.md merge=razorwind linguist-generated=true
+/INSTALL.md merge=razorwind linguist-generated=true
+/registry.json merge=razorwind linguist-generated=true
+/packages/cli/razorwind/** merge=razorwind linguist-generated=true
+/packages/tokens/src/css/** merge=razorwind linguist-generated=true
+/packages/tokens/src/js/** merge=razorwind linguist-generated=true
+/packages/tokens/src/tailwindcss/** merge=razorwind linguist-generated=true
+/packages/tokens/src/tamagui/config.ts merge=razorwind linguist-generated=true
+/packages/tokens/src/tamagui/INSTALL.md merge=razorwind linguist-generated=true
+/packages/eslint-plugin/src/index.ts merge=razorwind linguist-generated=true
+/packages/eslint-plugin/src/INSTALL.md merge=razorwind linguist-generated=true
+/packages/stylelint-plugin/src/index.ts merge=razorwind linguist-generated=true
+/packages/stylelint-plugin/src/INSTALL.md merge=razorwind linguist-generated=true
+/packages/shiki/src/*/theme.json merge=razorwind linguist-generated=true
+/packages/shiki/src/*/INSTALL.md merge=razorwind linguist-generated=true
+/maps/styles/__generated__/** merge=razorwind linguist-generated=true
+/docs/themes/** merge=razorwind linguist-generated=true
+/docs/llms/** merge=razorwind linguist-generated=true
+/apps/storybook/src/INSTALL.md merge=razorwind linguist-generated=true
+/apps/storybook/src/Tokens.mdx merge=razorwind linguist-generated=true
+/apps/storybook/src/Colors.mdx merge=razorwind linguist-generated=true
+/apps/storybook/src/Typography.mdx merge=razorwind linguist-generated=true
+/apps/storybook/src/Icons.mdx merge=razorwind linguist-generated=true
+/apps/storybook/src/Fonts.mdx merge=razorwind linguist-generated=true
+/apps/storybook/src/Fonts/*.mdx merge=razorwind linguist-generated=true
+/apps/storybook/src/blocks/ColorPalette.tsx merge=razorwind linguist-generated=true
+/apps/storybook/src/blocks/Typeset.tsx merge=razorwind linguist-generated=true
+/apps/storybook/src/blocks/TokenTable.tsx merge=razorwind linguist-generated=true
+/apps/storybook/src/blocks/IconGallery.tsx merge=razorwind linguist-generated=true
+/apps/storybook/src/blocks/FontSpecimen.tsx merge=razorwind linguist-generated=true
+/apps/storybook/src/blocks/ThemeVariant.ts merge=razorwind linguist-generated=true
+/apps/storybook/src/blocks/index.ts merge=razorwind linguist-generated=true
+/apps/storybook/src/tokens.json merge=razorwind linguist-generated=true
+/apps/storybook/src/theme.ts merge=razorwind linguist-generated=true

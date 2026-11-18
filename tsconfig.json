@@ -1,0 +1,437 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Cyclone UI - Monorepo",
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "ignoreDeprecations": "6.0"
+  },
+  "references": [
+    {
+      "path": "./tools/config"
+    },
+    {
+      "path": "./tools/nx"
+    },
+    {
+      "path": "./packages/tokens"
+    },
+    {
+      "path": "./packages/state"
+    },
+    {
+      "path": "./packages/helpers"
+    },
+    {
+      "path": "./packages/registry-api"
+    },
+    {
+      "path": "./packages/theme-builder"
+    },
+    {
+      "path": "./components/pdf-document-display"
+    },
+    {
+      "path": "./components/themeable-gradient"
+    },
+    {
+      "path": "./components/previous-button"
+    },
+    {
+      "path": "./components/validation-text"
+    },
+    {
+      "path": "./components/visually-hidden"
+    },
+    {
+      "path": "./components/alert-dialog"
+    },
+    {
+      "path": "./components/eyebrow-text"
+    },
+    {
+      "path": "./components/heading-text"
+    },
+    {
+      "path": "./components/date-picker"
+    },
+    {
+      "path": "./components/time-picker"
+    },
+    {
+      "path": "./components/file-picker"
+    },
+    {
+      "path": "./components/file"
+    },
+    {
+      "path": "./components/next-button"
+    },
+    {
+      "path": "./components/submit-button"
+    },
+    {
+      "path": "./components/number-text"
+    },
+    {
+      "path": "./components/radio-group"
+    },
+    {
+      "path": "./components/scroll-view"
+    },
+    {
+      "path": "./components/breadcrumb"
+    },
+    {
+      "path": "./components/bytes-text"
+    },
+    {
+      "path": "./components/data-table"
+    },
+    {
+      "path": "./components/pagination"
+    },
+    {
+      "path": "./components/accordion"
+    },
+    {
+      "path": "./components/collapsible"
+    },
+    {
+      "path": "./components/body-text"
+    },
+    {
+      "path": "./components/inline-code-text"
+    },
+    {
+      "path": "./components/kbd"
+    },
+    {
+      "path": "./components/dropdown-button"
+    },
+    {
+      "path": "./components/copy-page-dropdown-button"
+    },
+    {
+      "path": "./components/floating-toolbar"
+    },
+    {
+      "path": "./components/container"
+    },
+    {
+      "path": "./components/calendar"
+    },
+    {
+      "path": "./components/link-text"
+    },
+    {
+      "path": "./apps/registry-worker"
+    },
+    {
+      "path": "./components/checkbox"
+    },
+    {
+      "path": "./components/progress"
+    },
+    {
+      "path": "./components/callout"
+    },
+    {
+      "path": "./components/message"
+    },
+    {
+      "path": "./components/popover"
+    },
+    {
+      "path": "./components/spinner"
+    },
+    {
+      "path": "./components/tooltip"
+    },
+    {
+      "path": "./components/button"
+    },
+    {
+      "path": "./components/dialog"
+    },
+    {
+      "path": "./components/select"
+    },
+    {
+      "path": "./components/story"
+    },
+    {
+      "path": "./components/switch"
+    },
+    {
+      "path": "./components/alert"
+    },
+    {
+      "path": "./components/badge"
+    },
+    {
+      "path": "./components/tag"
+    },
+    {
+      "path": "./components/toast"
+    },
+    {
+      "path": "./components/toggle"
+    },
+    {
+      "path": "./components/toggle-group"
+    },
+    {
+      "path": "./components/field"
+    },
+    {
+      "path": "./components/input"
+    },
+    {
+      "path": "./components/stepper"
+    },
+    {
+      "path": "./components/timeline"
+    },
+    {
+      "path": "./components/table"
+    },
+    {
+      "path": "./components/card"
+    },
+    {
+      "path": "./components/form"
+    },
+    {
+      "path": "./components/link"
+    },
+    {
+      "path": "./components/tabs"
+    },
+    {
+      "path": "./components/text-area"
+    },
+    {
+      "path": "./components/sheet"
+    },
+    {
+      "path": "./components/drawer"
+    },
+    {
+      "path": "./components/code-block"
+    },
+    {
+      "path": "./components/package-command-code-block"
+    },
+    {
+      "path": "./components/anchor"
+    },
+    {
+      "path": "./components/file-tree"
+    },
+    {
+      "path": "./components/navigation-header"
+    },
+    {
+      "path": "./components/footer"
+    },
+    {
+      "path": "./components/error-page"
+    },
+    {
+      "path": "./components/terrain-footer"
+    },
+    {
+      "path": "./components/circular-progress"
+    },
+    {
+      "path": "./apps/storybook"
+    },
+    {
+      "path": "./packages/cli"
+    },
+    {
+      "path": "./components/glitch-separator"
+    },
+    {
+      "path": "./components/table-of-contents"
+    },
+    {
+      "path": "./components/redacted-animation"
+    },
+    {
+      "path": "./components/scramble-animation"
+    },
+    {
+      "path": "./components/divider"
+    },
+    {
+      "path": "./components/type-table"
+    },
+    {
+      "path": "./components/icons"
+    },
+    {
+      "path": "./components/illustrations"
+    },
+    {
+      "path": "./components/rating"
+    },
+    {
+      "path": "./components/like-button"
+    },
+    {
+      "path": "./components/feedback"
+    },
+    {
+      "path": "./components/slider"
+    },
+    {
+      "path": "./components/context-menu"
+    },
+    {
+      "path": "./components/tag-picker"
+    },
+    {
+      "path": "./components/overlay"
+    },
+    {
+      "path": "./components/page"
+    },
+    {
+      "path": "./components/article-page"
+    },
+    {
+      "path": "./components/article-progress-header"
+    },
+    {
+      "path": "./components/docs-page"
+    },
+    {
+      "path": "./packages/shiki"
+    },
+    {
+      "path": "./packages/eslint-plugin"
+    },
+    {
+      "path": "./components/confetti-burst"
+    },
+    {
+      "path": "./packages/stylelint-plugin"
+    },
+    {
+      "path": "./components/phone-number-input"
+    },
+    {
+      "path": "./components/password-input"
+    },
+    {
+      "path": "./components/number-input"
+    },
+    {
+      "path": "./components/search-input"
+    },
+    {
+      "path": "./components/otp-input"
+    },
+    {
+      "path": "./components/skeleton"
+    },
+    {
+      "path": "./components/color-compositions"
+    },
+    {
+      "path": "./components/topographic-background"
+    },
+    {
+      "path": "./components/address-input"
+    },
+    {
+      "path": "./components/manual-address-input"
+    },
+    {
+      "path": "./components/color-area"
+    },
+    {
+      "path": "./components/color-picker"
+    },
+    {
+      "path": "./components/credit-card-input"
+    },
+    {
+      "path": "./maps/styles"
+    },
+    {
+      "path": "./components/preview-link"
+    },
+    {
+      "path": "./components/search-dialog"
+    },
+    {
+      "path": "./components/privacy-choices"
+    },
+    {
+      "path": "./components/modal"
+    },
+    {
+      "path": "./components/ripple-animation"
+    },
+    {
+      "path": "./components/composed-chart"
+    },
+    {
+      "path": "./components/radial-chart"
+    },
+    {
+      "path": "./components/sankey-chart"
+    },
+    {
+      "path": "./components/radar-chart"
+    },
+    {
+      "path": "./components/area-chart"
+    },
+    {
+      "path": "./components/line-chart"
+    },
+    {
+      "path": "./components/bar-chart"
+    },
+    {
+      "path": "./components/pie-chart"
+    },
+    {
+      "path": "./components/chart"
+    },
+    {
+      "path": "./email"
+    },
+    {
+      "path": "./packages/nextjs"
+    },
+    {
+      "path": "./packages/vite"
+    },
+    {
+      "path": "./components/navigation-sidebar"
+    },
+    {
+      "path": "./components/avatar"
+    },
+    {
+      "path": "./components/theme-select"
+    },
+    {
+      "path": "./components/theme-toggler"
+    },
+    {
+      "path": "./components/copy-button"
+    },
+    {
+      "path": "./components/color-token"
+    },
+    {
+      "path": "./components/font-preview"
+    }
+  ],
+  "files": []
+}

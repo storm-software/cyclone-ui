@@ -1,21 +1,22 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import type { FileResult } from "@storm-stack/types/utility-types/file";
+ ------------------------------------------------------------------- */
+
+import type { FileResult } from "@stryke/types/file";
 import type {
   Atom,
   createStore,
@@ -25,17 +26,15 @@ import type {
   SetStateAction,
   WritableAtom
 } from "jotai";
-import { RESET } from "jotai/utils";
+import type { RESET } from "jotai/utils";
 
 export type JotaiStore = ReturnType<typeof createStore>;
 
 export type SetStateActionWithReset<Value> =
-  | Value
-  | typeof RESET
-  | ((prev: Value) => Value | typeof RESET);
-export type WithInitialValue<Value> = {
+  Value | typeof RESET | ((prev: Value) => Value | typeof RESET);
+export interface WithInitialValue<Value> {
   init: Value;
-};
+}
 
 /**
  * A type that checks if the value is a [Jotai](https://jotai.org) `Atom` object
@@ -65,7 +64,7 @@ export type IsWriteOnlyAtom<T> = [T] extends [
  */
 export type IsResetAtom<T> =
   IsWritableAtom<T> extends true
-    ? ExtractAtomArgs<T> extends [SetStateActionWithReset<infer U>]
+    ? ExtractAtomArgs<T> extends [SetStateActionWithReset<infer _U>]
       ? true
       : false
     : false;
@@ -80,7 +79,18 @@ export type AtomRecord<T> = {
   [K in keyof T]: Atom<T[K]>;
 };
 
-export type WritableAtomRecord<T> = {
+/**
+ * Constraint for objects whose values are Jotai atoms.
+ *
+ * Prefer `TState extends AtomRecordConstraint<TState>` over
+ * `TState extends AtomRecord<any>` — the latter requires a string index
+ * signature and rejects fixed-key interfaces such as `FormAtoms`.
+ */
+export type AtomRecordConstraint<T extends object = object> = {
+  [K in keyof T]: Atom<unknown>;
+};
+
+export type WritableAtomRecord<T extends object = object> = {
   [K in keyof T]: WritableAtom<
     T[K],
     [SetStateAction<T[K]> | typeof RESET],
@@ -88,12 +98,18 @@ export type WritableAtomRecord<T> = {
   >;
 };
 
-export type ExtractAtomRecordValues<T extends AtomRecord<any>> = {
+export type ExtractAtomRecordValues<T extends AtomRecordConstraint<T>> = {
   [K in keyof T]: ExtractAtomValue<T[K]>;
 };
 
 export type ClientFileResult = FileResult & {
   id: number;
+
+  /**
+   * How much of the file has been uploaded, from 0 to 100. While set below
+   * 100, the file shows an upload progress bar.
+   */
+  progress?: number;
 };
 
 export type SplitAtomAction<TValue> =

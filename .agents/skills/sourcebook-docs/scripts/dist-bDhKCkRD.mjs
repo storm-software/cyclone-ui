@@ -1,0 +1,1 @@
+import{createHash as e}from"node:crypto";const t=globalThis.process?.getBuiltinModule?.(`crypto`)?.hash,n=`sha256`,r=`base64url`;function i(i){if(t)return t(n,i,r);let a=e(n).update(i);return globalThis.process?.versions?.webcontainer?a.digest().toString(r):a.digest(r)}export{i as digest};

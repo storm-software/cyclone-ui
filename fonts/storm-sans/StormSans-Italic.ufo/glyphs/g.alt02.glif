@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="g.alt02" format="2">
+  <advance width="572"/>
+  <anchor x="314.0" y="540.0" name="top"/>
+  <outline>
+    <component base="g"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.talk</key>
+      <string>
+
+/* Y direction */
+ResYAnchor(5,15)
+ResYDist(5,83)
+ResYAnchor(27,7)
+YShift(27,30)
+ResYDist(30,33)
+ResYDist(27,63)
+ResYAnchor(76,10)
+ResYDist(76,50)
+YInterpolate(76,13,50)
+YInterpolate(50,41,63)
+ResYDist(41,54)
+YInterpolate(41,20,54)
+/* X direction */
+Smooth()
+</string>
+    </dict>
+  </lib>
+</glyph>

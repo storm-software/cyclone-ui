@@ -1,22 +1,23 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { BodyText } from "@cyclone-ui/body-text";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { LinkText } from "./LinkText";
 
 const meta: Meta<typeof LinkText> = {
@@ -38,6 +39,30 @@ export const Base: Story = {
   args: {}
 };
 
+export const Faded: Story = {
+  args: {
+    faded: true
+  }
+};
+
+export const Brand: Story = {
+  args: {
+    theme: "brand"
+  }
+};
+
+export const Small: Story = {
+  args: {
+    size: "sm"
+  }
+};
+
+export const Medium: Story = {
+  args: {
+    size: "md"
+  }
+};
+
 export const Disabled: Story = {
   args: {
     disabled: true
@@ -56,103 +81,79 @@ export const BaseVariant: Story = {
   }
 };
 
-export const BaseInverseVariant: Story = {
+export const EmphasisVariant: Story = {
   args: {
-    variant: "base",
+    variant: "emphasis"
+  }
+};
+
+export const InkVariant: Story = {
+  args: {
+    variant: "ink"
+  }
+};
+
+export const SubtleVariant: Story = {
+  args: {
+    variant: "subtle"
+  }
+};
+
+export const Mixed: Story = {
+  args: {
+    variant: "emphasis",
+    mixed: true
+  }
+};
+
+export const MixedInverse: Story = {
+  args: {
+    variant: "emphasis",
+    mixed: true,
     inverse: true
   }
 };
 
-export const MixedVariant: Story = {
+export const Themed: Story = {
   args: {
-    variant: "mixed",
-    underline: "static"
+    themed: true
   }
 };
 
-export const MixedInverseVariant: Story = {
+export const ThemedMixed: Story = {
   args: {
-    variant: "mixed",
-    inverse: true,
-    underline: "static"
+    variant: "emphasis",
+    mixed: true,
+    themed: true
   }
 };
 
-export const ThemedVariant: Story = {
+export const Discovery: Story = {
   args: {
-    variant: "themed"
+    theme: "discovery"
   }
 };
 
-export const ThemedInverseVariant: Story = {
-  args: {
-    variant: "themed",
-    inverse: true
-  }
-};
-
-export const BaseTheme: Story = {
-  args: {
-    theme: "base"
-  }
-};
-
-export const BrandTheme: Story = {
-  args: {
-    theme: "brand"
-  }
-};
-
-export const AlternateTheme: Story = {
-  args: {
-    theme: "alternate"
-  }
-};
-
-export const HelpTheme: Story = {
-  args: {
-    theme: "help"
-  }
-};
-
-export const LinkTheme: Story = {
-  args: {
-    theme: "link"
-  }
-};
-
-export const ErrorTheme: Story = {
+export const Danger: Story = {
   args: {
     theme: "danger"
   }
 };
 
-export const WarningTheme: Story = {
+export const Warning: Story = {
   args: {
     theme: "warning"
   }
 };
 
-export const InfoTheme: Story = {
+export const Info: Story = {
   args: {
     theme: "info"
   }
 };
 
-export const SuccessTheme: Story = {
+export const Success: Story = {
   args: {
     theme: "success"
-  }
-};
-
-export const PositiveTheme: Story = {
-  args: {
-    theme: "positive"
-  }
-};
-
-export const NegativeTheme: Story = {
-  args: {
-    theme: "negative"
   }
 };

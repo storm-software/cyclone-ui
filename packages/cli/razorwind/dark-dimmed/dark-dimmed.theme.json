@@ -1,0 +1,205 @@
+{
+  "$theme": "dark-dimmed",
+  "colors": {
+    "text": {
+      "banner": {
+        "title": {
+          "primary": "#d9d9d9",
+          "secondary": "#d9d9d9",
+          "tertiary": "#4a4b4e"
+        },
+        "header": {
+          "primary": "#d9d9d9",
+          "secondary": "#4a4b4e",
+          "tertiary": "#4a4b4e"
+        },
+        "footer": {
+          "primary": "#4a4b4e",
+          "secondary": "#4a4b4e",
+          "tertiary": "#4a4b4e"
+        },
+        "command": {
+          "primary": "#d9d9d9",
+          "secondary": "#d9d9d9",
+          "tertiary": "#4a4b4e"
+        },
+        "description": {
+          "primary": "#e6edf3",
+          "secondary": "#4a4b4e",
+          "tertiary": "#4a4b4e"
+        },
+        "link": {
+          "primary": "#8ab6dd",
+          "secondary": "#8ab6dd",
+          "tertiary": "#8ab6dd"
+        }
+      },
+      "heading": {
+        "primary": "#d9d9d9",
+        "secondary": "#d9d9d9",
+        "tertiary": "#4a4b4e"
+      },
+      "body": {
+        "primary": "#e6edf3",
+        "secondary": "#4a4b4e",
+        "tertiary": "#4a4b4e",
+        "link": "#8ab6dd"
+      },
+      "message": {
+        "link": {
+          "help": "#8ab6dd",
+          "success": "#8ab6dd",
+          "info": "#8ab6dd",
+          "debug": "#8ab6dd",
+          "warning": "#8ab6dd",
+          "danger": "#8ab6dd",
+          "error": "#8ab6dd"
+        },
+        "header": {
+          "help": "#604e86",
+          "success": "#b2d5b8",
+          "info": "#2e599b",
+          "debug": "#d5d5d5",
+          "warning": "#836426",
+          "danger": "#75223d",
+          "error": "#75223d"
+        },
+        "footer": {
+          "help": "#4a4b4e",
+          "success": "#4a4b4e",
+          "info": "#4a4b4e",
+          "debug": "#4a4b4e",
+          "warning": "#4a4b4e",
+          "danger": "#4a4b4e",
+          "error": "#4a4b4e"
+        },
+        "description": {
+          "help": "#e6edf3",
+          "success": "#e6edf3",
+          "info": "#e6edf3",
+          "debug": "#e6edf3",
+          "warning": "#e6edf3",
+          "danger": "#e6edf3",
+          "error": "#e6edf3"
+        }
+      },
+      "usage": {
+        "bin": "#d9d9d9",
+        "command": "#d9d9d9",
+        "dynamic": "#4a4b4e",
+        "options": "#2e599b",
+        "args": "#836426",
+        "description": "#4a4b4e"
+      },
+      "prompt": {
+        "icon": {
+          "active": "#d9d9d9",
+          "warning": "#836426",
+          "error": "#75223d",
+          "submitted": "#b2d5b8",
+          "cancelled": "#4a4b4e",
+          "disabled": "#4a4b4e"
+        },
+        "message": {
+          "active": "#e6edf3",
+          "warning": "#836426",
+          "error": "#75223d",
+          "submitted": "#b2d5b8",
+          "cancelled": "#4a4b4e",
+          "disabled": "#4a4b4e"
+        },
+        "input": {
+          "active": "#e6edf3",
+          "warning": "#836426",
+          "error": "#75223d",
+          "submitted": "#b2d5b8",
+          "cancelled": "#4a4b4e",
+          "disabled": "#4a4b4e",
+          "inactive": "#4a4b4e",
+          "placeholder": "#4a4b4e"
+        },
+        "description": {
+          "active": "#4a4b4e",
+          "warning": "#836426",
+          "error": "#75223d",
+          "submitted": "#b2d5b8",
+          "cancelled": "#4a4b4e",
+          "disabled": "#4a4b4e",
+          "inactive": "#4a4b4e"
+        }
+      },
+      "spinner": {
+        "icon": {
+          "active": "#d9d9d9",
+          "error": "#75223d",
+          "success": "#b2d5b8",
+          "help": "#604e86",
+          "info": "#2e599b",
+          "warning": "#836426"
+        },
+        "message": {
+          "active": "#e6edf3",
+          "error": "#75223d",
+          "success": "#b2d5b8",
+          "help": "#604e86",
+          "info": "#2e599b",
+          "warning": "#836426"
+        }
+      },
+      "tags": {
+        "$default": "#d9d9d9"
+      }
+    },
+    "border": {
+      "app": {
+        "table": {
+          "primary": "#4a4b4e",
+          "secondary": "#4a4b4e",
+          "tertiary": "#4a4b4e"
+        },
+        "divider": {
+          "primary": "#4a4b4e",
+          "secondary": "#4a4b4e",
+          "tertiary": "#4a4b4e"
+        },
+        "blockquote": {
+          "primary": "#4a4b4e",
+          "secondary": "#4a4b4e",
+          "tertiary": "#4a4b4e"
+        }
+      },
+      "banner": {
+        "outline": {
+          "primary": "#d9d9d9",
+          "secondary": "#d9d9d9",
+          "tertiary": "#4a4b4e"
+        },
+        "divider": {
+          "primary": "#4a4b4e",
+          "secondary": "#4a4b4e",
+          "tertiary": "#4a4b4e"
+        }
+      },
+      "message": {
+        "outline": {
+          "help": "#604e86",
+          "success": "#b2d5b8",
+          "info": "#2e599b",
+          "debug": "#d5d5d5",
+          "warning": "#836426",
+          "danger": "#75223d",
+          "error": "#75223d"
+        },
+        "divider": {
+          "help": "#604e86",
+          "success": "#b2d5b8",
+          "info": "#2e599b",
+          "debug": "#d5d5d5",
+          "warning": "#836426",
+          "danger": "#75223d",
+          "error": "#75223d"
+        }
+      }
+    }
+  }
+}

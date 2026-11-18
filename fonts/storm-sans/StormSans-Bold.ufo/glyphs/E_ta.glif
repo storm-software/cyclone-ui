@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Eta" format="2">
+  <advance width="724"/>
+  <unicode hex="0397"/>
+  <anchor x="362.0" y="0.0" name="bottom"/>
+  <anchor x="362.0" y="698.0" name="top"/>
+  <outline>
+    <component base="H"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

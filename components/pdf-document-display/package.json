@@ -1,46 +1,37 @@
 {
   "name": "@cyclone-ui/pdf-document-display",
-  "version": "0.5.0",
+  "version": "0.5.97",
   "type": "module",
-  "description": "A Next Button component meant to be shared in many other components",
+  "description": "Renders one page of a PDF from a URL or FileResult using react-pdf, with a spinner and PDF icon placeholder while loading or after an error. It exposes load progress, success and error callbacks, a pageNumber prop, and an option to disable the context menu.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/pdf-document-display"
   },
   "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
   "files": [
-    "dist",
-    "src",
-    "types"
+    "dist"
   ],
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@storm-stack/types": "latest",
-    "@tamagui/core": "^1.116.15",
-    "pdfjs-dist": "^4.7.76",
-    "react-pdf": "^9.1.1"
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/spinner": "workspace:*",
+    "@cyclone-ui/visually-hidden": "workspace:*",
+    "@stryke/type-checks": "catalog:",
+    "@stryke/types": "catalog:",
+    "@tamagui/core": "catalog:",
+    "pdfjs-dist": "4.8.69",
+    "react-pdf": "^9.2.1"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"
@@ -48,5 +39,19 @@
   "sideEffects": [
     "*.css"
   ],
-  "module:jsx": "dist/jsx"
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./PdfDocumentDisplay": {
+      "import": "./dist/PdfDocumentDisplay.mjs",
+      "require": "./dist/PdfDocumentDisplay.cjs"
+    },
+    "./*": "./*"
+  }
 }

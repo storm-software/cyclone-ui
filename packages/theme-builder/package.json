@@ -1,0 +1,101 @@
+{
+  "name": "@cyclone-ui/theme-builder",
+  "version": "0.0.80",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "A package for building themes within the Cyclone UI project",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "packages/theme-builder"
+  },
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "default": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
+    },
+    "./build": {
+      "require": {
+        "types": "./dist/build.d.cts",
+        "default": "./dist/build.cjs"
+      },
+      "import": {
+        "types": "./dist/build.d.mts",
+        "default": "./dist/build.mjs"
+      },
+      "default": {
+        "types": "./dist/build.d.mts",
+        "default": "./dist/build.mjs"
+      }
+    },
+    "./generate": {
+      "require": {
+        "types": "./dist/generate.d.cts",
+        "default": "./dist/generate.cjs"
+      },
+      "import": {
+        "types": "./dist/generate.d.mts",
+        "default": "./dist/generate.mjs"
+      },
+      "default": {
+        "types": "./dist/generate.d.mts",
+        "default": "./dist/generate.mjs"
+      }
+    },
+    "./package.json": "./package.json",
+    "./preprocessor": {
+      "require": {
+        "types": "./dist/preprocessor.d.cts",
+        "default": "./dist/preprocessor.cjs"
+      },
+      "import": {
+        "types": "./dist/preprocessor.d.mts",
+        "default": "./dist/preprocessor.mjs"
+      },
+      "default": {
+        "types": "./dist/preprocessor.d.mts",
+        "default": "./dist/preprocessor.mjs"
+      }
+    },
+    "./tailwind": {
+      "require": {
+        "types": "./dist/tailwind.d.cts",
+        "default": "./dist/tailwind.cjs"
+      },
+      "import": {
+        "types": "./dist/tailwind.d.mts",
+        "default": "./dist/tailwind.mjs"
+      },
+      "default": {
+        "types": "./dist/tailwind.d.mts",
+        "default": "./dist/tailwind.mjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "dependencies": {
+    "@razorwind/core": "catalog:",
+    "@razorwind/tamagui": "catalog:",
+    "style-dictionary": "catalog:"
+  },
+  "devDependencies": {
+    "@powerlines/plugin-tsdown": "catalog:",
+    "@types/node": "catalog:",
+    "powerlines": "catalog:",
+    "tailwindcss": "catalog:"
+  }
+}

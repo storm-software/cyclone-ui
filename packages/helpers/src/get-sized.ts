@@ -1,29 +1,27 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { fontSizeToSize } from "@cyclone-ui/tamagui";
-import { isNumber, isSet } from "@storm-stack/types";
-import type { FontSizeTokens, SizeTokens } from "@tamagui/core";
-import {
-  getRadius as getRadiusBase,
-  getSize,
-  getSpace
-} from "@tamagui/get-token";
+ ------------------------------------------------------------------- */
+
+import { isNumber } from "@stryke/type-checks/is-number";
+import { isSet } from "@stryke/type-checks/is-set";
 import { getNearestToken } from "./get-nearest-token";
+import { getTokenRelative } from "./get-token-relative";
+import type { TokenInput } from "./token-value";
+import { normalizeTokenValue } from "./token-value";
 
 export interface GetSizedOptions {
   scale?: number;
@@ -41,25 +39,23 @@ export interface GetSizedOptions {
  * @returns The size number
  */
 export const getSized = (
-  val: SizeTokens | number,
+  val: TokenInput,
   options: GetSizedOptions = {}
 ): number => {
-  let value = val;
-  if (!value) {
-    value = "$true";
-  }
+  let value = val ? normalizeTokenValue(val) : "true";
 
   if (isNumber(value)) {
-    value = options.nearest === false ? value : getNearestToken(value, "size");
-    if (!options.scale && !options.shift && !options.bounds) {
-      return value as number;
+    if (!options.shift && !options.bounds) {
+      return value * (isSet(options.scale) ? options.scale : 1);
     }
+
+    value = options.nearest === false ? value : getNearestToken(value, "size");
   }
 
-  const size = getSize(value, options);
+  const size = getTokenRelative("size", String(value), options);
   const scale = isSet(options.scale) ? options.scale : 1;
 
-  return size.val * scale;
+  return Number(size?.val) * scale;
 };
 
 /**
@@ -70,23 +66,30 @@ export const getSized = (
  * @returns The font size number
  */
 export const getSizeFromFontSized = (
-  val: FontSizeTokens | number,
+  val: TokenInput,
   options: GetSizedOptions = {}
 ) => {
-  let value = val;
-  if (!value) {
-    value = "$true";
-  }
+  let value = val ? normalizeTokenValue(val) : "true";
 
   if (isNumber(value)) {
-    value = options.nearest === false ? value : fontSizeToSize(value);
-    if (!options.scale && !options.shift && !options.bounds) {
-      return value as number;
+    if (!options.shift && !options.bounds) {
+      return value * (isSet(options.scale) ? options.scale : 1);
     }
+
+    value = options.nearest === false ? value : getNearestToken(value, "size");
   }
 
   return getSized(value, options);
 };
+
+/**
+ * Map a numeric font size to the nearest size token.
+ *
+ * @param fontSize - The font size in pixels
+ * @returns The nearest size token
+ */
+export const fontSizeToSize = (fontSize: number) =>
+  getNearestToken(fontSize, "size");
 
 /**
  * Get the space number from a size token value or number value and a scale
@@ -96,26 +99,32 @@ export const getSizeFromFontSized = (
  * @returns The space number
  */
 export const getSpaced = (
-  val: SizeTokens | number,
+  val: TokenInput,
   options: GetSizedOptions = {}
 ): number => {
-  let value = val;
-  if (!value) {
-    value = "$true";
-  }
+  let value = val ? normalizeTokenValue(val) : "true";
 
   if (isNumber(value)) {
-    value = options.nearest === false ? value : getNearestToken(value, "space");
-    if (!options.scale && !options.shift && !options.bounds) {
-      return value as number;
+    if (!options.shift && !options.bounds) {
+      return value * (isSet(options.scale) ? options.scale : 1);
     }
+
+    value = options.nearest === false ? value : getNearestToken(value, "space");
   }
 
-  const space = getSpace(value, options);
+  const space = getTokenRelative("space", String(value), options);
   const scale = isSet(options.scale) ? options.scale : 1;
 
-  return space.val * scale;
+  return Number(space?.val) * scale;
 };
+
+/**
+ * Map a size token or numeric size to the corresponding space value.
+ *
+ * @param val - The size token or number to use
+ * @returns The space number
+ */
+export const sizeToSpace = (val: TokenInput): number => getSpaced(val);
 
 export type GetRadiusOptions = GetSizedOptions & {
   circular?: boolean;
@@ -128,25 +137,23 @@ export type GetRadiusOptions = GetSizedOptions & {
  * @param options - The options to use
  * @returns The radius number
  */
-export const getRadius = (
-  val: SizeTokens | number,
-  options: GetRadiusOptions = {}
-) => {
+export const getRadius = (val: TokenInput, options: GetRadiusOptions = {}) => {
   if (options.circular) {
     return 100_000;
   }
 
-  let value = val;
+  let value = val ? normalizeTokenValue(val) : "true";
   if (isNumber(value)) {
+    if (!options.shift && !options.bounds) {
+      return value * (isSet(options.scale) ? options.scale : 1);
+    }
+
     value =
       options.nearest === false ? value : getNearestToken(value, "radius");
-    if (!options.scale && !options.shift && !options.bounds) {
-      return value as number;
-    }
   }
 
-  const radius = getRadiusBase(value, options);
+  const radius = getTokenRelative("radius", String(value), options);
   const scale = isSet(options.scale) ? options.scale : 1;
 
-  return radius.val * scale;
+  return Number(radius?.val) * scale;
 };

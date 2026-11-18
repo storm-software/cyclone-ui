@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Kappa" format="2">
+  <advance width="564"/>
+  <unicode hex="039A"/>
+  <anchor x="263.0" y="0.0" name="bottom"/>
+  <anchor x="366.0" y="698.0" name="top"/>
+  <outline>
+    <component base="K"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

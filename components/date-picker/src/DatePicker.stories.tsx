@@ -1,78 +1,199 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-/* eslint-disable react-hooks/rules-of-hooks */
+ ------------------------------------------------------------------- */
 
+import type { FieldLabelVariant } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
-import { StormDate } from "@storm-stack/date-time/storm-date";
-import { formatDate } from "@storm-stack/date-time/utilities/format-date";
-import type { Meta, StoryObj } from "@storybook/react";
-import { useCallback } from "react";
-import { DatePicker } from "./DatePicker";
+import { Calendar } from "@cyclone-ui/icons";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { formatDate } from "@stryke/date/format";
+import type { GetProps } from "@tamagui/core";
+import { useState } from "react";
+import { DATE_RANGE_SEPARATOR, DatePicker } from "./DatePicker";
 
-const meta: Meta<typeof DatePicker> = {
-  title: "Base/DatePicker",
+interface DatePickerValidation {
+  onChange: (() => { message: string; type: string }[])[];
+}
+
+/** Story-only args consumed by the custom `render` (the Form and Field). */
+type DatePickerStoryArgs = GetProps<typeof DatePicker> & {
+  labelVariant?: FieldLabelVariant;
+  description?: string;
+  required?: boolean;
+  validate?: DatePickerValidation;
+  showErrorsBeforeBlur?: boolean;
+};
+
+const meta: Meta<DatePickerStoryArgs> = {
+  title: "Form/DatePicker",
   component: DatePicker,
   tags: ["autodocs"],
-  render: (props: any) => {
-    const handleFormat = useCallback((value: any) => {
-      return formatDate(StormDate.create(value), {
-        returnEmptyIfNotSet: true,
-        returnEmptyIfInvalid: true
-      });
-    }, []);
-
-    const handleParse = useCallback((value: any) => {
-      const date = StormDate.create(value);
-
-      const invalid = date.validate();
-
-      return !invalid ? date : null;
-    }, []);
-
+  render: (
+    { description, labelVariant, mode, separator, variant, ...props }: any,
+    { id }: { id: string }
+  ) => {
     return (
-      <Form name="formName" defaultValues={{ datePickerName: null }}>
-        <Field
-          name="datePickerName"
-          {...props}
-          format={handleFormat}
-          parse={handleParse}>
-          <Field.Label>Label Text</Field.Label>
-          <DatePicker>
-            <DatePicker.TextBox>
-              <DatePicker.TextBox.Value />
-            </DatePicker.TextBox>
-          </DatePicker>
-          <Field.Details>
-            This is an example detailed message for an date-picker
-          </Field.Details>
+      <Form name={`formName-${id}`} initialValues={{ datePickerName: null }}>
+        <Field name="datePickerName" {...props} variant={variant}>
+          <Field.Label variant={labelVariant}>Label Text</Field.Label>
+          <DatePicker
+            mode={mode}
+            separator={separator}
+            variant={variant}
+            size={props.size}
+          />
+          {description && <Field.Details>{description}</Field.Details>}
         </Field>
       </Form>
     );
   }
-} satisfies Meta<typeof DatePicker>;
+} satisfies Meta<DatePickerStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof DatePicker>;
+type Story = StoryObj<DatePickerStoryArgs>;
+
+const validation = (
+  type:
+    | "danger"
+    | "warning"
+    | "info"
+    | "discovery"
+    | "success"
+    | "positive"
+    | "negative"
+): DatePickerValidation => ({
+  onChange: [
+    () => [
+      {
+        message: "This is an example validation message",
+        type
+      }
+    ]
+  ]
+});
 
 export const Base: Story = {
   args: {}
+};
+
+export const Floating: Story = {
+  args: {
+    labelVariant: "floating"
+  }
+};
+
+export const OutlinedFloating: Story = {
+  args: {
+    variant: "outlined",
+    labelVariant: "floating"
+  }
+};
+
+export const UnderlinedFloating: Story = {
+  args: {
+    variant: "underlined",
+    labelVariant: "floating"
+  }
+};
+
+export const InlinedFloating: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "floating"
+  }
+};
+
+export const OutlinedAbove: Story = {
+  args: {
+    variant: "outlined",
+    labelVariant: "above"
+  }
+};
+
+export const UnderlinedAbove: Story = {
+  args: {
+    variant: "underlined",
+    labelVariant: "above"
+  }
+};
+
+export const InlinedAbove: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "above"
+  }
+};
+
+export const Description: Story = {
+  args: {
+    labelVariant: "above",
+    description:
+      "This is a description that is longer than the label and will wrap to multiple lines. It is used to provide more information about the field."
+  }
+};
+
+export const Dot: Story = {
+  args: {
+    separator: "."
+  }
+};
+
+export const Slash: Story = {
+  args: {
+    separator: "/"
+  }
+};
+
+export const Range: Story = {
+  render: props => {
+    const [dates, setDates] = useState<Date[]>([
+      new Date(2026, 0, 28),
+      new Date(2026, 1, 3)
+    ]);
+    const [focused, setFocused] = useState(false);
+    const value = dates
+      .map(date => formatDate(date, "MM.DD.YYYY"))
+      .join(DATE_RANGE_SEPARATOR);
+
+    return (
+      <DatePicker
+        {...props}
+        mode="range"
+        focused={focused}
+        selectedDates={dates}
+        onFocus={() => setFocused(true)}
+        onBlur={() => setFocused(false)}
+        onDatesChange={event => setDates(event.detail)}>
+        <DatePicker.TextBox>
+          <DatePicker.TextBox.Value
+            value={value}
+            placeholder="MM.DD.YYYY"
+            readOnly={true}
+          />
+        </DatePicker.TextBox>
+        <DatePicker.Separator />
+        <DatePicker.Trigger>
+          <Calendar />
+        </DatePicker.Trigger>
+      </DatePicker>
+    );
+  }
 };
 
 export const Required: Story = {
@@ -93,32 +214,39 @@ export const Disabled: Story = {
 //   }
 // };
 
-export const Help: Story = {
+export const Discovery: Story = {
   args: {
-    theme: "help"
+    validate: validation("discovery")
   }
 };
 
 export const Error: Story = {
   args: {
-    theme: "danger"
+    showErrorsBeforeBlur: true,
+    validate: validation("danger")
   }
 };
 
 export const Warning: Story = {
   args: {
-    theme: "warning"
+    validate: validation("warning")
   }
 };
 
 export const Info: Story = {
   args: {
-    theme: "info"
+    validate: validation("info")
   }
 };
 
 export const Success: Story = {
   args: {
-    theme: "success"
+    validate: validation("success")
   }
 };
+
+export const SmallSize: Story = { args: { size: "sm" } };
+
+export const MediumSize: Story = { args: { size: "md" } };
+
+export const LargeSize: Story = { args: { size: "lg" } };

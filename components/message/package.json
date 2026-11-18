@@ -1,47 +1,35 @@
 {
   "name": "@cyclone-ui/message",
-  "version": "0.6.0",
+  "version": "0.6.99",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A toast notification container built on Tamagui Toast that renders each queued toast as a dismissible Alert in the bottom-right corner. It maps the toast's message type (including error and help) to an alert theme, and toasts can be swiped away. Use it to show temporary app-wide notifications.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/message"
   },
   "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
   "files": [
-    "dist",
-    "src",
-    "types"
+    "dist"
   ],
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/lucide-icons": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15",
-    "@tamagui/text": "^1.116.15",
-    "@tamagui/web": "^1.116.15"
+    "@cyclone-ui/alert": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/state": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@tamagui/toast": "catalog:"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"
@@ -49,5 +37,19 @@
   "sideEffects": [
     "*.css"
   ],
-  "module:jsx": "dist/jsx"
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Message": {
+      "import": "./dist/Message.mjs",
+      "require": "./dist/Message.cjs"
+    },
+    "./*": "./*"
+  }
 }

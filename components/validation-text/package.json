@@ -1,46 +1,34 @@
 {
   "name": "@cyclone-ui/validation-text",
-  "version": "0.5.0",
+  "version": "0.5.97",
   "type": "module",
-  "description": "A Next Button component meant to be shared in many other components",
+  "description": "A ValidationText component that shows field validation messages in caption text with an enter/exit animation. A single message is shown as plain text. Multiple messages are shown as a bulleted list under a heading that depends on the theme (errors, warnings or success), and a default notice is shown when the field is disabled. Use it below form fields.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/validation-text"
   },
   "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
   "files": [
-    "dist",
-    "src",
-    "types"
+    "dist"
   ],
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@storm-stack/types": "latest",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/lucide-icons": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15"
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@stryke/types": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/stacks": "catalog:"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"
@@ -48,5 +36,19 @@
   "sideEffects": [
     "*.css"
   ],
-  "module:jsx": "dist/jsx"
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./ValidationText": {
+      "import": "./dist/ValidationText.mjs",
+      "require": "./dist/ValidationText.cjs"
+    },
+    "./*": "./*"
+  }
 }

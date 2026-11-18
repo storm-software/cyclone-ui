@@ -1,56 +1,76 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
+"use client";
 
 import { BodyText } from "@cyclone-ui/body-text";
-import { ColorThemeName } from "@cyclone-ui/colors";
-import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
-import { ValidationDetails } from "@storm-stack/types/utility-types/validations";
-import { styled } from "@tamagui/core";
-import { Dot } from "@tamagui/lucide-icons";
+import { Dot } from "@cyclone-ui/icons";
+import type { ValidationDetail as ValidationDetails } from "@stryke/types/validations";
+import type { GetProps } from "@tamagui/core";
+import { createStyledHOC, styled, useThemeName } from "@tamagui/core";
 import { XStack, YStack } from "@tamagui/stacks";
 
 const ValidationBodyText = styled(BodyText, {
-  animation: "normal",
-
-  enterStyle: {
-    opacity: 0,
-    y: 10
-  },
-
-  exitStyle: {
-    opacity: 0,
-    y: 10
-  }
+  fontFamily: "caption",
+  transition: "400ms",
+  opacity: "enter:0 exit:0",
+  y: "enter:10px exit:10px"
 });
 
-export const ValidationText = ValidationBodyText.styleable<{
-  messages?: ValidationDetails[];
-  theme?: string;
-  disabled?: boolean;
-}>(
+export const ValidationText = createStyledHOC(
+  ValidationBodyText,
   (
-    { disabled, theme = ColorThemeName.BASE, messages = [], ...props },
+    {
+      disabled,
+      showDisabledMessage = true,
+      theme: themeProp,
+      messages = [],
+      id,
+      ...props
+    }: GetProps<typeof ValidationBodyText> & {
+      messages?: ValidationDetails[];
+      theme?: string;
+      disabled?: boolean;
+      /**
+       * Whether a disabled field shows "This field is disabled".
+       *
+       * @defaultValue true
+       */
+      showDisabledMessage?: boolean;
+    },
     forwardedRef
   ) => {
-    if ((messages.length === 1 && messages[0]?.message) || disabled) {
-      const message = messages[0]?.message || "This field is disabled";
+    // `createStyledHOC` consumes `theme` and wraps this render in that `Theme`,
+    // so read the active theme name rather than re-theming the text: forcing a
+    // `base` theme here resolved `primary` against the root theme.
+    const themeName = useThemeName();
+    const theme = themeProp ?? themeName;
+    const showDisabledNotice = Boolean(disabled && showDisabledMessage);
+
+    if ((messages.length === 1 && messages[0]?.message) || showDisabledNotice) {
+      const message =
+        (showDisabledNotice && (!theme || theme.endsWith("base"))) ||
+        messages.length === 0
+          ? "This field is disabled"
+          : messages[0]?.message;
 
       return (
-        <ValidationBodyText ref={forwardedRef} {...props} theme={theme}>
+        <ValidationBodyText ref={forwardedRef} id={id} {...props}>
           {message}
         </ValidationBodyText>
       );
@@ -59,27 +79,26 @@ export const ValidationText = ValidationBodyText.styleable<{
     }
 
     let heading = "Please review the following details: ";
-    if (theme?.includes(ColorThemeName.DANGER)) {
+    if (theme?.includes("danger")) {
       heading = "Please review the following errors: ";
-    } else if (theme?.includes(ColorThemeName.WARNING)) {
+    } else if (theme?.includes("warning")) {
       heading = "Please review the following warnings: ";
-    } else if (theme?.includes(ColorThemeName.SUCCESS)) {
+    } else if (theme?.includes("success")) {
       heading = "Successfully completed the following: ";
     }
 
     return (
-      <YStack gap="$0.5">
-        <ValidationBodyText ref={forwardedRef} {...props} theme={theme}>
+      // The whole list is the element an `id` (for `aria-describedby`) names.
+      <YStack gap="xs" id={id}>
+        <ValidationBodyText ref={forwardedRef} {...props}>
           {heading}
         </ValidationBodyText>
         {messages
           .filter(message => message.message)
           .map(message => (
-            <XStack key={message.message} gap="$1" alignItems="center">
-              <ThemeableIcon theme={theme}>
-                <Dot />
-              </ThemeableIcon>
-              <ValidationBodyText {...props} theme={theme}>
+            <XStack key={message.message} gap="md" alignItems="center">
+              <Dot variant="filled" color="primary" />
+              <ValidationBodyText {...props}>
                 {message.message}
               </ValidationBodyText>
             </XStack>

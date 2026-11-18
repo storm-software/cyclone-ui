@@ -1,5 +1,2077 @@
-## 0.6.0 (2024-06-19)
+![Cyclone UI's logo banner](https://public.storm-cdn.com/cyclone-ui/media/banner-1280x320-dark.gif)
 
+# Changelog for Cyclone UI - Data Table
+
+## [0.6.102](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.102) (11/18/2026)
+
+### Updated Dependencies
+
+- Updated **avatar** to **v0.0.27**
+- Updated **body-text** to **v0.5.90**
+- Updated **button** to **v0.6.98**
+- Updated **checkbox** to **v0.5.100**
+- Updated **context-menu** to **v0.0.90**
+- Updated **copy-button** to **v0.0.10**
+- Updated **field** to **v0.5.100**
+- Updated **form** to **v0.9.93**
+- Updated **heading-text** to **v0.5.91**
+- Updated **icons** to **v0.0.93**
+- Updated **pagination** to **v0.8.98**
+- Updated **popover** to **v0.5.100**
+- Updated **scroll-view** to **v0.5.98**
+- Updated **search-input** to **v0.1.102**
+- Updated **select** to **v0.6.102**
+- Updated **state** to **v0.0.94**
+- Updated **table** to **v0.4.94**
+
+## [0.6.101](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.101) (11/18/2026)
+
+### Updated Dependencies
+
+- Updated **avatar** to **v0.0.26**
+- Updated **body-text** to **v0.5.89**
+- Updated **button** to **v0.6.97**
+- Updated **checkbox** to **v0.5.99**
+- Updated **context-menu** to **v0.0.89**
+- Updated **copy-button** to **v0.0.9**
+- Updated **field** to **v0.5.99**
+- Updated **form** to **v0.9.92**
+- Updated **heading-text** to **v0.5.90**
+- Updated **icons** to **v0.0.92**
+- Updated **pagination** to **v0.8.97**
+- Updated **popover** to **v0.5.99**
+- Updated **scroll-view** to **v0.5.97**
+- Updated **search-input** to **v0.1.101**
+- Updated **select** to **v0.6.101**
+- Updated **state** to **v0.0.93**
+- Updated **table** to **v0.4.93**
+
+## [0.6.100](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.100) (11/18/2026)
+
+### Updated Dependencies
+
+- Updated **avatar** to **v0.0.25**
+- Updated **body-text** to **v0.5.88**
+- Updated **button** to **v0.6.96**
+- Updated **checkbox** to **v0.5.98**
+- Updated **context-menu** to **v0.0.88**
+- Updated **copy-button** to **v0.0.8**
+- Updated **field** to **v0.5.98**
+- Updated **form** to **v0.9.91**
+- Updated **heading-text** to **v0.5.89**
+- Updated **icons** to **v0.0.91**
+- Updated **pagination** to **v0.8.96**
+- Updated **popover** to **v0.5.98**
+- Updated **scroll-view** to **v0.5.96**
+- Updated **search-input** to **v0.1.100**
+- Updated **select** to **v0.6.100**
+- Updated **state** to **v0.0.92**
+- Updated **table** to **v0.4.92**
+
+## [0.6.99](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.99) (11/18/2026)
+
+### Updated Dependencies
+
+- Updated **avatar** to **v0.0.24**
+- Updated **button** to **v0.6.95**
+- Updated **checkbox** to **v0.5.97**
+- Updated **context-menu** to **v0.0.87**
+- Updated **copy-button** to **v0.0.7**
+- Updated **field** to **v0.5.97**
+- Updated **icons** to **v0.0.90**
+- Updated **pagination** to **v0.8.95**
+- Updated **popover** to **v0.5.97**
+- Updated **scroll-view** to **v0.5.95**
+- Updated **search-input** to **v0.1.99**
+- Updated **select** to **v0.6.99**
+- Updated **table** to **v0.4.91**
+
+## [0.6.98](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.98) (11/17/2026)
+
+### Updated Dependencies
+
+- Updated **avatar** to **v0.0.23**
+- Updated **body-text** to **v0.5.87**
+- Updated **button** to **v0.6.94**
+- Updated **checkbox** to **v0.5.96**
+- Updated **context-menu** to **v0.0.86**
+- Updated **copy-button** to **v0.0.6**
+- Updated **field** to **v0.5.96**
+- Updated **form** to **v0.9.90**
+- Updated **heading-text** to **v0.5.88**
+- Updated **icons** to **v0.0.89**
+- Updated **pagination** to **v0.8.94**
+- Updated **popover** to **v0.5.96**
+- Updated **scroll-view** to **v0.5.94**
+- Updated **search-input** to **v0.1.98**
+- Updated **select** to **v0.6.98**
+- Updated **state** to **v0.0.91**
+- Updated **table** to **v0.4.90**
+
+## [0.6.97](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.97) (11/17/2026)
+
+### Updated Dependencies
+
+- Updated **avatar** to **v0.0.22**
+- Updated **body-text** to **v0.5.86**
+- Updated **button** to **v0.6.93**
+- Updated **checkbox** to **v0.5.95**
+- Updated **context-menu** to **v0.0.85**
+- Updated **copy-button** to **v0.0.5**
+- Updated **field** to **v0.5.95**
+- Updated **form** to **v0.9.89**
+- Updated **heading-text** to **v0.5.87**
+- Updated **icons** to **v0.0.88**
+- Updated **pagination** to **v0.8.93**
+- Updated **popover** to **v0.5.95**
+- Updated **scroll-view** to **v0.5.93**
+- Updated **search-input** to **v0.1.97**
+- Updated **select** to **v0.6.97**
+- Updated **state** to **v0.0.90**
+- Updated **table** to **v0.4.89**
+
+## [0.6.96](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.96) (11/17/2026)
+
+### Updated Dependencies
+
+- Updated **avatar** to **v0.0.21**
+- Updated **body-text** to **v0.5.85**
+- Updated **button** to **v0.6.92**
+- Updated **checkbox** to **v0.5.94**
+- Updated **context-menu** to **v0.0.84**
+- Updated **copy-button** to **v0.0.4**
+- Updated **field** to **v0.5.94**
+- Updated **form** to **v0.9.88**
+- Updated **heading-text** to **v0.5.86**
+- Updated **icons** to **v0.0.87**
+- Updated **pagination** to **v0.8.92**
+- Updated **popover** to **v0.5.94**
+- Updated **scroll-view** to **v0.5.92**
+- Updated **search-input** to **v0.1.96**
+- Updated **select** to **v0.6.96**
+- Updated **state** to **v0.0.89**
+- Updated **table** to **v0.4.88**
+
+## [0.6.95](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.95) (11/17/2026)
+
+### Updated Dependencies
+
+- Updated **avatar** to **v0.0.20**
+- Updated **body-text** to **v0.5.84**
+- Updated **button** to **v0.6.91**
+- Updated **checkbox** to **v0.5.93**
+- Updated **context-menu** to **v0.0.83**
+- Updated **copy-button** to **v0.0.3**
+- Updated **field** to **v0.5.93**
+- Updated **form** to **v0.9.87**
+- Updated **heading-text** to **v0.5.85**
+- Updated **icons** to **v0.0.86**
+- Updated **pagination** to **v0.8.91**
+- Updated **popover** to **v0.5.93**
+- Updated **scroll-view** to **v0.5.91**
+- Updated **search-input** to **v0.1.95**
+- Updated **select** to **v0.6.95**
+- Updated **state** to **v0.0.88**
+- Updated **table** to **v0.4.87**
+
+## [0.6.94](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.94) (11/17/2026)
+
+### Features
+
+- **copy-button:** Initial check-in of the CopyButton component package ([94b147217](https://github.com/storm-software/cyclone-ui/commit/94b147217))
+
+### Updated Dependencies
+
+- Updated **avatar** to **v0.0.19**
+- Updated **body-text** to **v0.5.83**
+- Updated **button** to **v0.6.90**
+- Updated **checkbox** to **v0.5.92**
+- Updated **context-menu** to **v0.0.82**
+- Updated **copy-button** to **v0.0.2**
+- Updated **field** to **v0.5.92**
+- Updated **form** to **v0.9.86**
+- Updated **heading-text** to **v0.5.84**
+- Updated **icons** to **v0.0.85**
+- Updated **pagination** to **v0.8.90**
+- Updated **popover** to **v0.5.92**
+- Updated **scroll-view** to **v0.5.90**
+- Updated **search-input** to **v0.1.94**
+- Updated **select** to **v0.6.94**
+- Updated **state** to **v0.0.87**
+- Updated **table** to **v0.4.86**
+
+## [0.6.93](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.93) (11/16/2026)
+
+### Updated Dependencies
+
+- Updated **avatar** to **v0.0.18**
+- Updated **body-text** to **v0.5.82**
+- Updated **button** to **v0.6.89**
+- Updated **checkbox** to **v0.5.91**
+- Updated **context-menu** to **v0.0.81**
+- Updated **field** to **v0.5.91**
+- Updated **form** to **v0.9.85**
+- Updated **heading-text** to **v0.5.83**
+- Updated **icons** to **v0.0.84**
+- Updated **pagination** to **v0.8.89**
+- Updated **popover** to **v0.5.91**
+- Updated **scroll-view** to **v0.5.89**
+- Updated **search-input** to **v0.1.93**
+- Updated **select** to **v0.6.93**
+- Updated **state** to **v0.0.86**
+- Updated **table** to **v0.4.85**
+
+## [0.6.92](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.92) (11/16/2026)
+
+### Updated Dependencies
+
+- Updated **avatar** to **v0.0.17**
+- Updated **body-text** to **v0.5.81**
+- Updated **button** to **v0.6.88**
+- Updated **checkbox** to **v0.5.90**
+- Updated **context-menu** to **v0.0.80**
+- Updated **field** to **v0.5.90**
+- Updated **form** to **v0.9.84**
+- Updated **heading-text** to **v0.5.82**
+- Updated **icons** to **v0.0.83**
+- Updated **pagination** to **v0.8.88**
+- Updated **popover** to **v0.5.90**
+- Updated **scroll-view** to **v0.5.88**
+- Updated **search-input** to **v0.1.92**
+- Updated **select** to **v0.6.92**
+- Updated **state** to **v0.0.85**
+- Updated **table** to **v0.4.84**
+
+## [0.6.91](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.91) (11/15/2026)
+
+### Updated Dependencies
+
+- Updated **avatar** to **v0.0.16**
+- Updated **body-text** to **v0.5.80**
+- Updated **button** to **v0.6.87**
+- Updated **checkbox** to **v0.5.89**
+- Updated **context-menu** to **v0.0.79**
+- Updated **field** to **v0.5.89**
+- Updated **form** to **v0.9.83**
+- Updated **heading-text** to **v0.5.81**
+- Updated **icons** to **v0.0.82**
+- Updated **pagination** to **v0.8.87**
+- Updated **popover** to **v0.5.89**
+- Updated **scroll-view** to **v0.5.87**
+- Updated **search-input** to **v0.1.91**
+- Updated **select** to **v0.6.91**
+- Updated **state** to **v0.0.84**
+- Updated **table** to **v0.4.83**
+
+## [0.6.90](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.90) (11/15/2026)
+
+### Updated Dependencies
+
+- Updated **avatar** to **v0.0.15**
+- Updated **button** to **v0.6.86**
+- Updated **checkbox** to **v0.5.88**
+- Updated **context-menu** to **v0.0.78**
+- Updated **field** to **v0.5.88**
+- Updated **form** to **v0.9.82**
+- Updated **icons** to **v0.0.81**
+- Updated **pagination** to **v0.8.86**
+- Updated **popover** to **v0.5.88**
+- Updated **scroll-view** to **v0.5.86**
+- Updated **search-input** to **v0.1.90**
+- Updated **select** to **v0.6.90**
+- Updated **state** to **v0.0.83**
+- Updated **table** to **v0.4.82**
+
+## [0.6.89](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.89) (11/14/2026)
+
+### Bug Fixes
+
+- **data-table:** Ensure tables include scrollbar instead of overflowing ([0796dca6f](https://github.com/storm-software/cyclone-ui/commit/0796dca6f))
+
+### Updated Dependencies
+
+- Updated **avatar** to **v0.0.14**
+- Updated **body-text** to **v0.5.79**
+- Updated **button** to **v0.6.85**
+- Updated **checkbox** to **v0.5.87**
+- Updated **context-menu** to **v0.0.77**
+- Updated **field** to **v0.5.87**
+- Updated **form** to **v0.9.81**
+- Updated **heading-text** to **v0.5.80**
+- Updated **icons** to **v0.0.80**
+- Updated **pagination** to **v0.8.85**
+- Updated **popover** to **v0.5.87**
+- Updated **scroll-view** to **v0.5.85**
+- Updated **search-input** to **v0.1.89**
+- Updated **select** to **v0.6.89**
+- Updated **state** to **v0.0.82**
+- Updated **table** to **v0.4.81**
+
+## [0.6.88](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.88) (11/14/2026)
+
+### Features
+
+- **table:** Added various reusable `Table` and `DataTable` cell components ([aa76ecfec](https://github.com/storm-software/cyclone-ui/commit/aa76ecfec))
+
+### Updated Dependencies
+
+- Updated **avatar** to **v0.0.13**
+- Updated **body-text** to **v0.5.78**
+- Updated **button** to **v0.6.84**
+- Updated **checkbox** to **v0.5.86**
+- Updated **context-menu** to **v0.0.76**
+- Updated **field** to **v0.5.86**
+- Updated **form** to **v0.9.80**
+- Updated **heading-text** to **v0.5.79**
+- Updated **icons** to **v0.0.79**
+- Updated **pagination** to **v0.8.84**
+- Updated **popover** to **v0.5.86**
+- Updated **search-input** to **v0.1.88**
+- Updated **select** to **v0.6.88**
+- Updated **state** to **v0.0.81**
+- Updated **table** to **v0.4.80**
+
+## [0.6.87](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.87) (11/14/2026)
+
+### Features
+
+- **table:** Added the `uppercase` property to headers ([0c8c45ab1](https://github.com/storm-software/cyclone-ui/commit/0c8c45ab1))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.77**
+- Updated **button** to **v0.6.83**
+- Updated **checkbox** to **v0.5.85**
+- Updated **context-menu** to **v0.0.75**
+- Updated **field** to **v0.5.85**
+- Updated **form** to **v0.9.79**
+- Updated **heading-text** to **v0.5.78**
+- Updated **icons** to **v0.0.78**
+- Updated **pagination** to **v0.8.83**
+- Updated **popover** to **v0.5.85**
+- Updated **search-input** to **v0.1.87**
+- Updated **select** to **v0.6.87**
+- Updated **state** to **v0.0.80**
+- Updated **table** to **v0.4.79**
+
+## [0.6.86](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.86) (11/14/2026)
+
+### Documentation
+
+- **monorepo:** Added/updated documentation for components library ([1eb18466d](https://github.com/storm-software/cyclone-ui/commit/1eb18466d))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.76**
+- Updated **button** to **v0.6.82**
+- Updated **checkbox** to **v0.5.84**
+- Updated **context-menu** to **v0.0.74**
+- Updated **field** to **v0.5.84**
+- Updated **form** to **v0.9.78**
+- Updated **heading-text** to **v0.5.77**
+- Updated **icons** to **v0.0.77**
+- Updated **pagination** to **v0.8.82**
+- Updated **popover** to **v0.5.84**
+- Updated **search-input** to **v0.1.86**
+- Updated **select** to **v0.6.86**
+- Updated **state** to **v0.0.79**
+- Updated **table** to **v0.4.78**
+
+## [0.6.85](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.85) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.75**
+- Updated **button** to **v0.6.81**
+- Updated **checkbox** to **v0.5.83**
+- Updated **context-menu** to **v0.0.73**
+- Updated **field** to **v0.5.83**
+- Updated **form** to **v0.9.77**
+- Updated **heading-text** to **v0.5.76**
+- Updated **icons** to **v0.0.76**
+- Updated **pagination** to **v0.8.81**
+- Updated **popover** to **v0.5.83**
+- Updated **search-input** to **v0.1.85**
+- Updated **select** to **v0.6.85**
+- Updated **state** to **v0.0.78**
+- Updated **table** to **v0.4.77**
+
+## [0.6.84](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.84) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.74**
+- Updated **button** to **v0.6.80**
+- Updated **checkbox** to **v0.5.82**
+- Updated **context-menu** to **v0.0.72**
+- Updated **field** to **v0.5.82**
+- Updated **form** to **v0.9.76**
+- Updated **heading-text** to **v0.5.75**
+- Updated **icons** to **v0.0.75**
+- Updated **pagination** to **v0.8.80**
+- Updated **popover** to **v0.5.82**
+- Updated **search-input** to **v0.1.84**
+- Updated **select** to **v0.6.84**
+- Updated **state** to **v0.0.77**
+- Updated **table** to **v0.4.76**
+
+## [0.6.83](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.83) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.73**
+- Updated **button** to **v0.6.79**
+- Updated **checkbox** to **v0.5.81**
+- Updated **context-menu** to **v0.0.71**
+- Updated **field** to **v0.5.81**
+- Updated **form** to **v0.9.75**
+- Updated **heading-text** to **v0.5.74**
+- Updated **icons** to **v0.0.74**
+- Updated **pagination** to **v0.8.79**
+- Updated **popover** to **v0.5.81**
+- Updated **search-input** to **v0.1.83**
+- Updated **select** to **v0.6.83**
+- Updated **state** to **v0.0.76**
+- Updated **table** to **v0.4.75**
+
+## [0.6.82](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.82) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **context-menu** to **v0.0.70**
+- Updated **popover** to **v0.5.80**
+- Updated **search-input** to **v0.1.82**
+- Updated **select** to **v0.6.82**
+
+## [0.6.81](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.81) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.72**
+- Updated **button** to **v0.6.78**
+- Updated **checkbox** to **v0.5.80**
+- Updated **context-menu** to **v0.0.69**
+- Updated **field** to **v0.5.80**
+- Updated **form** to **v0.9.74**
+- Updated **heading-text** to **v0.5.73**
+- Updated **icons** to **v0.0.73**
+- Updated **pagination** to **v0.8.78**
+- Updated **popover** to **v0.5.79**
+- Updated **search-input** to **v0.1.81**
+- Updated **select** to **v0.6.81**
+- Updated **state** to **v0.0.75**
+- Updated **table** to **v0.4.74**
+
+## [0.6.80](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.80) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.71**
+- Updated **button** to **v0.6.77**
+- Updated **checkbox** to **v0.5.79**
+- Updated **context-menu** to **v0.0.68**
+- Updated **field** to **v0.5.79**
+- Updated **form** to **v0.9.73**
+- Updated **heading-text** to **v0.5.72**
+- Updated **icons** to **v0.0.72**
+- Updated **pagination** to **v0.8.77**
+- Updated **popover** to **v0.5.78**
+- Updated **search-input** to **v0.1.80**
+- Updated **select** to **v0.6.80**
+- Updated **state** to **v0.0.74**
+- Updated **table** to **v0.4.73**
+
+## [0.6.79](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.79) (11/13/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.70**
+- Updated **button** to **v0.6.76**
+- Updated **checkbox** to **v0.5.78**
+- Updated **context-menu** to **v0.0.67**
+- Updated **field** to **v0.5.78**
+- Updated **form** to **v0.9.72**
+- Updated **heading-text** to **v0.5.71**
+- Updated **icons** to **v0.0.71**
+- Updated **pagination** to **v0.8.76**
+- Updated **popover** to **v0.5.77**
+- Updated **search-input** to **v0.1.79**
+- Updated **select** to **v0.6.79**
+- Updated **state** to **v0.0.73**
+- Updated **table** to **v0.4.72**
+
+## [0.6.78](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.78) (11/12/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.75**
+- Updated **checkbox** to **v0.5.77**
+- Updated **context-menu** to **v0.0.66**
+- Updated **field** to **v0.5.77**
+- Updated **icons** to **v0.0.70**
+- Updated **pagination** to **v0.8.75**
+- Updated **popover** to **v0.5.76**
+- Updated **search-input** to **v0.1.78**
+- Updated **select** to **v0.6.78**
+
+## [0.6.77](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.77) (11/12/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.69**
+- Updated **button** to **v0.6.74**
+- Updated **checkbox** to **v0.5.76**
+- Updated **context-menu** to **v0.0.65**
+- Updated **field** to **v0.5.76**
+- Updated **form** to **v0.9.71**
+- Updated **heading-text** to **v0.5.70**
+- Updated **icons** to **v0.0.69**
+- Updated **pagination** to **v0.8.74**
+- Updated **popover** to **v0.5.75**
+- Updated **search-input** to **v0.1.77**
+- Updated **select** to **v0.6.77**
+- Updated **state** to **v0.0.72**
+- Updated **table** to **v0.4.71**
+
+## [0.6.76](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.76) (11/12/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.68**
+- Updated **button** to **v0.6.73**
+- Updated **checkbox** to **v0.5.75**
+- Updated **context-menu** to **v0.0.64**
+- Updated **field** to **v0.5.75**
+- Updated **form** to **v0.9.70**
+- Updated **heading-text** to **v0.5.69**
+- Updated **icons** to **v0.0.68**
+- Updated **pagination** to **v0.8.73**
+- Updated **popover** to **v0.5.74**
+- Updated **search-input** to **v0.1.76**
+- Updated **select** to **v0.6.76**
+- Updated **state** to **v0.0.71**
+- Updated **table** to **v0.4.70**
+
+## [0.6.75](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.75) (11/11/2026)
+
+### Updated Dependencies
+
+- Updated **checkbox** to **v0.5.74**
+- Updated **field** to **v0.5.74**
+- Updated **search-input** to **v0.1.75**
+- Updated **select** to **v0.6.75**
+
+## [0.6.74](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.74) (11/11/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.67**
+- Updated **button** to **v0.6.72**
+- Updated **checkbox** to **v0.5.73**
+- Updated **context-menu** to **v0.0.63**
+- Updated **field** to **v0.5.73**
+- Updated **form** to **v0.9.69**
+- Updated **heading-text** to **v0.5.68**
+- Updated **icons** to **v0.0.67**
+- Updated **pagination** to **v0.8.72**
+- Updated **popover** to **v0.5.73**
+- Updated **search-input** to **v0.1.74**
+- Updated **select** to **v0.6.74**
+- Updated **state** to **v0.0.70**
+- Updated **table** to **v0.4.69**
+
+## [0.6.73](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.73) (11/11/2026)
+
+### Updated Dependencies
+
+- Updated **checkbox** to **v0.5.72**
+- Updated **field** to **v0.5.72**
+- Updated **search-input** to **v0.1.73**
+- Updated **select** to **v0.6.73**
+
+## [0.6.72](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.72) (11/11/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.66**
+- Updated **button** to **v0.6.71**
+- Updated **checkbox** to **v0.5.71**
+- Updated **context-menu** to **v0.0.62**
+- Updated **field** to **v0.5.71**
+- Updated **form** to **v0.9.68**
+- Updated **heading-text** to **v0.5.67**
+- Updated **icons** to **v0.0.66**
+- Updated **pagination** to **v0.8.71**
+- Updated **popover** to **v0.5.72**
+- Updated **search-input** to **v0.1.72**
+- Updated **select** to **v0.6.72**
+- Updated **state** to **v0.0.69**
+- Updated **table** to **v0.4.68**
+
+## [0.6.71](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.71) (11/10/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.70**
+- Updated **checkbox** to **v0.5.70**
+- Updated **context-menu** to **v0.0.61**
+- Updated **field** to **v0.5.70**
+- Updated **icons** to **v0.0.65**
+- Updated **pagination** to **v0.8.70**
+- Updated **popover** to **v0.5.71**
+- Updated **search-input** to **v0.1.71**
+- Updated **select** to **v0.6.71**
+
+## [0.6.70](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.70) (11/10/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.65**
+- Updated **button** to **v0.6.69**
+- Updated **checkbox** to **v0.5.69**
+- Updated **context-menu** to **v0.0.60**
+- Updated **field** to **v0.5.69**
+- Updated **form** to **v0.9.67**
+- Updated **heading-text** to **v0.5.66**
+- Updated **icons** to **v0.0.64**
+- Updated **pagination** to **v0.8.69**
+- Updated **popover** to **v0.5.70**
+- Updated **search-input** to **v0.1.70**
+- Updated **select** to **v0.6.70**
+- Updated **state** to **v0.0.68**
+- Updated **table** to **v0.4.67**
+
+## [0.6.69](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.69) (11/10/2026)
+
+### Bug Fixes
+
+- **button:** Remove text transformation from `Button` display ([5439133e9](https://github.com/storm-software/cyclone-ui/commit/5439133e9))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.64**
+- Updated **button** to **v0.6.68**
+- Updated **checkbox** to **v0.5.68**
+- Updated **context-menu** to **v0.0.59**
+- Updated **field** to **v0.5.68**
+- Updated **form** to **v0.9.66**
+- Updated **heading-text** to **v0.5.65**
+- Updated **icons** to **v0.0.63**
+- Updated **pagination** to **v0.8.68**
+- Updated **popover** to **v0.5.69**
+- Updated **search-input** to **v0.1.69**
+- Updated **select** to **v0.6.69**
+- Updated **state** to **v0.0.67**
+- Updated **table** to **v0.4.66**
+
+## [0.6.68](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.68) (11/09/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.63**
+- Updated **button** to **v0.6.67**
+- Updated **checkbox** to **v0.5.67**
+- Updated **context-menu** to **v0.0.58**
+- Updated **field** to **v0.5.67**
+- Updated **form** to **v0.9.65**
+- Updated **heading-text** to **v0.5.64**
+- Updated **icons** to **v0.0.62**
+- Updated **pagination** to **v0.8.67**
+- Updated **popover** to **v0.5.68**
+- Updated **search-input** to **v0.1.68**
+- Updated **select** to **v0.6.68**
+- Updated **state** to **v0.0.66**
+- Updated **table** to **v0.4.65**
+
+## [0.6.67](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.67) (11/09/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.66**
+- Updated **checkbox** to **v0.5.66**
+- Updated **context-menu** to **v0.0.57**
+- Updated **field** to **v0.5.66**
+- Updated **form** to **v0.9.64**
+- Updated **icons** to **v0.0.61**
+- Updated **pagination** to **v0.8.66**
+- Updated **popover** to **v0.5.67**
+- Updated **search-input** to **v0.1.67**
+- Updated **select** to **v0.6.67**
+- Updated **state** to **v0.0.65**
+
+## [0.6.66](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.66) (11/09/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.62**
+- Updated **button** to **v0.6.65**
+- Updated **checkbox** to **v0.5.65**
+- Updated **context-menu** to **v0.0.56**
+- Updated **field** to **v0.5.65**
+- Updated **form** to **v0.9.63**
+- Updated **heading-text** to **v0.5.63**
+- Updated **icons** to **v0.0.60**
+- Updated **pagination** to **v0.8.65**
+- Updated **popover** to **v0.5.66**
+- Updated **search-input** to **v0.1.66**
+- Updated **select** to **v0.6.66**
+- Updated **state** to **v0.0.64**
+- Updated **table** to **v0.4.64**
+
+## [0.6.65](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.65) (11/08/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.61**
+- Updated **button** to **v0.6.64**
+- Updated **checkbox** to **v0.5.64**
+- Updated **context-menu** to **v0.0.55**
+- Updated **field** to **v0.5.64**
+- Updated **form** to **v0.9.62**
+- Updated **heading-text** to **v0.5.62**
+- Updated **icons** to **v0.0.59**
+- Updated **pagination** to **v0.8.64**
+- Updated **popover** to **v0.5.65**
+- Updated **search-input** to **v0.1.65**
+- Updated **select** to **v0.6.65**
+- Updated **state** to **v0.0.63**
+- Updated **table** to **v0.4.63**
+
+## [0.6.64](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.64) (11/08/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.60**
+- Updated **button** to **v0.6.63**
+- Updated **checkbox** to **v0.5.63**
+- Updated **context-menu** to **v0.0.54**
+- Updated **field** to **v0.5.63**
+- Updated **form** to **v0.9.61**
+- Updated **heading-text** to **v0.5.61**
+- Updated **icons** to **v0.0.58**
+- Updated **pagination** to **v0.8.63**
+- Updated **popover** to **v0.5.64**
+- Updated **search-input** to **v0.1.64**
+- Updated **select** to **v0.6.64**
+- Updated **state** to **v0.0.62**
+- Updated **table** to **v0.4.62**
+
+## [0.6.63](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.63) (11/08/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.59**
+- Updated **button** to **v0.6.62**
+- Updated **checkbox** to **v0.5.62**
+- Updated **context-menu** to **v0.0.53**
+- Updated **field** to **v0.5.62**
+- Updated **form** to **v0.9.60**
+- Updated **heading-text** to **v0.5.60**
+- Updated **icons** to **v0.0.57**
+- Updated **pagination** to **v0.8.62**
+- Updated **popover** to **v0.5.63**
+- Updated **search-input** to **v0.1.63**
+- Updated **select** to **v0.6.63**
+- Updated **state** to **v0.0.61**
+- Updated **table** to **v0.4.61**
+
+## [0.6.62](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.62) (11/08/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.58**
+- Updated **button** to **v0.6.61**
+- Updated **checkbox** to **v0.5.61**
+- Updated **context-menu** to **v0.0.52**
+- Updated **field** to **v0.5.61**
+- Updated **form** to **v0.9.59**
+- Updated **heading-text** to **v0.5.59**
+- Updated **icons** to **v0.0.56**
+- Updated **pagination** to **v0.8.61**
+- Updated **popover** to **v0.5.62**
+- Updated **search-input** to **v0.1.62**
+- Updated **select** to **v0.6.62**
+- Updated **state** to **v0.0.60**
+- Updated **table** to **v0.4.60**
+
+## [0.6.61](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.61) (11/07/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.57**
+- Updated **button** to **v0.6.60**
+- Updated **checkbox** to **v0.5.60**
+- Updated **context-menu** to **v0.0.51**
+- Updated **field** to **v0.5.60**
+- Updated **form** to **v0.9.58**
+- Updated **heading-text** to **v0.5.58**
+- Updated **icons** to **v0.0.55**
+- Updated **pagination** to **v0.8.60**
+- Updated **popover** to **v0.5.61**
+- Updated **search-input** to **v0.1.61**
+- Updated **select** to **v0.6.61**
+- Updated **state** to **v0.0.59**
+- Updated **table** to **v0.4.59**
+
+## [0.6.60](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.60) (11/07/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.56**
+- Updated **button** to **v0.6.59**
+- Updated **checkbox** to **v0.5.59**
+- Updated **context-menu** to **v0.0.50**
+- Updated **field** to **v0.5.59**
+- Updated **form** to **v0.9.57**
+- Updated **heading-text** to **v0.5.57**
+- Updated **icons** to **v0.0.54**
+- Updated **pagination** to **v0.8.59**
+- Updated **popover** to **v0.5.60**
+- Updated **search-input** to **v0.1.60**
+- Updated **select** to **v0.6.60**
+- Updated **state** to **v0.0.58**
+- Updated **table** to **v0.4.58**
+
+## [0.6.59](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.59) (11/07/2026)
+
+### Bug Fixes
+
+- **navigation-header:** Improve display or navigation header on smaller screens ([ae90d2838](https://github.com/storm-software/cyclone-ui/commit/ae90d2838))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.55**
+- Updated **button** to **v0.6.58**
+- Updated **checkbox** to **v0.5.58**
+- Updated **context-menu** to **v0.0.49**
+- Updated **field** to **v0.5.58**
+- Updated **form** to **v0.9.56**
+- Updated **heading-text** to **v0.5.56**
+- Updated **icons** to **v0.0.53**
+- Updated **pagination** to **v0.8.58**
+- Updated **popover** to **v0.5.59**
+- Updated **search-input** to **v0.1.59**
+- Updated **select** to **v0.6.59**
+- Updated **state** to **v0.0.57**
+- Updated **table** to **v0.4.57**
+
+## [0.6.58](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.58) (11/07/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.54**
+- Updated **button** to **v0.6.57**
+- Updated **checkbox** to **v0.5.57**
+- Updated **context-menu** to **v0.0.48**
+- Updated **field** to **v0.5.57**
+- Updated **form** to **v0.9.55**
+- Updated **heading-text** to **v0.5.55**
+- Updated **icons** to **v0.0.52**
+- Updated **pagination** to **v0.8.57**
+- Updated **popover** to **v0.5.58**
+- Updated **search-input** to **v0.1.58**
+- Updated **select** to **v0.6.58**
+- Updated **state** to **v0.0.56**
+- Updated **table** to **v0.4.56**
+
+## [0.6.57](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.57) (11/06/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Resolve issue generating color token variants ([bd2fc29c9](https://github.com/storm-software/cyclone-ui/commit/bd2fc29c9))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.53**
+- Updated **button** to **v0.6.56**
+- Updated **checkbox** to **v0.5.56**
+- Updated **context-menu** to **v0.0.47**
+- Updated **field** to **v0.5.56**
+- Updated **form** to **v0.9.54**
+- Updated **heading-text** to **v0.5.54**
+- Updated **icons** to **v0.0.51**
+- Updated **pagination** to **v0.8.56**
+- Updated **popover** to **v0.5.57**
+- Updated **search-input** to **v0.1.57**
+- Updated **select** to **v0.6.57**
+- Updated **state** to **v0.0.55**
+- Updated **table** to **v0.4.55**
+
+## [0.6.56](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.56) (11/06/2026)
+
+### Features
+
+- **container:** Added various new variants, and the `glass` and `noise` properties ([c6943e288](https://github.com/storm-software/cyclone-ui/commit/c6943e288))
+- **button:** Added `tooltip` property to `Button` component ([ff0b89e87](https://github.com/storm-software/cyclone-ui/commit/ff0b89e87))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.52**
+- Updated **button** to **v0.6.55**
+- Updated **checkbox** to **v0.5.55**
+- Updated **context-menu** to **v0.0.46**
+- Updated **field** to **v0.5.55**
+- Updated **form** to **v0.9.53**
+- Updated **heading-text** to **v0.5.53**
+- Updated **icons** to **v0.0.50**
+- Updated **pagination** to **v0.8.55**
+- Updated **popover** to **v0.5.56**
+- Updated **search-input** to **v0.1.56**
+- Updated **select** to **v0.6.56**
+- Updated **state** to **v0.0.54**
+- Updated **table** to **v0.4.54**
+
+## [0.6.55](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.55) (11/05/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.51**
+- Updated **button** to **v0.6.54**
+- Updated **checkbox** to **v0.5.54**
+- Updated **context-menu** to **v0.0.45**
+- Updated **field** to **v0.5.54**
+- Updated **form** to **v0.9.52**
+- Updated **heading-text** to **v0.5.52**
+- Updated **icons** to **v0.0.49**
+- Updated **pagination** to **v0.8.54**
+- Updated **popover** to **v0.5.55**
+- Updated **search-input** to **v0.1.55**
+- Updated **select** to **v0.6.55**
+- Updated **state** to **v0.0.53**
+- Updated **table** to **v0.4.53**
+
+## [0.6.54](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.54) (11/05/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve various display issues ([e77dcdc0d](https://github.com/storm-software/cyclone-ui/commit/e77dcdc0d))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.50**
+- Updated **button** to **v0.6.53**
+- Updated **checkbox** to **v0.5.53**
+- Updated **context-menu** to **v0.0.44**
+- Updated **field** to **v0.5.53**
+- Updated **form** to **v0.9.51**
+- Updated **heading-text** to **v0.5.51**
+- Updated **icons** to **v0.0.48**
+- Updated **pagination** to **v0.8.53**
+- Updated **popover** to **v0.5.54**
+- Updated **search-input** to **v0.1.54**
+- Updated **select** to **v0.6.54**
+- Updated **state** to **v0.0.52**
+- Updated **table** to **v0.4.52**
+
+## [0.6.53](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.53) (11/05/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.49**
+- Updated **button** to **v0.6.52**
+- Updated **checkbox** to **v0.5.52**
+- Updated **context-menu** to **v0.0.43**
+- Updated **field** to **v0.5.52**
+- Updated **form** to **v0.9.50**
+- Updated **heading-text** to **v0.5.50**
+- Updated **icons** to **v0.0.47**
+- Updated **pagination** to **v0.8.52**
+- Updated **popover** to **v0.5.53**
+- Updated **search-input** to **v0.1.53**
+- Updated **select** to **v0.6.53**
+- Updated **state** to **v0.0.51**
+- Updated **table** to **v0.4.51**
+
+## [0.6.52](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.52) (11/05/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.48**
+- Updated **button** to **v0.6.51**
+- Updated **checkbox** to **v0.5.51**
+- Updated **context-menu** to **v0.0.42**
+- Updated **field** to **v0.5.51**
+- Updated **form** to **v0.9.49**
+- Updated **heading-text** to **v0.5.49**
+- Updated **icons** to **v0.0.46**
+- Updated **pagination** to **v0.8.51**
+- Updated **popover** to **v0.5.52**
+- Updated **search-input** to **v0.1.52**
+- Updated **select** to **v0.6.52**
+- Updated **state** to **v0.0.50**
+- Updated **table** to **v0.4.50**
+
+## [0.6.51](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.51) (11/05/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.47**
+- Updated **button** to **v0.6.50**
+- Updated **checkbox** to **v0.5.50**
+- Updated **context-menu** to **v0.0.41**
+- Updated **field** to **v0.5.50**
+- Updated **form** to **v0.9.48**
+- Updated **heading-text** to **v0.5.48**
+- Updated **icons** to **v0.0.45**
+- Updated **pagination** to **v0.8.50**
+- Updated **popover** to **v0.5.51**
+- Updated **search-input** to **v0.1.51**
+- Updated **select** to **v0.6.51**
+- Updated **state** to **v0.0.49**
+- Updated **table** to **v0.4.49**
+
+## [0.6.50](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.50) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.46**
+- Updated **button** to **v0.6.49**
+- Updated **checkbox** to **v0.5.49**
+- Updated **context-menu** to **v0.0.40**
+- Updated **field** to **v0.5.49**
+- Updated **form** to **v0.9.47**
+- Updated **heading-text** to **v0.5.47**
+- Updated **icons** to **v0.0.44**
+- Updated **pagination** to **v0.8.49**
+- Updated **popover** to **v0.5.50**
+- Updated **search-input** to **v0.1.50**
+- Updated **select** to **v0.6.50**
+- Updated **state** to **v0.0.48**
+- Updated **table** to **v0.4.48**
+
+## [0.6.49](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.49) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.45**
+- Updated **button** to **v0.6.48**
+- Updated **checkbox** to **v0.5.48**
+- Updated **context-menu** to **v0.0.39**
+- Updated **field** to **v0.5.48**
+- Updated **form** to **v0.9.46**
+- Updated **heading-text** to **v0.5.46**
+- Updated **icons** to **v0.0.43**
+- Updated **pagination** to **v0.8.48**
+- Updated **popover** to **v0.5.49**
+- Updated **search-input** to **v0.1.49**
+- Updated **select** to **v0.6.49**
+- Updated **state** to **v0.0.47**
+- Updated **table** to **v0.4.47**
+
+## [0.6.48](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.48) (11/03/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.44**
+- Updated **button** to **v0.6.47**
+- Updated **checkbox** to **v0.5.47**
+- Updated **context-menu** to **v0.0.38**
+- Updated **field** to **v0.5.47**
+- Updated **form** to **v0.9.45**
+- Updated **heading-text** to **v0.5.45**
+- Updated **icons** to **v0.0.42**
+- Updated **pagination** to **v0.8.47**
+- Updated **popover** to **v0.5.48**
+- Updated **search-input** to **v0.1.48**
+- Updated **select** to **v0.6.48**
+- Updated **state** to **v0.0.46**
+- Updated **table** to **v0.4.46**
+
+## [0.6.47](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.47) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.43**
+- Updated **button** to **v0.6.46**
+- Updated **checkbox** to **v0.5.46**
+- Updated **context-menu** to **v0.0.37**
+- Updated **field** to **v0.5.46**
+- Updated **form** to **v0.9.44**
+- Updated **heading-text** to **v0.5.44**
+- Updated **icons** to **v0.0.41**
+- Updated **pagination** to **v0.8.46**
+- Updated **popover** to **v0.5.47**
+- Updated **search-input** to **v0.1.47**
+- Updated **select** to **v0.6.47**
+- Updated **state** to **v0.0.45**
+- Updated **table** to **v0.4.45**
+
+## [0.6.46](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.46) (11/03/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.45**
+- Updated **checkbox** to **v0.5.45**
+- Updated **context-menu** to **v0.0.36**
+- Updated **field** to **v0.5.45**
+- Updated **icons** to **v0.0.40**
+- Updated **pagination** to **v0.8.45**
+- Updated **popover** to **v0.5.46**
+- Updated **search-input** to **v0.1.46**
+- Updated **select** to **v0.6.46**
+
+## [0.6.45](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.45) (11/03/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.44**
+- Updated **checkbox** to **v0.5.44**
+- Updated **context-menu** to **v0.0.35**
+- Updated **field** to **v0.5.44**
+- Updated **form** to **v0.9.43**
+- Updated **pagination** to **v0.8.44**
+- Updated **popover** to **v0.5.45**
+- Updated **search-input** to **v0.1.45**
+- Updated **select** to **v0.6.45**
+- Updated **state** to **v0.0.44**
+
+## [0.6.44](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.44) (11/03/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.42**
+- Updated **button** to **v0.6.43**
+- Updated **checkbox** to **v0.5.43**
+- Updated **context-menu** to **v0.0.34**
+- Updated **field** to **v0.5.43**
+- Updated **form** to **v0.9.42**
+- Updated **heading-text** to **v0.5.43**
+- Updated **icons** to **v0.0.39**
+- Updated **pagination** to **v0.8.43**
+- Updated **popover** to **v0.5.44**
+- Updated **search-input** to **v0.1.44**
+- Updated **select** to **v0.6.44**
+- Updated **state** to **v0.0.43**
+- Updated **table** to **v0.4.44**
+
+## [0.6.43](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.43) (11/03/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.41**
+- Updated **button** to **v0.6.42**
+- Updated **checkbox** to **v0.5.42**
+- Updated **context-menu** to **v0.0.33**
+- Updated **field** to **v0.5.42**
+- Updated **form** to **v0.9.41**
+- Updated **heading-text** to **v0.5.42**
+- Updated **icons** to **v0.0.38**
+- Updated **pagination** to **v0.8.42**
+- Updated **popover** to **v0.5.43**
+- Updated **search-input** to **v0.1.43**
+- Updated **select** to **v0.6.43**
+- Updated **state** to **v0.0.42**
+- Updated **table** to **v0.4.43**
+
+## [0.6.42](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.42) (11/02/2026)
+
+### Updated Dependencies
+
+- Updated **context-menu** to **v0.0.32**
+- Updated **heading-text** to **v0.5.41**
+- Updated **popover** to **v0.5.42**
+- Updated **search-input** to **v0.1.42**
+- Updated **select** to **v0.6.42**
+- Updated **table** to **v0.4.42**
+
+## [0.6.41](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.41) (11/02/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.41**
+- Updated **checkbox** to **v0.5.41**
+- Updated **context-menu** to **v0.0.31**
+- Updated **field** to **v0.5.41**
+- Updated **icons** to **v0.0.37**
+- Updated **pagination** to **v0.8.41**
+- Updated **popover** to **v0.5.41**
+- Updated **search-input** to **v0.1.41**
+- Updated **select** to **v0.6.41**
+- Updated **table** to **v0.4.41**
+
+## [0.6.40](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.40) (11/01/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.40**
+- Updated **button** to **v0.6.40**
+- Updated **checkbox** to **v0.5.40**
+- Updated **context-menu** to **v0.0.30**
+- Updated **field** to **v0.5.40**
+- Updated **form** to **v0.9.40**
+- Updated **heading-text** to **v0.5.40**
+- Updated **icons** to **v0.0.36**
+- Updated **pagination** to **v0.8.40**
+- Updated **popover** to **v0.5.40**
+- Updated **search-input** to **v0.1.40**
+- Updated **select** to **v0.6.40**
+- Updated **state** to **v0.0.41**
+- Updated **table** to **v0.4.40**
+
+## [0.6.39](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.39) (11/01/2026)
+
+### Features
+
+- **scramble-animation:** Added scramble text animation component and improved design ([3a43c964f](https://github.com/storm-software/cyclone-ui/commit/3a43c964f))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.39**
+- Updated **button** to **v0.6.39**
+- Updated **checkbox** to **v0.5.39**
+- Updated **context-menu** to **v0.0.29**
+- Updated **field** to **v0.5.39**
+- Updated **form** to **v0.9.39**
+- Updated **heading-text** to **v0.5.39**
+- Updated **icons** to **v0.0.35**
+- Updated **pagination** to **v0.8.39**
+- Updated **popover** to **v0.5.39**
+- Updated **search-input** to **v0.1.39**
+- Updated **select** to **v0.6.39**
+- Updated **state** to **v0.0.40**
+- Updated **table** to **v0.4.39**
+
+## [0.6.38](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.38) (10/31/2026)
+
+### Features
+
+- **icons:** Update icons to match material design icons with animations ([84720d7e0](https://github.com/storm-software/cyclone-ui/commit/84720d7e0))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.38**
+- Updated **button** to **v0.6.38**
+- Updated **checkbox** to **v0.5.38**
+- Updated **context-menu** to **v0.0.28**
+- Updated **field** to **v0.5.38**
+- Updated **form** to **v0.9.38**
+- Updated **heading-text** to **v0.5.38**
+- Updated **icons** to **v0.0.34**
+- Updated **pagination** to **v0.8.38**
+- Updated **popover** to **v0.5.38**
+- Updated **search-input** to **v0.1.38**
+- Updated **select** to **v0.6.38**
+- Updated **state** to **v0.0.39**
+- Updated **table** to **v0.4.38**
+
+## [0.6.37](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.37) (10/31/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.37**
+- Updated **button** to **v0.6.37**
+- Updated **checkbox** to **v0.5.37**
+- Updated **context-menu** to **v0.0.27**
+- Updated **field** to **v0.5.37**
+- Updated **form** to **v0.9.37**
+- Updated **heading-text** to **v0.5.37**
+- Updated **icons** to **v0.0.33**
+- Updated **pagination** to **v0.8.37**
+- Updated **popover** to **v0.5.37**
+- Updated **search-input** to **v0.1.37**
+- Updated **select** to **v0.6.37**
+- Updated **state** to **v0.0.38**
+- Updated **table** to **v0.4.37**
+
+## [0.6.36](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.36) (10/30/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve typing issues with Cyclone UI components ([5dfa68e1e](https://github.com/storm-software/cyclone-ui/commit/5dfa68e1e))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.36**
+- Updated **button** to **v0.6.36**
+- Updated **checkbox** to **v0.5.36**
+- Updated **context-menu** to **v0.0.26**
+- Updated **field** to **v0.5.36**
+- Updated **form** to **v0.9.36**
+- Updated **heading-text** to **v0.5.36**
+- Updated **icons** to **v0.0.32**
+- Updated **pagination** to **v0.8.36**
+- Updated **popover** to **v0.5.36**
+- Updated **search-input** to **v0.1.36**
+- Updated **select** to **v0.6.36**
+- Updated **state** to **v0.0.37**
+- Updated **table** to **v0.4.36**
+
+## [0.6.35](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.35) (10/29/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.35**
+- Updated **button** to **v0.6.35**
+- Updated **checkbox** to **v0.5.35**
+- Updated **context-menu** to **v0.0.25**
+- Updated **field** to **v0.5.35**
+- Updated **form** to **v0.9.35**
+- Updated **heading-text** to **v0.5.35**
+- Updated **icons** to **v0.0.31**
+- Updated **pagination** to **v0.8.35**
+- Updated **popover** to **v0.5.35**
+- Updated **search-input** to **v0.1.35**
+- Updated **select** to **v0.6.35**
+- Updated **state** to **v0.0.36**
+- Updated **table** to **v0.4.35**
+
+## [0.6.34](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.34) (10/29/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.34**
+- Updated **button** to **v0.6.34**
+- Updated **checkbox** to **v0.5.34**
+- Updated **context-menu** to **v0.0.24**
+- Updated **field** to **v0.5.34**
+- Updated **form** to **v0.9.34**
+- Updated **heading-text** to **v0.5.34**
+- Updated **icons** to **v0.0.30**
+- Updated **pagination** to **v0.8.34**
+- Updated **popover** to **v0.5.34**
+- Updated **search-input** to **v0.1.34**
+- Updated **select** to **v0.6.34**
+- Updated **state** to **v0.0.35**
+- Updated **table** to **v0.4.34**
+
+## [0.6.33](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.33) (10/29/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.33**
+- Updated **button** to **v0.6.33**
+- Updated **checkbox** to **v0.5.33**
+- Updated **context-menu** to **v0.0.23**
+- Updated **field** to **v0.5.33**
+- Updated **form** to **v0.9.33**
+- Updated **heading-text** to **v0.5.33**
+- Updated **icons** to **v0.0.29**
+- Updated **pagination** to **v0.8.33**
+- Updated **popover** to **v0.5.33**
+- Updated **search-input** to **v0.1.33**
+- Updated **select** to **v0.6.33**
+- Updated **state** to **v0.0.34**
+- Updated **table** to **v0.4.33**
+
+## [0.6.32](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.32) (10/25/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.32**
+- Updated **button** to **v0.6.32**
+- Updated **checkbox** to **v0.5.32**
+- Updated **context-menu** to **v0.0.22**
+- Updated **field** to **v0.5.32**
+- Updated **form** to **v0.9.32**
+- Updated **heading-text** to **v0.5.32**
+- Updated **icons** to **v0.0.28**
+- Updated **pagination** to **v0.8.32**
+- Updated **popover** to **v0.5.32**
+- Updated **search-input** to **v0.1.32**
+- Updated **select** to **v0.6.32**
+- Updated **state** to **v0.0.33**
+- Updated **table** to **v0.4.32**
+
+## [0.6.31](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.31) (10/24/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.31**
+- Updated **button** to **v0.6.31**
+- Updated **checkbox** to **v0.5.31**
+- Updated **context-menu** to **v0.0.21**
+- Updated **field** to **v0.5.31**
+- Updated **form** to **v0.9.31**
+- Updated **heading-text** to **v0.5.31**
+- Updated **icons** to **v0.0.27**
+- Updated **pagination** to **v0.8.31**
+- Updated **popover** to **v0.5.31**
+- Updated **search-input** to **v0.1.31**
+- Updated **select** to **v0.6.31**
+- Updated **state** to **v0.0.32**
+- Updated **table** to **v0.4.31**
+
+## [0.6.30](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.30) (10/24/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.30**
+- Updated **button** to **v0.6.30**
+- Updated **checkbox** to **v0.5.30**
+- Updated **context-menu** to **v0.0.20**
+- Updated **field** to **v0.5.30**
+- Updated **form** to **v0.9.30**
+- Updated **heading-text** to **v0.5.30**
+- Updated **icons** to **v0.0.26**
+- Updated **pagination** to **v0.8.30**
+- Updated **popover** to **v0.5.30**
+- Updated **search-input** to **v0.1.30**
+- Updated **select** to **v0.6.30**
+- Updated **state** to **v0.0.31**
+- Updated **table** to **v0.4.30**
+
+## [0.6.29](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.29) (10/23/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.29**
+- Updated **button** to **v0.6.29**
+- Updated **checkbox** to **v0.5.29**
+- Updated **context-menu** to **v0.0.19**
+- Updated **field** to **v0.5.29**
+- Updated **form** to **v0.9.29**
+- Updated **heading-text** to **v0.5.29**
+- Updated **icons** to **v0.0.25**
+- Updated **pagination** to **v0.8.29**
+- Updated **popover** to **v0.5.29**
+- Updated **search-input** to **v0.1.29**
+- Updated **select** to **v0.6.29**
+- Updated **state** to **v0.0.30**
+- Updated **table** to **v0.4.29**
+
+## [0.6.28](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.28) (10/23/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.28**
+- Updated **button** to **v0.6.28**
+- Updated **checkbox** to **v0.5.28**
+- Updated **context-menu** to **v0.0.18**
+- Updated **field** to **v0.5.28**
+- Updated **form** to **v0.9.28**
+- Updated **heading-text** to **v0.5.28**
+- Updated **icons** to **v0.0.24**
+- Updated **pagination** to **v0.8.28**
+- Updated **popover** to **v0.5.28**
+- Updated **search-input** to **v0.1.28**
+- Updated **select** to **v0.6.28**
+- Updated **state** to **v0.0.29**
+- Updated **table** to **v0.4.28**
+
+## [0.6.27](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.27) (10/23/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.27**
+- Updated **button** to **v0.6.27**
+- Updated **checkbox** to **v0.5.27**
+- Updated **context-menu** to **v0.0.17**
+- Updated **field** to **v0.5.27**
+- Updated **form** to **v0.9.27**
+- Updated **heading-text** to **v0.5.27**
+- Updated **icons** to **v0.0.23**
+- Updated **pagination** to **v0.8.27**
+- Updated **popover** to **v0.5.27**
+- Updated **search-input** to **v0.1.27**
+- Updated **select** to **v0.6.27**
+- Updated **state** to **v0.0.28**
+- Updated **table** to **v0.4.27**
+
+## [0.6.26](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.26) (10/23/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.26**
+- Updated **button** to **v0.6.26**
+- Updated **checkbox** to **v0.5.26**
+- Updated **context-menu** to **v0.0.16**
+- Updated **field** to **v0.5.26**
+- Updated **form** to **v0.9.26**
+- Updated **heading-text** to **v0.5.26**
+- Updated **icons** to **v0.0.22**
+- Updated **pagination** to **v0.8.26**
+- Updated **popover** to **v0.5.26**
+- Updated **search-input** to **v0.1.26**
+- Updated **select** to **v0.6.26**
+- Updated **state** to **v0.0.27**
+- Updated **table** to **v0.4.26**
+
+## [0.6.25](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.25) (10/22/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update components to use `use client` directives as needed ([5bc81ef8](https://github.com/storm-software/cyclone-ui/commit/5bc81ef8))
+- **tokens:** Update token structure to better allow customizations ([7f23eb61](https://github.com/storm-software/cyclone-ui/commit/7f23eb61))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.25**
+- Updated **button** to **v0.6.25**
+- Updated **checkbox** to **v0.5.25**
+- Updated **context-menu** to **v0.0.15**
+- Updated **field** to **v0.5.25**
+- Updated **form** to **v0.9.25**
+- Updated **heading-text** to **v0.5.25**
+- Updated **icons** to **v0.0.21**
+- Updated **pagination** to **v0.8.25**
+- Updated **popover** to **v0.5.25**
+- Updated **search-input** to **v0.1.25**
+- Updated **select** to **v0.6.25**
+- Updated **state** to **v0.0.26**
+- Updated **table** to **v0.4.25**
+
+## [0.6.24](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.24) (10/19/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.24**
+- Updated **button** to **v0.6.24**
+- Updated **checkbox** to **v0.5.24**
+- Updated **context-menu** to **v0.0.14**
+- Updated **field** to **v0.5.24**
+- Updated **form** to **v0.9.24**
+- Updated **heading-text** to **v0.5.24**
+- Updated **icons** to **v0.0.20**
+- Updated **label-text** to **v0.5.24**
+- Updated **pagination** to **v0.8.24**
+- Updated **popover** to **v0.5.24**
+- Updated **search-input** to **v0.1.24**
+- Updated **select** to **v0.6.24**
+- Updated **state** to **v0.0.25**
+- Updated **table** to **v0.4.24**
+
+## [0.6.23](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.23) (10/19/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.23**
+- Updated **button** to **v0.6.23**
+- Updated **checkbox** to **v0.5.23**
+- Updated **context-menu** to **v0.0.13**
+- Updated **field** to **v0.5.23**
+- Updated **form** to **v0.9.23**
+- Updated **heading-text** to **v0.5.23**
+- Updated **icons** to **v0.0.19**
+- Updated **label-text** to **v0.5.23**
+- Updated **pagination** to **v0.8.23**
+- Updated **popover** to **v0.5.23**
+- Updated **search-input** to **v0.1.23**
+- Updated **select** to **v0.6.23**
+- Updated **state** to **v0.0.24**
+- Updated **table** to **v0.4.23**
+
+## [0.6.22](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.22) (10/18/2026)
+
+### Features
+
+- **tokens:** Added `brand` color theme to workspace ([735efe8a](https://github.com/storm-software/cyclone-ui/commit/735efe8a))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.22**
+- Updated **button** to **v0.6.22**
+- Updated **checkbox** to **v0.5.22**
+- Updated **context-menu** to **v0.0.12**
+- Updated **field** to **v0.5.22**
+- Updated **form** to **v0.9.22**
+- Updated **heading-text** to **v0.5.22**
+- Updated **icons** to **v0.0.18**
+- Updated **label-text** to **v0.5.22**
+- Updated **pagination** to **v0.8.22**
+- Updated **popover** to **v0.5.22**
+- Updated **search-input** to **v0.1.22**
+- Updated **select** to **v0.6.22**
+- Updated **state** to **v0.0.23**
+- Updated **table** to **v0.4.22**
+
+## [0.6.21](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.21) (10/16/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.21**
+- Updated **button** to **v0.6.21**
+- Updated **checkbox** to **v0.5.21**
+- Updated **context-menu** to **v0.0.11**
+- Updated **field** to **v0.5.21**
+- Updated **form** to **v0.9.21**
+- Updated **heading-text** to **v0.5.21**
+- Updated **icons** to **v0.0.17**
+- Updated **label-text** to **v0.5.21**
+- Updated **pagination** to **v0.8.21**
+- Updated **popover** to **v0.5.21**
+- Updated **search-input** to **v0.1.21**
+- Updated **select** to **v0.6.21**
+- Updated **state** to **v0.0.22**
+- Updated **table** to **v0.4.21**
+
+## [0.6.20](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.20) (10/16/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.20**
+- Updated **button** to **v0.6.20**
+- Updated **checkbox** to **v0.5.20**
+- Updated **context-menu** to **v0.0.10**
+- Updated **field** to **v0.5.20**
+- Updated **form** to **v0.9.20**
+- Updated **heading-text** to **v0.5.20**
+- Updated **icons** to **v0.0.16**
+- Updated **label-text** to **v0.5.20**
+- Updated **pagination** to **v0.8.20**
+- Updated **popover** to **v0.5.20**
+- Updated **search-input** to **v0.1.20**
+- Updated **select** to **v0.6.20**
+- Updated **state** to **v0.0.21**
+- Updated **table** to **v0.4.20**
+
+## [0.6.19](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.19) (10/16/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.19**
+- Updated **button** to **v0.6.19**
+- Updated **checkbox** to **v0.5.19**
+- Updated **context-menu** to **v0.0.9**
+- Updated **field** to **v0.5.19**
+- Updated **form** to **v0.9.19**
+- Updated **heading-text** to **v0.5.19**
+- Updated **icons** to **v0.0.15**
+- Updated **label-text** to **v0.5.19**
+- Updated **pagination** to **v0.8.19**
+- Updated **popover** to **v0.5.19**
+- Updated **search-input** to **v0.1.19**
+- Updated **select** to **v0.6.19**
+- Updated **state** to **v0.0.20**
+- Updated **table** to **v0.4.19**
+
+## [0.6.18](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.18) (10/16/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.18**
+- Updated **button** to **v0.6.18**
+- Updated **checkbox** to **v0.5.18**
+- Updated **context-menu** to **v0.0.8**
+- Updated **field** to **v0.5.18**
+- Updated **form** to **v0.9.18**
+- Updated **heading-text** to **v0.5.18**
+- Updated **icons** to **v0.0.14**
+- Updated **label-text** to **v0.5.18**
+- Updated **pagination** to **v0.8.18**
+- Updated **popover** to **v0.5.18**
+- Updated **search-input** to **v0.1.18**
+- Updated **select** to **v0.6.18**
+- Updated **state** to **v0.0.19**
+- Updated **table** to **v0.4.18**
+
+## [0.6.17](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.17) (10/14/2026)
+
+### Bug Fixes
+
+- **monorepo:** Clean up components display styling ([1866f60c](https://github.com/storm-software/cyclone-ui/commit/1866f60c))
+
+### Features
+
+- **data-table:** Added `card` theme to Data Table component ([74202899](https://github.com/storm-software/cyclone-ui/commit/74202899))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.17**
+- Updated **button** to **v0.6.17**
+- Updated **checkbox** to **v0.5.17**
+- Updated **context-menu** to **v0.0.7**
+- Updated **field** to **v0.5.17**
+- Updated **form** to **v0.9.17**
+- Updated **heading-text** to **v0.5.17**
+- Updated **icons** to **v0.0.13**
+- Updated **label-text** to **v0.5.17**
+- Updated **pagination** to **v0.8.17**
+- Updated **popover** to **v0.5.17**
+- Updated **search-input** to **v0.1.17**
+- Updated **select** to **v0.6.17**
+- Updated **state** to **v0.0.18**
+- Updated **table** to **v0.4.17**
+
+## [0.6.16](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.16) (10/13/2026)
+
+### Bug Fixes
+
+- **monorepo:** Clean up of various components and tokens ([08a494ad](https://github.com/storm-software/cyclone-ui/commit/08a494ad))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.16**
+- Updated **button** to **v0.6.16**
+- Updated **checkbox** to **v0.5.16**
+- Updated **context-menu** to **v0.0.6**
+- Updated **field** to **v0.5.16**
+- Updated **form** to **v0.9.16**
+- Updated **heading-text** to **v0.5.16**
+- Updated **icons** to **v0.0.12**
+- Updated **label-text** to **v0.5.16**
+- Updated **pagination** to **v0.8.16**
+- Updated **popover** to **v0.5.16**
+- Updated **search-input** to **v0.1.16**
+- Updated **select** to **v0.6.16**
+- Updated **state** to **v0.0.17**
+- Updated **table** to **v0.4.16**
+
+## [0.6.15](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.15) (10/12/2026)
+
+### Bug Fixes
+
+- **tokens:** Updates to background token structure ([913fc3c9](https://github.com/storm-software/cyclone-ui/commit/913fc3c9))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.15**
+- Updated **button** to **v0.6.15**
+- Updated **checkbox** to **v0.5.15**
+- Updated **field** to **v0.5.15**
+- Updated **form** to **v0.9.15**
+- Updated **heading-text** to **v0.5.15**
+- Updated **icons** to **v0.0.11**
+- Updated **label-text** to **v0.5.15**
+- Updated **pagination** to **v0.8.15**
+- Updated **popover** to **v0.5.15**
+- Updated **search-input** to **v0.1.15**
+- Updated **select** to **v0.6.15**
+- Updated **state** to **v0.0.16**
+- Updated **table** to **v0.4.15**
+
+## [0.6.14](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.14) (10/12/2026)
+
+### Bug Fixes
+
+- **monorepo:** Clean up component display issues ([aec421b0](https://github.com/storm-software/cyclone-ui/commit/aec421b0))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.14**
+- Updated **button** to **v0.6.14**
+- Updated **checkbox** to **v0.5.14**
+- Updated **field** to **v0.5.14**
+- Updated **form** to **v0.9.14**
+- Updated **heading-text** to **v0.5.14**
+- Updated **icons** to **v0.0.10**
+- Updated **label-text** to **v0.5.14**
+- Updated **pagination** to **v0.8.14**
+- Updated **popover** to **v0.5.14**
+- Updated **search-input** to **v0.1.14**
+- Updated **select** to **v0.6.14**
+- Updated **state** to **v0.0.15**
+- Updated **table** to **v0.4.14**
+
+## [0.6.13](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.13) (10/11/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.13**
+- Updated **button** to **v0.6.13**
+- Updated **checkbox** to **v0.5.13**
+- Updated **field** to **v0.5.13**
+- Updated **form** to **v0.9.13**
+- Updated **heading-text** to **v0.5.13**
+- Updated **icons** to **v0.0.9**
+- Updated **label-text** to **v0.5.13**
+- Updated **pagination** to **v0.8.13**
+- Updated **popover** to **v0.5.13**
+- Updated **search-input** to **v0.1.13**
+- Updated **select** to **v0.6.13**
+- Updated **state** to **v0.0.14**
+- Updated **table** to **v0.4.13**
+
+## [0.6.12](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.12) (10/11/2026)
+
+### Bug Fixes
+
+- **themes:** Update the token structure in the design system ([a226f474](https://github.com/storm-software/cyclone-ui/commit/a226f474))
+- **context-menu:** Update `Select` to use shared Context Menu component ([ef0f0b77](https://github.com/storm-software/cyclone-ui/commit/ef0f0b77))
+- **monorepo:** Update component descriptions and added design sync with Claude Design ([35ece709](https://github.com/storm-software/cyclone-ui/commit/35ece709))
+
+### Features
+
+- **field:** Added the `variant` property to both field and label components ([c1e0c13c](https://github.com/storm-software/cyclone-ui/commit/c1e0c13c))
+- **context-menu:** Added separate `ContextMenu` component to share ([e8ac830e](https://github.com/storm-software/cyclone-ui/commit/e8ac830e))
+- **confetti-burst:** Added the Confetti Burst reusable animation ([b395a334](https://github.com/storm-software/cyclone-ui/commit/b395a334))
+
+### Source Code Improvements
+
+- **monorepo:** Update form field usage to reduce overall number of components ([4e5fef79](https://github.com/storm-software/cyclone-ui/commit/4e5fef79))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.12**
+- Updated **button** to **v0.6.12**
+- Updated **checkbox** to **v0.5.12**
+- Updated **field** to **v0.5.12**
+- Updated **form** to **v0.9.12**
+- Updated **heading-text** to **v0.5.12**
+- Updated **icons** to **v0.0.8**
+- Updated **label-text** to **v0.5.12**
+- Updated **pagination** to **v0.8.12**
+- Updated **popover** to **v0.5.12**
+- Updated **search-input** to **v0.1.12**
+- Updated **select** to **v0.6.12**
+- Updated **state** to **v0.0.13**
+- Updated **table** to **v0.4.12**
+
+## [0.6.11](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.11) (10/07/2026)
+
+### Bug Fixes
+
+- **themes:** Clean up typography tokens ([68aee6ad](https://github.com/storm-software/cyclone-ui/commit/68aee6ad))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.11**
+- Updated **button** to **v0.6.11**
+- Updated **checkbox** to **v0.5.11**
+- Updated **checkbox-field** to **v0.1.11**
+- Updated **form** to **v0.9.11**
+- Updated **heading-text** to **v0.5.11**
+- Updated **icons** to **v0.0.7**
+- Updated **label-text** to **v0.5.11**
+- Updated **pagination** to **v0.8.11**
+- Updated **popover** to **v0.5.11**
+- Updated **search-input-field** to **v0.1.11**
+- Updated **select-field** to **v0.1.11**
+- Updated **state** to **v0.0.12**
+- Updated **table** to **v0.4.11**
+
+## [0.6.10](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.10) (10/06/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.10**
+- Updated **button** to **v0.6.10**
+- Updated **checkbox** to **v0.5.10**
+- Updated **checkbox-field** to **v0.1.10**
+- Updated **form** to **v0.9.10**
+- Updated **heading-text** to **v0.5.10**
+- Updated **icons** to **v0.0.6**
+- Updated **label-text** to **v0.5.10**
+- Updated **pagination** to **v0.8.10**
+- Updated **popover** to **v0.5.10**
+- Updated **search-input-field** to **v0.1.10**
+- Updated **select-field** to **v0.1.10**
+- Updated **state** to **v0.0.11**
+- Updated **table** to **v0.4.10**
+
+## [0.6.9](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.9) (10/05/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.9**
+- Updated **button** to **v0.6.9**
+- Updated **checkbox** to **v0.5.9**
+- Updated **checkbox-field** to **v0.1.9**
+- Updated **form** to **v0.9.9**
+- Updated **heading-text** to **v0.5.9**
+- Updated **icons** to **v0.0.5**
+- Updated **label-text** to **v0.5.9**
+- Updated **pagination** to **v0.8.9**
+- Updated **popover** to **v0.5.9**
+- Updated **search-input-field** to **v0.1.9**
+- Updated **select-field** to **v0.1.9**
+- Updated **state** to **v0.0.10**
+- Updated **table** to **v0.4.9**
+
+## [0.6.8](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.8) (10/05/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve release workflow warnings ([e0f2b332](https://github.com/storm-software/cyclone-ui/commit/e0f2b332))
+
+### Features
+
+- **page:** Added Page component for base layout ([0bc9835e](https://github.com/storm-software/cyclone-ui/commit/0bc9835e))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.8**
+- Updated **button** to **v0.6.8**
+- Updated **checkbox** to **v0.5.8**
+- Updated **checkbox-field** to **v0.1.8**
+- Updated **form** to **v0.9.8**
+- Updated **heading-text** to **v0.5.8**
+- Updated **icons** to **v0.0.4**
+- Updated **label-text** to **v0.5.8**
+- Updated **pagination** to **v0.8.8**
+- Updated **popover** to **v0.5.8**
+- Updated **search-input-field** to **v0.1.8**
+- Updated **select-field** to **v0.1.8**
+- Updated **state** to **v0.0.9**
+- Updated **table** to **v0.4.8**
+
+## [0.6.7](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.7) (10/04/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.7**
+- Updated **button** to **v0.6.7**
+- Updated **checkbox** to **v0.5.7**
+- Updated **checkbox-field** to **v0.1.7**
+- Updated **form** to **v0.9.7**
+- Updated **heading-text** to **v0.5.7**
+- Updated **icons** to **v0.0.3**
+- Updated **label-text** to **v0.5.7**
+- Updated **pagination** to **v0.8.7**
+- Updated **popover** to **v0.5.7**
+- Updated **search-input-field** to **v0.1.7**
+- Updated **select-field** to **v0.1.7**
+- Updated **state** to **v0.0.8**
+- Updated **table** to **v0.4.7**
+
+## [0.6.6](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.6) (10/03/2026)
+
+### Features
+
+- **icons:** Added icons library and removed lucid references ([45024ce8](https://github.com/storm-software/cyclone-ui/commit/45024ce8))
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+- **divider:** Added the `Divider` component package ([694276cf](https://github.com/storm-software/cyclone-ui/commit/694276cf))
+- **inline-code-text:** Added InlineCodeText component package ([482bad14](https://github.com/storm-software/cyclone-ui/commit/482bad14))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.6**
+- Updated **button** to **v0.6.6**
+- Updated **checkbox** to **v0.5.6**
+- Updated **checkbox-field** to **v0.1.6**
+- Updated **form** to **v0.9.6**
+- Updated **heading-text** to **v0.5.6**
+- Updated **icons** to **v0.0.2**
+- Updated **label-text** to **v0.5.6**
+- Updated **pagination** to **v0.8.6**
+- Updated **popover** to **v0.5.6**
+- Updated **search-input-field** to **v0.1.6**
+- Updated **select-field** to **v0.1.6**
+- Updated **state** to **v0.0.7**
+- Updated **table** to **v0.4.6**
+
+## [0.6.5](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.5) (09/21/2026)
+
+### Bug Fixes
+
+- **data-table:** Improve table header display and vector animations ([462cbe63](https://github.com/storm-software/cyclone-ui/commit/462cbe63))
+- **monorepo:** Stlying clean up and improved component props ([4eba5c0f](https://github.com/storm-software/cyclone-ui/commit/4eba5c0f))
+- **body-text:** Updates to workspace to use `BodyText` component ([af8e53c5](https://github.com/storm-software/cyclone-ui/commit/af8e53c5))
+- **select:** Clean up padding and sizing of select field ([c106a513](https://github.com/storm-software/cyclone-ui/commit/c106a513))
+
+### Features
+
+- **field:** Added `size` property to form field components ([380e416b](https://github.com/storm-software/cyclone-ui/commit/380e416b))
+- **accordion:** Added the `direction` property ([ba244763](https://github.com/storm-software/cyclone-ui/commit/ba244763))
+- **themes:** Update theme colors and apply them to components ([83c95718](https://github.com/storm-software/cyclone-ui/commit/83c95718))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.5**
+- Updated **button** to **v0.6.5**
+- Updated **checkbox** to **v0.5.5**
+- Updated **checkbox-field** to **v0.1.5**
+- Updated **form** to **v0.9.5**
+- Updated **heading-text** to **v0.5.5**
+- Updated **label-text** to **v0.5.5**
+- Updated **pagination** to **v0.8.5**
+- Updated **popover** to **v0.5.5**
+- Updated **search-input-field** to **v0.1.5**
+- Updated **select-field** to **v0.1.5**
+- Updated **state** to **v0.0.6**
+- Updated **table** to **v0.4.5**
+
+## [0.6.4](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.4) (09/13/2026)
+
+### Bug Fixes
+
+- **data-table:** Various styling clean up changes ([86787b1](https://github.com/storm-software/cyclone-ui/commit/86787b1))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.4**
+- Updated **checkbox** to **v0.5.4**
+- Updated **checkbox-field** to **v0.1.4**
+- Updated **form** to **v0.9.4**
+- Updated **label-text** to **v0.5.4**
+- Updated **pagination** to **v0.8.4**
+- Updated **popover** to **v0.5.4**
+- Updated **search-input-field** to **v0.1.4**
+- Updated **select-field** to **v0.1.4**
+- Updated **state** to **v0.0.5**
+- Updated **table** to **v0.4.4**
+
+## [0.6.3](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.3) (09/11/2026)
+
+### Bug Fixes
+
+- **field:** Clean up issues around field status display ([b5a57dd](https://github.com/storm-software/cyclone-ui/commit/b5a57dd))
+
+### Features
+
+- **anchor:** Added Anchor component to support permalink display ([7e31186](https://github.com/storm-software/cyclone-ui/commit/7e31186))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.3**
+- Updated **checkbox** to **v0.5.3**
+- Updated **checkbox-field** to **v0.1.3**
+- Updated **form** to **v0.9.3**
+- Updated **label-text** to **v0.5.3**
+- Updated **pagination** to **v0.8.3**
+- Updated **popover** to **v0.5.3**
+- Updated **search-input-field** to **v0.1.3**
+- Updated **select-field** to **v0.1.3**
+- Updated **state** to **v0.0.4**
+- Updated **table** to **v0.4.3**
+
+## [0.6.2](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.2) (09/06/2026)
+
+### Features
+
+- **themes:** Simplified semantic tokens to include a single `base` and only one background color ([3c71be2](https://github.com/storm-software/cyclone-ui/commit/3c71be2))
+- **themes:** Added the `brand` sub-theme to package ([94201d5](https://github.com/storm-software/cyclone-ui/commit/94201d5))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.2**
+- Updated **checkbox-field** to **v0.1.2**
+- Updated **form** to **v0.9.2**
+- Updated **label-text** to **v0.5.2**
+- Updated **pagination** to **v0.8.2**
+- Updated **popover** to **v0.5.2**
+- Updated **search-input-field** to **v0.1.2**
+- Updated **select-field** to **v0.1.2**
+- Updated **state** to **v0.0.3**
+- Updated **table** to **v0.4.2**
+
+## [0.6.1](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.1) (09/04/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.1**
+- Updated **checkbox-field** to **v0.1.1**
+- Updated **form** to **v0.9.1**
+- Updated **label-text** to **v0.5.1**
+- Updated **pagination** to **v0.8.1**
+- Updated **popover** to **v0.5.1**
+- Updated **search-input-field** to **v0.1.1**
+- Updated **select-field** to **v0.1.1**
+- Updated **state** to **v0.0.2**
+- Updated **table** to **v0.4.1**
+
+## 0.6.0 (2024-06-19)
 
 ### 🚀 Features
 
@@ -7,13 +2079,11 @@
 
 ## 0.5.0 (2024-06-19)
 
-
 ### 🚀 Features
 
 - **monorepo:** Upgrade React package dependencies to use the v19 release canidate ([687a997](https://github.com/storm-software/cyclone-ui/commit/687a997))
 
 ## 0.4.0 (2024-06-17)
-
 
 ### 🚀 Features
 
@@ -21,13 +2091,11 @@
 
 ## 0.3.0 (2024-06-16)
 
-
 ### 🚀 Features
 
 - **data-table:** Added support for table pagination functionality ([94e0dec](https://github.com/storm-software/cyclone-ui/commit/94e0dec))
 
 ## 0.2.2 (2024-06-15)
-
 
 ### 🩹 Fixes
 
@@ -35,13 +2103,11 @@
 
 ## 0.2.1 (2024-06-15)
 
-
 ### 🩹 Fixes
 
 - **monorepo:** Updates to TypeScript configuration in component packages ([6ff76bf](https://github.com/storm-software/cyclone-ui/commit/6ff76bf))
 
 ## 0.2.0 (2024-06-09)
-
 
 ### 🚀 Features
 

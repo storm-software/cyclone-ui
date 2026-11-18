@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Uhornhook" format="2">
+  <advance width="656"/>
+  <unicode hex="1EEC"/>
+  <anchor x="278.0" y="0.0" name="bottom"/>
+  <outline>
+    <component base="Uhorn"/>
+    <component base="hookcomb.case" xOffset="408"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.assembly</key>
+      <string>
+
+USEMYMETRICS[]
+OFFSET[R], $Uhorn$, 0, 0
+OFFSET[R], $hookcomb.case$, 408, 0
+CALL[], 21, 22, 88
+SVTCA[Y]
+CALL[], 43, 15, 1, 1, -63, 86
+SHC[2], 1
+CALL[], 9
+CALL[], 34, 39, 30, 25, 16, 87
+SVTCA[X]
+SHC[2], 1
+</string>
+      <key>com.type-invaders.vtt.talk</key>
+      <string></string>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

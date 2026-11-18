@@ -1,0 +1,345 @@
+/* -------------------------------------------------------------------
+
+                   🗲 Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
+"use client";
+
+import type { FieldLabelPlacement, FormControlSize } from "@cyclone-ui/helpers";
+import {
+  FieldNotchedOutline,
+  FormControlFrameContext,
+  getFieldLabelInset,
+  getFormControlAriaProps,
+  getFormFontScale,
+  getFormSizeScale,
+  useFieldHasValidationMessage,
+  useFieldLabelDefaults,
+  useFieldLabelPlacement,
+  useFieldShouldShowPlaceholder,
+  useFieldVariant,
+  useFormControl
+} from "@cyclone-ui/helpers";
+import type { InputContextProps } from "@cyclone-ui/input";
+import { ControlUnderline } from "@cyclone-ui/input";
+import { InputValue } from "@cyclone-ui/input/InputValue";
+import {
+  SCROLL_VIEW_CLASS_NAME,
+  SCROLL_VIEW_STYLES
+} from "@cyclone-ui/scroll-view";
+import { isWeb } from "@tamagui/constants";
+import type { GetProps } from "@tamagui/core";
+import {
+  createStyledHOC,
+  styled,
+  Theme,
+  useComposedRefs,
+  useTheme,
+  View
+} from "@tamagui/core";
+import { useCallback, useState } from "react";
+
+// Text areas float their field label by default.
+const FLOATING_LABEL = { variant: "floating" } as const;
+
+// Parts (such as `Field.Button`) float over the text area's bottom corner.
+const MULTILINE_FRAME = { multiline: true } as const;
+
+const isFormControlSize = (value: unknown): value is FormControlSize =>
+  value === "sm" || value === "md" || value === "lg";
+
+const TextAreaFrame = styled(InputValue, {
+  displayName: "TextArea",
+  render: "textarea",
+  transition: "200ms",
+  // This prevents Firefox from collapsing newline-only content.
+  // @ts-ignore -- forwarded as a textarea style on web.
+  whiteSpace: "pre-wrap",
+  height: "auto",
+  minHeight: "20xl",
+  paddingVertical: "xl",
+  backgroundColor: "surface",
+  color: "emphasis",
+  borderWidth: 1,
+  borderColor: "hairline hover:hairline-hovered focus-visible:primary-active",
+  borderRadius: "control",
+  boxShadow: "none focus-visible:ring-offset",
+  outlineWidth: 0,
+  outlineColor: "transparent",
+  variants: {
+    // A local `styled.dynamic`: the helpers' `formSizeVariants` carrier is
+    // branded by another `@tamagui/core` copy and would not type here.
+    size: styled.dynamic<FormControlSize>(size =>
+      isFormControlSize(size)
+        ? {
+            fontSize: 16 * getFormFontScale(size),
+            lineHeight:
+              size === "md" ? undefined : `${24 * getFormFontScale(size)}px`,
+            minHeight: 122 * getFormSizeScale(size),
+            paddingHorizontal: 16 * getFormSizeScale(size),
+            paddingVertical: 7 * getFormSizeScale(size)
+          }
+        : undefined
+    ),
+    focused: {
+      true: {
+        boxShadow: "ring-offset",
+        borderColor: "primary-active"
+      }
+    },
+
+    hasValidationMessage: {
+      true: {
+        borderColor: "primary hover:primary-hovered"
+      }
+    },
+
+    variant: {
+      outlined: {},
+      underlined: {
+        backgroundColor: "transparent",
+        borderWidth: 0,
+        borderBottomWidth: 1,
+        borderColor: "hairline hover:hairline-hovered focus-visible:primary",
+        borderBottomLeftRadius: 0,
+        borderBottomRightRadius: 0,
+        boxShadow: "none focus-visible:none"
+      },
+      inlined: {}
+    },
+
+    // Styled by the `.resolve` below because the inset depends on `size`.
+    labelPlacement: styled.dynamic<FieldLabelPlacement>(),
+
+    disabled: {
+      true: {
+        backgroundColor: "surface-disabled",
+        borderColor:
+          "primary-disabled hover:primary-disabled focus:primary-disabled"
+      }
+    }
+  } as const,
+  defaultVariants: {
+    variant: "outlined"
+  }
+}).resolve(props => ({
+  // The full 3px ring overwhelms a small text area, so use the 1px ring.
+  boxShadow:
+    props.focused && props.size === "sm" && props.variant !== "underlined"
+      ? "ring-subtle-offset"
+      : undefined,
+  // An underlined control's text starts flush with its left edge.
+  paddingLeft: props.variant === "underlined" ? 0 : undefined,
+  // Drop the text under a floating label by the extra height an inset label
+  // adds over a border one (see `getFieldLabelInset`).
+  paddingTop: props.labelPlacement
+    ? 10 * getFormSizeScale(props.size as FormControlSize | undefined) +
+      getFieldLabelInset(
+        props.labelPlacement as FieldLabelPlacement,
+        (props.size ?? "md") as FormControlSize
+      ) -
+      getFieldLabelInset("border")
+    : undefined
+}));
+
+// Tamagui v3 types `onFocus`/`onBlur` as an intersection of the web and
+// native handlers, so accept either event (as `Input` does).
+type TextAreaFocusEvent = any;
+
+const TextAreaDecorationFrame = styled(View, {
+  displayName: "TextAreaDecorationFrame",
+
+  position: "relative",
+  width: "100%",
+  minWidth: 0
+});
+
+/**
+ * A multiline Cyclone Input value with the same tokens and state behavior as the standard Input control.
+ */
+export const TextArea = createStyledHOC(
+  TextAreaFrame,
+  (
+    props: GetProps<typeof TextAreaFrame> &
+      Partial<
+        Pick<
+          InputContextProps,
+          "size" | "focused" | "variant" | "disabled" | "readOnly"
+        >
+      >,
+    forwardedRef
+  ) => {
+    // Inside a form control (such as `Field`), any prop left unset falls back
+    // to the control's state, which connects the text area to the form.
+    const formControl = useFormControl();
+    const fieldVariant = useFieldVariant(props.placeholder);
+    useFieldLabelDefaults(FLOATING_LABEL);
+    const formOnChange = formControl?.onChange;
+    const formOnBlur = formControl?.onBlur;
+    const {
+      children,
+      rows = 3,
+      render: _render,
+      focused: focusedProp = formControl?.focused,
+      disabled = formControl?.disabled ?? false,
+      readOnly = formControl?.readOnly ?? false,
+      placeholderTextColor = "primary-disabled",
+      onBlur = formOnBlur
+        ? // Focus moving within the text area is not a blur.
+          (event: TextAreaFocusEvent) => {
+            if (!event?.currentTarget?.contains?.(event.relatedTarget)) {
+              formOnBlur();
+            }
+          }
+        : undefined,
+      onFocus = formControl?.onFocus,
+      onChange = formOnChange
+        ? (event: CustomEvent<string>) => formOnChange(event.detail)
+        : undefined,
+      variant = formControl ? fieldVariant : "outlined",
+      name = formControl?.name,
+      size = formControl?.size,
+      value = formControl?.formattedValue,
+      placeholder,
+      className,
+      style,
+      ...rest
+    } = props;
+
+    const theme = useTheme();
+    const shouldShowPlaceholder = useFieldShouldShowPlaceholder(
+      formControl?.formattedValue
+    );
+
+    const ref = useComposedRefs(forwardedRef, formControl?.inputRef);
+    const [focused, setActive] = useState(false);
+    const hasValidationMessage = useFieldHasValidationMessage();
+    const labelPlacement = useFieldLabelPlacement();
+
+    const idleColor = hasValidationMessage ? "primary" : "hairline";
+    const focusColor = hasValidationMessage
+      ? "primary-active"
+      : "hairline-active";
+    const hoverColor = hasValidationMessage
+      ? "primary-hovered"
+      : "hairline-hovered";
+    const isFocused = focusedProp ?? focused;
+    const borderColor = `${isFocused ? focusColor : idleColor} hover:${disabled ? "primary-disabled" : isFocused ? focusColor : hoverColor} focus-visible:${focusColor} group-hover/field:${disabled ? "primary-disabled" : isFocused ? focusColor : hoverColor}`;
+
+    const handleFocus = useCallback(
+      (event: TextAreaFocusEvent) => {
+        setActive(true);
+        onFocus?.(event);
+      },
+      [onFocus]
+    );
+
+    const handleBlur = useCallback(
+      (event: TextAreaFocusEvent) => {
+        setActive(false);
+        onBlur?.(event);
+      },
+      [onBlur]
+    );
+
+    const textArea = (
+      <TextAreaFrame
+        ref={ref}
+        render="textarea"
+        type="textarea"
+        rows={rows}
+        // The field's state as native attributes, so the browser validates
+        // before (and without) JavaScript.
+        required={formControl?.required ? true : undefined}
+        minLength={formControl?.constraints?.minLength}
+        maxLength={formControl?.constraints?.maxLength}
+        {...getFormControlAriaProps(formControl)}
+        {...rest}
+        // The textarea is its own scroll container, so it takes the
+        // `ScrollView` scrollbar styles directly (as `Sheet` does).
+        className={`${SCROLL_VIEW_CLASS_NAME}${className ? ` ${className}` : ""}`}
+        name={name}
+        size={size}
+        value={value}
+        onChange={onChange}
+        placeholder={shouldShowPlaceholder ? placeholder : undefined}
+        // The styled layer drops `placeholderTextColor` before it reaches
+        // `InputValue`, so set the variable its `::placeholder` rule reads.
+        style={
+          {
+            ...(style as object),
+            // The control sizes itself, so never show the browser's resize grip.
+            resize: "none",
+            "--placeholderColor":
+              theme[placeholderTextColor]?.variable || placeholderTextColor
+          } as typeof style
+        }
+        focused={isFocused}
+        hasValidationMessage={hasValidationMessage}
+        variant={variant}
+        labelPlacement={labelPlacement}
+        disabled={disabled}
+        readOnly={readOnly}
+        // `FieldNotchedOutline` draws a notched field's border instead.
+        borderColor={labelPlacement === "border" ? "transparent" : borderColor}
+        boxShadow={`focus-visible:${
+          variant === "outlined" || variant === "inlined"
+            ? size === "sm"
+              ? "ring-subtle-offset"
+              : "ring-offset"
+            : "none"
+        }`}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+      />
+    );
+
+    const content =
+      variant === "outlined" && labelPlacement !== "border" && !children ? (
+        <>
+          {isWeb ? <style>{SCROLL_VIEW_STYLES}</style> : null}
+          {textArea}
+        </>
+      ) : (
+        <TextAreaDecorationFrame>
+          {isWeb ? <style>{SCROLL_VIEW_STYLES}</style> : null}
+          {textArea}
+          {variant === "outlined" ? (
+            <FieldNotchedOutline borderColor={borderColor} />
+          ) : variant === "underlined" ? (
+            <ControlUnderline
+              focused={isFocused}
+              disabled={disabled}
+              backgroundColor={disabled ? "primary-disabled" : focusColor}
+            />
+          ) : null}
+          {/* After the outline, so parts (and their focus rings) paint over it. */}
+          <FormControlFrameContext.Provider value={MULTILINE_FRAME}>
+            {children}
+          </FormControlFrameContext.Provider>
+        </TextAreaDecorationFrame>
+      );
+
+    return formControl?.theme ? (
+      <Theme name={formControl.theme}>{content}</Theme>
+    ) : (
+      content
+    );
+  },
+  { displayName: "TextArea" }
+);
+
+export type TextAreaProps = GetProps<typeof TextArea>;

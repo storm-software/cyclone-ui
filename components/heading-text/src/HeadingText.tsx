@@ -1,116 +1,171 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { GetProps, styled } from "@tamagui/core";
+ ------------------------------------------------------------------- */
+
+"use client";
+
+import type { GetProps } from "@tamagui/core";
+import { createStyledHOC, styled } from "@tamagui/core";
+// Lets TypeScript name `GetFontSizedInput` (SizableText's `size` type) in
+// this package's declarations.
+import type {} from "@tamagui/get-font-sized";
 import { SizableText } from "@tamagui/text";
 
 const BaseHeadingText = styled(SizableText, {
-  name: "HeadingText",
-  tag: "span",
-  accessibilityRole: "header",
+  displayName: "HeadingText",
+  render: "span",
+  role: "heading",
 
-  color: "$color",
-  fontFamily: "$heading",
-  size: "$true"
+  // The typography tokens only carry the family and leading, so each level
+  // sets its own size and weight. Static (not `size`) so a `size: true` passed
+  // through a styled context keeps the level's size.
+  fontSize: "xl max-sm:lg",
+  lineHeight: "xl max-sm:lg",
+  fontWeight: "semibold",
+  color: "primary",
+
+  variants: {
+    variant: {
+      base: {
+        fontFamily: "display"
+      },
+      editorial: {
+        fontFamily: "editorial"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    variant: "base"
+  }
+});
+
+export const HeadingHeroText = styled(BaseHeadingText, {
+  displayName: "HeadingHeroText",
+  render: "h1",
+  color: "primary",
+  fontSize: "5xl max-sm:3xl",
+  lineHeight: "5xl max-sm:3xl",
+  fontWeight: "semibold"
+});
+
+export const HeadingTitleText = styled(BaseHeadingText, {
+  displayName: "HeadingTitleText",
+  render: "h1",
+  color: "primary",
+  fontSize: "3xl max-sm:2xl",
+  lineHeight: "3xl max-sm:2xl",
+  fontWeight: "semibold"
+});
+
+export const HeadingLargeText = styled(BaseHeadingText, {
+  displayName: "HeadingLargeText",
+  render: "h2",
+  color: "emphasis",
+  fontSize: "3xl max-sm:2xl",
+  lineHeight: "3xl max-sm:2xl",
+  fontWeight: "semibold"
+});
+
+export const HeadingMediumText = styled(BaseHeadingText, {
+  displayName: "HeadingMediumText",
+  render: "h3",
+  color: "emphasis",
+  fontSize: "xl max-sm:lg",
+  lineHeight: "xl max-sm:lg",
+  fontWeight: "bold"
+});
+
+export const HeadingSmallText = styled(BaseHeadingText, {
+  displayName: "HeadingSmallText",
+  render: "h4",
+  color: "emphasis",
+  fontSize: "lg max-sm:md",
+  lineHeight: "sm",
+  fontWeight: "semibold"
+});
+
+export const HeadingExtraSmallText = styled(BaseHeadingText, {
+  displayName: "HeadingExtraSmallText",
+  render: "h5",
+  color: "emphasis",
+  fontSize: "md max-sm:sm",
+  lineHeight: "xs",
+  fontWeight: "semibold"
 });
 
 export type HeadingTextProps = GetProps<typeof BaseHeadingText>;
 
-export const HeadingText = BaseHeadingText.styleable<{ level?: number }>(
-  ({ children, level, ...props }, forwardedRef) => {
-    if (level === 1) {
+export const HeadingText = createStyledHOC(
+  BaseHeadingText,
+  (
+    {
+      children,
+      level,
+      variant = "base",
+      ...props
+    }: GetProps<typeof BaseHeadingText> & {
+      level?: 1 | 2 | 3 | 4 | 5 | "hero" | "title" | "lg" | "md" | "sm" | "xs";
+    },
+    forwardedRef
+  ) => {
+    if (level === "hero") {
       return (
-        <Heading1Text ref={forwardedRef} {...props}>
+        <HeadingHeroText ref={forwardedRef} variant={variant} {...props}>
           {children}
-        </Heading1Text>
+        </HeadingHeroText>
       );
-    } else if (level === 2) {
+    } else if (level === 1 || level === "title") {
       return (
-        <Heading2Text ref={forwardedRef} {...props}>
+        <HeadingTitleText ref={forwardedRef} variant={variant} {...props}>
           {children}
-        </Heading2Text>
+        </HeadingTitleText>
       );
-    } else if (level === 3) {
+    } else if (level === 2 || level === "lg") {
       return (
-        <Heading3Text ref={forwardedRef} {...props}>
+        <HeadingLargeText ref={forwardedRef} variant={variant} {...props}>
           {children}
-        </Heading3Text>
+        </HeadingLargeText>
       );
-    } else if (level === 4) {
+    } else if (level === 3 || level === "md") {
       return (
-        <Heading4Text ref={forwardedRef} {...props}>
+        <HeadingMediumText ref={forwardedRef} variant={variant} {...props}>
           {children}
-        </Heading4Text>
+        </HeadingMediumText>
       );
-    } else if (level === 5) {
+    } else if (level === 4 || level === "sm") {
       return (
-        <Heading5Text ref={forwardedRef} {...props}>
+        <HeadingSmallText ref={forwardedRef} variant={variant} {...props}>
           {children}
-        </Heading5Text>
+        </HeadingSmallText>
       );
-    } else if (level === 6) {
+    } else if (level === 5 || level === "xs") {
       return (
-        <Heading6Text ref={forwardedRef} {...props}>
+        <HeadingExtraSmallText ref={forwardedRef} variant={variant} {...props}>
           {children}
-        </Heading6Text>
+        </HeadingExtraSmallText>
       );
     }
 
     return (
-      <BaseHeadingText ref={forwardedRef} {...props}>
+      <BaseHeadingText ref={forwardedRef} variant={variant} {...props}>
         {children}
       </BaseHeadingText>
     );
   },
-  { staticConfig: { componentName: "HeadingText" } }
+  { displayName: "HeadingText" }
 );
-
-export const Heading1Text = styled(BaseHeadingText, {
-  name: "Heading1Text",
-  tag: "h1",
-  size: "$12"
-});
-
-export const Heading2Text = styled(BaseHeadingText, {
-  name: "Heading2Text",
-  tag: "h2",
-  size: "$11"
-});
-
-export const Heading3Text = styled(BaseHeadingText, {
-  name: "Heading3Text",
-  tag: "h3",
-  size: "$10"
-});
-
-export const Heading4Text = styled(BaseHeadingText, {
-  name: "Heading4Text",
-  tag: "h4",
-  size: "$9"
-});
-
-export const Heading5Text = styled(BaseHeadingText, {
-  name: "Heading5Text",
-  tag: "h5",
-  size: "$8"
-});
-
-export const Heading6Text = styled(BaseHeadingText, {
-  name: "Heading6Text",
-  tag: "h6",
-  size: "$7"
-});

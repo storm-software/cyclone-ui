@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "types": ["node"],
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "src/cyclone-style.ts",
+    "src/generate-style.ts",
+    "test/generate-style.spec.ts",
+    "test/glyphs.spec.ts"
+  ]
+}

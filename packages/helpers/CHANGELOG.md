@@ -1,3 +1,221 @@
+![Cyclone UI's logo banner](https://public.storm-cdn.com/cyclone-ui/media/banner-1280x320-dark.gif)
+
+# Changelog for Cyclone UI - Helpers
+
+## [0.3.81](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.81) (11/15/2026)
+
+### Bug Fixes
+
+- **monorepo:** Improve time to first content paint for components when server-side rendered ([288209293](https://github.com/storm-software/cyclone-ui/commit/288209293))
+
+## [0.3.76](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.76) (11/13/2026)
+
+### Bug Fixes
+
+- **field:** Resolve focus provider issue with 2 fields with same name ([ed016afd5](https://github.com/storm-software/cyclone-ui/commit/ed016afd5))
+
+## [0.3.67](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.67) (11/11/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update form field components to better support progressive enhancement in nextjs ([fafcb85ed](https://github.com/storm-software/cyclone-ui/commit/fafcb85ed))
+
+## [0.3.63](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.63) (11/09/2026)
+
+### Features
+
+- **monorepo:** Added the `readOnly` state for form fields ([19e3ada19](https://github.com/storm-software/cyclone-ui/commit/19e3ada19))
+
+## [0.3.60](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.60) (11/08/2026)
+
+### Bug Fixes
+
+- **anchor:** Added `icon` property to `Anchor` component ([ea2346966](https://github.com/storm-software/cyclone-ui/commit/ea2346966))
+
+## [0.3.59](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.59) (11/08/2026)
+
+### Features
+
+- **input:** Added a `Button` compound component to the fields ([9a4c0bdf2](https://github.com/storm-software/cyclone-ui/commit/9a4c0bdf2))
+
+## [0.3.52](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.52) (11/06/2026)
+
+### Features
+
+- **monorepo:** Reduced the amount of tokens by removing extra theme border colors ([f01400d25](https://github.com/storm-software/cyclone-ui/commit/f01400d25))
+
+## [0.3.46](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.46) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+## [0.3.45](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.45) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+## [0.3.43](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.43) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
+## [0.3.38](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.38) (10/31/2026)
+
+### Features
+
+- **icons:** Update icons to match material design icons with animations ([84720d7e0](https://github.com/storm-software/cyclone-ui/commit/84720d7e0))
+
+## [0.3.36](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.36) (10/30/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve typing issues with Cyclone UI components ([5dfa68e1e](https://github.com/storm-software/cyclone-ui/commit/5dfa68e1e))
+
+## [0.3.27](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.27) (10/23/2026)
+
+### Documentation
+
+- **monorepo:** Added `sourcebook` skills and partially generated docs for design system ([0dbff145](https://github.com/storm-software/cyclone-ui/commit/0dbff145))
+
+## [0.3.25](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.25) (10/22/2026)
+
+### Bug Fixes
+
+- **tokens:** Update token structure to better allow customizations ([7f23eb61](https://github.com/storm-software/cyclone-ui/commit/7f23eb61))
+
+## [0.3.17](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.17) (10/14/2026)
+
+### Features
+
+- **data-table:** Added `card` theme to Data Table component ([74202899](https://github.com/storm-software/cyclone-ui/commit/74202899))
+
+## [0.3.16](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.16) (10/13/2026)
+
+### Bug Fixes
+
+- **monorepo:** Clean up of various components and tokens ([08a494ad](https://github.com/storm-software/cyclone-ui/commit/08a494ad))
+- **tokens:** Further updates to token structure for improved theme customizations ([c694f50b](https://github.com/storm-software/cyclone-ui/commit/c694f50b))
+
+## [0.3.15](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.15) (10/12/2026)
+
+### Bug Fixes
+
+- **tokens:** Updates to background token structure ([913fc3c9](https://github.com/storm-software/cyclone-ui/commit/913fc3c9))
+
+## [0.3.14](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.14) (10/12/2026)
+
+### Bug Fixes
+
+- **monorepo:** Clean up component display issues ([aec421b0](https://github.com/storm-software/cyclone-ui/commit/aec421b0))
+
+## [0.3.12](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.12) (10/11/2026)
+
+### Bug Fixes
+
+- **themes:** Update the token structure in the design system ([a226f474](https://github.com/storm-software/cyclone-ui/commit/a226f474))
+- **monorepo:** Update component descriptions and added design sync with Claude Design ([35ece709](https://github.com/storm-software/cyclone-ui/commit/35ece709))
+
+### Features
+
+- **cli:** Added a `create-tokens` command ([0c2dde08](https://github.com/storm-software/cyclone-ui/commit/0c2dde08))
+
+### Source Code Improvements
+
+- **monorepo:** Update form field usage to reduce overall number of components ([4e5fef79](https://github.com/storm-software/cyclone-ui/commit/4e5fef79))
+
+## [0.3.11](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.11) (10/07/2026)
+
+### Updated Dependencies
+
+- Updated **themes** to **v0.3.11**
+
+## [0.3.10](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.10) (10/06/2026)
+
+### Updated Dependencies
+
+- Updated **themes** to **v0.3.10**
+
+## [0.3.9](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.9) (10/05/2026)
+
+### Updated Dependencies
+
+- Updated **themes** to **v0.3.9**
+
+## [0.3.8](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.8) (10/05/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve release workflow warnings ([e0f2b332](https://github.com/storm-software/cyclone-ui/commit/e0f2b332))
+
+### Features
+
+- **page:** Added Page component for base layout ([0bc9835e](https://github.com/storm-software/cyclone-ui/commit/0bc9835e))
+
+### Updated Dependencies
+
+- Updated **themes** to **v0.3.8**
+
+## [0.3.7](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.7) (10/04/2026)
+
+### Updated Dependencies
+
+- Updated **themes** to **v0.3.7**
+
+## [0.3.6](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.6) (10/03/2026)
+
+### Features
+
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+
+### Updated Dependencies
+
+- Updated **themes** to **v0.3.6**
+
+## [0.3.5](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.5) (09/21/2026)
+
+### Features
+
+- **field:** Added `size` property to form field components ([380e416b](https://github.com/storm-software/cyclone-ui/commit/380e416b))
+
+### Updated Dependencies
+
+- Updated **themes** to **v0.3.5**
+
+## [0.3.4](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.4) (09/13/2026)
+
+### Updated Dependencies
+
+- Updated **themes** to **v0.3.4**
+
+## [0.3.3](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.3) (09/11/2026)
+
+### Updated Dependencies
+
+- Updated **themes** to **v0.3.3**
+
+## [0.3.2](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.2) (09/06/2026)
+
+### Updated Dependencies
+
+- Updated **themes** to **v0.3.2**
+
+## [0.3.1](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.1) (09/04/2026)
+
+### Updated Dependencies
+
+- Updated **themes** to **v0.3.1**
+
 ## 0.3.0 (2024-06-13)
 
 ### 🚀 Features

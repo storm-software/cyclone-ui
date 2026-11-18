@@ -1,3 +1,59 @@
+![Cyclone UI's logo banner](https://public.storm-cdn.com/cyclone-ui/media/banner-1280x320-dark.gif)
+
+# Changelog for Cyclone UI - Registry API
+
+## [0.3.76](https://github.com/storm-software/cyclone-ui/releases/tag/registry-api%400.3.76) (11/14/2026)
+
+### Documentation
+
+- **monorepo:** Added/updated documentation for components library ([1eb18466d](https://github.com/storm-software/cyclone-ui/commit/1eb18466d))
+
+## [0.3.46](https://github.com/storm-software/cyclone-ui/releases/tag/registry-api%400.3.46) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+## [0.3.45](https://github.com/storm-software/cyclone-ui/releases/tag/registry-api%400.3.45) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+## [0.3.33](https://github.com/storm-software/cyclone-ui/releases/tag/registry-api%400.3.33) (10/29/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update workspace packages' dependencies and release `registry-api` package ([8b016c26b](https://github.com/storm-software/cyclone-ui/commit/8b016c26b))
+
+## [0.3.27](https://github.com/storm-software/cyclone-ui/releases/tag/registry-api%400.3.27) (10/23/2026)
+
+### Documentation
+
+- **monorepo:** Added `sourcebook` skills and partially generated docs for design system ([0dbff145](https://github.com/storm-software/cyclone-ui/commit/0dbff145))
+
+## [0.3.12](https://github.com/storm-software/cyclone-ui/releases/tag/registry-api%400.3.12) (10/11/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update component descriptions and added design sync with Claude Design ([35ece709](https://github.com/storm-software/cyclone-ui/commit/35ece709))
+
+## [0.3.8](https://github.com/storm-software/cyclone-ui/releases/tag/registry-api%400.3.8) (10/05/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve release workflow warnings ([e0f2b332](https://github.com/storm-software/cyclone-ui/commit/e0f2b332))
+
+### Features
+
+- **page:** Added Page component for base layout ([0bc9835e](https://github.com/storm-software/cyclone-ui/commit/0bc9835e))
+
+## [0.3.6](https://github.com/storm-software/cyclone-ui/releases/tag/registry-api%400.3.6) (10/03/2026)
+
+### Features
+
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+
 ## 0.3.0 (2024-06-19)
 
 ### 🚀 Features

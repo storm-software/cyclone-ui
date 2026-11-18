@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="threequarters" format="2">
+  <advance width="834"/>
+  <unicode hex="00BE"/>
+  <outline>
+    <component base="threesuperior"/>
+    <component base="fraction" xOffset="344"/>
+    <component base="fourinferior" xOffset="472"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.assembly</key>
+      <string>
+
+OFFSET[R], $threesuperior$, 0, 0
+OFFSET[R], $fraction$, 344, 0
+OFFSET[R], $fourinferior$, 472, 0
+CALL[], 27, 28, 88
+</string>
+      <key>com.type-invaders.vtt.talk</key>
+      <string></string>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

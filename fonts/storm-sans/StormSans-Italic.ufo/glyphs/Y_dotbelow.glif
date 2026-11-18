@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Ydotbelow" format="2">
+  <advance width="577"/>
+  <unicode hex="1EF4"/>
+  <anchor x="361.0" y="698.0" name="top"/>
+  <outline>
+    <component base="Y"/>
+    <component base="dotbelowcomb" xOffset="236"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.assembly</key>
+      <string>
+
+USEMYMETRICS[]
+OFFSET[R], $Y$, 0, 0
+OFFSET[R], $dotbelowcomb$, 236, 0
+CALL[], 21, 22, 88
+SVTCA[Y]
+CALL[], 19, 1, 1, 1, -66, 86
+SHC[2], 1
+CALL[], 9
+CALL[], 13, 22, 3, 32, 8, 87
+SVTCA[X]
+SHC[2], 1
+</string>
+      <key>com.type-invaders.vtt.talk</key>
+      <string></string>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

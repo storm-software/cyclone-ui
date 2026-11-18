@@ -1,267 +1,239 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { useColorThemeName } from "@cyclone-ui/client-state";
-import { ColorThemeName } from "@cyclone-ui/colors";
-import { GetProps, styled, Theme } from "@tamagui/core";
+ ------------------------------------------------------------------- */
+
+"use client";
+
+import type { GetProps } from "@tamagui/core";
+import { createStyledHOC, styled, useThemeName } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
 
-type LinkTextExtraProps = {
+export type LinkTextVariant = "base" | "emphasis" | "ink" | "subtle";
+
+export interface LinkTextExtraProps {
+  /**
+   * Whether the link is disabled.
+   *
+   * @defaultValue false
+   */
   disabled?: boolean;
+
+  /**
+   * The underline style.
+   *
+   * @defaultValue "static"
+   */
   underline?: "hover" | "initial" | "static" | "none";
-  variant?: "base" | "mixed" | "themed";
+
+  /**
+   * The text color: `base` uses `link`, the rest use their own color tokens.
+   *
+   * @defaultValue "base"
+   */
+  variant?: LinkTextVariant;
+
+  /**
+   * Underline in `link` while the text keeps the `variant` color.
+   *
+   * @defaultValue false
+   */
+  mixed?: boolean;
+
+  /**
+   * Swap the text and underline colors (only visible with `mixed`).
+   *
+   * @defaultValue false
+   */
   inverse?: boolean;
-};
+
+  /**
+   * Draw the underline in its color at 60% opacity, so it reads lighter than the text.
+   *
+   * @defaultValue true
+   */
+  faded?: boolean;
+
+  /**
+   * Use `primary` everywhere `link` would be used.
+   *
+   * @defaultValue false
+   */
+  themed?: boolean;
+
+  /**
+   * The size of the link text, corresponding to the body text sizes.
+   *
+   * @defaultValue "md"
+   */
+  size?: "sm" | "md" | "lg";
+}
 
 const LinkTextFrame = styled(SizableText, {
-  name: "LinkText",
-
+  displayName: "LinkText",
+  transition: "200ms",
   cursor: "pointer",
-  fontFamily: "$link",
-  fontWeight: "$md",
-  size: "$true",
-  whiteSpace: "nowrap",
 
+  whiteSpace: "nowrap",
+  textDecorationStyle: "solid",
   variants: {
     underline: {
       initial: {
-        animation: "normal",
-        textDecorationLine: "underline",
-        textDecorationStyle: "solid",
-
-        hoverStyle: {
-          textDecorationLine: "none"
-        }
+        textDecorationLine: "underline hover:none"
       },
       hover: {
-        textDecorationLine: "none",
-
-        hoverStyle: {
-          textDecorationLine: "underline",
-          textDecorationStyle: "solid"
-        }
+        textDecorationLine: "none hover:underline"
       },
       static: {
-        animation: "normal",
-        textDecorationLine: "underline",
-        textDecorationStyle: "solid"
+        textDecorationLine: "underline"
       },
       none: {
-        textDecorationLine: "none",
-
-        hoverStyle: {
-          textDecorationLine: "none"
-        }
+        textDecorationLine: "none hover:none"
       }
     },
 
     cta: {
       true: {
-        fontFamily: "$cta",
-        fontWeight: "$lg",
+        fontFamily: "display",
+        fontSize: "sm",
+        lineHeight: "sm",
+        fontWeight: "600",
         textTransform: "uppercase"
       }
     },
 
-    variant: {
-      base: {
-        color: "$color",
-        textDecorationColor: "$color",
-
-        hoverStyle: {
-          color: "$colorHover",
-          textDecorationColor: "$colorHover"
-        },
-
-        pressStyle: {
-          color: "$colorPress",
-          textDecorationColor: "$colorPress"
-        },
-
-        focusStyle: {
-          color: "$colorFocus",
-          textDecorationColor: "$colorFocus"
-        }
+    size: {
+      sm: {
+        fontFamily: "body",
+        fontSize: "sm",
+        lineHeight: "sm",
+        fontWeight: "medium"
       },
-      mixed: {
-        color: "$fg",
-        textDecorationColor: "$color",
-
-        hoverStyle: {
-          color: "$color",
-          textDecorationColor: "$fg"
-        },
-
-        pressStyle: {
-          color: "$colorPress",
-          textDecorationColor: "$fg"
-        },
-
-        focusStyle: {
-          color: "$colorFocus",
-          textDecorationColor: "$fg"
-        }
+      md: {
+        fontFamily: "body",
+        fontSize: "md",
+        lineHeight: "md",
+        fontWeight: "medium"
       },
-      themed: {
-        color: "$color",
-        textDecorationColor: "$color",
-
-        hoverStyle: {
-          color: "$fg",
-          textDecorationColor: "$fg"
-        },
-
-        pressStyle: {
-          color: "$fg",
-          textDecorationColor: "$fg"
-        },
-
-        focusStyle: {
-          color: "$fg",
-          textDecorationColor: "$fg"
-        }
-      },
-      baseInverse: {
-        color: "$colorHover",
-        textDecorationColor: "$colorHover",
-
-        hoverStyle: {
-          color: "$color",
-          textDecorationColor: "$color"
-        },
-
-        pressStyle: {
-          color: "$colorPress",
-          textDecorationColor: "$colorPress"
-        },
-
-        focusStyle: {
-          color: "$colorFocus",
-          textDecorationColor: "$colorFocus"
-        }
-      },
-      mixedInverse: {
-        color: "$color",
-        textDecorationColor: "$fg",
-
-        hoverStyle: {
-          color: "$fg",
-          textDecorationColor: "$color"
-        },
-
-        pressStyle: {
-          color: "$fg",
-          textDecorationColor: "$colorPress"
-        },
-
-        focusStyle: {
-          color: "$fg",
-          textDecorationColor: "$colorFocus"
-        }
-      },
-      themedInverse: {
-        color: "$fg",
-        textDecorationColor: "$fg",
-
-        hoverStyle: {
-          color: "$color",
-          textDecorationColor: "$color"
-        },
-
-        pressStyle: {
-          color: "$colorPress",
-          textDecorationColor: "$colorPress"
-        },
-
-        focusStyle: {
-          color: "$colorFocus",
-          textDecorationColor: "$colorFocus"
-        }
+      lg: {
+        fontFamily: "body",
+        fontSize: "lg",
+        lineHeight: "lg",
+        fontWeight: "medium"
       }
     },
 
     disabled: {
       true: {
-        cursor: "default",
-        color: "$colorDisabled",
-        textDecorationLine: "none",
-
-        hoverStyle: {
-          color: "$colorDisabled",
-          textDecorationLine: "none"
-        }
+        cursor: "default"
       }
     }
   } as const,
 
   defaultVariants: {
-    underline: "hover",
+    underline: "static",
     cta: false,
     disabled: false,
-    variant: "base"
+    size: "md"
   }
 });
 
-type BaseLinkTextVariant = GetProps<typeof LinkTextFrame>["variant"];
+/**
+ * A color token with its interaction states, e.g. `link hover:link-hovered ...`.
+ */
+const getStateColors = (token: string) =>
+  `${token} hover:${token}-hovered press:${token}-active focus:${token}-active`;
 
-export const LinkText = LinkTextFrame.styleable<LinkTextExtraProps>(
+/**
+ * In v2 an explicit `color` was applied through the inline `style` (via the
+ * removed `useStyle` hook), so it won over the variant's base and state colors.
+ * A plain value replaces every state clause; a flat clause string (e.g.
+ * `group-hover/card:primary-hovered`) is appended so it only replaces the
+ * clauses it restates.
+ */
+const mergeColor = <TColor,>(base: string, color: TColor): TColor => {
+  if (color === undefined) {
+    return base as TColor;
+  } else if (typeof color !== "string") {
+    return color;
+  } else if (/^[\w#.-]+$/.test(color)) {
+    return `${color} hover:${color} press:${color} focus:${color}` as TColor;
+  }
+
+  return `${base} ${color}` as TColor;
+};
+
+export const LinkText = createStyledHOC(
+  LinkTextFrame,
   (
     {
       children,
-      underline = "hover",
+      underline = "static",
       cta = false,
       disabled = false,
+      variant = "base",
+      mixed = false,
       inverse = false,
+      faded = true,
+      themed = false,
+      color,
+      textDecorationColor,
+      style,
       ...props
-    },
+    }: GetProps<typeof LinkTextFrame> & LinkTextExtraProps,
     forwardedRef
   ) => {
-    const colorRole = useColorThemeName();
-    const isLinkThemed =
-      !colorRole ||
-      colorRole === ColorThemeName.LINK ||
-      colorRole === ColorThemeName.BASE;
+    // Use the relative `base` name (or inherit) rather than the absolute
+    // `<mode>_base`: `useThemeName` reports the client's mode during hydration,
+    // so an absolute name mismatches the server's className on a dark start.
+    const themeName = useThemeName();
+    const theme =
+      !themeName || themeName === "dark" || themeName === "light"
+        ? "base"
+        : undefined;
 
-    let variant = props.variant as BaseLinkTextVariant;
-    if (!variant && isLinkThemed) {
-      variant = "base";
+    const link = themed ? "primary" : "link";
+    let textColor = getStateColors(variant === "base" ? link : variant);
+    let decorationColor = mixed ? getStateColors(link) : textColor;
+    if (mixed && inverse) {
+      [textColor, decorationColor] = [decorationColor, textColor];
     }
-    if (!variant) {
-      variant = "themed";
+    if (faded) {
+      decorationColor = decorationColor.replaceAll(/\S+/g, "$&/50");
     }
-    if (inverse) {
-      variant = `${variant}Inverse` as BaseLinkTextVariant;
+    if (disabled) {
+      textColor = `${link}-disabled hover:${link}-disabled`;
     }
 
     return (
-      <Theme name={isLinkThemed ? ColorThemeName.LINK : colorRole}>
-        <LinkTextFrame
-          {...props}
-          ref={forwardedRef}
-          underline={underline}
-          cta={cta}
-          disabled={disabled}
-          variant={variant}>
-          {children}
-        </LinkTextFrame>
-      </Theme>
+      <LinkTextFrame
+        {...props}
+        ref={forwardedRef}
+        theme={theme}
+        underline={underline}
+        cta={cta}
+        disabled={disabled}
+        color={mergeColor(textColor, color)}
+        textDecorationColor={mergeColor(decorationColor, textDecorationColor)}
+        style={[{ textUnderlineOffset: 3 }, style]}>
+        {children}
+      </LinkTextFrame>
     );
   },
-  { staticConfig: { componentName: "LinkText" } }
+  { displayName: "LinkText" }
 );
 
 export type LinkTextProps = GetProps<typeof LinkText>;

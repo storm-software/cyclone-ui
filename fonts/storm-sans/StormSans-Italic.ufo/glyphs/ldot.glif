@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ldot" format="2">
+  <advance width="338"/>
+  <unicode hex="0140"/>
+  <anchor x="116.0" y="0.0" name="bottom"/>
+  <anchor x="325.0" y="740.0" name="topright"/>
+  <outline>
+    <component base="l"/>
+    <component base="dotaccent" xOffset="-13" yOffset="-363"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.assembly</key>
+      <string>
+
+OFFSET[R], $l$, 0, 0
+OFFSET[R], $dotaccent$, -13, -363
+CALL[], 23, 24, 88
+SVTCA[Y]
+CALL[], 12, 1, 2, 0, 253, 86
+SHC[2], 1
+CALL[], 9
+CALL[], 15, 11, 1, 1, 6, 86
+SVTCA[X]
+SHC[2], 1
+</string>
+      <key>com.type-invaders.vtt.talk</key>
+      <string></string>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

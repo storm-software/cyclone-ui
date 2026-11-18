@@ -1,6 +1,6 @@
 <!-- .storybook/manager-head.html -->
 
-<meta name="description" "Cyclone-UI components library Storybook" key="desc" />
+<meta name="description" content="Cyclone UI - Storybook Components" key="desc" />
 <link
   rel="shortcut icon"
   href="../../../assets/icons/favicon.ico" />
@@ -19,3 +19,29 @@
   rel="apple-touch-icon"
   sizes="180x180"
   href="../../../assets/icons/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght,MONO@0,300..800,1;1,300..800,1&display=swap" rel="stylesheet">
+
+
+<style>
+  /* Center the brand logo horizontally in the sidebar header; the settings
+     button is pulled out of flow so it doesn't offset the logo */
+  .sidebar-header {
+    padding-left: 0;
+  }
+  .sidebar-header > div:has(> a[title]) {
+    margin-right: 0;
+  }
+  .sidebar-header a[title] {
+    justify-content: center;
+  }
+  .sidebar-header > button {
+    position: absolute;
+    right: 0px;
+  }
+  .sidebar-header a[title] img {
+    width: 80%;
+  }
+</style>

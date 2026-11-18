@@ -1,0 +1,53 @@
+{
+  "name": "@cyclone-ui/circular-progress",
+  "version": "0.0.88",
+  "type": "module",
+  "description": "A circular progress indicator drawn with SVG on top of Tamagui's Progress primitive. It takes value and max props, a sm, md, lg or xl size (or any size token), and a theme color for the indicator arc. Use it to show determinate progress in a compact space.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/circular-progress"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@tamagui/core": "catalog:",
+    "@tamagui/progress": "catalog:",
+    "react-native-svg": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "@tamagui/tailwind": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./CircularProgress": {
+      "import": "./dist/CircularProgress.mjs",
+      "require": "./dist/CircularProgress.cjs"
+    },
+    "./*": "./*"
+  }
+}

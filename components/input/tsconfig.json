@@ -1,16 +1,42 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc",
+    "tsBuildInfoFile": "../../dist/out-tsc/components/input/tsconfig.tsbuildinfo",
     "jsx": "preserve",
+    "lib": ["ESnext", "DOM"],
+    "ignoreDeprecations": "6.0",
+    "rootDir": ".",
     "types": [
       "node",
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ],
-    "lib": ["ESnext", "DOM"]
+    "outDir": "../../dist/out-tsc/components/input"
   },
+  "references": [
+    {
+      "path": "../../tools/config"
+    },
+    {
+      "path": "../../packages/helpers"
+    },
+    {
+      "path": "../button"
+    },
+    {
+      "path": "../form"
+    },
+    {
+      "path": "../field"
+    },
+    {
+      "path": "../icons"
+    },
+    {
+      "path": "../submit-button"
+    }
+  ],
   "files": [],
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

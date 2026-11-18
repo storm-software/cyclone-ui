@@ -1,0 +1,50 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/navigation-header/tsconfig.tsbuildinfo",
+    "jsx": "preserve",
+    "ignoreDeprecations": "6.0",
+    "rootDir": ".",
+    "types": [
+      "node",
+      "@nx/react/typings/cssmodule.d.ts",
+      "@nx/react/typings/image.d.ts"
+    ],
+    "outDir": "../../dist/out-tsc/components/navigation-header"
+  },
+  "references": [
+    {
+      "path": "../../tools/config"
+    },
+    {
+      "path": "../link"
+    },
+    {
+      "path": "../heading-text"
+    },
+    {
+      "path": "../eyebrow-text"
+    },
+    {
+      "path": "../icons"
+    },
+    {
+      "path": "../redacted-animation"
+    },
+    {
+      "path": "../search-dialog"
+    },
+    {
+      "path": "../theme-toggler"
+    },
+    {
+      "path": "../../packages/state"
+    },
+    {
+      "path": "../button"
+    }
+  ],
+  "files": [],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+}

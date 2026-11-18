@@ -1,0 +1,5 @@
+# Cyclone UI (Light High Contrast) Icons
+
+Use documented icon names and aliases; do not invent unavailable assets.
+
+No documented icons were found.

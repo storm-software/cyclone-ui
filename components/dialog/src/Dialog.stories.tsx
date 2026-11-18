@@ -1,24 +1,26 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { Button } from "@cyclone-ui/button";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { XStack, YStack } from "@tamagui/stacks";
-import { Dialog, type DialogProps } from "./Dialog";
+import type { DialogProps } from "./Dialog";
+import { Dialog } from "./Dialog";
 
 const meta: Meta<typeof Dialog> = {
   title: "Containers/Dialog",
@@ -35,11 +37,11 @@ const meta: Meta<typeof Dialog> = {
       <Dialog.Portal>
         <Dialog.Overlay key="overlay" />
         <Dialog.Container key="content">
-          <YStack space>
+          <YStack gap="3xl" padding="3xl">
             <Dialog.Heading>Dialog Heading</Dialog.Heading>
             <Dialog.Body>{children}</Dialog.Body>
 
-            <XStack gap="$3" justifyContent="flex-end">
+            <XStack gap="3xl" justifyContent="flex-end" flexWrap="wrap">
               <Dialog.Close>
                 <Dialog.Close.Text>Cancel</Dialog.Close.Text>
               </Dialog.Close>
@@ -73,19 +75,11 @@ export const Brand: Story = {
   }
 };
 
-export const Alternate: Story = {
+export const Discovery: Story = {
   args: {
     children:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    theme: "alternate"
-  }
-};
-
-export const Help: Story = {
-  args: {
-    children:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    theme: "help"
+    theme: "discovery"
   }
 };
 
@@ -121,18 +115,73 @@ export const Success: Story = {
   }
 };
 
-export const Positive: Story = {
+export const Primary: Story = {
   args: {
-    children:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    theme: "positive"
+    ...Base.args,
+    variant: "primary"
   }
 };
 
-export const Negative: Story = {
+export const Secondary: Story = {
   args: {
-    children:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    theme: "negative"
+    ...Base.args,
+    variant: "secondary"
+  }
+};
+
+export const Tertiary: Story = {
+  args: {
+    ...Base.args,
+    variant: "tertiary"
+  }
+};
+
+export const Outlined: Story = {
+  args: {
+    ...Base.args,
+    variant: "outlined"
+  }
+};
+
+export const Floating: Story = {
+  args: {
+    ...Base.args,
+    variant: "floating"
+  }
+};
+
+export const Raised: Story = {
+  args: {
+    ...Base.args,
+    shadowStyle: "elevated"
+  }
+};
+
+export const Accented: Story = {
+  args: {
+    ...Base.args,
+    accented: true
+  }
+};
+
+export const Glass: Story = {
+  args: {
+    ...Base.args,
+    glass: true
+  }
+};
+
+export const Noise: Story = {
+  args: {
+    ...Base.args,
+    variant: "primary",
+    noise: true
+  }
+};
+
+export const Flat: Story = {
+  args: {
+    ...Base.args,
+    shadowStyle: "flat"
   }
 };

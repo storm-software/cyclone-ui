@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/state",
-  "version": "0.0.1",
+  "version": "0.0.94",
   "type": "module",
   "description": "A state management package used to handle state in Storm Software applications.",
   "repository": {
@@ -12,11 +12,86 @@
   "keywords": [
     "jotai"
   ],
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "default": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
+    },
+    "./form": {
+      "require": {
+        "types": "./dist/form/index.d.cts",
+        "default": "./dist/form/index.cjs"
+      },
+      "import": {
+        "types": "./dist/form/index.d.mts",
+        "default": "./dist/form/index.mjs"
+      },
+      "default": {
+        "types": "./dist/form/index.d.mts",
+        "default": "./dist/form/index.mjs"
+      }
+    },
+    "./message": {
+      "require": {
+        "types": "./dist/message/index.d.cts",
+        "default": "./dist/message/index.cjs"
+      },
+      "import": {
+        "types": "./dist/message/index.d.mts",
+        "default": "./dist/message/index.mjs"
+      },
+      "default": {
+        "types": "./dist/message/index.d.mts",
+        "default": "./dist/message/index.mjs"
+      }
+    },
+    "./package.json": "./package.json",
+    "./theme": {
+      "require": {
+        "types": "./dist/theme/index.d.cts",
+        "default": "./dist/theme/index.cjs"
+      },
+      "import": {
+        "types": "./dist/theme/index.d.mts",
+        "default": "./dist/theme/index.mjs"
+      },
+      "default": {
+        "types": "./dist/theme/index.d.mts",
+        "default": "./dist/theme/index.mjs"
+      }
+    },
+    "./types": {
+      "require": {
+        "types": "./dist/types.d.cts",
+        "default": "./dist/types.cjs"
+      },
+      "import": {
+        "types": "./dist/types.d.mts",
+        "default": "./dist/types.mjs"
+      },
+      "default": {
+        "types": "./dist/types.d.mts",
+        "default": "./dist/types.mjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.cts",
   "peerDependencies": {
-    "jotai": ">=2.8.0",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "jotai": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "peerDependenciesMeta": {
     "jotai": {
@@ -33,21 +108,31 @@
     }
   },
   "dependencies": {
-    "@storm-stack/hooks": "latest",
-    "@storm-stack/serialization": "latest",
-    "@storm-stack/string-fns": "latest",
-    "@storm-stack/types": "latest",
-    "@storm-stack/unique-identifier": "latest",
-    "@storm-stack/utilities": "latest",
-    "bunshi": "^2.1.5"
+    "@cyclone-ui/helpers": "workspace:*",
+    "@maskito/core": "catalog:",
+    "@maskito/react": "catalog:",
+    "@stryke/async": "catalog:",
+    "@stryke/env": "catalog:",
+    "@stryke/helpers": "catalog:",
+    "@stryke/hooks": "catalog:",
+    "@stryke/json": "catalog:",
+    "@stryke/type-checks": "catalog:",
+    "@stryke/types": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/toast": "catalog:",
+    "bunshi": "catalog:",
+    "jotai-optics": "catalog:",
+    "optics-ts": "catalog:"
   },
   "devDependencies": {
-    "jotai": ">=2.8.0",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "@powerlines/plugin-tsdown": "catalog:",
+    "jotai": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "module": "./dist/index.mjs"
 }

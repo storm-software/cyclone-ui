@@ -1,44 +1,32 @@
 {
   "name": "@cyclone-ui/number-text",
-  "version": "0.5.0",
+  "version": "0.5.90",
   "type": "module",
-  "description": "A visually hidden component meant to be shared in many other components",
+  "description": "A label-styled text component that renders its numeric children with NumberFlow, so changes in value are animated. Values that are not numbers fall back to 0. Use it for counters, statistics and other numbers that update in place.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/number-text"
   },
   "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
   "files": [
-    "dist",
-    "src",
-    "types"
+    "dist"
   ],
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@number-flow/react": "^0.4.2",
-    "@tamagui/core": "^1.116.15"
+    "@number-flow/react": "^0.4.4",
+    "@tamagui/core": "catalog:",
+    "@tamagui/text": "catalog:"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"
@@ -46,5 +34,19 @@
   "sideEffects": [
     "*.css"
   ],
-  "module:jsx": "dist/jsx"
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./NumberText": {
+      "import": "./dist/NumberText.mjs",
+      "require": "./dist/NumberText.cjs"
+    },
+    "./*": "./*"
+  }
 }

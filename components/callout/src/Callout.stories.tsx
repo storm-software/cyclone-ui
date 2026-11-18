@@ -1,26 +1,31 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import type { Meta, StoryObj } from "@storybook/react";
-import { HelpCircle } from "@tamagui/lucide-icons";
+ ------------------------------------------------------------------- */
+
+import { QuestionCircle } from "@cyclone-ui/icons";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { YStack } from "@tamagui/stacks";
+import type { ComponentProps, ReactNode } from "react";
 import { Callout } from "./Callout";
 
-const meta: Meta<typeof Callout> = {
+// `icon` is a story-only arg consumed by the custom `render` below.
+type CalloutStoryArgs = ComponentProps<typeof Callout> & { icon?: ReactNode };
+
+const meta: Meta<CalloutStoryArgs> = {
   title: "Containers/Callout",
   component: Callout,
   tags: ["autodocs"],
@@ -28,7 +33,7 @@ const meta: Meta<typeof Callout> = {
     <Callout {...rest}>
       <Callout.Header>
         <Callout.Header.Icon>{icon}</Callout.Header.Icon>
-        <YStack gap="$1">
+        <YStack gap="md">
           <Callout.Header.Eyebrow>Callout Eyebrow</Callout.Header.Eyebrow>
           <Callout.Header.Heading>Callout Heading</Callout.Header.Heading>
         </YStack>
@@ -37,11 +42,11 @@ const meta: Meta<typeof Callout> = {
       <Callout.Body>{children}</Callout.Body>
     </Callout>
   )
-} satisfies Meta<typeof Callout>;
+} satisfies Meta<CalloutStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof Callout>;
+type Story = StoryObj<CalloutStoryArgs>;
 
 const bodyText =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
@@ -52,13 +57,6 @@ export const Base: Story = {
   }
 };
 
-export const CustomIcon: Story = {
-  args: {
-    children: bodyText,
-    icon: <HelpCircle />
-  }
-};
-
 export const Brand: Story = {
   args: {
     children: bodyText,
@@ -66,21 +64,21 @@ export const Brand: Story = {
   }
 };
 
-export const Alternate: Story = {
+export const CustomIcon: Story = {
   args: {
     children: bodyText,
-    theme: "alternate"
+    icon: <QuestionCircle />
   }
 };
 
-export const Help: Story = {
+export const Discovery: Story = {
   args: {
     children: bodyText,
-    theme: "help"
+    theme: "discovery"
   }
 };
 
-export const Error: Story = {
+export const Danger: Story = {
   args: {
     children: bodyText,
     theme: "danger"
@@ -105,19 +103,5 @@ export const Success: Story = {
   args: {
     children: bodyText,
     theme: "success"
-  }
-};
-
-export const Positive: Story = {
-  args: {
-    children: bodyText,
-    theme: "positive"
-  }
-};
-
-export const Negative: Story = {
-  args: {
-    children: bodyText,
-    theme: "negative"
   }
 };

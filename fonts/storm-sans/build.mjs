@@ -1,0 +1,74 @@
+#!/usr/bin/env zx
+/* -------------------------------------------------------------------
+
+                   🗲 Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
+/* eslint-disable unused-imports/no-unused-vars */
+
+import { mkdtemp, rm } from "node:fs/promises";
+import { join } from "node:path";
+import { $, chalk, echo } from "zx";
+import {
+  generateWebfonts,
+  organizeFontOutputs
+} from "../../tools/scripts/src/fonts/build-output.mjs";
+import { generateGlyphs } from "../../tools/scripts/src/fonts/generate-glyphs.mjs";
+
+// Compiles the Storm Sans designspaces into `./dist/{otf,ttf}`, generates
+// WOFF2 files in `./dist/webfonts`, then builds glyph ranges in `./dist/pbf`.
+// Requires `fontmake`, `fonttools`, `ttfautohint`, and `font-maker` on the PATH
+// (provided by `devenv shell`).
+//
+// fontmake's `-o` flag does NOT append: `-o variable -o otf -o ttf` parses as
+// `-o ttf` only, so all formats are passed to a single `-o`. `variable` is
+// incompatible with `-i`, so the variable and static builds run as separate
+// invocations. `-a` (ttfautohint) hints the static TTFs only: ttfautohint does
+// not support variable fonts and has no effect on OTF output.
+const designspaces = ["StormSans.designspace", "StormSans-Italic.designspace"];
+
+const $$ = $({ cwd: import.meta.dirname, verbose: true });
+const compiled = await mkdtemp(join(import.meta.dirname, ".font-compiled-"));
+
+try {
+  echo`${chalk.whiteBright(" 🔨  Building the Storm Sans font...")}`;
+
+  await Promise.all(
+    designspaces.flatMap(designspace => [
+      $$`fontmake -m ${designspace} -o variable --output-dir ${compiled}`,
+      $$`fontmake -m ${designspace} -o otf ttf -i -a --output-dir ${compiled}`
+    ])
+  );
+
+  await organizeFontOutputs(
+    compiled,
+    join(import.meta.dirname, "dist"),
+    "StormSans"
+  );
+  await generateWebfonts(
+    join(import.meta.dirname, "dist/ttf"),
+    join(import.meta.dirname, "dist/webfonts")
+  );
+  await generateGlyphs({ projectDir: import.meta.dirname });
+
+  echo`${chalk.green(" ✔ Successfully built the Storm Sans font!")}`;
+} catch (error) {
+  echo`${chalk.red(error?.message ? error.message : "A failure occurred while building the Storm Sans font")}`;
+
+  process.exitCode = 1;
+} finally {
+  await rm(compiled, { recursive: true, force: true });
+}

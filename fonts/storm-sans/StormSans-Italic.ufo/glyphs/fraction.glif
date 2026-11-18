@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="fraction" format="2">
+  <advance width="148"/>
+  <unicode hex="2044"/>
+  <outline>
+    <contour>
+      <point x="-245" y="0" type="line"/>
+      <point x="-172" y="0" type="line"/>
+      <point x="437" y="698" type="line"/>
+      <point x="364" y="698" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.talk</key>
+      <string>
+
+/* Y direction */
+ResYAnchor(0,18)
+ResYAnchor(2,16)
+/* X direction */
+Smooth()
+</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,44 +1,31 @@
 {
   "name": "@cyclone-ui/spinner",
-  "version": "0.5.0",
+  "version": "0.5.90",
   "type": "module",
-  "description": "A Next Button component meant to be shared in many other components",
+  "description": "A Spinner component that renders the React Native ActivityIndicator inside a Tamagui YStack. It takes a small or large size and a color, which can be a theme token or a raw value and defaults to the accent color. Use it to show that content or an action is loading.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/spinner"
   },
   "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
   "files": [
-    "dist",
-    "src",
-    "types"
+    "dist"
   ],
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15"
+    "@tamagui/core": "catalog:",
+    "@tamagui/stacks": "catalog:"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"
@@ -46,5 +33,19 @@
   "sideEffects": [
     "*.css"
   ],
-  "module:jsx": "dist/jsx"
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Spinner": {
+      "import": "./dist/Spinner.mjs",
+      "require": "./dist/Spinner.cjs"
+    },
+    "./*": "./*"
+  }
 }

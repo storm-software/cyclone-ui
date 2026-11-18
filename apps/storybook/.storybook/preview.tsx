@@ -1,69 +1,43 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-/* eslint-disable @nx/enforce-module-boundaries */
+ ------------------------------------------------------------------- */
 
-import { ThemeProvider } from "@cyclone-ui/client-state";
-import { MessageProvider } from "@cyclone-ui/message-state";
-import { Preview } from "@storybook/react";
+import "@fonts/fonts.css";
+import type { Preview } from "@storybook/react-vite";
 import "@tamagui/core/reset.css";
-import { PortalProvider } from "@tamagui/portal";
-import { YStack } from "@tamagui/stacks";
-import { DevTools, useAtomsDebugValue } from "jotai-devtools";
-import "jotai-devtools/styles.css";
 import "raf/polyfill";
-import { SafeAreaProvider } from "react-native-safe-area-context";
-import "../../../packages/font-mona-sans/css/style.css";
-import "../../../packages/font-permanent-marker/css/style.css";
-import "../../../packages/font-space-grotesk/css/style.css";
-import config from "../tamagui.config";
-
-const DebugAtoms = () => {
-  useAtomsDebugValue({
-    enabled: true
-  });
-
-  return null;
-};
-
-const Decorator = (Story: any, args: any) => {
-  const { mode } = args.globals;
-
-  return (
-    <SafeAreaProvider>
-      <ThemeProvider
-        config={config}
-        disableInjectCSS={false}
-        defaultMode={mode}>
-        <PortalProvider>
-          <MessageProvider>
-            <DevTools theme={mode} position="bottom-right" />
-            <DebugAtoms />
-            <YStack padding="$8" flexGrow={1}>
-              <Story />
-            </YStack>
-          </MessageProvider>
-        </PortalProvider>
-      </ThemeProvider>
-    </SafeAreaProvider>
-  );
-};
+import { CycloneDocsContainer, withCycloneTheme } from "./preview-decorators";
+import { storybookThemes } from "./storybook-themes";
 
 const preview: Preview = {
+  globalTypes: {
+    mode: {
+      description: "Color theme",
+      toolbar: {
+        title: "Theme",
+        icon: "circlehollow",
+        items: [
+          { value: "dark", title: "Dark", icon: "moon" },
+          { value: "light", title: "Light", icon: "sun" }
+        ],
+        dynamicTitle: true
+      }
+    }
+  },
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
@@ -72,15 +46,12 @@ const preview: Preview = {
         date: /Date$/
       }
     },
-    backgrounds: {
-      values: [
-        { value: "#fafafa", left: "☀️", name: "Light Mode" },
-        { value: "#151718", left: "🌙", name: "Dark Mode" }
-      ],
-      default: "Dark Mode"
+    docs: {
+      theme: storybookThemes.dark,
+      container: CycloneDocsContainer
     }
   },
-  decorators: [Decorator],
+  decorators: [withCycloneTheme],
   tags: ["autodocs"],
   initialGlobals: {
     mode: "dark",

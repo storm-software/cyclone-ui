@@ -1,0 +1,50 @@
+{
+  "name": "@cyclone-ui/redacted-animation",
+  "version": "0.0.88",
+  "type": "module",
+  "description": "A RedactedAnimation wrapper that briefly covers its children with an accent-colored mask, then slides the mask away to the left or right to reveal the content. It skips the animation when the user prefers reduced motion. Use it to add a redaction-style reveal effect to text or other inline content.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/redacted-animation"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./RedactedAnimation": {
+      "import": "./dist/RedactedAnimation.mjs",
+      "require": "./dist/RedactedAnimation.cjs"
+    },
+    "./*": "./*"
+  }
+}

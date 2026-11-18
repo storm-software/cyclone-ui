@@ -1,61 +1,81 @@
 {
   "name": "@cyclone-ui/data-table",
-  "version": "0.6.0",
-  "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "version": "0.6.102",
+  "private": false,
+  "description": "A data grid built on TanStack Table and the Cyclone UI Table that takes table options (columns and data) and adds sorting, faceted column filtering, client-side pagination with a configurable page size, optional row selection checkboxes and resizable columns. Use it to display large, interactive datasets. Helper cells add an avatar with a name, a copyable value, and a View button (or a whole View column) that opens a row's detail view through a callback or a link.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/data-table"
   },
-  "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
-  "files": [
-    "dist",
-    "src",
-    "types"
+  "sideEffects": [
+    "*.css"
   ],
-  "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./DataTable": {
+      "import": "./dist/DataTable.mjs",
+      "require": "./dist/DataTable.cjs"
+    },
+    "./DataTableCells": {
+      "import": "./dist/DataTableCells.mjs",
+      "require": "./dist/DataTableCells.cjs"
+    },
+    "./*": "./*"
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
-    "@storm-stack/string-fns": "latest",
-    "@storm-stack/types": "latest",
-    "@storm-stack/utilities": "latest",
-    "@tamagui/adapt": "^1.116.15",
-    "@tamagui/animate-presence": "^1.116.15",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/helpers": "^1.116.15",
-    "@tamagui/lucide-icons": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15",
-    "@tamagui/text": "^1.116.15",
-    "@tanstack/react-table": "^8.17.3",
-    "@tanstack/table-core": "^8.17.3"
+    "@cyclone-ui/avatar": "workspace:*",
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/checkbox": "workspace:*",
+    "@cyclone-ui/context-menu": "workspace:*",
+    "@cyclone-ui/copy-button": "workspace:*",
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/form": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/pagination": "workspace:*",
+    "@cyclone-ui/popover": "workspace:*",
+    "@cyclone-ui/scroll-view": "workspace:*",
+    "@cyclone-ui/search-input": "workspace:*",
+    "@cyclone-ui/select": "workspace:*",
+    "@cyclone-ui/state": "workspace:*",
+    "@cyclone-ui/table": "workspace:*",
+    "@stryke/helpers": "catalog:",
+    "@stryke/string-format": "catalog:",
+    "@stryke/type-checks": "catalog:",
+    "@stryke/types": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/helpers": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@tanstack/react-table": "^8.21.3",
+    "@tanstack/react-virtual": "catalog:",
+    "@tanstack/table-core": "^8.21.3"
   },
   "devDependencies": {
-    "@tamagui/avatar": "^1.116.15",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "@storybook/react-vite": "catalog:",
+    "@tamagui/avatar": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
   "module:jsx": "dist/jsx"
 }

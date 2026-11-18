@@ -1,0 +1,52 @@
+{
+  "name": "@cyclone-ui/anchor",
+  "version": "0.0.97",
+  "type": "module",
+  "description": "A heading wrapper that renders its children next to a permalink icon. The icon shows on hover or focus and links to href on web, or opens the URL with Linking on native. Use it to make headings and sections deep-linkable.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/anchor"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/icons": "workspace:*",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "@tamagui/tailwind": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Anchor": {
+      "import": "./dist/Anchor.mjs",
+      "require": "./dist/Anchor.cjs"
+    },
+    "./*": "./*"
+  }
+}

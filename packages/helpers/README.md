@@ -19,7 +19,7 @@
 This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository contains <a href="https://tamagui.dev" target="_blank">Tamagui</a> based design components used by Storm Software. Like <a href="https://ui.shadcn.com" target="_blank">Shadcn UI</a>, the components are copied into other repositories via the Cyclone CLI.
 <br />
 
-<h3 align="center">💻 Visit <a href="https://stormsoftware.com" target="_blank">stormsoftware.com</a> to stay up to date with this developer</h3><br />
+### 💻 Visit [stormsoftware.com](https://stormsoftware.com) to stay up to date with this developer<br />
 
 [![Version](https://img.shields.io/badge/version-0.3.0-1fb2a6.svg?style=for-the-badge&color=1fb2a6)](https://prettier.io/)&nbsp;[![Nx](https://img.shields.io/badge/Nx-17.0.2-lightgrey?style=for-the-badge&logo=nx&logoWidth=20&&color=1fb2a6)](http://nx.dev/)&nbsp;[![NextJs](https://img.shields.io/badge/Next.js-14.0.2-lightgrey?style=for-the-badge&logo=nextdotjs&logoWidth=20&color=1fb2a6)](https://nextjs.org/)&nbsp;[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge&logo=commitlint&color=1fb2a6)](http://commitizen.github.io/cz-cli/)&nbsp;![Semantic-Release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=for-the-badge&color=1fb2a6)&nbsp;[![documented with docusaurus](https://img.shields.io/badge/documented_with-docusaurus-success.svg?style=for-the-badge&logo=readthedocs&color=1fb2a6)](https://docusaurus.io/)&nbsp;![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/storm-software/cyclone-ui/cr.yml?style=for-the-badge&logo=github-actions&color=1fb2a6)
 
@@ -27,7 +27,7 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 <!-- markdownlint-disable -->
 
 > [!IMPORTANT] 
-> This repository, and the apps, libraries, and tools contained within, is still in it's initial development phase. As a result, bugs and issues are expected with it's usage. When the main development phase completes, a proper release will be performed, the packages will be availible through NPM (and other distributions), and this message will be removed. However, in the meantime, please feel free to report any issues you may come across.
+> This repository, and the apps, libraries, and tools contained within, is still in it's initial development phase. As a result, bugs and issues are expected with it's usage. When the main development phase completes, a proper release will be performed, the packages will be available through NPM (and other distributions), and this message will be removed. However, in the meantime, please feel free to report any issues you may come across.
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
@@ -39,15 +39,16 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# Cyclone-UI Helpers package
+# Cyclone UI - Helpers
 
 A package containing various helper utilities used in Storm Software applications
 
-<!-- START doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-## Table of Contents
 
+- [Quick Features](#quick-features)
 - [Installing](#installing)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -61,9 +62,19 @@ A package containing various helper utilities used in Storm Software application
 - [Changelog](#changelog)
 - [Contributing](#contributing)
 - [Contributors](#contributors)
-  - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Size, space, and radius helpers that read Tamagui tokens (`getSized`,
+  `getSpaced`, `getRadius`)
+- Token value normalization, including Tailwind-style arbitrary values such as
+  `[12px]`
+- Font size and font weight helpers for `styled.dynamic` variants
+- Form control sizes (`sm`, `md`, `lg`) and the shared form-control context
+  with hooks for fields
+- Color palette generators based on the OKLCH color space
 
 ## Installing
 
@@ -91,9 +102,34 @@ yarn add -D @cyclone-ui/helpers
 
 </details>
 
+## Usage
+
+Build a size variant for a Tamagui styled component:
+
+```tsx
+import { styled, View } from "@tamagui/core";
+import {
+  formSizeVariants,
+  getFormFontSize,
+  getFormSizeToken
+} from "@cyclone-ui/helpers";
+
+export const Box = styled(View, {
+  variants: {
+    size: formSizeVariants((size, env) => ({
+      height: getFormSizeToken(size),
+      ...getFormFontSize(size, env)
+    }))
+  }
+});
+```
+
+See the [package documentation](../../docs/packages/helpers.md) for every
+export.
+
 ## Reduced Package Size
 
-This project uses [tsup](https://tsup.egoist.dev/) to package the source code
+This project uses [tsdown](https://tsdown.dev/) to package the source code
 due to its ability to remove unused code and ship smaller javascript files
 thanks to code splitting. This helps to greatly reduce the size of the package
 and to make it easier to use in other projects.
@@ -103,6 +139,9 @@ and to make it easier to use in other projects.
 This project is built using [Nx](https://nx.dev). As a result, many of the usual
 commands are available to assist in development.
 
+To set up a checkout, clone the repository and run `pnpm install` in the
+repository root.
+
 ### Building
 
 Run `nx build helpers` to build the library.
@@ -110,7 +149,7 @@ Run `nx build helpers` to build the library.
 ### Running unit tests
 
 Run `nx test helpers` to execute the unit tests via
-[Jest](https://jestjs.io).
+[Vitest](https://vitest.dev).
 
 ### Linting
 
@@ -290,7 +329,7 @@ If this sounds interesting, and you would like to help us in creating the next
 generation of development tools, please reach out on our website!
 
 <br />
-<h3 align="center">💻 Visit <a href="https://stormsoftware.com" target="_blank">stormsoftware.com</a> to stay up to date with this developer</h3>
+### 💻 Visit [stormsoftware.com](https://stormsoftware.com) to stay up to date with this developer
 
 <br />
 <div align="right">[ <a href="#table-of-contents">Back to top ▲</a> ]</div>

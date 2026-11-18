@@ -1,54 +1,53 @@
 {
   "name": "@cyclone-ui/link",
-  "version": "0.5.0",
+  "version": "0.5.99",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A themed text link that renders an anchor with href and target on web and opens the URL with Linking on native. Setting external opens it in a new tab and adds an arrow icon that shifts on hover. Supports text sizes.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/link"
   },
   "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
   "files": [
-    "dist",
-    "src",
-    "types"
+    "dist"
   ],
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@tamagui/constants": "^1.116.15",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/lucide-icons": "^1.116.15",
-    "@tamagui/shapes": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15",
-    "@tamagui/text": "^1.116.15",
-    "@tamagui/web": "^1.116.15"
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/link-text": "workspace:*",
+    "@tamagui/constants": "catalog:",
+    "@tamagui/core": "catalog:"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "@cyclone-ui/body-text": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"
   },
   "sideEffects": [
     "*.css"
-  ]
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Link": {
+      "import": "./dist/Link.mjs",
+      "require": "./dist/Link.cjs"
+    },
+    "./*": "./*"
+  }
 }

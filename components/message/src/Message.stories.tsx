@@ -1,38 +1,46 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { Button } from "@cyclone-ui/button";
-import { useMessageActions } from "@cyclone-ui/message-state";
-import type { Meta, StoryObj } from "@storybook/react";
+import { useMessageActions } from "@cyclone-ui/state/message";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { XStack, YStack } from "@tamagui/stacks";
+import type { ComponentProps } from "react";
 import { Message } from "./Message";
 
-const meta: Meta<typeof Message> = {
+// `message` and `type` are story-only args consumed by the custom `render`.
+type MessageStoryArgs = ComponentProps<typeof Message> & {
+  message?: string;
+  type?: string;
+};
+
+const meta: Meta<MessageStoryArgs> = {
   title: "Containers/Message",
   component: Message,
   tags: ["autodocs"],
-  render: ({ message, type, ...rest }: any) => {
+  render: ({ message, type, ..._rest }: any) => {
     const { show, hide } = useMessageActions();
 
     return (
       <YStack alignItems="center" width="100%">
         <Message />
 
-        <XStack alignItems="center" gap="$4" marginTop="400px" width={400}>
+        <XStack alignItems="center" gap="5xl" marginTop="400px" width={400}>
           <Button
             variant="tertiary"
             onPress={() => {
@@ -54,11 +62,11 @@ const meta: Meta<typeof Message> = {
       </YStack>
     );
   }
-} satisfies Meta<typeof Message>;
+} satisfies Meta<MessageStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof Message>;
+type Story = StoryObj<MessageStoryArgs>;
 
 export const Base: Story = {
   args: {
@@ -75,15 +83,7 @@ export const Brand: Story = {
   }
 };
 
-export const Alternate: Story = {
-  args: {
-    message:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    type: "alternate"
-  }
-};
-
-export const Help: Story = {
+export const Discovery: Story = {
   args: {
     message:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",

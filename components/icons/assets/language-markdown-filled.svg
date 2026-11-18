@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<defs>
+		<mask id="language-markdown-mask">
+			<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+				<path d="M12 7H20.4a0.6 0.6 0 0 1 0.6 0.6V16.4a0.6 0.6 0 0 1 -0.6 0.6H12M12 7H3.6a0.6 0.6 0 0 0 -0.6 0.6V16.4a0.6 0.6 0 0 0 0.6 0.6H12" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="28"><animate attributeName="fill-opacity" begin="0.5s" dur="0.4s" fill="freeze" to="1" /><animate attributeName="stroke-dashoffset" dur="0.5s" fill="freeze" values="28;0" /></path>
+				<path d="M5.85 14.25V9.7L8.73 12.5L11.6 9.7V14.25" stroke="#000" stroke-width="1.4" stroke-dasharray="18" stroke-dashoffset="18"><animate attributeName="stroke-dashoffset" begin="0.9s" dur="0.3s" fill="freeze" to="0" /></path>
+				<path d="M16.8 9.75V14.3" stroke="#000" stroke-width="1.4" stroke-dasharray="6" stroke-dashoffset="6"><animate attributeName="stroke-dashoffset" begin="1.2s" dur="0.2s" fill="freeze" to="0" /></path>
+				<path d="M16.8 14.3l-1.95 -1.95M16.8 14.3l1.95 -1.95" stroke="#000" stroke-width="1.4" stroke-dasharray="4" stroke-dashoffset="4"><animate attributeName="stroke-dashoffset" begin="1.4s" dur="0.2s" fill="freeze" to="0" /></path>
+			</g>
+		</mask>
+	</defs>
+	<path d="M0 0h24v24H0z" fill="currentColor" mask="url(#language-markdown-mask)" />
+</svg>

@@ -19,7 +19,7 @@
 This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository contains <a href="https://tamagui.dev" target="_blank">Tamagui</a> based design components used by Storm Software. Like <a href="https://ui.shadcn.com" target="_blank">Shadcn UI</a>, the components are copied into other repositories via the Cyclone CLI.
 <br />
 
-<h3 align="center">💻 Visit <a href="https://stormsoftware.com" target="_blank">stormsoftware.com</a> to stay up to date with this developer</h3><br />
+### 💻 Visit [stormsoftware.com](https://stormsoftware.com) to stay up to date with this developer<br />
 
 [![Version](https://img.shields.io/badge/version-0.5.0-1fb2a6.svg?style=for-the-badge&color=1fb2a6)](https://prettier.io/)&nbsp;[![Nx](https://img.shields.io/badge/Nx-17.0.2-lightgrey?style=for-the-badge&logo=nx&logoWidth=20&&color=1fb2a6)](http://nx.dev/)&nbsp;[![NextJs](https://img.shields.io/badge/Next.js-14.0.2-lightgrey?style=for-the-badge&logo=nextdotjs&logoWidth=20&color=1fb2a6)](https://nextjs.org/)&nbsp;[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge&logo=commitlint&color=1fb2a6)](http://commitizen.github.io/cz-cli/)&nbsp;![Semantic-Release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=for-the-badge&color=1fb2a6)&nbsp;[![documented with docusaurus](https://img.shields.io/badge/documented_with-docusaurus-success.svg?style=for-the-badge&logo=readthedocs&color=1fb2a6)](https://docusaurus.io/)&nbsp;![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/storm-software/cyclone-ui/cr.yml?style=for-the-badge&logo=github-actions&color=1fb2a6)
 
@@ -27,7 +27,7 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 <!-- markdownlint-disable -->
 
 > [!IMPORTANT] 
-> This repository, and the apps, libraries, and tools contained within, is still in it's initial development phase. As a result, bugs and issues are expected with it's usage. When the main development phase completes, a proper release will be performed, the packages will be availible through NPM (and other distributions), and this message will be removed. However, in the meantime, please feel free to report any issues you may come across.
+> This repository, and the apps, libraries, and tools contained within, is still in it's initial development phase. As a result, bugs and issues are expected with it's usage. When the main development phase completes, a proper release will be performed, the packages will be available through NPM (and other distributions), and this message will be removed. However, in the meantime, please feel free to report any issues you may come across.
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
@@ -41,13 +41,15 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 # Bytes Text
 
-A `BytesText` component used to render the body text of a page. It is a simple component that renders the text in a way that is easy to read and understand.
+A `BytesText` component used to render a number of bytes as readable text, such as kilobytes or gigabytes. It is a simple component built on `BodyText`.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -65,7 +67,24 @@ A `BytesText` component used to render the body text of a page. It is a simple c
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Shows a number of bytes as readable text, using `prettyBytes` from `@stryke/string-format`.
+- Treats a value that is not a number as `0`.
+- Built on `BodyText`, so it accepts the same props and themes.
+
+## Installation
+
+Copy the component into your project with the [Cyclone UI CLI](../../docs/packages/cli.md), then install the packages that it adds:
+
+```bash
+pnpm exec cyclone-ui add bytes-text
+pnpm install
+```
+
+The [component reference](../../docs/design-system/components/bytes-text.md) lists the files that the CLI copies and the components it copies with them.
+
+The `@cyclone-ui/bytes-text` package is not published to npm yet. After it is published, you can also install it with a package manager:
 
 Using [pnpm](http://pnpm.io):
 
@@ -91,6 +110,16 @@ yarn add -D @cyclone-ui/bytes-text
 
 </details>
 
+## Usage
+
+```tsx
+import { BytesText } from "@cyclone-ui/bytes-text";
+
+export const Example = () => <BytesText>1337</BytesText>;
+```
+
+See the [component reference](../../docs/design-system/components/bytes-text.md) for details.
+
 ## Reduced Package Size
 
 This project uses [tsup](https://tsup.egoist.dev/) to package the source code due to its ability to remove unused code and ship smaller javascript files thanks to code splitting. This helps to greatly reduce the size of the package and to make it easier to use in other projects.
@@ -105,7 +134,7 @@ Run `nx build bytes-text` to build the library.
 
 ### Running unit tests
 
-Run `nx test bytes-text` to execute the unit tests via [Jest](https://jestjs.io).
+Run `nx test bytes-text` to execute the unit tests via [Vitest](https://vitest.dev).
 
 ### Linting
 
@@ -285,7 +314,7 @@ If this sounds interesting, and you would like to help us in creating the next
 generation of development tools, please reach out on our website!
 
 <br />
-<h3 align="center">💻 Visit <a href="https://stormsoftware.com" target="_blank">stormsoftware.com</a> to stay up to date with this developer</h3>
+### 💻 Visit [stormsoftware.com](https://stormsoftware.com) to stay up to date with this developer
 
 <br />
 <div align="right">[ <a href="#table-of-contents">Back to top ▲</a> ]</div>

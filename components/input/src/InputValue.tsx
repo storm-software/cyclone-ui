@@ -1,21 +1,103 @@
+/* -------------------------------------------------------------------
+
+                   🗲 Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
+"use client";
+
+import type { FormControlSize } from "@cyclone-ui/helpers";
 import {
-  View,
+  getFieldLabelInset,
+  getFormSizeScale,
+  useFieldHasStartIcon,
+  useFormControl
+} from "@cyclone-ui/helpers";
+import type {
+  GetProps,
+  TamaDefer,
+  TamaguiComponent,
+  TextNonStyleProps,
+  TextStylePropsBase
+} from "@tamagui/core";
+import {
+  createStyledHOC,
   styled,
   useComposedRefs,
   useEvent,
   useTheme
 } from "@tamagui/core";
 import { registerFocusable } from "@tamagui/focusable";
-import { FormEvent, useCallback, useEffect, useRef } from "react";
-import { InputProps } from "./types";
-import { InputContext, baseInputStyle } from "./utilities";
+import type { TamaguiWebElement } from "@tamagui/web";
+import type { FormEvent } from "react";
+import { useCallback, useEffect, useRef } from "react";
+import type { InputComponentProps } from "./types";
+import { InputContext, baseInputStyle, useInputBehavior } from "./utilities";
 
-const BaseInputValue = styled(View, baseInputStyle[0], baseInputStyle[1]);
+/* eslint-disable ts/no-unused-vars --
+ * Native-only props are destructured so they are not forwarded to the web input.
+ */
 
-export const InputValue = BaseInputValue.styleable<InputProps>(
-  ({ autoComplete = "off", ...inProps }, forwardedRef) => {
-    const { disabled, name, onChange, onInput, onBlur, onFocus } =
-      InputContext.useStyledContext();
+// Tamagui v3 cannot infer props from a bare host tag, so describe the styled
+// `<input>` explicitly: text styles plus the variants from `baseInputStyle`.
+// The ref stays `any`, as v2 inferred from the `"input" as any` host, since
+// it may hold an `<input>` or a `<textarea>`.
+type BaseInputValueComponent = TamaguiComponent<
+  TamaDefer,
+  any,
+  // `onChange`/`onInput` carry `InputChangeEventHandler` (see `types.ts`).
+  Omit<TextNonStyleProps, "onChange" | "onInput">,
+  TextStylePropsBase,
+  { size?: FormControlSize; disabled?: boolean }
+>;
+
+const BaseInputValue = styled(
+  "input" as any,
+  baseInputStyle[0],
+  baseInputStyle[1]
+) as unknown as BaseInputValueComponent;
+const BaseInputValueImpl = BaseInputValue as any;
+
+export const InputValue = createStyledHOC(
+  BaseInputValue,
+  (
+    {
+      autoComplete = "off",
+      ...inProps
+    }: Omit<GetProps<typeof BaseInputValue>, "onChange" | "onInput"> &
+      InputComponentProps,
+    forwardedRef
+  ) => {
+    const {
+      disabled: contextDisabled,
+      readOnly: contextReadOnly,
+      name: contextName,
+      labelPlacement,
+      size: contextSize,
+      variant
+    } = InputContext.useStyledContext();
+    const {
+      onChange: contextOnChange,
+      onInput: contextOnInput,
+      onBlur: contextOnBlur,
+      onFocus: contextOnFocus,
+      name: behaviorName
+    } = useInputBehavior();
+    // An underlined control's text starts flush with its left edge unless a
+    // start icon sits before it.
+    const flushStart = variant === "underlined" && !useFieldHasStartIcon();
 
     const {
       // some of destructed props are just to avoid passing them to ...rest because they are not in web.
@@ -62,15 +144,31 @@ export const InputValue = BaseInputValue.styleable<InputProps>(
       scrollEnabled,
       secureTextEntry,
       selectionColor,
+      nativePaddingInline,
+      render = "input",
       inputMode,
+      onChange: inputOnChange,
+      onInput: inputOnInput,
+      onBlur: inputOnBlur,
+      onFocus: inputOnFocus,
       ...rest
     } = inProps;
+    const disabled = inProps.disabled ?? contextDisabled;
+    const readOnly = inProps.readOnly ?? contextReadOnly;
+    const name = inProps.name ?? behaviorName ?? contextName;
+    // Unique per field, so the field label's `htmlFor` targets this input.
+    const id = useFormControl()?.id ?? name;
 
-    const ref = useRef<HTMLInputElement>(null);
+    const ref =
+      useRef<TamaguiWebElement<HTMLInputElement | HTMLTextAreaElement>>(null);
     const theme = useTheme();
 
     const composedRefs = useComposedRefs(forwardedRef, ref);
-
+    const paddingInline =
+      nativePaddingInline ??
+      `calc(var(--t-space-4xl) * ${getFormSizeScale(inProps.size ?? contextSize)})`;
+    const onChange = inputOnChange ?? contextOnChange;
+    const onInput = inputOnInput ?? contextOnInput;
     const handleSelectionChange = useEvent(() => {
       const start = ref.current?.selectionStart ?? 0;
       const end = ref.current?.selectionEnd ?? 0;
@@ -97,21 +195,37 @@ export const InputValue = BaseInputValue.styleable<InputProps>(
       }
 
       return () => {};
-    }, []);
+    }, [handleSelectionChange, onSelectionChange]);
 
     useEffect(() => {
       if (selection) {
         ref.current?.setSelectionRange(
           selection.start || null,
-          selection.end || null
+          selection.end ?? null
         );
       }
-    }, [selection?.start, selection?.end]);
+    }, [selection]);
+
+    const handleInput = useCallback(
+      (event: FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        event.stopPropagation();
+        const value = event.currentTarget.value;
+        onInput?.(
+          new CustomEvent("input", {
+            detail: value
+          })
+        );
+        onChange?.(new CustomEvent("change", { detail: value }));
+      },
+      [onChange, onInput]
+    );
 
     const finalProps = {
       ...rest,
+      autoComplete,
       inputMode,
       disabled,
+      readOnly,
       caretColor,
       enterKeyHint,
       style: {
@@ -122,9 +236,10 @@ export const InputValue = BaseInputValue.styleable<InputProps>(
         }),
         ...(selectionColor && {
           "--selectionColor": theme[selectionColor]?.variable || selectionColor
-        })
+        }),
+        "--autofillBackgroundColor": theme.surface?.variable
       }
-    } as any;
+    };
 
     useEffect(() => {
       if (!name) {
@@ -137,41 +252,13 @@ export const InputValue = BaseInputValue.styleable<InputProps>(
       return registerFocusable(name, {
         focusAndSelect: () => {
           ref.current?.focus();
-          onFocus?.();
+          contextOnFocus?.();
         },
         focus: () => {
-          onFocus?.();
+          contextOnFocus?.();
         }
       });
-    }, [name, disabled, onFocus]);
-
-    const handleChange = useCallback(
-      (event: FormEvent<HTMLInputElement>) => {
-        event.stopPropagation();
-
-        if (onChange) {
-          onChange(
-            new CustomEvent("change", {
-              detail: event.currentTarget.value
-            })
-          );
-        }
-      },
-      [onChange]
-    );
-
-    const handleInput = useCallback(
-      (event: FormEvent<HTMLInputElement>) => {
-        if (onInput) {
-          onInput(
-            new CustomEvent("input", {
-              detail: event.currentTarget.value
-            })
-          );
-        }
-      },
-      [onInput]
-    );
+    }, [name, disabled, contextOnFocus]);
 
     return (
       <>
@@ -185,23 +272,91 @@ export const InputValue = BaseInputValue.styleable<InputProps>(
       input::placeholder, textarea::placeholder {
         color: var(--placeholderColor) !important;
       }
+
+      /* A floating label's 200ms lift reveals the placeholder: start it after
+         the label begins clearing the text so it fades in, not pops. */
+      @media (prefers-reduced-motion: no-preference) {
+        @keyframes cyclone-placeholder-fade-in {
+          from {
+            opacity: 0;
+          }
+
+          to {
+            opacity: 1;
+          }
+        }
+
+        input::placeholder, textarea::placeholder {
+          animation: cyclone-placeholder-fade-in 200ms ease-out 100ms both;
+        }
+      }
+
+      input.cyclone-input-value:-webkit-autofill {
+        background-color: var(--autofillBackgroundColor) !important;
+        -webkit-box-shadow: 0 0 0 1000px var(--autofillBackgroundColor) inset !important;
+      }
       `}
           </style>
         )}
 
-        <BaseInputValue
-          ref={composedRefs}
-          disabled={disabled}
+        {/* Rendered directly, not through `asChild`: Tamagui v3 drops a
+            component's own config styles (all of `baseInputStyle`) when
+            `asChild` is set, leaving the browser's native field look. */}
+        <BaseInputValueImpl
           {...finalProps}
-          id={name}
-          onChange={handleChange}
-          onInput={handleInput}
-          onBlur={onBlur}
-          onFocus={onFocus}
-          autoComplete={autoComplete}
+          render={render === "textarea" ? "textarea" : "input"}
+          className={
+            [
+              rest.className,
+              render === "textarea" ? undefined : "cyclone-input-value"
+            ]
+              .filter(Boolean)
+              .join(" ") || undefined
+          }
+          ref={composedRefs}
+          name={name}
+          disabled={disabled}
+          readOnly={readOnly}
+          id={id}
+          style={{
+            ...finalProps.style,
+            ...(render === "textarea"
+              ? {
+                  flex: 1,
+                  minWidth: 0,
+                  margin: 0,
+                  paddingInlineStart: flushStart ? 0 : paddingInline,
+                  paddingInlineEnd: paddingInline
+                }
+              : {
+                  height: "100%",
+                  flex: 1,
+                  minWidth: 0,
+                  margin: 0,
+                  // No `padding` shorthand: merged style order varies by
+                  // size, and a later shorthand would reset `paddingInline`.
+                  paddingBottom: 0,
+                  // Drop the text under a floating label by the extra height
+                  // an inset label adds over a border one (see
+                  // `getFieldLabelInset`).
+                  paddingTop: labelPlacement
+                    ? 7 * getFormSizeScale(inProps.size ?? contextSize) +
+                      getFieldLabelInset(
+                        labelPlacement,
+                        inProps.size ?? contextSize
+                      ) -
+                      getFieldLabelInset("border")
+                    : 0,
+                  paddingInlineStart: flushStart ? 0 : paddingInline,
+                  paddingInlineEnd: paddingInline
+                })
+          }}
+          onChange={handleInput}
+          onBlur={inputOnBlur ?? contextOnBlur}
+          onFocus={inputOnFocus ?? contextOnFocus}
         />
       </>
     );
   },
-  { staticConfig: { componentName: "InputValue" } }
+  { displayName: "InputValue" }
 );

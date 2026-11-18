@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="caronslovak" format="2">
+  <advance width="600"/>
+  <unicode hex="02BC"/>
+  <anchor x="237.0" y="740.0" name="_topright"/>
+  <outline>
+    <contour>
+      <point x="278" y="740" type="line"/>
+      <point x="253" y="740" type="line"/>
+      <point x="237" y="564" type="line"/>
+      <point x="254" y="564" type="line"/>
+    </contour>
+  </outline>
+</glyph>

@@ -1,0 +1,56 @@
+{
+  "name": "@cyclone-ui/text-area",
+  "version": "0.1.101",
+  "type": "module",
+  "description": "A multiline text input that renders a textarea with 3 rows by default and uses the same tokens as the Cyclone UI Input. It has default, floating and underline variants, sm, md and lg sizes, and focus and disabled states, and its border reflects field validation messages. Wrapped in a Field, it connects to the form: it takes its name, value, size, disabled and focus state from the field and floats the field label by default.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/text-area"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/input": "workspace:*",
+    "@cyclone-ui/scroll-view": "workspace:*",
+    "@tamagui/constants": "catalog:",
+    "@tamagui/core": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/form": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./TextArea": {
+      "import": "./dist/TextArea.mjs",
+      "require": "./dist/TextArea.cjs"
+    },
+    "./*": "./*"
+  }
+}

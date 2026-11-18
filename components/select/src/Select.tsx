@@ -1,358 +1,884 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { Button } from "@cyclone-ui/button";
-import { ColorThemeName } from "@cyclone-ui/colors";
-import { getRadius, getSized } from "@cyclone-ui/helpers";
-import { isWeb } from "@tamagui/constants";
-import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
+ ------------------------------------------------------------------- */
+
+"use client";
+
+import { ContextMenu } from "@cyclone-ui/context-menu";
+import { Field } from "@cyclone-ui/field";
+import type { FieldLabelPlacement, FormControlSize } from "@cyclone-ui/helpers";
 import {
+  FieldNotchedOutline,
+  getFormControlAriaProps,
+  getFormSizeScale,
+  getFormSizeToken,
+  getSpaced,
+  useFieldHasValidationMessage,
+  useFieldLabelDefaults,
+  useFieldLabelPlacement,
+  useFieldVariant,
+  useFormControl
+} from "@cyclone-ui/helpers";
+import { ChevronDown } from "@cyclone-ui/icons";
+import { ControlUnderline } from "@cyclone-ui/input";
+import type { SelectOption } from "@stryke/types/form";
+import type { GetProps } from "@tamagui/core";
+import {
+  createStyledHOC,
+  isWeb,
   styled,
+  Text,
   useThemeName,
   View,
   withStaticProperties
 } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
-import { ChevronDown } from "@tamagui/lucide-icons";
-import { Select as TamaguiSelect } from "@tamagui/select";
-import { Separator } from "@tamagui/separator";
-import { useCallback, useMemo } from "react";
-import { SelectItems } from "./SelectItems";
+import { XStack } from "@tamagui/stacks";
+import type { ReactNode } from "react";
+import {
+  Children,
+  isValidElement,
+  Suspense,
+  use,
+  useCallback,
+  useMemo,
+  useRef,
+  useState
+} from "react";
+import type { ViewStyle } from "react-native";
+import type { SelectOptionEntry } from "./options";
+import {
+  getItemLabel,
+  getSearchMatch,
+  getTypeaheadMatch,
+  matchesSearch
+} from "./options";
+import { SelectItem, SelectItems } from "./SelectItems";
 import { SelectTextBox } from "./SelectTextBox";
-import { SelectContextProps } from "./types";
-import { getSelectSize, SelectContext } from "./utilities";
+import { SelectNativeValue } from "./SelectValue";
+import type { SelectChangeEventHandler, SelectContextProps } from "./types";
+import {
+  getSelectSize,
+  getSelectVisualFocus,
+  SelectBehaviorContext,
+  SelectContext
+} from "./utilities";
 
-const SelectGroup = styled(XGroup, {
-  name: "Select",
+// Selects float their field label by default.
+const FLOATING_LABEL = { variant: "floating" } as const;
+
+// Raised on the field while typed characters match no option.
+const NO_MATCH_MESSAGE = {
+  code: "select.no-match",
+  message: "No option matches what you typed",
+  type: "danger"
+} as const;
+
+// Characters typed within this many milliseconds build one search.
+const TYPEAHEAD_TIMEOUT = 1000;
+
+/**
+ * The `Select.Items.Item`s among `children`, else the field's `items`: what
+ * typing on the select matches, and what the search filter counts.
+ */
+// ponytail: only sees items written inside the select's JSX, not ones a
+// custom component renders; give the field `items` in that case.
+const getSelectOptions = (
+  children: ReactNode,
+  items?: SelectOption[]
+): SelectOptionEntry[] => {
+  const options: SelectOptionEntry[] = [];
+  const visit = (node: ReactNode) =>
+    Children.toArray(node).forEach(child => {
+      if (
+        !isValidElement<{
+          children?: ReactNode;
+          value?: unknown;
+          disabled?: boolean;
+        }>(child)
+      ) {
+        return;
+      }
+
+      if (child.type === SelectItem) {
+        options.push({
+          value: String(child.props.value),
+          label: getItemLabel(child.props.children, child.props.value),
+          disabled: Boolean(child.props.disabled)
+        });
+      } else {
+        visit(child.props.children);
+      }
+    });
+  visit(children);
+
+  return options.length > 0 || !items
+    ? options
+    : items.map(item => ({
+        value: String(item.value),
+        label: item.name,
+        disabled: Boolean(item.disabled)
+      }));
+};
+
+// A plain stack rather than `styled(XGroup)` so `transition` reaches the
+// rendered frame and the border and focus ring animate; see `InputGroup`.
+const SelectGroup = styled(XStack, {
+  displayName: "Select",
   context: SelectContext,
-
-  animation: "normal",
+  transition: "200ms",
+  position: "relative",
   justifyContent: "space-between",
   alignItems: "center",
   cursor: "pointer",
-  backgroundColor: "transparent",
+  backgroundColor: "surface",
   borderWidth: 1,
-  borderColor: "$borderColor",
+  borderColor: "hairline hover:primary-hovered focus-visible:primary-active",
   outlineStyle: "none",
-  gap: "$0",
-
-  ...(isWeb
-    ? {
-        tabIndex: 0
-      }
-    : {
-        focusable: true
-      }),
-
+  // this fixes a flex bug where it overflows container
+  boxShadow: "none focus-visible:ring-offset",
+  gap: "zero",
+  borderRadius: "control",
   // this fixes a flex bug where it overflows container
   minWidth: 0,
-
-  hoverStyle: {
-    borderColor: "$accent10"
-  },
-
-  focusVisibleStyle: {
-    outlineColor: "$accent10",
-    outlineWidth: 3,
-    outlineOffset: "$1.25",
-    outlineStyle: "solid",
-    borderColor: "$borderColorFocus"
-  },
-
+  tabIndex: 0,
   variants: {
     focused: {
       true: {
-        outlineColor: "$accent10",
-        outlineWidth: 3,
-        outlineOffset: "$1.25",
-        outlineStyle: "solid",
-        borderColor: "$borderColorFocus"
+        boxShadow: "ring-offset",
+        borderColor: "primary-active"
       }
     },
 
-    size: {
-      "...size": (
-        val: SizeTokens | number,
-        extras: VariantSpreadExtras<any>
-      ) => {
-        const result = getSelectSize(val, extras);
-
-        return {
-          ...result,
-          paddingHorizontal: 0
-        };
+    hasValidationMessage: {
+      true: {
+        borderColor: "primary hover:primary-hovered"
       }
     },
+
+    // The radius is styled by the `.resolve` below, as it depends on the
+    // size.
+    variant: {
+      outlined: {},
+      underlined: {
+        backgroundColor: "transparent",
+        borderWidth: 0,
+        borderBottomWidth: 1,
+        borderColor: "hairline hover:primary-hovered focus-visible:primary",
+        boxShadow: "none focus-visible:none"
+      },
+      inlined: {}
+    },
+
+    // Styled by the `.resolve` below because the geometry depends on
+    // `variant`, `labelPlacement` and `circular`.
+    frameSize: styled.dynamic<FormControlSize>(),
+
+    labelPlacement: styled.dynamic<FieldLabelPlacement>(),
 
     disabled: {
       true: {
-        borderColor: "$borderColorDisabled",
+        backgroundColor: "surface-disabled",
+        borderColor:
+          "primary-disabled hover:primary-disabled press:primary-disabled focus:primary-disabled",
         userSelect: "none",
         cursor: "not-allowed",
-
-        hoverStyle: {
-          borderColor: "$borderColorDisabled"
-        },
-
-        focusStyle: {
-          borderColor: "$borderColorDisabled",
-          outlineStyle: "none"
-        },
-
-        pressStyle: {
-          borderColor: "$borderColorDisabled",
-          outlineStyle: "none"
-        }
+        outlineStyle: "press:none focus:none"
       }
     }
   } as const,
-
   defaultVariants: {
-    size: "$true",
+    frameSize: "md",
     disabled: false,
-    focused: false
+    focused: false,
+    variant: "outlined"
   }
+}).resolve(props => {
+  const sized = getSelectSize(
+    (props.frameSize as FormControlSize | undefined) ?? "md",
+    {
+      labelPlacement: props.labelPlacement as FieldLabelPlacement | undefined,
+      circular: (props as { circular?: boolean }).circular
+    }
+  );
+  // `FieldNotchedOutline` draws a notched field's border instead; the
+  // padding keeps the content where the border left it.
+  const notched = props.labelPlacement === "border";
+
+  return sized
+    ? {
+        // The full 3px ring overwhelms a small select, so use the 1px ring.
+        boxShadow:
+          props.focused &&
+          props.frameSize === "sm" &&
+          props.variant !== "underlined"
+            ? "ring-subtle-offset"
+            : undefined,
+        height: sized.height,
+        minHeight: sized.minHeight,
+        paddingHorizontal: notched ? 1 : 0,
+        paddingVertical: notched ? 1 : undefined,
+        borderWidth: notched ? 0 : undefined,
+        // underlined selects round only their top corners; inlined ones none.
+        ...(props.variant === "underlined"
+          ? {
+              borderTopLeftRadius: sized.borderRadius,
+              borderTopRightRadius: sized.borderRadius,
+              borderBottomLeftRadius: 0,
+              borderBottomRightRadius: 0
+            }
+          : { borderRadius: sized.borderRadius })
+      }
+    : undefined;
 });
 
-const SelectSeparator = styled(Separator, {
-  name: "Select",
+const SelectSeparator = styled(View, {
+  displayName: "Select",
   context: SelectContext,
-
-  animation: "normal",
-  borderWidth: 1,
-  borderColor: "$borderColor",
-  vertical: true,
-  height: "50%",
-  marginVertical: "$0.25",
-
+  // Fades in over 200ms when the separator mounts. The object form with an
+  // `enter` key keeps a hover/focus restyle during the fade from snapping it
+  // to full opacity: Tamagui only re-renders (instead of emitting styles with
+  // the mount-time "no animation" flag) when `transition` names `enter`.
+  // The color lives on a child: a `group-hover/field` color on this element
+  // stuck at the hovered value after the pointer left.
+  transition: { duration: "200ms", enter: "200ms" },
+  opacity: "enter:0",
+  width: 1,
+  flexShrink: 0,
+  height: "60%",
+  marginVertical: "zero",
   variants: {
-    focused: {
-      true: {
-        borderColor: "$borderColorFocus"
-      }
-    },
-
-    disabled: {
-      true: {
-        borderColor: "$borderColorDisabled",
-
-        hoverStyle: {
-          borderColor: "$borderColorDisabled"
-        },
-
-        focusStyle: {
-          borderColor: "$borderColorDisabled"
-        },
-
-        pressStyle: {
-          borderColor: "$borderColorDisabled"
-        }
-      }
+    variant: {
+      outlined: {},
+      underlined: {
+        width: 0
+      },
+      inlined: {}
     }
   } as const,
-
   defaultVariants: {
-    disabled: false,
-    focused: false
+    variant: "outlined"
   }
 });
 
-const SelectTrigger = Button.styleable<{
-  forcePlacement?: GetProps<typeof XGroup.Item>["forcePlacement"];
-  rotateOnFocused?: boolean;
-}>(
-  ({ children, rotateOnFocused = true, ...props }, forwardedRef) => {
-    const { circular, focused, disabled, size, onFocus } =
-      SelectContext.useStyledContext();
+type SelectTriggerProps = GetProps<typeof Field.Icon>;
 
-    const radius = useMemo(
-      () => getRadius("$true", { circular, scale: 0.75 }),
-      []
-    );
-    const adjustedTrigger = useMemo(
-      () => getSized(size, { shift: -3 }),
-      [size]
-    );
-
-    const theme = useThemeName();
-    const rotate = useMemo(
-      () => (rotateOnFocused ? focused : false),
-      [rotateOnFocused, focused]
-    );
+const SelectTrigger = createStyledHOC(
+  Field.Icon,
+  (props: SelectTriggerProps, forwardedRef) => {
+    const { open, size } = SelectContext.useStyledContext();
 
     return (
-      <View
-        animation="slow"
-        rotate={rotate ? "180deg" : "0deg"}
-        cursor={disabled ? "not-allowed" : "pointer"}
-        paddingHorizontal="$0.6"
-        flexBasis="6%"
-        minWidth="$4">
-        <Button
-          ref={forwardedRef}
-          variant="ghost"
-          {...props}
-          disabled={disabled}
-          borderRadius={radius}
-          onPress={onFocus}
-          size={adjustedTrigger}
-          color={
-            theme?.includes(ColorThemeName.BASE) ? "$borderColor" : "$color"
-          }>
-          <Button.Icon>
-            {children || <ChevronDown disabled={disabled} />}
-          </Button.Icon>
-        </Button>
-      </View>
+      <Field.Icon
+        ref={forwardedRef}
+        {...props}
+        controlSize={size}
+        render="span"
+        role={undefined}
+        pointerEvents="none">
+        {/* `Field.Icon` clones its direct child with a `style` prop, which
+            stops the motion driver from animating it, so the rotating
+            wrapper sits one level down. */}
+        <View>
+          <View
+            // Points up while the menu is open. The rotation lives on a
+            // wrapper because react-native-svg drops a `transform` style on
+            // the icon.
+            transition="200ms"
+            rotate={open ? "180deg" : "0deg"}
+            alignItems="center"
+            justifyContent="center">
+            <ChevronDown
+              size={24 * getFormSizeScale(size)}
+              // Follows the field icon's hover color, which already fades in
+              // step with the border; its own color transition would restart
+              // on every frame of that one and finish ~200ms late.
+              color="currentColor"
+              style={{ transition: "none" } as ViewStyle}
+            />
+          </View>
+        </View>
+      </Field.Icon>
     );
   },
-  { staticConfig: { componentName: "Select" } }
+  { displayName: "Select" }
 );
 
-const BaseSelect = styled(TamaguiSelect, {
-  name: "Select",
-  context: SelectContext,
-
-  animation: "normal",
-  cursor: "pointer",
-  justifyContent: "center",
-  alignItems: "center",
-  borderColor: "transparent",
-  backgroundColor: "transparent",
-
-  variants: {
-    disabled: {
-      true: {
-        cursor: "not-allowed",
-        color: "$colorDisabled",
-        backgroundColor: "transparent"
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    disabled: false
-  }
-});
-
-const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
-  ({ children, ...props }, forwardedRef) => {
-    const { focused, disabled } = SelectContext.useStyledContext();
+const SelectTextBoxImpl = createStyledHOC(
+  SelectTextBox,
+  (
+    {
+      children,
+      ...props
+    }: GetProps<typeof SelectTextBox> & Partial<SelectContextProps>,
+    forwardedRef
+  ) => {
+    const { focused, disabled, size, variant, circular } =
+      SelectContext.useStyledContext();
+    const { invalid, searchable } = use(SelectBehaviorContext);
+    const themeName = useThemeName();
+    const formControl = useFormControl();
+    // Unmatched typing shows as an error at once, before the field shows its
+    // message (which waits for blur).
+    const hasValidationMessage = useFieldHasValidationMessage() || invalid;
+    const labelPlacement = useFieldLabelPlacement();
+    const [locallyActive, setLocallyActive] = useState(false);
+    const frameSize = size;
+    const underlineActive = focused || locallyActive;
+    const idleColor = hasValidationMessage ? "primary" : "hairline";
+    const focusColor = hasValidationMessage
+      ? "primary-active"
+      : "hairline-active";
+    const hoverColor = hasValidationMessage
+      ? "primary-hovered"
+      : "hairline-hovered";
+    // A call-site base replaces every lower-tier clause in v3, so restate
+    // the `disabled` variant's press/focus colors that v2 kept.
+    // In a field the label overlays the frame without being inside it, so
+    // the frame never sees `hover`; follow the field group's hover too.
+    const borderColor = `${focused ? focusColor : idleColor} hover:${focused ? focusColor : hoverColor} group-hover/field:${disabled ? "primary-disabled" : focused ? focusColor : hoverColor}${disabled ? " press:primary-disabled focus:primary-disabled" : ""} focus-visible:${focusColor}`;
 
     return (
       <SelectGroup
-        group={"select" as any}
+        // No own `group`: `group-hover/field` here and on the separator must
+        // resolve to the enclosing Field, which also covers its label overlay.
+        // Always a theme: going from none to `danger` would re-parent (and
+        // remount) the children, blurring the focused text box.
+        theme={invalid ? "danger" : themeName}
+        // Tab goes straight to a searchable select's text input.
+        {...(searchable && { tabIndex: -1 })}
         focused={focused}
+        hasValidationMessage={hasValidationMessage}
+        variant={variant}
+        labelPlacement={labelPlacement}
+        frameSize={frameSize}
         disabled={disabled}
-        minWidth="$10">
-        <SelectTextBox {...props}>
-          <XGroup.Item>
-            <View flex={1}>{children}</View>
-          </XGroup.Item>
+        borderColor={borderColor}
+        boxShadow={`focus-visible:${
+          variant === "outlined" || variant === "inlined"
+            ? size === "sm"
+              ? "ring-subtle-offset"
+              : "ring-offset"
+            : "none"
+        }`}
+        onFocus={() => setLocallyActive(true)}
+        onBlur={(event: any) => {
+          if (!event.currentTarget?.contains?.(event.relatedTarget)) {
+            setLocallyActive(false);
+          }
+        }}
+        transition="200ms">
+        <XGroup display="contents" disabled={disabled}>
+          <SelectTextBox
+            {...props}
+            paddingLeft={
+              variant === "underlined"
+                ? 0
+                : getSpaced(getFormSizeToken(frameSize)) * 0.25
+            }>
+            <XGroup.Item flex={1} minWidth={0} height="100%">
+              <View
+                flex={1}
+                minWidth={0}
+                flexDirection="row"
+                alignItems="center">
+                {children}
+                {formControl && (
+                  // The field's status icon; a span, as the text box is a
+                  // button.
+                  <Field.ThemeIcon
+                    position="end"
+                    render="span"
+                    role={undefined}
+                  />
+                )}
+              </View>
+            </XGroup.Item>
 
-          <XGroup.Item>
-            <SelectSeparator
-              ref={forwardedRef}
-              focused={focused}
+            {!disabled && (
+              <>
+                <XGroup.Item>
+                  <SelectSeparator ref={forwardedRef}>
+                    <View
+                      width="100%"
+                      height="100%"
+                      // Keep group color updates independent of the entrance fade.
+                      backgroundColor={`${focused ? focusColor : idleColor} group-hover/field:${focused ? focusColor : hoverColor}`}
+                      transition="200ms"
+                    />
+                  </SelectSeparator>
+                </XGroup.Item>
+
+                <XGroup.Item>
+                  <SelectTrigger />
+                </XGroup.Item>
+              </>
+            )}
+          </SelectTextBox>
+          {variant === "underlined" && (
+            <ControlUnderline
+              bottom={-1}
+              focused={underlineActive}
               disabled={disabled}
-              $group-select-hover={{
-                borderColor: disabled
-                  ? "$borderColorDisabled"
-                  : focused
-                    ? "$borderColorFocus"
-                    : "$accent10"
-              }}
+              backgroundColor={disabled ? "primary-disabled" : focusColor}
             />
-          </XGroup.Item>
-
-          <XGroup.Item>
-            <SelectTrigger />
-          </XGroup.Item>
-        </SelectTextBox>
+          )}
+          {labelPlacement === "border" && (
+            <FieldNotchedOutline
+              borderColor={borderColor}
+              borderRadius={circular ? 100_000 : "control"}
+            />
+          )}
+        </XGroup>
       </SelectGroup>
     );
   },
-  { staticConfig: { componentName: "Select" } }
+  { displayName: "Select" }
 );
 
-const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
+interface SelectFallbackProps {
+  name?: string;
+  value?: string;
+  placeholder?: string;
+  size: FormControlSize;
+  variant: SelectContextProps["variant"];
+  disabled?: boolean;
+  required?: boolean;
+}
+
+/**
+ * The select in a prerendered shell: a native `<select>` drawn like the
+ * closed control, which submits and validates without JavaScript. Its options
+ * are the field's `items` (or just the current value).
+ */
+const SelectFallback = ({
+  name,
+  value,
+  placeholder,
+  size,
+  variant,
+  disabled,
+  required
+}: SelectFallbackProps) => {
+  const formControl = useFormControl();
+  const hasValidationMessage = useFieldHasValidationMessage();
+  const labelPlacement = useFieldLabelPlacement();
+  const options =
+    formControl?.items ??
+    (value ? [{ name: value, value, disabled: false }] : []);
+
+  return (
+    <SelectGroup
+      frameSize={size}
+      variant={variant}
+      labelPlacement={labelPlacement}
+      disabled={disabled}
+      hasValidationMessage={hasValidationMessage}>
+      <SelectNativeValue
+        id={formControl?.id ?? name}
+        // `<select>` attributes, which Tamagui's `Text` doesn't type.
+        {...({
+          name,
+          defaultValue: value ?? "",
+          required: required ? true : undefined
+        } as object)}
+        disabled={disabled}
+        {...getFormControlAriaProps(formControl)}
+        size={size}
+        variant={variant}
+        labelPlacement={labelPlacement}
+        placeholding={!value}
+        style={{ appearance: "none" }}>
+        <option value="">{placeholder ?? ""}</option>
+        {options.map(option => (
+          <option
+            key={String(option.value)}
+            value={String(option.value)}
+            disabled={Boolean(option.disabled)}>
+            {option.name}
+          </option>
+        ))}
+      </SelectNativeValue>
+      {/* A View can't carry `color` in v3, so a Text passes it to the
+          `currentColor` icon. */}
+      <Text
+        display="flex"
+        pointerEvents="none"
+        paddingHorizontal="xl"
+        color={disabled ? "primary-disabled" : "primary"}>
+        <ChevronDown size={24 * getFormSizeScale(size)} color="currentColor" />
+      </Text>
+    </SelectGroup>
+  );
+};
+
+const SelectGroupImpl = createStyledHOC(
+  ContextMenu,
   (
-    {
-      name,
-      disabled,
-      focused,
-      children,
-      onFocus,
-      onBlur,
-      onChange,
-      size = "$true",
-      ...props
-    },
+    props: Omit<
+      GetProps<typeof ContextMenu>,
+      "value" | "onValueChange" | "variant"
+    > &
+      Partial<SelectContextProps> & {
+        /**
+         * The current value of the select. This should be used when the select is controlled.
+         */
+        value?: string;
+
+        /**
+         * The initial value of the select when it is uncontrolled. This value will be used as the starting value for the select before any user interaction.
+         */
+        defaultValue?: string;
+
+        /**
+         * Shown while nothing is selected, by the value a `Select` renders inside a `Field` when it is given no children.
+         */
+        placeholder?: string;
+        readOnly?: boolean;
+
+        /**
+         * Makes the text box a text input, showing the selected option,
+         * whose edited text filters the options and picks the best match.
+         * It keeps the focus while the menu is open; `ArrowDown` and `ArrowUp`
+         * step through the options. Where the menu opens as a bottom sheet on small
+         * screens, the sheet shows its own search input.
+         *
+         * @defaultValue `true`
+         */
+        searchable?: boolean;
+      },
     forwardedRef
   ) => {
+    // Inside a form control (such as `Field`), any prop left unset falls back
+    // to the control's state, which connects the select to the form.
+    const formControl = useFormControl();
+    const fieldVariant = useFieldVariant();
+    useFieldLabelDefaults(FLOATING_LABEL);
+    const formDefaultValue = formControl?.defaultValue;
+    const {
+      name = formControl?.name,
+      disabled = formControl?.disabled,
+      readOnly = formControl?.readOnly ?? false,
+      focused = formControl?.focused,
+      variant = formControl ? fieldVariant : "outlined",
+      children,
+      onFocus = formControl?.onFocus,
+      onBlur = formControl?.onBlur,
+      onChange: onChangeProp,
+      size = formControl?.size ?? "md",
+      value = formControl
+        ? formControl.formattedValue ||
+          String(formControl.value ?? formDefaultValue ?? "")
+        : undefined,
+      defaultValue = formControl ? String(formDefaultValue ?? "") : undefined,
+      placeholder,
+      searchable: searchableProp,
+      ...rest
+    } = props;
+    const formOnChange = formControl?.onChange;
+    const onChange = useMemo<SelectChangeEventHandler | undefined>(
+      () =>
+        onChangeProp ??
+        (formOnChange ? event => formOnChange(event.detail) : undefined),
+      [formOnChange, onChangeProp]
+    );
+    const [open, setOpen] = useState(false);
+    const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
+    const [search, setSearch] = useState<string>();
+    const inputRef = useRef<HTMLInputElement>(null);
+    const [invalid, setInvalid] = useState(false);
+    const typeaheadRef = useRef({ search: "", time: 0 });
+    const hasValidationMessage = useFieldHasValidationMessage();
+    const visualFocus = getSelectVisualFocus(focused, open);
+    const resolvedValue = value ?? uncontrolledValue;
+    const fieldItems = formControl?.items;
+    const options = useMemo(
+      () => getSelectOptions(children, fieldItems),
+      [children, fieldItems]
+    );
+    const searchable = searchableProp ?? true;
+    const setMessage = formControl?.setMessage;
+
+    const setNoMatch = useCallback(
+      (noMatch: boolean) => {
+        setInvalid(noMatch);
+        setMessage?.(
+          NO_MATCH_MESSAGE.code,
+          noMatch ? NO_MATCH_MESSAGE : undefined
+        );
+      },
+      [setMessage]
+    );
+
+    const applyValue = useCallback(
+      (nextValue: string) => {
+        setUncontrolledValue(nextValue);
+        onChange?.(
+          new CustomEvent("change", {
+            detail: nextValue
+          })
+        );
+      },
+      [onChange]
+    );
+
     const handleOpenChanged = useCallback(
-      (open: boolean, via?: "hover" | "press") => {
-        if (open) {
+      (nextOpen: boolean) => {
+        if (nextOpen && (disabled || readOnly)) {
+          return;
+        }
+
+        setOpen(nextOpen);
+
+        if (nextOpen) {
           onFocus?.();
         } else {
-          onBlur?.();
+          setSearch(undefined);
+          // A searchable select's field stays focused while its text input
+          // keeps the focus (see `handleTextBoxFocusChange`).
+          const input = inputRef.current;
+          if (input !== input?.ownerDocument.activeElement) {
+            onBlur?.();
+          }
         }
       },
-      [onFocus, onBlur]
+      [disabled, readOnly, onFocus, onBlur]
     );
 
     const handleChanged = useCallback(
-      (value: string) => {
-        onChange?.(
-          new CustomEvent("change", {
-            detail: value
-          })
-        );
-        onBlur?.();
+      (nextValue: string) => {
+        if (readOnly) return;
+        applyValue(nextValue);
+        setNoMatch(false);
+        handleOpenChanged(false);
       },
-      [onChange, onBlur]
+      [applyValue, setNoMatch, handleOpenChanged, readOnly]
+    );
+
+    const handleTextBoxKey = useCallback(
+      (key: string): boolean => {
+        if (disabled || readOnly) return false;
+
+        if (!searchable) {
+          // Space still opens the menu, as on any button.
+          if (key.length !== 1 || key === " ") return false;
+
+          const now = Date.now();
+          const state = typeaheadRef.current;
+          state.search =
+            now - state.time > TYPEAHEAD_TIMEOUT ? key : state.search + key;
+          state.time = now;
+
+          const match = getTypeaheadMatch(options, state.search, resolvedValue);
+          if (match && match.value !== resolvedValue) {
+            applyValue(match.value);
+          }
+          setNoMatch(!match);
+
+          return true;
+        }
+
+        // The text input edits its own text (see `handleTextBoxInput`).
+        // `ArrowDown` and `ArrowUp` open the menu, then step through the
+        // options it shows; `Enter` opens or closes it, rather than
+        // submitting the form.
+        if (key === "ArrowDown" || key === "ArrowUp") {
+          if (!open) {
+            handleOpenChanged(true);
+
+            return true;
+          }
+
+          const shown = options.filter(
+            option =>
+              !option.disabled &&
+              (!search || matchesSearch(option.label, search))
+          );
+          const index = shown.findIndex(
+            option => option.value === resolvedValue
+          );
+          const next =
+            key === "ArrowDown"
+              ? shown[Math.min(index + 1, shown.length - 1)]
+              : shown[Math.max(index - 1, 0)];
+          if (next && next.value !== resolvedValue) {
+            applyValue(next.value);
+            setNoMatch(false);
+          }
+
+          return true;
+        }
+        if (key === "Enter") {
+          handleOpenChanged(!open);
+
+          return true;
+        }
+
+        return false;
+      },
+      [
+        applyValue,
+        disabled,
+        handleOpenChanged,
+        open,
+        options,
+        readOnly,
+        resolvedValue,
+        search,
+        searchable,
+        setNoMatch
+      ]
+    );
+
+    // Editing a searchable select's text filters the options, opening the
+    // menu, and picks the best match.
+    const handleTextBoxInput = useCallback(
+      (text: string) => {
+        if (disabled || readOnly) return;
+
+        setSearch(text);
+        if (!open) {
+          handleOpenChanged(true);
+        }
+
+        const match = text.trim() ? getSearchMatch(options, text) : undefined;
+        if (match && match.value !== resolvedValue) {
+          applyValue(match.value);
+        }
+        setNoMatch(Boolean(text.trim()) && !match);
+      },
+      [
+        applyValue,
+        disabled,
+        handleOpenChanged,
+        open,
+        options,
+        readOnly,
+        resolvedValue,
+        setNoMatch
+      ]
+    );
+
+    // The field is focused while the text input is, or the menu is open (the
+    // menu's options and search take the focus from the input). Focus moving
+    // on to another control closes the menu; a press elsewhere dismisses it.
+    const handleTextBoxFocusChange = useCallback(
+      (nextFocused: boolean, next?: Element | null) => {
+        if (nextFocused) {
+          onFocus?.();
+        } else if (!open) {
+          onBlur?.();
+        } else if (
+          next &&
+          !next.closest?.("[data-context-menu-item], [data-select-search]")
+        ) {
+          handleOpenChanged(false);
+        }
+      },
+      [handleOpenChanged, onBlur, onFocus, open]
+    );
+
+    const behavior = useMemo(
+      () => ({
+        options,
+        searchable,
+        search,
+        setSearch,
+        inputRef,
+        invalid,
+        onTextBoxKey: handleTextBoxKey,
+        onTextBoxInput: handleTextBoxInput,
+        onTextBoxFocusChange: handleTextBoxFocusChange
+      }),
+      [
+        options,
+        searchable,
+        search,
+        invalid,
+        handleTextBoxKey,
+        handleTextBoxInput,
+        handleTextBoxFocusChange
+      ]
     );
 
     return (
-      <SelectContext.Provider
-        {...props}
-        name={name}
-        disabled={disabled}
-        focused={focused}
-        size={size}
-        onFocus={onFocus}
-        onBlur={onBlur}
-        onChange={onChange}>
-        <BaseSelect
-          id={name}
-          ref={forwardedRef}
-          disablePreventBodyScroll={true}
-          {...props}
-          onValueChange={handleChanged}
-          onOpenChange={handleOpenChanged}
-          open={focused}
+      // Tamagui's popover gives its callbacks random identity keys while
+      // rendering, which a Next.js Cache Components prerender only allows
+      // inside a Suspense boundary. The fallback sits outside the select
+      // context, whose `name` and `value` keys it would otherwise swallow.
+      <Suspense
+        fallback={
+          <SelectFallback
+            name={name}
+            value={resolvedValue}
+            placeholder={placeholder}
+            size={size}
+            variant={variant}
+            disabled={disabled}
+            required={formControl?.required}
+          />
+        }>
+        <SelectContext.Provider
+          // Only context keys: a styled context treats every key in its value
+          // as a context prop, so spreading all props swallowed `aria-*` and
+          // other DOM attributes before they reached the element. Only plain
+          // values too: it gives functions random identity keys.
+          circular={Boolean((rest as { circular?: boolean }).circular)}
+          name={name}
           disabled={disabled}
-          size={size}>
-          {children}
-        </BaseSelect>
-      </SelectContext.Provider>
+          focused={visualFocus}
+          hasValidationMessage={hasValidationMessage}
+          variant={variant}
+          size={size}
+          value={resolvedValue}
+          open={open}>
+          <SelectBehaviorContext value={behavior}>
+            {isWeb && name && (
+              // The trigger is a button, so this carries the value when the
+              // form submits.
+              <input type="hidden" name={name} value={resolvedValue ?? ""} />
+            )}
+            <ContextMenu
+              ref={forwardedRef}
+              aria-readonly={readOnly || undefined}
+              placement="bottom"
+              {...rest}
+              size={size}
+              value={resolvedValue}
+              onValueChange={handleChanged}
+              open={open}
+              onOpenChange={handleOpenChanged}>
+              {children ??
+                // Without children, a select in a field renders the field's items.
+                (formControl && (
+                  <>
+                    <SelectTextBoxImpl>
+                      <SelectTextBox.Value placeholder={placeholder} />
+                    </SelectTextBoxImpl>
+                    <SelectItems />
+                  </>
+                ))}
+            </ContextMenu>
+          </SelectBehaviorContext>
+        </SelectContext.Provider>
+      </Suspense>
     );
   },
-  { staticConfig: { componentName: "Select" } }
+  { displayName: "Select" }
 );
 
 export const Select = withStaticProperties(SelectGroupImpl, {
@@ -361,3 +887,10 @@ export const Select = withStaticProperties(SelectGroupImpl, {
   }),
   Items: SelectItems
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Select.TextBoxValue` is undefined on the server).
+ */
+export { SelectItems, SelectTextBoxImpl as SelectTextBox };
+export const SelectTextBoxValue = SelectTextBox.Value;

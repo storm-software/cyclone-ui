@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="checkmark" format="2">
+  <advance width="912"/>
+  <unicode hex="2713"/>
+  <outline>
+    <contour>
+      <point x="786" y="687" type="line"/>
+      <point x="715" y="715" type="line"/>
+      <point x="486" y="242" type="line"/>
+      <point x="407" y="76" type="line"/>
+      <point x="403" y="76" type="line"/>
+      <point x="323" y="242" type="line"/>
+      <point x="194" y="506" type="line"/>
+      <point x="126" y="473" type="line"/>
+      <point x="364" y="0" type="line"/>
+      <point x="446" y="0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.talk</key>
+      <string>
+
+/* Y direction */
+ResYAnchor(2,18)
+YShift(2,6)
+ResYAnchor(4)
+ResYAnchor(9)
+/* X direction */
+Smooth()
+</string>
+    </dict>
+  </lib>
+</glyph>

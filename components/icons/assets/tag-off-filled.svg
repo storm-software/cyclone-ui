@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<defs>
+		<mask id="tag-off-mask">
+			<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+				<path d="M7.5 3H11.5l9.3 9.3a1 1 0 0 1 0 1.4l-7.1 7.1a1 1 0 0 1 -1.4 0L3 11.5V4a1 1 0 0 1 1 -1Z" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="57"><animate attributeName="fill-opacity" begin="0.6s" dur="0.4s" fill="freeze" to="1" /><animate attributeName="stroke-dashoffset" dur="0.6s" fill="freeze" values="57;0" /></path>
+				<circle cx="6.5" cy="6.5" fill="#000" r="0"><animate attributeName="r" begin="1s" dur="0.2s" fill="freeze" to="1.5" /></circle>
+				<path d="M0 11h24" stroke="#000" transform="rotate(-45 12 12)" stroke-dasharray="25" stroke-dashoffset="25"><animate attributeName="stroke-dashoffset" begin="1.2s" dur="0.4s" fill="freeze" to="0" /></path>
+			</g>
+		</mask>
+	</defs>
+	<path d="M0 0h24v24H0z" fill="currentColor" mask="url(#tag-off-mask)" />
+	<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor">
+		<path d="M0 13h24" transform="rotate(-45 12 12)" stroke-dasharray="25" stroke-dashoffset="25"><animate attributeName="stroke-dashoffset" begin="1.2s" dur="0.4s" fill="freeze" to="0" /></path>
+	</g>
+</svg>

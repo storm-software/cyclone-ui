@@ -1,39 +1,49 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
+ ------------------------------------------------------------------- */
+
+"use client";
+
+import { HeadingExtraSmallText } from "@cyclone-ui/heading-text";
 import type { GetProps, SizeTokens } from "@tamagui/core";
 import {
   createStyledContext,
+  createStyledHOC,
+  isWeb,
   styled,
   View,
   withStaticProperties
 } from "@tamagui/core";
-import { ThemeableStack } from "@tamagui/stacks";
+import { YStack } from "@tamagui/stacks";
+import { Children, cloneElement, isValidElement } from "react";
 
-export type AlignCells = {
+export interface AlignCells {
   y: "center" | "start" | "end";
   x: "center" | "start" | "end";
-};
+}
 
 export type AlignHeaderCells = AlignCells;
 
-export type TableContextProps = {
+export type TableSizing = "fixed" | "content";
+
+export interface TableContextProps {
   cellWidth: SizeTokens | number;
   cellHeight: SizeTokens | number;
+  sizing: TableSizing;
   alignHeaderCells: {
     y: "center" | "start" | "end";
     x: "center" | "start" | "end";
@@ -43,50 +53,70 @@ export type TableContextProps = {
     x: "center" | "start" | "end";
   };
   borderColor: string;
-};
 
-const TableContext = createStyledContext<TableContextProps>({
-  cellWidth: "$8",
-  cellHeight: "$8",
-  alignHeaderCells: { x: "start", y: "center" },
-  alignCells: { x: "center", y: "center" },
-  borderColor: "$borderColor"
-});
+  /**
+   * Renders header text as small, letter-spaced, uppercase labels.
+   */
+  uppercase: boolean;
+}
+
+const TableContext = createStyledContext<
+  TableContextProps,
+  | "cellWidth"
+  | "cellHeight"
+  | "sizing"
+  | "alignHeaderCells"
+  | "alignCells"
+  | "borderColor"
+  | "uppercase"
+>(
+  {
+    cellWidth: "10xl",
+    cellHeight: "10xl",
+    sizing: "fixed",
+    alignHeaderCells: { x: "start", y: "center" },
+    alignCells: { x: "center", y: "center" },
+    borderColor: "hairline",
+    uppercase: false
+  } as TableContextProps,
+  {
+    keys: [
+      "cellWidth",
+      "cellHeight",
+      "sizing",
+      "alignHeaderCells",
+      "alignCells",
+      "borderColor",
+      "uppercase"
+    ]
+  }
+);
 
 export const TABLE_NAME = "Table";
 export const TABLE_HEADER_NAME = "TableHeader";
 
-const TableRow = styled(ThemeableStack, {
-  name: TABLE_NAME,
+const TableRow = styled(YStack, {
+  displayName: TABLE_NAME,
   context: TableContext,
-
-  tag: "tr",
-
+  render: "tr",
   flexDirection: "row",
   borderWidth: 0,
-  borderColor: "$borderColor",
+  borderColor: "hairline focus-visible:hairline-active",
   borderStyle: "solid",
   justifyContent: "flex-start",
   position: "relative",
-  backgroundColor: "transparent",
-  paddingHorizontal: "$2",
+  backgroundColor: "transparent hover:transparent",
+  paddingHorizontal: "xl",
 
-  hoverStyle: {
-    backgroundColor: "transparent"
-  },
-
-  focusVisibleStyle: {
-    outlineColor: "$accent10",
-    outlineWidth: 3,
-    outlineOffset: "$1.25",
-    outlineStyle: "solid",
-    borderColor: "$borderColorFocus"
-  },
-
+  boxShadow: "none focus-visible:ring-offset",
   variants: {
     header: {
-      false: {
-        borderBottomWidth: 1
+      false: {}
+    },
+
+    sizing: {
+      content: {
+        display: "web:table-row"
       }
     }
   },
@@ -96,227 +126,332 @@ const TableRow = styled(ThemeableStack, {
   }
 });
 
-const TableRowImpl = TableRow.styleable(
+const TableRowImpl = createStyledHOC(
+  TableRow,
   ({ children, header = false, ...props }, forwardRef) => {
+    const { sizing } = TableContext.useStyledContext();
+    const rowChildren = header
+      ? Children.toArray(children).map((child, index, childrenArray) => {
+          if (
+            !isValidElement<GetProps<typeof TableHeaderCell>>(child) ||
+            child.type !== TableHeaderCellImpl
+          ) {
+            return child;
+          }
+
+          // eslint-disable-next-line react/no-clone-element
+          return cloneElement(child, {
+            edgePadding:
+              index === 0 && index === childrenArray.length - 1
+                ? "both"
+                : index === 0
+                  ? "start"
+                  : index === childrenArray.length - 1
+                    ? "end"
+                    : undefined
+          });
+        })
+      : children;
+
     return (
       <TableRow
         ref={forwardRef}
-        group={"row" as any}
+        group={"row"}
         header={header}
         position="relative"
+        // Variant/context hover clauses don't reach the row, so set it here.
+        backgroundColor={
+          header || sizing === "fixed"
+            ? "transparent"
+            : "transparent hover:surface"
+        }
         {...props}>
-        <ThemeableStack
-          fullscreen={true}
-          animation="normal"
-          opacity={0}
-          backgroundColor="$primary"
-          $group-row-hover={{
-            opacity: header ? 0 : 0.1
-          }}
-          style={{
-            filter: "blur(1px)"
-          }}
-        />
-        {children}
+        {sizing === "fixed" && (
+          <YStack
+            position="absolute"
+            inset={0}
+            pointerEvents="none"
+            transition="200ms"
+            opacity={`0 group-hover/row:${header ? 0 : 1}`}
+            backgroundColor="surface"
+            style={{
+              filter: "blur(1px)"
+            }}
+          />
+        )}
+        {rowChildren}
       </TableRow>
     );
   },
   {
-    staticConfig: { componentName: TABLE_NAME }
+    displayName: TABLE_NAME
   }
 );
 
-const TableCell = styled(ThemeableStack, {
-  name: TABLE_NAME,
+const TableCell = styled(YStack, {
+  displayName: TABLE_NAME,
   context: TableContext,
-
-  tag: "td",
-
+  render: "td",
   flexDirection: "row",
   flexGrow: 0,
   flexShrink: 1,
   borderWidth: 0,
+  borderBottomWidth: 1,
+  borderColor: "hairline focus-visible:hairline-active",
   justifyContent: "flex-start",
-  paddingHorizontal: "$2",
+  paddingHorizontal: "xl",
 
-  focusVisibleStyle: {
-    outlineColor: "$accent10",
-    outlineWidth: 3,
-    outlineOffset: "$1.25",
-    outlineStyle: "solid",
-    borderColor: "$borderColorFocus"
-  },
-
+  boxShadow: "none focus-visible:ring-offset",
   variants: {
-    cellWidth: {
-      "...size": (name, { tokens }) => {
-        return {
-          width: tokens.size[name]
-        };
-      }
-    },
-
-    cellHeight: {
-      "...size": (name, { tokens }) => {
-        return {
-          minHeight: tokens.size[name]
-        };
-      }
-    },
-
-    alignCells: (val: AlignCells) => {
+    cellWidth: styled.dynamic<SizeTokens | number>((name, { tokens }) => {
       return {
-        alignItems: val.y === "center" ? "center" : `flex-${val.y}`,
-        justifyContent: val.x === "center" ? "center" : `flex-${val.x}`
+        width: typeof name === "string" ? tokens.size[name] : undefined
       };
+    }),
+
+    cellHeight: styled.dynamic<SizeTokens | number>((name, { tokens }) => {
+      return {
+        minHeight: typeof name === "string" ? tokens.size[name] : undefined
+      };
+    }),
+
+    alignCells: styled.dynamic<AlignCells>(val => {
+      return {
+        alignItems: val.y === "center" ? "center" : (`flex-${val.y}` as const),
+        justifyContent:
+          val.x === "center" ? "center" : (`flex-${val.x}` as const)
+      };
+    }),
+
+    sizing: {
+      content: {
+        display: "web:table-cell",
+        minHeight: "web:auto",
+        paddingVertical: "web:xl",
+        paddingHorizontal: "web:xl",
+        width: "web:auto"
+      }
     }
   } as const
 });
 
-const TableHeaderCell = styled(ThemeableStack, {
-  name: TABLE_HEADER_NAME,
+const TableHeaderCell = styled(YStack, {
+  displayName: TABLE_HEADER_NAME,
   context: TableContext,
 
-  tag: "th",
-
-  zIndex: 10,
+  render: "th",
+  zIndex: "10",
   flexDirection: "row",
   flexGrow: 0,
   flexShrink: 1,
   borderWidth: 0,
+  borderBottomWidth: 1,
+  borderColor: "hairline",
   justifyContent: "flex-start",
-  paddingHorizontal: "$2",
+  paddingVertical: "xl",
+  paddingHorizontal: "sm",
 
   variants: {
-    cellWidth: {
-      "...size": (name, { tokens }) => {
-        return {
-          width: tokens.size[name]
-        };
+    cellWidth: styled.dynamic<SizeTokens | number>((name, { tokens }) => {
+      return {
+        width: typeof name === "string" ? tokens.size[name] : undefined
+      };
+    }),
+
+    alignHeaderCells: styled.dynamic<AlignHeaderCells>(val => {
+      return {
+        alignItems: val.y === "center" ? "center" : (`flex-${val.y}` as const),
+        justifyContent:
+          val.x === "center" ? "center" : (`flex-${val.x}` as const)
+      };
+    }),
+
+    sizing: {
+      content: {
+        display: "web:table-cell",
+        paddingVertical: "web:xl",
+        paddingHorizontal: "web:2xl",
+        width: "web:auto"
       }
     },
 
-    alignHeaderCells: (val: AlignHeaderCells) => {
-      return {
-        alignItems: val.y === "center" ? "center" : `flex-${val.y}`,
-        justifyContent: val.x === "center" ? "center" : `flex-${val.x}`
-      };
+    edgePadding: {
+      start: {
+        paddingLeft: "web:4xl"
+      },
+      end: {
+        paddingRight: "web:4xl"
+      },
+      both: {
+        paddingHorizontal: "web:2xl"
+      }
     }
   } as const
 });
 
-const TableBody = styled(ThemeableStack, {
-  name: TABLE_NAME,
+const TableHeaderText = styled(HeadingExtraSmallText, {
+  displayName: TABLE_HEADER_NAME,
+  context: TableContext,
+  render: "span",
+  // Trims the line box to the cap height so the text centers in the cell like
+  // the icons beside it (e.g. the data table's filter button).
+  style: {
+    textBox: "trim-both cap alphabetic"
+  } as any,
+
+  variants: {
+    uppercase: {
+      true: {
+        fontFamily: "eyebrow",
+        fontWeight: "medium",
+        fontSize: "xs",
+        letterSpacing: isWeb ? "0.08em" : 1,
+        textTransform: "uppercase",
+        color: "subtle"
+      }
+    }
+  } as const
+});
+
+// The cell is a view, so plain text children get the header text styles here.
+const TableHeaderCellImpl = createStyledHOC(
+  TableHeaderCell,
+  ({ children, ...props }, forwardRef) => (
+    <TableHeaderCell ref={forwardRef} {...props}>
+      {Children.map(children, child =>
+        typeof child === "string" || typeof child === "number" ? (
+          <TableHeaderText>{child}</TableHeaderText>
+        ) : (
+          child
+        )
+      )}
+    </TableHeaderCell>
+  ),
+  {
+    displayName: TABLE_HEADER_NAME
+  }
+);
+
+const TableBody = styled(YStack, {
+  displayName: TABLE_NAME,
   context: TableContext,
 
-  tag: "tbody",
+  render: "tbody",
 
   flexDirection: "column",
   flexShrink: 1,
-  borderLeftWidth: 1,
-  borderRightWidth: 1
+
+  variants: {
+    sizing: {
+      content: {
+        display: "web:table-row-group"
+      }
+    }
+  } as const
 });
 
-const TableHeader = styled(ThemeableStack, {
-  name: TABLE_NAME,
+const TableHeader = styled(YStack, {
+  displayName: TABLE_NAME,
   context: TableContext,
-
-  tag: "thead",
-
+  render: "thead",
   flexDirection: "column",
   flexShrink: 1,
-  borderWidth: 1,
-  borderTopLeftRadius: "$true",
-  borderTopRightRadius: "$true",
-  overflow: "hidden"
+  borderWidth: 0,
+
+  variants: {
+    sizing: {
+      content: {
+        display: "web:table-header-group"
+      }
+    }
+  } as const
 });
 
-const TableHeaderImpl = TableHeader.styleable(
+const TableHeaderImpl = createStyledHOC(
+  TableHeader,
   ({ children, ...props }, forwardRef) => {
+    const { sizing } = TableContext.useStyledContext();
+
     return (
       <TableHeader ref={forwardRef} position="relative" {...props}>
-        <ThemeableStack
-          fullscreen={true}
-          animation="fast"
-          opacity={0.05}
-          backgroundColor="$primary"
-          style={{
-            filter: "blur(1px)"
-          }}
-        />
-        <View paddingVertical="$2.5">{children}</View>
+        {sizing === "content" ? (
+          children
+        ) : (
+          <View paddingVertical="2xl">{children}</View>
+        )}
       </TableHeader>
     );
   },
   {
-    staticConfig: { componentName: TABLE_NAME }
+    displayName: TABLE_NAME
   }
 );
 
-const TableFooter = styled(ThemeableStack, {
-  name: TABLE_NAME,
+const TableFooter = styled(YStack, {
+  displayName: TABLE_NAME,
   context: TableContext,
-
-  tag: "tfoot",
-
+  render: "tfoot",
   flexDirection: "column",
   flexShrink: 1,
-  borderWidth: 1,
-  borderTopWidth: 0,
-  borderBottomLeftRadius: "$true",
-  borderBottomRightRadius: "$true",
-  overflow: "hidden"
+  borderWidth: 0,
+  variants: {
+    sizing: {
+      content: {
+        display: "web:table-footer-group"
+      }
+    }
+  } as const
 });
 
-const TableFooterImpl = TableFooter.styleable(
+const TableFooterImpl = createStyledHOC(
+  TableFooter,
   ({ children, ...props }, forwardRef) => {
+    const { sizing } = TableContext.useStyledContext();
+
     return (
       <TableFooter ref={forwardRef} position="relative" {...props}>
-        <ThemeableStack
-          fullscreen={true}
-          animation="fast"
-          opacity={0.05}
-          backgroundColor="$primary"
-          style={{
-            filter: "blur(1px)"
-          }}
-        />
-        <View paddingVertical="$2.5">{children}</View>
+        {sizing === "content" ? (
+          children
+        ) : (
+          <View paddingVertical="2xl">{children}</View>
+        )}
       </TableFooter>
     );
   },
   {
-    staticConfig: { componentName: TABLE_NAME }
+    displayName: TABLE_NAME
   }
 );
 
-const TableFrame = styled(ThemeableStack, {
-  name: TABLE_NAME,
+const TableFrame = styled(YStack, {
+  displayName: TABLE_NAME,
   context: TableContext,
-
-  tag: "table",
-  backgrounded: false,
-
+  render: "table",
   borderWidth: 0,
   maxWidth: "100%",
   overflow: "hidden",
-
+  style: {
+    borderCollapse: "separate",
+    borderSpacing: 0
+  },
   variants: {
-    cellWidth: {
-      "...size": () => {
-        return {};
-      }
+    // Consumed only to feed `TableContext`; the cells style from it.
+    cellWidth: styled.dynamic<SizeTokens | number>(),
+    cellHeight: styled.dynamic<SizeTokens | number>(),
+    alignHeaderCells: styled.dynamic<AlignHeaderCells>(),
+    alignCells: styled.dynamic<AlignCells>(),
+    uppercase: {
+      true: {}
     },
 
-    cellHeight: {
-      "...size": () => {
-        return {};
+    sizing: {
+      fixed: {},
+      content: {
+        width: "max-content",
+        display: "web:table"
       }
-    },
-
-    alignHeaderCells: val => ({}),
-    alignCells: val => ({})
-  }
+    }
+  } as const
 });
 
 export type TableProps = GetProps<typeof TableFrame>;
@@ -326,6 +461,27 @@ export const Table = withStaticProperties(TableFrame, {
   Body: TableBody,
   Row: TableRowImpl,
   Cell: TableCell,
-  HeaderCell: TableHeaderCell,
+  HeaderCell: TableHeaderCellImpl,
+  HeaderText: TableHeaderText,
   Footer: TableFooterImpl
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`Table.Header` is undefined on the server).
+ */
+export {
+  TableBody,
+  TableCell,
+  TableFooterImpl as TableFooter,
+  TableHeaderImpl as TableHeader,
+  TableHeaderCellImpl as TableHeaderCell,
+  TableHeaderText,
+  TableRowImpl as TableRow
+};
+
+/**
+ * Reads the nearest table's settings, e.g. `uppercase` for custom header
+ * content.
+ */
+export const useTableContext = TableContext.useStyledContext;

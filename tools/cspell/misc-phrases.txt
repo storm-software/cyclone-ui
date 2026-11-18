@@ -1,0 +1,32 @@
+codeship
+truecolor
+pathext
+colorterm
+cfonts
+pjson
+linkify
+mdurl
+maska
+bunshi
+dtcg
+demi
+zindex
+oklch
+rehookify
+shiki
+uncentered
+pmtiles
+ttfautohint
+graphify
+lxml
+repacker
+
+# Shorthands
+maxh
+maxw
+minh
+minw
+xxxs
+
+# Ignore in Regex
+ommands

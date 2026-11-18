@@ -1,57 +1,40 @@
 {
   "name": "@cyclone-ui/tabs",
-  "version": "0.3.0",
+  "version": "0.3.97",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A tabbed interface with Header.Item triggers and Content.Item panels. It offers underline, floating, tabbed and fluid (gooey WebGL pill) tab styles in horizontal or vertical orientation, optional borders and sizes, and an animated active indicator. The floating style's indicator pill is a Container that takes the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating) and its shadow, glass, noise and accented options, and the fluid pill takes the variant's color. onValueChange reports the selected tab.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/tabs"
   },
   "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
   "files": [
-    "dist",
-    "src",
-    "types"
+    "dist"
   ],
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@tamagui/animate-presence": "^1.116.15",
-    "@tamagui/button": "^1.116.15",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/font-size": "^1.116.15",
-    "@tamagui/get-font-sized": "^1.116.15",
-    "@tamagui/helpers": "^1.116.15",
-    "@tamagui/helpers-tamagui": "^1.116.15",
-    "@tamagui/linear-gradient": "^1.116.15",
-    "@tamagui/lucide-icons": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15",
-    "@tamagui/tabs": "^1.116.15",
-    "@tamagui/text": "^1.116.15",
-    "@tamagui/use-controllable-state": "^1.116.15",
-    "@tamagui/web": "^1.116.15",
-    "react-native-svg": "^15.8.0"
+    "@cyclone-ui/container": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@tamagui/animate-presence": "catalog:",
+    "@tamagui/constants": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/get-font-sized": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@tamagui/tabs": "catalog:",
+    "react-native-svg": "catalog:"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "@cyclone-ui/body-text": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"
@@ -59,5 +42,23 @@
   "sideEffects": [
     "*.css"
   ],
-  "module:jsx": "dist/jsx"
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./fluid": {
+      "import": "./dist/fluid.mjs",
+      "require": "./dist/fluid.cjs"
+    },
+    "./Tabs": {
+      "import": "./dist/Tabs.mjs",
+      "require": "./dist/Tabs.cjs"
+    },
+    "./*": "./*"
+  }
 }

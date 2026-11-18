@@ -1,0 +1,49 @@
+{
+  "name": "@cyclone-ui/package-command-code-block",
+  "version": "0.0.99",
+  "type": "module",
+  "description": "A tabbed code block that shows the equivalent npm, pnpm, yarn and bun command for an ni-style command (install, run, exec, uninstall and others), each with a copy button. The chosen package manager is saved and kept in sync across instances. Use it in docs for install instructions.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/package-command-code-block"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/code-block": "workspace:*"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:",
+    "react-native-svg": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./PackageCommandCodeBlock": {
+      "import": "./dist/PackageCommandCodeBlock.mjs",
+      "require": "./dist/PackageCommandCodeBlock.cjs"
+    },
+    "./*": "./*"
+  }
+}

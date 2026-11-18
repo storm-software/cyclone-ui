@@ -1,37 +1,60 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import type { Meta, StoryObj } from "@storybook/react";
+ ------------------------------------------------------------------- */
+
+import {
+  CloseSquare,
+  ConfirmCircle,
+  Download,
+  EmailArrowRight,
+  Pause
+} from "@cyclone-ui/icons";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Avatar } from "@tamagui/avatar";
 import { Text, View } from "@tamagui/core";
 import { createColumnHelper } from "@tanstack/react-table";
+import type { ComponentType } from "react";
+import {
+  expect,
+  fireEvent,
+  fn,
+  screen,
+  userEvent,
+  waitFor,
+  within
+} from "storybook/test";
+import type { DataTableOptions, DataTableProps } from "./DataTable";
 import { DataTable, DataTableCell, DataTableHeader } from "./DataTable";
 
-const meta: Meta<typeof DataTable> = {
+// Stories only pass `data`; the custom `render` below supplies `columns`.
+type DataTableStoryArgs = Omit<DataTableProps<Person>, "options"> & {
+  options: Partial<DataTableOptions<Person>>;
+};
+
+const meta: Meta<DataTableStoryArgs> = {
   title: "Tables/DataTable",
-  component: DataTable,
+  component: DataTable as unknown as ComponentType<DataTableStoryArgs>,
   tags: ["autodocs"],
   render: ({ options, ...props }: any) => {
     return (
       <DataTable<Person>
         alignCells={{ x: "start", y: "center" }}
         alignHeaderCells={{ x: "start", y: "center" }}
-        cellWidth="$18"
-        cellHeight="$7"
+        marginBottom="20px"
         options={{
           ...options,
           columns
@@ -40,13 +63,13 @@ const meta: Meta<typeof DataTable> = {
       />
     );
   }
-} satisfies Meta<typeof DataTable>;
+} satisfies Meta<DataTableStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof DataTable>;
+type Story = StoryObj<DataTableStoryArgs>;
 
-type Person = {
+interface Person {
   fullName: string;
   userName: string;
   age: number;
@@ -54,7 +77,7 @@ type Person = {
   status: string;
   role: string;
   avatar?: string;
-};
+}
 
 const defaultData: Person[] = [
   {
@@ -161,13 +184,10 @@ const defaultData: Person[] = [
     status: "Offline",
     role: "Admin"
   }
-].map(
-  (row, index) =>
-    ({
-      ...row,
-      avatar: `https://i.pravatar.cc/150?img=${index + 1}`
-    }) as Person
-);
+].map((row, index) => ({
+  ...row,
+  avatar: `https://i.pravatar.cc/150?img=${index + 1}`
+}));
 
 const columnHelper = createColumnHelper<Person>();
 
@@ -175,21 +195,14 @@ const StatusButton = ({ status }: { status: string }) => {
   return (
     <View
       borderRadius={1000_000_000}
-      backgroundColor={
-        status?.toLocaleLowerCase() === "active" ? "$brand10" : "$base10"
-      }
-      paddingHorizontal="$2">
-      <Text
-        color="$bg"
-        $gtXs={{
-          fontSize: "$2",
-          lineHeight: "$1",
-          fontWeight: "$2"
-        }}
-        fontSize="$1"
-        fontWeight="$2"
-        lineHeight="$1"
-        paddingVertical="$1">
+      backgroundColor="primary"
+      height="6xl"
+      paddingHorizontal="xl"
+      alignItems="center"
+      justifyContent="center"
+      theme={status?.toLocaleLowerCase() === "active" ? "success" : "danger"}
+      themeShallow={true}>
+      <Text color="on-primary" paddingVertical="md">
         {status}
       </Text>
     </View>
@@ -211,29 +224,28 @@ const columns = [
           <View
             flexDirection="row"
             alignItems="center"
-            gap="$3"
-            marginLeft="$2">
-            <Avatar circular size="$5">
-              <Avatar.Image accessibilityLabel="Profile image" src={image} />
-              <Avatar.Fallback backgroundColor="$gray6" />
+            gap="3xl"
+            marginLeft="xl">
+            <Avatar circular size="12xl">
+              <Avatar.Image aria-label="Profile image" src={image} />
+              <Avatar.Fallback backgroundColor="gray6" />
             </Avatar>
             <View flexDirection="column">
               <Text>{fullName}</Text>
-              <Text fontSize="$2" lineHeight="$2" fontWeight="$2" theme="alt2">
-                {userName}
-              </Text>
+              <Text>{userName}</Text>
             </View>
           </View>
         );
       },
       header: DataTableHeader,
       id: "user_base",
-      meta: { facetFn: data => data.userName }
+      meta: { facetFn: (data: Person) => data.userName }
     }
   ),
   columnHelper.accessor("age", {
     header: DataTableHeader,
     cell: DataTableCell,
+    enableColumnFilter: true,
     footer: info => info.column.id
   }),
   columnHelper.accessor("status", {
@@ -241,6 +253,7 @@ const columns = [
     footer: info => info.column.id,
     cell: info => {
       const val = info.renderValue();
+
       return <StatusButton status={val?.toLocaleLowerCase() ?? ""} />;
     }
   }),
@@ -259,6 +272,151 @@ export const Base: Story = {
   }
 };
 
+export const Brand: Story = {
+  args: {
+    theme: "brand",
+    options: {
+      data: defaultData
+    }
+  }
+};
+
+export const Uppercase: Story = {
+  args: {
+    options: {
+      data: defaultData
+    },
+    uppercase: true
+  }
+};
+
+export const Resizable: Story = {
+  args: {
+    options: {
+      data: defaultData
+    },
+    resizable: true
+  }
+};
+
+export const Reorderable: Story = {
+  args: {
+    options: {
+      data: defaultData,
+      enableRowSelection: true
+    },
+    pageSize: 5,
+    reorderable: true,
+    resizable: true
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const headers = () =>
+      canvas.getAllByRole<
+        HTMLElement & {
+          dataset: { columnId?: string };
+        }
+      >("columnheader");
+    const header = (id: string) =>
+      headers().find(cell => cell.dataset.columnId === id)!;
+    const headerIds = () => headers().map(cell => cell.dataset.columnId);
+
+    // Story tsconfigs have no DOM lib.
+    const dataTransfer = new (globalThis as any).DataTransfer();
+    await fireEvent.dragStart(header("role"), { dataTransfer });
+    await fireEvent.dragOver(header("user_base"), { dataTransfer });
+    await fireEvent.drop(header("user_base"), { dataTransfer });
+    await fireEvent.dragEnd(header("role"), { dataTransfer });
+
+    await waitFor(async () =>
+      expect(headerIds()).toEqual([
+        "__selection",
+        "role",
+        "user_base",
+        "age",
+        "status"
+      ])
+    );
+  }
+};
+
+export const RowSelection: Story = {
+  args: {
+    options: {
+      data: defaultData,
+      enableRowSelection: true
+    },
+    pageSize: 5
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    // Story tsconfigs have no DOM lib.
+    const header = canvas
+      .getAllByRole<any>("columnheader")
+      .find(cell => cell.dataset.columnId === "user_base");
+
+    await userEvent.click(header.querySelector("button"));
+
+    // "@john" is shared by three rows with different full names.
+    await userEvent.click(
+      await screen.findByRole("checkbox", { name: "@john (3)" })
+    );
+
+    await waitFor(async () => expect(canvas.getByText("3 rows")).toBeTruthy());
+  }
+};
+
+const onHold = fn();
+const onExport = fn();
+
+export const SelectionActions: Story = {
+  args: {
+    options: {
+      data: defaultData,
+      enableRowSelection: true
+    },
+    pageSize: 5
+  },
+  render: ({ options, ...props }: any) => (
+    <DataTable<Person> {...props} options={{ ...options, columns }}>
+      <DataTable.SelectionAction<Person>
+        icon={<Pause size="2xl" />}
+        onAction={onHold}>
+        Hold
+      </DataTable.SelectionAction>
+      <DataTable.SelectionAction<Person>
+        icon={<Download size="2xl" />}
+        onAction={onExport}>
+        Export
+      </DataTable.SelectionAction>
+    </DataTable>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.click(
+      canvas.getByRole("checkbox", { name: "Select row 1" })
+    );
+    await userEvent.click(
+      canvas.getByRole("checkbox", { name: "Select row 3" })
+    );
+    await expect(await canvas.findByText("2 selected")).toBeVisible();
+
+    await userEvent.click(canvas.getByRole("button", { name: "Export" }));
+    await expect(onExport).toHaveBeenCalledWith([
+      expect.objectContaining({ index: 0 }),
+      expect.objectContaining({ index: 2 })
+    ]);
+
+    await userEvent.click(
+      canvas.getByRole("button", { name: "Clear selection" })
+    );
+    await waitFor(async () =>
+      expect(canvas.queryByText("2 selected")).not.toBeInTheDocument()
+    );
+  }
+};
+
 export const Pagination: Story = {
   args: {
     options: {
@@ -274,27 +432,20 @@ export const Pagination: Story = {
   }
 };
 
-export const Brand: Story = {
+export const Card: Story = {
   args: {
-    theme: "brand",
     options: {
-      data: defaultData
-    }
+      data: defaultData,
+      enableRowSelection: true
+    },
+    variant: "card",
+    pageSize: 5
   }
 };
 
-export const Alternate: Story = {
+export const Discovery: Story = {
   args: {
-    theme: "alternate",
-    options: {
-      data: defaultData
-    }
-  }
-};
-
-export const Help: Story = {
-  args: {
-    theme: "help",
+    theme: "discovery",
     options: {
       data: defaultData
     }
@@ -334,5 +485,100 @@ export const Success: Story = {
     options: {
       data: defaultData
     }
+  }
+};
+
+export const RowActions: Story = {
+  args: {
+    options: {
+      data: defaultData
+    },
+    pageSize: 5,
+    rowActions: row => [
+      {
+        value: "approve",
+        label: "Approve",
+        icon: <ConfirmCircle size="2xl" />,
+        disabled: row.original.status === "Active"
+      },
+      { value: "decline", label: "Decline", icon: <CloseSquare size="2xl" /> },
+      {
+        value: "message",
+        label: "Send Message",
+        icon: <EmailArrowRight size="2xl" />
+      }
+    ],
+    onRowAction: fn()
+  },
+  play: async ({ args, canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.click(
+      canvas.getByRole("button", { name: "Actions for row 2" })
+    );
+    await userEvent.click(
+      await screen.findByRole("button", { name: "Decline" })
+    );
+
+    await expect(args.onRowAction).toHaveBeenCalledWith(
+      "decline",
+      expect.objectContaining({ index: 1 })
+    );
+    await waitFor(async () =>
+      expect(
+        screen.queryByRole("button", { name: "Decline" })
+      ).not.toBeInTheDocument()
+    );
+  }
+};
+
+const manyUsersData: Person[] = Array.from({ length: 3000 }, (_, index) => ({
+  ...defaultData[index % defaultData.length]!,
+  userName: `@user${index}`
+}));
+
+export const ManyFilterValues: Story = {
+  args: {
+    options: {
+      data: manyUsersData
+    },
+    pageSize: 5
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const header = canvas
+      .getAllByRole("columnheader")
+      .find(
+        cell =>
+          (cell as HTMLElement & { dataset: { columnId?: string } }).dataset
+            .columnId === "user_base"
+      )!;
+
+    await userEvent.click(within(header).getByRole("button"));
+
+    // Only the rows in view (plus overscan) mount, not all 3000.
+    const first = await screen.findByText("@user0 (1)");
+    const checkboxCount = screen.getAllByRole("checkbox").length;
+    await expect(checkboxCount).toBeGreaterThan(1);
+    await expect(checkboxCount).toBeLessThan(100);
+    await expect(screen.queryByText("@user2999 (1)")).not.toBeInTheDocument();
+
+    // Story tsconfigs have no DOM lib.
+    const scrollElement = (first as any).closest(".cyclone-scroll-view");
+
+    // The position holds, give or take measurement corrections, once the
+    // rows in view have mounted.
+    const middle = Math.round(scrollElement.scrollHeight / 2);
+    scrollElement.scrollTop = middle;
+    await fireEvent.scroll(scrollElement);
+    await new Promise(resolve => {
+      setTimeout(resolve, 500);
+    });
+    await expect(Math.abs(scrollElement.scrollTop - middle)).toBeLessThan(100);
+
+    scrollElement.scrollTop = scrollElement.scrollHeight;
+    await fireEvent.scroll(scrollElement);
+
+    await expect(await screen.findByText("@user2999 (1)")).toBeVisible();
   }
 };

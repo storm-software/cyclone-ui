@@ -1,0 +1,56 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/article-page/tsconfig.tsbuildinfo",
+    "jsx": "preserve",
+    "ignoreDeprecations": "6.0",
+    "rootDir": ".",
+    "types": [
+      "node",
+      "@nx/react/typings/cssmodule.d.ts",
+      "@nx/react/typings/image.d.ts"
+    ],
+    "outDir": "../../dist/out-tsc/components/article-page"
+  },
+  "references": [
+    {
+      "path": "../tag"
+    },
+    {
+      "path": "../table-of-contents"
+    },
+    {
+      "path": "../link"
+    },
+    {
+      "path": "../inline-code-text"
+    },
+    {
+      "path": "../icons"
+    },
+    {
+      "path": "../heading-text"
+    },
+    {
+      "path": "../terrain-footer"
+    },
+    {
+      "path": "../feedback"
+    },
+    {
+      "path": "../card"
+    },
+    {
+      "path": "../button"
+    },
+    {
+      "path": "../breadcrumb"
+    },
+    {
+      "path": "../body-text"
+    }
+  ],
+  "files": [],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["src/**/*.spec.ts", "src/**/*.test.ts"]
+}

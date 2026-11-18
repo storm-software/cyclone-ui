@@ -1,0 +1,4 @@
+/.next/
+/next-env.d.ts
+*.tsbuildinfo
+/app/tailwind-probe/tailwind.css

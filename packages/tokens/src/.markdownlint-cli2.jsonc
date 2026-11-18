@@ -1,0 +1,5 @@
+{
+  // Razorwind owns these installation guides. Its templates emit unindented
+  // examples between numbered steps; keep other Markdown checks enabled.
+  "config": { "MD029": false }
+}

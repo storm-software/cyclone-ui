@@ -1,53 +1,39 @@
 {
   "name": "@cyclone-ui/button",
-  "version": "0.6.0",
+  "version": "0.6.98",
   "type": "module",
-  "description": "Button component for Cyclone UI",
+  "description": "A pressable button with Button.Text and Button.Icon subcomponents and the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating), whose background is drawn by a Container, plus ghost, link and cascade hover variants. It also has Container shadow styles and glass, noise and accented options. It supports sizes, circular and rounded shapes, ringed and disabled states, press ripples, and rendering as an anchor with href.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
-    "directory": "components/message"
+    "directory": "components/button"
   },
   "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
   "files": [
-    "dist",
-    "src",
-    "types"
+    "dist"
   ],
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@tamagui/constants": "^1.116.15",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/font-size": "^1.116.15",
-    "@tamagui/get-token": "^1.116.15",
-    "@tamagui/helpers": "^1.116.15",
-    "@tamagui/helpers-tamagui": "^1.116.15",
-    "@tamagui/linear-gradient": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15",
-    "@tamagui/text": "^1.116.15",
-    "@tamagui/web": "^1.116.15"
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/container": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/ripple-animation": "workspace:*",
+    "@cyclone-ui/tooltip": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/helpers": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@tamagui/text": "catalog:"
   },
   "devDependencies": {
-    "@tamagui/lucide-icons": "^1.116.15",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"
@@ -55,5 +41,19 @@
   "sideEffects": [
     "*.css"
   ],
-  "module:jsx": "dist/jsx"
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Button": {
+      "import": "./dist/Button.mjs",
+      "require": "./dist/Button.cjs"
+    },
+    "./*": "./*"
+  }
 }

@@ -1,49 +1,56 @@
 {
   "name": "@cyclone-ui/accordion",
-  "version": "0.3.0",
-  "type": "module",
-  "description": "A package containing the Accordion component used by Storm Software",
+  "version": "0.3.98",
+  "private": false,
+  "description": "A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.Heading, Item.Content) built on Tamagui's accordion. It supports single or multiple open items, the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating) and ghost, shadow, glass, noise and accented options, separated and borderless layouts, numbered headers, toggle or chevron icons with a configurable side, and an up or down direction. Use it for FAQs or grouped sections that users expand.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/accordion"
   },
-  "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
+  "type": "module",
   "exports": {
-    "./package.json": "./package.json",
     ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Accordion": {
+      "import": "./dist/Accordion.mjs",
+      "require": "./dist/Accordion.cjs"
+    },
+    "./*": "./*"
   },
-  "types": "./types/index.d.ts",
-  "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
-  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "source": "src/index.ts",
+  "types": "./dist/index.d.cts",
   "dependencies": {
-    "@storm-stack/types": "latest",
-    "@tamagui/accordion": "^1.116.15",
-    "@tamagui/collapsible": "^1.116.15",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/group": "^1.116.15",
-    "@tamagui/helpers": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15",
-    "@tamagui/separator": "^1.116.15"
+    "@cyclone-ui/container": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@stryke/type-checks": "catalog:",
+    "@tamagui/accordion": "catalog:",
+    "@tamagui/collapsible": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/group": "catalog:",
+    "@tamagui/helpers": "catalog:",
+    "@tamagui/react-native-types": "catalog:",
+    "@tamagui/stacks": "catalog:"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "@cyclone-ui/body-text": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"
   },
-  "module:jsx": "dist/jsx",
-  "source": "src/index.ts"
+  "module:jsx": "dist/jsx"
 }

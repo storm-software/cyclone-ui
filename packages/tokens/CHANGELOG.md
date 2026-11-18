@@ -1,0 +1,305 @@
+![Cyclone UI's logo banner](https://public.storm-cdn.com/cyclone-ui/media/banner-1280x320-dark.gif)
+
+# Changelog for Cyclone UI - Tokens
+
+## [0.3.78](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.78) (11/18/2026)
+
+### Features
+
+- **theme-select:** Initial check-in of the `ThemeSelect` component package ([254f1b59c](https://github.com/storm-software/cyclone-ui/commit/254f1b59c))
+- **story:** Added the Story component package ([186608daf](https://github.com/storm-software/cyclone-ui/commit/186608daf))
+
+## [0.3.77](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.77) (11/18/2026)
+
+### Features
+
+- **color-token:** Initial check-in of the color token display component ([d7e7f06b1](https://github.com/storm-software/cyclone-ui/commit/d7e7f06b1))
+
+## [0.3.74](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.74) (11/17/2026)
+
+### Features
+
+- **cli:** Added the `gc` command for garbage collecting old component files ([d09ba7717](https://github.com/storm-software/cyclone-ui/commit/d09ba7717))
+
+## [0.3.73](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.73) (11/17/2026)
+
+### Bug Fixes
+
+- **type-table:** Clean up display of various components ([fe1ee81a6](https://github.com/storm-software/cyclone-ui/commit/fe1ee81a6))
+
+## [0.3.59](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.59) (11/13/2026)
+
+### Features
+
+- **theme-toggler:** Initial check-in of the theme toggler component package ([394299dcf](https://github.com/storm-software/cyclone-ui/commit/394299dcf))
+
+## [0.3.56](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.56) (11/11/2026)
+
+### Features
+
+- **cli:** Update workspace support for using tailwindcss styling for the components library ([527d38a05](https://github.com/storm-software/cyclone-ui/commit/527d38a05))
+
+## [0.3.50](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.50) (11/08/2026)
+
+### Features
+
+- **manual-address-input:** Initial check-in of the Manual Address Input component ([1da71a61d](https://github.com/storm-software/cyclone-ui/commit/1da71a61d))
+
+## [0.3.45](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.45) (11/07/2026)
+
+### Bug Fixes
+
+- **field:** Update field's using the `above` label to display `description` below the text ([a94ad2e7d](https://github.com/storm-software/cyclone-ui/commit/a94ad2e7d))
+
+## [0.3.43](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.43) (11/07/2026)
+
+### Features
+
+- **stepper:** Added inline display for `Stepper` component ([5465a81ae](https://github.com/storm-software/cyclone-ui/commit/5465a81ae))
+
+## [0.3.42](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.42) (11/06/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Resolve issue generating color token variants ([bd2fc29c9](https://github.com/storm-software/cyclone-ui/commit/bd2fc29c9))
+
+## [0.3.41](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.41) (11/06/2026)
+
+### Features
+
+- **stepper:** Added the `details` property to `Stepper` component ([5d3ffa8f5](https://github.com/storm-software/cyclone-ui/commit/5d3ffa8f5))
+- **monorepo:** Reduced the amount of tokens by removing extra theme border colors ([f01400d25](https://github.com/storm-software/cyclone-ui/commit/f01400d25))
+- **kbd:** Added the `Kbd` keybord display components ([c8c84cb3e](https://github.com/storm-software/cyclone-ui/commit/c8c84cb3e))
+
+## [0.3.39](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.39) (11/05/2026)
+
+### Features
+
+- **context-menu:** Added the child and themed menu items ([47dbc07c5](https://github.com/storm-software/cyclone-ui/commit/47dbc07c5))
+
+## [0.3.38](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.38) (11/05/2026)
+
+### Features
+
+- **file:** Initial check-in of the `File` component package ([33ae985b4](https://github.com/storm-software/cyclone-ui/commit/33ae985b4))
+
+## [0.3.35](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.35) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **tokens:** Update token styles and remove `subtlest` duplicate tokens ([ccbe4f900](https://github.com/storm-software/cyclone-ui/commit/ccbe4f900))
+- **theme-builder:** Added the `border` color token to themes ([47f36e073](https://github.com/storm-software/cyclone-ui/commit/47f36e073))
+- **monorepo:** Update display of secondary variants to include box-shadow ([02092d99a](https://github.com/storm-software/cyclone-ui/commit/02092d99a))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+## [0.3.34](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.34) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **theme-builder:** Added the `border` color token to themes ([47f36e073](https://github.com/storm-software/cyclone-ui/commit/47f36e073))
+- **monorepo:** Update display of secondary variants to include box-shadow ([02092d99a](https://github.com/storm-software/cyclone-ui/commit/02092d99a))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+## [0.3.32](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.32) (11/03/2026)
+
+### Bug Fixes
+
+- **monorepo:** Remove duplicate dependencies from the workspace's packages ([52871708f](https://github.com/storm-software/cyclone-ui/commit/52871708f))
+
+## [0.3.31](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.31) (11/03/2026)
+
+### Bug Fixes
+
+- **theme-builder:** Added the `backdrop` color token and updated component responsiveness ([eaaf2aba9](https://github.com/storm-software/cyclone-ui/commit/eaaf2aba9))
+
+## [0.3.30](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.30) (11/03/2026)
+
+### Features
+
+- **footer:** Split footer out into a layout and block type components ([3976202de](https://github.com/storm-software/cyclone-ui/commit/3976202de))
+
+## [0.3.29](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.29) (11/01/2026)
+
+### Features
+
+- **modal:** Added Model component and updated Drawer styling ([567b818b5](https://github.com/storm-software/cyclone-ui/commit/567b818b5))
+
+## [0.3.27](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.27) (10/31/2026)
+
+### Features
+
+- **card:** Added the `variant` property to change border display ([5f86d2bce](https://github.com/storm-software/cyclone-ui/commit/5f86d2bce))
+
+## [0.3.21](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.21) (10/25/2026)
+
+### Bug Fixes
+
+- **nextjs:** Add support for providing tokens as build config ([09ca705a1](https://github.com/storm-software/cyclone-ui/commit/09ca705a1))
+
+## [0.3.20](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.20) (10/24/2026)
+
+### Features
+
+- **nextjs:** Added NextJS and Vite build packages, setup skills, and documentation updates ([2759b41c](https://github.com/storm-software/cyclone-ui/commit/2759b41c))
+
+## [0.3.18](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.18) (10/23/2026)
+
+### Bug Fixes
+
+- **icons:** Update weight of icons to better align with other components ([d6b95296](https://github.com/storm-software/cyclone-ui/commit/d6b95296))
+
+## [0.3.16](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.16) (10/23/2026)
+
+### Features
+
+- **article-page:** Added the `ArticlePage` component package ([3818b7a1](https://github.com/storm-software/cyclone-ui/commit/3818b7a1))
+
+### Documentation
+
+- **monorepo:** Added `sourcebook` skills and partially generated docs for design system ([0dbff145](https://github.com/storm-software/cyclone-ui/commit/0dbff145))
+
+## [0.3.15](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.15) (10/23/2026)
+
+### Bug Fixes
+
+- **select:** Clean up select option styling ([f7638208](https://github.com/storm-software/cyclone-ui/commit/f7638208))
+
+## [0.3.14](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.14) (10/22/2026)
+
+### Bug Fixes
+
+- **tokens:** Upgrade razorwind and generate config files ([2d174005](https://github.com/storm-software/cyclone-ui/commit/2d174005))
+- **tokens:** Update token structure to better allow customizations ([7f23eb61](https://github.com/storm-software/cyclone-ui/commit/7f23eb61))
+
+### Features
+
+- **search-dialog:** Added the SearchDialog component to support website searches ([6de49d52](https://github.com/storm-software/cyclone-ui/commit/6de49d52))
+
+## [0.3.1](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.1) (10/11/2026)
+
+### Features
+
+- **cli:** Added a `create-tokens` command ([0c2dde08](https://github.com/storm-software/cyclone-ui/commit/0c2dde08))
+
+## [0.3.11](https://github.com/storm-software/cyclone-ui/releases/tag/themes%400.3.11) (10/07/2026)
+
+### Bug Fixes
+
+- **fonts-storm-sans:** Update the style of `g` and `y` characters ([d328d3d1](https://github.com/storm-software/cyclone-ui/commit/d328d3d1))
+- **themes:** Clean up typography tokens ([68aee6ad](https://github.com/storm-software/cyclone-ui/commit/68aee6ad))
+
+## [0.3.10](https://github.com/storm-software/cyclone-ui/releases/tag/themes%400.3.10) (10/06/2026)
+
+### Bug Fixes
+
+- **cli:** Update CLI to use Razorwind plugins ([5e58c49c](https://github.com/storm-software/cyclone-ui/commit/5e58c49c))
+
+## [0.3.8](https://github.com/storm-software/cyclone-ui/releases/tag/themes%400.3.8) (10/05/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve release workflow warnings ([e0f2b332](https://github.com/storm-software/cyclone-ui/commit/e0f2b332))
+
+### Features
+
+- **page:** Added Page component for base layout ([0bc9835e](https://github.com/storm-software/cyclone-ui/commit/0bc9835e))
+
+## [0.3.7](https://github.com/storm-software/cyclone-ui/releases/tag/themes%400.3.7) (10/04/2026)
+
+### Bug Fixes
+
+- **fonts:** Added missing font files ([8ffd59e7](https://github.com/storm-software/cyclone-ui/commit/8ffd59e7))
+
+### Features
+
+- **tag-picker:** Added the Tag, TagPicker, and TagPickerField components ([01a2c188](https://github.com/storm-software/cyclone-ui/commit/01a2c188))
+- **fonts:** Added the Storm Serif font ([32daffcf](https://github.com/storm-software/cyclone-ui/commit/32daffcf))
+
+## [0.3.6](https://github.com/storm-software/cyclone-ui/releases/tag/themes%400.3.6) (10/03/2026)
+
+### Miscellaneous
+
+- **deps:** upgrade Tamagui to v3 ([3e96fbd8](https://github.com/storm-software/cyclone-ui/commit/3e96fbd8))
+
+### Bug Fixes
+
+- **fonts:** Updates to Storm Sans font design ([e4b856ba](https://github.com/storm-software/cyclone-ui/commit/e4b856ba))
+- **container:** Cleaned up the container display ([6d6132ff](https://github.com/storm-software/cyclone-ui/commit/6d6132ff))
+
+### Features
+
+- **rating:** Added the `Rating` and `Slider` component ([db0f602f](https://github.com/storm-software/cyclone-ui/commit/db0f602f))
+- **icons:** Added icons library and removed lucid references ([45024ce8](https://github.com/storm-software/cyclone-ui/commit/45024ce8))
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+- **monorepo:** Added `ui-ux-pro-max-cli` and UI component clean up ([72404ff9](https://github.com/storm-software/cyclone-ui/commit/72404ff9))
+- **divider:** Added the `Divider` component package ([694276cf](https://github.com/storm-software/cyclone-ui/commit/694276cf))
+- **inline-code-text:** Added InlineCodeText component package ([482bad14](https://github.com/storm-software/cyclone-ui/commit/482bad14))
+
+## [0.3.5](https://github.com/storm-software/cyclone-ui/releases/tag/themes%400.3.5) (09/21/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace packages' dependencies and devenv modules ([bb588d13](https://github.com/storm-software/cyclone-ui/commit/bb588d13))
+
+### Bug Fixes
+
+- **monorepo:** Stlying clean up and improved component props ([4eba5c0f](https://github.com/storm-software/cyclone-ui/commit/4eba5c0f))
+- **field:** Adjust display of label in fields ([9aa15776](https://github.com/storm-software/cyclone-ui/commit/9aa15776))
+- **field:** Update fields so that `floating` is the default variant ([33a72399](https://github.com/storm-software/cyclone-ui/commit/33a72399))
+- **monorepo:** Clean up various component stlyings ([5941ff1a](https://github.com/storm-software/cyclone-ui/commit/5941ff1a))
+- **body-text:** Updates to workspace to use `BodyText` component ([af8e53c5](https://github.com/storm-software/cyclone-ui/commit/af8e53c5))
+- **themes:** Update to use a merged color scheme tokens JSON ([0cbeaed2](https://github.com/storm-software/cyclone-ui/commit/0cbeaed2))
+- **select:** Clean up padding and sizing of select field ([c106a513](https://github.com/storm-software/cyclone-ui/commit/c106a513))
+
+### Features
+
+- **field:** Added `size` property to form field components ([380e416b](https://github.com/storm-software/cyclone-ui/commit/380e416b))
+- **accordion:** Added the `direction` property ([ba244763](https://github.com/storm-software/cyclone-ui/commit/ba244763))
+- **themes:** Update theme colors and apply them to components ([83c95718](https://github.com/storm-software/cyclone-ui/commit/83c95718))
+- **themes:** Simplify theme tokens to improve user experience ([9b53e050](https://github.com/storm-software/cyclone-ui/commit/9b53e050))
+- **display-text:** Added display text component and Razorwind plugins ([eb288dfa](https://github.com/storm-software/cyclone-ui/commit/eb288dfa))
+- **collapsible:** Added the `Collapsible` component package ([f903127c](https://github.com/storm-software/cyclone-ui/commit/f903127c))
+- **vectors:** Added the StormLogoText and StormLogoIcon svg components ([51c800eb](https://github.com/storm-software/cyclone-ui/commit/51c800eb))
+
+## [0.3.4](https://github.com/storm-software/cyclone-ui/releases/tag/themes%400.3.4) (09/13/2026)
+
+### Bug Fixes
+
+- **data-table:** Various styling clean up changes ([86787b1](https://github.com/storm-software/cyclone-ui/commit/86787b1))
+
+### Features
+
+- **circular-progress:** Added the CircularProgress component ([6eaff51](https://github.com/storm-software/cyclone-ui/commit/6eaff51))
+- **button:** Added `cascade` and `diagonal-cascade` variants ([d74ae25](https://github.com/storm-software/cyclone-ui/commit/d74ae25))
+- **navigation-header:** Added the NavigationHeader component ([c7bef48](https://github.com/storm-software/cyclone-ui/commit/c7bef48))
+- **navigation-header:** Initial check-in of the Navigation Header component ([545601a](https://github.com/storm-software/cyclone-ui/commit/545601a))
+
+## [0.3.3](https://github.com/storm-software/cyclone-ui/releases/tag/themes%400.3.3) (09/11/2026)
+
+### Bug Fixes
+
+- **field:** Clean up issues around field status display ([b5a57dd](https://github.com/storm-software/cyclone-ui/commit/b5a57dd))
+- **code-block:** Clean up to various components ([5610e6e](https://github.com/storm-software/cyclone-ui/commit/5610e6e))
+
+### Features
+
+- **package-command-code-block:** Added the Package Command Code Block component ([453b491](https://github.com/storm-software/cyclone-ui/commit/453b491))
+- **password-input-field:** Added the Password Input Field component ([828984b](https://github.com/storm-software/cyclone-ui/commit/828984b))
+- **field:** Add `underline` variant to form fields ([fac31ad](https://github.com/storm-software/cyclone-ui/commit/fac31ad))
+- **field:** Added `floating` label variant to fields ([50350f5](https://github.com/storm-software/cyclone-ui/commit/50350f5))
+- **sheet:** Added Sheet component to library ([15ceaa9](https://github.com/storm-software/cyclone-ui/commit/15ceaa9))
+
+## [0.3.2](https://github.com/storm-software/cyclone-ui/releases/tag/themes%400.3.2) (09/06/2026)
+
+### Features
+
+- **themes:** Simplified semantic tokens to include a single `base` and only one background color ([3c71be2](https://github.com/storm-software/cyclone-ui/commit/3c71be2))
+- **themes:** Added the `brand` sub-theme to package ([94201d5](https://github.com/storm-software/cyclone-ui/commit/94201d5))

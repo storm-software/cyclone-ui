@@ -1,34 +1,57 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
+ ------------------------------------------------------------------- */
+
+import type { FieldLabelVariant, FieldProps } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
-import type { Meta, StoryObj } from "@storybook/react";
+import { Input } from "@cyclone-ui/input";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { getMedia } from "@tamagui/core";
+import { expect, userEvent, waitFor, within } from "storybook/test";
 import { Select } from "./Select";
 
-const meta: Meta<typeof Select> = {
-  title: "Base/Select",
+// Story args configure the wrapping `Field`, not the `Select` itself, apart from
+// `description` (rendered as its `Field.Details`) and `searchable`.
+type SelectStoryArgs = Omit<FieldProps<string>, "children" | "name"> & {
+  labelVariant?: FieldLabelVariant;
+  description?: string;
+  searchable?: boolean;
+};
+
+const meta: Meta<SelectStoryArgs> = {
+  title: "Form/Select",
   component: Select,
   tags: ["autodocs"],
-  render: ({ defaultValue, ...props }: any) => (
-    <Form name="formName" defaultValues={{ selectName: defaultValue }}>
-      <Field name="selectName" {...props}>
-        <Field.Label>Label Text</Field.Label>
-        <Select>
+  render: (
+    {
+      defaultValue,
+      description,
+      labelVariant,
+      variant,
+      searchable,
+      ...props
+    }: any,
+    { id }: { id: string }
+  ) => (
+    <Form name={`formName-${id}`} initialValues={{ selectName: defaultValue }}>
+      <Field name="selectName" {...props} variant={variant}>
+        <Field.Label variant={labelVariant}>Label Text</Field.Label>
+        <Select variant={variant} size={props.size} searchable={searchable}>
           <Select.TextBox>
             <Select.TextBox.Value placeholder="email@example.com" />
           </Select.TextBox>
@@ -39,24 +62,42 @@ const meta: Meta<typeof Select> = {
                 key={option.value}
                 index={i}
                 value={option.value}
-                disabled={false}
+                disabled={option.disabled ?? false}
                 selected={false}>
                 {option.name}
               </Select.Items.Item>
             ))}
           </Select.Items>
         </Select>
-        <Field.Details>
-          This is an example detailed message for an select
-        </Field.Details>
+        {description && <Field.Details>{description}</Field.Details>}
       </Field>
     </Form>
   )
-} satisfies Meta<typeof Select>;
+} satisfies Meta<SelectStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof Select>;
+type Story = StoryObj<SelectStoryArgs>;
+
+const validation = (
+  type:
+    | "danger"
+    | "warning"
+    | "info"
+    | "discovery"
+    | "success"
+    | "positive"
+    | "negative"
+) => ({
+  onChange: [
+    () => [
+      {
+        message: "This is an example validation message",
+        type
+      }
+    ]
+  ]
+});
 
 const options = [
   { name: "Apple", value: "Apple" },
@@ -80,11 +121,292 @@ const options = [
   { name: "Orange", value: "Orange" },
   { name: "Grape", value: "Grape" },
   { name: "Jackfruit", value: "Jackfruit" },
+  {
+    name: "Yellow dragon fruit from northern Ecuador",
+    value: "Yellow dragon fruit"
+  },
   { name: "Durian", value: "Durian" }
 ];
 
 export const Base: Story = {
-  args: {}
+  args: {},
+  play: async ({ canvasElement }) => {
+    const document = within(canvasElement.ownerDocument.body);
+    const trigger = canvasElement.querySelector<HTMLElement>(
+      "[data-select-trigger]"
+    )!;
+
+    await userEvent.click(trigger);
+    await userEvent.click(
+      await document.findByRole("option", { name: "Pear" })
+    );
+    // On small screens the menu unmounts after the sheet slides out.
+    await waitFor(
+      async () =>
+        expect(document.queryByRole("listbox")).not.toBeInTheDocument(),
+      { timeout: 3000 }
+    );
+    // With this many options the text box is a text input showing it.
+    await expect(within(canvasElement).getByRole("combobox")).toHaveValue(
+      "Pear"
+    );
+
+    // Reopened, the selected option is marked and disabled ones can't be
+    // chosen.
+    await userEvent.click(trigger);
+    await expect(
+      await document.findByRole("option", { name: "Pear" })
+    ).toHaveAttribute("aria-selected", "true");
+    await userEvent.click(document.getByRole("option", { name: "Melon" }));
+    await expect(document.getByRole("listbox")).toBeInTheDocument();
+  }
+};
+
+/**
+ * Without `searchable`, typing on the closed select picks the option those
+ * characters start, as in a native `<select>`, without opening the menu.
+ */
+export const Typeahead: Story = {
+  args: {
+    searchable: false
+  },
+  play: async ({ canvasElement }) => {
+    const document = within(canvasElement.ownerDocument.body);
+    const trigger = canvasElement.querySelector<HTMLElement>(
+      "[data-select-trigger]"
+    )!;
+
+    trigger.focus();
+    await userEvent.keyboard("b");
+    await waitFor(() => expect(trigger).toHaveTextContent("Blackberry"));
+    // The same key again moves on to the next option it starts.
+    await userEvent.keyboard("b");
+    await waitFor(() => expect(trigger).toHaveTextContent("Blueberry"));
+    await expect(trigger).not.toHaveAttribute("aria-invalid");
+    await expect(document.queryByRole("listbox")).not.toBeInTheDocument();
+
+    // No option starts "bbz": an error, and the value stays.
+    await userEvent.keyboard("z");
+    await waitFor(() =>
+      expect(trigger).toHaveAttribute("aria-invalid", "true")
+    );
+    await expect(trigger).toHaveTextContent("Blueberry");
+    await expect(trigger).toHaveFocus();
+
+    // After a pause, typing starts a new search, which clears the error.
+    await new Promise(resolve => {
+      setTimeout(resolve, 1100);
+    });
+    await userEvent.keyboard("pea");
+    await waitFor(() => expect(trigger).toHaveTextContent("Pear"));
+    await expect(trigger).not.toHaveAttribute("aria-invalid");
+  }
+};
+
+/**
+ * By default, the text box is a text input: a click places
+ * the caret and opens the menu, and editing the text filters the options and
+ * picks the best match. On small screens, where the menu is a bottom sheet
+ * over the text box, the sheet has its own search input.
+ */
+export const Searchable: Story = {
+  play: async ({ canvasElement }) => {
+    const document = within(canvasElement.ownerDocument.body);
+    const input = within(canvasElement).getByRole("combobox");
+    const optionNames = () =>
+      document.queryAllByRole("option").map(option => option.textContent);
+    const berries = ["Blackberry", "Blueberry", "Raspberry", "Strawberry"];
+    // Where `Popover` adapts the menu to a bottom sheet.
+    const inSheet = Boolean((getMedia() as Record<string, boolean>)["max-sm"]);
+
+    await userEvent.click(input);
+    await document.findByRole("listbox");
+    if (inSheet) {
+      const sheetSearch = await document.findByLabelText("Search options");
+      await waitFor(() => expect(sheetSearch).toHaveFocus());
+      await userEvent.keyboard("berry");
+      await waitFor(() => expect(optionNames()).toEqual(berries));
+
+      return;
+    }
+    await expect(input).toHaveFocus();
+    await expect(
+      document.queryByLabelText("Search options")
+    ).not.toBeInTheDocument();
+
+    // Typing filters the options and picks the best match.
+    await userEvent.keyboard("berry");
+    await waitFor(() => expect(optionNames()).toEqual(berries));
+    await expect(input).toHaveValue("berry");
+    await expect(
+      document.getByRole("option", { name: "Blackberry" })
+    ).toHaveAttribute("aria-selected", "true");
+
+    // A click in the text moves the caret; the menu stays open.
+    await userEvent.click(input);
+    await expect(document.getByRole("listbox")).toBeInTheDocument();
+    await expect(input).toHaveFocus();
+
+    // Nothing contains the text with "zz" added: an error, and no options.
+    await userEvent.keyboard("{End}zz");
+    await expect(
+      await document.findByText("No matching options")
+    ).toBeInTheDocument();
+    await expect(input).toHaveAttribute("aria-invalid", "true");
+
+    await userEvent.keyboard("{Backspace}{Backspace}");
+    await waitFor(() => expect(optionNames()).toEqual(berries));
+    await expect(input).not.toHaveAttribute("aria-invalid");
+
+    // ArrowDown and ArrowUp step through the shown options, keeping the
+    // focus in the text input; Enter closes the menu, which shows the option.
+    await userEvent.keyboard("{ArrowDown}");
+    await expect(
+      document.getByRole("option", { name: "Blueberry" })
+    ).toHaveAttribute("aria-selected", "true");
+    await userEvent.keyboard("{ArrowUp}");
+    await expect(
+      document.getByRole("option", { name: "Blackberry" })
+    ).toHaveAttribute("aria-selected", "true");
+    await userEvent.keyboard("{ArrowDown}");
+    await expect(input).toHaveFocus();
+    await userEvent.keyboard("{Enter}");
+    await waitFor(() =>
+      expect(document.queryByRole("listbox")).not.toBeInTheDocument()
+    );
+    await expect(input).toHaveValue("Blueberry");
+    await expect(input).toHaveFocus();
+
+    // On the closed menu, ArrowDown opens it.
+    await userEvent.keyboard("{ArrowDown}");
+    await expect(await document.findByRole("listbox")).toBeInTheDocument();
+    await userEvent.keyboard("{Enter}");
+    await waitFor(() =>
+      expect(document.queryByRole("listbox")).not.toBeInTheDocument()
+    );
+
+    // Replacing the text filters afresh; Enter closes the menu (rather than
+    // submitting a form) and the text input shows the picked option.
+    await userEvent.keyboard("{Control>}a{/Control}pea");
+    await waitFor(() => expect(optionNames()).toEqual(["Pear", "Peach"]));
+    await userEvent.keyboard("{Enter}");
+    await waitFor(() =>
+      expect(document.queryByRole("listbox")).not.toBeInTheDocument()
+    );
+    await expect(input).toHaveValue("Pear");
+  }
+};
+
+export const HoverReset: Story = {
+  play: async ({ canvasElement }) => {
+    const trigger = canvasElement.querySelector<HTMLElement>(
+      "[data-select-trigger]"
+    )!;
+    // The divider is a 1px fade wrapper whose only child carries the color.
+    const separator = [...canvasElement.querySelectorAll("div")].find(
+      element =>
+        getComputedStyle(element).width === "1px" &&
+        element.childElementCount === 1
+    )!;
+    const color = () =>
+      getComputedStyle(separator.firstElementChild!).backgroundColor;
+
+    await waitFor(() => expect(getComputedStyle(separator).opacity).toBe("1"));
+    const restingColor = color();
+
+    for (let cycle = 0; cycle < 2; cycle++) {
+      await userEvent.hover(trigger);
+      await waitFor(() => expect(color()).not.toBe(restingColor));
+      await userEvent.unhover(trigger);
+      await waitFor(() => expect(color()).toBe(restingColor));
+    }
+  }
+};
+
+export const Floating: Story = {
+  args: {
+    labelVariant: "floating"
+  },
+  render: ({ labelVariant, ...props }, { id }) => (
+    <Form name={`formName-${id}`} initialValues={{ selectName: "" }}>
+      <Field {...props} name="selectName">
+        <Field.Label variant={labelVariant}>Label Text</Field.Label>
+        <Select>
+          <Select.TextBox>
+            <Select.TextBox.Value />
+          </Select.TextBox>
+          <Select.Items>
+            {options.map((option, i) => (
+              <Select.Items.Item
+                key={option.value}
+                index={i}
+                value={option.value}
+                disabled={option.disabled ?? false}
+                selected={false}>
+                {option.name}
+              </Select.Items.Item>
+            ))}
+          </Select.Items>
+        </Select>
+      </Field>
+    </Form>
+  )
+};
+
+export const FloatingWithPlaceholder: Story = {
+  args: {
+    labelVariant: "floating"
+  }
+};
+
+export const OutlinedFloating: Story = {
+  args: {
+    variant: "outlined",
+    labelVariant: "floating"
+  }
+};
+
+export const UnderlinedFloating: Story = {
+  args: {
+    variant: "underlined",
+    labelVariant: "floating"
+  }
+};
+
+export const InlinedFloating: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "floating"
+  }
+};
+
+export const OutlinedAbove: Story = {
+  args: {
+    variant: "outlined",
+    labelVariant: "above"
+  }
+};
+
+export const UnderlinedAbove: Story = {
+  args: {
+    variant: "underlined",
+    labelVariant: "above"
+  }
+};
+
+export const InlinedAbove: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "above"
+  }
+};
+
+export const Description: Story = {
+  args: {
+    labelVariant: "above",
+    description:
+      "This is a description that is longer than the label and will wrap to multiple lines. It is used to provide more information about the field."
+  }
 };
 
 export const Required: Story = {
@@ -105,32 +427,140 @@ export const DefaultValue: Story = {
   }
 };
 
-export const Help: Story = {
+export const Small: Story = {
   args: {
-    theme: "help"
+    size: "sm",
+    defaultValue: "Blackberry"
+  }
+};
+
+export const Large: Story = {
+  args: {
+    size: "lg",
+    defaultValue: "Blackberry"
+  }
+};
+
+export const LongValue: Story = {
+  args: {
+    size: "sm",
+    defaultValue: "Yellow dragon fruit"
+  }
+};
+
+export const Discovery: Story = {
+  args: {
+    defaultValue: "Blueberry",
+    showErrorsBeforeBlur: true,
+    validate: validation("discovery")
   }
 };
 
 export const Error: Story = {
   args: {
-    theme: "danger"
+    showErrorsBeforeBlur: true,
+    validate: validation("danger")
   }
 };
 
 export const Warning: Story = {
   args: {
-    theme: "warning"
+    validate: validation("warning")
   }
 };
 
 export const Info: Story = {
   args: {
-    theme: "info"
+    validate: validation("info")
   }
 };
 
 export const Success: Story = {
   args: {
-    theme: "success"
+    validate: validation("success")
+  }
+};
+
+export const SmallSize: Story = { args: { size: "sm" } };
+
+export const MediumSize: Story = { args: { size: "md" } };
+
+export const LargeSize: Story = { args: { size: "lg" } };
+
+/** Narrow controls reproduce long address values and compare value typography. */
+export const TruncatedValue: Story = {
+  render: () => (
+    <Form
+      name="truncated-select"
+      initialValues={{
+        sm: "Armed Forces Americas",
+        md: "Armed Forces Americas",
+        lg: "Armed Forces Americas"
+      }}>
+      <div style={{ width: 180, display: "grid", gap: 24 }}>
+        {(["sm", "md", "lg"] as const).map(size => (
+          <div key={size} data-size={size} style={{ minWidth: 0 }}>
+            <Field name={size} size={size}>
+              <Field.Label>State</Field.Label>
+              {/* The button's value truncates with an ellipsis; a text
+                  input scrolls its text instead. */}
+              <Select size={size} searchable={false}>
+                <Select.TextBox>
+                  <Select.TextBox.Value />
+                </Select.TextBox>
+                <Select.Items>
+                  <Select.Items.Item index={0} value="Armed Forces Americas">
+                    Armed Forces Americas
+                  </Select.Items.Item>
+                  <Select.Items.Item index={1} value="California">
+                    California
+                  </Select.Items.Item>
+                </Select.Items>
+              </Select>
+            </Field>
+            <Input size={size}>
+              <Input.TextBox>
+                <Input.TextBox.Value
+                  aria-label={`Input ${size}`}
+                  value="California"
+                />
+              </Input.TextBox>
+            </Input>
+          </div>
+        ))}
+      </div>
+    </Form>
+  ),
+  play: async ({ canvasElement }) => {
+    for (const size of ["sm", "md", "lg"]) {
+      const row = canvasElement.querySelector(`[data-size="${size}"]`)!;
+      const text = row.querySelector("[data-select-trigger] .is_Text")!;
+      // The text input, not the select's hidden form input.
+      const input = row.querySelector<HTMLInputElement>(
+        'input:not([type="hidden"])'
+      )!;
+      await waitFor(async () => {
+        await expect(text.scrollWidth).toBeGreaterThan(text.clientWidth);
+        await expect(getComputedStyle(text).whiteSpace).toBe("nowrap");
+        await expect(getComputedStyle(text).textOverflow).toBe("ellipsis");
+        for (const property of [
+          "fontSize",
+          "fontWeight",
+          "fontFamily",
+          "lineHeight"
+        ] as const) {
+          await expect(getComputedStyle(text)[property]).toBe(
+            getComputedStyle(input)[property]
+          );
+        }
+      });
+    }
+    const trigger = canvasElement.querySelector("[data-select-trigger]")!;
+    await userEvent.click(trigger.querySelector(".is_Text")!.parentElement!);
+    const document = within(canvasElement.ownerDocument.body);
+    await userEvent.click(
+      await document.findByRole("option", { name: "California" })
+    );
+    await waitFor(() => expect(trigger).toHaveTextContent("California"));
   }
 };

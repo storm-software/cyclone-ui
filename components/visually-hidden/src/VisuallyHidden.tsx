@@ -1,25 +1,26 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { Stack, styled } from "@tamagui/core";
+ ------------------------------------------------------------------- */
 
-export const VisuallyHidden = styled(Stack, {
-  animateOnly: ["opacity"],
+"use client";
 
+import { styled, View } from "@tamagui/core";
+
+export const VisuallyHidden = styled(View, {
   variants: {
     preserveDimensions: {
       true: {
@@ -35,7 +36,7 @@ export const VisuallyHidden = styled(Stack, {
         width: "auto",
         height: "auto",
         margin: 0,
-        zIndex: 1,
+        zIndex: "0",
         overflow: "visible",
         opacity: 1,
         pointerEvents: "auto"
@@ -54,7 +55,7 @@ export const VisuallyHidden = styled(Stack, {
 
     animate: {
       true: {
-        animation: "200ms"
+        transition: "200ms"
       }
     }
   } as const,
@@ -65,4 +66,4 @@ export const VisuallyHidden = styled(Stack, {
 });
 
 // @tamagui/core checks for this in spacing
-(VisuallyHidden as any)["isVisuallyHidden"] = true;
+(VisuallyHidden as any).isVisuallyHidden = true;

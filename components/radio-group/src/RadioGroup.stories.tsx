@@ -1,59 +1,45 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
+ ------------------------------------------------------------------- */
+
+import type { FieldProps } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
-import type { Meta, StoryObj } from "@storybook/react";
+import { Briefcase, Calendar, Clock, Email } from "@cyclone-ui/icons";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { ReactNode } from "react";
+import { expect, userEvent, waitFor, within } from "storybook/test";
+import type { RadioGroupIndicatorStyle } from "./RadioGroup";
 import { RadioGroup } from "./RadioGroup";
 
-const meta: Meta<typeof RadioGroup> = {
-  title: "Base/RadioGroup",
-  component: RadioGroup,
-  tags: ["autodocs"],
-  render: ({ defaultValue, ...props }: any) => (
-    <Form name="formName" defaultValues={{ selectName: defaultValue }}>
-      <Field name="selectName" {...props}>
-        <Field.Label>Label Text</Field.Label>
-        <RadioGroup width="500px">
-          {options.map((option, i) => (
-            <RadioGroup.Item
-              key={option.value}
-              index={i}
-              value={option.value}
-              description={option.description}
-              disabled={false}
-              selected={false}>
-              {option.name}
-            </RadioGroup.Item>
-          ))}
-        </RadioGroup>
-        <Field.Details>
-          This is an example detailed message for an select
-        </Field.Details>
-      </Field>
-    </Form>
-  )
-} satisfies Meta<typeof RadioGroup>;
+// Story args configure the wrapping `Field`, apart from `indicatorStyle` and
+// `description` (rendered as its `Field.Details`).
+type RadioGroupStoryArgs = Omit<FieldProps<string>, "children" | "name"> & {
+  indicatorStyle?: RadioGroupIndicatorStyle;
+  description?: string;
+};
 
-export default meta;
-
-type Story = StoryObj<typeof RadioGroup>;
-
-const options = [
+const options: {
+  name: string;
+  value: string;
+  description: string;
+  disabled?: boolean;
+  icon?: ReactNode;
+}[] = [
   {
     name: "Apple",
     value: "Apple",
@@ -80,13 +66,94 @@ const options = [
   }
 ];
 
+const renderGroup =
+  (items = options) =>
+  (
+    { defaultValue, indicatorStyle, description, ...props }: any,
+    { id }: { id: string }
+  ) => (
+    <Form name={`formName-${id}`} initialValues={{ selectName: defaultValue }}>
+      <Field name="selectName" {...props}>
+        <Field.Label>Label Text</Field.Label>
+        <RadioGroup
+          size={props.size}
+          indicatorStyle={indicatorStyle}
+          width="500px">
+          {items.map(option => (
+            <RadioGroup.Item
+              key={option.value}
+              value={option.value}
+              description={option.description}
+              disabled={option.disabled}
+              icon={option.icon}>
+              {option.name}
+            </RadioGroup.Item>
+          ))}
+        </RadioGroup>
+        {description && <Field.Details>{description}</Field.Details>}
+      </Field>
+    </Form>
+  );
+
+const meta: Meta<RadioGroupStoryArgs> = {
+  title: "Form/RadioGroup",
+  component: RadioGroup,
+  tags: ["autodocs"],
+  render: renderGroup()
+} satisfies Meta<RadioGroupStoryArgs>;
+
+export default meta;
+
+type Story = StoryObj<RadioGroupStoryArgs>;
+
+const validation = (
+  type:
+    | "danger"
+    | "warning"
+    | "info"
+    | "discovery"
+    | "success"
+    | "positive"
+    | "negative"
+) => ({
+  onChange: [
+    () => [
+      {
+        message: "This is an example validation message",
+        type
+      }
+    ]
+  ]
+});
+
 export const Base: Story = {
   args: {}
+};
+
+export const CircleIndicator: Story = {
+  args: {
+    indicatorStyle: "circle",
+    defaultValue: "Blackberry"
+  }
+};
+
+export const NoIndicator: Story = {
+  args: {
+    indicatorStyle: "none",
+    defaultValue: "Blackberry"
+  }
 };
 
 export const Required: Story = {
   args: {
     required: true
+  }
+};
+
+export const Description: Story = {
+  args: {
+    description:
+      "This is a description that is longer than the label and will wrap to multiple lines. It is used to provide more information about the radio group item."
   }
 };
 
@@ -102,32 +169,87 @@ export const DefaultValue: Story = {
   }
 };
 
-export const Help: Story = {
+export const DisabledItem: Story = {
   args: {
-    theme: "help"
+    defaultValue: "Apple"
+  },
+  render: renderGroup(
+    options.map(option => ({
+      ...option,
+      disabled: option.value === "Blackberry"
+    }))
+  ),
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const canvas = within(canvasElement);
+    // Story tsconfigs have no DOM lib, so `Element` is not typed here.
+    const radios = () =>
+      canvas.getAllByRole("radio") as unknown as {
+        getAttribute: (name: string) => string | null;
+      }[];
+    const checked = () =>
+      radios()
+        .filter(radio => radio.getAttribute("aria-checked") === "true")
+        .map(radio => radio.getAttribute("value"));
+
+    await waitFor(async () => expect(checked()).toEqual(["Apple"]));
+
+    // Pressing an item's text selects it and only it.
+    await userEvent.click(canvas.getByText("Pear"));
+    await waitFor(async () => expect(checked()).toEqual(["Pear"]));
+
+    // A disabled item can't be selected.
+    await userEvent.click(canvas.getByText("Blackberry"), {
+      pointerEventsCheck: 0
+    });
+    await expect(checked()).toEqual(["Pear"]);
+  }
+};
+
+const iconComponents = [Briefcase, Calendar, Clock, Email];
+
+export const WithIcons: Story = {
+  render: renderGroup(
+    options.map((option, i) => {
+      const Icon = iconComponents[i]!;
+
+      return { ...option, icon: <Icon size={24} color="currentColor" /> };
+    })
+  )
+};
+
+export const Discovery: Story = {
+  args: {
+    validate: validation("discovery")
   }
 };
 
 export const Error: Story = {
   args: {
-    theme: "danger"
+    showErrorsBeforeBlur: true,
+    validate: validation("danger")
   }
 };
 
 export const Warning: Story = {
   args: {
-    theme: "warning"
+    validate: validation("warning")
   }
 };
 
 export const Info: Story = {
   args: {
-    theme: "info"
+    validate: validation("info")
   }
 };
 
 export const Success: Story = {
   args: {
-    theme: "success"
+    validate: validation("success")
   }
 };
+
+export const SmallSize: Story = { args: { size: "sm" } };
+
+export const MediumSize: Story = { args: { size: "md" } };
+
+export const LargeSize: Story = { args: { size: "lg" } };

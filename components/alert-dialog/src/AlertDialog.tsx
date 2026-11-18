@@ -1,165 +1,187 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { ColorThemeName } from "@cyclone-ui/colors";
-import { Dialog, type DialogProps } from "@cyclone-ui/dialog";
-import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
-import { Theme, useThemeName, View, withStaticProperties } from "@tamagui/core";
-import { AlertCircle } from "@tamagui/lucide-icons";
+ ------------------------------------------------------------------- */
+
+"use client";
+
+import type { DialogProps } from "@cyclone-ui/dialog";
+import { Dialog, DialogContext } from "@cyclone-ui/dialog";
+import { AlertCircle, getIconByTheme, ThemeableIcon } from "@cyclone-ui/icons";
+import { ScrollView } from "@cyclone-ui/scroll-view";
+import {
+  createStyledHOC,
+  Theme,
+  View,
+  withStaticProperties
+} from "@tamagui/core";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { GetProps } from "@tamagui/web";
 
 const AlertDialogFrame: React.FC<DialogProps> = ({
   children,
-  theme,
   ...props
 }: DialogProps) => {
-  return (
-    <Theme name={theme}>
-      <Dialog {...props}>{children}</Dialog>
-    </Theme>
-  );
+  return <Dialog {...props}>{children}</Dialog>;
 };
 
-const AlertDialogIcon = ThemeableIcon.styleable(
+const AlertDialogIcon = createStyledHOC(
+  ThemeableIcon,
   ({ children, ...props }, forwardedRef) => {
-    const theme = useThemeName();
+    const { theme } = DialogContext.useStyledContext();
 
-    const padding = theme?.includes(ColorThemeName.SUCCESS) ? "$3" : "$2";
+    const padding = theme?.includes("success") ? "3xl" : "xl";
 
     return (
       <YStack position="relative" minWidth="100%" alignItems="center">
         <View
           theme={theme}
-          animation="normal"
-          enterStyle={{
-            y: -100,
-            opacity: 0.6
-          }}
+          transition="400ms"
+          y="enter:-100px"
+          opacity="enter:0.6"
           position="absolute"
           display="block"
           width="100%"
           height="55%"
-          backgroundColor="$primary"
-          zIndex="$1"
+          backgroundColor="primary"
+          zIndex="10"
         />
 
-        <XStack zIndex="$2" justifyContent="center" paddingTop="$3">
-          <View
-            theme={ColorThemeName.BASE}
-            themeShallow={true}
-            padding={padding}
-            backgroundColor="$surfacePrimary"
-            borderRadius={1000_000_000}>
-            <ThemeableIcon
-              ref={forwardedRef}
-              {...props}
-              theme={theme}
-              size="$7">
-              {children || getIconByTheme({ theme }) || <AlertCircle />}
-            </ThemeableIcon>
-          </View>
+        <XStack zIndex="20" justifyContent="center" paddingTop="3xl">
+          <Theme name={theme}>
+            <View
+              padding={padding}
+              backgroundColor="elevated"
+              borderRadius={1000_000_000}>
+              <ThemeableIcon
+                ref={forwardedRef}
+                {...props}
+                theme={theme}
+                color="primary"
+                size="14xl">
+                {children || getIconByTheme({ theme }) || <AlertCircle />}
+              </ThemeableIcon>
+            </View>
+          </Theme>
         </XStack>
       </YStack>
     );
   },
   {
-    staticConfig: { componentName: "AlertDialog" }
+    displayName: "AlertDialog"
   }
 );
 
-const AlertDialogContainer = Dialog.Container.styleable(
+const AlertDialogContainer = createStyledHOC(
+  Dialog.Container,
   ({ children, ...props }, forwardedRef) => {
-    const theme = useThemeName();
-
     return (
       <Dialog.Portal>
         <Dialog.Overlay key="overlay" />
         <Dialog.Container
           ref={forwardedRef}
           key="content"
-          variant="tertiary"
+          // Leaves room for the dialog's margin; `Content` scrolls past this.
+          maxHeight="85vh"
+          position="relative"
+          // The hairline is drawn by the overlay below instead, so the
+          // icon's primary band can paint over its top part.
+          borderWidth={0}
           {...props}
-          theme={ColorThemeName.BASE}
-          themeShallow={true}
-          backgroundColor="$surfacePrimary"
-          bordered={false}
-          noPadding={true}>
-          <Theme name={theme}>{children}</Theme>
+          tight={true}>
+          {children}
+          <View
+            position="absolute"
+            inset={0}
+            borderWidth={1}
+            borderColor="hairline"
+            borderRadius="dialog"
+            pointerEvents="none"
+            // Under the band (10), over the content.
+            zIndex="5"
+          />
         </Dialog.Container>
       </Dialog.Portal>
     );
   },
   {
-    staticConfig: { componentName: "AlertDialog" }
+    displayName: "AlertDialog"
   }
 );
 
-const AlertDialogContent = YStack.styleable(
+const AlertDialogContent = createStyledHOC(
+  YStack,
   ({ children, ...props }, forwardedRef) => {
     return (
-      <YStack
-        ref={forwardedRef}
-        paddingHorizontal="$5"
-        paddingTop="$2"
-        paddingBottom="$5"
-        gap="$3"
-        alignItems="center"
-        {...props}>
+      <ScrollView
+        // Sized to its content; `flex={1}` would collapse it to zero because
+        // the dialog has no fixed height.
+        flexShrink={1}
+        size="lg">
+        <YStack
+          ref={forwardedRef}
+          paddingLeft="7xl"
+          // The stable scrollbar gutter (6px thumb + `lg`) takes the place of
+          // part of the right padding, so the content stays centered.
+          paddingRight="calc(var(--t-space-7xl) - 6px - var(--t-space-lg))"
+          paddingTop="xl"
+          paddingBottom="7xl"
+          gap="3xl"
+          alignItems="center"
+          {...props}>
+          {children}
+        </YStack>
+      </ScrollView>
+    );
+  },
+  {
+    displayName: "AlertDialog"
+  }
+);
+
+const AlertDialogHeading = createStyledHOC(
+  Dialog.Heading,
+  ({ children, ...props }, forwardedRef) => {
+    return (
+      <Dialog.Heading ref={forwardedRef} {...props}>
         {children}
-      </YStack>
+      </Dialog.Heading>
     );
   },
   {
-    staticConfig: { componentName: "AlertDialog" }
+    displayName: "AlertDialogHeading"
   }
 );
 
-const AlertDialogHeading = Dialog.Heading.styleable(
+const AlertDialogBody = createStyledHOC(
+  Dialog.Body,
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Theme name={ColorThemeName.BASE}>
-        <Dialog.Heading ref={forwardedRef} {...props}>
-          {children}
-        </Dialog.Heading>
-      </Theme>
+      <Dialog.Body ref={forwardedRef} color="ink" {...props}>
+        {children}
+      </Dialog.Body>
     );
   },
   {
-    staticConfig: { componentName: "AlertDialogHeading" }
+    displayName: "AlertDialogBody"
   }
 );
 
-const AlertDialogBody = Dialog.Body.styleable(
-  ({ children, ...props }, forwardedRef) => {
-    return (
-      <Theme name={ColorThemeName.BASE}>
-        <Dialog.Body ref={forwardedRef} color="$secondary" size="$7" {...props}>
-          {children}
-        </Dialog.Body>
-      </Theme>
-    );
-  },
-  {
-    staticConfig: { componentName: "AlertDialogBody" }
-  }
-);
-
-const AlertDialogClose = Dialog.Close.styleable(
+const AlertDialogClose = createStyledHOC(
+  Dialog.Close,
   ({ children, ...props }, forwardedRef) => {
     return (
       <Dialog.Close ref={forwardedRef} variant="outlined" {...props}>
@@ -168,7 +190,7 @@ const AlertDialogClose = Dialog.Close.styleable(
     );
   },
   {
-    staticConfig: { componentName: "AlertDialog" }
+    displayName: "AlertDialog"
   }
 );
 
@@ -197,3 +219,22 @@ export const AlertDialog = withStaticProperties(AlertDialogFrame, {
     })
   })
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`AlertDialog.Trigger` is undefined on the server).
+ */
+export {
+  AlertDialogBody,
+  AlertDialogClose,
+  AlertDialogContainer,
+  AlertDialogContent,
+  AlertDialogHeading,
+  AlertDialogIcon
+};
+export const AlertDialogTrigger = Dialog.Trigger;
+export const AlertDialogContainerActionText = Dialog.Action.Text;
+export const AlertDialogContainerActionIcon = Dialog.Action.Icon;
+export const AlertDialogContainerAction = Dialog.Action;
+export const AlertDialogContainerCloseText = Dialog.Close.Text;
+export const AlertDialogContainerCloseIcon = Dialog.Close.Icon;

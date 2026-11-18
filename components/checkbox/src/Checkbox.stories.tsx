@@ -1,50 +1,74 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
+ ------------------------------------------------------------------- */
+
+import type { FieldProps } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { XStack } from "@tamagui/stacks";
+import { expect, userEvent, within } from "storybook/test";
 import { Checkbox } from "./Checkbox";
 
-const meta: Meta<typeof Checkbox> = {
-  title: "Base/Checkbox",
+type CheckboxStoryArgs = Omit<FieldProps<boolean>, "children" | "name">;
+
+const meta = {
+  title: "Form/Checkbox",
   component: Checkbox,
   tags: ["autodocs"],
-  render: (props: any) => (
-    <Form name="formName" initialValues={{ checkboxName: false }}>
+  render: ({ defaultValue, ...props }, { id }: { id: string }) => (
+    <Form
+      name={`formName-${id}`}
+      initialValues={{ checkboxName: defaultValue }}>
       <Field name="checkboxName" {...props}>
-        <XStack gap="$3" alignContent="center" alignItems="center">
-          <Checkbox />
+        <XStack gap="3xl" alignContent="center" alignItems="center">
+          <Checkbox size={props.size} />
           <Field.Label paddingBottom={0}>
             This is an example label message for a checkbox
           </Field.Label>
         </XStack>
-        <Field.Details>
-          This is an example detailed message for a checkbox
-        </Field.Details>
       </Field>
     </Form>
   )
-} satisfies Meta<typeof Checkbox>;
+} satisfies Meta<CheckboxStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof Checkbox>;
+type Story = StoryObj<CheckboxStoryArgs>;
+
+const validation = (
+  type:
+    | "danger"
+    | "warning"
+    | "info"
+    | "discovery"
+    | "success"
+    | "positive"
+    | "negative"
+) => ({
+  onChange: [
+    () => [
+      {
+        message: "This is an example validation message",
+        type
+      }
+    ]
+  ]
+});
 
 export const Base: Story = {
   args: {}
@@ -62,38 +86,60 @@ export const Disabled: Story = {
   }
 };
 
+export const ReadOnly: Story = {
+  args: { readOnly: true, defaultValue: true },
+  play: async ({ canvasElement }) => {
+    const checkbox = within(canvasElement).getByRole("checkbox");
+    await expect(checkbox).toHaveAttribute("aria-readonly", "true");
+    await expect(checkbox).not.toBeDisabled();
+    await userEvent.click(checkbox);
+    await expect(checkbox).toBeChecked();
+  }
+};
+
 export const DefaultValue: Story = {
   args: {
     defaultValue: true
   }
 };
 
-export const Help: Story = {
+export const Indeterminate: Story = {
+  render: () => <Checkbox checked="indeterminate" />
+};
+
+export const Discovery: Story = {
   args: {
-    theme: "help"
+    validate: validation("discovery")
   }
 };
 
 export const Error: Story = {
   args: {
-    theme: "danger"
+    showErrorsBeforeBlur: true,
+    validate: validation("danger")
   }
 };
 
 export const Warning: Story = {
   args: {
-    theme: "warning"
+    validate: validation("warning")
   }
 };
 
 export const Info: Story = {
   args: {
-    theme: "info"
+    validate: validation("info")
   }
 };
 
 export const Success: Story = {
   args: {
-    theme: "success"
+    validate: validation("success")
   }
 };
+
+export const SmallSize: Story = { args: { size: "sm" } };
+
+export const MediumSize: Story = { args: { size: "md" } };
+
+export const LargeSize: Story = { args: { size: "lg" } };

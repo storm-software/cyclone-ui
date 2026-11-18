@@ -1,29 +1,35 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
+ ------------------------------------------------------------------- */
+
+"use client";
+
+import type { ButtonProps } from "@cyclone-ui/button";
 import { Button } from "@cyclone-ui/button";
+import { DotsHorizontal } from "@cyclone-ui/icons";
 import { NextButton } from "@cyclone-ui/next-button";
 import { PreviousButton } from "@cyclone-ui/previous-button";
-import { SizeTokens } from "@tamagui/core";
-import { XStack, XStackProps } from "@tamagui/stacks";
-import { SizableText } from "@tamagui/text";
+import type { SizeTokens } from "@tamagui/core";
+import { createStyledHOC } from "@tamagui/core";
+import type { XStackProps } from "@tamagui/stacks";
+import { XStack } from "@tamagui/stacks";
 import { useCallback } from "react";
 
-type ExtraPaginationProps = {
+interface ExtraPaginationProps {
   hideText?: boolean;
   pageCount: number;
   pageIndex: number;
@@ -33,22 +39,33 @@ type ExtraPaginationProps = {
   onPrevious?: () => void;
   onNext?: () => void;
   buttonWidth?: SizeTokens;
-};
+}
 
-export type PaginationProps = XStackProps & ExtraPaginationProps;
+// `color` is forwarded to the page buttons, so it takes the buttons' value type
+// rather than the flat-clause `XStack` style value.
+// The rest props are spread onto each page button, so props both define take
+// the button's type (e.g. `fontWeight` is limited to the 100-900 scale).
+type SharedProps = Extract<keyof XStackProps, keyof ButtonProps>;
 
-export const Pagination = XStack.styleable<ExtraPaginationProps>(
+export type PaginationProps = Omit<XStackProps, SharedProps> &
+  Pick<ButtonProps, SharedProps | "color" | "size"> &
+  ExtraPaginationProps;
+
+export const Pagination = createStyledHOC(
+  XStack,
   ({
     children,
     pageCount,
     pageIndex,
     theme,
     hideText = false,
+    buttonWidth,
     setPageIndex,
     onFirst,
     onLast,
     onPrevious,
     onNext,
+    size,
     ...props
   }: PaginationProps) => {
     const currentPage = Math.min(pageCount, Math.max(1, pageIndex + 1));
@@ -95,44 +112,43 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
     }, [setPageIndex, currentPage, pageCount]);
 
     return (
-      <XStack gap="$0.5" alignItems="center" flex={1} flexShrink={1}>
-        <PreviousButton
-          {...props}
-          hideText={hideText}
-          variant="ghost"
-          bordered={false}
-          theme={theme}
-          size="$3"
-          paddingHorizontal="$0"
-          disabled={currentPage === 1}
-          onClick={onPrevious ?? handlePrevious}
-        />
+      <XStack gap="lg" alignItems="center">
+        {currentPage > 1 && (
+          <PreviousButton
+            {...props}
+            hideText={hideText}
+            variant="ghost"
+            theme={theme}
+            size={size}
+            paddingHorizontal="zero"
+            width={buttonWidth}
+            onClick={onPrevious ?? handlePrevious}
+          />
+        )}
 
         <Button
           variant={currentPage === 1 ? "outlined" : "ghost"}
-          bordered={false}
           theme={theme}
-          size="$3"
-          paddingHorizontal="$0"
+          size={size}
+          paddingHorizontal="zero"
           {...props}
+          width={buttonWidth}
           onClick={onFirst ?? handleFirst}>
           <Button.Text>1</Button.Text>
         </Button>
 
         {currentPage > 3 && pageCount > 5 && (
-          <SizableText color="$primary" size="$6" paddingHorizontal="$1">
-            . . .
-          </SizableText>
+          <DotsHorizontal color="primary" paddingHorizontal="md" />
         )}
 
         {pageCount > 1 && (
           <Button
             variant={currentPage === 2 ? "outlined" : "ghost"}
-            bordered={false}
             theme={theme}
-            size="$3"
-            paddingHorizontal="$0"
+            size={size}
+            paddingHorizontal="zero"
             {...props}
+            width={buttonWidth}
             onClick={handleSecond}>
             <Button.Text>
               {currentPage < 4
@@ -152,11 +168,11 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
                 ? "outlined"
                 : "ghost"
             }
-            bordered={false}
             theme={theme}
-            size="$3"
-            paddingHorizontal="$0"
+            size={size}
+            paddingHorizontal="zero"
             {...props}
+            width={buttonWidth}
             onClick={handleThird}>
             <Button.Text>
               {currentPage < 4
@@ -176,11 +192,11 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
                 ? "outlined"
                 : "ghost"
             }
-            bordered={false}
             theme={theme}
-            size="$3"
-            paddingHorizontal="$0"
+            size={size}
+            paddingHorizontal="zero"
             {...props}
+            width={buttonWidth}
             onClick={handleFourth}>
             <Button.Text>
               {currentPage < 4
@@ -193,36 +209,35 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
         )}
 
         {currentPage < pageCount - 2 && pageCount > 5 && (
-          <SizableText color="$primary" size="$6" paddingHorizontal="$1">
-            . . .
-          </SizableText>
+          <DotsHorizontal color="primary" paddingHorizontal="md" />
         )}
 
         {pageCount > 4 && (
           <Button
             variant={currentPage === pageCount ? "outlined" : "ghost"}
-            bordered={false}
             theme={theme}
             {...props}
-            size="$3"
-            paddingHorizontal="$0"
+            size={size}
+            paddingHorizontal="zero"
+            width={buttonWidth}
             onClick={onLast ?? handleLast}>
             <Button.Text>{pageCount}</Button.Text>
           </Button>
         )}
-        <NextButton
-          {...props}
-          hideText={hideText}
-          variant="ghost"
-          bordered={false}
-          theme={theme}
-          size="$3"
-          paddingHorizontal="$0"
-          disabled={currentPage === pageCount}
-          onClick={onNext ?? handleNext}
-        />
+        {currentPage < pageCount && (
+          <NextButton
+            {...props}
+            hideText={hideText}
+            variant="ghost"
+            theme={theme}
+            size={size}
+            paddingHorizontal="zero"
+            width={buttonWidth}
+            onClick={onNext ?? handleNext}
+          />
+        )}
       </XStack>
     );
   },
-  { staticConfig: { componentName: "Button" } }
+  { displayName: "Button" }
 );

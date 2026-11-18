@@ -1,52 +1,41 @@
 {
   "name": "@cyclone-ui/popover",
-  "version": "0.5.0",
+  "version": "0.5.100",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Anchor, Popover.Content (with an optional arrow, a ScrollView and Close) parts. Content is elevated by default, takes the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating) with shadow, glass, noise and accented options, and animates in, and on small screens it turns into a bottom sheet unless shouldAdapt is false. Use it for contextual menus, filters or extra details.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/popover"
   },
   "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
   "files": [
-    "dist",
-    "src",
-    "types"
+    "dist"
   ],
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@floating-ui/react": "0.26.28",
-    "@tamagui/adapt": "^1.116.15",
-    "@tamagui/animate-presence": "^1.116.15",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/create-context": "^1.116.15",
-    "@tamagui/popover": "^1.116.15",
-    "@tamagui/popper": "^1.116.15",
-    "@tamagui/sheet": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15",
-    "@tamagui/text": "^1.116.15"
+    "@cyclone-ui/container": "workspace:*",
+    "@cyclone-ui/scroll-view": "workspace:*",
+    "@cyclone-ui/sheet": "workspace:*",
+    "@tamagui/adapt": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/floating": "catalog:",
+    "@tamagui/popover": "catalog:",
+    "@tamagui/popper": "catalog:",
+    "@tamagui/stacks": "catalog:"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"
@@ -54,5 +43,19 @@
   "sideEffects": [
     "*.css"
   ],
-  "module:jsx": "dist/jsx"
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Popover": {
+      "import": "./dist/Popover.mjs",
+      "require": "./dist/Popover.cjs"
+    },
+    "./*": "./*"
+  }
 }

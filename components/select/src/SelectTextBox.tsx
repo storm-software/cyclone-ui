@@ -1,64 +1,58 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { useComposedRefs } from "@tamagui/compose-refs";
+ ------------------------------------------------------------------- */
+
+"use client";
+
+import { ContextMenu } from "@cyclone-ui/context-menu";
+import { getFormControlAriaProps, useFormControl } from "@cyclone-ui/helpers";
+import type { ViewProps } from "@tamagui/core";
 import {
-  isClient,
-  isWeb,
+  createStyledHOC,
   styled,
   View,
-  withStaticProperties,
-  type ViewProps
+  withStaticProperties
 } from "@tamagui/core";
-import {} from "@tamagui/list-item";
-import {
-  useSelectContext,
-  useSelectItemParentContext,
-  type SelectScopedProps
-} from "@tamagui/select";
+import { use } from "react";
 import { SelectValue } from "./SelectValue";
-import { getSelectSize, SelectContext } from "./utilities";
-
-const isPointerCoarse =
-  isWeb && isClient ? window.matchMedia("(pointer:coarse)").matches : true;
+import { SelectBehaviorContext, SelectContext } from "./utilities";
 
 const BaseSelectTextBox = styled(View, {
-  name: "SelectTrigger",
+  displayName: "SelectTrigger",
   context: SelectContext,
+  render: "button",
 
-  tag: "button",
-
-  animation: "normal",
+  transition: "200ms",
   cursor: "pointer",
   justifyContent: "space-between",
   alignItems: "center",
   display: "flex",
   flexDirection: "row",
+  height: "100%",
   flex: 1,
   flexGrow: 1,
+  minWidth: 0,
+  padding: 0,
   backgroundColor: "transparent",
   borderWidth: 0,
   outlineStyle: "none",
+  overflow: "hidden",
 
   variants: {
-    size: {
-      "...size": getSelectSize
-    },
-
     disabled: {
       true: {
         userSelect: "none",
@@ -68,75 +62,89 @@ const BaseSelectTextBox = styled(View, {
   } as const,
 
   defaultVariants: {
-    size: "$true",
     disabled: false
   }
 });
 
-const SelectTextBoxImpl = BaseSelectTextBox.styleable(
-  (
-    { __scopeSelect, children, ...props }: SelectScopedProps<ViewProps>,
-    forwardedRef
-  ) => {
-    const { disabled, size } = SelectContext.useStyledContext();
-    const context = useSelectContext("SelectTrigger", __scopeSelect);
-    const itemParentContext = useSelectItemParentContext(
-      "SelectTrigger",
-      __scopeSelect
+const SelectTextBoxImpl = createStyledHOC(
+  BaseSelectTextBox,
+  ({ children, onKeyDown, ...props }: ViewProps, forwardedRef) => {
+    const { disabled, name, open } = SelectContext.useStyledContext();
+    const { searchable, invalid, inputRef, onTextBoxKey } = use(
+      SelectBehaviorContext
     );
-    const composedRefs = useComposedRefs(
-      forwardedRef,
-      context.floatingContext?.refs.setReference as any
-    );
-
-    if (itemParentContext.shouldRenderWebNative) {
-      return null;
-    }
+    const formControl = useFormControl();
 
     return (
-      <BaseSelectTextBox
-        type="button"
-        id={itemParentContext.id}
-        // aria-controls={context.contentId}
-        aria-expanded={context.open}
-        aria-autocomplete="none"
-        dir={context.dir}
-        size={size}
-        disabled={disabled}
-        data-disabled={disabled ? "" : undefined}
-        {...props}
-        ref={composedRefs}
-        {...(process.env.TAMAGUI_TARGET === "web" &&
-        itemParentContext.interactions
-          ? {
-              ...itemParentContext.interactions.getReferenceProps(),
-              ...(isPointerCoarse
-                ? {
-                    onPress() {
-                      itemParentContext.setOpen(!context.open);
-                    }
+      <ContextMenu.Trigger
+        asChild={true}
+        // Runs before the trigger's toggle, which a handled press skips: a
+        // click in the open select's text input places the caret rather
+        // than closing the menu.
+        onPress={(event: any) => {
+          if (searchable && open && event?.target === inputRef?.current) {
+            event.preventDefault();
+          }
+        }}>
+        <BaseSelectTextBox
+          // A searchable select's text box holds a text input, which takes
+          // the focus, `id` and ARIA state (see `SelectValue`), and which a
+          // button can't contain.
+          {...(searchable
+            ? {
+                render: "div",
+                // A press beside the input focuses it, as in other fields.
+                onMouseDown: (event: any) => {
+                  const input = inputRef?.current;
+                  if (input && event.target !== input) {
+                    event.preventDefault();
+                    input.focus();
                   }
-                : {
-                    onMouseDown() {
-                      context.floatingContext?.update();
-                      itemParentContext.setOpen(!context.open);
-                    }
-                  })
-            }
-          : {
-              onPress() {
-                itemParentContext.setOpen(!context.open);
+                }
               }
-            })}>
-        {children}
-      </BaseSelectTextBox>
+            : {
+                type: "button",
+                "aria-required": formControl?.required ? true : undefined,
+                ...getFormControlAriaProps(formControl),
+                ...(invalid && { "aria-invalid": true }),
+                id: formControl?.id ?? name
+              })}
+          data-select-trigger
+          disabled={disabled}
+          data-disabled={disabled ? "" : undefined}
+          {...props}
+          onKeyDown={(event: any) => {
+            onKeyDown?.(event);
+            // Typed characters pick (and in a searchable select, filter) the
+            // options; see `Select`.
+            if (
+              !event.defaultPrevented &&
+              !event.isComposing &&
+              !event.ctrlKey &&
+              !event.metaKey &&
+              !event.altKey &&
+              onTextBoxKey?.(event.key)
+            ) {
+              event.preventDefault();
+            }
+          }}
+          ref={forwardedRef}>
+          {children}
+        </BaseSelectTextBox>
+      </ContextMenu.Trigger>
     );
   },
   {
-    staticConfig: { componentName: "SelectTrigger" }
+    displayName: "SelectTrigger"
   }
 );
 
 export const SelectTextBox = withStaticProperties(SelectTextBoxImpl, {
   Value: SelectValue
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`SelectTextBox.Value` is undefined on the server).
+ */
+export { SelectValue as SelectTextBoxValue };

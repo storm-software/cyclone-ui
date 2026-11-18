@@ -1,65 +1,108 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { getFontSizedFromSize, getSized, getSpaced } from "@cyclone-ui/helpers";
-import { sizeToSpace } from "@cyclone-ui/tamagui";
+ ------------------------------------------------------------------- */
+
+"use client";
+
+import type { FieldLabelPlacement, FormControlSize } from "@cyclone-ui/helpers";
 import {
-  createStyledContext,
-  isWeb,
-  SizeTokens,
-  stylePropsTextOnly,
-  validStyles,
-  VariantSpreadExtras
-} from "@tamagui/core";
-import { InputContextProps } from "./types";
+  formSizeVariants,
+  getFieldLabelInset,
+  getFormFontScale,
+  getFormFontSize,
+  getFormSizeToken,
+  getSized,
+  getSpaced,
+  sizeToSpace
+} from "@cyclone-ui/helpers";
+import type { TextStyle } from "@tamagui/core";
+import { createStyledContext, getVariableValue } from "@tamagui/core";
+import { createContext, use } from "react";
+import type {
+  InputBehaviorContextProps,
+  InputStyleContextProps
+} from "./types";
 
-export const InputContext = createStyledContext<InputContextProps>({
-  size: "$true",
-  circular: false,
-  disabled: false,
-  focused: false
-});
+// Callbacks must never enter createStyledContext: Tamagui hashes object and
+// function identities using randomness during prerendering.
+export const InputBehaviorContext = createContext<InputBehaviorContextProps>(
+  {}
+);
+export const useInputBehavior = () => use(InputBehaviorContext);
+export const InputContext = createStyledContext<
+  InputStyleContextProps,
+  | "size"
+  | "circular"
+  | "disabled"
+  | "readOnly"
+  | "focused"
+  | "hasValidationMessage"
+  | "variant"
+>(
+  {
+    size: "md",
+    circular: false,
+    disabled: false,
+    readOnly: false,
+    focused: false,
+    hasValidationMessage: false,
+    variant: "outlined"
+  } as InputStyleContextProps,
+  {
+    keys: [
+      "size",
+      "circular",
+      "disabled",
+      "readOnly",
+      "focused",
+      "hasValidationMessage",
+      "variant"
+    ]
+  }
+);
 
-export const baseInputStyle = [
+type BaseInputStyle = [Record<string, any>, Record<string, any>];
+
+export const baseInputStyle: BaseInputStyle = [
   {
     name: "InputValue",
-    tag: "input",
     context: InputContext,
 
-    animation: "normal",
+    transition: "200ms",
     cursor: "pointer",
     height: "100%",
     flex: 1,
-    color: "$color",
-    placeholderTextColor: "$placeholderColor",
-    selectionColor: "$color6",
-    fontFamily: "$body",
-    fontSize: "$true",
+    color: "emphasis",
+    placeholderTextColor: "primary-disabled",
+    selectionColor: "color6",
+    fontFamily: "body",
+    fontWeight: "400",
     alignItems: "center",
     margin: 0,
     padding: 0,
+    paddingHorizontal: "xl",
+    // Clear the browser's native field chrome, which a `color-scheme: dark`
+    // page paints gray. The frame draws the background, border and focus ring;
+    // don't rely on a global reset such as `@tamagui/core/reset.css`.
+    backgroundColor: "transparent",
+    borderWidth: 0,
+    outlineStyle: "none",
 
-    ...(isWeb
-      ? {
-          tabIndex: 0 as const
-        }
-      : {
-          focusable: true
-        }),
+    tabIndex: 0,
 
     // this fixes a flex bug where it overflows container
     minWidth: 0,
@@ -68,75 +111,100 @@ export const baseInputStyle = [
       disabled: {
         true: {
           cursor: "not-allowed",
-          color: "$colorDisabled",
-          placeholderTextColor: "$placeholderColorDisabled"
+          color: "primary-disabled hover:primary-disabled",
+          placeholderTextColor: "primary-disabled"
         }
       },
 
-      size: {
-        "...size": (
-          val: SizeTokens | number,
-          extras: VariantSpreadExtras<any>
-        ) => {
-          if (typeof val === "number") {
-            const space = sizeToSpace(val);
-            return {
-              ...getFontSizedFromSize(val, extras),
-              paddingHorizontal: Math.round(space * 0.4)
-            };
-          }
-
-          const size = getSized(val);
-          const space = sizeToSpace(size);
-          return {
-            ...getFontSizedFromSize(val, extras),
-            paddingHorizontal: Math.round(space * 0.4)
-          };
-        }
-      }
+      size: formSizeVariants((size, env) => {
+        return {
+          ...getInputValueTypography(size, env),
+          paddingHorizontal: Math.round(
+            sizeToSpace(getSized(getFormSizeToken(size))) * 0.4
+          )
+        };
+      })
     } as const,
 
     defaultVariants: {
-      size: "$true",
+      size: "md",
       disabled: false
     }
   },
   {
-    isInput: true,
-    accept: {
-      placeholderTextColor: "color",
-      selectionColor: "color"
-    } as const,
-    validStyles: {
-      ...validStyles,
-      ...stylePropsTextOnly
-    }
+    // Tamagui v3 removed `accept`; `isInput` selects the input style props,
+    // which include `placeholderTextColor` and `selectionColor` as colors.
+    isInput: true
   }
 ];
 
-export const getInputSize = (
-  val: SizeTokens | number,
-  extras: VariantSpreadExtras<any>
-) => {
-  const { tokens, props } = extras;
-  if (!val || props.circular) {
-    return;
+/** Join flat style values; later clauses win over earlier ones. */
+const joinFlatValues = (...values: unknown[]) =>
+  values.filter(value => value != null && value !== "").join(" ");
+
+/** Flat value strings need explicit units for numeric lengths. */
+const toFlatLength = (value: unknown) => {
+  if (value == null) {
+    return undefined;
   }
 
-  if (typeof val === "number") {
-    return {
-      paddingHorizontal: val * 0.25,
-      height: val,
-      borderRadius: props.circular ? 100_000 : val * 0.2
-    };
-  }
+  const resolved = getVariableValue(value);
 
-  const xSize = getSpaced(val);
-  const radiusToken = tokens.radius[val] ?? tokens.radius["$true"];
+  return typeof resolved === "number" ? `${resolved}px` : String(resolved);
+};
+
+/** Shared value typography for editable inputs and selected values. */
+export const getInputValueTypography = (
+  size: FormControlSize,
+  env: Parameters<typeof getFormFontSize>[1]
+): Pick<
+  TextStyle,
+  | "fontFamily"
+  | "fontWeight"
+  | "fontStyle"
+  | "letterSpacing"
+  | "textTransform"
+  | "fontSize"
+  | "lineHeight"
+> => {
+  const font = getFormFontSize(size, env);
 
   return {
-    paddingHorizontal: xSize,
-    height: val,
-    borderRadius: props.circular ? 100_000 : radiusToken
+    fontFamily: font.fontFamily ?? "body",
+    fontWeight: "400" as const,
+    fontStyle: font.fontStyle,
+    letterSpacing: font.letterSpacing,
+    textTransform: font.textTransform,
+    fontSize: joinFlatValues(
+      toFlatLength(font.fontSize),
+      `web:${16 * getFormFontScale(size)}px`
+    ),
+    lineHeight: joinFlatValues(
+      toFlatLength(font.lineHeight),
+      `web:${24 * getFormFontScale(size)}px`
+    )
+  };
+};
+
+export const getInputSize = (
+  val: FormControlSize,
+  {
+    labelPlacement,
+    circular
+  }: {
+    labelPlacement?: FieldLabelPlacement | null;
+    circular?: boolean | null;
+  } = {}
+) => {
+  const token = getFormSizeToken(val);
+  const height = labelPlacement
+    ? getSized(token) + getFieldLabelInset(labelPlacement, val)
+    : token;
+
+  return {
+    paddingHorizontal: getSpaced(token),
+    height,
+    minHeight: height,
+    borderRadius: circular ? 100_000 : "control"
   };
 };

@@ -1,0 +1,51 @@
+{
+  "name": "@cyclone-ui/glitch-separator",
+  "version": "0.0.88",
+  "type": "module",
+  "description": "A decorative section divider that draws a ragged grid of seeded pseudo-random squares in SVG between a top and bottom color. On web it can animate never, always or on scroll, and it respects reduced-motion settings. Native renders a still edge.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/glitch-separator"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@tamagui/core": "catalog:",
+    "react-native-svg": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "@tamagui/tailwind": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./GlitchSeparator": {
+      "import": "./dist/GlitchSeparator.mjs",
+      "require": "./dist/GlitchSeparator.cjs"
+    },
+    "./*": "./*"
+  }
+}

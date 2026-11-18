@@ -1,45 +1,33 @@
 {
   "name": "@cyclone-ui/progress",
-  "version": "0.5.0",
+  "version": "0.5.90",
   "type": "module",
-  "description": "A visually hidden component meant to be shared in many other components",
+  "description": "A themed progress bar built on the Tamagui Progress, with an animated indicator. It accepts value, max, size and an indicator color token. Use it to show how far a task or loading process has gone.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/progress"
   },
   "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
   "files": [
-    "dist",
-    "src",
-    "types"
+    "dist"
   ],
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/progress": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15"
+    "@tamagui/core": "catalog:",
+    "@tamagui/progress": "catalog:"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "@storybook/react-vite": "catalog:",
+    "@tamagui/tailwind": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:",
+    "@tamagui/create-context": "catalog:"
   },
   "publishConfig": {
     "access": "public"
@@ -47,5 +35,19 @@
   "sideEffects": [
     "*.css"
   ],
-  "module:jsx": "dist/jsx"
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Progress": {
+      "import": "./dist/Progress.mjs",
+      "require": "./dist/Progress.cjs"
+    },
+    "./*": "./*"
+  }
 }

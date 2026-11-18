@@ -1,0 +1,129 @@
+![Cyclone UI's logo banner](https://public.storm-cdn.com/cyclone-ui/media/banner-1280x320-dark.gif)
+
+# Changelog for Cyclone UI - Heading Text
+
+## [0.5.77](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.77) (11/14/2026)
+
+### Documentation
+
+- **monorepo:** Added/updated documentation for components library ([1eb18466d](https://github.com/storm-software/cyclone-ui/commit/1eb18466d))
+
+## [0.5.47](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.47) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+## [0.5.46](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.46) (11/04/2026)
+
+### Miscellaneous
+
+- [nx migration] update-0-0-19 ([1bba628c7](https://github.com/storm-software/cyclone-ui/commit/1bba628c7))
+
+### Bug Fixes
+
+- **monorepo:** Add fonts as nixpkgs packages and resolve linting issues ([80de8d9a5](https://github.com/storm-software/cyclone-ui/commit/80de8d9a5))
+- **monorepo:** Resolve server rendering issues with newly added component files and linting failures ([199b43593](https://github.com/storm-software/cyclone-ui/commit/199b43593))
+
+## [0.5.41](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.41) (11/02/2026)
+
+### Bug Fixes
+
+- **heading-text:** Update the font-size display of the heading text to adjust to smaller screens ([9bd5628f5](https://github.com/storm-software/cyclone-ui/commit/9bd5628f5))
+
+## [0.5.27](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.27) (10/23/2026)
+
+### Documentation
+
+- **monorepo:** Added `sourcebook` skills and partially generated docs for design system ([0dbff145](https://github.com/storm-software/cyclone-ui/commit/0dbff145))
+
+## [0.5.25](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.25) (10/22/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update components to use `use client` directives as needed ([5bc81ef8](https://github.com/storm-software/cyclone-ui/commit/5bc81ef8))
+- **tokens:** Update token structure to better allow customizations ([7f23eb61](https://github.com/storm-software/cyclone-ui/commit/7f23eb61))
+
+## [0.5.22](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.22) (10/18/2026)
+
+### Features
+
+- **tokens:** Added `brand` color theme to workspace ([735efe8a](https://github.com/storm-software/cyclone-ui/commit/735efe8a))
+
+## [0.5.15](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.15) (10/12/2026)
+
+### Bug Fixes
+
+- **tokens:** Updates to background token structure ([913fc3c9](https://github.com/storm-software/cyclone-ui/commit/913fc3c9))
+
+## [0.5.12](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.12) (10/11/2026)
+
+### Bug Fixes
+
+- **themes:** Update the token structure in the design system ([a226f474](https://github.com/storm-software/cyclone-ui/commit/a226f474))
+- **monorepo:** Update component descriptions and added design sync with Claude Design ([35ece709](https://github.com/storm-software/cyclone-ui/commit/35ece709))
+
+### Features
+
+- **confetti-burst:** Added the Confetti Burst reusable animation ([b395a334](https://github.com/storm-software/cyclone-ui/commit/b395a334))
+
+## [0.5.11](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.11) (10/07/2026)
+
+### Bug Fixes
+
+- **themes:** Clean up typography tokens ([68aee6ad](https://github.com/storm-software/cyclone-ui/commit/68aee6ad))
+
+## [0.5.8](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.8) (10/05/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve release workflow warnings ([e0f2b332](https://github.com/storm-software/cyclone-ui/commit/e0f2b332))
+
+### Features
+
+- **page:** Added Page component for base layout ([0bc9835e](https://github.com/storm-software/cyclone-ui/commit/0bc9835e))
+
+## [0.5.7](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.7) (10/04/2026)
+
+### Features
+
+- **tag-picker:** Added the Tag, TagPicker, and TagPickerField components ([01a2c188](https://github.com/storm-software/cyclone-ui/commit/01a2c188))
+- **fonts:** Added the Storm Serif font ([32daffcf](https://github.com/storm-software/cyclone-ui/commit/32daffcf))
+
+## [0.5.6](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.6) (10/03/2026)
+
+### Bug Fixes
+
+- **fonts:** Updates to Storm Sans font design ([e4b856ba](https://github.com/storm-software/cyclone-ui/commit/e4b856ba))
+
+### Features
+
+- **icons:** Added icons library and removed lucid references ([45024ce8](https://github.com/storm-software/cyclone-ui/commit/45024ce8))
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+
+## [0.5.5](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.5) (09/21/2026)
+
+### Bug Fixes
+
+- **monorepo:** Stlying clean up and improved component props ([4eba5c0f](https://github.com/storm-software/cyclone-ui/commit/4eba5c0f))
+- **field:** Adjust display of label in fields ([9aa15776](https://github.com/storm-software/cyclone-ui/commit/9aa15776))
+- **body-text:** Updates to workspace to use `BodyText` component ([af8e53c5](https://github.com/storm-software/cyclone-ui/commit/af8e53c5))
+- **themes:** Update to use a merged color scheme tokens JSON ([0cbeaed2](https://github.com/storm-software/cyclone-ui/commit/0cbeaed2))
+
+### Features
+
+- **accordion:** Added the `direction` property ([ba244763](https://github.com/storm-software/cyclone-ui/commit/ba244763))
+- **themes:** Update theme colors and apply them to components ([83c95718](https://github.com/storm-software/cyclone-ui/commit/83c95718))
+- **display-text:** Added display text component and Razorwind plugins ([eb288dfa](https://github.com/storm-software/cyclone-ui/commit/eb288dfa))
+- **collapsible:** Added the `Collapsible` component package ([f903127c](https://github.com/storm-software/cyclone-ui/commit/f903127c))
+
+## [0.5.2](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.2) (09/06/2026)
+
+### Features
+
+- **themes:** Added the `brand` sub-theme to package ([94201d5](https://github.com/storm-software/cyclone-ui/commit/94201d5))

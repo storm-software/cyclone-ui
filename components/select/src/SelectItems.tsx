@@ -1,279 +1,190 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { ColorThemeName } from "@cyclone-ui/colors";
-import { getFontSizedFromSize, getSized } from "@cyclone-ui/helpers";
-import { SelectOption } from "@storm-stack/types/utility-types/form";
-import { Adapt } from "@tamagui/adapt";
-import { styled, Theme, View, withStaticProperties } from "@tamagui/core";
-import { LinearGradient } from "@tamagui/linear-gradient";
-import { Check, ChevronDown, ChevronUp, Lock } from "@tamagui/lucide-icons";
-import { Select as TamaguiSelect } from "@tamagui/select";
-import { Sheet } from "@tamagui/sheet";
-import { XStack, YStack } from "@tamagui/stacks";
-import { useMemo } from "react";
-import { SelectContext } from "./utilities";
+ ------------------------------------------------------------------- */
 
-const SelectItemFrame = styled(TamaguiSelect.Item, {
-  name: "SelectItems",
-  context: SelectContext,
+"use client";
 
-  backgroundColor: "transparent",
-  marginVertical: 0,
-  paddingVertical: 0,
-  paddingHorizontal: "$2",
+import type {
+  ContextMenuContentProps,
+  ContextMenuItemProps
+} from "@cyclone-ui/context-menu";
+import { ContextMenu } from "@cyclone-ui/context-menu";
+import { FormControlContext, useFormControl } from "@cyclone-ui/helpers";
+import { SearchInput } from "@cyclone-ui/search-input";
+import type { SelectOption } from "@stryke/types/form";
+import { Theme, useMedia, View, withStaticProperties } from "@tamagui/core";
+import type { JSX } from "react";
+import { use, useEffect, useRef } from "react";
+import { getItemLabel, matchesSearch } from "./options";
+import { SelectBehaviorContext, SelectContext } from "./utilities";
 
-  focusStyle: {
-    backgroundColor: "transparent"
-  },
+// Like v2 `.styleable<Custom>()`, the option fields replace the item's
+// same-named props (`value` is stringified below).
+type SelectItemOption = Omit<SelectOption, "name">;
+type SelectItemProps = Omit<ContextMenuItemProps, keyof SelectItemOption> &
+  Partial<SelectItemOption>;
 
-  hoverStyle: {
-    backgroundColor: "transparent"
-  }
-});
+export const SelectItem = ({
+  children,
+  value,
+  // Option fields with no DOM attribute of their own.
+  index: _index,
+  selected: _selected,
+  description: _description,
+  status: _status,
+  icon: _icon,
+  image: _image,
+  ...props
+}: SelectItemProps): JSX.Element | null => {
+  const { value: selectedValue } = SelectContext.useStyledContext();
+  const { search } = use(SelectBehaviorContext);
+  const selected = selectedValue === String(value);
+  const ref = useRef<HTMLElement>(null);
 
-const SelectItemGroup = styled(XStack, {
-  name: "SelectItems",
-  context: SelectContext,
-
-  cursor: "pointer",
-  gap: "$2",
-  alignItems: "center",
-  paddingHorizontal: "$2",
-  paddingVertical: 0,
-  borderRadius: "$3",
-  minHeight: "$4",
-  width: "100%",
-
-  hoverStyle: {
-    backgroundColor: "$muted"
-  },
-
-  focusStyle: {
-    backgroundColor: "$muted"
-  },
-
-  focusVisibleStyle: {
-    backgroundColor: "$muted"
-  },
-
-  variants: {
-    disabled: {
-      true: {
-        cursor: "not-allowed",
-        backgroundColor: "transparent",
-
-        hoverStyle: {
-          backgroundColor: "transparent"
-        },
-
-        focusStyle: {
-          backgroundColor: "transparent"
-        }
-      }
+  // Keeps the option the arrow keys step to in view.
+  useEffect(() => {
+    if (selected) {
+      ref.current?.scrollIntoView?.({ block: "nearest" });
     }
-  } as const,
+  }, [selected]);
 
-  defaultVariants: {
-    disabled: false
+  // Hidden while the menu's search filter doesn't match it.
+  if (search && !matchesSearch(getItemLabel(children, value), search)) {
+    return null;
   }
-});
 
-const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
-  name: "SelectItems",
-  context: SelectContext,
+  return (
+    <ContextMenu.Item
+      {...props}
+      // Not typed on the item, which passes it on to its frame.
+      {...({ ref } as object)}
+      role="option"
+      aria-selected={selected}
+      value={String(value)}>
+      <ContextMenu.Item.Text whiteSpace="nowrap">
+        {children}
+      </ContextMenu.Item.Text>
+    </ContextMenu.Item>
+  );
+};
 
-  cursor: "pointer",
-  color: "$color",
-  fontFamily: "$body",
-  flex: 1,
+// The search input of a searchable select's bottom sheet, which covers the text
+// box typed in elsewhere. Its own component so its effect runs where it
+// mounts: the sheet mounts the menu's contents after it opens.
+const SelectSearch = (): JSX.Element => {
+  const { search, setSearch } = use(SelectBehaviorContext);
+  const { open } = SelectContext.useStyledContext();
+  const ref = useRef<HTMLElement>(null);
 
-  variants: {
-    selected: {
-      true: {
-        color: "$fg"
-      }
-    },
-
-    disabled: {
-      true: {
-        cursor: "not-allowed",
-        color: "$colorDisabled",
-
-        hoverStyle: {
-          color: "$colorDisabled"
-        }
-      }
-    },
-
-    size: {
-      "...size": getFontSizedFromSize
+  // Opening the sheet focuses its first focusable element, the search's icon
+  // button; type straight into the search instead. A passive effect runs
+  // after that.
+  useEffect(() => {
+    if (open) {
+      ref.current?.querySelector?.("input")?.focus();
     }
-  } as const,
+  }, [open]);
 
-  fontWeight: "$6",
-
-  defaultVariants: {
-    disabled: false,
-    selected: false,
-    size: "$true"
-  }
-});
-
-export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
-  ({ children, value, selected, disabled, ...props }, forwardedRef) => {
-    const { size } = SelectContext.useStyledContext();
-    const isSmall = useMemo(() => getSized(size) < getSized("$md"), [size]);
-
-    return (
-      <Theme name={ColorThemeName.BASE}>
-        <SelectItemFrame
-          {...props}
-          group={true}
-          ref={forwardedRef}
-          value={String(value)}
-          textValue={String(value)}
-          disabled={disabled}>
-          <SelectItemGroup
-            disabled={disabled}
-            justifyContent={isSmall ? "space-between" : "center"}>
-            <View width="$2" justifyContent="center">
-              {disabled && <Lock size="$1.5" color="$colorDisabled" />}
-              <TamaguiSelect.ItemIndicator>
-                <Theme name={ColorThemeName.ACCENT}>
-                  <Check size="$2" color="$color" />
-                </Theme>
-              </TamaguiSelect.ItemIndicator>
-            </View>
-            <SelectItemTextFrame
-              selected={selected}
-              disabled={disabled}
-              $group-hover={{
-                color: disabled
-                  ? "$colorDisabled"
-                  : selected
-                    ? "$fg"
-                    : "$colorHover"
-              }}>
-              {children}
-            </SelectItemTextFrame>
-          </SelectItemGroup>
-        </SelectItemFrame>
-      </Theme>
-    );
-  },
-  {
-    staticConfig: { componentName: "SelectItems" }
-  }
-);
-
-const SelectItemsGroup = View.styleable(
-  ({ children, ...props }, forwardedRef) => {
-    return (
-      <View ref={forwardedRef} flex={1} {...props}>
-        <Adapt when={"sm" as any} platform="touch">
-          <Sheet
-            modal={true}
-            dismissOnSnapToBottom={true}
-            animationConfig={{
-              type: "spring",
-              damping: 20,
-              mass: 1.2,
-              stiffness: 250
-            }}>
-            <Sheet.Frame>
-              <Sheet.ScrollView>
-                <Adapt.Contents />
-              </Sheet.ScrollView>
-            </Sheet.Frame>
-            <Sheet.Overlay
-              animation="lazy"
-              enterStyle={{ opacity: 0 }}
-              exitStyle={{ opacity: 0 }}
-            />
-          </Sheet>
-        </Adapt>
-
-        <TamaguiSelect.Content zIndex={200000}>
-          <TamaguiSelect.ScrollUpButton
-            animation="quick"
-            animateOnly={["scale", "opacity"]}
-            enterStyle={{ opacity: 0.2, scale: 0.5 }}
-            alignItems="center"
-            justifyContent="center"
-            position="relative"
-            height="$3">
-            <YStack zIndex={10}>
-              <ChevronUp size={20} />
-            </YStack>
-            <LinearGradient
-              start={[0, 0]}
-              end={[0, 1]}
-              fullscreen={true}
-              colors={["$base3", "transparent"]}
-              borderRadius="$4"
-              marginTop="$0.2"
-            />
-          </TamaguiSelect.ScrollUpButton>
-
-          <TamaguiSelect.Viewport
-            animation="quick"
-            animateOnly={["transform", "scale", "opacity"]}
-            enterStyle={{ opacity: 0.5, scale: 0.9, y: -10 }}
-            exitStyle={{ opacity: 0.7, scale: 0.95, y: 10 }}
-            backgroundColor="$base3"
-            minWidth="$10"
-            borderRadius="$true"
-            shadowColor="$shadowColor"
-            shadowOffset={{ width: 0, height: 4 }}
-            shadowRadius={30}>
-            <TamaguiSelect.Group paddingVertical="$2">
-              {children}
-            </TamaguiSelect.Group>
-          </TamaguiSelect.Viewport>
-
-          <TamaguiSelect.ScrollDownButton
-            animation="quick"
-            animateOnly={["scale", "opacity"]}
-            enterStyle={{ opacity: 0.2, scale: 0.5 }}
-            alignItems="center"
-            justifyContent="center"
-            position="relative"
-            width="100%"
-            height="$3">
-            <YStack zIndex={10}>
-              <ChevronDown size={20} />
-            </YStack>
-            <LinearGradient
-              start={[0, 0]}
-              end={[0, 1]}
-              fullscreen={true}
-              colors={["transparent", "$base3"]}
-              borderRadius="$4"
-              marginBottom="$0.2"
-            />
-          </TamaguiSelect.ScrollDownButton>
-        </TamaguiSelect.Content>
+  return (
+    // The search is local UI state, not part of the select's field: hide the
+    // enclosing field from it.
+    <FormControlContext value={undefined}>
+      {/* Its own `field` group: groups flow through context into the portal,
+          so it would otherwise follow the select field's hover. */}
+      <View ref={ref as any} group="field" data-select-search>
+        <SearchInput
+          size="sm"
+          value={search ?? ""}
+          onChange={(event: CustomEvent<string>) => setSearch?.(event.detail)}>
+          <SearchInput.TextBox
+            aria-label="Search options"
+            placeholder="Search..."
+          />
+        </SearchInput>
       </View>
-    );
-  },
-  { staticConfig: { componentName: "SelectItems" } }
-);
+    </FormControlContext>
+  );
+};
+
+const SelectItemsGroup = ({
+  children,
+  ...props
+}: ContextMenuContentProps): JSX.Element => {
+  const items = useFormControl()?.items;
+  const { options, searchable, search, inputRef } = use(SelectBehaviorContext);
+  // Where the menu is a bottom sheet (`Popover`'s `max-sm`), it shows its own
+  // search input.
+  const inSheet = Boolean((useMedia() as Record<string, boolean>)["max-sm"]);
+  const noResults =
+    search?.trim() &&
+    options.length > 0 &&
+    !options.some(option => matchesSearch(option.label, search));
+
+  return (
+    // Keeps a validation theme on the field from tinting the options.
+    <Theme name="base">
+      <ContextMenu.Content
+        // At least the text box's width, plus 4px on each side.
+        minWidth="calc(var(--tamagui-popper-anchor-width) + 8px)"
+        // Focus stays in a searchable select's text input, for typing; the
+        // arrow keys step through the options from there.
+        disableFocusScope={searchable}
+        // The popover returns focus to its trigger, which in a searchable
+        // select isn't focusable: return it to the text input instead.
+        onCloseAutoFocus={
+          searchable
+            ? (event: { cancel: () => void }) => {
+                event.cancel();
+                inputRef?.current?.focus();
+              }
+            : undefined
+        }
+        {...props}>
+        {searchable && inSheet && <SelectSearch />}
+        {noResults ? (
+          <ContextMenu.Item.Text
+            {...({ role: "status" } as object)}
+            color="primary-disabled"
+            textAlign="center">
+            No matching options
+          </ContextMenu.Item.Text>
+        ) : (
+          <ContextMenu.Content.ScrollView
+            // A valid ARIA role that Tamagui's React Native `Role` type lacks.
+            {...({ role: "listbox" } as object)}>
+            {children ??
+              items?.map((item, index) => (
+                <SelectItem key={index} {...item} value={String(item.value)}>
+                  {item.name}
+                </SelectItem>
+              ))}
+          </ContextMenu.Content.ScrollView>
+        )}
+      </ContextMenu.Content>
+    </Theme>
+  );
+};
 
 export const SelectItems = withStaticProperties(SelectItemsGroup, {
   Item: SelectItem
 });
+
+/**
+ * Flat named exports for React Server Components, which cannot dot into a
+ * client module (`SelectItems.Item` is undefined on the server).
+ */
+export { SelectItem as SelectItemsItem };

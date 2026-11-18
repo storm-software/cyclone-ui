@@ -1,44 +1,81 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
+ ------------------------------------------------------------------- */
+
+"use client";
+
+import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
-import { CheckboxField } from "@cyclone-ui/checkbox-field";
-import { ColorThemeName } from "@cyclone-ui/colors";
+import { Checkbox } from "@cyclone-ui/checkbox";
+import { ContextMenu } from "@cyclone-ui/context-menu";
+import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
-import { CallbackContext, FieldAtoms, FormAtoms } from "@cyclone-ui/form-state";
-import { LabelText } from "@cyclone-ui/label-text";
+import {
+  HeadingExtraSmallText,
+  HeadingSmallText
+} from "@cyclone-ui/heading-text";
+import {
+  Close,
+  DotsVertical,
+  FilterAlt,
+  SortAscending,
+  SortDescending
+} from "@cyclone-ui/icons";
 import { Pagination } from "@cyclone-ui/pagination";
 import { Popover } from "@cyclone-ui/popover";
-import { SearchInputField } from "@cyclone-ui/search-input-field";
-import { SelectField } from "@cyclone-ui/select-field";
-import { Table, type TableProps } from "@cyclone-ui/table";
-import { titleCase } from "@storm-stack/string-fns/title-case";
-import { isNumber } from "@storm-stack/types/type-checks/is-number";
-import type { SelectOption } from "@storm-stack/types/utility-types/form";
-import { deepClone } from "@storm-stack/utilities/helper-fns/deep-clone";
-import { isEqual } from "@storm-stack/utilities/helper-fns/is-equal";
-import { matchSorter } from "@storm-stack/utilities/helper-fns/match-sorter";
-import { createStyledContext, View } from "@tamagui/core";
-import { ArrowDownAZ, ArrowUpZA, Filter } from "@tamagui/lucide-icons";
-import { XStack, YStack } from "@tamagui/stacks";
-import { SizableText } from "@tamagui/text";
 import {
+  SCROLL_VIEW_CLASS_NAME,
+  SCROLL_VIEW_STYLES
+} from "@cyclone-ui/scroll-view";
+import { SearchInput } from "@cyclone-ui/search-input";
+import { Select } from "@cyclone-ui/select";
+import type { CallbackContext, FieldAtoms } from "@cyclone-ui/state/form";
+import type { TableProps } from "@cyclone-ui/table";
+import { Table, useTableContext } from "@cyclone-ui/table";
+import { matchSorter } from "@stryke/helpers/match-sorter";
+import { titleCase } from "@stryke/string-format/title-case";
+import { isNumber } from "@stryke/type-checks/is-number";
+import type { SelectOption } from "@stryke/types/form";
+import {
+  createStyledContext,
+  getTokens,
+  getVariableValue,
+  isWeb,
+  View
+} from "@tamagui/core";
+import { withStaticProperties } from "@tamagui/helpers";
+import { XStack, YStack } from "@tamagui/stacks";
+import type {
   CellContext,
+  Column,
+  ColumnDef,
   ColumnFiltersState,
+  ColumnOrderState,
+  HeaderContext,
+  OnChangeFn,
+  PaginationState,
+  Table as ReactTable,
+  Row,
+  RowData,
+  RowSelectionState,
+  SortingState,
+  TableOptions
+} from "@tanstack/react-table";
+import {
   flexRender,
   getCoreRowModel,
   getFacetedRowModel,
@@ -46,47 +83,48 @@ import {
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
-  Row,
-  useReactTable,
-  type HeaderContext,
-  type PaginationState,
-  type Table as ReactTable,
-  type RowData,
-  type SortingState,
-  type TableOptions
+  useReactTable
 } from "@tanstack/react-table";
+import { useVirtualizer } from "@tanstack/react-virtual";
+import type { Dispatch, ReactNode, SetStateAction } from "react";
 import {
-  Dispatch,
-  SetStateAction,
   useCallback,
+  useEffect,
+  useLayoutEffect,
   useMemo,
+  useRef,
   useState
 } from "react";
 
 declare module "@tanstack/react-table" {
+  // Type parameters must match `@tanstack/table-core`'s declaration exactly.
+  // eslint-disable-next-line unused-imports/no-unused-vars, ts/no-unused-vars -- Module augmentation must retain the upstream type parameter names.
   interface ColumnMeta<TData extends RowData, TValue> {
     facetFn?: (data: TData) => string;
   }
 }
 
-const defaultFilterFn = <TData extends RowData>(
-  row: Row<TData>,
-  columnId: string,
-  filterValues: any[] = []
-) => {
-  return !filterValues.some(filterValue =>
-    isEqual(row.getValue(columnId), filterValue)
-  );
-};
+// Filter values are facet keys, so rows whose accessor values differ but
+// share a facet (e.g. same `userName`) are filtered together.
+const getFacetKey = <TData extends RowData>(
+  value: any,
+  facetFn?: (data: TData) => string
+) => String(facetFn?.(value) ?? value);
 
-export type DataTableContextProps = {
+const getDefaultFilterFn =
+  <TData extends RowData>(facetFn?: (data: TData) => string) =>
+  (row: Row<TData>, columnId: string, filterValues: string[] = []) =>
+    !filterValues.includes(getFacetKey(row.getValue(columnId), facetFn));
+
+export interface DataTableContextProps {
   sorting: SortingState;
   setSorting: Dispatch<SetStateAction<SortingState>>;
   columnFilters: ColumnFiltersState;
   setColumnFilters: Dispatch<SetStateAction<ColumnFiltersState>>;
   pagination: PaginationState;
   setPagination: Dispatch<SetStateAction<PaginationState>>;
-};
+  selectedRows: Row<any>[];
+}
 
 export const DataTableContext = createStyledContext<DataTableContextProps>({
   sorting: [] as SortingState,
@@ -94,29 +132,453 @@ export const DataTableContext = createStyledContext<DataTableContextProps>({
   columnFilters: [] as ColumnFiltersState,
   setColumnFilters: () => {},
   pagination: { pageIndex: 0, pageSize: 10 },
-  setPagination: () => {}
+  setPagination: () => {},
+  selectedRows: [] as Row<any>[]
 } as const);
 
 export type DataTableOptions<TData = any> = Partial<TableOptions<TData>> &
   Omit<TableOptions<TData>, "getCoreRowModel">;
 
+export interface DataTableRowAction {
+  value: string;
+  label: string;
+  icon?: ReactNode;
+  disabled?: boolean;
+}
+
+export type DataTableVariant = "standard" | "card";
+
 export interface DataTableProps<TData extends RowData> extends TableProps {
   options: DataTableOptions<TData>;
   pageSize?: number | null | false;
+  resizable?: boolean;
+
+  /**
+   * Lets columns be reordered by dragging their header onto another header.
+   * The selection and actions columns stay pinned to the edges.
+   */
+  reorderable?: boolean;
+
+  /**
+   * `standard` divides rows with hairlines; `card` draws the header, each row
+   * and the pagination footer as separate rounded cards.
+   */
+  variant?: DataTableVariant;
+
+  /**
+   * Adds a trailing column whose button opens a menu of these actions, or of
+   * the actions returned for each row.
+   */
+  rowActions?:
+    DataTableRowAction[] | ((row: Row<TData>) => DataTableRowAction[]);
+
+  /**
+   * Called with the selected action's `value` and its row.
+   */
+  onRowAction?: (value: string, row: Row<TData>) => void;
+
+  /**
+   * Actions (`DataTable.SelectionAction`) shown in the bar above the column
+   * headers while rows are selected.
+   */
+  children?: ReactNode;
 }
 
-export function DataTable<TData extends RowData>({
+const SELECTION_COLUMN_ID = "__selection";
+const ACTIONS_COLUMN_ID = "__actions";
+
+// Cards are drawn on the cells: a `tr` can't be rounded.
+const getCardCellProps = (index: number, count: number) => ({
+  backgroundColor: "surface",
+  borderBottomWidth: 0,
+  ...(index === 0
+    ? { borderTopLeftRadius: "card", borderBottomLeftRadius: "card" }
+    : {}),
+  ...(index === count - 1
+    ? { borderTopRightRadius: "card", borderBottomRightRadius: "card" }
+    : {})
+});
+
+const getSelectionColumn = <TData extends RowData>(): ColumnDef<TData> => ({
+  id: SELECTION_COLUMN_ID,
+  size: 56,
+  enableColumnFilter: false,
+  enableResizing: false,
+  enableSorting: false,
+  header: ({ table }) => {
+    const pageRows = table.getRowModel().rows;
+    const hasSelectableRows = pageRows.some(row => row.getCanSelect());
+    const checked = table.getIsAllPageRowsSelected()
+      ? true
+      : table.getIsSomePageRowsSelected()
+        ? "indeterminate"
+        : false;
+
+    return (
+      <View width="100%" alignItems="center" justifyContent="center">
+        <Checkbox
+          name="data-table-select-all"
+          aria-label="Select all rows on this page"
+          checked={checked}
+          disabled={!hasSelectableRows}
+          onCheckedChange={nextChecked =>
+            table.toggleAllPageRowsSelected(nextChecked === true)
+          }
+        />
+      </View>
+    );
+  },
+  cell: ({ row }) => (
+    <View width="100%" alignItems="center" justifyContent="center">
+      <Checkbox
+        name={`data-table-select-row-${row.id}`}
+        aria-label={`Select row ${row.index + 1}`}
+        checked={row.getIsSelected()}
+        disabled={!row.getCanSelect()}
+        onCheckedChange={checked => row.toggleSelected(checked === true)}
+      />
+    </View>
+  )
+});
+
+const DataTableRowActions = <TData extends RowData>({
+  row,
+  actions,
+  onAction
+}: {
+  row: Row<TData>;
+  actions: DataTableRowAction[];
+  onAction?: (value: string, row: Row<TData>) => void;
+}) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <View width="100%" alignItems="flex-end" justifyContent="center">
+      <ContextMenu
+        open={open}
+        onOpenChange={setOpen}
+        placement="bottom-end"
+        onValueChange={(value: any) => {
+          setOpen(false);
+          onAction?.(value, row);
+        }}>
+        <ContextMenu.Trigger asChild={true}>
+          <Button
+            theme="base"
+            variant="ghost"
+            ghostOpacity={0.4}
+            circular={true}
+            tight={true}
+            color="primary"
+            size="6xl"
+            padding="lg"
+            aria-label={`Actions for row ${row.index + 1}`}
+            tooltip="Show row actions">
+            <Button.Icon>
+              <DotsVertical size="2xl" />
+            </Button.Icon>
+          </Button>
+        </ContextMenu.Trigger>
+        <ContextMenu.Content>
+          {actions.map(action => (
+            <ContextMenu.Item
+              key={action.value}
+              aria-label={action.label}
+              value={action.value}
+              disabled={action.disabled}>
+              {action.icon && (
+                // Flex centers an SVG, which would otherwise sit on the baseline.
+                <ContextMenu.Item.Icon display="flex" alignItems="center">
+                  {action.icon}
+                </ContextMenu.Item.Icon>
+              )}
+              <ContextMenu.Item.Label>{action.label}</ContextMenu.Item.Label>
+            </ContextMenu.Item>
+          ))}
+        </ContextMenu.Content>
+      </ContextMenu>
+    </View>
+  );
+};
+
+const getActionsColumn = <TData extends RowData>(
+  rowActions: NonNullable<DataTableProps<TData>["rowActions"]>,
+  onRowAction: DataTableProps<TData>["onRowAction"]
+): ColumnDef<TData> => ({
+  id: ACTIONS_COLUMN_ID,
+  size: 56,
+  enableColumnFilter: false,
+  enableResizing: false,
+  enableSorting: false,
+  header: () => null,
+  cell: ({ row }) => (
+    <DataTableRowActions
+      row={row}
+      actions={typeof rowActions === "function" ? rowActions(row) : rowActions}
+      onAction={onRowAction}
+    />
+  )
+});
+
+interface ContentSizedCell {
+  dataset: { columnId?: string };
+  getBoundingClientRect: () => { width: number };
+  scrollWidth: number;
+  style: { width: string };
+}
+
+interface ContentSizedTableElement {
+  querySelectorAll: (selector: string) => ArrayLike<ContentSizedCell>;
+  style: {
+    maxWidth: string;
+    minWidth: string;
+    tableLayout: string;
+    width: string;
+  };
+}
+
+interface ContentResizeObserver {
+  disconnect: () => void;
+  observe: (element: ContentSizedCell) => void;
+}
+
+type ContentResizeObserverConstructor = new (
+  callback: () => void
+) => ContentResizeObserver;
+
+const useContentSizedColumns = (enabled: boolean) => {
+  const tableRef = useRef<ContentSizedTableElement | null>(null);
+
+  const measureColumns = useCallback(() => {
+    if (!enabled) {
+      return;
+    }
+
+    const tableElement = tableRef.current;
+
+    if (!tableElement?.querySelectorAll) {
+      return;
+    }
+
+    const cells = Array.from(tableElement.querySelectorAll("[data-column-id]"));
+    const headerCells = Array.from(
+      tableElement.querySelectorAll("thead [data-column-id]")
+    );
+
+    tableElement.style.width = "max-content";
+    tableElement.style.minWidth = "0px";
+    tableElement.style.maxWidth = "none";
+    tableElement.style.tableLayout = "auto";
+
+    cells.forEach(cell => {
+      cell.style.width = "auto";
+    });
+
+    const widths = cells.reduce((result, cell) => {
+      const columnId = cell.dataset.columnId;
+
+      if (columnId) {
+        result.set(
+          columnId,
+          // Not `scrollWidth`, which rounds: a cell 149.4px wide would get
+          // 149px and wrap its text.
+          Math.max(
+            result.get(columnId) ?? 0,
+            Math.ceil(cell.getBoundingClientRect().width)
+          )
+        );
+      }
+
+      return result;
+    }, new Map<string, number>());
+
+    const lastColumnId = headerCells.at(-1)?.dataset.columnId;
+    const intrinsicTableWidth = headerCells.reduce((width, cell) => {
+      const columnId = cell.dataset.columnId;
+
+      return width + (columnId ? (widths.get(columnId) ?? 0) : 0);
+    }, 0);
+
+    cells.forEach(cell => {
+      const columnId = cell.dataset.columnId;
+      const width = columnId ? widths.get(columnId) : undefined;
+
+      if (width && columnId !== lastColumnId) {
+        cell.style.width = `${width}px`;
+      }
+    });
+
+    tableElement.style.width = "100%";
+    tableElement.style.minWidth = `${intrinsicTableWidth}px`;
+    tableElement.style.tableLayout = "fixed";
+  }, [enabled]);
+
+  useLayoutEffect(measureColumns);
+
+  useEffect(() => {
+    if (!enabled) {
+      return;
+    }
+
+    const tableElement = tableRef.current;
+    // `unknown` first: intersecting with `typeof globalThis` would keep the
+    // DOM `ResizeObserver`, whose `observe` only takes a DOM `Element`.
+    const ResizeObserverImpl = (
+      globalThis as unknown as {
+        ResizeObserver?: ContentResizeObserverConstructor;
+      }
+    ).ResizeObserver;
+
+    if (!tableElement?.querySelectorAll || !ResizeObserverImpl) {
+      return;
+    }
+
+    let animationFrame: number | undefined;
+    const observer = new ResizeObserverImpl(() => {
+      if (animationFrame !== undefined) {
+        cancelAnimationFrame(animationFrame);
+      }
+
+      animationFrame = requestAnimationFrame(measureColumns);
+    });
+
+    animationFrame = requestAnimationFrame(measureColumns);
+
+    Array.from(tableElement.querySelectorAll("[data-column-id] *")).forEach(
+      element => observer.observe(element)
+    );
+
+    return () => {
+      observer.disconnect();
+
+      if (animationFrame !== undefined) {
+        cancelAnimationFrame(animationFrame);
+      }
+    };
+  }, [enabled, measureColumns]);
+
+  return tableRef;
+};
+
+const useInitialContentSizedColumns = <TData extends RowData>(
+  tableRef: { current: ContentSizedTableElement | null },
+  table: ReactTable<TData>,
+  enabled: boolean
+) => {
+  const measuredColumnsRef = useRef<string | undefined>(undefined);
+  const columnIds = table
+    .getVisibleLeafColumns()
+    .map(column => column.id)
+    .join("\0");
+
+  useLayoutEffect(() => {
+    const tableElement = tableRef.current;
+
+    if (
+      !enabled ||
+      measuredColumnsRef.current === columnIds ||
+      !tableElement?.querySelectorAll
+    ) {
+      return;
+    }
+
+    measuredColumnsRef.current = columnIds;
+
+    const columnWidthPadding = getVariableValue(getTokens().space.xl);
+
+    const widths = Array.from(
+      tableElement.querySelectorAll("[data-column-id]")
+    ).reduce((result, cell) => {
+      const columnId = cell.dataset.columnId;
+
+      if (columnId) {
+        result.set(
+          columnId,
+          Math.max(result.get(columnId) ?? 0, Math.ceil(cell.scrollWidth))
+        );
+      }
+
+      return result;
+    }, new Map<string, number>());
+
+    table.setColumnSizing(current => {
+      const next = { ...current };
+      let changed = false;
+
+      table.getVisibleLeafColumns().forEach(column => {
+        const measuredWidth = widths.get(column.id);
+        const initialWidth = measuredWidth
+          ? measuredWidth + columnWidthPadding
+          : undefined;
+
+        if (
+          initialWidth &&
+          current[column.id] === undefined &&
+          initialWidth > column.getSize()
+        ) {
+          next[column.id] = initialWidth;
+          changed = true;
+        }
+      });
+
+      return changed ? next : current;
+    });
+  }, [columnIds, enabled, table, tableRef]);
+};
+
+function DataTableImpl<TData extends RowData>({
   options,
   pageSize = 100,
+  resizable = false,
+  reorderable = false,
+  variant = "standard",
+  rowActions,
+  onRowAction,
+  children,
   ...rest
 }: DataTableProps<TData>) {
-  const [data, setData] = useState<TData[]>(() => [...options.data]);
+  const card = variant === "card";
+  const [data] = useState<TData[]>(() => [...options.data]);
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const [columnOrder, setColumnOrder] = useState<ColumnOrderState>(
+    () => options.initialState?.columnOrder ?? []
+  );
+  const [draggedColumn, setDraggedColumn] = useState<string | null>(null);
+  const [dropColumn, setDropColumn] = useState<string | null>(null);
+  const [hoveredResizer, setHoveredResizer] = useState<string | null>(null);
+  const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
-    pageSize: isNumber(pageSize) && pageSize > 0 ? pageSize : 100
+    pageSize:
+      isNumber(pageSize) && pageSize > 0
+        ? Math.min(pageSize, data.length)
+        : Math.min(100, data.length)
   });
+  const tableRef = useContentSizedColumns(!resizable);
+  const rowSelectionEnabled =
+    options.enableRowSelection !== undefined &&
+    options.enableRowSelection !== false;
+
+  const columns = useMemo(
+    () => [
+      ...(rowSelectionEnabled ? [getSelectionColumn<TData>()] : []),
+      ...options.columns.map(column => ({
+        filterFn: getDefaultFilterFn<TData>(column.meta?.facetFn),
+        ...column
+      })),
+      ...(rowActions ? [getActionsColumn(rowActions, onRowAction)] : [])
+    ],
+    [options.columns, rowSelectionEnabled, rowActions, onRowAction]
+  );
+
+  const handleRowSelectionChange = useCallback<OnChangeFn<RowSelectionState>>(
+    updater => {
+      setRowSelection(updater);
+      options.onRowSelectionChange?.(updater);
+    },
+    [options.onRowSelectionChange]
+  );
 
   // const columnHelper = useMemo(() => createColumnHelper<TData>(), []);
 
@@ -127,27 +589,65 @@ export function DataTable<TData extends RowData>({
     getPaginationRowModel: getPaginationRowModel(),
     getFacetedRowModel: getFacetedRowModel(),
     getFacetedUniqueValues: getFacetedUniqueValues(),
+    onColumnFiltersChange: setColumnFilters,
+    onSortingChange: setSorting,
+    onColumnOrderChange: setColumnOrder,
+    onPaginationChange: setPagination,
+    manualPagination: false,
+    columnResizeMode: "onChange",
+    ...options,
     state: {
       sorting,
       columnFilters,
-      pagination
+      columnOrder,
+      pagination,
+      rowSelection,
+      ...options.state
     },
-    onColumnFiltersChange: setColumnFilters,
-    onSortingChange: setSorting,
-    onPaginationChange: setPagination,
-    manualPagination: false,
-    ...options,
-    columns: options.columns.map(column => ({
-      filterFn: defaultFilterFn,
-      ...column
-    })),
-    rowCount: data.length,
+    onRowSelectionChange: handleRowSelectionChange,
+    enableRowSelection: rowSelectionEnabled
+      ? options.enableRowSelection
+      : false,
+    enableColumnResizing: resizable,
+    columns,
     data
   });
+
+  useInitialContentSizedColumns(tableRef, table, resizable);
+
+  const leafColumnIds = table.getVisibleLeafColumns().map(column => column.id);
+  const isReorderable = (column: Column<TData>) =>
+    reorderable &&
+    column.columns.length === 0 &&
+    column.id !== SELECTION_COLUMN_ID &&
+    column.id !== ACTIONS_COLUMN_ID;
+
+  const handleColumnDragEnd = () => {
+    setDraggedColumn(null);
+    setDropColumn(null);
+  };
+
+  const handleColumnDrop = (targetId: string) => {
+    if (draggedColumn && draggedColumn !== targetId) {
+      table.setColumnOrder(() => {
+        const ids = table.getAllLeafColumns().map(column => column.id);
+        const next = ids.filter(id => id !== draggedColumn);
+        // Taking the target's old index lands the column past it in the
+        // direction it was dragged.
+        next.splice(ids.indexOf(targetId), 0, draggedColumn);
+
+        return next;
+      });
+    }
+
+    handleColumnDragEnd();
+  };
 
   const headerGroups = table.getHeaderGroups();
   const tableRows = table.getRowModel().rows;
   const pageCount = table.getPageCount();
+  const selectedRows = table.getSelectedRowModel().rows;
+  const columnCount = table.getVisibleLeafColumns().length;
 
   return (
     <DataTableContext.Provider
@@ -156,85 +656,371 @@ export function DataTable<TData extends RowData>({
       columnFilters={columnFilters}
       setColumnFilters={setColumnFilters}
       pagination={pagination}
-      setPagination={setPagination}>
-      <YStack gap="$3">
-        <Table
-          alignCells={{ x: "start", y: "center" }}
-          alignHeaderCells={{ x: "start", y: "center" }}
-          cellWidth="$18"
-          cellHeight="$7"
-          {...rest}>
-          <Table.Header>
-            {headerGroups.map(headerGroup => {
-              return (
-                <Table.Row key={headerGroup.id} header={true}>
-                  {headerGroup.headers.map(header => (
-                    <Table.HeaderCell key={header.id} group={"header" as any}>
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
-                    </Table.HeaderCell>
-                  ))}
-                </Table.Row>
-              );
-            })}
-          </Table.Header>
-          <Table.Body>
-            {tableRows.map(row => {
-              return (
-                <Table.Row key={row.id}>
-                  {row.getVisibleCells().map(cell => (
-                    <Table.Cell key={cell.id}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
-                    </Table.Cell>
-                  ))}
-                </Table.Row>
-              );
-            })}
-            {tableRows.length === 0 && (
-              <Table.Row>
-                <View
-                  flex={1}
-                  justifyContent="center"
-                  alignItems="center"
-                  padding="$5">
-                  <LabelText size="$6">No data to display</LabelText>
-                </View>
-              </Table.Row>
-            )}
-          </Table.Body>
-          {pageCount > 1 && (
-            <Table.Footer>
-              <Table.Row header={true}>
-                <DataTablePagination
-                  setPageIndex={table.setPageIndex}
-                  nextPage={table.nextPage}
-                  previousPage={table.previousPage}
-                  firstPage={table.firstPage}
-                  lastPage={table.lastPage}
-                  totalCount={data.length}
-                  unfilteredCount={table.getFilteredRowModel().rows.length}
-                  pageIndex={pagination.pageIndex}
-                  pageSize={pagination.pageSize}
-                  pageCount={pageCount}
+      setPagination={setPagination}
+      selectedRows={selectedRows}>
+      <YStack gap="3xl">
+        {/* Columns never shrink below their content; a table wider than its
+            container scrolls sideways instead of overflowing it. The scrollbar
+            is the themed one from `ScrollView`. */}
+        <View
+          maxWidth="100%"
+          overflowX="auto"
+          className={SCROLL_VIEW_CLASS_NAME}>
+          {isWeb ? <style>{SCROLL_VIEW_STYLES}</style> : null}
+          <Table
+            ref={tableRef as any}
+            width={resizable ? table.getTotalSize() : "100%"}
+            maxWidth="none"
+            alignCells={{ x: "start", y: "center" }}
+            alignHeaderCells={{ x: "start", y: "center" }}
+            {...{ sizing: "content" }}
+            {...rest}
+            style={
+              [
+                rest.style,
+                {
+                  borderCollapse: "separate",
+                  borderSpacing: card
+                    ? `0 ${getVariableValue(getTokens().space["2xl"])}px`
+                    : 0
+                },
+                resizable
+                  ? {
+                      tableLayout: "fixed",
+                      width: table.getTotalSize()
+                    }
+                  : undefined
+              ] as any
+            }>
+            {/* Fixed layout sizes columns from the first row, which is the
+              full-width selection bar while rows are selected. */}
+            <colgroup>
+              {table.getVisibleLeafColumns().map(column => (
+                <col
+                  key={column.id}
+                  data-column-id={column.id}
+                  style={resizable ? { width: column.getSize() } : undefined}
                 />
-              </Table.Row>
-            </Table.Footer>
-          )}
-        </Table>
+              ))}
+            </colgroup>
+            <Table.Header>
+              {selectedRows.length > 0 && (
+                <Table.Row header={true}>
+                  <Table.Cell
+                    paddingVertical="lg"
+                    {...(card ? getCardCellProps(0, 1) : {})}
+                    // After the spread, which also sets it (TS2783 otherwise).
+                    borderBottomWidth={0}
+                    backgroundColor="floating"
+                    {...({ colSpan: columnCount } as any)}>
+                    <XStack
+                      flexGrow={1}
+                      // Zero intrinsic width so the spanning bar doesn't widen
+                      // the columns under it (it still fills the cell).
+                      width={0}
+                      minWidth="100%"
+                      alignItems="center"
+                      justifyContent="space-between"
+                      gap="xl"
+                      paddingHorizontal="xl">
+                      <HeadingExtraSmallText
+                        fontWeight="medium"
+                        aria-live="polite">{`${selectedRows.length} selected`}</HeadingExtraSmallText>
+                      <XStack alignItems="center" gap="xl max-md:md">
+                        {children}
+                        <Button
+                          theme="base"
+                          variant="ghost"
+                          circular={true}
+                          tight={true}
+                          size="6xl"
+                          padding="lg"
+                          marginLeft="4xl max-md:lg"
+                          aria-label="Clear selection"
+                          tooltip="Clear selection"
+                          onPress={() => table.resetRowSelection(true)}>
+                          <Button.Icon>
+                            <Close variant="bold" size="2xl" />
+                          </Button.Icon>
+                        </Button>
+                      </XStack>
+                    </XStack>
+                  </Table.Cell>
+                </Table.Row>
+              )}
+              {headerGroups.map(headerGroup => {
+                return (
+                  <Table.Row key={headerGroup.id} header={true}>
+                    {headerGroup.headers.map((header, index) => (
+                      <Table.HeaderCell
+                        key={header.id}
+                        position="relative"
+                        edgePadding={
+                          index === 0 &&
+                          index === headerGroup.headers.length - 1
+                            ? "both"
+                            : index === 0
+                              ? "start"
+                              : index === headerGroup.headers.length - 1
+                                ? "end"
+                                : undefined
+                        }
+                        {...(card
+                          ? getCardCellProps(index, headerGroup.headers.length)
+                          : {})}
+                        // Match the body cells so the checkboxes line up.
+                        {...(header.column.id === SELECTION_COLUMN_ID
+                          ? { paddingLeft: "xl", paddingRight: "xl" }
+                          : {})}
+                        {...(isReorderable(header.column)
+                          ? ({
+                              cursor: "grab",
+                              ...(draggedColumn === header.column.id
+                                ? { opacity: 0.5 }
+                                : {}),
+                              draggable: true,
+                              onDragStart: (event: any) => {
+                                event.dataTransfer.effectAllowed = "move";
+                                // Firefox won't start a drag without data.
+                                event.dataTransfer.setData(
+                                  "text/plain",
+                                  header.column.id
+                                );
+                                setDraggedColumn(header.column.id);
+                              },
+                              onDragOver: (event: any) => {
+                                // Ignore drags that didn't start on a header.
+                                if (draggedColumn) {
+                                  event.preventDefault();
+                                  setDropColumn(header.column.id);
+                                }
+                              },
+                              onDrop: (event: any) => {
+                                event.preventDefault();
+                                handleColumnDrop(header.column.id);
+                              },
+                              onDragEnd: handleColumnDragEnd
+                            } as any)
+                          : {})}
+                        style={
+                          resizable
+                            ? ({ width: header.getSize() } as any)
+                            : undefined
+                        }
+                        {...({
+                          colSpan: header.colSpan,
+                          ...(header.colSpan === 1
+                            ? { "data-column-id": header.column.id }
+                            : {})
+                        } as any)}
+                        group="header">
+                        {header.isPlaceholder
+                          ? null
+                          : flexRender(
+                              header.column.columnDef.header,
+                              header.getContext()
+                            )}
+                        {resizable && header.column.getCanResize() && (
+                          <View
+                            role="separator"
+                            aria-label={`Resize ${header.column.id} column`}
+                            aria-orientation="vertical"
+                            position="absolute"
+                            top={0}
+                            right={0}
+                            bottom={0}
+                            width="2xl"
+                            zIndex="20"
+                            cursor="col-resize"
+                            userSelect="none"
+                            // Web-only CSS property that is not a Tamagui style prop.
+                            style={{ touchAction: "none" } as any}
+                            data-column-resizer={header.column.id}
+                            onDoubleClick={() => header.column.resetSize()}
+                            onMouseEnter={() => setHoveredResizer(header.id)}
+                            onMouseLeave={() => setHoveredResizer(null)}
+                            onMouseDown={(event: any) => {
+                              // Keeps a draggable header from starting a drag.
+                              event.preventDefault();
+                              header.getResizeHandler()(event);
+                            }}
+                            onTouchStart={header.getResizeHandler()}>
+                            <View
+                              position="absolute"
+                              top="xl"
+                              left="50%"
+                              marginLeft={-1}
+                              bottom="xl"
+                              borderWidth={0}
+                              borderRightWidth={1}
+                              borderStyle="dashed"
+                              borderRightColor={
+                                header.column.getIsResizing()
+                                  ? "subtle"
+                                  : hoveredResizer === header.id
+                                    ? "subtle"
+                                    : "transparent"
+                              }
+                            />
+                          </View>
+                        )}
+                        {draggedColumn &&
+                          dropColumn === header.column.id &&
+                          dropColumn !== draggedColumn && (
+                            <View
+                              position="absolute"
+                              top="xl"
+                              bottom="xl"
+                              {...(leafColumnIds.indexOf(draggedColumn) <
+                              leafColumnIds.indexOf(dropColumn)
+                                ? { right: 0 }
+                                : { left: 0 })}
+                              borderWidth={0}
+                              borderLeftWidth={1}
+                              borderStyle="dashed"
+                              borderLeftColor="subtle"
+                              pointerEvents="none"
+                            />
+                          )}
+                      </Table.HeaderCell>
+                    ))}
+                  </Table.Row>
+                );
+              })}
+            </Table.Header>
+            <Table.Body>
+              {tableRows.map(row => {
+                const cells = row.getVisibleCells();
+
+                return (
+                  <Table.Row
+                    key={row.id}
+                    aria-selected={row.getIsSelected()}
+                    // An explicit `undefined` would wipe the row's hover background.
+                    // Cards paint the cells instead; a row background would show
+                    // square behind their rounded corners.
+                    {...(card
+                      ? { backgroundColor: "transparent" }
+                      : row.getIsSelected()
+                        ? { backgroundColor: "surface-active" }
+                        : {})}>
+                    {cells.map((cell, index) => (
+                      <Table.Cell
+                        key={cell.id}
+                        {...(card
+                          ? {
+                              ...getCardCellProps(index, cells.length),
+                              transition: "200ms",
+                              backgroundColor: row.getIsSelected()
+                                ? "surface-active"
+                                : "surface group-hover/row:surface-hovered"
+                            }
+                          : {})}
+                        style={
+                          resizable
+                            ? ({ width: cell.column.getSize() } as any)
+                            : undefined
+                        }
+                        {...({ "data-column-id": cell.column.id } as any)}>
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext()
+                        )}
+                      </Table.Cell>
+                    ))}
+                  </Table.Row>
+                );
+              })}
+              {tableRows.length === 0 && (
+                <Table.Row>
+                  <Table.Cell
+                    {...(card ? getCardCellProps(0, 1) : {})}
+                    {...({ colSpan: columnCount } as any)}>
+                    <View
+                      flex={1}
+                      justifyContent="center"
+                      alignItems="center"
+                      padding="7xl">
+                      <HeadingSmallText size={4}>
+                        No data to display
+                      </HeadingSmallText>
+                    </View>
+                  </Table.Cell>
+                </Table.Row>
+              )}
+            </Table.Body>
+            {pageSize && (
+              <Table.Footer>
+                <Table.Row header={true}>
+                  <Table.Cell
+                    paddingTop="3xl"
+                    {...(card
+                      ? { ...getCardCellProps(0, 1), paddingVertical: "xl" }
+                      : {})}
+                    borderBottomWidth={0}
+                    {...({ colSpan: columnCount } as any)}>
+                    <DataTablePagination
+                      setPageIndex={table.setPageIndex}
+                      nextPage={table.nextPage}
+                      previousPage={table.previousPage}
+                      firstPage={table.firstPage}
+                      lastPage={table.lastPage}
+                      totalCount={data.length}
+                      unfilteredCount={table.getFilteredRowModel().rows.length}
+                      pageIndex={pagination.pageIndex}
+                      pageSize={pagination.pageSize}
+                      pageCount={pageCount}
+                    />
+                  </Table.Cell>
+                </Table.Row>
+              </Table.Footer>
+            )}
+          </Table>
+        </View>
       </YStack>
     </DataTableContext.Provider>
   );
 }
 
-export interface DataTableCellProps<TData extends RowData, TValue = any>
-  extends CellContext<TData, TValue> {
+export interface DataTableSelectionActionProps<TData extends RowData> {
+  icon?: ReactNode;
+  children: ReactNode;
+  disabled?: boolean;
+
+  /**
+   * Called with the selected rows (across every page) when pressed.
+   */
+  onAction: (rows: Row<TData>[]) => void;
+}
+
+export function DataTableSelectionAction<TData extends RowData>({
+  icon,
+  children,
+  disabled,
+  onAction
+}: DataTableSelectionActionProps<TData>) {
+  const { selectedRows } = DataTableContext.useStyledContext();
+
+  return (
+    <Button
+      theme="base"
+      size="sm"
+      disabled={disabled}
+      onPress={() => onAction(selectedRows)}>
+      {icon && <Button.Icon>{icon}</Button.Icon>}
+      <Button.Text>{children}</Button.Text>
+    </Button>
+  );
+}
+
+export const DataTable = withStaticProperties(DataTableImpl, {
+  SelectionAction: DataTableSelectionAction
+});
+
+export interface DataTableCellProps<
+  TData extends RowData,
+  TValue = any
+> extends CellContext<TData, TValue> {
   value?: string;
 }
 
@@ -247,30 +1033,67 @@ export const DataTableCell = <TData extends RowData, TValue = any>(
   props: DataTableCellProps<TData, TValue>
 ) => {
   const value = props.value ? props.value : props.renderValue();
+
   return (
-    <SizableText
-      animation="normal"
-      fontFamily="$body"
-      color="$color"
-      $group-row-hover={{ color: "$primary" }}>
+    <BodyText transition="200ms" color="ink group-hover/row:ink-active">
       {value}
-    </SizableText>
+    </BodyText>
   );
 };
 
 const SEARCH_FIELD_NAME = "__search";
 const SELECT_ALL_FIELD_NAME = "__selectAll";
 
-const DataTableHeaderFilterFields = <TData extends RowData, TValue = any>({
+// Rows are measured once mounted; this only sizes the scrollbar beforehand.
+const FILTER_ROW_ESTIMATED_HEIGHT = 20;
+
+const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
   valuesMap = new Map(),
-  onSearchChange
+  onSearchChange,
+  onFilterChange,
+  filterValues,
+  selectAll
 }: {
   valuesMap: Map<string, { value: any; count: number }>;
   onSearchChange: (context: CallbackContext<FieldAtoms<string>>) => void;
+  onFilterChange: (name: string, checked: boolean) => void;
+  filterValues: any[];
+  selectAll: boolean | "indeterminate";
 }) => {
   const [searchResults, setSearchResults] = useState(
     useMemo(() => Array.from(valuesMap.keys()), [valuesMap])
   );
+  const intrinsicFilterLabels = useMemo(
+    () =>
+      Array.from(valuesMap.entries())
+        .map(([value, { count }]) => `${value} (${count})`)
+        .join("\n"),
+    [valuesMap]
+  );
+
+  // A column can have thousands of values, so only the visible rows mount.
+  const scrollRef = useRef<
+    | (HTMLElement & {
+        scrollTo: (options: { y: number; animated: boolean }) => void;
+      })
+    | null
+  >(null);
+  const virtualizer = useVirtualizer({
+    count: searchResults.length,
+    getScrollElement: () => scrollRef.current,
+    // Tamagui's web ScrollView replaces the element's `scrollTo` with React
+    // Native's `{ x, y, animated }` one, which read the default `{ top }` as a
+    // smooth scroll to 0 on every measurement correction.
+    scrollToFn: (offset, { adjustments = 0, behavior }) =>
+      scrollRef.current?.scrollTo({
+        y: offset + adjustments,
+        animated: behavior === "smooth"
+      }),
+    getItemKey: index => searchResults[index]!,
+    estimateSize: () => FILTER_ROW_ESTIMATED_HEIGHT,
+    gap: getVariableValue(getTokens().space.xl),
+    overscan: 10
+  });
 
   const handleSearchChange = useCallback(
     (context: CallbackContext<FieldAtoms<string>>) => {
@@ -282,51 +1105,121 @@ const DataTableHeaderFilterFields = <TData extends RowData, TValue = any>({
 
       setSearchResults(!value ? keys : matchSorter(keys, value));
     },
-    [valuesMap]
+    [onSearchChange, valuesMap]
+  );
+
+  const handleFilterChange = useCallback(
+    (name: string, checked: boolean | "indeterminate") => {
+      onFilterChange(name, checked === true);
+    },
+    [onFilterChange]
   );
 
   return (
-    <YStack gap="$3" width="100%">
-      <SearchInputField
-        name={SEARCH_FIELD_NAME}
-        size="$3"
-        width="$15"
-        onChange={handleSearchChange}>
-        <SearchInputField.Control>
-          <SearchInputField.Control.TextBox placeholder="Filter..." />
-        </SearchInputField.Control>
-      </SearchInputField>
+    <View width="max-content" minWidth="100%" maxWidth="100%">
+      <HeadingExtraSmallText
+        aria-hidden={true}
+        height={0}
+        overflow="hidden"
+        opacity={0}
+        pointerEvents="none"
+        paddingRight="9xl"
+        maxWidth="100%"
+        whiteSpace="pre">
+        {intrinsicFilterLabels}
+      </HeadingExtraSmallText>
 
-      <Popover.Content.ScrollView maxHeight="$16" padding={5}>
-        <YStack gap="$2">
-          <CheckboxField name={SELECT_ALL_FIELD_NAME} size="$3">
-            <XStack gap="$3">
-              <CheckboxField.Control />
-              <CheckboxField.Label>{"(Select All)"}</CheckboxField.Label>
-            </XStack>
-          </CheckboxField>
+      <YStack gap="2xl">
+        <View marginHorizontal="xl" marginTop="lg">
+          <Field
+            name={SEARCH_FIELD_NAME}
+            size="sm"
+            onChange={handleSearchChange}>
+            <SearchInput>
+              <SearchInput.TextBox placeholder="Filter..." />
+            </SearchInput>
+          </Field>
+        </View>
 
-          {searchResults.map(searchResult => (
-            <CheckboxField key={searchResult} name={searchResult} size="$3">
-              <XStack gap="$3">
-                <CheckboxField.Control />
-                <CheckboxField.Label>{`${searchResult} (${valuesMap.get(searchResult)?.count ?? 0})`}</CheckboxField.Label>
+        <Popover.Content.ScrollView
+          ref={scrollRef as any}
+          size="lg"
+          maxHeight="30xl">
+          <YStack
+            gap="xl"
+            width="100%"
+            minWidth="28xl"
+            paddingHorizontal="xl"
+            paddingTop="0"
+            paddingBottom="2xl">
+            <Field name={SELECT_ALL_FIELD_NAME}>
+              <XStack gap="xl" alignItems="center" justifyContent="flex-start">
+                <Checkbox
+                  size="sm"
+                  checked={selectAll}
+                  onCheckedChange={checked =>
+                    handleFilterChange(SELECT_ALL_FIELD_NAME, checked)
+                  }
+                />
+                <Field.Label>{"(Select All)"}</Field.Label>
               </XStack>
-            </CheckboxField>
-          ))}
-        </YStack>
-      </Popover.Content.ScrollView>
-    </YStack>
+            </Field>
+
+            {searchResults.length > 0 && (
+              <View
+                position="relative"
+                width="100%"
+                height={virtualizer.getTotalSize()}>
+                {virtualizer.getVirtualItems().map(virtualItem => {
+                  const searchResult = searchResults[virtualItem.index]!;
+
+                  return (
+                    <View
+                      key={virtualItem.key}
+                      ref={virtualizer.measureElement as any}
+                      {...({ "data-index": virtualItem.index } as any)}
+                      position="absolute"
+                      top={virtualItem.start}
+                      left={0}
+                      width="100%">
+                      <Field name={searchResult}>
+                        <XStack
+                          gap="xl"
+                          alignItems="center"
+                          justifyContent="flex-start">
+                          <Checkbox
+                            size="sm"
+                            checked={!filterValues.includes(searchResult)}
+                            onCheckedChange={checked =>
+                              handleFilterChange(searchResult, checked)
+                            }
+                          />
+                          <Field.Label>{`${searchResult} (${valuesMap.get(searchResult)?.count ?? 0})`}</Field.Label>
+                        </XStack>
+                      </Field>
+                    </View>
+                  );
+                })}
+              </View>
+            )}
+          </YStack>
+        </Popover.Content.ScrollView>
+      </YStack>
+    </View>
   );
 };
 
 export const DataTableHeader = <TData extends RowData, TValue = any>({
   column,
-  ...props
+  ..._props
 }: DataTableHeaderProps<TData, TValue>) => {
   const [currentSearch, setCurrentSearch] = useState("");
 
   const { sorting } = DataTableContext.useStyledContext();
+  const { uppercase } = useTableContext();
+  const headingColor = uppercase
+    ? "subtle group-hover/header:emphasis"
+    : "emphasis group-hover/header:emphasis-hovered";
   const {
     toggleSorting,
     clearSorting,
@@ -356,64 +1249,49 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
     return Array.from(facetedUniqueValues.keys())
       .slice(0, 5000)
       .reduce((ret, value) => {
-        ret.set(String(meta?.facetFn?.(value) ?? value), {
+        const key = getFacetKey(value, meta?.facetFn);
+        ret.set(key, {
           value,
-          count: facetedUniqueValues.get(value)
+          count: (ret.get(key)?.count ?? 0) + facetedUniqueValues.get(value)
         });
 
         return ret;
       }, new Map());
-  }, [filterValues, meta]);
+  }, [column, meta]);
 
-  const handleChange = useCallback(
-    ({ get, set, atoms }: CallbackContext<FormAtoms>) => {
-      const values = get(atoms.values);
-      const previousValues = get(atoms.previousValues);
+  const selectAll =
+    filterValues.length === 0
+      ? true
+      : filterValues.length === valuesMap.size
+        ? false
+        : "indeterminate";
 
-      const keys = Object.keys(values).filter(
-        key => key !== SEARCH_FIELD_NAME && key !== SELECT_ALL_FIELD_NAME
-      );
-
-      if (
-        values[SELECT_ALL_FIELD_NAME] !== "indeterminate" &&
-        values[SELECT_ALL_FIELD_NAME] !== previousValues[SELECT_ALL_FIELD_NAME]
-      ) {
-        set(atoms.values, prev =>
-          keys.reduce((ret, key) => {
-            ret[key] = values[SELECT_ALL_FIELD_NAME];
-
-            return ret;
-          }, deepClone(prev))
-        );
-
-        setFilterValue(
-          values[SELECT_ALL_FIELD_NAME]
-            ? []
-            : Array.from(valuesMap.values()).map(item => item.value)
-        );
-      } else {
-        const selectAll = keys.some(key => values[key] === false)
-          ? keys.some(key => values[key] === true)
-            ? "indeterminate"
-            : false
-          : true;
-        set(atoms.values, prev => ({
-          ...prev,
-          [SELECT_ALL_FIELD_NAME]: selectAll
-        }));
-
-        setFilterValue(
-          keys
-            .filter(key => values[key] === false && valuesMap.has(key))
-            .map(key => valuesMap.get(key)!.value)
-        );
+  const handleFilterChange = useCallback(
+    (name: string, checked: boolean) => {
+      if (name === SELECT_ALL_FIELD_NAME) {
+        setFilterValue(checked ? [] : Array.from(valuesMap.keys()));
+        return;
       }
+
+      if (!valuesMap.has(name)) {
+        return;
+      }
+
+      setFilterValue((current: unknown) => {
+        const filterValues = (current ?? []) as string[];
+
+        return checked
+          ? filterValues.filter(filterValue => filterValue !== name)
+          : filterValues.includes(name)
+            ? filterValues
+            : [...filterValues, name];
+      });
     },
-    [valuesMap]
+    [setFilterValue, valuesMap]
   );
 
   const handleSearchChange = useCallback(
-    ({ get, set, atoms }: CallbackContext<FieldAtoms<string>>) => {
+    ({ get, set: _set, atoms }: CallbackContext<FieldAtoms<string>>) => {
       setCurrentSearch(get(atoms.value));
     },
     []
@@ -425,9 +1303,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
     return keys.reduce(
       (ret, key) => ({
         ...ret,
-        [key]: !filterValues.some(filterValue =>
-          isEqual(filterValue, valuesMap.get(key)!.value)
-        )
+        [key]: !filterValues.includes(key)
       }),
       {
         [SEARCH_FIELD_NAME]: currentSearch,
@@ -439,87 +1315,87 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
               : "indeterminate"
       } as Record<string, any>
     );
-  }, [valuesMap]);
+  }, [currentSearch, filterValues, valuesMap]);
 
   return (
     <XStack
-      group={"header" as any}
+      group={"header"}
       flexGrow={1}
+      gap="3xl"
       justifyContent="space-between"
       alignItems="center"
-      paddingRight="$3"
-      borderRightColor="$borderColor"
-      borderRightWidth={1}>
-      <XStack gap="$2" onPress={handleSorting} flex={1} cursor="pointer">
-        <SizableText
-          animation="normal"
-          fontFamily="$label"
-          color="$primary"
-          size="$6"
-          $group-header-hover={{ color: "$fg" }}>
+      // Static so the filter button anchors to the header cell's edge.
+      position="static"
+      // Reserves room for the absolutely positioned filter button.
+      paddingRight={column.getCanFilter() ? "8xl" : "3xl"}>
+      <XStack gap="xl" flexShrink={0} cursor="pointer" onPress={handleSorting}>
+        <Table.HeaderText transition="200ms" color={headingColor}>
           {titleCase(id)}
-        </SizableText>
+        </Table.HeaderText>
         {isSorted && !desc && (
-          <XStack gap="$0.25" alignItems="center">
-            <ArrowDownAZ size="$1" color="$primary" />
-            <SizableText
-              animation="normal"
-              fontFamily="$label"
-              fontWeight="$6"
-              color="$primary"
-              size="$2">
+          <XStack gap="xxs" alignItems="center">
+            <SortAscending size="4xl" color={headingColor} />
+            <Table.HeaderText
+              transition="200ms"
+              fontWeight={600}
+              color={headingColor}>
               {sortIndex + 1}
-            </SizableText>
+            </Table.HeaderText>
           </XStack>
         )}
         {isSorted && desc && (
-          <XStack gap="$0.25" alignItems="center">
-            <ArrowUpZA size="$1" color="$primary" />
-            <SizableText
-              animation="normal"
-              fontFamily="$label"
-              fontWeight="$6"
-              color="$primary"
-              size="$2">
+          <XStack gap="xxs" alignItems="center">
+            <SortDescending size="4xl" color={headingColor} />
+            <Table.HeaderText
+              transition="200ms"
+              fontWeight={600}
+              color={headingColor}>
               {sortIndex + 1}
-            </SizableText>
+            </Table.HeaderText>
           </XStack>
         )}
       </XStack>
 
       {column.getCanFilter() && (
         <View
-          animation="normal"
-          opacity={filterValues.length > 0 ? 1 : 0}
-          $group-header-hover={{ opacity: 1 }}>
+          transition="200ms"
+          position="absolute"
+          // Lifts the icon, whose lines read low beside cap text.
+          top={0}
+          bottom={3}
+          right="4xl"
+          justifyContent="center"
+          opacity={`${filterValues.length > 0 ? 1 : 0} group-hover/header:1`}>
           <Popover allowFlip={true}>
             <Popover.Trigger asChild={true}>
               <Button
+                theme="base"
                 variant="ghost"
-                theme={ColorThemeName.BASE}
                 circular={true}
-                bordered={false}
-                color="$primary"
-                padding="$2"
-                width="$3">
+                tight={true}
+                size="6xl"
+                padding="lg"
+                tooltip="Filter">
                 <Button.Icon>
-                  <Filter size="$1" />
+                  <FilterAlt size="2xl" />
                 </Button.Icon>
               </Button>
             </Popover.Trigger>
 
-            <Popover.Content width="$16">
-              <View flex={1} minWidth="100%">
-                <Form
-                  name={`${id}_filter`}
-                  initialValues={initialValues}
-                  onChange={handleChange}>
-                  <DataTableHeaderFilterFields
-                    valuesMap={valuesMap}
-                    onSearchChange={handleSearchChange}
-                  />
-                </Form>
-              </View>
+            <Popover.Content
+              width="max-content"
+              minWidth="30xl"
+              maxWidth="90vw"
+              padding="xl">
+              <Form name={`${id}_filter`} initialValues={initialValues}>
+                <DataTableHeaderFilterFields
+                  valuesMap={valuesMap}
+                  onSearchChange={handleSearchChange}
+                  onFilterChange={handleFilterChange}
+                  filterValues={filterValues}
+                  selectAll={selectAll}
+                />
+              </Form>
             </Popover.Content>
           </Popover>
         </View>
@@ -549,7 +1425,7 @@ export function DataTablePagination<TData extends RowData>({
   pageIndex,
   pageSize,
   pageCount,
-  ...props
+  ..._props
 }: DataTablePaginationProps<TData>) {
   const { setPagination } = DataTableContext.useStyledContext();
 
@@ -644,62 +1520,76 @@ export function DataTablePagination<TData extends RowData>({
 
   return (
     <XStack
-      group={"header" as any}
+      group="header"
       flexGrow={1}
       justifyContent="space-between"
       alignItems="center"
-      paddingHorizontal="$2">
+      paddingHorizontal="xl">
       <View flex={1}>
-        <XStack alignItems="center" gap="$2">
-          <Form
-            name="pageSizing"
-            initialValues={{
-              pageSize
-            }}>
-            <SelectField
-              name="pageSize"
-              items={pageSizes}
-              size="$4"
-              onChange={handlePageSizeChange}>
-              <XStack alignItems="center" gap="$4">
-                <SelectField.Label hideOptional={true}>
-                  Per page:
-                </SelectField.Label>
-                <SelectField.Control placeholder="Size" flex={1} />
-              </XStack>
-            </SelectField>
-          </Form>
+        <XStack alignItems="center" gap="xl">
+          <View width="30xl" flexShrink={0}>
+            <Form
+              name="pageSizing"
+              initialValues={{
+                pageSize
+              }}>
+              <View width="30xl">
+                <Field
+                  name="pageSize"
+                  items={pageSizes}
+                  size="sm"
+                  onChange={handlePageSizeChange}>
+                  <XStack alignItems="center" gap="3xl">
+                    <Field.Label
+                      variant="above"
+                      flexShrink={0}
+                      fontWeight="medium">
+                      Per page:
+                    </Field.Label>
+                    <View width="18xl" flexShrink={0}>
+                      <Select />
+                    </View>
+                  </XStack>
+                </Field>
+              </View>
+            </Form>
+          </View>
 
-          <YStack gap="$2">
-            <XStack justifyContent="space-between" alignItems="center" gap="$4">
-              <LabelText size="$4">Total:</LabelText>
-              <LabelText size="$3">{`${totalCount} ${totalCount === 1 ? "row" : "rows"}`}</LabelText>
-            </XStack>
+          <YStack gap="xs" justifyContent="center">
+            <HeadingExtraSmallText fontWeight="medium">
+              {`${unfilteredCount > 0 ? pageIndex * pageSize + 1 : 0}-${Math.min((pageIndex + 1) * pageSize, unfilteredCount)} of ${unfilteredCount} ${unfilteredCount === 1 ? "row" : "rows"}`}
+            </HeadingExtraSmallText>
             {unfilteredCount !== totalCount && (
               <XStack
                 justifyContent="space-between"
                 alignItems="center"
-                gap="$4">
-                <LabelText size="$4">Filtering:</LabelText>
-                <LabelText size="$3">
+                gap="xl">
+                <HeadingExtraSmallText fontWeight="medium">
+                  Filtering:
+                </HeadingExtraSmallText>
+                <HeadingExtraSmallText>
                   {`${totalCount - unfilteredCount} ${totalCount - unfilteredCount === 1 ? "row" : "rows"}`}
-                </LabelText>
+                </HeadingExtraSmallText>
               </XStack>
             )}
           </YStack>
         </XStack>
       </View>
 
-      <Pagination
-        hideText={true}
-        pageIndex={pageIndex}
-        pageCount={pageCount}
-        setPageIndex={setPageIndex}
-        onNext={nextPage}
-        onPrevious={previousPage}
-        onFirst={firstPage}
-        onLast={lastPage}
-      />
+      {pageCount > 1 && (
+        <Pagination
+          hideText={true}
+          size="sm"
+          buttonWidth="9xl"
+          pageIndex={pageIndex}
+          pageCount={pageCount}
+          setPageIndex={setPageIndex}
+          onNext={nextPage}
+          onPrevious={previousPage}
+          onFirst={firstPage}
+          onLast={lastPage}
+        />
+      )}
     </XStack>
   );
 }

@@ -1,0 +1,81 @@
+/**
+ * Storm Sans and Storm Serif — self-hosted `@font-face` declarations for web
+ * applications.
+ *
+ * Uses the variable font builds, so every weight is available from a single
+ * file per style: 100 (Thin) to 700 (Bold) for Storm Sans, 200 (ExtraLight)
+ * to 800 (ExtraBold) for Storm Serif. Storm Serif also has an optical size
+ * axis (6-72), which browsers set from the font size automatically
+ * (`font-optical-sizing: auto`). The referenced files are built from the
+ * `./storm-sans` and `./storm-serif` UFO/designspace sources by the
+ * `fonts-storm-sans` and `fonts-storm-serif` projects (requires `fontmake`).
+ * Build both projects with:
+ *
+ *   nx run-many --target=build --projects=fonts-storm-sans,fonts-storm-serif
+ *
+ * URLs are relative to this file, so it works both from the source projects
+ * (`fonts/fonts.css` -> `fonts/storm-sans/dist/ttf/*`) and from the build
+ * output (`dist/fonts/fonts.css` -> `dist/fonts/storm-sans/dist/ttf/*`).
+ *
+ * Bundled apps (Vite, webpack, Next.js) can import it directly:
+ *
+ *   import "@fonts/fonts.css";
+ *
+ * Unbundled apps can serve the build output and link it:
+ *
+ *   <link rel="stylesheet" href="/fonts/fonts.css" />
+ *
+ * Then apply the family, for example:
+ *
+ *   font-family: "Storm Sans", -apple-system, BlinkMacSystemFont, system-ui,
+ *     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+ *
+ *   font-family: "Storm Serif", Georgia, Cambria, "Times New Roman", Times,
+ *     serif;
+ */
+
+@font-face {
+  font-family: "Storm Sans";
+  src:
+    url("./storm-sans/dist/ttf/Variable.ttf") format("truetype")
+      tech(variations),
+    url("./storm-sans/dist/ttf/Variable.ttf") format("truetype-variations");
+  font-weight: 100 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src:
+    url("./storm-sans/dist/ttf/Italic-Variable.ttf") format("truetype")
+      tech(variations),
+    url("./storm-sans/dist/ttf/Italic-Variable.ttf")
+      format("truetype-variations");
+  font-weight: 100 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src:
+    url("./storm-serif/dist/ttf/Variable.ttf") format("truetype")
+      tech(variations),
+    url("./storm-serif/dist/ttf/Variable.ttf") format("truetype-variations");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src:
+    url("./storm-serif/dist/ttf/Italic-Variable.ttf") format("truetype")
+      tech(variations),
+    url("./storm-serif/dist/ttf/Italic-Variable.ttf")
+      format("truetype-variations");
+  font-weight: 200 800;
+  font-style: italic;
+  font-display: swap;
+}

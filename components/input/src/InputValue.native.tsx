@@ -1,43 +1,73 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { styled, useComposedRefs } from "@tamagui/core";
+ ------------------------------------------------------------------- */
+
+"use client";
+
+import type { Mutable } from "@stryke/types/base";
+import type { GetProps } from "@tamagui/core";
+import { createStyledHOC, styled, useComposedRefs } from "@tamagui/core";
 import { registerFocusable } from "@tamagui/focusable";
+import type { ComponentProps, ComponentType } from "react";
 import { useEffect, useRef } from "react";
 import type {
-  NativeSyntheticEvent,
-  TextInputChangeEventData,
-  TextInputKeyPressEventData,
-  TextInputSubmitEditingEventData
+  TextInputChangeEvent,
+  TextInputKeyPressEvent,
+  TextInputSubmitEditingEvent
 } from "react-native";
 import { TextInput } from "react-native";
-import type { InputProps } from "./types";
-import { baseInputStyle, InputContext } from "./utilities";
+import type { InputComponentProps } from "./types";
+import { baseInputStyle, InputContext, useInputBehavior } from "./utilities";
 
-const BaseInputValue = styled(TextInput, baseInputStyle[0], baseInputStyle[1]);
+/* eslint-disable ts/no-unused-vars --
+ * Web-only props are destructured so they are not forwarded to the native input.
+ */
 
-export const Input = BaseInputValue.styleable<InputProps>(
-  (inProps, forwardedRef) => {
-    const { disabled, name, onChange, onInput, onBlur, onFocus } =
-      InputContext.useStyledContext();
+const BaseInputValue = styled(
+  TextInput,
+  baseInputStyle[0] as any,
+  baseInputStyle[1]
+);
+
+export const InputValue: ComponentType<InputComponentProps> = createStyledHOC(
+  BaseInputValue,
+  (
+    inProps: Omit<GetProps<typeof BaseInputValue>, "onChange" | "onInput"> &
+      InputComponentProps,
+    forwardedRef
+  ) => {
+    const {
+      disabled: contextDisabled,
+      readOnly: contextReadOnly,
+      name: contextName
+    } = InputContext.useStyledContext();
+    const {
+      onChange: contextOnChange,
+      onInput: contextOnInput,
+      onBlur,
+      onFocus,
+      name: behaviorName
+    } = useInputBehavior();
 
     const {
       // some of destructed props are just to avoid passing them to ...rest because they are not in native.
       type,
+      onChange: inputOnChange,
+      onInput: inputOnInput,
       // @ts-ignore
       dirname,
       max,
@@ -48,22 +78,28 @@ export const Input = BaseInputValue.styleable<InputProps>(
       required,
       step,
       disabled: _disabled,
+      readOnly: _readOnly,
       id,
       caretColor,
       rows,
       enterKeyHint,
       returnKeyType,
       onKeyDown,
+      render: _render,
       inputMode,
-      tag,
       ...rest
     } = inProps;
+    const disabled = inProps.disabled ?? contextDisabled;
+    const readOnly = inProps.readOnly ?? contextReadOnly;
+    const name = inProps.name ?? behaviorName ?? contextName;
+    const onChange = inputOnChange ?? contextOnChange;
+    const onInput = inputOnInput ?? contextOnInput;
 
     const ref = useRef<HTMLInputElement>(null);
     const composedRefs = useComposedRefs<any>(forwardedRef, ref);
 
     let secureTextEntry = false;
-    let cursorColor = caretColor;
+    const cursorColor = caretColor;
     let _returnKeyType = returnKeyType;
     let _enterKeyHint = enterKeyHint;
     if (enterKeyHint === "go") {
@@ -104,21 +140,19 @@ export const Input = BaseInputValue.styleable<InputProps>(
       enterKeyHint: _enterKeyHint,
       returnKeyType: _returnKeyType,
       secureTextEntry,
-      numberOfLines: rows || rest.numberOfLines
-    } as any;
+      numberOfLines: rows ?? rest.numberOfLines
+    } as Mutable<ComponentProps<typeof BaseInputValue>>;
 
-    if (tag === "textarea") {
+    if (type === "textarea") {
       finalProps.multiline = true;
     }
 
     if (onKeyDown) {
-      finalProps.onKeyPress = (
-        e: NativeSyntheticEvent<TextInputKeyPressEventData>
-      ) => {
+      finalProps.onKeyPress = (e: TextInputKeyPressEvent) => {
         const { key } = e.nativeEvent;
         if (
           key === "Backspace" ||
-          (tag === "textarea" && key === "Enter") ||
+          (type === "textarea" && key === "Enter") ||
           key.length === 1
         ) {
           onKeyDown({
@@ -128,9 +162,7 @@ export const Input = BaseInputValue.styleable<InputProps>(
         }
       };
 
-      finalProps.onSubmitEditing = (
-        e: NativeSyntheticEvent<TextInputSubmitEditingEventData>
-      ) => {
+      finalProps.onSubmitEditing = (_e: TextInputSubmitEditingEvent) => {
         onKeyDown({
           key: "Enter",
           type: "keydown"
@@ -139,11 +171,8 @@ export const Input = BaseInputValue.styleable<InputProps>(
     }
 
     if (onChange || onInput) {
-      finalProps.onChange = (
-        event: NativeSyntheticEvent<TextInputChangeEventData>
-      ) => {
+      finalProps.onChange = (event: TextInputChangeEvent) => {
         const { text } = event.nativeEvent;
-
         if (onInput) {
           onInput(
             new CustomEvent("input", {
@@ -183,13 +212,16 @@ export const Input = BaseInputValue.styleable<InputProps>(
 
     return (
       <BaseInputValue
-        onChange={e => {}}
+        onChange={_e => {}}
         ref={composedRefs}
         onBlur={onBlur}
         onFocus={onFocus}
-        editable={!disabled}
         {...finalProps}
+        editable={!disabled && !readOnly}
       />
     );
   }
 );
+
+/** @deprecated Use InputValue. */
+export { InputValue as Input };

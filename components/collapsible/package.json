@@ -1,0 +1,52 @@
+{
+  "name": "@cyclone-ui/collapsible",
+  "version": "0.3.94",
+  "type": "module",
+  "description": "A single disclosure panel built on Accordion, with Collapsible.Header and Collapsible.Content subcomponents and a chevron icon. Open state can be controlled with a boolean value or left uncontrolled with defaultValue. Use it to show and hide one section of content.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/collapsible"
+  },
+  "private": false,
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/accordion": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/helpers": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "module:jsx": "dist/jsx",
+  "source": "src/index.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Collapsible": {
+      "import": "./dist/Collapsible.mjs",
+      "require": "./dist/Collapsible.cjs"
+    },
+    "./get-collapsible-value": {
+      "import": "./dist/get-collapsible-value.mjs",
+      "require": "./dist/get-collapsible-value.cjs"
+    },
+    "./*": "./*"
+  }
+}

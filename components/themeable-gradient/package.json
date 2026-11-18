@@ -1,45 +1,33 @@
 {
   "name": "@cyclone-ui/themeable-gradient",
-  "version": "0.0.1",
+  "version": "0.0.93",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A ThemeableGradient component that renders a diagonal LinearGradient. Its color stops are generated from a theme color (accent by default) using a scientific palette variant such as surrounding. An optional theme prop applies a specific theme. Use it for decorative backgrounds that follow the active theme.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/themeable-gradient"
   },
   "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
   "files": [
-    "dist",
-    "src",
-    "types"
+    "dist"
   ],
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/helpers-tamagui": "^1.116.15",
-    "@tamagui/linear-gradient": "^1.116.15"
+    "@cyclone-ui/helpers": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/helpers-tamagui": "catalog:",
+    "@tamagui/linear-gradient": "catalog:"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"
@@ -47,5 +35,19 @@
   "sideEffects": [
     "*.css"
   ],
-  "module:jsx": "dist/jsx"
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./ThemeableGradient": {
+      "import": "./dist/ThemeableGradient.mjs",
+      "require": "./dist/ThemeableGradient.cjs"
+    },
+    "./*": "./*"
+  }
 }

@@ -1,55 +1,114 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { isNumber } from "@storm-stack/types";
-import type { SizeTokens, VariantSpreadExtras } from "@tamagui/core";
-import { getSpace } from "@tamagui/get-token";
+ ------------------------------------------------------------------- */
+
+import { isNumber } from "@stryke/type-checks/is-number";
+import { getTokenRelative } from "./get-token-relative";
+import type { TokenInput } from "./token-value";
+import { normalizeTokenValue } from "./token-value";
+import type { StyleEnv } from "./types";
+
+const FALLBACK_HEIGHT = 44;
+
+const tokenNumber = (token: unknown): number | undefined => {
+  if (typeof token === "number") {
+    return token;
+  }
+
+  if (token && typeof token === "object" && "val" in token) {
+    const value = token.val;
+
+    return typeof value === "number" ? value : undefined;
+  }
+
+  return undefined;
+};
+
+const lookupToken = (group: unknown, key: string) => {
+  if (!group || typeof group !== "object") {
+    return;
+  }
+
+  const tokens = group as Record<string, unknown>;
+  const normalized = key.replace(/^\$/, "");
+
+  return tokens[key] ?? tokens[`$${normalized}`] ?? tokens[normalized];
+};
+
+const resolveTokenKey = (val: TokenInput) => {
+  const rawKey = String(normalizeTokenValue(val));
+
+  return rawKey === "true" ? "5xl" : rawKey;
+};
 
 /**
  * Get the sizing related style values for a button component based on the size token or number
  *
  * @param val - The size token or number to use
- * @param param - The tokens and props to use
+ * @param env - The `styled.dynamic` environment
+ * @param circular - Whether the button is circular
  * @returns The style values for the button sizing
  */
 export const getButtonSized = (
-  val: SizeTokens | number,
-  { tokens, props }: VariantSpreadExtras<any>
+  val: TokenInput,
+  { tokens }: StyleEnv = {},
+  circular = false
 ) => {
-  if (!val || props.circular) {
+  if (!val) {
     return;
   }
 
-  if (isNumber(val)) {
+  const borderRadius = circular ? 100_000 : "button";
+
+  const tokenValue = normalizeTokenValue(val);
+
+  if (isNumber(tokenValue)) {
     return {
-      paddingHorizontal: val * 0.25,
-      gap: val * 0.25,
-      height: val,
-      borderRadius: props.circular ? 100_000 : val * 0.2
+      paddingHorizontal: circular ? 0 : tokenValue * 0.25,
+      gap: circular ? 0 : tokenValue * 0.25,
+      height: tokenValue,
+      minHeight: tokenValue,
+      ...(circular
+        ? { width: tokenValue, minWidth: tokenValue }
+        : { minWidth: "fit-content" }),
+      borderRadius
     };
   }
 
-  const size = getSpace(val);
-  const radiusToken = tokens.radius[val] ?? tokens.radius["$true"];
+  const tokenKey = resolveTokenKey(tokenValue);
+
+  const height =
+    tokenNumber(lookupToken(tokens?.size, tokenKey)) ??
+    tokenNumber(lookupToken(tokens?.size, "5xl")) ??
+    tokenNumber(getTokenRelative("size", tokenKey)) ??
+    FALLBACK_HEIGHT;
+  const space =
+    tokenNumber(getTokenRelative("space", tokenKey, { shift: -1 })) ??
+    tokenNumber(lookupToken(tokens?.space, "2xl")) ??
+    10;
 
   return {
-    paddingHorizontal: size,
-    gap: size,
-    height: val,
-    borderRadius: props.circular ? 100_000 : radiusToken
+    paddingHorizontal: circular ? 0 : space,
+    gap: circular ? 0 : space,
+    height,
+    minHeight: height,
+    ...(circular
+      ? { width: height, minWidth: height }
+      : { minWidth: "fit-content" }),
+    borderRadius
   };
 };

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<defs>
+		<mask id="certificate-mask">
+			<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+				<path d="M12 4H20a1 1 0 0 1 1 1V15a1 1 0 0 1 -1 1H4a1 1 0 0 1 -1 -1V5a1 1 0 0 1 1 -1Z" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="59"><animate attributeName="fill-opacity" begin="0.8s" dur="0.4s" fill="freeze" to="1" /><animate attributeName="stroke-dashoffset" dur="0.6s" fill="freeze" values="59;0" /></path>
+				<path d="M13 16V20.5L15 19L17 20.5V16" stroke="#fff" fill="#fff" fill-opacity="0" stroke-dasharray="15" stroke-dashoffset="15"><animate attributeName="fill-opacity" begin="0.8s" dur="0.4s" fill="freeze" to="1" /><animate attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" fill="freeze" to="0" /></path>
+				<path d="M6 7h4" stroke="#000" stroke-width="1.5" stroke-dasharray="5" stroke-dashoffset="5"><animate attributeName="stroke-dashoffset" begin="1.2s" dur="0.15s" fill="freeze" to="0" /></path>
+				<path d="M6 10h2" stroke="#000" stroke-width="1.5" stroke-dasharray="3" stroke-dashoffset="3"><animate attributeName="stroke-dashoffset" begin="1.35s" dur="0.15s" fill="freeze" to="0" /></path>
+				<path d="M6 13h4" stroke="#000" stroke-width="1.5" stroke-dasharray="5" stroke-dashoffset="5"><animate attributeName="stroke-dashoffset" begin="1.5s" dur="0.15s" fill="freeze" to="0" /></path>
+				<path d="M15 7a3 3 0 1 1 0 6a3 3 0 1 1 0 -6Z" stroke="#000" stroke-width="1.5" stroke-dasharray="20" stroke-dashoffset="20"><animate attributeName="stroke-dashoffset" begin="1.65s" dur="0.3s" fill="freeze" to="0" /></path>
+			</g>
+		</mask>
+	</defs>
+	<path d="M0 0h24v24H0z" fill="currentColor" mask="url(#certificate-mask)" />
+</svg>

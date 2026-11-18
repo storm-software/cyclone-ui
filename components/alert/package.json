@@ -1,50 +1,39 @@
 {
   "name": "@cyclone-ui/alert",
-  "version": "0.4.0",
+  "version": "0.4.99",
   "type": "module",
-  "description": "A package containing the Alert component used by Storm Software",
+  "description": "An inline alert banner with compound parts (Alert.Icon, Alert.Content.Heading, Alert.Content.Body, Alert.Close). Its type prop (base, brand, danger, warning, info, success, discovery, positive, negative) sets the color theme and default icon. Use it to show status or feedback messages in the page.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/alert"
   },
   "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
   "files": [
-    "dist",
-    "src",
-    "types"
+    "dist"
   ],
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/group": "^1.116.15",
-    "@tamagui/helpers": "^1.116.15",
-    "@tamagui/helpers-tamagui": "^1.116.15",
-    "@tamagui/lucide-icons": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15",
-    "@tamagui/text": "^1.116.15",
-    "@tamagui/web": "^1.116.15"
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/container": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@tamagui/animate-presence": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@tamagui/web": "catalog:"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "@storybook/react-vite": "catalog:",
+    "@tamagui/get-font-sized": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"
@@ -52,5 +41,19 @@
   "sideEffects": [
     "*.css"
   ],
-  "module:jsx": "dist/jsx"
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Alert": {
+      "import": "./dist/Alert.mjs",
+      "require": "./dist/Alert.cjs"
+    },
+    "./*": "./*"
+  }
 }
