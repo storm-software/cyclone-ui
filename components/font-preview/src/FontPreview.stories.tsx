@@ -42,9 +42,11 @@ export const Base: Story = {
     await expect(canvas.getByText("Regular 400 Italic")).toBeInTheDocument();
     await expect(canvas.getByText("ExtraBold 800 Italic")).toBeInTheDocument();
 
-    const input = canvasElement.querySelector<HTMLInputElement>("input")!;
+    const input = canvas.getByPlaceholderText(
+      "The quick brown fox jumps over the lazy dog"
+    );
     await userEvent.type(input, "Some custom text");
-    await waitFor(async () =>
+    await waitFor(() =>
       expect(canvas.getAllByText("Some custom text")).toHaveLength(14)
     );
 
@@ -53,12 +55,8 @@ export const Base: Story = {
     await expect(thumb).toHaveAttribute("aria-valuenow", "64");
     thumb.focus();
     await userEvent.keyboard("{ArrowRight}");
-    await waitFor(async () =>
-      expect(thumb).toHaveAttribute("aria-valuenow", "65")
-    );
-    await waitFor(async () =>
-      expect(canvasElement.textContent).toContain("65px")
-    );
+    await waitFor(() => expect(thumb).toHaveAttribute("aria-valuenow", "65"));
+    await waitFor(() => expect(canvasElement.textContent).toContain("65px"));
   }
 };
 

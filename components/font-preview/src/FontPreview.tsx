@@ -207,6 +207,39 @@ const FontPreviewRow = ({
   </YStack>
 );
 
+const FontPreviewTextField = ({ sampleText }: { sampleText: string }) => (
+  <Field name="text">
+    <Field.Label>Type here to preview text</Field.Label>
+    <Input circular>
+      <Input.TextBox>
+        <Input.TextBox.Value placeholder={sampleText} />
+      </Input.TextBox>
+    </Input>
+  </Field>
+);
+
+const FontPreviewSizeField = ({
+  sizeOptions
+}: {
+  sizeOptions: readonly number[];
+}) => (
+  <Field name="size">
+    <Field.Label>Size</Field.Label>
+    <Select searchable={false}>
+      <Select.TextBox>
+        <Select.TextBox.Value />
+      </Select.TextBox>
+      <Select.Items>
+        {sizeOptions.map((option, index) => (
+          <Select.Items.Item key={option} index={index} value={String(option)}>
+            {`${option}px`}
+          </Select.Items.Item>
+        ))}
+      </Select.Items>
+    </Select>
+  </Field>
+);
+
 type FontPreviewContentProps = Required<
   Pick<FontPreviewProps, "fontFamily" | "sizes" | "defaultSize" | "sampleText">
 > &
@@ -233,34 +266,10 @@ const FontPreviewContent = ({
     <>
       <XStack gap="3xl" alignItems="center" flexWrap="wrap">
         <View flexGrow={3} flexBasis={240} minWidth={0}>
-          <Field name="text">
-            <Field.Label>Type here to preview text</Field.Label>
-            <Input circular={true}>
-              <Input.TextBox>
-                <Input.TextBox.Value placeholder={sampleText} />
-              </Input.TextBox>
-            </Input>
-          </Field>
+          <FontPreviewTextField sampleText={sampleText} />
         </View>
         <View width="20xl" flexShrink={0}>
-          <Field name="size">
-            <Field.Label>Size</Field.Label>
-            <Select searchable={false}>
-              <Select.TextBox>
-                <Select.TextBox.Value />
-              </Select.TextBox>
-              <Select.Items>
-                {sizeOptions.map((option, index) => (
-                  <Select.Items.Item
-                    key={option}
-                    index={index}
-                    value={String(option)}>
-                    {`${option}px`}
-                  </Select.Items.Item>
-                ))}
-              </Select.Items>
-            </Select>
-          </Field>
+          <FontPreviewSizeField sizeOptions={sizeOptions} />
         </View>
         <View flexGrow={1} flexBasis={160} minWidth={0}>
           <Slider
