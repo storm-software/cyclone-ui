@@ -3,7 +3,9 @@
   "projectOwner": "storm-software",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "files": ["README.md"],
+  "files": [
+    "README.md"
+  ],
   "imageSize": 100,
   "contributorsPerLine": 5,
   "linkToUsage": true,
@@ -16,21 +18,40 @@
       "name": "Patrick Sullivan",
       "avatar_url": "https://avatars.githubusercontent.com/u/99053093?v=4",
       "profile": "http://www.sullypat.com/",
-      "contributions": ["design", "code", "tool", "doc", "test"]
+      "contributions": [
+        "design",
+        "code",
+        "tool",
+        "doc",
+        "test"
+      ]
     },
     {
       "login": "tbenning",
       "name": "Tyler Benning",
       "avatar_url": "https://avatars.githubusercontent.com/u/7265547?v=4",
       "profile": "https://tylerbenning.com/",
-      "contributions": ["design"]
+      "contributions": [
+        "design"
+      ]
     },
     {
       "login": "stormie-bot",
       "name": "Stormie",
       "avatar_url": "https://avatars.githubusercontent.com/u/149802440?v=4",
       "profile": "http://stormsoftware.com",
-      "contributions": ["maintenance"]
+      "contributions": [
+        "maintenance"
+      ]
+    },
+    {
+      "login": "zkoppert",
+      "name": "Zack Koppert",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6935431?v=4",
+      "profile": "https://www.zackkoppert.com",
+      "contributions": [
+        "code"
+      ]
     }
   ]
 }
