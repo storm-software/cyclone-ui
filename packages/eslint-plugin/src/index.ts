@@ -4276,6 +4276,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/color-token",
+      jsx: ["ColorToken"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/composed-chart",
       jsx: ["ComposedChart"],
       roles: []
@@ -4752,14 +4757,7 @@ export const manifest: DesignSystemManifest = {
     }
   ],
   icons: [],
-  fonts: [
-    {
-      family: "Storm Sans"
-    },
-    {
-      family: "Storm Serif"
-    }
-  ],
+  fonts: [],
   tailwind: {
     name: "cyclone-ui",
     version: "0.0.0",

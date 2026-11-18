@@ -1,0 +1,58 @@
+{
+  "name": "@cyclone-ui/color-token",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A color token swatch that shows the token's color, its name and description in a Tooltip on hover, and its hex value inline on hover or focus. Pressing it copies the hex value; Shift with a press copies the OKLCH value.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/color-token"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/copy-button": "workspace:*",
+    "@cyclone-ui/tooltip": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "chroma-js": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "@types/chroma-js": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./ColorToken": {
+      "import": "./dist/ColorToken.mjs",
+      "require": "./dist/ColorToken.cjs"
+    },
+    "./utilities": {
+      "import": "./dist/utilities.mjs",
+      "require": "./dist/utilities.cjs"
+    },
+    "./*": "./*"
+  }
+}

@@ -8,6 +8,12 @@ $schema: https://raw.githubusercontent.com/evilmartians/lefthook/refs/heads/mast
 assert_lefthook_installed: true
 no_tty: false
 min_version: "2.0.0"
+
+# Hook commands run inside the devenv shell (see .lefthook/devenv-run.sh), so
+# devenv-provided tools such as pnpm are available however git is invoked.
+templates:
+  devenv: .lefthook/devenv-run.sh
+
 # remotes:
 #   - git_url: https://github.com/storm-software/storm-ops
 #     ref: main
@@ -18,12 +24,12 @@ pre-commit:
   commands:
     nx-sync:
       glob: "**/*"
-      run: "pnpm nx sync"
+      run: "{devenv} pnpm nx sync"
       stage_fixed: true
 
 pre-push:
   commands:
     nx-sync:
       glob: "**/*"
-      run: pnpm nx sync
+      run: "{devenv} pnpm nx sync"
       stage_fixed: true

@@ -748,6 +748,36 @@
       ]
     },
     {
+      "name": "@cyclone-ui/color-token",
+      "type": "registry:component",
+      "title": "@cyclone-ui/color-token",
+      "description": "A color token swatch that shows the token's color, its name and description in a Tooltip on hover, and its hex value inline on hover or focus. Pressing it copies the hex value; Shift with a press copies the OKLCH value.",
+      "dependencies": ["@tamagui/core@3.3.2", "chroma-js@^2.6.0"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "@types/chroma-js@^2.4.5",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/copy-button",
+        "@cyclone-ui/tooltip"
+      ],
+      "files": [
+        {
+          "path": "components/color-token/src/ColorToken.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/color-token/src/utilities.ts",
+          "type": "registry:file",
+          "target": "components/color-token/src/utilities.ts"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/composed-chart",
       "type": "registry:component",
       "title": "@cyclone-ui/composed-chart",

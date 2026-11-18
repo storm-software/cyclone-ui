@@ -419,6 +419,9 @@
     },
     {
       "path": "./components/copy-button"
+    },
+    {
+      "path": "./components/color-token"
     }
   ],
   "files": []
