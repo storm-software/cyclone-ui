@@ -759,7 +759,7 @@ const ButtonTextFrame = styled(Text, {
       link: {
         color: "link",
         textDecorationLine: "underline",
-        textDecorationColor: "link",
+        textDecorationColor: "link/50",
         textDecorationStyle: "solid"
       }
     },
@@ -924,7 +924,9 @@ const ButtonText = createStyledHOC(
         color={`${String(colorForVariant(variant, disabled, color, theme))} group-hover/button:${hoverColor}`}
         {...props}
         borderRadius={0}
-        textDecorationColor={`group-hover/button:${hoverColor}`}>
+        textDecorationColor={`group-hover/button:${hoverColor}${
+          variant === "link" ? "/50" : ""
+        }`}>
         {children}
       </ButtonTextFrame>
     );

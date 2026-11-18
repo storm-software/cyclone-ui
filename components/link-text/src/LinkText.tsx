@@ -212,7 +212,7 @@ export const LinkText = createStyledHOC(
       [textColor, decorationColor] = [decorationColor, textColor];
     }
     if (faded) {
-      decorationColor = decorationColor.replaceAll(/\S+/g, "$&/60");
+      decorationColor = decorationColor.replaceAll(/\S+/g, "$&/50");
     }
     if (disabled) {
       textColor = `${link}-disabled hover:${link}-disabled`;
