@@ -156,6 +156,7 @@ The pages below describe the public parts and props. Choose a semantic token for
 | [Number Text](./number-text.md) | A label-styled text component that renders its numeric children with NumberFlow, so changes in value are animated. |
 | [Preview Link](./preview-link.md) | A Link with a dotted underline that shows a Tooltip with more details when hovered or focused. |
 | [Kbd](./kbd.md) | A keyboard key (`<kbd>`) in three sizes, with `KbdGroup` for key combinations such as Ctrl + K. |
+| [Font Preview](./font-preview.md) | A font specimen with a row for each weight and style of a font, in text the reader types at a size chosen with a select or slider. |
 
 ## Media and motion
 
