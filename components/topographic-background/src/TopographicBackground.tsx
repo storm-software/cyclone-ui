@@ -93,10 +93,10 @@ export type TopographicBackgroundProps = GetProps<
    * seconds, modulo 3600, and `light` is true in a light theme. Frames are
    * drawn when `floor(timestamp / (1000 / 30))` changes, so a renderer
    * elsewhere on the page that follows the same rules can draw the same
-   * effect in step. Name any helpers so that they don't clash with the
-   * renderer's own (`hash`, `noise`, `toLinear`). Only the `interactive`
-   * renderer draws it, so touch-first devices don't, and reduced motion
-   * turns it off.
+   * effect in step. It eases in with the warp over the first 4 seconds. Name
+   * any helpers so that they don't clash with the renderer's own (`hash`,
+   * `noise`, `toLinear`). Only the `interactive` renderer draws it, so
+   * touch-first devices don't, and reduced motion turns it off.
    */
   paintShader?: string;
 };

@@ -26,10 +26,12 @@ const meta: Meta<typeof Skeleton> = {
   tags: ["autodocs"],
   args: {
     animation: "wave",
+    variant: "normal",
     shape: "rectangle"
   },
   argTypes: {
     animation: { control: "inline-radio", options: ["wave", "none"] },
+    variant: { control: "inline-radio", options: ["normal", "pixel"] },
     shape: { control: "inline-radio", options: ["rectangle", "circle"] }
   },
   decorators: [
@@ -85,6 +87,13 @@ export const Card: Story = {
       </View>
     </View>
   )
+};
+
+export const Pixel: Story = {
+  args: {
+    variant: "pixel"
+  },
+  render: Card.render
 };
 
 export const NoAnimation: Story = {

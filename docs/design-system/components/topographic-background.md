@@ -122,7 +122,7 @@ float paint(vec2 px, vec2 viewport, float time, bool light);
 | `time` | The `requestAnimationFrame` timestamp of the frame, in seconds, modulo 3600. |
 | `light` | `true` in a light theme. |
 
-It returns how much of the color map shows, from 0 (grey) to 1 (full color). The shader combines it with the pointer's paint. Name any helper functions so that they don't clash with the renderer's own `hash`, `noise`, and `toLinear`.
+It returns how much of the color map shows, from 0 (grey) to 1 (full color). The shader combines it with the pointer's paint. Like the warp, it eases in over the first 4 seconds, so the first frame matches the static image. Name any helper functions so that they don't clash with the renderer's own `hash`, `noise`, and `toLinear`.
 
 The arguments don't depend on the canvas. Another renderer on the page can evaluate the same GLSL with the same arguments. If it also draws when `floor(timestamp / (1000 / 30))` changes, its effect stays in step with the background. A drop can then fall from the background into another canvas without a break.
 
