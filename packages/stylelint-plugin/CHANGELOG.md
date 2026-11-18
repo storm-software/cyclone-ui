@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.78](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.78) (11/18/2026)
+
+### Features
+
+- **color-token:** Initial check-in of the color token display component ([d7e7f06b1](https://github.com/storm-software/cyclone-ui/commit/d7e7f06b1))
+
 ## [0.0.75](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.75) (11/17/2026)
 
 ### Features
