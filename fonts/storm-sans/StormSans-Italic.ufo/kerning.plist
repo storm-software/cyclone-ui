@@ -5,7 +5,7 @@
     <key>Aogonek</key>
     <dict>
       <key>j</key>
-      <integer>90</integer>
+      <integer>167</integer>
       <key>uni0458</key>
       <integer>90</integer>
     </dict>
@@ -147,6 +147,11 @@
       <key>zeta</key>
       <integer>-5</integer>
     </dict>
+    <key>Ccedilla</key>
+    <dict>
+      <key>j</key>
+      <integer>4</integer>
+    </dict>
     <key>Chi</key>
     <dict>
       <key>Phi</key>
@@ -260,10 +265,15 @@
       <key>zeta</key>
       <integer>-35</integer>
     </dict>
+    <key>Eng</key>
+    <dict>
+      <key>j</key>
+      <integer>57</integer>
+    </dict>
     <key>Eogonek</key>
     <dict>
       <key>j</key>
-      <integer>55</integer>
+      <integer>145</integer>
       <key>uni0458</key>
       <integer>55</integer>
     </dict>
@@ -586,10 +596,15 @@
       <key>zerosuperior</key>
       <integer>-10</integer>
     </dict>
+    <key>Idotbelow</key>
+    <dict>
+      <key>j</key>
+      <integer>5</integer>
+    </dict>
     <key>Iogonek</key>
     <dict>
       <key>j</key>
-      <integer>42</integer>
+      <integer>132</integer>
       <key>uni0458</key>
       <integer>42</integer>
     </dict>
@@ -1838,7 +1853,7 @@
     <key>aogonek</key>
     <dict>
       <key>j</key>
-      <integer>90</integer>
+      <integer>166</integer>
       <key>public.kern2.latn_lc_j</key>
       <integer>20</integer>
       <key>uni0458</key>
@@ -1967,7 +1982,7 @@
     <key>backslash</key>
     <dict>
       <key>j</key>
-      <integer>87</integer>
+      <integer>134</integer>
       <key>uni0414.loclBGR</key>
       <integer>100</integer>
       <key>uni0437.loclBGR</key>
@@ -2021,16 +2036,31 @@
     <key>braceleft</key>
     <dict>
       <key>j</key>
-      <integer>5</integer>
+      <integer>94</integer>
       <key>uni0458</key>
       <integer>5</integer>
+    </dict>
+    <key>braceright</key>
+    <dict>
+      <key>j</key>
+      <integer>4</integer>
     </dict>
     <key>bracketleft</key>
     <dict>
       <key>j</key>
-      <integer>0</integer>
+      <integer>83</integer>
       <key>uni0458</key>
       <integer>0</integer>
+    </dict>
+    <key>bracketright</key>
+    <dict>
+      <key>j</key>
+      <integer>61</integer>
+    </dict>
+    <key>ccedilla</key>
+    <dict>
+      <key>j</key>
+      <integer>70</integer>
     </dict>
     <key>chi</key>
     <dict>
@@ -2069,7 +2099,7 @@
       <key>foursuperior</key>
       <integer>20</integer>
       <key>j</key>
-      <integer>63</integer>
+      <integer>153</integer>
       <key>kappa</key>
       <integer>-12</integer>
       <key>lambda</key>
@@ -2265,6 +2295,11 @@
       <integer>10</integer>
       <key>zerosuperior</key>
       <integer>-15</integer>
+    </dict>
+    <key>dotlessj</key>
+    <dict>
+      <key>j</key>
+      <integer>61</integer>
     </dict>
     <key>eightinferior</key>
     <dict>
@@ -2598,6 +2633,26 @@
       <key>zeta</key>
       <integer>-10</integer>
     </dict>
+    <key>eng</key>
+    <dict>
+      <key>j</key>
+      <integer>61</integer>
+    </dict>
+    <key>eogonek</key>
+    <dict>
+      <key>j</key>
+      <integer>54</integer>
+    </dict>
+    <key>eta</key>
+    <dict>
+      <key>j</key>
+      <integer>63</integer>
+    </dict>
+    <key>etatonos</key>
+    <dict>
+      <key>j</key>
+      <integer>63</integer>
+    </dict>
     <key>eth</key>
     <dict>
       <key>public.kern2.latn_uc_t</key>
@@ -2624,6 +2679,11 @@
       <integer>-40</integer>
       <key>uni04AE</key>
       <integer>-40</integer>
+    </dict>
+    <key>f</key>
+    <dict>
+      <key>j</key>
+      <integer>26</integer>
     </dict>
     <key>fiveinferior</key>
     <dict>
@@ -3462,12 +3522,17 @@
       <key>public.kern2.latn_uc_y</key>
       <integer>10</integer>
     </dict>
+    <key>idotbelow</key>
+    <dict>
+      <key>j</key>
+      <integer>103</integer>
+    </dict>
     <key>ij</key>
     <dict>
       <key>V</key>
       <integer>0</integer>
       <key>j</key>
-      <integer>14</integer>
+      <integer>104</integer>
       <key>public.kern2.latn_uc_y</key>
       <integer>-20</integer>
       <key>uni0458</key>
@@ -3492,7 +3557,7 @@
     <key>iogonek</key>
     <dict>
       <key>j</key>
-      <integer>90</integer>
+      <integer>166</integer>
       <key>public.kern2.latn_lc_j</key>
       <integer>10</integer>
       <key>uni0458</key>
@@ -3593,6 +3658,8 @@
     <dict>
       <key>V</key>
       <integer>0</integer>
+      <key>j</key>
+      <integer>77</integer>
       <key>public.kern2.latn_uc_y</key>
       <integer>-10</integer>
     </dict>
@@ -3613,6 +3680,8 @@
       <integer>40</integer>
       <key>foursuperior</key>
       <integer>10</integer>
+      <key>j</key>
+      <integer>61</integer>
       <key>ninesuperior</key>
       <integer>40</integer>
       <key>onesuperior</key>
@@ -3851,9 +3920,14 @@
     <key>lcommaaccent</key>
     <dict>
       <key>j</key>
-      <integer>17</integer>
+      <integer>104</integer>
       <key>uni0458</key>
       <integer>17</integer>
+    </dict>
+    <key>longs</key>
+    <dict>
+      <key>j</key>
+      <integer>58</integer>
     </dict>
     <key>lslash</key>
     <dict>
@@ -4557,7 +4631,7 @@
       <key>iotadieresistonos</key>
       <integer>40</integer>
       <key>j</key>
-      <integer>65</integer>
+      <integer>144</integer>
       <key>public.kern2.cyrl_lc_che</key>
       <integer>-10</integer>
       <key>public.kern2.cyrl_lc_cheabkhaz</key>
@@ -14025,6 +14099,11 @@
       <key>zerosuperior</key>
       <integer>20</integer>
     </dict>
+    <key>q</key>
+    <dict>
+      <key>j</key>
+      <integer>63</integer>
+    </dict>
     <key>question</key>
     <dict>
       <key>V</key>
@@ -14238,6 +14317,11 @@
       <integer>10</integer>
       <key>zerosuperior</key>
       <integer>-15</integer>
+    </dict>
+    <key>scedilla</key>
+    <dict>
+      <key>j</key>
+      <integer>48</integer>
     </dict>
     <key>seveninferior</key>
     <dict>
@@ -14692,6 +14776,8 @@
       <integer>-15</integer>
       <key>foursuperior</key>
       <integer>25</integer>
+      <key>j</key>
+      <integer>66</integer>
       <key>public.kern2.grek_uc_Upsilon</key>
       <integer>-47</integer>
       <key>public.kern2.inp_colon</key>
@@ -15332,6 +15418,16 @@
       <integer>25</integer>
       <key>trademark</key>
       <integer>50</integer>
+    </dict>
+    <key>tcedilla</key>
+    <dict>
+      <key>j</key>
+      <integer>148</integer>
+    </dict>
+    <key>tcommaaccent</key>
+    <dict>
+      <key>j</key>
+      <integer>75</integer>
     </dict>
     <key>theta</key>
     <dict>
@@ -16036,7 +16132,7 @@
       <key>delta</key>
       <integer>-90</integer>
       <key>j</key>
-      <integer>63</integer>
+      <integer>121</integer>
       <key>p</key>
       <integer>10</integer>
       <key>phi</key>
@@ -16263,6 +16359,8 @@
       <integer>19</integer>
       <key>foursuperior</key>
       <integer>-37</integer>
+      <key>j</key>
+      <integer>30</integer>
       <key>nineinferior</key>
       <integer>20</integer>
       <key>ninesuperior</key>
@@ -16864,7 +16962,7 @@
     <key>uni0414</key>
     <dict>
       <key>j</key>
-      <integer>46</integer>
+      <integer>121</integer>
       <key>uni0458</key>
       <integer>46</integer>
     </dict>
@@ -17547,14 +17645,14 @@
     <key>uni0426</key>
     <dict>
       <key>j</key>
-      <integer>46</integer>
+      <integer>121</integer>
       <key>uni0458</key>
       <integer>46</integer>
     </dict>
     <key>uni0429</key>
     <dict>
       <key>j</key>
-      <integer>44</integer>
+      <integer>121</integer>
       <key>uni0458</key>
       <integer>44</integer>
     </dict>
@@ -18108,6 +18206,11 @@
       <key>zerosuperior</key>
       <integer>32</integer>
     </dict>
+    <key>uni0443</key>
+    <dict>
+      <key>j</key>
+      <integer>113</integer>
+    </dict>
     <key>uni0444</key>
     <dict>
       <key>ampersand</key>
@@ -18358,14 +18461,14 @@
     <key>uni0446</key>
     <dict>
       <key>j</key>
-      <integer>47</integer>
+      <integer>132</integer>
       <key>uni0458</key>
       <integer>47</integer>
     </dict>
     <key>uni0449</key>
     <dict>
       <key>j</key>
-      <integer>47</integer>
+      <integer>132</integer>
       <key>uni0458</key>
       <integer>47</integer>
     </dict>
@@ -18385,6 +18488,8 @@
       <integer>-18</integer>
       <key>foursuperior</key>
       <integer>-2</integer>
+      <key>j</key>
+      <integer>61</integer>
       <key>ninesuperior</key>
       <integer>-23</integer>
       <key>onesuperior</key>
@@ -18777,7 +18882,7 @@
     <key>uni0458</key>
     <dict>
       <key>j</key>
-      <integer>14</integer>
+      <integer>104</integer>
       <key>ninesuperior</key>
       <integer>-10</integer>
       <key>onesuperior</key>
@@ -18822,6 +18927,11 @@
       <integer>-10</integer>
       <key>uni04D4</key>
       <integer>-10</integer>
+    </dict>
+    <key>uni045E</key>
+    <dict>
+      <key>j</key>
+      <integer>113</integer>
     </dict>
     <key>uni0474</key>
     <dict>
@@ -19260,17 +19370,22 @@
       <key>zerosuperior</key>
       <integer>38</integer>
     </dict>
+    <key>uni0494</key>
+    <dict>
+      <key>j</key>
+      <integer>17</integer>
+    </dict>
     <key>uni0495</key>
     <dict>
       <key>j</key>
-      <integer>0</integer>
+      <integer>76</integer>
       <key>uni0458</key>
       <integer>0</integer>
     </dict>
     <key>uni0496</key>
     <dict>
       <key>j</key>
-      <integer>68</integer>
+      <integer>140</integer>
       <key>uni0458</key>
       <integer>68</integer>
     </dict>
@@ -19293,7 +19408,7 @@
       <key>foursuperior</key>
       <integer>15</integer>
       <key>j</key>
-      <integer>47</integer>
+      <integer>132</integer>
       <key>nineinferior</key>
       <integer>-5</integer>
       <key>ninesuperior</key>
@@ -19412,7 +19527,7 @@
     <key>uni049A</key>
     <dict>
       <key>j</key>
-      <integer>71</integer>
+      <integer>144</integer>
       <key>uni0458</key>
       <integer>71</integer>
     </dict>
@@ -19437,7 +19552,7 @@
       <key>foursuperior</key>
       <integer>10</integer>
       <key>j</key>
-      <integer>54</integer>
+      <integer>136</integer>
       <key>oneinferior</key>
       <integer>5</integer>
       <key>onesuperior</key>
@@ -19556,21 +19671,26 @@
     <key>uni04A2</key>
     <dict>
       <key>j</key>
-      <integer>45</integer>
+      <integer>120</integer>
       <key>uni0458</key>
       <integer>45</integer>
     </dict>
     <key>uni04A3</key>
     <dict>
       <key>j</key>
-      <integer>47</integer>
+      <integer>132</integer>
       <key>uni0458</key>
       <integer>47</integer>
+    </dict>
+    <key>uni04A6</key>
+    <dict>
+      <key>j</key>
+      <integer>18</integer>
     </dict>
     <key>uni04A7</key>
     <dict>
       <key>j</key>
-      <integer>0</integer>
+      <integer>76</integer>
       <key>uni0458</key>
       <integer>0</integer>
     </dict>
@@ -19617,6 +19737,16 @@
       <integer>-35</integer>
       <key>uni0475</key>
       <integer>-8</integer>
+    </dict>
+    <key>uni04AC</key>
+    <dict>
+      <key>j</key>
+      <integer>9</integer>
+    </dict>
+    <key>uni04AD</key>
+    <dict>
+      <key>j</key>
+      <integer>52</integer>
     </dict>
     <key>uni04AE</key>
     <dict>
@@ -20211,7 +20341,7 @@
       <key>foursuperior</key>
       <integer>-22</integer>
       <key>j</key>
-      <integer>91</integer>
+      <integer>134</integer>
       <key>ninesuperior</key>
       <integer>8</integer>
       <key>oneinferior</key>
@@ -20364,7 +20494,7 @@
       <key>foursuperior</key>
       <integer>5</integer>
       <key>j</key>
-      <integer>77</integer>
+      <integer>152</integer>
       <key>nineinferior</key>
       <integer>5</integer>
       <key>oneinferior</key>
@@ -20475,28 +20605,28 @@
     <key>uni04B4</key>
     <dict>
       <key>j</key>
-      <integer>46</integer>
+      <integer>121</integer>
       <key>uni0458</key>
       <integer>46</integer>
     </dict>
     <key>uni04B5</key>
     <dict>
       <key>j</key>
-      <integer>47</integer>
+      <integer>132</integer>
       <key>uni0458</key>
       <integer>47</integer>
     </dict>
     <key>uni04B6</key>
     <dict>
       <key>j</key>
-      <integer>45</integer>
+      <integer>120</integer>
       <key>uni0458</key>
       <integer>45</integer>
     </dict>
     <key>uni04B7</key>
     <dict>
       <key>j</key>
-      <integer>47</integer>
+      <integer>132</integer>
       <key>uni0458</key>
       <integer>47</integer>
     </dict>
@@ -20539,7 +20669,7 @@
     <key>uni04E1</key>
     <dict>
       <key>j</key>
-      <integer>0</integer>
+      <integer>80</integer>
       <key>parenright</key>
       <integer>10</integer>
       <key>public.kern2.cyrl_lc_a</key>
@@ -20567,17 +20697,32 @@
       <key>uni0458</key>
       <integer>0</integer>
     </dict>
+    <key>uni04EF</key>
+    <dict>
+      <key>j</key>
+      <integer>113</integer>
+    </dict>
+    <key>uni04F1</key>
+    <dict>
+      <key>j</key>
+      <integer>113</integer>
+    </dict>
+    <key>uni04F3</key>
+    <dict>
+      <key>j</key>
+      <integer>113</integer>
+    </dict>
     <key>uni0524</key>
     <dict>
       <key>j</key>
-      <integer>45</integer>
+      <integer>120</integer>
       <key>uni0458</key>
       <integer>45</integer>
     </dict>
     <key>uni0525</key>
     <dict>
       <key>j</key>
-      <integer>67</integer>
+      <integer>145</integer>
       <key>uni0458</key>
       <integer>67</integer>
     </dict>
@@ -20598,7 +20743,7 @@
     <key>uogonek</key>
     <dict>
       <key>j</key>
-      <integer>90</integer>
+      <integer>166</integer>
       <key>parenright</key>
       <integer>20</integer>
       <key>public.kern2.latn_lc_j</key>
@@ -20773,7 +20918,7 @@
       <key>iotadieresistonos</key>
       <integer>36</integer>
       <key>j</key>
-      <integer>0</integer>
+      <integer>89</integer>
       <key>nineinferior</key>
       <integer>-20</integer>
       <key>onesuperior</key>
@@ -20844,6 +20989,46 @@
       <integer>-15</integer>
       <key>zeta</key>
       <integer>-14</integer>
+    </dict>
+    <key>y</key>
+    <dict>
+      <key>j</key>
+      <integer>113</integer>
+    </dict>
+    <key>yacute</key>
+    <dict>
+      <key>j</key>
+      <integer>113</integer>
+    </dict>
+    <key>ycircumflex</key>
+    <dict>
+      <key>j</key>
+      <integer>113</integer>
+    </dict>
+    <key>ydieresis</key>
+    <dict>
+      <key>j</key>
+      <integer>113</integer>
+    </dict>
+    <key>ydotbelow</key>
+    <dict>
+      <key>j</key>
+      <integer>247</integer>
+    </dict>
+    <key>ygrave</key>
+    <dict>
+      <key>j</key>
+      <integer>113</integer>
+    </dict>
+    <key>yhook</key>
+    <dict>
+      <key>j</key>
+      <integer>113</integer>
+    </dict>
+    <key>ytilde</key>
+    <dict>
+      <key>j</key>
+      <integer>113</integer>
     </dict>
     <key>zeroinferior</key>
     <dict>
@@ -21232,7 +21417,7 @@
       <key>iotadieresistonos</key>
       <integer>56</integer>
       <key>j</key>
-      <integer>16</integer>
+      <integer>107</integer>
       <key>lambda</key>
       <integer>5</integer>
       <key>nineinferior</key>
