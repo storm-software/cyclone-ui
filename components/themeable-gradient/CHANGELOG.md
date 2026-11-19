@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Themeable Gradient
 
+## [0.0.98](https://github.com/storm-software/cyclone-ui/releases/tag/themeable-gradient%400.0.98) (11/19/2026)
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.97**
+
 ## [0.0.97](https://github.com/storm-software/cyclone-ui/releases/tag/themeable-gradient%400.0.97) (11/19/2026)
 
 ### Updated Dependencies

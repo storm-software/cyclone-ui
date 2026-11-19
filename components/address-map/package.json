@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/address-map",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "description": "A map of an address: raster map tiles (OpenStreetMap by default) centered on its latitude and longitude, with a marker and the tile provider's attribution, or a placeholder while there is no address. Shared by AddressInput and ManualAddressInput.",
   "repository": {

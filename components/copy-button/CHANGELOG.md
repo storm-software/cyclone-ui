@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Copy Button
 
+## [0.0.15](https://github.com/storm-software/cyclone-ui/releases/tag/copy-button%400.0.15) (11/19/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.95**
+- Updated **button** to **v0.6.103**
+- Updated **icons** to **v0.0.98**
+- Updated **toast** to **v0.0.15**
+- Updated **tooltip** to **v0.5.103**
+
 ## [0.0.14](https://github.com/storm-software/cyclone-ui/releases/tag/copy-button%400.0.14) (11/19/2026)
 
 ### Updated Dependencies
