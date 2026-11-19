@@ -189,7 +189,7 @@ export const getFieldLabelId = (id: string) => `${id}-label`;
 // Tamagui `Label`'s layout effect writes `aria-labelledby` onto it. A control
 // that hydrates later (the Select trigger sits in a Suspense boundary) then
 // mismatches. Native still needs `Label`'s press-to-focus.
-const FieldLabelElement = (isWeb ? LabelFrame : TamaguiLabel) as typeof TamaguiLabel;
+const FieldLabelElement = (isWeb ? LabelFrame : TamaguiLabel);
 
 const FieldDetailsContext = createContext<ReactNode>(null);
 
@@ -618,12 +618,12 @@ const FieldGroupInnerImpl = createStyledHOC(
             <FieldDetailsSetterContext.Provider value={setDetails}>
               <FieldDetailsContext.Provider value={details}>
                 <FieldLabelAboveContext.Provider value={labelAbove}>
-                  <YStack group={"field"} gap="lg" disabled={disabled}>
+                  <YStack group={"field"} gap="md" disabled={disabled}>
                     <FieldGroupFrame
                       ref={forwardedRef}
                       // A label above the control sits closer to it.
                       {...(labelAbove &&
-                        rest.orientation !== "horizontal" && { gap: "xl" })}
+                        rest.orientation !== "horizontal" && { gap: "lg" })}
                       {...rest}
                       disabled={disabled}
                       variant={variant}>
@@ -633,7 +633,7 @@ const FieldGroupInnerImpl = createStyledHOC(
                       showDisabledMessage={showDisabledMessage}
                       // Under a label above the control, the stack's gap alone
                       // separates the message from the control.
-                      marginTop={labelAbove ? "zero" : "lg"}
+                      marginTop={labelAbove ? "zero" : "md"}
                     />
                   </YStack>
                 </FieldLabelAboveContext.Provider>

@@ -9,7 +9,13 @@
  */
 
 import { animations } from "@tamagui/config/animations-motion";
-import { createFont, createTamagui, createTokens, px } from "@tamagui/core";
+import {
+  createFont,
+  createTamagui,
+  createTokens,
+  isWeb,
+  px
+} from "@tamagui/core";
 import userConfig from "./default-config";
 
 const tokens = createTokens({
@@ -836,7 +842,7 @@ const themes = {
 };
 
 const bodyFont = createFont({
-  family: "Storm Sans",
+  family: isWeb ? '"Storm Sans"' : "Storm Sans",
   size: {
     "2xl": 30,
     "3xl": 36,
@@ -886,20 +892,29 @@ const bodyFont = createFont({
     xxxs: 11.25
   },
   weight: {
-    black: "900",
+    black: "700",
     bold: "700",
-    extrabold: "800",
+    extrabold: "700",
     extralight: "200",
     light: "300",
     medium: "500",
     normal: "400",
     semibold: "600",
     thin: "100"
+  },
+  face: {
+    100: { normal: "Thin", italic: "ThinItalic" },
+    200: { normal: "ExtraLight", italic: "ExtraLightItalic" },
+    300: { normal: "Light", italic: "LightItalic" },
+    400: { normal: "Regular", italic: "Italic" },
+    500: { normal: "Medium", italic: "MediumItalic" },
+    600: { normal: "SemiBold", italic: "SemiBoldItalic" },
+    700: { normal: "Bold", italic: "BoldItalic" }
   }
 });
 
 const captionFont = createFont({
-  family: "Storm Sans",
+  family: isWeb ? '"Storm Sans"' : "Storm Sans",
   size: {
     "2xl": 30,
     "3xl": 36,
@@ -949,15 +964,24 @@ const captionFont = createFont({
     xxxs: 11.25
   },
   weight: {
-    black: "900",
+    black: "700",
     bold: "700",
-    extrabold: "800",
+    extrabold: "700",
     extralight: "200",
     light: "300",
     medium: "500",
     normal: "400",
     semibold: "600",
     thin: "100"
+  },
+  face: {
+    100: { normal: "Thin", italic: "ThinItalic" },
+    200: { normal: "ExtraLight", italic: "ExtraLightItalic" },
+    300: { normal: "Light", italic: "LightItalic" },
+    400: { normal: "Regular", italic: "Italic" },
+    500: { normal: "Medium", italic: "MediumItalic" },
+    600: { normal: "SemiBold", italic: "SemiBoldItalic" },
+    700: { normal: "Bold", italic: "BoldItalic" }
   }
 });
 
@@ -1025,7 +1049,7 @@ const codeFont = createFont({
 });
 
 const displayFont = createFont({
-  family: "Storm Sans",
+  family: isWeb ? '"Storm Sans"' : "Storm Sans",
   size: {
     "2xl": 30,
     "3xl": 36,
@@ -1075,20 +1099,29 @@ const displayFont = createFont({
     xxxs: 12.375
   },
   weight: {
-    black: "900",
+    black: "700",
     bold: "700",
-    extrabold: "800",
+    extrabold: "700",
     extralight: "200",
     light: "300",
     medium: "500",
     normal: "400",
     semibold: "600",
     thin: "100"
+  },
+  face: {
+    100: { normal: "Thin", italic: "ThinItalic" },
+    200: { normal: "ExtraLight", italic: "ExtraLightItalic" },
+    300: { normal: "Light", italic: "LightItalic" },
+    400: { normal: "Regular", italic: "Italic" },
+    500: { normal: "Medium", italic: "MediumItalic" },
+    600: { normal: "SemiBold", italic: "SemiBoldItalic" },
+    700: { normal: "Bold", italic: "BoldItalic" }
   }
 });
 
 const editorialFont = createFont({
-  family: "Storm Serif",
+  family: isWeb ? '"Storm Serif"' : "Storm Serif",
   size: {
     "2xl": 30,
     "3xl": 36,
@@ -1138,7 +1171,7 @@ const editorialFont = createFont({
     xxxs: 12.375
   },
   weight: {
-    black: "900",
+    black: "800",
     bold: "700",
     extrabold: "800",
     extralight: "200",
@@ -1146,7 +1179,16 @@ const editorialFont = createFont({
     medium: "500",
     normal: "400",
     semibold: "600",
-    thin: "100"
+    thin: "200"
+  },
+  face: {
+    200: { normal: "ExtraLight", italic: "ExtraLightItalic" },
+    300: { normal: "Light", italic: "LightItalic" },
+    400: { normal: "Regular", italic: "Italic" },
+    500: { normal: "Medium", italic: "MediumItalic" },
+    600: { normal: "SemiBold", italic: "SemiBoldItalic" },
+    700: { normal: "Bold", italic: "BoldItalic" },
+    800: { normal: "ExtraBold", italic: "ExtraBoldItalic" }
   }
 });
 

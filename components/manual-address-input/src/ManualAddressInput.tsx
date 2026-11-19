@@ -18,6 +18,8 @@
 
 "use client";
 
+import type { AddressMapProps, AddressOption } from "@cyclone-ui/address-map";
+import { AddressMap, isAddressOption } from "@cyclone-ui/address-map";
 import type { FieldLabelVariant, FieldVariant } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import type { FormControlSize } from "@cyclone-ui/helpers";
@@ -27,7 +29,7 @@ import { FormApi } from "@cyclone-ui/state/form";
 import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, View } from "@tamagui/core";
 import type { ReactNode } from "react";
-import { useCallback, useEffect, useMemo, useRef } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   COUNTRY_CODES,
   getAddressFormat,
@@ -169,11 +171,20 @@ export interface ManualAddressInputExtraProps {
 
   /**
    * Require an address: the first line, the country, and the city, state and
-   * postal code where the country's addresses need them.
+   * postal code where the country's addresses need them. Without it, those
+   * fields become required once any address field has a value.
    *
    * @defaultValue false
    */
   required?: boolean;
+
+  /**
+   * Show "(Optional)" beside each label that is not required. A required
+   * field keeps its asterisk and does not show it.
+   *
+   * @defaultValue false
+   */
+  showOptional?: boolean;
 
   /** Disable every field. */
   disabled?: boolean;
@@ -221,6 +232,7 @@ export const ManualAddressInput = createStyledHOC(
       defaultCountry = "US",
       countries,
       required = false,
+      showOptional = false,
       disabled,
       readOnly,
       size,
@@ -237,6 +249,10 @@ export const ManualAddressInput = createStyledHOC(
     const setInitialValues = form.initialValues.set();
     const text = (key: ManualAddressFieldKey) =>
       String(values[names[key]] ?? "").trim();
+
+    // Once any field has a value, an optional address is being entered, so
+    // its parts are required as they would be with `required`.
+    const isRequired = required || FIELD_KEYS.some(key => Boolean(text(key)));
 
     const country = (text("country") || defaultCountry).toUpperCase();
     const format = getAddressFormat(country);
@@ -344,7 +360,9 @@ export const ManualAddressInput = createStyledHOC(
         disabled={(disabled ?? false) || (options.disabled ?? false)}
         readOnly={readOnly}
         validate={options.validate}>
-        <Field.Label variant={labelVariant}>{label}</Field.Label>
+        <Field.Label variant={labelVariant} showOptional={showOptional}>
+          {label}
+        </Field.Label>
         <Input size={size} variant={variant}>
           <Input.TextBox>
             <Input.TextBox.Value
@@ -366,7 +384,9 @@ export const ManualAddressInput = createStyledHOC(
 
     const city = format.cityLabel && (
       <ManualAddressInputCell key="city">
-        {textField("city", format.cityLabel, "address-level2", { required })}
+        {textField("city", format.cityLabel, "address-level2", {
+          required: isRequired
+        })}
       </ManualAddressInputCell>
     );
 
@@ -378,11 +398,11 @@ export const ManualAddressInput = createStyledHOC(
             name={names.state}
             size={size}
             variant={variant}
-            required={required && format.stateRequired}
+            required={isRequired && format.stateRequired}
             disabled={disabled}
             readOnly={readOnly}
             items={stateItems}>
-            <Field.Label variant={labelVariant}>
+            <Field.Label variant={labelVariant} showOptional={showOptional}>
               {format.stateLabel}
             </Field.Label>
             <Select size={size} variant={variant}>
@@ -396,7 +416,7 @@ export const ManualAddressInput = createStyledHOC(
           </Field>
         ) : (
           textField("state", format.stateLabel, "address-level1", {
-            required: required && format.stateRequired
+            required: isRequired && format.stateRequired
           })
         )}
       </ManualAddressInputCell>
@@ -407,7 +427,7 @@ export const ManualAddressInput = createStyledHOC(
     const postalCode = format.postalCodeLabel && (
       <ManualAddressInputCell key={`zip-code-${country}`}>
         {textField("zipCode", format.postalCodeLabel, "postal-code", {
-          required: required && format.postalCodeRequired,
+          required: isRequired && format.postalCodeRequired,
           validate: postalCodeValidate
         })}
       </ManualAddressInputCell>
@@ -419,7 +439,7 @@ export const ManualAddressInput = createStyledHOC(
     return (
       <ManualAddressInputFrame ref={forwardedRef} {...props}>
         {textField("addressLine1", "Address Line 1", "address-line1", {
-          required,
+          required: isRequired,
           placeholder: "Street address or P.O. box"
         })}
 
@@ -437,11 +457,13 @@ export const ManualAddressInput = createStyledHOC(
           name={names.country}
           size={size}
           variant={variant}
-          required={required}
+          required={isRequired}
           disabled={disabled}
           readOnly={readOnly}
           items={countryItems}>
-          <Field.Label variant={labelVariant}>Country</Field.Label>
+          <Field.Label variant={labelVariant} showOptional={showOptional}>
+            Country
+          </Field.Label>
           <Select size={size} variant={variant}>
             <Select.TextBox>
               <Select.TextBox.Value>
@@ -460,4 +482,104 @@ export const ManualAddressInput = createStyledHOC(
     );
   },
   { displayName: "ManualAddressInput" }
+);
+
+export interface ManualAddressInputMapExtraProps {
+  /**
+   * The address search API, as for `AddressInput`: it is sent
+   * `GET <endpoint>?q=<address>` once the first address line and the city or
+   * postal code are filled in, and its first match is shown.
+   */
+  endpoint: string;
+
+  /** The same `name` prefix given to the `ManualAddressInput`. */
+  name?: string;
+}
+
+// Wait for a pause in typing before asking the endpoint.
+const MAP_LOOKUP_DELAY = 600;
+
+/**
+ * An `AddressMap` of the address entered in a `ManualAddressInput`, found
+ * with an address search API. It reads the form, so it goes inside the same `Form`.
+ *
+ * @example
+ * ```tsx
+ * <Form name="checkout">
+ *   <ManualAddressInputMap endpoint="/api/addresses" />
+ *   <ManualAddressInput />
+ * </Form>
+ * ```
+ */
+export const ManualAddressInputMap = createStyledHOC(
+  AddressMap,
+  (
+    {
+      endpoint,
+      name,
+      ...props
+    }: Omit<AddressMapProps, "address"> & ManualAddressInputMapExtraProps,
+    forwardedRef
+  ) => {
+    const names = useMemo(() => getManualAddressFieldNames(name), [name]);
+    const values = FormApi.use().values.get() as Record<string, unknown>;
+    const text = (key: ManualAddressFieldKey) =>
+      String(values[names[key]] ?? "").trim();
+
+    // The street and where it is; units (lines 2 and 3) only confuse a
+    // geocoder.
+    const line1 = text("addressLine1");
+    const city = text("city");
+    const zipCode = text("zipCode");
+    const country = text("country").toUpperCase();
+    const query =
+      line1 && (city || zipCode)
+        ? [
+            line1,
+            city,
+            [text("state"), zipCode].filter(Boolean).join(" "),
+            country && getCountryName(country)
+          ]
+            .filter(Boolean)
+            .join(", ")
+        : "";
+
+    // Kept while the text changes, so the map doesn't flash empty per keypress.
+    const [address, setAddress] = useState<AddressOption>();
+    useEffect(() => {
+      if (!query) {
+        return;
+      }
+
+      // Aborted when the text changes, so an older answer never wins.
+      const controller = new AbortController();
+      const timeout = setTimeout(() => {
+        fetch(
+          `${endpoint}${endpoint.includes("?") ? "&" : "?"}q=${encodeURIComponent(query)}`,
+          { signal: controller.signal }
+        )
+          .then(async response => (response.ok ? response.json() : []))
+          .then((data: unknown) =>
+            setAddress(
+              Array.isArray(data) ? data.find(isAddressOption) : undefined
+            )
+          )
+          .catch(() => {});
+      }, MAP_LOOKUP_DELAY);
+
+      return () => {
+        clearTimeout(timeout);
+        controller.abort();
+      };
+    }, [endpoint, query]);
+
+    return (
+      <AddressMap
+        ref={forwardedRef}
+        {...props}
+        address={query ? address : undefined}
+      />
+    );
+  },
+  { displayName: "ManualAddressInputMap" }
 );

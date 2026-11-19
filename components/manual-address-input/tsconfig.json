@@ -18,19 +18,22 @@
       "path": "../../tools/config"
     },
     {
-      "path": "../field"
+      "path": "../address-map"
     },
     {
-      "path": "../../packages/helpers"
-    },
-    {
-      "path": "../input"
+      "path": "../../packages/state"
     },
     {
       "path": "../select"
     },
     {
-      "path": "../../packages/state"
+      "path": "../input"
+    },
+    {
+      "path": "../../packages/helpers"
+    },
+    {
+      "path": "../field"
     },
     {
       "path": "../form"

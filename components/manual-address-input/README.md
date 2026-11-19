@@ -51,6 +51,15 @@ A `Manual Address Input` component used to type an address by hand. It renders t
 
 The country sets each field's label ("ZIP Code" in the US, "Postal Code" elsewhere; "State" or "Province"), whether it shows and is required, the postal code format, the state options and whether the postal code comes before the city. Address lines 2 and 3 stay disabled until the line before them is filled in.
 
+`ManualAddressInputMap` adds an [Address Map](../address-map) of the entered address, found with an address search API (the same `GET <endpoint>?q=<address>` contract as [Address Input](../address-input)):
+
+```tsx
+<Form name="checkout">
+  <ManualAddressInputMap endpoint="/api/addresses" />
+  <ManualAddressInput />
+</Form>
+```
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 

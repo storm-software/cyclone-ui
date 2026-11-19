@@ -66,6 +66,7 @@ The pages below describe the public parts and props. Choose a semantic token for
 | [OTP Input](./otp-input.md) | A one-time passcode input that renders one numeric input per digit (4 by default). |
 | [Phone Number Input](./phone-number-input.md) | A headless phone number input built on Input that adds a searchable country-code picker with flags in a menu. |
 | [Address Input](./address-input.md) | An address search field: a SearchInput whose suggestions come from an address search API endpoint (GET <endpoint>?q=<text> returning label/latitude/longitude options), with a map of the chosen address. |
+| [Address Map](./address-map.md) | A static map centered on an address, with a marker and the tile attribution. Shared by Address Input and Manual Address Input. |
 | [Credit Card Input](./credit-card-input.md) | Credit card fields (card number, expiry date, security code and name on card) built on Input, with a card preview that follows what is entered. |
 | [Date Picker](./date-picker.md) | A date input with a masked text box and a calendar popover that has day, month and year views. |
 | [Time Picker](./time-picker.md) | A time input with a masked text box and a clock popover whose hand can be pressed or dragged to pick the hour and minutes. |

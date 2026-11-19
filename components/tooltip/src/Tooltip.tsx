@@ -125,7 +125,7 @@ const TooltipArrow = (props: GetProps<typeof TamaguiTooltip.Arrow>) => {
           ? { marginLeft: borderWidth }
           : { marginTop: borderWidth };
 
-  return <TamaguiTooltip.Arrow {...props} {...inset} />;
+  return <TamaguiTooltip.Arrow size={12} {...props} {...inset} />;
 };
 
 // The `ContainerBackground` draws the surface. Positioned for it (Popper
@@ -143,8 +143,8 @@ const TooltipContent = styled(
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "transparent",
-    paddingVertical: "3xl",
-    paddingHorizontal: "2xl",
+    paddingVertical: "md",
+    paddingHorizontal: "lg",
     borderWidth: 0,
     borderRadius: "tooltip",
     x: "enter:0 exit:0",
@@ -221,8 +221,8 @@ const TooltipContentImpl = createStyledHOC(
         boxShadow={containerShadows[shadowStyle]}
         backgroundColor={backgroundColor}
         borderRadius="tooltip"
-        paddingVertical="3xl"
-        paddingHorizontal="2xl"
+        paddingVertical="md"
+        paddingHorizontal="lg"
         {...props}>
         {/* Tamagui wraps the children in a `display: contents` theme node, so
             the layer's `borderRadius="inherit"` reads 0; set it directly. */}

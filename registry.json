@@ -39,7 +39,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/address-input",
       "description": "An address search field: a SearchInput whose suggestions come from an address search API endpoint (GET <endpoint>?q=<text> returning label/latitude/longitude options), with a map of the chosen address. It provides Map, Search and TextBox parts; the map sits outside the Field so a floating label still lines up.",
-      "dependencies": ["@tamagui/core@3.3.2", "@tamagui/image@3.3.2"],
+      "dependencies": ["@tamagui/core@3.3.2"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.7",
         "react@^19.3.1",
@@ -47,7 +47,7 @@
         "react-native@^0.87.1"
       ],
       "registryDependencies": [
-        "@cyclone-ui/body-text",
+        "@cyclone-ui/address-map",
         "@cyclone-ui/context-menu",
         "@cyclone-ui/icons",
         "@cyclone-ui/search-input"
@@ -55,6 +55,26 @@
       "files": [
         {
           "path": "components/address-input/src/AddressInput.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "@cyclone-ui/address-map",
+      "type": "registry:component",
+      "title": "@cyclone-ui/address-map",
+      "description": "A map of an address: raster map tiles (OpenStreetMap by default) centered on its latitude and longitude, with a marker and the tile provider's attribution, or a placeholder while there is no address. Shared by AddressInput and ManualAddressInput.",
+      "dependencies": ["@tamagui/core@3.3.2", "@tamagui/image@3.3.2"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": ["@cyclone-ui/body-text", "@cyclone-ui/icons"],
+      "files": [
+        {
+          "path": "components/address-map/src/AddressMap.tsx",
           "type": "registry:component"
         }
       ]
@@ -4408,6 +4428,7 @@
         "react-native@^0.87.1"
       ],
       "registryDependencies": [
+        "@cyclone-ui/address-map",
         "@cyclone-ui/field",
         "@cyclone-ui/input",
         "@cyclone-ui/select"

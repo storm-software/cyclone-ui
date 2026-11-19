@@ -1,0 +1,52 @@
+{
+  "name": "@cyclone-ui/address-map",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "A map of an address: raster map tiles (OpenStreetMap by default) centered on its latitude and longitude, with a marker and the tile provider's attribution, or a placeholder while there is no address. Shared by AddressInput and ManualAddressInput.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/address-map"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/image": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./AddressMap": {
+      "import": "./dist/AddressMap.mjs",
+      "require": "./dist/AddressMap.cjs"
+    },
+    "./*": "./*"
+  }
+}

@@ -259,7 +259,7 @@ const CountryCodeSelector = (): JSX.Element => {
         <FormControlContext value={undefined}>
           {/* Its own `field` group: groups flow through context into the
               portal, so it would otherwise follow the phone field's hover. */}
-          <View group="field">
+          <View group="field" marginTop="lg">
             <SearchInput size="sm" value={search} onChange={handleSearchChange}>
               <SearchInput.TextBox
                 aria-label="Search countries"

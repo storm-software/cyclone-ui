@@ -4156,6 +4156,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/address-map",
+      jsx: ["AddressMap"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/alert",
       jsx: ["Alert"],
       roles: []
@@ -4772,7 +4777,14 @@ export const manifest: DesignSystemManifest = {
     }
   ],
   icons: [],
-  fonts: [],
+  fonts: [
+    {
+      family: "Storm Sans"
+    },
+    {
+      family: "Storm Serif"
+    }
+  ],
   tailwind: {
     name: "cyclone-ui",
     version: "0.0.0",

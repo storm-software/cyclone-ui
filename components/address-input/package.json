@@ -18,13 +18,12 @@
     "react-native": "catalog:"
   },
   "dependencies": {
-    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/address-map": "workspace:*",
     "@cyclone-ui/context-menu": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/search-input": "workspace:*",
-    "@tamagui/core": "catalog:",
-    "@tamagui/image": "catalog:"
+    "@tamagui/core": "catalog:"
   },
   "devDependencies": {
     "@cyclone-ui/field": "workspace:*",

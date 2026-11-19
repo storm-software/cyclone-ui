@@ -18,6 +18,7 @@
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/address-map": "workspace:*",
     "@cyclone-ui/field": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/input": "workspace:*",

@@ -20,7 +20,10 @@ import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 import type { ManualAddressInputProps } from "./ManualAddressInput";
-import { ManualAddressInput } from "./ManualAddressInput";
+import {
+  ManualAddressInput,
+  ManualAddressInputMap
+} from "./ManualAddressInput";
 
 /** Story-only `initialValues` go to the wrapping `Form`. */
 type ManualAddressInputStoryArgs = ManualAddressInputProps & {
@@ -46,7 +49,7 @@ export default meta;
 type Story = StoryObj<ManualAddressInputStoryArgs>;
 
 const getTextBox = (canvasElement: HTMLElement, name: string) =>
-  canvasElement.querySelector<HTMLInputElement>(`input[id="${name}"]`)!;
+  canvasElement.querySelector<HTMLInputElement>(`input[name="${name}"]`)!;
 
 // A field can draw more than one `label`; the one with the field's label id
 // names it.
@@ -245,6 +248,64 @@ export const LimitedCountries: Story = {
   args: { countries: ["US", "CA", "MX"] }
 };
 
+const labelsWithOptional = (canvasElement: HTMLElement) =>
+  Array.from(canvasElement.querySelectorAll('[id$="-label"]')).filter(label =>
+    label.textContent?.includes("(Optional)")
+  );
+
+export const ShowOptional: Story = {
+  args: { showOptional: true },
+  play: async ({ canvasElement }) => {
+    // None of the default fields are required, so each label marks that.
+    // The text stays in the label when a narrow field hides it from view.
+    await waitFor(async () =>
+      expect(labelsWithOptional(canvasElement)).toHaveLength(7)
+    );
+  }
+};
+
+export const RequiredOnceEntered: Story = {
+  args: { showOptional: true },
+  play: async ({ canvasElement }) => {
+    const line1 = getTextBox(canvasElement, "addressLine1");
+
+    // Optional until any field has a value, then the address's parts are
+    // required as with `required` (only lines 2 and 3 stay optional).
+    await waitFor(async () =>
+      expect(labelsWithOptional(canvasElement)).toHaveLength(7)
+    );
+    await userEvent.type(line1, "1600 Amphitheatre Pkwy");
+    await waitFor(async () =>
+      expect(labelsWithOptional(canvasElement)).toHaveLength(2)
+    );
+
+    await userEvent.clear(line1);
+    await waitFor(async () =>
+      expect(labelsWithOptional(canvasElement)).toHaveLength(7)
+    );
+  }
+};
+
+export const ShowOptionalRequired: Story = {
+  args: { required: true, showOptional: true },
+  play: async ({ canvasElement }) => {
+    await waitFor(async () => {
+      const labels = Array.from(
+        canvasElement.querySelectorAll('[id$="-label"]')
+      );
+      const text = (name: string) =>
+        labels.find(label => label.textContent?.includes(name))?.textContent ??
+        "";
+
+      // Lines 2 and 3 stay optional. A required field keeps its asterisk.
+      expect(labelsWithOptional(canvasElement)).toHaveLength(2);
+      expect(text("Address Line 1")).not.toContain("(Optional)");
+      expect(text("Address Line 2")).toContain("(Optional)");
+      expect(text("Country")).not.toContain("(Optional)");
+    });
+  }
+};
+
 export const LabelAbove: Story = { args: { labelVariant: "above" } };
 
 export const Underlined: Story = { args: { variant: "underlined" } };
@@ -254,3 +315,48 @@ export const Disabled: Story = { args: { disabled: true } };
 export const SmallSize: Story = { args: { size: "sm" } };
 
 export const LargeSize: Story = { args: { size: "lg" } };
+
+const CITY_HALL = {
+  label: "200 N Spring St, Los Angeles, CA 90012, USA",
+  latitude: 34.0537,
+  longitude: -118.2428
+};
+
+export const WithMap: Story = {
+  args: { initialValues: { country: "US" } },
+  // Stands in for an address search API that finds every address.
+  beforeEach: () => {
+    const realFetch = globalThis.fetch;
+    globalThis.fetch = async (...[input, init]: Parameters<typeof fetch>) =>
+      String(input).startsWith("/api/addresses?")
+        ? Response.json([CITY_HALL])
+        : realFetch(input, init);
+
+    return () => {
+      globalThis.fetch = realFetch;
+    };
+  },
+  render: ({ initialValues, ...args }, { id }) => (
+    <Form name={`formName-${id}`} initialValues={initialValues ?? {}}>
+      <ManualAddressInputMap endpoint="/api/addresses" maxWidth={560} />
+      <ManualAddressInput maxWidth={560} {...args} />
+    </Form>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await expect(canvas.queryByRole("img")).not.toBeInTheDocument();
+
+    await userEvent.type(
+      getTextBox(canvasElement, "addressLine1"),
+      "200 N Spring St"
+    );
+    await userEvent.type(getTextBox(canvasElement, "city"), "Los Angeles");
+    await expect(
+      await canvas.findByRole(
+        "img",
+        { name: `Map of ${CITY_HALL.label}` },
+        { timeout: 3000 }
+      )
+    ).toBeInTheDocument();
+  }
+};

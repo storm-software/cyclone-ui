@@ -27,14 +27,14 @@ pnpm install
 ```
 
 - **File:** `AddressInput.tsx`. The CLI writes it to `<path>/address-input/`. `path` comes from `components.json` and defaults to `components`.
-- **Also copies:** [Body Text](./body-text.md), [Button](./button.md), [Container](./container.md), [Context Menu](./context-menu.md), [Field](./field.md), [Heading Text](./heading-text.md), [Icons](../icons/index.md), [Input](./input.md), [Link](./link.md), [Link Text](./link-text.md), [Popover](./popover.md), [Ripple Animation](./ripple-animation.md), [Scroll View](./scroll-view.md), [Search Input](./search-input.md), [Sheet](./sheet.md), [Spinner](./spinner.md), [Tooltip](./tooltip.md), and [Validation Text](./validation-text.md). Imports between copied components become relative paths.
+- **Also copies:** [Address Map](./address-map.md), [Body Text](./body-text.md), [Button](./button.md), [Container](./container.md), [Context Menu](./context-menu.md), [Field](./field.md), [Heading Text](./heading-text.md), [Icons](../icons/index.md), [Input](./input.md), [Link](./link.md), [Link Text](./link-text.md), [Popover](./popover.md), [Ripple Animation](./ripple-animation.md), [Scroll View](./scroll-view.md), [Search Input](./search-input.md), [Sheet](./sheet.md), [Spinner](./spinner.md), [Tooltip](./tooltip.md), and [Validation Text](./validation-text.md). Imports between copied components become relative paths.
 - **Adds to `package.json`:** `@tamagui/core` and `@tamagui/image`.
 
 ## Import
 
 ```tsx
 import { AddressInput } from "@cyclone-ui/address-input";
-import type { AddressOption } from "@cyclone-ui/address-input";
+import type { AddressOption } from "@cyclone-ui/address-input"; // re-exported from @cyclone-ui/address-map
 ```
 
 ## Usage
@@ -76,7 +76,7 @@ The map is a separate part. This lets you place it outside the `Field`.
 | Part | Renders | Purpose |
 | --- | --- | --- |
 | `AddressInput` | A Tamagui `View` with a `4xl` gap | The root. It holds the endpoint and the chosen address. |
-| `AddressInput.Map` | A Tamagui `View`, 240 px high, that clips its content. With an address, it has `role="img"` and holds 256 px raster tiles (Tamagui `Image`), a marker, and the attribution text. | A map of the chosen address. Without an address, it shows a map icon. |
+| `AddressInput.Map` | An [Address Map](./address-map.md) | A map of the chosen address. Without an address, it shows a map icon. |
 | `AddressInput.Search` | A [Search Input](./search-input.md), which is an [Input](./input.md) frame | Gets its suggestions from the endpoint and holds the field value. |
 | `AddressInput.TextBox` | `SearchInput.TextBox`: an `Input.TextBox` with a native `<input role="combobox">`. It anchors a [Context menu](./context-menu.md) popover with a `listbox` of `option` items. | The text box. It shows a map pin icon by default. |
 
@@ -127,17 +127,7 @@ It accepts the props of `SearchInput.TextBox`.
 
 ### `AddressInput.Map`
 
-It also accepts the props of the Tamagui `View`.
-
-| Prop          | Type     | Default                                         | Description                                                          |
-| ------------- | -------- | ----------------------------------------------- | -------------------------------------------------------------------- |
-| `zoom`        | `number` | `15`                                            | The zoom level, from 0 (the world) to 19 (a building).               |
-| `tileUrl`     | `string` | `https://tile.openstreetmap.org/{z}/{x}/{y}.png` | A 256 px raster tile URL with `{z}`, `{x}`, and `{y}` placeholders. |
-| `attribution` | `string` | `© OpenStreetMap contributors` for the default tiles, otherwise empty | The credit that the tile provider requires.  |
-
-OpenStreetMap tiles are for light use only. In production, set your own `tileUrl` and `attribution`.
-
-The map shows static tiles. The user cannot pan or zoom it.
+It accepts the props of [Address Map](./address-map.md) (`zoom`, `tileUrl`, `attribution`, and the Tamagui `View` props), except `address`, which comes from the chosen address.
 
 ## Endpoint contract
 

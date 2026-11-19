@@ -27,8 +27,8 @@ pnpm install
 ```
 
 - **Files:** `address-format.ts` and `ManualAddressInput.tsx`. The CLI writes them to `<path>/manual-address-input/`. `path` comes from `components.json` and defaults to `components`.
-- **Also copies:** [Body Text](./body-text.md), [Button](./button.md), [Container](./container.md), [Context Menu](./context-menu.md), [Field](./field.md), [Heading Text](./heading-text.md), [Icons](../icons/index.md), [Input](./input.md), [Link](./link.md), [Link Text](./link-text.md), [Popover](./popover.md), [Ripple Animation](./ripple-animation.md), [Scroll View](./scroll-view.md), [Select](./select.md), [Sheet](./sheet.md), [Spinner](./spinner.md), [Tooltip](./tooltip.md), and [Validation Text](./validation-text.md). Imports between copied components become relative paths.
-- **Adds to `package.json`:** `@tamagui/core`.
+- **Also copies:** [Address Map](./address-map.md), [Body Text](./body-text.md), [Button](./button.md), [Container](./container.md), [Context Menu](./context-menu.md), [Field](./field.md), [Heading Text](./heading-text.md), [Icons](../icons/index.md), [Input](./input.md), [Link](./link.md), [Link Text](./link-text.md), [Popover](./popover.md), [Ripple Animation](./ripple-animation.md), [Scroll View](./scroll-view.md), [Select](./select.md), [Sheet](./sheet.md), [Spinner](./spinner.md), [Tooltip](./tooltip.md), and [Validation Text](./validation-text.md). Imports between copied components become relative paths.
+- **Adds to `package.json`:** `@tamagui/core` and `@tamagui/image`.
 
 ## Import
 
@@ -82,6 +82,8 @@ The examples are the stories in [`ManualAddressInput.stories.tsx`](../../../comp
 | `SavedAddress` | Initial form values. Lines 2 and 3 are enabled, and the state shows `California`. |
 | `NamePrefix` | `name="shipping"`. Address Line 1 has `autocomplete="section-shipping address-line1"`. |
 | `LimitedCountries` | `countries={["US", "CA", "MX"]}`. |
+| `WithMap` | A `ManualAddressInputMap` above the fields, with a mock endpoint. The map appears once Address Line 1 and the city are filled in. |
+| `ShowOptional`, `ShowOptionalRequired` | `showOptional`. Each label that is not required shows "(Optional)". With `required`, only Address Lines 2 and 3 show it. |
 | `LabelAbove`, `Underlined`, `Disabled` | `labelVariant="above"`, `variant="underlined"`, and `disabled`. |
 | `SmallSize`, `LargeSize` | The `sm` and `lg` sizes. |
 
@@ -95,11 +97,33 @@ It also accepts the props of the Tamagui `View`.
 | `defaultCountry` | `string`                                  | `"US"`        | The country used while the form has no country value. |
 | `countries`      | `string[]`                                | All countries | The ISO 3166-1 alpha-2 codes that the user can pick.  |
 | `required`       | `boolean`                                 | `false`       | Require an address (see [Countries](#countries)).     |
+| `showOptional`   | `boolean`                                 | `false`       | Show "(Optional)" beside each label that is not required. A required field keeps its asterisk. |
 | `disabled`       | `boolean`                                 | `false`       | Disable every field.                                  |
 | `readOnly`       | `boolean`                                 | `false`       | Prevent edits to every field. The fields keep their normal colors. |
 | `size`           | `"sm" \| "md" \| "lg"`                    | `"md"`        | The size of the fields.                               |
 | `variant`        | `"outlined" \| "underlined" \| "inlined"` | `"outlined"`  | The field style.                                      |
 | `labelVariant`   | `"floating" \| "above"`                   | `"floating"`  | Where the labels show.                                |
+
+## Map
+
+`ManualAddressInputMap` is an [Address Map](./address-map.md) of the entered address. Place it in the same `Form`. It sends the first address line, city, state, postal code and country name to an address search API (`GET <endpoint>?q=<address>`, the same contract as [Address Input](./address-input.md#endpoint-contract)) and shows the first match. Lines 2 and 3 are left out, because unit numbers confuse geocoders.
+
+```tsx
+<Form name="checkout">
+  <ManualAddressInputMap endpoint="/api/addresses" />
+  <ManualAddressInput />
+</Form>
+```
+
+| Prop       | Type     | Description                                                   |
+| ---------- | -------- | ------------------------------------------------------------- |
+| `endpoint` | `string` | The address search API. Required.                             |
+| `name`     | `string` | The same field-name prefix given to the `ManualAddressInput`. |
+
+It also accepts the [Address Map](./address-map.md) props except `address`.
+
+- It waits for Address Line 1 and the city or postal code, then 600 ms after the last change, before it sends a request. A new request cancels the older one.
+- It keeps the last map while the text changes. It clears the map when Address Line 1 is cleared, or when the endpoint finds nothing or answers with an error status. A network error keeps the last map.
 
 ## Values
 
@@ -140,7 +164,7 @@ Address Line 2 is disabled until Address Line 1 has text, and Address Line 3 is 
 
 Countries without specific rules get an optional `Province` and `Postal Code`.
 
-With `required`, the country, Address Line 1 and the city are required. The state is required only where addresses must have one (such as the US, Canada and Japan), and the postal code only where the country has a known postal code format (Ireland's Eircode stays optional).
+With `required`, the country, Address Line 1 and the city are required. The state is required only where addresses must have one (such as the US, Canada and Japan), and the postal code only where the country has a known postal code format (Ireland's Eircode stays optional). Without `required`, the same fields become required as soon as any address field has a value, and optional again once every field is cleared.
 
 A postal code that does not match the country's format shows "Enter a valid ZIP Code, such as 94103" (with the country's label and example) after the field loses focus. `isValidPostalCode(value, country)` runs the same check, for example on a server.
 

@@ -431,6 +431,9 @@
     },
     {
       "path": "./components/font-preview"
+    },
+    {
+      "path": "./components/address-map"
     }
   ],
   "files": []
