@@ -331,6 +331,24 @@ export const useFieldLabelPlacement = (): FieldLabelPlacement | undefined => {
 };
 
 /**
+ * Get the focus ring of a text box style control's frame. Under an "above"
+ * label the ring hugs the frame; otherwise it is offset from it. The full ring
+ * overwhelms a small control, which uses the 1px ring.
+ *
+ * @param size - The control size.
+ * @param labelVariant - The enclosing field's label variant, if any.
+ * @returns The `boxShadow` token.
+ */
+export const getFormFocusRing = (
+  size: FormControlSize | undefined,
+  labelVariant: FieldLabelVariant | undefined
+) => {
+  const ring = size === "sm" ? "ring-subtle" : "ring";
+
+  return labelVariant === "above" ? ring : (`${ring}-offset` as const);
+};
+
+/**
  * Get the extra height (and top text inset) a control adds for a floating
  * label: a label floats onto an outlined control's border, so it only
  * needs a few pixels, but inside an underlined or inlined control it needs a row.

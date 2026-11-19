@@ -20,10 +20,15 @@
 
 import { ContextMenu } from "@cyclone-ui/context-menu";
 import { Field } from "@cyclone-ui/field";
-import type { FieldLabelPlacement, FormControlSize } from "@cyclone-ui/helpers";
+import type {
+  FieldLabelPlacement,
+  FieldLabelVariant,
+  FormControlSize
+} from "@cyclone-ui/helpers";
 import {
   FieldNotchedOutline,
   getFormControlAriaProps,
+  getFormFocusRing,
   getFormSizeScale,
   getFormSizeToken,
   getSpaced,
@@ -190,6 +195,9 @@ const SelectGroup = styled(XStack, {
 
     labelPlacement: styled.dynamic<FieldLabelPlacement>(),
 
+    // The focus ring depends on it; styled by the `.resolve` below.
+    labelVariant: styled.dynamic<FieldLabelVariant>(),
+
     disabled: {
       true: {
         backgroundColor: "surface-disabled",
@@ -221,12 +229,12 @@ const SelectGroup = styled(XStack, {
 
   return sized
     ? {
-        // The full 3px ring overwhelms a small select, so use the 1px ring.
         boxShadow:
-          props.focused &&
-          props.frameSize === "sm" &&
-          props.variant !== "underlined"
-            ? "ring-subtle-offset"
+          props.focused && props.variant !== "underlined"
+            ? getFormFocusRing(
+                props.frameSize as FormControlSize | undefined,
+                props.labelVariant as FieldLabelVariant | undefined
+              )
             : undefined,
         height: sized.height,
         minHeight: sized.minHeight,
@@ -365,14 +373,13 @@ const SelectTextBoxImpl = createStyledHOC(
         hasValidationMessage={hasValidationMessage}
         variant={variant}
         labelPlacement={labelPlacement}
+        labelVariant={formControl?.labelVariant}
         frameSize={frameSize}
         disabled={disabled}
         borderColor={borderColor}
         boxShadow={`focus-visible:${
           variant === "outlined" || variant === "inlined"
-            ? size === "sm"
-              ? "ring-subtle-offset"
-              : "ring-offset"
+            ? getFormFocusRing(size, formControl?.labelVariant)
             : "none"
         }`}
         onFocus={() => setLocallyActive(true)}

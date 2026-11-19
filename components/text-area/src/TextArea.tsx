@@ -18,12 +18,17 @@
 
 "use client";
 
-import type { FieldLabelPlacement, FormControlSize } from "@cyclone-ui/helpers";
+import type {
+  FieldLabelPlacement,
+  FieldLabelVariant,
+  FormControlSize
+} from "@cyclone-ui/helpers";
 import {
   FieldNotchedOutline,
   FormControlFrameContext,
   getFieldLabelInset,
   getFormControlAriaProps,
+  getFormFocusRing,
   getFormFontScale,
   getFormSizeScale,
   useFieldHasValidationMessage,
@@ -124,6 +129,9 @@ const TextAreaFrame = styled(InputValue, {
     // Styled by the `.resolve` below because the inset depends on `size`.
     labelPlacement: styled.dynamic<FieldLabelPlacement>(),
 
+    // The focus ring depends on it; styled by the `.resolve` below.
+    labelVariant: styled.dynamic<FieldLabelVariant>(),
+
     disabled: {
       true: {
         backgroundColor: "surface-disabled",
@@ -136,10 +144,12 @@ const TextAreaFrame = styled(InputValue, {
     variant: "outlined"
   }
 }).resolve(props => ({
-  // The full 3px ring overwhelms a small text area, so use the 1px ring.
   boxShadow:
-    props.focused && props.size === "sm" && props.variant !== "underlined"
-      ? "ring-subtle-offset"
+    props.focused && props.variant !== "underlined"
+      ? getFormFocusRing(
+          props.size as FormControlSize | undefined,
+          props.labelVariant as FieldLabelVariant | undefined
+        )
       : undefined,
   // An underlined control's text starts flush with its left edge.
   paddingLeft: props.variant === "underlined" ? 0 : undefined,
@@ -291,15 +301,14 @@ export const TextArea = createStyledHOC(
         hasValidationMessage={hasValidationMessage}
         variant={variant}
         labelPlacement={labelPlacement}
+        labelVariant={formControl?.labelVariant}
         disabled={disabled}
         readOnly={readOnly}
         // `FieldNotchedOutline` draws a notched field's border instead.
         borderColor={labelPlacement === "border" ? "transparent" : borderColor}
         boxShadow={`focus-visible:${
           variant === "outlined" || variant === "inlined"
-            ? size === "sm"
-              ? "ring-subtle-offset"
-              : "ring-offset"
+            ? getFormFocusRing(size, formControl?.labelVariant)
             : "none"
         }`}
         onFocus={handleFocus}

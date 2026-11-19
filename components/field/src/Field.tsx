@@ -83,8 +83,9 @@ import { XStack, YStack } from "@tamagui/stacks";
 // this package's declarations.
 import type {} from "@tamagui/get-font-sized";
 import { SizableText } from "@tamagui/text";
-import type { ReactNode, RefObject } from "react";
+import type { ReactElement, ReactNode, RefObject } from "react";
 import {
+  Children,
   cloneElement,
   createContext,
   isValidElement,
@@ -123,14 +124,27 @@ export type {
 const useFieldPresentation = () => useFormControl() as FormControlState;
 
 /**
- * Whether the field's details render under an "above" label (see
- * `FieldLabel`) instead of under the control.
+ * Get a field's first direct child element of a component type.
+ *
+ * @remarks
+ * The field's parts register themselves in layout effects, which never run on
+ * the server, so the field reads a direct child's props to lay itself out on
+ * its first render too.
  */
-const useFieldDetailsUnderLabel = () => {
-  const { labelVariant, labelDefaults } = useFieldPresentation();
+const findChildElement = <TProps,>(children: ReactNode, type: unknown) =>
+  Children.toArray(children).find(
+    (child): child is ReactElement<TProps> =>
+      isValidElement(child) && child.type === type
+  );
 
-  return labelVariant === "above" && !labelDefaults?.inline;
-};
+/**
+ * Whether the field's label sits above its control: neither floating over it
+ * nor inline beside it. The field then tightens its spacing, and its details
+ * render under the label (see `FieldLabel`) instead of under the control.
+ */
+const FieldLabelAboveContext = createContext(false);
+
+const useFieldLabelAbove = () => use(FieldLabelAboveContext);
 
 /** The ids of a field's description and messages, for `aria-describedby`. */
 const getFieldDetailsId = (name: string) => `${name}-details`;
@@ -427,15 +441,30 @@ const FieldGroupInnerImpl = createStyledHOC(
     const messages = field.messages.get();
     const invalid = field.invalid.get();
     const presentation = useFieldPresentation();
-    const [details, setDetails] = useState<ReactNode>(null);
-    const detailsUnderLabel = useFieldDetailsUnderLabel();
+    // A direct `Field.Label` child's explicit variant and `Field.Details`
+    // child's content are known before they register themselves (as when
+    // rendering on the server), so the label's spacing and the details render
+    // where they stay once hydrated.
+    const labelVariant =
+      findChildElement<{ variant?: FieldLabelVariant }>(children, FieldLabel)
+        ?.props.variant ?? presentation.labelVariant;
+    const labelAbove =
+      labelVariant === "above" && !presentation.labelDefaults?.inline;
+    const detailsElement = findChildElement<{ children?: ReactNode }>(
+      children,
+      FieldDetailsImpl
+    );
+    const [registeredDetails, setDetails] = useState<ReactNode>(null);
+    const details = detailsElement
+      ? (detailsElement.props.children ?? null)
+      : registeredDetails;
     const hasMessages =
       messages.length > 0 || (showDisabledMessage && Boolean(disabled));
     // Only the parts that are showing: details under the control give way to
     // messages, while details under an "above" label stay.
     const describedBy =
       [
-        details != null && (detailsUnderLabel || !hasMessages)
+        details != null && (labelAbove || !hasMessages)
           ? getFieldDetailsId(presentation.id ?? name)
           : undefined,
         hasMessages ? getFieldMessagesId(presentation.id ?? name) : undefined
@@ -588,18 +617,26 @@ const FieldGroupInnerImpl = createStyledHOC(
           <FieldButtonsContext.Provider value={fieldButtons}>
             <FieldDetailsSetterContext.Provider value={setDetails}>
               <FieldDetailsContext.Provider value={details}>
-                <YStack group={"field"} gap="lg" disabled={disabled}>
-                  <FieldGroupFrame
-                    ref={forwardedRef}
-                    {...rest}
-                    disabled={disabled}
-                    variant={variant}>
-                    {children}
-                  </FieldGroupFrame>
-                  <FieldValidationTextImpl
-                    showDisabledMessage={showDisabledMessage}
-                  />
-                </YStack>
+                <FieldLabelAboveContext.Provider value={labelAbove}>
+                  <YStack group={"field"} gap="lg" disabled={disabled}>
+                    <FieldGroupFrame
+                      ref={forwardedRef}
+                      // A label above the control sits closer to it.
+                      {...(labelAbove &&
+                        rest.orientation !== "horizontal" && { gap: "xl" })}
+                      {...rest}
+                      disabled={disabled}
+                      variant={variant}>
+                      {children}
+                    </FieldGroupFrame>
+                    <FieldValidationTextImpl
+                      showDisabledMessage={showDisabledMessage}
+                      // Under a label above the control, the stack's gap alone
+                      // separates the message from the control.
+                      marginTop={labelAbove ? "zero" : "lg"}
+                    />
+                  </YStack>
+                </FieldLabelAboveContext.Provider>
               </FieldDetailsContext.Provider>
             </FieldDetailsSetterContext.Provider>
           </FieldButtonsContext.Provider>
@@ -831,7 +868,7 @@ const FieldDetailsImpl = createStyledHOC(
     const field = FieldApi.use();
     const setDetails = use(FieldDetailsSetterContext);
     const messages = field.messages.get();
-    const underLabel = useFieldDetailsUnderLabel();
+    const underLabel = useFieldLabelAbove();
 
     useLayoutEffect(() => {
       setDetails(children);
@@ -1374,7 +1411,7 @@ const FieldLabel = createStyledHOC(
       labelVariant: registeredVariant
     } = useFieldPresentation();
     const details = use(FieldDetailsContext);
-    const detailsUnderLabel = useFieldDetailsUnderLabel();
+    const detailsUnderLabel = useFieldLabelAbove();
     const variant = variantProp ?? labelDefaults?.variant ?? "above";
     const inline = labelDefaults?.inline;
     // Controls only hide their placeholder once the field has registered the

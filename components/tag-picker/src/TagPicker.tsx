@@ -18,10 +18,15 @@
 
 "use client";
 
-import type { FieldLabelPlacement, FormControlSize } from "@cyclone-ui/helpers";
+import type {
+  FieldLabelPlacement,
+  FieldLabelVariant,
+  FormControlSize
+} from "@cyclone-ui/helpers";
 import {
   FieldNotchedOutline,
   getFieldLabelInset,
+  getFormFocusRing,
   getFormFontScale,
   getFormSizeScale,
   getFormSizeToken,
@@ -137,6 +142,9 @@ const TagPickerFrame = styled(XStack, {
 
     labelPlacement: styled.dynamic<FieldLabelPlacement>(),
 
+    // The focus ring depends on it; styled by the `.resolve` below.
+    labelVariant: styled.dynamic<FieldLabelVariant>(),
+
     disabled: {
       true: {
         backgroundColor: "surface-disabled",
@@ -166,9 +174,10 @@ const TagPickerFrame = styled(XStack, {
     // Focus ring: underlined and inlined pickers show their underline instead.
     boxShadow:
       props.focused && (variant === "outlined" || variant === "inlined")
-        ? props.frameSize === "sm"
-          ? "ring-subtle-offset"
-          : "ring-offset"
+        ? getFormFocusRing(
+            props.frameSize as FormControlSize | undefined,
+            props.labelVariant as FieldLabelVariant | undefined
+          )
         : undefined,
     minHeight: sized?.minHeight,
     borderWidth: notched ? 0 : undefined,
@@ -587,6 +596,7 @@ const TagPickerImpl = createStyledHOC(
           frameSize={size}
           variant={variant}
           labelPlacement={labelPlacement}
+          labelVariant={formControl?.labelVariant}
           focused={active}
           disabled={disabled}
           borderColor={borderColor}

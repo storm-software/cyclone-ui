@@ -19,11 +19,16 @@
 "use client";
 
 import { Button } from "@cyclone-ui/button";
-import type { FieldLabelPlacement, FormControlSize } from "@cyclone-ui/helpers";
+import type {
+  FieldLabelPlacement,
+  FieldLabelVariant,
+  FormControlSize
+} from "@cyclone-ui/helpers";
 import {
   FieldNotchedOutline,
   FormControlFrameContext,
   getFormControlAriaProps,
+  getFormFocusRing,
   getFormSizeToken,
   getSized,
   useFieldHasValidationMessage,
@@ -155,6 +160,9 @@ const InputGroup = styled(XStack, {
 
     labelPlacement: styled.dynamic<FieldLabelPlacement>(),
 
+    // The focus ring depends on it; styled by the `.resolve` below.
+    labelVariant: styled.dynamic<FieldLabelVariant>(),
+
     disabled: {
       true: {
         userSelect: "none",
@@ -195,9 +203,10 @@ const InputGroup = styled(XStack, {
     // Focus ring: underlined and inlined inputs show their underline instead.
     boxShadow:
       props.focused && (variant === "outlined" || variant === "inlined")
-        ? frameSize === "sm"
-          ? "ring-subtle-offset"
-          : "ring-offset"
+        ? getFormFocusRing(
+            frameSize as FormControlSize,
+            props.labelVariant as FieldLabelVariant | undefined
+          )
         : undefined,
     paddingHorizontal: sized ? (notched ? 1 : 0) : undefined,
     paddingVertical: notched ? 1 : undefined,
@@ -357,6 +366,7 @@ const InputGroupImpl = createStyledHOC(
               frameSize={frameSize}
               variant={variant}
               labelPlacement={labelPlacement}
+              labelVariant={formControl?.labelVariant}
               focused={active}
               hasValidationMessage={hasValidationMessage}
               disabled={disabled}
