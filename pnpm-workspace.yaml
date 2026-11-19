@@ -24,7 +24,7 @@ catalog:
   "@shell-shock/eslint-plugin": ^0.0.100
   "@shell-shock/nx": ^0.0.109
   "@shell-shock/preset-cli": ^0.9.48
-  "@storm-software/eslint-plugin-pnpm": ^0.0.120
+  "@storm-software/eslint-plugin-pnpm": ^0.0.121
   "@storybook/addon-docs": ^10.6.7
   "@storybook/addon-vitest": ^10.6.7
   "@storybook/react": ^10.6.7
@@ -104,20 +104,20 @@ catalog:
   "@razorwind/shell-shock": ^0.0.32
   "@razorwind/tailwindcss": ^0.0.109
   "@razorwind/tamagui": ^0.0.117
-  "@storm-software/cloudflare-tools": ^0.71.308
-  "@storm-software/config": ^1.138.93
-  "@storm-software/config-tools": ^1.190.157
-  "@storm-software/cspell": ^0.46.224
-  "@storm-software/eslint-config-react": ^0.0.115
-  "@storm-software/eslint-plugin-tsdoc": ^0.0.120
-  "@storm-software/git-tools": ^2.133.3
-  "@storm-software/linting-tools": ^1.134.88
-  "@storm-software/markdownlint": ^0.30.312
-  "@storm-software/pnpm-tools": ^0.7.171
-  "@storm-software/prettier": ^0.59.210
-  "@storm-software/tsconfig": ^0.48.223
-  "@storm-software/untyped": ^0.24.299
-  "@storm-software/workspace-tools": ^1.297.29
+  "@storm-software/cloudflare-tools": ^0.71.310
+  "@storm-software/config": ^1.138.94
+  "@storm-software/config-tools": ^1.190.158
+  "@storm-software/cspell": ^0.46.225
+  "@storm-software/eslint-config-react": ^0.0.116
+  "@storm-software/eslint-plugin-tsdoc": ^0.0.121
+  "@storm-software/git-tools": ^2.133.4
+  "@storm-software/linting-tools": ^1.134.89
+  "@storm-software/markdownlint": ^0.30.313
+  "@storm-software/pnpm-tools": ^0.7.172
+  "@storm-software/prettier": ^0.59.211
+  "@storm-software/tsconfig": ^0.48.224
+  "@storm-software/untyped": ^0.24.300
+  "@storm-software/workspace-tools": ^1.297.30
   "@stryke/async": ^0.1.45
   "@stryke/env": ^0.20.136
   "@stryke/helpers": ^0.10.57
@@ -130,8 +130,8 @@ catalog:
   "@swc-node/register": 1.11.1
   "@swc/core": 1.15.41
   "@swc/helpers": 0.5.23
-  "@trpc/client": ^11.28.3
-  "@trpc/server": ^11.28.3
+  "@trpc/client": ^11.29.5
+  "@trpc/server": ^11.29.5
   "@types/chroma-js": ^2.4.5
   "@types/react": ^19.3.0
   "@types/react-dom": ^19.3.0
@@ -169,8 +169,8 @@ catalog:
   react-native-web: 0.19.12
   react-refresh: ^0.10.0
   recharts: 3.8.0
-  react-email: ^6.11.13
-  "@react-email/ui": ^6.11.13
+  react-email: ^6.11.16
+  "@react-email/ui": ^6.11.16
   "@opentelemetry/api": ^1.10.0
   motion: ^11.18.2
   next: ^16.4.6
@@ -190,7 +190,7 @@ catalog:
   wrangler: ^3.114.17
   zod: ^3.25.76
   zx: ^8.8.5
-  "@storm-software/tsdoc": ^0.13.309
+  "@storm-software/tsdoc": ^0.13.310
   playwright: ^1.65.1
   style-dictionary: ^5.8.0
   "@maskito/phone": 3.11.1
@@ -206,7 +206,7 @@ catalog:
   "@shell-shock/plugin-skills": ^0.0.27
   "@razorwind/eslint": ^0.0.40
   "@razorwind/stylelint": ^0.0.40
-  "@sourcebook/config": ^0.0.15
+  "@sourcebook/config": ^0.0.16
   "@tanstack/react-virtual": ^3.14.26
   "@nx/maven": 24.0.3
   tsx: ^4.23.15
