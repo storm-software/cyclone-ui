@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Navigation Header
 
+## [0.0.105](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-header%400.0.105) (11/19/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve typescript compilation issues ([639256057](https://github.com/storm-software/cyclone-ui/commit/639256057))
+
 ## [0.0.104](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-header%400.0.104) (11/19/2026)
 
 ### Bug Fixes
