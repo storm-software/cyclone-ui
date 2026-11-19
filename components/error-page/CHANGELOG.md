@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Error Page
 
+## [0.0.20](https://github.com/storm-software/cyclone-ui/releases/tag/error-page%400.0.20) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.92**
+- Updated **eyebrow-text** to **v0.5.92**
+- Updated **heading-text** to **v0.5.93**
+- Updated **icons** to **v0.0.95**
+- Updated **illustrations** to **v0.0.21**
+- Updated **link** to **v0.5.101**
+
 ## [0.0.19](https://github.com/storm-software/cyclone-ui/releases/tag/error-page%400.0.19) (11/18/2026)
 
 ### Updated Dependencies

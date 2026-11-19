@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - ESLint Plugin
 
+## [0.0.82](https://github.com/storm-software/cyclone-ui/releases/tag/eslint-plugin%400.0.82) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
 ## [0.0.80](https://github.com/storm-software/cyclone-ui/releases/tag/eslint-plugin%400.0.80) (11/18/2026)
 
 ### Bug Fixes

@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Visually Hidden
 
+## [0.5.92](https://github.com/storm-software/cyclone-ui/releases/tag/visually-hidden%400.5.92) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
 ## [0.5.76](https://github.com/storm-software/cyclone-ui/releases/tag/visually-hidden%400.5.76) (11/14/2026)
 
 ### Documentation

@@ -2,6 +2,25 @@
 
 # Changelog for Cyclone UI - Select
 
+## [0.6.104](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.104) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+- **field:** Clean up the display of the `above` label variant ([f522e535e](https://github.com/storm-software/cyclone-ui/commit/f522e535e))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.92**
+- Updated **context-menu** to **v0.0.92**
+- Updated **field** to **v0.5.102**
+- Updated **form** to **v0.9.95**
+- Updated **helpers** to **v0.3.94**
+- Updated **icons** to **v0.0.95**
+- Updated **input** to **v0.6.102**
+- Updated **search-input** to **v0.1.104**
+- Updated **tooltip** to **v0.5.100**
+
 ## [0.6.103](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.103) (11/18/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Pdf Document Display
 
+## [0.5.99](https://github.com/storm-software/cyclone-ui/releases/tag/pdf-document-display%400.5.99) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **icons** to **v0.0.95**
+- Updated **spinner** to **v0.5.92**
+- Updated **visually-hidden** to **v0.5.92**
+
 ## [0.5.98](https://github.com/storm-software/cyclone-ui/releases/tag/pdf-document-display%400.5.98) (11/18/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,25 @@
 
 # Changelog for Cyclone UI - Docs Page
 
+## [0.0.78](https://github.com/storm-software/cyclone-ui/releases/tag/docs-page%400.0.78) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.92**
+- Updated **breadcrumb** to **v0.4.104**
+- Updated **button** to **v0.6.100**
+- Updated **divider** to **v0.0.88**
+- Updated **heading-text** to **v0.5.93**
+- Updated **icons** to **v0.0.95**
+- Updated **inline-code-text** to **v0.5.91**
+- Updated **navigation-sidebar** to **v0.0.36**
+- Updated **page** to **v0.0.96**
+- Updated **table-of-contents** to **v0.0.96**
+
 ## [0.0.77](https://github.com/storm-software/cyclone-ui/releases/tag/docs-page%400.0.77) (11/18/2026)
 
 ### Updated Dependencies

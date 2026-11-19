@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Stepper
 
+## [0.3.101](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.101) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.93**
+- Updated **icons** to **v0.0.95**
+- Updated **next-button** to **v0.5.100**
+- Updated **number-text** to **v0.5.92**
+- Updated **previous-button** to **v0.5.100**
+
 ## [0.3.100](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.100) (11/18/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Credit Card Input
 
+## [0.0.86](https://github.com/storm-software/cyclone-ui/releases/tag/credit-card-input%400.0.86) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **eyebrow-text** to **v0.5.92**
+- Updated **field** to **v0.5.102**
+- Updated **form** to **v0.9.95**
+- Updated **heading-text** to **v0.5.93**
+- Updated **helpers** to **v0.3.94**
+- Updated **input** to **v0.6.102**
+- Updated **password-input** to **v0.0.101**
+
 ## [0.0.85](https://github.com/storm-software/cyclone-ui/releases/tag/credit-card-input%400.0.85) (11/18/2026)
 
 ### Updated Dependencies

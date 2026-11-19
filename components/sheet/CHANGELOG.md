@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Sheet
 
+## [0.0.101](https://github.com/storm-software/cyclone-ui/releases/tag/sheet%400.0.101) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.92**
+- Updated **button** to **v0.6.100**
+- Updated **container** to **v0.6.99**
+- Updated **heading-text** to **v0.5.93**
+- Updated **scroll-view** to **v0.5.100**
+
 ## [0.0.100](https://github.com/storm-software/cyclone-ui/releases/tag/sheet%400.0.100) (11/18/2026)
 
 ### Updated Dependencies

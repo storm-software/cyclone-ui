@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Button
 
+## [0.6.100](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.100) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.92**
+- Updated **container** to **v0.6.99**
+- Updated **helpers** to **v0.3.94**
+- Updated **icons** to **v0.0.95**
+- Updated **ripple-animation** to **v0.0.69**
+- Updated **tooltip** to **v0.5.100**
+
 ## [0.6.99](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.99) (11/18/2026)
 
 ### Updated Dependencies

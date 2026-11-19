@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Context Menu
 
+## [0.0.92](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.92) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.92**
+- Updated **button** to **v0.6.100**
+- Updated **container** to **v0.6.99**
+- Updated **helpers** to **v0.3.94**
+- Updated **icons** to **v0.0.95**
+- Updated **popover** to **v0.5.102**
+- Updated **tooltip** to **v0.5.100**
+
 ## [0.0.91](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.91) (11/18/2026)
 
 ### Updated Dependencies

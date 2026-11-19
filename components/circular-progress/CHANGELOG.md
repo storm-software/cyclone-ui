@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Circular Progress
 
+## [0.0.90](https://github.com/storm-software/cyclone-ui/releases/tag/circular-progress%400.0.90) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
 ## [0.0.74](https://github.com/storm-software/cyclone-ui/releases/tag/circular-progress%400.0.74) (11/14/2026)
 
 ### Documentation

@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Theme Select
 
+## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/theme-select%400.0.5) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.102**
+- Updated **form** to **v0.9.95**
+- Updated **select** to **v0.6.104**
+
 ## [0.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/theme-select%400.0.4) (11/18/2026)
 
 ### Updated Dependencies

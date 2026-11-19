@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Navigation Header
 
+## [0.0.101](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-header%400.0.101) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.100**
+- Updated **eyebrow-text** to **v0.5.92**
+- Updated **heading-text** to **v0.5.93**
+- Updated **icons** to **v0.0.95**
+- Updated **link** to **v0.5.101**
+- Updated **redacted-animation** to **v0.0.90**
+- Updated **search-dialog** to **v0.0.80**
+- Updated **state** to **v0.0.96**
+- Updated **theme-toggler** to **v0.0.26**
+
 ## [0.0.100](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-header%400.0.100) (11/18/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Search Dialog
 
+## [0.0.80](https://github.com/storm-software/cyclone-ui/releases/tag/search-dialog%400.0.80) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.92**
+- Updated **button** to **v0.6.100**
+- Updated **dialog** to **v0.3.101**
+- Updated **icons** to **v0.0.95**
+- Updated **input** to **v0.6.102**
+- Updated **kbd** to **v0.0.47**
+- Updated **toggle-group** to **v0.0.89**
+- Updated **visually-hidden** to **v0.5.92**
+
 ## [0.0.79](https://github.com/storm-software/cyclone-ui/releases/tag/search-dialog%400.0.79) (11/18/2026)
 
 ### Updated Dependencies

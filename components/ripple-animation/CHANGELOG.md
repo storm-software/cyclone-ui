@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Ripple Animation
 
+## [0.0.69](https://github.com/storm-software/cyclone-ui/releases/tag/ripple-animation%400.0.69) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
 ## [0.0.53](https://github.com/storm-software/cyclone-ui/releases/tag/ripple-animation%400.0.53) (11/14/2026)
 
 ### Documentation

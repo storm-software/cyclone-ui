@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Password Input
 
+## [0.0.101](https://github.com/storm-software/cyclone-ui/releases/tag/password-input%400.0.101) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.92**
+- Updated **field** to **v0.5.102**
+- Updated **form** to **v0.9.95**
+- Updated **helpers** to **v0.3.94**
+- Updated **icons** to **v0.0.95**
+- Updated **input** to **v0.6.102**
+
 ## [0.0.100](https://github.com/storm-software/cyclone-ui/releases/tag/password-input%400.0.100) (11/18/2026)
 
 ### Updated Dependencies

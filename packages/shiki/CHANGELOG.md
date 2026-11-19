@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Shiki
 
+## [0.0.82](https://github.com/storm-software/cyclone-ui/releases/tag/shiki%400.0.82) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
 ## [0.0.60](https://github.com/storm-software/cyclone-ui/releases/tag/shiki%400.0.60) (11/13/2026)
 
 ### Features

@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Search Input
 
+## [0.1.104](https://github.com/storm-software/cyclone-ui/releases/tag/search-input%400.1.104) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **context-menu** to **v0.0.92**
+- Updated **field** to **v0.5.102**
+- Updated **form** to **v0.9.95**
+- Updated **helpers** to **v0.3.94**
+- Updated **icons** to **v0.0.95**
+- Updated **input** to **v0.6.102**
+
 ## [0.1.103](https://github.com/storm-software/cyclone-ui/releases/tag/search-input%400.1.103) (11/18/2026)
 
 ### Updated Dependencies

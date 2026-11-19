@@ -2,6 +2,36 @@
 
 # Changelog for Cyclone UI - Nextjs
 
+## [0.0.72](https://github.com/storm-software/cyclone-ui/releases/tag/nextjs%400.0.72) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **bar-chart** to **v0.0.64**
+- Updated **body-text** to **v0.5.92**
+- Updated **calendar** to **v0.0.86**
+- Updated **chart** to **v0.0.64**
+- Updated **checkbox** to **v0.5.102**
+- Updated **composed-chart** to **v0.0.64**
+- Updated **drawer** to **v0.1.102**
+- Updated **field** to **v0.5.102**
+- Updated **footer** to **v0.0.100**
+- Updated **form** to **v0.9.95**
+- Updated **input** to **v0.6.102**
+- Updated **link** to **v0.5.101**
+- Updated **page** to **v0.0.96**
+- Updated **password-input** to **v0.0.101**
+- Updated **radio-group** to **v0.5.103**
+- Updated **select** to **v0.6.104**
+- Updated **state** to **v0.0.96**
+- Updated **switch** to **v0.5.102**
+- Updated **text-area** to **v0.1.103**
+- Updated **theme-builder** to **v0.0.82**
+- Updated **tokens** to **v0.3.81**
+
 ## [0.0.71](https://github.com/storm-software/cyclone-ui/releases/tag/nextjs%400.0.71) (11/18/2026)
 
 ### Updated Dependencies

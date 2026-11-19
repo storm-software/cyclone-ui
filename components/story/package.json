@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/story",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "description": "A documentation block that displays a component with controls to change its props. The preview renders the component, or a render function for compound components, from the story args; a skeleton stands in while the display loads or suspends, and an error boundary keeps a failing render inside the preview with an error icon. Under it, a Props panel builds a Form of Field controls (a text input, number input, switch or select per prop) from the initial args or declared controls, each with its documentation, and a Reset button. Variants are presets of args chosen with a select, fixed props have no control, and a title and description head the block. Use it in documentation pages, like Fumadocs Story.",
   "repository": {

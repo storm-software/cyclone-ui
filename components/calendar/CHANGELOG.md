@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Calendar
 
+## [0.0.86](https://github.com/storm-software/cyclone-ui/releases/tag/calendar%400.0.86) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.100**
+- Updated **heading-text** to **v0.5.93**
+- Updated **helpers** to **v0.3.94**
+- Updated **icons** to **v0.0.95**
+
 ## [0.0.85](https://github.com/storm-software/cyclone-ui/releases/tag/calendar%400.0.85) (11/18/2026)
 
 ### Updated Dependencies

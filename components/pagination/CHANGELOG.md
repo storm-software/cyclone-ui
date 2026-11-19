@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Pagination
 
+## [0.8.100](https://github.com/storm-software/cyclone-ui/releases/tag/pagination%400.8.100) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.100**
+- Updated **icons** to **v0.0.95**
+- Updated **next-button** to **v0.5.100**
+- Updated **previous-button** to **v0.5.100**
+
 ## [0.8.99](https://github.com/storm-software/cyclone-ui/releases/tag/pagination%400.8.99) (11/18/2026)
 
 ### Updated Dependencies

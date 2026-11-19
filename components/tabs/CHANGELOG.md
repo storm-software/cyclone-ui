@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Tabs
 
+## [0.3.99](https://github.com/storm-software/cyclone-ui/releases/tag/tabs%400.3.99) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.92**
+- Updated **container** to **v0.6.99**
+- Updated **heading-text** to **v0.5.93**
+- Updated **helpers** to **v0.3.94**
+
 ## [0.3.98](https://github.com/storm-software/cyclone-ui/releases/tag/tabs%400.3.98) (11/18/2026)
 
 ### Updated Dependencies

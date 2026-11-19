@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Terrain Footer
 
+## [0.0.61](https://github.com/storm-software/cyclone-ui/releases/tag/terrain-footer%400.0.61) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.92**
+- Updated **footer** to **v0.0.100**
+- Updated **heading-text** to **v0.5.93**
+- Updated **icons** to **v0.0.95**
+- Updated **link** to **v0.5.101**
+
 ## [0.0.60](https://github.com/storm-software/cyclone-ui/releases/tag/terrain-footer%400.0.60) (11/18/2026)
 
 ### Updated Dependencies

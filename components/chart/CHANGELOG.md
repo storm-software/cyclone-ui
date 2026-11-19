@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Chart
 
+## [0.0.64](https://github.com/storm-software/cyclone-ui/releases/tag/chart%400.0.64) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.92**
+- Updated **number-text** to **v0.5.92**
+- Updated **spinner** to **v0.5.92**
+
 ## [0.0.63](https://github.com/storm-software/cyclone-ui/releases/tag/chart%400.0.63) (11/18/2026)
 
 ### Updated Dependencies

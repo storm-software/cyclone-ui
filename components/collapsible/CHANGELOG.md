@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Collapsible
 
+## [0.3.96](https://github.com/storm-software/cyclone-ui/releases/tag/collapsible%400.3.96) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **accordion** to **v0.3.100**
+- Updated **body-text** to **v0.5.92**
+
 ## [0.3.95](https://github.com/storm-software/cyclone-ui/releases/tag/collapsible%400.3.95) (11/18/2026)
 
 ### Updated Dependencies

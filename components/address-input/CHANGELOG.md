@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Address Input
 
+## [0.0.88](https://github.com/storm-software/cyclone-ui/releases/tag/address-input%400.0.88) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.92**
+- Updated **context-menu** to **v0.0.92**
+- Updated **field** to **v0.5.102**
+- Updated **form** to **v0.9.95**
+- Updated **helpers** to **v0.3.94**
+- Updated **icons** to **v0.0.95**
+- Updated **search-input** to **v0.1.104**
+
 ## [0.0.87](https://github.com/storm-software/cyclone-ui/releases/tag/address-input%400.0.87) (11/18/2026)
 
 ### Updated Dependencies

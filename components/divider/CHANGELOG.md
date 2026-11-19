@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Divider
 
+## [0.0.88](https://github.com/storm-software/cyclone-ui/releases/tag/divider%400.0.88) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **tokens** to **v0.3.81**
+
 ## [0.0.87](https://github.com/storm-software/cyclone-ui/releases/tag/divider%400.0.87) (11/18/2026)
 
 ### Updated Dependencies

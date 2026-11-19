@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Card
 
+## [0.6.102](https://github.com/storm-software/cyclone-ui/releases/tag/card%400.6.102) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.92**
+- Updated **container** to **v0.6.99**
+- Updated **eyebrow-text** to **v0.5.92**
+- Updated **heading-text** to **v0.5.93**
+- Updated **helpers** to **v0.3.94**
+- Updated **icons** to **v0.0.95**
+- Updated **link** to **v0.5.101**
+- Updated **tag** to **v0.0.95**
+
 ## [0.6.101](https://github.com/storm-software/cyclone-ui/releases/tag/card%400.6.101) (11/18/2026)
 
 ### Updated Dependencies

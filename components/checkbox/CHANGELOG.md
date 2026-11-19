@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Checkbox
 
+## [0.5.102](https://github.com/storm-software/cyclone-ui/releases/tag/checkbox%400.5.102) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.102**
+- Updated **form** to **v0.9.95**
+- Updated **helpers** to **v0.3.94**
+- Updated **icons** to **v0.0.95**
+
 ## [0.5.101](https://github.com/storm-software/cyclone-ui/releases/tag/checkbox%400.5.101) (11/18/2026)
 
 ### Updated Dependencies

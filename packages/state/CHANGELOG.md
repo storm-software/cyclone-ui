@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - State
 
+## [0.0.96](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.96) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.94**
+
 ## [0.0.95](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.95) (11/18/2026)
 
 ### Updated Dependencies

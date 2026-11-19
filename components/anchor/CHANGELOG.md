@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Anchor
 
+## [0.0.99](https://github.com/storm-software/cyclone-ui/releases/tag/anchor%400.0.99) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.93**
+- Updated **icons** to **v0.0.95**
+
 ## [0.0.98](https://github.com/storm-software/cyclone-ui/releases/tag/anchor%400.0.98) (11/18/2026)
 
 ### Updated Dependencies

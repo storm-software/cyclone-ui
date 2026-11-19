@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - CLI
 
+## [0.6.84](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.84) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **registry-api** to **v0.3.92**
+- Updated **theme-builder** to **v0.0.82**
+
 ## [0.6.83](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.83) (11/18/2026)
 
 ### Updated Dependencies

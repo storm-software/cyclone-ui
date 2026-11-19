@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Phone Number Input
 
+## [0.0.105](https://github.com/storm-software/cyclone-ui/releases/tag/phone-number-input%400.0.105) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **context-menu** to **v0.0.92**
+- Updated **field** to **v0.5.102**
+- Updated **form** to **v0.9.95**
+- Updated **helpers** to **v0.3.94**
+- Updated **input** to **v0.6.102**
+- Updated **search-input** to **v0.1.104**
+
 ## [0.0.104](https://github.com/storm-software/cyclone-ui/releases/tag/phone-number-input%400.0.104) (11/18/2026)
 
 ### Updated Dependencies

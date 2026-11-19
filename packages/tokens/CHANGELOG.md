@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Tokens
 
+## [0.3.81](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.81) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
 ## [0.3.78](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.78) (11/18/2026)
 
 ### Features

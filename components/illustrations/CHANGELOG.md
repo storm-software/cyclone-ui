@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Illustrations
 
+## [0.0.21](https://github.com/storm-software/cyclone-ui/releases/tag/illustrations%400.0.21) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
 ## [0.0.11](https://github.com/storm-software/cyclone-ui/releases/tag/illustrations%400.0.11) (11/16/2026)
 
 ### Features

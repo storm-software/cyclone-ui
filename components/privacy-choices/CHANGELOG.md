@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Privacy Choices
 
+## [0.0.67](https://github.com/storm-software/cyclone-ui/releases/tag/privacy-choices%400.0.67) (11/19/2026)
+
+### Bug Fixes
+
+- **field:** Clean up the display of the `above` label variant ([7102d4423](https://github.com/storm-software/cyclone-ui/commit/7102d4423))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.92**
+- Updated **button** to **v0.6.100**
+- Updated **dialog** to **v0.3.101**
+- Updated **heading-text** to **v0.5.93**
+- Updated **icons** to **v0.0.95**
+- Updated **scroll-view** to **v0.5.100**
+- Updated **switch** to **v0.5.102**
+- Updated **tabs** to **v0.3.99**
+
 ## [0.0.66](https://github.com/storm-software/cyclone-ui/releases/tag/privacy-choices%400.0.66) (11/18/2026)
 
 ### Updated Dependencies
