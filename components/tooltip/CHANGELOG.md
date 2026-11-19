@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Tooltip
 
+## [0.5.101](https://github.com/storm-software/cyclone-ui/releases/tag/tooltip%400.5.101) (11/19/2026)
+
+### Features
+
+- **address-map:** Initial check-in of the `AddressMap` component package ([2f4a24e3e](https://github.com/storm-software/cyclone-ui/commit/2f4a24e3e))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.93**
+- Updated **container** to **v0.6.100**
+
 ## [0.5.100](https://github.com/storm-software/cyclone-ui/releases/tag/tooltip%400.5.100) (11/19/2026)
 
 ### Bug Fixes

@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Phone Number Input
 
+## [0.0.106](https://github.com/storm-software/cyclone-ui/releases/tag/phone-number-input%400.0.106) (11/19/2026)
+
+### Features
+
+- **address-map:** Initial check-in of the `AddressMap` component package ([2f4a24e3e](https://github.com/storm-software/cyclone-ui/commit/2f4a24e3e))
+
+### Updated Dependencies
+
+- Updated **context-menu** to **v0.0.93**
+- Updated **field** to **v0.5.103**
+- Updated **form** to **v0.9.96**
+- Updated **helpers** to **v0.3.95**
+- Updated **input** to **v0.6.103**
+- Updated **search-input** to **v0.1.105**
+
 ## [0.0.105](https://github.com/storm-software/cyclone-ui/releases/tag/phone-number-input%400.0.105) (11/19/2026)
 
 ### Bug Fixes

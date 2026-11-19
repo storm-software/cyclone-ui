@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.83](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.83) (11/19/2026)
+
+### Features
+
+- **address-map:** Initial check-in of the `AddressMap` component package ([2f4a24e3e](https://github.com/storm-software/cyclone-ui/commit/2f4a24e3e))
+
 ## [0.0.82](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.82) (11/19/2026)
 
 ### Bug Fixes

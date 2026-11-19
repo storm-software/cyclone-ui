@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Tokens
 
+## [0.3.82](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.82) (11/19/2026)
+
+### Features
+
+- **address-map:** Initial check-in of the `AddressMap` component package ([2f4a24e3e](https://github.com/storm-software/cyclone-ui/commit/2f4a24e3e))
+
 ## [0.3.81](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.81) (11/19/2026)
 
 ### Bug Fixes

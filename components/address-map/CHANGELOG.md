@@ -1,0 +1,14 @@
+![Cyclone UI's logo banner](https://public.storm-cdn.com/cyclone-ui/media/banner-1280x320-dark.gif)
+
+# Changelog for Cyclone UI - Address Map
+
+## [0.0.1](https://github.com/storm-software/cyclone-ui/releases/tag/address-map%400.0.1) (11/19/2026)
+
+### Features
+
+- **address-map:** Initial check-in of the `AddressMap` component package ([2f4a24e3e](https://github.com/storm-software/cyclone-ui/commit/2f4a24e3e))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.93**
+- Updated **icons** to **v0.0.96**
