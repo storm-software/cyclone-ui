@@ -20,6 +20,7 @@
   "dependencies": {
     "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/spinner": "workspace:*",
     "@tamagui/core": "catalog:",
     "@tamagui/image": "catalog:"
   },

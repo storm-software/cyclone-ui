@@ -29,7 +29,7 @@ import type { SearchDialogProps } from "@cyclone-ui/search-dialog";
 import { SearchDialogPlaceholder } from "@cyclone-ui/search-dialog/SearchDialogButton";
 import type { ThemeTogglerProps } from "@cyclone-ui/theme-toggler";
 import { ThemeToggler } from "@cyclone-ui/theme-toggler";
-import type { GetProps } from "@tamagui/core";
+import type { GetProps, TamaguiElement } from "@tamagui/core";
 import {
   createStyledHOC,
   styled,
@@ -374,6 +374,58 @@ const NavigationHeaderDropdown = styled(View, {
     }
   } as const
 });
+
+// Its height follows the content's, so it can transition between menus.
+const NavigationHeaderDropdownViewport = styled(View, {
+  displayName: "NavigationHeaderDropdownViewport",
+  width: "100%",
+  overflow: "hidden"
+});
+
+interface NavigationHeaderMeasuredElement {
+  offsetHeight: number;
+  parentElement: { style: { height: string; transition: string } } | null;
+}
+
+interface NavigationHeaderResizeObserver {
+  observe: (target: NavigationHeaderMeasuredElement) => void;
+  disconnect: () => void;
+}
+
+// Sizes the viewport (the content's parent) to the content's height. Styles
+// are written in the observer callback, not via state, so the CSS transition
+// isn't chased by re-renders. The first measure after opening snaps; later
+// ones (switching between menus) animate.
+const animateDropdownHeight = (element: TamaguiElement | null) => {
+  const node = element as unknown as NavigationHeaderMeasuredElement | null;
+  const viewport = node?.parentElement;
+  const BrowserResizeObserver = (
+    globalThis as typeof globalThis & {
+      ResizeObserver?: new (
+        callback: () => void
+      ) => NavigationHeaderResizeObserver;
+    }
+  ).ResizeObserver;
+  if (!node || !viewport || !BrowserResizeObserver) {
+    return;
+  }
+
+  let first = true;
+  const observer = new BrowserResizeObserver(() => {
+    viewport.style.transition =
+      first || getBrowserWindow()?.matchMedia?.(reducedMotionMediaQuery).matches
+        ? "none"
+        : `height ${dropdownTransition} ease-out`;
+    viewport.style.height = `${node.offsetHeight}px`;
+    first = false;
+  });
+  observer.observe(node);
+
+  return () => {
+    observer.disconnect();
+    viewport.style.height = "";
+  };
+};
 
 const NavigationHeaderDropdownContent = styled(View, {
   displayName: "NavigationHeaderDropdownContent",
@@ -1106,75 +1158,79 @@ const NavigationHeaderRoot = createStyledHOC(
               : `clip-path ${dropdownTransition}`
           }}
           onMouseLeave={() => setHoveredDropdownItem(null)}>
-          {openItem?.children?.length ? (
-            <NavigationHeaderDropdownContent>
-              {groupNavigationHeaderChildren(openItem.children).map(
-                (group, groupIndex) => (
-                  <NavigationHeaderDropdownGroup
-                    key={`${group.label ?? "navigation-group"}-${groupIndex}`}>
-                    {group.label ? (
-                      <NavigationHeaderDropdownEntrance {...entranceProps()}>
-                        <NavigationHeaderDropdownGroupLabel>
-                          {group.label}
-                        </NavigationHeaderDropdownGroupLabel>
-                      </NavigationHeaderDropdownEntrance>
-                    ) : null}
-
-                    {group.items.map((child, childIndex) => {
-                      const scope = group.featured ? "featured" : "standard";
-                      const hovered = hoveredDropdownItem?.scope === scope;
-
-                      // Always pass a plain color: switching between the link's
-                      // own `hover:` styles and an override mid-hover makes
-                      // Tamagui skip clearing its hover state on mouse leave,
-                      // leaving the previous link stuck highlighted.
-                      const color = hovered
-                        ? hoveredDropdownItem.groupIndex === groupIndex &&
-                          hoveredDropdownItem.childIndex === childIndex
-                          ? "emphasis-active"
-                          : "emphasis-inactive"
-                        : "emphasis";
-
-                      return (
-                        <NavigationHeaderDropdownEntrance
-                          key={`${child.href ?? "navigation-child"}-${childIndex}`}
-                          {...entranceProps()}>
-                          <NavigationHeaderDropdownLink
-                            group={false}
-                            variant="emphasis"
-                            inverse={true}
-                            underline="none"
-                            featured={child.featured}
-                            href={child.href}
-                            target={child.target}
-                            external={child.external}
-                            style={{ color: `var(--${color})` }}
-                            aria-current={child.active ? "page" : undefined}
-                            onMouseEnter={() =>
-                              setHoveredDropdownItem({
-                                scope,
-                                groupIndex,
-                                childIndex
-                              })
-                            }
-                            onPress={(event: NavigationHeaderPressEvent) => {
-                              child.onPress?.(event);
-                              setOpenItemIndex(null);
-                            }}>
-                            {child.featured ? (
-                              <HeadingLargeText>{child.label}</HeadingLargeText>
-                            ) : (
-                              child.label
-                            )}
-                          </NavigationHeaderDropdownLink>
+          <NavigationHeaderDropdownViewport>
+            {openItem?.children?.length ? (
+              <NavigationHeaderDropdownContent ref={animateDropdownHeight}>
+                {groupNavigationHeaderChildren(openItem.children).map(
+                  (group, groupIndex) => (
+                    <NavigationHeaderDropdownGroup
+                      key={`${group.label ?? "navigation-group"}-${groupIndex}`}>
+                      {group.label ? (
+                        <NavigationHeaderDropdownEntrance {...entranceProps()}>
+                          <NavigationHeaderDropdownGroupLabel>
+                            {group.label}
+                          </NavigationHeaderDropdownGroupLabel>
                         </NavigationHeaderDropdownEntrance>
-                      );
-                    })}
-                  </NavigationHeaderDropdownGroup>
-                )
-              )}
-            </NavigationHeaderDropdownContent>
-          ) : null}
+                      ) : null}
+
+                      {group.items.map((child, childIndex) => {
+                        const scope = group.featured ? "featured" : "standard";
+                        const hovered = hoveredDropdownItem?.scope === scope;
+
+                        // Always pass a plain color: switching between the link's
+                        // own `hover:` styles and an override mid-hover makes
+                        // Tamagui skip clearing its hover state on mouse leave,
+                        // leaving the previous link stuck highlighted.
+                        const color = hovered
+                          ? hoveredDropdownItem.groupIndex === groupIndex &&
+                            hoveredDropdownItem.childIndex === childIndex
+                            ? "emphasis-active"
+                            : "emphasis-inactive"
+                          : "emphasis";
+
+                        return (
+                          <NavigationHeaderDropdownEntrance
+                            key={`${child.href ?? "navigation-child"}-${childIndex}`}
+                            {...entranceProps()}>
+                            <NavigationHeaderDropdownLink
+                              group={false}
+                              variant="emphasis"
+                              inverse={true}
+                              underline="none"
+                              featured={child.featured}
+                              href={child.href}
+                              target={child.target}
+                              external={child.external}
+                              style={{ color: `var(--${color})` }}
+                              aria-current={child.active ? "page" : undefined}
+                              onMouseEnter={() =>
+                                setHoveredDropdownItem({
+                                  scope,
+                                  groupIndex,
+                                  childIndex
+                                })
+                              }
+                              onPress={(event: NavigationHeaderPressEvent) => {
+                                child.onPress?.(event);
+                                setOpenItemIndex(null);
+                              }}>
+                              {child.featured ? (
+                                <HeadingLargeText>
+                                  {child.label}
+                                </HeadingLargeText>
+                              ) : (
+                                child.label
+                              )}
+                            </NavigationHeaderDropdownLink>
+                          </NavigationHeaderDropdownEntrance>
+                        );
+                      })}
+                    </NavigationHeaderDropdownGroup>
+                  )
+                )}
+              </NavigationHeaderDropdownContent>
+            ) : null}
+          </NavigationHeaderDropdownViewport>
         </NavigationHeaderDropdown>
 
         <NavigationHeaderMobileLayer

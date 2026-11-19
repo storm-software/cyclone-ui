@@ -49,7 +49,7 @@ const AlertDialogIcon = createStyledHOC(
       <YStack position="relative" minWidth="100%" alignItems="center">
         <View
           theme={theme}
-          transition="400ms"
+          transition={{ duration: "400ms", delay: "200ms" }}
           y="enter:-100px"
           opacity="enter:0.6"
           position="absolute"

@@ -145,7 +145,7 @@ const AlertFrameImpl = ({
             // Fades and grows in on mount, and back out when dismissed. Naming
             // `exit` keeps `createComponent` off its `avoidReRenders` path, so
             // the exit timing is used.
-            transition={{ duration: "400ms", exit: "200ms ease-out" }}
+            transition={{ duration: "400ms", delay: "100ms", exit: "200ms ease-out" }}
             opacity="enter:0 exit:0"
             scale="enter:0.95 exit:0.95">
             <Container

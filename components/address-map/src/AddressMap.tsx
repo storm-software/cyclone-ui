@@ -20,9 +20,11 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { MapMarker, MapTrifold } from "@cyclone-ui/icons";
+import { Spinner } from "@cyclone-ui/spinner";
 import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, View } from "@tamagui/core";
 import { Image } from "@tamagui/image";
+import { useState } from "react";
 
 /** An address with the coordinates to show it at. */
 export interface AddressOption {
@@ -109,9 +111,23 @@ export const AddressMap = createStyledHOC(
     }: GetProps<typeof AddressMapFrame> & AddressMapExtraProps,
     forwardedRef
   ) => {
+    // The src of the last center tile that finished (or failed) loading; the
+    // map shows a spinner in place of the marker until it matches.
+    const [loadedSrc, setLoadedSrc] = useState<string>();
+
     if (!address) {
       return (
         <AddressMapFrame ref={forwardedRef} {...props}>
+          {/* A larger, subdued copy behind, cropped by the frame's corner. */}
+          <View
+            position="absolute"
+            right={-64}
+            bottom={-96}
+            opacity={0.15}
+            transform={[{ rotate: "-12deg" }]}
+            aria-hidden>
+            <MapTrifold color="subtle" size={320} />
+          </View>
           <MapTrifold color="subtle" size="16xl" />
         </AddressMapFrame>
       );
@@ -125,6 +141,13 @@ export const AddressMap = createStyledHOC(
         Math.asinh(Math.tan((address.latitude * Math.PI) / 180)) / Math.PI) /
         2) *
       scale;
+
+    const tileSrc = (tileX: number, tileY: number) =>
+      tileUrl
+        .replace("{z}", String(zoom))
+        .replace("{x}", String(tileX))
+        .replace("{y}", String(tileY));
+    const centerSrc = tileSrc(Math.floor(x) % scale, Math.floor(y));
 
     return (
       <AddressMapFrame
@@ -143,6 +166,8 @@ export const AddressMap = createStyledHOC(
             // Longitude wraps around past the antimeridian.
             const tileX = (((Math.floor(x) + dx) % scale) + scale) % scale;
 
+            const src = tileSrc(tileX, tileY);
+
             return (
               <Image
                 key={`${dx},${dy}`}
@@ -151,41 +176,50 @@ export const AddressMap = createStyledHOC(
                 left={(dx - (x % 1)) * TILE_SIZE}
                 top={(dy - (y % 1)) * TILE_SIZE}
                 width={TILE_SIZE}
+                // A CSS reset's `img { max-width: 100% }` would squash it to the 0px wrapper.
+                maxWidth={TILE_SIZE}
                 height={TILE_SIZE}
-                src={tileUrl
-                  .replace("{z}", String(zoom))
-                  .replace("{x}", String(tileX))
-                  .replace("{y}", String(tileY))}
+                src={src}
+                onLoad={src === centerSrc ? () => setLoadedSrc(src) : undefined}
+                onError={
+                  src === centerSrc ? () => setLoadedSrc(src) : undefined
+                }
               />
             );
           })}
         </View>
 
-        {/* Positioned, so it paints over the tiles. */}
-        <View
-          position="relative"
-          alignItems="center"
-          justifyContent="center"
-          width={56}
-          height={56}
-          borderRadius="full">
+        {/* Positioned, so they paint over the tiles. */}
+        {loadedSrc !== centerSrc ? (
+          <View position="relative">
+            <Spinner size="large" color="var(--primary)" />
+          </View>
+        ) : (
           <View
-            position="absolute"
-            inset={0}
-            borderRadius="full"
-            backgroundColor="primary"
-            opacity={0.3}
-          />
-          <View
+            position="relative"
             alignItems="center"
             justifyContent="center"
-            width={32}
-            height={32}
-            borderRadius="full"
-            backgroundColor="secondary">
-            <MapMarker color="primary" size="5xl" variant="filled" />
+            width={56}
+            height={56}
+            borderRadius="full">
+            <View
+              position="absolute"
+              inset={0}
+              borderRadius="full"
+              backgroundColor="primary"
+              opacity={0.3}
+            />
+            <View
+              alignItems="center"
+              justifyContent="center"
+              width={32}
+              height={32}
+              borderRadius="full"
+              backgroundColor="secondary">
+              <MapMarker color="primary" size="5xl" variant="filled" />
+            </View>
           </View>
-        </View>
+        )}
 
         <BodyText
           size="sm"
