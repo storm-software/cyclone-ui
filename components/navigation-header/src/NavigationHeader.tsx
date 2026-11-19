@@ -399,8 +399,9 @@ interface NavigationHeaderResizeObserver {
 const animateDropdownHeight = (element: TamaguiElement | null) => {
   const node = element as unknown as NavigationHeaderMeasuredElement | null;
   const viewport = node?.parentElement;
+  // Keep the structural observer type even when consumers include lib.dom.
   const BrowserResizeObserver = (
-    globalThis as typeof globalThis & {
+    globalThis as unknown as {
       ResizeObserver?: new (
         callback: () => void
       ) => NavigationHeaderResizeObserver;
