@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Context Menu
 
+## [0.0.94](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.94) (11/19/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.94**
+- Updated **button** to **v0.6.102**
+- Updated **container** to **v0.6.101**
+- Updated **helpers** to **v0.3.96**
+- Updated **icons** to **v0.0.97**
+- Updated **popover** to **v0.5.104**
+- Updated **tooltip** to **v0.5.102**
+
 ## [0.0.93](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.93) (11/19/2026)
 
 ### Updated Dependencies
