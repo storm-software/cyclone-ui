@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Topographic Background
 
+## [0.0.22](https://github.com/storm-software/cyclone-ui/releases/tag/topographic-background%400.0.22) (11/18/2026)
+
+### Bug Fixes
+
+- **topographic-background:** Update logic to apply shaders through props ([37d70ab08](https://github.com/storm-software/cyclone-ui/commit/37d70ab08))
+
 ## [0.0.21](https://github.com/storm-software/cyclone-ui/releases/tag/topographic-background%400.0.21) (11/18/2026)
 
 ### Features
