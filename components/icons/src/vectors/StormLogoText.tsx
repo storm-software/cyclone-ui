@@ -595,9 +595,16 @@ const ThemedIcon = ({
     ? explicitColor
     : (theme.primary?.get() ?? theme.color?.get());
 
+  // These props arrive as `any` through IconProps. Annotate the locals so
+  // the maps are indexed with their own keys.
+  const logoWeight: keyof typeof PATHS =
+    weight === "thick" ? "thick" : "thin";
+  const logoStretch: keyof typeof HEIGHTS =
+    stretch === "medium" || stretch === "tall" ? stretch : "normal";
+
   // Pad the view box so the outline stroke isn't clipped at the edges
   const pad = outlined ? OUTLINE_WIDTH / 2 : 0;
-  const height = HEIGHTS[stretch];
+  const height = HEIGHTS[logoStretch];
 
   return (
     <Svg
@@ -609,7 +616,7 @@ const ThemedIcon = ({
         stroke={outlined ? color : undefined}
         strokeWidth={outlined ? OUTLINE_WIDTH : undefined}
         strokeLinejoin="round">
-        {PATHS[weight][stretch].map(d => (
+        {PATHS[logoWeight][logoStretch].map(d => (
           <Path key={d} fillRule="evenodd" d={d} />
         ))}
       </G>

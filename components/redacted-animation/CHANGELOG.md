@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Redacted Animation
 
+## [0.0.89](https://github.com/storm-software/cyclone-ui/releases/tag/redacted-animation%400.0.89) (11/18/2026)
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.92**
+
 ## [0.0.88](https://github.com/storm-software/cyclone-ui/releases/tag/redacted-animation%400.0.88) (11/18/2026)
 
 ### Updated Dependencies

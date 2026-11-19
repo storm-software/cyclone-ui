@@ -2,6 +2,14 @@
 
 # Changelog for Cyclone UI - Pdf Document Display
 
+## [0.5.98](https://github.com/storm-software/cyclone-ui/releases/tag/pdf-document-display%400.5.98) (11/18/2026)
+
+### Updated Dependencies
+
+- Updated **icons** to **v0.0.94**
+- Updated **spinner** to **v0.5.91**
+- Updated **visually-hidden** to **v0.5.91**
+
 ## [0.5.97](https://github.com/storm-software/cyclone-ui/releases/tag/pdf-document-display%400.5.97) (11/18/2026)
 
 ### Updated Dependencies

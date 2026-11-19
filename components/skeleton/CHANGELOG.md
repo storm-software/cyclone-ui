@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Skeleton
 
+## [0.0.75](https://github.com/storm-software/cyclone-ui/releases/tag/skeleton%400.0.75) (11/18/2026)
+
+### Features
+
+- **skeleton:** Added `variant` property to `Skeleton` component ([6c6fe8031](https://github.com/storm-software/cyclone-ui/commit/6c6fe8031))
+
 ## [0.0.60](https://github.com/storm-software/cyclone-ui/releases/tag/skeleton%400.0.60) (11/14/2026)
 
 ### Documentation

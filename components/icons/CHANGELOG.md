@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Icons
 
+## [0.0.94](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.94) (11/18/2026)
+
+### Features
+
+- **skeleton:** Added `variant` property to `Skeleton` component ([6c6fe8031](https://github.com/storm-software/cyclone-ui/commit/6c6fe8031))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.93**
+
 ## [0.0.93](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.93) (11/18/2026)
 
 ### Updated Dependencies

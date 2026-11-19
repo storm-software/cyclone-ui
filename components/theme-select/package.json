@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/theme-select",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "description": "A Select preloaded with an option for each color theme in the Tamagui config (base, brand, discovery, info, warning, danger, success), each option written in its theme's primary color. Wrapped in a Field, it connects to the form like Select.",
   "repository": {

@@ -37,8 +37,8 @@ const TopographicBackgroundFrame = styled(View, {
   pointerEvents: "none"
 });
 
-// Painting under the cursor needs a hovering, precise pointer; touch-first
-// devices keep the static image.
+// Painting under the cursor needs a hovering, precise pointer. Touch-first
+// devices keep the static image, unless a `paintShader` animates it.
 const HOVER_POINTER = "(hover: hover) and (pointer: fine)";
 
 const fill = {
@@ -51,7 +51,8 @@ const fill = {
 /**
  * - `interactive`: the grey map for the current theme, gently warping, with
  *   colour painted in under the cursor. Touch-first devices get the static
- *   image for the current theme instead.
+ *   image for the current theme instead, or, with a `paintShader`, the
+ *   warping map and that paint without the cursor brush.
  * - `dark`, `light`, `color`: the static image only, with no motion or hover.
  */
 export type TopographicBackgroundVariant =
@@ -93,10 +94,10 @@ export type TopographicBackgroundProps = GetProps<
    * seconds, modulo 3600, and `light` is true in a light theme. Frames are
    * drawn when `floor(timestamp / (1000 / 30))` changes, so a renderer
    * elsewhere on the page that follows the same rules can draw the same
-   * effect in step. Name any helpers so that they don't clash with the
-   * renderer's own (`hash`, `noise`, `toLinear`). Only the `interactive`
-   * renderer draws it, so touch-first devices don't, and reduced motion
-   * turns it off.
+   * effect in step. It eases in with the warp over the first 4 seconds. Name
+   * any helpers so that they don't clash with the renderer's own (`hash`,
+   * `noise`, `toLinear`). Only the `interactive` renderer draws it, also
+   * on touch-first devices, and reduced motion turns it off.
    */
   paintShader?: string;
 };
@@ -123,11 +124,8 @@ export const TopographicBackground = ({
   useEffect(() => {
     // Checked after hydration so the server-rendered (static shell) markup is
     // the same for every device: the static image, under an empty canvas.
-    if (
-      !interactive ||
-      !canvasRef.current ||
-      !matchMedia(HOVER_POINTER).matches
-    ) {
+    const brush = matchMedia(HOVER_POINTER).matches;
+    if (!interactive || !canvasRef.current || (!brush && !paintShader)) {
       return;
     }
     const instance = startTopography(
@@ -135,7 +133,8 @@ export const TopographicBackground = ({
       darkSrc,
       colorSrc,
       () => lightRef.current,
-      paintShader
+      paintShader,
+      brush
     );
     topographyRef.current = instance;
 

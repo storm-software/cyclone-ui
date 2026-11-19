@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Modal
 
+## [0.0.65](https://github.com/storm-software/cyclone-ui/releases/tag/modal%400.0.65) (11/18/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.91**
+- Updated **button** to **v0.6.99**
+- Updated **dialog** to **v0.3.100**
+- Updated **field** to **v0.5.101**
+- Updated **form** to **v0.9.94**
+- Updated **icons** to **v0.0.94**
+- Updated **input** to **v0.6.101**
+- Updated **scroll-view** to **v0.5.99**
+- Updated **select** to **v0.6.103**
+
 ## [0.0.64](https://github.com/storm-software/cyclone-ui/releases/tag/modal%400.0.64) (11/18/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Bytes Text
 
+## [0.5.91](https://github.com/storm-software/cyclone-ui/releases/tag/bytes-text%400.5.91) (11/18/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.91**
+
 ## [0.5.90](https://github.com/storm-software/cyclone-ui/releases/tag/bytes-text%400.5.90) (11/18/2026)
 
 ### Updated Dependencies

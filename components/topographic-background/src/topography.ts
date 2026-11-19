@@ -135,8 +135,9 @@ const FRAGMENT = (paint = NO_PAINT) => /* glsl */ `
                      noise(p + vec2(5.2 - t * 0.6, 1.3 + t))) - 0.5;
 
     // Ease in from the static CSS image, and never pull texels past an edge.
+    float ease = smoothstep(0.0, 4.0, uTime);
     vec2 edge = smoothstep(0.0, 0.02, uv) * smoothstep(0.0, 0.02, 1.0 - uv);
-    float strength = 0.012 * smoothstep(0.0, 4.0, uTime) * edge.x * edge.y;
+    float strength = 0.012 * ease * edge.x * edge.y;
     vec2 st = uv + warp * strength;
 
     // Paint dries unevenly: a fixed grain decides where colour holds longest.
@@ -145,7 +146,7 @@ const FRAGMENT = (paint = NO_PAINT) => /* glsl */ `
     float wet = smoothstep(dry - 0.05, dry + 0.05, texture2D(uPaint, vUv).r);
     if (uStill < 0.5) {
       vec2 px = uRect.xy + vec2(vUv.x, 1.0 - vUv.y) * uRect.zw;
-      float extra = paint(px, uViewport, uClock, uInvert > 0.5);
+      float extra = ease * paint(px, uViewport, uClock, uInvert > 0.5);
       wet = 1.0 - (1.0 - wet) * (1.0 - clamp(extra, 0.0, 1.0));
     }
 
@@ -176,6 +177,7 @@ export interface Topography {
  * @param isLight - Whether the light theme (an inverted grey map) is active.
  * @param paintShader - GLSL that also paints colour in, without a pointer
  *   (see `TopographicBackgroundProps.paintShader`).
+ * @param pointerPaint - Whether the pointer paints; off for touch-first devices.
  * @returns Controls for the running renderer.
  */
 export const startTopography = (
@@ -183,7 +185,8 @@ export const startTopography = (
   src: string,
   colorSrc: string,
   isLight: () => boolean,
-  paintShader?: string
+  paintShader?: string,
+  pointerPaint = true
 ): Topography => {
   const gl = canvas.getContext("webgl2", { antialias: false });
   // The static CSS topography remains if WebGL is unavailable.
@@ -469,9 +472,11 @@ export const startTopography = (
 
   document.addEventListener("visibilitychange", syncMotion);
   motion.addEventListener("change", syncMotion);
-  window.addEventListener("pointermove", point, { passive: true });
-  window.addEventListener("pointerdown", point, { passive: true });
-  window.addEventListener("pointerout", leave, { passive: true });
+  if (pointerPaint) {
+    window.addEventListener("pointermove", point, { passive: true });
+    window.addEventListener("pointerdown", point, { passive: true });
+    window.addEventListener("pointerout", leave, { passive: true });
+  }
   canvas.addEventListener("webglcontextlost", contextLost);
   canvas.addEventListener("webglcontextrestored", contextRestored);
 
