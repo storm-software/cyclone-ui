@@ -9,7 +9,8 @@
 # Orca provides ORCA_ROOT_PATH, ORCA_WORKTREE_PATH, and ORCA_WORKSPACE_NAME.
 #
 # Trusts direnv/devenv for the new worktree path (trust is per-directory),
-# copies missing dotenv files from the primary checkout, and warms the env.
+# copies missing dotenv files from the primary checkout, and warms the env
+# for interactive shells and for git hooks.
 
 set -euo pipefail
 
@@ -80,11 +81,18 @@ fi
 if [[ -f "$WORKTREE/.envrc" ]] && command -v direnv >/dev/null 2>&1; then
   log "warming environment: direnv exec . true"
   direnv exec . true
-elif ((has_devenv_project)) && command -v devenv >/dev/null 2>&1; then
-  log "warming environment: devenv shell --profile development -- true"
-  devenv shell --profile development -- true
 else
-  log "skip environment warm (no direnv/devenv available)"
+  log "skip direnv warm (no .envrc or direnv)"
+fi
+
+# Git hooks started outside the devenv shell (Orca, IDEs, GUI clients) enter it
+# through .lefthook/devenv-run.sh. Warm that exact path now so the first commit
+# in this worktree does not spend minutes evaluating and building devenv.
+if ((has_devenv_project)) && command -v devenv >/dev/null 2>&1; then
+  log "warming git hook environment: .lefthook/devenv-run.sh true"
+  env -u DEVENV_ROOT "$WORKTREE/.lefthook/devenv-run.sh" true
+else
+  log "skip git hook environment warm (no devenv project or devenv)"
 fi
 
 log "done"

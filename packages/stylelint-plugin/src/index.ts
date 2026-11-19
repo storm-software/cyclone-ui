@@ -4769,14 +4769,7 @@ export const manifest: DesignSystemManifest = {
       roles: ["visually-hidden"]
     }
   ],
-  fonts: [
-    {
-      family: "Storm Sans"
-    },
-    {
-      family: "Storm Serif"
-    }
-  ],
+  fonts: [],
   tailwind: {
     name: "cyclone-ui",
     version: "0.0.0",

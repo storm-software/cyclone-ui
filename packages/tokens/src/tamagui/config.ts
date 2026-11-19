@@ -9,13 +9,7 @@
  */
 
 import { animations } from "@tamagui/config/animations-motion";
-import {
-  createFont,
-  createTamagui,
-  createTokens,
-  isWeb,
-  px
-} from "@tamagui/core";
+import { createFont, createTamagui, createTokens, px } from "@tamagui/core";
 import userConfig from "./default-config";
 
 const tokens = createTokens({
@@ -842,7 +836,7 @@ const themes = {
 };
 
 const bodyFont = createFont({
-  family: isWeb ? '"Storm Sans"' : "Storm Sans",
+  family: "Storm Sans",
   size: {
     "2xl": 30,
     "3xl": 36,
@@ -892,29 +886,20 @@ const bodyFont = createFont({
     xxxs: 11.25
   },
   weight: {
-    black: "700",
+    black: "900",
     bold: "700",
-    extrabold: "700",
+    extrabold: "800",
     extralight: "200",
     light: "300",
     medium: "500",
     normal: "400",
     semibold: "600",
     thin: "100"
-  },
-  face: {
-    100: { normal: "Thin", italic: "ThinItalic" },
-    200: { normal: "ExtraLight", italic: "ExtraLightItalic" },
-    300: { normal: "Light", italic: "LightItalic" },
-    400: { normal: "Regular", italic: "Italic" },
-    500: { normal: "Medium", italic: "MediumItalic" },
-    600: { normal: "SemiBold", italic: "SemiBoldItalic" },
-    700: { normal: "Bold", italic: "BoldItalic" }
   }
 });
 
 const captionFont = createFont({
-  family: isWeb ? '"Storm Sans"' : "Storm Sans",
+  family: "Storm Sans",
   size: {
     "2xl": 30,
     "3xl": 36,
@@ -964,24 +949,15 @@ const captionFont = createFont({
     xxxs: 11.25
   },
   weight: {
-    black: "700",
+    black: "900",
     bold: "700",
-    extrabold: "700",
+    extrabold: "800",
     extralight: "200",
     light: "300",
     medium: "500",
     normal: "400",
     semibold: "600",
     thin: "100"
-  },
-  face: {
-    100: { normal: "Thin", italic: "ThinItalic" },
-    200: { normal: "ExtraLight", italic: "ExtraLightItalic" },
-    300: { normal: "Light", italic: "LightItalic" },
-    400: { normal: "Regular", italic: "Italic" },
-    500: { normal: "Medium", italic: "MediumItalic" },
-    600: { normal: "SemiBold", italic: "SemiBoldItalic" },
-    700: { normal: "Bold", italic: "BoldItalic" }
   }
 });
 
@@ -1049,7 +1025,7 @@ const codeFont = createFont({
 });
 
 const displayFont = createFont({
-  family: isWeb ? '"Storm Sans"' : "Storm Sans",
+  family: "Storm Sans",
   size: {
     "2xl": 30,
     "3xl": 36,
@@ -1099,79 +1075,7 @@ const displayFont = createFont({
     xxxs: 12.375
   },
   weight: {
-    black: "700",
-    bold: "700",
-    extrabold: "700",
-    extralight: "200",
-    light: "300",
-    medium: "500",
-    normal: "400",
-    semibold: "600",
-    thin: "100"
-  },
-  face: {
-    100: { normal: "Thin", italic: "ThinItalic" },
-    200: { normal: "ExtraLight", italic: "ExtraLightItalic" },
-    300: { normal: "Light", italic: "LightItalic" },
-    400: { normal: "Regular", italic: "Italic" },
-    500: { normal: "Medium", italic: "MediumItalic" },
-    600: { normal: "SemiBold", italic: "SemiBoldItalic" },
-    700: { normal: "Bold", italic: "BoldItalic" }
-  }
-});
-
-const editorialFont = createFont({
-  family: isWeb ? '"Storm Serif"' : "Storm Serif",
-  size: {
-    "2xl": 30,
-    "3xl": 36,
-    "4xl": 48,
-    "5xl": 60,
-    "6xl": 72,
-    "7xl": 96,
-    "8xl": 128,
-    "9xl": 160,
-    "10xl": 192,
-    "11xl": 224,
-    "12xl": 256,
-    "13xl": 288,
-    "14xl": 320,
-    "15xl": 384,
-    lg: 20,
-    md: 18,
-    sm: 16,
-    xl: 24,
-    xs: 14,
-    xxs: 12,
-    xxxs: 10
-  },
-  lineHeight: {
-    "2xl": 37.125,
-    "3xl": 44.55,
-    "4xl": 59.4,
-    "5xl": 74.25,
-    "6xl": 89.1,
-    "7xl": 118.8,
-    "8xl": 158.4,
-    "9xl": 198,
-    "10xl": 237.6,
-    "11xl": 277.2,
-    "12xl": 316.8,
-    "13xl": 356.4,
-    "14xl": 396,
-    "15xl": 475.2,
-    lg: 24.75,
-    md: 22.275,
-    normal: 19.8,
-    sm: 19.8,
-    true: 19.8,
-    xl: 29.7,
-    xs: 17.325,
-    xxs: 14.85,
-    xxxs: 12.375
-  },
-  weight: {
-    black: "800",
+    black: "900",
     bold: "700",
     extrabold: "800",
     extralight: "200",
@@ -1179,16 +1083,70 @@ const editorialFont = createFont({
     medium: "500",
     normal: "400",
     semibold: "600",
-    thin: "200"
+    thin: "100"
+  }
+});
+
+const editorialFont = createFont({
+  family: "Storm Serif",
+  size: {
+    "2xl": 30,
+    "3xl": 36,
+    "4xl": 48,
+    "5xl": 60,
+    "6xl": 72,
+    "7xl": 96,
+    "8xl": 128,
+    "9xl": 160,
+    "10xl": 192,
+    "11xl": 224,
+    "12xl": 256,
+    "13xl": 288,
+    "14xl": 320,
+    "15xl": 384,
+    lg: 20,
+    md: 18,
+    sm: 16,
+    xl: 24,
+    xs: 14,
+    xxs: 12,
+    xxxs: 10
   },
-  face: {
-    200: { normal: "ExtraLight", italic: "ExtraLightItalic" },
-    300: { normal: "Light", italic: "LightItalic" },
-    400: { normal: "Regular", italic: "Italic" },
-    500: { normal: "Medium", italic: "MediumItalic" },
-    600: { normal: "SemiBold", italic: "SemiBoldItalic" },
-    700: { normal: "Bold", italic: "BoldItalic" },
-    800: { normal: "ExtraBold", italic: "ExtraBoldItalic" }
+  lineHeight: {
+    "2xl": 37.125,
+    "3xl": 44.55,
+    "4xl": 59.4,
+    "5xl": 74.25,
+    "6xl": 89.1,
+    "7xl": 118.8,
+    "8xl": 158.4,
+    "9xl": 198,
+    "10xl": 237.6,
+    "11xl": 277.2,
+    "12xl": 316.8,
+    "13xl": 356.4,
+    "14xl": 396,
+    "15xl": 475.2,
+    lg: 24.75,
+    md: 22.275,
+    normal: 19.8,
+    sm: 19.8,
+    true: 19.8,
+    xl: 29.7,
+    xs: 17.325,
+    xxs: 14.85,
+    xxxs: 12.375
+  },
+  weight: {
+    black: "900",
+    bold: "700",
+    extrabold: "800",
+    extralight: "200",
+    light: "300",
+    medium: "500",
+    normal: "400",
+    semibold: "600",
+    thin: "100"
   }
 });
 

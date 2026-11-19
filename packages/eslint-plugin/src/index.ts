@@ -4772,14 +4772,7 @@ export const manifest: DesignSystemManifest = {
     }
   ],
   icons: [],
-  fonts: [
-    {
-      family: "Storm Sans"
-    },
-    {
-      family: "Storm Serif"
-    }
-  ],
+  fonts: [],
   tailwind: {
     name: "cyclone-ui",
     version: "0.0.0",

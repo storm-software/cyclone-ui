@@ -111,11 +111,15 @@ function regenerate(source) {
   });
   const files = generatedFiles();
   if (files.length) {
+    // generatedFiles() already excludes ignored untracked files, so --force
+    // only lets tracked outputs inside ignored directories (such as fonts)
+    // be staged instead of failing the whole add.
     git(
       [
         "--literal-pathspecs",
         "add",
         "-A",
+        "--force",
         "--pathspec-from-file=-",
         "--pathspec-file-nul"
       ],
