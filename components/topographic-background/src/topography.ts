@@ -177,6 +177,7 @@ export interface Topography {
  * @param isLight - Whether the light theme (an inverted grey map) is active.
  * @param paintShader - GLSL that also paints colour in, without a pointer
  *   (see `TopographicBackgroundProps.paintShader`).
+ * @param pointerPaint - Whether the pointer paints; off for touch-first devices.
  * @returns Controls for the running renderer.
  */
 export const startTopography = (
@@ -184,7 +185,8 @@ export const startTopography = (
   src: string,
   colorSrc: string,
   isLight: () => boolean,
-  paintShader?: string
+  paintShader?: string,
+  pointerPaint = true
 ): Topography => {
   const gl = canvas.getContext("webgl2", { antialias: false });
   // The static CSS topography remains if WebGL is unavailable.
@@ -470,9 +472,11 @@ export const startTopography = (
 
   document.addEventListener("visibilitychange", syncMotion);
   motion.addEventListener("change", syncMotion);
-  window.addEventListener("pointermove", point, { passive: true });
-  window.addEventListener("pointerdown", point, { passive: true });
-  window.addEventListener("pointerout", leave, { passive: true });
+  if (pointerPaint) {
+    window.addEventListener("pointermove", point, { passive: true });
+    window.addEventListener("pointerdown", point, { passive: true });
+    window.addEventListener("pointerout", leave, { passive: true });
+  }
   canvas.addEventListener("webglcontextlost", contextLost);
   canvas.addEventListener("webglcontextrestored", contextRestored);
 
