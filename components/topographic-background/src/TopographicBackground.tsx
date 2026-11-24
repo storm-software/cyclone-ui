@@ -23,7 +23,11 @@ import { isWeb, styled, useThemeName, View } from "@tamagui/core";
 import { useEffect, useRef } from "react";
 import {
   topographyColorSrc,
+  topographyDarkHighContrastSrc,
+  topographyDarkLowContrastSrc,
   topographyDarkSrc,
+  topographyLightHighContrastSrc,
+  topographyLightLowContrastSrc,
   topographyLightSrc
 } from "./images";
 import type { Topography } from "./topography";
@@ -54,12 +58,26 @@ const fill = {
  *   image for the current theme instead, or, with a `paintShader`, the
  *   warping map and that paint without the cursor brush.
  * - `dark`, `light`, `color`: the static image only, with no motion or hover.
+ * - `dark-high-contrast`, `dark-low-contrast`, `light-high-contrast`,
+ *   `light-low-contrast`: the static dark or light image with the same
+ *   greys spread further apart or drawn closer together in lightness.
  */
 export type TopographicBackgroundVariant =
   | "interactive"
   | "dark"
+  | "dark-high-contrast"
+  | "dark-low-contrast"
   | "light"
+  | "light-high-contrast"
+  | "light-low-contrast"
   | "color";
+
+const CONTRAST_SRC = {
+  "dark-high-contrast": topographyDarkHighContrastSrc,
+  "dark-low-contrast": topographyDarkLowContrastSrc,
+  "light-high-contrast": topographyLightHighContrastSrc,
+  "light-low-contrast": topographyLightLowContrastSrc
+};
 
 export type TopographicBackgroundProps = GetProps<
   typeof TopographicBackgroundFrame
@@ -165,11 +183,16 @@ export const TopographicBackground = ({
             alt=""
             draggable={false}
             src={
-              variant === "color"
-                ? colorSrc
-                : variant === "light" || (interactive && light)
+              variant === "interactive"
+                ? light
                   ? lightSrc
                   : darkSrc
+                : {
+                    dark: darkSrc,
+                    light: lightSrc,
+                    color: colorSrc,
+                    ...CONTRAST_SRC
+                  }[variant]
             }
             style={{ ...fill, objectFit: "cover" }}
           />

@@ -68,7 +68,7 @@ An animated background pattern component styled like a painted topographic map o
 ## Quick Features
 
 - Fills its nearest positioned ancestor with a topographic map image, behind the content of a page or a section. Web only. On native, it renders an empty frame.
-- Variants: `interactive` (default), `dark`, `light` and `color`.
+- Variants: `interactive` (default), `dark`, `light` and `color`, and high and low contrast `dark-high-contrast`, `dark-low-contrast`, `light-high-contrast` and `light-low-contrast`.
 - `interactive` follows the light or dark theme. With a mouse or another fine pointer, it warps the contour lines with WebGL2 and paints the color map in under the pointer.
 - The static image is in the server markup, so it paints before hydration. It stays when WebGL2 is not available.
 - Pauses while the page is hidden. Draws one still frame when the user prefers reduced motion.

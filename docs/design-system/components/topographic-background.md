@@ -15,7 +15,7 @@ component:
 
 `TopographicBackground` fills its nearest positioned ancestor with a topographic map image. It ignores pointer events. Place it behind the content of a page or a section. It is web only. On native, it renders an empty frame.
 
-The default `interactive` variant follows the light or dark theme. With a mouse or another fine pointer that can hover, it warps the contour lines with WebGL and paints the colored map in under the pointer. The `dark`, `light`, and `color` variants show the image alone, with no motion or hover effect.
+The default `interactive` variant follows the light or dark theme. With a mouse or another fine pointer that can hover, it warps the contour lines with WebGL and paints the colored map in under the pointer. The `dark`, `light`, and `color` variants show the image alone, with no motion or hover effect. The `dark-high-contrast`, `dark-low-contrast`, `light-high-contrast`, and `light-low-contrast` variants show the dark or light image with its greys spread further apart or drawn closer together in lightness.
 
 Use it for a full-page or hero background. For a background built from the theme colors, use [Themeable gradient](./themeable-gradient.md).
 
@@ -37,7 +37,7 @@ pnpm install
 import { TopographicBackground } from "@cyclone-ui/topographic-background";
 ```
 
-The package also exports the image URLs `topographyDarkSrc`, `topographyLightSrc`, and `topographyColorSrc`, and the `TopographicBackgroundProps` and `TopographicBackgroundVariant` types. The WebGL renderer, `startTopography`, is available from `@cyclone-ui/topographic-background/topography`.
+The package also exports the image URLs `topographyDarkSrc`, `topographyLightSrc`, `topographyColorSrc`, `topographyDarkHighContrastSrc`, `topographyDarkLowContrastSrc`, `topographyLightHighContrastSrc`, and `topographyLightLowContrastSrc`, and the `TopographicBackgroundProps` and `TopographicBackgroundVariant` types. The WebGL renderer, `startTopography`, is available from `@cyclone-ui/topographic-background/topography`.
 
 ## Usage
 
@@ -59,7 +59,7 @@ The package also exports the image URLs `topographyDarkSrc`, `topographyLightSrc
 | Part | Renders | Purpose |
 | --- | --- | --- |
 | `TopographicBackground` | A Tamagui `View` with `aria-hidden`, `accessibilityElementsHidden`, `importantForAccessibility="no-hide-descendants"`, `position: absolute`, `inset: 0`, `overflow: hidden`, and `pointerEvents: none` | The frame. It fills the nearest positioned ancestor. On native, it has no children. |
-| Image | An `<img alt="">` (web only) with `draggable={false}` and `objectFit: cover` that fills the frame | The static map. It shows `colorSrc` for `color`, `lightSrc` for `light` or for `interactive` in a light theme, and `darkSrc` in the other cases. It is always in the server markup, so it paints before hydration. |
+| Image | An `<img alt="">` (web only) with `draggable={false}` and `objectFit: cover` that fills the frame | The static map. It shows `colorSrc` for `color`, `lightSrc` for `light` or for `interactive` in a light theme, `darkSrc` for `dark` or for `interactive` in a dark theme, and the package's own image for a high or low contrast variant. It is always in the server markup, so it paints before hydration. |
 | Canvas | A `<canvas>` (web only, `interactive` only) over the image | After hydration, when `(hover: hover) and (pointer: fine)` matches, a WebGL2 renderer draws into it. A fragment shader warps the map with slow value noise. A second pass, at half resolution, keeps the paint under the pointer. A `requestAnimationFrame` loop renders 30 frames per second, when `floor(timestamp / (1000 / 30))` changes. |
 
 The image and the canvas are internal. They are not exported. The renderer follows the pointer on `window` (`pointermove`, `pointerdown`, and `pointerout`), because the canvas sits behind the page.
@@ -72,6 +72,7 @@ The examples are the stories in [`TopographicBackground.stories.tsx`](../../../c
 | --- | --- |
 | `Interactive` | The default `interactive` variant. It follows the Storybook toolbar theme. Move the pointer to paint color in. |
 | `Dark`, `Light`, `Color` | The static `dark`, `light`, and `color` images. |
+| `DarkHighContrast`, `DarkLowContrast`, `LightHighContrast`, `LightLowContrast` | The static high and low contrast dark and light images. |
 
 ## Props
 
@@ -79,13 +80,13 @@ The examples are the stories in [`TopographicBackground.stories.tsx`](../../../c
 
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
-| `variant` | `"interactive" \| "dark" \| "light" \| "color"` | `"interactive"` | The image and the behavior. See [Variants](#variants). |
+| `variant` | `"interactive" \| "dark" \| "dark-high-contrast" \| "dark-low-contrast" \| "light" \| "light-high-contrast" \| "light-low-contrast" \| "color"` | `"interactive"` | The image and the behavior. See [Variants](#variants). |
 | `darkSrc` | `string` | `topographyDarkSrc` | URL of the dark (grey) topography image. The interactive renderer uses it as the map. |
 | `lightSrc` | `string` | `topographyLightSrc` | URL of the light topography image. |
 | `colorSrc` | `string` | `topographyColorSrc` | URL of the same contours in color. The interactive renderer paints it in under the pointer. |
 | `paintShader` | `string` | none | GLSL that also paints the color map in, with no pointer. See [Paint shader](#paint-shader). |
 
-The default URLs point to the SVG files in the package `assets` folder (`topography-dark.svg`, `topography-light.svg`, and `topography-color.svg`).
+The default URLs point to the SVG files in the package `assets` folder (`topography-dark.svg`, `topography-light.svg`, and `topography-color.svg`). The `src` props don't change the high and low contrast variants, which always show `topography-dark-high-contrast.svg`, `topography-dark-low-contrast.svg`, `topography-light-high-contrast.svg`, or `topography-light-low-contrast.svg`.
 
 ## Variants
 
@@ -94,9 +95,13 @@ The default URLs point to the SVG files in the package `assets` folder (`topogra
 | `interactive` | The grey map for the current theme, with motion and paint under the pointer. Touch-first devices get the static image for the current theme. |
 | `dark` | The dark (grey) image only. |
 | `light` | The light image only. |
+| `dark-high-contrast`, `light-high-contrast` | The dark or light image only, with the same greys further apart in lightness. |
+| `dark-low-contrast`, `light-low-contrast` | The dark or light image only, with the same greys closer together in lightness. |
 | `color` | The color image only. |
 
 The theme is light when the current theme name starts with `light`.
+
+The high and low contrast images keep the hue and chroma of each grey and scale its distance in OKLab lightness from the map's average: 1.8 times for high contrast and 0.5 times for low contrast. The light images are the dark ones inverted, like `topography-light.svg`. To regenerate them, for example after a change to `topography-dark.svg` or to the factors, run `python3 scripts/contrast.py src/assets` from the package folder.
 
 ## Behavior
 

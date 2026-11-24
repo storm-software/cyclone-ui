@@ -33,7 +33,16 @@ const meta: Meta<typeof TopographicBackground> = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["interactive", "dark", "light", "color"]
+      options: [
+        "interactive",
+        "dark",
+        "dark-high-contrast",
+        "dark-low-contrast",
+        "light",
+        "light-high-contrast",
+        "light-low-contrast",
+        "color"
+      ]
     }
   },
   decorators: [
@@ -55,8 +64,24 @@ export const Dark: Story = {
   args: { variant: "dark" }
 };
 
+export const DarkHighContrast: Story = {
+  args: { variant: "dark-high-contrast" }
+};
+
+export const DarkLowContrast: Story = {
+  args: { variant: "dark-low-contrast" }
+};
+
 export const Light: Story = {
   args: { variant: "light" }
+};
+
+export const LightHighContrast: Story = {
+  args: { variant: "light-high-contrast" }
+};
+
+export const LightLowContrast: Story = {
+  args: { variant: "light-low-contrast" }
 };
 
 export const Color: Story = {

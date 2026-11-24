@@ -33,3 +33,27 @@ export const topographyColorSrc = new URL(
   "./assets/topography-color.svg",
   import.meta.url
 ).href;
+
+/** URL of the dark topography image with its grey levels spread further apart. */
+export const topographyDarkHighContrastSrc = new URL(
+  "./assets/topography-dark-high-contrast.svg",
+  import.meta.url
+).href;
+
+/** URL of the dark topography image with its grey levels drawn closer together. */
+export const topographyDarkLowContrastSrc = new URL(
+  "./assets/topography-dark-low-contrast.svg",
+  import.meta.url
+).href;
+
+/** URL of the high contrast light topography image (the dark one inverted). */
+export const topographyLightHighContrastSrc = new URL(
+  "./assets/topography-light-high-contrast.svg",
+  import.meta.url
+).href;
+
+/** URL of the low contrast light topography image (the dark one inverted). */
+export const topographyLightLowContrastSrc = new URL(
+  "./assets/topography-light-low-contrast.svg",
+  import.meta.url
+).href;
