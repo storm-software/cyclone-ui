@@ -14763,7 +14763,7 @@ module.exports = {
       $description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
       $type: "dimension",
-      $value: "0.5625rem",
+      $value: "0.375rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -14771,7 +14771,7 @@ module.exports = {
         $description:
           "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
         $type: "dimension",
-        $value: "{border-radius.lg}",
+        $value: "{border-radius.md}",
         key: "{border-radius.button}"
       },
       name: "BorderRadiusButton",

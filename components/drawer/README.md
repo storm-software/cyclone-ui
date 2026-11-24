@@ -6,7 +6,8 @@ A side panel built on the Cyclone UI `Sheet` that slides in from the right by de
 
 - Slides in from the `right` by default. Set `direction` to `top`, `bottom`, or `left` to change the edge.
 - `sm`, `md`, and `lg` sizes. Below the `sm` breakpoint every size fills 95% of the viewport along the drawer's axis.
-- `Footer` buttons wrap onto stacked rows when they don't fit side by side.
+- `Footer.Actions.Secondary` and `Footer.Actions.Primary` group the footer buttons. They share the widest button's width in a row (secondary at the start, primary at the end) and stack at full width, primary first, on small screens or when they don't fit. Loose `Footer` buttons wrap onto stacked rows instead.
+- One `padding` prop (default `xl`) spaces the frame, `Content`, `Footer` and the footer buttons evenly.
 - Parts: `Frame`, `Content`, `Handle`, `Overlay`, `ScrollView`, `Header`, `Title`, `Description`, `Heading`, `Body`, and `Footer`.
 - A bordered frame that sits flush against its edge like `Sheet`. Set `showGaps` to inset it from the viewport and round every corner with the `drawer` border radius. `Content` is a bordered panel inset in it, and `Footer` sits below `Content` on the frame.
 - `Header` stays pinned while the rest of `Content` scrolls once it overflows.

@@ -927,7 +927,7 @@
   --radius-2xl: 1rem;
   --radius-3xl: 1.5rem;
   --radius-4xl: 2rem;
-  --radius-button: var(--radius-lg);
+  --radius-button: var(--radius-md);
   --radius-card: var(--radius-xl);
   --radius-checkbox: var(--radius-sm);
   --radius-container: var(--radius-2xl);

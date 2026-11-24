@@ -26,7 +26,7 @@ pnpm exec cyclone-ui add button
 pnpm install
 ```
 
-- **File:** `Button.tsx`. The CLI writes it to `<path>/button/`. `path` comes from `components.json` and defaults to `components`.
+- **Files:** `Button.tsx` and `ActionButtons.tsx`. The CLI writes them to `<path>/button/`. `path` comes from `components.json` and defaults to `components`.
 - **Also copies:** [Body Text](./body-text.md), [Container](./container.md), [Icons](../icons/index.md), [Ripple Animation](./ripple-animation.md), and [Tooltip](./tooltip.md). Imports between copied components become relative paths.
 - **Adds to `package.json`:** `@tamagui/core`, `@tamagui/helpers`, `@tamagui/stacks`, and `@tamagui/text`.
 
@@ -139,6 +139,32 @@ The `primary` through `floating` variants are the [`Container`](./container.md) 
 
 The `sm`, `md`, and `lg` sizes map to control size tokens. The `Sizes` story shows all three. A raw size token such as `13xl` is allowed. See [Design tokens](../tokens/index.md).
 
+## Action buttons
+
+`ActionButtons` lays out a set of dialog or form actions. Put the buttons in `ActionButtons.Secondary` and `ActionButtons.Primary` groups; the groups only hold buttons.
+
+```tsx
+import { ActionButtons, Button } from "@cyclone-ui/button"
+
+<ActionButtons>
+  <ActionButtons.Secondary>
+    <Button variant="outlined" size="sm"><Button.Text>Previous</Button.Text></Button>
+    <Button variant="outlined" size="sm"><Button.Text>Clear</Button.Text></Button>
+  </ActionButtons.Secondary>
+  <ActionButtons.Primary>
+    <Button variant="primary" size="sm"><Button.Text>Next</Button.Text></Button>
+  </ActionButtons.Primary>
+</ActionButtons>
+```
+
+- In a row, every button is as wide as the widest one. Secondary buttons start the row and primary buttons end it.
+- Below the `sm` breakpoint, or when the buttons don't fit in one row, they stack at full width, primary first.
+- `gap` (default `xl`) sets the space between buttons in a group, and between every button in a column. A nested `ActionButtons` without `gap` uses its wrapper's; that is how `Drawer.Footer` and `Modal.Footer` pass on their `padding`.
+- A fragment in a group counts as its children, so each button still gets its own slot.
+- Without a group among its children, it renders them unchanged.
+
+On the web it measures the buttons' natural widths with the DOM. `Drawer.Footer.Actions` and `Modal.Footer.Actions` are this component. `ActionButtonsPrimary` and `ActionButtonsSecondary` are also exported by name for React Server Components.
+
 ## States
 
 - **Default, hover, press.** Variants change color on hover and press. Cascade variants animate their border and fill.
@@ -159,4 +185,5 @@ For an icon-only button, set an accessible name, for example `aria-label`. The c
 ## Source
 
 - [`components/button/src/Button.tsx`](../../../components/button/src/Button.tsx)
+- [`components/button/src/ActionButtons.tsx`](../../../components/button/src/ActionButtons.tsx)
 - [`components/button/src/Button.stories.tsx`](../../../components/button/src/Button.stories.tsx) (title: `Triggers/Button`)

@@ -50,6 +50,10 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
+    "./ActionButtons": {
+      "import": "./dist/ActionButtons.mjs",
+      "require": "./dist/ActionButtons.cjs"
+    },
     "./Button": {
       "import": "./dist/Button.mjs",
       "require": "./dist/Button.cjs"

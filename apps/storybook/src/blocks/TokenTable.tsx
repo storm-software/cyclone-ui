@@ -4736,7 +4736,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
@@ -10201,7 +10201,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
@@ -15666,7 +15666,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
@@ -21132,7 +21132,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
@@ -26598,7 +26598,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
@@ -32064,7 +32064,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",

@@ -19,7 +19,12 @@
 "use client";
 
 import type { BodyText } from "@cyclone-ui/body-text";
-import { Button } from "@cyclone-ui/button";
+import {
+  ActionButtons,
+  ActionButtonsPrimary,
+  ActionButtonsSecondary,
+  Button
+} from "@cyclone-ui/button";
 import { ArrowLeft, Close } from "@cyclone-ui/icons";
 import type {
   SheetComponent,
@@ -55,6 +60,12 @@ export type DrawerProps = Omit<SheetProps, "size" | "variant"> & {
    * `false` (default) the frame sits flush against its edge like `Sheet`.
    */
   showGaps?: boolean;
+  /**
+   * The one spacing of the drawer's layout: between the frame and
+   * `Drawer.Content`, between `Drawer.Content` and `Drawer.Footer`, around and
+   * between the footer buttons. Defaults to `xl`.
+   */
+  padding?: DrawerContentProps["gap"];
 };
 export type DrawerFrameProps = SheetFrameProps;
 export type DrawerOverlayProps = SheetOverlayProps;
@@ -76,7 +87,8 @@ const DrawerContext = createContext<{
   size?: DrawerSize;
   /** Whether `Drawer.Frame` renders a `Drawer.Handle`. */
   hasHandle?: boolean;
-}>({ setOpen: () => {}, showGaps: false, direction: "right" });
+  padding: DrawerProps["padding"];
+}>({ setOpen: () => {}, showGaps: false, direction: "right", padding: "xl" });
 
 // Mirrors Sheet's own size styles, which a media clause on the same prop would
 // otherwise replace.
@@ -181,7 +193,11 @@ const DrawerHeaderImpl: FC<DrawerHeaderProps> = ({
   closable = false,
   ...props
 }) => {
-  const { setOpen } = use(DrawerContext);
+  const { setOpen, padding } = use(DrawerContext);
+  const inset =
+    typeof padding === "number"
+      ? `${padding}px`
+      : `var(--t-space-${String(padding)})`;
 
   return (
     <XStack
@@ -215,6 +231,11 @@ const DrawerHeaderImpl: FC<DrawerHeaderProps> = ({
           size="sm"
           circular={true}
           flexGrow={0}
+          // Out of `Drawer.Content`'s `5xl` / `6xl` header padding into the
+          // panel's top-right corner, `padding` in from its edges. Still in
+          // flow, so the title wraps before reaching it.
+          marginTop={`calc(${inset} - var(--t-space-5xl))`}
+          marginRight={`calc(${inset} - var(--t-space-6xl))`}
           onPress={() => setOpen(false)}>
           <Button.Icon>
             <Close variant="bold" color="currentColor" />
@@ -223,55 +244,6 @@ const DrawerHeaderImpl: FC<DrawerHeaderProps> = ({
       )}
     </XStack>
   );
-};
-
-// `right` is the reference: `lg` on the handle and above the footer, `2xl` on
-// the other edges. The handle edge follows `direction`; without a handle it
-// takes `2xl` too (see `drawerContentHandlelessMargins`).
-const drawerContentMargins: Record<
-  DrawerDirection,
-  {
-    marginTop: "2xl" | "lg";
-    marginRight: "2xl" | "lg";
-    marginBottom: "lg";
-    marginLeft: "2xl" | "lg";
-  }
-> = {
-  right: {
-    marginTop: "2xl",
-    marginRight: "2xl",
-    marginBottom: "lg",
-    marginLeft: "lg"
-  },
-  left: {
-    marginTop: "2xl",
-    marginRight: "lg",
-    marginBottom: "lg",
-    marginLeft: "2xl"
-  },
-  top: {
-    marginTop: "2xl",
-    marginRight: "2xl",
-    marginBottom: "lg",
-    marginLeft: "2xl"
-  },
-  bottom: {
-    marginTop: "lg",
-    marginRight: "2xl",
-    marginBottom: "lg",
-    marginLeft: "2xl"
-  }
-};
-
-// `top`'s handle edge is also the footer edge, which keeps `lg`.
-const drawerContentHandlelessMargins: Record<
-  DrawerDirection,
-  Record<string, "2xl">
-> = {
-  right: { marginLeft: "2xl" },
-  left: { marginRight: "2xl" },
-  top: {},
-  bottom: { marginTop: "2xl" }
 };
 
 const DrawerContentFrame = styled(YStack, {
@@ -294,15 +266,13 @@ const isDrawerHeader = (child: ReactNode) =>
 // `Drawer.Header` children stay pinned, and the rest scrolls once it
 // outgrows the panel.
 const DrawerContent: FC<DrawerContentProps> = ({ children, ...props }) => {
-  const { direction, hasHandle = true } = use(DrawerContext);
+  const { padding } = use(DrawerContext);
   const items = Children.toArray(children);
   const header = items.filter(isDrawerHeader);
 
   return (
-    <DrawerContentFrame
-      {...drawerContentMargins[direction]}
-      {...(!hasHandle && drawerContentHandlelessMargins[direction])}
-      {...props}>
+    // On the handle side this sits past the frame's handle inset.
+    <DrawerContentFrame margin={padding} {...props}>
       {header.length > 0 && (
         <YStack flexShrink={0} paddingHorizontal="6xl">
           {header}
@@ -336,19 +306,34 @@ const DrawerDescription = styled(Sheet.Description, {
 });
 
 // Stays pinned below `Drawer.Content`, on the frame's surface. Buttons wrap
-// onto stacked rows once they no longer fit side by side.
-const DrawerFooterImpl: FC<DrawerFooterProps> = props => (
-  <Sheet.Footer
-    flexShrink={0}
-    flexWrap="wrap"
-    padding="xl"
-    // `Drawer.Content`'s `lg` margin already sits above, so the buttons end up
-    // centered between the panel and the frame's bottom edge.
-    paddingTop="calc(var(--t-space-xl) - var(--t-space-lg))"
-    gap="2xl"
-    {...props}
-  />
-);
+// onto stacked rows once they no longer fit side by side; put them in
+// `Drawer.Footer.Actions.Secondary` / `.Primary` groups to size and stack them
+// together instead (see `ActionButtons`).
+const DrawerFooterImpl: FC<DrawerFooterProps> = ({ children, ...props }) => {
+  const { padding } = use(DrawerContext);
+
+  return (
+    <Sheet.Footer
+      flexShrink={0}
+      flexWrap="wrap"
+      // Longhands only: `Sheet.Footer` sets its handle-side padding first, so
+      // that key sorts before a `padding` shorthand, which would then win.
+      // `Drawer.Content`'s bottom margin is the space above the buttons, and
+      // the sides match its side margins.
+      paddingTop={0}
+      paddingBottom={padding}
+      paddingLeft={padding}
+      paddingRight={padding}
+      gap={padding}
+      {...props}>
+      <ActionButtons gap={padding}>{children}</ActionButtons>
+    </Sheet.Footer>
+  );
+};
+
+const DrawerFooter = withStaticProperties(DrawerFooterImpl, {
+  Actions: ActionButtons
+});
 
 const DrawerImpl: FC<DrawerProps> = ({
   direction = "right",
@@ -358,6 +343,7 @@ const DrawerImpl: FC<DrawerProps> = ({
   showGaps = false,
   size,
   snapPoints,
+  padding = "xl",
   ...props
 }) => {
   const isSmall = useMedia()["max-sm"] ?? false;
@@ -377,7 +363,8 @@ const DrawerImpl: FC<DrawerProps> = ({
   );
 
   return (
-    <DrawerContext.Provider value={{ setOpen, showGaps, direction, size }}>
+    <DrawerContext.Provider
+      value={{ setOpen, showGaps, direction, size, padding }}>
       <Sheet
         direction={direction}
         size={size}
@@ -404,7 +391,7 @@ export interface DrawerComponent extends FC<DrawerProps> {
   Header: FC<DrawerHeaderProps>;
   Title: SheetComponent["Heading"];
   Description: typeof BodyText;
-  Footer: FC<DrawerFooterProps>;
+  Footer: FC<DrawerFooterProps> & { Actions: typeof ActionButtons };
 }
 
 export const Drawer: DrawerComponent = withStaticProperties(DrawerImpl, {
@@ -418,7 +405,7 @@ export const Drawer: DrawerComponent = withStaticProperties(DrawerImpl, {
   Header: DrawerHeaderImpl,
   Title: DrawerTitle,
   Description: DrawerDescription,
-  Footer: DrawerFooterImpl
+  Footer: DrawerFooter
 });
 
 /**
@@ -428,7 +415,7 @@ export const Drawer: DrawerComponent = withStaticProperties(DrawerImpl, {
 export {
   DrawerContent,
   DrawerDescription,
-  DrawerFooterImpl as DrawerFooter,
+  DrawerFooter,
   DrawerFrameImpl as DrawerFrame,
   DrawerHandle,
   DrawerHeaderImpl as DrawerHeader,
@@ -438,3 +425,6 @@ export const DrawerOverlay = Sheet.Overlay;
 export const DrawerScrollView: typeof Sheet.ScrollView = Sheet.ScrollView;
 export const DrawerHeading = Sheet.Heading;
 export const DrawerBody = Sheet.Body;
+export const DrawerFooterActions = ActionButtons;
+export const DrawerFooterActionsPrimary = ActionButtonsPrimary;
+export const DrawerFooterActionsSecondary = ActionButtonsSecondary;

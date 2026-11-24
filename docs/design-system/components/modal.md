@@ -62,18 +62,22 @@ const [open, setOpen] = useState(false);
     </Modal.Content>
 
     <Modal.Footer>
-      <Button variant="outlined" size="sm" flexGrow={0} onPress={() => setOpen(false)}>
-        <Button.Text>Cancel</Button.Text>
-      </Button>
-      <Button variant="primary" size="sm" flexGrow={0} onPress={sendInvite}>
-        <Button.Text>Send invite</Button.Text>
-      </Button>
+      <Modal.Footer.Actions.Secondary>
+        <Button variant="outlined" size="sm" onPress={() => setOpen(false)}>
+          <Button.Text>Cancel</Button.Text>
+        </Button>
+      </Modal.Footer.Actions.Secondary>
+      <Modal.Footer.Actions.Primary>
+        <Button variant="primary" size="sm" onPress={sendInvite}>
+          <Button.Text>Send invite</Button.Text>
+        </Button>
+      </Modal.Footer.Actions.Primary>
     </Modal.Footer>
   </Modal.Frame>
 </Modal>
 ```
 
-Set `flexGrow={0}` on footer buttons. A `Button` grows to fill its row by default.
+A `Button` grows to fill its row by default. Put footer buttons in action groups (see [Footer actions](#footer-actions)), or set `flexGrow={0}` on buttons placed directly in `Modal.Footer`.
 
 ## Anatomy
 
@@ -88,7 +92,10 @@ Set `flexGrow={0}` on footer buttons. A `Button` grows to fill its row by defaul
       </Modal.Header>
       <Modal.Body />
     </Modal.Content>
-    <Modal.Footer />
+    <Modal.Footer>
+      <Modal.Footer.Actions.Secondary />
+      <Modal.Footer.Actions.Primary />
+    </Modal.Footer>
   </Modal.Frame>
 </Modal>
 ```
@@ -98,16 +105,28 @@ Set `flexGrow={0}` on footer buttons. A `Button` grows to fill its row by defaul
 | `Modal` | [Dialog](./dialog.md) | The root. It holds the open state and passes its props to `Dialog`. |
 | `Modal.Trigger` | `Dialog.Trigger` | Opens the modal. Use `asChild` to render your own button. |
 | `Modal.Frame` | `Dialog.Portal` with `Dialog.Overlay` and `Dialog.Container` (`role="dialog"`) | The outer shell. It renders in a portal over the overlay. It has the `surface` variant, no padding, a `maxWidth` of `480`, and a `maxHeight` of `85vh`. |
-| `Modal.Content` | A `YStack` with the `canvas` background, a `hairline` border, and an `lg` margin | The inset panel. Direct `Modal.Header` children stay at the top. The other children go in a [ScrollView](./scroll-view.md) (size `lg`) that scrolls when the frame reaches its `maxHeight`. |
+| `Modal.Content` | A `YStack` with the `canvas` background, a `hairline` border, and a margin of the modal's `padding` | The inset panel. Direct `Modal.Header` children stay at the top. The other children go in a [ScrollView](./scroll-view.md) (size `lg`) that scrolls when the frame reaches its `maxHeight`. |
 | `Modal.Header` | An `XStack` | The header row. It holds the title and description. With `onBack`, it adds a back button on the left. With `closable`, it adds a close button on the right. |
 | `Modal.Title` | `Dialog.Heading` (inside the Tamagui `DialogTitle`) at font size `2xl`, `semibold` | The title. It names the dialog. |
 | `Modal.Description` | `Dialog.Body` at size `sm` (inside the Tamagui `DialogDescription`) | The description. It describes the dialog. |
 | `Modal.Body` | A `BodyText` with the `ink` color | Body text in the scrolling area. |
-| `Modal.Footer` | An `XStack` aligned to the end, with an `xl` padding and a `2xl` gap | The action row. It sits in the frame below `Modal.Content`, so it stays visible while the content scrolls. |
+| `Modal.Footer` | An `XStack` aligned to the end, with the modal's `padding` on the sides and bottom (none on top, where `Modal.Content`'s margin already sits) and the same `gap` | The action row. It sits in the frame below `Modal.Content`, so it stays visible while the content scrolls. |
+| `Modal.Footer.Actions.Secondary` | An `XStack` of buttons | The secondary buttons, such as **Cancel**. They start the row and end the column. |
+| `Modal.Footer.Actions.Primary` | An `XStack` of buttons | The primary buttons, such as **Send invite**. They end the row and start the column. |
 
 The back and close buttons are ghost, circular, `sm` [Buttons](./button.md). The close button is inside the Tamagui `DialogClose`, so it closes the modal.
 
-The package also exports flat names for React Server Components, which cannot read `Modal.Trigger` from a client module: `ModalTrigger`, `ModalFrame`, `ModalContent`, `ModalHeader`, `ModalTitle`, `ModalDescription`, `ModalBody`, and `ModalFooter`.
+The package also exports flat names for React Server Components, which cannot read `Modal.Trigger` from a client module: `ModalTrigger`, `ModalFrame`, `ModalContent`, `ModalHeader`, `ModalTitle`, `ModalDescription`, `ModalBody`, `ModalFooter`, `ModalFooterActions`, `ModalFooterActionsPrimary`, and `ModalFooterActionsSecondary`.
+
+## Footer actions
+
+Put footer buttons in `Modal.Footer.Actions.Secondary` and `Modal.Footer.Actions.Primary` groups. The groups only hold buttons; `Modal.Footer` lays them out:
+
+- In a row, every button is as wide as the widest one. Secondary buttons sit at the start of the row and primary buttons at the end, with an `xl` gap between the buttons in a group.
+- Below the `sm` breakpoint, or when the buttons don't fit in one row at that width, they stack in a column at the full width of the footer. Primary buttons come first, then secondary buttons, with the same `xl` gap between every button.
+- The order changes in the DOM too, so keyboard focus follows what you see.
+
+The buttons don't need `flexGrow={0}` in a group. `Modal.Footer.Actions` is the [`ActionButtons`](./button.md) component from `@cyclone-ui/button`. Its gap is the modal's `padding` (see [Props](#props)). Without a group, `Modal.Footer` lays out its children as before.
 
 ## Examples
 
@@ -118,6 +137,9 @@ The examples are the stories in [`Modal.stories.tsx`](../../../components/modal/
 | `Base` | A controlled modal (`open` and `onOpenChange`). The trigger opens an "Invite a member" form with a closable header, two text inputs, and a role select. The footer **Cancel** and **Send invite** buttons close it. |
 | `Uncontrolled` | A modal with `defaultOpen`, so it is open when the story loads. It has a closable header and one `Modal.Body` paragraph, and no footer. |
 | `Scrollable` | A header with `onBack` and `closable`, and 32 body paragraphs. The header and the footer stay visible while the content scrolls. |
+| `FooterActions` | Secondary **Previous** and **Clear** buttons and a primary **Next** button, all the same width, in one row (stacked below `sm`). Its play function checks the widths and the order. |
+| `FooterActionsStacked` | Labels too long to share a row in the 480px modal, so the buttons stack at full width, primary first, on any screen size. Its play function checks the order. |
+| `Padding` | `FooterActionsStacked` with `padding="4xl"`. |
 
 ## Props
 
@@ -130,6 +152,7 @@ The examples are the stories in [`Modal.stories.tsx`](../../../components/modal/
 | `open` | `boolean` | - | The open state, for a controlled modal. |
 | `defaultOpen` | `boolean` | - | The open state on the first render, for an uncontrolled modal. |
 | `onOpenChange` | `(open: boolean) => void` | - | Called when the modal opens or closes. |
+| `padding` | space token | `"xl"` | The one spacing of the layout: between the frame and `Modal.Content` on every side, between `Modal.Content` and `Modal.Footer`, between the footer buttons, and from the buttons to the frame. |
 | `modal` | `boolean` | `true` | Makes the dialog modal. |
 | `theme` | `string` | `"base"` | The theme name applied to the modal and its parts. |
 | `overlay` | `boolean` | `true` | Set to `false` to hide the overlay. |

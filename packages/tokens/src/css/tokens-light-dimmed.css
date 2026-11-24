@@ -1382,7 +1382,7 @@
     --storm-border-radius-xl
   ); /** Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker. */
   --storm-border-radius-button: var(
-    --storm-border-radius-lg
+    --storm-border-radius-md
   ); /** Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it. */
   --storm-border-radius-tag: var(
     --storm-border-radius-sm

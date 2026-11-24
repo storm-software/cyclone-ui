@@ -19,7 +19,12 @@
 "use client";
 
 import { BodyText } from "@cyclone-ui/body-text";
-import { Button } from "@cyclone-ui/button";
+import {
+  ActionButtons,
+  ActionButtonsPrimary,
+  ActionButtonsSecondary,
+  Button
+} from "@cyclone-ui/button";
 import type { DialogProps } from "@cyclone-ui/dialog";
 import { Dialog } from "@cyclone-ui/dialog";
 import { ArrowLeft, Close } from "@cyclone-ui/icons";
@@ -30,11 +35,18 @@ import { DialogClose } from "@tamagui/dialog";
 import { withStaticProperties } from "@tamagui/helpers";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { FC, ReactNode } from "react";
-import { Children, isValidElement } from "react";
+import { Children, createContext, isValidElement, use } from "react";
 
 // Not `variant`: `Modal.Frame` owns its `elevated` surface and inset-panel
 // layout.
-export type ModalProps = Omit<DialogProps, "variant">;
+export type ModalProps = Omit<DialogProps, "variant"> & {
+  /**
+   * The one spacing of the modal's layout: between the frame and
+   * `Modal.Content`, between `Modal.Content` and `Modal.Footer`, around and
+   * between the footer buttons. Defaults to `xl`.
+   */
+  padding?: GetProps<typeof YStack>["gap"];
+};
 export type ModalFrameProps = GetProps<typeof Dialog.Container>;
 export type ModalContentProps = GetProps<typeof YStack>;
 export type ModalFooterProps = GetProps<typeof XStack>;
@@ -47,7 +59,13 @@ export type ModalHeaderProps = GetProps<typeof XStack> & {
 export type ModalTitleProps = GetProps<typeof Dialog.Heading>;
 export type ModalDescriptionProps = GetProps<typeof Dialog.Body>;
 
-const ModalImpl: FC<ModalProps> = props => <Dialog {...props} />;
+const ModalPaddingContext = createContext<ModalProps["padding"]>("xl");
+
+const ModalImpl: FC<ModalProps> = ({ padding = "xl", ...props }) => (
+  <ModalPaddingContext.Provider value={padding}>
+    <Dialog {...props} />
+  </ModalPaddingContext.Provider>
+);
 
 // The outer shell, portaled with the dialog's overlay. `Modal.Footer` sits on
 // it, below `Modal.Content`.
@@ -78,53 +96,65 @@ const ModalHeaderImpl: FC<ModalHeaderProps> = ({
   onBack,
   closable = false,
   ...props
-}) => (
-  <XStack
-    alignItems="flex-start"
-    gap="xl"
-    width="100%"
-    flexShrink={0}
-    {...props}>
-    {onBack && (
-      <Button
-        aria-label="Back"
-        tooltip="Back"
-        variant="ghost"
-        size="sm"
-        circular={true}
-        flexGrow={0}
-        onPress={onBack}>
-        <Button.Icon>
-          <ArrowLeft color="currentColor" />
-        </Button.Icon>
-      </Button>
-    )}
-    <YStack flex={1} gap="lg" alignSelf="center">
-      {children}
-    </YStack>
-    {closable && (
-      <DialogClose asChild={true}>
+}) => {
+  const padding = use(ModalPaddingContext);
+  const inset =
+    typeof padding === "number"
+      ? `${padding}px`
+      : `var(--t-space-${String(padding)})`;
+
+  return (
+    <XStack
+      alignItems="flex-start"
+      gap="xl"
+      width="100%"
+      flexShrink={0}
+      {...props}>
+      {onBack && (
         <Button
-          aria-label="Close"
-          tooltip="Close"
+          aria-label="Back"
+          tooltip="Back"
           variant="ghost"
           size="sm"
           circular={true}
-          flexGrow={0}>
+          flexGrow={0}
+          onPress={onBack}>
           <Button.Icon>
-            <Close variant="bold" color="currentColor" />
+            <ArrowLeft color="currentColor" />
           </Button.Icon>
         </Button>
-      </DialogClose>
-    )}
-  </XStack>
-);
+      )}
+      <YStack flex={1} gap="lg" alignSelf="center">
+        {children}
+      </YStack>
+      {closable && (
+        <DialogClose asChild={true}>
+          <Button
+            aria-label="Close"
+            tooltip="Close"
+            variant="ghost"
+            size="sm"
+            circular={true}
+            flexGrow={0}
+            // Out of `Modal.Content`'s `5xl` / `6xl` header padding into the
+            // panel's top-right corner, `padding` in from its edges. Still in
+            // flow, so the title wraps before reaching it.
+            marginTop={`calc(${inset} - var(--t-space-5xl))`}
+            marginRight={`calc(${inset} - var(--t-space-6xl))`}>
+            <Button.Icon>
+              <Close variant="bold" color="currentColor" />
+            </Button.Icon>
+          </Button>
+        </DialogClose>
+      )}
+    </XStack>
+  );
+};
 
 const ModalContentFrame = styled(YStack, {
   displayName: "ModalContent",
   flexGrow: 1,
   flexShrink: 1,
-  margin: "lg",
   paddingTop: "5xl",
   gap: "6xl",
   backgroundColor: "canvas",
@@ -144,7 +174,7 @@ const ModalContent: FC<ModalContentProps> = ({ children, ...props }) => {
   const header = items.filter(isModalHeader);
 
   return (
-    <ModalContentFrame {...props}>
+    <ModalContentFrame margin={use(ModalPaddingContext)} {...props}>
       {header.length > 0 && (
         <YStack flexShrink={0} paddingHorizontal="6xl">
           {header}
@@ -189,18 +219,35 @@ const ModalBody: typeof BodyText = styled(BodyText, {
   color: "ink"
 });
 
-const ModalFooter = styled(XStack, {
+const ModalFooterFrame = styled(XStack, {
   displayName: "ModalFooter",
   alignItems: "center",
   justifyContent: "flex-end",
-  gap: "2xl",
   width: "100%",
-  padding: "xl",
-  // `Modal.Content`'s `lg` margin already sits above, so the buttons end up
-  // centered between the panel and the frame's bottom edge.
-  paddingTop: "calc(var(--t-space-xl) - var(--t-space-lg))",
   flexShrink: 0
 });
+
+// Put buttons in `Modal.Footer.Actions.Secondary` / `.Primary` groups to size
+// and stack them together (see `ActionButtons`).
+const ModalFooter = withStaticProperties(
+  ({ children, ...props }: ModalFooterProps) => {
+    const padding = use(ModalPaddingContext);
+
+    return (
+      // `Modal.Content`'s bottom margin is the space above the buttons, and
+      // the sides match its side margins.
+      <ModalFooterFrame
+        paddingTop={0}
+        paddingBottom={padding}
+        paddingHorizontal={padding}
+        gap={padding}
+        {...props}>
+        <ActionButtons gap={padding}>{children}</ActionButtons>
+      </ModalFooterFrame>
+    );
+  },
+  { Actions: ActionButtons }
+);
 
 export interface ModalComponent extends FC<ModalProps> {
   Trigger: typeof Dialog.Trigger;
@@ -210,7 +257,7 @@ export interface ModalComponent extends FC<ModalProps> {
   Title: FC<ModalTitleProps>;
   Description: FC<ModalDescriptionProps>;
   Body: typeof BodyText;
-  Footer: FC<ModalFooterProps>;
+  Footer: FC<ModalFooterProps> & { Actions: typeof ActionButtons };
 }
 
 export const Modal: ModalComponent = withStaticProperties(ModalImpl, {
@@ -238,3 +285,6 @@ export {
   ModalTitle
 };
 export const ModalTrigger = Dialog.Trigger;
+export const ModalFooterActions = ActionButtons;
+export const ModalFooterActionsPrimary = ActionButtonsPrimary;
+export const ModalFooterActionsSecondary = ActionButtonsSecondary;

@@ -250,7 +250,7 @@ const tokens = createTokens({
     "2xl": 16,
     "3xl": 24,
     "4xl": 32,
-    button: 9,
+    button: 6,
     card: 11.5,
     checkbox: 4,
     container: 16,

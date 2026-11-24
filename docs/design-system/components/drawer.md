@@ -57,12 +57,16 @@ const [open, setOpen] = useState(false);
         <Drawer.Body>Filter controls go here.</Drawer.Body>
       </Drawer.Content>
       <Drawer.Footer>
-        <Button onPress={() => setOpen(false)} variant="outlined" size="sm" flexGrow={0}>
-          <Button.Text>Cancel</Button.Text>
-        </Button>
-        <Button onPress={() => setOpen(false)} variant="primary" size="sm" flexGrow={0}>
-          <Button.Text>Apply</Button.Text>
-        </Button>
+        <Drawer.Footer.Actions.Secondary>
+          <Button onPress={() => setOpen(false)} variant="outlined" size="sm">
+            <Button.Text>Cancel</Button.Text>
+          </Button>
+        </Drawer.Footer.Actions.Secondary>
+        <Drawer.Footer.Actions.Primary>
+          <Button onPress={() => setOpen(false)} variant="primary" size="sm">
+            <Button.Text>Apply</Button.Text>
+          </Button>
+        </Drawer.Footer.Actions.Primary>
       </Drawer.Footer>
     </Drawer.Frame>
   </Drawer>
@@ -83,7 +87,10 @@ const [open, setOpen] = useState(false);
       </Drawer.Header>
       <Drawer.Body />
     </Drawer.Content>
-    <Drawer.Footer />
+    <Drawer.Footer>
+      <Drawer.Footer.Actions.Secondary />
+      <Drawer.Footer.Actions.Primary />
+    </Drawer.Footer>
   </Drawer.Frame>
 </Drawer>
 ```
@@ -94,16 +101,18 @@ const [open, setOpen] = useState(false);
 | `Drawer.Overlay` | `Sheet.Overlay` | The backdrop. |
 | `Drawer.Frame` | `Sheet.Frame`. For `top`, `right`, and `left`, a Tamagui `Dialog` content frame with `role="dialog"`. For `bottom`, a Tamagui `Sheet` container and background. | The panel. It has a `surface` background and a 1 px `hairline` border on the side that faces the page (on all sides with `showGaps`). With `showGaps`, it also has the `drawer` radius and an `lg` margin. It sets the text color to `var(--primary)`, so `currentColor` icons in the portal stay visible. You can override the background, border color, and radius. |
 | `Drawer.Handle` | `Sheet.Handle` with `margin={0}` | The drag handle. |
-| `Drawer.Content` | A `YStack` with a `canvas` background, a 1 px `hairline` border, and the `sm` radius. It holds a `Sheet.ScrollView`. | The inset panel. `Drawer.Header` children stay pinned at the top. All other children scroll in the `Sheet.ScrollView` when they are taller than the panel. |
+| `Drawer.Content` | A `YStack` with a `canvas` background, a 1 px `hairline` border, the `sm` radius, and a margin of the drawer's `padding` on every side. It holds a `Sheet.ScrollView`. | The inset panel. `Drawer.Header` children stay pinned at the top. All other children scroll in the `Sheet.ScrollView` when they are taller than the panel. |
 | `Drawer.Header` | An `XStack`. It adds ghost `Button`s with `aria-label="Back"` and `aria-label="Close"` when you set `onBack` or `closable`. | The title row. The back button calls `onBack`. The close button closes the drawer. |
 | `Drawer.Title` | `Sheet.Heading` at font size `2xl`, `semibold` | The title. For `top`, `right`, and `left`, it is the dialog title. |
 | `Drawer.Description` | `Sheet.Description` at size `sm`, `normal` weight, `ink` color | The supporting text. For `top`, `right`, and `left`, it is the dialog description. |
 | `Drawer.Body` | `Sheet.Body` | The body text. |
-| `Drawer.Footer` | `Sheet.Footer` with `xl` padding, a `2xl` gap, and `flexWrap: "wrap"` | The action row. It stays below `Drawer.Content`, on the frame surface. Buttons wrap onto new rows when they do not fit side by side. |
+| `Drawer.Footer` | `Sheet.Footer` with the drawer's `padding` on the sides and bottom (none on top, where `Drawer.Content`'s margin already sits), the same `gap`, and `flexWrap: "wrap"` | The action row. It stays below `Drawer.Content`, on the frame surface. Buttons wrap onto new rows when they do not fit side by side; put them in action groups to size and stack them together instead (see [Footer actions](#footer-actions)). |
+| `Drawer.Footer.Actions.Secondary` | An `XStack` of buttons | The secondary buttons, such as **Cancel** or **Previous**. They start the row and end the column. |
+| `Drawer.Footer.Actions.Primary` | An `XStack` of buttons | The primary buttons, such as **Save** or **Next**. They end the row and start the column. |
 | `Drawer.ScrollView` | `Sheet.ScrollView` | A scroll area for a custom layout without `Drawer.Content`. |
 | `Drawer.Heading` | `Sheet.Heading` | A large heading for a custom layout without `Drawer.Header`. |
 
-`DrawerFrame`, `DrawerHandle`, `DrawerOverlay`, `DrawerContent`, `DrawerHeader`, `DrawerTitle`, `DrawerDescription`, `DrawerBody`, `DrawerFooter`, `DrawerScrollView`, and `DrawerHeading` are also exported by name. Use them in React Server Components, which cannot read `Drawer.Frame` from a client module.
+`DrawerFrame`, `DrawerHandle`, `DrawerOverlay`, `DrawerContent`, `DrawerHeader`, `DrawerTitle`, `DrawerDescription`, `DrawerBody`, `DrawerFooter`, `DrawerFooterActions`, `DrawerFooterActionsPrimary`, `DrawerFooterActionsSecondary`, `DrawerScrollView`, and `DrawerHeading` are also exported by name. Use them in React Server Components, which cannot read `Drawer.Frame` from a client module.
 
 ## Examples
 
@@ -116,7 +125,19 @@ The examples are the stories in [`Drawer.stories.tsx`](../../../components/drawe
 | `Top`, `Right`, `Bottom`, `Left` | Each `direction`. |
 | `ShowGaps` | `showGaps`: the frame is inset from the viewport and has rounded corners on all sides. |
 | `Uncontrolled` | A drawer that opens with `defaultOpen` and has no `open` state. The header close button closes it. |
+| `FooterActions` | A `md` drawer with secondary **Previous** and **Clear** buttons and a primary **Next** button, all the same width. Its play function checks the widths and the row or column order. |
+| `Padding` | `FooterActions` with `padding="4xl"`. |
 | `Scrollable` | 64 paragraphs in `Drawer.Content` with `snapPoints={[90]}`. The header has back and close buttons. The header and footer stay visible while the body scrolls. |
+
+## Footer actions
+
+Put footer buttons in `Drawer.Footer.Actions.Secondary` and `Drawer.Footer.Actions.Primary` groups. The groups only hold buttons; `Drawer.Footer` lays them out:
+
+- In a row, every button is as wide as the widest one. Secondary buttons sit at the start of the row and primary buttons at the end, with an `xl` gap between the buttons in a group.
+- Below the `sm` breakpoint, or when the buttons don't fit in one row at that width, they stack in a column at the full width of the footer. Primary buttons come first, then secondary buttons, with the same `xl` gap between every button.
+- The order changes in the DOM too, so keyboard focus follows what you see.
+
+The buttons don't need `flexGrow={0}` in a group. `Drawer.Footer.Actions` is the [`ActionButtons`](./button.md) component from `@cyclone-ui/button`. Its gap is the drawer's `padding` (see [Props](#props)). Without a group, `Drawer.Footer` lays out its children as before.
 
 ## Props
 
@@ -126,6 +147,7 @@ The examples are the stories in [`Drawer.stories.tsx`](../../../components/drawe
 | --- | --- | --- | --- |
 | `direction` | `"top" \| "right" \| "bottom" \| "left"` | `"right"` | The edge the drawer slides in from. |
 | `size` | `"sm" \| "md" \| "lg"` | None | The drawer size. See [Sizes](#sizes). |
+| `padding` | space token | `"xl"` | The one spacing of the layout: between the frame and `Drawer.Content` on every side, between `Drawer.Content` and `Drawer.Footer`, between the footer buttons, and from the buttons to the frame. On the handle side it sits past the handle's inset. |
 | `showGaps` | `boolean` | `false` | When `true`, insets the frame from the viewport with an `lg` margin and rounds every corner with the `drawer` radius. When `false`, the frame sits flush against its edge with Sheet's radius, like [Sheet](./sheet.md). |
 | `open` | `boolean` | None | The controlled open state. |
 | `defaultOpen` | `boolean` | `false` | The initial open state when `open` is not set. |

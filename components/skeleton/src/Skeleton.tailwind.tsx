@@ -32,7 +32,7 @@ export type SkeletonVariant = "normal" | "pixel";
 
 /** The pixel variant's grid: 3px squares with half-strength 1px gaps. */
 const PIXEL_GRID_MASK =
-  "conic-gradient(from 90deg at 1px 1px, #000 90deg, rgb(0 0 0 / 0.5) 0)";
+  "conic-gradient(from 90deg at 1px 1px, #000 90deg, rgb(0 0 0 / 0.025) 0)";
 
 /**
  * A 64px tile of the grid's 4px cells at a few random strengths, shifted by
@@ -104,10 +104,13 @@ export const Skeleton = forwardRef<TailwindViewElement, SkeletonProps>(
         --cyclone-skeleton-shine: oklch(from var(--hairline) calc(l + 0.08) c h);
         position: absolute;
         inset: 0;
+        /* The bare % hints ease the edges so the wave is softer outside its crest. */
         background: linear-gradient(
           90deg,
           transparent,
+          30%,
           var(--cyclone-skeleton-shine),
+          70%,
           transparent
         );
         transform: translateX(-100%);
@@ -132,17 +135,19 @@ export const Skeleton = forwardRef<TailwindViewElement, SkeletonProps>(
 
       @media (prefers-reduced-motion: no-preference) {
         @keyframes cyclone-skeleton-wave {
+          /* Sweeps for 1.5s, then rests offscreen for 1s before the next pass. */
           from {
             transform: translateX(-100%);
           }
 
+          60%,
           to {
             transform: translateX(100%);
           }
         }
 
         .cyclone-skeleton-wave {
-          animation: cyclone-skeleton-wave 1.2s linear infinite;
+          animation: cyclone-skeleton-wave 2.5s linear infinite;
         }
 
         @keyframes cyclone-skeleton-flicker {

@@ -7,6 +7,8 @@ A centered modal built on the Cyclone UI `Dialog`, with the same parts as `Drawe
 - Built on `Dialog`: focus is trapped, and the overlay, Escape key, and close button dismiss it.
 - Parts: `Trigger`, `Frame`, `Content`, `Header`, `Title`, `Description`, `Body`, and `Footer`.
 - `Frame` is a bordered shell (480px wide, 85vh tall at most). `Content` is a bordered panel inset in it, and `Footer` sits below `Content` on the frame.
+- `Footer.Actions.Secondary` and `Footer.Actions.Primary` group the footer buttons. They share the widest button's width in a row (secondary at the start, primary at the end) and stack at full width, primary first, on small screens or when they don't fit.
+- One `padding` prop (default `xl`) spaces the frame, `Content`, `Footer` and the footer buttons evenly.
 - `Header` stays pinned while the rest of `Content` scrolls once it overflows.
 - `Header` can render a back button (`onBack`) and a close button (`closable`).
 
@@ -73,20 +75,16 @@ export function Example() {
           <Modal.Body>Invites expire after 7 days.</Modal.Body>
         </Modal.Content>
         <Modal.Footer>
-          <Button
-            variant="outlined"
-            size="sm"
-            flexGrow={0}
-            onPress={() => setOpen(false)}>
-            <Button.Text>Cancel</Button.Text>
-          </Button>
-          <Button
-            variant="primary"
-            size="sm"
-            flexGrow={0}
-            onPress={() => setOpen(false)}>
-            <Button.Text>Send invite</Button.Text>
-          </Button>
+          <Modal.Footer.Actions.Secondary>
+            <Button variant="outlined" size="sm" onPress={() => setOpen(false)}>
+              <Button.Text>Cancel</Button.Text>
+            </Button>
+          </Modal.Footer.Actions.Secondary>
+          <Modal.Footer.Actions.Primary>
+            <Button variant="primary" size="sm" onPress={() => setOpen(false)}>
+              <Button.Text>Send invite</Button.Text>
+            </Button>
+          </Modal.Footer.Actions.Primary>
         </Modal.Footer>
       </Modal.Frame>
     </Modal>
