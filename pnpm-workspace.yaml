@@ -24,7 +24,7 @@ catalog:
   "@shell-shock/eslint-plugin": ^0.0.100
   "@shell-shock/nx": ^0.0.109
   "@shell-shock/preset-cli": ^0.9.48
-  "@storm-software/eslint-plugin-pnpm": ^0.0.121
+  "@storm-software/eslint-plugin-pnpm": ^0.0.122
   "@storybook/addon-docs": ^10.6.7
   "@storybook/addon-vitest": ^10.6.7
   "@storybook/react": ^10.6.7
@@ -104,20 +104,20 @@ catalog:
   "@razorwind/shell-shock": ^0.0.32
   "@razorwind/tailwindcss": ^0.0.109
   "@razorwind/tamagui": ^0.0.117
-  "@storm-software/cloudflare-tools": ^0.71.310
-  "@storm-software/config": ^1.138.94
-  "@storm-software/config-tools": ^1.190.158
-  "@storm-software/cspell": ^0.46.225
-  "@storm-software/eslint-config-react": ^0.0.116
-  "@storm-software/eslint-plugin-tsdoc": ^0.0.121
-  "@storm-software/git-tools": ^2.133.4
-  "@storm-software/linting-tools": ^1.134.89
-  "@storm-software/markdownlint": ^0.30.313
-  "@storm-software/pnpm-tools": ^0.7.172
-  "@storm-software/prettier": ^0.59.211
-  "@storm-software/tsconfig": ^0.48.224
-  "@storm-software/untyped": ^0.24.300
-  "@storm-software/workspace-tools": ^1.297.30
+  "@storm-software/cloudflare-tools": ^0.71.311
+  "@storm-software/config": ^1.138.95
+  "@storm-software/config-tools": ^1.190.159
+  "@storm-software/cspell": ^0.46.226
+  "@storm-software/eslint-config-react": ^0.0.117
+  "@storm-software/eslint-plugin-tsdoc": ^0.0.122
+  "@storm-software/git-tools": ^2.133.5
+  "@storm-software/linting-tools": ^1.134.90
+  "@storm-software/markdownlint": ^0.30.314
+  "@storm-software/pnpm-tools": ^0.7.173
+  "@storm-software/prettier": ^0.59.212
+  "@storm-software/tsconfig": ^0.48.225
+  "@storm-software/untyped": ^0.24.301
+  "@storm-software/workspace-tools": ^1.297.31
   "@stryke/async": ^0.1.45
   "@stryke/env": ^0.20.136
   "@stryke/helpers": ^0.10.57
@@ -190,7 +190,7 @@ catalog:
   wrangler: ^3.114.17
   zod: ^3.25.76
   zx: ^8.8.5
-  "@storm-software/tsdoc": ^0.13.310
+  "@storm-software/tsdoc": ^0.13.311
   playwright: ^1.65.1
   style-dictionary: ^5.8.0
   "@maskito/phone": 3.11.1
