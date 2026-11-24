@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Button
 
+## [0.6.104](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.104) (11/24/2026)
+
+### Features
+
+- **button:** Added the ActionButtons export ([74fe2d204](https://github.com/storm-software/cyclone-ui/commit/74fe2d204))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.96**
+- Updated **container** to **v0.6.103**
+- Updated **helpers** to **v0.3.98**
+- Updated **icons** to **v0.0.99**
+- Updated **ripple-animation** to **v0.0.73**
+- Updated **tooltip** to **v0.5.104**
+
 ## [0.6.103](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.103) (11/19/2026)
 
 ### Updated Dependencies

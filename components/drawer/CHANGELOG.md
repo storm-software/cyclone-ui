@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Drawer
 
+## [0.1.106](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.106) (11/24/2026)
+
+### Features
+
+- **button:** Added the ActionButtons export ([74fe2d204](https://github.com/storm-software/cyclone-ui/commit/74fe2d204))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.96**
+- Updated **button** to **v0.6.104**
+- Updated **icons** to **v0.0.99**
+- Updated **sheet** to **v0.0.105**
+
 ## [0.1.105](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.105) (11/19/2026)
 
 ### Updated Dependencies

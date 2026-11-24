@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - ESLint Plugin
 
+## [0.0.86](https://github.com/storm-software/cyclone-ui/releases/tag/eslint-plugin%400.0.86) (11/24/2026)
+
+### Features
+
+- **button:** Added the ActionButtons export ([74fe2d204](https://github.com/storm-software/cyclone-ui/commit/74fe2d204))
+
 ## [0.0.83](https://github.com/storm-software/cyclone-ui/releases/tag/eslint-plugin%400.0.83) (11/19/2026)
 
 ### Features

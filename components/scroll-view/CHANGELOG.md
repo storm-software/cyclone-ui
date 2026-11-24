@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Scroll View
 
+## [0.5.104](https://github.com/storm-software/cyclone-ui/releases/tag/scroll-view%400.5.104) (11/24/2026)
+
+### Features
+
+- **button:** Added the ActionButtons export ([74fe2d204](https://github.com/storm-software/cyclone-ui/commit/74fe2d204))
+
+### Updated Dependencies
+
+- Updated **icons** to **v0.0.99**
+
 ## [0.5.103](https://github.com/storm-software/cyclone-ui/releases/tag/scroll-view%400.5.103) (11/19/2026)
 
 ### Updated Dependencies

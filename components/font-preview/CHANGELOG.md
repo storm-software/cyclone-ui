@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Font Preview
 
+## [0.0.8](https://github.com/storm-software/cyclone-ui/releases/tag/font-preview%400.0.8) (11/24/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.96**
+- Updated **field** to **v0.5.106**
+- Updated **form** to **v0.9.99**
+- Updated **input** to **v0.6.106**
+- Updated **select** to **v0.6.108**
+- Updated **slider** to **v0.0.102**
+- Updated **state** to **v0.0.100**
+
 ## [0.0.7](https://github.com/storm-software/cyclone-ui/releases/tag/font-preview%400.0.7) (11/19/2026)
 
 ### Updated Dependencies

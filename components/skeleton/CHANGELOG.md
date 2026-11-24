@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Skeleton
 
+## [0.0.80](https://github.com/storm-software/cyclone-ui/releases/tag/skeleton%400.0.80) (11/24/2026)
+
+### Features
+
+- **button:** Added the ActionButtons export ([74fe2d204](https://github.com/storm-software/cyclone-ui/commit/74fe2d204))
+
 ## [0.0.76](https://github.com/storm-software/cyclone-ui/releases/tag/skeleton%400.0.76) (11/19/2026)
 
 ### Bug Fixes

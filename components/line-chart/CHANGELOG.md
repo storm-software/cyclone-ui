@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Line Chart
 
+## [0.0.68](https://github.com/storm-software/cyclone-ui/releases/tag/line-chart%400.0.68) (11/24/2026)
+
+### Updated Dependencies
+
+- Updated **chart** to **v0.0.68**
+
 ## [0.0.67](https://github.com/storm-software/cyclone-ui/releases/tag/line-chart%400.0.67) (11/19/2026)
 
 ### Updated Dependencies
