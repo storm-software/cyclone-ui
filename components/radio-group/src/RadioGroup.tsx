@@ -24,6 +24,7 @@ import type { FormControlSize } from "@cyclone-ui/helpers";
 import {
   formSizeVariants,
   getFormControlAriaProps,
+  getFormFocusRing,
   getFormFontScale,
   getFormFontSize,
   getFormSizeScale,
@@ -301,6 +302,9 @@ const RadioGroupItemContainer = createStyledHOC(
     forwardedRef
   ) => {
     const { size } = RadioGroupContext.useStyledContext();
+    // Under an "above" label the ring hugs the item, so it stays clear of the
+    // label and details above the group and the message below it.
+    const ring = getFormFocusRing(size, useFormControl()?.labelVariant);
     const group = use(TamaguiRadioGroupContext);
     const indicatorStyle = use(IndicatorStyleContext);
     const readOnly = use(ReadOnlyContext);
@@ -368,8 +372,8 @@ const RadioGroupItemContainer = createStyledHOC(
             : withClauses(
                 props.boxShadow,
                 size === "sm"
-                  ? `press:ring-subtle-offset focus:ring-subtle-offset focus-visible:ring-subtle-offset`
-                  : `focus:ring-offset focus-visible:ring-offset`
+                  ? `press:${ring} focus:${ring} focus-visible:${ring}`
+                  : `focus:${ring} focus-visible:${ring}`
               )
         }
         borderColor={`${borderColor} hover:${hoverColor}${disabled ? "" : ` focus:${focusColor} focus-visible:${focusColor}`}`}

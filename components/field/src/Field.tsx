@@ -631,9 +631,10 @@ const FieldGroupInnerImpl = createStyledHOC(
                     </FieldGroupFrame>
                     <FieldValidationTextImpl
                       showDisabledMessage={showDisabledMessage}
-                      // Under a label above the control, the stack's gap alone
-                      // separates the message from the control.
-                      marginTop={labelAbove ? "zero" : "md"}
+                      // Under a label above the control, the message's cap
+                      // height sits about as far below the control as the
+                      // label's baseline sits above it, clear of the focus ring.
+                      marginTop={labelAbove ? "lg" : "md"}
                     />
                   </YStack>
                 </FieldLabelAboveContext.Provider>
@@ -1463,8 +1464,10 @@ const FieldLabel = createStyledHOC(
       </XStack>
     ) : detailsUnderLabel && details ? (
       // Unlike under the control, these details stay up while a validation
-      // message shows.
-      <YStack gap="sm">
+      // message shows. The details' line height is tighter than the label's,
+      // so the padding keeps their descenders as clear of the control's focus
+      // ring as the label's.
+      <YStack gap="sm" paddingBottom="md">
         {label}
         <FieldDetailsText
           marginLeft={fieldVariant === "underlined" ? "zero" : "md"}>

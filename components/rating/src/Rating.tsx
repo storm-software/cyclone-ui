@@ -22,6 +22,7 @@ import type { ConfettiBurstHandle } from "@cyclone-ui/confetti-burst";
 import { ConfettiBurst } from "@cyclone-ui/confetti-burst";
 import type { FormControlSize } from "@cyclone-ui/helpers";
 import {
+  getFormFocusRing,
   getFormSizeScale,
   useFieldHasValidationMessage,
   useFormControl
@@ -270,7 +271,8 @@ export const Rating = forwardRef<TamaguiElement, RatingProps>(
         alignSelf="flex-start"
         borderRadius="control"
         outlineStyle="none"
-        boxShadow="none focus-visible:ring-offset"
+        // Under an "above" label the ring hugs the stars, clear of the label.
+        boxShadow={`none focus-visible:${getFormFocusRing(undefined, formControl?.labelVariant)}`}
         opacity={disabled ? 0.5 : 1}
         cursor={disabled ? "not-allowed" : undefined}
         tabIndex={interactive ? 0 : undefined}
