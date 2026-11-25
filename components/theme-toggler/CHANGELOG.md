@@ -2,6 +2,15 @@
 
 # Changelog for Cyclone UI - Theme Toggler
 
+## [0.0.31](https://github.com/storm-software/cyclone-ui/releases/tag/theme-toggler%400.0.31) (11/24/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.105**
+- Updated **icons** to **v0.0.100**
+- Updated **state** to **v0.0.101**
+- Updated **tokens** to **v0.3.86**
+
 ## [0.0.30](https://github.com/storm-software/cyclone-ui/releases/tag/theme-toggler%400.0.30) (11/24/2026)
 
 ### Updated Dependencies

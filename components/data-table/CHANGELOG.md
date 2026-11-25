@@ -2,6 +2,28 @@
 
 # Changelog for Cyclone UI - Data Table
 
+## [0.6.109](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.109) (11/24/2026)
+
+### Updated Dependencies
+
+- Updated **avatar** to **v0.0.34**
+- Updated **body-text** to **v0.5.97**
+- Updated **button** to **v0.6.105**
+- Updated **checkbox** to **v0.5.107**
+- Updated **context-menu** to **v0.0.97**
+- Updated **copy-button** to **v0.0.17**
+- Updated **field** to **v0.5.107**
+- Updated **form** to **v0.9.100**
+- Updated **heading-text** to **v0.5.98**
+- Updated **icons** to **v0.0.100**
+- Updated **pagination** to **v0.8.105**
+- Updated **popover** to **v0.5.107**
+- Updated **scroll-view** to **v0.5.105**
+- Updated **search-input** to **v0.1.109**
+- Updated **select** to **v0.6.109**
+- Updated **state** to **v0.0.101**
+- Updated **table** to **v0.4.101**
+
 ## [0.6.108](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.108) (11/24/2026)
 
 ### Updated Dependencies

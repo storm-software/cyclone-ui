@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Rating
 
+## [0.0.103](https://github.com/storm-software/cyclone-ui/releases/tag/rating%400.0.103) (11/24/2026)
+
+### Miscellaneous
+
+- **monorepo:** Added missing items to the previous commit ([620695a08](https://github.com/storm-software/cyclone-ui/commit/620695a08))
+
+### Updated Dependencies
+
+- Updated **confetti-burst** to **v0.0.87**
+- Updated **field** to **v0.5.107**
+- Updated **form** to **v0.9.100**
+- Updated **helpers** to **v0.3.99**
+- Updated **icons** to **v0.0.100**
+- Updated **tokens** to **v0.3.86**
+
 ## [0.0.102](https://github.com/storm-software/cyclone-ui/releases/tag/rating%400.0.102) (11/24/2026)
 
 ### Updated Dependencies

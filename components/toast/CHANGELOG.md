@@ -2,6 +2,15 @@
 
 # Changelog for Cyclone UI - Toast
 
+## [0.0.17](https://github.com/storm-software/cyclone-ui/releases/tag/toast%400.0.17) (11/24/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.97**
+- Updated **button** to **v0.6.105**
+- Updated **icons** to **v0.0.100**
+- Updated **visually-hidden** to **v0.5.97**
+
 ## [0.0.16](https://github.com/storm-software/cyclone-ui/releases/tag/toast%400.0.16) (11/24/2026)
 
 ### Updated Dependencies

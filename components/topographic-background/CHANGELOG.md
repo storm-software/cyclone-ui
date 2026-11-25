@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Topographic Background
 
+## [0.0.28](https://github.com/storm-software/cyclone-ui/releases/tag/topographic-background%400.0.28) (11/24/2026)
+
+### Features
+
+- **topographic-background:** Added low and high contrast backgrounds ([13efb3411](https://github.com/storm-software/cyclone-ui/commit/13efb3411))
+
 ## [0.0.23](https://github.com/storm-software/cyclone-ui/releases/tag/topographic-background%400.0.23) (11/19/2026)
 
 ### Bug Fixes
