@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cyclone UI Diagram"
+  short_description: "Editorial diagrams with Cyclone UI themes and SVG"
+  default_prompt: "Use $cyclone-ui-diagram to draw an editorial diagram with Cyclone UI tokens, a themed React component, and static SVGs."

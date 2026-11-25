@@ -1,0 +1,325 @@
+{
+  "name": "release-sequence",
+  "title": "Publish once. Confirm the version.",
+  "description": "An author pushes a tag, CI publishes to the registry, and CI confirms the released version before notifying the author.",
+  "width": 960,
+  "height": 600,
+  "children": [
+    {
+      "tag": "defs",
+      "children": [
+        {
+          "tag": "marker",
+          "attrs": {
+            "id": "arrow",
+            "viewBox": "0 0 8 8",
+            "markerWidth": 8,
+            "markerHeight": 8,
+            "refX": 7,
+            "refY": 4,
+            "orient": "auto",
+            "markerUnits": "userSpaceOnUse"
+          },
+          "children": [
+            {
+              "tag": "path",
+              "attrs": {
+                "d": "M1 1 L7 4 L1 7",
+                "fill": "none",
+                "stroke": "@line",
+                "strokeWidth": 1.25,
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "marker",
+          "attrs": {
+            "id": "arrow-accent",
+            "viewBox": "0 0 8 8",
+            "markerWidth": 8,
+            "markerHeight": 8,
+            "refX": 7,
+            "refY": 4,
+            "orient": "auto",
+            "markerUnits": "userSpaceOnUse"
+          },
+          "children": [
+            {
+              "tag": "path",
+              "attrs": {
+                "d": "M1 1 L7 4 L1 7",
+                "fill": "none",
+                "stroke": "@accent",
+                "strokeWidth": 1.25,
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 32,
+        "y": 48,
+        "fill": "@muted"
+      },
+      "text": "FIG. 02 / RELEASE SEQUENCE",
+      "font": "eyebrow"
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 32,
+        "y": 104,
+        "fill": "@ink"
+      },
+      "text": "Publish once. Confirm the version.",
+      "font": "title"
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 32,
+        "y": 140,
+        "fill": "@muted"
+      },
+      "text": "Message order runs from top to bottom.",
+      "font": "detail"
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 140,
+        "y": 188,
+        "fill": "@ink",
+        "textAnchor": "middle"
+      },
+      "text": "Author",
+      "font": "label"
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 140,
+        "y": 208,
+        "fill": "@muted",
+        "textAnchor": "middle"
+      },
+      "text": "tag owner",
+      "font": "detail"
+    },
+    {
+      "tag": "line",
+      "attrs": {
+        "x1": 140,
+        "y1": 224,
+        "x2": 140,
+        "y2": 532,
+        "stroke": "@line",
+        "strokeWidth": 1,
+        "strokeDasharray": "3 5"
+      }
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 480,
+        "y": 188,
+        "fill": "@ink",
+        "textAnchor": "middle"
+      },
+      "text": "CI",
+      "font": "label"
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 480,
+        "y": 208,
+        "fill": "@muted",
+        "textAnchor": "middle"
+      },
+      "text": "release job",
+      "font": "detail"
+    },
+    {
+      "tag": "line",
+      "attrs": {
+        "x1": 480,
+        "y1": 224,
+        "x2": 480,
+        "y2": 532,
+        "stroke": "@line",
+        "strokeWidth": 1,
+        "strokeDasharray": "3 5"
+      }
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 820,
+        "y": 188,
+        "fill": "@ink",
+        "textAnchor": "middle"
+      },
+      "text": "Registry",
+      "font": "label"
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 820,
+        "y": 208,
+        "fill": "@muted",
+        "textAnchor": "middle"
+      },
+      "text": "package store",
+      "font": "detail"
+    },
+    {
+      "tag": "line",
+      "attrs": {
+        "x1": 820,
+        "y1": 224,
+        "x2": 820,
+        "y2": 532,
+        "stroke": "@line",
+        "strokeWidth": 1,
+        "strokeDasharray": "3 5"
+      }
+    },
+    {
+      "tag": "rect",
+      "attrs": {
+        "x": 474,
+        "y": 252,
+        "width": 12,
+        "height": 232,
+        "rx": 4,
+        "fill": "@panel",
+        "stroke": "@line"
+      }
+    },
+    {
+      "tag": "line",
+      "attrs": {
+        "x1": 140,
+        "y1": 252,
+        "x2": 474,
+        "y2": 252,
+        "stroke": "@line",
+        "strokeWidth": 1,
+        "markerEnd": "url(#arrow)"
+      }
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 304,
+        "y": 240,
+        "fill": "@muted",
+        "textAnchor": "middle"
+      },
+      "text": "1 / PUSH TAG",
+      "font": "eyebrow"
+    },
+    {
+      "tag": "line",
+      "attrs": {
+        "x1": 486,
+        "y1": 328,
+        "x2": 820,
+        "y2": 328,
+        "stroke": "@accent",
+        "strokeWidth": 1.5,
+        "markerEnd": "url(#arrow-accent)"
+      }
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 652,
+        "y": 316,
+        "fill": "@muted",
+        "textAnchor": "middle"
+      },
+      "text": "2 / PUBLISH",
+      "font": "eyebrow"
+    },
+    {
+      "tag": "line",
+      "attrs": {
+        "x1": 820,
+        "y1": 404,
+        "x2": 486,
+        "y2": 404,
+        "stroke": "@line",
+        "strokeWidth": 1,
+        "strokeDasharray": "5 4",
+        "markerEnd": "url(#arrow)"
+      }
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 652,
+        "y": 392,
+        "fill": "@muted",
+        "textAnchor": "middle"
+      },
+      "text": "3 / VERSION AVAILABLE",
+      "font": "eyebrow"
+    },
+    {
+      "tag": "line",
+      "attrs": {
+        "x1": 474,
+        "y1": 480,
+        "x2": 140,
+        "y2": 480,
+        "stroke": "@line",
+        "strokeWidth": 1,
+        "strokeDasharray": "5 4",
+        "markerEnd": "url(#arrow)"
+      }
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 304,
+        "y": 468,
+        "fill": "@muted",
+        "textAnchor": "middle"
+      },
+      "text": "4 / RELEASE READY",
+      "font": "eyebrow"
+    },
+    {
+      "tag": "line",
+      "attrs": {
+        "x1": 32,
+        "y1": 548,
+        "x2": 928,
+        "y2": 548,
+        "stroke": "@rule",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 32,
+        "y": 576,
+        "fill": "@muted"
+      },
+      "text": "Dashed messages are confirmations; they return to the caller.",
+      "font": "detail"
+    }
+  ]
+}

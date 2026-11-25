@@ -1,0 +1,413 @@
+{
+  "name": "cache-path",
+  "title": "A cache hit never reaches the app",
+  "description": "The CDN serves cached responses directly to the browser; cache misses continue through the app to Postgres.",
+  "width": 960,
+  "height": 520,
+  "children": [
+    {
+      "tag": "defs",
+      "children": [
+        {
+          "tag": "marker",
+          "attrs": {
+            "id": "arrow",
+            "viewBox": "0 0 8 8",
+            "markerWidth": 8,
+            "markerHeight": 8,
+            "refX": 7,
+            "refY": 4,
+            "orient": "auto",
+            "markerUnits": "userSpaceOnUse"
+          },
+          "children": [
+            {
+              "tag": "path",
+              "attrs": {
+                "d": "M1 1 L7 4 L1 7",
+                "fill": "none",
+                "stroke": "@line",
+                "strokeWidth": 1.25,
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "marker",
+          "attrs": {
+            "id": "arrow-accent",
+            "viewBox": "0 0 8 8",
+            "markerWidth": 8,
+            "markerHeight": 8,
+            "refX": 7,
+            "refY": 4,
+            "orient": "auto",
+            "markerUnits": "userSpaceOnUse"
+          },
+          "children": [
+            {
+              "tag": "path",
+              "attrs": {
+                "d": "M1 1 L7 4 L1 7",
+                "fill": "none",
+                "stroke": "@accent",
+                "strokeWidth": 1.25,
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 32,
+        "y": 48,
+        "fill": "@muted"
+      },
+      "text": "FIG. 01 / REQUEST ARCHITECTURE",
+      "font": "eyebrow"
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 32,
+        "y": 104,
+        "fill": "@ink"
+      },
+      "text": "A cache hit never reaches the app",
+      "font": "title"
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 32,
+        "y": 140,
+        "fill": "@muted"
+      },
+      "text": "Four components. One request boundary.",
+      "font": "detail"
+    },
+    {
+      "tag": "line",
+      "attrs": {
+        "x1": 32,
+        "y1": 172,
+        "x2": 928,
+        "y2": 172,
+        "stroke": "@rule",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "tag": "line",
+      "attrs": {
+        "x1": 208,
+        "y1": 288,
+        "x2": 272,
+        "y2": 288,
+        "stroke": "@line",
+        "strokeWidth": 1,
+        "markerEnd": "url(#arrow)"
+      }
+    },
+    {
+      "tag": "line",
+      "attrs": {
+        "x1": 448,
+        "y1": 288,
+        "x2": 512,
+        "y2": 288,
+        "stroke": "@line",
+        "strokeWidth": 1,
+        "markerEnd": "url(#arrow)"
+      }
+    },
+    {
+      "tag": "line",
+      "attrs": {
+        "x1": 688,
+        "y1": 288,
+        "x2": 752,
+        "y2": 288,
+        "stroke": "@line",
+        "strokeWidth": 1,
+        "markerEnd": "url(#arrow)"
+      }
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 240,
+        "y": 272,
+        "fill": "@muted",
+        "textAnchor": "middle"
+      },
+      "text": "HTTPS",
+      "font": "eyebrow"
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 480,
+        "y": 272,
+        "fill": "@muted",
+        "textAnchor": "middle"
+      },
+      "text": "MISS",
+      "font": "eyebrow"
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 720,
+        "y": 272,
+        "fill": "@muted",
+        "textAnchor": "middle"
+      },
+      "text": "SQL",
+      "font": "eyebrow"
+    },
+    {
+      "tag": "path",
+      "attrs": {
+        "d": "M360 340 V376 Q360 384 352 384 H128 Q120 384 120 376 V340",
+        "stroke": "@accent",
+        "strokeWidth": 1.5,
+        "strokeDasharray": "5 4",
+        "markerEnd": "url(#arrow-accent)"
+      }
+    },
+    {
+      "tag": "rect",
+      "attrs": {
+        "x": 32,
+        "y": 236,
+        "width": 176,
+        "height": 104,
+        "rx": 4,
+        "fill": "@panel",
+        "stroke": "@rule"
+      }
+    },
+    {
+      "tag": "line",
+      "attrs": {
+        "x1": 32,
+        "y1": 256,
+        "x2": 208,
+        "y2": 256,
+        "stroke": "@rule",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "tag": "circle",
+      "attrs": {
+        "cx": 44,
+        "cy": 246,
+        "r": 2,
+        "fill": "@muted"
+      }
+    },
+    {
+      "tag": "circle",
+      "attrs": {
+        "cx": 52,
+        "cy": 246,
+        "r": 2,
+        "fill": "@muted"
+      }
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 48,
+        "y": 284,
+        "fill": "@ink"
+      },
+      "text": "Browser",
+      "font": "label"
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 48,
+        "y": 312,
+        "fill": "@muted"
+      },
+      "text": "reader request",
+      "font": "detail"
+    },
+    {
+      "tag": "rect",
+      "attrs": {
+        "x": 272,
+        "y": 236,
+        "width": 176,
+        "height": 104,
+        "rx": 4,
+        "fill": "@panel",
+        "stroke": "@accent",
+        "strokeWidth": 1.5
+      }
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 288,
+        "y": 258,
+        "fill": "@muted"
+      },
+      "text": "RESPONSE BOUNDARY",
+      "font": "eyebrow"
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 288,
+        "y": 284,
+        "fill": "@ink"
+      },
+      "text": "CDN",
+      "font": "label"
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 288,
+        "y": 312,
+        "fill": "@muted"
+      },
+      "text": "cached at the edge",
+      "font": "detail"
+    },
+    {
+      "tag": "rect",
+      "attrs": {
+        "x": 512,
+        "y": 236,
+        "width": 176,
+        "height": 104,
+        "rx": 4,
+        "fill": "@panel",
+        "stroke": "@rule"
+      }
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 528,
+        "y": 258,
+        "fill": "@muted"
+      },
+      "text": "COMPUTE",
+      "font": "eyebrow"
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 528,
+        "y": 284,
+        "fill": "@ink"
+      },
+      "text": "App",
+      "font": "label"
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 528,
+        "y": 312,
+        "fill": "@muted"
+      },
+      "text": "origin handler",
+      "font": "detail"
+    },
+    {
+      "tag": "path",
+      "attrs": {
+        "d": "M752 248 C752 232 928 232 928 248 V324 C928 340 752 340 752 324 Z",
+        "fill": "@panel",
+        "stroke": "@rule"
+      }
+    },
+    {
+      "tag": "ellipse",
+      "attrs": {
+        "cx": 840,
+        "cy": 248,
+        "rx": 88,
+        "ry": 12,
+        "fill": "@panel",
+        "stroke": "@rule"
+      }
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 768,
+        "y": 288,
+        "fill": "@ink"
+      },
+      "text": "Postgres",
+      "font": "label"
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 768,
+        "y": 312,
+        "fill": "@muted"
+      },
+      "text": "durable records",
+      "font": "detail"
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 240,
+        "y": 412,
+        "fill": "@muted",
+        "textAnchor": "middle"
+      },
+      "text": "CACHE HIT / DIRECT RESPONSE",
+      "font": "eyebrow"
+    },
+    {
+      "tag": "line",
+      "attrs": {
+        "x1": 32,
+        "y1": 448,
+        "x2": 928,
+        "y2": 448,
+        "stroke": "@rule",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 32,
+        "y": 476,
+        "fill": "@muted"
+      },
+      "text": "Solid: request path",
+      "font": "detail"
+    },
+    {
+      "tag": "text",
+      "attrs": {
+        "x": 352,
+        "y": 476,
+        "fill": "@muted"
+      },
+      "text": "Dashed: cached response",
+      "font": "detail"
+    }
+  ]
+}

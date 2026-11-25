@@ -1,0 +1,50 @@
+{
+  "skill_name": "cyclone-ui-diagram",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Draw Browser -> CDN -> App -> Postgres with a cache-hit response from CDN to Browser. Highlight CDN. Give me a reusable web/native component, an offline preview and light/dark SVGs.",
+      "expected_output": "An architecture composition with an explicit return path, one editable source, all five generated artifacts, inherited primary accent and browser validation.",
+      "files": [],
+      "expectations": [
+        "Preserves all four components and distinguishes cache miss from cache hit direction",
+        "Uses the JSON scene as the single editable source and rebuilds every delivery",
+        "Uses inherited primary and real Cyclone token names rather than forced orange or teal",
+        "Generates a standalone Tamagui/react-native-svg component without inventing a diagrams package",
+        "Checks light/dark and narrow output; distinguishes web proof from native device proof"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Redraw our publication decision flow: Draft -> In review -> Approved? Yes -> Published, No -> Draft. Use Diagram Design style with Cyclone UI tokens. Highlight the decision.",
+      "expected_output": "A flowchart with a decision diamond and labeled Yes/No branches, preserving the rejection loop. It uses the Cyclone palette and complete editable/generated artifacts.",
+      "files": [],
+      "expectations": [
+        "Uses a decision diamond rather than uniform cards",
+        "Labels both exits and returns No to Draft",
+        "Includes title and meaningful description, readable text, and explicit arrow direction",
+        "Runs the validator and reports browser evidence accurately"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "We need a sales trend diagram for the last six months. I haven't supplied the figures yet. Make it match diagramdesign.dev but use our Cyclone brand theme.",
+      "expected_output": "Requests the missing measurements or produces a clearly empty labeled structure. Does not invent a trend or claim fake values as measured. Explains inherited brand theme usage without editing tokens.",
+      "files": [],
+      "expectations": [
+        "Does not fabricate monthly figures or a claimed trend",
+        "Selects time-series grammar with an explicit date and unit scale when data becomes available",
+        "Uses Cyclone brand through the surrounding theme, without changing generated token files"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Create a pointer-responsive isometric empty-state object for an empty deployment history.",
+      "expected_output": "Routes to cyclone-ui-illustration instead of forcing the diagram grammar onto illustration artwork.",
+      "files": [],
+      "expectations": [
+        "Recognizes illustration artwork as outside this skill's diagram workflow"
+      ]
+    }
+  ]
+}
