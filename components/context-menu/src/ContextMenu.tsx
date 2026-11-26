@@ -44,7 +44,15 @@ import {
   withStaticProperties
 } from "@tamagui/core";
 import type { JSX, ReactNode } from "react";
-import { createContext, use, useLayoutEffect, useMemo, useState } from "react";
+import {
+  Children,
+  createContext,
+  isValidElement,
+  use,
+  useLayoutEffect,
+  useMemo,
+  useState
+} from "react";
 import { getContextMenuSize } from "./utilities";
 
 // Menus narrower than this center their item text, unless an item shows an
@@ -262,7 +270,7 @@ const ContextMenuContent = ({
           }
         }}>
         {isWeb && <style>{CONTEXT_MENU_STYLES}</style>}
-        {children}
+        {wrapItems(children)}
       </View>
     </Popover.Content>
   );
@@ -301,6 +309,37 @@ const ContextMenuScrollView = ({
       <View width="100%">{children}</View>
     </Popover.Content.ScrollView>
   );
+};
+
+// Items placed straight in the content get the scroll view that
+// `ContextMenu.Content.ScrollView` would give them: the content's `gap`, which
+// spaces a header from the list, would otherwise space every item apart.
+// ponytail: matches only `ContextMenu.Item` elements; a component that renders
+// one still needs an explicit `ContextMenu.Content.ScrollView`.
+const wrapItems = (children: ReactNode): ReactNode[] => {
+  const result: ReactNode[] = [];
+  let items: ReactNode[] = [];
+  const flush = () => {
+    if (items.length > 0) {
+      result.push(
+        <ContextMenuScrollView key={result.length}>{items}</ContextMenuScrollView>
+      );
+      items = [];
+    }
+  };
+
+  // eslint-disable-next-line react/no-children-to-array
+  Children.toArray(children).forEach(child => {
+    if (isValidElement(child) && child.type === ContextMenuItem) {
+      items.push(child);
+    } else {
+      flush();
+      result.push(child);
+    }
+  });
+  flush();
+
+  return result;
 };
 
 const ContextMenuItemFrame = styled(View, {

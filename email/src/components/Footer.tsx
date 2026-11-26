@@ -32,7 +32,8 @@ export interface FooterProps {
 }
 
 // Like `@cyclone-ui/footer`: `secondary` background, hairline top border and
-// `primary` text (`emphasis` here, which keeps AA contrast on the fill).
+// `primary` text (`emphasis` here, which keeps AA contrast on the fill). The
+// bottom corners follow the rounded `EmailLayout` container.
 export const Footer = ({
   companyName,
   tagline,
@@ -40,7 +41,7 @@ export const Footer = ({
   address,
   unsubscribeUrl
 }: FooterProps) => (
-  <Section className="border-0 border-t border-solid border-hairline bg-base-secondary px-6 py-12">
+  <Section className="rounded-b-2xl border-0 border-t border-solid border-hairline bg-elevated px-6 py-12">
     {tagline ? (
       <HeadingText level="sm" className="mb-6 max-w-[360px]">
         {tagline}

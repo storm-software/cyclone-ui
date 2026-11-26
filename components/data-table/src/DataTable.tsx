@@ -538,6 +538,15 @@ function DataTableImpl<TData extends RowData>({
   ...rest
 }: DataTableProps<TData>) {
   const card = variant === "card";
+
+  // Margins (and their `m*` shorthands) space the whole data table,
+  // pagination included, not just the scrolling table.
+  const margins: Record<string, unknown> = {};
+  const tableProps: Record<string, unknown> = {};
+  Object.entries(rest).forEach(([key, value]) => {
+    (/^m(?:argin|[belrstxy]?$)/.test(key) ? margins : tableProps)[key] = value;
+  });
+
   const [data] = useState<TData[]>(() => [...options.data]);
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
@@ -658,7 +667,7 @@ function DataTableImpl<TData extends RowData>({
       pagination={pagination}
       setPagination={setPagination}
       selectedRows={selectedRows}>
-      <YStack gap="3xl">
+      <YStack {...margins}>
         {/* Columns never shrink below their content; a table wider than its
             container scrolls sideways instead of overflowing it. The scrollbar
             is the themed one from `ScrollView`. */}
@@ -674,7 +683,7 @@ function DataTableImpl<TData extends RowData>({
             alignCells={{ x: "start", y: "center" }}
             alignHeaderCells={{ x: "start", y: "center" }}
             {...{ sizing: "content" }}
-            {...rest}
+            {...tableProps}
             style={
               [
                 rest.style,
@@ -949,34 +958,32 @@ function DataTableImpl<TData extends RowData>({
                 </Table.Row>
               )}
             </Table.Body>
-            {pageSize && (
-              <Table.Footer>
-                <Table.Row header={true}>
-                  <Table.Cell
-                    paddingTop="3xl"
-                    {...(card
-                      ? { ...getCardCellProps(0, 1), paddingVertical: "xl" }
-                      : {})}
-                    borderBottomWidth={0}
-                    {...({ colSpan: columnCount } as any)}>
-                    <DataTablePagination
-                      setPageIndex={table.setPageIndex}
-                      nextPage={table.nextPage}
-                      previousPage={table.previousPage}
-                      firstPage={table.firstPage}
-                      lastPage={table.lastPage}
-                      totalCount={data.length}
-                      unfilteredCount={table.getFilteredRowModel().rows.length}
-                      pageIndex={pagination.pageIndex}
-                      pageSize={pagination.pageSize}
-                      pageCount={pageCount}
-                    />
-                  </Table.Cell>
-                </Table.Row>
-              </Table.Footer>
-            )}
           </Table>
         </View>
+        {/* Outside the scroll container so its scrollbar sits between the rows
+            and the pagination, and the pagination stays in view. */}
+        {pageSize && (
+          <View
+            paddingHorizontal="xl"
+            {...(card
+              ? { ...getCardCellProps(0, 1), paddingVertical: "xl" }
+              : { paddingTop: "3xl", paddingBottom: "xl" })}
+            // A resizable table can be narrower than its container.
+            maxWidth={resizable ? table.getTotalSize() : undefined}>
+            <DataTablePagination
+              setPageIndex={table.setPageIndex}
+              nextPage={table.nextPage}
+              previousPage={table.previousPage}
+              firstPage={table.firstPage}
+              lastPage={table.lastPage}
+              totalCount={data.length}
+              unfilteredCount={table.getFilteredRowModel().rows.length}
+              pageIndex={pagination.pageIndex}
+              pageSize={pagination.pageSize}
+              pageCount={pageCount}
+            />
+          </View>
+        )}
       </YStack>
     </DataTableContext.Provider>
   );
@@ -1522,11 +1529,14 @@ export function DataTablePagination<TData extends RowData>({
     <XStack
       group="header"
       flexGrow={1}
+      flexWrap="wrap"
       justifyContent="space-between"
       alignItems="center"
+      gap="xl"
       paddingHorizontal="xl">
-      <View flex={1}>
-        <XStack alignItems="center" gap="xl">
+      {/* Not `flex`: a zero basis never wraps the page buttons. */}
+      <View flexGrow={1} flexShrink={1}>
+        <XStack flexWrap="wrap" alignItems="center" gap="xl">
           <View width="30xl" flexShrink={0}>
             <Form
               name="pageSizing"
