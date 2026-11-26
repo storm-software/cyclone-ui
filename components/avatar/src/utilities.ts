@@ -156,16 +156,54 @@ export const cropAvatarImage = async (
 };
 
 /**
- * The first letters of the first and last words of a name.
+ * The first letters of the first and last words of a name. Punctuation and symbols are skipped, so "User (Admin)" is "UA", unless the name has no letters or digits at all.
  *
  * @param name - A name, such as "Ada Lovelace".
  * @returns The initials, such as "AL".
  */
 export const getAvatarInitials = (name: string) => {
   const words = name.trim().split(/\s+/).filter(Boolean);
+  const letters = words.flatMap(word => word.match(/[\p{L}\p{N}]/u)?.[0] ?? []);
+  const chars =
+    letters.length > 0 ? letters : words.map(word => Array.from(word)[0]!);
 
-  return (words.length > 1 ? [words[0]!, words.at(-1)!] : words)
-    .map(word => Array.from(word)[0])
+  return (chars.length > 1 ? [chars[0]!, chars.at(-1)!] : chars)
     .join("")
     .toUpperCase();
+};
+
+// The fills of `assets/backgrounds/topography-color.svg`, without its brown.
+const AVATAR_COLORS = [
+  "#6E5EA6",
+  "#797AAA",
+  "#7D89C0",
+  "#9B8BC0",
+  "#DDC4DF",
+  "#FBE7EB",
+  "#F7C8D1",
+  "#F08928",
+  "#F7B46F",
+  "#FDD9A4",
+  "#FEF0CF",
+  "#80C8C1",
+  "#94C6DA",
+  "#87ACD3",
+  "#A29DA0"
+] as const;
+
+/**
+ * A background color from the topography palette, picked by a hash of the name, so a name always gets the same color. Also returns a text color that contrasts with it at 4.5:1 or more.
+ *
+ * @param name - A name, such as "Ada Lovelace".
+ * @returns The `background` and text `color`.
+ */
+export const getAvatarColor = (name: string) => {
+  let hash = 0;
+  for (const char of name.trim()) {
+    hash = (hash * 31 + char.codePointAt(0)!) >>> 0;
+  }
+  const background = AVATAR_COLORS[hash % AVATAR_COLORS.length]!;
+
+  // Black text falls below 4.5:1 only on the darkest purple.
+  return { background, color: background === "#6E5EA6" ? "white" : "black" };
 };

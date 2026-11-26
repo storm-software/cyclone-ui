@@ -4,6 +4,7 @@
     "tsBuildInfoFile": "../../dist/out-tsc/components/message/tsconfig.tsbuildinfo",
     "jsx": "preserve",
     "ignoreDeprecations": "6.0",
+    "lib": ["ESnext", "DOM"],
     "rootDir": ".",
     "types": [
       "node",
@@ -24,6 +25,12 @@
     },
     {
       "path": "../button"
+    },
+    {
+      "path": "../copy-button"
+    },
+    {
+      "path": "../toast"
     }
   ],
   "files": [],

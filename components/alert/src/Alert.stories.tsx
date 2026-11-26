@@ -19,6 +19,7 @@
 import { QuestionCircle } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import type { ComponentProps, ReactNode } from "react";
+import { expect, userEvent, waitFor, within } from "storybook/test";
 import { Alert } from "./Alert";
 
 // `icon` is a story-only arg consumed by the custom `render` below.
@@ -100,5 +101,46 @@ export const Discovery: Story = {
   args: {
     children: bodyText,
     type: "discovery"
+  }
+};
+
+export const WithDetails: Story = {
+  args: {
+    children: bodyText,
+    type: "danger"
+  },
+  render: ({ children, icon, theme, type, ...rest }: any) => (
+    <Alert {...rest} theme={theme} type={type}>
+      <Alert.Icon>{icon}</Alert.Icon>
+      <Alert.Content>
+        <Alert.Content.Heading>Alert Heading</Alert.Content.Heading>
+        <Alert.Content.Body>{children}</Alert.Content.Body>
+        <Alert.Content.Details>
+          Request ID 7f3a-21c9. The server returned 503 Service Unavailable
+          after 3 retries.
+        </Alert.Content.Details>
+      </Alert.Content>
+
+      <Alert.Close />
+    </Alert>
+  ),
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const canvas = within(canvasElement);
+    const toggle = canvas.getByRole("button", { name: "Show details" });
+
+    await expect(toggle).toHaveAttribute("aria-expanded", "false");
+    await expect(canvas.queryByText(/Request ID 7f3a-21c9/)).toBeNull();
+
+    await userEvent.click(toggle);
+    await expect(toggle).toHaveAttribute("aria-expanded", "true");
+    await expect(toggle).toHaveAccessibleName("Hide details");
+    await waitFor(async () =>
+      expect(canvas.getByText(/Request ID 7f3a-21c9/)).toBeVisible()
+    );
+
+    await userEvent.click(toggle);
+    await waitFor(async () =>
+      expect(canvas.queryByText(/Request ID 7f3a-21c9/)).toBeNull()
+    );
   }
 };

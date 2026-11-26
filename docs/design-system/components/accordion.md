@@ -131,6 +131,12 @@ The root also accepts the other props of the Tamagui accordion, such as `collaps
 | ------- | -------- | ---------------------------------------------- |
 | `value` | `string` | The unique ID of the item. Used for the state. |
 
+### `Accordion.Item.Header`
+
+| Prop       | Type                       | Default | Description                                                                 |
+| ---------- | -------------------------- | ------- | --------------------------------------------------------------------------- |
+| `iconSize` | `number \| FontSizeTokens` | `"6xl"` | The size of the toggle or chevron icon: a `size` token (`"6xl"` is 24px) or pixels. |
+
 ## Variants
 
 Every variant but `ghost` is a [Container](./container.md) variant, the same set as [Button](./button.md): a Container draws the surface behind the group or, when `separated`, behind each item. See the [Container variants](./container.md#variants) for each background and border. `surface` is the default.

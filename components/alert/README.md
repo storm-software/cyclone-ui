@@ -69,7 +69,8 @@ A package containing the Alert component used by Storm Software
 
 ## Quick Features
 
-- Compound API: `Alert`, `Alert.Icon`, `Alert.Content` (`Heading`, `Body`) and `Alert.Close`.
+- Compound API: `Alert`, `Alert.Icon`, `Alert.Content` (`Heading`, `Body`, `Details`) and `Alert.Close`.
+- An optional "Show details" toggle (`Alert.Content.Details`) that expands more information.
 - Seven types: `base`, `brand`, `danger`, `warning`, `info`, `success` and `discovery`.
 - A status icon that follows the type, or a custom icon.
 - A circular close button.
@@ -122,6 +123,7 @@ export const Example = () => (
     <Alert.Content>
       <Alert.Content.Heading>Heading</Alert.Content.Heading>
       <Alert.Content.Body>Message</Alert.Content.Body>
+      <Alert.Content.Details>More information</Alert.Content.Details>
     </Alert.Content>
     <Alert.Close />
   </Alert>

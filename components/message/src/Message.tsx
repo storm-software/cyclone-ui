@@ -20,10 +20,14 @@
 
 import type { AlertType } from "@cyclone-ui/alert";
 import { Alert } from "@cyclone-ui/alert";
+import { writeClipboard } from "@cyclone-ui/copy-button/clipboard";
+import { toast as notify } from "@cyclone-ui/toast";
 import { useEvent, View } from "@tamagui/core";
+import { YStack } from "@tamagui/stacks";
 import type { ToastItemRenderProps, ToastRootProps } from "@tamagui/toast";
 import { Toast, toast as toastApi, useToasts } from "@tamagui/toast";
-import { useEffect, useMemo, useRef, useState } from "react";
+import type { ReactNode } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 
 const getAlertType = (type: unknown): AlertType => {
   switch (type) {
@@ -49,8 +53,9 @@ const getAlertType = (type: unknown): AlertType => {
 
 export type MessageProps = Partial<ToastRootProps>;
 
-const DEFAULT_DURATION = 25 * 1000;
+const DEFAULT_DURATION = 10 * 1000;
 const DEFAULT_ERROR_DURATION = 60 * 1000;
+const DEFAULT_WARNING_DURATION = 25 * 1000;
 
 // Shrinks from full width to nothing over `duration`, freezing while `paused`.
 const MessageTimer = ({
@@ -115,6 +120,98 @@ const MessageTimer = ({
   );
 };
 
+// A body longer than this is clamped to one line fewer, behind a details
+// toggle that takes about that last line, so every message is roughly the
+// same height.
+const MAX_BODY_LINES = 3;
+
+// A wrapped text node has one client rect per line.
+const countLines = (node: Text) => {
+  const range = document.createRange();
+  range.selectNodeContents(node);
+
+  return new Set(
+    Array.from(range.getClientRects(), rect => Math.round(rect.bottom))
+  ).size;
+};
+
+// Measures the full text before paint and, when it is too long, clamps it
+// until the details toggle is opened. Remount (`key`) it when the text
+// changes. Measures on web only; native shows the full text. Pressing the
+// text calls `onCopy`.
+const MessageText = ({
+  heading,
+  children,
+  onCopy
+}: {
+  heading: ReactNode;
+  children?: ReactNode;
+  onCopy: () => void;
+}) => {
+  const ref = useRef<HTMLElement>(null);
+  const [overflows, setOverflows] = useState(false);
+  const [measured, setMeasured] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useLayoutEffect(() => {
+    const node = ref.current?.firstChild;
+    if (!measured && typeof document !== "undefined" && node instanceof Text) {
+      setOverflows(countLines(node) > MAX_BODY_LINES);
+      setMeasured(true);
+    }
+  }, [measured]);
+
+  // Text measured in a fallback font wraps differently once the web font
+  // arrives (e.g. a message shown right after page load), so measure again.
+  useEffect(() => {
+    if (
+      typeof document !== "undefined" &&
+      document.fonts?.status === "loading"
+    ) {
+      void document.fonts.ready.then(() => setMeasured(false));
+    }
+  }, []);
+
+  const collapsible = measured && overflows;
+
+  return (
+    <>
+      {/* One button (not the details toggle) so the keyboard can copy too. */}
+      <YStack
+        role="button"
+        tabIndex={0}
+        gap="xxs"
+        borderRadius="xs"
+        cursor="pointer"
+        boxShadow="focus-visible:ring-offset"
+        outlineStyle="focus-visible:none"
+        onPress={onCopy}
+        onKeyDown={event => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            onCopy();
+          }
+        }}>
+        <Alert.Content.Heading>{heading}</Alert.Content.Heading>
+        {!!children && (
+          // Clamped by CSS, so the ellipsis goes away on expand and screen
+          // readers always get the whole text.
+          <Alert.Content.Body
+            ref={ref as any}
+            numberOfLines={
+              collapsible && !open ? MAX_BODY_LINES - 1 : undefined
+            }>
+            {children}
+          </Alert.Content.Body>
+        )}
+      </YStack>
+      {collapsible && (
+        <Alert.Content.Details value={open} onValueChange={setOpen} />
+      )}
+    </>
+  );
+};
+
 const MessageItem = ({
   handleClose,
   index,
@@ -126,12 +223,21 @@ const MessageItem = ({
   const paused = hovered || expanded;
 
   const type = getAlertType(toast.data?.messageType ?? toast.type);
+  const title = typeof toast.title === "function" ? toast.title() : toast.title;
+  const description =
+    typeof toast.description === "function"
+      ? toast.description()
+      : toast.description;
   const timeout =
     toast.type === "loading"
       ? Number.POSITIVE_INFINITY
       : (toast.duration ??
         duration ??
-        (type === "danger" ? DEFAULT_ERROR_DURATION : DEFAULT_DURATION));
+        (type === "danger"
+          ? DEFAULT_ERROR_DURATION
+          : type === "warning"
+            ? DEFAULT_WARNING_DURATION
+            : DEFAULT_DURATION));
 
   // The library only pauses its own timer while 2+ messages are stacked, so the
   // dismissal timer is owned by `MessageTimer` instead.
@@ -170,16 +276,22 @@ const MessageItem = ({
         <Alert.Icon>{toast.icon}</Alert.Icon>
         {/* Only the card edge peeks out from the stack, not clipped text. */}
         <Alert.Content opacity={stacked ? 0 : 1} transition="400ms">
-          <Alert.Content.Heading>
-            {typeof toast.title === "function" ? toast.title() : toast.title}
-          </Alert.Content.Heading>
-          {!!toast.description && (
-            <Alert.Content.Body>
-              {typeof toast.description === "function"
-                ? toast.description()
-                : toast.description}
-            </Alert.Content.Body>
-          )}
+          <MessageText
+            key={typeof description === "string" ? description : undefined}
+            heading={title}
+            onCopy={() => {
+              // Shown by the app's `Toaster` from `@cyclone-ui/toast`.
+              writeClipboard(
+                [title, description]
+                  .filter(part => typeof part === "string")
+                  .join("\n")
+              ).then(
+                () => notify.success("Copied to clipboard"),
+                () => notify.error("Couldn't copy to clipboard")
+              );
+            }}>
+            {description}
+          </MessageText>
         </Alert.Content>
         <Alert.Close tooltip="Dismiss" onPress={handleClose} />
         {Number.isFinite(timeout) && (

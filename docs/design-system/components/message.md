@@ -25,7 +25,7 @@ pnpm install
 ```
 
 - **File:** `Message.tsx`. The CLI writes it to `<path>/message/`. `path` comes from `components.json` and defaults to `components`.
-- **Also copies:** [Alert](./alert.md), [Body Text](./body-text.md), [Button](./button.md), [Container](./container.md), [Heading Text](./heading-text.md), [Icons](../icons/index.md), [Ripple Animation](./ripple-animation.md), and [Tooltip](./tooltip.md). Imports between copied components become relative paths.
+- **Also copies:** [Alert](./alert.md), [Body Text](./body-text.md), [Button](./button.md), [Container](./container.md), [Copy Button](../../../components/copy-button/README.md), [Heading Text](./heading-text.md), [Icons](../icons/index.md), [Ripple Animation](./ripple-animation.md), [Toast](../../../components/toast/README.md), and [Tooltip](./tooltip.md). Imports between copied components become relative paths.
 - **Adds to `package.json`:** `@tamagui/core`, `@tamagui/stacks`, and `@tamagui/toast`.
 
 ## Import
@@ -97,7 +97,7 @@ You do not compose these parts. `Message` renders them for each queued toast.
 | `Message` | The Tamagui `Toast` root | Holds the shared settings: position, gap, swipe, and `duration`. |
 | Viewport | `Toast.Viewport` with the label "Messages". Tamagui portals it to the root and renders it only while there are toasts. On web it is a polite live region (`aria-live="polite"`). | The area in the bottom-right corner that holds the stack of toasts. |
 | Item | `Toast.Item`. Its inner frame has `role="status"`, `aria-live="polite"`, `aria-atomic`, and `tabIndex={0}`. | One toast. It can be swiped away horizontally. In a collapsed stack, only the edge of each card behind the front one shows. |
-| Alert | An [Alert](./alert.md) with the mapped type | Shows the toast icon, the title as the heading, and the description as the body (only when it is set). |
+| Alert | An [Alert](./alert.md) with the mapped type | Shows the toast icon, the title as the heading, and the description as the body (only when it is set). A description longer than 3 lines is clamped to 2, with an `Alert.Content.Details` toggle that unclamps it. |
 | Close | `Alert.Close`: a ghost, circular [Button](./button.md) with the tooltip "Dismiss" | Closes the toast. |
 | Countdown bar | A Tamagui `View`, 3 px high, at the bottom edge (`pointerEvents="none"`) | Shrinks over the toast duration. The toast closes when it reaches zero. A `loading` toast has no bar. |
 
@@ -107,7 +107,8 @@ The examples are the stories in [`Message.stories.tsx`](../../../components/mess
 
 | Stories | What they show |
 | --- | --- |
-| `Base` | A toast with no `type`. It uses the `base` alert style. |
+| `Base` | A toast with no `type`. It uses the `base` alert style. Its play function checks that the long body is cut and that **Show details** reveals the rest. |
+| `Short` | A one-sentence body that fits, so there is no details toggle. |
 | `Brand`, `Warning`, `Info`, `Success` | A toast with the type of the same name. |
 | `Discovery` | `type: "help"`, which shows the `discovery` alert style. |
 | `Error` | `type: "error"`, which shows the `danger` alert style. It stays for 60 seconds by default. |
@@ -143,6 +144,8 @@ The `useMessageActions` hook also has `showInfo`, `showSuccess`, `showWarning`, 
 ## Behavior
 
 - Each toast shows an alert icon, a heading, an optional body, and a close button.
+- Pressing the heading or body text (or Enter/Space when it has focus) copies the heading and the whole body to the clipboard. Then `toast.success("Copied to clipboard")` from [Toast](../../../components/toast/README.md) confirms it, or `toast.error` if the copy fails. Mount one `Toaster` in the app to see them.
+- Toasts stay roughly the same height. A string body that would wrap past 3 lines is clamped to 2 lines (CSS line clamp, ending in "…"), and **Show details** unclamps the same paragraph. The toggle takes about the third line. Screen readers always get the whole text. The text is measured on web only (again once web fonts load); native shows the full body.
 - A bar at the bottom edge shrinks over the toast duration. When it reaches zero, the toast closes and the toast's `onAutoClose` callback runs.
 - The timer pauses while the pointer is over the toast, while the toast has focus, and while the stack is expanded.
 - The viewport label is "Messages".

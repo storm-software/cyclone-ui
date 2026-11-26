@@ -73,6 +73,7 @@ A package containing the `Message` component used by Storm Software
 - Maps message types, including `error` and `help`, to alert themes.
 - A countdown bar that pauses on hover and focus. The default duration is 30 seconds.
 - Swipe a toast sideways to dismiss it.
+- Press the message text to copy it to the clipboard. A `@cyclone-ui/toast` toast says "Copied to clipboard" (mount one `Toaster` in the app).
 
 ## Installation
 

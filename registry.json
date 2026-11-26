@@ -87,7 +87,7 @@
       "name": "@cyclone-ui/alert",
       "type": "registry:component",
       "title": "@cyclone-ui/alert",
-      "description": "An inline alert banner with compound parts (Alert.Icon, Alert.Content.Heading, Alert.Content.Body, Alert.Close). Its type prop (base, brand, danger, warning, info, success, discovery, positive, negative) sets the color theme and default icon. Use it to show status or feedback messages in the page.",
+      "description": "An inline alert banner with compound parts (Alert.Icon, Alert.Content.Heading, Alert.Content.Body, Alert.Content.Details, Alert.Close). Alert.Content.Details is an optional toggle that shows and hides more information. Its type prop (base, brand, danger, warning, info, success, discovery, positive, negative) sets the color theme and default icon. Use it to show status or feedback messages in the page.",
       "dependencies": [
         "@tamagui/animate-presence@3.3.2",
         "@tamagui/core@3.3.2",
@@ -104,6 +104,7 @@
       "registryDependencies": [
         "@cyclone-ui/body-text",
         "@cyclone-ui/button",
+        "@cyclone-ui/collapsible",
         "@cyclone-ui/container",
         "@cyclone-ui/heading-text",
         "@cyclone-ui/icons"
@@ -4469,7 +4470,12 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": ["@cyclone-ui/alert", "@cyclone-ui/button"],
+      "registryDependencies": [
+        "@cyclone-ui/alert",
+        "@cyclone-ui/button",
+        "@cyclone-ui/copy-button",
+        "@cyclone-ui/toast"
+      ],
       "files": [
         {
           "path": "components/message/src/Message.tsx",

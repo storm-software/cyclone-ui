@@ -59,6 +59,30 @@ export const Initials: Story = {
   }
 };
 
+// cspell:ignore Wirth
+const NAMES = [
+  "Ada Lovelace",
+  "Alan Turing",
+  "Grace Hopper",
+  "Linus Torvalds",
+  "Margaret Hamilton",
+  "Ken Thompson",
+  "Katherine Johnson",
+  "Niklaus Wirth"
+];
+
+/** Each name always gets the same color from the topography palette. */
+export const Colored: Story = {
+  args: { src: undefined, colored: true },
+  render: (args: AvatarProps) => (
+    <Row>
+      {NAMES.map(name => (
+        <Avatar key={name} {...args} name={name} />
+      ))}
+    </Row>
+  )
+};
+
 export const Icon: Story = {
   args: { src: undefined, name: undefined }
 };

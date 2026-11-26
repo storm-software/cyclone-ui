@@ -29,7 +29,7 @@ import { styled, View } from "@tamagui/core";
 import type { ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
 import { AvatarCropModal } from "./AvatarCropModal";
-import { getAvatarInitials } from "./utilities";
+import { getAvatarColor, getAvatarInitials } from "./utilities";
 
 export type AvatarSize = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
 
@@ -165,6 +165,13 @@ export interface AvatarProps extends Omit<
   fallback?: ReactNode;
 
   /**
+   * Fills the fallback with a color from the topography palette, picked from `name`, so the same name always gets the same color. Has no effect without a `name`.
+   *
+   * @defaultValue false
+   */
+  colored?: boolean;
+
+  /**
    * Shows a status dot (a `Badge` in this color, such as `"success"` for online) on the bottom-right edge, cut out of the avatar by a transparent ring.
    */
   status?: BadgeColor;
@@ -194,6 +201,7 @@ export const Avatar = ({
   size = "md",
   circular = true,
   fallback,
+  colored = false,
   status,
   statusLabel,
   editable = false,
@@ -235,6 +243,7 @@ export const Avatar = ({
   const imageSrc = preview ?? src ?? undefined;
   const sizes = AVATAR_SIZES[size];
   const initials = name ? getAvatarInitials(name) : "";
+  const color = colored && name ? getAvatarColor(name) : undefined;
   const label = [name, status && statusLabel].filter(Boolean).join(", ");
   // The layers clip themselves (and cut out the status ring), instead of the
   // frame, so the status dot can sit over the frame's edge.
@@ -270,7 +279,7 @@ export const Avatar = ({
         {...layer}
         alignItems="center"
         justifyContent="center"
-        backgroundColor="sunken"
+        backgroundColor={color?.background ?? "sunken"}
         {...(label
           ? { role: "img", "aria-label": label }
           : { "aria-hidden": true })}>
@@ -279,13 +288,17 @@ export const Avatar = ({
             <BodyText
               render="span"
               size={sizes.text}
-              color="ink"
+              color={color?.color ?? "ink"}
               fontWeight="semibold"
               aria-hidden={true}>
               {initials}
             </BodyText>
           ) : (
-            <Account size={sizes.icon} color="subtle" animated={false} />
+            <Account
+              size={sizes.icon}
+              color={color?.color ?? "subtle"}
+              animated={false}
+            />
           ))}
       </TamaguiAvatar.Fallback>
       {editable && (

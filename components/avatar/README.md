@@ -70,6 +70,7 @@ A package containing the Avatar component used by Storm Software
 - Shows an image at a fixed size. While it loads, or when it is missing or fails, the initials of `name` or a person icon show instead. `fallback` replaces both.
 - Six sizes: `xs`, `sm`, `md` (default), `lg`, `xl` and `2xl`.
 - Round by default. `circular={false}` gives rounded corners.
+- `colored` fills the fallback with a color from the topography palette, picked from `name`, so the same name always gets the same color.
 - `status` adds a presence dot in any `Badge` color. `statusLabel` describes it to screen readers.
 - Hides a broken image, so the browser's broken-image icon does not show over the fallback.
 - `editable` adds an upload button and a crop modal (drag or arrow keys to move, 1× to 3× zoom). `onUpload` gets the cropped square image, at most 512 × 512 px. Web only.

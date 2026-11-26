@@ -18,6 +18,7 @@
 
 import {
   clampAvatarCrop,
+  getAvatarColor,
   getAvatarCropRect,
   getAvatarInitials
 } from "./utilities";
@@ -56,5 +57,31 @@ describe("avatar initials", () => {
     expect(getAvatarInitials(" ada  king lovelace ")).toBe("AL");
     expect(getAvatarInitials("cher")).toBe("C");
     expect(getAvatarInitials("   ")).toBe("");
+  });
+
+  it("skips punctuation and symbols unless nothing else is left", () => {
+    expect(getAvatarInitials("User (Admin)")).toBe("UA");
+    expect(getAvatarInitials('"Ada" - Lovelace!')).toBe("AL");
+    expect(getAvatarInitials("@élodie")).toBe("É");
+    expect(getAvatarInitials("?? !!")).toBe("?!");
+  });
+});
+
+describe("avatar color", () => {
+  it("picks the same color for the same name", () => {
+    expect(getAvatarColor("Ada Lovelace")).toEqual(
+      getAvatarColor(" Ada Lovelace ")
+    );
+  });
+
+  it("spreads names over every palette color except the brown", () => {
+    const colors = new Set(
+      Array.from(
+        { length: 500 },
+        (_, i) => getAvatarColor(`user-${i}`).background
+      )
+    );
+    expect(colors.size).toBe(15);
+    expect(colors.has("#B49259")).toBe(false);
   });
 });

@@ -18,9 +18,12 @@
 
 import { Button } from "@cyclone-ui/button";
 import { useMessageActions } from "@cyclone-ui/state/message";
+import { toast, Toaster } from "@cyclone-ui/toast";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { ComponentProps } from "react";
+import { useEffect } from "react";
+import { expect, userEvent, waitFor, within } from "storybook/test";
 import { Message } from "./Message";
 
 // `message` and `type` are story-only args consumed by the custom `render`.
@@ -36,9 +39,19 @@ const meta: Meta<MessageStoryArgs> = {
   render: ({ message, type, ..._rest }: any) => {
     const { show, hide } = useMessageActions();
 
+    // The toast store is shared: clear it when leaving the story.
+    useEffect(
+      () => () => {
+        toast.dismiss(undefined, { immediate: true });
+      },
+      []
+    );
+
     return (
       <YStack alignItems="center" width="100%">
         <Message />
+        {/* Shows "Copied to clipboard" when the message text is pressed. */}
+        <Toaster />
 
         <XStack alignItems="center" gap="5xl" marginTop="400px" width={400}>
           <Button
@@ -72,6 +85,38 @@ export const Base: Story = {
   args: {
     message:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  },
+  // Text past the line limit moves into the collapsed details section.
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const page = within(canvasElement.ownerDocument.body);
+    // A message shown before the web font loads is measured again after it.
+    await canvasElement.ownerDocument.fonts.ready;
+
+    await userEvent.click(page.getByRole("button", { name: "Show" }));
+    const toggle = await page.findByRole("button", { name: "Show details" });
+    const body = page.getByText(/^Lorem ipsum .*pariatur\.$/);
+    const lines = () =>
+      Math.round(
+        body.offsetHeight / Number.parseFloat(getComputedStyle(body).lineHeight)
+      );
+    await waitFor(async () => expect(lines()).toBe(2));
+
+    // Expanding unclamps the same text: no ellipsis, no split.
+    await userEvent.click(toggle);
+    await waitFor(async () => expect(lines()).toBeGreaterThan(3));
+
+    // Pressing the text copies the message.
+    await userEvent.click(body);
+    // The pill and the toast live region both carry the text.
+    await expect(
+      await page.findAllByText("Copied to clipboard")
+    ).not.toHaveLength(0);
+  }
+};
+
+export const Short: Story = {
+  args: {
+    message: "Your changes were saved."
   }
 };
 

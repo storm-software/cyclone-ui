@@ -20,6 +20,8 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
+import type { CollapsibleProps } from "@cyclone-ui/collapsible";
+import { Collapsible } from "@cyclone-ui/collapsible";
 import type { ContainerProps } from "@cyclone-ui/container";
 import { Container } from "@cyclone-ui/container";
 import { HeadingMediumText } from "@cyclone-ui/heading-text";
@@ -41,6 +43,7 @@ import {
 } from "@tamagui/core";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { GetProps } from "@tamagui/web";
+import type { ReactNode } from "react";
 import { useState } from "react";
 
 export type AlertType =
@@ -87,6 +90,7 @@ const AlertCloseImpl = createStyledHOC(
           ref={forwardedRef}
           theme="base"
           variant="ghost"
+          ghostOpacity={0.9}
           circular={true}
           tight={true}
           tooltip="Dismiss"
@@ -145,7 +149,11 @@ const AlertFrameImpl = ({
             // Fades and grows in on mount, and back out when dismissed. Naming
             // `exit` keeps `createComponent` off its `avoidReRenders` path, so
             // the exit timing is used.
-            transition={{ duration: "400ms", delay: "100ms", exit: "200ms ease-out" }}
+            transition={{
+              duration: "400ms",
+              delay: "100ms",
+              exit: "200ms ease-out"
+            }}
             opacity="enter:0 exit:0"
             scale="enter:0.95 exit:0.95">
             <Container
@@ -292,6 +300,82 @@ const AlertBodyImpl = createStyledHOC(
   }
 );
 
+export type AlertDetailsProps = Omit<
+  CollapsibleProps,
+  "value" | "defaultValue" | "onValueChange"
+> & {
+  /** The toggle text. Defaults to "Show details" / "Hide details". */
+  label?: ReactNode;
+  /** Whether the details are shown (controlled). */
+  value?: boolean;
+  /** Whether the details start shown. */
+  defaultValue?: boolean;
+  onValueChange?: (value: boolean) => void;
+};
+
+// The `ring-offset` focus ring's outer edge. The Accordion clips its header
+// (`overflow: hidden`), so the header is inset vertically by this much and a
+// wrapper is pulled back out, keeping the spacing unchanged.
+const DETAILS_RING_INSET = 7;
+
+/**
+ * A centered "Show details" toggle at the bottom of the alert. The details
+ * expand above it, so the toggle stays at the bottom.
+ */
+const AlertDetails = ({
+  children,
+  label,
+  value,
+  defaultValue = false,
+  onValueChange,
+  ...props
+}: AlertDetailsProps) => {
+  const { type } = AlertContext.useStyledContext();
+  const [open, setOpen] = useState(defaultValue);
+  const isOpen = value ?? open;
+
+  return (
+    <View marginVertical={-DETAILS_RING_INSET}>
+      <Collapsible
+        theme={type ?? "base"}
+        variant="ghost"
+        bordered={false}
+        direction="up"
+        icon="toggle"
+        {...props}
+        value={isOpen}
+        onValueChange={next => {
+          setOpen(Boolean(next));
+          onValueChange?.(Boolean(next));
+        }}>
+        <Collapsible.Header
+          alignSelf="center"
+          gap="xs"
+          iconSize="2xl"
+          marginVertical={DETAILS_RING_INSET}
+          paddingVertical="lg">
+          <Collapsible.Header.Heading fontSize="xs" lineHeight="xs">
+            {label ?? (isOpen ? "Hide details" : "Show details")}
+          </Collapsible.Header.Heading>
+        </Collapsible.Header>
+        {/* The wrapper's inset plus a 10px gap under the body text. */}
+        <Collapsible.Content
+          paddingTop={DETAILS_RING_INSET + 10}
+          paddingBottom={0}>
+          {/* A bare string needs a text node on native. */}
+          {typeof children === "string" ? (
+            <AlertBodyImpl>{children}</AlertBodyImpl>
+          ) : (
+            <Theme name="base">{children}</Theme>
+          )}
+        </Collapsible.Content>
+      </Collapsible>
+    </View>
+  );
+};
+
+AlertDetails.displayName = "Alert.Content.Details";
+
 export type AlertContentProps = GetProps<typeof AlertContent>;
 export type AlertHeadingProps = GetProps<typeof AlertHeadingImpl>;
 export type AlertBodyProps = GetProps<typeof AlertBodyImpl>;
@@ -303,7 +387,8 @@ export const Alert = withStaticProperties(AlertFrameImpl, {
   Icon: AlertIcon,
   Content: withStaticProperties(AlertContent, {
     Heading: AlertHeadingImpl,
-    Body: AlertBodyImpl
+    Body: AlertBodyImpl,
+    Details: AlertDetails
   }),
   Close: withStaticProperties(AlertCloseImpl, {
     Text: Button.Text,
@@ -319,6 +404,7 @@ export {
   AlertBodyImpl as AlertBody,
   AlertCloseImpl as AlertClose,
   AlertContent,
+  AlertDetails,
   AlertHeadingImpl as AlertHeading,
   AlertIcon
 };
