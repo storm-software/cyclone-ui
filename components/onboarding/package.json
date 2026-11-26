@@ -1,0 +1,59 @@
+{
+  "name": "@cyclone-ui/onboarding",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "An Onboarding block that walks new users through an application in a few steps. The root tracks the current step (controlled or uncontrolled), gates the Next button with canGoNext and calls onComplete on the last step; Onboarding.Step shows its content only on its step, Onboarding.StepIndicator draws dots or pills, Onboarding.Header shows a centered title and description, and Onboarding.Navigation renders Back and Next/Complete buttons. A step can have sub-steps that Next and Back page through first, such as the items of a FeatureCarousel, a keyboard-navigable list of features that binds to the onboarding's sub-step. TipsList shows numbered tips and useOnboarding reads the state. Use it for first-run setup, product tours and personalization screens.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/onboarding"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/container": "workspace:*",
+    "@cyclone-ui/eyebrow-text": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/next-button": "workspace:*",
+    "@cyclone-ui/previous-button": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/use-controllable-state": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/dialog": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/illustrations": "workspace:*",
+    "@cyclone-ui/radio-group": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Onboarding": {
+      "import": "./dist/Onboarding.mjs",
+      "require": "./dist/Onboarding.cjs"
+    },
+    "./*": "./*"
+  }
+}

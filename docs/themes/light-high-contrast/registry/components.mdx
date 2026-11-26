@@ -5,7 +5,7 @@ description: "Components available in the Cyclone UI (Light High Contrast)."
 
 # Components
 
-126 `component` items in the component registry.
+127 `component` items in the component registry.
 
 ## @cyclone-ui/accordion
 
@@ -3641,6 +3641,43 @@ A label-styled text component that renders its numeric children with NumberFlow,
 | Path                                        | Type        | Target |
 | ------------------------------------------- | ----------- | ------ |
 | `components/number-text/src/NumberText.tsx` | `component` | —      |
+
+## @cyclone-ui/onboarding
+
+An Onboarding block that walks new users through an application in a few steps. The root tracks the current step (controlled or uncontrolled), gates the Next button with canGoNext and calls onComplete on the last step; Onboarding.Step shows its content only on its step, Onboarding.StepIndicator draws dots or pills, Onboarding.Header shows a centered title and description, and Onboarding.Navigation renders Back and Next/Complete buttons. A step can have sub-steps that Next and Back page through first, such as the items of a FeatureCarousel, a keyboard-navigable list of features that binds to the onboarding's sub-step. TipsList shows numbered tips and useOnboarding reads the state. Use it for first-run setup, product tours and personalization screens.
+
+- **Name:** `@cyclone-ui/onboarding`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/body-text@0.5.97`
+- `@cyclone-ui/container@0.6.104`
+- `@cyclone-ui/eyebrow-text@0.5.97`
+- `@cyclone-ui/heading-text@0.5.98`
+- `@cyclone-ui/next-button@0.5.105`
+- `@cyclone-ui/previous-button@0.5.105`
+- `@tamagui/core@3.3.2`
+- `@tamagui/use-controllable-state@3.3.2`
+
+### Files
+
+| Path                                       | Type        | Target |
+| ------------------------------------------ | ----------- | ------ |
+| `components/onboarding/src/Onboarding.tsx` | `component` | —      |
+
+### Props
+
+| Prop            | Type                                           | Default | Required | Description                                                                                                                                                                                               |
+| --------------- | ---------------------------------------------- | ------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `totalSteps`    | `number`                                       | —       | Yes      | The number of steps.                                                                                                                                                                                      |
+| `value`         | `number`                                       | —       | No       | The current step, from 1. Makes the onboarding controlled.                                                                                                                                                |
+| `defaultValue`  | `number`                                       | —       | No       | The initial step when uncontrolled. Defaults to 1.                                                                                                                                                        |
+| `onValueChange` | `(step: number) => void`                       | —       | No       | Called with the new step when it changes.                                                                                                                                                                 |
+| `subSteps`      | `Record<number, number>`                       | —       | No       | The number of sub-steps of each step, by step (from 1). `Next` and `Back` page through a step's sub-steps (such as a `FeatureCarousel`'s items) before moving to another step. Steps not listed have one. |
+| `canGoNext`     | `(step: number, stepValue: number) => boolean` | —       | No       | Whether the user can move on from a step and sub-step. Defaults to always.                                                                                                                                |
+| `onComplete`    | `() => void`                                   | —       | No       | Called when `Next` is pressed on the last sub-step of the last step.                                                                                                                                      |
+| `children`      | `ReactNode`                                    | —       | No       |                                                                                                                                                                                                           |
 
 ## @cyclone-ui/otp-input
 

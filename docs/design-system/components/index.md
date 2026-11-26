@@ -124,6 +124,7 @@ The pages below describe the public parts and props. Choose a semantic token for
 | [Breadcrumb](./breadcrumb.md) | A breadcrumb trail of Breadcrumb.Item links followed by the current page name. |
 | [Pagination](./pagination.md) | A page navigation bar with previous and next buttons, first and last page buttons, and a sliding window of page numbers with ellipses. |
 | [Stepper](./stepper.md) | A multi-step wizard built on Tamagui Tabs with a vertical header list that marks completed and current steps with check icons, plus optional step numbers. |
+| [Onboarding](./onboarding.md) | A step-by-step block that walks new users through an application, with a step indicator, a feature carousel, numbered tips, and Back and Next buttons. |
 | [Tabs](./tabs.md) | A tabbed interface with Header.Item triggers and Content.Item panels. |
 | [Accordion](./accordion.md) | A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.Heading, Item.Content) built on Tamagui's accordion. |
 | [Collapsible](./collapsible.md) | A single disclosure panel built on Accordion, with Collapsible.Header and Collapsible.Content subcomponents and a chevron icon. |

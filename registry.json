@@ -4641,6 +4641,36 @@
       ]
     },
     {
+      "name": "@cyclone-ui/onboarding",
+      "type": "registry:component",
+      "title": "@cyclone-ui/onboarding",
+      "description": "An Onboarding block that walks new users through an application in a few steps. The root tracks the current step (controlled or uncontrolled), gates the Next button with canGoNext and calls onComplete on the last step; Onboarding.Step shows its content only on its step, Onboarding.StepIndicator draws dots or pills, Onboarding.Header shows a centered title and description, and Onboarding.Navigation renders Back and Next/Complete buttons. A step can have sub-steps that Next and Back page through first, such as the items of a FeatureCarousel, a keyboard-navigable list of features that binds to the onboarding's sub-step. TipsList shows numbered tips and useOnboarding reads the state. Use it for first-run setup, product tours and personalization screens.",
+      "dependencies": [
+        "@tamagui/core@3.3.2",
+        "@tamagui/use-controllable-state@3.3.2"
+      ],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/container",
+        "@cyclone-ui/eyebrow-text",
+        "@cyclone-ui/heading-text",
+        "@cyclone-ui/next-button",
+        "@cyclone-ui/previous-button"
+      ],
+      "files": [
+        {
+          "path": "components/onboarding/src/Onboarding.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/otp-input",
       "type": "registry:component",
       "title": "@cyclone-ui/otp-input",

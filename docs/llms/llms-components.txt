@@ -2877,6 +2877,42 @@ A label-styled text component that renders its numeric children with NumberFlow,
 | --- | --- | --- |
 | `../../components/number-text/src/NumberText.tsx` | `component` |  |
 
+## @cyclone-ui/onboarding
+
+An Onboarding block that walks new users through an application in a few steps. The root tracks the current step (controlled or uncontrolled), gates the Next button with canGoNext and calls onComplete on the last step; Onboarding.Step shows its content only on its step, Onboarding.StepIndicator draws dots or pills, Onboarding.Header shows a centered title and description, and Onboarding.Navigation renders Back and Next/Complete buttons. A step can have sub-steps that Next and Back page through first, such as the items of a FeatureCarousel, a keyboard-navigable list of features that binds to the onboarding's sub-step. TipsList shows numbered tips and useOnboarding reads the state. Use it for first-run setup, product tours and personalization screens.
+
+- **Name:** `@cyclone-ui/onboarding`
+- **Type:** `component`
+- **Version:** `0.0.0`
+
+### Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/container`: `workspace:*`
+- `@cyclone-ui/eyebrow-text`: `workspace:*`
+- `@cyclone-ui/heading-text`: `workspace:*`
+- `@cyclone-ui/next-button`: `workspace:*`
+- `@cyclone-ui/previous-button`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/use-controllable-state`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/dialog`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/illustrations`: `workspace:*`
+- `@cyclone-ui/radio-group`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/onboarding/src/Onboarding.tsx` | `component` |  |
+
 ## @cyclone-ui/otp-input
 
 A one-time passcode input that renders one numeric input per digit (4 by default). Focus moves with typing, Backspace and the arrow keys, pasted codes fill the inputs, and autocomplete uses one-time-code. onComplete fires when every digit is filled. Use it on its own or wrap it in a Field to connect it to a Form.

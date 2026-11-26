@@ -4504,6 +4504,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/onboarding",
+      jsx: ["Onboarding"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/otp-input",
       jsx: ["OtpInput"],
       roles: []

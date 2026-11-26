@@ -1,0 +1,69 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/onboarding/tsconfig.tsbuildinfo",
+    "jsx": "preserve",
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "ignoreDeprecations": "6.0",
+    "rootDir": ".",
+    "types": [
+      "node",
+      "@nx/react/typings/cssmodule.d.ts",
+      "@nx/react/typings/image.d.ts"
+    ],
+    "outDir": "../../dist/out-tsc/components/onboarding"
+  },
+  "references": [
+    {
+      "path": "../../tools/config"
+    },
+    {
+      "path": "../body-text"
+    },
+    {
+      "path": "../button"
+    },
+    {
+      "path": "../container"
+    },
+    {
+      "path": "../eyebrow-text"
+    },
+    {
+      "path": "../heading-text"
+    },
+    {
+      "path": "../next-button"
+    },
+    {
+      "path": "../previous-button"
+    },
+    {
+      "path": "../dialog"
+    },
+    {
+      "path": "../icons"
+    },
+    {
+      "path": "../illustrations"
+    },
+    {
+      "path": "../radio-group"
+    }
+  ],
+  "files": [],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    "vitest.config.mts",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts",
+    "src/**/*.spec.tsx",
+    "src/**/*.test.tsx"
+  ]
+}

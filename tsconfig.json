@@ -434,6 +434,9 @@
     },
     {
       "path": "./components/address-map"
+    },
+    {
+      "path": "./components/onboarding"
     }
   ],
   "files": []
