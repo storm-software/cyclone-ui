@@ -1,0 +1,11 @@
+{
+  "name": "file-viewer-dialog",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "components/file-viewer-dialog/src",
+  "targets": {
+    "nx-release-publish": {
+      "executor": "@cyclone-ui/tools-nx:component-publish"
+    }
+  }
+}

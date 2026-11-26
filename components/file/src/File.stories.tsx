@@ -19,7 +19,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { View } from "@tamagui/core";
 import { useEffect, useState } from "react";
-import { expect, fn, userEvent, waitFor, within } from "storybook/test";
+import { expect, fn, screen, userEvent, waitFor, within } from "storybook/test";
 import { File } from "./File";
 
 const meta: Meta<typeof File> = {
@@ -46,6 +46,37 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Base: Story = {};
+
+export const OpensViewer: Story = {
+  play: async ({ canvasElement }) => {
+    const link = within(canvasElement).getByRole("link", {
+      name: "sample.svg"
+    });
+    await userEvent.click(link);
+
+    // Named by its title.
+    await expect(
+      await screen.findByRole("dialog", { name: "sample.svg" })
+    ).toBeInTheDocument();
+
+    await userEvent.keyboard("{Escape}");
+    await waitFor(async () =>
+      expect(screen.queryByRole("dialog")).not.toBeInTheDocument()
+    );
+    await waitFor(async () => expect(link).toHaveFocus());
+  }
+};
+
+export const OfficeDocument: Story = {
+  args: {
+    name: "quarterly-operations-report.docx",
+    mimeType:
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    size: 83_054,
+    // File Viewer's English demo document, pinned to a commit.
+    uri: "https://raw.githubusercontent.com/flyfish-dev/file-viewer/3d8a37c7fd3114b3f85bdc70fdced39765c55bcc/apps/viewer-demo/public/example/en/quarterly-operations-report.docx"
+  }
+};
 
 export const Removable: Story = {
   args: { onRemove: () => {} }

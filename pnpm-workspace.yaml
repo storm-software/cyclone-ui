@@ -12,6 +12,11 @@ catalog:
   "@cloudflare/workers-types": ^4.20260702.1
   "@maskito/core": ^3.11.1
   "@maskito/react": ^3.11.1
+  "@file-viewer/pptx": 3.3.6
+  "@file-viewer/react": 3.3.6
+  "@file-viewer/renderer-pptx": 3.3.6
+  "@file-viewer/renderer-spreadsheet": 3.3.6
+  "@file-viewer/renderer-word": 3.3.6
   "@powerlines/nx": ^0.13.259
   "@powerlines/tsconfig": ^0.4.262
   "@powerlines/tsdoc": ^0.2.210

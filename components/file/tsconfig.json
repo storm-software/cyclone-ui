@@ -49,6 +49,12 @@
     },
     {
       "path": "../body-text"
+    },
+    {
+      "path": "../file-viewer"
+    },
+    {
+      "path": "../file-viewer-dialog"
     }
   ],
   "files": [],

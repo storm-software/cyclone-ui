@@ -9,6 +9,21 @@ catalogs:
     '@cloudflare/workers-types':
       specifier: ^4.20260702.1
       version: 4.20260702.1
+    '@file-viewer/pptx':
+      specifier: 3.3.6
+      version: 3.3.6
+    '@file-viewer/react':
+      specifier: 3.3.6
+      version: 3.3.6
+    '@file-viewer/renderer-pptx':
+      specifier: 3.3.6
+      version: 3.3.6
+    '@file-viewer/renderer-spreadsheet':
+      specifier: 3.3.6
+      version: 3.3.6
+    '@file-viewer/renderer-word':
+      specifier: 3.3.6
+      version: 3.3.6
     '@maplibre/maplibre-gl-style-spec':
       specifier: ^24.10.0
       version: 24.10.0
@@ -2816,6 +2831,12 @@ importers:
       '@cyclone-ui/bytes-text':
         specifier: workspace:*
         version: link:../bytes-text
+      '@cyclone-ui/file-viewer':
+        specifier: workspace:*
+        version: link:../file-viewer
+      '@cyclone-ui/file-viewer-dialog':
+        specifier: workspace:*
+        version: link:../file-viewer-dialog
       '@cyclone-ui/heading-text':
         specifier: workspace:*
         version: link:../heading-text
@@ -2963,6 +2984,86 @@ importers:
       '@tamagui/tailwind':
         specifier: 'catalog:'
         version: 3.3.2(@babel/core@8.1.2)(@react-native/babel-preset@0.81.5(@babel/core@8.1.2))(encoding@0.1.13)(react-dom@19.3.1(react@19.3.1))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.1.2)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.1))(react@19.3.1))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.1.2)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.1))(react@19.3.1))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-native@0.87.1(@babel/core@8.1.2)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.1))(react@19.3.1)(tailwindcss@4.3.0)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.1)(sass@1.105.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+      react:
+        specifier: 'catalog:'
+        version: 19.3.1
+      react-dom:
+        specifier: 'catalog:'
+        version: 19.3.1(react@19.3.1)
+      react-native:
+        specifier: 'catalog:'
+        version: 0.87.1(@babel/core@8.1.2)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.1)
+
+  components/file-viewer:
+    dependencies:
+      '@file-viewer/pptx':
+        specifier: 'catalog:'
+        version: 3.3.6
+      '@file-viewer/react':
+        specifier: 'catalog:'
+        version: 3.3.6(react@19.3.1)
+      '@file-viewer/renderer-pptx':
+        specifier: 'catalog:'
+        version: 3.3.6
+      '@file-viewer/renderer-spreadsheet':
+        specifier: 'catalog:'
+        version: 3.3.6
+      '@file-viewer/renderer-word':
+        specifier: 'catalog:'
+        version: 3.3.6
+      '@tamagui/core':
+        specifier: 'catalog:'
+        version: 3.3.2(react-dom@19.3.1(react@19.3.1))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.1.2)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.1))(react@19.3.1))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.1.2)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.1))(react@19.3.1))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-native@0.87.1(@babel/core@8.1.2)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.1))(react@19.3.1)
+    devDependencies:
+      '@storybook/react-vite':
+        specifier: 'catalog:'
+        version: 10.6.7(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rollup@4.68.7)(storybook@10.6.7(@types/react@19.3.0)(prettier@3.10.1)(react@19.3.1))(typescript@7.0.2)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.1)(sass@1.105.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+      react:
+        specifier: 'catalog:'
+        version: 19.3.1
+      react-dom:
+        specifier: 'catalog:'
+        version: 19.3.1(react@19.3.1)
+      react-native:
+        specifier: 'catalog:'
+        version: 0.87.1(@babel/core@8.1.2)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.1)
+
+  components/file-viewer-dialog:
+    dependencies:
+      '@cyclone-ui/body-text':
+        specifier: workspace:*
+        version: link:../body-text
+      '@cyclone-ui/button':
+        specifier: workspace:*
+        version: link:../button
+      '@cyclone-ui/file-viewer':
+        specifier: workspace:*
+        version: link:../file-viewer
+      '@cyclone-ui/icons':
+        specifier: workspace:*
+        version: link:../icons
+      '@cyclone-ui/modal':
+        specifier: workspace:*
+        version: link:../modal
+      '@cyclone-ui/pdf-document-display':
+        specifier: workspace:*
+        version: link:../pdf-document-display
+      '@stryke/string-format':
+        specifier: 'catalog:'
+        version: 0.17.59
+      '@tamagui/core':
+        specifier: 'catalog:'
+        version: 3.3.2(react-dom@19.3.1(react@19.3.1))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.1.2)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.1))(react@19.3.1))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.1.2)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.1))(react@19.3.1))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-native@0.87.1(@babel/core@8.1.2)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.1))(react@19.3.1)
+      '@tamagui/image':
+        specifier: 'catalog:'
+        version: 3.3.2(react-dom@19.3.1(react@19.3.1))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.1.2)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.1))(react@19.3.1))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.1.2)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.1))(react@19.3.1))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-native@0.87.1(@babel/core@8.1.2)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.1))(react@19.3.1)
+      '@tamagui/stacks':
+        specifier: 'catalog:'
+        version: 3.3.2(react-dom@19.3.1(react@19.3.1))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.1.2)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.1))(react@19.3.1))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.1.2)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.1))(react@19.3.1))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-native@0.87.1(@babel/core@8.1.2)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.1))(react@19.3.1)
+    devDependencies:
+      '@storybook/react-vite':
+        specifier: 'catalog:'
+        version: 10.6.7(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rollup@4.68.7)(storybook@10.6.7(@types/react@19.3.0)(prettier@3.10.1)(react@19.3.1))(typescript@7.0.2)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.1)(sass@1.105.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       react:
         specifier: 'catalog:'
         version: 19.3.1
@@ -8738,6 +8839,32 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
+  '@file-viewer/core@3.3.6':
+    resolution: {integrity: sha512-yyu/rFJEPjZ9IBZeJAdFeHRKR7tPFN2dNAVkaQCa/9BNM3UqQdqA8kq3TEOrKwcC6JE5VTtjWt7Ad0IbiHt/yg==}
+
+  '@file-viewer/doc@3.3.6':
+    resolution: {integrity: sha512-FKSi3Ji73n6MfZUR12Xi02COBhKWoMvNCNl0zukWdY9U0woE5p6cqNb9/y/VrB0A4WTct5D/Z7SAt4jfdOYrjg==}
+
+  '@file-viewer/docx@0.3.42':
+    resolution: {integrity: sha512-tmqxWONZ6Z3jX9IF8YrdnkC+4V+3aiT06H9e6ashxngaBZWP5Ay2hRL54qujNahC401znbTxUdg+6WAvNYpT2A==}
+
+  '@file-viewer/pptx@3.3.6':
+    resolution: {integrity: sha512-IUTvi4/7HCnSWdIyHXCtZBBZ1uzEbLGq74wXNEnQJVguRhXxQw2XJ+fzGXRSB1AwzBLkj697AMj2XVleOi/qcA==}
+
+  '@file-viewer/react@3.3.6':
+    resolution: {integrity: sha512-BAd5bXDJrQZdpfLN1Nax1X6wXB19E+lVJe+jep07CViErEZAvxIgPVBghvnxqd9As68obkVJJRDpp2chLnIyEQ==}
+    peerDependencies:
+      react: '>=17 <20'
+
+  '@file-viewer/renderer-pptx@3.3.6':
+    resolution: {integrity: sha512-Xi52WXzquD3q7jj2V2lW3afCvjENGD2kNnwBojoB1KB5b0VRuqhliV/AdM5oucSIJcUURn4xp7Fz+0kJ0JLeKw==}
+
+  '@file-viewer/renderer-spreadsheet@3.3.6':
+    resolution: {integrity: sha512-pfDe8GVlJgIGbPY0ckYj2voEdvODqBaeNbcmeztu9eSzQJ4TWTTh+u14KqgLTuQQza8X+B6nJuuE46BDjKcsiA==}
+
+  '@file-viewer/renderer-word@3.3.6':
+    resolution: {integrity: sha512-pXaj0VCW8qbcJBBucHY6FG2H42T4RXPHV+YksnkfW+fU5OjxZ5uTzDxTA+yem76Qh4AwZCEh6uQyEZRAfhpaRA==}
+
   '@floating-ui/core@1.8.0':
     resolution: {integrity: sha512-0CIZ5itps/8x7BG8dEIhs53BvCUH2PCoogtakwRTut+Arm58sJooJ0AuZhLw2HJYIR5cMLNPBSS728sPho2khQ==}
 
@@ -14165,6 +14292,9 @@ packages:
   '@types/supports-color@8.1.3':
     resolution: {integrity: sha512-Hy6UMpxhE3j1tLpl27exp1XqHD7n8chAiNPzWfz16LPZoMMoSc4dzLl6w9qijkEb/r5O1ozdu1CWGA2L83ZeZg==}
 
+  '@types/trusted-types@2.0.7':
+    resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
+
   '@types/unist@2.0.11':
     resolution: {integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==}
 
@@ -17126,6 +17256,9 @@ packages:
   diffie-hellman@5.0.3:
     resolution: {integrity: sha512-kqag/Nl+f3GwyK25fhUMYj81BUOrZ9IuJsjIcDE5icNM9FJHAVm3VcUDxdLPoQtTuUylWm6ZIknYJwwaPxsUzg==}
 
+  dingbat-to-unicode@1.0.2:
+    resolution: {integrity: sha512-R0bRerYzy/EZP6QzD3Hkl6JjUDA1Mnn+pd928w0nWjPzihnbAR6dcjGJGiRyznj5E4S1duEKzWrTqw02DPcdzg==}
+
   dir-glob@3.0.1:
     resolution: {integrity: sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==}
     engines: {node: '>=8'}
@@ -17179,6 +17312,9 @@ packages:
   domhandler@5.0.3:
     resolution: {integrity: sha512-cgwlv/1iFQiFnU96XXgROh8xTeetsnJiDsTc7TYCLFd9+/WNkIqPTxiM/8pSd8VIrhXGTf1Ny1q1hquVqDJB5w==}
     engines: {node: '>= 4'}
+
+  dompurify@3.4.18:
+    resolution: {integrity: sha512-ofe3wI/uNm68HInABYFJYqQxRw1EaKAjNdrFVKqjUY+UZurvNd2L/HuQe097s/4RivWiZyP6tT7aoT8atjfhwg==}
 
   domutils@1.5.1:
     resolution: {integrity: sha512-gSu5Oi/I+3wDENBsOWBiRK1eoGxcywYSqg3rR960/+EfY0CF4EX1VPkgHOZ3WiS/Jg2DtliF6BhWcHlfpYUcGw==}
@@ -17253,6 +17389,9 @@ packages:
 
   duplexify@3.7.1:
     resolution: {integrity: sha512-07z8uv2wMyS51kKhD1KsdXJg5WQ6t93RneqRxUHnskXVtlYYkLqM0gqStQZ3pj073g687jPCHrqNfCzawLYh5g==}
+
+  e-virt-table@1.4.18:
+    resolution: {integrity: sha512-t6EipswGvN/tBzrhZCY1QHv/XkcPNTZDNmO2cuEJQi66nbgMq5YeaaPMfmvNKNRCHHrkNVRr9+fFBefRjHm6mQ==}
 
   earcut@3.2.4:
     resolution: {integrity: sha512-FHc6yNpnTORB0tM5kmZ03iD2mDuNakDE2lvf4Hw1XkfxtEHIGVi01B/GqUSwx+NcC1WGjidAfpTXzeALtPtfpg==}
@@ -19145,6 +19284,9 @@ packages:
     engines: {node: '>=16.x'}
     hasBin: true
 
+  immediate@3.0.6:
+    resolution: {integrity: sha512-XXOFtyqDjNDAQxVfYxuF7g9Il/IbWmmlQg2MYKOH8ExIT1qg6xc4zyS3HaEEATgs1btfzxq15ciUiY7gjSXRGQ==}
+
   immer@10.2.0:
     resolution: {integrity: sha512-d/+XTN3zfODyjr89gM3mPq1WNX2B8pYsu7eORitdwyA2sBubnTl3laYlBk4sXY5FUa5qTZGBDPJICVbvqzjlbw==}
 
@@ -20104,6 +20246,9 @@ packages:
     resolution: {integrity: sha512-ZZow9HBI5O6EPgSJLUb8n2NKgmVWTwCvHGwFuJlMjvLFqlGG6pjirPhtdsseaLZjSibD8eegzmYpUZwoIlj2cQ==}
     engines: {node: '>=4.0'}
 
+  jszip@3.10.2:
+    resolution: {integrity: sha512-3l+rb15IOWtUhU0H5MFqES/T6Kh7abYwjosBey/vD6hDt8zoEffkSC5Ws5SGtgVw3gBx2NEbhTeSW1+kWkpyTQ==}
+
   jwa@2.0.1:
     resolution: {integrity: sha512-hRF04fqJIP8Abbkq5NKGN0Bbr3JxlQ+qhZufXVr0DvujKy93ZCbXZMHDL4EOtodSbCWxOqR8MS1tXA5hwqCXDg==}
 
@@ -20249,6 +20394,9 @@ packages:
 
   libphonenumber-js@1.12.31:
     resolution: {integrity: sha512-Z3IhgVgrqO1S5xPYM3K5XwbkDasU67/Vys4heW+lfSBALcUZjeIIzI8zCLifY+OCzSq+fpDdywMDa7z+4srJPQ==}
+
+  lie@3.3.0:
+    resolution: {integrity: sha512-UaiMJzeWRlEujzAuw5LokY1L5ecNQYZKfmyZ9L7wDHb/p5etKaxXhohBcrw0EYby+G/NA52vRSN4N39dxHAIwQ==}
 
   lighthouse-logger@1.4.2:
     resolution: {integrity: sha512-gPWxznF6TKmUHrOQjlVo2UbaL2EJ71mb2CCeRs/2qBpi4L/g4LUVc9+3lKQ6DTUZwJswfM7ainGrLO1+fOqa2g==}
@@ -24529,6 +24677,11 @@ packages:
     engines: {node: '>=22.0.0'}
     hasBin: true
 
+  styled-exceljs@0.21.6:
+    resolution: {integrity: sha512-n3lHSH5rKn7wlu6+rBIv1/anXDDJd1+IAWI60iCfXW9QlYRDHQDEN6P2Vq9b/6TxT+hUiLTNFy9Hoo0TGk5t8g==}
+    engines: {node: '>=0.8'}
+    hasBin: true
+
   styled-jsx@3.3.2:
     resolution: {integrity: sha512-daAkGd5mqhbBhLd6jYAjYBa9LpxYCzsgo/f6qzPdFxVB8yoGbhxvzQgkC0pfmCVvW3JuAEBn0UzFLBfkHVZG1g==}
     peerDependencies:
@@ -25558,6 +25711,9 @@ packages:
 
   utf8-byte-length@1.0.5:
     resolution: {integrity: sha512-Xn0w3MtiQ6zoz2vFyUVruaCL53O/DwUvkEeOvj+uulMm0BkUGYWmBYVyElqZaSLhY6ZD0ulfU3aBra2aVT4xfA==}
+
+  utif@3.1.0:
+    resolution: {integrity: sha512-WEo4D/xOvFW53K5f5QTaTbbiORcm2/pCL9P6qmJnup+17eYfKaEhDeX9PeQkuyEoIxlbGklDuGl8xwuXYMrrXQ==}
 
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
@@ -30434,6 +30590,54 @@ snapshots:
       walkdir: 0.4.1
 
   '@fastify/busboy@2.1.1': {}
+
+  '@file-viewer/core@3.3.6':
+    dependencies:
+      dompurify: 3.4.18
+
+  '@file-viewer/doc@3.3.6':
+    dependencies:
+      dompurify: 3.4.18
+
+  '@file-viewer/docx@0.3.42':
+    dependencies:
+      '@xmldom/xmldom': 0.9.12
+      jszip: 3.10.2
+
+  '@file-viewer/pptx@3.3.6':
+    dependencies:
+      dingbat-to-unicode: 1.0.2
+      dompurify: 3.4.18
+      jszip: 3.10.2
+      tinycolor2: 1.6.0
+      utif: 3.1.0
+
+  '@file-viewer/react@3.3.6(react@19.3.1)':
+    dependencies:
+      '@file-viewer/core': 3.3.6
+      react: 19.3.1
+
+  '@file-viewer/renderer-pptx@3.3.6':
+    dependencies:
+      '@file-viewer/core': 3.3.6
+      '@file-viewer/pptx': 3.3.6
+
+  '@file-viewer/renderer-spreadsheet@3.3.6':
+    dependencies:
+      '@file-viewer/core': 3.3.6
+      '@xmldom/xmldom': 0.9.12
+      e-virt-table: 1.4.18
+      jszip: 3.10.2
+      styled-exceljs: 0.21.6
+      tinycolor2: 1.6.0
+      utif: 3.1.0
+
+  '@file-viewer/renderer-word@3.3.6':
+    dependencies:
+      '@file-viewer/core': 3.3.6
+      '@file-viewer/doc': 3.3.6
+      '@file-viewer/docx': 0.3.42
+      jszip: 3.10.2
 
   '@floating-ui/core@1.8.0':
     dependencies:
@@ -50243,6 +50447,9 @@ snapshots:
 
   '@types/supports-color@8.1.3': {}
 
+  '@types/trusted-types@2.0.7':
+    optional: true
+
   '@types/unist@2.0.11': {}
 
   '@types/unist@3.0.3': {}
@@ -53738,6 +53945,8 @@ snapshots:
       miller-rabin: 4.0.1
       randombytes: 2.1.0
 
+  dingbat-to-unicode@1.0.2: {}
+
   dir-glob@3.0.1:
     dependencies:
       path-type: 4.0.0
@@ -53795,6 +54004,10 @@ snapshots:
   domhandler@5.0.3:
     dependencies:
       domelementtype: 2.3.0
+
+  dompurify@3.4.18:
+    optionalDependencies:
+      '@types/trusted-types': 2.0.7
 
   domutils@1.5.1:
     dependencies:
@@ -53879,6 +54092,10 @@ snapshots:
       inherits: 2.0.4
       readable-stream: 2.3.8
       stream-shift: 1.0.3
+
+  e-virt-table@1.4.18:
+    dependencies:
+      '@floating-ui/dom': 1.8.0
 
   earcut@3.2.4: {}
 
@@ -56658,6 +56875,8 @@ snapshots:
     dependencies:
       queue: 6.0.2
 
+  immediate@3.0.6: {}
+
   immer@10.2.0: {}
 
   immer@11.2.10: {}
@@ -58113,6 +58332,13 @@ snapshots:
       object.assign: 4.1.7
       object.values: 1.2.1
 
+  jszip@3.10.2:
+    dependencies:
+      lie: 3.3.0
+      pako: 1.0.11
+      readable-stream: 2.3.8
+      setimmediate: 1.0.5
+
   jwa@2.0.1:
     dependencies:
       buffer-equal-constant-time: 1.0.1
@@ -58261,6 +58487,10 @@ snapshots:
       type-check: 0.4.0
 
   libphonenumber-js@1.12.31: {}
+
+  lie@3.3.0:
+    dependencies:
+      immediate: 3.0.6
 
   lighthouse-logger@1.4.2:
     dependencies:
@@ -65944,6 +66174,8 @@ snapshots:
       prettier: 3.10.1
       tinycolor2: 1.6.0
 
+  styled-exceljs@0.21.6: {}
+
   styled-jsx@3.3.2(react@17.0.2):
     dependencies:
       '@babel/types': 7.8.3
@@ -67299,6 +67531,10 @@ snapshots:
       react: 19.3.1
 
   utf8-byte-length@1.0.5: {}
+
+  utif@3.1.0:
+    dependencies:
+      pako: 1.0.11
 
   util-deprecate@1.0.2: {}
 

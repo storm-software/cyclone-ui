@@ -1,0 +1,63 @@
+{
+  "name": "@cyclone-ui/file-viewer-dialog",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "A Modal that previews a file, with its name, MIME type and size in the header and a download button in the footer. Images and text show on every platform; on the web, PDFs show one page at a time with page buttons, Word, Excel and PowerPoint files open in File Viewer, and video and audio play in the browser's player. Other files show a message to download them. It also exports getFilePreviewKind, which sorts a file by its MIME type and extension.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/file-viewer-dialog"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/file-viewer": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/modal": "workspace:*",
+    "@cyclone-ui/pdf-document-display": "workspace:*",
+    "@stryke/string-format": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/image": "catalog:",
+    "@tamagui/stacks": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./FileViewerDialog": {
+      "import": "./dist/FileViewerDialog.mjs",
+      "require": "./dist/FileViewerDialog.cjs"
+    },
+    "./FileViewerDialogWebPreview": {
+      "import": "./dist/FileViewerDialogWebPreview.mjs",
+      "require": "./dist/FileViewerDialogWebPreview.cjs"
+    },
+    "./*": "./*"
+  }
+}

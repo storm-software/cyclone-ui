@@ -1,0 +1,59 @@
+{
+  "name": "@cyclone-ui/file-viewer",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "A web-only viewer for Word, Excel and PowerPoint files, built on File Viewer with only its Word, spreadsheet and PPTX renderers. It follows the Cyclone light or dark theme, loads its parsing workers from the renderer packages so apps need no asset setup, and exports isOfficeFile to check a file's name or MIME type.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/file-viewer"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@file-viewer/pptx": "catalog:",
+    "@file-viewer/react": "catalog:",
+    "@file-viewer/renderer-pptx": "catalog:",
+    "@file-viewer/renderer-spreadsheet": "catalog:",
+    "@file-viewer/renderer-word": "catalog:",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./FileViewer": {
+      "import": "./dist/FileViewer.mjs",
+      "require": "./dist/FileViewer.cjs"
+    },
+    "./isOfficeFile": {
+      "import": "./dist/isOfficeFile.mjs",
+      "require": "./dist/isOfficeFile.cjs"
+    },
+    "./*": "./*"
+  }
+}

@@ -4389,6 +4389,16 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/file-viewer",
+      jsx: ["FileViewer"],
+      roles: []
+    },
+    {
+      name: "@cyclone-ui/file-viewer-dialog",
+      jsx: ["FileViewerDialog"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/floating-toolbar",
       jsx: ["FloatingToolbar"],
       roles: []

@@ -21,6 +21,11 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { BytesText } from "@cyclone-ui/bytes-text";
+import type { FilePreviewKind } from "@cyclone-ui/file-viewer-dialog";
+import {
+  FileViewerDialog,
+  getFilePreviewKind
+} from "@cyclone-ui/file-viewer-dialog";
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import type { FormControlSize, StyleEnv } from "@cyclone-ui/helpers";
 import {
@@ -45,13 +50,15 @@ import { Progress } from "@cyclone-ui/progress";
 import type { ClientFileResult } from "@cyclone-ui/state";
 import { formatDate } from "@stryke/date/format";
 import type { TamaguiWebElement } from "@tamagui/core";
-import { styled, Text, Theme, View } from "@tamagui/core";
+import { isWeb, styled, Text, Theme, View } from "@tamagui/core";
 import { Image } from "@tamagui/image";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import { XStack, YStack } from "@tamagui/stacks";
 import { SizableText } from "@tamagui/text";
 import type { PropsWithChildren } from "react";
 import { Fragment, useEffect, useLayoutEffect, useRef, useState } from "react";
+import type { GestureResponderEvent } from "react-native";
+import { FileOfficePreview } from "./FileOfficePreview";
 import { FilePdfPreview } from "./FilePdfPreview";
 
 /**
@@ -135,9 +142,14 @@ const fileTextOverflowStyle = {
 const FileViewLink = ({
   uri,
   size,
+  onOpen,
   children,
   ...props
-}: PropsWithChildren<{ uri?: string; size: FormControlSize }>) => {
+}: PropsWithChildren<{
+  uri?: string;
+  size: FormControlSize;
+  onOpen: () => void;
+}>) => {
   if (uri) {
     return (
       <Link
@@ -147,8 +159,20 @@ const FileViewLink = ({
         textAlign="center"
         {...fileTextOverflowStyle}
         {...props}
-        href={uri}
-        target="_blank">
+        aria-haspopup="dialog"
+        // On native, `Link` would also open `href` outside the app.
+        href={isWeb ? uri : undefined}
+        target="_blank"
+        onPress={(event: GestureResponderEvent) => {
+          // On web this is the DOM click. Modified clicks keep the browser's
+          // new tab / window behavior.
+          const { metaKey, ctrlKey, shiftKey, altKey } =
+            event as unknown as MouseEvent;
+          if (!(metaKey || ctrlKey || shiftKey || altKey)) {
+            event.preventDefault();
+            onOpen();
+          }
+        }}>
         {children}
       </Link>
     );
@@ -171,13 +195,6 @@ const FileViewLink = ({
   );
 };
 
-// Browsers often report source files as `video/mp2t` (`.ts`) or with no MIME
-// type at all, so the extension is checked too.
-const TEXT_MIME_TYPE =
-  /^text\/|json|xml|yaml|javascript|typescript|toml|x-sh|sql|graphql/i;
-const TEXT_EXTENSION =
-  /\.(?:txt|log|md|mdx|csv|tsv|json5?|jsonc|ya?ml|toml|ini|cfg|conf|env|xml|html?|css|scss|sass|less|[cm]?[jt]sx?|vue|svelte|astro|py|rb|go|rs|java|kts?|swift|c|h|cc|cpp|hpp|cs|php|lua|sh|bash|zsh|fish|ps1|sql|graphql|gql|proto|tf|nix|lock|gitignore|dockerfile)$/i;
-
 // ponytail: reads the whole file to show ~2 kB, so large files are skipped;
 // stream the first chunk instead if bigger text previews are ever needed.
 const MAX_TEXT_PREVIEW_FILE_SIZE = 1024 * 1024;
@@ -190,25 +207,6 @@ const UPLOAD_SUCCESS_DURATION = 3000;
 const UPLOAD_STATUS_TRANSITION_DURATION = 200;
 
 type FileUploadStatus = "uploading" | "success" | "failed";
-
-type FilePreviewKind = "image" | "text" | "pdf";
-
-const getFilePreviewKind = (
-  name?: string,
-  mimeType?: string
-): FilePreviewKind => {
-  if (mimeType?.startsWith("image/")) {
-    return "image";
-  }
-  if (mimeType === "application/pdf" || /\.pdf$/i.test(name ?? "")) {
-    return "pdf";
-  }
-  if (TEXT_MIME_TYPE.test(mimeType ?? "") || TEXT_EXTENSION.test(name ?? "")) {
-    return "text";
-  }
-
-  return "image";
-};
 
 const FileTextPreview = ({ uri, size }: { uri: string; size?: number }) => {
   const [text, setText] = useState("");
@@ -251,23 +249,32 @@ const FileTextPreview = ({ uri, size }: { uri: string; size?: number }) => {
 const FileFilePreview = ({
   kind,
   uri,
+  name,
   size
 }: {
   kind: FilePreviewKind;
   uri?: string;
+  name?: string;
   size?: number;
 }) => {
   if (!uri) {
     return null;
   }
+  if (kind === "image") {
+    return <Image height={500} src={uri} />;
+  }
   if (kind === "pdf") {
     return <FilePdfPreview uri={uri} />;
+  }
+  if (kind === "office") {
+    return <FileOfficePreview uri={uri} name={name} />;
   }
   if (kind === "text") {
     return <FileTextPreview uri={uri} size={size} />;
   }
 
-  return <Image height={500} src={uri} />;
+  // Video, audio and other files show the plain card.
+  return null;
 };
 
 export type FileProps = PropsWithChildren<ClientFileResult> & {
@@ -286,9 +293,12 @@ export type FileProps = PropsWithChildren<ClientFileResult> & {
 
 /**
  * A card showing a file's name, size, modified time and MIME type over an
- * image, text or PDF preview, with download and remove buttons.
+ * image, text, PDF or Office preview, with download and remove buttons. The
+ * name opens the file in a `FileViewerDialog`.
  *
  * @remarks
+ * PDF and Office previews are web only.
+ *
  * While `progress` is between 0 and 100, an inline progress bar shows how
  * much of the file has been uploaded, and the remove button cancels the
  * upload instead. When the upload completes, the card briefly shows a success
@@ -314,6 +324,7 @@ export const File = ({
   const buttonSize = getSized("10xl") * scale;
   const buttonInset = 6 * scale;
   const previewKind = getFilePreviewKind(name, mimeType);
+  const [viewerOpen, setViewerOpen] = useState(false);
 
   const failed = status === "failed";
   const uploading = !failed && progress !== undefined && progress < 100;
@@ -556,7 +567,10 @@ export const File = ({
         justifyContent="center">
         <YStack width="100%" gap="xl">
           <View zIndex="30" justifyContent="center" alignItems="center">
-            <FileViewLink uri={uri} size={controlSize}>
+            <FileViewLink
+              uri={uri}
+              size={controlSize}
+              onOpen={() => setViewerOpen(true)}>
               {name || "Unnamed File"}
             </FileViewLink>
           </View>
@@ -739,8 +753,27 @@ export const File = ({
         // preview, and with GPU compositing it let the preview paint square
         // over the card's rounded corners.
         scale="1 group-hover/file:1.2">
-        <FileFilePreview key={id} kind={previewKind} uri={uri} size={size} />
+        <FileFilePreview
+          key={id}
+          kind={previewKind}
+          uri={uri}
+          name={name}
+          size={size}
+        />
       </View>
+
+      {/* Inside the card, whose click handlers keep clicks in the (portaled)
+          dialog from reaching a surrounding file picker. */}
+      {uri && (
+        <FileViewerDialog
+          open={viewerOpen}
+          onOpenChange={setViewerOpen}
+          uri={uri}
+          name={name}
+          mimeType={mimeType}
+          size={size}
+        />
+      )}
     </View>
   );
 };

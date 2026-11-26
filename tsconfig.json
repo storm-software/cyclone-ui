@@ -64,6 +64,12 @@
       "path": "./components/file"
     },
     {
+      "path": "./components/file-viewer"
+    },
+    {
+      "path": "./components/file-viewer-dialog"
+    },
+    {
       "path": "./components/next-button"
     },
     {

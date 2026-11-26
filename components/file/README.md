@@ -68,7 +68,8 @@ A package containing the File component used by Storm Software
 ## Quick Features
 
 - A card for one file: the name, size, modified date and MIME type over a preview.
-- Previews images, the first lines of text and source files, and the top of the first page of a PDF. PDF previews are web only.
+- Previews images, the first lines of text and source files, the top of the first page of a PDF, and the start of a Word, Excel or PowerPoint file. PDF and Office previews are web only.
+- The file name opens the file in a [`FileViewerDialog`](../file-viewer-dialog/README.md). Modified clicks (Ctrl, ⌘, Shift) still open it in a new tab.
 - A download button when there is a `uri`, and a remove button when you pass `onRemove`. They show on hover, and always on touch screens.
 - Upload states: a progress bar while `progress` is below 100, a short "Upload complete" state, and a failure state when `status` is `"failed"`.
 - `onCancel` replaces the remove action during an upload.

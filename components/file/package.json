@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/file",
   "version": "0.0.58",
   "type": "module",
-  "description": "A file card that shows a file's name, size, modified date and MIME type over an image, text or PDF preview, with download and remove buttons. While an upload is underway, it shows an inline progress bar with the uploaded percentage.",
+  "description": "A file card that shows a file's name, size, modified date and MIME type over an image, text, PDF or Office preview, with download and remove buttons. The name opens the file in a FileViewerDialog. While an upload is underway, it shows an inline progress bar with the uploaded percentage.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
@@ -21,6 +21,8 @@
     "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/button": "workspace:*",
     "@cyclone-ui/bytes-text": "workspace:*",
+    "@cyclone-ui/file-viewer": "workspace:*",
+    "@cyclone-ui/file-viewer-dialog": "workspace:*",
     "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",

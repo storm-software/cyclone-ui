@@ -261,6 +261,14 @@ const DialogContainer = createStyledHOC(
       noise,
       accented,
       maxWidth,
+      // The content's focus and dismiss handlers, which `Container` would
+      // drop.
+      onOpenAutoFocus,
+      onCloseAutoFocus,
+      onEscapeKeyDown,
+      onPointerDownOutside,
+      onFocusOutside,
+      onInteractOutside,
       ...props
     }: GetProps<typeof Container> & TamaguiDialogContentProps,
     forwardedRef
@@ -270,6 +278,12 @@ const DialogContainer = createStyledHOC(
 
     return (
       <TamaguiDialogContent
+        onOpenAutoFocus={onOpenAutoFocus}
+        onCloseAutoFocus={onCloseAutoFocus}
+        onEscapeKeyDown={onEscapeKeyDown}
+        onPointerDownOutside={onPointerDownOutside}
+        onFocusOutside={onFocusOutside}
+        onInteractOutside={onInteractOutside}
         // An outlined container is transparent; this opaque backing keeps its
         // content readable over the page, unlike `Button`'s `outlined`.
         backgroundColor={variant === "outlined" ? "elevated" : "transparent"}
