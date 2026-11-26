@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Address Map
 
+## [0.0.7](https://github.com/storm-software/cyclone-ui/releases/tag/address-map%400.0.7) (11/26/2026)
+
+### Bug Fixes
+
+- **address-map:** Resolve raster map bug in address map ([21f3eb66b](https://github.com/storm-software/cyclone-ui/commit/21f3eb66b))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.99**
+- Updated **icons** to **v0.0.102**
+- Updated **spinner** to **v0.5.99**
+
 ## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/address-map%400.0.6) (11/25/2026)
 
 ### Updated Dependencies

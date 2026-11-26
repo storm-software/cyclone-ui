@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/font-preview",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "type": "module",
   "description": "A font specimen that shows each weight and style of a font from the Tamagui config as its own labeled row (such as Regular 400 or Black 900 Italic), in text the reader types and at a size chosen from a select of presets or with a slider. The rows default to the faces the font declares.",
   "repository": {

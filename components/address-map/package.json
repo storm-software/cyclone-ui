@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/address-map",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
   "description": "A map of an address: vector tiles (a Protomaps-schema TileJSON, drawn by MapLibre in Cyclone's map style) or raster tiles (OpenStreetMap by default) centered on its latitude and longitude, with a marker and the tile provider's attribution, or a placeholder while there is no address. Shared by AddressInput and ManualAddressInput.",
   "repository": {
@@ -48,6 +48,14 @@
     "./AddressMap": {
       "import": "./dist/AddressMap.mjs",
       "require": "./dist/AddressMap.cjs"
+    },
+    "./styles/cyclone-dark": {
+      "import": "./dist/styles/cyclone-dark.mjs",
+      "require": "./dist/styles/cyclone-dark.cjs"
+    },
+    "./styles/cyclone-light": {
+      "import": "./dist/styles/cyclone-light.mjs",
+      "require": "./dist/styles/cyclone-light.cjs"
     },
     "./*": "./*"
   }
