@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/file",
-  "version": "0.0.58",
+  "version": "0.0.59",
   "type": "module",
   "description": "A file card that shows a file's name, size, modified date and MIME type over an image, text, PDF or Office preview, with download and remove buttons. The name opens the file in a FileViewerDialog. While an upload is underway, it shows an inline progress bar with the uploaded percentage.",
   "repository": {
@@ -63,6 +63,10 @@
     "./File": {
       "import": "./dist/File.mjs",
       "require": "./dist/File.cjs"
+    },
+    "./FileOfficePreview": {
+      "import": "./dist/FileOfficePreview.mjs",
+      "require": "./dist/FileOfficePreview.cjs"
     },
     "./FilePdfPreview": {
       "import": "./dist/FilePdfPreview.mjs",

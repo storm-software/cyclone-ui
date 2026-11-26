@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Radar Chart
 
+## [0.0.72](https://github.com/storm-software/cyclone-ui/releases/tag/radar-chart%400.0.72) (11/26/2026)
+
+### Updated Dependencies
+
+- Updated **chart** to **v0.0.72**
+
 ## [0.0.71](https://github.com/storm-software/cyclone-ui/releases/tag/radar-chart%400.0.71) (11/26/2026)
 
 ### Updated Dependencies

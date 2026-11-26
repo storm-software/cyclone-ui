@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Privacy Choices
 
+## [0.0.75](https://github.com/storm-software/cyclone-ui/releases/tag/privacy-choices%400.0.75) (11/26/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.100**
+- Updated **button** to **v0.6.108**
+- Updated **dialog** to **v0.3.109**
+- Updated **heading-text** to **v0.5.101**
+- Updated **icons** to **v0.0.103**
+- Updated **scroll-view** to **v0.5.108**
+- Updated **switch** to **v0.5.110**
+- Updated **tabs** to **v0.3.107**
+
 ## [0.0.74](https://github.com/storm-software/cyclone-ui/releases/tag/privacy-choices%400.0.74) (11/26/2026)
 
 ### Updated Dependencies

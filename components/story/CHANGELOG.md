@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Story
 
+## [0.0.12](https://github.com/storm-software/cyclone-ui/releases/tag/story%400.0.12) (11/26/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.100**
+- Updated **button** to **v0.6.108**
+- Updated **field** to **v0.5.110**
+- Updated **form** to **v0.9.103**
+- Updated **heading-text** to **v0.5.101**
+- Updated **icons** to **v0.0.103**
+- Updated **input** to **v0.6.110**
+- Updated **kbd** to **v0.0.55**
+- Updated **number-input** to **v0.0.111**
+- Updated **select** to **v0.6.112**
+- Updated **skeleton** to **v0.0.84**
+- Updated **switch** to **v0.5.110**
+- Updated **theme-select** to **v0.0.13**
+
 ## [0.0.11](https://github.com/storm-software/cyclone-ui/releases/tag/story%400.0.11) (11/26/2026)
 
 ### Updated Dependencies

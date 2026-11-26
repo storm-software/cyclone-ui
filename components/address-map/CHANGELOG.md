@@ -2,6 +2,14 @@
 
 # Changelog for Cyclone UI - Address Map
 
+## [0.0.8](https://github.com/storm-software/cyclone-ui/releases/tag/address-map%400.0.8) (11/26/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.100**
+- Updated **icons** to **v0.0.103**
+- Updated **spinner** to **v0.5.100**
+
 ## [0.0.7](https://github.com/storm-software/cyclone-ui/releases/tag/address-map%400.0.7) (11/26/2026)
 
 ### Bug Fixes

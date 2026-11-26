@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - ESLint Plugin
 
+## [0.0.90](https://github.com/storm-software/cyclone-ui/releases/tag/eslint-plugin%400.0.90) (11/26/2026)
+
+### Features
+
+- **file-viewer:** Initial check-in of the File Viewer and File Viewer Dialog components ([3add7204d](https://github.com/storm-software/cyclone-ui/commit/3add7204d))
+- **onboarding:** Initial check-in of the Onboarding component package ([5dd9b85c7](https://github.com/storm-software/cyclone-ui/commit/5dd9b85c7))
+
 ## [0.0.86](https://github.com/storm-software/cyclone-ui/releases/tag/eslint-plugin%400.0.86) (11/24/2026)
 
 ### Features
