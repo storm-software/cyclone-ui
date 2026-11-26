@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Accordion
 
+## [0.3.106](https://github.com/storm-software/cyclone-ui/releases/tag/accordion%400.3.106) (11/25/2026)
+
+### Features
+
+- **alert:** Added collapsable support for `Alert` component ([0703f5265](https://github.com/storm-software/cyclone-ui/commit/0703f5265))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.98**
+- Updated **container** to **v0.6.105**
+- Updated **heading-text** to **v0.5.99**
+- Updated **icons** to **v0.0.101**
+
 ## [0.3.105](https://github.com/storm-software/cyclone-ui/releases/tag/accordion%400.3.105) (11/24/2026)
 
 ### Updated Dependencies

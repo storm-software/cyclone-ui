@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Context Menu
 
+## [0.0.98](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.98) (11/25/2026)
+
+### Bug Fixes
+
+- **email:** Clean up email template to use topography background ([ec69f32f8](https://github.com/storm-software/cyclone-ui/commit/ec69f32f8))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.98**
+- Updated **button** to **v0.6.106**
+- Updated **container** to **v0.6.105**
+- Updated **helpers** to **v0.3.100**
+- Updated **icons** to **v0.0.101**
+- Updated **popover** to **v0.5.108**
+- Updated **tooltip** to **v0.5.106**
+
 ## [0.0.97](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.97) (11/24/2026)
 
 ### Updated Dependencies

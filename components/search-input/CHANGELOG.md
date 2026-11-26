@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Search Input
 
+## [0.1.110](https://github.com/storm-software/cyclone-ui/releases/tag/search-input%400.1.110) (11/25/2026)
+
+### Updated Dependencies
+
+- Updated **context-menu** to **v0.0.98**
+- Updated **field** to **v0.5.108**
+- Updated **form** to **v0.9.101**
+- Updated **helpers** to **v0.3.100**
+- Updated **icons** to **v0.0.101**
+- Updated **input** to **v0.6.108**
+
 ## [0.1.109](https://github.com/storm-software/cyclone-ui/releases/tag/search-input%400.1.109) (11/24/2026)
 
 ### Updated Dependencies

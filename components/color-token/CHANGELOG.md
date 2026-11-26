@@ -2,6 +2,14 @@
 
 # Changelog for Cyclone UI - Color Token
 
+## [0.0.12](https://github.com/storm-software/cyclone-ui/releases/tag/color-token%400.0.12) (11/25/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.98**
+- Updated **copy-button** to **v0.0.18**
+- Updated **tooltip** to **v0.5.106**
+
 ## [0.0.11](https://github.com/storm-software/cyclone-ui/releases/tag/color-token%400.0.11) (11/24/2026)
 
 ### Updated Dependencies

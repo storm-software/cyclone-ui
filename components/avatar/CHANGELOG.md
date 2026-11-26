@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Avatar
 
+## [0.0.35](https://github.com/storm-software/cyclone-ui/releases/tag/avatar%400.0.35) (11/25/2026)
+
+### Features
+
+- **alert:** Added collapsable support for `Alert` component ([0703f5265](https://github.com/storm-software/cyclone-ui/commit/0703f5265))
+
+### Updated Dependencies
+
+- Updated **badge** to **v0.3.106**
+- Updated **body-text** to **v0.5.98**
+- Updated **button** to **v0.6.106**
+- Updated **icons** to **v0.0.101**
+- Updated **modal** to **v0.0.72**
+- Updated **slider** to **v0.0.104**
+- Updated **spinner** to **v0.5.98**
+
 ## [0.0.34](https://github.com/storm-software/cyclone-ui/releases/tag/avatar%400.0.34) (11/24/2026)
 
 ### Updated Dependencies

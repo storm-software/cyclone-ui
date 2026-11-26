@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Card
 
+## [0.6.108](https://github.com/storm-software/cyclone-ui/releases/tag/card%400.6.108) (11/25/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.98**
+- Updated **container** to **v0.6.105**
+- Updated **eyebrow-text** to **v0.5.98**
+- Updated **heading-text** to **v0.5.99**
+- Updated **helpers** to **v0.3.100**
+- Updated **icons** to **v0.0.101**
+- Updated **link** to **v0.5.107**
+- Updated **tag** to **v0.0.101**
+
 ## [0.6.107](https://github.com/storm-software/cyclone-ui/releases/tag/card%400.6.107) (11/24/2026)
 
 ### Updated Dependencies

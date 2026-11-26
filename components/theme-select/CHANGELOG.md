@@ -2,6 +2,14 @@
 
 # Changelog for Cyclone UI - Theme Select
 
+## [0.0.11](https://github.com/storm-software/cyclone-ui/releases/tag/theme-select%400.0.11) (11/25/2026)
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.108**
+- Updated **form** to **v0.9.101**
+- Updated **select** to **v0.6.110**
+
 ## [0.0.10](https://github.com/storm-software/cyclone-ui/releases/tag/theme-select%400.0.10) (11/24/2026)
 
 ### Updated Dependencies
