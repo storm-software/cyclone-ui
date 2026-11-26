@@ -22,9 +22,11 @@ import { BodyText } from "@cyclone-ui/body-text";
 import { MapMarker, MapTrifold } from "@cyclone-ui/icons";
 import { Spinner } from "@cyclone-ui/spinner";
 import type { GetProps } from "@tamagui/core";
-import { createStyledHOC, styled, View } from "@tamagui/core";
+import { createStyledHOC, styled, useThemeName, View } from "@tamagui/core";
 import { Image } from "@tamagui/image";
-import { useState } from "react";
+import type { Map as MapLibreMap, StyleSpecification } from "maplibre-gl";
+import type { ComponentProps, FC, RefAttributes } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /** An address with the coordinates to show it at. */
 export interface AddressOption {
@@ -41,6 +43,10 @@ export const isAddressOption = (value: any): value is AddressOption =>
   Number.isFinite(value.longitude);
 
 const TILE_SIZE = 256;
+// `@tamagui/image` forwards a ref to its `<img>`; its declared type omits it.
+const TileImage = Image as FC<
+  ComponentProps<typeof Image> & RefAttributes<HTMLImageElement>
+>;
 // The tiles around the address's tile, enough to cover a 1024×512px map.
 const TILE_OFFSETS = [-2, -1, 0, 1, 2].flatMap(dx =>
   [-1, 0, 1].map(dy => [dx, dy] as const)
@@ -69,9 +75,93 @@ export interface AddressMapExtraProps {
    */
   tileUrl?: string;
 
+  /**
+   * The TileJSON URL of a vector tileset in the Protomaps basemap schema, such
+   * as a PMTiles archive built by Cyclone's `maps/tiles` and served by a tile
+   * server. MapLibre draws it in Cyclone's map style for the current theme,
+   * in place of the raster `tileUrl` tiles.
+   *
+   * @see https://docs.protomaps.com/basemaps/layers
+   */
+  tiles?: string;
+
   /** The credit the tile provider requires on its map. */
   attribution?: string;
 }
+
+/**
+ * MapLibre drawing a vector tileset, centered on a point. It's loaded with the
+ * first map that needs it, and reports `src` once the view has rendered.
+ */
+const VectorTiles = ({
+  tiles,
+  longitude,
+  latitude,
+  zoom,
+  src,
+  onLoad
+}: {
+  tiles: string;
+  longitude: number;
+  latitude: number;
+  zoom: number;
+  src: string;
+  onLoad: (src: string) => void;
+}) => {
+  const container = useRef<HTMLElement>(null);
+  const [map, setMap] = useState<MapLibreMap>();
+  const dark = !useThemeName().startsWith("light");
+
+  useEffect(() => {
+    let instance: MapLibreMap | undefined;
+    let cancelled = false;
+    void Promise.all([
+      import("maplibre-gl"),
+      dark
+        ? import("./styles/cyclone-dark.json")
+        : import("./styles/cyclone-light.json")
+    ]).then(([{ Map }, { default: style }]) => {
+      if (cancelled || !container.current) {
+        return;
+      }
+
+      instance = new Map({
+        container: container.current,
+        style: {
+          ...(style as StyleSpecification),
+          sources: { stormsoftware: { type: "vector", url: tiles } }
+        },
+        interactive: false,
+        attributionControl: false
+      });
+      setMap(instance);
+    });
+
+    return () => {
+      cancelled = true;
+      instance?.remove();
+    };
+  }, [tiles, dark]);
+
+  useEffect(() => {
+    if (!map) {
+      return;
+    }
+
+    map.jumpTo({ center: [longitude, latitude], zoom });
+    // An error (a tile, the glyphs) also ends the wait, as a raster tile's does.
+    const loaded = () => onLoad(src);
+    void map.once("idle", loaded);
+    void map.once("error", loaded);
+
+    return () => {
+      map.off("idle", loaded);
+      map.off("error", loaded);
+    };
+  }, [map, longitude, latitude, zoom, src, onLoad]);
+
+  return <View ref={container as any} position="absolute" inset={0} />;
+};
 
 const AddressMapFrame = styled(View, {
   displayName: "AddressMap",
@@ -84,11 +174,14 @@ const AddressMapFrame = styled(View, {
   justifyContent: "center"
 });
 
-// ponytail: static tiles, no panning or zooming; swap in MapLibre (or a native
-// map) if the map ever needs to be dragged.
+// ponytail: a static map, no panning or zooming; set MapLibre's `interactive`
+// if the map ever needs to be dragged. Vector tiles are web only (MapLibre GL
+// JS) and use the light/dark styles copied from `maps/styles/__generated__`
+// (recopy them when the tokens change); dimmed and high-contrast themes get
+// the plain ones.
 /**
- * A map of an address: raster tiles centered on its coordinates, with a marker
- * on it, or a placeholder while there is no address.
+ * A map of an address: vector or raster tiles centered on its coordinates,
+ * with a marker on it, or a placeholder while there is no address.
  *
  * @example
  * ```tsx
@@ -104,7 +197,9 @@ export const AddressMap = createStyledHOC(
       address,
       zoom = 15,
       tileUrl = OPEN_STREET_MAP_TILES,
-      attribution = tileUrl === OPEN_STREET_MAP_TILES
+      tiles,
+      // Protomaps basemaps are OpenStreetMap data too.
+      attribution = tiles || tileUrl === OPEN_STREET_MAP_TILES
         ? OPEN_STREET_MAP_ATTRIBUTION
         : "",
       ...props
@@ -141,13 +236,20 @@ export const AddressMap = createStyledHOC(
         Math.asinh(Math.tan((address.latitude * Math.PI) / 180)) / Math.PI) /
         2) *
       scale;
+    // Where the address sits in its tile, in whole pixels: the server's and the
+    // browser's `Math.asinh` can differ in the last bit, and an unrounded
+    // offset then hashes to a different style class, a hydration mismatch.
+    const offsetX = Math.round((x % 1) * TILE_SIZE);
+    const offsetY = Math.round((y % 1) * TILE_SIZE);
 
     const tileSrc = (tileX: number, tileY: number) =>
       tileUrl
         .replace("{z}", String(zoom))
         .replace("{x}", String(tileX))
         .replace("{y}", String(tileY));
-    const centerSrc = tileSrc(Math.floor(x) % scale, Math.floor(y));
+    const centerSrc = tiles
+      ? `${tiles}#${zoom}/${address.latitude}/${address.longitude}`
+      : tileSrc(Math.floor(x) % scale, Math.floor(y));
 
     return (
       <AddressMapFrame
@@ -155,39 +257,63 @@ export const AddressMap = createStyledHOC(
         role="img"
         aria-label={`Map of ${address.label}`}
         {...props}>
-        {/* The tiles are laid out so the address is at the frame's center. */}
-        <View position="absolute" left="50%" top="50%">
-          {TILE_OFFSETS.map(([dx, dy]) => {
-            const tileY = Math.floor(y) + dy;
-            if (tileY < 0 || tileY >= scale) {
-              return null;
-            }
+        {tiles ? (
+          <VectorTiles
+            tiles={tiles}
+            longitude={address.longitude}
+            latitude={address.latitude}
+            zoom={zoom}
+            src={centerSrc}
+            onLoad={setLoadedSrc}
+          />
+        ) : (
+          /* The tiles are laid out so the address is at the frame's center. */
+          <View position="absolute" left="50%" top="50%">
+            {TILE_OFFSETS.map(([dx, dy]) => {
+              const tileY = Math.floor(y) + dy;
+              if (tileY < 0 || tileY >= scale) {
+                return null;
+              }
 
-            // Longitude wraps around past the antimeridian.
-            const tileX = (((Math.floor(x) + dx) % scale) + scale) % scale;
+              // Longitude wraps around past the antimeridian.
+              const tileX = (((Math.floor(x) + dx) % scale) + scale) % scale;
 
-            const src = tileSrc(tileX, tileY);
+              const src = tileSrc(tileX, tileY);
 
-            return (
-              <Image
-                key={`${dx},${dy}`}
-                alt=""
-                position="absolute"
-                left={(dx - (x % 1)) * TILE_SIZE}
-                top={(dy - (y % 1)) * TILE_SIZE}
-                width={TILE_SIZE}
-                // A CSS reset's `img { max-width: 100% }` would squash it to the 0px wrapper.
-                maxWidth={TILE_SIZE}
-                height={TILE_SIZE}
-                src={src}
-                onLoad={src === centerSrc ? () => setLoadedSrc(src) : undefined}
-                onError={
-                  src === centerSrc ? () => setLoadedSrc(src) : undefined
-                }
-              />
-            );
-          })}
-        </View>
+              return (
+                <TileImage
+                  key={`${dx},${dy}`}
+                  alt=""
+                  position="absolute"
+                  left={dx * TILE_SIZE - offsetX}
+                  top={dy * TILE_SIZE - offsetY}
+                  width={TILE_SIZE}
+                  // A CSS reset's `img { max-width: 100% }` would squash it to the 0px wrapper.
+                  maxWidth={TILE_SIZE}
+                  height={TILE_SIZE}
+                  src={src}
+                  // A server-rendered tile can finish (or fail) before hydration,
+                  // and then `onLoad`/`onError` never fire.
+                  ref={
+                    src === centerSrc
+                      ? (image: HTMLImageElement | null) => {
+                          if (image?.complete) {
+                            setLoadedSrc(src);
+                          }
+                        }
+                      : undefined
+                  }
+                  onLoad={
+                    src === centerSrc ? () => setLoadedSrc(src) : undefined
+                  }
+                  onError={
+                    src === centerSrc ? () => setLoadedSrc(src) : undefined
+                  }
+                />
+              );
+            })}
+          </View>
+        )}
 
         {/* Positioned, so they paint over the tiles. */}
         {loadedSrc !== centerSrc ? (

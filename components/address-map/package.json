@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/address-map",
   "version": "0.0.6",
   "type": "module",
-  "description": "A map of an address: raster map tiles (OpenStreetMap by default) centered on its latitude and longitude, with a marker and the tile provider's attribution, or a placeholder while there is no address. Shared by AddressInput and ManualAddressInput.",
+  "description": "A map of an address: vector tiles (a Protomaps-schema TileJSON, drawn by MapLibre in Cyclone's map style) or raster tiles (OpenStreetMap by default) centered on its latitude and longitude, with a marker and the tile provider's attribution, or a placeholder while there is no address. Shared by AddressInput and ManualAddressInput.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
@@ -22,7 +22,8 @@
     "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/spinner": "workspace:*",
     "@tamagui/core": "catalog:",
-    "@tamagui/image": "catalog:"
+    "@tamagui/image": "catalog:",
+    "maplibre-gl": "catalog:"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

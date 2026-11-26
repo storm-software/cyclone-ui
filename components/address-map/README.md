@@ -41,7 +41,7 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 # Address Map
 
-An `Address Map` component that shows a static map of an address: raster tiles centered on its coordinates, with a marker and the tile provider's attribution, or a map icon while there is no address. [Address Input](../address-input) (`AddressInput.Map`) and [Manual Address Input](../manual-address-input) (`ManualAddressInputMap`) both draw it.
+An `Address Map` component that shows a static map of an address: vector or raster tiles centered on its coordinates, with a marker and the tile provider's attribution, or a map icon while there is no address. [Address Input](../address-input) (`AddressInput.Map`) and [Manual Address Input](../manual-address-input) (`ManualAddressInputMap`) both draw it.
 
 ```tsx
 <AddressMap
@@ -54,6 +54,12 @@ An `Address Map` component that shows a static map of an address: raster tiles c
 ```
 
 It draws OpenStreetMap tiles by default, which are for light use only. Set `tileUrl` (and `attribution`) to your tile provider's in production.
+
+To draw vector tiles instead, set `tiles` to the TileJSON URL of a [Protomaps-schema](https://docs.protomaps.com/basemaps/layers) tileset, such as a PMTiles archive built by [`maps/tiles`](../../maps) and served by a tile server. [MapLibre GL JS](https://maplibre.org) (web only, loaded with the first such map) draws it in Cyclone's light or dark map style, which loads its glyphs and sprites from `public.storm-cdn.com`, so that host must be reachable (CORS and `connect-src`) from your page.
+
+```tsx
+<AddressMap address={address} tiles="https://tiles.example.com/planet.json" />
+```
 
 <!-- START footer -->
 <!-- prettier-ignore-start -->
