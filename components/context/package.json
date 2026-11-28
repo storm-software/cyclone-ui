@@ -1,0 +1,55 @@
+{
+  "name": "@cyclone-ui/context",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Context, a meter of how much of the model's context window an AI conversation has used. The root takes usedTokens, maxTokens, an optional usage breakdown (input, output, reasoning and cached input tokens, in the AI SDK's LanguageModelUsage shape) and an optional cost in US dollars. Context.Trigger is a small ghost button with the percentage used and a CircularProgress ring; hovering, focusing or pressing it opens a Popover card (a bottom sheet on small screens) with the used and maximum tokens in compact notation, a Progress bar, a row per kind of token and, when cost is set, the total cost. The parts (ContentHeader, ContentBody, ContentFooter and the InputUsage, OutputUsage, ReasoningUsage and CacheUsage rows) compose for custom cards, and useContextValue reads the usage.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/context"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/circular-progress": "workspace:*",
+    "@cyclone-ui/popover": "workspace:*",
+    "@cyclone-ui/progress": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/popper": "catalog:",
+    "@tamagui/use-controllable-state": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/text-area": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Context": {
+      "import": "./dist/Context.mjs",
+      "require": "./dist/Context.cjs"
+    },
+    "./*": "./*"
+  }
+}

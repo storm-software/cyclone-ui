@@ -1,0 +1,51 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/trace/tsconfig.tsbuildinfo",
+    "jsx": "preserve",
+    "lib": ["ESNext", "DOM"],
+    "ignoreDeprecations": "6.0",
+    "rootDir": ".",
+    "types": [
+      "node",
+      "@nx/react/typings/cssmodule.d.ts",
+      "@nx/react/typings/image.d.ts"
+    ],
+    "outDir": "../../dist/out-tsc/components/trace"
+  },
+  "references": [
+    {
+      "path": "../../tools/config"
+    },
+    {
+      "path": "../visually-hidden"
+    },
+    {
+      "path": "../collapsible"
+    },
+    {
+      "path": "../body-text"
+    },
+    {
+      "path": "../icons"
+    },
+    {
+      "path": "../dialog"
+    },
+    {
+      "path": "../code-block"
+    },
+    {
+      "path": "../button"
+    }
+  ],
+  "files": [],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": [
+    "vitest.config.mts",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts",
+    "src/**/*.spec.tsx",
+    "src/**/*.test.tsx"
+  ]
+}

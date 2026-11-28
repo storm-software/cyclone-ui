@@ -1,0 +1,53 @@
+{
+  "name": "@cyclone-ui/tool",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Tool, the Cyclone UI AI component for a tool call the agent makes: a Trace line whose title, status and icon follow the tool part's `state` (\"Running …\", \"Ran …\", \"Failed to run …\", \"Denied …\"), and that opens to show the call's input and output as pretty-printed JSON code blocks. Tool.Header takes the part's `type`, `state`, `title` and `approval`; Tool.Input and Tool.Output take `input`, `output` and `errorText`. Pending approvals use Confirmation.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/tool"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/code-block": "workspace:*",
+    "@cyclone-ui/confirmation": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/trace": "workspace:*",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/drawer": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Tool": {
+      "import": "./dist/Tool.mjs",
+      "require": "./dist/Tool.cjs"
+    },
+    "./*": "./*"
+  }
+}

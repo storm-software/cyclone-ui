@@ -4239,14 +4239,29 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/chain-of-thought",
+      jsx: ["ChainOfThought"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/chart",
       jsx: ["Chart"],
+      roles: []
+    },
+    {
+      name: "@cyclone-ui/chat",
+      jsx: ["Chat"],
       roles: []
     },
     {
       name: "@cyclone-ui/checkbox",
       jsx: ["Checkbox"],
       roles: ["checkbox"]
+    },
+    {
+      name: "@cyclone-ui/checkpoint",
+      jsx: ["Checkpoint"],
+      roles: []
     },
     {
       name: "@cyclone-ui/circular-progress",
@@ -4294,8 +4309,18 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/confirmation",
+      jsx: ["Confirmation"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/container",
       jsx: ["Container"],
+      roles: []
+    },
+    {
+      name: "@cyclone-ui/context",
+      jsx: ["Context"],
       roles: []
     },
     {
@@ -4439,6 +4464,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/inline-citation",
+      jsx: ["InlineCitation"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/inline-code-text",
       jsx: ["InlineCodeText"],
       roles: []
@@ -4486,6 +4516,11 @@ export const manifest: DesignSystemManifest = {
     {
       name: "@cyclone-ui/modal",
       jsx: ["Modal"],
+      roles: []
+    },
+    {
+      name: "@cyclone-ui/model-selector",
+      jsx: ["ModelSelector"],
       roles: []
     },
     {
@@ -4564,6 +4599,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/plan",
+      jsx: ["Plan"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/popover",
       jsx: ["Popover"],
       roles: []
@@ -4589,6 +4629,21 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/prompt-input",
+      jsx: ["PromptInput"],
+      roles: []
+    },
+    {
+      name: "@cyclone-ui/prompt-message",
+      jsx: ["PromptMessage"],
+      roles: []
+    },
+    {
+      name: "@cyclone-ui/queue",
+      jsx: ["Queue"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/radar-chart",
       jsx: ["RadarChart"],
       roles: []
@@ -4606,6 +4661,11 @@ export const manifest: DesignSystemManifest = {
     {
       name: "@cyclone-ui/rating",
       jsx: ["Rating"],
+      roles: []
+    },
+    {
+      name: "@cyclone-ui/reasoning",
+      jsx: ["Reasoning"],
       roles: []
     },
     {
@@ -4664,8 +4724,18 @@ export const manifest: DesignSystemManifest = {
       roles: ["range"]
     },
     {
+      name: "@cyclone-ui/sources",
+      jsx: ["Sources"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/spinner",
       jsx: ["Spinner"],
+      roles: []
+    },
+    {
+      name: "@cyclone-ui/stack-trace",
+      jsx: ["StackTrace"],
       roles: []
     },
     {
@@ -4679,8 +4749,18 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/subagent",
+      jsx: ["Subagent"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/submit-button",
       jsx: ["SubmitButton"],
+      roles: []
+    },
+    {
+      name: "@cyclone-ui/suggestion",
+      jsx: ["Suggestion"],
       roles: []
     },
     {
@@ -4714,8 +4794,23 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/task",
+      jsx: ["Task"],
+      roles: []
+    },
+    {
+      name: "@cyclone-ui/terminal",
+      jsx: ["Terminal"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/terrain-footer",
       jsx: ["TerrainFooter"],
+      roles: []
+    },
+    {
+      name: "@cyclone-ui/test-results",
+      jsx: ["TestResults"],
       roles: []
     },
     {
@@ -4764,6 +4859,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/tool",
+      jsx: ["Tool"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/tooltip",
       jsx: ["Tooltip"],
       roles: []
@@ -4771,6 +4871,11 @@ export const manifest: DesignSystemManifest = {
     {
       name: "@cyclone-ui/topographic-background",
       jsx: ["TopographicBackground"],
+      roles: []
+    },
+    {
+      name: "@cyclone-ui/trace",
+      jsx: ["Trace"],
       roles: []
     },
     {

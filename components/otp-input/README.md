@@ -70,6 +70,7 @@ One-Time Password (OTP) Input form control component for Cyclone UI. Use it on i
 - One numeric text box per digit. The default length is 4.
 - Typing moves focus to the next box. Paste fills several boxes. Backspace and the arrow keys move between boxes.
 - `onComplete` runs when every digit is filled.
+- `middleLabel` places a string after the first half of the boxes. `"-"` with the default length shows two boxes, `-`, then the last two.
 - Controlled (`value`, `onChange`) and uncontrolled (`defaultValue`) modes, and `sm`, `md`, and `lg` sizes.
 
 ## Installation

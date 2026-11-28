@@ -1,0 +1,11 @@
+{
+  "name": "model-selector",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "components/model-selector/src",
+  "targets": {
+    "nx-release-publish": {
+      "executor": "@cyclone-ui/tools-nx:component-publish"
+    }
+  }
+}

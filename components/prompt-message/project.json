@@ -1,0 +1,11 @@
+{
+  "name": "prompt-message",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "components/prompt-message/src",
+  "targets": {
+    "nx-release-publish": {
+      "executor": "@cyclone-ui/tools-nx:component-publish"
+    }
+  }
+}

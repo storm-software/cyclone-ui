@@ -1,0 +1,48 @@
+{
+  "name": "@cyclone-ui/sources",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Sources, the links an AI agent used for a reply, built on Trace: a collapsible line that reads \"Used N sources\" (SourcesTrigger with count) and opens into a list of links. Source renders one link that opens in a new tab, titled by title or the URL's hostname, with an external-link icon and screen reader text. Sources takes open, defaultOpen and onOpenChange.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/sources"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/trace": "workspace:*",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Sources": {
+      "import": "./dist/Sources.mjs",
+      "require": "./dist/Sources.cjs"
+    },
+    "./*": "./*"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "name": "@cyclone-ui/subagent",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Subagent, the Cyclone UI AI component for work the agent hands to a subagent: a Trace line (\"Running the research agent\", then \"Ran the research agent\") with the model in a tag, that opens to the task it was given, a nested list of its tool calls and what it found. Subagent.Header takes `name`, `model` and the tool part's `state`; Subagent.Tool renders one tool call with Tool. Also exported under the AI SDK Elements names (Agent, AgentHeader, …).",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/subagent"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/tag": "workspace:*",
+    "@cyclone-ui/tool": "workspace:*",
+    "@cyclone-ui/trace": "workspace:*",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/icons": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Subagent": {
+      "import": "./dist/Subagent.mjs",
+      "require": "./dist/Subagent.cjs"
+    },
+    "./*": "./*"
+  }
+}

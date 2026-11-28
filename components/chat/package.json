@@ -1,0 +1,56 @@
+{
+  "name": "@cyclone-ui/chat",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Chat, the thread of a conversation with an agent. Chat.Content is the scrolling transcript, a log of Chat.Item rows: it opens at the start of the last turn, scrolls a new turn (a Chat.Item with scrollAnchor, such as the person's message) near the top and lets its reply stream in below, follows the reply while the reader stays at the end, and leaves them where they are when they scroll up. Chat.ScrollButton returns to the end, Chat.EmptyState fills an empty thread and Chat.Download saves it as Markdown with messagesToMarkdown.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/chat"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/scroll-view": "workspace:*",
+    "@tamagui/constants": "catalog:",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/prompt-input": "workspace:*",
+    "@cyclone-ui/prompt-message": "workspace:*",
+    "@cyclone-ui/suggestion": "workspace:*",
+    "@cyclone-ui/trace": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Chat": {
+      "import": "./dist/Chat.mjs",
+      "require": "./dist/Chat.cjs"
+    },
+    "./*": "./*"
+  }
+}

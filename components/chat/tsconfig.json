@@ -1,0 +1,60 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/chat/tsconfig.tsbuildinfo",
+    "jsx": "preserve",
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "ignoreDeprecations": "6.0",
+    "rootDir": ".",
+    "types": [
+      "node",
+      "@nx/react/typings/cssmodule.d.ts",
+      "@nx/react/typings/image.d.ts"
+    ],
+    "outDir": "../../dist/out-tsc/components/chat"
+  },
+  "references": [
+    {
+      "path": "../../tools/config"
+    },
+    {
+      "path": "../body-text"
+    },
+    {
+      "path": "../button"
+    },
+    {
+      "path": "../icons"
+    },
+    {
+      "path": "../scroll-view"
+    },
+    {
+      "path": "../prompt-input"
+    },
+    {
+      "path": "../prompt-message"
+    },
+    {
+      "path": "../suggestion"
+    },
+    {
+      "path": "../trace"
+    }
+  ],
+  "files": [],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    "vitest.config.mts",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts",
+    "src/**/*.spec.tsx",
+    "src/**/*.test.tsx"
+  ]
+}

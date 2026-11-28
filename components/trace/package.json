@@ -1,0 +1,56 @@
+{
+  "name": "@cyclone-ui/trace",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Trace, the building block of the Cyclone UI AI components: a list of lines that report what an agent did, each an icon, a one-line title that truncates and an optional description such as a duration or count. A line's status shows running work with a shimmering title, failed work in the danger color and pending work dimmed. Trace.Collapsible expands a line into its detail (text, code or nested lines) and can be controlled; Trace.Link opens a page and Trace.Button opens a dialog, sheet or popover. Use it for reasoning, tool calls, sources, plans and tasks.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/trace"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/collapsible": "workspace:*",
+    "@cyclone-ui/visually-hidden": "workspace:*",
+    "@tamagui/constants": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/helpers-tamagui": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/code-block": "workspace:*",
+    "@cyclone-ui/dialog": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Trace": {
+      "import": "./dist/Trace.mjs",
+      "require": "./dist/Trace.cjs"
+    },
+    "./*": "./*"
+  }
+}

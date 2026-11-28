@@ -21,14 +21,22 @@
 import type { FormControlSize, FormControlState } from "@cyclone-ui/helpers";
 import {
   FormControlContext,
+  getFormFontScale,
   getFormSizeToken,
   useFormControl
 } from "@cyclone-ui/helpers";
 import { Input } from "@cyclone-ui/input";
 import type { GetProps } from "@tamagui/core";
-import { createStyledHOC, styled, useComposedRefs, View } from "@tamagui/core";
+import {
+  createStyledHOC,
+  styled,
+  Text,
+  useComposedRefs,
+  View
+} from "@tamagui/core";
 import type { ClipboardEvent, FocusEvent } from "react";
 import {
+  Fragment,
   useCallback,
   useId,
   useLayoutEffect,
@@ -39,18 +47,24 @@ import {
 
 export interface OtpInputProps {
   /**
-   * The number of digits in the one-time password.
+   * The number of characters in the one-time password.
    *
    * @defaultValue 4
    */
   length?: number;
 
-  /** Called after the user fills every digit. */
+  /**
+   * Accept digits only. Set to `false` to also accept ASCII letters.
+   * @defaultValue true
+   */
+  numericOnly?: boolean;
+
+  /** Called after the user fills every slot. */
   onComplete?: (value: string) => void;
 
   /**
-   * The name of the first digit's input (`${name}-${index}` for the others),
-   * also used as its `id`. Inside a `Field`, defaults to the field name.
+   * The name of the first input (`${name}-${index}` for the others).
+   * Inside a `Field`, defaults to the field name.
    */
   name?: string;
 
@@ -77,6 +91,12 @@ export interface OtpInputProps {
 
   /** Called with the new code when a digit changes. */
   onChange?: (value: string) => void;
+
+  /**
+   * A label between the first half of the boxes and the last half.
+   * `length` 4 with `"-"` renders two boxes, the label, then the last two.
+   */
+  middleLabel?: string;
 }
 
 const OtpInputFrame = styled(View, {
@@ -87,9 +107,11 @@ const OtpInputFrame = styled(View, {
 });
 
 const noop = () => undefined;
+const digitsOnly = (value: string) => value.replace(/\D/g, "");
+const lettersAndDigits = (value: string) => value.replace(/[^a-z0-9]/gi, "");
 
 /**
- * A one-time passcode input with one numeric text box per digit. Wrap it in a
+ * A one-time passcode input with one text box per character. Wrap it in a
  * `Field` to connect it to a form.
  */
 export const OtpInput = createStyledHOC(
@@ -98,6 +120,7 @@ export const OtpInput = createStyledHOC(
     {
       children: _children,
       length: lengthProp = 4,
+      numericOnly = true,
       onComplete,
       name: nameProp,
       size: sizeProp,
@@ -106,6 +129,7 @@ export const OtpInput = createStyledHOC(
       value: valueProp,
       defaultValue = "",
       onChange,
+      middleLabel,
       ...props
     }: Omit<GetProps<typeof OtpInputFrame>, keyof OtpInputProps> &
       OtpInputProps,
@@ -126,6 +150,7 @@ export const OtpInput = createStyledHOC(
     const onValueChange = onChange ?? formControl?.onChange;
     const onFocus = formControl?.onFocus;
     const onBlur = formControl?.onBlur;
+    const sanitize = numericOnly ? digitsOnly : lettersAndDigits;
 
     // Each digit is a bare `Input`: this control connects the whole code to
     // the field, so the digits must not each take its value, focus, label
@@ -155,13 +180,17 @@ export const OtpInput = createStyledHOC(
     );
     const inputSlotsRef = useRef<Array<HTMLInputElement | null>>([]);
     const slotSize = getFormSizeToken(size);
-    const digits = value.replace(/\D/g, "").slice(0, length).split("");
+    const fontScale = getFormFontScale(size);
+    const middle = Math.floor(length / 2);
+    const showMiddle = Boolean(middleLabel) && middle > 0;
+    const characters = useMemo(
+      () => sanitize(value).slice(0, length).split(""),
+      [length, sanitize, value]
+    );
 
     const focusInput = useCallback(
       (index: number) => {
         const nextIndex = Math.max(0, Math.min(index, length - 1));
-        const inputName = nextIndex === 0 ? name : `${name}-${nextIndex}`;
-
         setActiveIndex(nextIndex);
         setHasFocus(true);
 
@@ -169,22 +198,14 @@ export const OtpInput = createStyledHOC(
           nextIndex === 0
             ? firstInputRef.current
             : inputSlotsRef.current[nextIndex];
-        const webInput =
-          firstInputRef.current?.ownerDocument.getElementById(inputName);
-
-        if (webInput) {
-          webInput.focus();
-          return;
-        }
-
         input?.focus();
       },
-      [length, name]
+      [length]
     );
     const updateValue = useCallback(
-      (nextDigits: string[]) => {
+      (nextCharacters: string[]) => {
         if (readOnly) return;
-        const nextValue = nextDigits.join("").slice(0, length);
+        const nextValue = nextCharacters.join("").slice(0, length);
         setLocalValue(nextValue);
         onValueChange?.(nextValue);
 
@@ -195,63 +216,44 @@ export const OtpInput = createStyledHOC(
       [length, onComplete, onValueChange, readOnly]
     );
     const applyInput = useCallback(
-      (index: number, input: string) => {
-        const nextDigits = Array.from(
+      (index: number, raw: string) => {
+        const input = sanitize(raw);
+        if (raw && !input) return;
+        const nextCharacters = Array.from(
           { length },
-          (_, slotIndex) => digits[slotIndex] ?? ""
+          (_, slotIndex) => characters[slotIndex] ?? ""
         );
 
         if (!input) {
-          nextDigits[index] = "";
-          updateValue(nextDigits);
+          nextCharacters[index] = "";
+          updateValue(nextCharacters);
           return;
         }
 
         input
           .slice(0, length - index)
           .split("")
-          .forEach((digit, offset) => {
-            nextDigits[index + offset] = digit;
+          .forEach((character, offset) => {
+            nextCharacters[index + offset] = character;
           });
 
-        updateValue(nextDigits);
+        updateValue(nextCharacters);
         focusInput(Math.min(index + input.length, length - 1));
       },
-      [digits, focusInput, length, updateValue]
-    );
-    const handleChange = useCallback(
-      (index: number, event: CustomEvent<string>) => {
-        applyInput(index, event.detail.replace(/\D/g, ""));
-      },
-      [applyInput]
+      [characters, focusInput, length, sanitize, updateValue]
     );
     const handlePaste = useCallback(
       (index: number, event: ClipboardEvent<HTMLElement>) => {
-        const input = event.clipboardData.getData("text").replace(/\D/g, "");
-
-        if (!input) {
-          return;
-        }
-
         event.preventDefault();
-        applyInput(index, input);
+        const input = event.clipboardData.getData("text");
+        if (input) applyInput(index, input);
       },
       [applyInput]
     );
     useLayoutEffect(() => {
-      const ownerDocument = firstInputRef.current?.ownerDocument;
-
-      if (!ownerDocument) {
-        return;
-      }
-
-      const inputs = Array.from({ length }, (_, index) => {
-        const inputName = index === 0 ? name : `${name}-${index}`;
-
-        return ownerDocument.getElementById(
-          inputName
-        ) as HTMLInputElement | null;
-      });
+      const inputs = Array.from({ length }, (_, index) =>
+        index === 0 ? firstInputRef.current : inputSlotsRef.current[index]
+      );
       const handleInput = (event: Event) => {
         const input = event.currentTarget as HTMLInputElement;
         const index = inputs.indexOf(input);
@@ -261,38 +263,44 @@ export const OtpInput = createStyledHOC(
         }
 
         event.stopPropagation();
-        applyInput(index, input.value);
+        const nextValue = input.value;
+        // A rejected edit may leave the code state unchanged. Restore the
+        // slot before applying the edit so the rendered value stays in sync.
+        input.value = characters[index] ?? "";
+        applyInput(index, nextValue);
       };
 
-      inputs.forEach(input => input?.addEventListener("input", handleInput));
+      inputs.forEach(input => input?.addEventListener?.("input", handleInput));
 
       return () =>
         inputs.forEach(input =>
-          input?.removeEventListener("input", handleInput)
+          input?.removeEventListener?.("input", handleInput)
         );
-    }, [applyInput, length, name]);
+    }, [applyInput, characters, length, name]);
     const handleKeyDown = useCallback(
-      (index: number, event: { key: string; preventDefault: () => void }) => {
+      (index: number, event: { key?: string; preventDefault?: () => void }) => {
         if (event.key === "Backspace") {
-          event.preventDefault();
+          event.preventDefault?.();
 
-          const nextDigits = Array.from(
+          const nextCharacters = Array.from(
             { length },
-            (_, slotIndex) => digits[slotIndex] ?? ""
+            (_, slotIndex) => characters[slotIndex] ?? ""
           );
-          const nextIndex = nextDigits[index] ? index : Math.max(0, index - 1);
-          nextDigits[nextIndex] = "";
-          updateValue(nextDigits);
+          const nextIndex = nextCharacters[index]
+            ? index
+            : Math.max(0, index - 1);
+          nextCharacters[nextIndex] = "";
+          updateValue(nextCharacters);
           focusInput(nextIndex);
         } else if (event.key === "ArrowLeft") {
-          event.preventDefault();
+          event.preventDefault?.();
           focusInput(index - 1);
         } else if (event.key === "ArrowRight") {
-          event.preventDefault();
+          event.preventDefault?.();
           focusInput(index + 1);
         }
       },
-      [digits, focusInput, length, updateValue]
+      [characters, focusInput, length, updateValue]
     );
     const handleBlur = useCallback(
       (event: FocusEvent<HTMLElement>) => {
@@ -312,56 +320,89 @@ export const OtpInput = createStyledHOC(
         role="group"
         {...props}
         onBlur={handleBlur}>
-        <FormControlContext value={slotFormControl}>
-          {Array.from({ length }, (_, index) => (
-            <Input
-              key={index}
-              name={index === 0 ? name : `${name}-${index}`}
-              size={size}
-              variant="outlined"
-              width={slotSize}
-              minWidth={slotSize}
-              flex={0}
-              focused={(focused || hasFocus) && activeIndex === index}
-              disabled={disabled}
-              readOnly={readOnly}
-              tabIndex={-1}
-              onChange={event => handleChange(index, event)}>
-              <Input.TextBox>
-                <Input.TextBox.Value
-                  ref={
-                    index === 0
-                      ? firstSlotRef
-                      : element => {
-                          inputSlotsRef.current[index] = element;
-                        }
-                  }
-                  aria-label={`Digit ${index + 1} of ${length}`}
-                  autoComplete={index === 0 ? "one-time-code" : "off"}
-                  inputMode="numeric"
-                  enterKeyHint={index === length - 1 ? "done" : "next"}
-                  maxLength={length}
-                  pattern="[0-9]*"
-                  type="text"
-                  value={digits[index] ?? ""}
-                  textAlign="center"
-                  paddingHorizontal="zero"
-                  tabIndex={0}
-                  onKeyDown={event =>
-                    handleKeyDown(index, event)
-                  }
-                  onPaste={event => handlePaste(index, event)}
-                  onFocus={event => {
-                    setActiveIndex(index);
-                    setHasFocus(true);
-                    onFocus?.();
-                    (event.currentTarget as HTMLInputElement).select?.();
-                  }}
-                />
-              </Input.TextBox>
-            </Input>
-          ))}
-        </FormControlContext>
+        {Array.from({ length }, (_, index) => (
+          <Fragment key={index}>
+            {showMiddle && index === middle ? (
+              <Text
+                aria-hidden
+                color={disabled ? "primary-disabled" : "emphasis"}
+                fontFamily="body"
+                fontWeight="400"
+                fontSize={`${16 * fontScale}px`}
+                lineHeight={`${24 * fontScale}px`}
+                userSelect="none"
+                flexShrink={0}>
+                {middleLabel}
+              </Text>
+            ) : null}
+            <FormControlContext
+              value={
+                slotFormControl?.id && index > 0
+                  ? {
+                      ...slotFormControl,
+                      id: `${slotFormControl.id}-${index}`
+                    }
+                  : slotFormControl
+              }>
+              <Input
+                name={index === 0 ? name : `${name}-${index}`}
+                size={size}
+                variant="outlined"
+                width={slotSize}
+                minWidth={slotSize}
+                flex={0}
+                focused={(focused || hasFocus) && activeIndex === index}
+                disabled={disabled}
+                readOnly={readOnly}
+                tabIndex={-1}
+                onChange={(event: CustomEvent<string>) =>
+                  applyInput(index, event.detail)
+                }>
+                <Input.TextBox>
+                  <Input.TextBox.Value
+                    ref={
+                      index === 0
+                        ? firstSlotRef
+                        : (element: HTMLInputElement | null) => {
+                            inputSlotsRef.current[index] = element;
+                          }
+                    }
+                    aria-label={`${numericOnly ? "Digit" : "Character"} ${index + 1} of ${length}`}
+                    autoComplete={index === 0 ? "one-time-code" : "off"}
+                    inputMode={numericOnly ? "numeric" : "text"}
+                    enterKeyHint={index === length - 1 ? "done" : "next"}
+                    maxLength={length}
+                    pattern={numericOnly ? "[0-9]*" : "[a-zA-Z0-9]*"}
+                    spellCheck={false}
+                    type="text"
+                    value={characters[index] ?? ""}
+                    textAlign="center"
+                    paddingHorizontal="zero"
+                    nativePaddingInline="0px"
+                    tabIndex={0}
+                    onKeyDown={(event: {
+                      key?: string;
+                      preventDefault?: () => void;
+                    }) => handleKeyDown(index, event)}
+                    onPaste={(event: ClipboardEvent<HTMLElement>) =>
+                      handlePaste(index, event)
+                    }
+                    onFocus={() => {
+                      setActiveIndex(index);
+                      setHasFocus(true);
+                      onFocus?.();
+                      const input =
+                        index === 0
+                          ? firstInputRef.current
+                          : inputSlotsRef.current[index];
+                      input?.select?.();
+                    }}
+                  />
+                </Input.TextBox>
+              </Input>
+            </FormControlContext>
+          </Fragment>
+        ))}
       </OtpInputFrame>
     );
   },

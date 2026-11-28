@@ -1,0 +1,50 @@
+{
+  "name": "@cyclone-ui/queue",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Queue, the Cyclone UI AI component for an agent's todo list: Trace lines split into a section of what is left (N to do) and a section of what is done (N completed), each a collapsible line. Pass todos (id, title, description, status pending, in_progress or completed) for the default sections, or compose Queue.Section, Queue.SectionLabel, Queue.List and Queue.Item parts. Each todo shows an empty circle, a dotted circle or a check for its status, the todo in progress shimmers while isStreaming is true, a todo with a description opens to show it, and Queue.ItemAction adds an icon button.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/queue"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/trace": "workspace:*",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Queue": {
+      "import": "./dist/Queue.mjs",
+      "require": "./dist/Queue.cjs"
+    },
+    "./*": "./*"
+  }
+}

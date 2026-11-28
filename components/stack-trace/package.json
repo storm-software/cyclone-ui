@@ -1,0 +1,53 @@
+{
+  "name": "@cyclone-ui/stack-trace",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "StackTrace, a failed tool call and its stack frames, built on Trace. It parses a JavaScript stack string (trace prop) into the error type, message and frames (function, file, line, column), and renders a danger line that reads \"Failed: TypeError: ...\" and opens (open, defaultOpen, onOpenChange) into the full error, your own frames as lines that call onFilePathClick, and the node_modules and Node internal frames folded into a dimmed monospace block. StackTraceActions and StackTraceCopyButton sit beside the line. parseStackTrace is exported.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/stack-trace"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/code-block": "workspace:*",
+    "@cyclone-ui/copy-button": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/trace": "workspace:*",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./parse-stack-trace": {
+      "import": "./dist/parse-stack-trace.mjs",
+      "require": "./dist/parse-stack-trace.cjs"
+    },
+    "./StackTrace": {
+      "import": "./dist/StackTrace.mjs",
+      "require": "./dist/StackTrace.cjs"
+    },
+    "./*": "./*"
+  }
+}

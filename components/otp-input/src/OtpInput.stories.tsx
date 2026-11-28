@@ -26,11 +26,11 @@ import type { OtpInputProps } from "./OtpInput";
 import { OtpInput } from "./OtpInput";
 
 /**
- * Field props plus the `length` and `onComplete` passed to `OtpInput`, and a
+ * Field props plus the options passed to `OtpInput`, and a
  * `description` rendered as its `Field.Details`.
  */
 type OtpInputStoryArgs = Partial<FieldProps> &
-  Pick<OtpInputProps, "length" | "onComplete"> & {
+  Pick<OtpInputProps, "length" | "middleLabel" | "numericOnly" | "onComplete"> & {
     defaultValue?: string;
     description?: string;
   };
@@ -45,13 +45,26 @@ const meta: Meta<OtpInputStoryArgs> = {
     onComplete: fn()
   },
   render: (
-    { defaultValue = "", length, onComplete, description, ...props }: any,
+    {
+      defaultValue = "",
+      length,
+      middleLabel,
+      numericOnly,
+      onComplete,
+      description,
+      ...props
+    }: any,
     { id }: { id: string }
   ) => (
     <Form name={`formName-${id}`} initialValues={{ code: defaultValue }}>
       <Field name="code" {...props}>
         <Field.Label>Code</Field.Label>
-        <OtpInput length={length} onComplete={onComplete} />
+        <OtpInput
+          length={length}
+          middleLabel={middleLabel}
+          numericOnly={numericOnly}
+          onComplete={onComplete}
+        />
         {description && <Field.Details>{description}</Field.Details>}
       </Field>
     </Form>
@@ -84,6 +97,10 @@ export const Base: Story = {
     await expect(inputs[0]).toHaveAttribute("autocomplete", "one-time-code");
     await expect(inputs[0]).toHaveAttribute("inputmode", "numeric");
 
+    await userEvent.type(inputs[0]!, "A");
+    await expect(inputs[0]).toHaveValue("");
+    await expect(inputs[0]).toHaveFocus();
+
     await userEvent.type(inputs[0]!, "1");
     await expect(inputs[1]).toHaveFocus();
     await userEvent.type(inputs[1]!, "2");
@@ -115,6 +132,27 @@ export const Paste: Story = {
       inputs.map(input => (input as HTMLInputElement).value)
     ).toEqual(["0", "1", "2", "3"]);
     await expect(args.onComplete).toHaveBeenCalledWith("0123");
+  }
+};
+
+export const Alphanumeric: Story = {
+  args: { length: 8, numericOnly: false },
+  play: async ({ args, canvasElement }) => {
+    const canvas = within(canvasElement);
+    const inputs = canvas.getAllByRole("textbox");
+
+    await expect(inputs[0]).toHaveAttribute("inputmode", "text");
+    await userEvent.click(canvas.getByText("Code", { exact: true }));
+    await expect(inputs[0]).toHaveFocus();
+    await userEvent.type(inputs[0]!, "A");
+    await expect(inputs[1]).toHaveFocus();
+    await userEvent.click(inputs[0]!);
+    await userEvent.paste("AbCD-2345");
+
+    await expect(
+      inputs.map(input => (input as HTMLInputElement).value)
+    ).toEqual([..."AbCD2345"]);
+    await expect(args.onComplete).toHaveBeenCalledWith("AbCD2345");
   }
 };
 
@@ -151,6 +189,20 @@ export const DefaultValue: Story = {
 export const SixDigits: Story = {
   args: {
     length: 6
+  }
+};
+
+export const MiddleLabel: Story = {
+  args: {
+    middleLabel: "-"
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const children = [...canvas.getByRole("group").children];
+
+    await expect(canvas.getAllByRole("textbox")).toHaveLength(4);
+    await expect(children).toHaveLength(5);
+    await expect(children[2]).toHaveTextContent("-");
   }
 };
 

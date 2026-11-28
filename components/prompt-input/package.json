@@ -1,0 +1,55 @@
+{
+  "name": "@cyclone-ui/prompt-input",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "PromptInput, the field a person types a message to an AI agent in: a form with chips for attached files, a text box that grows with its text, and a footer of tools (such as ModelSelector menus and a Context meter) and a submit button. Enter sends and Shift+Enter adds a line; files are attached with a plus button or, on the web, by pasting or dropping them, within accept, maxFiles and maxFileSize limits (onError reports the rest). onSubmit receives the text and the files as AI SDK FileUIPart-shaped data URLs, and the input clears once it resolves; the text can be controlled with value and onValueChange. The chat status (ready, submitted, streaming or error) turns the submit button into a spinner or a stop button that calls onStop, and blocks sending while a reply streams. usePromptInput reads the text, files and status.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/prompt-input"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/input": "workspace:*",
+    "@cyclone-ui/tag": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/use-controllable-state": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/context": "workspace:*",
+    "@cyclone-ui/model-selector": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./PromptInput": {
+      "import": "./dist/PromptInput.mjs",
+      "require": "./dist/PromptInput.cjs"
+    },
+    "./*": "./*"
+  }
+}

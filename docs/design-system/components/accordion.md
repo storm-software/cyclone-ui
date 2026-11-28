@@ -133,9 +133,10 @@ The root also accepts the other props of the Tamagui accordion, such as `collaps
 
 ### `Accordion.Item.Header`
 
-| Prop       | Type                       | Default | Description                                                                 |
-| ---------- | -------------------------- | ------- | --------------------------------------------------------------------------- |
-| `iconSize` | `number \| FontSizeTokens` | `"6xl"` | The size of the toggle or chevron icon: a `size` token (`"6xl"` is 24px) or pixels. |
+| Prop        | Type                       | Default                  | Description                                                                                                            |
+| ----------- | -------------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| `iconSize`  | `number \| FontSizeTokens` | `"6xl"`                  | The size of the toggle or chevron icon: a `size` token (`"6xl"` is 24px) or pixels.                                    |
+| `iconColor` | `ColorTokens \| string`    | The variant's foreground | The color of the toggle or chevron icon. It takes hover and group clauses, such as `"ink group-hover/trace:emphasis"`. |
 
 ## Variants
 

@@ -1,0 +1,51 @@
+{
+  "name": "@cyclone-ui/task",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Task, the Cyclone UI AI component for a piece of work an agent is doing: a Trace line with a title and a status icon that expands into the steps the agent took, each a Task.Item line with an optional icon and description. The task's status follows its items (running while one runs, error once one failed, done after), it opens while it runs and closes when done unless the reader chose, and isStreaming keeps it running between steps. Task.ItemFile shows a file name inline, and useTask reads the state. Use Plan instead when the steps are known up front.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/task"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/inline-code-text": "workspace:*",
+    "@cyclone-ui/trace": "workspace:*",
+    "@tamagui/constants": "catalog:",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Task": {
+      "import": "./dist/Task.mjs",
+      "require": "./dist/Task.cjs"
+    },
+    "./*": "./*"
+  }
+}

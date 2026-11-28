@@ -443,6 +443,69 @@
     },
     {
       "path": "./components/onboarding"
+    },
+    {
+      "path": "./components/chain-of-thought"
+    },
+    {
+      "path": "./components/inline-citation"
+    },
+    {
+      "path": "./components/model-selector"
+    },
+    {
+      "path": "./components/prompt-message"
+    },
+    {
+      "path": "./components/confirmation"
+    },
+    {
+      "path": "./components/prompt-input"
+    },
+    {
+      "path": "./components/test-results"
+    },
+    {
+      "path": "./components/stack-trace"
+    },
+    {
+      "path": "./components/checkpoint"
+    },
+    {
+      "path": "./components/suggestion"
+    },
+    {
+      "path": "./components/reasoning"
+    },
+    {
+      "path": "./components/subagent"
+    },
+    {
+      "path": "./components/terminal"
+    },
+    {
+      "path": "./components/context"
+    },
+    {
+      "path": "./components/sources"
+    },
+    {
+      "path": "./components/queue"
+    },
+    {
+      "path": "./components/trace"
+    },
+    {
+      "path": "./components/chat"
+    },
+    {
+      "path": "./components/plan"
+    },
+    {
+      "path": "./components/task"
+    },
+    {
+      "path": "./components/tool"
     }
   ],
   "files": []

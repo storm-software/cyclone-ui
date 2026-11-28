@@ -36,7 +36,12 @@ import { AccordionToggle } from "@cyclone-ui/icons/vectors";
 import { isString } from "@stryke/type-checks/is-string";
 import type { AccordionSingleProps } from "@tamagui/accordion";
 import { Accordion as TamaguiAccordion } from "@tamagui/accordion";
-import type { FontSizeTokens, GetProps, TamaguiElement } from "@tamagui/core";
+import type {
+  ColorTokens,
+  FontSizeTokens,
+  GetProps,
+  TamaguiElement
+} from "@tamagui/core";
 import {
   createStyledContext,
   createStyledHOC,
@@ -543,10 +548,16 @@ const AccordionItemHeaderImpl = createStyledHOC(
     {
       children,
       iconSize = "6xl",
+      iconColor,
       ...props
     }: GetProps<typeof AccordionItemHeader> & {
       /** The size of the toggle or chevron icon (a `size` token or pixels). */
       iconSize?: number | FontSizeTokens;
+      /**
+       * The toggle or chevron icon's color, in place of the variant's
+       * foreground (`primary` on surfaces). Takes hover and group clauses.
+       */
+      iconColor?: ColorTokens | string;
     },
     forwardedRef
   ) => {
@@ -589,7 +600,11 @@ const AccordionItemHeaderImpl = createStyledHOC(
         <Text
           display="flex"
           transition="250ms"
-          color={foreground ?? "primary group-hover/accordion:primary-hovered"}>
+          color={
+            iconColor ??
+            foreground ??
+            "primary group-hover/accordion:primary-hovered"
+          }>
           {icon === "toggle" && (
             <AccordionToggle
               isExpanded={open}

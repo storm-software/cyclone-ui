@@ -1,0 +1,52 @@
+{
+  "name": "@cyclone-ui/confirmation",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Confirmation, the Cyclone UI AI component that asks the person to approve or deny a tool call before it runs: a bordered row with an optional icon, the question with an optional description, and Deny and Approve buttons. It reads the tool part's `approval` and `state`, shows only while an approval is pending or answered, and swaps the question for `Confirmation.Accepted` or `Confirmation.Rejected` content once the person answers. Confirmation.Action is a small Button.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/confirmation"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/container": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/helpers-tamagui": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/icons": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Confirmation": {
+      "import": "./dist/Confirmation.mjs",
+      "require": "./dist/Confirmation.cjs"
+    },
+    "./*": "./*"
+  }
+}

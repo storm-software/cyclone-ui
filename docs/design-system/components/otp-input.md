@@ -1,6 +1,6 @@
 ---
 title: OTP Input
-description: A one-time passcode input with one numeric text box per digit, paste support, and keyboard navigation.
+description: A segmented one-time passcode input with numeric and alphanumeric modes, paste support, and keyboard navigation.
 documentType: reference
 tags: [component, otp-input, input, form]
 component:
@@ -13,7 +13,7 @@ component:
 
 # OTP Input
 
-`OtpInput` collects a one-time passcode. It shows one numeric text box for each digit. It moves focus as the user types. Wrap it in a [Field](./field.md) to connect the whole code to a form.
+`OtpInput` collects a one-time passcode in one text box per character. It moves focus as the user types. Wrap it in a [Field](./field.md) to connect the whole code to a form.
 
 ## Installation
 
@@ -45,6 +45,8 @@ import { OtpInput } from "@cyclone-ui/otp-input";
 </Form>
 ```
 
+For an eight-character device code, use `<OtpInput length={8} numericOnly={false} />`. Pasting `ABCD-2345` fills the slots with `ABCD2345`.
+
 ## Anatomy
 
 ```tsx
@@ -53,7 +55,7 @@ import { OtpInput } from "@cyclone-ui/otp-input";
 
 | Part | Renders | Purpose |
 | --- | --- | --- |
-| `OtpInput` | A Tamagui `View` with `role="group"`. It holds one [`Input`](./input.md) for each digit, and each `Input.TextBox.Value` renders `<input type="text">`. | The whole code. It connects the code to the field as one value. The field ref (masks and form registration) goes on the first digit. The digits do not read the field value, focus, label defaults, or status icon. |
+| `OtpInput` | A Tamagui `View` with `role="group"`. It holds one [`Input`](./input.md) for each character, and each `Input.TextBox.Value` renders `<input type="text">`. | The whole code. It connects the code to the field as one value. The field ref for masks and form registration goes on the first slot. |
 
 `OtpInput` is a single part. It has no subcomponents.
 
@@ -65,10 +67,12 @@ The examples are the stories in [`OtpInput.stories.tsx`](../../../components/otp
 | --- | --- |
 | `Base` | Four digits. The play function checks `autocomplete="one-time-code"` and `inputmode="numeric"`, types `1234`, checks that focus moves and `onComplete` gets `"1234"`, then clears two digits with **Backspace**. |
 | `Paste` | Pasting `0123` into the first box fills all four boxes and calls `onComplete`. |
+| `Alphanumeric` | Typing letters advances focus, and pasting a hyphenated code fills the slots while preserving letter case. |
 | `Required` | A required field. The play function checks that the label has no "(Optional)" text. |
 | `Description` | A long `Field.Details` description that wraps. |
 | `Disabled`, `DefaultValue` | Disabled digits, and a code that starts as `0123`. |
 | `SixDigits` | `length={6}`. |
+| `MiddleLabel` | `middleLabel="-"`. Two boxes, the label, then the last two boxes. |
 | `Error` | A `danger` validation message shown before blur. |
 | `SmallSize`, `MediumSize`, `LargeSize` | The `sm`, `md`, and `lg` sizes. |
 
@@ -78,27 +82,30 @@ The examples are the stories in [`OtpInput.stories.tsx`](../../../components/otp
 
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
-| `length` | `number` | `4` | The number of digits. The component rounds it down and uses at least `1`. |
-| `onComplete` | `(value: string) => void` | None | Called after the user fills every digit. |
-| `name` | `string` | Field name, or a generated id | The name and `id` of the first digit. Other digits use `<name>-<index>`. |
+| `length` | `number` | `4` | The number of characters. The component rounds it down and uses at least `1`. |
+| `numericOnly` | `boolean` | `true` | Accepts digits only. Set to `false` to also accept ASCII letters. |
+| `onComplete` | `(value: string) => void` | None | Called after the user fills every slot. |
+| `name` | `string` | Field name, or a generated id | The name of the first slot. Other slots use `<name>-<index>`. |
 | `size` | `"sm" \| "md" \| "lg"` | Field size | The size of the digit boxes. |
 | `disabled` | `boolean` | Field value, or `false` | Disables all digits. |
 | `readOnly` | `boolean` | Field value, or `false` | Prevents edits without the disabled colors. |
 | `value` | `string` | None | The code of a controlled input. Inside a `Field`, the field holds the value. |
 | `defaultValue` | `string` | `""` | The initial code of an uncontrolled input outside a `Field`. |
 | `onChange` | `(value: string) => void` | Field `onChange` | Called with the new code when a digit changes. |
+| `middleLabel` | `string` | None | A label after the first half of the boxes. `length` 4 with `"-"` renders two boxes, the label, then the last two. Hidden when there is only one box. |
 
 ## Behavior
 
-- Each digit box accepts digits only. Other characters are removed.
-- Typing a digit moves focus to the next box.
+- Numeric mode accepts digits. Alphanumeric mode accepts ASCII letters and digits and preserves letter case. Both modes discard separators during paste.
+- Typing an accepted character moves focus to the next box.
 - A pasted code fills the boxes from the current one. The code is cut to fit.
-- **Backspace** clears the current digit. If the box is empty, it clears the previous digit and moves focus there.
+- **Backspace** clears the current slot. If the box is empty, it clears the previous slot and moves focus there.
 - **Left arrow** and **right arrow** move focus to the previous and next box.
 - Focus selects the text in a box.
-- The first box has `autoComplete="one-time-code"`. The numeric keyboard shows on mobile, and the last box uses the `done` enter key hint. Other boxes use `next`.
+- The first box has `autoComplete="one-time-code"`. The last box uses the `done` enter key hint. Other boxes use `next`.
 - Each box uses the `outlined` input style, and the active box shows the focus style.
 - The group fires the field blur when focus leaves the whole group.
+- `middleLabel` is decorative. It is not part of the code, and paste still drops separators.
 
 ## Variants and states
 
@@ -107,9 +114,9 @@ The stories show the default four digits, paste, required, disabled, a default v
 ## Accessibility
 
 - The wrapper has `role="group"`.
-- Each box has the label "Digit *n* of *length*".
-- Each box uses `inputMode="numeric"` and `pattern="[0-9]*"`.
+- Numeric slots are labeled “Digit *n* of *length*” and request a numeric keyboard. Alphanumeric slots are labeled “Character *n* of *length*” and request a text keyboard.
 - Each box is a tab stop (`tabIndex={0}`). The `Input` frame around it is not (`tabIndex={-1}`).
+- `middleLabel` is hidden from assistive technology. The slots stay labeled by position.
 
 ## Related
 

@@ -550,6 +550,32 @@
       ]
     },
     {
+      "name": "@cyclone-ui/chain-of-thought",
+      "type": "registry:component",
+      "title": "@cyclone-ui/chain-of-thought",
+      "description": "ChainOfThought, the Cyclone UI AI component for the steps behind an agent's answer: a summary Trace line that expands into the steps. The summary's status and title follow its steps: Researching with a running shimmer while a step runs (or isStreaming is set), then Researched in 3 steps, with the failed ones counted and the danger color when any failed. ChainOfThought.Step is a line with a label, a description, an icon and a status (complete, active, pending or error) that opens into its detail when it has children; ChainOfThought.SearchResults shows results as tags and ChainOfThought.Image a captioned image. It opens while it runs and closes when done unless the reader chose; built on Task.",
+      "dependencies": ["@tamagui/core@3.3.2"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/icons",
+        "@cyclone-ui/tag",
+        "@cyclone-ui/task",
+        "@cyclone-ui/trace"
+      ],
+      "files": [
+        {
+          "path": "components/chain-of-thought/src/ChainOfThought.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/chart",
       "type": "registry:component",
       "title": "@cyclone-ui/chart",
@@ -608,6 +634,31 @@
       ]
     },
     {
+      "name": "@cyclone-ui/chat",
+      "type": "registry:component",
+      "title": "@cyclone-ui/chat",
+      "description": "Chat, the thread of a conversation with an agent. Chat.Content is the scrolling transcript, a log of Chat.Item rows: it opens at the start of the last turn, scrolls a new turn (a Chat.Item with scrollAnchor, such as the person's message) near the top and lets its reply stream in below, follows the reply while the reader stays at the end, and leaves them where they are when they scroll up. Chat.ScrollButton returns to the end, Chat.EmptyState fills an empty thread and Chat.Download saves it as Markdown with messagesToMarkdown.",
+      "dependencies": ["@tamagui/constants@3.3.2", "@tamagui/core@3.3.2"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/button",
+        "@cyclone-ui/icons",
+        "@cyclone-ui/scroll-view"
+      ],
+      "files": [
+        {
+          "path": "components/chat/src/Chat.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/checkbox",
       "type": "registry:component",
       "title": "@cyclone-ui/checkbox",
@@ -629,6 +680,31 @@
       "files": [
         {
           "path": "components/checkbox/src/Checkbox.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "@cyclone-ui/checkpoint",
+      "type": "registry:component",
+      "title": "@cyclone-ui/checkpoint",
+      "description": "Checkpoint, a point in an AI conversation that the person can return to: a separator after a turn that shows a decorative Checkpoint.Icon (a restore clock by default), a label and a Checkpoint.Trigger button (Restore by default, with an optional tooltip) between two rules. The border variant puts a rule under the row instead and the inline variant drops the rules. Restoring keeps that turn and drops every message after it.",
+      "dependencies": ["@tamagui/core@3.3.2", "@tamagui/helpers-tamagui@3.3.2"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/button",
+        "@cyclone-ui/divider",
+        "@cyclone-ui/icons"
+      ],
+      "files": [
+        {
+          "path": "components/checkpoint/src/Checkpoint.tsx",
           "type": "registry:component"
         }
       ]
@@ -861,6 +937,30 @@
       ]
     },
     {
+      "name": "@cyclone-ui/confirmation",
+      "type": "registry:component",
+      "title": "@cyclone-ui/confirmation",
+      "description": "Confirmation, the Cyclone UI AI component that asks the person to approve or deny a tool call before it runs: a bordered row with an optional icon, the question with an optional description, and Deny and Approve buttons. It reads the tool part's `approval` and `state`, shows only while an approval is pending or answered, and swaps the question for `Confirmation.Accepted` or `Confirmation.Rejected` content once the person answers. Confirmation.Action is a small Button.",
+      "dependencies": ["@tamagui/core@3.3.2", "@tamagui/helpers-tamagui@3.3.2"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/button",
+        "@cyclone-ui/container"
+      ],
+      "files": [
+        {
+          "path": "components/confirmation/src/Confirmation.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/container",
       "type": "registry:component",
       "title": "@cyclone-ui/container",
@@ -876,6 +976,36 @@
       "files": [
         {
           "path": "components/container/src/Container.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "@cyclone-ui/context",
+      "type": "registry:component",
+      "title": "@cyclone-ui/context",
+      "description": "Context, a meter of how much of the model's context window an AI conversation has used. The root takes usedTokens, maxTokens, an optional usage breakdown (input, output, reasoning and cached input tokens, in the AI SDK's LanguageModelUsage shape) and an optional cost in US dollars. Context.Trigger is a small ghost button with the percentage used and a CircularProgress ring; hovering, focusing or pressing it opens a Popover card (a bottom sheet on small screens) with the used and maximum tokens in compact notation, a Progress bar, a row per kind of token and, when cost is set, the total cost. The parts (ContentHeader, ContentBody, ContentFooter and the InputUsage, OutputUsage, ReasoningUsage and CacheUsage rows) compose for custom cards, and useContextValue reads the usage.",
+      "dependencies": [
+        "@tamagui/core@3.3.2",
+        "@tamagui/popper@3.3.2",
+        "@tamagui/use-controllable-state@3.3.2"
+      ],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/button",
+        "@cyclone-ui/circular-progress",
+        "@cyclone-ui/popover",
+        "@cyclone-ui/progress"
+      ],
+      "files": [
+        {
+          "path": "components/context/src/Context.tsx",
           "type": "registry:component"
         }
       ]
@@ -4344,6 +4474,36 @@
       ]
     },
     {
+      "name": "@cyclone-ui/inline-citation",
+      "type": "registry:component",
+      "title": "@cyclone-ui/inline-citation",
+      "description": "InlineCitation, a source marker inside a sentence of an AI reply. InlineCitationCardTrigger is a small button labeled with the first source's hostname and a +N count (sources prop); it opens a hover card (InlineCitationCard, a Popover with open, defaultOpen and onOpenChange) on hover, keyboard focus or press, and Enter moves focus into it. InlineCitationCardBody holds InlineCitationSource (title, url, description), InlineCitationQuote and a carousel (InlineCitationCarousel with Header, Index, Prev, Next, Content and Item) that pages through several sources. InlineCitationText highlights the cited text while the citation is hovered.",
+      "dependencies": [
+        "@tamagui/core@3.3.2",
+        "@tamagui/popper@3.3.2",
+        "@tamagui/use-controllable-state@3.3.2"
+      ],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/button",
+        "@cyclone-ui/icons",
+        "@cyclone-ui/popover",
+        "@cyclone-ui/trace"
+      ],
+      "files": [
+        {
+          "path": "components/inline-citation/src/InlineCitation.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/inline-code-text",
       "type": "registry:component",
       "title": "@cyclone-ui/inline-code-text",
@@ -4597,6 +4757,34 @@
       "files": [
         {
           "path": "components/modal/src/Modal.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "@cyclone-ui/model-selector",
+      "type": "registry:component",
+      "title": "@cyclone-ui/model-selector",
+      "description": "ModelSelector, a menu that picks one option for an AI agent, such as the model it runs (grouped by provider, each with a short description) or how hard it thinks (effort). It is built on ContextMenu, so it opens as a popover on large screens and a bottom sheet on small ones; the root takes value, onValueChange and open/defaultOpen/onOpenChange, and picking an option closes the menu. ModelSelector.Trigger is a small ghost button showing the selected option (with an optional muted label such as Effort) and a chevron; ModelSelector.Content, Group (with a heading), Item (with a description), Name and Separator build the menu.",
+      "dependencies": [
+        "@tamagui/core@3.3.2",
+        "@tamagui/use-controllable-state@3.3.2"
+      ],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/button",
+        "@cyclone-ui/context-menu",
+        "@cyclone-ui/eyebrow-text",
+        "@cyclone-ui/icons"
+      ],
+      "files": [
+        {
+          "path": "components/model-selector/src/ModelSelector.tsx",
           "type": "registry:component"
         }
       ]
@@ -4995,6 +5183,26 @@
       ]
     },
     {
+      "name": "@cyclone-ui/plan",
+      "type": "registry:component",
+      "title": "@cyclone-ui/plan",
+      "description": "Plan, the Cyclone UI AI component for the steps an agent decides on before it starts: a Trace line with the goal and progress (Plan.Title, Plan.Description such as 2 of 4 done) that shimmers while isStreaming is true and expands into the steps. Each Plan.Step is done, running or pending, with a check, a dotted circle or an empty circle, and pending steps are dimmed. The plan starts open; open, defaultOpen and onOpenChange control it, Plan.Action puts buttons beside the line and Plan.Footer below it. Use Task instead when the steps come from the work itself.",
+      "dependencies": ["@tamagui/core@3.3.2"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": ["@cyclone-ui/icons", "@cyclone-ui/trace"],
+      "files": [
+        {
+          "path": "components/plan/src/Plan.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/popover",
       "type": "registry:component",
       "title": "@cyclone-ui/popover",
@@ -5128,6 +5336,87 @@
       ]
     },
     {
+      "name": "@cyclone-ui/prompt-input",
+      "type": "registry:component",
+      "title": "@cyclone-ui/prompt-input",
+      "description": "PromptInput, the field a person types a message to an AI agent in: a form with chips for attached files, a text box that grows with its text, and a footer of tools (such as ModelSelector menus and a Context meter) and a submit button. Enter sends and Shift+Enter adds a line; files are attached with a plus button or, on the web, by pasting or dropping them, within accept, maxFiles and maxFileSize limits (onError reports the rest). onSubmit receives the text and the files as AI SDK FileUIPart-shaped data URLs, and the input clears once it resolves; the text can be controlled with value and onValueChange. The chat status (ready, submitted, streaming or error) turns the submit button into a spinner or a stop button that calls onStop, and blocks sending while a reply streams. usePromptInput reads the text, files and status.",
+      "dependencies": [
+        "@tamagui/core@3.3.2",
+        "@tamagui/use-controllable-state@3.3.2"
+      ],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/button",
+        "@cyclone-ui/icons",
+        "@cyclone-ui/input",
+        "@cyclone-ui/tag"
+      ],
+      "files": [
+        {
+          "path": "components/prompt-input/src/PromptInput.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "@cyclone-ui/prompt-message",
+      "type": "registry:component",
+      "title": "@cyclone-ui/prompt-message",
+      "description": "PromptMessage, one turn of an AI conversation: from=\"user\" sets the person's message at the end in a surface bubble, while the agent's reply spans the row unframed. Parts: an optional avatar beside the turn, PromptMessage.Header for the sender and time, PromptMessage.Content (variant surface, primary, tinted or ghost; a status theme such as danger tints it), and PromptMessage.Actions with ghost icon buttons that have tooltips: PromptMessage.Action, PromptMessage.Copy (a CopyButton that swaps to a check) and PromptMessage.Feedback (good and bad response toggles with aria-pressed, controlled or uncontrolled).",
+      "dependencies": [
+        "@tamagui/core@3.3.2",
+        "@tamagui/use-controllable-state@3.3.2"
+      ],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/button",
+        "@cyclone-ui/container",
+        "@cyclone-ui/copy-button",
+        "@cyclone-ui/icons"
+      ],
+      "files": [
+        {
+          "path": "components/prompt-message/src/PromptMessage.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "@cyclone-ui/queue",
+      "type": "registry:component",
+      "title": "@cyclone-ui/queue",
+      "description": "Queue, the Cyclone UI AI component for an agent's todo list: Trace lines split into a section of what is left (N to do) and a section of what is done (N completed), each a collapsible line. Pass todos (id, title, description, status pending, in_progress or completed) for the default sections, or compose Queue.Section, Queue.SectionLabel, Queue.List and Queue.Item parts. Each todo shows an empty circle, a dotted circle or a check for its status, the todo in progress shimmers while isStreaming is true, a todo with a description opens to show it, and Queue.ItemAction adds an icon button.",
+      "dependencies": ["@tamagui/core@3.3.2"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/button",
+        "@cyclone-ui/icons",
+        "@cyclone-ui/trace"
+      ],
+      "files": [
+        {
+          "path": "components/queue/src/Queue.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/radar-chart",
       "type": "registry:component",
       "title": "@cyclone-ui/radar-chart",
@@ -5220,6 +5509,26 @@
       "files": [
         {
           "path": "components/rating/src/Rating.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "@cyclone-ui/reasoning",
+      "type": "registry:component",
+      "title": "@cyclone-ui/reasoning",
+      "description": "Reasoning, the Cyclone UI AI component for a model's thinking: a Trace line that reads Thinking with a running shimmer while isStreaming is true, then Thought for Ns, and expands into the thinking text. It opens while the model thinks and closes when it finishes unless the reader opened or closed it, and it measures the duration itself when duration is not given. Pass the text as children, or compose Reasoning.Trigger and Reasoning.Content; open, defaultOpen and onOpenChange control it, and useReasoning reads its state.",
+      "dependencies": ["@tamagui/core@3.3.2"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": ["@cyclone-ui/icons", "@cyclone-ui/trace"],
+      "files": [
+        {
+          "path": "components/reasoning/src/Reasoning.tsx",
           "type": "registry:component"
         }
       ]
@@ -5518,6 +5827,26 @@
       ]
     },
     {
+      "name": "@cyclone-ui/sources",
+      "type": "registry:component",
+      "title": "@cyclone-ui/sources",
+      "description": "Sources, the links an AI agent used for a reply, built on Trace: a collapsible line that reads \"Used N sources\" (SourcesTrigger with count) and opens into a list of links. Source renders one link that opens in a new tab, titled by title or the URL's hostname, with an external-link icon and screen reader text. Sources takes open, defaultOpen and onOpenChange.",
+      "dependencies": ["@tamagui/core@3.3.2"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": ["@cyclone-ui/icons", "@cyclone-ui/trace"],
+      "files": [
+        {
+          "path": "components/sources/src/Sources.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/spinner",
       "type": "registry:component",
       "title": "@cyclone-ui/spinner",
@@ -5532,6 +5861,36 @@
       "files": [
         {
           "path": "components/spinner/src/Spinner.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "@cyclone-ui/stack-trace",
+      "type": "registry:component",
+      "title": "@cyclone-ui/stack-trace",
+      "description": "StackTrace, a failed tool call and its stack frames, built on Trace. It parses a JavaScript stack string (trace prop) into the error type, message and frames (function, file, line, column), and renders a danger line that reads \"Failed: TypeError: ...\" and opens (open, defaultOpen, onOpenChange) into the full error, your own frames as lines that call onFilePathClick, and the node_modules and Node internal frames folded into a dimmed monospace block. StackTraceActions and StackTraceCopyButton sit beside the line. parseStackTrace is exported.",
+      "dependencies": ["@tamagui/core@3.3.2"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/code-block",
+        "@cyclone-ui/copy-button",
+        "@cyclone-ui/icons",
+        "@cyclone-ui/trace"
+      ],
+      "files": [
+        {
+          "path": "components/stack-trace/src/parse-stack-trace.ts",
+          "type": "registry:file",
+          "target": "components/stack-trace/src/parse-stack-trace.ts"
+        },
+        {
+          "path": "components/stack-trace/src/StackTrace.tsx",
           "type": "registry:component"
         }
       ]
@@ -5604,6 +5963,31 @@
       ]
     },
     {
+      "name": "@cyclone-ui/subagent",
+      "type": "registry:component",
+      "title": "@cyclone-ui/subagent",
+      "description": "Subagent, the Cyclone UI AI component for work the agent hands to a subagent: a Trace line (\"Running the research agent\", then \"Ran the research agent\") with the model in a tag, that opens to the task it was given, a nested list of its tool calls and what it found. Subagent.Header takes `name`, `model` and the tool part's `state`; Subagent.Tool renders one tool call with Tool. Also exported under the AI SDK Elements names (Agent, AgentHeader, …).",
+      "dependencies": ["@tamagui/core@3.3.2"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/tag",
+        "@cyclone-ui/tool",
+        "@cyclone-ui/trace"
+      ],
+      "files": [
+        {
+          "path": "components/subagent/src/Subagent.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/submit-button",
       "type": "registry:component",
       "title": "@cyclone-ui/submit-button",
@@ -5623,6 +6007,26 @@
       "files": [
         {
           "path": "components/submit-button/src/SubmitButton.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "@cyclone-ui/suggestion",
+      "type": "registry:component",
+      "title": "@cyclone-ui/suggestion",
+      "description": "Suggestions, a row of prompts the person can send to an AI agent without typing. Suggestions lays the pills out on one line that scrolls sideways when they don't fit, fading the edge that has more to show; each Suggestion is a rounded Button labeled with its suggestion (or children) that calls onClick with the suggestion text when pressed. Put the row above the prompt input.",
+      "dependencies": ["@tamagui/constants@3.3.2", "@tamagui/core@3.3.2"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": ["@cyclone-ui/button", "@cyclone-ui/scroll-view"],
+      "files": [
+        {
+          "path": "components/suggestion/src/Suggestion.tsx",
           "type": "registry:component"
         }
       ]
@@ -5816,6 +6220,56 @@
       ]
     },
     {
+      "name": "@cyclone-ui/task",
+      "type": "registry:component",
+      "title": "@cyclone-ui/task",
+      "description": "Task, the Cyclone UI AI component for a piece of work an agent is doing: a Trace line with a title and a status icon that expands into the steps the agent took, each a Task.Item line with an optional icon and description. The task's status follows its items (running while one runs, error once one failed, done after), it opens while it runs and closes when done unless the reader chose, and isStreaming keeps it running between steps. Task.ItemFile shows a file name inline, and useTask reads the state. Use Plan instead when the steps are known up front.",
+      "dependencies": ["@tamagui/constants@3.3.2", "@tamagui/core@3.3.2"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/icons",
+        "@cyclone-ui/inline-code-text",
+        "@cyclone-ui/trace"
+      ],
+      "files": [
+        {
+          "path": "components/task/src/Task.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "@cyclone-ui/terminal",
+      "type": "registry:component",
+      "title": "@cyclone-ui/terminal",
+      "description": "Terminal, the Cyclone UI AI component for a shell command the agent runs: a Trace line (\"Running pnpm build\", \"Ran pnpm build\", or \"pnpm lint exited with code 1\" in the danger color) that opens once output streams in, with the output in a code-font block that scrolls to the end as it grows. It takes `output`, `isStreaming`, `command`, `exitCode`, `autoScroll` and `onClear`, with copy and clear buttons beside the line.",
+      "dependencies": ["@tamagui/core@3.3.2"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/button",
+        "@cyclone-ui/code-block",
+        "@cyclone-ui/copy-button",
+        "@cyclone-ui/icons",
+        "@cyclone-ui/trace"
+      ],
+      "files": [
+        {
+          "path": "components/terminal/src/Terminal.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/terrain-footer",
       "type": "registry:component",
       "title": "@cyclone-ui/terrain-footer",
@@ -5835,6 +6289,33 @@
         },
         {
           "path": "components/terrain-footer/src/TerrainFooter.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "@cyclone-ui/test-results",
+      "type": "registry:component",
+      "title": "@cyclone-ui/test-results",
+      "description": "TestResults, a test run by an AI agent, built on Trace: a summary line that counts the tests (\"Ran 42 tests, 2 failed\", summary prop, with an optional duration and progress bar) and opens into its suites. TestSuite (name, status) is a collapsible line with TestSuiteStats that opens when it has a failure; Test (name, status, duration) is a line with a passed, failed, skipped or running status, and a failed test opens into TestError, the failure message and stack in the code font. Without a summary the run reads as running.",
+      "dependencies": ["@tamagui/core@3.3.2"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/code-block",
+        "@cyclone-ui/icons",
+        "@cyclone-ui/progress",
+        "@cyclone-ui/trace",
+        "@cyclone-ui/visually-hidden"
+      ],
+      "files": [
+        {
+          "path": "components/test-results/src/TestResults.tsx",
           "type": "registry:component"
         }
       ]
@@ -6055,6 +6536,32 @@
       ]
     },
     {
+      "name": "@cyclone-ui/tool",
+      "type": "registry:component",
+      "title": "@cyclone-ui/tool",
+      "description": "Tool, the Cyclone UI AI component for a tool call the agent makes: a Trace line whose title, status and icon follow the tool part's `state` (\"Running …\", \"Ran …\", \"Failed to run …\", \"Denied …\"), and that opens to show the call's input and output as pretty-printed JSON code blocks. Tool.Header takes the part's `type`, `state`, `title` and `approval`; Tool.Input and Tool.Output take `input`, `output` and `errorText`. Pending approvals use Confirmation.",
+      "dependencies": ["@tamagui/core@3.3.2"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/code-block",
+        "@cyclone-ui/confirmation",
+        "@cyclone-ui/icons",
+        "@cyclone-ui/trace"
+      ],
+      "files": [
+        {
+          "path": "components/tool/src/Tool.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/tooltip",
       "type": "registry:component",
       "title": "@cyclone-ui/tooltip",
@@ -6108,6 +6615,34 @@
           "path": "components/topographic-background/src/topography.ts",
           "type": "registry:file",
           "target": "components/topographic-background/src/topography.ts"
+        }
+      ]
+    },
+    {
+      "name": "@cyclone-ui/trace",
+      "type": "registry:component",
+      "title": "@cyclone-ui/trace",
+      "description": "Trace, the building block of the Cyclone UI AI components: a list of lines that report what an agent did, each an icon, a one-line title that truncates and an optional description such as a duration or count. A line's status shows running work with a shimmering title, failed work in the danger color and pending work dimmed. Trace.Collapsible expands a line into its detail (text, code or nested lines) and can be controlled; Trace.Link opens a page and Trace.Button opens a dialog, sheet or popover. Use it for reasoning, tool calls, sources, plans and tasks.",
+      "dependencies": [
+        "@tamagui/constants@3.3.2",
+        "@tamagui/core@3.3.2",
+        "@tamagui/helpers-tamagui@3.3.2"
+      ],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.7",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/collapsible",
+        "@cyclone-ui/visually-hidden"
+      ],
+      "files": [
+        {
+          "path": "components/trace/src/Trace.tsx",
+          "type": "registry:component"
         }
       ]
     },

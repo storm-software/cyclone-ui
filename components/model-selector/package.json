@@ -1,0 +1,52 @@
+{
+  "name": "@cyclone-ui/model-selector",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "ModelSelector, a menu that picks one option for an AI agent, such as the model it runs (grouped by provider, each with a short description) or how hard it thinks (effort). It is built on ContextMenu, so it opens as a popover on large screens and a bottom sheet on small ones; the root takes value, onValueChange and open/defaultOpen/onOpenChange, and picking an option closes the menu. ModelSelector.Trigger is a small ghost button showing the selected option (with an optional muted label such as Effort) and a chevron; ModelSelector.Content, Group (with a heading), Item (with a description), Name and Separator build the menu.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/model-selector"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/context-menu": "workspace:*",
+    "@cyclone-ui/eyebrow-text": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/use-controllable-state": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./ModelSelector": {
+      "import": "./dist/ModelSelector.mjs",
+      "require": "./dist/ModelSelector.cjs"
+    },
+    "./*": "./*"
+  }
+}

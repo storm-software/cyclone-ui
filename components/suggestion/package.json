@@ -1,0 +1,51 @@
+{
+  "name": "@cyclone-ui/suggestion",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Suggestions, a row of prompts the person can send to an AI agent without typing. Suggestions lays the pills out on one line that scrolls sideways when they don't fit, fading the edge that has more to show; each Suggestion is a rounded Button labeled with its suggestion (or children) that calls onClick with the suggestion text when pressed. Put the row above the prompt input.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/suggestion"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/scroll-view": "workspace:*",
+    "@tamagui/constants": "catalog:",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/prompt-message": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Suggestion": {
+      "import": "./dist/Suggestion.mjs",
+      "require": "./dist/Suggestion.cjs"
+    },
+    "./*": "./*"
+  }
+}

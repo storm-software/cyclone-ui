@@ -175,6 +175,32 @@ The pages below describe the public parts and props. Choose a semantic token for
 | [Scramble Animation](./scramble-animation.md) | Decodes its text from random characters on mount and scrambles the characters near the pointer. |
 | [Topographic Background](./topographic-background.md) | A full-bleed topographic map background. The interactive variant warps the contours with WebGL and paints color in under the pointer. |
 
+## AI
+
+| Component | Purpose |
+| --- | --- |
+| [Chat](./chat.md) | The thread of a conversation with an agent: a scrolling transcript that moves a new turn near the top, lets its reply stream in below, and follows it only while the reader stays at the end. |
+| [Prompt Message](./prompt-message.md) | One turn of a conversation: the person's message in a bubble or the agent's reply, with an avatar, a header, and copy, feedback and retry actions. |
+| [Prompt Input](./prompt-input.md) | The field a person types a message to an agent in, with attached files, a text box that grows, tools, and a submit button that shows the reply's status. |
+| [Suggestion](./suggestion.md) | A row of prompts that the person can send in one press. It scrolls sideways when the prompts don't fit. |
+| [Checkpoint](./checkpoint.md) | A marker in a conversation that the person can restore the work to, as a divider, a bordered row or an inline label. |
+| [Model Selector](./model-selector.md) | A menu for picking the model (or effort) a prompt is sent to, from a ghost trigger in the prompt input's footer. |
+| [Context](./context.md) | A meter of how much of the model's context window a conversation uses, with a card that breaks the tokens and cost down. |
+| [Trace](./trace.md) | The building block of the AI components: lines that report what an agent did, each with an icon, a title, a status and an optional expandable detail. |
+| [Reasoning](./reasoning.md) | A line that reads "Thinking" while the model reasons and "Thought for Ns" when it is done, opening to show the reasoning. |
+| [Chain of Thought](./chain-of-thought.md) | An agent's research steps, with search results and images, under a summary line that opens while it works. |
+| [Plan](./plan.md) | A plan an agent made before it starts: a title, a description and its steps, each done, running or pending. |
+| [Task](./task.md) | A task an agent works through, whose status follows its steps: running, failed or done. |
+| [Queue](./queue.md) | An agent's to-do list, in "to do" and "completed" sections that open into each item's details. |
+| [Tool](./tool.md) | A tool call: a line that reads Running, Ran, Failed or Denied, opening to the call's input and output. |
+| [Confirmation](./confirmation.md) | A request for the person to approve or deny a tool call, and the answer once they give it. |
+| [Terminal](./terminal.md) | A command an agent ran, with its streaming output, exit code, and copy and clear buttons. |
+| [Subagent](./subagent.md) | A subagent an agent started, with its model, instructions, tool calls and output. |
+| [Sources](./sources.md) | A "Used N sources" line that opens into the links a reply drew on. |
+| [Inline Citation](./inline-citation.md) | A citation in the text of a reply that shows its sources in a card on hover, focus or press. |
+| [Stack Trace](./stack-trace.md) | A JavaScript error with its stack: the error, your own frames, and the framework frames folded away. |
+| [Test Results](./test-results.md) | A test run's summary, suites and tests, each passed, failed, skipped or running, opening to the failures. |
+
 ## Utilities
 
 | Component | Purpose |

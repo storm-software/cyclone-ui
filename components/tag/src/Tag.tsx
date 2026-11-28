@@ -557,6 +557,8 @@ const TagRemoveButton = createStyledHOC(
     return (
       <TagRemoveButtonFrame
         ref={forwardedRef}
+        // Not a submit button: removing a tag inside a form must not send it.
+        {...({ type: "button" } as object)}
         {...props}
         onPress={event => {
           // Keeps the press from also pressing a `pressable` tag.

@@ -5,7 +5,7 @@ description: "Components available in the Cyclone UI (Dark Dimmed)."
 
 # Components
 
-129 `component` items in the component registry.
+150 `component` items in the component registry.
 
 ## @cyclone-ui/accordion
 
@@ -758,6 +758,46 @@ A themed card container with a gradient background and an optional accent color.
 | `size`  | `SizeTokens`                  | —       | Yes      | —           |
 | `theme` | `string \| null \| undefined` | —       | Yes      | —           |
 
+## @cyclone-ui/chain-of-thought
+
+ChainOfThought, the Cyclone UI AI component for the steps behind an agent's answer: a summary Trace line that expands into the steps. The summary's status and title follow its steps: Researching with a running shimmer while a step runs (or isStreaming is set), then Researched in 3 steps, with the failed ones counted and the danger color when any failed. ChainOfThought.Step is a line with a label, a description, an icon and a status (complete, active, pending or error) that opens into its detail when it has children; ChainOfThought.SearchResults shows results as tags and ChainOfThought.Image a captioned image. It opens while it runs and closes when done unless the reader chose; built on Task.
+
+- **Name:** `@cyclone-ui/chain-of-thought`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/body-text@0.5.100`
+- `@cyclone-ui/icons@0.0.103`
+- `@cyclone-ui/tag@0.0.103`
+- `@cyclone-ui/task@0.0.1`
+- `@cyclone-ui/trace@0.0.1`
+- `@tamagui/core@3.3.2`
+
+### Files
+
+| Path                                                 | Type        | Target |
+| ---------------------------------------------------- | ----------- | ------ |
+| `components/chain-of-thought/src/ChainOfThought.tsx` | `component` | —      |
+
+### Props
+
+#### `ChainOfThoughtStepProps`
+
+| Prop          | Type                       | Default | Required | Description                                                                     |
+| ------------- | -------------------------- | ------- | -------- | ------------------------------------------------------------------------------- |
+| `label`       | `ReactNode`                | —       | Yes      | What the step did, in the tense of its status: "Searched the web for …".        |
+| `status`      | `ChainOfThoughtStepStatus` | —       | No       | Defaults to `complete`.                                                         |
+| `icon`        | `ReactNode`                | —       | No       | Defaults to an icon for the status.                                             |
+| `defaultOpen` | `boolean`                  | —       | No       | Whether a step with children starts open.                                       |
+| `children`    | `ReactNode`                | —       | No       | The step's detail, such as search results or output. The line opens to show it. |
+
+#### `ChainOfThoughtImageProps`
+
+| Prop      | Type        | Default | Required | Description           |
+| --------- | ----------- | ------- | -------- | --------------------- |
+| `caption` | `ReactNode` | —       | No       | Text under the image. |
+
 ## @cyclone-ui/chart
 
 Shared building blocks for the Cyclone UI chart packages, built on Recharts. It provides the chart container, which maps each series to theme data colors, and the tooltip, legend, point markers, zoom brush, background patterns, reveal animation and loading skeleton that the charts reuse. Use it to build a custom Recharts chart that looks like the other Cyclone charts.
@@ -876,6 +916,52 @@ Shared building blocks for the Cyclone UI chart packages, built on Recharts. It 
 | `roundness`     | `TooltipRoundness`            | —       | No       | Corner radius; defaults to the `tooltip` radius token. |
 | `variant`       | `TooltipVariant`              | —       | No       | —                                                      |
 
+## @cyclone-ui/chat
+
+Chat, the thread of a conversation with an agent. Chat.Content is the scrolling transcript, a log of Chat.Item rows: it opens at the start of the last turn, scrolls a new turn (a Chat.Item with scrollAnchor, such as the person's message) near the top and lets its reply stream in below, follows the reply while the reader stays at the end, and leaves them where they are when they scroll up. Chat.ScrollButton returns to the end, Chat.EmptyState fills an empty thread and Chat.Download saves it as Markdown with messagesToMarkdown.
+
+- **Name:** `@cyclone-ui/chat`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/body-text@0.5.100`
+- `@cyclone-ui/button@0.6.108`
+- `@cyclone-ui/icons@0.0.103`
+- `@cyclone-ui/scroll-view@0.5.108`
+- `@tamagui/constants@3.3.2`
+- `@tamagui/core@3.3.2`
+
+### Files
+
+| Path                           | Type        | Target |
+| ------------------------------ | ----------- | ------ |
+| `components/chat/src/Chat.tsx` | `component` | —      |
+
+### Props
+
+#### `ChatItemProps`
+
+| Prop           | Type      | Default | Required | Description                                                                                                                           |
+| -------------- | --------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `scrollAnchor` | `boolean` | —       | No       | Starts a turn: when it is added, the view scrolls it near the top and the reply streams in below it. Set it on the person's messages. |
+
+#### `ChatEmptyStateProps`
+
+| Prop          | Type        | Default                                       | Required | Description                                          |
+| ------------- | ----------- | --------------------------------------------- | -------- | ---------------------------------------------------- |
+| `title`       | `string`    | `"No messages yet"`                           | No       | The title.                                           |
+| `description` | `string`    | `"Start a conversation to see messages here"` | No       | The line under the title.                            |
+| `icon`        | `ReactNode` | —                                             | No       | An icon above the title. Set its `size`, such as 32. |
+
+#### `ChatDownloadProps`
+
+| Prop            | Type                                              | Default             | Required | Description                                       |
+| --------------- | ------------------------------------------------- | ------------------- | -------- | ------------------------------------------------- |
+| `messages`      | `readonly ChatMessage[]`                          | —                   | Yes      | The messages to save.                             |
+| `filename`      | `string`                                          | `"conversation.md"` | No       | The file's name.                                  |
+| `formatMessage` | `(message: ChatMessage, index: number) => string` | —                   | No       | Formats each message, as in `messagesToMarkdown`. |
+
 ## @cyclone-ui/checkbox
 
 A themed checkbox built on the Tamagui Checkbox, showing a check or a minus indicator for the indeterminate state. It supports form control sizes, circular, focused and disabled states, and validation colors. Wrapped in a Field, it connects to the form: it reads its checked state, size, disabled and focused states from the field and reports changes to it.
@@ -898,6 +984,34 @@ A themed checkbox built on the Tamagui Checkbox, showing a check or a minus indi
 | Path                                   | Type        | Target |
 | -------------------------------------- | ----------- | ------ |
 | `components/checkbox/src/Checkbox.tsx` | `component` | —      |
+
+## @cyclone-ui/checkpoint
+
+Checkpoint, a point in an AI conversation that the person can return to: a separator after a turn that shows a decorative Checkpoint.Icon (a restore clock by default), a label and a Checkpoint.Trigger button (Restore by default, with an optional tooltip) between two rules. The border variant puts a rule under the row instead and the inline variant drops the rules. Restoring keeps that turn and drops every message after it.
+
+- **Name:** `@cyclone-ui/checkpoint`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/body-text@0.5.100`
+- `@cyclone-ui/button@0.6.108`
+- `@cyclone-ui/divider@0.0.96`
+- `@cyclone-ui/icons@0.0.103`
+- `@tamagui/core@3.3.2`
+- `@tamagui/helpers-tamagui@3.3.2`
+
+### Files
+
+| Path                                       | Type        | Target |
+| ------------------------------------------ | ----------- | ------ |
+| `components/checkpoint/src/Checkpoint.tsx` | `component` | —      |
+
+### Props
+
+| Prop      | Type                | Default | Required | Description                          |
+| --------- | ------------------- | ------- | -------- | ------------------------------------ |
+| `variant` | `CheckpointVariant` | —       | No       | The layout. Defaults to `separator`. |
 
 ## @cyclone-ui/circular-progress
 
@@ -1268,6 +1382,61 @@ An invisible anchor that bursts a ring of accent-colored confetti squares out of
 | `spread` | `number` | —       | No       | The base distance, in pixels, that the confetti flies from the centre. |
 | `count`  | `number` | —       | No       | The number of confetti squares in each burst.                          |
 
+## @cyclone-ui/confirmation
+
+Confirmation, the Cyclone UI AI component that asks the person to approve or deny a tool call before it runs: a bordered row with an optional icon, the question with an optional description, and Deny and Approve buttons. It reads the tool part's `approval` and `state`, shows only while an approval is pending or answered, and swaps the question for `Confirmation.Accepted` or `Confirmation.Rejected` content once the person answers. Confirmation.Action is a small Button.
+
+- **Name:** `@cyclone-ui/confirmation`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/body-text@0.5.100`
+- `@cyclone-ui/button@0.6.108`
+- `@cyclone-ui/container@0.6.107`
+- `@tamagui/core@3.3.2`
+- `@tamagui/helpers-tamagui@3.3.2`
+
+### Files
+
+| Path                                           | Type        | Target |
+| ---------------------------------------------- | ----------- | ------ |
+| `components/confirmation/src/Confirmation.tsx` | `component` | —      |
+
+### Props
+
+#### `ConfirmationProps`
+
+| Prop       | Type           | Default | Required | Description                                                              |
+| ---------- | -------------- | ------- | -------- | ------------------------------------------------------------------------ |
+| `approval` | `ToolApproval` | —       | No       | The tool part's `approval`. Without it, nothing renders.                 |
+| `state`    | `ToolState`    | —       | Yes      | The tool part's `state`. Nothing renders while the input streams in.     |
+| `icon`     | `ReactNode`    | —       | No       | An icon before the question that names the tool, such as `\<Console />`. |
+
+#### `ConfirmationTitleProps`
+
+| Prop          | Type        | Default | Required | Description                                                        |
+| ------------- | ----------- | ------- | -------- | ------------------------------------------------------------------ |
+| `description` | `ReactNode` | —       | No       | Secondary text under the question, such as where the command runs. |
+
+#### `ConfirmationRequestProps`
+
+| Prop       | Type        | Default | Required | Description |
+| ---------- | ----------- | ------- | -------- | ----------- |
+| `children` | `ReactNode` | —       | No       | —           |
+
+#### `ConfirmationAcceptedProps`
+
+| Prop       | Type        | Default | Required | Description |
+| ---------- | ----------- | ------- | -------- | ----------- |
+| `children` | `ReactNode` | —       | No       | —           |
+
+#### `ConfirmationRejectedProps`
+
+| Prop       | Type        | Default | Required | Description |
+| ---------- | ----------- | ------- | -------- | ----------- |
+| `children` | `ReactNode` | —       | No       | —           |
+
 ## @cyclone-ui/container
 
 A themed surface Container that wraps content in a padded, rounded box. Variants include primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated (the default) and floating. It also has size-based padding, shadow styles, and circular, tight and accented options, a glass option that turns the background into translucent frosted glass, and a noise option that overlays a fine film grain. Use it for cards and panels.
@@ -1296,6 +1465,43 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 | `glass`       | `boolean`              | —       | No       | Turn the background into translucent frosted glass.              |
 | `noise`       | `boolean`              | —       | No       | Overlay a fine film grain on the background.                     |
 | `accented`    | `boolean`              | —       | No       | Draw the border in the `primary` color.                          |
+
+## @cyclone-ui/context
+
+Context, a meter of how much of the model's context window an AI conversation has used. The root takes usedTokens, maxTokens, an optional usage breakdown (input, output, reasoning and cached input tokens, in the AI SDK's LanguageModelUsage shape) and an optional cost in US dollars. Context.Trigger is a small ghost button with the percentage used and a CircularProgress ring; hovering, focusing or pressing it opens a Popover card (a bottom sheet on small screens) with the used and maximum tokens in compact notation, a Progress bar, a row per kind of token and, when cost is set, the total cost. The parts (ContentHeader, ContentBody, ContentFooter and the InputUsage, OutputUsage, ReasoningUsage and CacheUsage rows) compose for custom cards, and useContextValue reads the usage.
+
+- **Name:** `@cyclone-ui/context`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/body-text@0.5.100`
+- `@cyclone-ui/button@0.6.108`
+- `@cyclone-ui/circular-progress@0.0.98`
+- `@cyclone-ui/popover@0.5.110`
+- `@cyclone-ui/progress@0.5.100`
+- `@tamagui/core@3.3.2`
+- `@tamagui/popper@3.3.2`
+- `@tamagui/use-controllable-state@3.3.2`
+
+### Files
+
+| Path                                 | Type        | Target |
+| ------------------------------------ | ----------- | ------ |
+| `components/context/src/Context.tsx` | `component` | —      |
+
+### Props
+
+| Prop           | Type                      | Default | Required | Description                                                             |
+| -------------- | ------------------------- | ------- | -------- | ----------------------------------------------------------------------- |
+| `usedTokens`   | `number`                  | —       | Yes      | The tokens the conversation uses.                                       |
+| `maxTokens`    | `number`                  | —       | Yes      | The model's context window, in tokens.                                  |
+| `usage`        | `ContextUsage`            | —       | No       | The usage by kind of token, shown as rows in the card.                  |
+| `cost`         | `number`                  | —       | No       | The conversation's cost so far, in US dollars. Shown when set.          |
+| `open`         | `boolean`                 | —       | No       | Whether the card is open. Makes it controlled; pass `onOpenChange` too. |
+| `defaultOpen`  | `boolean`                 | —       | No       | Whether the card starts open when uncontrolled. Defaults to `false`.    |
+| `onOpenChange` | `(open: boolean) => void` | —       | No       | Called with the new open state when the card opens or closes.           |
+| `children`     | `ReactNode`               | —       | No       | Custom parts. Defaults to a `Context.Trigger` and a `Context.Content`.  |
 
 ## @cyclone-ui/context-menu
 
@@ -3090,6 +3296,56 @@ Isometric line illustrations that answer the pointer, built on the Hairline engi
 | `strokeWidth` | `number`                              | `0.9`   | No       | The stroke width in pixels. Strokes do not scale with the drawing.                                                                                                                    |
 | `palette`     | `Partial<Record<PaletteKey, string>>` | —       | No       | Overrides one of the palette's five colours with a theme token name (`"surface"`) or a colour. Set `plate` to the surface the illustration sits on, so its solids are filled with it. |
 
+## @cyclone-ui/inline-citation
+
+InlineCitation, a source marker inside a sentence of an AI reply. InlineCitationCardTrigger is a small button labeled with the first source's hostname and a +N count (sources prop); it opens a hover card (InlineCitationCard, a Popover with open, defaultOpen and onOpenChange) on hover, keyboard focus or press, and Enter moves focus into it. InlineCitationCardBody holds InlineCitationSource (title, url, description), InlineCitationQuote and a carousel (InlineCitationCarousel with Header, Index, Prev, Next, Content and Item) that pages through several sources. InlineCitationText highlights the cited text while the citation is hovered.
+
+- **Name:** `@cyclone-ui/inline-citation`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/body-text@0.5.100`
+- `@cyclone-ui/button@0.6.108`
+- `@cyclone-ui/icons@0.0.103`
+- `@cyclone-ui/popover@0.5.110`
+- `@cyclone-ui/trace@0.0.1`
+- `@tamagui/core@3.3.2`
+- `@tamagui/popper@3.3.2`
+- `@tamagui/use-controllable-state@3.3.2`
+
+### Files
+
+| Path                                                | Type        | Target |
+| --------------------------------------------------- | ----------- | ------ |
+| `components/inline-citation/src/InlineCitation.tsx` | `component` | —      |
+
+### Props
+
+#### `InlineCitationCardProps`
+
+| Prop           | Type                      | Default | Required | Description                                                             |
+| -------------- | ------------------------- | ------- | -------- | ----------------------------------------------------------------------- |
+| `open`         | `boolean`                 | —       | No       | Whether the card is open. Makes it controlled; pass `onOpenChange` too. |
+| `defaultOpen`  | `boolean`                 | —       | No       | Whether the card starts open when uncontrolled. Defaults to `false`.    |
+| `onOpenChange` | `(open: boolean) => void` | —       | No       | Called with the new open state.                                         |
+| `children`     | `ReactNode`               | —       | No       | —                                                                       |
+
+#### `InlineCitationCardTriggerProps`
+
+| Prop       | Type        | Default | Required | Description                                                                                    |
+| ---------- | ----------- | ------- | -------- | ---------------------------------------------------------------------------------------------- |
+| `sources`  | `string[]`  | —       | Yes      | The URLs of the sources. The first one's hostname labels the button, with a count of the rest. |
+| `children` | `ReactNode` | —       | No       | A custom label in place of the hostname and count.                                             |
+
+#### `InlineCitationSourceProps`
+
+| Prop          | Type     | Default | Required | Description                                                              |
+| ------------- | -------- | ------- | -------- | ------------------------------------------------------------------------ |
+| `title`       | `string` | —       | No       | The page's title.                                                        |
+| `url`         | `string` | —       | No       | The page's URL, shown as a link to its hostname that opens in a new tab. |
+| `description` | `string` | —       | No       | A short summary of the page.                                             |
+
 ## @cyclone-ui/inline-code-text
 
 An inline span styled for short code snippets, using the code font with a subtle background, padding and rounded corners. Use it to mark up commands, identifiers or values inside running text.
@@ -3463,6 +3719,58 @@ A centered modal built on the Cyclone UI Dialog, with the same parts as the Draw
 | ---------- | ------------ | ------- | -------- | ---------------------------------------------------- |
 | `onBack`   | `() => void` | —       | No       | Renders a back arrow button that calls this handler. |
 | `closable` | `boolean`    | —       | No       | Renders an X button that closes the modal.           |
+
+## @cyclone-ui/model-selector
+
+ModelSelector, a menu that picks one option for an AI agent, such as the model it runs (grouped by provider, each with a short description) or how hard it thinks (effort). It is built on ContextMenu, so it opens as a popover on large screens and a bottom sheet on small ones; the root takes value, onValueChange and open/defaultOpen/onOpenChange, and picking an option closes the menu. ModelSelector.Trigger is a small ghost button showing the selected option (with an optional muted label such as Effort) and a chevron; ModelSelector.Content, Group (with a heading), Item (with a description), Name and Separator build the menu.
+
+- **Name:** `@cyclone-ui/model-selector`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/button@0.6.108`
+- `@cyclone-ui/context-menu@0.0.100`
+- `@cyclone-ui/eyebrow-text@0.5.100`
+- `@cyclone-ui/icons@0.0.103`
+- `@tamagui/core@3.3.2`
+- `@tamagui/use-controllable-state@3.3.2`
+
+### Files
+
+| Path                                              | Type        | Target |
+| ------------------------------------------------- | ----------- | ------ |
+| `components/model-selector/src/ModelSelector.tsx` | `component` | —      |
+
+### Props
+
+#### `ModelSelectorProps`
+
+| Prop            | Type                      | Default | Required | Description                                                             |
+| --------------- | ------------------------- | ------- | -------- | ----------------------------------------------------------------------- |
+| `value`         | `string`                  | —       | No       | The selected option's `value`, which shows a check mark.                |
+| `onValueChange` | `(value: string) => void` | —       | No       | Called with an option's `value` when it is picked.                      |
+| `open`          | `boolean`                 | —       | No       | Whether the menu is open. Makes it controlled; pass `onOpenChange` too. |
+| `defaultOpen`   | `boolean`                 | —       | No       | Whether the menu starts open when uncontrolled. Defaults to `false`.    |
+| `onOpenChange`  | `(open: boolean) => void` | —       | No       | Called with the new open state when the menu opens or closes.           |
+
+#### `ModelSelectorTriggerProps`
+
+| Prop    | Type     | Default | Required | Description                                                 |
+| ------- | -------- | ------- | -------- | ----------------------------------------------------------- |
+| `label` | `string` | —       | No       | A muted label before the selected option, such as `Effort`. |
+
+#### `ModelSelectorGroupProps`
+
+| Prop      | Type     | Default | Required | Description                                                    |
+| --------- | -------- | ------- | -------- | -------------------------------------------------------------- |
+| `heading` | `string` | —       | No       | The group's name, such as the provider, shown above its items. |
+
+#### `ModelSelectorItemProps`
+
+| Prop          | Type        | Default | Required | Description                                                     |
+| ------------- | ----------- | ------- | -------- | --------------------------------------------------------------- |
+| `description` | `ReactNode` | —       | No       | A short line under the name, such as what the model is best at. |
 
 ## @cyclone-ui/navigation-header
 
@@ -4174,6 +4482,39 @@ A composable pie and donut chart built on Recharts and the shared Cyclone chart 
 | --------- | ------------------- | ------- | -------- | ----------- |
 | `variant` | `BackgroundVariant` | —       | No       | —           |
 
+## @cyclone-ui/plan
+
+Plan, the Cyclone UI AI component for the steps an agent decides on before it starts: a Trace line with the goal and progress (Plan.Title, Plan.Description such as 2 of 4 done) that shimmers while isStreaming is true and expands into the steps. Each Plan.Step is done, running or pending, with a check, a dotted circle or an empty circle, and pending steps are dimmed. The plan starts open; open, defaultOpen and onOpenChange control it, Plan.Action puts buttons beside the line and Plan.Footer below it. Use Task instead when the steps come from the work itself.
+
+- **Name:** `@cyclone-ui/plan`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/icons@0.0.103`
+- `@cyclone-ui/trace@0.0.1`
+- `@tamagui/core@3.3.2`
+
+### Files
+
+| Path                           | Type        | Target |
+| ------------------------------ | ----------- | ------ |
+| `components/plan/src/Plan.tsx` | `component` | —      |
+
+### Props
+
+#### `PlanProps`
+
+| Prop          | Type      | Default | Required | Description                                                               |
+| ------------- | --------- | ------- | -------- | ------------------------------------------------------------------------- |
+| `isStreaming` | `boolean` | —       | No       | Whether the agent is still working through the plan. Defaults to `false`. |
+
+#### `PlanStepProps`
+
+| Prop     | Type             | Default | Required | Description            |
+| -------- | ---------------- | ------- | -------- | ---------------------- |
+| `status` | `PlanStepStatus` | —       | No       | Defaults to `pending`. |
+
 ## @cyclone-ui/popover
 
 A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Anchor, Popover.Content (with an optional arrow, a ScrollView and Close) parts. Content is elevated by default, takes the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating) with shadow, glass, noise and accented options, and animates in, and on small screens it turns into a bottom sheet unless shouldAdapt is false. Use it for contextual menus, filters or extra details.
@@ -4341,6 +4682,148 @@ A themed progress bar built on the Tamagui Progress, with an animated indicator.
 | `color`    | `ColorTokens \| ThemeTokens` | —       | No       | —                                                                                                                                      |
 | `variant`  | `ProgressVariant`            | —       | No       | `solid` fills a continuous bar. `dashed` splits the track into segments that light up (with a brief scale pop) as the value increases. |
 | `segments` | `number`                     | —       | No       | The number of dashed segments. By default, as many as fit the track's width while keeping each segment a tall pill.                    |
+
+## @cyclone-ui/prompt-input
+
+PromptInput, the field a person types a message to an AI agent in: a form with chips for attached files, a text box that grows with its text, and a footer of tools (such as ModelSelector menus and a Context meter) and a submit button. Enter sends and Shift+Enter adds a line; files are attached with a plus button or, on the web, by pasting or dropping them, within accept, maxFiles and maxFileSize limits (onError reports the rest). onSubmit receives the text and the files as AI SDK FileUIPart-shaped data URLs, and the input clears once it resolves; the text can be controlled with value and onValueChange. The chat status (ready, submitted, streaming or error) turns the submit button into a spinner or a stop button that calls onStop, and blocks sending while a reply streams. usePromptInput reads the text, files and status.
+
+- **Name:** `@cyclone-ui/prompt-input`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/button@0.6.108`
+- `@cyclone-ui/icons@0.0.103`
+- `@cyclone-ui/input@0.6.110`
+- `@cyclone-ui/tag@0.0.103`
+- `@tamagui/core@3.3.2`
+- `@tamagui/use-controllable-state@3.3.2`
+
+### Files
+
+| Path                                          | Type        | Target |
+| --------------------------------------------- | ----------- | ------ |
+| `components/prompt-input/src/PromptInput.tsx` | `component` | —      |
+
+### Props
+
+#### `PromptInputProps`
+
+| Prop            | Type                                                                                           | Default | Required | Description                                                                                                                                                                                      |
+| --------------- | ---------------------------------------------------------------------------------------------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `onSubmit`      | `( message: PromptInputMessage, event?: FormEvent<HTMLFormElement> ) => void \| Promise<void>` | —       | No       | Called with the text and files (as data URLs) when the message is sent. The text box and files clear once it returns, or once its promise resolves; a rejected promise keeps them, to try again. |
+| `value`         | `string`                                                                                       | —       | No       | The message text. Makes the text controlled; pass `onValueChange` too.                                                                                                                           |
+| `defaultValue`  | `string`                                                                                       | —       | No       | The initial text when uncontrolled.                                                                                                                                                              |
+| `onValueChange` | `(text: string) => void`                                                                       | —       | No       | Called with the new text when it changes.                                                                                                                                                        |
+| `status`        | `ChatStatus`                                                                                   | —       | No       | The chat's status. While a reply is `submitted` or `streaming`, a message can't be sent, and the submit button shows a spinner or a stop square. Defaults to `ready`.                            |
+| `onStop`        | `() => void`                                                                                   | —       | No       | Stops the reply. While set, the submit button stops a reply on its way.                                                                                                                          |
+| `accept`        | `string`                                                                                       | —       | No       | The file types to accept, as in an `\<input type="file">`.                                                                                                                                       |
+| `maxFiles`      | `number`                                                                                       | —       | No       | The most files a message can have.                                                                                                                                                               |
+| `maxFileSize`   | `number`                                                                                       | —       | No       | The largest file to accept, in bytes.                                                                                                                                                            |
+| `onError`       | `(error: PromptInputError) => void`                                                            | —       | No       | Called when attached files are turned away.                                                                                                                                                      |
+| `children`      | `ReactNode`                                                                                    | —       | No       | Custom parts. Defaults to a `PromptInput.Header`, a `PromptInput.Textarea` and a `PromptInput.Footer` with an attach and a submit button.                                                        |
+
+#### `PromptInputAttachmentProps`
+
+| Prop   | Type                      | Default | Required | Description        |
+| ------ | ------------------------- | ------- | -------- | ------------------ |
+| `data` | `PromptInputAttachedFile` | —       | Yes      | The attached file. |
+
+## @cyclone-ui/prompt-message
+
+PromptMessage, one turn of an AI conversation: from="user" sets the person's message at the end in a surface bubble, while the agent's reply spans the row unframed. Parts: an optional avatar beside the turn, PromptMessage.Header for the sender and time, PromptMessage.Content (variant surface, primary, tinted or ghost; a status theme such as danger tints it), and PromptMessage.Actions with ghost icon buttons that have tooltips: PromptMessage.Action, PromptMessage.Copy (a CopyButton that swaps to a check) and PromptMessage.Feedback (good and bad response toggles with aria-pressed, controlled or uncontrolled).
+
+- **Name:** `@cyclone-ui/prompt-message`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/body-text@0.5.100`
+- `@cyclone-ui/button@0.6.108`
+- `@cyclone-ui/container@0.6.107`
+- `@cyclone-ui/copy-button@0.0.20`
+- `@cyclone-ui/icons@0.0.103`
+- `@tamagui/core@3.3.2`
+- `@tamagui/use-controllable-state@3.3.2`
+
+### Files
+
+| Path                                              | Type        | Target |
+| ------------------------------------------------- | ----------- | ------ |
+| `components/prompt-message/src/PromptMessage.tsx` | `component` | —      |
+
+### Props
+
+#### `PromptMessageProps`
+
+| Prop     | Type                | Default | Required | Description                                                                                                                                        |
+| -------- | ------------------- | ------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `from`   | `PromptMessageFrom` | —       | No       | Who sent the message. The person's (`user`) messages sit at the end of the row, in a bubble; the others sit at the start. Defaults to `assistant`. |
+| `avatar` | `ReactNode`         | —       | No       | An avatar, such as an `Avatar`, beside the message, level with its top.                                                                            |
+
+#### `PromptMessageContentProps`
+
+| Prop      | Type                          | Default | Required | Description                                                                              |
+| --------- | ----------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------- |
+| `variant` | `PromptMessageContentVariant` | —       | No       | The surface. Defaults to `surface` for the person's messages and `ghost` for the others. |
+
+#### `PromptMessageActionProps`
+
+| Prop      | Type     | Default | Required | Description                                                                    |
+| --------- | -------- | ------- | -------- | ------------------------------------------------------------------------------ |
+| `tooltip` | `string` | —       | No       | Shown in a tooltip while the pointer rests on the button. Defaults to `label`. |
+| `label`   | `string` | —       | No       | The button's accessible name. Defaults to `tooltip`.                           |
+
+#### `PromptMessageFeedbackProps`
+
+| Prop            | Type                                          | Default | Required | Description                                                 |
+| --------------- | --------------------------------------------- | ------- | -------- | ----------------------------------------------------------- |
+| `value`         | `PromptMessageFeedbackValue`                  | —       | No       | The selected feedback. Makes the toggles controlled.        |
+| `defaultValue`  | `PromptMessageFeedbackValue`                  | —       | No       | The initial feedback when uncontrolled. Defaults to `null`. |
+| `onValueChange` | `(value: PromptMessageFeedbackValue) => void` | —       | No       | Called with the new feedback when either toggle is pressed. |
+
+## @cyclone-ui/queue
+
+Queue, the Cyclone UI AI component for an agent's todo list: Trace lines split into a section of what is left (N to do) and a section of what is done (N completed), each a collapsible line. Pass todos (id, title, description, status pending, in_progress or completed) for the default sections, or compose Queue.Section, Queue.SectionLabel, Queue.List and Queue.Item parts. Each todo shows an empty circle, a dotted circle or a check for its status, the todo in progress shimmers while isStreaming is true, a todo with a description opens to show it, and Queue.ItemAction adds an icon button.
+
+- **Name:** `@cyclone-ui/queue`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/button@0.6.108`
+- `@cyclone-ui/icons@0.0.103`
+- `@cyclone-ui/trace@0.0.1`
+- `@tamagui/core@3.3.2`
+
+### Files
+
+| Path                             | Type        | Target |
+| -------------------------------- | ----------- | ------ |
+| `components/queue/src/Queue.tsx` | `component` | —      |
+
+### Props
+
+#### `QueueProps`
+
+| Prop          | Type          | Default | Required | Description                                                                                                     |
+| ------------- | ------------- | ------- | -------- | --------------------------------------------------------------------------------------------------------------- |
+| `todos`       | `QueueTodo[]` | —       | No       | The todo list, shown in a "N to do" and a "N completed" section. Leave it out to compose the sections yourself. |
+| `isStreaming` | `boolean`     | —       | No       | Whether the agent is still working, which makes the todo in progress shimmer. Defaults to `false`.              |
+
+#### `QueueSectionLabelProps`
+
+| Prop    | Type        | Default | Required | Description                               |
+| ------- | ----------- | ------- | -------- | ----------------------------------------- |
+| `count` | `number`    | —       | No       | The number of todos in the section.       |
+| `label` | `string`    | —       | Yes      | What the todos are: "to do", "completed". |
+| `icon`  | `ReactNode` | —       | No       | —                                         |
+
+#### `QueueItemProps`
+
+| Prop     | Type              | Default | Required | Description            |
+| -------- | ----------------- | ------- | -------- | ---------------------- |
+| `status` | `QueueTodoStatus` | —       | No       | Defaults to `pending`. |
 
 ## @cyclone-ui/radar-chart
 
@@ -4564,6 +5047,41 @@ A row of icons, stars by default, for displaying or selecting a rating. It can b
 | `emptyColor`            | `RatingColor`                     | —       | No       | The color of empty icons.                                                                 |
 | `highlightSelectedOnly` | `boolean`                         | —       | No       | Only fill the icon matching the value, rather than every icon up to it.                   |
 | `getLabelText`          | `(value: number) => string`       | —       | No       | Build the accessible description of a value.                                              |
+
+## @cyclone-ui/reasoning
+
+Reasoning, the Cyclone UI AI component for a model's thinking: a Trace line that reads Thinking with a running shimmer while isStreaming is true, then Thought for Ns, and expands into the thinking text. It opens while the model thinks and closes when it finishes unless the reader opened or closed it, and it measures the duration itself when duration is not given. Pass the text as children, or compose Reasoning.Trigger and Reasoning.Content; open, defaultOpen and onOpenChange control it, and useReasoning reads its state.
+
+- **Name:** `@cyclone-ui/reasoning`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/icons@0.0.103`
+- `@cyclone-ui/trace@0.0.1`
+- `@tamagui/core@3.3.2`
+
+### Files
+
+| Path                                     | Type        | Target |
+| ---------------------------------------- | ----------- | ------ |
+| `components/reasoning/src/Reasoning.tsx` | `component` | —      |
+
+### Props
+
+#### `ReasoningProps`
+
+| Prop          | Type        | Default | Required | Description                                                                                                                                                 |
+| ------------- | ----------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `isStreaming` | `boolean`   | —       | No       | Whether the model is still thinking. Defaults to `false`.                                                                                                   |
+| `duration`    | `number`    | —       | No       | How long the model thought, in seconds. Without it, the time from when `isStreaming` turns on to when it turns off is shown.                                |
+| `children`    | `ReactNode` | —       | No       | The thinking text, shown under a default trigger, or the `Reasoning.Trigger` and `Reasoning.Content` parts. Empty text renders a line with nothing to open. |
+
+#### `ReasoningTriggerProps`
+
+| Prop                 | Type                                                     | Default | Required | Description                                                                                                                                                       |
+| -------------------- | -------------------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `getThinkingMessage` | `(isStreaming: boolean, duration?: number) => ReactNode` | —       | No       | The title, from whether the model is thinking and how long it thought. Defaults to "Thinking", then "Thought for 5s" (or "Thought" when the duration is unknown). |
 
 ## @cyclone-ui/redacted-animation
 
@@ -4953,6 +5471,39 @@ A Material-style slider, built on the Tamagui Slider, for choosing a single valu
 | `getAriaLabel`      | `(index: number) => string`                               | —       | No       | Build the accessible name of a thumb.                                                                    |
 | `getAriaValueText`  | `(value: number, index: number) => string`                | —       | No       | Build the accessible description of a thumb's value.                                                     |
 
+## @cyclone-ui/sources
+
+Sources, the links an AI agent used for a reply, built on Trace: a collapsible line that reads "Used N sources" (SourcesTrigger with count) and opens into a list of links. Source renders one link that opens in a new tab, titled by title or the URL's hostname, with an external-link icon and screen reader text. Sources takes open, defaultOpen and onOpenChange.
+
+- **Name:** `@cyclone-ui/sources`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/icons@0.0.103`
+- `@cyclone-ui/trace@0.0.1`
+- `@tamagui/core@3.3.2`
+
+### Files
+
+| Path                                 | Type        | Target |
+| ------------------------------------ | ----------- | ------ |
+| `components/sources/src/Sources.tsx` | `component` | —      |
+
+### Props
+
+#### `SourcesTriggerProps`
+
+| Prop    | Type     | Default | Required | Description                                       |
+| ------- | -------- | ------- | -------- | ------------------------------------------------- |
+| `count` | `number` | —       | Yes      | The number of sources, shown as "Used 3 sources". |
+
+#### `SourceProps`
+
+| Prop    | Type     | Default | Required | Description                                       |
+| ------- | -------- | ------- | -------- | ------------------------------------------------- |
+| `title` | `string` | —       | No       | The page's title. Defaults to the URL's hostname. |
+
 ## @cyclone-ui/spinner
 
 A Spinner component that renders the React Native ActivityIndicator inside a Tamagui YStack. It takes a small or large size and a color, which can be a theme token or a raw value and defaults to the accent color. Use it to show that content or an action is loading.
@@ -4977,6 +5528,43 @@ A Spinner component that renders the React Native ActivityIndicator inside a Tam
 | ------- | ------------------------------------------------------- | ------- | -------- | ----------- |
 | `size`  | `"small" \| "large"`                                    | —       | No       | —           |
 | `color` | `(ColorTokens \| ThemeTokens \| (string & {})) \| null` | —       | No       | —           |
+
+## @cyclone-ui/stack-trace
+
+StackTrace, a failed tool call and its stack frames, built on Trace. It parses a JavaScript stack string (trace prop) into the error type, message and frames (function, file, line, column), and renders a danger line that reads "Failed: TypeError: ..." and opens (open, defaultOpen, onOpenChange) into the full error, your own frames as lines that call onFilePathClick, and the node_modules and Node internal frames folded into a dimmed monospace block. StackTraceActions and StackTraceCopyButton sit beside the line. parseStackTrace is exported.
+
+- **Name:** `@cyclone-ui/stack-trace`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/code-block@0.6.110`
+- `@cyclone-ui/copy-button@0.0.20`
+- `@cyclone-ui/icons@0.0.103`
+- `@cyclone-ui/trace@0.0.1`
+- `@tamagui/core@3.3.2`
+
+### Files
+
+| Path                                              | Type        | Target |
+| ------------------------------------------------- | ----------- | ------ |
+| `components/stack-trace/src/parse-stack-trace.ts` | `file`      | —      |
+| `components/stack-trace/src/StackTrace.tsx`       | `component` | —      |
+
+### Props
+
+#### `StackTraceProps`
+
+| Prop              | Type                                                                       | Default | Required | Description                                                                                                          |
+| ----------------- | -------------------------------------------------------------------------- | ------- | -------- | -------------------------------------------------------------------------------------------------------------------- |
+| `trace`           | `string`                                                                   | —       | Yes      | The stack, such as a tool's `errorText` or an `error.stack`.                                                         |
+| `onFilePathClick` | `( filePath: string, lineNumber?: number, columnNumber?: number ) => void` | —       | No       | Called when one of your own frames is pressed, to open the file at the line. Without it, the frames are not buttons. |
+
+#### `StackTraceFramesProps`
+
+| Prop                 | Type      | Default | Required | Description                                                                      |
+| -------------------- | --------- | ------- | -------- | -------------------------------------------------------------------------------- |
+| `showInternalFrames` | `boolean` | —       | No       | Show the `node_modules` and Node frames, folded into a line. Defaults to `true`. |
 
 ## @cyclone-ui/stepper
 
@@ -5052,6 +5640,73 @@ A documentation block that displays a component with controls to change its prop
 | `skeleton`    | `ReactNode`                       | —       | No       | The placeholder shown while the display loads, shaped like the component. Defaults to a rounded block.                            |
 | `themeSelect` | `boolean`                         | —       | No       | Shows a theme select over the display, which renders the preview in the selected color theme (`base` at first).                   |
 
+## @cyclone-ui/subagent
+
+Subagent, the Cyclone UI AI component for work the agent hands to a subagent: a Trace line ("Running the research agent", then "Ran the research agent") with the model in a tag, that opens to the task it was given, a nested list of its tool calls and what it found. Subagent.Header takes `name`, `model` and the tool part's `state`; Subagent.Tool renders one tool call with Tool. Also exported under the AI SDK Elements names (Agent, AgentHeader, …).
+
+- **Name:** `@cyclone-ui/subagent`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/body-text@0.5.100`
+- `@cyclone-ui/tag@0.0.103`
+- `@cyclone-ui/tool@0.0.1`
+- `@cyclone-ui/trace@0.0.1`
+- `@tamagui/core@3.3.2`
+
+### Files
+
+| Path                                   | Type        | Target |
+| -------------------------------------- | ----------- | ------ |
+| `components/subagent/src/Subagent.tsx` | `component` | —      |
+
+### Props
+
+#### `SubagentHeaderProps`
+
+| Prop    | Type        | Default | Required | Description                                                                                                         |
+| ------- | ----------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------- |
+| `name`  | `string`    | —       | Yes      | What ran, after the verb, as in "Ran the research agent".                                                           |
+| `model` | `string`    | —       | No       | The subagent's model, shown in a tag after the title.                                                               |
+| `state` | `ToolState` | —       | No       | The subagent tool part's `state`. Pass `preliminary` while its output streams in. Defaults to `"output-available"`. |
+
+#### `SubagentToolProps`
+
+| Prop          | Type        | Default | Required | Description                                                     |
+| ------------- | ----------- | ------- | -------- | --------------------------------------------------------------- |
+| `tool`        | `ToolPart`  | —       | Yes      | One of the subagent's tool parts.                               |
+| `title`       | `ReactNode` | —       | No       | What the tool ran, after the verb, in place of the tool's name. |
+| `isStreaming` | `boolean`   | —       | No       | Whether the chat is still streaming; see `Tool.Header`.         |
+
+#### `SubagentOutputProps`
+
+| Prop     | Type     | Default | Required | Description                                                      |
+| -------- | -------- | ------- | -------- | ---------------------------------------------------------------- |
+| `schema` | `string` | —       | No       | The schema of a structured result, shown as code under the text. |
+
+#### `AgentHeaderProps`
+
+| Prop    | Type        | Default | Required | Description                                                                                                         |
+| ------- | ----------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------- |
+| `name`  | `string`    | —       | Yes      | What ran, after the verb, as in "Ran the research agent".                                                           |
+| `model` | `string`    | —       | No       | The subagent's model, shown in a tag after the title.                                                               |
+| `state` | `ToolState` | —       | No       | The subagent tool part's `state`. Pass `preliminary` while its output streams in. Defaults to `"output-available"`. |
+
+#### `AgentOutputProps`
+
+| Prop     | Type     | Default | Required | Description                                                      |
+| -------- | -------- | ------- | -------- | ---------------------------------------------------------------- |
+| `schema` | `string` | —       | No       | The schema of a structured result, shown as code under the text. |
+
+#### `AgentToolProps`
+
+| Prop          | Type        | Default | Required | Description                                                     |
+| ------------- | ----------- | ------- | -------- | --------------------------------------------------------------- |
+| `tool`        | `ToolPart`  | —       | Yes      | One of the subagent's tool parts.                               |
+| `title`       | `ReactNode` | —       | No       | What the tool ran, after the verb, in place of the tool's name. |
+| `isStreaming` | `boolean`   | —       | No       | Whether the chat is still streaming; see `Tool.Header`.         |
+
 ## @cyclone-ui/submit-button
 
 A Button preset labeled "Submit" by default, with a right-arrow icon that animates on hover. When onPress returns a promise, the label and arrow slide away into a spinner and "Submitting", then into a success or error state with its own text, icon and theme. The state can also be controlled with status. It accepts all Button props plus hideText to show only the icon and animateShrink for the arrow. Use it for submitting forms.
@@ -5086,6 +5741,33 @@ A Button preset labeled "Submit" by default, with a right-arrow icon that animat
 | `resetDelaySuccess` | `number`                     | —              | No       | Overrides `resetDelay` for the success state. Pass `-1` to never reset.                                                                                                                                                      |
 | `resetDelayError`   | `number`                     | —              | No       | Overrides `resetDelay` for the error state. Pass `-1` to never reset.                                                                                                                                                        |
 | `direction`         | `"vertical" \| "horizontal"` | `"vertical"`   | No       | How the labels move between states: `vertical` slides the next state up from below (and back down when returning to an earlier state), `horizontal` always slides it in from the left and the previous one out on the right. |
+
+## @cyclone-ui/suggestion
+
+Suggestions, a row of prompts the person can send to an AI agent without typing. Suggestions lays the pills out on one line that scrolls sideways when they don't fit, fading the edge that has more to show; each Suggestion is a rounded Button labeled with its suggestion (or children) that calls onClick with the suggestion text when pressed. Put the row above the prompt input.
+
+- **Name:** `@cyclone-ui/suggestion`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/button@0.6.108`
+- `@cyclone-ui/scroll-view@0.5.108`
+- `@tamagui/constants@3.3.2`
+- `@tamagui/core@3.3.2`
+
+### Files
+
+| Path                                       | Type        | Target |
+| ------------------------------------------ | ----------- | ------ |
+| `components/suggestion/src/Suggestion.tsx` | `component` | —      |
+
+### Props
+
+| Prop         | Type                           | Default | Required | Description                                                          |
+| ------------ | ------------------------------ | ------- | -------- | -------------------------------------------------------------------- |
+| `suggestion` | `string`                       | —       | Yes      | The prompt to send. It is also the label, unless `children` are set. |
+| `onClick`    | `(suggestion: string) => void` | —       | No       | Called with `suggestion` when the suggestion is pressed.             |
 
 ## @cyclone-ui/switch
 
@@ -5386,6 +6068,96 @@ A TagPicker input that turns typed text into removable tags. Enter adds a trimme
 | `removeButtonLabel` | `(tag: string) => string`  | ``A function returning `Remove ${tag}`.`` | No       | Get the accessible label of a tag's remove button                        |
 | `inputRef`          | `Ref<HTMLInputElement>`    | —                                         | No       | A ref to the text box's `\<input>` element                               |
 
+## @cyclone-ui/task
+
+Task, the Cyclone UI AI component for a piece of work an agent is doing: a Trace line with a title and a status icon that expands into the steps the agent took, each a Task.Item line with an optional icon and description. The task's status follows its items (running while one runs, error once one failed, done after), it opens while it runs and closes when done unless the reader chose, and isStreaming keeps it running between steps. Task.ItemFile shows a file name inline, and useTask reads the state. Use Plan instead when the steps are known up front.
+
+- **Name:** `@cyclone-ui/task`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/icons@0.0.103`
+- `@cyclone-ui/inline-code-text@0.5.99`
+- `@cyclone-ui/trace@0.0.1`
+- `@tamagui/constants@3.3.2`
+- `@tamagui/core@3.3.2`
+
+### Files
+
+| Path                           | Type        | Target |
+| ------------------------------ | ----------- | ------ |
+| `components/task/src/Task.tsx` | `component` | —      |
+
+### Props
+
+#### `TaskProps`
+
+| Prop          | Type      | Default | Required | Description                                                                                                                               |
+| ------------- | --------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `isStreaming` | `boolean` | —       | No       | Keeps the task running between steps, while the agent is still working on it. Without it, the task runs only while one of its items does. |
+
+#### `TaskTriggerProps`
+
+| Prop    | Type        | Default | Required | Description                                                                                           |
+| ------- | ----------- | ------- | -------- | ----------------------------------------------------------------------------------------------------- |
+| `title` | `ReactNode` | —       | No       | What the agent is doing, then what it did: "Updating the page metadata", "Updated the page metadata". |
+
+#### `TaskItemProps`
+
+| Prop          | Type        | Default | Required | Description                                                            |
+| ------------- | ----------- | ------- | -------- | ---------------------------------------------------------------------- |
+| `icon`        | `ReactNode` | —       | No       | An icon before the title, such as the kind of step (a search, a read). |
+| `description` | `ReactNode` | —       | No       | Secondary text after the title, such as a count or a duration.         |
+
+## @cyclone-ui/terminal
+
+Terminal, the Cyclone UI AI component for a shell command the agent runs: a Trace line ("Running pnpm build", "Ran pnpm build", or "pnpm lint exited with code 1" in the danger color) that opens once output streams in, with the output in a code-font block that scrolls to the end as it grows. It takes `output`, `isStreaming`, `command`, `exitCode`, `autoScroll` and `onClear`, with copy and clear buttons beside the line.
+
+- **Name:** `@cyclone-ui/terminal`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/button@0.6.108`
+- `@cyclone-ui/code-block@0.6.110`
+- `@cyclone-ui/copy-button@0.0.20`
+- `@cyclone-ui/icons@0.0.103`
+- `@cyclone-ui/trace@0.0.1`
+- `@tamagui/core@3.3.2`
+
+### Files
+
+| Path                                   | Type        | Target |
+| -------------------------------------- | ----------- | ------ |
+| `components/terminal/src/Terminal.tsx` | `component` | —      |
+
+### Props
+
+#### `TerminalProps`
+
+| Prop          | Type         | Default | Required | Description                                                     |
+| ------------- | ------------ | ------- | -------- | --------------------------------------------------------------- |
+| `output`      | `string`     | —       | Yes      | Everything the command has printed so far.                      |
+| `isStreaming` | `boolean`    | —       | No       | Whether the command is still running. Defaults to `false`.      |
+| `autoScroll`  | `boolean`    | —       | No       | Scroll the output to its end as it grows. Defaults to `true`.   |
+| `onClear`     | `() => void` | —       | No       | Clears the output. Shows a clear button beside the line.        |
+| `command`     | `string`     | —       | No       | The command, such as `pnpm build`, which the title names.       |
+| `exitCode`    | `number`     | —       | No       | The command's exit code once it exits. Any code but `0` failed. |
+
+#### `TerminalStatusProps`
+
+| Prop       | Type        | Default | Required | Description                                          |
+| ---------- | ----------- | ------- | -------- | ---------------------------------------------------- |
+| `children` | `ReactNode` | —       | No       | Shown while the command runs. Defaults to a spinner. |
+
+#### `TerminalCopyButtonProps`
+
+| Prop      | Type         | Default | Required | Description                                                             |
+| --------- | ------------ | ------- | -------- | ----------------------------------------------------------------------- |
+| `onCopy`  | `() => void` | —       | No       | Called when the reader presses the button.                              |
+| `timeout` | `number`     | —       | No       | How long the button shows it copied, in milliseconds. Defaults to 2000. |
+
 ## @cyclone-ui/terrain-footer
 
 A site footer block built on the Cyclone UI Footer that draws a wireframe terrain backdrop behind the footer content, with an optional subtle ripple animation that respects reduced motion and an optional noise texture overlay. It has the same compound parts as the Footer. Use it at the bottom of marketing pages.
@@ -5413,6 +6185,60 @@ A site footer block built on the Cyclone UI Footer that draws a wireframe terrai
 | --------- | --------- | ------- | -------- | ------------------------------------------------------------------------------------------------------- |
 | `animate` | `boolean` | —       | No       | Enable the subtle terrain ripple. Respects reduced motion and stays still below `md`. Defaults to true. |
 | `noise`   | `boolean` | —       | No       | Overlay a low-opacity noise texture over the footer. Defaults to true.                                  |
+
+## @cyclone-ui/test-results
+
+TestResults, a test run by an AI agent, built on Trace: a summary line that counts the tests ("Ran 42 tests, 2 failed", summary prop, with an optional duration and progress bar) and opens into its suites. TestSuite (name, status) is a collapsible line with TestSuiteStats that opens when it has a failure; Test (name, status, duration) is a line with a passed, failed, skipped or running status, and a failed test opens into TestError, the failure message and stack in the code font. Without a summary the run reads as running.
+
+- **Name:** `@cyclone-ui/test-results`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/body-text@0.5.100`
+- `@cyclone-ui/code-block@0.6.110`
+- `@cyclone-ui/icons@0.0.103`
+- `@cyclone-ui/progress@0.5.100`
+- `@cyclone-ui/trace@0.0.1`
+- `@cyclone-ui/visually-hidden@0.5.100`
+- `@tamagui/core@3.3.2`
+
+### Files
+
+| Path                                          | Type        | Target |
+| --------------------------------------------- | ----------- | ------ |
+| `components/test-results/src/TestResults.tsx` | `component` | —      |
+
+### Props
+
+#### `TestResultsProps`
+
+| Prop      | Type                     | Default | Required | Description                                                             |
+| --------- | ------------------------ | ------- | -------- | ----------------------------------------------------------------------- |
+| `summary` | `TestResultsSummaryData` | —       | No       | The counts once the run is done. Without them the run reads as running. |
+
+#### `TestSuiteProps`
+
+| Prop     | Type               | Default | Required | Description                                       |
+| -------- | ------------------ | ------- | -------- | ------------------------------------------------- |
+| `name`   | `string`           | —       | Yes      | The suite, usually a file such as `cart.test.ts`. |
+| `status` | `TestResultStatus` | —       | Yes      | `failed` when one of its tests failed.            |
+
+#### `TestSuiteStatsProps`
+
+| Prop      | Type     | Default | Required | Description |
+| --------- | -------- | ------- | -------- | ----------- |
+| `passed`  | `number` | —       | No       | —           |
+| `failed`  | `number` | —       | No       | —           |
+| `skipped` | `number` | —       | No       | —           |
+
+#### `TestProps`
+
+| Prop       | Type               | Default | Required | Description                              |
+| ---------- | ------------------ | ------- | -------- | ---------------------------------------- |
+| `name`     | `string`           | —       | Yes      | —                                        |
+| `status`   | `TestResultStatus` | —       | Yes      | —                                        |
+| `duration` | `number`           | —       | No       | How long the test took, in milliseconds. |
 
 ## @cyclone-ui/text-area
 
@@ -5686,6 +6512,53 @@ A clickable group of toggle components that exists in either an "on" or "off" st
 | ------- | -------- | ------- | -------- | ---------------------------------------------------- |
 | `value` | `string` | —       | Yes      | The value this toggle adds to the group's selection. |
 
+## @cyclone-ui/tool
+
+Tool, the Cyclone UI AI component for a tool call the agent makes: a Trace line whose title, status and icon follow the tool part's `state` ("Running …", "Ran …", "Failed to run …", "Denied …"), and that opens to show the call's input and output as pretty-printed JSON code blocks. Tool.Header takes the part's `type`, `state`, `title` and `approval`; Tool.Input and Tool.Output take `input`, `output` and `errorText`. Pending approvals use Confirmation.
+
+- **Name:** `@cyclone-ui/tool`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/body-text@0.5.100`
+- `@cyclone-ui/code-block@0.6.110`
+- `@cyclone-ui/confirmation@0.0.1`
+- `@cyclone-ui/icons@0.0.103`
+- `@cyclone-ui/trace@0.0.1`
+- `@tamagui/core@3.3.2`
+
+### Files
+
+| Path                           | Type        | Target |
+| ------------------------------ | ----------- | ------ |
+| `components/tool/src/Tool.tsx` | `component` | —      |
+
+### Props
+
+#### `ToolHeaderProps`
+
+| Prop       | Type               | Default | Required | Description                                                                       |
+| ---------- | ------------------ | ------- | -------- | --------------------------------------------------------------------------------- |
+| `type`     | `ToolPart["type"]` | —       | No       | The part's `type`. Its name (`tool-readFile` → readFile) is the title by default. |
+| `toolName` | `string`           | —       | No       | The part's `toolName`, the title by default for a `dynamic-tool`.                 |
+| `state`    | `ToolState`        | —       | Yes      | The part's `state`, which sets the line's status, icon and verb.                  |
+| `title`    | `ReactNode`        | —       | No       | What the tool ran, after the verb, as in "Ran pnpm test".                         |
+| `icon`     | `ReactNode`        | —       | No       | An icon that names the tool, in place of the state's icon.                        |
+
+#### `ToolInputProps`
+
+| Prop    | Type                | Default | Required | Description                                       |
+| ------- | ------------------- | ------- | -------- | ------------------------------------------------- |
+| `input` | `ToolPart["input"]` | —       | Yes      | The part's `input`, shown as pretty-printed JSON. |
+
+#### `ToolOutputProps`
+
+| Prop        | Type                    | Default | Required | Description                                                                                           |
+| ----------- | ----------------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------- |
+| `output`    | `ToolPart["output"]`    | —       | No       | The part's `output`: a string as is, an element rendered as is, anything else as pretty-printed JSON. |
+| `errorText` | `ToolPart["errorText"]` | —       | No       | The part's `errorText`, shown in place of the output when the call failed.                            |
+
 ## @cyclone-ui/tooltip
 
 A tooltip built on the Tamagui Tooltip with Trigger and Content parts. The content is elevated, takes the Container variants (primary, secondary, tertiary, outlined, sunken, canvas, surface, elevated, floating) with shadow, glass and accented options, animates in and out, and shows an arrow by default, and the arrow and border colors can be customized. Use it to show short supplemental information on hover or focus.
@@ -5742,6 +6615,57 @@ A full-bleed topographic map background for the web. The interactive variant fol
 | `lightSrc`    | `string`                       | `topographyLightSrc` | No       | URL of the light topography image.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | `colorSrc`    | `string`                       | `topographyColorSrc` | No       | URL of the same contours in colour.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | `paintShader` | `string`                       | —                    | No       | GLSL that also paints the colour map in, with no pointer (rain, for example). It must define `float paint(vec2 px, vec2 viewport, float time, bool light)`, which returns 0 (grey) to 1 (full colour) for the pixel at `px`, in CSS pixels from the viewport's top left. `viewport` is the viewport's size in CSS pixels, `time` is the frame's `requestAnimationFrame` timestamp in seconds, modulo 3600, and `light` is true in a light theme. Frames are drawn when `floor(timestamp / (1000 / 30))` changes, so a renderer elsewhere on the page that follows the same rules can draw the same effect in step. It eases in with the warp over the first 4 seconds. Name any helpers so that they don't clash with the renderer's own (`hash`, `noise`, `toLinear`). Only the `interactive` renderer draws it, also on touch-first devices, and reduced motion turns it off. |
+
+## @cyclone-ui/trace
+
+Trace, the building block of the Cyclone UI AI components: a list of lines that report what an agent did, each an icon, a one-line title that truncates and an optional description such as a duration or count. A line's status shows running work with a shimmering title, failed work in the danger color and pending work dimmed. Trace.Collapsible expands a line into its detail (text, code or nested lines) and can be controlled; Trace.Link opens a page and Trace.Button opens a dialog, sheet or popover. Use it for reasoning, tool calls, sources, plans and tasks.
+
+- **Name:** `@cyclone-ui/trace`
+- **Type:** `component`
+
+### Dependencies
+
+- `@cyclone-ui/body-text@0.5.100`
+- `@cyclone-ui/collapsible@0.3.104`
+- `@cyclone-ui/visually-hidden@0.5.100`
+- `@tamagui/constants@3.3.2`
+- `@tamagui/core@3.3.2`
+- `@tamagui/helpers-tamagui@3.3.2`
+
+### Files
+
+| Path                             | Type        | Target |
+| -------------------------------- | ----------- | ------ |
+| `components/trace/src/Trace.tsx` | `component` | —      |
+
+### Props
+
+#### `TraceLineProps`
+
+| Prop     | Type          | Default | Required | Description                                                 |
+| -------- | ------------- | ------- | -------- | ----------------------------------------------------------- |
+| `status` | `TraceStatus` | —       | No       | The state of the work the line reports. Done work has none. |
+
+#### `TraceCollapsibleProps`
+
+| Prop           | Type                      | Default | Required | Description                                                             |
+| -------------- | ------------------------- | ------- | -------- | ----------------------------------------------------------------------- |
+| `open`         | `boolean`                 | —       | No       | Whether the line is open. Makes it controlled; pass `onOpenChange` too. |
+| `defaultOpen`  | `boolean`                 | —       | No       | Whether the line starts open when uncontrolled. Defaults to `false`.    |
+| `onOpenChange` | `(open: boolean) => void` | —       | No       | Called with the new open state when the reader opens or closes it.      |
+
+#### `TraceLinkProps`
+
+| Prop       | Type      | Default | Required | Description                                             |
+| ---------- | --------- | ------- | -------- | ------------------------------------------------------- |
+| `href`     | `string`  | —       | Yes      | The page the line opens.                                |
+| `external` | `boolean` | —       | No       | Open the page in a new tab, and tell screen readers so. |
+
+#### `TraceProps`
+
+| Prop       | Type        | Default | Required | Description |
+| ---------- | ----------- | ------- | -------- | ----------- |
+| `children` | `ReactNode` | —       | No       | —           |
 
 ## @cyclone-ui/type-table
 

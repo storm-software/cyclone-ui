@@ -1,0 +1,52 @@
+{
+  "name": "@cyclone-ui/inline-citation",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "InlineCitation, a source marker inside a sentence of an AI reply. InlineCitationCardTrigger is a small button labeled with the first source's hostname and a +N count (sources prop); it opens a hover card (InlineCitationCard, a Popover with open, defaultOpen and onOpenChange) on hover, keyboard focus or press, and Enter moves focus into it. InlineCitationCardBody holds InlineCitationSource (title, url, description), InlineCitationQuote and a carousel (InlineCitationCarousel with Header, Index, Prev, Next, Content and Item) that pages through several sources. InlineCitationText highlights the cited text while the citation is hovered.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/inline-citation"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/popover": "workspace:*",
+    "@cyclone-ui/trace": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/popper": "catalog:",
+    "@tamagui/use-controllable-state": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./InlineCitation": {
+      "import": "./dist/InlineCitation.mjs",
+      "require": "./dist/InlineCitation.cjs"
+    },
+    "./*": "./*"
+  }
+}
