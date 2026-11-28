@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/plan",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "Plan, the Cyclone UI AI component for the steps an agent decides on before it starts: a Trace line with the goal and progress (Plan.Title, Plan.Description such as 2 of 4 done) that shimmers while isStreaming is true and expands into the steps. Each Plan.Step is done, running or pending, with a check, a dotted circle or an empty circle, and pending steps are dimmed. The plan starts open; open, defaultOpen and onOpenChange control it, Plan.Action puts buttons beside the line and Plan.Footer below it. Use Task instead when the steps come from the work itself.",
   "repository": {

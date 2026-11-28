@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/confirmation",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "Confirmation, the Cyclone UI AI component that asks the person to approve or deny a tool call before it runs: a bordered row with an optional icon, the question with an optional description, and Deny and Approve buttons. It reads the tool part's `approval` and `state`, shows only while an approval is pending or answered, and swaps the question for `Confirmation.Accepted` or `Confirmation.Rejected` content once the person answers. Confirmation.Action is a small Button.",
   "repository": {

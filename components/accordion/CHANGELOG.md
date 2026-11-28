@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Accordion
 
+## [0.3.109](https://github.com/storm-software/cyclone-ui/releases/tag/accordion%400.3.109) (11/28/2026)
+
+### Features
+
+- **monorepo:** Added various AI component packages ([dd2949e80](https://github.com/storm-software/cyclone-ui/commit/dd2949e80))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.101**
+- Updated **container** to **v0.6.108**
+- Updated **heading-text** to **v0.5.102**
+- Updated **icons** to **v0.0.104**
+
 ## [0.3.108](https://github.com/storm-software/cyclone-ui/releases/tag/accordion%400.3.108) (11/26/2026)
 
 ### Updated Dependencies

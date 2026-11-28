@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Tag
 
+## [0.0.104](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.104) (11/28/2026)
+
+### Features
+
+- **monorepo:** Added various AI component packages ([dd2949e80](https://github.com/storm-software/cyclone-ui/commit/dd2949e80))
+
+### Updated Dependencies
+
+- Updated **container** to **v0.6.108**
+- Updated **icons** to **v0.0.104**
+- Updated **ripple-animation** to **v0.0.78**
+
 ## [0.0.103](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.103) (11/26/2026)
 
 ### Updated Dependencies

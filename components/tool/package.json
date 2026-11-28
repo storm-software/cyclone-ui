@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/tool",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "Tool, the Cyclone UI AI component for a tool call the agent makes: a Trace line whose title, status and icon follow the tool part's `state` (\"Running …\", \"Ran …\", \"Failed to run …\", \"Denied …\"), and that opens to show the call's input and output as pretty-printed JSON code blocks. Tool.Header takes the part's `type`, `state`, `title` and `approval`; Tool.Input and Tool.Output take `input`, `output` and `errorText`. Pending approvals use Confirmation.",
   "repository": {

@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/prompt-message",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "PromptMessage, one turn of an AI conversation: from=\"user\" sets the person's message at the end in a surface bubble, while the agent's reply spans the row unframed. Parts: an optional avatar beside the turn, PromptMessage.Header for the sender and time, PromptMessage.Content (variant surface, primary, tinted or ghost; a status theme such as danger tints it), and PromptMessage.Actions with ghost icon buttons that have tooltips: PromptMessage.Action, PromptMessage.Copy (a CopyButton that swaps to a check) and PromptMessage.Feedback (good and bad response toggles with aria-pressed, controlled or uncontrolled).",
   "repository": {

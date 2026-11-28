@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/terminal",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "Terminal, the Cyclone UI AI component for a shell command the agent runs: a Trace line (\"Running pnpm build\", \"Ran pnpm build\", or \"pnpm lint exited with code 1\" in the danger color) that opens once output streams in, with the output in a code-font block that scrolls to the end as it grows. It takes `output`, `isStreaming`, `command`, `exitCode`, `autoScroll` and `onClear`, with copy and clear buttons beside the line.",
   "repository": {

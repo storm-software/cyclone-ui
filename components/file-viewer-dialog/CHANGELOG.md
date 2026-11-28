@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - File Viewer Dialog
 
+## [0.0.2](https://github.com/storm-software/cyclone-ui/releases/tag/file-viewer-dialog%400.0.2) (11/28/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.101**
+- Updated **button** to **v0.6.109**
+- Updated **file-viewer** to **v0.0.2**
+- Updated **icons** to **v0.0.104**
+- Updated **modal** to **v0.0.75**
+- Updated **pdf-document-display** to **v0.5.108**
+
 ## [0.0.1](https://github.com/storm-software/cyclone-ui/releases/tag/file-viewer-dialog%400.0.1) (11/26/2026)
 
 ### Features

@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.91](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.91) (11/28/2026)
+
+### Features
+
+- **monorepo:** Added various AI component packages ([dd2949e80](https://github.com/storm-software/cyclone-ui/commit/dd2949e80))
+
 ## [0.0.90](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.90) (11/26/2026)
 
 ### Features

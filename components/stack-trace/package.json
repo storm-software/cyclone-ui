@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/stack-trace",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "StackTrace, a failed tool call and its stack frames, built on Trace. It parses a JavaScript stack string (trace prop) into the error type, message and frames (function, file, line, column), and renders a danger line that reads \"Failed: TypeError: ...\" and opens (open, defaultOpen, onOpenChange) into the full error, your own frames as lines that call onFilePathClick, and the node_modules and Node internal frames folded into a dimmed monospace block. StackTraceActions and StackTraceCopyButton sit beside the line. parseStackTrace is exported.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/stack-trace"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",

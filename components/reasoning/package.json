@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/reasoning",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "Reasoning, the Cyclone UI AI component for a model's thinking: a Trace line that reads Thinking with a running shimmer while isStreaming is true, then Thought for Ns, and expands into the thinking text. It opens while the model thinks and closes when it finishes unless the reader opened or closed it, and it measures the duration itself when duration is not given. Pass the text as children, or compose Reasoning.Trigger and Reasoning.Content; open, defaultOpen and onOpenChange control it, and useReasoning reads its state.",
   "repository": {

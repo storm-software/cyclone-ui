@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Color Picker
 
+## [0.0.97](https://github.com/storm-software/cyclone-ui/releases/tag/color-picker%400.0.97) (11/28/2026)
+
+### Updated Dependencies
+
+- Updated **color-area** to **v0.0.86**
+- Updated **field** to **v0.5.111**
+- Updated **form** to **v0.9.104**
+- Updated **helpers** to **v0.3.103**
+- Updated **icons** to **v0.0.104**
+- Updated **input** to **v0.6.111**
+- Updated **popover** to **v0.5.111**
+- Updated **toggle-group** to **v0.0.98**
+
 ## [0.0.96](https://github.com/storm-software/cyclone-ui/releases/tag/color-picker%400.0.96) (11/26/2026)
 
 ### Updated Dependencies

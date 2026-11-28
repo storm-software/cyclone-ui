@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/suggestion",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "Suggestions, a row of prompts the person can send to an AI agent without typing. Suggestions lays the pills out on one line that scrolls sideways when they don't fit, fading the edge that has more to show; each Suggestion is a rounded Button labeled with its suggestion (or children) that calls onClick with the suggestion text when pressed. Put the row above the prompt input.",
   "repository": {

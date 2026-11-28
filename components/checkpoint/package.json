@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/checkpoint",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "Checkpoint, a point in an AI conversation that the person can return to: a separator after a turn that shows a decorative Checkpoint.Icon (a restore clock by default), a label and a Checkpoint.Trigger button (Restore by default, with an optional tooltip) between two rules. The border variant puts a rule under the row instead and the inline variant drops the rules. Restoring keeps that turn and drops every message after it.",
   "repository": {

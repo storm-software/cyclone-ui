@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/task",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "Task, the Cyclone UI AI component for a piece of work an agent is doing: a Trace line with a title and a status icon that expands into the steps the agent took, each a Task.Item line with an optional icon and description. The task's status follows its items (running while one runs, error once one failed, done after), it opens while it runs and closes when done unless the reader chose, and isStreaming keeps it running between steps. Task.ItemFile shows a file name inline, and useTask reads the state. Use Plan instead when the steps are known up front.",
   "repository": {

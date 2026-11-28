@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/sources",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "Sources, the links an AI agent used for a reply, built on Trace: a collapsible line that reads \"Used N sources\" (SourcesTrigger with count) and opens into a list of links. Source renders one link that opens in a new tab, titled by title or the URL's hostname, with an external-link icon and screen reader text. Sources takes open, defaultOpen and onOpenChange.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/sources"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",

@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/chain-of-thought",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "ChainOfThought, the Cyclone UI AI component for the steps behind an agent's answer: a summary Trace line that expands into the steps. The summary's status and title follow its steps: Researching with a running shimmer while a step runs (or isStreaming is set), then Researched in 3 steps, with the failed ones counted and the danger color when any failed. ChainOfThought.Step is a line with a label, a description, an icon and a status (complete, active, pending or error) that opens into its detail when it has children; ChainOfThought.SearchResults shows results as tags and ChainOfThought.Image a captioned image. It opens while it runs and closes when done unless the reader chose; built on Task.",
   "repository": {

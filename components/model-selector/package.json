@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/model-selector",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "ModelSelector, a menu that picks one option for an AI agent, such as the model it runs (grouped by provider, each with a short description) or how hard it thinks (effort). It is built on ContextMenu, so it opens as a popover on large screens and a bottom sheet on small ones; the root takes value, onValueChange and open/defaultOpen/onOpenChange, and picking an option closes the menu. ModelSelector.Trigger is a small ghost button showing the selected option (with an optional muted label such as Effort) and a chevron; ModelSelector.Content, Group (with a heading), Item (with a description), Name and Separator build the menu.",
   "repository": {

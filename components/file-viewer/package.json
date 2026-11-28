@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/file-viewer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "A web-only viewer for Word, Excel and PowerPoint files, built on File Viewer with only its Word, spreadsheet and PPTX renderers. It follows the Cyclone light or dark theme, loads its parsing workers from the renderer packages so apps need no asset setup, and exports isOfficeFile to check a file's name or MIME type.",
   "repository": {

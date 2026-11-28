@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/test-results",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "TestResults, a test run by an AI agent, built on Trace: a summary line that counts the tests (\"Ran 42 tests, 2 failed\", summary prop, with an optional duration and progress bar) and opens into its suites. TestSuite (name, status) is a collapsible line with TestSuiteStats that opens when it has a failure; Test (name, status, duration) is a line with a passed, failed, skipped or running status, and a failed test opens into TestError, the failure message and stack in the code font. Without a summary the run reads as running.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/test-results"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
