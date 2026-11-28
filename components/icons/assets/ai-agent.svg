@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor">
+		<path d="M12 2c5.523 0 10 4.477 10 10a9.97 9.97 0 0 1 -2.83 6.97A9.97 9.97 0 0 1 12 22a9.97 9.97 0 0 1 -7.17 -3.03A9.97 9.97 0 0 1 2 12C2 6.477 6.477 2 12 2M12 16a6.98 6.98 0 0 0 -5.075 2.182A7.96 7.96 0 0 0 12 20a7.96 7.96 0 0 0 5.074 -1.818A6.98 6.98 0 0 0 12 16M12 4a8 8 0 0 0 -6.452 12.73A8.97 8.97 0 0 1 12 14a8.97 8.97 0 0 1 6.451 2.73A8 8 0 0 0 12 4M11.53 5.32a0.506 0.506 0 0 1 0.94 0l0.254 0.61a4.37 4.37 0 0 0 2.25 2.327l0.718 0.318c0.41 0.183 0.41 0.781 0 0.964l-0.76 0.338a4.36 4.36 0 0 0 -2.218 2.25l-0.247 0.566a0.506 0.506 0 0 1 -0.934 0l-0.246 -0.565a4.36 4.36 0 0 0 -2.22 -2.251l-0.76 -0.338a0.531 0.531 0 0 1 0 -0.964l0.718 -0.318a4.37 4.37 0 0 0 2.251 -2.326z" fill="currentColor" fill-opacity="0" stroke-width="1" stroke-dasharray="63">
+			<animate attributeName="stroke-dashoffset" dur="0.6s" fill="freeze" values="63;0" />
+			<animate attributeName="fill-opacity" begin="0.6s" dur="0.4s" fill="freeze" to="1" />
+			<animate attributeName="stroke-width" begin="0.6s" dur="0.4s" fill="freeze" values="1;0" />
+		</path>
+	</g>
+</svg>

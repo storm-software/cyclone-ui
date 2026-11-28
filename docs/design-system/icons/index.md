@@ -1,6 +1,6 @@
 ---
 title: "Icons"
-description: "Catalog of all 585 Cyclone UI icon components, with import paths and the size, color, variant, animated, and mirrored props."
+description: "Catalog of all 852 Cyclone UI icon components, with import paths and the size, color, variant, animated, and mirrored props."
 documentType: reference
 tags: [icons, line-md, tamagui, animation]
 component:
@@ -142,595 +142,862 @@ The `Display/Icons` story has a `Gallery` view. It shows a preview of every icon
 
 ## Catalog
 
-The catalog has 585 icons. 130 of them (marked *) are drawn for Cyclone UI in the line-md style, most of them after [Material Design Icons](https://pictogrammers.com/library/mdi/) shapes. The variant counts are: `regular` 575, `bold` 575, `loop` 86, `filled` 314, `filled-loop` 49.
+The catalog has 852 icons. 400 of them (marked *) are drawn for Cyclone UI in the line-md style, after [Material Design Icons](https://pictogrammers.com/library/mdi/), [Lucide](https://lucide.dev), [Tabler](https://tabler.io/icons), [Solar](https://www.figma.com/community/file/1166831539721848736) and [Remix Icon](https://remixicon.com) shapes. An icon whose name was already taken has an `Alt` suffix, for example `GithubAlt` and `MediumAlt`. The variant counts are: `regular` 843, `bold` 843, `loop` 86, `filled` 433, `filled-loop` 49. Brand icons drop the `brand-` prefix of their source name, for example `Docker` and `Vercel`.
 
-| Component                     | `regular` | `bold` | `loop` | `filled` | `filled-loop` |
-| ----------------------------- | :-------: | :----: | :----: | :------: | :-----------: |
-| `Account`                     |     ✓     |   ✓    |        |          |               |
-| `AccountAdd`                  |     ✓     |   ✓    |        |          |               |
-| `AccountAlert`                |     ✓     |   ✓    |   ✓    |          |               |
-| `AccountCircle` *             |     ✓     |   ✓    |        |    ✓     |               |
-| `AccountDelete`               |     ✓     |   ✓    |        |          |               |
-| `AccountRemove`               |     ✓     |   ✓    |        |          |               |
-| `AccountSmall`                |     ✓     |   ✓    |        |          |               |
-| `Alarm` *                     |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `AlarmCheck` *                |     ✓     |   ✓    |        |    ✓     |               |
-| `AlarmOff` *                  |     ✓     |   ✓    |        |    ✓     |               |
-| `AlarmPlus` *                 |     ✓     |   ✓    |        |    ✓     |               |
-| `Alert`                       |     ✓     |   ✓    |   ✓    |          |               |
-| `AlertCircle`                 |     ✓     |   ✓    |   ✓    |          |               |
-| `AlertSquare`                 |     ✓     |   ✓    |   ✓    |          |               |
-| `AlignCenter`                 |     ✓     |   ✓    |        |          |               |
-| `AlignJustify`                |     ✓     |   ✓    |        |          |               |
-| `AlignLeft`                   |     ✓     |   ✓    |        |          |               |
-| `AlignRight`                  |     ✓     |   ✓    |        |          |               |
-| `Anchor` *                    |     ✓     |   ✓    |        |          |               |
-| `ArrowAlignBottom`            |     ✓     |   ✓    |        |          |               |
-| `ArrowAlignCenter`            |     ✓     |   ✓    |        |          |               |
-| `ArrowAlignLeft`              |     ✓     |   ✓    |        |          |               |
-| `ArrowAlignMiddle`            |     ✓     |   ✓    |        |          |               |
-| `ArrowAlignRight`             |     ✓     |   ✓    |        |          |               |
-| `ArrowAlignTop`               |     ✓     |   ✓    |        |          |               |
-| `ArrowCloseDown`              |     ✓     |   ✓    |        |          |               |
-| `ArrowCloseLeft`              |     ✓     |   ✓    |        |          |               |
-| `ArrowCloseRight`             |     ✓     |   ✓    |        |          |               |
-| `ArrowCloseUp`                |     ✓     |   ✓    |        |          |               |
-| `ArrowDown`                   |     ✓     |   ✓    |        |          |               |
-| `ArrowDownCircle`             |     ✓     |   ✓    |        |          |               |
-| `ArrowDownSquare`             |     ✓     |   ✓    |        |          |               |
-| `ArrowLeft`                   |     ✓     |   ✓    |        |          |               |
-| `ArrowLeftCircle`             |     ✓     |   ✓    |        |          |               |
-| `ArrowLeftSquare`             |     ✓     |   ✓    |        |          |               |
-| `ArrowOpenDown`               |     ✓     |   ✓    |        |          |               |
-| `ArrowOpenLeft`               |     ✓     |   ✓    |        |          |               |
-| `ArrowOpenRight`              |     ✓     |   ✓    |        |          |               |
-| `ArrowOpenUp`                 |     ✓     |   ✓    |        |          |               |
-| `ArrowRight`                  |     ✓     |   ✓    |        |          |               |
-| `ArrowRightCircle`            |     ✓     |   ✓    |        |          |               |
-| `ArrowRightSquare`            |     ✓     |   ✓    |        |          |               |
-| `ArrowsDiagonal`              |     ✓     |   ✓    |        |          |               |
-| `ArrowsDiagonalRotated`       |     ✓     |   ✓    |        |          |               |
-| `ArrowsHorizontal`            |     ✓     |   ✓    |        |          |               |
-| `ArrowsHorizontalAlt`         |     ✓     |   ✓    |        |          |               |
-| `ArrowsLongDiagonal`          |     ✓     |   ✓    |        |          |               |
-| `ArrowsLongDiagonalRotated`   |           |        |        |          |               |
-| `ArrowSmallDown`              |     ✓     |   ✓    |        |          |               |
-| `ArrowSmallLeft`              |     ✓     |   ✓    |        |          |               |
-| `ArrowSmallRight`             |     ✓     |   ✓    |        |          |               |
-| `ArrowSmallUp`                |     ✓     |   ✓    |        |          |               |
-| `ArrowsVertical`              |     ✓     |   ✓    |        |          |               |
-| `ArrowsVerticalAlt`           |     ✓     |   ✓    |        |          |               |
-| `ArrowUp`                     |     ✓     |   ✓    |        |          |               |
-| `ArrowUpCircle`               |     ✓     |   ✓    |        |          |               |
-| `ArrowUpSquare`               |     ✓     |   ✓    |        |          |               |
-| `Asterisk` *                  |     ✓     |   ✓    |        |          |               |
-| `At`                          |     ✓     |   ✓    |        |          |               |
-| `Attachment` *                |     ✓     |   ✓    |        |          |               |
-| `AutoFix` *                   |     ✓     |   ✓    |   ✓    |          |               |
-| `AutoMode` *                  |     ✓     |   ✓    |   ✓    |          |               |
-| `Aws` *                       |     ✓     |   ✓    |        |          |               |
-| `BackupRestore`               |     ✓     |   ✓    |        |          |               |
-| `BadgeAccount` *              |     ✓     |   ✓    |        |    ✓     |               |
-| `BadgeAccountHorizontal` *    |     ✓     |   ✓    |        |    ✓     |               |
-| `Bank` *                      |     ✓     |   ✓    |        |    ✓     |               |
-| `BankCircle` *                |     ✓     |   ✓    |        |    ✓     |               |
-| `Barcode` *                   |     ✓     |   ✓    |        |          |               |
-| `BarcodeScan` *               |     ✓     |   ✓    |        |          |               |
-| `Beer`                        |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `BeerAlt`                     |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `Bell`                        |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `BellAlert`                   |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `BellOff` *                   |     ✓     |   ✓    |        |    ✓     |               |
-| `BellPlus` *                  |     ✓     |   ✓    |        |    ✓     |               |
-| `BellRemove` *                |     ✓     |   ✓    |        |    ✓     |               |
-| `BellRing` *                  |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `Bluesky`                     |     ✓     |   ✓    |        |    ✓     |               |
-| `Brake`                       |     ✓     |   ✓    |        |    ✓     |               |
-| `BrakeAbs`                    |     ✓     |   ✓    |        |    ✓     |               |
-| `BrakeAlert`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `BrakeHold`                   |     ✓     |   ✓    |        |    ✓     |               |
-| `BrakeParking`                |     ✓     |   ✓    |        |    ✓     |               |
-| `Briefcase`                   |     ✓     |   ✓    |        |    ✓     |               |
-| `BriefcaseCancel`             |     ✓     |   ✓    |        |    ✓     |               |
-| `BriefcaseCheck`              |     ✓     |   ✓    |        |    ✓     |               |
-| `BriefcaseMinus`              |     ✓     |   ✓    |        |    ✓     |               |
-| `BriefcasePlus`               |     ✓     |   ✓    |        |    ✓     |               |
-| `BriefcaseRemove`             |     ✓     |   ✓    |        |    ✓     |               |
-| `Bug` *                       |     ✓     |   ✓    |        |    ✓     |               |
-| `BuyMeACoffee`                |     ✓     |   ✓    |        |    ✓     |               |
-| `Cake`                        |     ✓     |   ✓    |        |    ✓     |               |
-| `Calendar`                    |     ✓     |   ✓    |        |          |               |
-| `Camera` *                    |     ✓     |   ✓    |        |    ✓     |               |
-| `Cancel`                      |     ✓     |   ✓    |        |          |               |
-| `CardAccountDetails` *        |     ✓     |   ✓    |        |    ✓     |               |
-| `CarLight`                    |     ✓     |   ✓    |        |    ✓     |               |
-| `CarLightAlert`               |     ✓     |   ✓    |        |    ✓     |               |
-| `CarLightAlertOff`            |     ✓     |   ✓    |        |    ✓     |               |
-| `CarLightDimmed`              |     ✓     |   ✓    |        |    ✓     |               |
-| `CarLightDimmedOff`           |     ✓     |   ✓    |        |    ✓     |               |
-| `CarLightOff`                 |     ✓     |   ✓    |        |    ✓     |               |
-| `Cart` *                      |     ✓     |   ✓    |        |    ✓     |               |
-| `CartVariant` *               |     ✓     |   ✓    |        |          |               |
-| `Cctv` *                      |     ✓     |   ✓    |        |          |               |
-| `CctvOff` *                   |     ✓     |   ✓    |        |          |               |
-| `Cellphone`                   |     ✓     |   ✓    |        |          |               |
-| `CellphoneAndroid` *          |     ✓     |   ✓    |        |          |               |
-| `CellphoneArrowDown`          |     ✓     |   ✓    |        |          |               |
-| `CellphoneArrowUp`            |     ✓     |   ✓    |        |          |               |
-| `CellphoneCheck` *            |     ✓     |   ✓    |        |          |               |
-| `CellphoneKey` *              |     ✓     |   ✓    |        |          |               |
-| `CellphoneOff`                |     ✓     |   ✓    |        |          |               |
-| `CellphoneScreenshot`         |     ✓     |   ✓    |        |          |               |
-| `Certificate` *               |     ✓     |   ✓    |        |    ✓     |               |
-| `Chat`                        |     ✓     |   ✓    |        |    ✓     |               |
-| `ChatAlert`                   |     ✓     |   ✓    |        |    ✓     |               |
-| `ChatAlertOff`                |     ✓     |   ✓    |        |    ✓     |               |
-| `ChatBubble`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `ChatBubbleOff`               |     ✓     |   ✓    |        |    ✓     |               |
-| `ChatOff`                     |     ✓     |   ✓    |        |    ✓     |               |
-| `ChatRound`                   |     ✓     |   ✓    |        |    ✓     |               |
-| `ChatRoundAlert`              |     ✓     |   ✓    |        |    ✓     |               |
-| `ChatRoundAlertOff`           |     ✓     |   ✓    |        |    ✓     |               |
-| `ChatRoundDots`               |     ✓     |   ✓    |        |    ✓     |               |
-| `ChatRoundDotsOff`            |     ✓     |   ✓    |        |    ✓     |               |
-| `ChatRoundOff`                |     ✓     |   ✓    |        |    ✓     |               |
-| `CheckAll`                    |     ✓     |   ✓    |        |          |               |
-| `CheckList3`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `ChevronDoubleDown`           |     ✓     |   ✓    |        |          |               |
-| `ChevronDoubleLeft`           |     ✓     |   ✓    |        |          |               |
-| `ChevronDoubleRight`          |     ✓     |   ✓    |        |          |               |
-| `ChevronDoubleUp`             |     ✓     |   ✓    |        |          |               |
-| `ChevronDown`                 |     ✓     |   ✓    |        |          |               |
-| `ChevronDownCircle`           |     ✓     |   ✓    |        |          |               |
-| `ChevronDownSquare`           |     ✓     |   ✓    |        |          |               |
-| `ChevronLeft`                 |     ✓     |   ✓    |        |          |               |
-| `ChevronLeftCircle`           |     ✓     |   ✓    |        |          |               |
-| `ChevronLeftSquare`           |     ✓     |   ✓    |        |          |               |
-| `ChevronRight`                |     ✓     |   ✓    |        |          |               |
-| `ChevronRightCircle`          |     ✓     |   ✓    |        |          |               |
-| `ChevronRightSquare`          |     ✓     |   ✓    |        |          |               |
-| `ChevronSmallDoubleDown`      |     ✓     |   ✓    |        |          |               |
-| `ChevronSmallDoubleLeft`      |     ✓     |   ✓    |        |          |               |
-| `ChevronSmallDoubleRight`     |     ✓     |   ✓    |        |          |               |
-| `ChevronSmallDoubleUp`        |     ✓     |   ✓    |        |          |               |
-| `ChevronSmallDown`            |     ✓     |   ✓    |        |          |               |
-| `ChevronSmallLeft`            |     ✓     |   ✓    |        |          |               |
-| `ChevronSmallRight`           |     ✓     |   ✓    |        |          |               |
-| `ChevronSmallTripleDown`      |     ✓     |   ✓    |        |          |               |
-| `ChevronSmallTripleLeft`      |     ✓     |   ✓    |        |          |               |
-| `ChevronSmallTripleRight`     |     ✓     |   ✓    |        |          |               |
-| `ChevronSmallTripleUp`        |     ✓     |   ✓    |        |          |               |
-| `ChevronSmallUp`              |     ✓     |   ✓    |        |          |               |
-| `ChevronTripleDown`           |     ✓     |   ✓    |        |          |               |
-| `ChevronTripleLeft`           |     ✓     |   ✓    |        |          |               |
-| `ChevronTripleRight`          |     ✓     |   ✓    |        |          |               |
-| `ChevronTripleUp`             |     ✓     |   ✓    |        |          |               |
-| `ChevronUp`                   |     ✓     |   ✓    |        |          |               |
-| `ChevronUpCircle`             |     ✓     |   ✓    |        |          |               |
-| `ChevronUpSquare`             |     ✓     |   ✓    |        |          |               |
-| `Circle`                      |     ✓     |   ✓    |        |    ✓     |               |
-| `Clipboard` *                 |     ✓     |   ✓    |        |    ✓     |               |
-| `ClipboardArrow`              |     ✓     |   ✓    |        |          |               |
-| `ClipboardCheck`              |     ✓     |   ✓    |        |          |               |
-| `ClipboardList`               |     ✓     |   ✓    |        |          |               |
-| `ClipboardMinus`              |     ✓     |   ✓    |        |          |               |
-| `ClipboardPlus`               |     ✓     |   ✓    |        |          |               |
-| `ClipboardRemove`             |     ✓     |   ✓    |        |          |               |
-| `ClipboardText` *             |     ✓     |   ✓    |        |    ✓     |               |
-| `Clock` *                     |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `Close`                       |     ✓     |   ✓    |        |          |               |
-| `CloseCircle`                 |     ✓     |   ✓    |        |    ✓     |               |
-| `CloseSmall`                  |     ✓     |   ✓    |        |          |               |
-| `CloseSquare`                 |     ✓     |   ✓    |        |    ✓     |               |
-| `Cloud`                       |     ✓     |   ✓    |        |    ✓     |               |
-| `CloudAlt`                    |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `CloudAltBraces`              |     ✓     |   ✓    |   ✓    |          |               |
-| `CloudAltDownload`            |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `CloudAltOff`                 |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `CloudAltPrint`               |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `CloudAltTags`                |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `CloudAltUpload`              |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `CloudDown`                   |     ✓     |   ✓    |        |          |               |
-| `CloudOff`                    |     ✓     |   ✓    |        |    ✓     |               |
-| `CloudUp`                     |     ✓     |   ✓    |        |          |               |
-| `Coffee`                      |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `CoffeeArrow`                 |     ✓     |   ✓    |        |    ✓     |               |
-| `CoffeeHalfEmpty`             |           |        |        |          |       ✓       |
-| `Cog`                         |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `CogOff`                      |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `Compass`                     |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `CompassOff`                  |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `Computer`                    |     ✓     |   ✓    |        |    ✓     |               |
-| `ComputerOff`                 |     ✓     |   ✓    |        |    ✓     |               |
-| `Confirm`                     |     ✓     |   ✓    |        |          |               |
-| `ConfirmCircle`               |     ✓     |   ✓    |        |    ✓     |               |
-| `ConfirmSquare`               |     ✓     |   ✓    |        |    ✓     |               |
-| `Console` *                   |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `ConsoleLine` *               |     ✓     |   ✓    |   ✓    |          |               |
-| `Construction`                |     ✓     |   ✓    |        |          |               |
-| `Cookie`                      |     ✓     |   ✓    |        |    ✓     |               |
-| `CookieCheck`                 |     ✓     |   ✓    |        |    ✓     |               |
-| `CookieMinus`                 |     ✓     |   ✓    |        |    ✓     |               |
-| `CookieOff`                   |     ✓     |   ✓    |        |    ✓     |               |
-| `CookiePlus`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `CookieRemove`                |     ✓     |   ✓    |        |    ✓     |               |
-| `CookieSettings`              |     ✓     |   ✓    |        |    ✓     |               |
-| `Discord`                     |     ✓     |   ✓    |        |          |               |
-| `Dns` *                       |     ✓     |   ✓    |        |    ✓     |               |
-| `Document`                    |     ✓     |   ✓    |        |          |               |
-| `DocumentAdd`                 |     ✓     |   ✓    |        |          |               |
-| `DocumentCode`                |     ✓     |   ✓    |        |          |               |
-| `DocumentDelete`              |     ✓     |   ✓    |        |          |               |
-| `DocumentList`                |     ✓     |   ✓    |        |          |               |
-| `DocumentRemove`              |     ✓     |   ✓    |        |          |               |
-| `DocumentReport`              |     ✓     |   ✓    |        |          |               |
-| `Dot` *                       |     ✓     |   ✓    |        |    ✓     |               |
-| `DotsHorizontal` *            |     ✓     |   ✓    |        |          |               |
-| `DotsVertical` *              |     ✓     |   ✓    |        |          |               |
-| `DoubleArrowHorizontal`       |     ✓     |   ✓    |        |          |               |
-| `DoubleArrowVertical`         |     ✓     |   ✓    |        |          |               |
-| `Download`                    |     ✓     |   ✓    |   ✓    |          |               |
-| `Downloading`                 |     ✓     |   ✓    |   ✓    |          |               |
-| `DownloadOff`                 |     ✓     |   ✓    |   ✓    |          |               |
-| `DownloadOffOutline`          |     ✓     |   ✓    |   ✓    |          |               |
-| `DownloadOutline`             |     ✓     |   ✓    |   ✓    |          |               |
-| `DragHorizontal` *            |     ✓     |   ✓    |        |          |               |
-| `DragVertical` *              |     ✓     |   ✓    |        |          |               |
-| `Edit`                        |     ✓     |   ✓    |        |    ✓     |               |
-| `EditFull`                    |           |        |        |    ✓     |               |
-| `Email`                       |     ✓     |   ✓    |        |    ✓     |               |
-| `EmailAlert`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `EmailAlt`                    |           |        |        |    ✓     |               |
-| `EmailArrowDown`              |     ✓     |   ✓    |        |    ✓     |               |
-| `EmailArrowLeft`              |     ✓     |   ✓    |        |    ✓     |               |
-| `EmailArrowRight`             |     ✓     |   ✓    |        |    ✓     |               |
-| `EmailArrowUp`                |     ✓     |   ✓    |        |    ✓     |               |
-| `EmailCheck`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `EmailMinus`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `EmailMultiple`               |     ✓     |   ✓    |        |    ✓     |               |
-| `EmailOpened`                 |     ✓     |   ✓    |        |    ✓     |               |
-| `EmailOpenedAlt`              |           |        |        |    ✓     |               |
-| `EmailOpenedMultiple`         |     ✓     |   ✓    |        |    ✓     |               |
-| `EmailPlus`                   |     ✓     |   ✓    |        |    ✓     |               |
-| `EmailRemove`                 |     ✓     |   ✓    |        |    ✓     |               |
-| `EmojiAngry`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `EmojiCry`                    |     ✓     |   ✓    |        |    ✓     |               |
-| `EmojiFrown`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `EmojiFrownOpen`              |     ✓     |   ✓    |        |    ✓     |               |
-| `EmojiGrin`                   |     ✓     |   ✓    |        |    ✓     |               |
-| `EmojiNeutral`                |     ✓     |   ✓    |        |    ✓     |               |
-| `EmojiSmile`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `EmojiSmileWink`              |     ✓     |   ✓    |        |    ✓     |               |
-| `Engine`                      |     ✓     |   ✓    |        |    ✓     |               |
-| `EngineOff`                   |     ✓     |   ✓    |        |    ✓     |               |
-| `ExternalLink`                |     ✓     |   ✓    |        |          |               |
-| `ExternalLinkRounded`         |     ✓     |   ✓    |        |          |               |
-| `Facebook` *                  |     ✓     |   ✓    |        |    ✓     |               |
-| `File`                        |     ✓     |   ✓    |        |    ✓     |               |
-| `FileCancel`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `FileDocument`                |     ✓     |   ✓    |        |    ✓     |               |
-| `FileDocumentCancel`          |     ✓     |   ✓    |        |    ✓     |               |
-| `FileDocumentMinus`           |     ✓     |   ✓    |        |    ✓     |               |
-| `FileDocumentOff`             |     ✓     |   ✓    |        |    ✓     |               |
-| `FileDocumentPlus`            |     ✓     |   ✓    |        |    ✓     |               |
-| `FileDocumentRemove`          |     ✓     |   ✓    |        |    ✓     |               |
-| `FileDownload`                |     ✓     |   ✓    |        |    ✓     |               |
-| `FileExport`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `FileImport`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `FileMinus`                   |     ✓     |   ✓    |        |    ✓     |               |
-| `FileOff`                     |     ✓     |   ✓    |        |    ✓     |               |
-| `FilePlus`                    |     ✓     |   ✓    |        |    ✓     |               |
-| `FileRemove`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `FileSearch`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `FileUpload`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `Filter`                      |     ✓     |   ✓    |        |    ✓     |               |
-| `FilterAlt`                   |     ✓     |   ✓    |        |          |               |
-| `FilterAltOff`                |     ✓     |   ✓    |        |          |               |
-| `FilterConfirm`               |     ✓     |   ✓    |        |    ✓     |               |
-| `FilterMinus`                 |     ✓     |   ✓    |        |    ✓     |               |
-| `FilterOff`                   |     ✓     |   ✓    |        |    ✓     |               |
-| `FilterPlus`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `FilterRemove`                |     ✓     |   ✓    |        |    ✓     |               |
-| `FilterVariant` *             |     ✓     |   ✓    |        |          |               |
-| `Fingerprint` *               |     ✓     |   ✓    |        |          |               |
-| `FingerprintPattern` *        |     ✓     |   ✓    |        |          |               |
-| `FlipHorizontal` *            |     ✓     |   ✓    |        |          |               |
-| `FlipToBack` *                |     ✓     |   ✓    |        |          |               |
-| `FlipToFront` *               |     ✓     |   ✓    |        |          |               |
-| `FlipVertical` *              |     ✓     |   ✓    |        |          |               |
-| `Folder`                      |     ✓     |   ✓    |        |    ✓     |               |
-| `FolderArrowDown`             |     ✓     |   ✓    |        |    ✓     |               |
-| `FolderArrowLeft`             |     ✓     |   ✓    |        |    ✓     |               |
-| `FolderArrowRight`            |     ✓     |   ✓    |        |    ✓     |               |
-| `FolderArrowUp`               |     ✓     |   ✓    |        |    ✓     |               |
-| `FolderCancel`                |     ✓     |   ✓    |        |    ✓     |               |
-| `FolderCheck`                 |     ✓     |   ✓    |        |    ✓     |               |
-| `FolderMinus`                 |     ✓     |   ✓    |        |    ✓     |               |
-| `FolderMultiple`              |     ✓     |   ✓    |        |    ✓     |               |
-| `FolderMusic`                 |     ✓     |   ✓    |        |    ✓     |               |
-| `FolderNetwork`               |     ✓     |   ✓    |        |    ✓     |               |
-| `FolderOff`                   |     ✓     |   ✓    |        |    ✓     |               |
-| `FolderOpen` *                |     ✓     |   ✓    |        |    ✓     |               |
-| `FolderPlus`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `FolderRemove`                |     ✓     |   ✓    |        |    ✓     |               |
-| `FolderSettings`              |     ✓     |   ✓    |        |    ✓     |               |
-| `FolderZip`                   |     ✓     |   ✓    |        |    ✓     |               |
-| `ForkLeft`                    |     ✓     |   ✓    |        |          |               |
-| `ForkRight`                   |     ✓     |   ✓    |        |          |               |
-| `FormatQuoteClose` *          |     ✓     |   ✓    |        |    ✓     |               |
-| `FormatQuoteOpen` *           |     ✓     |   ✓    |        |    ✓     |               |
-| `Gauge`                       |     ✓     |   ✓    |   ✓    |          |               |
-| `GaugeEmpty`                  |     ✓     |   ✓    |        |          |               |
-| `GaugeFull`                   |     ✓     |   ✓    |        |          |               |
-| `GaugeLow`                    |     ✓     |   ✓    |        |          |               |
-| `Gift` *                      |     ✓     |   ✓    |        |    ✓     |               |
-| `Github` *                    |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `GithubBox` *                 |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `Grid3`                       |     ✓     |   ✓    |        |    ✓     |               |
-| `HandClap` *                  |     ✓     |   ✓    |        |    ✓     |               |
-| `Hash`                        |     ✓     |   ✓    |        |          |               |
-| `HashSmall`                   |     ✓     |   ✓    |        |          |               |
-| `HazardLights`                |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `HazardLightsOff`             |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `Heart`                       |     ✓     |   ✓    |        |    ✓     |               |
-| `HeartFilledHalf`             |     ✓     |   ✓    |        |          |               |
-| `HeartHalf`                   |     ✓     |   ✓    |        |    ✓     |               |
-| `Home`                        |     ✓     |   ✓    |        |          |               |
-| `HomeMd`                      |     ✓     |   ✓    |        |          |               |
-| `HomeSimple`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `Iconify1`                    |     ✓     |   ✓    |        |          |               |
-| `Iconify2`                    |     ✓     |   ✓    |        |          |               |
-| `Iconify2Static`              |     ✓     |   ✓    |        |          |               |
-| `Image`                       |     ✓     |   ✓    |        |    ✓     |               |
-| `InformationSlabCircle` *     |     ✓     |   ✓    |        |    ✓     |               |
-| `Instagram`                   |     ✓     |   ✓    |        |          |               |
-| `Key` *                       |     ✓     |   ✓    |        |    ✓     |               |
-| `KeyVariant` *                |     ✓     |   ✓    |        |    ✓     |               |
-| `Kubernetes` *                |     ✓     |   ✓    |        |    ✓     |               |
-| `LanguageC` *                 |     ✓     |   ✓    |        |          |               |
-| `LanguageCpp` *               |     ✓     |   ✓    |        |          |               |
-| `LanguageCsharp` *            |     ✓     |   ✓    |        |          |               |
-| `LanguageGo` *                |     ✓     |   ✓    |        |          |               |
-| `LanguageHtml5` *             |     ✓     |   ✓    |        |    ✓     |               |
-| `LanguageJava` *              |     ✓     |   ✓    |        |          |               |
-| `LanguageJavascript` *        |     ✓     |   ✓    |        |    ✓     |               |
-| `LanguageJsx` *               |     ✓     |   ✓    |        |    ✓     |               |
-| `LanguageMarkdown` *          |     ✓     |   ✓    |        |    ✓     |               |
-| `LanguagePhp` *               |     ✓     |   ✓    |        |    ✓     |               |
-| `LanguagePython` *            |     ✓     |   ✓    |        |    ✓     |               |
-| `LanguageRust` *              |     ✓     |   ✓    |        |          |               |
-| `LanguageTypescript` *        |     ✓     |   ✓    |        |    ✓     |               |
-| `Laptop`                      |     ✓     |   ✓    |        |    ✓     |               |
-| `LaptopOff`                   |     ✓     |   ✓    |        |    ✓     |               |
-| `License` *                   |     ✓     |   ✓    |        |    ✓     |               |
-| `Lightbulb`                   |     ✓     |   ✓    |        |    ✓     |               |
-| `LightbulbOff`                |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `LightDark`                   |     ✓     |   ✓    |   ✓    |          |               |
-| `Lightning` *                 |     ✓     |   ✓    |        |    ✓     |               |
-| `Link`                        |     ✓     |   ✓    |        |          |               |
-| `Linkedin` *                  |     ✓     |   ✓    |        |    ✓     |               |
-| `List`                        |     ✓     |   ✓    |        |          |               |
-| `List3`                       |     ✓     |   ✓    |        |    ✓     |               |
-| `ListBox` *                   |     ✓     |   ✓    |        |    ✓     |               |
-| `ListIndented`                |     ✓     |   ✓    |        |          |               |
-| `ListIndentedReversed`        |     ✓     |   ✓    |        |          |               |
-| `Loading`                     |           |        |   ✓    |          |               |
-| `LoadingAlt`                  |           |        |   ✓    |          |               |
-| `Lock` *                      |     ✓     |   ✓    |        |    ✓     |               |
-| `LockOpen` *                  |     ✓     |   ✓    |        |    ✓     |               |
-| `Login`                       |     ✓     |   ✓    |        |          |               |
-| `LogIn2`                      |     ✓     |   ✓    |        |          |               |
-| `Logout`                      |     ✓     |   ✓    |        |          |               |
-| `LogOut2`                     |     ✓     |   ✓    |        |          |               |
-| `Magnify` *                   |     ✓     |   ✓    |        |    ✓     |               |
-| `Mailbox` *                   |     ✓     |   ✓    |        |    ✓     |               |
-| `MapMarker`                   |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `MapMarkerAlt`                |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `MapMarkerAltOff`             |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `MapMarkerMinus`              |     ✓     |   ✓    |        |    ✓     |               |
-| `MapMarkerMultiple`           |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `MapMarkerMultipleAlt`        |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `MapMarkerMultipleAltOff`     |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `MapMarkerMultipleOff`        |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `MapMarkerOff`                |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `MapMarkerPlus`               |     ✓     |   ✓    |        |    ✓     |               |
-| `MapMarkerRadius`             |     ✓     |   ✓    |        |    ✓     |               |
-| `MapMarkerRemove`             |     ✓     |   ✓    |        |    ✓     |               |
-| `MapTrifold` *                |     ✓     |   ✓    |        |          |               |
-| `Marker`                      |     ✓     |   ✓    |        |    ✓     |               |
-| `Mastodon`                    |     ✓     |   ✓    |        |    ✓     |               |
-| `MedicalServices`             |     ✓     |   ✓    |        |    ✓     |               |
-| `Medium` *                    |     ✓     |   ✓    |        |          |               |
-| `Menu`                        |     ✓     |   ✓    |        |          |               |
-| `MenuFoldLeft`                |     ✓     |   ✓    |        |          |               |
-| `MenuFoldRight`               |     ✓     |   ✓    |        |          |               |
-| `MenuUnfoldLeft`              |     ✓     |   ✓    |        |          |               |
-| `MenuUnfoldRight`             |     ✓     |   ✓    |        |          |               |
-| `Microphone` *                |     ✓     |   ✓    |        |    ✓     |               |
-| `MicrophoneOff` *             |     ✓     |   ✓    |        |    ✓     |               |
-| `Minus`                       |     ✓     |   ✓    |        |          |               |
-| `MinusCircle`                 |     ✓     |   ✓    |        |    ✓     |               |
-| `MinusSquare`                 |     ✓     |   ✓    |        |    ✓     |               |
-| `Monitor`                     |     ✓     |   ✓    |        |    ✓     |               |
-| `MonitorArrowDown`            |     ✓     |   ✓    |        |    ✓     |               |
-| `MonitorArrowUp`              |     ✓     |   ✓    |        |    ✓     |               |
-| `MonitorMutlple`              |     ✓     |   ✓    |        |    ✓     |               |
-| `MonitorOff`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `MonitorScreenshot`           |     ✓     |   ✓    |        |    ✓     |               |
-| `MonitorSmall`                |     ✓     |   ✓    |        |    ✓     |               |
-| `MonitorSmallOff`             |     ✓     |   ✓    |        |    ✓     |               |
-| `Moon`                        |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `MoonAlt`                     |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `MoonAltOff`                  |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `MoonOff`                     |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `MoonRising`                  |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `MoonRisingAlt`               |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `MoonSimple`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `MoonSimpleOff`               |     ✓     |   ✓    |        |    ✓     |               |
-| `Mushroom`                    |     ✓     |   ✓    |        |    ✓     |               |
-| `MushroomOff`                 |     ✓     |   ✓    |        |    ✓     |               |
-| `MyLocation`                  |     ✓     |   ✓    |   ✓    |          |               |
-| `MyLocationOff`               |     ✓     |   ✓    |   ✓    |          |               |
-| `NavigationLeftDown`          |     ✓     |   ✓    |        |          |               |
-| `NavigationLeftUp`            |     ✓     |   ✓    |        |          |               |
-| `NavigationRightDown`         |     ✓     |   ✓    |        |          |               |
-| `NavigationRightUp`           |     ✓     |   ✓    |        |          |               |
-| `NewspaperVariant` *          |     ✓     |   ✓    |        |    ✓     |               |
-| `Nix` *                       |     ✓     |   ✓    |        |          |               |
-| `Notebook` *                  |     ✓     |   ✓    |        |    ✓     |               |
-| `OpenSourceInitiative` *      |     ✓     |   ✓    |        |    ✓     |               |
-| `PaintDrop`                   |     ✓     |   ✓    |        |    ✓     |               |
-| `PaintDropHalf`               |           |        |        |    ✓     |               |
-| `PaletteSwatchVariant` *      |     ✓     |   ✓    |        |    ✓     |               |
-| `Patreon`                     |     ✓     |   ✓    |        |          |               |
-| `Pause`                       |     ✓     |   ✓    |        |          |               |
-| `PauseOff`                    |     ✓     |   ✓    |        |          |               |
-| `Peanut`                      |     ✓     |   ✓    |        |    ✓     |               |
-| `PeanutOff`                   |     ✓     |   ✓    |        |    ✓     |               |
-| `Peertube`                    |     ✓     |   ✓    |        |          |               |
-| `PeertubeAlt`                 |     ✓     |   ✓    |        |          |               |
-| `Pencil`                      |     ✓     |   ✓    |        |          |               |
-| `Person`                      |     ✓     |   ✓    |        |    ✓     |               |
-| `PersonAdd`                   |     ✓     |   ✓    |        |    ✓     |               |
-| `PersonOff`                   |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `PersonRemove`                |     ✓     |   ✓    |        |    ✓     |               |
-| `PersonSearch`                |     ✓     |   ✓    |        |    ✓     |               |
-| `Phone`                       |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `PhoneAdd`                    |     ✓     |   ✓    |        |    ✓     |               |
-| `PhoneCall`                   |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `PhoneIncoming`               |     ✓     |   ✓    |        |    ✓     |               |
-| `PhoneOff`                    |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `PhoneOutgoing`               |     ✓     |   ✓    |        |    ✓     |               |
-| `PhoneRemove`                 |     ✓     |   ✓    |        |    ✓     |               |
-| `Pin` *                       |     ✓     |   ✓    |        |    ✓     |               |
-| `Pixelfed`                    |     ✓     |   ✓    |        |    ✓     |               |
-| `Pizza`                       |     ✓     |   ✓    |        |    ✓     |               |
-| `PizzaOff`                    |     ✓     |   ✓    |        |    ✓     |               |
-| `Play`                        |     ✓     |   ✓    |        |    ✓     |               |
-| `PlayOff`                     |     ✓     |   ✓    |        |    ✓     |               |
-| `Pleroma`                     |     ✓     |   ✓    |        |          |               |
-| `Plus`                        |     ✓     |   ✓    |        |          |               |
-| `PlusCircle`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `PlusSquare`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `Puzzle` *                    |     ✓     |   ✓    |        |    ✓     |               |
-| `Qrcode` *                    |     ✓     |   ✓    |        |          |               |
-| `Question`                    |     ✓     |   ✓    |        |          |               |
-| `QuestionCircle` *            |     ✓     |   ✓    |        |    ✓     |               |
-| `QuestionSquare` *            |     ✓     |   ✓    |        |    ✓     |               |
-| `Reddit`                      |     ✓     |   ✓    |   ✓    |          |               |
-| `RedditCircle`                |     ✓     |   ✓    |   ✓    |          |               |
-| `Remove`                      |     ✓     |   ✓    |        |          |               |
-| `Robot` *                     |     ✓     |   ✓    |        |    ✓     |               |
-| `Rotate180`                   |     ✓     |   ✓    |        |          |               |
-| `Rotate270`                   |     ✓     |   ✓    |        |          |               |
-| `Rotate90`                    |     ✓     |   ✓    |        |          |               |
-| `Round360`                    |     ✓     |   ✓    |        |          |               |
-| `RoundaboutLeft`              |     ✓     |   ✓    |        |          |               |
-| `RoundaboutRight`             |     ✓     |   ✓    |        |          |               |
-| `RoundRampLeft`               |     ✓     |   ✓    |        |          |               |
-| `RoundRampRight`              |     ✓     |   ✓    |        |          |               |
-| `Rss` *                       |     ✓     |   ✓    |   ✓    |          |               |
-| `RssBox` *                    |     ✓     |   ✓    |        |    ✓     |               |
-| `SafeSquare` *                |     ✓     |   ✓    |        |    ✓     |               |
-| `SatelliteUplink` *           |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `SatelliteVariant` *          |     ✓     |   ✓    |        |    ✓     |               |
-| `Search`                      |     ✓     |   ✓    |        |    ✓     |               |
-| `Security`                    |     ✓     |   ✓    |        |    ✓     |               |
-| `SecurityOff`                 |     ✓     |   ✓    |        |    ✓     |               |
-| `Send` *                      |     ✓     |   ✓    |        |    ✓     |               |
-| `Server` *                    |     ✓     |   ✓    |        |    ✓     |               |
-| `Share` *                     |     ✓     |   ✓    |        |    ✓     |               |
-| `ShareVariant` *              |     ✓     |   ✓    |        |    ✓     |               |
-| `Shimmer` *                   |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `Skull` *                     |     ✓     |   ✓    |        |    ✓     |               |
-| `SortAscending` *             |     ✓     |   ✓    |        |          |               |
-| `SortDescending` *            |     ✓     |   ✓    |        |          |               |
-| `Soundcloud`                  |     ✓     |   ✓    |        |          |               |
-| `Speed`                       |     ✓     |   ✓    |   ✓    |          |               |
-| `Speedometer`                 |     ✓     |   ✓    |   ✓    |          |               |
-| `Spotify`                     |     ✓     |   ✓    |        |    ✓     |               |
-| `Square`                      |     ✓     |   ✓    |        |    ✓     |               |
-| `Star`                        |     ✓     |   ✓    |        |    ✓     |               |
-| `StarAlt`                     |     ✓     |   ✓    |        |    ✓     |               |
-| `StarAltFilledHalf`           |     ✓     |   ✓    |        |          |               |
-| `StarAltFilledRightHalf`      |     ✓     |   ✓    |        |          |               |
-| `StarHalf`                    |     ✓     |   ✓    |        |    ✓     |               |
-| `StarHalfAlt`                 |     ✓     |   ✓    |        |    ✓     |               |
-| `StarPulsating`               |           |        |   ✓    |          |       ✓       |
-| `StarRightHalf`               |     ✓     |   ✓    |        |    ✓     |               |
-| `StarRightHalfAlt`            |     ✓     |   ✓    |        |    ✓     |               |
-| `Steering`                    |     ✓     |   ✓    |        |          |               |
-| `SteeringOff`                 |     ✓     |   ✓    |        |          |               |
-| `Storefront` *                |     ✓     |   ✓    |        |    ✓     |               |
-| `Sunny`                       |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `SunnyOff`                    |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `SunnyOutline`                |     ✓     |   ✓    |   ✓    |          |               |
-| `SunRising`                   |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
-| `Switch`                      |     ✓     |   ✓    |        |    ✓     |               |
-| `SwitchOff`                   |     ✓     |   ✓    |        |    ✓     |               |
-| `Tablet`                      |     ✓     |   ✓    |        |          |               |
-| `TabletArrowDown`             |     ✓     |   ✓    |        |          |               |
-| `TabletArrowUp`               |     ✓     |   ✓    |        |          |               |
-| `TabletOff`                   |     ✓     |   ✓    |        |          |               |
-| `TabletScreenshot`            |     ✓     |   ✓    |        |          |               |
-| `Taco`                        |     ✓     |   ✓    |        |          |               |
-| `Tag` *                       |     ✓     |   ✓    |        |    ✓     |               |
-| `TagOff` *                    |     ✓     |   ✓    |        |    ✓     |               |
-| `TagPlus` *                   |     ✓     |   ✓    |        |    ✓     |               |
-| `Tailwind` *                  |     ✓     |   ✓    |        |    ✓     |               |
-| `Telegram` *                  |     ✓     |   ✓    |        |    ✓     |               |
-| `Terraform` *                 |     ✓     |   ✓    |        |    ✓     |               |
-| `TextBox`                     |     ✓     |   ✓    |        |          |               |
-| `TextBoxMultiple`             |     ✓     |   ✓    |        |          |               |
-| `ThumbsDown` *                |     ✓     |   ✓    |        |    ✓     |               |
-| `ThumbsUp` *                  |     ✓     |   ✓    |        |    ✓     |               |
-| `Tiktok`                      |     ✓     |   ✓    |        |          |               |
-| `Tor` *                       |     ✓     |   ✓    |        |    ✓     |               |
-| `Trash`                       |     ✓     |   ✓    |        |          |               |
-| `TrayArrowDown` *             |     ✓     |   ✓    |   ✓    |          |               |
-| `TrayArrowUp` *               |     ✓     |   ✓    |   ✓    |          |               |
-| `Tune` *                      |     ✓     |   ✓    |   ✓    |          |               |
-| `TuneVertical` *              |     ✓     |   ✓    |   ✓    |          |               |
-| `TurnLeft`                    |     ✓     |   ✓    |        |          |               |
-| `TurnRight`                   |     ✓     |   ✓    |        |          |               |
-| `TurnSharpLeft`               |     ✓     |   ✓    |        |          |               |
-| `TurnSharpRight`              |     ✓     |   ✓    |        |          |               |
-| `TurnSlightLeft`              |     ✓     |   ✓    |        |          |               |
-| `TurnSlightRight`             |     ✓     |   ✓    |        |          |               |
-| `Twitter`                     |     ✓     |   ✓    |        |    ✓     |               |
-| `TwitterX`                    |     ✓     |   ✓    |        |          |               |
-| `TwitterXAlt`                 |     ✓     |   ✓    |        |          |               |
-| `TwoFactorAuthentication` *   |     ✓     |   ✓    |        |          |               |
-| `Update` *                    |     ✓     |   ✓    |   ✓    |          |               |
-| `Upload`                      |     ✓     |   ✓    |   ✓    |          |               |
-| `Uploading`                   |     ✓     |   ✓    |   ✓    |          |               |
-| `UploadOff`                   |     ✓     |   ✓    |   ✓    |          |               |
-| `UploadOffOutline`            |     ✓     |   ✓    |   ✓    |          |               |
-| `UploadOutline`               |     ✓     |   ✓    |   ✓    |          |               |
-| `UsbFlashDrive` *             |     ✓     |   ✓    |        |    ✓     |               |
-| `UTurnLeft`                   |     ✓     |   ✓    |        |          |               |
-| `UTurnRight`                  |     ✓     |   ✓    |        |          |               |
-| `ValignBaseline`              |     ✓     |   ✓    |        |          |               |
-| `ValignBottom`                |     ✓     |   ✓    |        |          |               |
-| `ValignMiddle`                |     ✓     |   ✓    |        |          |               |
-| `ValignTop`                   |     ✓     |   ✓    |        |          |               |
-| `VolumeHigh`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `VolumeHighOff`               |     ✓     |   ✓    |        |    ✓     |               |
-| `VolumeLow`                   |     ✓     |   ✓    |        |    ✓     |               |
-| `VolumeLowOff`                |     ✓     |   ✓    |        |    ✓     |               |
-| `VolumeMedium`                |     ✓     |   ✓    |        |    ✓     |               |
-| `VolumeMediumOff`             |     ✓     |   ✓    |        |    ✓     |               |
-| `VolumeMinus`                 |     ✓     |   ✓    |        |    ✓     |               |
-| `VolumePlus`                  |     ✓     |   ✓    |        |    ✓     |               |
-| `VolumeRemove`                |     ✓     |   ✓    |        |    ✓     |               |
-| `Watch`                       |     ✓     |   ✓    |   ✓    |          |               |
-| `WatchOff`                    |     ✓     |   ✓    |   ✓    |          |               |
-| `Water`                       |     ✓     |   ✓    |        |    ✓     |               |
-| `WaterOff`                    |     ✓     |   ✓    |        |    ✓     |               |
-| `WeatherCloudy`               |           |        |   ✓    |          |               |
-| `Web` *                       |     ✓     |   ✓    |        |          |               |
-| `WebBox` *                    |     ✓     |   ✓    |        |    ✓     |               |
-| `Youtube`                     |     ✓     |   ✓    |        |    ✓     |               |
+| Component                      | `regular` | `bold` | `loop` | `filled` | `filled-loop` |
+| ------------------------------ | :-------: | :----: | :----: | :------: | :-----------: |
+| `Account`                      |     ✓     |   ✓    |        |          |               |
+| `AccountAdd`                   |     ✓     |   ✓    |        |          |               |
+| `AccountAlert`                 |     ✓     |   ✓    |   ✓    |          |               |
+| `AccountCircle` *              |     ✓     |   ✓    |        |    ✓     |               |
+| `AccountDelete`                |     ✓     |   ✓    |        |          |               |
+| `AccountRemove`                |     ✓     |   ✓    |        |          |               |
+| `AccountSmall`                 |     ✓     |   ✓    |        |          |               |
+| `Ad` *                         |     ✓     |   ✓    |        |          |               |
+| `Ai` *                         |     ✓     |   ✓    |        |          |               |
+| `AiAgent` *                    |     ✓     |   ✓    |        |    ✓     |               |
+| `AiGenerate2` *                |     ✓     |   ✓    |        |    ✓     |               |
+| `AiGenerate2Alt` *             |     ✓     |   ✓    |        |          |               |
+| `Alarm` *                      |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `AlarmCheck` *                 |     ✓     |   ✓    |        |    ✓     |               |
+| `AlarmOff` *                   |     ✓     |   ✓    |        |    ✓     |               |
+| `AlarmPlus` *                  |     ✓     |   ✓    |        |    ✓     |               |
+| `Album` *                      |     ✓     |   ✓    |        |          |               |
+| `Alert`                        |     ✓     |   ✓    |   ✓    |          |               |
+| `AlertCircle`                  |     ✓     |   ✓    |   ✓    |          |               |
+| `AlertSquare`                  |     ✓     |   ✓    |   ✓    |          |               |
+| `AlignCenter`                  |     ✓     |   ✓    |        |          |               |
+| `AlignJustify`                 |     ✓     |   ✓    |        |          |               |
+| `AlignLeft`                    |     ✓     |   ✓    |        |          |               |
+| `AlignRight`                   |     ✓     |   ✓    |        |          |               |
+| `Amazon` *                     |     ✓     |   ✓    |        |    ✓     |               |
+| `Anchor` *                     |     ✓     |   ✓    |        |          |               |
+| `Android` *                    |     ✓     |   ✓    |        |    ✓     |               |
+| `Anthropic` *                  |     ✓     |   ✓    |        |    ✓     |               |
+| `ApiApp` *                     |     ✓     |   ✓    |        |          |               |
+| `Apple` *                      |     ✓     |   ✓    |        |    ✓     |               |
+| `AppStore` *                   |     ✓     |   ✓    |        |    ✓     |               |
+| `Archive` *                    |     ✓     |   ✓    |        |          |               |
+| `Archive2` *                   |     ✓     |   ✓    |        |    ✓     |               |
+| `ArchiveStack` *               |     ✓     |   ✓    |        |    ✓     |               |
+| `ArchiveX` *                   |     ✓     |   ✓    |        |          |               |
+| `ArrowAlignBottom`             |     ✓     |   ✓    |        |          |               |
+| `ArrowAlignCenter`             |     ✓     |   ✓    |        |          |               |
+| `ArrowAlignLeft`               |     ✓     |   ✓    |        |          |               |
+| `ArrowAlignMiddle`             |     ✓     |   ✓    |        |          |               |
+| `ArrowAlignRight`              |     ✓     |   ✓    |        |          |               |
+| `ArrowAlignTop`                |     ✓     |   ✓    |        |          |               |
+| `ArrowCloseDown`               |     ✓     |   ✓    |        |          |               |
+| `ArrowCloseLeft`               |     ✓     |   ✓    |        |          |               |
+| `ArrowCloseRight`              |     ✓     |   ✓    |        |          |               |
+| `ArrowCloseUp`                 |     ✓     |   ✓    |        |          |               |
+| `ArrowDown`                    |     ✓     |   ✓    |        |          |               |
+| `ArrowDownCircle`              |     ✓     |   ✓    |        |          |               |
+| `ArrowDownSquare`              |     ✓     |   ✓    |        |          |               |
+| `ArrowLeft`                    |     ✓     |   ✓    |        |          |               |
+| `ArrowLeftCircle`              |     ✓     |   ✓    |        |          |               |
+| `ArrowLeftSquare`              |     ✓     |   ✓    |        |          |               |
+| `ArrowOpenDown`                |     ✓     |   ✓    |        |          |               |
+| `ArrowOpenLeft`                |     ✓     |   ✓    |        |          |               |
+| `ArrowOpenRight`               |     ✓     |   ✓    |        |          |               |
+| `ArrowOpenUp`                  |     ✓     |   ✓    |        |          |               |
+| `ArrowRight`                   |     ✓     |   ✓    |        |          |               |
+| `ArrowRightCircle`             |     ✓     |   ✓    |        |          |               |
+| `ArrowRightSquare`             |     ✓     |   ✓    |        |          |               |
+| `ArrowsDiagonal`               |     ✓     |   ✓    |        |          |               |
+| `ArrowsDiagonalRotated`        |     ✓     |   ✓    |        |          |               |
+| `ArrowsHorizontal`             |     ✓     |   ✓    |        |          |               |
+| `ArrowsHorizontalAlt`          |     ✓     |   ✓    |        |          |               |
+| `ArrowsLongDiagonal`           |     ✓     |   ✓    |        |          |               |
+| `ArrowsLongDiagonalRotated`    |     ✓     |   ✓    |        |          |               |
+| `ArrowSmallDown`               |     ✓     |   ✓    |        |          |               |
+| `ArrowSmallLeft`               |     ✓     |   ✓    |        |          |               |
+| `ArrowSmallRight`              |     ✓     |   ✓    |        |          |               |
+| `ArrowSmallUp`                 |     ✓     |   ✓    |        |          |               |
+| `ArrowsVertical`               |     ✓     |   ✓    |        |          |               |
+| `ArrowsVerticalAlt`            |     ✓     |   ✓    |        |          |               |
+| `ArrowUp`                      |     ✓     |   ✓    |        |          |               |
+| `ArrowUpCircle`                |     ✓     |   ✓    |        |          |               |
+| `ArrowUpSquare`                |     ✓     |   ✓    |        |          |               |
+| `Article` *                    |     ✓     |   ✓    |        |    ✓     |               |
+| `Asterisk` *                   |     ✓     |   ✓    |        |          |               |
+| `At`                           |     ✓     |   ✓    |        |          |               |
+| `Atom` *                       |     ✓     |   ✓    |        |    ✓     |               |
+| `Attachment` *                 |     ✓     |   ✓    |        |          |               |
+| `AudioLines` *                 |     ✓     |   ✓    |        |          |               |
+| `Auth0` *                      |     ✓     |   ✓    |        |          |               |
+| `AutoFix` *                    |     ✓     |   ✓    |   ✓    |          |               |
+| `AutoMode` *                   |     ✓     |   ✓    |   ✓    |          |               |
+| `Award` *                      |     ✓     |   ✓    |        |    ✓     |               |
+| `Aws` *                        |     ✓     |   ✓    |        |          |               |
+| `BackupRestore`                |     ✓     |   ✓    |        |          |               |
+| `BadgeAccount` *               |     ✓     |   ✓    |        |    ✓     |               |
+| `BadgeAccountHorizontal` *     |     ✓     |   ✓    |        |    ✓     |               |
+| `Bank` *                       |     ✓     |   ✓    |        |    ✓     |               |
+| `BankCircle` *                 |     ✓     |   ✓    |        |    ✓     |               |
+| `Barcode` *                    |     ✓     |   ✓    |        |          |               |
+| `BarcodeScan` *                |     ✓     |   ✓    |        |          |               |
+| `Battery` *                    |     ✓     |   ✓    |        |          |               |
+| `BatteryCharging` *            |     ✓     |   ✓    |        |          |               |
+| `BatteryExclamationPoint` *    |     ✓     |   ✓    |        |          |               |
+| `BatteryFull` *                |     ✓     |   ✓    |        |          |               |
+| `BatteryLow` *                 |     ✓     |   ✓    |        |          |               |
+| `BatteryMedium` *              |     ✓     |   ✓    |        |          |               |
+| `Beer`                         |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `BeerAlt`                      |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `Behance` *                    |     ✓     |   ✓    |        |    ✓     |               |
+| `Bell`                         |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `BellAlert`                    |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `BellOff` *                    |     ✓     |   ✓    |        |    ✓     |               |
+| `BellPlus` *                   |     ✓     |   ✓    |        |    ✓     |               |
+| `BellRemove` *                 |     ✓     |   ✓    |        |    ✓     |               |
+| `BellRing` *                   |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `BitCoin` *                    |     ✓     |   ✓    |        |    ✓     |               |
+| `Blender` *                    |     ✓     |   ✓    |        |    ✓     |               |
+| `Bluesky`                      |     ✓     |   ✓    |        |    ✓     |               |
+| `Bluetooth` *                  |     ✓     |   ✓    |        |          |               |
+| `BluetoothConnected` *         |     ✓     |   ✓    |        |          |               |
+| `BluetoothOff` *               |     ✓     |   ✓    |        |          |               |
+| `BluetoothSearching` *         |     ✓     |   ✓    |        |          |               |
+| `Bold` *                       |     ✓     |   ✓    |        |          |               |
+| `Booklet` *                    |     ✓     |   ✓    |        |    ✓     |               |
+| `Bookmark` *                   |     ✓     |   ✓    |        |    ✓     |               |
+| `Bookmark2` *                  |     ✓     |   ✓    |        |    ✓     |               |
+| `Bookmark3` *                  |     ✓     |   ✓    |        |    ✓     |               |
+| `BookMarked` *                 |     ✓     |   ✓    |        |    ✓     |               |
+| `Brain` *                      |     ✓     |   ✓    |        |          |               |
+| `BrainCircuit` *               |     ✓     |   ✓    |        |          |               |
+| `Brake`                        |     ✓     |   ✓    |        |    ✓     |               |
+| `BrakeAbs`                     |     ✓     |   ✓    |        |    ✓     |               |
+| `BrakeAlert`                   |     ✓     |   ✓    |        |    ✓     |               |
+| `BrakeHold`                    |     ✓     |   ✓    |        |    ✓     |               |
+| `BrakeParking`                 |     ✓     |   ✓    |        |    ✓     |               |
+| `Briefcase`                    |     ✓     |   ✓    |        |    ✓     |               |
+| `BriefcaseCancel`              |     ✓     |   ✓    |        |    ✓     |               |
+| `BriefcaseCheck`               |     ✓     |   ✓    |        |    ✓     |               |
+| `BriefcaseMinus`               |     ✓     |   ✓    |        |    ✓     |               |
+| `BriefcasePlus`                |     ✓     |   ✓    |        |    ✓     |               |
+| `BriefcaseRemove`              |     ✓     |   ✓    |        |    ✓     |               |
+| `Btc` *                        |     ✓     |   ✓    |        |    ✓     |               |
+| `Bug` *                        |     ✓     |   ✓    |        |    ✓     |               |
+| `BuyMeACoffee`                 |     ✓     |   ✓    |        |    ✓     |               |
+| `Cake`                         |     ✓     |   ✓    |        |    ✓     |               |
+| `Calendar`                     |     ✓     |   ✓    |        |          |               |
+| `Camera` *                     |     ✓     |   ✓    |        |    ✓     |               |
+| `Cancel`                       |     ✓     |   ✓    |        |          |               |
+| `CardAccountDetails` *         |     ✓     |   ✓    |        |    ✓     |               |
+| `CarLight`                     |     ✓     |   ✓    |        |    ✓     |               |
+| `CarLightAlert`                |     ✓     |   ✓    |        |    ✓     |               |
+| `CarLightAlertOff`             |     ✓     |   ✓    |        |    ✓     |               |
+| `CarLightDimmed`               |     ✓     |   ✓    |        |    ✓     |               |
+| `CarLightDimmedOff`            |     ✓     |   ✓    |        |    ✓     |               |
+| `CarLightOff`                  |     ✓     |   ✓    |        |    ✓     |               |
+| `Cart` *                       |     ✓     |   ✓    |        |    ✓     |               |
+| `CartVariant` *                |     ✓     |   ✓    |        |          |               |
+| `CaseLower` *                  |     ✓     |   ✓    |        |          |               |
+| `CaseSensitive` *              |     ✓     |   ✓    |        |          |               |
+| `CaseUpper` *                  |     ✓     |   ✓    |        |          |               |
+| `Cash` *                       |     ✓     |   ✓    |        |    ✓     |               |
+| `Cctv` *                       |     ✓     |   ✓    |        |          |               |
+| `CctvOff` *                    |     ✓     |   ✓    |        |          |               |
+| `Cellphone`                    |     ✓     |   ✓    |        |          |               |
+| `CellphoneAndroid` *           |     ✓     |   ✓    |        |          |               |
+| `CellphoneArrowDown`           |     ✓     |   ✓    |        |          |               |
+| `CellphoneArrowUp`             |     ✓     |   ✓    |        |          |               |
+| `CellphoneCheck` *             |     ✓     |   ✓    |        |          |               |
+| `CellphoneKey` *               |     ✓     |   ✓    |        |          |               |
+| `CellphoneOff`                 |     ✓     |   ✓    |        |          |               |
+| `CellphoneScreenshot`          |     ✓     |   ✓    |        |          |               |
+| `Certificate` *                |     ✓     |   ✓    |        |    ✓     |               |
+| `Certificate2` *               |     ✓     |   ✓    |        |    ✓     |               |
+| `ChartArea` *                  |     ✓     |   ✓    |        |          |               |
+| `ChartBar` *                   |     ✓     |   ✓    |        |          |               |
+| `ChartCandlestick` *           |     ✓     |   ✓    |        |          |               |
+| `ChartColumn` *                |     ✓     |   ✓    |        |          |               |
+| `ChartLine` *                  |     ✓     |   ✓    |        |          |               |
+| `ChartNetwork` *               |     ✓     |   ✓    |        |          |               |
+| `ChartPie` *                   |     ✓     |   ✓    |        |          |               |
+| `Chat`                         |     ✓     |   ✓    |        |    ✓     |               |
+| `ChatAlert`                    |     ✓     |   ✓    |        |    ✓     |               |
+| `ChatAlertOff`                 |     ✓     |   ✓    |        |    ✓     |               |
+| `ChatBubble`                   |     ✓     |   ✓    |        |    ✓     |               |
+| `ChatBubbleOff`                |     ✓     |   ✓    |        |    ✓     |               |
+| `ChatOff`                      |     ✓     |   ✓    |        |    ✓     |               |
+| `ChatRound`                    |     ✓     |   ✓    |        |    ✓     |               |
+| `ChatRoundAlert`               |     ✓     |   ✓    |        |    ✓     |               |
+| `ChatRoundAlertOff`            |     ✓     |   ✓    |        |    ✓     |               |
+| `ChatRoundDots`                |     ✓     |   ✓    |        |    ✓     |               |
+| `ChatRoundDotsOff`             |     ✓     |   ✓    |        |    ✓     |               |
+| `ChatRoundOff`                 |     ✓     |   ✓    |        |    ✓     |               |
+| `CheckAll`                     |     ✓     |   ✓    |        |          |               |
+| `CheckboxMultipleBlank` *      |     ✓     |   ✓    |        |    ✓     |               |
+| `CheckList3`                   |     ✓     |   ✓    |        |    ✓     |               |
+| `ChevronDoubleDown`            |     ✓     |   ✓    |        |          |               |
+| `ChevronDoubleLeft`            |     ✓     |   ✓    |        |          |               |
+| `ChevronDoubleRight`           |     ✓     |   ✓    |        |          |               |
+| `ChevronDoubleUp`              |     ✓     |   ✓    |        |          |               |
+| `ChevronDown`                  |     ✓     |   ✓    |        |          |               |
+| `ChevronDownCircle`            |     ✓     |   ✓    |        |          |               |
+| `ChevronDownSquare`            |     ✓     |   ✓    |        |          |               |
+| `ChevronLeft`                  |     ✓     |   ✓    |        |          |               |
+| `ChevronLeftCircle`            |     ✓     |   ✓    |        |          |               |
+| `ChevronLeftSquare`            |     ✓     |   ✓    |        |          |               |
+| `ChevronRight`                 |     ✓     |   ✓    |        |          |               |
+| `ChevronRightCircle`           |     ✓     |   ✓    |        |          |               |
+| `ChevronRightSquare`           |     ✓     |   ✓    |        |          |               |
+| `ChevronSmallDoubleDown`       |     ✓     |   ✓    |        |          |               |
+| `ChevronSmallDoubleLeft`       |     ✓     |   ✓    |        |          |               |
+| `ChevronSmallDoubleRight`      |     ✓     |   ✓    |        |          |               |
+| `ChevronSmallDoubleUp`         |     ✓     |   ✓    |        |          |               |
+| `ChevronSmallDown`             |     ✓     |   ✓    |        |          |               |
+| `ChevronSmallLeft`             |     ✓     |   ✓    |        |          |               |
+| `ChevronSmallRight`            |     ✓     |   ✓    |        |          |               |
+| `ChevronSmallTripleDown`       |     ✓     |   ✓    |        |          |               |
+| `ChevronSmallTripleLeft`       |     ✓     |   ✓    |        |          |               |
+| `ChevronSmallTripleRight`      |     ✓     |   ✓    |        |          |               |
+| `ChevronSmallTripleUp`         |     ✓     |   ✓    |        |          |               |
+| `ChevronSmallUp`               |     ✓     |   ✓    |        |          |               |
+| `ChevronTripleDown`            |     ✓     |   ✓    |        |          |               |
+| `ChevronTripleLeft`            |     ✓     |   ✓    |        |          |               |
+| `ChevronTripleRight`           |     ✓     |   ✓    |        |          |               |
+| `ChevronTripleUp`              |     ✓     |   ✓    |        |          |               |
+| `ChevronUp`                    |     ✓     |   ✓    |        |          |               |
+| `ChevronUpCircle`              |     ✓     |   ✓    |        |          |               |
+| `ChevronUpSquare`              |     ✓     |   ✓    |        |          |               |
+| `Circle`                       |     ✓     |   ✓    |        |    ✓     |               |
+| `Clapperboard` *               |     ✓     |   ✓    |        |          |               |
+| `Claude` *                     |     ✓     |   ✓    |        |    ✓     |               |
+| `Clipboard` *                  |     ✓     |   ✓    |        |    ✓     |               |
+| `ClipboardArrow`               |     ✓     |   ✓    |        |          |               |
+| `ClipboardCheck`               |     ✓     |   ✓    |        |          |               |
+| `ClipboardList`                |     ✓     |   ✓    |        |          |               |
+| `ClipboardMinus`               |     ✓     |   ✓    |        |          |               |
+| `ClipboardPlus`                |     ✓     |   ✓    |        |          |               |
+| `ClipboardRemove`              |     ✓     |   ✓    |        |          |               |
+| `ClipboardText` *              |     ✓     |   ✓    |        |    ✓     |               |
+| `Clock` *                      |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `Close`                        |     ✓     |   ✓    |        |          |               |
+| `CloseCircle`                  |     ✓     |   ✓    |        |    ✓     |               |
+| `ClosedCaption` *              |     ✓     |   ✓    |        |          |               |
+| `CloseSmall`                   |     ✓     |   ✓    |        |          |               |
+| `CloseSquare`                  |     ✓     |   ✓    |        |    ✓     |               |
+| `Cloud`                        |     ✓     |   ✓    |        |    ✓     |               |
+| `CloudAlt`                     |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `CloudAltBraces`               |     ✓     |   ✓    |   ✓    |          |               |
+| `CloudAltDownload`             |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `CloudAltOff`                  |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `CloudAltPrint`                |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `CloudAltTags`                 |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `CloudAltUpload`               |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `CloudDown`                    |     ✓     |   ✓    |        |          |               |
+| `Cloudflare` *                 |     ✓     |   ✓    |        |          |               |
+| `CloudOff`                     |     ✓     |   ✓    |        |    ✓     |               |
+| `CloudUp`                      |     ✓     |   ✓    |        |          |               |
+| `Codepen` *                    |     ✓     |   ✓    |        |          |               |
+| `Codesandbox` *                |     ✓     |   ✓    |        |          |               |
+| `Coffee`                       |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `CoffeeArrow`                  |     ✓     |   ✓    |        |    ✓     |               |
+| `CoffeeHalfEmpty`              |           |        |        |          |       ✓       |
+| `Cog`                          |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `CogOff`                       |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `Coin` *                       |     ✓     |   ✓    |        |    ✓     |               |
+| `Command` *                    |     ✓     |   ✓    |        |          |               |
+| `Compass`                      |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `CompassOff`                   |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `Component` *                  |     ✓     |   ✓    |        |          |               |
+| `Computer`                     |     ✓     |   ✓    |        |    ✓     |               |
+| `ComputerOff`                  |     ✓     |   ✓    |        |    ✓     |               |
+| `Confirm`                      |     ✓     |   ✓    |        |          |               |
+| `ConfirmCircle`                |     ✓     |   ✓    |        |    ✓     |               |
+| `ConfirmSquare`                |     ✓     |   ✓    |        |    ✓     |               |
+| `Console` *                    |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `ConsoleLine` *                |     ✓     |   ✓    |   ✓    |          |               |
+| `Construction`                 |     ✓     |   ✓    |        |          |               |
+| `ConstructionAlt` *            |     ✓     |   ✓    |        |          |               |
+| `ContactsBook` *               |     ✓     |   ✓    |        |    ✓     |               |
+| `ContactsBook2` *              |     ✓     |   ✓    |        |    ✓     |               |
+| `ContactsBook3` *              |     ✓     |   ✓    |        |    ✓     |               |
+| `Contrast` *                   |     ✓     |   ✓    |        |          |               |
+| `Cookie`                       |     ✓     |   ✓    |        |    ✓     |               |
+| `CookieCheck`                  |     ✓     |   ✓    |        |    ✓     |               |
+| `CookieMinus`                  |     ✓     |   ✓    |        |    ✓     |               |
+| `CookieOff`                    |     ✓     |   ✓    |        |    ✓     |               |
+| `CookiePlus`                   |     ✓     |   ✓    |        |    ✓     |               |
+| `CookieRemove`                 |     ✓     |   ✓    |        |    ✓     |               |
+| `CookieSettings`               |     ✓     |   ✓    |        |    ✓     |               |
+| `Copilot` *                    |     ✓     |   ✓    |        |    ✓     |               |
+| `CreditCard` *                 |     ✓     |   ✓    |        |          |               |
+| `CreditCardCheck` *            |     ✓     |   ✓    |        |          |               |
+| `CreditCardMinus` *            |     ✓     |   ✓    |        |          |               |
+| `CreditCardPlus` *             |     ✓     |   ✓    |        |          |               |
+| `CreditCardReader` *           |     ✓     |   ✓    |        |          |               |
+| `CreditCardX` *                |     ✓     |   ✓    |        |          |               |
+| `Currency` *                   |     ✓     |   ✓    |        |    ✓     |               |
+| `CursorAi` *                   |     ✓     |   ✓    |        |    ✓     |               |
+| `CustomerService` *            |     ✓     |   ✓    |        |    ✓     |               |
+| `CustomerService2` *           |     ✓     |   ✓    |        |    ✓     |               |
+| `Database` *                   |     ✓     |   ✓    |        |          |               |
+| `Databricks` *                 |     ✓     |   ✓    |        |          |               |
+| `Deepseek` *                   |     ✓     |   ✓    |        |    ✓     |               |
+| `Dice5` *                      |     ✓     |   ✓    |        |          |               |
+| `Dices` *                      |     ✓     |   ✓    |        |          |               |
+| `Diff` *                       |     ✓     |   ✓    |        |          |               |
+| `Discord`                      |     ✓     |   ✓    |        |          |               |
+| `DiscordAlt` *                 |     ✓     |   ✓    |        |    ✓     |               |
+| `Dns` *                        |     ✓     |   ✓    |        |    ✓     |               |
+| `Docker` *                     |     ✓     |   ✓    |        |          |               |
+| `Document`                     |     ✓     |   ✓    |        |          |               |
+| `DocumentAdd`                  |     ✓     |   ✓    |        |          |               |
+| `DocumentCode`                 |     ✓     |   ✓    |        |          |               |
+| `DocumentDelete`               |     ✓     |   ✓    |        |          |               |
+| `DocumentList`                 |     ✓     |   ✓    |        |          |               |
+| `DocumentRemove`               |     ✓     |   ✓    |        |          |               |
+| `DocumentReport`               |     ✓     |   ✓    |        |          |               |
+| `Dot` *                        |     ✓     |   ✓    |        |    ✓     |               |
+| `DotsHorizontal` *             |     ✓     |   ✓    |        |          |               |
+| `DotsVertical` *               |     ✓     |   ✓    |        |          |               |
+| `DoubleArrowHorizontal`        |     ✓     |   ✓    |        |          |               |
+| `DoubleArrowVertical`          |     ✓     |   ✓    |        |          |               |
+| `Download`                     |     ✓     |   ✓    |   ✓    |          |               |
+| `Downloading`                  |     ✓     |   ✓    |   ✓    |          |               |
+| `DownloadOff`                  |     ✓     |   ✓    |   ✓    |          |               |
+| `DownloadOffOutline`           |     ✓     |   ✓    |   ✓    |          |               |
+| `DownloadOutline`              |     ✓     |   ✓    |   ✓    |          |               |
+| `DragHorizontal` *             |     ✓     |   ✓    |        |          |               |
+| `DragVertical` *               |     ✓     |   ✓    |        |          |               |
+| `Dribbble` *                   |     ✓     |   ✓    |        |    ✓     |               |
+| `Edit`                         |     ✓     |   ✓    |        |    ✓     |               |
+| `EditFull`                     |           |        |        |    ✓     |               |
+| `Eject` *                      |     ✓     |   ✓    |        |          |               |
+| `Elastic` *                    |     ✓     |   ✓    |        |          |               |
+| `Email` *                      |     ✓     |   ✓    |        |    ✓     |               |
+| `EmailAdd` *                   |     ✓     |   ✓    |        |    ✓     |               |
+| `EmailAi` *                    |     ✓     |   ✓    |        |    ✓     |               |
+| `EmailAlert`                   |     ✓     |   ✓    |        |    ✓     |               |
+| `EmailAlt`                     |           |        |        |    ✓     |               |
+| `EmailArrowDown`               |     ✓     |   ✓    |        |    ✓     |               |
+| `EmailArrowLeft`               |     ✓     |   ✓    |        |    ✓     |               |
+| `EmailArrowRight`              |     ✓     |   ✓    |        |    ✓     |               |
+| `EmailArrowUp`                 |     ✓     |   ✓    |        |    ✓     |               |
+| `EmailCheck` *                 |     ✓     |   ✓    |        |    ✓     |               |
+| `EmailClose` *                 |     ✓     |   ✓    |        |    ✓     |               |
+| `EmailDownload` *              |     ✓     |   ✓    |        |    ✓     |               |
+| `EmailForbid` *                |     ✓     |   ✓    |        |    ✓     |               |
+| `EmailLock` *                  |     ✓     |   ✓    |        |    ✓     |               |
+| `EmailMinus`                   |     ✓     |   ✓    |        |    ✓     |               |
+| `EmailMultiple`                |     ✓     |   ✓    |        |    ✓     |               |
+| `EmailOpen` *                  |     ✓     |   ✓    |        |    ✓     |               |
+| `EmailOpened`                  |     ✓     |   ✓    |        |    ✓     |               |
+| `EmailOpenedAlt`               |           |        |        |    ✓     |               |
+| `EmailOpenedMultiple`          |     ✓     |   ✓    |        |    ✓     |               |
+| `EmailPlus`                    |     ✓     |   ✓    |        |    ✓     |               |
+| `EmailRemove`                  |     ✓     |   ✓    |        |    ✓     |               |
+| `EmailSend` *                  |     ✓     |   ✓    |        |    ✓     |               |
+| `EmailSettings` *              |     ✓     |   ✓    |        |    ✓     |               |
+| `EmailStar` *                  |     ✓     |   ✓    |        |    ✓     |               |
+| `EmailUnread` *                |     ✓     |   ✓    |        |    ✓     |               |
+| `EmojiAngry`                   |     ✓     |   ✓    |        |    ✓     |               |
+| `EmojiCry`                     |     ✓     |   ✓    |        |    ✓     |               |
+| `EmojiFrown`                   |     ✓     |   ✓    |        |    ✓     |               |
+| `EmojiFrownOpen`               |     ✓     |   ✓    |        |    ✓     |               |
+| `EmojiGrin`                    |     ✓     |   ✓    |        |    ✓     |               |
+| `EmojiNeutral`                 |     ✓     |   ✓    |        |    ✓     |               |
+| `EmojiSmile`                   |     ✓     |   ✓    |        |    ✓     |               |
+| `EmojiSmileWink`               |     ✓     |   ✓    |        |    ✓     |               |
+| `Engine`                       |     ✓     |   ✓    |        |    ✓     |               |
+| `EngineOff`                    |     ✓     |   ✓    |        |    ✓     |               |
+| `Eth` *                        |     ✓     |   ✓    |        |    ✓     |               |
+| `Exchange` *                   |     ✓     |   ✓    |        |    ✓     |               |
+| `Exchange2` *                  |     ✓     |   ✓    |        |    ✓     |               |
+| `ExchangeBox` *                |     ✓     |   ✓    |        |    ✓     |               |
+| `ExchangeCny` *                |     ✓     |   ✓    |        |    ✓     |               |
+| `ExchangeDollar` *             |     ✓     |   ✓    |        |    ✓     |               |
+| `ExchangeFunds` *              |     ✓     |   ✓    |        |    ✓     |               |
+| `ExternalLink`                 |     ✓     |   ✓    |        |          |               |
+| `ExternalLinkRounded`          |     ✓     |   ✓    |        |          |               |
+| `Facebook` *                   |     ✓     |   ✓    |        |    ✓     |               |
+| `FacebookBox` *                |     ✓     |   ✓    |        |    ✓     |               |
+| `Figma` *                      |     ✓     |   ✓    |        |    ✓     |               |
+| `File`                         |     ✓     |   ✓    |        |    ✓     |               |
+| `FileCancel`                   |     ✓     |   ✓    |        |    ✓     |               |
+| `FileDocument`                 |     ✓     |   ✓    |        |    ✓     |               |
+| `FileDocumentCancel`           |     ✓     |   ✓    |        |    ✓     |               |
+| `FileDocumentMinus`            |     ✓     |   ✓    |        |    ✓     |               |
+| `FileDocumentOff`              |     ✓     |   ✓    |        |    ✓     |               |
+| `FileDocumentPlus`             |     ✓     |   ✓    |        |    ✓     |               |
+| `FileDocumentRemove`           |     ✓     |   ✓    |        |    ✓     |               |
+| `FileDownload`                 |     ✓     |   ✓    |        |    ✓     |               |
+| `FileExport`                   |     ✓     |   ✓    |        |    ✓     |               |
+| `FileImport`                   |     ✓     |   ✓    |        |    ✓     |               |
+| `FileMinus`                    |     ✓     |   ✓    |        |    ✓     |               |
+| `FileOff`                      |     ✓     |   ✓    |        |    ✓     |               |
+| `FilePlus`                     |     ✓     |   ✓    |        |    ✓     |               |
+| `FileRemove`                   |     ✓     |   ✓    |        |    ✓     |               |
+| `FileSearch`                   |     ✓     |   ✓    |        |    ✓     |               |
+| `FileUpload`                   |     ✓     |   ✓    |        |    ✓     |               |
+| `FileZip` *                    |     ✓     |   ✓    |        |    ✓     |               |
+| `Film` *                       |     ✓     |   ✓    |        |          |               |
+| `Filter`                       |     ✓     |   ✓    |        |    ✓     |               |
+| `FilterAlt`                    |     ✓     |   ✓    |        |          |               |
+| `FilterAltOff`                 |     ✓     |   ✓    |        |          |               |
+| `FilterConfirm`                |     ✓     |   ✓    |        |    ✓     |               |
+| `FilterMinus`                  |     ✓     |   ✓    |        |    ✓     |               |
+| `FilterOff`                    |     ✓     |   ✓    |        |    ✓     |               |
+| `FilterPlus`                   |     ✓     |   ✓    |        |    ✓     |               |
+| `FilterRemove`                 |     ✓     |   ✓    |        |    ✓     |               |
+| `FilterVariant` *              |     ✓     |   ✓    |        |          |               |
+| `Fingerprint` *                |     ✓     |   ✓    |        |          |               |
+| `FingerprintPattern` *         |     ✓     |   ✓    |        |          |               |
+| `Flag` *                       |     ✓     |   ✓    |        |    ✓     |               |
+| `FlipHorizontal` *             |     ✓     |   ✓    |        |          |               |
+| `FlipToBack` *                 |     ✓     |   ✓    |        |          |               |
+| `FlipToFront` *                |     ✓     |   ✓    |        |          |               |
+| `FlipVertical` *               |     ✓     |   ✓    |        |          |               |
+| `Folder`                       |     ✓     |   ✓    |        |    ✓     |               |
+| `FolderArrowDown`              |     ✓     |   ✓    |        |    ✓     |               |
+| `FolderArrowLeft`              |     ✓     |   ✓    |        |    ✓     |               |
+| `FolderArrowRight`             |     ✓     |   ✓    |        |    ✓     |               |
+| `FolderArrowUp`                |     ✓     |   ✓    |        |    ✓     |               |
+| `FolderCancel`                 |     ✓     |   ✓    |        |    ✓     |               |
+| `FolderCheck`                  |     ✓     |   ✓    |        |    ✓     |               |
+| `FolderMinus`                  |     ✓     |   ✓    |        |    ✓     |               |
+| `FolderMultiple`               |     ✓     |   ✓    |        |    ✓     |               |
+| `FolderMusic`                  |     ✓     |   ✓    |        |    ✓     |               |
+| `FolderNetwork`                |     ✓     |   ✓    |        |    ✓     |               |
+| `FolderOff`                    |     ✓     |   ✓    |        |    ✓     |               |
+| `FolderOpen` *                 |     ✓     |   ✓    |        |    ✓     |               |
+| `FolderPlus`                   |     ✓     |   ✓    |        |    ✓     |               |
+| `FolderRemove`                 |     ✓     |   ✓    |        |    ✓     |               |
+| `FolderSettings`               |     ✓     |   ✓    |        |    ✓     |               |
+| `FolderZip`                    |     ✓     |   ✓    |        |    ✓     |               |
+| `FolderZipAlt` *               |     ✓     |   ✓    |        |    ✓     |               |
+| `FontMono` *                   |     ✓     |   ✓    |        |          |               |
+| `FontSansSerif` *              |     ✓     |   ✓    |        |          |               |
+| `FontSerif` *                  |     ✓     |   ✓    |        |          |               |
+| `ForkLeft`                     |     ✓     |   ✓    |        |          |               |
+| `ForkRight`                    |     ✓     |   ✓    |        |          |               |
+| `Form` *                       |     ✓     |   ✓    |        |          |               |
+| `FormatQuoteClose` *           |     ✓     |   ✓    |        |    ✓     |               |
+| `FormatQuoteOpen` *            |     ✓     |   ✓    |        |    ✓     |               |
+| `Fullscreen` *                 |     ✓     |   ✓    |        |          |               |
+| `Funds` *                      |     ✓     |   ✓    |        |    ✓     |               |
+| `Gallery` *                    |     ✓     |   ✓    |        |    ✓     |               |
+| `Gauge`                        |     ✓     |   ✓    |   ✓    |          |               |
+| `GaugeEmpty`                   |     ✓     |   ✓    |        |          |               |
+| `GaugeFull`                    |     ✓     |   ✓    |        |          |               |
+| `GaugeLow`                     |     ✓     |   ✓    |        |          |               |
+| `Gemini` *                     |     ✓     |   ✓    |        |    ✓     |               |
+| `Ghost` *                      |     ✓     |   ✓    |        |          |               |
+| `Gift` *                       |     ✓     |   ✓    |        |    ✓     |               |
+| `Github` *                     |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `GithubAlt` *                  |     ✓     |   ✓    |        |          |               |
+| `GithubBox` *                  |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `GolfBall` *                   |     ✓     |   ✓    |        |    ✓     |               |
+| `GooglePlay` *                 |     ✓     |   ✓    |        |    ✓     |               |
+| `Government` *                 |     ✓     |   ✓    |        |    ✓     |               |
+| `Gps` *                        |     ✓     |   ✓    |        |    ✓     |               |
+| `GraduationCap` *              |     ✓     |   ✓    |        |    ✓     |               |
+| `Graphql` *                    |     ✓     |   ✓    |        |          |               |
+| `Grid3`                        |     ✓     |   ✓    |        |    ✓     |               |
+| `GrokAi` *                     |     ✓     |   ✓    |        |    ✓     |               |
+| `HandClap` *                   |     ✓     |   ✓    |        |    ✓     |               |
+| `HardDrive` *                  |     ✓     |   ✓    |        |    ✓     |               |
+| `Hash`                         |     ✓     |   ✓    |        |          |               |
+| `HashSmall`                    |     ✓     |   ✓    |        |          |               |
+| `HazardLights`                 |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `HazardLightsOff`              |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `Hd` *                         |     ✓     |   ✓    |        |          |               |
+| `Heading` *                    |     ✓     |   ✓    |        |          |               |
+| `Heading1` *                   |     ✓     |   ✓    |        |          |               |
+| `Heading2` *                   |     ✓     |   ✓    |        |          |               |
+| `Heading3` *                   |     ✓     |   ✓    |        |          |               |
+| `Heading4` *                   |     ✓     |   ✓    |        |          |               |
+| `Heading5` *                   |     ✓     |   ✓    |        |          |               |
+| `Heading6` *                   |     ✓     |   ✓    |        |          |               |
+| `Heart`                        |     ✓     |   ✓    |        |    ✓     |               |
+| `HeartFilledHalf`              |     ✓     |   ✓    |        |          |               |
+| `HeartHalf`                    |     ✓     |   ✓    |        |    ✓     |               |
+| `Home`                         |     ✓     |   ✓    |        |          |               |
+| `HomeMd`                       |     ✓     |   ✓    |        |          |               |
+| `HomeSimple` *                 |     ✓     |   ✓    |        |    ✓     |               |
+| `Iconify1`                     |     ✓     |   ✓    |        |          |               |
+| `Iconify2`                     |     ✓     |   ✓    |        |          |               |
+| `Iconify2Static`               |     ✓     |   ✓    |        |          |               |
+| `Image`                        |     ✓     |   ✓    |        |    ✓     |               |
+| `Inbox2` *                     |     ✓     |   ✓    |        |    ✓     |               |
+| `IndentDecrease` *             |     ✓     |   ✓    |        |          |               |
+| `IndentIncrease` *             |     ✓     |   ✓    |        |          |               |
+| `InformationSlabCircle` *      |     ✓     |   ✓    |        |    ✓     |               |
+| `Instagram`                    |     ✓     |   ✓    |        |          |               |
+| `Install` *                    |     ✓     |   ✓    |        |    ✓     |               |
+| `Italic` *                     |     ✓     |   ✓    |        |          |               |
+| `Key` *                        |     ✓     |   ✓    |        |    ✓     |               |
+| `KeyRound` *                   |     ✓     |   ✓    |        |          |               |
+| `KeySquare` *                  |     ✓     |   ✓    |        |          |               |
+| `KeyVariant` *                 |     ✓     |   ✓    |        |    ✓     |               |
+| `Kubernetes` *                 |     ✓     |   ✓    |        |    ✓     |               |
+| `LanguageC` *                  |     ✓     |   ✓    |        |          |               |
+| `LanguageCpp` *                |     ✓     |   ✓    |        |          |               |
+| `LanguageCsharp` *             |     ✓     |   ✓    |        |          |               |
+| `LanguageGo` *                 |     ✓     |   ✓    |        |          |               |
+| `LanguageHtml5` *              |     ✓     |   ✓    |        |    ✓     |               |
+| `LanguageJava` *               |     ✓     |   ✓    |        |          |               |
+| `LanguageJavascript` *         |     ✓     |   ✓    |        |    ✓     |               |
+| `LanguageJsx` *                |     ✓     |   ✓    |        |    ✓     |               |
+| `LanguageMarkdown` *           |     ✓     |   ✓    |        |    ✓     |               |
+| `LanguagePhp` *                |     ✓     |   ✓    |        |    ✓     |               |
+| `LanguagePython` *             |     ✓     |   ✓    |        |    ✓     |               |
+| `LanguageRust` *               |     ✓     |   ✓    |        |          |               |
+| `Languages` *                  |     ✓     |   ✓    |        |          |               |
+| `LanguageTypescript` *         |     ✓     |   ✓    |        |    ✓     |               |
+| `Laptop`                       |     ✓     |   ✓    |        |    ✓     |               |
+| `LaptopOff`                    |     ✓     |   ✓    |        |    ✓     |               |
+| `LayoutBottom2` *              |     ✓     |   ✓    |        |    ✓     |               |
+| `LayoutBottombar` *            |     ✓     |   ✓    |        |    ✓     |               |
+| `LayoutBottombarCollapse` *    |     ✓     |   ✓    |        |    ✓     |               |
+| `LayoutBottombarExpand` *      |     ✓     |   ✓    |        |    ✓     |               |
+| `LayoutLeft2` *                |     ✓     |   ✓    |        |    ✓     |               |
+| `LayoutNavbar` *               |     ✓     |   ✓    |        |    ✓     |               |
+| `LayoutNavbarCollapse` *       |     ✓     |   ✓    |        |    ✓     |               |
+| `LayoutNavbarExpand` *         |     ✓     |   ✓    |        |    ✓     |               |
+| `LayoutRight2` *               |     ✓     |   ✓    |        |    ✓     |               |
+| `LayoutSidebar` *              |     ✓     |   ✓    |        |    ✓     |               |
+| `LayoutSidebarLeftCollapse` *  |     ✓     |   ✓    |        |    ✓     |               |
+| `LayoutSidebarLeftExpand` *    |     ✓     |   ✓    |        |    ✓     |               |
+| `LayoutSidebarRight` *         |     ✓     |   ✓    |        |    ✓     |               |
+| `LayoutSidebarRightCollapse` * |     ✓     |   ✓    |        |    ✓     |               |
+| `LayoutSidebarRightExpand` *   |     ✓     |   ✓    |        |    ✓     |               |
+| `LayoutTop2` *                 |     ✓     |   ✓    |        |    ✓     |               |
+| `LetterSpacing` *              |     ✓     |   ✓    |        |          |               |
+| `Library` *                    |     ✓     |   ✓    |        |          |               |
+| `License` *                    |     ✓     |   ✓    |        |    ✓     |               |
+| `Lightbulb`                    |     ✓     |   ✓    |        |    ✓     |               |
+| `LightbulbOff`                 |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `LightDark`                    |     ✓     |   ✓    |   ✓    |          |               |
+| `Lightning` *                  |     ✓     |   ✓    |        |    ✓     |               |
+| `LineHeight` *                 |     ✓     |   ✓    |        |          |               |
+| `Link`                         |     ✓     |   ✓    |        |          |               |
+| `Linkedin` *                   |     ✓     |   ✓    |        |    ✓     |               |
+| `List`                         |     ✓     |   ✓    |        |          |               |
+| `List3`                        |     ✓     |   ✓    |        |    ✓     |               |
+| `ListBox` *                    |     ✓     |   ✓    |        |    ✓     |               |
+| `ListIndented`                 |     ✓     |   ✓    |        |          |               |
+| `ListIndentedReversed`         |     ✓     |   ✓    |        |          |               |
+| `Loading`                      |           |        |   ✓    |          |               |
+| `LoadingAlt`                   |           |        |   ✓    |          |               |
+| `Lock` *                       |     ✓     |   ✓    |        |    ✓     |               |
+| `LockOpen` *                   |     ✓     |   ✓    |        |    ✓     |               |
+| `Login`                        |     ✓     |   ✓    |        |          |               |
+| `LogIn2`                       |     ✓     |   ✓    |        |          |               |
+| `Logout`                       |     ✓     |   ✓    |        |          |               |
+| `LogOut2`                      |     ✓     |   ✓    |        |          |               |
+| `Magnify` *                    |     ✓     |   ✓    |        |    ✓     |               |
+| `Mailbox` *                    |     ✓     |   ✓    |        |    ✓     |               |
+| `MapMarker`                    |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `MapMarkerAlt`                 |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `MapMarkerAltOff`              |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `MapMarkerMinus`               |     ✓     |   ✓    |        |    ✓     |               |
+| `MapMarkerMultiple`            |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `MapMarkerMultipleAlt`         |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `MapMarkerMultipleAltOff`      |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `MapMarkerMultipleOff`         |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `MapMarkerOff`                 |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `MapMarkerPlus`                |     ✓     |   ✓    |        |    ✓     |               |
+| `MapMarkerRadius`              |     ✓     |   ✓    |        |    ✓     |               |
+| `MapMarkerRemove`              |     ✓     |   ✓    |        |    ✓     |               |
+| `MapTrifold` *                 |     ✓     |   ✓    |        |          |               |
+| `Marker`                       |     ✓     |   ✓    |        |    ✓     |               |
+| `Mastodon`                     |     ✓     |   ✓    |        |    ✓     |               |
+| `Matrix` *                     |     ✓     |   ✓    |        |          |               |
+| `MedicalServices`              |     ✓     |   ✓    |        |    ✓     |               |
+| `Medium` *                     |     ✓     |   ✓    |        |          |               |
+| `MediumAlt` *                  |     ✓     |   ✓    |        |    ✓     |               |
+| `Menu`                         |     ✓     |   ✓    |        |          |               |
+| `MenuFoldLeft`                 |     ✓     |   ✓    |        |          |               |
+| `MenuFoldRight`                |     ✓     |   ✓    |        |          |               |
+| `MenuUnfoldLeft`               |     ✓     |   ✓    |        |          |               |
+| `MenuUnfoldRight`              |     ✓     |   ✓    |        |          |               |
+| `Meta` *                       |     ✓     |   ✓    |        |    ✓     |               |
+| `Microfrontends` *             |     ✓     |   ✓    |        |          |               |
+| `Microphone` *                 |     ✓     |   ✓    |        |    ✓     |               |
+| `MicrophoneOff` *              |     ✓     |   ✓    |        |    ✓     |               |
+| `MindMap` *                    |     ✓     |   ✓    |        |          |               |
+| `Minus`                        |     ✓     |   ✓    |        |          |               |
+| `MinusCircle`                  |     ✓     |   ✓    |        |    ✓     |               |
+| `MinusSquare`                  |     ✓     |   ✓    |        |    ✓     |               |
+| `Monitor`                      |     ✓     |   ✓    |        |    ✓     |               |
+| `MonitorArrowDown`             |     ✓     |   ✓    |        |    ✓     |               |
+| `MonitorArrowUp`               |     ✓     |   ✓    |        |    ✓     |               |
+| `MonitorMutlple`               |     ✓     |   ✓    |        |    ✓     |               |
+| `MonitorOff`                   |     ✓     |   ✓    |        |    ✓     |               |
+| `MonitorScreenshot`            |     ✓     |   ✓    |        |    ✓     |               |
+| `MonitorSmall`                 |     ✓     |   ✓    |        |    ✓     |               |
+| `MonitorSmallOff`              |     ✓     |   ✓    |        |    ✓     |               |
+| `Moon`                         |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `MoonAlt`                      |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `MoonAltOff`                   |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `MoonOff`                      |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `MoonRising`                   |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `MoonRisingAlt`                |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `MoonSimple`                   |     ✓     |   ✓    |        |    ✓     |               |
+| `MoonSimpleOff`                |     ✓     |   ✓    |        |    ✓     |               |
+| `Mushroom`                     |     ✓     |   ✓    |        |    ✓     |               |
+| `MushroomOff`                  |     ✓     |   ✓    |        |    ✓     |               |
+| `MyLocation`                   |     ✓     |   ✓    |   ✓    |          |               |
+| `MyLocationOff`                |     ✓     |   ✓    |   ✓    |          |               |
+| `NavigationLeftDown`           |     ✓     |   ✓    |        |          |               |
+| `NavigationLeftUp`             |     ✓     |   ✓    |        |          |               |
+| `NavigationRightDown`          |     ✓     |   ✓    |        |          |               |
+| `NavigationRightUp`            |     ✓     |   ✓    |        |          |               |
+| `Network` *                    |     ✓     |   ✓    |        |          |               |
+| `Newspaper` *                  |     ✓     |   ✓    |        |          |               |
+| `NewspaperVariant` *           |     ✓     |   ✓    |        |    ✓     |               |
+| `Nextjs` *                     |     ✓     |   ✓    |        |    ✓     |               |
+| `Nix` *                        |     ✓     |   ✓    |        |          |               |
+| `Notebook` *                   |     ✓     |   ✓    |        |    ✓     |               |
+| `Notion` *                     |     ✓     |   ✓    |        |    ✓     |               |
+| `Npmjs` *                      |     ✓     |   ✓    |        |    ✓     |               |
+| `Oauth` *                      |     ✓     |   ✓    |        |          |               |
+| `Openai` *                     |     ✓     |   ✓    |        |    ✓     |               |
+| `OpenSourceInitiative` *       |     ✓     |   ✓    |        |    ✓     |               |
+| `OrganizationChart` *          |     ✓     |   ✓    |        |          |               |
+| `Outbox` *                     |     ✓     |   ✓    |        |    ✓     |               |
+| `Paintbrush` *                 |     ✓     |   ✓    |        |          |               |
+| `PaintbrushVertical` *         |     ✓     |   ✓    |        |          |               |
+| `PaintDrop`                    |     ✓     |   ✓    |        |    ✓     |               |
+| `PaintDropHalf`                |           |        |        |    ✓     |               |
+| `Palette` *                    |     ✓     |   ✓    |        |          |               |
+| `PaletteSwatchVariant` *       |     ✓     |   ✓    |        |    ✓     |               |
+| `Paperclip` *                  |     ✓     |   ✓    |        |          |               |
+| `Patreon`                      |     ✓     |   ✓    |        |          |               |
+| `PatreonAlt` *                 |     ✓     |   ✓    |        |    ✓     |               |
+| `Pause`                        |     ✓     |   ✓    |        |          |               |
+| `PauseOff`                     |     ✓     |   ✓    |        |          |               |
+| `Paypal` *                     |     ✓     |   ✓    |        |    ✓     |               |
+| `Peanut`                       |     ✓     |   ✓    |        |    ✓     |               |
+| `PeanutOff`                    |     ✓     |   ✓    |        |    ✓     |               |
+| `Peertube`                     |     ✓     |   ✓    |        |          |               |
+| `PeertubeAlt`                  |     ✓     |   ✓    |        |          |               |
+| `Pencil`                       |     ✓     |   ✓    |        |          |               |
+| `Person`                       |     ✓     |   ✓    |        |    ✓     |               |
+| `PersonAdd`                    |     ✓     |   ✓    |        |    ✓     |               |
+| `PersonOff`                    |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `PersonRemove`                 |     ✓     |   ✓    |        |    ✓     |               |
+| `PersonSearch`                 |     ✓     |   ✓    |        |    ✓     |               |
+| `Phone`                        |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `PhoneAdd`                     |     ✓     |   ✓    |        |    ✓     |               |
+| `PhoneCall`                    |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `PhoneIncoming`                |     ✓     |   ✓    |        |    ✓     |               |
+| `PhoneOff`                     |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `PhoneOutgoing`                |     ✓     |   ✓    |        |    ✓     |               |
+| `PhoneRemove`                  |     ✓     |   ✓    |        |    ✓     |               |
+| `Pin` *                        |     ✓     |   ✓    |        |    ✓     |               |
+| `Pixelfed`                     |     ✓     |   ✓    |        |    ✓     |               |
+| `Pizza`                        |     ✓     |   ✓    |        |    ✓     |               |
+| `PizzaOff`                     |     ✓     |   ✓    |        |    ✓     |               |
+| `Play`                         |     ✓     |   ✓    |        |    ✓     |               |
+| `PlayingCards` *               |     ✓     |   ✓    |        |          |               |
+| `PlayingCardsFan` *            |     ✓     |   ✓    |        |          |               |
+| `PlayOff`                      |     ✓     |   ✓    |        |    ✓     |               |
+| `Pleroma`                      |     ✓     |   ✓    |        |          |               |
+| `Plus`                         |     ✓     |   ✓    |        |          |               |
+| `PlusCircle`                   |     ✓     |   ✓    |        |    ✓     |               |
+| `PlusSquare`                   |     ✓     |   ✓    |        |    ✓     |               |
+| `Pnpm` *                       |     ✓     |   ✓    |        |          |               |
+| `Podcast` *                    |     ✓     |   ✓    |        |          |               |
+| `Power` *                      |     ✓     |   ✓    |        |          |               |
+| `Powershell` *                 |     ✓     |   ✓    |        |          |               |
+| `Prisma` *                     |     ✓     |   ✓    |        |          |               |
+| `ProductHunt` *                |     ✓     |   ✓    |        |    ✓     |               |
+| `Puzzle` *                     |     ✓     |   ✓    |        |    ✓     |               |
+| `Qrcode` *                     |     ✓     |   ✓    |        |          |               |
+| `Question`                     |     ✓     |   ✓    |        |          |               |
+| `QuestionCircle` *             |     ✓     |   ✓    |        |    ✓     |               |
+| `QuestionSquare` *             |     ✓     |   ✓    |        |    ✓     |               |
+| `QwenAi` *                     |     ✓     |   ✓    |        |    ✓     |               |
+| `Radar` *                      |     ✓     |   ✓    |        |    ✓     |               |
+| `Reactjs` *                    |     ✓     |   ✓    |        |    ✓     |               |
+| `Reddit`                       |     ✓     |   ✓    |   ✓    |          |               |
+| `Reddit2` *                    |     ✓     |   ✓    |        |    ✓     |               |
+| `RedditCircle`                 |     ✓     |   ✓    |   ✓    |          |               |
+| `Regex` *                      |     ✓     |   ✓    |        |          |               |
+| `Remove`                       |     ✓     |   ✓    |        |          |               |
+| `Robot` *                      |     ✓     |   ✓    |        |    ✓     |               |
+| `RobotArm` *                   |     ✓     |   ✓    |        |          |               |
+| `Rotate180`                    |     ✓     |   ✓    |        |          |               |
+| `Rotate270`                    |     ✓     |   ✓    |        |          |               |
+| `Rotate90`                     |     ✓     |   ✓    |        |          |               |
+| `Round360`                     |     ✓     |   ✓    |        |          |               |
+| `RoundaboutLeft`               |     ✓     |   ✓    |        |          |               |
+| `RoundaboutRight`              |     ✓     |   ✓    |        |          |               |
+| `RoundRampLeft`                |     ✓     |   ✓    |        |          |               |
+| `RoundRampRight`               |     ✓     |   ✓    |        |          |               |
+| `Rss` *                        |     ✓     |   ✓    |   ✓    |          |               |
+| `RssBox` *                     |     ✓     |   ✓    |        |    ✓     |               |
+| `Ruler` *                      |     ✓     |   ✓    |        |          |               |
+| `RulerDimensionLine` *         |     ✓     |   ✓    |        |          |               |
+| `Safe2` *                      |     ✓     |   ✓    |        |    ✓     |               |
+| `SafeSquare` *                 |     ✓     |   ✓    |        |    ✓     |               |
+| `SatelliteUplink` *            |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `SatelliteVariant` *           |     ✓     |   ✓    |        |    ✓     |               |
+| `Save` *                       |     ✓     |   ✓    |        |          |               |
+| `Save2` *                      |     ✓     |   ✓    |        |    ✓     |               |
+| `SaveAll` *                    |     ✓     |   ✓    |        |          |               |
+| `Scales` *                     |     ✓     |   ✓    |        |    ✓     |               |
+| `Scroll` *                     |     ✓     |   ✓    |        |          |               |
+| `ScrollText` *                 |     ✓     |   ✓    |        |          |               |
+| `Search`                       |     ✓     |   ✓    |        |    ✓     |               |
+| `Security`                     |     ✓     |   ✓    |        |    ✓     |               |
+| `SecurityOff`                  |     ✓     |   ✓    |        |    ✓     |               |
+| `Send` *                       |     ✓     |   ✓    |        |    ✓     |               |
+| `Sentry` *                     |     ✓     |   ✓    |        |          |               |
+| `Server` *                     |     ✓     |   ✓    |        |    ✓     |               |
+| `Share` *                      |     ✓     |   ✓    |        |    ✓     |               |
+| `ShareVariant` *               |     ✓     |   ✓    |        |    ✓     |               |
+| `Shimmer` *                    |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `Shredder` *                   |     ✓     |   ✓    |        |          |               |
+| `Signal` *                     |     ✓     |   ✓    |        |          |               |
+| `SignalHigh` *                 |     ✓     |   ✓    |        |          |               |
+| `SignalLow` *                  |     ✓     |   ✓    |        |          |               |
+| `SignalMedium` *               |     ✓     |   ✓    |        |          |               |
+| `SignalZero` *                 |     ✓     |   ✓    |        |          |               |
+| `Sip` *                        |     ✓     |   ✓    |        |    ✓     |               |
+| `Skull` *                      |     ✓     |   ✓    |        |    ✓     |               |
+| `Slack` *                      |     ✓     |   ✓    |        |    ✓     |               |
+| `Slideshow` *                  |     ✓     |   ✓    |        |    ✓     |               |
+| `Snowflake` *                  |     ✓     |   ✓    |        |          |               |
+| `SortAscending` *              |     ✓     |   ✓    |        |          |               |
+| `SortDescending` *             |     ✓     |   ✓    |        |          |               |
+| `Soundcloud`                   |     ✓     |   ✓    |        |          |               |
+| `Sparkle` *                    |     ✓     |   ✓    |        |          |               |
+| `Sparkles` *                   |     ✓     |   ✓    |        |          |               |
+| `Speed`                        |     ✓     |   ✓    |   ✓    |          |               |
+| `Speedometer`                  |     ✓     |   ✓    |   ✓    |          |               |
+| `SpellCheck` *                 |     ✓     |   ✓    |        |          |               |
+| `Spotify`                      |     ✓     |   ✓    |        |    ✓     |               |
+| `Square`                       |     ✓     |   ✓    |        |    ✓     |               |
+| `StackOverflow` *              |     ✓     |   ✓    |        |    ✓     |               |
+| `Star`                         |     ✓     |   ✓    |        |    ✓     |               |
+| `StarAlt`                      |     ✓     |   ✓    |        |    ✓     |               |
+| `StarAltFilledHalf`            |     ✓     |   ✓    |        |          |               |
+| `StarAltFilledRightHalf`       |     ✓     |   ✓    |        |          |               |
+| `StarHalf`                     |     ✓     |   ✓    |        |    ✓     |               |
+| `StarHalfAlt`                  |     ✓     |   ✓    |        |    ✓     |               |
+| `StarPulsating`                |           |        |   ✓    |          |       ✓       |
+| `StarRightHalf`                |     ✓     |   ✓    |        |    ✓     |               |
+| `StarRightHalfAlt`             |     ✓     |   ✓    |        |    ✓     |               |
+| `Steering`                     |     ✓     |   ✓    |        |          |               |
+| `SteeringOff`                  |     ✓     |   ✓    |        |          |               |
+| `Stethoscope` *                |     ✓     |   ✓    |        |          |               |
+| `Stock` *                      |     ✓     |   ✓    |        |    ✓     |               |
+| `Storefront` *                 |     ✓     |   ✓    |        |    ✓     |               |
+| `Storybook` *                  |     ✓     |   ✓    |        |          |               |
+| `Strikethrough` *              |     ✓     |   ✓    |        |          |               |
+| `Subscript` *                  |     ✓     |   ✓    |        |          |               |
+| `Sunny`                        |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `SunnyOff`                     |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `SunnyOutline`                 |     ✓     |   ✓    |   ✓    |          |               |
+| `SunRising`                    |     ✓     |   ✓    |   ✓    |    ✓     |       ✓       |
+| `Superscript` *                |     ✓     |   ✓    |        |          |               |
+| `Survey` *                     |     ✓     |   ✓    |        |    ✓     |               |
+| `Switch`                       |     ✓     |   ✓    |        |    ✓     |               |
+| `SwitchOff`                    |     ✓     |   ✓    |        |    ✓     |               |
+| `Tablet`                       |     ✓     |   ✓    |        |          |               |
+| `TabletArrowDown`              |     ✓     |   ✓    |        |          |               |
+| `TabletArrowUp`                |     ✓     |   ✓    |        |          |               |
+| `TabletOff`                    |     ✓     |   ✓    |        |          |               |
+| `TabletScreenshot`             |     ✓     |   ✓    |        |          |               |
+| `Taco`                         |     ✓     |   ✓    |        |          |               |
+| `Tag` *                        |     ✓     |   ✓    |        |    ✓     |               |
+| `TagOff` *                     |     ✓     |   ✓    |        |    ✓     |               |
+| `TagPlus` *                    |     ✓     |   ✓    |        |    ✓     |               |
+| `Tailwind` *                   |     ✓     |   ✓    |        |    ✓     |               |
+| `Target` *                     |     ✓     |   ✓    |        |          |               |
+| `Telegram` *                   |     ✓     |   ✓    |        |    ✓     |               |
+| `Telegram2` *                  |     ✓     |   ✓    |        |    ✓     |               |
+| `TerminalBox` *                |     ✓     |   ✓    |        |    ✓     |               |
+| `Terraform` *                  |     ✓     |   ✓    |        |    ✓     |               |
+| `TextBox`                      |     ✓     |   ✓    |        |          |               |
+| `TextBoxMultiple`              |     ✓     |   ✓    |        |          |               |
+| `Threejs` *                    |     ✓     |   ✓    |        |          |               |
+| `ThumbsDown` *                 |     ✓     |   ✓    |        |    ✓     |               |
+| `ThumbsUp` *                   |     ✓     |   ✓    |        |    ✓     |               |
+| `Tiktok`                       |     ✓     |   ✓    |        |          |               |
+| `Timeline` *                   |     ✓     |   ✓    |        |          |               |
+| `Tor` *                        |     ✓     |   ✓    |        |    ✓     |               |
+| `TowerControl` *               |     ✓     |   ✓    |        |          |               |
+| `Trash`                        |     ✓     |   ✓    |        |          |               |
+| `TrayArrowDown` *              |     ✓     |   ✓    |   ✓    |          |               |
+| `TrayArrowUp` *                |     ✓     |   ✓    |   ✓    |          |               |
+| `Trophy` *                     |     ✓     |   ✓    |        |          |               |
+| `Tune` *                       |     ✓     |   ✓    |   ✓    |          |               |
+| `TuneVertical` *               |     ✓     |   ✓    |   ✓    |          |               |
+| `TurnLeft`                     |     ✓     |   ✓    |        |          |               |
+| `TurnRight`                    |     ✓     |   ✓    |        |          |               |
+| `TurnSharpLeft`                |     ✓     |   ✓    |        |          |               |
+| `TurnSharpRight`               |     ✓     |   ✓    |        |          |               |
+| `TurnSlightLeft`               |     ✓     |   ✓    |        |          |               |
+| `TurnSlightRight`              |     ✓     |   ✓    |        |          |               |
+| `Tv` *                         |     ✓     |   ✓    |        |          |               |
+| `TvMinimal` *                  |     ✓     |   ✓    |        |          |               |
+| `Twitter`                      |     ✓     |   ✓    |        |    ✓     |               |
+| `TwitterX`                     |     ✓     |   ✓    |        |          |               |
+| `TwitterXAlt`                  |     ✓     |   ✓    |        |          |               |
+| `TwoFactorAuthentication` *    |     ✓     |   ✓    |        |          |               |
+| `Underline` *                  |     ✓     |   ✓    |        |          |               |
+| `Undo` *                       |     ✓     |   ✓    |        |          |               |
+| `Undo2` *                      |     ✓     |   ✓    |        |          |               |
+| `Uninstall` *                  |     ✓     |   ✓    |        |    ✓     |               |
+| `Unsplash` *                   |     ✓     |   ✓    |        |    ✓     |               |
+| `Update` *                     |     ✓     |   ✓    |   ✓    |          |               |
+| `Upload`                       |     ✓     |   ✓    |   ✓    |          |               |
+| `Uploading`                    |     ✓     |   ✓    |   ✓    |          |               |
+| `UploadOff`                    |     ✓     |   ✓    |   ✓    |          |               |
+| `UploadOffOutline`             |     ✓     |   ✓    |   ✓    |          |               |
+| `UploadOutline`                |     ✓     |   ✓    |   ✓    |          |               |
+| `UsbFlashDrive` *              |     ✓     |   ✓    |        |    ✓     |               |
+| `UTurnLeft`                    |     ✓     |   ✓    |        |          |               |
+| `UTurnRight`                   |     ✓     |   ✓    |        |          |               |
+| `ValignBaseline`               |     ✓     |   ✓    |        |          |               |
+| `ValignBottom`                 |     ✓     |   ✓    |        |          |               |
+| `ValignMiddle`                 |     ✓     |   ✓    |        |          |               |
+| `ValignTop`                    |     ✓     |   ✓    |        |          |               |
+| `Vercel` *                     |     ✓     |   ✓    |        |    ✓     |               |
+| `VerifiedBadge` *              |     ✓     |   ✓    |        |    ✓     |               |
+| `Video` *                      |     ✓     |   ✓    |        |          |               |
+| `VideoOff` *                   |     ✓     |   ✓    |        |          |               |
+| `VisualStudio` *               |     ✓     |   ✓    |        |          |               |
+| `Vite` *                       |     ✓     |   ✓    |        |          |               |
+| `VoiceAi` *                    |     ✓     |   ✓    |        |    ✓     |               |
+| `Voicemail` *                  |     ✓     |   ✓    |        |          |               |
+| `VolumeHigh`                   |     ✓     |   ✓    |        |    ✓     |               |
+| `VolumeHighOff`                |     ✓     |   ✓    |        |    ✓     |               |
+| `VolumeLow`                    |     ✓     |   ✓    |        |    ✓     |               |
+| `VolumeLowOff`                 |     ✓     |   ✓    |        |    ✓     |               |
+| `VolumeMedium`                 |     ✓     |   ✓    |        |    ✓     |               |
+| `VolumeMediumOff`              |     ✓     |   ✓    |        |    ✓     |               |
+| `VolumeMinus`                  |     ✓     |   ✓    |        |    ✓     |               |
+| `VolumePlus`                   |     ✓     |   ✓    |        |    ✓     |               |
+| `VolumeRemove`                 |     ✓     |   ✓    |        |    ✓     |               |
+| `Vscode` *                     |     ✓     |   ✓    |        |          |               |
+| `Wallet` *                     |     ✓     |   ✓    |        |          |               |
+| `WalletCards` *                |     ✓     |   ✓    |        |          |               |
+| `WalletMinimal` *              |     ✓     |   ✓    |        |          |               |
+| `Wand` *                       |     ✓     |   ✓    |        |          |               |
+| `WandSparkles` *               |     ✓     |   ✓    |        |          |               |
+| `Watch`                        |     ✓     |   ✓    |   ✓    |          |               |
+| `WatchOff`                     |     ✓     |   ✓    |   ✓    |          |               |
+| `Water`                        |     ✓     |   ✓    |        |    ✓     |               |
+| `WaterOff`                     |     ✓     |   ✓    |        |    ✓     |               |
+| `WeatherCloudy`                |           |        |   ✓    |          |               |
+| `Web` *                        |     ✓     |   ✓    |        |          |               |
+| `WebBox` *                     |     ✓     |   ✓    |        |    ✓     |               |
+| `Webhook` *                    |     ✓     |   ✓    |        |          |               |
+| `Windows` *                    |     ✓     |   ✓    |        |    ✓     |               |
+| `Wrench` *                     |     ✓     |   ✓    |        |          |               |
+| `Yarn` *                       |     ✓     |   ✓    |        |          |               |
+| `Ycombinator` *                |     ✓     |   ✓    |        |          |               |
+| `Youtube`                      |     ✓     |   ✓    |        |    ✓     |               |
 
 ## Related
 
@@ -743,3 +1010,5 @@ The catalog has 585 icons. 130 of them (marked *) are drawn for Cyclone UI in th
 ## License
 
 The line-md icon artwork is © Vjacheslav Trushkin. It is licensed under the [MIT License](https://github.com/cyberalien/line-md/blob/main/license.txt).
+
+The icons drawn after other sets keep their shapes: [Lucide](https://github.com/lucide-icons/lucide/blob/main/LICENSE) (ISC, © Lucide Contributors), [Tabler Icons](https://github.com/tabler/tabler-icons/blob/master/LICENSE) (MIT, © Paweł Kuna), [Solar](https://creativecommons.org/licenses/by/4.0/) (CC BY 4.0, © 480 Design; `Contrast`) and [Remix Icon](https://github.com/Remix-Design/RemixIcon/blob/master/License) (Remix Icon License v1.0, © Remix Design).

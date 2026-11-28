@@ -25,10 +25,16 @@ import { AccountCircle } from "./icons/AccountCircle";
 import { AccountDelete } from "./icons/AccountDelete";
 import { AccountRemove } from "./icons/AccountRemove";
 import { AccountSmall } from "./icons/AccountSmall";
+import { Ad } from "./icons/Ad";
+import { Ai } from "./icons/Ai";
+import { AiAgent } from "./icons/AiAgent";
+import { AiGenerate2 } from "./icons/AiGenerate2";
+import { AiGenerate2Alt } from "./icons/AiGenerate2Alt";
 import { Alarm } from "./icons/Alarm";
 import { AlarmCheck } from "./icons/AlarmCheck";
 import { AlarmOff } from "./icons/AlarmOff";
 import { AlarmPlus } from "./icons/AlarmPlus";
+import { Album } from "./icons/Album";
 import { Alert } from "./icons/Alert";
 import { AlertCircle } from "./icons/AlertCircle";
 import { AlertSquare } from "./icons/AlertSquare";
@@ -36,7 +42,17 @@ import { AlignCenter } from "./icons/AlignCenter";
 import { AlignJustify } from "./icons/AlignJustify";
 import { AlignLeft } from "./icons/AlignLeft";
 import { AlignRight } from "./icons/AlignRight";
+import { Amazon } from "./icons/Amazon";
 import { Anchor } from "./icons/Anchor";
+import { Android } from "./icons/Android";
+import { Anthropic } from "./icons/Anthropic";
+import { ApiApp } from "./icons/ApiApp";
+import { Apple } from "./icons/Apple";
+import { AppStore } from "./icons/AppStore";
+import { Archive } from "./icons/Archive";
+import { Archive2 } from "./icons/Archive2";
+import { ArchiveStack } from "./icons/ArchiveStack";
+import { ArchiveX } from "./icons/ArchiveX";
 import { ArrowAlignBottom } from "./icons/ArrowAlignBottom";
 import { ArrowAlignCenter } from "./icons/ArrowAlignCenter";
 import { ArrowAlignLeft } from "./icons/ArrowAlignLeft";
@@ -75,11 +91,16 @@ import { ArrowsVerticalAlt } from "./icons/ArrowsVerticalAlt";
 import { ArrowUp } from "./icons/ArrowUp";
 import { ArrowUpCircle } from "./icons/ArrowUpCircle";
 import { ArrowUpSquare } from "./icons/ArrowUpSquare";
+import { Article } from "./icons/Article";
 import { Asterisk } from "./icons/Asterisk";
 import { At } from "./icons/At";
+import { Atom } from "./icons/Atom";
 import { Attachment } from "./icons/Attachment";
+import { AudioLines } from "./icons/AudioLines";
+import { Auth0 } from "./icons/Auth0";
 import { AutoFix } from "./icons/AutoFix";
 import { AutoMode } from "./icons/AutoMode";
+import { Award } from "./icons/Award";
 import { Aws } from "./icons/Aws";
 import { BackupRestore } from "./icons/BackupRestore";
 import { BadgeAccount } from "./icons/BadgeAccount";
@@ -88,15 +109,36 @@ import { Bank } from "./icons/Bank";
 import { BankCircle } from "./icons/BankCircle";
 import { Barcode } from "./icons/Barcode";
 import { BarcodeScan } from "./icons/BarcodeScan";
+import { Battery } from "./icons/Battery";
+import { BatteryCharging } from "./icons/BatteryCharging";
+import { BatteryExclamationPoint } from "./icons/BatteryExclamationPoint";
+import { BatteryFull } from "./icons/BatteryFull";
+import { BatteryLow } from "./icons/BatteryLow";
+import { BatteryMedium } from "./icons/BatteryMedium";
 import { Beer } from "./icons/Beer";
 import { BeerAlt } from "./icons/BeerAlt";
+import { Behance } from "./icons/Behance";
 import { Bell } from "./icons/Bell";
 import { BellAlert } from "./icons/BellAlert";
 import { BellOff } from "./icons/BellOff";
 import { BellPlus } from "./icons/BellPlus";
 import { BellRemove } from "./icons/BellRemove";
 import { BellRing } from "./icons/BellRing";
+import { BitCoin } from "./icons/BitCoin";
+import { Blender } from "./icons/Blender";
 import { Bluesky } from "./icons/Bluesky";
+import { Bluetooth } from "./icons/Bluetooth";
+import { BluetoothConnected } from "./icons/BluetoothConnected";
+import { BluetoothOff } from "./icons/BluetoothOff";
+import { BluetoothSearching } from "./icons/BluetoothSearching";
+import { Bold } from "./icons/Bold";
+import { Booklet } from "./icons/Booklet";
+import { Bookmark } from "./icons/Bookmark";
+import { Bookmark2 } from "./icons/Bookmark2";
+import { Bookmark3 } from "./icons/Bookmark3";
+import { BookMarked } from "./icons/BookMarked";
+import { Brain } from "./icons/Brain";
+import { BrainCircuit } from "./icons/BrainCircuit";
 import { Brake } from "./icons/Brake";
 import { BrakeAbs } from "./icons/BrakeAbs";
 import { BrakeAlert } from "./icons/BrakeAlert";
@@ -108,6 +150,7 @@ import { BriefcaseCheck } from "./icons/BriefcaseCheck";
 import { BriefcaseMinus } from "./icons/BriefcaseMinus";
 import { BriefcasePlus } from "./icons/BriefcasePlus";
 import { BriefcaseRemove } from "./icons/BriefcaseRemove";
+import { Btc } from "./icons/Btc";
 import { Bug } from "./icons/Bug";
 import { BuyMeACoffee } from "./icons/BuyMeACoffee";
 import { Cake } from "./icons/Cake";
@@ -123,6 +166,10 @@ import { CarLightDimmedOff } from "./icons/CarLightDimmedOff";
 import { CarLightOff } from "./icons/CarLightOff";
 import { Cart } from "./icons/Cart";
 import { CartVariant } from "./icons/CartVariant";
+import { CaseLower } from "./icons/CaseLower";
+import { CaseSensitive } from "./icons/CaseSensitive";
+import { CaseUpper } from "./icons/CaseUpper";
+import { Cash } from "./icons/Cash";
 import { Cctv } from "./icons/Cctv";
 import { CctvOff } from "./icons/CctvOff";
 import { Cellphone } from "./icons/Cellphone";
@@ -134,6 +181,14 @@ import { CellphoneKey } from "./icons/CellphoneKey";
 import { CellphoneOff } from "./icons/CellphoneOff";
 import { CellphoneScreenshot } from "./icons/CellphoneScreenshot";
 import { Certificate } from "./icons/Certificate";
+import { Certificate2 } from "./icons/Certificate2";
+import { ChartArea } from "./icons/ChartArea";
+import { ChartBar } from "./icons/ChartBar";
+import { ChartCandlestick } from "./icons/ChartCandlestick";
+import { ChartColumn } from "./icons/ChartColumn";
+import { ChartLine } from "./icons/ChartLine";
+import { ChartNetwork } from "./icons/ChartNetwork";
+import { ChartPie } from "./icons/ChartPie";
 import { Chat } from "./icons/Chat";
 import { ChatAlert } from "./icons/ChatAlert";
 import { ChatAlertOff } from "./icons/ChatAlertOff";
@@ -147,6 +202,7 @@ import { ChatRoundDots } from "./icons/ChatRoundDots";
 import { ChatRoundDotsOff } from "./icons/ChatRoundDotsOff";
 import { ChatRoundOff } from "./icons/ChatRoundOff";
 import { CheckAll } from "./icons/CheckAll";
+import { CheckboxMultipleBlank } from "./icons/CheckboxMultipleBlank";
 import { CheckList3 } from "./icons/CheckList3";
 import { ChevronDoubleDown } from "./icons/ChevronDoubleDown";
 import { ChevronDoubleLeft } from "./icons/ChevronDoubleLeft";
@@ -181,6 +237,8 @@ import { ChevronUp } from "./icons/ChevronUp";
 import { ChevronUpCircle } from "./icons/ChevronUpCircle";
 import { ChevronUpSquare } from "./icons/ChevronUpSquare";
 import { Circle } from "./icons/Circle";
+import { Clapperboard } from "./icons/Clapperboard";
+import { Claude } from "./icons/Claude";
 import { Clipboard } from "./icons/Clipboard";
 import { ClipboardArrow } from "./icons/ClipboardArrow";
 import { ClipboardCheck } from "./icons/ClipboardCheck";
@@ -192,6 +250,7 @@ import { ClipboardText } from "./icons/ClipboardText";
 import { Clock } from "./icons/Clock";
 import { Close } from "./icons/Close";
 import { CloseCircle } from "./icons/CloseCircle";
+import { ClosedCaption } from "./icons/ClosedCaption";
 import { CloseSmall } from "./icons/CloseSmall";
 import { CloseSquare } from "./icons/CloseSquare";
 import { Cloud } from "./icons/Cloud";
@@ -203,15 +262,21 @@ import { CloudAltPrint } from "./icons/CloudAltPrint";
 import { CloudAltTags } from "./icons/CloudAltTags";
 import { CloudAltUpload } from "./icons/CloudAltUpload";
 import { CloudDown } from "./icons/CloudDown";
+import { Cloudflare } from "./icons/Cloudflare";
 import { CloudOff } from "./icons/CloudOff";
 import { CloudUp } from "./icons/CloudUp";
+import { Codepen } from "./icons/Codepen";
+import { Codesandbox } from "./icons/Codesandbox";
 import { Coffee } from "./icons/Coffee";
 import { CoffeeArrow } from "./icons/CoffeeArrow";
 import { CoffeeHalfEmpty } from "./icons/CoffeeHalfEmpty";
 import { Cog } from "./icons/Cog";
 import { CogOff } from "./icons/CogOff";
+import { Coin } from "./icons/Coin";
+import { Command } from "./icons/Command";
 import { Compass } from "./icons/Compass";
 import { CompassOff } from "./icons/CompassOff";
+import { Component } from "./icons/Component";
 import { Computer } from "./icons/Computer";
 import { ComputerOff } from "./icons/ComputerOff";
 import { Confirm } from "./icons/Confirm";
@@ -220,6 +285,11 @@ import { ConfirmSquare } from "./icons/ConfirmSquare";
 import { Console } from "./icons/Console";
 import { ConsoleLine } from "./icons/ConsoleLine";
 import { Construction } from "./icons/Construction";
+import { ConstructionAlt } from "./icons/ConstructionAlt";
+import { ContactsBook } from "./icons/ContactsBook";
+import { ContactsBook2 } from "./icons/ContactsBook2";
+import { ContactsBook3 } from "./icons/ContactsBook3";
+import { Contrast } from "./icons/Contrast";
 import { Cookie } from "./icons/Cookie";
 import { CookieCheck } from "./icons/CookieCheck";
 import { CookieMinus } from "./icons/CookieMinus";
@@ -227,8 +297,27 @@ import { CookieOff } from "./icons/CookieOff";
 import { CookiePlus } from "./icons/CookiePlus";
 import { CookieRemove } from "./icons/CookieRemove";
 import { CookieSettings } from "./icons/CookieSettings";
+import { Copilot } from "./icons/Copilot";
+import { CreditCard } from "./icons/CreditCard";
+import { CreditCardCheck } from "./icons/CreditCardCheck";
+import { CreditCardMinus } from "./icons/CreditCardMinus";
+import { CreditCardPlus } from "./icons/CreditCardPlus";
+import { CreditCardReader } from "./icons/CreditCardReader";
+import { CreditCardX } from "./icons/CreditCardX";
+import { Currency } from "./icons/Currency";
+import { CursorAi } from "./icons/CursorAi";
+import { CustomerService } from "./icons/CustomerService";
+import { CustomerService2 } from "./icons/CustomerService2";
+import { Database } from "./icons/Database";
+import { Databricks } from "./icons/Databricks";
+import { Deepseek } from "./icons/Deepseek";
+import { Dice5 } from "./icons/Dice5";
+import { Dices } from "./icons/Dices";
+import { Diff } from "./icons/Diff";
 import { Discord } from "./icons/Discord";
+import { DiscordAlt } from "./icons/DiscordAlt";
 import { Dns } from "./icons/Dns";
+import { Docker } from "./icons/Docker";
 import { Document } from "./icons/Document";
 import { DocumentAdd } from "./icons/DocumentAdd";
 import { DocumentCode } from "./icons/DocumentCode";
@@ -248,9 +337,14 @@ import { DownloadOffOutline } from "./icons/DownloadOffOutline";
 import { DownloadOutline } from "./icons/DownloadOutline";
 import { DragHorizontal } from "./icons/DragHorizontal";
 import { DragVertical } from "./icons/DragVertical";
+import { Dribbble } from "./icons/Dribbble";
 import { Edit } from "./icons/Edit";
 import { EditFull } from "./icons/EditFull";
+import { Eject } from "./icons/Eject";
+import { Elastic } from "./icons/Elastic";
 import { Email } from "./icons/Email";
+import { EmailAdd } from "./icons/EmailAdd";
+import { EmailAi } from "./icons/EmailAi";
 import { EmailAlert } from "./icons/EmailAlert";
 import { EmailAlt } from "./icons/EmailAlt";
 import { EmailArrowDown } from "./icons/EmailArrowDown";
@@ -258,13 +352,22 @@ import { EmailArrowLeft } from "./icons/EmailArrowLeft";
 import { EmailArrowRight } from "./icons/EmailArrowRight";
 import { EmailArrowUp } from "./icons/EmailArrowUp";
 import { EmailCheck } from "./icons/EmailCheck";
+import { EmailClose } from "./icons/EmailClose";
+import { EmailDownload } from "./icons/EmailDownload";
+import { EmailForbid } from "./icons/EmailForbid";
+import { EmailLock } from "./icons/EmailLock";
 import { EmailMinus } from "./icons/EmailMinus";
 import { EmailMultiple } from "./icons/EmailMultiple";
+import { EmailOpen } from "./icons/EmailOpen";
 import { EmailOpened } from "./icons/EmailOpened";
 import { EmailOpenedAlt } from "./icons/EmailOpenedAlt";
 import { EmailOpenedMultiple } from "./icons/EmailOpenedMultiple";
 import { EmailPlus } from "./icons/EmailPlus";
 import { EmailRemove } from "./icons/EmailRemove";
+import { EmailSend } from "./icons/EmailSend";
+import { EmailSettings } from "./icons/EmailSettings";
+import { EmailStar } from "./icons/EmailStar";
+import { EmailUnread } from "./icons/EmailUnread";
 import { EmojiAngry } from "./icons/EmojiAngry";
 import { EmojiCry } from "./icons/EmojiCry";
 import { EmojiFrown } from "./icons/EmojiFrown";
@@ -275,9 +378,18 @@ import { EmojiSmile } from "./icons/EmojiSmile";
 import { EmojiSmileWink } from "./icons/EmojiSmileWink";
 import { Engine } from "./icons/Engine";
 import { EngineOff } from "./icons/EngineOff";
+import { Eth } from "./icons/Eth";
+import { Exchange } from "./icons/Exchange";
+import { Exchange2 } from "./icons/Exchange2";
+import { ExchangeBox } from "./icons/ExchangeBox";
+import { ExchangeCny } from "./icons/ExchangeCny";
+import { ExchangeDollar } from "./icons/ExchangeDollar";
+import { ExchangeFunds } from "./icons/ExchangeFunds";
 import { ExternalLink } from "./icons/ExternalLink";
 import { ExternalLinkRounded } from "./icons/ExternalLinkRounded";
 import { Facebook } from "./icons/Facebook";
+import { FacebookBox } from "./icons/FacebookBox";
+import { Figma } from "./icons/Figma";
 import { File } from "./icons/File";
 import { FileCancel } from "./icons/FileCancel";
 import { FileDocument } from "./icons/FileDocument";
@@ -295,6 +407,8 @@ import { FilePlus } from "./icons/FilePlus";
 import { FileRemove } from "./icons/FileRemove";
 import { FileSearch } from "./icons/FileSearch";
 import { FileUpload } from "./icons/FileUpload";
+import { FileZip } from "./icons/FileZip";
+import { Film } from "./icons/Film";
 import { Filter } from "./icons/Filter";
 import { FilterAlt } from "./icons/FilterAlt";
 import { FilterAltOff } from "./icons/FilterAltOff";
@@ -306,6 +420,7 @@ import { FilterRemove } from "./icons/FilterRemove";
 import { FilterVariant } from "./icons/FilterVariant";
 import { Fingerprint } from "./icons/Fingerprint";
 import { FingerprintPattern } from "./icons/FingerprintPattern";
+import { Flag } from "./icons/Flag";
 import { FlipHorizontal } from "./icons/FlipHorizontal";
 import { FlipToBack } from "./icons/FlipToBack";
 import { FlipToFront } from "./icons/FlipToFront";
@@ -327,23 +442,50 @@ import { FolderPlus } from "./icons/FolderPlus";
 import { FolderRemove } from "./icons/FolderRemove";
 import { FolderSettings } from "./icons/FolderSettings";
 import { FolderZip } from "./icons/FolderZip";
+import { FolderZipAlt } from "./icons/FolderZipAlt";
+import { FontMono } from "./icons/FontMono";
+import { FontSansSerif } from "./icons/FontSansSerif";
+import { FontSerif } from "./icons/FontSerif";
 import { ForkLeft } from "./icons/ForkLeft";
 import { ForkRight } from "./icons/ForkRight";
+import { Form } from "./icons/Form";
 import { FormatQuoteClose } from "./icons/FormatQuoteClose";
 import { FormatQuoteOpen } from "./icons/FormatQuoteOpen";
+import { Fullscreen } from "./icons/Fullscreen";
+import { Funds } from "./icons/Funds";
+import { Gallery } from "./icons/Gallery";
 import { Gauge } from "./icons/Gauge";
 import { GaugeEmpty } from "./icons/GaugeEmpty";
 import { GaugeFull } from "./icons/GaugeFull";
 import { GaugeLow } from "./icons/GaugeLow";
+import { Gemini } from "./icons/Gemini";
+import { Ghost } from "./icons/Ghost";
 import { Gift } from "./icons/Gift";
 import { Github } from "./icons/Github";
+import { GithubAlt } from "./icons/GithubAlt";
 import { GithubBox } from "./icons/GithubBox";
+import { GolfBall } from "./icons/GolfBall";
+import { GooglePlay } from "./icons/GooglePlay";
+import { Government } from "./icons/Government";
+import { Gps } from "./icons/Gps";
+import { GraduationCap } from "./icons/GraduationCap";
+import { Graphql } from "./icons/Graphql";
 import { Grid3 } from "./icons/Grid3";
+import { GrokAi } from "./icons/GrokAi";
 import { HandClap } from "./icons/HandClap";
+import { HardDrive } from "./icons/HardDrive";
 import { Hash } from "./icons/Hash";
 import { HashSmall } from "./icons/HashSmall";
 import { HazardLights } from "./icons/HazardLights";
 import { HazardLightsOff } from "./icons/HazardLightsOff";
+import { Hd } from "./icons/Hd";
+import { Heading } from "./icons/Heading";
+import { Heading1 } from "./icons/Heading1";
+import { Heading2 } from "./icons/Heading2";
+import { Heading3 } from "./icons/Heading3";
+import { Heading4 } from "./icons/Heading4";
+import { Heading5 } from "./icons/Heading5";
+import { Heading6 } from "./icons/Heading6";
 import { Heart } from "./icons/Heart";
 import { HeartFilledHalf } from "./icons/HeartFilledHalf";
 import { HeartHalf } from "./icons/HeartHalf";
@@ -354,9 +496,16 @@ import { Iconify1 } from "./icons/Iconify1";
 import { Iconify2 } from "./icons/Iconify2";
 import { Iconify2Static } from "./icons/Iconify2Static";
 import { Image } from "./icons/Image";
+import { Inbox2 } from "./icons/Inbox2";
+import { IndentDecrease } from "./icons/IndentDecrease";
+import { IndentIncrease } from "./icons/IndentIncrease";
 import { InformationSlabCircle } from "./icons/InformationSlabCircle";
 import { Instagram } from "./icons/Instagram";
+import { Install } from "./icons/Install";
+import { Italic } from "./icons/Italic";
 import { Key } from "./icons/Key";
+import { KeyRound } from "./icons/KeyRound";
+import { KeySquare } from "./icons/KeySquare";
 import { KeyVariant } from "./icons/KeyVariant";
 import { Kubernetes } from "./icons/Kubernetes";
 import { LanguageC } from "./icons/LanguageC";
@@ -371,14 +520,34 @@ import { LanguageMarkdown } from "./icons/LanguageMarkdown";
 import { LanguagePhp } from "./icons/LanguagePhp";
 import { LanguagePython } from "./icons/LanguagePython";
 import { LanguageRust } from "./icons/LanguageRust";
+import { Languages } from "./icons/Languages";
 import { LanguageTypescript } from "./icons/LanguageTypescript";
 import { Laptop } from "./icons/Laptop";
 import { LaptopOff } from "./icons/LaptopOff";
+import { LayoutBottom2 } from "./icons/LayoutBottom2";
+import { LayoutBottombar } from "./icons/LayoutBottombar";
+import { LayoutBottombarCollapse } from "./icons/LayoutBottombarCollapse";
+import { LayoutBottombarExpand } from "./icons/LayoutBottombarExpand";
+import { LayoutLeft2 } from "./icons/LayoutLeft2";
+import { LayoutNavbar } from "./icons/LayoutNavbar";
+import { LayoutNavbarCollapse } from "./icons/LayoutNavbarCollapse";
+import { LayoutNavbarExpand } from "./icons/LayoutNavbarExpand";
+import { LayoutRight2 } from "./icons/LayoutRight2";
+import { LayoutSidebar } from "./icons/LayoutSidebar";
+import { LayoutSidebarLeftCollapse } from "./icons/LayoutSidebarLeftCollapse";
+import { LayoutSidebarLeftExpand } from "./icons/LayoutSidebarLeftExpand";
+import { LayoutSidebarRight } from "./icons/LayoutSidebarRight";
+import { LayoutSidebarRightCollapse } from "./icons/LayoutSidebarRightCollapse";
+import { LayoutSidebarRightExpand } from "./icons/LayoutSidebarRightExpand";
+import { LayoutTop2 } from "./icons/LayoutTop2";
+import { LetterSpacing } from "./icons/LetterSpacing";
+import { Library } from "./icons/Library";
 import { License } from "./icons/License";
 import { Lightbulb } from "./icons/Lightbulb";
 import { LightbulbOff } from "./icons/LightbulbOff";
 import { LightDark } from "./icons/LightDark";
 import { Lightning } from "./icons/Lightning";
+import { LineHeight } from "./icons/LineHeight";
 import { Link } from "./icons/Link";
 import { Linkedin } from "./icons/Linkedin";
 import { List } from "./icons/List";
@@ -411,15 +580,20 @@ import { MapMarkerRemove } from "./icons/MapMarkerRemove";
 import { MapTrifold } from "./icons/MapTrifold";
 import { Marker } from "./icons/Marker";
 import { Mastodon } from "./icons/Mastodon";
+import { Matrix } from "./icons/Matrix";
 import { MedicalServices } from "./icons/MedicalServices";
 import { Medium } from "./icons/Medium";
+import { MediumAlt } from "./icons/MediumAlt";
 import { Menu } from "./icons/Menu";
 import { MenuFoldLeft } from "./icons/MenuFoldLeft";
 import { MenuFoldRight } from "./icons/MenuFoldRight";
 import { MenuUnfoldLeft } from "./icons/MenuUnfoldLeft";
 import { MenuUnfoldRight } from "./icons/MenuUnfoldRight";
+import { Meta } from "./icons/Meta";
+import { Microfrontends } from "./icons/Microfrontends";
 import { Microphone } from "./icons/Microphone";
 import { MicrophoneOff } from "./icons/MicrophoneOff";
+import { MindMap } from "./icons/MindMap";
 import { Minus } from "./icons/Minus";
 import { MinusCircle } from "./icons/MinusCircle";
 import { MinusSquare } from "./icons/MinusSquare";
@@ -447,16 +621,31 @@ import { NavigationLeftDown } from "./icons/NavigationLeftDown";
 import { NavigationLeftUp } from "./icons/NavigationLeftUp";
 import { NavigationRightDown } from "./icons/NavigationRightDown";
 import { NavigationRightUp } from "./icons/NavigationRightUp";
+import { Network } from "./icons/Network";
+import { Newspaper } from "./icons/Newspaper";
 import { NewspaperVariant } from "./icons/NewspaperVariant";
+import { Nextjs } from "./icons/Nextjs";
 import { Nix } from "./icons/Nix";
 import { Notebook } from "./icons/Notebook";
+import { Notion } from "./icons/Notion";
+import { Npmjs } from "./icons/Npmjs";
+import { Oauth } from "./icons/Oauth";
+import { Openai } from "./icons/Openai";
 import { OpenSourceInitiative } from "./icons/OpenSourceInitiative";
+import { OrganizationChart } from "./icons/OrganizationChart";
+import { Outbox } from "./icons/Outbox";
+import { Paintbrush } from "./icons/Paintbrush";
+import { PaintbrushVertical } from "./icons/PaintbrushVertical";
 import { PaintDrop } from "./icons/PaintDrop";
 import { PaintDropHalf } from "./icons/PaintDropHalf";
+import { Palette } from "./icons/Palette";
 import { PaletteSwatchVariant } from "./icons/PaletteSwatchVariant";
+import { Paperclip } from "./icons/Paperclip";
 import { Patreon } from "./icons/Patreon";
+import { PatreonAlt } from "./icons/PatreonAlt";
 import { Pause } from "./icons/Pause";
 import { PauseOff } from "./icons/PauseOff";
+import { Paypal } from "./icons/Paypal";
 import { Peanut } from "./icons/Peanut";
 import { PeanutOff } from "./icons/PeanutOff";
 import { Peertube } from "./icons/Peertube";
@@ -479,20 +668,34 @@ import { Pixelfed } from "./icons/Pixelfed";
 import { Pizza } from "./icons/Pizza";
 import { PizzaOff } from "./icons/PizzaOff";
 import { Play } from "./icons/Play";
+import { PlayingCards } from "./icons/PlayingCards";
+import { PlayingCardsFan } from "./icons/PlayingCardsFan";
 import { PlayOff } from "./icons/PlayOff";
 import { Pleroma } from "./icons/Pleroma";
 import { Plus } from "./icons/Plus";
 import { PlusCircle } from "./icons/PlusCircle";
 import { PlusSquare } from "./icons/PlusSquare";
+import { Pnpm } from "./icons/Pnpm";
+import { Podcast } from "./icons/Podcast";
+import { Power } from "./icons/Power";
+import { Powershell } from "./icons/Powershell";
+import { Prisma } from "./icons/Prisma";
+import { ProductHunt } from "./icons/ProductHunt";
 import { Puzzle } from "./icons/Puzzle";
 import { Qrcode } from "./icons/Qrcode";
 import { Question } from "./icons/Question";
 import { QuestionCircle } from "./icons/QuestionCircle";
 import { QuestionSquare } from "./icons/QuestionSquare";
+import { QwenAi } from "./icons/QwenAi";
+import { Radar } from "./icons/Radar";
+import { Reactjs } from "./icons/Reactjs";
 import { Reddit } from "./icons/Reddit";
+import { Reddit2 } from "./icons/Reddit2";
 import { RedditCircle } from "./icons/RedditCircle";
+import { Regex } from "./icons/Regex";
 import { Remove } from "./icons/Remove";
 import { Robot } from "./icons/Robot";
+import { RobotArm } from "./icons/RobotArm";
 import { Rotate180 } from "./icons/Rotate180";
 import { Rotate270 } from "./icons/Rotate270";
 import { Rotate90 } from "./icons/Rotate90";
@@ -503,25 +706,49 @@ import { RoundRampLeft } from "./icons/RoundRampLeft";
 import { RoundRampRight } from "./icons/RoundRampRight";
 import { Rss } from "./icons/Rss";
 import { RssBox } from "./icons/RssBox";
+import { Ruler } from "./icons/Ruler";
+import { RulerDimensionLine } from "./icons/RulerDimensionLine";
+import { Safe2 } from "./icons/Safe2";
 import { SafeSquare } from "./icons/SafeSquare";
 import { SatelliteUplink } from "./icons/SatelliteUplink";
 import { SatelliteVariant } from "./icons/SatelliteVariant";
+import { Save } from "./icons/Save";
+import { Save2 } from "./icons/Save2";
+import { SaveAll } from "./icons/SaveAll";
+import { Scales } from "./icons/Scales";
+import { Scroll } from "./icons/Scroll";
+import { ScrollText } from "./icons/ScrollText";
 import { Search } from "./icons/Search";
 import { Security } from "./icons/Security";
 import { SecurityOff } from "./icons/SecurityOff";
 import { Send } from "./icons/Send";
+import { Sentry } from "./icons/Sentry";
 import { Server } from "./icons/Server";
 import { Share } from "./icons/Share";
 import { ShareVariant } from "./icons/ShareVariant";
 import { Shimmer } from "./icons/Shimmer";
+import { Shredder } from "./icons/Shredder";
+import { Signal } from "./icons/Signal";
+import { SignalHigh } from "./icons/SignalHigh";
+import { SignalLow } from "./icons/SignalLow";
+import { SignalMedium } from "./icons/SignalMedium";
+import { SignalZero } from "./icons/SignalZero";
+import { Sip } from "./icons/Sip";
 import { Skull } from "./icons/Skull";
+import { Slack } from "./icons/Slack";
+import { Slideshow } from "./icons/Slideshow";
+import { Snowflake } from "./icons/Snowflake";
 import { SortAscending } from "./icons/SortAscending";
 import { SortDescending } from "./icons/SortDescending";
 import { Soundcloud } from "./icons/Soundcloud";
+import { Sparkle } from "./icons/Sparkle";
+import { Sparkles } from "./icons/Sparkles";
 import { Speed } from "./icons/Speed";
 import { Speedometer } from "./icons/Speedometer";
+import { SpellCheck } from "./icons/SpellCheck";
 import { Spotify } from "./icons/Spotify";
 import { Square } from "./icons/Square";
+import { StackOverflow } from "./icons/StackOverflow";
 import { Star } from "./icons/Star";
 import { StarAlt } from "./icons/StarAlt";
 import { StarAltFilledHalf } from "./icons/StarAltFilledHalf";
@@ -533,11 +760,18 @@ import { StarRightHalf } from "./icons/StarRightHalf";
 import { StarRightHalfAlt } from "./icons/StarRightHalfAlt";
 import { Steering } from "./icons/Steering";
 import { SteeringOff } from "./icons/SteeringOff";
+import { Stethoscope } from "./icons/Stethoscope";
+import { Stock } from "./icons/Stock";
 import { Storefront } from "./icons/Storefront";
+import { Storybook } from "./icons/Storybook";
+import { Strikethrough } from "./icons/Strikethrough";
+import { Subscript } from "./icons/Subscript";
 import { Sunny } from "./icons/Sunny";
 import { SunnyOff } from "./icons/SunnyOff";
 import { SunnyOutline } from "./icons/SunnyOutline";
 import { SunRising } from "./icons/SunRising";
+import { Superscript } from "./icons/Superscript";
+import { Survey } from "./icons/Survey";
 import { Switch } from "./icons/Switch";
 import { SwitchOff } from "./icons/SwitchOff";
 import { Tablet } from "./icons/Tablet";
@@ -550,17 +784,24 @@ import { Tag } from "./icons/Tag";
 import { TagOff } from "./icons/TagOff";
 import { TagPlus } from "./icons/TagPlus";
 import { Tailwind } from "./icons/Tailwind";
+import { Target } from "./icons/Target";
 import { Telegram } from "./icons/Telegram";
+import { Telegram2 } from "./icons/Telegram2";
+import { TerminalBox } from "./icons/TerminalBox";
 import { Terraform } from "./icons/Terraform";
 import { TextBox } from "./icons/TextBox";
 import { TextBoxMultiple } from "./icons/TextBoxMultiple";
+import { Threejs } from "./icons/Threejs";
 import { ThumbsDown } from "./icons/ThumbsDown";
 import { ThumbsUp } from "./icons/ThumbsUp";
 import { Tiktok } from "./icons/Tiktok";
+import { Timeline } from "./icons/Timeline";
 import { Tor } from "./icons/Tor";
+import { TowerControl } from "./icons/TowerControl";
 import { Trash } from "./icons/Trash";
 import { TrayArrowDown } from "./icons/TrayArrowDown";
 import { TrayArrowUp } from "./icons/TrayArrowUp";
+import { Trophy } from "./icons/Trophy";
 import { Tune } from "./icons/Tune";
 import { TuneVertical } from "./icons/TuneVertical";
 import { TurnLeft } from "./icons/TurnLeft";
@@ -569,10 +810,17 @@ import { TurnSharpLeft } from "./icons/TurnSharpLeft";
 import { TurnSharpRight } from "./icons/TurnSharpRight";
 import { TurnSlightLeft } from "./icons/TurnSlightLeft";
 import { TurnSlightRight } from "./icons/TurnSlightRight";
+import { Tv } from "./icons/Tv";
+import { TvMinimal } from "./icons/TvMinimal";
 import { Twitter } from "./icons/Twitter";
 import { TwitterX } from "./icons/TwitterX";
 import { TwitterXAlt } from "./icons/TwitterXAlt";
 import { TwoFactorAuthentication } from "./icons/TwoFactorAuthentication";
+import { Underline } from "./icons/Underline";
+import { Undo } from "./icons/Undo";
+import { Undo2 } from "./icons/Undo2";
+import { Uninstall } from "./icons/Uninstall";
+import { Unsplash } from "./icons/Unsplash";
 import { Update } from "./icons/Update";
 import { Upload } from "./icons/Upload";
 import { Uploading } from "./icons/Uploading";
@@ -586,6 +834,14 @@ import { ValignBaseline } from "./icons/ValignBaseline";
 import { ValignBottom } from "./icons/ValignBottom";
 import { ValignMiddle } from "./icons/ValignMiddle";
 import { ValignTop } from "./icons/ValignTop";
+import { Vercel } from "./icons/Vercel";
+import { VerifiedBadge } from "./icons/VerifiedBadge";
+import { Video } from "./icons/Video";
+import { VideoOff } from "./icons/VideoOff";
+import { VisualStudio } from "./icons/VisualStudio";
+import { Vite } from "./icons/Vite";
+import { VoiceAi } from "./icons/VoiceAi";
+import { Voicemail } from "./icons/Voicemail";
 import { VolumeHigh } from "./icons/VolumeHigh";
 import { VolumeHighOff } from "./icons/VolumeHighOff";
 import { VolumeLow } from "./icons/VolumeLow";
@@ -595,6 +851,12 @@ import { VolumeMediumOff } from "./icons/VolumeMediumOff";
 import { VolumeMinus } from "./icons/VolumeMinus";
 import { VolumePlus } from "./icons/VolumePlus";
 import { VolumeRemove } from "./icons/VolumeRemove";
+import { Vscode } from "./icons/Vscode";
+import { Wallet } from "./icons/Wallet";
+import { WalletCards } from "./icons/WalletCards";
+import { WalletMinimal } from "./icons/WalletMinimal";
+import { Wand } from "./icons/Wand";
+import { WandSparkles } from "./icons/WandSparkles";
 import { Watch } from "./icons/Watch";
 import { WatchOff } from "./icons/WatchOff";
 import { Water } from "./icons/Water";
@@ -602,6 +864,11 @@ import { WaterOff } from "./icons/WaterOff";
 import { WeatherCloudy } from "./icons/WeatherCloudy";
 import { Web } from "./icons/Web";
 import { WebBox } from "./icons/WebBox";
+import { Webhook } from "./icons/Webhook";
+import { Windows } from "./icons/Windows";
+import { Wrench } from "./icons/Wrench";
+import { Yarn } from "./icons/Yarn";
+import { Ycombinator } from "./icons/Ycombinator";
 import { Youtube } from "./icons/Youtube";
 import type { IconComponent } from "./types";
 
@@ -616,10 +883,16 @@ export const allIcons: { [component: string]: IconComponent } = {
   AccountDelete,
   AccountRemove,
   AccountSmall,
+  Ad,
+  Ai,
+  AiAgent,
+  AiGenerate2,
+  AiGenerate2Alt,
   Alarm,
   AlarmCheck,
   AlarmOff,
   AlarmPlus,
+  Album,
   Alert,
   AlertCircle,
   AlertSquare,
@@ -627,7 +900,17 @@ export const allIcons: { [component: string]: IconComponent } = {
   AlignJustify,
   AlignLeft,
   AlignRight,
+  Amazon,
   Anchor,
+  Android,
+  Anthropic,
+  ApiApp,
+  Apple,
+  AppStore,
+  Archive,
+  Archive2,
+  ArchiveStack,
+  ArchiveX,
   ArrowAlignBottom,
   ArrowAlignCenter,
   ArrowAlignLeft,
@@ -666,11 +949,16 @@ export const allIcons: { [component: string]: IconComponent } = {
   ArrowUp,
   ArrowUpCircle,
   ArrowUpSquare,
+  Article,
   Asterisk,
   At,
+  Atom,
   Attachment,
+  AudioLines,
+  Auth0,
   AutoFix,
   AutoMode,
+  Award,
   Aws,
   BackupRestore,
   BadgeAccount,
@@ -679,15 +967,36 @@ export const allIcons: { [component: string]: IconComponent } = {
   BankCircle,
   Barcode,
   BarcodeScan,
+  Battery,
+  BatteryCharging,
+  BatteryExclamationPoint,
+  BatteryFull,
+  BatteryLow,
+  BatteryMedium,
   Beer,
   BeerAlt,
+  Behance,
   Bell,
   BellAlert,
   BellOff,
   BellPlus,
   BellRemove,
   BellRing,
+  BitCoin,
+  Blender,
   Bluesky,
+  Bluetooth,
+  BluetoothConnected,
+  BluetoothOff,
+  BluetoothSearching,
+  Bold,
+  Booklet,
+  Bookmark,
+  Bookmark2,
+  Bookmark3,
+  BookMarked,
+  Brain,
+  BrainCircuit,
   Brake,
   BrakeAbs,
   BrakeAlert,
@@ -699,6 +1008,7 @@ export const allIcons: { [component: string]: IconComponent } = {
   BriefcaseMinus,
   BriefcasePlus,
   BriefcaseRemove,
+  Btc,
   Bug,
   BuyMeACoffee,
   Cake,
@@ -714,6 +1024,10 @@ export const allIcons: { [component: string]: IconComponent } = {
   CarLightOff,
   Cart,
   CartVariant,
+  CaseLower,
+  CaseSensitive,
+  CaseUpper,
+  Cash,
   Cctv,
   CctvOff,
   Cellphone,
@@ -725,6 +1039,14 @@ export const allIcons: { [component: string]: IconComponent } = {
   CellphoneOff,
   CellphoneScreenshot,
   Certificate,
+  Certificate2,
+  ChartArea,
+  ChartBar,
+  ChartCandlestick,
+  ChartColumn,
+  ChartLine,
+  ChartNetwork,
+  ChartPie,
   Chat,
   ChatAlert,
   ChatAlertOff,
@@ -738,6 +1060,7 @@ export const allIcons: { [component: string]: IconComponent } = {
   ChatRoundDotsOff,
   ChatRoundOff,
   CheckAll,
+  CheckboxMultipleBlank,
   CheckList3,
   ChevronDoubleDown,
   ChevronDoubleLeft,
@@ -772,6 +1095,8 @@ export const allIcons: { [component: string]: IconComponent } = {
   ChevronUpCircle,
   ChevronUpSquare,
   Circle,
+  Clapperboard,
+  Claude,
   Clipboard,
   ClipboardArrow,
   ClipboardCheck,
@@ -783,6 +1108,7 @@ export const allIcons: { [component: string]: IconComponent } = {
   Clock,
   Close,
   CloseCircle,
+  ClosedCaption,
   CloseSmall,
   CloseSquare,
   Cloud,
@@ -794,15 +1120,21 @@ export const allIcons: { [component: string]: IconComponent } = {
   CloudAltTags,
   CloudAltUpload,
   CloudDown,
+  Cloudflare,
   CloudOff,
   CloudUp,
+  Codepen,
+  Codesandbox,
   Coffee,
   CoffeeArrow,
   CoffeeHalfEmpty,
   Cog,
   CogOff,
+  Coin,
+  Command,
   Compass,
   CompassOff,
+  Component,
   Computer,
   ComputerOff,
   Confirm,
@@ -811,6 +1143,11 @@ export const allIcons: { [component: string]: IconComponent } = {
   Console,
   ConsoleLine,
   Construction,
+  ConstructionAlt,
+  ContactsBook,
+  ContactsBook2,
+  ContactsBook3,
+  Contrast,
   Cookie,
   CookieCheck,
   CookieMinus,
@@ -818,8 +1155,27 @@ export const allIcons: { [component: string]: IconComponent } = {
   CookiePlus,
   CookieRemove,
   CookieSettings,
+  Copilot,
+  CreditCard,
+  CreditCardCheck,
+  CreditCardMinus,
+  CreditCardPlus,
+  CreditCardReader,
+  CreditCardX,
+  Currency,
+  CursorAi,
+  CustomerService,
+  CustomerService2,
+  Database,
+  Databricks,
+  Deepseek,
+  Dice5,
+  Dices,
+  Diff,
   Discord,
+  DiscordAlt,
   Dns,
+  Docker,
   Document,
   DocumentAdd,
   DocumentCode,
@@ -839,9 +1195,14 @@ export const allIcons: { [component: string]: IconComponent } = {
   DownloadOutline,
   DragHorizontal,
   DragVertical,
+  Dribbble,
   Edit,
   EditFull,
+  Eject,
+  Elastic,
   Email,
+  EmailAdd,
+  EmailAi,
   EmailAlert,
   EmailAlt,
   EmailArrowDown,
@@ -849,13 +1210,22 @@ export const allIcons: { [component: string]: IconComponent } = {
   EmailArrowRight,
   EmailArrowUp,
   EmailCheck,
+  EmailClose,
+  EmailDownload,
+  EmailForbid,
+  EmailLock,
   EmailMinus,
   EmailMultiple,
+  EmailOpen,
   EmailOpened,
   EmailOpenedAlt,
   EmailOpenedMultiple,
   EmailPlus,
   EmailRemove,
+  EmailSend,
+  EmailSettings,
+  EmailStar,
+  EmailUnread,
   EmojiAngry,
   EmojiCry,
   EmojiFrown,
@@ -866,9 +1236,18 @@ export const allIcons: { [component: string]: IconComponent } = {
   EmojiSmileWink,
   Engine,
   EngineOff,
+  Eth,
+  Exchange,
+  Exchange2,
+  ExchangeBox,
+  ExchangeCny,
+  ExchangeDollar,
+  ExchangeFunds,
   ExternalLink,
   ExternalLinkRounded,
   Facebook,
+  FacebookBox,
+  Figma,
   File,
   FileCancel,
   FileDocument,
@@ -886,6 +1265,8 @@ export const allIcons: { [component: string]: IconComponent } = {
   FileRemove,
   FileSearch,
   FileUpload,
+  FileZip,
+  Film,
   Filter,
   FilterAlt,
   FilterAltOff,
@@ -897,6 +1278,7 @@ export const allIcons: { [component: string]: IconComponent } = {
   FilterVariant,
   Fingerprint,
   FingerprintPattern,
+  Flag,
   FlipHorizontal,
   FlipToBack,
   FlipToFront,
@@ -918,23 +1300,50 @@ export const allIcons: { [component: string]: IconComponent } = {
   FolderRemove,
   FolderSettings,
   FolderZip,
+  FolderZipAlt,
+  FontMono,
+  FontSansSerif,
+  FontSerif,
   ForkLeft,
   ForkRight,
+  Form,
   FormatQuoteClose,
   FormatQuoteOpen,
+  Fullscreen,
+  Funds,
+  Gallery,
   Gauge,
   GaugeEmpty,
   GaugeFull,
   GaugeLow,
+  Gemini,
+  Ghost,
   Gift,
   Github,
+  GithubAlt,
   GithubBox,
+  GolfBall,
+  GooglePlay,
+  Government,
+  Gps,
+  GraduationCap,
+  Graphql,
   Grid3,
+  GrokAi,
   HandClap,
+  HardDrive,
   Hash,
   HashSmall,
   HazardLights,
   HazardLightsOff,
+  Hd,
+  Heading,
+  Heading1,
+  Heading2,
+  Heading3,
+  Heading4,
+  Heading5,
+  Heading6,
   Heart,
   HeartFilledHalf,
   HeartHalf,
@@ -945,9 +1354,16 @@ export const allIcons: { [component: string]: IconComponent } = {
   Iconify2,
   Iconify2Static,
   Image,
+  Inbox2,
+  IndentDecrease,
+  IndentIncrease,
   InformationSlabCircle,
   Instagram,
+  Install,
+  Italic,
   Key,
+  KeyRound,
+  KeySquare,
   KeyVariant,
   Kubernetes,
   LanguageC,
@@ -962,14 +1378,34 @@ export const allIcons: { [component: string]: IconComponent } = {
   LanguagePhp,
   LanguagePython,
   LanguageRust,
+  Languages,
   LanguageTypescript,
   Laptop,
   LaptopOff,
+  LayoutBottom2,
+  LayoutBottombar,
+  LayoutBottombarCollapse,
+  LayoutBottombarExpand,
+  LayoutLeft2,
+  LayoutNavbar,
+  LayoutNavbarCollapse,
+  LayoutNavbarExpand,
+  LayoutRight2,
+  LayoutSidebar,
+  LayoutSidebarLeftCollapse,
+  LayoutSidebarLeftExpand,
+  LayoutSidebarRight,
+  LayoutSidebarRightCollapse,
+  LayoutSidebarRightExpand,
+  LayoutTop2,
+  LetterSpacing,
+  Library,
   License,
   Lightbulb,
   LightbulbOff,
   LightDark,
   Lightning,
+  LineHeight,
   Link,
   Linkedin,
   List,
@@ -1002,15 +1438,20 @@ export const allIcons: { [component: string]: IconComponent } = {
   MapTrifold,
   Marker,
   Mastodon,
+  Matrix,
   MedicalServices,
   Medium,
+  MediumAlt,
   Menu,
   MenuFoldLeft,
   MenuFoldRight,
   MenuUnfoldLeft,
   MenuUnfoldRight,
+  Meta,
+  Microfrontends,
   Microphone,
   MicrophoneOff,
+  MindMap,
   Minus,
   MinusCircle,
   MinusSquare,
@@ -1038,16 +1479,31 @@ export const allIcons: { [component: string]: IconComponent } = {
   NavigationLeftUp,
   NavigationRightDown,
   NavigationRightUp,
+  Network,
+  Newspaper,
   NewspaperVariant,
+  Nextjs,
   Nix,
   Notebook,
+  Notion,
+  Npmjs,
+  Oauth,
+  Openai,
   OpenSourceInitiative,
+  OrganizationChart,
+  Outbox,
+  Paintbrush,
+  PaintbrushVertical,
   PaintDrop,
   PaintDropHalf,
+  Palette,
   PaletteSwatchVariant,
+  Paperclip,
   Patreon,
+  PatreonAlt,
   Pause,
   PauseOff,
+  Paypal,
   Peanut,
   PeanutOff,
   Peertube,
@@ -1070,20 +1526,34 @@ export const allIcons: { [component: string]: IconComponent } = {
   Pizza,
   PizzaOff,
   Play,
+  PlayingCards,
+  PlayingCardsFan,
   PlayOff,
   Pleroma,
   Plus,
   PlusCircle,
   PlusSquare,
+  Pnpm,
+  Podcast,
+  Power,
+  Powershell,
+  Prisma,
+  ProductHunt,
   Puzzle,
   Qrcode,
   Question,
   QuestionCircle,
   QuestionSquare,
+  QwenAi,
+  Radar,
+  Reactjs,
   Reddit,
+  Reddit2,
   RedditCircle,
+  Regex,
   Remove,
   Robot,
+  RobotArm,
   Rotate90,
   Rotate180,
   Rotate270,
@@ -1094,25 +1564,49 @@ export const allIcons: { [component: string]: IconComponent } = {
   RoundRampRight,
   Rss,
   RssBox,
+  Ruler,
+  RulerDimensionLine,
+  Safe2,
   SafeSquare,
   SatelliteUplink,
   SatelliteVariant,
+  Save,
+  Save2,
+  SaveAll,
+  Scales,
+  Scroll,
+  ScrollText,
   Search,
   Security,
   SecurityOff,
   Send,
+  Sentry,
   Server,
   Share,
   ShareVariant,
   Shimmer,
+  Shredder,
+  Signal,
+  SignalHigh,
+  SignalLow,
+  SignalMedium,
+  SignalZero,
+  Sip,
   Skull,
+  Slack,
+  Slideshow,
+  Snowflake,
   SortAscending,
   SortDescending,
   Soundcloud,
+  Sparkle,
+  Sparkles,
   Speed,
   Speedometer,
+  SpellCheck,
   Spotify,
   Square,
+  StackOverflow,
   Star,
   StarAlt,
   StarAltFilledHalf,
@@ -1124,11 +1618,18 @@ export const allIcons: { [component: string]: IconComponent } = {
   StarRightHalfAlt,
   Steering,
   SteeringOff,
+  Stethoscope,
+  Stock,
   Storefront,
+  Storybook,
+  Strikethrough,
+  Subscript,
   Sunny,
   SunnyOff,
   SunnyOutline,
   SunRising,
+  Superscript,
+  Survey,
   Switch,
   SwitchOff,
   Tablet,
@@ -1141,17 +1642,24 @@ export const allIcons: { [component: string]: IconComponent } = {
   TagOff,
   TagPlus,
   Tailwind,
+  Target,
   Telegram,
+  Telegram2,
+  TerminalBox,
   Terraform,
   TextBox,
   TextBoxMultiple,
+  Threejs,
   ThumbsDown,
   ThumbsUp,
   Tiktok,
+  Timeline,
   Tor,
+  TowerControl,
   Trash,
   TrayArrowDown,
   TrayArrowUp,
+  Trophy,
   Tune,
   TuneVertical,
   TurnLeft,
@@ -1160,10 +1668,17 @@ export const allIcons: { [component: string]: IconComponent } = {
   TurnSharpRight,
   TurnSlightLeft,
   TurnSlightRight,
+  Tv,
+  TvMinimal,
   Twitter,
   TwitterX,
   TwitterXAlt,
   TwoFactorAuthentication,
+  Underline,
+  Undo,
+  Undo2,
+  Uninstall,
+  Unsplash,
   Update,
   Upload,
   Uploading,
@@ -1177,6 +1692,14 @@ export const allIcons: { [component: string]: IconComponent } = {
   ValignBottom,
   ValignMiddle,
   ValignTop,
+  Vercel,
+  VerifiedBadge,
+  Video,
+  VideoOff,
+  VisualStudio,
+  Vite,
+  VoiceAi,
+  Voicemail,
   VolumeHigh,
   VolumeHighOff,
   VolumeLow,
@@ -1186,6 +1709,12 @@ export const allIcons: { [component: string]: IconComponent } = {
   VolumeMinus,
   VolumePlus,
   VolumeRemove,
+  Vscode,
+  Wallet,
+  WalletCards,
+  WalletMinimal,
+  Wand,
+  WandSparkles,
   Watch,
   WatchOff,
   Water,
@@ -1193,5 +1722,10 @@ export const allIcons: { [component: string]: IconComponent } = {
   WeatherCloudy,
   Web,
   WebBox,
+  Webhook,
+  Windows,
+  Wrench,
+  Yarn,
+  Ycombinator,
   Youtube
 };

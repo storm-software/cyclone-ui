@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor">
+		<path d="M19 12a4 4 0 0 1 2.5 7.121V23.5L19 22l-2.5 1.5v-4.379A4 4 0 0 1 19 12M20 2a1 1 0 0 1 1 1v7h-2V4H5v16h8v2H4a1 1 0 0 1 -1 -1V3a1 1 0 0 1 1 -1zM19 14a2 2 0 1 0 0 4a2 2 0 0 0 0 -4M13 15H8v-2h5zM16 11H8V9h8z" fill="currentColor" fill-opacity="0" stroke-width="1" stroke-dasharray="103">
+			<animate attributeName="stroke-dashoffset" dur="0.8s" fill="freeze" values="103;0" />
+			<animate attributeName="fill-opacity" begin="0.8s" dur="0.4s" fill="freeze" to="1" />
+			<animate attributeName="stroke-width" begin="0.8s" dur="0.4s" fill="freeze" values="1;0" />
+		</path>
+	</g>
+</svg>

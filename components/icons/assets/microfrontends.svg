@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor">
+		<path d="M7.5 7.5L12 12l4.5 -4.5" stroke-dasharray="13">
+			<animate attributeName="stroke-dashoffset" dur="0.2s" fill="freeze" values="13;0" />
+		</path>
+		<path d="M6 16v-4" stroke-dasharray="4" stroke-dashoffset="4">
+			<animate attributeName="stroke-dashoffset" begin="0.2s" dur="0.2s" fill="freeze" to="0" />
+		</path>
+		<path d="M18 16v-4" stroke-dasharray="4" stroke-dashoffset="4">
+			<animate attributeName="stroke-dashoffset" begin="0.2s" dur="0.2s" fill="freeze" to="0" />
+		</path>
+		<path d="M16 6a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" stroke-dasharray="13" stroke-dashoffset="13">
+			<animate attributeName="stroke-dashoffset" begin="0.4s" dur="0.2s" fill="freeze" to="0" />
+		</path>
+		<path d="M16 18a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" stroke-dasharray="13" stroke-dashoffset="13">
+			<animate attributeName="stroke-dashoffset" begin="0.4s" dur="0.2s" fill="freeze" to="0" />
+		</path>
+		<path d="M4 6a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" stroke-dasharray="13" stroke-dashoffset="13">
+			<animate attributeName="stroke-dashoffset" begin="0.4s" dur="0.2s" fill="freeze" to="0" />
+		</path>
+		<path d="M4 18a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" stroke-dasharray="13" stroke-dashoffset="13">
+			<animate attributeName="stroke-dashoffset" begin="0.4s" dur="0.2s" fill="freeze" to="0" />
+		</path>
+	</g>
+</svg>
